@@ -1,0 +1,6 @@
+LIBRARY PSAPI
+DESCRIPTION 'Psapi.dll'
+EXETYPE NT
+
+EXPORTS
+   _GetModuleInformation@16 = GetModuleInformation

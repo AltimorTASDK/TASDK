@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "TribesAscendSDK", "TribesAscendSDK\TribesAscendSDK.dproj", "{D58B268B-D058-4F1F-9F8D-740FD96C97CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{C409FC42-C9F3-4AC4-82BF-3F7DB9F52439}"
+EndProject
+Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "DebugShim", "DebugShim\DebugShim.dproj", "{AA402382-B47C-44BD-A47F-8997BC924E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Unittest|Any CPU = Unittest|Any CPU
+		Default|Any CPU = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
+		{AA402382-B47C-44BD-A47F-8997BC924E88}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
+		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA402382-B47C-44BD-A47F-8997BC924E88} = {C409FC42-C9F3-4AC4-82BF-3F7DB9F52439}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = DebugShim\DebugShim.dproj
+	EndGlobalSection
+EndGlobal
