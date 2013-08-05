@@ -32,10 +32,10 @@ extern(Windows)
 
 			push EAX;
 			call LoadLibraryA;
-			
-			pop EAX;
+
 			pop EDX;
 			pop ECX;
+			pop EAX;
 			ret; // This pops a return value off the stack, which we've already set to the previous eip.
 		}
 	}
@@ -50,10 +50,10 @@ extern(Windows)
 				CONTEXT threadContext = { NULL };
 				threadContext.ContextFlags = CONTEXT_CONTROL | CONTEXT_INTEGER;
 				GetThreadContext(mainThreadHandle, &threadContext);
+				threadContext.Esp -= 4;
 				*cast(uint*)threadContext.Esp = threadContext.Eip;
 				threadContext.Esp -= 4;
 				*cast(uint*)threadContext.Esp = threadContext.Eax;
-				threadContext.Esp -= 4;
 				threadContext.Eip = cast(uint)&MainThreadThunk;
 				threadContext.Eax = cast(uint)`C:\Tribes\TribesAscendSDK\TribesAscendSDK\bin\Debug\TribesAscendSDK.dll`.ptr;
 				SetThreadContext(mainThreadHandle, &threadContext);
