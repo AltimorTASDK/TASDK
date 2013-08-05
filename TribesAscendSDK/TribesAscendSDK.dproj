@@ -26,6 +26,7 @@
         <Lib>../lib/psapi.lib</Lib>
       </Libs>
     </Libs>
+    <ExtraCompilerArguments>-gs -gx</ExtraCompilerArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>

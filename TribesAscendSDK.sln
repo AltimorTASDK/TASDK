@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{C409FC42
 EndProject
 Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "DebugShim", "DebugShim\DebugShim.dproj", "{AA402382-B47C-44BD-A47F-8997BC924E88}"
 EndProject
+Project("{3947E667-4C90-4C3A-BEB9-7148D6FE0D7C}") = "Injector", "Injector\Injector.dproj", "{AB961FDF-9F40-4D37-B622-B3F05A136C95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,14 @@ Global
 		{AA402382-B47C-44BD-A47F-8997BC924E88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA402382-B47C-44BD-A47F-8997BC924E88}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
 		{AA402382-B47C-44BD-A47F-8997BC924E88}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Default|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,6 +46,6 @@ Global
 		{AA402382-B47C-44BD-A47F-8997BC924E88} = {C409FC42-C9F3-4AC4-82BF-3F7DB9F52439}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = DebugShim\DebugShim.dproj
+		StartupItem = Injector\Injector.dproj
 	EndGlobalSection
 EndGlobal

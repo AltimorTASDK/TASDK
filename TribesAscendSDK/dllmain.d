@@ -48,20 +48,27 @@ extern(Windows) DWORD Init(LPVOID lpThreadParameter)
 
 extern(Windows) BOOL DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID pvReserved)
 {
-	final switch (dwReason) 
+	switch (dwReason) 
 	{
 		case DLL_PROCESS_ATTACH:
+			MessageBoxA(null, "Process Attach", "Process Attach", MB_OK);
 			CreateThread(NULL, 0, &Init, NULL, 0, cast(DWORD*)NULL);
-			dll_process_attach(hInstance, true);
+			dll_process_attach(hInstance, false);
 			g_hInst = hInstance; 
 			break; 
+		default:
+			MessageBoxA(null, "Default", "Default", MB_OK);
+			return false;
 		case DLL_PROCESS_DETACH: 
+			MessageBoxA(null, "Process Detach", "Process Detach", MB_OK);
 			dll_process_detach(hInstance, true);
 			break;
 		case DLL_THREAD_ATTACH:
+			MessageBoxA(null, "Thread Attach", "Thread Attach", MB_OK);
 			dll_thread_attach(true, true);
 			break;
 		case DLL_THREAD_DETACH:
+			MessageBoxA(null, "Thread Detach", "Thread Detach", MB_OK);
 			dll_thread_detach(true, true);
 			break;
 	}
