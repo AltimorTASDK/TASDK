@@ -22,6 +22,7 @@
     <DebugLevel>0</DebugLevel>
     <Libs>
       <Libs>
+        <Lib>Advapi32.lib</Lib>
         <Lib>Kernel32.lib</Lib>
         <Lib>User32.lib</Lib>
         <Lib>../lib/psapi.lib</Lib>
