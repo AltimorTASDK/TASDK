@@ -21,7 +21,9 @@ extern(Windows)
 	alias PTHREADENTRY32 LPTHREADENTRY32;
 
 	HANDLE CreateToolhelp32Snapshot(DWORD dwFlags, DWORD th32ProcessID);
+	BOOL EnumProcessModulesEx(HANDLE hProcess, HMODULE* lphModule, DWORD cb, LPDWORD lpcbNeeded, DWORD dwFilterFlag);
 	HWND FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName);
+	DWORD GetModuleFileNameExA(HANDLE hProcess, HMODULE hModule, LPSTR lpFilename, DWORD nSize);
 	DWORD GetWindowThreadProcessId(HWND hWnd, LPDWORD lpdwProcessId);
 	HANDLE OpenProcess(DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwProcessId);
 	BOOL ReadProcessMemory(HANDLE hProcess, LPCVOID lpBaseAddress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
@@ -30,6 +32,10 @@ extern(Windows)
 	BOOL WriteProcessMemory(HANDLE hProcess, LPCVOID lpBaseAddress, LPCVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesWritten);
 
 	immutable void* NULL = cast(void*)0;
+	enum
+	{
+		LIST_MODULES_32BIT = 0x01,
+	}
 	enum
 	{
 		TH32CS_SNAPTHREAD = 0x00000004,
@@ -113,7 +119,18 @@ extern(Windows)
 		LPVOID thunkAddress = VirtualAllocEx(mainProcessHandle, NULL, ThunkData.length, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 		WriteProcessMemory(mainProcessHandle, thunkAddress, ThunkData.ptr, ThunkData.length, cast(SIZE_T*)NULL);
 		threadContext.Eip = cast(uint)thunkAddress;
-		
+
+		HMODULE loadedModules[1024];
+		DWORD cbNeeded;
+		EnumProcessModulesEx(mainProcessHandle, loadedModules.ptr, loadedModules.sizeof, &cbNeeded, LIST_MODULES_32BIT);
+		for (uint i = 0; i < cbNeeded / HMODULE.sizeof; i++)
+		{
+			CHAR moduleName[MAX_PATH];
+			moduleName[] = '\0';
+			GetModuleFileNameExA(mainProcessHandle, loadedModules[i], moduleName.ptr, moduleName.sizeof / CHAR.sizeof);
+			printf("Process has loaded '%s'\n", moduleName);
+			//if (!strcmp(moduleName, "Kernel32.dll"))
+		}
 		// TODO: Retrieve the correct address for LoadLibraryA in the running exe and set that as the value of ebx.
 
 		LPVOID stringAddress = VirtualAllocEx(mainProcessHandle, NULL, SDKLocation.length + 1, MEM_COMMIT, PAGE_READWRITE);
@@ -122,7 +139,7 @@ extern(Windows)
 		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)(stringAddress + SDKLocation.length), &zero, zero.sizeof, cast(SIZE_T*)NULL);
 		threadContext.Eax = cast(uint)stringAddress;
 
-		SetThreadContext(mainThreadHandle, &threadContext);
+		//SetThreadContext(mainThreadHandle, &threadContext);
 		ResumeThread(mainThreadHandle);
 	}
 

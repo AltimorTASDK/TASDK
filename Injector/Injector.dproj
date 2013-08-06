@@ -24,6 +24,7 @@
       <Libs>
         <Lib>Kernel32.lib</Lib>
         <Lib>User32.lib</Lib>
+        <Lib>../lib/psapi.lib</Lib>
       </Libs>
     </Libs>
   </PropertyGroup>
@@ -37,6 +38,6 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="dllmain.d" />
+    <Compile Include="main.d" />
   </ItemGroup>
 </Project>

@@ -3,4 +3,30 @@ DESCRIPTION 'Psapi.dll'
 EXETYPE NT
 
 EXPORTS
+   _QueryWorkingSetEx@12 = QueryWorkingSetEx
+   _GetProcessMemoryInfo@12 = GetProcessMemoryInfo
+   _GetModuleFileNameExW@16 = GetModuleFileNameExW
+   _EnumProcessModules@16 = EnumProcessModules
+   _EnumProcessModulesEx@20 = EnumProcessModulesEx
+   _GetMappedFileNameW@16 = GetMappedFileNameW
    _GetModuleInformation@16 = GetModuleInformation
+   _GetDeviceDriverBaseNameW@12 = GetDeviceDriverBaseNameW
+   _GetModuleFileNameExA@16 = GetModuleFileNameExA
+   _EnumDeviceDrivers@12 = EnumDeviceDrivers
+   _GetMappedFileNameA@16 = GetMappedFileNameA
+   _EnumProcesses@12 = EnumProcesses
+   _GetDeviceDriverBaseNameA@12 = GetDeviceDriverBaseNameA
+   _EmptyWorkingSet@4 = EmptyWorkingSet
+   _GetModuleBaseNameW@16 = GetModuleBaseNameW
+   _GetWsChanges@12 = GetWsChanges
+   _EnumPageFilesA@8 = EnumPageFilesA
+   _GetProcessImageFileNameW@12 = GetProcessImageFileNameW
+   _GetModuleBaseNameA@16 = GetModuleBaseNameA
+   _GetProcessImageFileNameA@12 = GetProcessImageFileNameA
+   _GetDeviceDriverFileNameW@12 = GetDeviceDriverFileNameW
+   _QueryWorkingSet@12 = QueryWorkingSet
+   _GetPerformanceInfo@8 = GetPerformanceInfo
+   _GetDeviceDriverFileNameA@12 = GetDeviceDriverFileNameA
+   _InitializeProcessForWsWatch@4 = InitializeProcessForWsWatch
+   _GetWsChangesEx@12 = GetWsChangesEx
+   _EnumPageFilesW@8 = EnumPageFilesW
