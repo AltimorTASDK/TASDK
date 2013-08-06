@@ -10,25 +10,20 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 		Unittest|Any CPU = Unittest|Any CPU
-		Default|Any CPU = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Default|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Default|Any CPU.Build.0 = Debug|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
-		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Default|Any CPU.ActiveCfg = Debug|Any CPU
-		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
 		{D58B268B-D058-4F1F-9F8D-740FD96C97CF}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.ActiveCfg = Unittest|Any CPU
+		{AB961FDF-9F40-4D37-B622-B3F05A136C95}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Injector\Injector.dproj

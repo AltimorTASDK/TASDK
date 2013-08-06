@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{002A2DE9-8BB6-484D-9802-7E4AD4084715}") = "TribesAscendSDK", "TribesAscendSDK\TribesAscendSDK.visualdproj", "{F0E61E72-8B9E-440B-8786-DB73DDFF3079}"
+EndProject
+Project("{002A2DE9-8BB6-484D-9802-7E4AD4084715}") = "Injector", "Injector\Injector.visualdproj", "{B39D1094-A848-4EF6-B183-34E4557D5D1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E61E72-8B9E-440B-8786-DB73DDFF3079}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F0E61E72-8B9E-440B-8786-DB73DDFF3079}.Debug|Win32.Build.0 = Debug|Win32
+		{B39D1094-A848-4EF6-B183-34E4557D5D1B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B39D1094-A848-4EF6-B183-34E4557D5D1B}.Debug|Win32.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
