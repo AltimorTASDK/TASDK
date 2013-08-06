@@ -15,11 +15,17 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug</OutputPath>
     <Externalconsole>true</Externalconsole>
-    <Target>SharedLibrary</Target>
+    <Target>Executable</Target>
     <OutputName>Injector</OutputName>
     <UnittestMode>false</UnittestMode>
     <ObjectsDirectory>obj\Debug</ObjectsDirectory>
     <DebugLevel>0</DebugLevel>
+    <Libs>
+      <Libs>
+        <Lib>Kernel32.lib</Lib>
+        <Lib>User32.lib</Lib>
+      </Libs>
+    </Libs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
