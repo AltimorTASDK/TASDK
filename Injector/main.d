@@ -78,26 +78,7 @@ extern(Windows)
 		THREAD_IMPERSONATE = 0x0100,
 		THREAD_DIRECT_IMPERSONATION = 0x0200,
 	}
-	
-	//char* mSDKDll;
-	export extern(C) void MainThreadThunk()
-	{
-		asm
-		{
-			naked;
-			push ECX;
-			push EDX;
 
-			push EAX;
-			call EBX;
-
-			pop EDX;
-			pop ECX;
-			pop EBX;
-			pop EAX;
-			ret; // This pops a return value off the stack, which we've already set to the previous eip.
-		}
-	}
 	immutable(immutable(ubyte)[0x0A]) ThunkData =
 	[
 		0x51, // push ECX
@@ -174,20 +155,14 @@ extern(Windows)
 			Die("Failed to write the thunk to memory!");
 		threadContext.Eip = cast(uint)thunkAddress;
 
-		HMODULE loadedModules[1024];
-		DWORD cbNeeded;
-		if (!EnumProcessModules(mainProcessHandle, loadedModules.ptr, loadedModules.sizeof, &cbNeeded))
-			Die("Failed to enumerate the process's modules!");
-		for (uint i = 0; i < cbNeeded / HMODULE.sizeof; i++)
-		{
-			CHAR moduleName[MAX_PATH];
-			moduleName[] = '\0';
-			if (!GetModuleFileNameExA(mainProcessHandle, loadedModules[i], moduleName.ptr, moduleName.sizeof / CHAR.sizeof))
-				Die("Failed to get a module file name for a module loaded by the process!");
-			printf("Process has loaded '%s'\n", moduleName);
-			//if (!strcmp(moduleName, "Kernel32.dll"))
-		}
-		// TODO: Retrieve the correct address for LoadLibraryA in the running exe and set that as the value of ebx.
+
+		HMODULE moduleHandle = GetModuleHandleA("KERNEL32.dll");
+		if (!moduleHandle)
+			Die("Failed to get a module handle for Kernel32!");
+		FARPROC loadLib = GetProcAddress(moduleHandle, "LoadLibraryA");
+		if (!loadLib)
+			Die("Failed to get the address of LoadLibraryA in Kernel32!");
+		threadContext.Ebx = cast(uint)loadLib;
 
 		LPVOID stringAddress = VirtualAllocEx(mainProcessHandle, NULL, SDKLocation.length + 1, MEM_COMMIT, PAGE_READWRITE);
 		if (!WriteProcessMemory(mainProcessHandle, cast(LPCVOID)stringAddress, SDKLocation.ptr, SDKLocation.length, cast(SIZE_T*)NULL))
@@ -197,8 +172,8 @@ extern(Windows)
 			Die("Failed to write the null terminator of the SDK location string to memory!");
 		threadContext.Eax = cast(uint)stringAddress;
 
-		//if (!SetThreadContext(mainThreadHandle, &threadContext))
-		//	Die("Failed to set the thread context!");
+		if (!SetThreadContext(mainThreadHandle, &threadContext))
+			Die("Failed to set the thread context!");
 		if (!ResumeThread(mainThreadHandle))
 			Die("Failed to resume the thread!");
 	}
