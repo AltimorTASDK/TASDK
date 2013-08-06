@@ -36,6 +36,7 @@ extern(Windows)
 	}
 	enum
 	{
+		PROCESS_VM_OPERATION = 0x0008,
 		PROCESS_VM_READ = 0x0010,
 		PROCESS_VM_WRITE = 0x0020,
 	}
@@ -53,7 +54,7 @@ extern(Windows)
 	}
 	
 	//char* mSDKDll;
-	extern(C) void MainThreadThunk()
+	export extern(C) void MainThreadThunk()
 	{
 		asm
 		{
@@ -62,14 +63,30 @@ extern(Windows)
 			push EDX;
 
 			push EAX;
-			call LoadLibraryA;
+			call EBX;
 
 			pop EDX;
 			pop ECX;
+			pop EBX;
 			pop EAX;
 			ret; // This pops a return value off the stack, which we've already set to the previous eip.
 		}
 	}
+	immutable(immutable(ubyte)[0x0A]) ThunkData =
+	[
+		0x51, // push ECX
+		0x52, // push EDX
+
+		0x50, // push EAX
+		0xFF, 0xD3, // call EBX
+
+		0x5A, // pop EDX
+		0x59, // pop ECX
+		0x5B, // pop EBX
+		0x58, // pop EAX
+		0xC3, // ret
+	];
+	immutable string SDKLocation = `C:\Tribes\TribesAscendSDK\TribesAscendSDK\bin\Debug\TribesAscendSDK.dll`;
 
 	void main()
 	{
@@ -84,14 +101,27 @@ extern(Windows)
 		CONTEXT threadContext = { NULL };
 		threadContext.ContextFlags = CONTEXT_CONTROL | CONTEXT_INTEGER;
 		GetThreadContext(mainThreadHandle, &threadContext);
+
+		// Save the old stuff.
 		threadContext.Esp -= 4;
 		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.Eip, threadContext.Eip.sizeof, cast(SIZE_T*)NULL);
-		//*cast(uint*)threadContext.Esp = threadContext.Eip;
 		threadContext.Esp -= 4;
 		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.Eax, threadContext.Eax.sizeof, cast(SIZE_T*)NULL);
-		//*cast(uint*)threadContext.Esp = threadContext.Eax;
-		threadContext.Eip = cast(uint)&MainThreadThunk;
-		threadContext.Eax = cast(uint)`C:\Tribes\TribesAscendSDK\TribesAscendSDK\bin\Debug\TribesAscendSDK.dll`.ptr;
+		threadContext.Esp -= 4;
+		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)threadContext.Esp, &threadContext.Ebx, threadContext.Ebx.sizeof, cast(SIZE_T*)NULL);
+
+		LPVOID thunkAddress = VirtualAllocEx(mainProcessHandle, NULL, ThunkData.length, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+		WriteProcessMemory(mainProcessHandle, thunkAddress, ThunkData.ptr, ThunkData.length, cast(SIZE_T*)NULL);
+		threadContext.Eip = cast(uint)thunkAddress;
+		
+		// TODO: Retrieve the correct address for LoadLibraryA in the running exe and set that as the value of ebx.
+
+		LPVOID stringAddress = VirtualAllocEx(mainProcessHandle, NULL, SDKLocation.length + 1, MEM_COMMIT, PAGE_READWRITE);
+		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)stringAddress, SDKLocation.ptr, SDKLocation.length, cast(SIZE_T*)NULL);
+		byte zero = 0;
+		WriteProcessMemory(mainProcessHandle, cast(LPCVOID)(stringAddress + SDKLocation.length), &zero, zero.sizeof, cast(SIZE_T*)NULL);
+		threadContext.Eax = cast(uint)stringAddress;
+
 		SetThreadContext(mainThreadHandle, &threadContext);
 		ResumeThread(mainThreadHandle);
 	}
@@ -104,7 +134,7 @@ extern(Windows)
 		DWORD procID;
 		if (!GetWindowThreadProcessId(wHand, &procID))
 			MessageBoxA(NULL, "Failed to get window thread process id!", "Failed to get window thread process id!", MB_OK);
-		HANDLE hProcess = OpenProcess(PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, procID);
+		HANDLE hProcess = OpenProcess(PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, procID);
 		if(!hProcess)
 			MessageBoxA(NULL, "Failed to get process handle!", "Failed to get process handle!", MB_OK);
 		*processHandle = hProcess;
