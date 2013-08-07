@@ -19,7 +19,8 @@ public extern(Windows)
 	public alias DWORD* LPDWORD;
 
 	public const void* NULL = cast(void*)0;
-
-	bool GetModuleInformation(HANDLE hProcess, HMODULE hModule, LPMODULEINFO lpmodinfo, uint cb);
+	
 	HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, size_t dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
+	void ExitThread(DWORD dwExitCode);
+	bool GetModuleInformation(HANDLE hProcess, HMODULE hModule, LPMODULEINFO lpmodinfo, uint cb);
 }

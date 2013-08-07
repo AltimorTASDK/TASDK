@@ -78,17 +78,35 @@ extern(Windows)
 		THREAD_IMPERSONATE = 0x0100,
 		THREAD_DIRECT_IMPERSONATION = 0x0200,
 	}
+	export void TempMethod()
+	{
+		asm
+		{
+			naked;
+			mov EAX, 0xFFFF;
+			mov EDX, 0xFFFF;
+			push 0xDEADBEEF;
 
-	immutable(immutable(ubyte)[0x0A]) ThunkData =
+			//pop 0xDEADBEEF;
+		}
+	}
+
+	immutable(immutable(ubyte)[0x0E]) ThunkData =
 	[
+		0x55, // push EBP
+		0x89, 0xE5, // mov EBP, ESP
 		0x51, // push ECX
 		0x52, // push EDX
+		//0xB8, 0xFF, 0xFF, 0xFF, 0xFF, // mov EAX, 0xFFFFFFFF
+		//0xBA, 0xFF, 0xFF, 0xFF, 0xFF, // mov EDX, 0xFFFFFFFF
+
 
 		0x50, // push EAX
 		0xFF, 0xD3, // call EBX
 
 		0x5A, // pop EDX
 		0x59, // pop ECX
+		0x5D, // pop EBP
 		0x5B, // pop EBX
 		0x58, // pop EAX
 		0xC3, // ret

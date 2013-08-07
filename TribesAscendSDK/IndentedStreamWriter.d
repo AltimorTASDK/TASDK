@@ -10,6 +10,7 @@ public final class IndentedStreamWriter
 private:
 	string mCurrentIndentString = "";
 	bool mCurrentLineIndented;
+	bool mClosed;
 	int mIndent;
 	File mInnerFile;
 	
@@ -18,7 +19,13 @@ public:
 	{
 		this.mInnerFile = File(fileName, "w");
 	}
-	
+
+	~this()
+	{
+		if (!mClosed)
+			Close();
+	}
+
 	@property
 	{
 		int Indent() { return mIndent; }
@@ -38,8 +45,12 @@ public:
 	
 	void Close()
 	{
-		this.Flush();
-		mInnerFile.close();
+		if (!mClosed)
+		{
+			mClosed = true;
+			Flush();
+			mInnerFile.close();
+		}
 	}
 	
 	void Flush()
@@ -47,48 +58,32 @@ public:
 		mInnerFile.flush();
 	}
 	
-	void Write(const char* message, ...)
+	void Write(Char, A...)(in Char[] message, A args)
 	{
-		char[] buffer = new char[2048];
-		buffer[] = 0;
-		
-		va_list lst;
-		va_start(lst, message);
-		int res = vsprintf(buffer.ptr, message, lst);
-		va_end(lst);
-
-//		if (res < 0)
-//			mInnerFile.write("It was < 0");
-//		else
-//			mInnerFile.write("The result was '" ~ to!string(res) ~ "'.\n");
-		
 		if (!mCurrentLineIndented)
 		{
-			this.mInnerFile.write(this.mCurrentIndentString);
-			this.mCurrentLineIndented = true;
+			mInnerFile.write(mCurrentIndentString);
+			mCurrentLineIndented = true;
 		}
-		this.mInnerFile.write(buffer[0..strlen(buffer.ptr)]);
+		static if (args.length)
+			mInnerFile.writef(message, args);
+		else
+			mInnerFile.write(message);
 		Flush();
 	}
 	
-	void WriteLine(const char* message, ...)
+	void WriteLine(Char, A...)(in Char[] message, A args)
 	{
-		char[] buffer = new char[2048];
-		buffer[] = 0;
-		
-		va_list lst;
-		va_start(lst, message);
-		vsprintf(buffer.ptr, message, lst);
-		va_end(lst);
-		
 		if (!mCurrentLineIndented)
 		{
-			this.mInnerFile.write(this.mCurrentIndentString);
-			this.mCurrentLineIndented = true;
+			mInnerFile.write(mCurrentIndentString);
+			mCurrentLineIndented = true;
 		}
-		this.mInnerFile.write(buffer[0..strlen(buffer.ptr)]);
-		this.mInnerFile.write("\n");
-		this.mCurrentLineIndented = false;
+		static if (args.length)
+			mInnerFile.writefln(message, args);
+		else
+			mInnerFile.writeln(message);
+		mCurrentLineIndented = false;
 		Flush();
 	}
 	
