@@ -38,7 +38,7 @@ public size_t FindPattern(void* start_address, size_t file_size, immutable ubyte
 	{
 		if(*cast(ubyte*)ret_address == pattern[pos] || mask[pos] == '?')
 		{
-			if(pos + 1 < mask.length)
+			if(pos + 1 >= mask.length)
 			{
 				return ret_address - search_len;
 			}

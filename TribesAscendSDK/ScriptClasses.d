@@ -38,7 +38,7 @@ public struct ScriptNameEntry // Total size: 0x20
 {
 private:
 	byte __padding__[0x10];
-	char mName[0x10];
+	char mName[1024];
 
 public:
 	@property immutable(string) Name() { return cast(immutable char[])mName[0..strlen(mName.ptr)]; }

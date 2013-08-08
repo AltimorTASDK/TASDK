@@ -2,6 +2,7 @@ module dllmain;
 
 private import core.sys.windows.windows;
 private import core.sys.windows.dll;
+private import std.stdio;
 private import IndentedStreamWriter;
 private import ScriptClasses;
 private import ScriptHooks;
@@ -20,7 +21,8 @@ static void Init()
 		
 		MODULEINFO moduleInfo = GetModuleInfo("TribesAscend.exe");
 
-		ScriptObject.ObjectArray = *cast(ScriptArray!(ScriptObject)**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigObjects, kMaskObjects) + 1);
+		ScriptArray!(ScriptObject)* object_array = *cast(ScriptArray!(ScriptObject)**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigObjects, kMaskObjects) + 1);
+		ScriptObject.ObjectArray = object_array;
 		ScriptName.NameArray = *cast(ScriptArray!(ScriptNameEntry*)**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigNames, kMaskNames) + 2);
 
 		ScriptHooks.NativeArray = *cast(NativeFunction**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigNatives, kMaskNatives) + 3);
@@ -40,9 +42,9 @@ static void Init()
 		//ModInit();
 		HeaderGenerator.Generate();
 	}
-	catch (Error e)
+	catch (Throwable e)
 	{
-
+		writef("ERROR occurred: %s:%u '%s'", e.file, e.line, e.msg);
 	}
 }
 

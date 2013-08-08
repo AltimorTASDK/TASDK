@@ -50,7 +50,9 @@ private:
 public:
 	this(string fileName)
 	{
-		mkdirRecurse(dirName(fileName));
+		string dName = dirName(fileName);
+		if (dName != "." && !exists(dName))
+			mkdirRecurse(dName);
 		this.mInnerFile = File(fileName, "w");
 		this.mIndent = new IndentClass(this);
 	}

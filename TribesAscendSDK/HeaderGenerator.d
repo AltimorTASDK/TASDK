@@ -6,6 +6,7 @@ private import ScriptClasses;
 
 public void Generate()
 {
+	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
 	ClassDescriptor[] classDescriptors;
 	StructDescriptor[] structDescriptors;
 	ConstantDescriptor[] constantDescriptors;
@@ -21,7 +22,8 @@ public void Generate()
 			{
 				case "Class":
 				{
-					ClassDescriptor cd = new ClassDescriptor(cast(ScriptClass)classObject); 
+					wtr.WriteLine("Found the class '%s'", classObject.GetFullName());
+					ClassDescriptor cd = new ClassDescriptor(cast(ScriptClass)classObject);
 					classDescriptors ~= cd;
 					TypeIdentifiers[classObject.GetFullName()] = cd;
 					break;
@@ -80,7 +82,7 @@ public void Generate()
 }
 
 private:
-Descriptor[string] TypeIdentifiers;
+__gshared Descriptor[string] TypeIdentifiers;
 
 void ProcessNested(Descriptor desc, ScriptObject innerVal)
 {
@@ -147,7 +149,7 @@ final class DependencyManager
 		{
 			n = outer.GetName() ~ "." ~ n;
 		}
-		return n;
+		return "UnrealScript." ~ n;
 	}
 
 	void ProcessProperty(ScriptProperty prop)
@@ -627,7 +629,7 @@ final class ClassDescriptor : NestableContainer
 				headerNameBuf[i] = '/';
 		}
 		string headerName = cast(string)headerNameBuf;
-		IndentedStreamWriter wtr = new IndentedStreamWriter(SDKSourcePath ~ "TribesAscendSDK/" ~ headerName ~ ".d");
+		IndentedStreamWriter wtr = new IndentedStreamWriter(SDKSourcePath ~ "TribesAscendSDK/UnrealScript/" ~ headerName ~ ".d");
 		this.Write(wtr);
 		wtr.Close();
 	}
