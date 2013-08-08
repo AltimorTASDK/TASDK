@@ -5,9 +5,6 @@ private import ScriptClasses;
 
 public void Generate()
 {
-	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
-	ScriptClass coreClass = ScriptObject.Find!(ScriptClass)("Class Core.Class");
-
 	ClassDescriptor[] classDescriptors;
 	StructDescriptor[] structDescriptors;
 	ConstantDescriptor[] constantDescriptors;
