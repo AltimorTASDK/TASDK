@@ -2,6 +2,8 @@ module IndentedStreamWriter;
 
 private import core.vararg;
 private import std.conv;
+private import std.file;
+private import std.path;
 private import std.stdio;
 private import std.c.string;
 
@@ -48,6 +50,7 @@ private:
 public:
 	this(string fileName)
 	{
+		mkdirRecurse(dirName(fileName));
 		this.mInnerFile = File(fileName, "w");
 		this.mIndent = new IndentClass(this);
 	}
