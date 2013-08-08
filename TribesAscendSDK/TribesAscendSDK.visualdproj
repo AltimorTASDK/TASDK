@@ -95,8 +95,13 @@
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
  </Config>
  <Folder name="TribesAscendSDK">
+  <Folder name="UnrealScript">
+   <File path="UnrealScript\Helpers.d" />
+  </Folder>
+  <File path="../Config.d" />
   <File path="dllmain.d" />
   <File path="Flags.d" />
+  <File path="HeaderGenerator.d" />
   <File path="IndentedStreamWriter.d" />
   <File path="ScriptClasses.d" />
   <File path="ScriptHooks.d" />

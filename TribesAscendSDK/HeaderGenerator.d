@@ -12,7 +12,7 @@ public void Generate()
 	EnumDescriptor[] enumDescriptors;
 	FunctionDescriptor[] functionDescriptors;
 	PropertyDescriptor[] propertyDescriptors;
-	for (int i = 0; i < ScriptObject.ObjectArray.Count; i++)
+	for (int i = 0; i < (*ScriptObject.ObjectArray).Count; i++)
 	{
 		ScriptObject classObject = (*ScriptObject.ObjectArray)[i];
 		if (classObject)
@@ -117,6 +117,7 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 					default:
 						throw new Exception("Unknown DescriptorType!");
 				}
+				break;
 			}
 			default:
 				throw new Exception("Unknown parent descriptor type!");
