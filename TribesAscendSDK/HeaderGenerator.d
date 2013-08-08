@@ -1,5 +1,6 @@
 module HeaderGenerator;
 
+private import Config;
 private import IndentedStreamWriter;
 private import ScriptClasses;
 
@@ -618,7 +619,16 @@ final class ClassDescriptor : NestableContainer
 
 	void Generate()
 	{
-		// TODO: Implement this.
+		char[] headerNameBuf = cast(char[])DependencyManager.GetImportName(InnerClass);
+		for (int i = 0; i < headerNameBuf.length; i++)
+		{
+			if (headerNameBuf[i] == '.')
+				headerNameBuf[i] = '/';
+		}
+		string headerName = cast(string)headerNameBuf;
+		IndentedStreamWriter wtr = new IndentedStreamWriter(SDKSourcePath ~ "TribesAscendSDK/" ~ headerName ~ ".d");
+		this.Write(wtr);
+		wtr.Close();
 	}
 }
 
