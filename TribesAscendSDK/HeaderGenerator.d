@@ -227,7 +227,10 @@ final class PropertyDescriptor : Descriptor
 	{
 		// Check to see if the property name is the same as a valid type.
 		if (TypeIdentifiers.get(InnerProperty.GetName(), null))
+		{
+			wtr.WriteLine("// WARNING: Property '%s' has the same name as a defined type!", InnerProperty.GetName());
 			return;
+		}
 
 		switch(InnerProperty.ObjectClass.GetName())
 		{
@@ -324,9 +327,112 @@ final class FunctionDescriptor : Descriptor
 	@property final override DescriptorType Type() { return DescriptorType.Function; }
 
 	ScriptFunction InnerFunction;
+	FunctionArgumentDescriptor[] Arguments;
+	ScriptProperty ReturnProperty;
 	this(ScriptFunction innerFunction)
 	{
 		InnerFunction = innerFunction;
+		for (ScriptProperty functionArgument = cast(ScriptProperty)InnerFunction.Children; functionArgument; functionArgument = cast(ScriptProperty)functionArgument.Next)
+		{
+			if (functionArgument.PropertyFlags.HasAnyFlags(ScriptPropertyFlags.ParamFlags))
+			{
+				if (functionArgument.PropertyFlags.HasFlag(ScriptPropertyFlags.ReturnParam))
+				{
+					if (ReturnProperty)
+						throw new Exception("Found multiple return parameters!");
+					ReturnProperty = functionArgument;
+				}
+				else if (functionArgument.PropertyFlags.HasFlag(ScriptPropertyFlags.Param))
+					Arguments ~= new FunctionArgumentDescriptor(functionArgument);
+				else
+					throw new Exception("Unknown property with param flags!");
+			}
+			else
+			{
+				// We don't currently do anything with any children other than the params.
+			}
+		}
+	}
+
+	override void RequireDependencies(DependencyManager mgr)
+	{
+		if (ReturnProperty)
+			mgr.ProcessProperty(ReturnProperty);
+		foreach (arg; Arguments)
+			arg.RequireDependencies(mgr);
+	}
+
+	override void Write(IndentedStreamWriter wtr)
+	{
+		// Check to see if the function name is the same as a valid type.
+		if (TypeIdentifiers.get(InnerFunction.GetName(), null))
+		{
+			wtr.WriteLine("// WARNING: Function '%s' has the same name as a defined type!", InnerFunction.GetName());
+			return;
+		}
+
+		wtr.Write("final ");
+		if (ReturnProperty)
+			wtr.Write("%s", GetTypeName(ReturnProperty));
+		else
+			wtr.Write("void");
+		wtr.Write(" %s(", InnerFunction.GetName());
+
+		int paramSize = 0;
+		for (int i = 0; i < Arguments.length; i++)
+		{
+			Arguments[i].WriteDeclaration(wtr);
+			paramSize += Arguments[i].InnerProperty.ElementSize;
+			if (i != Arguments.length + 1)
+				wtr.Write(", ");
+		}
+		if (ReturnProperty)
+			paramSize += ReturnProperty.ElementSize;
+
+		wtr.WriteLine(")");
+		wtr.WriteLine("{");
+		++wtr.Indent;
+
+		if (paramSize > 0)
+		{
+			wtr.WriteLine("ubyte params[%u];", paramSize);
+			wtr.WriteLine("params[] = 0;");
+		}
+
+		foreach (arg; Arguments)
+			arg.WriteLoadToBuffer(wtr, "params");
+
+		wtr.Write("(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[%u], ", InnerFunction.ObjectInternalInteger);
+		if (paramSize > 0)
+			wtr.Write("params.ptr");
+		else
+			wtr.Write("cast(void*)0");
+		wtr.WriteLine(", cast(void*)0);");
+
+		foreach (arg; Arguments)
+			arg.WriteLoadFromBuffer(wtr, "params");
+
+		if (ReturnProperty)
+		{
+			string tpName = GetTypeName(ReturnProperty);
+			if (InnerFunction.ReturnValOffset != 0)
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("return params[%u];", InnerFunction.ReturnValOffset);
+				else
+					wtr.WriteLine("return *cast(%s*)&params[%u];", tpName, InnerFunction.ReturnValOffset);
+			}
+			else
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("return params[0];");
+				else
+					wtr.WriteLine("return *(%s*)params.ptr;", tpName);
+			}
+		}
+
+		--wtr.Indent;
+		wtr.WriteLine("}");
 	}
 }
 
