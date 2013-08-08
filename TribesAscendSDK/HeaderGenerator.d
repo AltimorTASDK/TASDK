@@ -254,6 +254,71 @@ final class PropertyDescriptor : Descriptor
 	}
 }
 
+final class FunctionArgumentDescriptor : Descriptor
+{
+	@property final override DescriptorType Type() { return DescriptorType.FunctionArgument; }
+
+	ScriptProperty InnerProperty;
+	this(ScriptProperty innerProperty)
+	{
+		InnerProperty = innerProperty;
+	}
+	
+	override void RequireDependencies(DependencyManager mgr) { mgr.ProcessProperty(InnerProperty); }
+
+	// We don't implement this method, instead we implement a set of 3 methods.
+	override void Write(IndentedStreamWriter wtr) { }
+
+	void WriteDeclaration(IndentedStreamWriter wtr)
+	{
+		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
+			wtr.WriteLine("%s* %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+		else
+			wtr.WriteLine("%s %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+	}
+
+	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
+	{
+		string tpName = GetTypeName(InnerProperty);
+		if (InnerProperty.Offset != 0)
+		{
+			if (tpName == "ubyte")
+				wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+			else
+				wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+		}
+		else
+		{
+			if (tpName == "ubyte")
+				wtr.WriteLine("%s[0] = %s;", bufName, InnerProperty.GetName());
+			else
+				wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, InnerProperty.GetName());
+		}
+	}
+
+	void WriteLoadFromBuffer(IndentedStreamWriter wtr, string bufName)
+	{
+		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
+		{
+			string tpName = GetTypeName(InnerProperty);
+			if (InnerProperty.Offset != 0)
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("*%s = %s[%u];", InnerProperty.GetName(), bufName, InnerProperty.Offset);
+				else
+					wtr.WriteLine("*%s = *cast(%s*)&%s[%u];", InnerProperty.GetName(), tpName, bufName, InnerProperty.Offset);
+			}
+			else
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("*%s = %s[0];", InnerProperty.GetName(), bufName);
+				else
+					wtr.WriteLine("*%s = *cast(%s*)%s.ptr;", InnerProperty.GetName(), tpName, bufName);
+			}
+		}
+	}
+}
+
 final class FunctionDescriptor : Descriptor
 {
 	@property final override DescriptorType Type() { return DescriptorType.Function; }
