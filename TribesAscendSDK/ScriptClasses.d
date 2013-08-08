@@ -93,9 +93,9 @@ public:
 
 	final static T Find(T)(string name)
 	{
-		for(int i = 0; i < mObjectArray.Count; i++)
+		for(int i = 0; i < ObjectArray.Count; i++)
 		{
-			ScriptObject object = (*mObjectArray)[i];
+			ScriptObject object = (*ObjectArray)[i];
 			if(object.GetFullName() == name)
 				return cast(T)object;
 		}
@@ -496,7 +496,7 @@ public:
 	}
 }
 
-extern(C++) public interface ScripArrayProperty : ScriptProperty // Total size: 0x80
+extern(C++) public interface ScriptArrayProperty : ScriptProperty // Total size: 0x80
 {
 public:
 	@property

@@ -58,5 +58,10 @@
     <Compile Include="..\Config.d">
       <Link>Config.d</Link>
     </Compile>
+    <Compile Include="UnrealScript\Helpers.d" />
+    <Compile Include="HeaderGenerator.d" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnrealScript\" />
   </ItemGroup>
 </Project>

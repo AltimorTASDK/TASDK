@@ -7,6 +7,7 @@ private import ScriptClasses;
 private import ScriptHooks;
 private import SigScans;
 private import Win32API;
+private import HeaderGenerator;
 
 __gshared HINSTANCE g_hInst = NULL;
 
@@ -36,15 +37,8 @@ static void Init()
 		
 		//OutputLog("\n");
 
-		IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
-		wtr.WriteLine("Hello %s!", "Orvid");
-		wtr.Write("Wait,");
-		int cnt = 2;
-		wtr.Write(" why are there %u", cnt);
-		wtr.WriteLine(" %s's?!?!?!", "Orvid");
-		//wtr.Close();
-
 		//ModInit();
+		HeaderGenerator.Generate();
 	}
 	catch (Error e)
 	{
