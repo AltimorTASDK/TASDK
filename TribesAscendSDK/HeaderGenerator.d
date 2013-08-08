@@ -322,6 +322,12 @@ final class FunctionArgumentDescriptor : Descriptor
 final class FunctionDescriptor : Descriptor
 {
 	@property final override DescriptorType Type() { return DescriptorType.Function; }
+
+	ScriptFunction InnerFunction;
+	this(ScriptFunction innerFunction)
+	{
+		InnerFunction = innerFunction;
+	}
 }
 
 abstract class NestableContainer : Descriptor
