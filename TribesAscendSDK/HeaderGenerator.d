@@ -7,29 +7,139 @@ public void Generate()
 {
 	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
 	ScriptClass coreClass = ScriptObject.Find!(ScriptClass)("Class Core.Class");
-	ScriptClass[] classesToGenerate;
+
+	ClassDescriptor[] classDescriptors;
+	StructDescriptor[] structDescriptors;
+	ConstantDescriptor[] constantDescriptors;
+	EnumDescriptor[] enumDescriptors;
+	FunctionDescriptor[] functionDescriptors;
+	PropertyDescriptor[] propertyDescriptors;
 	for (int i = 0; i < ScriptObject.ObjectArray.Count; i++)
 	{
 		ScriptObject classObject = (*ScriptObject.ObjectArray)[i];
-		if (classObject && classObject.ObjectClass == coreClass)
+		if (classObject)
 		{
-			wtr.WriteLine("Found class '%s'", classObject.GetFullName());
-			classesToGenerate ~= cast(ScriptClass)classObject;
+			switch (classObject.ObjectClass.GetName())
+			{
+				case "Class":
+				{
+					ClassDescriptor cd = new ClassDescriptor(cast(ScriptClass)classObject); 
+					classDescriptors ~= cd;
+					TypeIdentifiers[classObject.GetFullName()] = cd;
+					break;
+				}
+				case "ScriptStruct":
+				{
+					StructDescriptor sd = new StructDescriptor(cast(ScriptStruct)classObject); 
+					structDescriptors ~= sd;
+					TypeIdentifiers[classObject.GetFullName()] = sd;
+					break;
+				}
+				case "Const":
+					constantDescriptors ~= new ConstantDescriptor(cast(ScriptConst)classObject);
+					break;
+				case "Enum":
+					enumDescriptors ~= new EnumDescriptor(cast(ScriptEnum)classObject);
+					break;
+				case "Function":
+					functionDescriptors ~= new FunctionDescriptor(cast(ScriptFunction)classObject);
+					break;
+				case "ArrayProperty":
+				case "BoolProperty":
+				case "ByteProperty":
+				case "ClassProperty":
+				case "FloatProperty":
+				case "IntProperty":
+				case "NameProperty":
+				case "ObjectProperty":
+				case "StringRefProperty":
+				case "StrProperty":
+				case "StructProperty":
+					propertyDescriptors ~= new PropertyDescriptor(cast(ScriptProperty)classObject);
+					break;
+				case "State":
+					// TODO: Implement.
+					break;
+				default:
+					break;
+			}
 		}
 	}
-	foreach (c; classesToGenerate)
-	{
-		//c.Generate();
-	}
+
+	foreach (sd; structDescriptors)
+		ProcessNested(sd, sd.InnerStruct);
+	foreach (cd; constantDescriptors)
+		ProcessNested(cd, cd.InnerConstant);
+	foreach (ed; enumDescriptors)
+		ProcessNested(ed, ed.InnerEnum);
+	foreach (fd; functionDescriptors)
+		ProcessNested(fd, fd.InnerFunction);
+	foreach (pd; propertyDescriptors)
+		ProcessNested(pd, pd.InnerProperty);
+
+	foreach (c; classDescriptors)
+		c.Generate();
 }
 
 private:
 Descriptor[string] TypeIdentifiers;
 
+void ProcessNested(Descriptor desc, ScriptObject innerVal)
+{
+	Descriptor parent = TypeIdentifiers.get(innerVal.Outer.GetFullName(), null);
+	if (parent)
+	{
+		switch (parent.Type)
+		{
+			case DescriptorType.Class:
+			case DescriptorType.Struct:
+			{
+				NestableContainer cont = cast(NestableContainer)parent;
+				switch (desc.Type)
+				{
+					case DescriptorType.Constant:
+						cont.NestedConstants ~= cast(ConstantDescriptor)desc;
+						break;
+					case DescriptorType.Enum:
+						cont.NestedEnums ~= cast(EnumDescriptor)desc;
+						break;
+					case DescriptorType.Function:
+						cont.Functions ~= cast(FunctionDescriptor)desc;
+						break;
+					case DescriptorType.Property:
+						cont.Properties ~= cast(PropertyDescriptor)desc;
+						break;
+					case DescriptorType.Struct:
+						cont.NestedStructs ~= cast(StructDescriptor)desc;
+						break;
+
+					case DescriptorType.Class:
+					case DescriptorType.FunctionArgument:
+						throw new Exception("These shouldn't be making it here!");
+					default:
+						throw new Exception("Unknown DescriptorType!");
+				}
+			}
+			default:
+				throw new Exception("Unknown parent descriptor type!");
+		}
+	}
+	else
+	{
+		// We weren't able to locate the parent of this Descriptor
+		// TODO: Output some useful info here.
+	}
+}
+
 final class DependencyManager
 {
 	ScriptObject[string] RequiredImports;
 	ScriptObject ParentType;
+
+	this(ScriptObject parentType)
+	{
+		ParentType = parentType;
+	}
 
 	static final immutable(string) GetImportName(ScriptObject type)
 	{
@@ -43,7 +153,7 @@ final class DependencyManager
 
 	void ProcessProperty(ScriptProperty prop)
 	{
-		switch(prop.ObjectClass.GetName())
+		switch (prop.ObjectClass.GetName())
 		{
 			case "ObjectProperty":
 			case "StructProperty":
@@ -91,7 +201,7 @@ abstract class Descriptor
 
 	final bool IsManaullyDefinedType(string name)
 	{
-		switch(name)
+		switch (name)
 		{
 			case "QWord":
 			case "Rotator":
@@ -104,7 +214,7 @@ abstract class Descriptor
 
 	final immutable(string) GetTypeName(ScriptObject obj)
 	{
-		switch(obj.ObjectClass.GetName())
+		switch (obj.ObjectClass.GetName())
 		{
 			case "ObjectProperty":
 			case "StructProperty":
@@ -232,7 +342,7 @@ final class PropertyDescriptor : Descriptor
 			return;
 		}
 
-		switch(InnerProperty.ObjectClass.GetName())
+		switch (InnerProperty.ObjectClass.GetName())
 		{
 			case "BoolProperty":
 				wtr.WriteLine("@property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
@@ -251,6 +361,7 @@ final class PropertyDescriptor : Descriptor
 				wtr.WriteLine("@property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 			default:
+				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
 				wtr.WriteLine("// ERROR: Unknown object class '%s' for the property named '%s'!", InnerProperty.ObjectClass.GetName(), InnerProperty.GetName());
 				break;
 		}
@@ -443,12 +554,70 @@ abstract class NestableContainer : Descriptor
 	StructDescriptor[] NestedStructs;
 	PropertyDescriptor[] Properties;
 	FunctionDescriptor[] Functions;
+
+	override void RequireDependencies(DependencyManager mgr)
+	{
+		foreach (nc; NestedConstants)
+			nc.RequireDependencies(mgr);
+		foreach (ne; NestedEnums)
+			ne.RequireDependencies(mgr);
+		foreach (ns; NestedStructs)
+			ns.RequireDependencies(mgr);
+		foreach (p; Properties)
+			p.RequireDependencies(mgr);
+		foreach (f; Functions)
+			f.RequireDependencies(mgr);
+	}
 }
 
 final class ClassDescriptor : NestableContainer
 {
 	@property final override DescriptorType Type() { return DescriptorType.Class; }
+
 	ScriptClass InnerClass;
+	DependencyManager DepManager;
+	this(ScriptClass innerClass)
+	{
+		InnerClass = innerClass;
+		DepManager = new DependencyManager(innerClass);
+	}
+
+	override void RequireDependencies(DependencyManager mgr)
+	{
+		mgr.RequireType(InnerClass.Super);
+		super.RequireDependencies(mgr);
+	}
+
+	override void Write(IndentedStreamWriter wtr)
+	{
+		this.RequireDependencies(DepManager);
+
+		wtr.WriteLine("module %s;", DependencyManager.GetImportName(InnerClass));
+		wtr.WriteLine();
+		DepManager.Write(wtr);
+		wtr.WriteLine();
+
+		wtr.Write("class %s", InnerClass.GetName());
+		if (InnerClass.Super)
+			wtr.Write(" : %s", InnerClass.Super.GetName());
+		wtr.WriteLine();
+		wtr.WriteLine("{");
+		++wtr.Indent;
+
+		foreach (nc; NestedConstants)
+			nc.Write(wtr);
+		foreach (ne; NestedEnums)
+			ne.Write(wtr);
+		foreach (ns; NestedStructs)
+			ns.Write(wtr);
+		foreach (p; Properties)
+			p.Write(wtr);
+		foreach (f; Functions)
+			f.Write(wtr);
+
+		--wtr.Indent;
+		wtr.WriteLine("}");
+	}
 
 	void Generate()
 	{
@@ -459,4 +628,40 @@ final class ClassDescriptor : NestableContainer
 final class StructDescriptor : NestableContainer
 {
 	@property final override DescriptorType Type() { return DescriptorType.Struct; }
+
+	ScriptStruct InnerStruct;
+	this(ScriptStruct innerStruct)
+	{
+		InnerStruct = innerStruct;
+	}
+	
+	override void RequireDependencies(DependencyManager mgr)
+	{
+		mgr.RequireType(InnerStruct.Super);
+		super.RequireDependencies(mgr);
+	}
+	
+	override void Write(IndentedStreamWriter wtr)
+	{
+		wtr.Write("struct %s", InnerStruct.GetName());
+		if (InnerStruct.Super)
+			wtr.Write(" : %s", InnerStruct.Super.GetName());
+		wtr.WriteLine();
+		wtr.WriteLine("{");
+		++wtr.Indent;
+		
+		foreach (nc; NestedConstants)
+			nc.Write(wtr);
+		foreach (ne; NestedEnums)
+			ne.Write(wtr);
+		foreach (ns; NestedStructs)
+			ns.Write(wtr);
+		foreach (p; Properties)
+			p.Write(wtr);
+		foreach (f; Functions)
+			f.Write(wtr);
+		
+		--wtr.Indent;
+		wtr.WriteLine("}");
+	}
 }
