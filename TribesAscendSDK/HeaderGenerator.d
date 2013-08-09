@@ -443,19 +443,39 @@ final class FunctionArgumentDescriptor : Descriptor
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
 	{
 		string tpName = GetTypeName(InnerProperty);
-		if (InnerProperty.Offset != 0)
+		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
 		{
-			if (tpName == "ubyte")
-				wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+			if (InnerProperty.Offset != 0)
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("%s[%u] = *%s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+				else
+					wtr.WriteLine("*cast(%s*)&%s[%u] = *%s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+			}
 			else
-				wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("%s[0] = *%s;", bufName, InnerProperty.GetName());
+				else
+					wtr.WriteLine("*cast(%s*)%s.ptr = *%s;", tpName, bufName, InnerProperty.GetName());
+			}
 		}
 		else
 		{
-			if (tpName == "ubyte")
-				wtr.WriteLine("%s[0] = %s;", bufName, InnerProperty.GetName());
+			if (InnerProperty.Offset != 0)
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+				else
+					wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+			}
 			else
-				wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, InnerProperty.GetName());
+			{
+				if (tpName == "ubyte")
+					wtr.WriteLine("%s[0] = %s;", bufName, InnerProperty.GetName());
+				else
+					wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, InnerProperty.GetName());
+			}
 		}
 	}
 
@@ -587,7 +607,7 @@ final class FunctionDescriptor : Descriptor
 				if (tpName == "ubyte")
 					wtr.WriteLine("return params[0];");
 				else
-					wtr.WriteLine("return *(%s*)params.ptr;", tpName);
+					wtr.WriteLine("return *cast(%s*)params.ptr;", tpName);
 			}
 		}
 
