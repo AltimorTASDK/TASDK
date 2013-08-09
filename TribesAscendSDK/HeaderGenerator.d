@@ -564,12 +564,12 @@ final class FunctionDescriptor : Descriptor
 		if (ReturnProperty)
 		{
 			string tpName = GetTypeName(ReturnProperty);
-			if (InnerFunction.ReturnValOffset != 0)
+			if (ReturnProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("return params[%u];", InnerFunction.ReturnValOffset);
+					wtr.WriteLine("return params[%u];", ReturnProperty.Offset);
 				else
-					wtr.WriteLine("return *cast(%s*)&params[%u];", tpName, InnerFunction.ReturnValOffset);
+					wtr.WriteLine("return *cast(%s*)&params[%u];", tpName, ReturnProperty.Offset);
 			}
 			else
 			{

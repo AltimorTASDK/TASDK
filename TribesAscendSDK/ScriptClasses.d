@@ -44,7 +44,7 @@ public:
 	}
 }
 
-public struct ScriptNameEntry // Total size: 0x20
+public struct ScriptNameEntry // Total size: N/A (This structure is dynamically sized)
 {
 private:
 	byte __padding__[0x10];
