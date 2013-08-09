@@ -296,14 +296,14 @@ final class EnumDescriptor : Descriptor
 		{
 			wtr.WriteLine();
 			wtr.WriteLine("{");
-			++wtr.Indent;
+			wtr.Indent++;
 
 			for (int i = 0; i < InnerEnum.ValueNames.Count; i++)
 			{
 				wtr.WriteLine("%s = %u,", InnerEnum.ValueNames[i].GetName(), i);
 			}
 
-			--wtr.Indent;
+			wtr.Indent--;
 			wtr.WriteLine("}");
 		}
 		else
@@ -512,7 +512,7 @@ final class FunctionDescriptor : Descriptor
 
 		wtr.WriteLine(")");
 		wtr.WriteLine("{");
-		++wtr.Indent;
+		wtr.Indent++;
 
 		if (paramSize > 0)
 		{
@@ -552,7 +552,7 @@ final class FunctionDescriptor : Descriptor
 			}
 		}
 
-		--wtr.Indent;
+		wtr.Indent--;
 		wtr.WriteLine("}");
 	}
 }
@@ -612,7 +612,7 @@ final class ClassDescriptor : NestableContainer
 			wtr.Write(" : %s", InnerClass.Super.GetName());
 		wtr.WriteLine();
 		wtr.WriteLine("{");
-		++wtr.Indent;
+		wtr.Indent++;
 
 		foreach (nc; NestedConstants)
 			nc.Write(wtr);
@@ -625,7 +625,7 @@ final class ClassDescriptor : NestableContainer
 		foreach (f; Functions)
 			f.Write(wtr);
 
-		--wtr.Indent;
+		wtr.Indent--;
 		wtr.WriteLine("}");
 	}
 
@@ -678,7 +678,7 @@ final class StructDescriptor : NestableContainer
 			wtr.Write(" : %s", InnerStruct.Super.GetName());
 		wtr.WriteLine();
 		wtr.WriteLine("{");
-		++wtr.Indent;
+		wtr.Indent++;
 		
 		foreach (nc; NestedConstants)
 			nc.Write(wtr);
@@ -691,7 +691,7 @@ final class StructDescriptor : NestableContainer
 		foreach (f; Functions)
 			f.Write(wtr);
 		
-		--wtr.Indent;
+		wtr.Indent--;
 		wtr.WriteLine("}");
 	}
 }
