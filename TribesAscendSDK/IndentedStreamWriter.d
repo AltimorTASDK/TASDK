@@ -10,7 +10,7 @@ private import std.c.string;
 public final class IndentedStreamWriter
 {
 private:
-	string mCurrentIndentString = "";
+	string mCurrentIndentString;
 	bool mCurrentLineIndented;
 	bool mClosed;
 	final class IndentClass
@@ -22,7 +22,7 @@ private:
 			mParent = parent;
 		}
 
-		private void SetIndent(int indent)
+		private IndentClass SetIndent(int indent)
 		{
 			mIndent = indent;
 			if (mIndent != indent)
@@ -32,14 +32,15 @@ private:
 				buf[] = '\t';
 				mParent.mCurrentIndentString = cast(immutable char[])buf;
 			}
+			return this;
 		}
 
-		void opUnary(string s)()
+		IndentClass opUnary(string s)()
 		{
 			static if (s == "++")
-				SetIndent(mIndent + 1);
+				return SetIndent(mIndent + 1);
 			else static if (s == "--")
-				SetIndent(mIndent - 1);
+				return SetIndent(mIndent - 1);
 			else
 				static assert(0, "Operator " ~ op ~ " is not implemented!");
 		}
@@ -55,6 +56,7 @@ public:
 			mkdirRecurse(dName);
 		this.mInnerFile = File(fileName, "w");
 		this.mIndent = new IndentClass(this);
+		this.mCurrentIndentString = "";
 	}
 
 	~this()
