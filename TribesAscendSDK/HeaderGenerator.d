@@ -147,6 +147,7 @@ string EscapeName(string name)
 }
 final class DependencyManager
 {
+	bool NeedsScriptClasses;
 	ScriptObject[string] RequiredImports;
 	ScriptObject ParentType;
 
@@ -177,7 +178,14 @@ final class DependencyManager
 				if ((cast(ScriptByteProperty)prop).EnumType)
 					RequireType((cast(ScriptByteProperty)prop).EnumType);
 				break;
+			case "ClassProperty":
+			case "NameProperty":
+			case "StrProperty":
+			case "StringRefProperty":
+				NeedsScriptClasses = true;
+				break;
 			case "ArrayProperty":
+				NeedsScriptClasses = true;
 				ProcessProperty((cast(ScriptArrayProperty)prop).InnerProperty);
 				break;
 			default:
@@ -189,6 +197,11 @@ final class DependencyManager
 	{
 		if (type == ParentType)
 			return;
+		if (Descriptor.IsManaullyDefinedType(type.GetName()))
+		{
+			NeedsScriptClasses = true;
+			return;
+		}
 		if (type.Outer.Outer)
 		{
 			// Ensure that we only require the class-level
@@ -201,6 +214,8 @@ final class DependencyManager
 
 	void Write(IndentedStreamWriter wtr)
 	{
+		if (NeedsScriptClasses)
+			wtr.WriteLine("import ScriptClasses;");
 		foreach (ri; RequiredImports.byValue())
 		{
 			wtr.WriteLine("import %s;", GetImportName(ri));
@@ -218,7 +233,7 @@ abstract class Descriptor
 	abstract void RequireDependencies(DependencyManager mgr);
 	abstract void Write(IndentedStreamWriter wtr);
 
-	final bool IsManaullyDefinedType(string name)
+	static final bool IsManaullyDefinedType(string name)
 	{
 		switch (name)
 		{
@@ -333,8 +348,7 @@ final class ConstantDescriptor : Descriptor
 	override void RequireDependencies(DependencyManager mgr) { }
 	override void Write(IndentedStreamWriter wtr)
 	{
-		// TODO: The way we write InnerConstant.Value may need to change depending on how well this works.
-		wtr.WriteLine("public static immutable(auto) %s = %s;", InnerConstant.GetName(), InnerConstant.Value.ToString());
+		wtr.WriteLine("public static immutable auto %s = %s;", InnerConstant.GetName(), InnerConstant.Value.ToString());
 	}
 }
 
