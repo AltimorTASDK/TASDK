@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D58B268B-D058-4F1F-9F8D-740FD96C97CF}</ProjectGuid>
     <Compiler>DMD2</Compiler>
-    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <PreferOneStepBuild>false</PreferOneStepBuild>
     <UseDefaultCompiler>true</UseDefaultCompiler>
     <IncrementalLinking>true</IncrementalLinking>
   </PropertyGroup>

@@ -387,9 +387,9 @@ final class FunctionArgumentDescriptor : Descriptor
 	void WriteDeclaration(IndentedStreamWriter wtr)
 	{
 		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
-			wtr.WriteLine("%s* %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+			wtr.Write("%s* %s", GetTypeName(InnerProperty), InnerProperty.GetName());
 		else
-			wtr.WriteLine("%s %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+			wtr.Write("%s %s", GetTypeName(InnerProperty), InnerProperty.GetName());
 	}
 
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
@@ -495,7 +495,7 @@ final class FunctionDescriptor : Descriptor
 		{
 			Arguments[i].WriteDeclaration(wtr);
 			paramSize += Arguments[i].InnerProperty.ElementSize;
-			if (i != Arguments.length + 1)
+			if (i + 1 != Arguments.length)
 				wtr.Write(", ");
 		}
 		if (ReturnProperty)
