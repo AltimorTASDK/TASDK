@@ -109,6 +109,8 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 						break;
 					case DescriptorType.Property:
 						cont.Properties ~= cast(PropertyDescriptor)desc;
+						if (parent.Type == DescriptorType.Struct)
+							(cast(PropertyDescriptor)desc).ParentIsStruct = true;
 						break;
 					case DescriptorType.Struct:
 						cont.NestedStructs ~= cast(StructDescriptor)desc;
@@ -341,9 +343,11 @@ final class PropertyDescriptor : Descriptor
 	@property final override DescriptorType Type() { return DescriptorType.Property; }
 
 	ScriptProperty InnerProperty;
+	bool ParentIsStruct;
 	this(ScriptProperty innerProperty)
 	{
 		InnerProperty = innerProperty;
+		ParentIsStruct = false;
 	}
 
 	// TODO: Add support for DelegateProperty, MapProperty, FixedArrayProperty, PointerProperty, InterfaceProperty, and ComponentProperty
@@ -382,6 +386,9 @@ final class PropertyDescriptor : Descriptor
 				wtr.WriteLine("// ERROR: Unknown object class '%s' for the property named '%s'!", InnerProperty.ObjectClass.GetName(), InnerProperty.GetName());
 				break;
 		}
+
+		if (ParentIsStruct)
+			wtr.WriteLine("private ubyte __%s[%u];", InnerProperty.GetName(), InnerProperty.ElementSize); // This ensures that structures are the generated as the correct size.
 	}
 }
 
@@ -661,7 +668,7 @@ final class StructDescriptor : NestableContainer
 	override void RequireDependencies(DependencyManager mgr)
 	{
 		if (InnerStruct.Super)
-			mgr.RequireType(InnerStruct.Super);
+			(cast(StructDescriptor)TypeIdentifiers[InnerStruct.Super.GetFullName()]).RequireDependencies(mgr);
 		
 		foreach (nc; NestedConstants)
 			nc.RequireDependencies(mgr);
@@ -677,13 +684,22 @@ final class StructDescriptor : NestableContainer
 	
 	override void Write(IndentedStreamWriter wtr)
 	{
-		wtr.Write("struct %s", InnerStruct.GetName());
-		if (InnerStruct.Super)
-			wtr.Write(" : %s", InnerStruct.Super.GetName());
+		wtr.Write("struct %s", EscapeName(InnerStruct.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
 		wtr.Indent++;
+
+		WriteBody(wtr);
 		
+		wtr.Indent--;
+		wtr.WriteLine("}");
+	}
+
+	void WriteBody(IndentedStreamWriter wtr)
+	{
+		if (InnerStruct.Super)
+			(cast(StructDescriptor)TypeIdentifiers[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
+
 		foreach (nc; NestedConstants)
 			nc.Write(wtr);
 		foreach (ne; NestedEnums)
@@ -694,8 +710,5 @@ final class StructDescriptor : NestableContainer
 			p.Write(wtr);
 		foreach (f; Functions)
 			f.Write(wtr);
-		
-		wtr.Indent--;
-		wtr.WriteLine("}");
 	}
 }
