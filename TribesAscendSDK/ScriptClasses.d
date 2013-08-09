@@ -275,7 +275,7 @@ public:
 	}
 }
 
-extern(C++) public interface ScriptProperty : ScriptField // Total size: 0x7C
+extern(C++) public interface ScriptProperty : ScriptField // Total size: 0x80
 {
 public:
 	@property
@@ -283,9 +283,9 @@ public:
 		final auto ref uint ArrayDimentions() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x40); }													// 0x40 (0x04)
 		final auto ref uint ElementSize() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x44); }														// 0x44 (0x04)
 		final auto ref Flags!(ScriptPropertyFlags) PropertyFlags() { return *cast(Flags!(ScriptPropertyFlags)*)(cast(size_t)cast(void*)this + 0x48); }		// 0x48 (0x08)
-		// __padding1__ 0x4C (0x10)
-		final auto ref uint Offset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x5C); }															// 0x5C (0x04)
-		// __padding2__ 0x60 (0x1C)
+		// __padding1__ 0x50 (0x10)
+		final auto ref uint Offset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x60); }															// 0x60 (0x04)
+		// __padding2__ 0x64 (0x1C)
 	}
 }
 
@@ -487,39 +487,39 @@ public enum ScriptPropertyFlags : ulong // Total size: 0x08
 	CrossLevel = CrossLevelPassive | CrossLevelActive,
 }
 
-extern(C++) public interface ScriptObjectProperty : ScriptProperty // Total size: 0x80
+extern(C++) public interface ScriptObjectProperty : ScriptProperty // Total size: 0x84
 {
 public:
 	@property
 	{
-		final auto ref ScriptClass PropertyClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x7C); }		// 0x7C (0x04)
+		final auto ref ScriptClass PropertyClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x80); }		// 0x80 (0x04)
 	}
 }
 
-extern(C++) public interface ScriptArrayProperty : ScriptProperty // Total size: 0x80
+extern(C++) public interface ScriptArrayProperty : ScriptProperty // Total size: 0x84
 {
 public:
 	@property
 	{
-		final auto ref ScriptProperty InnerProperty() { return *cast(ScriptProperty*)(cast(size_t)cast(void*)this + 0x7C); }	// 0x7C (0x04)
+		final auto ref ScriptProperty InnerProperty() { return *cast(ScriptProperty*)(cast(size_t)cast(void*)this + 0x80); }	// 0x80 (0x04)
 	}
 }
 
-extern(C++) public interface ScriptBoolProperty : ScriptProperty // Total size: 0x80
+extern(C++) public interface ScriptBoolProperty : ScriptProperty // Total size: 0x84
 {
 public:
 	@property
 	{
-		final auto ref uint BitMask() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x7C); }		// 0x7C (0x04)
+		final auto ref uint BitMask() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x80); }		// 0x80 (0x04)
 	}
 }
 
-extern(C++) public interface ScriptByteProperty : ScriptProperty // Total size: 0x80
+extern(C++) public interface ScriptByteProperty : ScriptProperty // Total size: 0x84
 {
 public:
 	@property
 	{
-		final auto ref ScriptEnum EnumType() { return *cast(ScriptEnum*)(cast(size_t)cast(void*)this + 0x7C); }	// 0x7C (0x04)
+		final auto ref ScriptEnum EnumType() { return *cast(ScriptEnum*)(cast(size_t)cast(void*)this + 0x80); }	// 0x80 (0x04)
 	}
 }
 

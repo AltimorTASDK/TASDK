@@ -555,20 +555,6 @@ abstract class NestableContainer : Descriptor
 	StructDescriptor[] NestedStructs;
 	PropertyDescriptor[] Properties;
 	FunctionDescriptor[] Functions;
-
-	override void RequireDependencies(DependencyManager mgr)
-	{
-		foreach (nc; NestedConstants)
-			nc.RequireDependencies(mgr);
-		foreach (ne; NestedEnums)
-			ne.RequireDependencies(mgr);
-		foreach (ns; NestedStructs)
-			ns.RequireDependencies(mgr);
-		foreach (p; Properties)
-			p.RequireDependencies(mgr);
-		foreach (f; Functions)
-			f.RequireDependencies(mgr);
-	}
 }
 
 final class ClassDescriptor : NestableContainer
@@ -585,8 +571,19 @@ final class ClassDescriptor : NestableContainer
 
 	override void RequireDependencies(DependencyManager mgr)
 	{
-		mgr.RequireType(InnerClass.Super);
-		super.RequireDependencies(mgr);
+		if (InnerClass.Super)
+			mgr.RequireType(InnerClass.Super);
+
+		foreach (nc; NestedConstants)
+			nc.RequireDependencies(mgr);
+		foreach (ne; NestedEnums)
+			ne.RequireDependencies(mgr);
+		foreach (ns; NestedStructs)
+			ns.RequireDependencies(mgr);
+		foreach (p; Properties)
+			p.RequireDependencies(mgr);
+		foreach (f; Functions)
+			f.RequireDependencies(mgr);
 	}
 
 	override void Write(IndentedStreamWriter wtr)
@@ -629,7 +626,7 @@ final class ClassDescriptor : NestableContainer
 				headerNameBuf[i] = '/';
 		}
 		string headerName = cast(string)headerNameBuf;
-		IndentedStreamWriter wtr = new IndentedStreamWriter(SDKSourcePath ~ "TribesAscendSDK/UnrealScript/" ~ headerName ~ ".d");
+		IndentedStreamWriter wtr = new IndentedStreamWriter(SDKSourcePath ~ "TribesAscendSDK/" ~ headerName ~ ".d");
 		this.Write(wtr);
 		wtr.Close();
 	}
@@ -647,8 +644,19 @@ final class StructDescriptor : NestableContainer
 	
 	override void RequireDependencies(DependencyManager mgr)
 	{
-		mgr.RequireType(InnerStruct.Super);
-		super.RequireDependencies(mgr);
+		if (InnerStruct.Super)
+			mgr.RequireType(InnerStruct.Super);
+		
+		foreach (nc; NestedConstants)
+			nc.RequireDependencies(mgr);
+		foreach (ne; NestedEnums)
+			ne.RequireDependencies(mgr);
+		foreach (ns; NestedStructs)
+			ns.RequireDependencies(mgr);
+		foreach (p; Properties)
+			p.RequireDependencies(mgr);
+		foreach (f; Functions)
+			f.RequireDependencies(mgr);
 	}
 	
 	override void Write(IndentedStreamWriter wtr)
