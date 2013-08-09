@@ -1,8 +1,9 @@
 module ScriptClasses;
 
-private import std.c.string;
 private import std.conv;
 private import std.math;
+private import std.encoding;
+private import std.c.string;
 
 private import Flags : Flags;
 
@@ -18,6 +19,7 @@ private:
 public:
 	@property
 	{
+		final T* Data() { return mData; }
 		final int Count() { return mCount; }
 		final int Max() { return mMax; }
 	}
@@ -32,6 +34,14 @@ public struct ScriptString // Total size: 0x0C
 {
 private:
 	ScriptArray!(wchar) mString;
+
+public:
+	string ToString()
+	{
+		string dst;
+		transcode(cast(immutable wchar[])mString.Data[0..mString.Count - 1], dst); // The wide string is null terminated.
+		return dst;
+	}
 }
 
 public struct ScriptNameEntry // Total size: 0x20

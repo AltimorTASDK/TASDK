@@ -334,7 +334,7 @@ final class ConstantDescriptor : Descriptor
 	override void Write(IndentedStreamWriter wtr)
 	{
 		// TODO: The way we write InnerConstant.Value may need to change depending on how well this works.
-		wtr.WriteLine("static immutable(auto) %s = %s;", InnerConstant.GetName(), InnerConstant.Value);
+		wtr.WriteLine("public static immutable(auto) %s = %s;", InnerConstant.GetName(), InnerConstant.Value.ToString());
 	}
 }
 
@@ -366,8 +366,8 @@ final class PropertyDescriptor : Descriptor
 		switch (InnerProperty.ObjectClass.GetName())
 		{
 			case "BoolProperty":
-				wtr.WriteLine("@property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-				wtr.WriteLine("@property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+				wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+				wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				break;
 			case "ObjectProperty":
 			case "StringRefProperty":
@@ -379,7 +379,7 @@ final class PropertyDescriptor : Descriptor
 			case "StrProperty":
 			case "NameProperty":
 			case "ArrayProperty":
-				wtr.WriteLine("@property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+				wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 			default:
 				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
@@ -618,7 +618,7 @@ final class ClassDescriptor : NestableContainer
 		DepManager.Write(wtr);
 		wtr.WriteLine();
 
-		wtr.Write("class %s", EscapeName(InnerClass.GetName()));
+		wtr.Write("extern(C++) interface %s", EscapeName(InnerClass.GetName()));
 		if (InnerClass.Super)
 			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
