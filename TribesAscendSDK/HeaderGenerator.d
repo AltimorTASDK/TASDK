@@ -145,6 +145,8 @@ final class DependencyManager
 	static final immutable(string) GetImportName(ScriptObject type)
 	{
 		string n = type.GetName();
+		if (n == "Object")
+			n = "UObject";
 		for (ScriptObject outer = type.Outer; outer; outer = outer.Outer)
 		{
 			n = outer.GetName() ~ "." ~ n;
@@ -189,7 +191,12 @@ final class DependencyManager
 	void Write(IndentedStreamWriter wtr)
 	{
 		foreach (ri; RequiredImports.byValue())
-			wtr.WriteLine("import %s : %s;", ri.GetName(), GetImportName(ri));
+		{
+			wtr.WriteLine("import %s;", GetImportName(ri));
+			//if (ri.GetName() == "Object")
+			//	wtr.WriteLine("import UObject : UObject;");
+			//wtr.WriteLine("import %s : %s;", ri.GetName(), ri.GetName());
+		}
 	}
 }
 
@@ -227,6 +234,8 @@ abstract class Descriptor
 				string tp = obj.GetName();
 				if (IsManaullyDefinedType(tp))
 					return tp;
+				else if (tp == "Object")
+					return "UObject";
 				for (ScriptObject outer = obj.Outer; outer.Outer; outer = outer.Outer)
 					tp = outer.GetName() ~ "." ~ tp;
 				return tp;
@@ -595,7 +604,10 @@ final class ClassDescriptor : NestableContainer
 		DepManager.Write(wtr);
 		wtr.WriteLine();
 
-		wtr.Write("class %s", InnerClass.GetName());
+		if (InnerClass.GetName() == "Object")
+			wtr.Write("class UObject");
+		else
+			wtr.Write("class %s", InnerClass.GetName());
 		if (InnerClass.Super)
 			wtr.Write(" : %s", InnerClass.Super.GetName());
 		wtr.WriteLine();
