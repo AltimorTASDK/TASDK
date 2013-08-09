@@ -10,42 +10,9 @@ private import std.c.string;
 public final class IndentedStreamWriter
 {
 private:
-	string mCurrentIndentString;
 	bool mCurrentLineIndented;
 	bool mClosed;
-	final class IndentClass
-	{
-		IndentedStreamWriter mParent;
-		int mIndent;
-		this(IndentedStreamWriter parent)
-		{
-			mParent = parent;
-		}
-
-		private IndentClass SetIndent(int indent)
-		{
-			mIndent = indent;
-			if (mIndent != indent)
-			{
-				mIndent = indent;
-				char[] buf = new char[indent];
-				buf[] = '\t';
-				mParent.mCurrentIndentString = cast(immutable char[])buf;
-			}
-			return this;
-		}
-
-		IndentClass opUnary(string s)()
-		{
-			static if (s == "++")
-				return SetIndent(mIndent + 1);
-			else static if (s == "--")
-				return SetIndent(mIndent - 1);
-			else
-				static assert(0, "Operator " ~ op ~ " is not implemented!");
-		}
-	}
-	IndentClass mIndent;
+	int mIndent;
 	File mInnerFile;
 
 public:
@@ -55,8 +22,6 @@ public:
 		if (dName != "." && !exists(dName))
 			mkdirRecurse(dName);
 		this.mInnerFile = File(fileName, "w");
-		this.mIndent = new IndentClass(this);
-		this.mCurrentIndentString = "";
 	}
 
 	~this()
@@ -65,7 +30,7 @@ public:
 			Close();
 	}
 
-	@property auto ref IndentClass Indent() { return mIndent; }
+	@property auto ref int Indent() { return mIndent; }
 	
 	void Close()
 	{
@@ -81,14 +46,20 @@ public:
 	{
 		mInnerFile.flush();
 	}
-	
-	void Write(Char, A...)(in Char[] message, A args)
+
+	private void EnsureIndent()
 	{
 		if (!mCurrentLineIndented)
 		{
-			mInnerFile.write(mCurrentIndentString);
+			for (int i = 0; i < mIndent; i++)
+				mInnerFile.write("\t");
 			mCurrentLineIndented = true;
 		}
+	}
+
+	void Write(Char, A...)(in Char[] message, A args)
+	{
+		EnsureIndent();
 		static if (args.length)
 			mInnerFile.writef(message, args);
 		else
@@ -99,11 +70,7 @@ public:
 
 	void WriteLine()()
 	{
-		if (!mCurrentLineIndented)
-		{
-			mInnerFile.write(mCurrentIndentString);
-			mCurrentLineIndented = true;
-		}
+		EnsureIndent();
 		mInnerFile.writeln();
 		mCurrentLineIndented = false;
 		Flush();
@@ -111,11 +78,7 @@ public:
 
 	void WriteLine(Char, A...)(in Char[] message, A args)
 	{
-		if (!mCurrentLineIndented)
-		{
-			mInnerFile.write(mCurrentIndentString);
-			mCurrentLineIndented = true;
-		}
+		EnsureIndent();
 		static if (args.length)
 			mInnerFile.writefln(message, args);
 		else
