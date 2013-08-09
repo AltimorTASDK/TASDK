@@ -380,8 +380,16 @@ final class PropertyDescriptor : Descriptor
 		switch (InnerProperty.ObjectClass.GetName())
 		{
 			case "BoolProperty":
-				wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-				wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+				if (ParentIsStruct)
+				{
+					wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)&this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)&this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+				}
+				else
+				{
+					wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+				}
 				break;
 			case "ObjectProperty":
 			case "StringRefProperty":
@@ -393,7 +401,10 @@ final class PropertyDescriptor : Descriptor
 			case "StrProperty":
 			case "NameProperty":
 			case "ArrayProperty":
-				wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+				if (ParentIsStruct)
+					wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+				else
+					wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 			default:
 				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
