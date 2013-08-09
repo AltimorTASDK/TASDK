@@ -6,23 +6,24 @@ private import ScriptClasses;
 
 public void Generate()
 {
-	IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
+	//IndentedStreamWriter wtr = new IndentedStreamWriter("TribesAscendSDKTest.log");
 	ClassDescriptor[] classDescriptors;
 	StructDescriptor[] structDescriptors;
 	ConstantDescriptor[] constantDescriptors;
 	EnumDescriptor[] enumDescriptors;
 	FunctionDescriptor[] functionDescriptors;
 	PropertyDescriptor[] propertyDescriptors;
+	//wtr.WriteLine("Dumping %u objects.", (*ScriptObject.ObjectArray).Count);
 	for (int i = 0; i < (*ScriptObject.ObjectArray).Count; i++)
 	{
 		ScriptObject classObject = (*ScriptObject.ObjectArray)[i];
 		if (classObject)
 		{
+			//wtr.WriteLine("%u: %s", i, classObject.GetFullName());
 			switch (classObject.ObjectClass.GetName())
 			{
 				case "Class":
 				{
-					wtr.WriteLine("Found the class '%s'", classObject.GetFullName());
 					ClassDescriptor cd = new ClassDescriptor(cast(ScriptClass)classObject);
 					classDescriptors ~= cd;
 					TypeIdentifiers[classObject.GetFullName()] = cd;
@@ -132,6 +133,16 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 	}
 }
 
+string EscapeName(string name)
+{
+	switch (name)
+	{
+		case "Object":
+			return "UObject";
+		default:
+			return name;
+	}
+}
 final class DependencyManager
 {
 	ScriptObject[string] RequiredImports;
@@ -144,12 +155,10 @@ final class DependencyManager
 
 	static final immutable(string) GetImportName(ScriptObject type)
 	{
-		string n = type.GetName();
-		if (n == "Object")
-			n = "UObject";
+		string n = EscapeName(type.GetName());
 		for (ScriptObject outer = type.Outer; outer; outer = outer.Outer)
 		{
-			n = outer.GetName() ~ "." ~ n;
+			n = EscapeName(outer.GetName()) ~ "." ~ n;
 		}
 		return "UnrealScript." ~ n;
 	}
@@ -231,13 +240,11 @@ abstract class Descriptor
 			case "Enum":
 			case "ScriptStruct":
 			{
-				string tp = obj.GetName();
+				string tp = EscapeName(obj.GetName());
 				if (IsManaullyDefinedType(tp))
 					return tp;
-				else if (tp == "Object")
-					return "UObject";
 				for (ScriptObject outer = obj.Outer; outer.Outer; outer = outer.Outer)
-					tp = outer.GetName() ~ "." ~ tp;
+					tp = EscapeName(outer.GetName()) ~ "." ~ tp;
 				return tp;
 			}
 			case "ArrayProperty":
@@ -604,12 +611,9 @@ final class ClassDescriptor : NestableContainer
 		DepManager.Write(wtr);
 		wtr.WriteLine();
 
-		if (InnerClass.GetName() == "Object")
-			wtr.Write("class UObject");
-		else
-			wtr.Write("class %s", InnerClass.GetName());
+		wtr.Write("class %s", EscapeName(InnerClass.GetName()));
 		if (InnerClass.Super)
-			wtr.Write(" : %s", InnerClass.Super.GetName());
+			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
 		wtr.Indent++;
