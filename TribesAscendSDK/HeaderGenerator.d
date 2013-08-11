@@ -617,7 +617,7 @@ final class FunctionDescriptor : Descriptor
 
 		if (paramSize > 0)
 		{
-			wtr.WriteLine("ubyte params[%u];", paramSize);
+			wtr.WriteLine("ubyte params[%u]; // %u", InnerFunction.ParamsSize, paramSize);
 			wtr.WriteLine("params[] = 0;");
 		}
 
@@ -640,9 +640,9 @@ final class FunctionDescriptor : Descriptor
 			if (ReturnProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("return params[%u];", ReturnProperty.Offset);
+					wtr.WriteLine("return params[%u]; // %u", ReturnProperty.Offset, InnerFunction.ReturnValOffset);
 				else
-					wtr.WriteLine("return *cast(%s*)&params[%u];", tpName, ReturnProperty.Offset);
+					wtr.WriteLine("return *cast(%s*)&params[%u]; // %u", tpName, ReturnProperty.Offset, InnerFunction.ReturnValOffset);
 			}
 			else
 			{
