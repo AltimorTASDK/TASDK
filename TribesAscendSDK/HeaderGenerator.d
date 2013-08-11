@@ -591,6 +591,8 @@ final class FunctionDescriptor : Descriptor
 
 		if (alone)
 			wtr.Write("final ");
+		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
+			wtr.Write("static ");
 		if (ReturnProperty)
 			wtr.Write("%s", GetTypeName(ReturnProperty));
 		else
