@@ -591,8 +591,9 @@ final class FunctionDescriptor : Descriptor
 
 		if (alone)
 			wtr.Write("final ");
-		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
-			wtr.Write("static ");
+		// TODO: Add a member to access the class object, and use that as the this object for static functions.
+//		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
+//			wtr.Write("static ");
 		if (ReturnProperty)
 			wtr.Write("%s", GetTypeName(ReturnProperty));
 		else
@@ -692,7 +693,7 @@ abstract class NestableContainer : Descriptor
 			ns.Write(wtr);
 
 		// Properties & Bool Properties
-		if (Properties.length + BoolProperties.length > 1)
+		if (Properties.length + (BoolProperties.length * 2) > 1)
 		{
 			wtr.WriteLine("@property final");
 			wtr.WriteLine("{");
@@ -711,9 +712,11 @@ abstract class NestableContainer : Descriptor
 			wtr.Indent--;
 			wtr.WriteLine("}");
 		}
+		// Bool properties require 2 functions to define, thus,
+		// if it calls Write on a BoolProperty, it is not alone.
 		foreach (bp; BoolProperties)
-			bp.Write(wtr, BoolProperties.length <= 1);
-		if (Properties.length + BoolProperties.length > 1)
+			bp.Write(wtr, false);
+		if (Properties.length + (BoolProperties.length * 2) > 1)
 		{
 			wtr.Indent--;
 			wtr.WriteLine("}");
@@ -773,11 +776,6 @@ final class ClassDescriptor : NestableContainer
 
 	override void Write(IndentedStreamWriter wtr)
 	{
-		if (InnerClass.Super && IsFactory(InnerClass))
-		{
-			wtr.WriteLine("// ERROR: Factories are not generatable!");
-			return;
-		}
 		this.RequireDependencies(DepManager);
 
 		wtr.WriteLine("module %s;", DependencyManager.GetImportName(InnerClass));
@@ -801,6 +799,18 @@ final class ClassDescriptor : NestableContainer
 
 	void Generate()
 	{
+		if (InnerClass.Super && IsFactory(InnerClass))
+		{
+			// TODO: Output something useful here.
+			//wtr.WriteLine("// ERROR: Factories are not generatable!");
+			return;
+		}
+		else if (InnerClass.GetName() == "Default__Class")
+		{
+			// Don't emit the default class.
+			// TODO: Output something useful here.
+			return;
+		}
 		char[] headerNameBuf = cast(char[])DependencyManager.GetImportName(InnerClass);
 		for (int i = 0; i < headerNameBuf.length; i++)
 		{

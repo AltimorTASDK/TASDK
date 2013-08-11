@@ -40,1043 +40,306 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActorFactorySelection.d">
-      <LastGenOutput>obj\Debug\ActorFactorySelection.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AITreeFactoryNew.d">
-      <LastGenOutput>obj\Debug\AITreeFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AITreeLabelRenderer.d">
-      <LastGenOutput>obj\Debug\AITreeLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeContentCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeContentCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeCookedContentCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeCookedContentCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeCookedPackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeCookedPackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeCookedTextureSingleUsageCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeCookedTextureSingleUsageCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeCookedTextureUsageCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeCookedTextureUsageCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeKismetCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeKismetCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeReferencedContentCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeReferencedContentCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeReferencedObjectCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeReferencedObjectCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeScriptCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeScriptCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnalyzeShaderCachesCommandlet.d">
-      <LastGenOutput>obj\Debug\AnalyzeShaderCachesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimNodeEditInfo.d">
-      <LastGenOutput>obj\Debug\AnimNodeEditInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimNodeEditInfo_AimOffset.d">
-      <LastGenOutput>obj\Debug\AnimNodeEditInfo_AimOffset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimSetFactoryNew.d">
-      <LastGenOutput>obj\Debug\AnimSetFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimSetLabelRenderer.d">
-      <LastGenOutput>obj\Debug\AnimSetLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimTreeEdSkelComponent.d">
-      <LastGenOutput>obj\Debug\AnimTreeEdSkelComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimTreeFactoryNew.d">
-      <LastGenOutput>obj\Debug\AnimTreeFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="AnimTreeLabelRenderer.d">
-      <LastGenOutput>obj\Debug\AnimTreeLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexClothingAssetLabelRenderer.d">
-      <LastGenOutput>obj\Debug\ApexClothingAssetLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexDestructibleAssetLabelRenderer.d">
-      <LastGenOutput>obj\Debug\ApexDestructibleAssetLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexDestructibleAssetThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\ApexDestructibleAssetThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexDestructibleDamageParametersFactoryNew.d">
-      <LastGenOutput>obj\Debug\ApexDestructibleDamageParametersFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexGenericAssetFactory.d">
-      <LastGenOutput>obj\Debug\ApexGenericAssetFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ApexGenericAssetLabelRenderer.d">
-      <LastGenOutput>obj\Debug\ApexGenericAssetLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ArchetypeThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\ArchetypeThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ASVSkelComponent.d">
-      <LastGenOutput>obj\Debug\ASVSkelComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="BasicStatsVisualizer.d">
-      <LastGenOutput>obj\Debug\BasicStatsVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="BatchExportCommandlet.d">
-      <LastGenOutput>obj\Debug\BatchExportCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="BrowserManager.d">
-      <LastGenOutput>obj\Debug\BrowserManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="BrushBuilder.d">
-      <LastGenOutput>obj\Debug\BrushBuilder.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ByteCodeSerializer.d">
-      <LastGenOutput>obj\Debug\ByteCodeSerializer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CameraAnimFactory.d">
-      <LastGenOutput>obj\Debug\CameraAnimFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CascadeConfiguration.d">
-      <LastGenOutput>obj\Debug\CascadeConfiguration.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CascadeOptions.d">
-      <LastGenOutput>obj\Debug\CascadeOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CascadeParticleSystemComponent.d">
-      <LastGenOutput>obj\Debug\CascadeParticleSystemComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CascadePreviewComponent.d">
-      <LastGenOutput>obj\Debug\CascadePreviewComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ChangePrefabSequenceClassCommandlet.d">
-      <LastGenOutput>obj\Debug\ChangePrefabSequenceClassCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CheckLightMapUVsCommandlet.d">
-      <LastGenOutput>obj\Debug\CheckLightMapUVsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CheckpointGameAssetDatabaseCommandlet.d">
-      <LastGenOutput>obj\Debug\CheckpointGameAssetDatabaseCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ClassExporterUC.d">
-      <LastGenOutput>obj\Debug\ClassExporterUC.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ClassFactoryUC.d">
-      <LastGenOutput>obj\Debug\ClassFactoryUC.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ColladaFactory.d">
-      <LastGenOutput>obj\Debug\ColladaFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CompressAnimationsCommandlet.d">
-      <LastGenOutput>obj\Debug\CompressAnimationsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ConformCommandlet.d">
-      <LastGenOutput>obj\Debug\ConformCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ContentAuditCommandlet.d">
-      <LastGenOutput>obj\Debug\ContentAuditCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ContentComparisonCommandlet.d">
-      <LastGenOutput>obj\Debug\ContentComparisonCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ConvertMapToNavMesh.d">
-      <LastGenOutput>obj\Debug\ConvertMapToNavMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CookPackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\CookPackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CubeBuilder.d">
-      <LastGenOutput>obj\Debug\CubeBuilder.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdOptions.d">
-      <LastGenOutput>obj\Debug\CurveEdOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPreset_CosWave.d">
-      <LastGenOutput>obj\Debug\CurveEdPreset_CosWave.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPreset_LinearDecay.d">
-      <LastGenOutput>obj\Debug\CurveEdPreset_LinearDecay.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPreset_Nothing.d">
-      <LastGenOutput>obj\Debug\CurveEdPreset_Nothing.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPreset_SineWave.d">
-      <LastGenOutput>obj\Debug\CurveEdPreset_SineWave.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPreset_UserSet.d">
-      <LastGenOutput>obj\Debug\CurveEdPreset_UserSet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPresetBase.d">
-      <LastGenOutput>obj\Debug\CurveEdPresetBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CurveEdPresetCurveFactoryNew.d">
-      <LastGenOutput>obj\Debug\CurveEdPresetCurveFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="CustomPropertyItemBindings.d">
-      <LastGenOutput>obj\Debug\CustomPropertyItemBindings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DecalMaterialFactoryNew.d">
-      <LastGenOutput>obj\Debug\DecalMaterialFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DefaultSizedThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\DefaultSizedThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DiffPackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\DiffPackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DumpEmittersCommandlet.d">
-      <LastGenOutput>obj\Debug\DumpEmittersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DumpLightmapInfoCommandlet.d">
-      <LastGenOutput>obj\Debug\DumpLightmapInfoCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DumpShadersCommandlet.d">
-      <LastGenOutput>obj\Debug\DumpShadersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EditorComponent.d">
-      <LastGenOutput>obj\Debug\EditorComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EditorEngine.d">
-      <LastGenOutput>obj\Debug\EditorEngine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EditorPlayer.d">
-      <LastGenOutput>obj\Debug\EditorPlayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EditorUserSettings.d">
-      <LastGenOutput>obj\Debug\EditorUserSettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EditorViewportInput.d">
-      <LastGenOutput>obj\Debug\EditorViewportInput.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="EdModeComponent.d">
-      <LastGenOutput>obj\Debug\EdModeComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ExamineOutersCommandlet.d">
-      <LastGenOutput>obj\Debug\ExamineOutersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ExporterT3DX.d">
-      <LastGenOutput>obj\Debug\ExporterT3DX.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ExportLocCommandlet.d">
-      <LastGenOutput>obj\Debug\ExportLocCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FaceFXStudioSkelComponent.d">
-      <LastGenOutput>obj\Debug\FaceFXStudioSkelComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FbxImportUI.d">
-      <LastGenOutput>obj\Debug\FbxImportUI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindAssetReferencersCommandlet.d">
-      <LastGenOutput>obj\Debug\FindAssetReferencersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindDarkDiffuseTexturesCommandlet.d">
-      <LastGenOutput>obj\Debug\FindDarkDiffuseTexturesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindDuplicateKismetObjectsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindDuplicateKismetObjectsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindDuplicateTexturesCommandlet.d">
-      <LastGenOutput>obj\Debug\FindDuplicateTexturesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindEmitterMismatchedLODsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindEmitterMismatchedLODsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindEmitterModifiedLODsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindEmitterModifiedLODsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindEmitterModuleLODErrorsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindEmitterModuleLODErrorsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindQuestionableTexturesCommandlet.d">
-      <LastGenOutput>obj\Debug\FindQuestionableTexturesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindRenamedPrefabSequencesCommandlet.d">
-      <LastGenOutput>obj\Debug\FindRenamedPrefabSequencesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindStaticActorsRefsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindStaticActorsRefsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindStaticMeshCanBecomeDynamicCommandlet.d">
-      <LastGenOutput>obj\Debug\FindStaticMeshCanBecomeDynamicCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindStaticMeshEmptySectionsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindStaticMeshEmptySectionsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindTexturesWithMissingPhysicalMaterialsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindTexturesWithMissingPhysicalMaterialsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindUniqueSpecularTextureMaterialsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindUniqueSpecularTextureMaterialsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FindUnreferencedFunctionsCommandlet.d">
-      <LastGenOutput>obj\Debug\FindUnreferencedFunctionsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FixAdditiveReferencesCommandlet.d">
-      <LastGenOutput>obj\Debug\FixAdditiveReferencesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FixAmbiguousMaterialParametersCommandlet.d">
-      <LastGenOutput>obj\Debug\FixAmbiguousMaterialParametersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FixupEmittersCommandlet.d">
-      <LastGenOutput>obj\Debug\FixupEmittersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FixupRedirectsCommandlet.d">
-      <LastGenOutput>obj\Debug\FixupRedirectsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FixupSourceUVsCommandlet.d">
-      <LastGenOutput>obj\Debug\FixupSourceUVsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FonixFactory.d">
-      <LastGenOutput>obj\Debug\FonixFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FontThumbnailLabelRenderer.d">
-      <LastGenOutput>obj\Debug\FontThumbnailLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FontThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\FontThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FracturedStaticMeshLabelRenderer.d">
-      <LastGenOutput>obj\Debug\FracturedStaticMeshLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FractureMaterialFactoryNew.d">
-      <LastGenOutput>obj\Debug\FractureMaterialFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsDatabase.d">
-      <LastGenOutput>obj\Debug\GameStatsDatabase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsDatabaseVisitor.d">
-      <LastGenOutput>obj\Debug\GameStatsDatabaseVisitor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsDBUploader.d">
-      <LastGenOutput>obj\Debug\GameStatsDBUploader.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsFileReader.d">
-      <LastGenOutput>obj\Debug\GameStatsFileReader.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsReport.d">
-      <LastGenOutput>obj\Debug\GameStatsReport.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsVisitorImpl.d">
-      <LastGenOutput>obj\Debug\GameStatsVisitorImpl.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GameStatsVisualizer.d">
-      <LastGenOutput>obj\Debug\GameStatsVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_AITree.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_AITree.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_All.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_All.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Animation.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Animation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_AnimTree.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_AnimTree.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ApexClothingAsset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ApexClothingAsset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ApexDestructibleAsset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ApexDestructibleAsset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ApexDestructibleDamageParameters.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ApexDestructibleDamageParameters.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ApexGenericAsset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ApexGenericAsset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Archetype.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Archetype.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_CameraAnim.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_CameraAnim.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_CurveEdPresetCurve.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_CurveEdPresetCurve.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Custom.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Custom.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_DecalMaterial.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_DecalMaterial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_DMC.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_DMC.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_FaceFXAnimSet.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_FaceFXAnimSet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_FaceFXAsset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_FaceFXAsset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Font.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Font.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_FracturedStaticMesh.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_FracturedStaticMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_FractureMaterial.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_FractureMaterial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_LensFlare.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_LensFlare.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Material.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Material.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_MaterialInstanceConstant.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_MaterialInstanceConstant.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_MaterialInstanceTimeVarying.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_MaterialInstanceTimeVarying.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_MorphTargetSet.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_MorphTargetSet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_MorphWeightSequence.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_MorphWeightSequence.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ParticleSystem.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ParticleSystem.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_PhysicalMaterial.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_PhysicalMaterial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_PhysicsAsset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_PhysicsAsset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_PhysXParticleSystem.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_PhysXParticleSystem.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_PostProcess.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_PostProcess.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Prefab.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Prefab.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_ProcBuildingRuleset.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_ProcBuildingRuleset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_RenderTexture.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_RenderTexture.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Sequence.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Sequence.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SkeletalMesh.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SkeletalMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SoundClass.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SoundClass.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SoundCue.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SoundCue.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SoundMode.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SoundMode.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Sounds.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Sounds.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SoundWave.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SoundWave.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SpeechRecognition.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SpeechRecognition.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_SpeedTree.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_SpeedTree.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_StaticMesh.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_StaticMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_TerrainLayer.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_TerrainLayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_TerrainMaterial.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_TerrainMaterial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_Texture.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_Texture.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_TextureCube.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_TextureCube.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericBrowserType_TextureMovie.d">
-      <LastGenOutput>obj\Debug\GenericBrowserType_TextureMovie.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericParamlistVisualizer.d">
-      <LastGenOutput>obj\Debug\GenericParamlistVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GenericThumbnailLabelRenderer.d">
-      <LastGenOutput>obj\Debug\GenericThumbnailLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier.d">
-      <LastGenOutput>obj\Debug\GeomModifier.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Clip.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Clip.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Create.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Create.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Delete.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Delete.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Edit.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Edit.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Extrude.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Extrude.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Flip.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Flip.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Lathe.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Lathe.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Optimize.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Optimize.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Pen.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Pen.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Split.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Split.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Triangulate.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Triangulate.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Turn.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Turn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GeomModifier_Weld.d">
-      <LastGenOutput>obj\Debug\GeomModifier_Weld.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="HeatmapVisualizer.d">
-      <LastGenOutput>obj\Debug\HeatmapVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="IconThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\IconThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpEdOptions.d">
-      <LastGenOutput>obj\Debug\InterpEdOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackAnimControlHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackAnimControlHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackBoolPropHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackBoolPropHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackColorPropHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackColorPropHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackDirectorHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackDirectorHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackEventHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackEventHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackFaceFXHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackFaceFXHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackFloatPropHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackFloatPropHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackHeadTrackingHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackHeadTrackingHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackLinearColorPropHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackLinearColorPropHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackParticleReplayHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackParticleReplayHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackSoundHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackSoundHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackToggleHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackToggleHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackVectorPropHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackVectorPropHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterpTrackVisibilityHelper.d">
-      <LastGenOutput>obj\Debug\InterpTrackVisibilityHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="KismetBindings.d">
-      <LastGenOutput>obj\Debug\KismetBindings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LensFlareEditorOptions.d">
-      <LastGenOutput>obj\Debug\LensFlareEditorOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LensFlareEditorPropertyWrapper.d">
-      <LastGenOutput>obj\Debug\LensFlareEditorPropertyWrapper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LensFlareFactoryNew.d">
-      <LastGenOutput>obj\Debug\LensFlareFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LensFlarePreviewComponent.d">
-      <LastGenOutput>obj\Debug\LensFlarePreviewComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LensFlareThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\LensFlareThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LevelExporterLOD.d">
-      <LastGenOutput>obj\Debug\LevelExporterLOD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LevelExporterOBJ.d">
-      <LastGenOutput>obj\Debug\LevelExporterOBJ.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LevelExporterSTL.d">
-      <LastGenOutput>obj\Debug\LevelExporterSTL.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LevelExporterT3D.d">
-      <LastGenOutput>obj\Debug\LevelExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LevelFactory.d">
-      <LastGenOutput>obj\Debug\LevelFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LightingChannelsObject.d">
-      <LastGenOutput>obj\Debug\LightingChannelsObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LightmassOptionsObject.d">
-      <LastGenOutput>obj\Debug\LightmassOptionsObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LinkedObjectFactory.d">
-      <LastGenOutput>obj\Debug\LinkedObjectFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListCorruptedComponentsCommandlet.d">
-      <LastGenOutput>obj\Debug\ListCorruptedComponentsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListCustomMaterialExpressionsCommandlet.d">
-      <LastGenOutput>obj\Debug\ListCustomMaterialExpressionsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListDistanceCrossFadeNodesCommandlet.d">
-      <LastGenOutput>obj\Debug\ListDistanceCrossFadeNodesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListEmittersUsingModuleCommandlet.d">
-      <LastGenOutput>obj\Debug\ListEmittersUsingModuleCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListLoopingEmittersCommandlet.d">
-      <LastGenOutput>obj\Debug\ListLoopingEmittersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListPackagesReferencingCommandlet.d">
-      <LastGenOutput>obj\Debug\ListPackagesReferencingCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListPSysFixedBoundSettingCommandlet.d">
-      <LastGenOutput>obj\Debug\ListPSysFixedBoundSettingCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListScriptReferencedContentCommandlet.d">
-      <LastGenOutput>obj\Debug\ListScriptReferencedContentCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ListSoundNodeWavesCommandlet.d">
-      <LastGenOutput>obj\Debug\ListSoundNodeWavesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LoadPackageCommandlet.d">
-      <LastGenOutput>obj\Debug\LoadPackageCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LocSoundInfoCommandlet.d">
-      <LastGenOutput>obj\Debug\LocSoundInfoCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MakeCommandlet.d">
-      <LastGenOutput>obj\Debug\MakeCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialEditorInstanceConstant.d">
-      <LastGenOutput>obj\Debug\MaterialEditorInstanceConstant.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialEditorInstanceTimeVarying.d">
-      <LastGenOutput>obj\Debug\MaterialEditorInstanceTimeVarying.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialEditorMeshComponent.d">
-      <LastGenOutput>obj\Debug\MaterialEditorMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialEditorOptions.d">
-      <LastGenOutput>obj\Debug\MaterialEditorOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialEditorSkeletalMeshComponent.d">
-      <LastGenOutput>obj\Debug\MaterialEditorSkeletalMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialExporterT3D.d">
-      <LastGenOutput>obj\Debug\MaterialExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialFactory.d">
-      <LastGenOutput>obj\Debug\MaterialFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialFactoryNew.d">
-      <LastGenOutput>obj\Debug\MaterialFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialInstanceConstantFactoryNew.d">
-      <LastGenOutput>obj\Debug\MaterialInstanceConstantFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialInstanceLabelRenderer.d">
-      <LastGenOutput>obj\Debug\MaterialInstanceLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialInstanceThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\MaterialInstanceThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MaterialInstanceTimeVaryingFactoryNew.d">
-      <LastGenOutput>obj\Debug\MaterialInstanceTimeVaryingFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MemCountThumbnailLabelRenderer.d">
-      <LastGenOutput>obj\Debug\MemCountThumbnailLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MergePackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\MergePackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MineCookedPackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\MineCookedPackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ModelExporterT3D.d">
-      <LastGenOutput>obj\Debug\ModelExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ModelFactory.d">
-      <LastGenOutput>obj\Debug\ModelFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ObjectExporterT3D.d">
-      <LastGenOutput>obj\Debug\ObjectExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OutputAuditSummaryCommandlet.d">
-      <LastGenOutput>obj\Debug\OutputAuditSummaryCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PackageExporterT3D.d">
-      <LastGenOutput>obj\Debug\PackageExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PackageFactory.d">
-      <LastGenOutput>obj\Debug\PackageFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ParticleSystemFactoryNew.d">
-      <LastGenOutput>obj\Debug\ParticleSystemFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ParticleSystemLabelRenderer.d">
-      <LastGenOutput>obj\Debug\ParticleSystemLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ParticleSystemThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\ParticleSystemThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PatchScriptCommandlet.d">
-      <LastGenOutput>obj\Debug\PatchScriptCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PerformanceVisualizer.d">
-      <LastGenOutput>obj\Debug\PerformanceVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PerformMapCheckCommandlet.d">
-      <LastGenOutput>obj\Debug\PerformMapCheckCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PerformTerrainMaterialDumpCommandlet.d">
-      <LastGenOutput>obj\Debug\PerformTerrainMaterialDumpCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PersistentCookerData.d">
-      <LastGenOutput>obj\Debug\PersistentCookerData.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PhATSimOptions.d">
-      <LastGenOutput>obj\Debug\PhATSimOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PhATSkeletalMeshComponent.d">
-      <LastGenOutput>obj\Debug\PhATSkeletalMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PhysicalMaterialFactoryNew.d">
-      <LastGenOutput>obj\Debug\PhysicalMaterialFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PhysicsAssetLabelRenderer.d">
-      <LastGenOutput>obj\Debug\PhysicsAssetLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PhysXParticleSystemFactoryNew.d">
-      <LastGenOutput>obj\Debug\PhysXParticleSystemFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PIEToNormalCommandlet.d">
-      <LastGenOutput>obj\Debug\PIEToNormalCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PkgInfoCommandlet.d">
-      <LastGenOutput>obj\Debug\PkgInfoCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PlayerMovementVisualizer.d">
-      <LastGenOutput>obj\Debug\PlayerMovementVisualizer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PolysExporterT3D.d">
-      <LastGenOutput>obj\Debug\PolysExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PolysFactory.d">
-      <LastGenOutput>obj\Debug\PolysFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PostProcessFactoryNew.d">
-      <LastGenOutput>obj\Debug\PostProcessFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PostProcessLabelRenderer.d">
-      <LastGenOutput>obj\Debug\PostProcessLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PrecompileShadersCommandlet.d">
-      <LastGenOutput>obj\Debug\PrecompileShadersCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PrefabThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\PrefabThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PreviewMaterial.d">
-      <LastGenOutput>obj\Debug\PreviewMaterial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ProcBuildingRulesetFactoryNew.d">
-      <LastGenOutput>obj\Debug\ProcBuildingRulesetFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyDrawProxy.d">
-      <LastGenOutput>obj\Debug\PropertyDrawProxy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputArrayItemBase.d">
-      <LastGenOutput>obj\Debug\PropertyInputArrayItemBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputBool.d">
-      <LastGenOutput>obj\Debug\PropertyInputBool.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputCombo.d">
-      <LastGenOutput>obj\Debug\PropertyInputCombo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputEditInline.d">
-      <LastGenOutput>obj\Debug\PropertyInputEditInline.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputProxy.d">
-      <LastGenOutput>obj\Debug\PropertyInputProxy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PropertyInputText.d">
-      <LastGenOutput>obj\Debug\PropertyInputText.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="RenderTargetCubeExporterTGA.d">
-      <LastGenOutput>obj\Debug\RenderTargetCubeExporterTGA.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="RenderTargetExporterTGA.d">
-      <LastGenOutput>obj\Debug\RenderTargetExporterTGA.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ReplaceActorCommandlet.d">
-      <LastGenOutput>obj\Debug\ReplaceActorCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ResavePackagesCommandlet.d">
-      <LastGenOutput>obj\Debug\ResavePackagesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ScaleAudioVolumeCommandlet.d">
-      <LastGenOutput>obj\Debug\ScaleAudioVolumeCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SequenceExporterT3D.d">
-      <LastGenOutput>obj\Debug\SequenceExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SequenceFactory.d">
-      <LastGenOutput>obj\Debug\SequenceFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SequenceObjectHelper.d">
-      <LastGenOutput>obj\Debug\SequenceObjectHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SetMaterialUsageCommandlet.d">
-      <LastGenOutput>obj\Debug\SetMaterialUsageCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SetPackageFlagsCommandlet.d">
-      <LastGenOutput>obj\Debug\SetPackageFlagsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SetTextureLODGroupCommandlet.d">
-      <LastGenOutput>obj\Debug\SetTextureLODGroupCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ShowObjectCountCommandlet.d">
-      <LastGenOutput>obj\Debug\ShowObjectCountCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ShowPropertyFlagsCommandlet.d">
-      <LastGenOutput>obj\Debug\ShowPropertyFlagsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ShowTaggedPropsCommandlet.d">
-      <LastGenOutput>obj\Debug\ShowTaggedPropsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SkeletalMeshFactory.d">
-      <LastGenOutput>obj\Debug\SkeletalMeshFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SkeletalMeshLabelRenderer.d">
-      <LastGenOutput>obj\Debug\SkeletalMeshLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SkeletalMeshThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\SkeletalMeshThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundClassFactory.d">
-      <LastGenOutput>obj\Debug\SoundClassFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundClassInfoCommandlet.d">
-      <LastGenOutput>obj\Debug\SoundClassInfoCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundCueAuditCommandlet.d">
-      <LastGenOutput>obj\Debug\SoundCueAuditCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundCueFactoryNew.d">
-      <LastGenOutput>obj\Debug\SoundCueFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundExporterWAV.d">
-      <LastGenOutput>obj\Debug\SoundExporterWAV.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundFactory.d">
-      <LastGenOutput>obj\Debug\SoundFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundLabelRenderer.d">
-      <LastGenOutput>obj\Debug\SoundLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundModeFactory.d">
-      <LastGenOutput>obj\Debug\SoundModeFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundNodeHelper.d">
-      <LastGenOutput>obj\Debug\SoundNodeHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundSurroundExporterWAV.d">
-      <LastGenOutput>obj\Debug\SoundSurroundExporterWAV.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundSurroundFactory.d">
-      <LastGenOutput>obj\Debug\SoundSurroundFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SoundTTSFactory.d">
-      <LastGenOutput>obj\Debug\SoundTTSFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SpeedTreeFactory.d">
-      <LastGenOutput>obj\Debug\SpeedTreeFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshExporterOBJ.d">
-      <LastGenOutput>obj\Debug\StaticMeshExporterOBJ.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshExporterT3D.d">
-      <LastGenOutput>obj\Debug\StaticMeshExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshFactory.d">
-      <LastGenOutput>obj\Debug\StaticMeshFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshLabelRenderer.d">
-      <LastGenOutput>obj\Debug\StaticMeshLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshMode_Options.d">
-      <LastGenOutput>obj\Debug\StaticMeshMode_Options.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StaticMeshThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\StaticMeshThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StripSourceCommandlet.d">
-      <LastGenOutput>obj\Debug\StripSourceCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TagCookedReferencedAssetsCommandlet.d">
-      <LastGenOutput>obj\Debug\TagCookedReferencedAssetsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TagReferencedAssetsCommandlet.d">
-      <LastGenOutput>obj\Debug\TagReferencedAssetsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TagSuboptimalTexturesCommandlet.d">
-      <LastGenOutput>obj\Debug\TagSuboptimalTexturesCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainEditOptions.d">
-      <LastGenOutput>obj\Debug\TerrainEditOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainExporterT3D.d">
-      <LastGenOutput>obj\Debug\TerrainExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainFactory.d">
-      <LastGenOutput>obj\Debug\TerrainFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapExporter.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapExporter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapExporterG16BMPT3D.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapExporterG16BMPT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapExporterTextT3D.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapExporterTextT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapFactory.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapFactoryG16BMP.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapFactoryG16BMP.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapFactoryG16BMPT3D.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapFactoryG16BMPT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainHeightMapFactoryTextT3D.d">
-      <LastGenOutput>obj\Debug\TerrainHeightMapFactoryTextT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainLayerSetupFactoryNew.d">
-      <LastGenOutput>obj\Debug\TerrainLayerSetupFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TerrainMaterialFactoryNew.d">
-      <LastGenOutput>obj\Debug\TerrainMaterialFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TestCompressionCommandlet.d">
-      <LastGenOutput>obj\Debug\TestCompressionCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TestTextureCompressionCommandlet.d">
-      <LastGenOutput>obj\Debug\TestTextureCompressionCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TestWordWrapCommandlet.d">
-      <LastGenOutput>obj\Debug\TestWordWrapCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextBufferExporterTXT.d">
-      <LastGenOutput>obj\Debug\TextBufferExporterTXT.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureCubeFactoryNew.d">
-      <LastGenOutput>obj\Debug\TextureCubeFactoryNew.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureCubeThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\TextureCubeThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureExporterBMP.d">
-      <LastGenOutput>obj\Debug\TextureExporterBMP.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureExporterPCX.d">
-      <LastGenOutput>obj\Debug\TextureExporterPCX.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureExporterT3D.d">
-      <LastGenOutput>obj\Debug\TextureExporterT3D.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureExporterTGA.d">
-      <LastGenOutput>obj\Debug\TextureExporterTGA.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextureThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\TextureThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ThumbnailLabelRenderer.d">
-      <LastGenOutput>obj\Debug\ThumbnailLabelRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ThumbnailManager.d">
-      <LastGenOutput>obj\Debug\ThumbnailManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ThumbnailRenderer.d">
-      <LastGenOutput>obj\Debug\ThumbnailRenderer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Transactor.d">
-      <LastGenOutput>obj\Debug\Transactor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TransBuffer.d">
-      <LastGenOutput>obj\Debug\TransBuffer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UnrealEdEngine.d">
-      <LastGenOutput>obj\Debug\UnrealEdEngine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UnrealEdKeyBindings.d">
-      <LastGenOutput>obj\Debug\UnrealEdKeyBindings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UnrealEdOptions.d">
-      <LastGenOutput>obj\Debug\UnrealEdOptions.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UnrealEdTypes.d">
-      <LastGenOutput>obj\Debug\UnrealEdTypes.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UpdateKismetCommandlet.d">
-      <LastGenOutput>obj\Debug\UpdateKismetCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UT3MapStatsCommandlet.d">
-      <LastGenOutput>obj\Debug\UT3MapStatsCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WrangleContentCommandlet.d">
-      <LastGenOutput>obj\Debug\WrangleContentCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WriteGameStatsReportCommandlet.d">
-      <LastGenOutput>obj\Debug\WriteGameStatsReportCommandlet.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="ActorFactorySelection.d" />
+    <Compile Include="AITreeLabelRenderer.d" />
+    <Compile Include="AnalyzeContentCommandlet.d" />
+    <Compile Include="AnalyzeCookedContentCommandlet.d" />
+    <Compile Include="AnalyzeCookedPackagesCommandlet.d" />
+    <Compile Include="AnalyzeCookedTextureSingleUsageCommandlet.d" />
+    <Compile Include="AnalyzeCookedTextureUsageCommandlet.d" />
+    <Compile Include="AnalyzeKismetCommandlet.d" />
+    <Compile Include="AnalyzeReferencedContentCommandlet.d" />
+    <Compile Include="AnalyzeReferencedObjectCommandlet.d" />
+    <Compile Include="AnalyzeScriptCommandlet.d" />
+    <Compile Include="AnalyzeShaderCachesCommandlet.d" />
+    <Compile Include="AnimNodeEditInfo.d" />
+    <Compile Include="AnimNodeEditInfo_AimOffset.d" />
+    <Compile Include="AnimSetLabelRenderer.d" />
+    <Compile Include="AnimTreeEdSkelComponent.d" />
+    <Compile Include="AnimTreeLabelRenderer.d" />
+    <Compile Include="ApexClothingAssetLabelRenderer.d" />
+    <Compile Include="ApexDestructibleAssetLabelRenderer.d" />
+    <Compile Include="ApexDestructibleAssetThumbnailRenderer.d" />
+    <Compile Include="ApexGenericAssetLabelRenderer.d" />
+    <Compile Include="ArchetypeThumbnailRenderer.d" />
+    <Compile Include="ASVSkelComponent.d" />
+    <Compile Include="BasicStatsVisualizer.d" />
+    <Compile Include="BatchExportCommandlet.d" />
+    <Compile Include="BrowserManager.d" />
+    <Compile Include="BrushBuilder.d" />
+    <Compile Include="ByteCodeSerializer.d" />
+    <Compile Include="CascadeConfiguration.d" />
+    <Compile Include="CascadeOptions.d" />
+    <Compile Include="CascadeParticleSystemComponent.d" />
+    <Compile Include="CascadePreviewComponent.d" />
+    <Compile Include="ChangePrefabSequenceClassCommandlet.d" />
+    <Compile Include="CheckLightMapUVsCommandlet.d" />
+    <Compile Include="CheckpointGameAssetDatabaseCommandlet.d" />
+    <Compile Include="ClassExporterUC.d" />
+    <Compile Include="CompressAnimationsCommandlet.d" />
+    <Compile Include="ConformCommandlet.d" />
+    <Compile Include="ContentAuditCommandlet.d" />
+    <Compile Include="ContentComparisonCommandlet.d" />
+    <Compile Include="ConvertMapToNavMesh.d" />
+    <Compile Include="CookPackagesCommandlet.d" />
+    <Compile Include="CubeBuilder.d" />
+    <Compile Include="CurveEdOptions.d" />
+    <Compile Include="CurveEdPreset_CosWave.d" />
+    <Compile Include="CurveEdPreset_LinearDecay.d" />
+    <Compile Include="CurveEdPreset_Nothing.d" />
+    <Compile Include="CurveEdPreset_SineWave.d" />
+    <Compile Include="CurveEdPreset_UserSet.d" />
+    <Compile Include="CurveEdPresetBase.d" />
+    <Compile Include="CustomPropertyItemBindings.d" />
+    <Compile Include="DefaultSizedThumbnailRenderer.d" />
+    <Compile Include="DiffPackagesCommandlet.d" />
+    <Compile Include="DumpEmittersCommandlet.d" />
+    <Compile Include="DumpLightmapInfoCommandlet.d" />
+    <Compile Include="DumpShadersCommandlet.d" />
+    <Compile Include="EditorComponent.d" />
+    <Compile Include="EditorEngine.d" />
+    <Compile Include="EditorPlayer.d" />
+    <Compile Include="EditorUserSettings.d" />
+    <Compile Include="EditorViewportInput.d" />
+    <Compile Include="EdModeComponent.d" />
+    <Compile Include="ExamineOutersCommandlet.d" />
+    <Compile Include="ExporterT3DX.d" />
+    <Compile Include="ExportLocCommandlet.d" />
+    <Compile Include="FaceFXStudioSkelComponent.d" />
+    <Compile Include="FbxImportUI.d" />
+    <Compile Include="FindAssetReferencersCommandlet.d" />
+    <Compile Include="FindDarkDiffuseTexturesCommandlet.d" />
+    <Compile Include="FindDuplicateKismetObjectsCommandlet.d" />
+    <Compile Include="FindDuplicateTexturesCommandlet.d" />
+    <Compile Include="FindEmitterMismatchedLODsCommandlet.d" />
+    <Compile Include="FindEmitterModifiedLODsCommandlet.d" />
+    <Compile Include="FindEmitterModuleLODErrorsCommandlet.d" />
+    <Compile Include="FindQuestionableTexturesCommandlet.d" />
+    <Compile Include="FindRenamedPrefabSequencesCommandlet.d" />
+    <Compile Include="FindStaticActorsRefsCommandlet.d" />
+    <Compile Include="FindStaticMeshCanBecomeDynamicCommandlet.d" />
+    <Compile Include="FindStaticMeshEmptySectionsCommandlet.d" />
+    <Compile Include="FindTexturesWithMissingPhysicalMaterialsCommandlet.d" />
+    <Compile Include="FindUniqueSpecularTextureMaterialsCommandlet.d" />
+    <Compile Include="FindUnreferencedFunctionsCommandlet.d" />
+    <Compile Include="FixAdditiveReferencesCommandlet.d" />
+    <Compile Include="FixAmbiguousMaterialParametersCommandlet.d" />
+    <Compile Include="FixupEmittersCommandlet.d" />
+    <Compile Include="FixupRedirectsCommandlet.d" />
+    <Compile Include="FixupSourceUVsCommandlet.d" />
+    <Compile Include="FontThumbnailLabelRenderer.d" />
+    <Compile Include="FontThumbnailRenderer.d" />
+    <Compile Include="FracturedStaticMeshLabelRenderer.d" />
+    <Compile Include="GameStatsDatabase.d" />
+    <Compile Include="GameStatsDatabaseVisitor.d" />
+    <Compile Include="GameStatsDBUploader.d" />
+    <Compile Include="GameStatsFileReader.d" />
+    <Compile Include="GameStatsReport.d" />
+    <Compile Include="GameStatsVisitorImpl.d" />
+    <Compile Include="GameStatsVisualizer.d" />
+    <Compile Include="GenericBrowserType.d" />
+    <Compile Include="GenericBrowserType_AITree.d" />
+    <Compile Include="GenericBrowserType_All.d" />
+    <Compile Include="GenericBrowserType_Animation.d" />
+    <Compile Include="GenericBrowserType_AnimTree.d" />
+    <Compile Include="GenericBrowserType_ApexClothingAsset.d" />
+    <Compile Include="GenericBrowserType_ApexDestructibleAsset.d" />
+    <Compile Include="GenericBrowserType_ApexDestructibleDamageParameters.d" />
+    <Compile Include="GenericBrowserType_ApexGenericAsset.d" />
+    <Compile Include="GenericBrowserType_Archetype.d" />
+    <Compile Include="GenericBrowserType_CameraAnim.d" />
+    <Compile Include="GenericBrowserType_CurveEdPresetCurve.d" />
+    <Compile Include="GenericBrowserType_Custom.d" />
+    <Compile Include="GenericBrowserType_DecalMaterial.d" />
+    <Compile Include="GenericBrowserType_DMC.d" />
+    <Compile Include="GenericBrowserType_FaceFXAnimSet.d" />
+    <Compile Include="GenericBrowserType_FaceFXAsset.d" />
+    <Compile Include="GenericBrowserType_Font.d" />
+    <Compile Include="GenericBrowserType_FracturedStaticMesh.d" />
+    <Compile Include="GenericBrowserType_FractureMaterial.d" />
+    <Compile Include="GenericBrowserType_LensFlare.d" />
+    <Compile Include="GenericBrowserType_Material.d" />
+    <Compile Include="GenericBrowserType_MaterialInstanceConstant.d" />
+    <Compile Include="GenericBrowserType_MaterialInstanceTimeVarying.d" />
+    <Compile Include="GenericBrowserType_MorphTargetSet.d" />
+    <Compile Include="GenericBrowserType_MorphWeightSequence.d" />
+    <Compile Include="GenericBrowserType_ParticleSystem.d" />
+    <Compile Include="GenericBrowserType_PhysicalMaterial.d" />
+    <Compile Include="GenericBrowserType_PhysicsAsset.d" />
+    <Compile Include="GenericBrowserType_PhysXParticleSystem.d" />
+    <Compile Include="GenericBrowserType_PostProcess.d" />
+    <Compile Include="GenericBrowserType_Prefab.d" />
+    <Compile Include="GenericBrowserType_ProcBuildingRuleset.d" />
+    <Compile Include="GenericBrowserType_RenderTexture.d" />
+    <Compile Include="GenericBrowserType_Sequence.d" />
+    <Compile Include="GenericBrowserType_SkeletalMesh.d" />
+    <Compile Include="GenericBrowserType_SoundClass.d" />
+    <Compile Include="GenericBrowserType_SoundCue.d" />
+    <Compile Include="GenericBrowserType_SoundMode.d" />
+    <Compile Include="GenericBrowserType_Sounds.d" />
+    <Compile Include="GenericBrowserType_SoundWave.d" />
+    <Compile Include="GenericBrowserType_SpeechRecognition.d" />
+    <Compile Include="GenericBrowserType_SpeedTree.d" />
+    <Compile Include="GenericBrowserType_StaticMesh.d" />
+    <Compile Include="GenericBrowserType_TerrainLayer.d" />
+    <Compile Include="GenericBrowserType_TerrainMaterial.d" />
+    <Compile Include="GenericBrowserType_Texture.d" />
+    <Compile Include="GenericBrowserType_TextureCube.d" />
+    <Compile Include="GenericBrowserType_TextureMovie.d" />
+    <Compile Include="GenericParamlistVisualizer.d" />
+    <Compile Include="GenericThumbnailLabelRenderer.d" />
+    <Compile Include="GeomModifier.d" />
+    <Compile Include="GeomModifier_Clip.d" />
+    <Compile Include="GeomModifier_Create.d" />
+    <Compile Include="GeomModifier_Delete.d" />
+    <Compile Include="GeomModifier_Edit.d" />
+    <Compile Include="GeomModifier_Extrude.d" />
+    <Compile Include="GeomModifier_Flip.d" />
+    <Compile Include="GeomModifier_Lathe.d" />
+    <Compile Include="GeomModifier_Optimize.d" />
+    <Compile Include="GeomModifier_Pen.d" />
+    <Compile Include="GeomModifier_Split.d" />
+    <Compile Include="GeomModifier_Triangulate.d" />
+    <Compile Include="GeomModifier_Turn.d" />
+    <Compile Include="GeomModifier_Weld.d" />
+    <Compile Include="HeatmapVisualizer.d" />
+    <Compile Include="IconThumbnailRenderer.d" />
+    <Compile Include="InterpEdOptions.d" />
+    <Compile Include="InterpTrackAnimControlHelper.d" />
+    <Compile Include="InterpTrackBoolPropHelper.d" />
+    <Compile Include="InterpTrackColorPropHelper.d" />
+    <Compile Include="InterpTrackDirectorHelper.d" />
+    <Compile Include="InterpTrackEventHelper.d" />
+    <Compile Include="InterpTrackFaceFXHelper.d" />
+    <Compile Include="InterpTrackFloatPropHelper.d" />
+    <Compile Include="InterpTrackHeadTrackingHelper.d" />
+    <Compile Include="InterpTrackHelper.d" />
+    <Compile Include="InterpTrackLinearColorPropHelper.d" />
+    <Compile Include="InterpTrackParticleReplayHelper.d" />
+    <Compile Include="InterpTrackSoundHelper.d" />
+    <Compile Include="InterpTrackToggleHelper.d" />
+    <Compile Include="InterpTrackVectorPropHelper.d" />
+    <Compile Include="InterpTrackVisibilityHelper.d" />
+    <Compile Include="KismetBindings.d" />
+    <Compile Include="LensFlareEditorOptions.d" />
+    <Compile Include="LensFlareEditorPropertyWrapper.d" />
+    <Compile Include="LensFlarePreviewComponent.d" />
+    <Compile Include="LensFlareThumbnailRenderer.d" />
+    <Compile Include="LevelExporterLOD.d" />
+    <Compile Include="LevelExporterOBJ.d" />
+    <Compile Include="LevelExporterSTL.d" />
+    <Compile Include="LevelExporterT3D.d" />
+    <Compile Include="LightingChannelsObject.d" />
+    <Compile Include="LightmassOptionsObject.d" />
+    <Compile Include="ListCorruptedComponentsCommandlet.d" />
+    <Compile Include="ListCustomMaterialExpressionsCommandlet.d" />
+    <Compile Include="ListDistanceCrossFadeNodesCommandlet.d" />
+    <Compile Include="ListEmittersUsingModuleCommandlet.d" />
+    <Compile Include="ListLoopingEmittersCommandlet.d" />
+    <Compile Include="ListPackagesReferencingCommandlet.d" />
+    <Compile Include="ListPSysFixedBoundSettingCommandlet.d" />
+    <Compile Include="ListScriptReferencedContentCommandlet.d" />
+    <Compile Include="ListSoundNodeWavesCommandlet.d" />
+    <Compile Include="LoadPackageCommandlet.d" />
+    <Compile Include="LocSoundInfoCommandlet.d" />
+    <Compile Include="MakeCommandlet.d" />
+    <Compile Include="MaterialEditorInstanceConstant.d" />
+    <Compile Include="MaterialEditorInstanceTimeVarying.d" />
+    <Compile Include="MaterialEditorMeshComponent.d" />
+    <Compile Include="MaterialEditorOptions.d" />
+    <Compile Include="MaterialEditorSkeletalMeshComponent.d" />
+    <Compile Include="MaterialExporterT3D.d" />
+    <Compile Include="MaterialInstanceLabelRenderer.d" />
+    <Compile Include="MaterialInstanceThumbnailRenderer.d" />
+    <Compile Include="MemCountThumbnailLabelRenderer.d" />
+    <Compile Include="MergePackagesCommandlet.d" />
+    <Compile Include="MineCookedPackagesCommandlet.d" />
+    <Compile Include="ModelExporterT3D.d" />
+    <Compile Include="ObjectExporterT3D.d" />
+    <Compile Include="OutputAuditSummaryCommandlet.d" />
+    <Compile Include="PackageExporterT3D.d" />
+    <Compile Include="ParticleSystemLabelRenderer.d" />
+    <Compile Include="ParticleSystemThumbnailRenderer.d" />
+    <Compile Include="PatchScriptCommandlet.d" />
+    <Compile Include="PerformanceVisualizer.d" />
+    <Compile Include="PerformMapCheckCommandlet.d" />
+    <Compile Include="PerformTerrainMaterialDumpCommandlet.d" />
+    <Compile Include="PersistentCookerData.d" />
+    <Compile Include="PhATSimOptions.d" />
+    <Compile Include="PhATSkeletalMeshComponent.d" />
+    <Compile Include="PhysicsAssetLabelRenderer.d" />
+    <Compile Include="PIEToNormalCommandlet.d" />
+    <Compile Include="PkgInfoCommandlet.d" />
+    <Compile Include="PlayerMovementVisualizer.d" />
+    <Compile Include="PolysExporterT3D.d" />
+    <Compile Include="PostProcessLabelRenderer.d" />
+    <Compile Include="PrecompileShadersCommandlet.d" />
+    <Compile Include="PrefabThumbnailRenderer.d" />
+    <Compile Include="PreviewMaterial.d" />
+    <Compile Include="PropertyDrawProxy.d" />
+    <Compile Include="PropertyInputArrayItemBase.d" />
+    <Compile Include="PropertyInputBool.d" />
+    <Compile Include="PropertyInputCombo.d" />
+    <Compile Include="PropertyInputEditInline.d" />
+    <Compile Include="PropertyInputProxy.d" />
+    <Compile Include="PropertyInputText.d" />
+    <Compile Include="RenderTargetCubeExporterTGA.d" />
+    <Compile Include="RenderTargetExporterTGA.d" />
+    <Compile Include="ReplaceActorCommandlet.d" />
+    <Compile Include="ResavePackagesCommandlet.d" />
+    <Compile Include="ScaleAudioVolumeCommandlet.d" />
+    <Compile Include="SequenceExporterT3D.d" />
+    <Compile Include="SequenceObjectHelper.d" />
+    <Compile Include="SetMaterialUsageCommandlet.d" />
+    <Compile Include="SetPackageFlagsCommandlet.d" />
+    <Compile Include="SetTextureLODGroupCommandlet.d" />
+    <Compile Include="ShowObjectCountCommandlet.d" />
+    <Compile Include="ShowPropertyFlagsCommandlet.d" />
+    <Compile Include="ShowTaggedPropsCommandlet.d" />
+    <Compile Include="SkeletalMeshLabelRenderer.d" />
+    <Compile Include="SkeletalMeshThumbnailRenderer.d" />
+    <Compile Include="SoundClassInfoCommandlet.d" />
+    <Compile Include="SoundCueAuditCommandlet.d" />
+    <Compile Include="SoundExporterWAV.d" />
+    <Compile Include="SoundLabelRenderer.d" />
+    <Compile Include="SoundNodeHelper.d" />
+    <Compile Include="SoundSurroundExporterWAV.d" />
+    <Compile Include="StaticMeshExporterOBJ.d" />
+    <Compile Include="StaticMeshExporterT3D.d" />
+    <Compile Include="StaticMeshLabelRenderer.d" />
+    <Compile Include="StaticMeshMode_Options.d" />
+    <Compile Include="StaticMeshThumbnailRenderer.d" />
+    <Compile Include="StripSourceCommandlet.d" />
+    <Compile Include="TagCookedReferencedAssetsCommandlet.d" />
+    <Compile Include="TagReferencedAssetsCommandlet.d" />
+    <Compile Include="TagSuboptimalTexturesCommandlet.d" />
+    <Compile Include="TerrainEditOptions.d" />
+    <Compile Include="TerrainExporterT3D.d" />
+    <Compile Include="TerrainHeightMapExporter.d" />
+    <Compile Include="TerrainHeightMapExporterG16BMPT3D.d" />
+    <Compile Include="TerrainHeightMapExporterTextT3D.d" />
+    <Compile Include="TestCompressionCommandlet.d" />
+    <Compile Include="TestTextureCompressionCommandlet.d" />
+    <Compile Include="TestWordWrapCommandlet.d" />
+    <Compile Include="TextBufferExporterTXT.d" />
+    <Compile Include="TextureCubeThumbnailRenderer.d" />
+    <Compile Include="TextureExporterBMP.d" />
+    <Compile Include="TextureExporterPCX.d" />
+    <Compile Include="TextureExporterT3D.d" />
+    <Compile Include="TextureExporterTGA.d" />
+    <Compile Include="TextureThumbnailRenderer.d" />
+    <Compile Include="ThumbnailLabelRenderer.d" />
+    <Compile Include="ThumbnailManager.d" />
+    <Compile Include="ThumbnailRenderer.d" />
+    <Compile Include="Transactor.d" />
+    <Compile Include="TransBuffer.d" />
+    <Compile Include="UnrealEdEngine.d" />
+    <Compile Include="UnrealEdKeyBindings.d" />
+    <Compile Include="UnrealEdOptions.d" />
+    <Compile Include="UnrealEdTypes.d" />
+    <Compile Include="UpdateKismetCommandlet.d" />
+    <Compile Include="UT3MapStatsCommandlet.d" />
+    <Compile Include="WrangleContentCommandlet.d" />
+    <Compile Include="WriteGameStatsReportCommandlet.d" />
   </ItemGroup>
 </Project>
