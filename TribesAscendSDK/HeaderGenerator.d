@@ -621,7 +621,7 @@ final class FunctionDescriptor : Descriptor
 			arg.WriteLoadToBuffer(wtr, "params");
 
 		wtr.Write("(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[%u], ", InnerFunction.ObjectInternalInteger);
-		if (paramSize > 0)
+		if (InnerFunction.ParamsSize > 0)
 			wtr.Write("params.ptr");
 		else
 			wtr.Write("cast(void*)0");
