@@ -246,14 +246,14 @@ public:
 	@property
 	{
 		final auto ref Flags!(ScriptFunctionFlags) FunctionFlags() { return *cast(Flags!(ScriptFunctionFlags)*)(cast(size_t)cast(void*)this + 0x90); }		// 0x90 (0x04)
-		final auto ref ushort Native() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0x94); }														// 0x94 (0x04)
-		final auto ref ushort RepOffset() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0x98); }													// 0x98 (0x04)
-		final auto ref ScriptName FriendlyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 0x9C); }											// 0x9C (0x08)
-		final auto ref ushort NumParams() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0xA4); }													// 0xA4 (0x04)
-		final auto ref ushort ParamsSize() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0xA8); }													// 0xA8 (0x04)
-		final auto ref uint ReturnValOffset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0xAC); }													// 0xAC (0x04)
-		// __padding__ 0xB0 (0x04)
-		final auto ref void* Function() { return *cast(void**)(cast(size_t)cast(void*)this + 0xB4); }														// 0xB4 (0x04)
+		final auto ref ushort Native() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0x94); }														// 0x94 (0x02)
+		final auto ref ushort RepOffset() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0x96); }													// 0x96 (0x02)
+		final auto ref ScriptName FriendlyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 0x98); }											// 0x98 (0x08)
+		final auto ref ushort NumParams() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0xA0); }													// 0xA0 (0x02)
+		final auto ref ushort ParamsSize() { return *cast(ushort*)(cast(size_t)cast(void*)this + 0xA2); }													// 0xA2 (0x02)
+		final auto ref uint ReturnValOffset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0xA4); }													// 0xA4 (0x04)
+		// __padding__ 0xA8 (0x04)
+		final auto ref void* Function() { return *cast(void**)(cast(size_t)cast(void*)this + 0xAC); }														// 0xAC (0x04)
 	}
 }
 

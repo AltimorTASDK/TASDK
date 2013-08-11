@@ -295,7 +295,7 @@ abstract class Descriptor
 			case "ClassProperty":
 				return "ScriptClass";
 			default:
-				return "\n// ERROR: Unknown object class '" ~ obj.ObjectClass.GetFullName() ~ "'~\nvoid*";
+				return "\n// ERROR: Unknown object class '" ~ obj.ObjectClass.GetFullName() ~ "'!\nvoid*";
 		}
 	}
 }
@@ -324,23 +324,17 @@ final class EnumDescriptor : Descriptor
 	override void RequireDependencies(DependencyManager mgr) { }
 	override void Write(IndentedStreamWriter wtr)
 	{
-		wtr.Write("enum %s : ubyte", InnerEnum.GetName());
-		//if (InnerEnum.ValueNames.Count > 1)
-		//{
-			wtr.WriteLine();
-			wtr.WriteLine("{");
-			wtr.Indent++;
+		wtr.WriteLine("enum %s : ubyte", InnerEnum.GetName());
+		wtr.WriteLine("{");
+		wtr.Indent++;
 
-			for (int i = 0; i < InnerEnum.ValueNames.Count; i++)
-			{
-				wtr.WriteLine("%s = %u,", InnerEnum.ValueNames[i].GetName(), i);
-			}
+		for (int i = 0; i < InnerEnum.ValueNames.Count; i++)
+		{
+			wtr.WriteLine("%s = %u,", InnerEnum.ValueNames[i].GetName(), i);
+		}
 
-			wtr.Indent--;
-			wtr.WriteLine("}");
-		//}
-		//else
-		//	wtr.WriteLine(" %s = 0;", InnerEnum.ValueNames[0].GetName());
+		wtr.Indent--;
+		wtr.WriteLine("}");
 	}
 }
 
@@ -368,13 +362,13 @@ final class ConstantDescriptor : Descriptor
 					break;
 				case '\'':
 					if (valString[0] == '\'')
-						valString = `"` ~ valString[1..(valString.length - 2)] ~ `"`;
+						valString = `"` ~ valString[1..(valString.length - 1)] ~ `"`;
 					break;
 				default:
 					break;
 			}
 		}
-		wtr.WriteLine("public static immutable auto %s = %s;", InnerConstant.GetName(), valString);
+		wtr.WriteLine("public enum %s = %s;", InnerConstant.GetName(), valString);
 	}
 }
 

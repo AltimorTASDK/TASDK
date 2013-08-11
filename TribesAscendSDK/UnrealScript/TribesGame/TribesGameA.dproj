@@ -36,239 +36,703 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AlienFXManager.d" />
-    <Compile Include="dsWebAdmin.d" />
-    <Compile Include="GFxDeviceAmmoCount.d" />
-    <Compile Include="GFxTrAction.d" />
-    <Compile Include="GFxTrDevices.d" />
-    <Compile Include="GFxTrDialog_Error.d" />
-    <Compile Include="GFxTrDialog_Info.d" />
-    <Compile Include="GFxTrFront.d" />
-    <Compile Include="GFxTrFront_CustomGameSetup.d" />
-    <Compile Include="GFxTrFront_Dialog.d" />
-    <Compile Include="GFxTrFront_Party.d" />
-    <Compile Include="GFxTrFront_Setup.d" />
-    <Compile Include="GFxTrFront_View.d" />
+    <Compile Include="AlienFXManager.d">
+      <LastGenOutput>obj\Debug\AlienFXManager.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="dsWebAdmin.d">
+      <LastGenOutput>obj\Debug\dsWebAdmin.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxDeviceAmmoCount.d">
+      <LastGenOutput>obj\Debug\GFxDeviceAmmoCount.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrAction.d">
+      <LastGenOutput>obj\Debug\GFxTrAction.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrDevices.d">
+      <LastGenOutput>obj\Debug\GFxTrDevices.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrDialog_Error.d">
+      <LastGenOutput>obj\Debug\GFxTrDialog_Error.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrDialog_Info.d">
+      <LastGenOutput>obj\Debug\GFxTrDialog_Info.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront.d">
+      <LastGenOutput>obj\Debug\GFxTrFront.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront_CustomGameSetup.d">
+      <LastGenOutput>obj\Debug\GFxTrFront_CustomGameSetup.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront_Dialog.d">
+      <LastGenOutput>obj\Debug\GFxTrFront_Dialog.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront_Party.d">
+      <LastGenOutput>obj\Debug\GFxTrFront_Party.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront_Setup.d">
+      <LastGenOutput>obj\Debug\GFxTrFront_Setup.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrFront_View.d">
+      <LastGenOutput>obj\Debug\GFxTrFront_View.obj</LastGenOutput>
+    </Compile>
     <Compile Include="GfxTrHud.d" />
-    <Compile Include="GfxTrHudTeam.d" />
-    <Compile Include="GFxTrMenuMoviePlayer.d" />
-    <Compile Include="GFxTrMenuSounds.d" />
-    <Compile Include="GFxTrPage.d" />
-    <Compile Include="GFxTrPage_Accolades.d" />
-    <Compile Include="GFxTrPage_AudioSettings.d" />
-    <Compile Include="GFxTrPage_Badges.d" />
-    <Compile Include="GFxTrPage_BlockedPlayers.d" />
-    <Compile Include="GFxTrPage_Bundles.d" />
-    <Compile Include="GFxTrPage_BuyBoost.d" />
-    <Compile Include="GFxTrPage_BuyGold.d" />
-    <Compile Include="GFxTrPage_BuyGoldPortal.d" />
-    <Compile Include="GFxTrPage_BuyGoldSteam.d" />
-    <Compile Include="GFxTrPage_ChangeMap.d" />
-    <Compile Include="GFxTrPage_ClanTagChange.d" />
-    <Compile Include="GFxTrPage_Class.d" />
-    <Compile Include="GFxTrPage_Classes.d" />
-    <Compile Include="GFxTrPage_ClassSelect.d" />
-    <Compile Include="GFxTrPage_CmntyVideo.d" />
-    <Compile Include="GFxTrPage_ControlSettings.d" />
-    <Compile Include="GFxTrPage_CustomMatch.d" />
-    <Compile Include="GFxTrPage_Equip.d" />
-    <Compile Include="GFxTrPage_Extras.d" />
-    <Compile Include="GFxTrPage_FollowerActions.d" />
-    <Compile Include="GFxTrPage_Followers.d" />
-    <Compile Include="GFxTrPage_FriendActions.d" />
-    <Compile Include="GFxTrPage_FriendJoin.d" />
-    <Compile Include="GFxTrPage_Friends.d" />
-    <Compile Include="GFxTrPage_Game.d" />
-    <Compile Include="GFxTrPage_GameMapSetup.d" />
-    <Compile Include="GFxTrPage_GameRules.d" />
-    <Compile Include="GFxTrPage_GameType.d" />
-    <Compile Include="GFxTrPage_GameTypeFilter.d" />
-    <Compile Include="GFxTrPage_HiRezVideo.d" />
-    <Compile Include="GFxTrPage_HUDSettings.d" />
-    <Compile Include="GFxTrPage_JoinMatch.d" />
-    <Compile Include="GFxTrPage_KeybindAction.d" />
-    <Compile Include="GFxTrPage_KeybindCommunication.d" />
-    <Compile Include="GFxTrPage_KeybindGameplay.d" />
-    <Compile Include="GFxTrPage_KeybindHotkeys.d" />
-    <Compile Include="GFxTrPage_KeybindInterface.d" />
-    <Compile Include="GFxTrPage_KeybindMovement.d" />
-    <Compile Include="GFxTrPage_KeybindSettings.d" />
-    <Compile Include="GFxTrPage_KeybindSpecInterface.d" />
-    <Compile Include="GFxTrPage_KeybindSpecMovement.d" />
-    <Compile Include="GFxTrPage_KeybindSpecTargeting.d" />
-    <Compile Include="GFxTrPage_KeybindSpectator.d" />
-    <Compile Include="GFxTrPage_KeybindVehicle.d" />
-    <Compile Include="GFxTrPage_KeybindWeapon.d" />
-    <Compile Include="GFxTrPage_LiveStream.d" />
-    <Compile Include="GFxTrPage_Loadouts.d" />
-    <Compile Include="GFxTrPage_Login.d" />
-    <Compile Include="GFxTrPage_Main.d" />
-    <Compile Include="GFxTrPage_ManageProfile.d" />
-    <Compile Include="GFxTrPage_ManageProfiles.d" />
-    <Compile Include="GFxTrPage_ManageServer.d" />
-    <Compile Include="GFxTrPage_ManageServers.d" />
-    <Compile Include="GFxTrPage_MapRotation.d" />
-    <Compile Include="GFxTrPage_NameChange.d" />
-    <Compile Include="GFxTrPage_NotificationSettings.d" />
-    <Compile Include="GFxTrPage_Party.d" />
-    <Compile Include="GFxTrPage_PartyAction.d" />
-    <Compile Include="GFxTrPage_PartyInvite.d" />
-    <Compile Include="GFxTrPage_PartyMember.d" />
-    <Compile Include="GFxTrPage_PlayNow.d" />
-    <Compile Include="GFxTrPage_Profile.d" />
-    <Compile Include="GFxTrPage_Queued.d" />
-    <Compile Include="GFxTrPage_QuickMatch.d" />
-    <Compile Include="GFxTrPage_RankedMatch.d" />
-    <Compile Include="GFxTrPage_RegionSettings.d" />
-    <Compile Include="GFxTrPage_RentServer.d" />
-    <Compile Include="GFxTrPage_RoamArena.d" />
-    <Compile Include="GFxTrPage_RoamCAH.d" />
-    <Compile Include="GFxTrPage_RoamCTF.d" />
-    <Compile Include="GFxTrPage_RoamingMatch.d" />
-    <Compile Include="GFxTrPage_RoamRabbit.d" />
-    <Compile Include="GFxTrPage_RoamTDM.d" />
-    <Compile Include="GFxTrPage_RotationType.d" />
-    <Compile Include="GFxTrPage_ServerActions.d" />
-    <Compile Include="GFxTrPage_ServerAddTime.d" />
-    <Compile Include="GFxTrPage_ServerBase.d" />
-    <Compile Include="GFxTrPage_ServerCallin.d" />
-    <Compile Include="GFxTrPage_ServerClasses.d" />
-    <Compile Include="GFxTrPage_ServerEditCallin.d" />
-    <Compile Include="GFxTrPage_ServerFF.d" />
-    <Compile Include="GFxTrPage_ServerPlayer.d" />
-    <Compile Include="GFxTrPage_ServerScoring.d" />
-    <Compile Include="GFxTrPage_ServerSettings.d" />
-    <Compile Include="GFxTrPage_ServerSpawn.d" />
-    <Compile Include="GFxTrPage_ServerTeam.d" />
-    <Compile Include="GFxTrPage_ServerTeamJoin.d" />
-    <Compile Include="GFxTrPage_ServerTime.d" />
-    <Compile Include="GFxTrPage_ServerVehicle.d" />
-    <Compile Include="GFxTrPage_Settings.d" />
-    <Compile Include="GFxTrPage_Social.d" />
-    <Compile Include="GFxTrPage_Store.d" />
-    <Compile Include="GFxTrPage_TrainingMatch.d" />
-    <Compile Include="GFxTrPage_TrainVideo.d" />
-    <Compile Include="GFxTrPage_Vehicle.d" />
-    <Compile Include="GFxTrPage_VendorTable.d" />
-    <Compile Include="GFxTrPage_VideoGraphics.d" />
-    <Compile Include="GFxTrPage_VideoResolution.d" />
-    <Compile Include="GFxTrPage_VideoResolutionTypes.d" />
-    <Compile Include="GFxTrPage_VideoSettings.d" />
-    <Compile Include="GFxTrPage_VideoTexture.d" />
-    <Compile Include="GFxTrPage_VideoWindow.d" />
-    <Compile Include="GFxTrPage_WatchNow.d" />
-    <Compile Include="GFxTrPage_WhisperSettings.d" />
-    <Compile Include="GFxTrReticules.d" />
-    <Compile Include="GFxTrScene.d" />
-    <Compile Include="GFxTrScene_Class.d" />
-    <Compile Include="GFxTrScene_Container.d" />
-    <Compile Include="GFxTrScene_EULA.d" />
-    <Compile Include="GFxTrScene_ExperienceSummary.d" />
-    <Compile Include="GFxTrScene_Friends.d" />
-    <Compile Include="GFxTrScene_Header.d" />
-    <Compile Include="GFxTrScene_Login.d" />
-    <Compile Include="GFxTrScene_MatchSummary.d" />
-    <Compile Include="GFxTrScene_PlayerSummary.d" />
-    <Compile Include="GFxTrScene_PlayNow.d" />
-    <Compile Include="GFxTrScene_Profile.d" />
-    <Compile Include="GFxTrScene_Settings.d" />
-    <Compile Include="GFxTrScene_Social.d" />
-    <Compile Include="GFxTrUI_ClassMenu.d" />
-    <Compile Include="GFxTrUI_DeployableMenu.d" />
-    <Compile Include="GFxTrUI_LoadoutMenu.d" />
-    <Compile Include="GFxTrUI_MainMenu.d" />
-    <Compile Include="GFxTrUI_TeamSelectionMenu.d" />
-    <Compile Include="GFxTrUI_VehicleMenu.d" />
-    <Compile Include="GFxTrView_MatchMake.d" />
-    <Compile Include="Interface_TrTripNotifier.d" />
-    <Compile Include="TrAccolade.d" />
-    <Compile Include="TrAccolade_Aftermath.d" />
-    <Compile Include="TrAccolade_AirMail.d" />
-    <Compile Include="TrAccolade_ArtilleryStrike.d" />
-    <Compile Include="TrAccolade_Assist.d" />
-    <Compile Include="TrAccolade_Assist_Vehicle.d" />
-    <Compile Include="TrAccolade_BaseAssist.d" />
-    <Compile Include="TrAccolade_BaseRadarKill.d" />
-    <Compile Include="TrAccolade_BaseRepair.d" />
-    <Compile Include="TrAccolade_BaseTurretKill.d" />
-    <Compile Include="TrAccolade_BenchEm.d" />
-    <Compile Include="TrAccolade_BluePlateSpecial.d" />
-    <Compile Include="TrAccolade_Caerbannog.d" />
-    <Compile Include="TrAccolade_CaptureAndHold.d" />
-    <Compile Include="TrAccolade_DoubleDown.d" />
-    <Compile Include="TrAccolade_FastGrab.d" />
-    <Compile Include="TrAccolade_FinalBlow.d" />
-    <Compile Include="TrAccolade_FirstBlood.d" />
-    <Compile Include="TrAccolade_FlagAssist.d" />
-    <Compile Include="TrAccolade_FlagCap.d" />
-    <Compile Include="TrAccolade_FlagDefense.d" />
-    <Compile Include="TrAccolade_FlagGrab.d" />
-    <Compile Include="TrAccolade_FlagGrabCTF.d" />
-    <Compile Include="TrAccolade_FlagGrabDM.d" />
-    <Compile Include="TrAccolade_FlagGrabE.d" />
-    <Compile Include="TrAccolade_FlagGrabLlama.d" />
-    <Compile Include="TrAccolade_FlagHolder.d" />
-    <Compile Include="TrAccolade_FlagKiller.d" />
-    <Compile Include="TrAccolade_FlagReturn.d" />
-    <Compile Include="TrAccolade_GameComplete.d" />
-    <Compile Include="TrAccolade_GameWinner.d" />
-    <Compile Include="TrAccolade_GenDefense.d" />
-    <Compile Include="TrAccolade_GeneratorKill.d" />
-    <Compile Include="TrAccolade_Headshot.d" />
-    <Compile Include="TrAccolade_HeavyVehicleDestroy.d" />
-    <Compile Include="TrAccolade_HoldTheLine.d" />
-    <Compile Include="TrAccolade_HotAir.d" />
-    <Compile Include="TrAccolade_KillStreak_Explosive_Fifteen.d" />
-    <Compile Include="TrAccolade_KillStreak_Explosive_Five.d" />
-    <Compile Include="TrAccolade_KillStreak_Explosive_Ten.d" />
-    <Compile Include="TrAccolade_KillStreak_Fifteen.d" />
-    <Compile Include="TrAccolade_KillStreak_Five.d" />
-    <Compile Include="TrAccolade_KillStreak_Sniping_Fifteen.d" />
-    <Compile Include="TrAccolade_KillStreak_Sniping_Five.d" />
-    <Compile Include="TrAccolade_KillStreak_Sniping_Ten.d" />
-    <Compile Include="TrAccolade_KillStreak_Spinfusor_Fifteen.d" />
-    <Compile Include="TrAccolade_KillStreak_Spinfusor_Five.d" />
-    <Compile Include="TrAccolade_KillStreak_Spinfusor_Ten.d" />
-    <Compile Include="TrAccolade_KillStreak_Ten.d" />
-    <Compile Include="TrAccolade_KillStreak_Twenty.d" />
-    <Compile Include="TrAccolade_KillStreak_TwentyFive.d" />
-    <Compile Include="TrAccolade_LastManStanding.d" />
-    <Compile Include="TrAccolade_LightVehicleDestroy.d" />
-    <Compile Include="TrAccolade_MediumVehicleDestroy.d" />
-    <Compile Include="TrAccolade_Melee.d" />
-    <Compile Include="TrAccolade_Miracle.d" />
-    <Compile Include="TrAccolade_MultiKill_Double.d" />
-    <Compile Include="TrAccolade_MultiKill_Quatra.d" />
-    <Compile Include="TrAccolade_MultiKill_Team.d" />
-    <Compile Include="TrAccolade_MultiKill_Triple.d" />
-    <Compile Include="TrAccolade_MultiKill_Ultra.d" />
-    <Compile Include="TrAccolade_NoJoy.d" />
-    <Compile Include="TrAccolade_NotAmongEquals.d" />
-    <Compile Include="TrAccolade_OneManArmy.d" />
-    <Compile Include="TrAccolade_RabbitHunter.d" />
-    <Compile Include="TrAccolade_Revenge.d" />
-    <Compile Include="TrAccolade_Roadkill.d" />
-    <Compile Include="TrAccolade_Sticky.d" />
-    <Compile Include="TrAccolade_TribalHonor.d" />
-    <Compile Include="TrAccolade_TurretAssist.d" />
-    <Compile Include="TrAccolade_UltraGrab.d" />
-    <Compile Include="TrAccolade_UnitedWeStand.d" />
-    <Compile Include="TrAccoladeHelper.d" />
-    <Compile Include="TrAccoladeList.d" />
-    <Compile Include="TrAccoladeManager.d" />
-    <Compile Include="TrActorFactoryPawn.d" />
-    <Compile Include="TrActorFactoryVehicle.d" />
-    <Compile Include="TrAnimNodeAimOffset.d" />
-    <Compile Include="TrAnimNodeBlendBy3pDevice.d" />
-    <Compile Include="TrAnimNodeBlendByDeployableState.d" />
-    <Compile Include="TrAnimNodeBlendByDeviceAnim.d" />
-    <Compile Include="TrAnimNodeBlendByDirection.d" />
-    <Compile Include="TrAnimNodeBlendByFlagDirection.d" />
-    <Compile Include="TrAnimNodeBlendByFlying.d" />
-    <Compile Include="TrAnimNodeBlendByFlyingVehicleThrottle.d" />
-    <Compile Include="TrAnimNodeBlendByGravCycleDirection.d" />
-    <Compile Include="TrAnimNodeBlendByGravCycleTilt.d" />
-    <Compile Include="TrAnimNodeBlendByPhysics.d" />
+    <Compile Include="GfxTrHudTeam.d">
+      <LastGenOutput>obj\Debug\GfxTrHudTeam.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrMenuMoviePlayer.d">
+      <LastGenOutput>obj\Debug\GFxTrMenuMoviePlayer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrMenuSounds.d">
+      <LastGenOutput>obj\Debug\GFxTrMenuSounds.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage.d">
+      <LastGenOutput>obj\Debug\GFxTrPage.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Accolades.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Accolades.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_AudioSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_AudioSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Badges.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Badges.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_BlockedPlayers.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_BlockedPlayers.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Bundles.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Bundles.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_BuyBoost.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_BuyBoost.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_BuyGold.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_BuyGold.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_BuyGoldPortal.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_BuyGoldPortal.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_BuyGoldSteam.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_BuyGoldSteam.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ChangeMap.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ChangeMap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ClanTagChange.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ClanTagChange.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Class.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Class.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Classes.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Classes.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ClassSelect.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ClassSelect.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_CmntyVideo.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_CmntyVideo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ControlSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ControlSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_CustomMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_CustomMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Equip.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Equip.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Extras.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Extras.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_FollowerActions.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_FollowerActions.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Followers.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Followers.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_FriendActions.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_FriendActions.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_FriendJoin.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_FriendJoin.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Friends.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Friends.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Game.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Game.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_GameMapSetup.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_GameMapSetup.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_GameRules.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_GameRules.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_GameType.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_GameType.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_GameTypeFilter.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_GameTypeFilter.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_HiRezVideo.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_HiRezVideo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_HUDSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_HUDSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_JoinMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_JoinMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindAction.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindAction.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindCommunication.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindCommunication.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindGameplay.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindGameplay.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindHotkeys.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindHotkeys.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindInterface.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindInterface.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindMovement.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindMovement.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindSpecInterface.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindSpecInterface.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindSpecMovement.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindSpecMovement.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindSpecTargeting.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindSpecTargeting.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindSpectator.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindSpectator.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindVehicle.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindVehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_KeybindWeapon.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_KeybindWeapon.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_LiveStream.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_LiveStream.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Loadouts.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Loadouts.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Login.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Login.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Main.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Main.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ManageProfile.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ManageProfile.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ManageProfiles.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ManageProfiles.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ManageServer.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ManageServer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ManageServers.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ManageServers.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_MapRotation.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_MapRotation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_NameChange.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_NameChange.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_NotificationSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_NotificationSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Party.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Party.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_PartyAction.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_PartyAction.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_PartyInvite.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_PartyInvite.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_PartyMember.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_PartyMember.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_PlayNow.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_PlayNow.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Profile.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Profile.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Queued.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Queued.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_QuickMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_QuickMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RankedMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RankedMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RegionSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RegionSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RentServer.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RentServer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamArena.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamArena.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamCAH.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamCAH.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamCTF.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamCTF.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamingMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamingMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamRabbit.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamRabbit.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RoamTDM.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RoamTDM.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_RotationType.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_RotationType.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerActions.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerActions.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerAddTime.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerAddTime.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerBase.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerCallin.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerCallin.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerClasses.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerClasses.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerEditCallin.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerEditCallin.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerFF.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerFF.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerPlayer.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerPlayer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerScoring.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerScoring.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerSpawn.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerSpawn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerTeam.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerTeam.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerTeamJoin.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerTeamJoin.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerTime.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerTime.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_ServerVehicle.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_ServerVehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Settings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Settings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Social.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Social.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Store.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Store.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_TrainingMatch.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_TrainingMatch.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_TrainVideo.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_TrainVideo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_Vehicle.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_Vehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VendorTable.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VendorTable.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoGraphics.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoGraphics.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoResolution.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoResolution.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoResolutionTypes.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoResolutionTypes.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoTexture.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoTexture.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_VideoWindow.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_VideoWindow.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_WatchNow.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_WatchNow.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrPage_WhisperSettings.d">
+      <LastGenOutput>obj\Debug\GFxTrPage_WhisperSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrReticules.d">
+      <LastGenOutput>obj\Debug\GFxTrReticules.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene.d">
+      <LastGenOutput>obj\Debug\GFxTrScene.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Class.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Class.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Container.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Container.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_EULA.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_EULA.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_ExperienceSummary.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_ExperienceSummary.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Friends.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Friends.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Header.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Header.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Login.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Login.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_MatchSummary.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_MatchSummary.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_PlayerSummary.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_PlayerSummary.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_PlayNow.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_PlayNow.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Profile.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Profile.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Settings.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Settings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrScene_Social.d">
+      <LastGenOutput>obj\Debug\GFxTrScene_Social.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_ClassMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_ClassMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_DeployableMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_DeployableMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_LoadoutMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_LoadoutMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_MainMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_MainMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_TeamSelectionMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_TeamSelectionMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrUI_VehicleMenu.d">
+      <LastGenOutput>obj\Debug\GFxTrUI_VehicleMenu.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxTrView_MatchMake.d">
+      <LastGenOutput>obj\Debug\GFxTrView_MatchMake.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="Interface_TrTripNotifier.d">
+      <LastGenOutput>obj\Debug\Interface_TrTripNotifier.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade.d">
+      <LastGenOutput>obj\Debug\TrAccolade.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Aftermath.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Aftermath.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_AirMail.d">
+      <LastGenOutput>obj\Debug\TrAccolade_AirMail.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_ArtilleryStrike.d">
+      <LastGenOutput>obj\Debug\TrAccolade_ArtilleryStrike.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Assist.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Assist.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Assist_Vehicle.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Assist_Vehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BaseAssist.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BaseAssist.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BaseRadarKill.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BaseRadarKill.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BaseRepair.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BaseRepair.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BaseTurretKill.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BaseTurretKill.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BenchEm.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BenchEm.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_BluePlateSpecial.d">
+      <LastGenOutput>obj\Debug\TrAccolade_BluePlateSpecial.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Caerbannog.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Caerbannog.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_CaptureAndHold.d">
+      <LastGenOutput>obj\Debug\TrAccolade_CaptureAndHold.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_DoubleDown.d">
+      <LastGenOutput>obj\Debug\TrAccolade_DoubleDown.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FastGrab.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FastGrab.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FinalBlow.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FinalBlow.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FirstBlood.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FirstBlood.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagAssist.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagAssist.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagCap.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagCap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagDefense.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagDefense.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagGrab.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagGrab.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagGrabCTF.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagGrabCTF.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagGrabDM.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagGrabDM.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagGrabE.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagGrabE.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagGrabLlama.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagGrabLlama.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagHolder.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagHolder.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagKiller.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagKiller.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_FlagReturn.d">
+      <LastGenOutput>obj\Debug\TrAccolade_FlagReturn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_GameComplete.d">
+      <LastGenOutput>obj\Debug\TrAccolade_GameComplete.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_GameWinner.d">
+      <LastGenOutput>obj\Debug\TrAccolade_GameWinner.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_GenDefense.d">
+      <LastGenOutput>obj\Debug\TrAccolade_GenDefense.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_GeneratorKill.d">
+      <LastGenOutput>obj\Debug\TrAccolade_GeneratorKill.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Headshot.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Headshot.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_HeavyVehicleDestroy.d">
+      <LastGenOutput>obj\Debug\TrAccolade_HeavyVehicleDestroy.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_HoldTheLine.d">
+      <LastGenOutput>obj\Debug\TrAccolade_HoldTheLine.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_HotAir.d">
+      <LastGenOutput>obj\Debug\TrAccolade_HotAir.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Explosive_Fifteen.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Explosive_Fifteen.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Explosive_Five.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Explosive_Five.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Explosive_Ten.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Explosive_Ten.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Fifteen.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Fifteen.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Five.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Five.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Sniping_Fifteen.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Sniping_Fifteen.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Sniping_Five.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Sniping_Five.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Sniping_Ten.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Sniping_Ten.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Spinfusor_Fifteen.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Spinfusor_Fifteen.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Spinfusor_Five.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Spinfusor_Five.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Spinfusor_Ten.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Spinfusor_Ten.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Ten.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Ten.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_Twenty.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_Twenty.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_KillStreak_TwentyFive.d">
+      <LastGenOutput>obj\Debug\TrAccolade_KillStreak_TwentyFive.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_LastManStanding.d">
+      <LastGenOutput>obj\Debug\TrAccolade_LastManStanding.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_LightVehicleDestroy.d">
+      <LastGenOutput>obj\Debug\TrAccolade_LightVehicleDestroy.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MediumVehicleDestroy.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MediumVehicleDestroy.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Melee.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Melee.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Miracle.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Miracle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MultiKill_Double.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MultiKill_Double.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MultiKill_Quatra.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MultiKill_Quatra.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MultiKill_Team.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MultiKill_Team.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MultiKill_Triple.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MultiKill_Triple.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_MultiKill_Ultra.d">
+      <LastGenOutput>obj\Debug\TrAccolade_MultiKill_Ultra.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_NoJoy.d">
+      <LastGenOutput>obj\Debug\TrAccolade_NoJoy.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_NotAmongEquals.d">
+      <LastGenOutput>obj\Debug\TrAccolade_NotAmongEquals.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_OneManArmy.d">
+      <LastGenOutput>obj\Debug\TrAccolade_OneManArmy.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_RabbitHunter.d">
+      <LastGenOutput>obj\Debug\TrAccolade_RabbitHunter.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Revenge.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Revenge.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Roadkill.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Roadkill.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_Sticky.d">
+      <LastGenOutput>obj\Debug\TrAccolade_Sticky.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_TribalHonor.d">
+      <LastGenOutput>obj\Debug\TrAccolade_TribalHonor.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_TurretAssist.d">
+      <LastGenOutput>obj\Debug\TrAccolade_TurretAssist.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_UltraGrab.d">
+      <LastGenOutput>obj\Debug\TrAccolade_UltraGrab.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccolade_UnitedWeStand.d">
+      <LastGenOutput>obj\Debug\TrAccolade_UnitedWeStand.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccoladeHelper.d">
+      <LastGenOutput>obj\Debug\TrAccoladeHelper.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccoladeList.d">
+      <LastGenOutput>obj\Debug\TrAccoladeList.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAccoladeManager.d">
+      <LastGenOutput>obj\Debug\TrAccoladeManager.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrActorFactoryPawn.d">
+      <LastGenOutput>obj\Debug\TrActorFactoryPawn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrActorFactoryVehicle.d">
+      <LastGenOutput>obj\Debug\TrActorFactoryVehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeAimOffset.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeAimOffset.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendBy3pDevice.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendBy3pDevice.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByDeployableState.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByDeployableState.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByDeviceAnim.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByDeviceAnim.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByDirection.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByDirection.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByFlagDirection.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByFlagDirection.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByFlying.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByFlying.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByFlyingVehicleThrottle.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByFlyingVehicleThrottle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByGravCycleDirection.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByGravCycleDirection.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByGravCycleTilt.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByGravCycleTilt.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="TrAnimNodeBlendByPhysics.d">
+      <LastGenOutput>obj\Debug\TrAnimNodeBlendByPhysics.obj</LastGenOutput>
+    </Compile>
     <Compile Include="TrAnimNodeBlendByRidingPassenger.d" />
     <Compile Include="TrAnimNodeBlendBySpeed.d" />
     <Compile Include="TrAnimNodeBlendByTankSteering.d" />
