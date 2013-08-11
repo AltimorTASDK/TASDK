@@ -22,7 +22,7 @@ static void Init()
 		MODULEINFO moduleInfo = GetModuleInfo("TribesAscend.exe");
 
 		ScriptArray!(ScriptObject)* object_array = *cast(ScriptArray!(ScriptObject)**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigObjects, kMaskObjects) + 1);
-		ScriptObject.ObjectArray = object_array;
+		ScriptObject.SetObjectArray(object_array);
 		ScriptName.NameArray = *cast(ScriptArray!(ScriptNameEntry*)**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigNames, kMaskNames) + 2);
 
 		ScriptHooks.NativeArray = *cast(NativeFunction**)(FindPattern(moduleInfo.lpBaseOfDll, moduleInfo.SizeOfImage, kSigNatives, kMaskNatives) + 3);

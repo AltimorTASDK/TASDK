@@ -79,9 +79,6 @@ public:
 
 extern(C++) public interface ScriptObject // Total size: 0x3C
 {
-private:
-	static ScriptArray!(ScriptObject)* mObjectArray;
-
 public:
 	@property
 	{
@@ -99,17 +96,54 @@ public:
 		final auto ref ScriptObject ObjectArchetype() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x38); }	// 0x38 (0x04)
 	}
 
-	@property final static auto ref ScriptArray!(ScriptObject)* ObjectArray() { return mObjectArray; }
+	private static ScriptArray!(ScriptObject)* mObjectArray;
+	@property final static ScriptArray!(ScriptObject)* ObjectArray() { return mObjectArray; }
+	
+	private static ScriptClass[string] mClassLookup;
+	private static ScriptFunction[string] mFunctionLookup;
+	private static ScriptStruct[string] mStructLookup;
+	final static void SetObjectArray(ScriptArray!(ScriptObject)* arr)
+	{
+		mObjectArray = arr;
+
+		for (int i = 0; i < ObjectArray.Count; i++)
+		{
+			ScriptObject obj = (*ObjectArray)[i];
+			switch (obj.ObjectClass.GetName())
+			{
+				case "Class":
+					mClassLookup[obj.GetFullName()] = cast(ScriptClass)obj;
+					break;
+				case "Function":
+					mFunctionLookup[obj.GetFullName()] = cast(ScriptFunction)obj;
+					break;
+				case "ScriptStruct":
+					mStructLookup[obj.GetFullName()] = cast(ScriptStruct)obj;
+					break;
+				default:
+					break;
+			}
+		}
+	}
 
 	final static T Find(T)(string name)
 	{
-		for(int i = 0; i < ObjectArray.Count; i++)
+		static if (is(T == ScriptClass))
+			return mClassLookup.get(name, null);
+		else static if (is(T == ScriptFunction))
+			return mFunctionLookup.get(name, null);
+		else static if (is(T == ScriptStruct))
+			return mStructLookup.get(name, null);
+		else
 		{
-			ScriptObject object = (*ObjectArray)[i];
-			if(object.GetFullName() == name)
-				return cast(T)object;
+			for(int i = 0; i < ObjectArray.Count; i++)
+			{
+				ScriptObject object = (*ObjectArray)[i];
+				if(object.GetFullName() == name)
+					return cast(T)object;
+			}
+			return null;
 		}
-		return null;
 	}
 
 	final immutable(string) GetName() { return Name.GetName(); }
