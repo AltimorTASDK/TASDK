@@ -115,10 +115,16 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 						cont.Functions ~= cast(FunctionDescriptor)desc;
 						break;
 					case DescriptorType.Property:
-						cont.Properties ~= cast(PropertyDescriptor)desc;
+					{
+						PropertyDescriptor pDesc = cast(PropertyDescriptor)desc;
+						if (pDesc.IsBoolProperty)
+							cont.BoolProperties ~= pDesc;
+						else
+							cont.Properties ~= pDesc;
 						if (parent.Type == DescriptorType.Struct)
-							(cast(PropertyDescriptor)desc).ParentIsStruct = true;
+							pDesc.ParentIsStruct = true;
 						break;
+					}
 					case DescriptorType.Struct:
 						cont.NestedStructs ~= cast(StructDescriptor)desc;
 						break;
@@ -225,13 +231,9 @@ final class DependencyManager
 	{
 		if (NeedsScriptClasses)
 			wtr.WriteLine("import ScriptClasses;");
+		// TODO: Sort these before writing them out.
 		foreach (ri; RequiredImports.byValue())
-		{
 			wtr.WriteLine("import %s;", GetImportName(ri));
-			//if (ri.GetName() == "Object")
-			//	wtr.WriteLine("import UObject : UObject;");
-			//wtr.WriteLine("import %s : %s;", ri.GetName(), ri.GetName());
-		}
 	}
 }
 
@@ -349,7 +351,7 @@ final class ConstantDescriptor : Descriptor
 	}
 
 	override void RequireDependencies(DependencyManager mgr) { }
-	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method isn't implemented!"); }
+	override void Write(IndentedStreamWriter wtr) { assert(0, "This method isn't implemented!"); }
 	void Write(IndentedStreamWriter wtr, bool alone)
 	{
 		string valString = InnerConstant.Value.ToString();
@@ -382,16 +384,18 @@ final class PropertyDescriptor : Descriptor
 
 	ScriptProperty InnerProperty;
 	bool ParentIsStruct;
+	bool IsBoolProperty;
 	this(ScriptProperty innerProperty)
 	{
 		InnerProperty = innerProperty;
 		ParentIsStruct = false;
+		IsBoolProperty = InnerProperty.ObjectClass.GetName() == "BoolProperty";
 	}
 
 	// TODO: Add support for DelegateProperty, MapProperty, FixedArrayProperty, PointerProperty, InterfaceProperty, and ComponentProperty
 
 	override void RequireDependencies(DependencyManager mgr) { mgr.ProcessProperty(InnerProperty); }
-	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method is not implemented!"); }
+	override void Write(IndentedStreamWriter wtr) { assert(0, "This method is not implemented!"); }
 
 	void Write(IndentedStreamWriter wtr, bool alone)
 	{
@@ -428,10 +432,12 @@ final class PropertyDescriptor : Descriptor
 			case "StrProperty":
 			case "NameProperty":
 			case "ArrayProperty":
+				if (alone)
+					wtr.Write("auto ref ");
 				if (ParentIsStruct)
-					wtr.WriteLine("auto ref %s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("%s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine("auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("%s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 			default:
 				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
@@ -573,7 +579,7 @@ final class FunctionDescriptor : Descriptor
 			arg.RequireDependencies(mgr);
 	}
 
-	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method is not implemented!"); }
+	override void Write(IndentedStreamWriter wtr) { assert(0, "This method is not implemented!"); }
 	void Write(IndentedStreamWriter wtr, bool alone)
 	{
 		// Check to see if the function name is the same as a valid type.
@@ -655,7 +661,72 @@ abstract class NestableContainer : Descriptor
 	EnumDescriptor[] NestedEnums;
 	StructDescriptor[] NestedStructs;
 	PropertyDescriptor[] Properties;
+	PropertyDescriptor[] BoolProperties;
 	FunctionDescriptor[] Functions;
+
+	final void WriteChildren(IndentedStreamWriter wtr)
+	{
+		// Nested Constants
+		if (NestedConstants.length > 1)
+		{
+			wtr.WriteLine("enum");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
+		foreach (nc; NestedConstants)
+			nc.Write(wtr, NestedConstants.length <= 1);
+		if (NestedConstants.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
+		// Nested Enums
+		foreach (ne; NestedEnums)
+			ne.Write(wtr);
+
+		// Nested Structs
+		foreach (ns; NestedStructs)
+			ns.Write(wtr);
+
+		// Properties & Bool Properties
+		if (Properties.length + BoolProperties.length > 1)
+		{
+			wtr.WriteLine("@property final");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
+		if (Properties.length > 1)
+		{
+			wtr.WriteLine("auto ref");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
+		foreach (p; Properties)
+			p.Write(wtr, Properties.length <= 1);
+		if (Properties.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+		foreach (bp; BoolProperties)
+			bp.Write(wtr, BoolProperties.length <= 1);
+		if (Properties.length + BoolProperties.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
+		// Functions
+		if (Functions.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("final:");
+			wtr.Indent++;
+		}
+		foreach (f; Functions)
+			f.Write(wtr, Functions.length <= 1);
+	}
 }
 
 final class ClassDescriptor : NestableContainer
@@ -683,6 +754,8 @@ final class ClassDescriptor : NestableContainer
 			ns.RequireDependencies(mgr);
 		foreach (p; Properties)
 			p.RequireDependencies(mgr);
+		foreach (bp; BoolProperties)
+			bp.RequireDependencies(mgr);
 		foreach (f; Functions)
 			f.RequireDependencies(mgr);
 	}
@@ -718,47 +791,7 @@ final class ClassDescriptor : NestableContainer
 		wtr.WriteLine("public extern(D):");
 		wtr.Indent++;
 		
-		if (NestedConstants.length > 1)
-		{
-			wtr.WriteLine("enum");
-			wtr.WriteLine("{");
-			wtr.Indent++;
-		}
-		foreach (nc; NestedConstants)
-			nc.Write(wtr, NestedConstants.length <= 1);
-		if (NestedConstants.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("}");
-		}
-
-		foreach (ne; NestedEnums)
-			ne.Write(wtr);
-		foreach (ns; NestedStructs)
-			ns.Write(wtr);
-
-		if (Properties.length > 1)
-		{
-			wtr.WriteLine("@property final");
-			wtr.WriteLine("{");
-			wtr.Indent++;
-		}
-		foreach (p; Properties)
-			p.Write(wtr, Properties.length <= 1);
-		if (Properties.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("}");
-		}
-
-		if (Functions.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("final:");
-			wtr.Indent++;
-		}
-		foreach (f; Functions)
-			f.Write(wtr, Functions.length <= 1);
+		WriteChildren(wtr);
 
 		wtr.Indent--;
 		wtr.WriteLine("}");
@@ -802,6 +835,8 @@ final class StructDescriptor : NestableContainer
 			ns.RequireDependencies(mgr);
 		foreach (p; Properties)
 			p.RequireDependencies(mgr);
+		foreach (bp; BoolProperties)
+			bp.RequireDependencies(mgr);
 		foreach (f; Functions)
 			f.RequireDependencies(mgr);
 	}
@@ -828,47 +863,6 @@ final class StructDescriptor : NestableContainer
 	{
 		if (InnerStruct.Super)
 			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
-
-		if (NestedConstants.length > 1)
-		{
-			wtr.WriteLine("enum");
-			wtr.WriteLine("{");
-			wtr.Indent++;
-		}
-		foreach (nc; NestedConstants)
-			nc.Write(wtr, NestedConstants.length <= 1);
-		if (NestedConstants.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("}");
-		}
-
-		foreach (ne; NestedEnums)
-			ne.Write(wtr);
-		foreach (ns; NestedStructs)
-			ns.Write(wtr);
-
-		if (Properties.length > 1)
-		{
-			wtr.WriteLine("@property final");
-			wtr.WriteLine("{");
-			wtr.Indent++;
-		}
-		foreach (p; Properties)
-			p.Write(wtr, Properties.length <= 1);
-		if (Properties.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("}");
-		}
-
-		if (Functions.length > 1)
-		{
-			wtr.Indent--;
-			wtr.WriteLine("final:");
-			wtr.Indent++;
-		}
-		foreach (f; Functions)
-			f.Write(wtr, Functions.length <= 1);
+		WriteChildren(wtr);
 	}
 }

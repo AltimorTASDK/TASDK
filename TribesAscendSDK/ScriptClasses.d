@@ -259,12 +259,131 @@ public:
 
 public enum ScriptFunctionFlags : uint // Total size: 0x04
 {
-	Final = 1 << 0,
-	Latent = 1 << 3,
-	Simulated = 1 << 8,
-	Exec = 1 << 9,
-	Native = 1 << 10,
-	Event = 1 << 11,
+	/**
+	 * Function is final (prebindable, non-overridable function).
+	 */
+	Final					= 1 <<  0,
+	/**
+	 * Function has been defined (not just declared).
+	 */
+	Defined					= 1 <<  1,
+	/**
+	 * Function is an iterator.
+	 */
+	Iterator				= 1 <<  2,
+	/**
+	 * Function is a latent state function.
+	 */
+	Latent					= 1 <<  3,
+	/**
+	 * Unary operator is a prefix operator.
+	 */
+	PreOperator				= 1 <<  4,
+	/**
+	 * Function cannot be reentered.
+	 */
+	Singular				= 1 <<  5,
+	/**
+	 * Function is network-replicated.
+	 */
+	Net						= 1 <<  6,
+	/**
+	 * Function should be sent reliably on the network.
+	 */
+	NetReliable				= 1 <<  7,
+	/**
+	 * Function executed on the client side.
+	 */
+	Simulated				= 1 <<  8,
+	/**
+	 * Executable from command line.
+	 */
+	Exec					= 1 <<  9,
+	/**
+	 * Native function.
+	 */
+	Native					= 1 << 10,
+	/**
+	 * Event function.
+	 */
+	Event					= 1 << 11,
+	/**
+	 * Operator function.
+	 */
+	Operator				= 1 << 12,
+	/**
+	 * Static function.
+	 */
+	Static					= 1 << 13,
+	/**
+	 * Function has optional parameters.
+	 */
+	HasOptionalParams		= 1 << 14,
+	/**
+	 * Function doesn't modify this object.
+	 */
+	Const					= 1 << 15,
+	/**
+	 * Return value is purely dependent on parameters; no state dependencies or internal state changes.
+	 */
+	Invarient				= 1 << 16,
+	/**
+	 * Function is accessible in all classes (if overridden, parameters much remain unchanged).
+	 */
+	Public					= 1 << 17,
+	/**
+	 * Function is accessible only in the class it is defined in (cannot be overriden, but function
+	 * name may be reused in subclasses.  IOW: if overridden, parameters don't need to match, and
+	 * Super.Func() cannot be accessed since it's private.)
+	 */
+	Private					= 1 << 18,
+	/**
+	 * Function is accessible only in the class it is defined in and subclasses (if overridden, parameters much remain unchanged).
+	 */
+	Protected				= 1 << 19,
+	/**
+	 * Function is actually a delegate.
+	 */
+	Delegate				= 1 << 20,
+	/**
+	 * Function is executed on servers (set by replication code if passes check).
+	 */
+	NetServer				= 1 << 21,
+	/**
+	 * Function has out (pass by reference) parameters.
+	 */
+	HasOutParams			= 1 << 22,
+	/**
+	 * Function has structs that contain defaults.
+	 */
+	HasDefaults				= 1 << 23,
+	/**
+	 * Function is executed on clients.
+	 */
+	NetClient				= 1 << 24,
+	/**
+	 * Function is imported from a DLL.
+	 */
+	DLLImport				= 1 << 25,
+	/**
+	 * Function can be called from K2.
+	 */
+	K2Call					= 1 << 26,
+	/**
+	 * Function can be overriden/implemented from K2.
+	 */
+	K2Override				= 1 << 27,
+	/**
+	 * Function can be called from K2, and is also pure (produces no side effects).
+	 * If you set this, you should set K2Call as well.
+	 */
+	K2Pure					= 1 << 28,
+
+	InheritFuncFlags = Exec | Event,
+	OverrideFuncMatchFlags = Exec | Final | Latent | PreOperator | Iterator | Static | Public | Protected | Const,
+	NetFuncFlags = Net | NetReliable | NetServer | NetClient,
+
+	AllFlags = 0xFFFFFFFF,
 }
 
 extern(C++) public interface ScriptState : ScriptStruct // Total size: 0xD8
