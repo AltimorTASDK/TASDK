@@ -660,6 +660,7 @@ final class FunctionDescriptor : Descriptor
 
 abstract class NestableContainer : Descriptor
 {
+	@property final bool HasChildren() { return NestedConstants.length + NestedEnums.length + NestedStructs.length + Properties.length + BoolProperties.length + Functions.length != 0; }
 	ConstantDescriptor[] NestedConstants;
 	EnumDescriptor[] NestedEnums;
 	StructDescriptor[] NestedStructs;
@@ -788,7 +789,8 @@ final class ClassDescriptor : NestableContainer
 			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
-		wtr.WriteLine("public extern(D):");
+		if (HasChildren)
+			wtr.WriteLine("public extern(D):");
 		wtr.Indent++;
 		
 		WriteChildren(wtr);
