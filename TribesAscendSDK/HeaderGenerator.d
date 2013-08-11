@@ -690,17 +690,26 @@ abstract class NestableContainer : Descriptor
 			ns.Write(wtr);
 
 		// Properties & Bool Properties
-		if (Properties.length + (BoolProperties.length * 2) > 1)
+		if (Properties.length > 1 && BoolProperties.length == 0)
 		{
-			wtr.WriteLine("@property final");
+			wtr.WriteLine("@property final auto ref");
 			wtr.WriteLine("{");
 			wtr.Indent++;
 		}
-		if (Properties.length > 1)
+		else
 		{
-			wtr.WriteLine("auto ref");
-			wtr.WriteLine("{");
-			wtr.Indent++;
+			if (Properties.length + (BoolProperties.length * 2) > 1)
+			{
+				wtr.WriteLine("@property final");
+				wtr.WriteLine("{");
+				wtr.Indent++;
+			}
+			if (Properties.length > 1)
+			{
+				wtr.WriteLine("auto ref");
+				wtr.WriteLine("{");
+				wtr.Indent++;
+			}
 		}
 		foreach (p; Properties)
 			p.Write(wtr, Properties.length <= 1);
@@ -713,7 +722,7 @@ abstract class NestableContainer : Descriptor
 		// if it calls Write on a BoolProperty, it is not alone.
 		foreach (bp; BoolProperties)
 			bp.Write(wtr, false);
-		if (Properties.length + (BoolProperties.length * 2) > 1)
+		if (BoolProperties.length >= 1)
 		{
 			wtr.Indent--;
 			wtr.WriteLine("}");
