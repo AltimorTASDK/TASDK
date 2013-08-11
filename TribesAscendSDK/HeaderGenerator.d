@@ -620,7 +620,7 @@ final class FunctionDescriptor : Descriptor
 		foreach (arg; Arguments)
 			arg.WriteLoadToBuffer(wtr, "params");
 
-		wtr.Write("(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[%u], ", InnerFunction.ObjectInternalInteger);
+		wtr.Write("(cast(ScriptObject)this).ProcessEvent(ScriptObject.Find!(ScriptFunction)(\"%s\"), ", InnerFunction.GetFullName());
 		if (InnerFunction.ParamsSize > 0)
 			wtr.Write("params.ptr");
 		else
