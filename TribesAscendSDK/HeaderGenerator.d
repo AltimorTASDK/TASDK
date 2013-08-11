@@ -600,24 +600,20 @@ final class FunctionDescriptor : Descriptor
 			wtr.Write("void");
 		wtr.Write(" %s(", InnerFunction.GetName());
 
-		int paramSize = 0;
 		for (int i = 0; i < Arguments.length; i++)
 		{
 			Arguments[i].WriteDeclaration(wtr);
-			paramSize += Arguments[i].InnerProperty.ElementSize;
 			if (i + 1 != Arguments.length)
 				wtr.Write(", ");
 		}
-		if (ReturnProperty)
-			paramSize += ReturnProperty.ElementSize;
 
 		wtr.WriteLine(")");
 		wtr.WriteLine("{");
 		wtr.Indent++;
 
-		if (paramSize > 0)
+		if (InnerFunction.ParamsSize > 0)
 		{
-			wtr.WriteLine("ubyte params[%u]; // %u", InnerFunction.ParamsSize, paramSize);
+			wtr.WriteLine("ubyte params[%u];", InnerFunction.ParamsSize);
 			wtr.WriteLine("params[] = 0;");
 		}
 
@@ -640,9 +636,9 @@ final class FunctionDescriptor : Descriptor
 			if (ReturnProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("return params[%u]; // %u", ReturnProperty.Offset, InnerFunction.ReturnValOffset);
+					wtr.WriteLine("return params[%u];", ReturnProperty.Offset,);
 				else
-					wtr.WriteLine("return *cast(%s*)&params[%u]; // %u", tpName, ReturnProperty.Offset, InnerFunction.ReturnValOffset);
+					wtr.WriteLine("return *cast(%s*)&params[%u];", tpName, ReturnProperty.Offset);
 			}
 			else
 			{
