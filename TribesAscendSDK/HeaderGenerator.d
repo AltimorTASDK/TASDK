@@ -349,7 +349,8 @@ final class ConstantDescriptor : Descriptor
 	}
 
 	override void RequireDependencies(DependencyManager mgr) { }
-	override void Write(IndentedStreamWriter wtr)
+	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method isn't implemented!"); }
+	void Write(IndentedStreamWriter wtr, bool alone)
 	{
 		string valString = InnerConstant.Value.ToString();
 		if (valString.length > 2)
@@ -368,7 +369,10 @@ final class ConstantDescriptor : Descriptor
 					break;
 			}
 		}
-		wtr.WriteLine("public enum %s = %s;", InnerConstant.GetName(), valString);
+		if (alone)
+			wtr.WriteLine("enum %s = %s;", InnerConstant.GetName(), valString);
+		else
+			wtr.WriteLine("%s = %s,", InnerConstant.GetName(), valString);
 	}
 }
 
@@ -387,8 +391,9 @@ final class PropertyDescriptor : Descriptor
 	// TODO: Add support for DelegateProperty, MapProperty, FixedArrayProperty, PointerProperty, InterfaceProperty, and ComponentProperty
 
 	override void RequireDependencies(DependencyManager mgr) { mgr.ProcessProperty(InnerProperty); }
+	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method is not implemented!"); }
 
-	override void Write(IndentedStreamWriter wtr)
+	void Write(IndentedStreamWriter wtr, bool alone)
 	{
 		// Check to see if the property name is the same as a valid type.
 		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
@@ -397,18 +402,20 @@ final class PropertyDescriptor : Descriptor
 			return;
 		}
 
+		if (alone)
+			wtr.Write("@property final ");
 		switch (InnerProperty.ObjectClass.GetName())
 		{
 			case "BoolProperty":
 				if (ParentIsStruct)
 				{
-					wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)&this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)&this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { return (*cast(uint*)(cast(size_t)&this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)&this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				else
 				{
-					wtr.WriteLine("public @property final bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
-					wtr.WriteLine("public @property final bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s() { return (*cast(uint*)(cast(size_t)cast(void*)this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
+					wtr.WriteLine("bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				break;
 			case "ObjectProperty":
@@ -422,18 +429,15 @@ final class PropertyDescriptor : Descriptor
 			case "NameProperty":
 			case "ArrayProperty":
 				if (ParentIsStruct)
-					wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("auto ref %s %s() { return *cast(%s*)(cast(size_t)&this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
-					wtr.WriteLine("public @property final auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
+					wtr.WriteLine("auto ref %s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
 			default:
 				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
 				wtr.WriteLine("// ERROR: Unknown object class '%s' for the property named '%s'!", InnerProperty.ObjectClass.GetName(), InnerProperty.GetName());
 				break;
 		}
-
-		if (ParentIsStruct)
-			wtr.WriteLine("private ubyte __%s[%u];", InnerProperty.GetName(), InnerProperty.ElementSize); // This ensures that structures are the generated as the correct size.
 	}
 }
 
@@ -569,7 +573,8 @@ final class FunctionDescriptor : Descriptor
 			arg.RequireDependencies(mgr);
 	}
 
-	override void Write(IndentedStreamWriter wtr)
+	override void Write(IndentedStreamWriter wtr) { static assert(0, "This method is not implemented!"); }
+	void Write(IndentedStreamWriter wtr, bool alone)
 	{
 		// Check to see if the function name is the same as a valid type.
 		if (TypeIdentifiersTable.get(InnerFunction.GetName(), null))
@@ -578,7 +583,8 @@ final class FunctionDescriptor : Descriptor
 			return;
 		}
 
-		wtr.Write("final ");
+		if (alone)
+			wtr.Write("final ");
 		if (ReturnProperty)
 			wtr.Write("%s", GetTypeName(ReturnProperty));
 		else
@@ -709,19 +715,50 @@ final class ClassDescriptor : NestableContainer
 			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
-		wtr.WriteLine("extern(D):");
+		wtr.WriteLine("public extern(D):");
 		wtr.Indent++;
-
+		
+		if (NestedConstants.length > 1)
+		{
+			wtr.WriteLine("enum");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
 		foreach (nc; NestedConstants)
-			nc.Write(wtr);
+			nc.Write(wtr, NestedConstants.length <= 1);
+		if (NestedConstants.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
 		foreach (ne; NestedEnums)
 			ne.Write(wtr);
 		foreach (ns; NestedStructs)
 			ns.Write(wtr);
+
+		if (Properties.length > 1)
+		{
+			wtr.WriteLine("@property final");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
 		foreach (p; Properties)
-			p.Write(wtr);
+			p.Write(wtr, Properties.length <= 1);
+		if (Properties.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
+		if (Functions.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("final:");
+			wtr.Indent++;
+		}
 		foreach (f; Functions)
-			f.Write(wtr);
+			f.Write(wtr, Functions.length <= 1);
 
 		wtr.Indent--;
 		wtr.WriteLine("}");
@@ -776,6 +813,11 @@ final class StructDescriptor : NestableContainer
 		wtr.WriteLine("{");
 		wtr.Indent++;
 
+		wtr.WriteLine("private ubyte __buffer__[%u];", InnerStruct.PropertySize);
+		wtr.Indent--;
+		wtr.WriteLine("public extern(D):");
+		wtr.Indent++;
+
 		WriteBody(wtr);
 		
 		wtr.Indent--;
@@ -787,15 +829,46 @@ final class StructDescriptor : NestableContainer
 		if (InnerStruct.Super)
 			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
 
+		if (NestedConstants.length > 1)
+		{
+			wtr.WriteLine("enum");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
 		foreach (nc; NestedConstants)
-			nc.Write(wtr);
+			nc.Write(wtr, NestedConstants.length <= 1);
+		if (NestedConstants.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
 		foreach (ne; NestedEnums)
 			ne.Write(wtr);
 		foreach (ns; NestedStructs)
 			ns.Write(wtr);
+
+		if (Properties.length > 1)
+		{
+			wtr.WriteLine("@property final");
+			wtr.WriteLine("{");
+			wtr.Indent++;
+		}
 		foreach (p; Properties)
-			p.Write(wtr);
+			p.Write(wtr, Properties.length <= 1);
+		if (Properties.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("}");
+		}
+
+		if (Functions.length > 1)
+		{
+			wtr.Indent--;
+			wtr.WriteLine("final:");
+			wtr.Indent++;
+		}
 		foreach (f; Functions)
-			f.Write(wtr);
+			f.Write(wtr, Functions.length <= 1);
 	}
 }
