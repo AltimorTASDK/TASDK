@@ -341,5 +341,9 @@
     <Compile Include="UT3MapStatsCommandlet.d" />
     <Compile Include="WrangleContentCommandlet.d" />
     <Compile Include="WriteGameStatsReportCommandlet.d" />
+    <Compile Include="TerrainHeightMapFactory.d" />
+    <Compile Include="TerrainHeightMapFactoryG16BMP.d" />
+    <Compile Include="TerrainHeightMapFactoryG16BMPT3D.d" />
+    <Compile Include="TerrainHeightMapFactoryTextT3D.d" />
   </ItemGroup>
 </Project>
