@@ -6,10 +6,14 @@ import UnrealScript.Engine.DistributionVectorConstant;
 
 extern(C++) interface DistributionVectorParameterBase : DistributionVectorConstant
 {
-	public @property final auto ref DistributionFloatParameterBase.DistributionParamMode ParamModes() { return *cast(DistributionFloatParameterBase.DistributionParamMode*)(cast(size_t)cast(void*)this + 156); }
-	public @property final auto ref Vector MaxOutput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref Vector MinOutput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref Vector MaxInput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 120); }
-	public @property final auto ref Vector MinInput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 108); }
-	public @property final auto ref ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		DistributionFloatParameterBase.DistributionParamMode ParamModes() { return *cast(DistributionFloatParameterBase.DistributionParamMode*)(cast(size_t)cast(void*)this + 156); }
+		Vector MaxOutput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 144); }
+		Vector MinOutput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 132); }
+		Vector MaxInput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 120); }
+		Vector MinInput() { return *cast(Vector*)(cast(size_t)cast(void*)this + 108); }
+		ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
+	}
 }

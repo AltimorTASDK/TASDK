@@ -4,6 +4,10 @@ import UnrealScript.Engine.SeqVar_Int;
 
 extern(C++) interface SeqVar_RandomInt : SeqVar_Int
 {
-	public @property final auto ref int Max() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
-	public @property final auto ref int Min() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
+public extern(D):
+	@property final auto ref
+	{
+		int Max() { return *cast(int*)(cast(size_t)cast(void*)this + 156); }
+		int Min() { return *cast(int*)(cast(size_t)cast(void*)this + 152); }
+	}
 }

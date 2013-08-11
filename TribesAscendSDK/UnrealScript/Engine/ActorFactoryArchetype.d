@@ -5,5 +5,6 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface ActorFactoryArchetype : ActorFactory
 {
-	public @property final auto ref Actor ArchetypeActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref Actor ArchetypeActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 92); }
 }

@@ -11,39 +11,44 @@ import UnrealScript.Engine.HUD;
 
 extern(C++) interface GameCameraBase : UObject
 {
-	public @property final bool bResetCameraInterpolation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x1) != 0; }
-	public @property final bool bResetCameraInterpolation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x1; } return val; }
-	public @property final auto ref GamePlayerCamera PlayerCamera() { return *cast(GamePlayerCamera*)(cast(size_t)cast(void*)this + 60); }
-	final void OnBecomeActive(GameCameraBase OldCamera)
+public extern(D):
+	@property final
+	{
+		@property final auto ref GamePlayerCamera PlayerCamera() { return *cast(GamePlayerCamera*)(cast(size_t)cast(void*)this + 60); }
+		bool bResetCameraInterpolation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 64) & 0x1) != 0; }
+		bool bResetCameraInterpolation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 64) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 64) &= ~0x1; } return val; }
+	}
+final:
+	void OnBecomeActive(GameCameraBase OldCamera)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCameraBase*)params.ptr = OldCamera;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30879], params.ptr, cast(void*)0);
 	}
-	final void OnBecomeInActive(GameCameraBase NewCamera)
+	void OnBecomeInActive(GameCameraBase NewCamera)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCameraBase*)params.ptr = NewCamera;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30881], params.ptr, cast(void*)0);
 	}
-	final void ResetInterpolation()
+	void ResetInterpolation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30883], cast(void*)0, cast(void*)0);
 	}
-	final void UpdateCamera(Pawn P, GamePlayerCamera CameraActor, float DeltaTime, Camera.TViewTarget* OutVT)
+	void UpdateCamera(Pawn P, GamePlayerCamera pCameraActor, float DeltaTime, Camera.TViewTarget* OutVT)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		*cast(GamePlayerCamera*)&params[4] = CameraActor;
+		*cast(GamePlayerCamera*)&params[4] = pCameraActor;
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = *OutVT;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30884], params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
-	final void ProcessViewRotation(float DeltaTime, Actor ViewTarget, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotation(float DeltaTime, Actor ViewTarget, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -55,7 +60,7 @@ extern(C++) interface GameCameraBase : UObject
 		*out_ViewRotation = *cast(Rotator*)&params[8];
 		*out_DeltaRot = *cast(Rotator*)&params[20];
 	}
-	final void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -66,11 +71,11 @@ extern(C++) interface GameCameraBase : UObject
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
-	final void Init()
+	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30898], cast(void*)0, cast(void*)0);
 	}
-	final void ModifyPostProcessSettings(PostProcessVolume.PostProcessSettings* PP)
+	void ModifyPostProcessSettings(PostProcessVolume.PostProcessSettings* PP)
 	{
 		ubyte params[220];
 		params[] = 0;

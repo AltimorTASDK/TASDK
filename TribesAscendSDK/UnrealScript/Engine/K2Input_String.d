@@ -5,5 +5,6 @@ import UnrealScript.Engine.K2Input;
 
 extern(C++) interface K2Input_String : K2Input
 {
-	public @property final auto ref ScriptString DefaultString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
+public extern(D):
+	@property final auto ref ScriptString DefaultString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
 }

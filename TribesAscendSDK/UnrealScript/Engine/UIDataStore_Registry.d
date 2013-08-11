@@ -6,7 +6,8 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface UIDataStore_Registry : UIDataStore
 {
-	public @property final auto ref UIDynamicFieldProvider RegistryDataProvider() { return *cast(UIDynamicFieldProvider*)(cast(size_t)cast(void*)this + 120); }
+public extern(D):
+	@property final auto ref UIDynamicFieldProvider RegistryDataProvider() { return *cast(UIDynamicFieldProvider*)(cast(size_t)cast(void*)this + 120); }
 	final UIDynamicFieldProvider GetDataProvider()
 	{
 		ubyte params[4];

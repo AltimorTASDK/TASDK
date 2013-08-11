@@ -8,21 +8,23 @@ import UnrealScript.Engine.Mutator;
 
 extern(C++) interface UTMutator : Mutator
 {
-	final UTMutator GetNextUTMutator()
+public extern(D):
+final:
+	UTMutator GetNextUTMutator()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44841], params.ptr, cast(void*)0);
 		return *cast(UTMutator*)params.ptr;
 	}
-	final bool MutatorIsAllowed()
+	bool MutatorIsAllowed()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48551], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool ReplaceWith(Actor Other, ScriptString aClassName)
+	bool ReplaceWith(Actor Other, ScriptString aClassName)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -31,7 +33,7 @@ extern(C++) interface UTMutator : Mutator
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48555], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void ProcessSpeechRecognition(UTPlayerController Speaker, ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)* Words)
+	void ProcessSpeechRecognition(UTPlayerController Speaker, ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)* Words)
 	{
 		ubyte params[16];
 		params[] = 0;

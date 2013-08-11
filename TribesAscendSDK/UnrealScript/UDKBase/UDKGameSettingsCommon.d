@@ -5,7 +5,9 @@ import UnrealScript.Engine.OnlineGameSettings;
 
 extern(C++) interface UDKGameSettingsCommon : OnlineGameSettings
 {
-	final bool StringToBlob(ScriptString* InString, ScriptString* OutBlob)
+public extern(D):
+final:
+	bool StringToBlob(ScriptString* InString, ScriptString* OutBlob)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -16,7 +18,7 @@ extern(C++) interface UDKGameSettingsCommon : OnlineGameSettings
 		*OutBlob = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[24];
 	}
-	final ScriptString BlobToString(ScriptString* InBlob)
+	ScriptString BlobToString(ScriptString* InBlob)
 	{
 		ubyte params[24];
 		params[] = 0;

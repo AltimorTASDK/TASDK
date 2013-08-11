@@ -5,6 +5,7 @@ import UnrealScript.TribesGame.TrEmitCameraEffect_Speed;
 
 extern(C++) interface TrEmitCameraEffect_Rain : TrEmitCameraEffect_Speed
 {
+public extern(D):
 	final void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87266], cast(void*)0, cast(void*)0);

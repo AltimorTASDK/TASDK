@@ -7,19 +7,27 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface DataStoreClient : UIRoot
 {
+public extern(D):
 	struct PlayerDataStoreGroup
 	{
-		public @property final auto ref ScriptArray!(UIDataStore) DataStores() { return *cast(ScriptArray!(UIDataStore)*)(cast(size_t)&this + 4); }
-		private ubyte __DataStores[12];
-		public @property final auto ref LocalPlayer PlayerOwner() { return *cast(LocalPlayer*)(cast(size_t)&this + 0); }
-		private ubyte __PlayerOwner[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(UIDataStore) DataStores() { return *cast(ScriptArray!(UIDataStore)*)(cast(size_t)&this + 4); }
+			LocalPlayer PlayerOwner() { return *cast(LocalPlayer*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(ScriptString) GlobalDataStoreClasses() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref ScriptArray!(UIDataStore) GlobalDataStores() { return *cast(ScriptArray!(UIDataStore)*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref ScriptArray!(ScriptString) PlayerDataStoreClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref ScriptArray!(ScriptClass) PlayerDataStoreClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { return *cast(ScriptArray!(DataStoreClient.PlayerDataStoreGroup)*)(cast(size_t)cast(void*)this + 108); }
-	final UIDataStore FindDataStore(ScriptName DataStoreTag, LocalPlayer PlayerOwner)
+	@property final auto ref
+	{
+		ScriptArray!(ScriptString) GlobalDataStoreClasses() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(UIDataStore) GlobalDataStores() { return *cast(ScriptArray!(UIDataStore)*)(cast(size_t)cast(void*)this + 72); }
+		ScriptArray!(ScriptString) PlayerDataStoreClassNames() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 84); }
+		ScriptArray!(ScriptClass) PlayerDataStoreClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 96); }
+		ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { return *cast(ScriptArray!(DataStoreClient.PlayerDataStoreGroup)*)(cast(size_t)cast(void*)this + 108); }
+	}
+final:
+	UIDataStore FindDataStore(ScriptName DataStoreTag, LocalPlayer PlayerOwner)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -28,7 +36,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7802], params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[12];
 	}
-	final ScriptClass FindDataStoreClass(ScriptClass RequiredMetaClass)
+	ScriptClass FindDataStoreClass(ScriptClass RequiredMetaClass)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -36,7 +44,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7804], params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
-	final UIDataStore CreateDataStore(ScriptClass DataStoreClass)
+	UIDataStore CreateDataStore(ScriptClass DataStoreClass)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -44,7 +52,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7806], params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[4];
 	}
-	final bool RegisterDataStore(UIDataStore DataStore, LocalPlayer PlayerOwner)
+	bool RegisterDataStore(UIDataStore DataStore, LocalPlayer PlayerOwner)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -53,7 +61,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7808], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void GetPlayerDataStoreClasses(ScriptArray!(ScriptClass)* out_DataStoreClasses)
+	void GetPlayerDataStoreClasses(ScriptArray!(ScriptClass)* out_DataStoreClasses)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -61,7 +69,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7818], params.ptr, cast(void*)0);
 		*out_DataStoreClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
 	}
-	final bool UnregisterDataStore(UIDataStore DataStore)
+	bool UnregisterDataStore(UIDataStore DataStore)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -69,7 +77,7 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7824], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final int FindPlayerDataStoreIndex(LocalPlayer PlayerOwner)
+	int FindPlayerDataStoreIndex(LocalPlayer PlayerOwner)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -77,11 +85,11 @@ extern(C++) interface DataStoreClient : UIRoot
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13653], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final void NotifyGameSessionEnded()
+	void NotifyGameSessionEnded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13661], cast(void*)0, cast(void*)0);
 	}
-	final void DebugDumpDataStoreInfo(bool bVerbose)
+	void DebugDumpDataStoreInfo(bool bVerbose)
 	{
 		ubyte params[4];
 		params[] = 0;

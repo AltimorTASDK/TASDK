@@ -5,6 +5,7 @@ import UnrealScript.Engine.AudioComponent;
 
 extern(C++) interface UTAmbientSoundComponent : AudioComponent
 {
+public extern(D):
 	final void OcclusionChanged(bool bNowOccluded)
 	{
 		ubyte params[4];

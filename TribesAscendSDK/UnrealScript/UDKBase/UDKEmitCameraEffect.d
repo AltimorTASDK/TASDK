@@ -6,32 +6,37 @@ import UnrealScript.Engine.Emitter;
 
 extern(C++) interface UDKEmitCameraEffect : Emitter
 {
-	public @property final auto ref UDKPlayerController Cam() { return *cast(UDKPlayerController*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref float DistFromCamera() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-	final void PostBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		UDKPlayerController Cam() { return *cast(UDKPlayerController*)(cast(size_t)cast(void*)this + 492); }
+		float DistFromCamera() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+	}
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34778], cast(void*)0, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34779], cast(void*)0, cast(void*)0);
 	}
-	final void RegisterCamera(UDKPlayerController inCam)
+	void RegisterCamera(UDKPlayerController inCam)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKPlayerController*)params.ptr = inCam;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34780], params.ptr, cast(void*)0);
 	}
-	final void Activate()
+	void Activate()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34782], cast(void*)0, cast(void*)0);
 	}
-	final void Deactivate()
+	void Deactivate()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34783], cast(void*)0, cast(void*)0);
 	}
-	final void UpdateLocation(Vector* CamLoc, Rotator* CamRot, float CamFOVDeg)
+	void UpdateLocation(Vector* CamLoc, Rotator* CamRot, float CamFOVDeg)
 	{
 		ubyte params[28];
 		params[] = 0;

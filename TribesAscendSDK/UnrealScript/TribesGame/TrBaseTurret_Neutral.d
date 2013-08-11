@@ -7,15 +7,17 @@ import UnrealScript.TribesGame.TrHelpTextManager;
 
 extern(C++) interface TrBaseTurret_Neutral : TrDeployable_BaseTurret
 {
-	final bool ShouldShowHelpText(TrHelpTextManager.EHelpTextType HelpTextType)
+public extern(D):
+final:
+	bool ShouldShowHelpText(TrHelpTextManager.EHelpTextType HelpTextType)
 	{
-		ubyte params[5];
+		ubyte params[8];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = HelpTextType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72148], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final Texture2D GetMarker()
+	Texture2D GetMarker()
 	{
 		ubyte params[4];
 		params[] = 0;

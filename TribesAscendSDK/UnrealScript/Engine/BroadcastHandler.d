@@ -10,14 +10,19 @@ import UnrealScript.Engine.Info;
 
 extern(C++) interface BroadcastHandler : Info
 {
-	public @property final bool bMuteSpectators() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-	public @property final bool bMuteSpectators(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
-	public @property final auto ref int SentText() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
-	final void UpdateSentText()
+public extern(D):
+	@property final
+	{
+		@property final auto ref int SentText() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
+		bool bMuteSpectators() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
+		bool bMuteSpectators(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+	}
+final:
+	void UpdateSentText()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12018], cast(void*)0, cast(void*)0);
 	}
-	final bool AllowsBroadcast(Actor broadcaster, int InLen)
+	bool AllowsBroadcast(Actor broadcaster, int InLen)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -26,7 +31,7 @@ extern(C++) interface BroadcastHandler : Info
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12019], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void BroadcastText(PlayerReplicationInfo SenderPRI, PlayerController Receiver, ScriptString msg, ScriptName Type)
+	void BroadcastText(PlayerReplicationInfo SenderPRI, PlayerController Receiver, ScriptString msg, ScriptName Type)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -36,7 +41,7 @@ extern(C++) interface BroadcastHandler : Info
 		*cast(ScriptName*)&params[20] = Type;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12023], params.ptr, cast(void*)0);
 	}
-	final void BroadcastLocalized(Actor Sender, PlayerController Receiver, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void BroadcastLocalized(Actor Sender, PlayerController Receiver, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -49,7 +54,7 @@ extern(C++) interface BroadcastHandler : Info
 		*cast(UObject*)&params[24] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12028], params.ptr, cast(void*)0);
 	}
-	final void Broadcast(Actor Sender, ScriptString msg, ScriptName Type)
+	void Broadcast(Actor Sender, ScriptString msg, ScriptName Type)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -58,7 +63,7 @@ extern(C++) interface BroadcastHandler : Info
 		*cast(ScriptName*)&params[16] = Type;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12036], params.ptr, cast(void*)0);
 	}
-	final void BroadcastTeam(Controller Sender, ScriptString msg, ScriptName Type)
+	void BroadcastTeam(Controller Sender, ScriptString msg, ScriptName Type)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -67,7 +72,7 @@ extern(C++) interface BroadcastHandler : Info
 		*cast(ScriptName*)&params[16] = Type;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12042], params.ptr, cast(void*)0);
 	}
-	final void AllowBroadcastLocalized(Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void AllowBroadcastLocalized(Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -79,7 +84,7 @@ extern(C++) interface BroadcastHandler : Info
 		*cast(UObject*)&params[20] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12047], params.ptr, cast(void*)0);
 	}
-	final void AllowBroadcastLocalizedTeam(int TeamIndex, Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void AllowBroadcastLocalizedTeam(int TeamIndex, Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[28];
 		params[] = 0;

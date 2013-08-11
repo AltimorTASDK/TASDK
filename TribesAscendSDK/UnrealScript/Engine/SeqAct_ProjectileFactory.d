@@ -6,9 +6,13 @@ import UnrealScript.Engine.ParticleSystem;
 
 extern(C++) interface SeqAct_ProjectileFactory : SeqAct_ActorFactory
 {
-	public @property final auto ref ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 328); }
-	public @property final auto ref ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 320); }
-	public @property final auto ref ParticleSystem PSTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 316); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 328); }
+		ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 320); }
+		ParticleSystem PSTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 316); }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

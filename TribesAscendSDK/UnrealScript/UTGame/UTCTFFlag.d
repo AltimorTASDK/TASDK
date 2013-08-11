@@ -10,44 +10,52 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTCTFFlag : UTCarriedObject
 {
-	public @property final auto ref ScriptArray!(MaterialInstanceConstant) MICArray() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 776); }
-	public @property final auto ref float LastLocationPingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
-	public @property final auto ref Vector HoverboardingClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 800); }
-	public @property final auto ref Vector RunningClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
-	public @property final bool bWasClothEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x10) != 0; }
-	public @property final bool bWasClothEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x10; } return val; }
-	public @property final bool bRespawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x8) != 0; }
-	public @property final bool bRespawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x8; } return val; }
-	public @property final bool bFadingOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x4) != 0; }
-	public @property final bool bFadingOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x4; } return val; }
-	public @property final bool bBringDownFromBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x2) != 0; }
-	public @property final bool bBringDownFromBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x2; } return val; }
-	public @property final bool bBringUpBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x1) != 0; }
-	public @property final bool bBringUpBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x1; } return val; }
-	public @property final auto ref ParticleSystem RespawnEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 768); }
-	final void ReplicatedEvent(ScriptName VarName)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(MaterialInstanceConstant) MICArray() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 776); }
+			float LastLocationPingTime() { return *cast(float*)(cast(size_t)cast(void*)this + 820); }
+			Vector HoverboardingClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 800); }
+			Vector RunningClothVelClamp() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
+			ParticleSystem RespawnEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 768); }
+		}
+		bool bWasClothEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x10) != 0; }
+		bool bWasClothEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x10; } return val; }
+		bool bRespawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x8) != 0; }
+		bool bRespawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x8; } return val; }
+		bool bFadingOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x4) != 0; }
+		bool bFadingOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x4; } return val; }
+		bool bBringDownFromBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x2) != 0; }
+		bool bBringDownFromBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x2; } return val; }
+		bool bBringUpBright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 772) & 0x1) != 0; }
+		bool bBringUpBright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 772) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 772) &= ~0x1; } return val; }
+	}
+final:
+	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44545], params.ptr, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44547], cast(void*)0, cast(void*)0);
 	}
-	final void Tick(float DeltaTime)
+	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44549], params.ptr, cast(void*)0);
 	}
-	final void OnBaseChainChanged()
+	void OnBaseChainChanged()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44553], cast(void*)0, cast(void*)0);
 	}
-	final bool ShouldMinimapRenderFor(PlayerController PC)
+	bool ShouldMinimapRenderFor(PlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -55,18 +63,18 @@ extern(C++) interface UTCTFFlag : UTCarriedObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44555], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void ClientReturnedHome()
+	void ClientReturnedHome()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44558], cast(void*)0, cast(void*)0);
 	}
-	final void SetHolder(Controller C)
+	void SetHolder(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44559], params.ptr, cast(void*)0);
 	}
-	final bool ValidHolder(Actor Other)
+	bool ValidHolder(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -74,26 +82,26 @@ extern(C++) interface UTCTFFlag : UTCarriedObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44568], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void SameTeamTouch(Controller C)
+	void SameTeamTouch(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44572], params.ptr, cast(void*)0);
 	}
-	final void CustomRespawnEffects()
+	void CustomRespawnEffects()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44574], cast(void*)0, cast(void*)0);
 	}
-	final void bringUpBrightOff()
+	void bringUpBrightOff()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44576], cast(void*)0, cast(void*)0);
 	}
-	final void CustomFadeOutEffects()
+	void CustomFadeOutEffects()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44578], cast(void*)0, cast(void*)0);
 	}
-	final void Drop(Controller Killer, bool bNoThrow)
+	void Drop(Controller Killer, bool bNoThrow)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -101,11 +109,11 @@ extern(C++) interface UTCTFFlag : UTCarriedObject
 		*cast(bool*)&params[4] = bNoThrow;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44603], params.ptr, cast(void*)0);
 	}
-	final void SetFlagPropertiesToStationaryFlagState()
+	void SetFlagPropertiesToStationaryFlagState()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44606], cast(void*)0, cast(void*)0);
 	}
-	final void SetFlagDynamicLightToNotBeDynamic()
+	void SetFlagDynamicLightToNotBeDynamic()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44607], cast(void*)0, cast(void*)0);
 	}

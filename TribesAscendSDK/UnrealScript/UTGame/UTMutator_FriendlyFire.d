@@ -5,15 +5,17 @@ import UnrealScript.UTGame.UTMutator;
 
 extern(C++) interface UTMutator_FriendlyFire : UTMutator
 {
-	public @property final auto ref float FriendlyFireScale() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-	final bool MutatorIsAllowed()
+public extern(D):
+	@property final auto ref float FriendlyFireScale() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
+final:
+	bool MutatorIsAllowed()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48586], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void InitMutator(ScriptString Options, ScriptString* ErrorMessage)
+	void InitMutator(ScriptString Options, ScriptString* ErrorMessage)
 	{
 		ubyte params[24];
 		params[] = 0;

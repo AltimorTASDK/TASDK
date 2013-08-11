@@ -5,15 +5,17 @@ import UnrealScript.Engine.AnimNodeSequence;
 
 extern(C++) interface UDKAnimNodeFramePlayer : AnimNodeSequence
 {
-	final void SetAnimation(ScriptName Sequence, float RateScale)
+public extern(D):
+final:
+	void SetAnimation(ScriptName pSequence, float RateScale)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = Sequence;
+		*cast(ScriptName*)params.ptr = pSequence;
 		*cast(float*)&params[8] = RateScale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34585], params.ptr, cast(void*)0);
 	}
-	final void SetAnimPosition(float Perc)
+	void SetAnimPosition(float Perc)
 	{
 		ubyte params[4];
 		params[] = 0;

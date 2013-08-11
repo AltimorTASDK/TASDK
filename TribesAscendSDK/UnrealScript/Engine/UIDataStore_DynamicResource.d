@@ -11,21 +11,28 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 {
+public extern(D):
 	struct DynamicResourceProviderDefinition
 	{
-		public @property final auto ref ScriptClass ProviderClass() { return *cast(ScriptClass*)(cast(size_t)&this + 20); }
-		private ubyte __ProviderClass[4];
-		public @property final auto ref ScriptString ProviderClassName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-		private ubyte __ProviderClassName[12];
-		public @property final auto ref ScriptName ProviderTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __ProviderTag[8];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptClass ProviderClass() { return *cast(ScriptClass*)(cast(size_t)&this + 20); }
+			ScriptString ProviderClassName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+			ScriptName ProviderTag() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition) ResourceProviderDefinitions() { return *cast(ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition)*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref UObject.MultiMap_Mirror ResourceProviders() { return *cast(UObject.MultiMap_Mirror*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref UIDataStore_GameResource GameResourceDataStore() { return *cast(UIDataStore_GameResource*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref UIDataProvider_OnlineProfileSettings ProfileProvider() { return *cast(UIDataProvider_OnlineProfileSettings*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
-	final int FindProviderTypeIndex(ScriptName ProviderTag)
+	@property final auto ref
+	{
+		ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition) ResourceProviderDefinitions() { return *cast(ScriptArray!(UIDataStore_DynamicResource.DynamicResourceProviderDefinition)*)(cast(size_t)cast(void*)this + 132); }
+		UObject.MultiMap_Mirror ResourceProviders() { return *cast(UObject.MultiMap_Mirror*)(cast(size_t)cast(void*)this + 144); }
+		UIDataStore_GameResource GameResourceDataStore() { return *cast(UIDataStore_GameResource*)(cast(size_t)cast(void*)this + 128); }
+		UIDataProvider_OnlineProfileSettings ProfileProvider() { return *cast(UIDataProvider_OnlineProfileSettings*)(cast(size_t)cast(void*)this + 124); }
+		UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+	}
+final:
+	int FindProviderTypeIndex(ScriptName ProviderTag)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -33,7 +40,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28471], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final ScriptName GenerateProviderAccessTag(int ProviderIndex, int InstanceIndex)
+	ScriptName GenerateProviderAccessTag(int ProviderIndex, int InstanceIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -42,7 +49,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28474], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[8];
 	}
-	final int GetProviderCount(ScriptName ProviderTag)
+	int GetProviderCount(ScriptName ProviderTag)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -50,7 +57,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28478], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final bool GetResourceProviders(ScriptName ProviderTag, ScriptArray!(UIResourceCombinationProvider)* out_Providers)
+	bool GetResourceProviders(ScriptName ProviderTag, ScriptArray!(UIResourceCombinationProvider)* out_Providers)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -60,7 +67,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		*out_Providers = *cast(ScriptArray!(UIResourceCombinationProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetResourceProviderFields(ScriptName ProviderTag, ScriptArray!(ScriptName)* ProviderFieldTags)
+	bool GetResourceProviderFields(ScriptName ProviderTag, ScriptArray!(ScriptName)* ProviderFieldTags)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -70,7 +77,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		*ProviderFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetProviderFieldValue(ScriptName ProviderTag, ScriptName SearchField, int ProviderIndex, UIRoot.UIProviderScriptFieldValue* out_FieldValue)
+	bool GetProviderFieldValue(ScriptName ProviderTag, ScriptName SearchField, int ProviderIndex, UIRoot.UIProviderScriptFieldValue* out_FieldValue)
 	{
 		ubyte params[108];
 		params[] = 0;
@@ -82,7 +89,7 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		*out_FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[20];
 		return *cast(bool*)&params[104];
 	}
-	final int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, UIRoot.UIProviderScriptFieldValue* ValueToSearchFor)
+	int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, UIRoot.UIProviderScriptFieldValue* ValueToSearchFor)
 	{
 		ubyte params[104];
 		params[] = 0;
@@ -93,21 +100,21 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 		*ValueToSearchFor = *cast(UIRoot.UIProviderScriptFieldValue*)&params[16];
 		return *cast(int*)&params[100];
 	}
-	final void OnLoginChange(ubyte LocalUserNum)
+	void OnLoginChange(ubyte LocalUserNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28502], params.ptr, cast(void*)0);
 	}
-	final void Registered(LocalPlayer PlayerOwner)
+	void Registered(LocalPlayer PlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28504], params.ptr, cast(void*)0);
 	}
-	final void Unregistered(LocalPlayer PlayerOwner)
+	void Unregistered(LocalPlayer PlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;

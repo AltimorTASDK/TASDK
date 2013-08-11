@@ -6,11 +6,13 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_Queued : GFxTrPage
 {
-	final void Initialize()
+public extern(D):
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60390], cast(void*)0, cast(void*)0);
 	}
-	final int TakeAction(int ActionIndex, GFxObject DataList)
+	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;

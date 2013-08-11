@@ -8,7 +8,9 @@ import UnrealScript.Engine.OnlinePlayerStorage;
 
 extern(C++) interface OnlineEventsInterface : UInterface
 {
-	final bool UploadPlayerData(OnlineSubsystem.UniqueNetId UniqueId, ScriptString PlayerNick, OnlineProfileSettings ProfileSettings, OnlinePlayerStorage PlayerStorage)
+public extern(D):
+final:
+	bool UploadPlayerData(OnlineSubsystem.UniqueNetId UniqueId, ScriptString PlayerNick, OnlineProfileSettings ProfileSettings, OnlinePlayerStorage PlayerStorage)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -19,7 +21,7 @@ extern(C++) interface OnlineEventsInterface : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21608], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	final bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ScriptArray!(ubyte)* Payload)
+	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ScriptArray!(ubyte)* Payload)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -29,7 +31,7 @@ extern(C++) interface OnlineEventsInterface : UInterface
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)
+	bool UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)
 	{
 		ubyte params[12];
 		params[] = 0;

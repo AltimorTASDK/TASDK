@@ -5,11 +5,18 @@ import UnrealScript.Engine.UIResourceDataProvider;
 
 extern(C++) interface UIWeaponSummary : UIResourceDataProvider
 {
-	public @property final bool bIsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
-	public @property final bool bIsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
-	public @property final auto ref ScriptString WeaponDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString ClassPathName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptString WeaponDescription() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+			ScriptString ClassPathName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		}
+		bool bIsDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 160) & 0x1) != 0; }
+		bool bIsDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 160) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 160) &= ~0x1; } return val; }
+	}
 	final bool IsProviderDisabled()
 	{
 		ubyte params[4];

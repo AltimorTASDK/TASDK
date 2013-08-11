@@ -5,5 +5,6 @@ import UnrealScript.Engine.SeqVar_Object;
 
 extern(C++) interface SeqVar_Character : SeqVar_Object
 {
-	public @property final auto ref ScriptClass PawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 176); }
+public extern(D):
+	@property final auto ref ScriptClass PawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 176); }
 }

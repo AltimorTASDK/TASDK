@@ -5,6 +5,7 @@ import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface SeqEvent_LevelLoaded : SequenceEvent
 {
+public extern(D):
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

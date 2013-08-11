@@ -6,8 +6,10 @@ import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface UTSeqEvent_FlagEvent : SequenceEvent
 {
+public extern(D):
+final:
 	// WARNING: Function 'Trigger' has the same name as a defined type!
-	final int GetObjClassVersion()
+	int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -5,26 +5,31 @@ import UnrealScript.TribesGame.TrDevice_Pack;
 
 extern(C++) interface TrDevice_Blink : TrDevice_Pack
 {
-	public @property final auto ref float m_fMinZImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 2180); }
-	public @property final auto ref float m_fPowerPoolCost() { return *cast(float*)(cast(size_t)cast(void*)this + 2184); }
-	public @property final auto ref float m_fSpeedCapThresholdStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2200); }
-	public @property final auto ref float m_fSpeedCapPct() { return *cast(float*)(cast(size_t)cast(void*)this + 2204); }
-	public @property final auto ref float m_fSpeedCapThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2196); }
-	public @property final auto ref float m_fLastActivationTimestamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2192); }
-	public @property final auto ref float m_fCooldownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2188); }
-	public @property final auto ref Vector m_vBlinkImpulse() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2168); }
-	final Vector GetBlinkImpulse()
+public extern(D):
+	@property final auto ref
+	{
+		float m_fMinZImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 2180); }
+		float m_fPowerPoolCost() { return *cast(float*)(cast(size_t)cast(void*)this + 2184); }
+		float m_fSpeedCapThresholdStart() { return *cast(float*)(cast(size_t)cast(void*)this + 2200); }
+		float m_fSpeedCapPct() { return *cast(float*)(cast(size_t)cast(void*)this + 2204); }
+		float m_fSpeedCapThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 2196); }
+		float m_fLastActivationTimestamp() { return *cast(float*)(cast(size_t)cast(void*)this + 2192); }
+		float m_fCooldownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 2188); }
+		Vector m_vBlinkImpulse() { return *cast(Vector*)(cast(size_t)cast(void*)this + 2168); }
+	}
+final:
+	Vector GetBlinkImpulse()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[76587], params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	final void ToggleActivate()
+	void ToggleActivate()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[81098], cast(void*)0, cast(void*)0);
 	}
-	final void OnBlink(float PercentEffectiveness)
+	void OnBlink(float PercentEffectiveness)
 	{
 		ubyte params[4];
 		params[] = 0;

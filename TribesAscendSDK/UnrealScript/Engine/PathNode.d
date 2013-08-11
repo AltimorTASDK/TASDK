@@ -5,6 +5,7 @@ import UnrealScript.Engine.NavigationPoint;
 
 extern(C++) interface PathNode : NavigationPoint
 {
+public extern(D):
 	final ScriptString GetDebugAbbrev()
 	{
 		ubyte params[12];

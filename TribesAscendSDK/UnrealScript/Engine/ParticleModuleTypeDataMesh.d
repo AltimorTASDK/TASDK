@@ -6,6 +6,7 @@ import UnrealScript.Engine.StaticMesh;
 
 extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 {
+public extern(D):
 	enum EMeshCameraFacingOptions : ubyte
 	{
 		XAxisFacing_NoUp = 0,
@@ -39,24 +40,30 @@ extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 		PSMA_MeshFaceCameraWithLockedAxis = 2,
 		PSMA_MAX = 3,
 	}
-	public @property final auto ref float Yaw() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
-	public @property final auto ref float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
-	public @property final auto ref float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingOptions*)(cast(size_t)cast(void*)this + 83); }
-	public @property final auto ref ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis*)(cast(size_t)cast(void*)this + 82); }
-	public @property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { return *cast(ParticleModuleOrientationAxisLock.EParticleAxisLock*)(cast(size_t)cast(void*)this + 81); }
-	public @property final auto ref ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { return *cast(ParticleModuleTypeDataMesh.EMeshScreenAlignment*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 72); }
-	public @property final bool bApplyParticleRotationAsSpin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x20) != 0; }
-	public @property final bool bApplyParticleRotationAsSpin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x20; } return val; }
-	public @property final bool bCameraFacing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x10) != 0; }
-	public @property final bool bCameraFacing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x10; } return val; }
-	public @property final bool bOverrideMaterial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x8) != 0; }
-	public @property final bool bOverrideMaterial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x8; } return val; }
-	public @property final bool bAllowMotionBlur() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x4) != 0; }
-	public @property final bool bAllowMotionBlur(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x4; } return val; }
-	public @property final bool DoCollisions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
-	public @property final bool DoCollisions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
-	public @property final bool CastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
-	public @property final bool CastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+	@property final
+	{
+		auto ref
+		{
+			float Yaw() { return *cast(float*)(cast(size_t)cast(void*)this + 92); }
+			float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 88); }
+			float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingOptions CameraFacingOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingOptions*)(cast(size_t)cast(void*)this + 83); }
+			ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis CameraFacingUpAxisOption() { return *cast(ParticleModuleTypeDataMesh.EMeshCameraFacingUpAxis*)(cast(size_t)cast(void*)this + 82); }
+			ParticleModuleOrientationAxisLock.EParticleAxisLock AxisLockOption() { return *cast(ParticleModuleOrientationAxisLock.EParticleAxisLock*)(cast(size_t)cast(void*)this + 81); }
+			ParticleModuleTypeDataMesh.EMeshScreenAlignment MeshAlignment() { return *cast(ParticleModuleTypeDataMesh.EMeshScreenAlignment*)(cast(size_t)cast(void*)this + 80); }
+			StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)cast(void*)this + 72); }
+		}
+		bool bApplyParticleRotationAsSpin() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x20) != 0; }
+		bool bApplyParticleRotationAsSpin(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x20; } return val; }
+		bool bCameraFacing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x10) != 0; }
+		bool bCameraFacing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x10; } return val; }
+		bool bOverrideMaterial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x8) != 0; }
+		bool bOverrideMaterial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x8; } return val; }
+		bool bAllowMotionBlur() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x4) != 0; }
+		bool bAllowMotionBlur(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x4; } return val; }
+		bool DoCollisions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x2) != 0; }
+		bool DoCollisions(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x2; } return val; }
+		bool CastShadows() { return (*cast(uint*)(cast(size_t)cast(void*)this + 76) & 0x1) != 0; }
+		bool CastShadows(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
+	}
 }

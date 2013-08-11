@@ -4,5 +4,6 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface UTSeqAct_HoverboardSpinJump : SequenceAction
 {
-	public @property final auto ref float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
 }

@@ -6,15 +6,17 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxUDKFrontEnd_Settings : GFxUDKFrontEnd_SettingsBase
 {
-	final void SetSelectedOptionSet()
+public extern(D):
+final:
+	void SetSelectedOptionSet()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39065], cast(void*)0, cast(void*)0);
 	}
-	final void UpdateListDataProvider()
+	void UpdateListDataProvider()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39066], cast(void*)0, cast(void*)0);
 	}
-	final void PopulateOptionDataProviderForIndex(int Index, GFxObject* OutDataProvider, ScriptString* OutDefaultValue, int* OutDefaultIndex)
+	void PopulateOptionDataProviderForIndex(int Index, GFxObject* OutDataProvider, ScriptString* OutDefaultValue, int* OutDefaultIndex)
 	{
 		ubyte params[24];
 		params[] = 0;

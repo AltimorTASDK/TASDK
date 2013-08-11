@@ -5,7 +5,8 @@ import UnrealScript.Engine.UIDataStore_StringAliasMap;
 
 extern(C++) interface UDKUIDataStore_StringAliasMap : UIDataStore_StringAliasMap
 {
-	public @property final auto ref int FakePlatform() { return *cast(int*)(cast(size_t)cast(void*)this + 196); }
+public extern(D):
+	@property final auto ref int FakePlatform() { return *cast(int*)(cast(size_t)cast(void*)this + 196); }
 	final int GetStringWithFieldName(ScriptString FieldName, ScriptString* MappedString)
 	{
 		ubyte params[28];

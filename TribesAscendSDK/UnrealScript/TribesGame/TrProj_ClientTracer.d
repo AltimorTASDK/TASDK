@@ -8,8 +8,10 @@ import UnrealScript.Engine.PhysicalMaterial;
 
 extern(C++) interface TrProj_ClientTracer : TrProjectile
 {
-	public @property final auto ref ScriptClass m_InheritedClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 816); }
-	final void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+public extern(D):
+	@property final auto ref ScriptClass m_InheritedClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 816); }
+final:
+	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -17,7 +19,7 @@ extern(C++) interface TrProj_ClientTracer : TrProjectile
 		*cast(ScriptClass*)&params[12] = ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108279], params.ptr, cast(void*)0);
 	}
-	final SoundCue GetExplosionSound(PhysicalMaterial HitMaterial, Actor HitActor)
+	SoundCue GetExplosionSound(PhysicalMaterial HitMaterial, Actor HitActor)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -26,7 +28,7 @@ extern(C++) interface TrProj_ClientTracer : TrProjectile
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108282], params.ptr, cast(void*)0);
 		return *cast(SoundCue*)&params[8];
 	}
-	final void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
+	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
 		ubyte params[28];
 		params[] = 0;

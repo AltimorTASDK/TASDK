@@ -6,7 +6,9 @@ import UnrealScript.UTGame.UTEmitter;
 
 extern(C++) interface UTEmit_HitEffect : UTEmitter
 {
-	final void AttachTo(Pawn P, ScriptName NewBoneName)
+public extern(D):
+final:
+	void AttachTo(Pawn P, ScriptName NewBoneName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -14,7 +16,7 @@ extern(C++) interface UTEmit_HitEffect : UTEmitter
 		*cast(ScriptName*)&params[4] = NewBoneName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47370], params.ptr, cast(void*)0);
 	}
-	final void PawnBaseDied()
+	void PawnBaseDied()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47373], cast(void*)0, cast(void*)0);
 	}

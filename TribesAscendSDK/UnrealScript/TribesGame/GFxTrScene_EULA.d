@@ -5,20 +5,22 @@ import UnrealScript.TribesGame.GFxTrScene;
 
 extern(C++) interface GFxTrScene_EULA : GFxTrScene
 {
-	public @property final auto ref ScriptString EULA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-	final void LoadEULA()
+public extern(D):
+	@property final auto ref ScriptString EULA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
+final:
+	void LoadEULA()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63265], cast(void*)0, cast(void*)0);
 	}
-	final void AcceptEULA()
+	void AcceptEULA()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63266], cast(void*)0, cast(void*)0);
 	}
-	final void Initialize()
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63267], cast(void*)0, cast(void*)0);
 	}
-	final void EULAReponse(bool bAccepted)
+	void EULAReponse(bool bAccepted)
 	{
 		ubyte params[4];
 		params[] = 0;

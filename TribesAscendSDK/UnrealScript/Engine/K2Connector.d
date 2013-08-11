@@ -6,6 +6,7 @@ import UnrealScript.Engine.K2NodeBase;
 
 extern(C++) interface K2Connector : UObject
 {
+public extern(D):
 	enum EK2ConnectorType : ubyte
 	{
 		K2CT_Bool = 0,
@@ -25,7 +26,10 @@ extern(C++) interface K2Connector : UObject
 		K2CD_Output = 1,
 		K2CD_MAX = 2,
 	}
-	public @property final auto ref K2Connector.EK2ConnectorType Type() { return *cast(K2Connector.EK2ConnectorType*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref ScriptString ConnName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref K2NodeBase OwningNode() { return *cast(K2NodeBase*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref
+	{
+		K2Connector.EK2ConnectorType Type() { return *cast(K2Connector.EK2ConnectorType*)(cast(size_t)cast(void*)this + 76); }
+		ScriptString ConnName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 64); }
+		K2NodeBase OwningNode() { return *cast(K2NodeBase*)(cast(size_t)cast(void*)this + 60); }
+	}
 }

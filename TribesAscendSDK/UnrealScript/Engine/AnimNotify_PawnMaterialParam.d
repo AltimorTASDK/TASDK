@@ -8,7 +8,8 @@ import UnrealScript.Engine.AnimNotify_Scripted;
 
 extern(C++) interface AnimNotify_PawnMaterialParam : AnimNotify_Scripted
 {
-	public @property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 64); }
+public extern(D):
+	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 64); }
 	final void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
 		ubyte params[8];

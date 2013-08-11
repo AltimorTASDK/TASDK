@@ -7,7 +7,9 @@ import UnrealScript.TribesGame.TrDeviceAttachment;
 
 extern(C++) interface TrAttachment_Melee : TrDeviceAttachment
 {
-	final void PlayImpactSound(Actor HitActor, SoundCue SoundToPlay, Vector FireDir, Vector HitLocation)
+public extern(D):
+final:
+	void PlayImpactSound(Actor HitActor, SoundCue SoundToPlay, Vector FireDir, Vector HitLocation)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -17,7 +19,7 @@ extern(C++) interface TrAttachment_Melee : TrDeviceAttachment
 		*cast(Vector*)&params[20] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68481], params.ptr, cast(void*)0);
 	}
-	final void PlayImpactEffects(Vector HitLocation)
+	void PlayImpactEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;

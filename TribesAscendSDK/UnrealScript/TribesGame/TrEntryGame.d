@@ -5,11 +5,13 @@ import UnrealScript.UTGame.UTEntryGame;
 
 extern(C++) interface TrEntryGame : UTEntryGame
 {
-	final void SendMenuEngineLoaded()
+public extern(D):
+final:
+	void SendMenuEngineLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87278], cast(void*)0, cast(void*)0);
 	}
-	final ScriptClass SetGameType(ScriptString MapName, ScriptString Options, ScriptString Portal)
+	ScriptClass SetGameType(ScriptString MapName, ScriptString Options, ScriptString Portal)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -19,7 +21,7 @@ extern(C++) interface TrEntryGame : UTEntryGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87279], params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[36];
 	}
-	final void OnEngineHasLoaded()
+	void OnEngineHasLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87284], cast(void*)0, cast(void*)0);
 	}

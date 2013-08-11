@@ -5,6 +5,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface ApexDestructibleDamageParameters : UObject
 {
+public extern(D):
 	enum EDamageParameterOverrideMode : ubyte
 	{
 		DPOM_Absolute = 0,
@@ -13,21 +14,25 @@ extern(C++) interface ApexDestructibleDamageParameters : UObject
 	}
 	struct DamagePair
 	{
-		public @property final auto ref ApexDestructibleDamageParameters.DamageParameters Params() { return *cast(ApexDestructibleDamageParameters.DamageParameters*)(cast(size_t)&this + 8); }
-		private ubyte __Params[16];
-		public @property final auto ref ScriptName DamageCauserName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __DamageCauserName[8];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			ApexDestructibleDamageParameters.DamageParameters Params() { return *cast(ApexDestructibleDamageParameters.DamageParameters*)(cast(size_t)&this + 8); }
+			ScriptName DamageCauserName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct DamageParameters
 	{
-		public @property final auto ref float Momentum() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __Momentum[4];
-		public @property final auto ref float Radius() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __Radius[4];
-		public @property final auto ref float BaseDamage() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __BaseDamage[4];
-		public @property final auto ref ApexDestructibleDamageParameters.EDamageParameterOverrideMode OverrideMode() { return *cast(ApexDestructibleDamageParameters.EDamageParameterOverrideMode*)(cast(size_t)&this + 0); }
-		private ubyte __OverrideMode[1];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			float Momentum() { return *cast(float*)(cast(size_t)&this + 12); }
+			float Radius() { return *cast(float*)(cast(size_t)&this + 8); }
+			float BaseDamage() { return *cast(float*)(cast(size_t)&this + 4); }
+			ApexDestructibleDamageParameters.EDamageParameterOverrideMode OverrideMode() { return *cast(ApexDestructibleDamageParameters.EDamageParameterOverrideMode*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(ApexDestructibleDamageParameters.DamagePair) DamageMap() { return *cast(ScriptArray!(ApexDestructibleDamageParameters.DamagePair)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptArray!(ApexDestructibleDamageParameters.DamagePair) DamageMap() { return *cast(ScriptArray!(ApexDestructibleDamageParameters.DamagePair)*)(cast(size_t)cast(void*)this + 60); }
 }

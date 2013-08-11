@@ -11,6 +11,7 @@ import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface AudioDevice : Subsystem
 {
+public extern(D):
 	enum EDebugState : ubyte
 	{
 		DEBUGSTATE_None = 0,
@@ -65,74 +66,83 @@ extern(C++) interface AudioDevice : Subsystem
 	}
 	struct Listener
 	{
-		public @property final auto ref Vector Front() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Front[12];
-		public @property final auto ref Vector Right() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Right[12];
-		public @property final auto ref Vector Up() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Up[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 4); }
-		private ubyte __Location[12];
-		// WARNING: Property 'PortalVolume' has the same name as a defined type!
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Front() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Right() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Up() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 4); }
+			// WARNING: Property 'PortalVolume' has the same name as a defined type!
+		}
 	}
 	struct AudioClassInfo
 	{
-		public @property final auto ref int SizeRealTime() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __SizeRealTime[4];
-		public @property final auto ref int NumRealTime() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __NumRealTime[4];
-		public @property final auto ref int SizeResident() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __SizeResident[4];
-		public @property final auto ref int NumResident() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __NumResident[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			int SizeRealTime() { return *cast(int*)(cast(size_t)&this + 12); }
+			int NumRealTime() { return *cast(int*)(cast(size_t)&this + 8); }
+			int SizeResident() { return *cast(int*)(cast(size_t)&this + 4); }
+			int NumResident() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) AudioComponents() { return *cast(ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref ScriptArray!(UObject.Pointer) Sources() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref ScriptArray!(UObject.Pointer) FreeSources() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 152); }
-	public @property final auto ref ScriptArray!(AudioDevice.Listener) Listeners() { return *cast(ScriptArray!(AudioDevice.Listener)*)(cast(size_t)cast(void*)this + 224); }
-	public @property final auto ref float LastUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
-	public @property final auto ref float TransientMasterVolume() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
-	public @property final auto ref AudioDevice.EDebugState DebugState() { return *cast(AudioDevice.EDebugState*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref UObject.Pointer TextToSpeech() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 692); }
-	public @property final auto ref float ExteriorLPFInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-	public @property final auto ref float ExteriorVolumeInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
-	public @property final auto ref float InteriorLPFInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-	public @property final auto ref float InteriorVolumeInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-	public @property final auto ref UObject.Double ExteriorLPFEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 664); }
-	public @property final auto ref UObject.Double InteriorLPFEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 656); }
-	public @property final auto ref UObject.Double ExteriorEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 648); }
-	public @property final auto ref UObject.Double InteriorEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref UObject.Double InteriorStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 632); }
-	public @property final auto ref ReverbVolume.InteriorSettings ListenerInteriorSettings() { return *cast(ReverbVolume.InteriorSettings*)(cast(size_t)cast(void*)this + 596); }
-	public @property final auto ref int ListenerVolumeIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref UObject.Double SoundModeEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 584); }
-	public @property final auto ref UObject.Double SoundModeFadeInEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 576); }
-	public @property final auto ref UObject.Double SoundModeFadeInStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 568); }
-	public @property final auto ref UObject.Double SoundModeStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 560); }
-	public @property final auto ref SoundMode CurrentMode() { return *cast(SoundMode*)(cast(size_t)cast(void*)this + 556); }
-	public @property final auto ref ScriptName BaseSoundModeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 548); }
-	public @property final auto ref UObject.Pointer Effects() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref QWord CurrentTick() { return *cast(QWord*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref int CommonAudioPoolFreeBytes() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref UObject.Pointer CommonAudioPool() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
-	public @property final bool bGameWasTicking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
-	public @property final bool bGameWasTicking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
-	public @property final bool m_bEnableBassBoost() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
-	public @property final bool m_bEnableBassBoost(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
-	public @property final auto ref SoundNodeWave ChirpOutSoundNodeWave() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString ChirpOutSoundNodeWaveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref SoundNodeWave ChirpInSoundNodeWave() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref ScriptString ChirpInSoundNodeWaveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref float MinCompressedDurationGame() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref float MinCompressedDurationEditor() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref float LowPassFilterResonance() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref int CommonAudioPoolSize() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref int MaxChannels() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-	final bool SetSoundMode(ScriptName NewMode)
+			ScriptArray!(UObject.Pointer) Sources() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 140); }
+			ScriptArray!(UObject.Pointer) FreeSources() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 152); }
+			ScriptArray!(AudioDevice.Listener) Listeners() { return *cast(ScriptArray!(AudioDevice.Listener)*)(cast(size_t)cast(void*)this + 224); }
+			float LastUpdateTime() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
+			float TransientMasterVolume() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
+			AudioDevice.EDebugState DebugState() { return *cast(AudioDevice.EDebugState*)(cast(size_t)cast(void*)this + 696); }
+			UObject.Pointer TextToSpeech() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 692); }
+			float ExteriorLPFInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
+			float ExteriorVolumeInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
+			float InteriorLPFInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+			float InteriorVolumeInterp() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
+			UObject.Double ExteriorLPFEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 664); }
+			UObject.Double InteriorLPFEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 656); }
+			UObject.Double ExteriorEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 648); }
+			UObject.Double InteriorEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 640); }
+			UObject.Double InteriorStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 632); }
+			ReverbVolume.InteriorSettings ListenerInteriorSettings() { return *cast(ReverbVolume.InteriorSettings*)(cast(size_t)cast(void*)this + 596); }
+			int ListenerVolumeIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 592); }
+			UObject.Double SoundModeEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 584); }
+			UObject.Double SoundModeFadeInEndTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 576); }
+			UObject.Double SoundModeFadeInStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 568); }
+			UObject.Double SoundModeStartTime() { return *cast(UObject.Double*)(cast(size_t)cast(void*)this + 560); }
+			SoundMode CurrentMode() { return *cast(SoundMode*)(cast(size_t)cast(void*)this + 556); }
+			ScriptName BaseSoundModeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 548); }
+			UObject.Pointer Effects() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 544); }
+			QWord CurrentTick() { return *cast(QWord*)(cast(size_t)cast(void*)this + 236); }
+			int CommonAudioPoolFreeBytes() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
+			UObject.Pointer CommonAudioPool() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+			SoundNodeWave ChirpOutSoundNodeWave() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
+			ScriptString ChirpOutSoundNodeWaveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+			SoundNodeWave ChirpInSoundNodeWave() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 96); }
+			ScriptString ChirpInSoundNodeWaveName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 84); }
+			float MinCompressedDurationGame() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+			float MinCompressedDurationEditor() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
+			float LowPassFilterResonance() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
+			int CommonAudioPoolSize() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
+			int MaxChannels() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+		}
+		bool bGameWasTicking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
+		bool bGameWasTicking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
+		bool m_bEnableBassBoost() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
+		bool m_bEnableBassBoost(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
+	}
+final:
+	bool SetSoundMode(ScriptName NewMode)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -140,7 +150,7 @@ void*)*)(cast(size_t)cast(void*)this + 128); }
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9511], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final SoundClass FindSoundClass(ScriptName SoundClassName)
+	SoundClass FindSoundClass(ScriptName SoundClassName)
 	{
 		ubyte params[12];
 		params[] = 0;

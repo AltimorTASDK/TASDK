@@ -6,13 +6,18 @@ import UnrealScript.Engine.Pawn;
 
 extern(C++) interface UDKScriptedNavigationPoint : NavigationPoint
 {
-	public @property final bool bAnchorMustBeReachable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x4) != 0; }
-	public @property final bool bAnchorMustBeReachable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x4; } return val; }
-	public @property final bool bScriptNotifyAnchorFindingResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x2) != 0; }
-	public @property final bool bScriptNotifyAnchorFindingResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x2; } return val; }
-	public @property final bool bScriptSpecifyEndAnchor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x1) != 0; }
-	public @property final bool bScriptSpecifyEndAnchor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x1; } return val; }
-	final NavigationPoint SpecifyEndAnchor(Pawn RouteFinder)
+public extern(D):
+	@property final
+	{
+		bool bAnchorMustBeReachable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x4) != 0; }
+		bool bAnchorMustBeReachable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x4; } return val; }
+		bool bScriptNotifyAnchorFindingResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x2) != 0; }
+		bool bScriptNotifyAnchorFindingResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x2; } return val; }
+		bool bScriptSpecifyEndAnchor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x1) != 0; }
+		bool bScriptSpecifyEndAnchor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 692) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 692) &= ~0x1; } return val; }
+	}
+final:
+	NavigationPoint SpecifyEndAnchor(Pawn RouteFinder)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -20,7 +25,7 @@ extern(C++) interface UDKScriptedNavigationPoint : NavigationPoint
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35324], params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[4];
 	}
-	final void NotifyAnchorFindingResult(NavigationPoint EndAnchor, Pawn RouteFinder)
+	void NotifyAnchorFindingResult(NavigationPoint EndAnchor, Pawn RouteFinder)
 	{
 		ubyte params[8];
 		params[] = 0;

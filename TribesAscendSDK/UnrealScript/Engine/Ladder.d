@@ -7,8 +7,12 @@ import UnrealScript.Engine.Pawn;
 
 extern(C++) interface Ladder : NavigationPoint
 {
-	public @property final auto ref Ladder LadderList() { return *cast(Ladder*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref LadderVolume MyLadder() { return *cast(LadderVolume*)(cast(size_t)cast(void*)this + 692); }
+public extern(D):
+	@property final auto ref
+	{
+		Ladder LadderList() { return *cast(Ladder*)(cast(size_t)cast(void*)this + 696); }
+		LadderVolume MyLadder() { return *cast(LadderVolume*)(cast(size_t)cast(void*)this + 692); }
+	}
 	final bool SuggestMovePreparation(Pawn Other)
 	{
 		ubyte params[8];

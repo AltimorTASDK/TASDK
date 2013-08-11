@@ -6,6 +6,7 @@ import UnrealScript.TribesGame.TrDevice;
 
 extern(C++) interface TrDevice_SN7 : TrDevice
 {
+public extern(D):
 	final Projectile ProjectileFire()
 	{
 		ubyte params[4];

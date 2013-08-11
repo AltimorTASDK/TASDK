@@ -5,6 +5,7 @@ import UnrealScript.TribesGame.TrCTFBase;
 
 extern(C++) interface TrCTFBase_BloodEagle : TrCTFBase
 {
+public extern(D):
 	final ScriptString GetSpectatorName()
 	{
 		ubyte params[12];

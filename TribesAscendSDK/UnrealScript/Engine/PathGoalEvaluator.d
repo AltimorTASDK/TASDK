@@ -6,15 +6,20 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface PathGoalEvaluator : UObject
 {
-	public @property final auto ref int CacheIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref int MaxPathVisits() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref NavigationPoint GeneratedGoal() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref PathGoalEvaluator NextEvaluator() { return *cast(PathGoalEvaluator*)(cast(size_t)cast(void*)this + 60); }
-	final void Recycle()
+public extern(D):
+	@property final auto ref
+	{
+		int CacheIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
+		int MaxPathVisits() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
+		NavigationPoint GeneratedGoal() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 64); }
+		PathGoalEvaluator NextEvaluator() { return *cast(PathGoalEvaluator*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void Recycle()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18164], cast(void*)0, cast(void*)0);
 	}
-	final ScriptString GetDumpString()
+	ScriptString GetDumpString()
 	{
 		ubyte params[12];
 		params[] = 0;

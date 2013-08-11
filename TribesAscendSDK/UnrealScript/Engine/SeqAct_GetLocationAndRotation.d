@@ -5,10 +5,14 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_GetLocationAndRotation : SequenceAction
 {
-	public @property final auto ref ScriptName SocketOrBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }
-	public @property final auto ref Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 256); }
-	public @property final auto ref Vector RotationVector() { return *cast(Vector*)(cast(size_t)cast(void*)this + 244); }
-	public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptName SocketOrBoneName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }
+		Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 256); }
+		Vector RotationVector() { return *cast(Vector*)(cast(size_t)cast(void*)this + 244); }
+		Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 232); }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

@@ -6,6 +6,7 @@ import UnrealScript.Engine.SeqAct_Toggle;
 
 extern(C++) interface ReverbVolumeToggleable : ReverbVolume
 {
+public extern(D):
 	final void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];

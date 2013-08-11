@@ -8,18 +8,25 @@ import UnrealScript.Engine.MaterialInterface;
 
 extern(C++) interface FogVolumeDensityComponent : ActorComponent
 {
-	public @property final auto ref ScriptArray!(Actor) FogVolumeActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref float StartDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref UObject.LinearColor ApproxFogLightColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 116); }
-	public @property final auto ref UObject.LinearColor SimpleLightColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 100); }
-	public @property final bool bOnlyAffectsTranslucency() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x4) != 0; }
-	public @property final bool bOnlyAffectsTranslucency(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x4; } return val; }
-	public @property final bool bAffectsTranslucency() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x2) != 0; }
-	public @property final bool bAffectsTranslucency(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x2; } return val; }
-	public @property final bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x1) != 0; }
-	public @property final bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x1; } return val; }
-	public @property final auto ref MaterialInterface DefaultFogVolumeMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 92); }
-	public @property final auto ref MaterialInterface FogMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 88); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(Actor) FogVolumeActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 136); }
+			float StartDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
+			UObject.LinearColor ApproxFogLightColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 116); }
+			UObject.LinearColor SimpleLightColor() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 100); }
+			MaterialInterface DefaultFogVolumeMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 92); }
+			MaterialInterface FogMaterial() { return *cast(MaterialInterface*)(cast(size_t)cast(void*)this + 88); }
+		}
+		bool bOnlyAffectsTranslucency() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x4) != 0; }
+		bool bOnlyAffectsTranslucency(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x4; } return val; }
+		bool bAffectsTranslucency() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x2) != 0; }
+		bool bAffectsTranslucency(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x2; } return val; }
+		bool bEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 96) & 0x1) != 0; }
+		bool bEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 96) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 96) &= ~0x1; } return val; }
+	}
 	final void SetEnabled(bool bSetEnabled)
 	{
 		ubyte params[4];

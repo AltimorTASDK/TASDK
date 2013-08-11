@@ -5,7 +5,8 @@ import UnrealScript.Engine.SeqAct_Switch;
 
 extern(C++) interface SeqAct_RandomSwitch : SeqAct_Switch
 {
-	public @property final auto ref ScriptArray!(int) AutoDisabledIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 256); }
+public extern(D):
+	@property final auto ref ScriptArray!(int) AutoDisabledIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 256); }
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

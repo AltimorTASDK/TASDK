@@ -7,6 +7,7 @@ import UnrealScript.IpDrv.WebApplication;
 
 extern(C++) interface ImageServer : WebApplication
 {
+public extern(D):
 	final void Query(WebRequest Request, WebResponse Response)
 	{
 		ubyte params[8];

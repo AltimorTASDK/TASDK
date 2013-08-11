@@ -5,6 +5,7 @@ import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionCustom : MaterialExpression
 {
+public extern(D):
 	enum ECustomMaterialOutputType : ubyte
 	{
 		CMOT_Float1 = 0,
@@ -15,12 +16,19 @@ extern(C++) interface MaterialExpressionCustom : MaterialExpression
 	}
 	struct CustomInput
 	{
-		// WARNING: Property 'Input' has the same name as a defined type!
-		public @property final auto ref ScriptString InputName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
-		private ubyte __InputName[12];
+		private ubyte __buffer__[40];
+	public extern(D):
+		@property final auto ref
+		{
+			// WARNING: Property 'Input' has the same name as a defined type!
+			ScriptString InputName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(MaterialExpressionCustom.CustomInput) Inputs() { return *cast(ScriptArray!(MaterialExpressionCustom.CustomInput)*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref MaterialExpressionCustom.ECustomMaterialOutputType OutputType() { return *cast(MaterialExpressionCustom.ECustomMaterialOutputType*)(cast(size_t)cast(void*)this + 120); }
-	public @property final auto ref ScriptString Code() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
+	@property final auto ref
+	{
+		ScriptArray!(MaterialExpressionCustom.CustomInput) Inputs() { return *cast(ScriptArray!(MaterialExpressionCustom.CustomInput)*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		MaterialExpressionCustom.ECustomMaterialOutputType OutputType() { return *cast(MaterialExpressionCustom.ECustomMaterialOutputType*)(cast(size_t)cast(void*)this + 120); }
+		ScriptString Code() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 108); }
+	}
 }

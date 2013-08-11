@@ -7,14 +7,18 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrWarningMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString RequiresPowerToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
-	public @property final auto ref ScriptString RequiresCreditsToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-	public @property final auto ref ScriptString SuicidePenalty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString MissileIntercepted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString MissileTargetingYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString MissileLockedOnToYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString SaberLauncherNeedsTargetToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString FumbledFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString RequiresPowerToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 184); }
+		ScriptString RequiresCreditsToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
+		ScriptString SuicidePenalty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString MissileIntercepted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		ScriptString MissileTargetingYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString MissileLockedOnToYou() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString SaberLauncherNeedsTargetToFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString FumbledFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

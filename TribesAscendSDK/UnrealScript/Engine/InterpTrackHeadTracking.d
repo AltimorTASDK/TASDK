@@ -5,6 +5,7 @@ import UnrealScript.Engine.InterpTrack;
 
 extern(C++) interface InterpTrackHeadTracking : InterpTrack
 {
+public extern(D):
 	enum EHeadTrackingAction : ubyte
 	{
 		EHTA_DisableHeadTracking = 0,
@@ -13,21 +14,30 @@ extern(C++) interface InterpTrackHeadTracking : InterpTrack
 	}
 	struct HeadTrackingKey
 	{
-		public @property final auto ref InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)&this + 4); }
-		private ubyte __Action[1];
-		public @property final auto ref float Time() { return *cast(float*)(cast(size_t)&this + 0); }
-		private ubyte __Time[4];
+		private ubyte __buffer__[5];
+	public extern(D):
+		@property final auto ref
+		{
+			InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)&this + 4); }
+			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { return *cast(ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey)*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref ScriptArray!(ScriptName) TrackControllerName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref ScriptArray!(ScriptClass) ActorClassesToLookAt() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 172); }
-	public @property final auto ref ScriptArray!(ScriptName) TargetBoneNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 184); }
-	public @property final auto ref float MaxInterestTime() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
-	public @property final auto ref float MinLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
-	public @property final auto ref float MaxLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
-	public @property final bool bLookAtPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x2) != 0; }
-	public @property final bool bLookAtPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x2; } return val; }
-	public @property final bool bDisableBeyondLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x1) != 0; }
-	public @property final bool bDisableBeyondLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x1; } return val; }
-	public @property final auto ref float LookAtActorRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { return *cast(ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey)*)(cast(size_t)cast(void*)this + 128); }
+			ScriptArray!(ScriptName) TrackControllerName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 140); }
+			ScriptArray!(ScriptClass) ActorClassesToLookAt() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 172); }
+			ScriptArray!(ScriptName) TargetBoneNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 184); }
+			float MaxInterestTime() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }
+			float MinLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }
+			float MaxLookAtTime() { return *cast(float*)(cast(size_t)cast(void*)this + 160); }
+			float LookAtActorRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 152); }
+		}
+		bool bLookAtPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x2) != 0; }
+		bool bLookAtPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x2; } return val; }
+		bool bDisableBeyondLimit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 156) & 0x1) != 0; }
+		bool bDisableBeyondLimit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 156) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 156) &= ~0x1; } return val; }
+	}
 }

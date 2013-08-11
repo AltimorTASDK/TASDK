@@ -7,8 +7,12 @@ import UnrealScript.Engine.PlayerReplicationInfo;
 
 extern(C++) interface UTSayMsg : UTLocalMessage
 {
-	public @property final auto ref UObject.Color BlueTeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref UObject.Color RedTeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		UObject.Color BlueTeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 104); }
+		UObject.Color RedTeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
 	{
 		ubyte params[8];

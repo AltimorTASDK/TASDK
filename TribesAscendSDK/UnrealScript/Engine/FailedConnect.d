@@ -7,8 +7,10 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface FailedConnect : LocalMessage
 {
-	public @property final auto ref ScriptString FailMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
-	final int GetFailSwitch(ScriptString FailString)
+public extern(D):
+	@property final auto ref ScriptString FailMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
+final:
+	int GetFailSwitch(ScriptString FailString)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -16,7 +18,7 @@ extern(C++) interface FailedConnect : LocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15694], params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;

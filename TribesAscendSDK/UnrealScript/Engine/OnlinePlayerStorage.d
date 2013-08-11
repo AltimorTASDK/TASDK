@@ -6,6 +6,7 @@ import UnrealScript.Engine.Settings;
 
 extern(C++) interface OnlinePlayerStorage : UObject
 {
+public extern(D):
 	enum EOnlineProfilePropertyOwner : ubyte
 	{
 		OPPO_None = 0,
@@ -22,18 +23,25 @@ extern(C++) interface OnlinePlayerStorage : UObject
 	}
 	struct OnlineProfileSetting
 	{
-		public @property final auto ref Settings.SettingsProperty ProfileSetting() { return *cast(Settings.SettingsProperty*)(cast(size_t)&this + 4); }
-		private ubyte __ProfileSetting[20];
-		public @property final auto ref OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { return *cast(OnlinePlayerStorage.EOnlineProfilePropertyOwner*)(cast(size_t)&this + 0); }
-		private ubyte __Owner[1];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			Settings.SettingsProperty ProfileSetting() { return *cast(Settings.SettingsProperty*)(cast(size_t)&this + 4); }
+			OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { return *cast(OnlinePlayerStorage.EOnlineProfilePropertyOwner*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { return *cast(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { return *cast(ScriptArray!(Settings.SettingsPropertyPropertyMetaData)*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref int DeviceID() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { return *cast(OnlinePlayerStorage.EOnlinePlayerStorageAsyncState*)(cast(size_t)cast(void*)this + 92); }
-	public @property final auto ref int VersionNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref int VersionSettingsId() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-	final bool GetProfileSettingId(ScriptName ProfileSettingName, int* ProfileSettingId)
+	@property final auto ref
+	{
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { return *cast(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)*)(cast(size_t)cast(void*)this + 68); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { return *cast(ScriptArray!(Settings.SettingsPropertyPropertyMetaData)*)(cast(size_t)cast(void*)this + 80); }
+		int DeviceID() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
+		OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { return *cast(OnlinePlayerStorage.EOnlinePlayerStorageAsyncState*)(cast(size_t)cast(void*)this + 92); }
+		int VersionNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }
+		int VersionSettingsId() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+	}
+final:
+	bool GetProfileSettingId(ScriptName ProfileSettingName, int* ProfileSettingId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -43,7 +51,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*ProfileSettingId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final ScriptName GetProfileSettingName(int ProfileSettingId)
+	ScriptName GetProfileSettingName(int ProfileSettingId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -51,7 +59,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22414], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final ScriptString GetProfileSettingColumnHeader(int ProfileSettingId)
+	ScriptString GetProfileSettingColumnHeader(int ProfileSettingId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -59,7 +67,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22417], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final int FindProfileSettingIndex(int ProfileSettingId)
+	int FindProfileSettingIndex(int ProfileSettingId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -67,7 +75,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22420], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final int FindProfileMappingIndex(int ProfileSettingId)
+	int FindProfileMappingIndex(int ProfileSettingId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -75,7 +83,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22423], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final int FindProfileMappingIndexByName(ScriptName ProfileSettingName)
+	int FindProfileMappingIndexByName(ScriptName ProfileSettingName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -83,7 +91,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22426], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final int FindDefaultProfileMappingIndexByName(ScriptName ProfileSettingName)
+	int FindDefaultProfileMappingIndexByName(ScriptName ProfileSettingName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -91,7 +99,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22429], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final bool IsProfileSettingIdMapped(int ProfileSettingId)
+	bool IsProfileSettingIdMapped(int ProfileSettingId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -99,7 +107,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22432], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool GetProfileSettingValue(int ProfileSettingId, ScriptString* Value, int ValueMapID)
+	bool GetProfileSettingValue(int ProfileSettingId, ScriptString* Value, int ValueMapID)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -110,7 +118,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[20];
 	}
-	final ScriptName GetProfileSettingValueName(int ProfileSettingId)
+	ScriptName GetProfileSettingValueName(int ProfileSettingId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -118,7 +126,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22440], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final bool GetProfileSettingValues(int ProfileSettingId, ScriptArray!(ScriptName)* Values)
+	bool GetProfileSettingValues(int ProfileSettingId, ScriptArray!(ScriptName)* Values)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -128,7 +136,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Values = *cast(ScriptArray!(ScriptName)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final bool GetProfileSettingValueByName(ScriptName ProfileSettingName, ScriptString* Value)
+	bool GetProfileSettingValueByName(ScriptName ProfileSettingName, ScriptString* Value)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -138,7 +146,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Value = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool SetProfileSettingValueByName(ScriptName ProfileSettingName, ScriptString* NewValue)
+	bool SetProfileSettingValueByName(ScriptName ProfileSettingName, ScriptString* NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -148,7 +156,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool SetProfileSettingValue(int ProfileSettingId, ScriptString* NewValue)
+	bool SetProfileSettingValue(int ProfileSettingId, ScriptString* NewValue)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -158,7 +166,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*NewValue = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final bool GetProfileSettingValueId(int ProfileSettingId, int* ValueId, int* ListIndex)
+	bool GetProfileSettingValueId(int ProfileSettingId, int* ValueId, int* ListIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -170,7 +178,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetProfileSettingValueFromListIndex(int ProfileSettingId, int ListIndex, int* Value)
+	bool GetProfileSettingValueFromListIndex(int ProfileSettingId, int ListIndex, int* Value)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -181,7 +189,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Value = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetProfileSettingValueInt(int ProfileSettingId, int* Value)
+	bool GetProfileSettingValueInt(int ProfileSettingId, int* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -191,7 +199,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool GetProfileSettingValueFloat(int ProfileSettingId, float* Value)
+	bool GetProfileSettingValueFloat(int ProfileSettingId, float* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -201,7 +209,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool SetProfileSettingValueId(int ProfileSettingId, int Value)
+	bool SetProfileSettingValueId(int ProfileSettingId, int Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -210,7 +218,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22478], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool SetProfileSettingValueInt(int ProfileSettingId, int Value)
+	bool SetProfileSettingValueInt(int ProfileSettingId, int Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -219,7 +227,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22482], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool SetProfileSettingValueFloat(int ProfileSettingId, float Value)
+	bool SetProfileSettingValueFloat(int ProfileSettingId, float Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -228,9 +236,9 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22486], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool GetProfileSettingMappingType(int ProfileId, Settings.EPropertyValueMappingType* OutType)
+	bool GetProfileSettingMappingType(int ProfileId, Settings.EPropertyValueMappingType* OutType)
 	{
-		ubyte params[9];
+		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileId;
 		*cast(Settings.EPropertyValueMappingType*)&params[4] = *OutType;
@@ -238,7 +246,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool GetProfileSettingMappingIds(int ProfileId, ScriptArray!(int)* Ids)
+	bool GetProfileSettingMappingIds(int ProfileId, ScriptArray!(int)* Ids)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -248,9 +256,9 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*Ids = *cast(ScriptArray!(int)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final bool GetProfileSettingRange(int ProfileId, float* OutMinValue, float* OutMaxValue, float* RangeIncrement, ubyte* bFormatAsInt)
+	bool GetProfileSettingRange(int ProfileId, float* OutMinValue, float* OutMaxValue, float* RangeIncrement, ubyte* bFormatAsInt)
 	{
-		ubyte params[21];
+		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileId;
 		*cast(float*)&params[4] = *OutMinValue;
@@ -264,7 +272,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*bFormatAsInt = params[16];
 		return *cast(bool*)&params[20];
 	}
-	final bool SetRangedProfileSettingValue(int ProfileId, float NewValue)
+	bool SetRangedProfileSettingValue(int ProfileId, float NewValue)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -273,7 +281,7 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22506], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool GetRangedProfileSettingValue(int ProfileId, float* OutValue)
+	bool GetRangedProfileSettingValue(int ProfileId, float* OutValue)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -283,36 +291,36 @@ extern(C++) interface OnlinePlayerStorage : UObject
 		*OutValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final void AddSettingInt(int SettingId)
+	void AddSettingInt(int SettingId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = SettingId;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22514], params.ptr, cast(void*)0);
 	}
-	final void AddSettingFloat(int SettingId)
+	void AddSettingFloat(int SettingId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = SettingId;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22516], params.ptr, cast(void*)0);
 	}
-	final void SetToDefaults()
+	void SetToDefaults()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22518], cast(void*)0, cast(void*)0);
 	}
-	final void AppendVersionToSettings()
+	void AppendVersionToSettings()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22519], cast(void*)0, cast(void*)0);
 	}
-	final int GetVersionNumber()
+	int GetVersionNumber()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22520], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final void SetDefaultVersionNumber()
+	void SetDefaultVersionNumber()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22522], cast(void*)0, cast(void*)0);
 	}

@@ -6,6 +6,10 @@ import UnrealScript.Engine.Volume;
 
 extern(C++) interface PrecomputedVisibilityOverrideVolume : Volume
 {
-	public @property final auto ref ScriptArray!(Actor) OverrideVisibleActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref ScriptArray!(Actor) OverrideInvisibleActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 532); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(Actor) OverrideVisibleActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 520); }
+		ScriptArray!(Actor) OverrideInvisibleActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 532); }
+	}
 }

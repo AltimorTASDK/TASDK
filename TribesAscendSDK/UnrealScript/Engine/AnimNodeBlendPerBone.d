@@ -5,11 +5,18 @@ import UnrealScript.Engine.AnimNodeBlend;
 
 extern(C++) interface AnimNodeBlendPerBone : AnimNodeBlend
 {
-	public @property final auto ref ScriptArray!(ScriptName) BranchStartBoneName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 264); }
-	public @property final auto ref ScriptArray!(float) Child2PerBoneWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 276); }
-	public @property final auto ref ScriptArray!(ubyte) LocalToCompReqBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 288); }
-	public @property final bool bForceLocalSpaceBlend() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-	public @property final bool bForceLocalSpaceBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(ScriptName) BranchStartBoneName() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 264); }
+			ScriptArray!(float) Child2PerBoneWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 276); }
+			ScriptArray!(ubyte) LocalToCompReqBones() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 288); }
+		}
+		bool bForceLocalSpaceBlend() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
+		bool bForceLocalSpaceBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+	}
 	final void SetBlendTarget(float BlendTarget, float BlendTime)
 	{
 		ubyte params[8];

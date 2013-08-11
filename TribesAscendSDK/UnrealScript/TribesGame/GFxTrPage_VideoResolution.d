@@ -7,22 +7,24 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_VideoResolution : GFxTrPage
 {
-	public @property final auto ref int CurrResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void SpecialAction(GFxTrAction Action)
+public extern(D):
+	@property final auto ref int CurrResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+final:
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61383], params.ptr, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61387], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -30,14 +32,14 @@ extern(C++) interface GFxTrPage_VideoResolution : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61389], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void PopupData(GFxObject Obj)
+	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61393], params.ptr, cast(void*)0);
 	}
-	final void PopupComplete(int Action, ScriptString TextInput)
+	void PopupComplete(int Action, ScriptString TextInput)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -45,7 +47,7 @@ extern(C++) interface GFxTrPage_VideoResolution : GFxTrPage
 		*cast(ScriptString*)&params[4] = TextInput;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61398], params.ptr, cast(void*)0);
 	}
-	final void RevertSetting()
+	void RevertSetting()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61403], cast(void*)0, cast(void*)0);
 	}

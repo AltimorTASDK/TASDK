@@ -6,7 +6,8 @@ import UnrealScript.UTGame.UTPlayerReplicationInfo;
 
 extern(C++) interface UTDmgType_ScorpionSelfDestruct : UTDmgType_Burning
 {
-	public @property final auto ref int DamageGivenForSelfDestruct() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
+public extern(D):
+	@property final auto ref int DamageGivenForSelfDestruct() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
 	final int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];

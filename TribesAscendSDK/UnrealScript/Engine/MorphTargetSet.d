@@ -7,9 +7,13 @@ import UnrealScript.Engine.SkeletalMesh;
 
 extern(C++) interface MorphTargetSet : UObject
 {
-	public @property final auto ref ScriptArray!(MorphTarget) Targets() { return *cast(ScriptArray!(MorphTarget)*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref UObject.Array_Mirror RawWedgePointIndices() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref SkeletalMesh BaseSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(MorphTarget) Targets() { return *cast(ScriptArray!(MorphTarget)*)(cast(size_t)cast(void*)this + 60); }
+		UObject.Array_Mirror RawWedgePointIndices() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 76); }
+		SkeletalMesh BaseSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 72); }
+	}
 	final MorphTarget FindMorphTarget(ScriptName MorphTargetName)
 	{
 		ubyte params[12];

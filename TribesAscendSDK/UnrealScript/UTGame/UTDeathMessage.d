@@ -8,11 +8,19 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface UTDeathMessage : UTLocalMessage
 {
-	public @property final bool bNoConsoleDeathMessages() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x1) != 0; }
-	public @property final bool bNoConsoleDeathMessages(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x1; } return val; }
-	public @property final auto ref ScriptString SomeoneString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString KilledString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptString SomeoneString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+			ScriptString KilledString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+		}
+		bool bNoConsoleDeathMessages() { return (*cast(uint*)(cast(size_t)cast(void*)this + 124) & 0x1) != 0; }
+		bool bNoConsoleDeathMessages(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 124) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 124) &= ~0x1; } return val; }
+	}
+final:
+	UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -20,7 +28,7 @@ extern(C++) interface UTDeathMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47015], params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[4];
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -32,7 +40,7 @@ extern(C++) interface UTDeathMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47018], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

@@ -12,40 +12,48 @@ import UnrealScript.UTGame.UTTeamInfo;
 
 extern(C++) interface TrGame_TRRabbit : TrGame
 {
+public extern(D):
 	struct ScoreStruct
 	{
-		public @property final auto ref float Score() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __Score[4];
-		public @property final auto ref TrPlayerController C() { return *cast(TrPlayerController*)(cast(size_t)&this + 0); }
-		private ubyte __C[4];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref
+		{
+			float Score() { return *cast(float*)(cast(size_t)&this + 4); }
+			TrPlayerController C() { return *cast(TrPlayerController*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref PlayerReplicationInfo m_HolderPRI() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1464); }
-	public @property final auto ref PlayerReplicationInfo m_Leader() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1468); }
-	public @property final auto ref float m_fScoreInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 1460); }
-	public @property final auto ref TrFlagRabbit m_Flag() { return *cast(TrFlagRabbit*)(cast(size_t)cast(void*)this + 1456); }
-	final void ApplyServerSettings()
+	@property final auto ref
+	{
+		PlayerReplicationInfo m_HolderPRI() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1464); }
+		PlayerReplicationInfo m_Leader() { return *cast(PlayerReplicationInfo*)(cast(size_t)cast(void*)this + 1468); }
+		float m_fScoreInterval() { return *cast(float*)(cast(size_t)cast(void*)this + 1460); }
+		TrFlagRabbit m_Flag() { return *cast(TrFlagRabbit*)(cast(size_t)cast(void*)this + 1456); }
+	}
+final:
+	void ApplyServerSettings()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90778], cast(void*)0, cast(void*)0);
 	}
-	final void RegisterFlag(TrFlagRabbit F)
+	void RegisterFlag(TrFlagRabbit F)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrFlagRabbit*)params.ptr = F;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90780], params.ptr, cast(void*)0);
 	}
-	final void PickedUpFlag(Controller Holder)
+	void PickedUpFlag(Controller Holder)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Holder;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90783], params.ptr, cast(void*)0);
 	}
-	final void DroppedFlag()
+	void DroppedFlag()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90786], cast(void*)0, cast(void*)0);
 	}
-	final void SetTeam(Controller Other, UTTeamInfo NewTeam, bool bNewTeam)
+	void SetTeam(Controller Other, UTTeamInfo NewTeam, bool bNewTeam)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -54,18 +62,18 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		*cast(bool*)&params[8] = bNewTeam;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90789], params.ptr, cast(void*)0);
 	}
-	final void ScoreFlagTimer()
+	void ScoreFlagTimer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90794], cast(void*)0, cast(void*)0);
 	}
-	final void ScoreFlagHold(bool firstPass)
+	void ScoreFlagHold(bool firstPass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = firstPass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90795], params.ptr, cast(void*)0);
 	}
-	final void ScoreKill(Controller Killer, Controller Other)
+	void ScoreKill(Controller Killer, Controller Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -73,11 +81,11 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		*cast(Controller*)&params[4] = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90798], params.ptr, cast(void*)0);
 	}
-	final void ChangePreviousRabbitTeam()
+	void ChangePreviousRabbitTeam()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90801], cast(void*)0, cast(void*)0);
 	}
-	final TrGame_TRRabbit.ScoreStruct MakeScoreStruct(TrPlayerController C, float Score)
+	TrGame_TRRabbit.ScoreStruct MakeScoreStruct(TrPlayerController C, float Score)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -86,7 +94,7 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90802], params.ptr, cast(void*)0);
 		return *cast(TrGame_TRRabbit.ScoreStruct*)&params[8];
 	}
-	final bool SortPlayerScores(PlayerReplicationInfo Scorer)
+	bool SortPlayerScores(PlayerReplicationInfo Scorer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -94,7 +102,7 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90807], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool CheckScore(PlayerReplicationInfo Scorer)
+	bool CheckScore(PlayerReplicationInfo Scorer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -102,7 +110,7 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90820], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
+	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -111,16 +119,16 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90824], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final ubyte PickTeam(ubyte Num, Controller C)
+	ubyte PickTeam(ubyte Num, Controller C)
 	{
-		ubyte params[12];
+		ubyte params[9];
 		params[] = 0;
 		params[0] = Num;
 		*cast(Controller*)&params[4] = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90831], params.ptr, cast(void*)0);
 		return params[8];
 	}
-	final ubyte PickTeamForMigration(Controller C)
+	ubyte PickTeamForMigration(Controller C)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -128,11 +136,11 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90835], params.ptr, cast(void*)0);
 		return params[4];
 	}
-	final void PlayEndOfMatchMessage()
+	void PlayEndOfMatchMessage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90838], cast(void*)0, cast(void*)0);
 	}
-	final void DiscardInventory(Pawn Other, Controller Killer)
+	void DiscardInventory(Pawn Other, Controller Killer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -140,17 +148,17 @@ extern(C++) interface TrGame_TRRabbit : TrGame
 		*cast(Controller*)&params[4] = Killer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90843], params.ptr, cast(void*)0);
 	}
-	final float RatePlayerStart(PlayerStart P, ubyte Team, Controller Player)
+	float RatePlayerStart(PlayerStart P, ubyte Team, Controller pPlayer)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerStart*)params.ptr = P;
 		params[4] = Team;
-		*cast(Controller*)&params[8] = Player;
+		*cast(Controller*)&params[8] = pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90848], params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	final int GetGameTypeId()
+	int GetGameTypeId()
 	{
 		ubyte params[4];
 		params[] = 0;

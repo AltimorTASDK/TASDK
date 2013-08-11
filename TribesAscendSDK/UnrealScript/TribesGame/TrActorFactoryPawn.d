@@ -6,9 +6,13 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface TrActorFactoryPawn : UTActorFactoryAI
 {
-	public @property final auto ref ScriptClass FamilyInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref float GroundSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref int NextTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptClass FamilyInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 144); }
+		float GroundSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
+		int NextTeam() { return *cast(int*)(cast(size_t)cast(void*)this + 136); }
+	}
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

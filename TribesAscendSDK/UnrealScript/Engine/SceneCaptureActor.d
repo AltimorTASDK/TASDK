@@ -6,6 +6,7 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface SceneCaptureActor : Actor
 {
+public extern(D):
 	final void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];

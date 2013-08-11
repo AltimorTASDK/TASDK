@@ -5,6 +5,7 @@ import UnrealScript.Engine.DecalManager;
 
 extern(C++) interface UTDecalManager : DecalManager
 {
+public extern(D):
 	final bool CanSpawnDecals()
 	{
 		ubyte params[4];

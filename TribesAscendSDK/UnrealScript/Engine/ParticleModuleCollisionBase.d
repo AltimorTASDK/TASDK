@@ -4,6 +4,7 @@ import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleCollisionBase : ParticleModule
 {
+public extern(D):
 	enum EParticleCollisionComplete : ubyte
 	{
 		EPCC_Kill = 0,

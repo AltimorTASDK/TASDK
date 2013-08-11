@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTCheatManager;
 
 extern(C++) interface TrCheatManager : UTCheatManager
 {
+public extern(D):
 	final Weapon GiveWeapon(ScriptString WeaponClassStr)
 	{
 		ubyte params[16];

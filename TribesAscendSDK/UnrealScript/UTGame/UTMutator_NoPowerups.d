@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTMutator;
 
 extern(C++) interface UTMutator_NoPowerups : UTMutator
 {
+public extern(D):
 	final bool CheckReplacement(Actor Other)
 	{
 		ubyte params[8];

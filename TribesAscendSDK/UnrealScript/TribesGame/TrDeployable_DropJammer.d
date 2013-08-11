@@ -7,7 +7,9 @@ import UnrealScript.TribesGame.TrDeployable_Sensor;
 
 extern(C++) interface TrDeployable_DropJammer : TrDeployable_Sensor
 {
-	final bool ShouldDetectPawn(Pawn P)
+public extern(D):
+final:
+	bool ShouldDetectPawn(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -15,25 +17,25 @@ extern(C++) interface TrDeployable_DropJammer : TrDeployable_Sensor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80010], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void OnPowerStatusChanged()
+	void OnPowerStatusChanged()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80013], cast(void*)0, cast(void*)0);
 	}
-	final void AddDetectedPawn(Pawn DetectedPawn)
+	void AddDetectedPawn(Pawn DetectedPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = DetectedPawn;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80016], params.ptr, cast(void*)0);
 	}
-	final void RemoveDetectedPawn(Pawn DetectedPawn)
+	void RemoveDetectedPawn(Pawn DetectedPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = DetectedPawn;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80019], params.ptr, cast(void*)0);
 	}
-	final Texture2D GetMarker()
+	Texture2D GetMarker()
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -6,5 +6,6 @@ import UnrealScript.Engine.MaterialInterface;
 
 extern(C++) interface ParticleModuleMeshMaterial : ParticleModuleMaterialBase
 {
-	public @property final auto ref ScriptArray!(MaterialInterface) MeshMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref ScriptArray!(MaterialInterface) MeshMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 72); }
 }

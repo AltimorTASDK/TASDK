@@ -7,12 +7,16 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrDeployableMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString DeployableAmmoDepleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString DeployableAmmoRemaining() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString DeployableHologramInvalidDeploySpot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString DeployableHologramOnlyOutside() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString DeployableHologramTooCloseToAnotherDeployable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString DeployableHologramTooCloseToEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString DeployableAmmoDepleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString DeployableAmmoRemaining() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		ScriptString DeployableHologramInvalidDeploySpot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString DeployableHologramOnlyOutside() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString DeployableHologramTooCloseToAnotherDeployable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString DeployableHologramTooCloseToEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

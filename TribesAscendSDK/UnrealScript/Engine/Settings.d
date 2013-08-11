@@ -6,6 +6,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface Settings : UObject
 {
+public extern(D):
 	enum EOnlineDataAdvertisementType : ubyte
 	{
 		ODAT_DontAdvertise = 0,
@@ -36,126 +37,141 @@ extern(C++) interface Settings : UObject
 	}
 	struct LocalizedStringSetting
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref int ValueIndex() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __ValueIndex[4];
-		public @property final auto ref Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 8); }
-		private ubyte __AdvertisementType[1];
+		private ubyte __buffer__[9];
+	public extern(D):
+		@property final auto ref
+		{
+			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+			int ValueIndex() { return *cast(int*)(cast(size_t)&this + 4); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 8); }
+		}
 	}
 	struct SettingsProperty
 	{
-		public @property final auto ref int PropertyId() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __PropertyId[4];
-		public @property final auto ref Settings.SettingsData Data() { return *cast(Settings.SettingsData*)(cast(size_t)&this + 4); }
-		private ubyte __Data[12];
-		public @property final auto ref Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 16); }
-		private ubyte __AdvertisementType[1];
+		private ubyte __buffer__[17];
+	public extern(D):
+		@property final auto ref
+		{
+			int PropertyId() { return *cast(int*)(cast(size_t)&this + 0); }
+			Settings.SettingsData Data() { return *cast(Settings.SettingsData*)(cast(size_t)&this + 4); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { return *cast(Settings.EOnlineDataAdvertisementType*)(cast(size_t)&this + 16); }
+		}
 	}
 	struct SettingsData
 	{
-		public @property final auto ref Settings.ESettingsDataType Type() { return *cast(Settings.ESettingsDataType*)(cast(size_t)&this + 0); }
-		private ubyte __Type[1];
-		public @property final auto ref int Value1() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __Value1[4];
-		public @property final auto ref UObject.Pointer Value2() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
-		private ubyte __Value2[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			Settings.ESettingsDataType Type() { return *cast(Settings.ESettingsDataType*)(cast(size_t)&this + 0); }
+			int Value1() { return *cast(int*)(cast(size_t)&this + 4); }
+			UObject.Pointer Value2() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
+		}
 	}
 	struct IdToStringMapping
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __Name[8];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+		}
 	}
 	struct LocalizedStringSettingMetaData
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __Name[8];
-		public @property final auto ref ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-		private ubyte __ColumnHeaderText[12];
-		public @property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)&this + 24); }
-		private ubyte __ValueMappings[12];
+		private ubyte __buffer__[36];
+	public extern(D):
+		@property final auto ref
+		{
+			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
+			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)&this + 24); }
+		}
 	}
 	struct StringIdToStringMapping
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __Name[8];
-		public @property final bool bIsWildcard() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-		public @property final bool bIsWildcard(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
-		private ubyte __bIsWildcard[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+				ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			}
+			bool bIsWildcard() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
+			bool bIsWildcard(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+		}
 	}
 	struct SettingsPropertyPropertyMetaData
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __Name[8];
-		public @property final auto ref ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-		private ubyte __ColumnHeaderText[12];
-		public @property final auto ref Settings.EPropertyValueMappingType MappingType() { return *cast(Settings.EPropertyValueMappingType*)(cast(size_t)&this + 24); }
-		private ubyte __MappingType[1];
-		public @property final auto ref ScriptArray!(Settings.IdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)&this + 28); }
-		private ubyte __ValueMappings[12];
-		public @property final auto ref ScriptArray!(Settings.SettingsData) PredefinedValues() { return *cast(ScriptArray!(Settings.SettingsData)*)(cast(size_t)&this + 40); }
-		private ubyte __PredefinedValues[12];
-		public @property final auto ref float MinVal() { return *cast(float*)(cast(size_t)&this + 52); }
-		private ubyte __MinVal[4];
-		public @property final auto ref float MaxVal() { return *cast(float*)(cast(size_t)&this + 56); }
-		private ubyte __MaxVal[4];
-		public @property final auto ref float RangeIncrement() { return *cast(float*)(cast(size_t)&this + 60); }
-		private ubyte __RangeIncrement[4];
+		private ubyte __buffer__[64];
+	public extern(D):
+		@property final auto ref
+		{
+			int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			ScriptString ColumnHeaderText() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
+			Settings.EPropertyValueMappingType MappingType() { return *cast(Settings.EPropertyValueMappingType*)(cast(size_t)&this + 24); }
+			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)&this + 28); }
+			ScriptArray!(Settings.SettingsData) PredefinedValues() { return *cast(ScriptArray!(Settings.SettingsData)*)(cast(size_t)&this + 40); }
+			float MinVal() { return *cast(float*)(cast(size_t)&this + 52); }
+			float MaxVal() { return *cast(float*)(cast(size_t)&this + 56); }
+			float RangeIncrement() { return *cast(float*)(cast(size_t)&this + 60); }
+		}
 	}
-	public @property final auto ref ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { return *cast(ScriptArray!(Settings.LocalizedStringSetting)*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref ScriptArray!(Settings.SettingsProperty) Properties() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { return *cast(ScriptArray!(Settings.LocalizedStringSettingMetaData)*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { return *cast(ScriptArray!(Settings.SettingsPropertyPropertyMetaData)*)(cast(size_t)cast(void*)this + 96); }
-	final void UpdateFromURL(ScriptString* URL, GameInfo Game)
+	@property final auto ref
+	{
+		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { return *cast(ScriptArray!(Settings.LocalizedStringSetting)*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)cast(void*)this + 72); }
+		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { return *cast(ScriptArray!(Settings.LocalizedStringSettingMetaData)*)(cast(size_t)cast(void*)this + 84); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { return *cast(ScriptArray!(Settings.SettingsPropertyPropertyMetaData)*)(cast(size_t)cast(void*)this + 96); }
+	}
+final:
+	void UpdateFromURL(ScriptString* pURL, GameInfo Game)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *URL;
+		*cast(ScriptString*)params.ptr = *pURL;
 		*cast(GameInfo*)&params[12] = Game;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5197], params.ptr, cast(void*)0);
-		*URL = *cast(ScriptString*)params.ptr;
+		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	final void BuildURL(ScriptString* URL)
+	void BuildURL(ScriptString* pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *URL;
+		*cast(ScriptString*)params.ptr = *pURL;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5198], params.ptr, cast(void*)0);
-		*URL = *cast(ScriptString*)params.ptr;
+		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	final void AppendContextsToURL(ScriptString* URL)
+	void AppendContextsToURL(ScriptString* pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *URL;
+		*cast(ScriptString*)params.ptr = *pURL;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5201], params.ptr, cast(void*)0);
-		*URL = *cast(ScriptString*)params.ptr;
+		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	final void AppendPropertiesToURL(ScriptString* URL)
+	void AppendPropertiesToURL(ScriptString* pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *URL;
+		*cast(ScriptString*)params.ptr = *pURL;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5203], params.ptr, cast(void*)0);
-		*URL = *cast(ScriptString*)params.ptr;
+		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	final void AppendDataBindingsToURL(ScriptString* URL)
+	void AppendDataBindingsToURL(ScriptString* pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = *URL;
+		*cast(ScriptString*)params.ptr = *pURL;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5205], params.ptr, cast(void*)0);
-		*URL = *cast(ScriptString*)params.ptr;
+		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	final void GetQoSAdvertisedStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* QoSSettings)
+	void GetQoSAdvertisedStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* QoSSettings)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -163,7 +179,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5207], params.ptr, cast(void*)0);
 		*QoSSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
 	}
-	final void GetQoSAdvertisedProperties(ScriptArray!(Settings.SettingsProperty)* QoSProps)
+	void GetQoSAdvertisedProperties(ScriptArray!(Settings.SettingsProperty)* QoSProps)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -171,7 +187,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5209], params.ptr, cast(void*)0);
 		*QoSProps = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
-	final bool GetRangedPropertyValue(int PropertyId, float* OutValue)
+	bool GetRangedPropertyValue(int PropertyId, float* OutValue)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -181,7 +197,7 @@ extern(C++) interface Settings : UObject
 		*OutValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool SetRangedPropertyValue(int PropertyId, float NewValue)
+	bool SetRangedPropertyValue(int PropertyId, float NewValue)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -190,9 +206,9 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5229], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool GetPropertyRange(int PropertyId, float* OutMinValue, float* OutMaxValue, float* RangeIncrement, ubyte* bFormatAsInt)
+	bool GetPropertyRange(int PropertyId, float* OutMinValue, float* OutMaxValue, float* RangeIncrement, ubyte* bFormatAsInt)
 	{
-		ubyte params[21];
+		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
 		*cast(float*)&params[4] = *OutMinValue;
@@ -206,9 +222,9 @@ extern(C++) interface Settings : UObject
 		*bFormatAsInt = params[16];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetPropertyMappingType(int PropertyId, Settings.EPropertyValueMappingType* OutType)
+	bool GetPropertyMappingType(int PropertyId, Settings.EPropertyValueMappingType* OutType)
 	{
-		ubyte params[9];
+		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropertyId;
 		*cast(Settings.EPropertyValueMappingType*)&params[4] = *OutType;
@@ -216,7 +232,7 @@ extern(C++) interface Settings : UObject
 		*OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool HasStringSetting(int SettingId)
+	bool HasStringSetting(int SettingId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -224,7 +240,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5244], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool HasProperty(int PropertyId)
+	bool HasProperty(int PropertyId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -232,7 +248,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5250], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void UpdateProperties(ScriptArray!(Settings.SettingsProperty)* Props, bool bShouldAddIfMissing)
+	void UpdateProperties(ScriptArray!(Settings.SettingsProperty)* Props, bool bShouldAddIfMissing)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -241,7 +257,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5253], params.ptr, cast(void*)0);
 		*Props = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
-	final void UpdateStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* pSettings, bool bShouldAddIfMissing)
+	void UpdateStringSettings(ScriptArray!(Settings.LocalizedStringSetting)* pSettings, bool bShouldAddIfMissing)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -250,7 +266,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5256], params.ptr, cast(void*)0);
 		*pSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
 	}
-	final Settings.ESettingsDataType GetPropertyType(int PropertyId)
+	Settings.ESettingsDataType GetPropertyType(int PropertyId)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -258,7 +274,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5260], params.ptr, cast(void*)0);
 		return *cast(Settings.ESettingsDataType*)&params[4];
 	}
-	final bool GetPropertyValueId(int PropertyId, int* ValueId)
+	bool GetPropertyValueId(int PropertyId, int* ValueId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -268,7 +284,7 @@ extern(C++) interface Settings : UObject
 		*ValueId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool SetPropertyValueId(int PropertyId, int ValueId)
+	bool SetPropertyValueId(int PropertyId, int ValueId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -277,7 +293,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5267], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool GetStringProperty(int PropertyId, ScriptString* Value)
+	bool GetStringProperty(int PropertyId, ScriptString* Value)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -287,7 +303,7 @@ extern(C++) interface Settings : UObject
 		*Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final void SetStringProperty(int PropertyId, ScriptString Value)
+	void SetStringProperty(int PropertyId, ScriptString Value)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -295,7 +311,7 @@ extern(C++) interface Settings : UObject
 		*cast(ScriptString*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5275], params.ptr, cast(void*)0);
 	}
-	final bool GetIntProperty(int PropertyId, int* Value)
+	bool GetIntProperty(int PropertyId, int* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -305,7 +321,7 @@ extern(C++) interface Settings : UObject
 		*Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final void SetIntProperty(int PropertyId, int Value)
+	void SetIntProperty(int PropertyId, int Value)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -313,7 +329,7 @@ extern(C++) interface Settings : UObject
 		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5282], params.ptr, cast(void*)0);
 	}
-	final bool GetFloatProperty(int PropertyId, float* Value)
+	bool GetFloatProperty(int PropertyId, float* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -323,7 +339,7 @@ extern(C++) interface Settings : UObject
 		*Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final void SetFloatProperty(int PropertyId, float Value)
+	void SetFloatProperty(int PropertyId, float Value)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -331,7 +347,7 @@ extern(C++) interface Settings : UObject
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5289], params.ptr, cast(void*)0);
 	}
-	final bool SetPropertyFromStringByName(ScriptName PropertyName, ScriptString* NewValue)
+	bool SetPropertyFromStringByName(ScriptName PropertyName, ScriptString* NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -341,7 +357,7 @@ extern(C++) interface Settings : UObject
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final ScriptString GetPropertyAsStringByName(ScriptName PropertyName)
+	ScriptString GetPropertyAsStringByName(ScriptName PropertyName)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -349,7 +365,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5296], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	final ScriptString GetPropertyAsString(int PropertyId)
+	ScriptString GetPropertyAsString(int PropertyId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -357,7 +373,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5300], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final ScriptString GetPropertyColumnHeader(int PropertyId)
+	ScriptString GetPropertyColumnHeader(int PropertyId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -365,7 +381,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5303], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final ScriptName GetPropertyName(int PropertyId)
+	ScriptName GetPropertyName(int PropertyId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -373,7 +389,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5306], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final bool GetPropertyId(ScriptName PropertyName, int* PropertyId)
+	bool GetPropertyId(ScriptName PropertyName, int* PropertyId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -383,7 +399,7 @@ extern(C++) interface Settings : UObject
 		*PropertyId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ScriptString* NewValue)
+	bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ScriptString* NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -393,7 +409,7 @@ extern(C++) interface Settings : UObject
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final ScriptName GetStringSettingValueNameByName(ScriptName StringSettingName)
+	ScriptName GetStringSettingValueNameByName(ScriptName StringSettingName)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -401,7 +417,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5316], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[8];
 	}
-	final ScriptName GetStringSettingValueName(int StringSettingId, int ValueIndex)
+	ScriptName GetStringSettingValueName(int StringSettingId, int ValueIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -410,7 +426,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5320], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[8];
 	}
-	final bool IsWildcardStringSetting(int StringSettingId)
+	bool IsWildcardStringSetting(int StringSettingId)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -418,7 +434,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5323], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final ScriptString GetStringSettingColumnHeader(int StringSettingId)
+	ScriptString GetStringSettingColumnHeader(int StringSettingId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -426,7 +442,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5327], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final ScriptName GetStringSettingName(int StringSettingId)
+	ScriptName GetStringSettingName(int StringSettingId)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -434,7 +450,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5330], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final bool GetStringSettingId(ScriptName StringSettingName, int* StringSettingId)
+	bool GetStringSettingId(ScriptName StringSettingName, int* StringSettingId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -444,7 +460,7 @@ extern(C++) interface Settings : UObject
 		*StringSettingId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetStringSettingValueByName(ScriptName StringSettingName, int* ValueIndex)
+	bool GetStringSettingValueByName(ScriptName StringSettingName, int* ValueIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -454,7 +470,7 @@ extern(C++) interface Settings : UObject
 		*ValueIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final void SetStringSettingValueByName(ScriptName StringSettingName, int ValueIndex, bool bShouldAutoAdd)
+	void SetStringSettingValueByName(ScriptName StringSettingName, int ValueIndex, bool bShouldAutoAdd)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -463,7 +479,7 @@ extern(C++) interface Settings : UObject
 		*cast(bool*)&params[12] = bShouldAutoAdd;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5340], params.ptr, cast(void*)0);
 	}
-	final bool GetStringSettingValueNames(int StringSettingId, ScriptArray!(Settings.IdToStringMapping)* Values)
+	bool GetStringSettingValueNames(int StringSettingId, ScriptArray!(Settings.IdToStringMapping)* Values)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -473,7 +489,7 @@ extern(C++) interface Settings : UObject
 		*Values = *cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final bool IncrementStringSettingValue(int StringSettingId, int Direction, bool bShouldWrap)
+	bool IncrementStringSettingValue(int StringSettingId, int Direction, bool bShouldWrap)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -483,7 +499,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5348], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final bool GetStringSettingValue(int StringSettingId, int* ValueIndex)
+	bool GetStringSettingValue(int StringSettingId, int* ValueIndex)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -493,7 +509,7 @@ extern(C++) interface Settings : UObject
 		*ValueIndex = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final void SetStringSettingValue(int StringSettingId, int ValueIndex, bool bShouldAutoAdd)
+	void SetStringSettingValue(int StringSettingId, int ValueIndex, bool bShouldAutoAdd)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -502,7 +518,7 @@ extern(C++) interface Settings : UObject
 		*cast(bool*)&params[8] = bShouldAutoAdd;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5361], params.ptr, cast(void*)0);
 	}
-	final void GetSettingsDataDateTime(Settings.SettingsData* Data, int* OutInt1, int* OutInt2)
+	void GetSettingsDataDateTime(Settings.SettingsData* Data, int* OutInt1, int* OutInt2)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -514,7 +530,7 @@ extern(C++) interface Settings : UObject
 		*OutInt1 = *cast(int*)&params[12];
 		*OutInt2 = *cast(int*)&params[16];
 	}
-	final void GetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* OutBlob)
+	void GetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* OutBlob)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -524,7 +540,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*OutBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
-	final int GetSettingsDataInt(Settings.SettingsData* Data)
+	int GetSettingsDataInt(Settings.SettingsData* Data)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -533,7 +549,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	final float GetSettingsDataFloat(Settings.SettingsData* Data)
+	float GetSettingsDataFloat(Settings.SettingsData* Data)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -542,7 +558,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(float*)&params[12];
 	}
-	final ScriptString GetSettingsDataString(Settings.SettingsData* Data)
+	ScriptString GetSettingsDataString(Settings.SettingsData* Data)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -551,7 +567,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(ScriptString*)&params[12];
 	}
-	final void EmptySettingsData(Settings.SettingsData* Data)
+	void EmptySettingsData(Settings.SettingsData* Data)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -559,7 +575,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5383], params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	final void SetSettingsData(Settings.SettingsData* Data, Settings.SettingsData* Data2Copy)
+	void SetSettingsData(Settings.SettingsData* Data, Settings.SettingsData* Data2Copy)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -569,7 +585,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*Data2Copy = *cast(Settings.SettingsData*)&params[12];
 	}
-	final void SetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* InBlob)
+	void SetSettingsDataBlob(Settings.SettingsData* Data, ScriptArray!(ubyte)* InBlob)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -579,7 +595,7 @@ extern(C++) interface Settings : UObject
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 		*InBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
-	final void SetSettingsDataDateTime(Settings.SettingsData* Data, int InInt1, int InInt2)
+	void SetSettingsDataDateTime(Settings.SettingsData* Data, int InInt1, int InInt2)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -589,7 +605,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5391], params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	final void SetSettingsDataInt(Settings.SettingsData* Data, int InInt)
+	void SetSettingsDataInt(Settings.SettingsData* Data, int InInt)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -598,7 +614,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5395], params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	final void SetSettingsDataFloat(Settings.SettingsData* Data, float InFloat)
+	void SetSettingsDataFloat(Settings.SettingsData* Data, float InFloat)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -607,7 +623,7 @@ extern(C++) interface Settings : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5399], params.ptr, cast(void*)0);
 		*Data = *cast(Settings.SettingsData*)params.ptr;
 	}
-	final void SetSettingsDataString(Settings.SettingsData* Data, ScriptString InString)
+	void SetSettingsDataString(Settings.SettingsData* Data, ScriptString InString)
 	{
 		ubyte params[24];
 		params[] = 0;

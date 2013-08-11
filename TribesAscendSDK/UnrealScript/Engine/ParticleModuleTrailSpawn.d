@@ -4,6 +4,7 @@ import UnrealScript.Engine.ParticleModuleTrailBase;
 
 extern(C++) interface ParticleModuleTrailSpawn : ParticleModuleTrailBase
 {
+public extern(D):
 	enum ETrail2SpawnMethod : ubyte
 	{
 		PET2SM_Emitter = 0,
@@ -11,5 +12,5 @@ extern(C++) interface ParticleModuleTrailSpawn : ParticleModuleTrailBase
 		PET2SM_Distance = 2,
 		PET2SM_MAX = 3,
 	}
-	public @property final auto ref float MinSpawnVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
+	@property final auto ref float MinSpawnVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
 }

@@ -4,6 +4,7 @@ import UnrealScript.Engine.ParticleEmitter;
 
 extern(C++) interface ParticleSpriteEmitter : ParticleEmitter
 {
+public extern(D):
 	enum EParticleScreenAlignment : ubyte
 	{
 		PSA_Square = 0,

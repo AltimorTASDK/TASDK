@@ -6,6 +6,10 @@ import UnrealScript.Engine.K2Node_Code;
 
 extern(C++) interface K2Node_MemberVar : K2Node_Code
 {
-	public @property final auto ref ScriptString VarName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref K2Connector.EK2ConnectorType VarType() { return *cast(K2Connector.EK2ConnectorType*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString VarName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 96); }
+		K2Connector.EK2ConnectorType VarType() { return *cast(K2Connector.EK2ConnectorType*)(cast(size_t)cast(void*)this + 92); }
+	}
 }

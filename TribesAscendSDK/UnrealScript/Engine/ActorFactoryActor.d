@@ -5,5 +5,6 @@ import UnrealScript.Engine.ActorFactory;
 
 extern(C++) interface ActorFactoryActor : ActorFactory
 {
-	public @property final auto ref ScriptClass ActorClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref ScriptClass ActorClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
 }

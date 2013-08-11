@@ -4,9 +4,13 @@ import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionIf : MaterialExpression
 {
-	public @property final auto ref MaterialExpression.ExpressionInput ALessThanB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 220); }
-	public @property final auto ref MaterialExpression.ExpressionInput AEqualsB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 192); }
-	public @property final auto ref MaterialExpression.ExpressionInput AGreaterThanB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 164); }
-	public @property final auto ref MaterialExpression.ExpressionInput B() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref MaterialExpression.ExpressionInput A() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+public extern(D):
+	@property final auto ref
+	{
+		MaterialExpression.ExpressionInput ALessThanB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 220); }
+		MaterialExpression.ExpressionInput AEqualsB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 192); }
+		MaterialExpression.ExpressionInput AGreaterThanB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 164); }
+		MaterialExpression.ExpressionInput B() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 136); }
+		MaterialExpression.ExpressionInput A() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 108); }
+	}
 }

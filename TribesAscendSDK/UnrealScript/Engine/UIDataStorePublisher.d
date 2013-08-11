@@ -6,6 +6,7 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface UIDataStorePublisher : UIDataStoreSubscriber
 {
+public extern(D):
 	final bool SaveSubscriberValue(ScriptArray!(UIDataStore)* out_BoundDataStores, int BindingIndex)
 	{
 		ubyte params[20];

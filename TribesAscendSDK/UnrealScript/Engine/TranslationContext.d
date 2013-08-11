@@ -6,7 +6,8 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TranslationContext : UObject
 {
-	public @property final auto ref ScriptArray!(TranslatorTag) TranslatorTags() { return *cast(ScriptArray!(TranslatorTag)*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref ScriptArray!(TranslatorTag) TranslatorTags() { return *cast(ScriptArray!(TranslatorTag)*)(cast(size_t)cast(void*)this + 60); }
 	final bool RegisterTranslatorTag(TranslatorTag InTagHandler)
 	{
 		ubyte params[8];

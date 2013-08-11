@@ -7,11 +7,15 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrJammerMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString JammedByEnemyJammerPack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString JammingViaOtherDropJammer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString JammedByEnemyDropJammer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString JammingForOther() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString JammingViaOther() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString JammedByEnemyJammerPack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		ScriptString JammingViaOtherDropJammer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString JammedByEnemyDropJammer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString JammingForOther() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString JammingViaOther() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

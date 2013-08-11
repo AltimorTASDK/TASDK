@@ -7,40 +7,48 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_Equip : GFxTrPage
 {
-	public @property final bool bReticulesOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x2) != 0; }
-	public @property final bool bReticulesOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x2; } return val; }
-	public @property final bool bUpgradePurchase() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x1) != 0; }
-	public @property final bool bUpgradePurchase(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x1; } return val; }
-	public @property final auto ref int ReticuleIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 380); }
-	public @property final auto ref int PurchasingUpgrade() { return *cast(int*)(cast(size_t)cast(void*)this + 376); }
-	public @property final auto ref int PurchasingEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 372); }
-	public @property final auto ref int FocusedEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-	public @property final auto ref int ViewedEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-	public @property final auto ref int GoldPrice() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-	public @property final auto ref int xpPrice() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void SpecialAction(GFxTrAction Action)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			int ReticuleIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 380); }
+			int PurchasingUpgrade() { return *cast(int*)(cast(size_t)cast(void*)this + 376); }
+			int PurchasingEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 372); }
+			int FocusedEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
+			int ViewedEquip() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
+			int GoldPrice() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
+			int xpPrice() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		}
+		bool bReticulesOpen() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x2) != 0; }
+		bool bReticulesOpen(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x2; } return val; }
+		bool bUpgradePurchase() { return (*cast(uint*)(cast(size_t)cast(void*)this + 384) & 0x1) != 0; }
+		bool bUpgradePurchase(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 384) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 384) &= ~0x1; } return val; }
+	}
+final:
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58595], params.ptr, cast(void*)0);
 	}
-	final void ShowReticule(int Index)
+	void ShowReticule(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58599], params.ptr, cast(void*)0);
 	}
-	final void HideReticule()
+	void HideReticule()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58608], cast(void*)0, cast(void*)0);
 	}
-	final void OnPurchaseSuccess()
+	void OnPurchaseSuccess()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58609], cast(void*)0, cast(void*)0);
 	}
-	final void SetActiveEquip(int EquipId, bool bShowStatus)
+	void SetActiveEquip(int EquipId, bool bShowStatus)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -48,7 +56,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		*cast(bool*)&params[4] = bShowStatus;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58610], params.ptr, cast(void*)0);
 	}
-	final int TakeAction(int ActionIndex, GFxObject DataList)
+	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -57,7 +65,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58617], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final int TakeFocus(int ActionIndex, GFxObject DataList)
+	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -66,14 +74,14 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58621], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58631], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -81,7 +89,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58638], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final GFxObject FillSkin(int ActionIndex)
+	GFxObject FillSkin(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -89,7 +97,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58658], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final bool CheckUpgrades(GFxObject DataList)
+	bool CheckUpgrades(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -97,7 +105,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58664], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final GFxObject FillUpgrades(GFxObject DataList)
+	GFxObject FillUpgrades(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -105,7 +113,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58670], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final bool CheckPricing(GFxObject DataList)
+	bool CheckPricing(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -113,7 +121,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58691], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final GFxObject FillPricing(GFxObject DataList)
+	GFxObject FillPricing(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -121,7 +129,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58696], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final GFxObject FillPricingSkin(GFxObject DataList)
+	GFxObject FillPricingSkin(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -129,14 +137,14 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58706], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void CheckDescription(GFxObject DataList)
+	void CheckDescription(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58713], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillDescription(GFxObject DataList)
+	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -144,14 +152,14 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58717], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final bool CheckPurchasable()
+	bool CheckPurchasable()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58736], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsEquipMaxed(int Index)
+	bool IsEquipMaxed(int Index)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -159,7 +167,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58738], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool IsOwned(int Index)
+	bool IsOwned(int Index)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -167,7 +175,7 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58742], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final int ModifyAction(int ActionIndex, GFxObject DataList)
+	int ModifyAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -176,21 +184,21 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58746], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void PopupData(GFxObject Obj)
+	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58750], params.ptr, cast(void*)0);
 	}
-	final void PopupDataSkin(GFxObject Obj)
+	void PopupDataSkin(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58754], params.ptr, cast(void*)0);
 	}
-	final void PopupComplete(int Action, ScriptString TextInput)
+	void PopupComplete(int Action, ScriptString TextInput)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -198,14 +206,14 @@ extern(C++) interface GFxTrPage_Equip : GFxTrPage
 		*cast(ScriptString*)&params[4] = TextInput;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58757], params.ptr, cast(void*)0);
 	}
-	final void SaveReticule(GFxObject Data)
+	void SaveReticule(GFxObject Data)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Data;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58764], params.ptr, cast(void*)0);
 	}
-	final void OnClose()
+	void OnClose()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58770], cast(void*)0, cast(void*)0);
 	}

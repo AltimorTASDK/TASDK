@@ -7,11 +7,15 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface TgSupportCommands : UObject
 {
-	public static immutable auto GC_OS_TYPE_BELOW_XP = 10300;
-	public static immutable auto GC_OS_TYPE_XP = 10301;
-	public static immutable auto GC_OS_TYPE_VISTA = 10303;
-	public static immutable auto GC_OS_TYPE_WIN7 = 10305;
-	public static immutable auto GC_OS_TYPE_WIN8 = 10307;
+public extern(D):
+	enum
+	{
+		GC_OS_TYPE_BELOW_XP = 10300,
+		GC_OS_TYPE_XP = 10301,
+		GC_OS_TYPE_VISTA = 10303,
+		GC_OS_TYPE_WIN7 = 10305,
+		GC_OS_TYPE_WIN8 = 10307,
+	}
 	enum GC_ALERT_PRIORITY : ubyte
 	{
 		GC_APT_MINIMAL = 0,
@@ -54,58 +58,62 @@ extern(C++) interface TgSupportCommands : UObject
 		GC_STT_DECLINE = 4,
 		GC_STT_MAX = 5,
 	}
-	// WARNING: Property 'WorldInfo' has the same name as a defined type!
-	public @property final auto ref PlayerController PC() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 60); }
-	final void gmMatchForce(int nQueueId)
+	@property final auto ref
+	{
+		// WARNING: Property 'WorldInfo' has the same name as a defined type!
+		PlayerController PC() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void gmMatchForce(int nQueueId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nQueueId;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34397], params.ptr, cast(void*)0);
 	}
-	final void gmMatchNext(int nMapId)
+	void gmMatchNext(int nMapId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nMapId;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34399], params.ptr, cast(void*)0);
 	}
-	final void gmCommand(ScriptString sCommand)
+	void gmCommand(ScriptString sCommand)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = sCommand;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34401], params.ptr, cast(void*)0);
 	}
-	final void gmC(ScriptString sCommand)
+	void gmC(ScriptString sCommand)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = sCommand;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34403], params.ptr, cast(void*)0);
 	}
-	final void GPerfDebugFeet(int feet)
+	void GPerfDebugFeet(int feet)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = feet;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34405], params.ptr, cast(void*)0);
 	}
-	final void GPerfDebugSkips(int skips)
+	void GPerfDebugSkips(int skips)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = skips;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34407], params.ptr, cast(void*)0);
 	}
-	final void GPerfDebugRelevMode(int Mode)
+	void GPerfDebugRelevMode(int Mode)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Mode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34409], params.ptr, cast(void*)0);
 	}
-	final void scLog(ScriptString LogName, bool bEnabled)
+	void scLog(ScriptString LogName, bool bEnabled)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -113,28 +121,28 @@ extern(C++) interface TgSupportCommands : UObject
 		*cast(bool*)&params[12] = bEnabled;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34411], params.ptr, cast(void*)0);
 	}
-	final void scLogMark(ScriptString Comment)
+	void scLogMark(ScriptString Comment)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Comment;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34415], params.ptr, cast(void*)0);
 	}
-	final void scStartGame(ScriptString Reason)
+	void scStartGame(ScriptString Reason)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34417], params.ptr, cast(void*)0);
 	}
-	final void scEndGame(ScriptString Reason)
+	void scEndGame(ScriptString Reason)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34420], params.ptr, cast(void*)0);
 	}
-	final void scScore(int nTeam, int nCount)
+	void scScore(int nTeam, int nCount)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -142,43 +150,43 @@ extern(C++) interface TgSupportCommands : UObject
 		*cast(int*)&params[4] = nCount;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34423], params.ptr, cast(void*)0);
 	}
-	final void scTime(int nSeconds)
+	void scTime(int nSeconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nSeconds;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34427], params.ptr, cast(void*)0);
 	}
-	final void scTimer(ScriptString sCommand)
+	void scTimer(ScriptString sCommand)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = sCommand;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34430], params.ptr, cast(void*)0);
 	}
-	final void scDemoRec()
+	void scDemoRec()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34433], cast(void*)0, cast(void*)0);
 	}
-	final void scDemoStop()
+	void scDemoStop()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34434], cast(void*)0, cast(void*)0);
 	}
-	final void scPerfDebugFeet(int feet)
+	void scPerfDebugFeet(int feet)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = feet;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34435], params.ptr, cast(void*)0);
 	}
-	final void scPerfDebugSkip(int skips)
+	void scPerfDebugSkip(int skips)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = skips;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34437], params.ptr, cast(void*)0);
 	}
-	final void scPerfDebugRelevMode(int Mode)
+	void scPerfDebugRelevMode(int Mode)
 	{
 		ubyte params[4];
 		params[] = 0;

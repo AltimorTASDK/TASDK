@@ -5,17 +5,24 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeBlendList : AnimNodeBlendBase
 {
-	public @property final auto ref ScriptArray!(float) TargetWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 244); }
-	public @property final auto ref int EditorActiveChildIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 272); }
-	public @property final auto ref float SliderPosition() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-	public @property final bool bSkipBlendWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x4) != 0; }
-	public @property final bool bSkipBlendWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x4; } return val; }
-	public @property final bool bForceChildFullWeightWhenBecomingRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x2) != 0; }
-	public @property final bool bForceChildFullWeightWhenBecomingRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x2; } return val; }
-	public @property final bool bPlayActiveChild() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x1) != 0; }
-	public @property final bool bPlayActiveChild(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x1; } return val; }
-	public @property final auto ref int ActiveChildIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 260); }
-	public @property final auto ref float BlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(float) TargetWeight() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 244); }
+			int EditorActiveChildIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 272); }
+			float SliderPosition() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
+			int ActiveChildIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 260); }
+			float BlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+		}
+		bool bSkipBlendWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x4) != 0; }
+		bool bSkipBlendWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x4; } return val; }
+		bool bForceChildFullWeightWhenBecomingRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x2) != 0; }
+		bool bForceChildFullWeightWhenBecomingRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x2; } return val; }
+		bool bPlayActiveChild() { return (*cast(uint*)(cast(size_t)cast(void*)this + 264) & 0x1) != 0; }
+		bool bPlayActiveChild(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 264) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 264) &= ~0x1; } return val; }
+	}
 	final void SetActiveChild(int ChildIndex, float BlendTime)
 	{
 		ubyte params[8];

@@ -4,6 +4,7 @@ import UnrealScript.Engine.ParticleModuleOrientationBase;
 
 extern(C++) interface ParticleModuleOrientationAxisLock : ParticleModuleOrientationBase
 {
+public extern(D):
 	enum EParticleAxisLock : ubyte
 	{
 		EPAL_NONE = 0,
@@ -18,5 +19,5 @@ extern(C++) interface ParticleModuleOrientationAxisLock : ParticleModuleOrientat
 		EPAL_ROTATE_Z = 9,
 		EPAL_MAX = 10,
 	}
-	public @property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { return *cast(ParticleModuleOrientationAxisLock.EParticleAxisLock*)(cast(size_t)cast(void*)this + 72); }
+	@property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { return *cast(ParticleModuleOrientationAxisLock.EParticleAxisLock*)(cast(size_t)cast(void*)this + 72); }
 }

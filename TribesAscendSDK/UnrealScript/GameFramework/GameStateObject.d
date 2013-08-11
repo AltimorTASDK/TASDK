@@ -6,6 +6,7 @@ import UnrealScript.Engine.GameplayEventsHandler;
 
 extern(C++) interface GameStateObject : GameplayEventsHandler
 {
+public extern(D):
 	enum GameSessionType : ubyte
 	{
 		GT_SessionInvalid = 0,
@@ -16,36 +17,47 @@ extern(C++) interface GameStateObject : GameplayEventsHandler
 	}
 	struct TeamState
 	{
-		public @property final auto ref ScriptArray!(int) PlayerIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
-		private ubyte __PlayerIndices[12];
-		public @property final auto ref int TeamIndex() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __TeamIndex[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(int) PlayerIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
+			int TeamIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct PlayerState
 	{
-		public @property final auto ref float TimeAliveSinceLastDeath() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __TimeAliveSinceLastDeath[4];
-		public @property final auto ref float TimeSpawned() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __TimeSpawned[4];
-		public @property final auto ref int CurrentTeamIndex() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __CurrentTeamIndex[4];
-		public @property final auto ref int PlayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __PlayerIndex[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			float TimeAliveSinceLastDeath() { return *cast(float*)(cast(size_t)&this + 12); }
+			float TimeSpawned() { return *cast(float*)(cast(size_t)&this + 8); }
+			int CurrentTeamIndex() { return *cast(int*)(cast(size_t)&this + 4); }
+			int PlayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref int MaxRoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref int RoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-	public @property final bool bIsRoundStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
-	public @property final bool bIsRoundStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
-	public @property final bool bIsMatchStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
-	public @property final bool bIsMatchStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
-	public @property final auto ref GameStateObject.GameSessionType SessionType() { return *cast(GameStateObject.GameSessionType*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref UObject.Array_Mirror PlayerStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref UObject.Array_Mirror TeamStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 88); }
-	final void PreProcessStream()
+	@property final
+	{
+		auto ref
+		{
+			int MaxRoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
+			int RoundNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+			GameStateObject.GameSessionType SessionType() { return *cast(GameStateObject.GameSessionType*)(cast(size_t)cast(void*)this + 112); }
+			UObject.Array_Mirror PlayerStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 100); }
+			UObject.Array_Mirror TeamStates() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 88); }
+		}
+		bool bIsRoundStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x2) != 0; }
+		bool bIsRoundStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x2; } return val; }
+		bool bIsMatchStarted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 116) & 0x1) != 0; }
+		bool bIsMatchStarted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 116) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 116) &= ~0x1; } return val; }
+	}
+final:
+	void PreProcessStream()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31955], cast(void*)0, cast(void*)0);
 	}
-	final void Reset()
+	void Reset()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31956], cast(void*)0, cast(void*)0);
 	}

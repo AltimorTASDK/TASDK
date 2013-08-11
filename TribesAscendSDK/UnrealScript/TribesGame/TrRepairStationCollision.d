@@ -8,15 +8,17 @@ import UnrealScript.TribesGame.TrStationCollision;
 
 extern(C++) interface TrRepairStationCollision : TrStationCollision
 {
-	public @property final auto ref ScriptArray!(Pawn) m_NearByPawns() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 484); }
-	final int GetPawnsInStation()
+public extern(D):
+	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { return *cast(ScriptArray!(Pawn)*)(cast(size_t)cast(void*)this + 484); }
+final:
+	int GetPawnsInStation()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110595], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final void CheckNearByPawns(TrPawn aPawn, bool bAdd)
+	void CheckNearByPawns(TrPawn aPawn, bool bAdd)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -24,21 +26,21 @@ extern(C++) interface TrRepairStationCollision : TrStationCollision
 		*cast(bool*)&params[4] = bAdd;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110597], params.ptr, cast(void*)0);
 	}
-	final void Touch(Actor Other, 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void Touch(Actor Other, 
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110604], params.ptr, cast(void*)0);
 	}
-	final void UnTouch(Actor Other)
+	void UnTouch(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -10,6 +10,7 @@ import UnrealScript.Engine.Volume;
 
 extern(C++) interface Pylon : NavigationPoint
 {
+public extern(D):
 	enum ENavMeshEdgeType : ubyte
 	{
 		NAVEDGE_Normal = 0,
@@ -24,81 +25,91 @@ extern(C++) interface Pylon : NavigationPoint
 	}
 	struct PolyReference
 	{
-		public @property final auto ref int PolyId() { return *cast(int*)(cast(size_t)&this + 20); }
-		private ubyte __PolyId[4];
-		public @property final auto ref Actor.ActorReference OwningPylon() { return *cast(Actor.ActorReference*)(cast(size_t)&this + 0); }
-		private ubyte __OwningPylon[20];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			int PolyId() { return *cast(int*)(cast(size_t)&this + 20); }
+			Actor.ActorReference OwningPylon() { return *cast(Actor.ActorReference*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(Vector) NextPassSeedList() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 716); }
-	public @property final auto ref ScriptArray!(Volume) ExpansionVolumes() { return *cast(ScriptArray!(Volume)*)(cast(size_t)cast(void*)this + 744); }
-	public @property final auto ref ScriptArray!(Pylon) ImposterPylons() { return *cast(ScriptArray!(Pylon)*)(cast(size_t)cast(void*)this + 792); }
-	public @property final auto ref ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 804); }
-	public @property final auto ref ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 816); }
-	public @property final auto ref int DebugEdgeCount() { return *cast(int*)(cast(size_t)cast(void*)this + 828); }
-	public @property final auto ref Vector ExpansionSphereCenter() { return *cast(Vector*)(cast(size_t)cast(void*)this + 772); }
-	public @property final bool bForceObstacleMeshCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x400) != 0; }
-	public @property final bool bForceObstacleMeshCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x400; } return val; }
-	public @property final bool bDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x200) != 0; }
-	public @property final bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x200; } return val; }
-	public @property final bool bBuildThisPylon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x100) != 0; }
-	public @property final bool bBuildThisPylon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x100; } return val; }
-	public @property final bool bDrawObstacleSurface() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x80) != 0; }
-	public @property final bool bDrawObstacleSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x80; } return val; }
-	public @property final bool bDrawWalkableSurface() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x40) != 0; }
-	public @property final bool bDrawWalkableSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x40; } return val; }
-	public @property final bool bRenderInShowPaths() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x20) != 0; }
-	public @property final bool bRenderInShowPaths(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x20; } return val; }
-	public @property final bool bDrawPolyBounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x10) != 0; }
-	public @property final bool bDrawPolyBounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x10; } return val; }
-	public @property final bool bDrawEdgePolys() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x8) != 0; }
-	public @property final bool bDrawEdgePolys(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x8; } return val; }
-	public @property final bool bNeedsCostCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x4) != 0; }
-	public @property final bool bNeedsCostCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x4; } return val; }
-	public @property final bool bUseExpansionSphereOverride() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x2) != 0; }
-	public @property final bool bUseExpansionSphereOverride(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x2; } return val; }
-	public @property final bool bImportedMesh() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x1) != 0; }
-	public @property final bool bImportedMesh(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x1; } return val; }
-	public @property final auto ref float MaxExpansionRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
-	public @property final auto ref float ExpansionRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 756); }
-	public @property final auto ref Pylon NextPylon() { return *cast(Pylon*)(cast(size_t)cast(void*)this + 740); }
-	public @property final auto ref UObject.Pointer OctreeIWasAddedTo() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 736); }
-	public @property final auto ref UObject.OctreeElementId OctreeId() { return *cast(UObject.OctreeElementId*)(cast(size_t)cast(void*)this + 728); }
-	public @property final auto ref UObject.Pointer PathObjectsThatAffectThisPylon() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
-	public @property final auto ref UObject.Pointer WorkingSetPtr() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 708); }
-	public @property final auto ref UObject.Pointer DynamicObstacleMesh() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 704); }
-	public @property final auto ref UObject.Pointer ObstacleMesh() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 700); }
-	public @property final auto ref UObject.Pointer NavMeshPtr() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 692); }
-	final void OnPylonStatusChange()
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(Vector) NextPassSeedList() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 716); }
+			ScriptArray!(Volume) ExpansionVolumes() { return *cast(ScriptArray!(Volume)*)(cast(size_t)cast(void*)this + 744); }
+			ScriptArray!(Pylon) ImposterPylons() { return *cast(ScriptArray!(Pylon)*)(cast(size_t)cast(void*)this + 792); }
+			ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 804); }
+			ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 816); }
+			int DebugEdgeCount() { return *cast(int*)(cast(size_t)cast(void*)this + 828); }
+			Vector ExpansionSphereCenter() { return *cast(Vector*)(cast(size_t)cast(void*)this + 772); }
+			float MaxExpansionRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
+			float ExpansionRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 756); }
+			Pylon NextPylon() { return *cast(Pylon*)(cast(size_t)cast(void*)this + 740); }
+			UObject.Pointer OctreeIWasAddedTo() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 736); }
+			UObject.OctreeElementId OctreeId() { return *cast(UObject.OctreeElementId*)(cast(size_t)cast(void*)this + 728); }
+			UObject.Pointer PathObjectsThatAffectThisPylon() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
+			UObject.Pointer WorkingSetPtr() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 708); }
+			UObject.Pointer DynamicObstacleMesh() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 704); }
+			UObject.Pointer ObstacleMesh() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 700); }
+			UObject.Pointer NavMeshPtr() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 696); }
+			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 692); }
+		}
+		bool bForceObstacleMeshCollision() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x400) != 0; }
+		bool bForceObstacleMeshCollision(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x400; } return val; }
+		bool bDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x200) != 0; }
+		bool bDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x200; } return val; }
+		bool bBuildThisPylon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x100) != 0; }
+		bool bBuildThisPylon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x100; } return val; }
+		bool bDrawObstacleSurface() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x80) != 0; }
+		bool bDrawObstacleSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x80; } return val; }
+		bool bDrawWalkableSurface() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x40) != 0; }
+		bool bDrawWalkableSurface(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x40; } return val; }
+		bool bRenderInShowPaths() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x20) != 0; }
+		bool bRenderInShowPaths(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x20; } return val; }
+		bool bDrawPolyBounds() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x10) != 0; }
+		bool bDrawPolyBounds(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x10; } return val; }
+		bool bDrawEdgePolys() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x8) != 0; }
+		bool bDrawEdgePolys(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x8; } return val; }
+		bool bNeedsCostCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x4) != 0; }
+		bool bNeedsCostCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x4; } return val; }
+		bool bUseExpansionSphereOverride() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x2) != 0; }
+		bool bUseExpansionSphereOverride(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x2; } return val; }
+		bool bImportedMesh() { return (*cast(uint*)(cast(size_t)cast(void*)this + 768) & 0x1) != 0; }
+		bool bImportedMesh(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 768) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 768) &= ~0x1; } return val; }
+	}
+final:
+	void OnPylonStatusChange()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9967], cast(void*)0, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9968], cast(void*)0, cast(void*)0);
 	}
-	final void SetEnabled(bool bEnabled)
+	void SetEnabled(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9969], params.ptr, cast(void*)0);
 	}
-	final bool IsEnabled()
+	bool IsEnabled()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9971], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void OnToggle(SeqAct_Toggle Action)
+	void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9973], params.ptr, cast(void*)0);
 	}
-	final bool CanReachPylon(Pylon DestPylon, Controller C)
+	bool CanReachPylon(Pylon DestPylon, Controller C)
 	{
 		ubyte params[12];
 		params[] = 0;

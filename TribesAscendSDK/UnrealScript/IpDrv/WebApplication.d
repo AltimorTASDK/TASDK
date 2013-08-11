@@ -9,22 +9,27 @@ import UnrealScript.IpDrv.WebServer;
 
 extern(C++) interface WebApplication : UObject
 {
-	public @property final auto ref ScriptString Path() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
-	// WARNING: Property 'WebServer' has the same name as a defined type!
-	// WARNING: Property 'WorldInfo' has the same name as a defined type!
-	final void Init()
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString Path() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
+		// WARNING: Property 'WebServer' has the same name as a defined type!
+		// WARNING: Property 'WorldInfo' has the same name as a defined type!
+	}
+final:
+	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33079], cast(void*)0, cast(void*)0);
 	}
-	final void Cleanup()
+	void Cleanup()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33080], cast(void*)0, cast(void*)0);
 	}
-	final void CleanupApp()
+	void CleanupApp()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33081], cast(void*)0, cast(void*)0);
 	}
-	final bool PreQuery(WebRequest Request, WebResponse Response)
+	bool PreQuery(WebRequest Request, WebResponse Response)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -33,7 +38,7 @@ extern(C++) interface WebApplication : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33082], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void Query(WebRequest Request, WebResponse Response)
+	void Query(WebRequest Request, WebResponse Response)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -41,7 +46,7 @@ extern(C++) interface WebApplication : UObject
 		*cast(WebResponse*)&params[4] = Response;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33086], params.ptr, cast(void*)0);
 	}
-	final void PostQuery(WebRequest Request, WebResponse Response)
+	void PostQuery(WebRequest Request, WebResponse Response)
 	{
 		ubyte params[8];
 		params[] = 0;

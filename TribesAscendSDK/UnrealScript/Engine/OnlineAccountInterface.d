@@ -6,7 +6,9 @@ import UnrealScript.Core.UInterface;
 
 extern(C++) interface OnlineAccountInterface : UInterface
 {
-	final bool CreateOnlineAccount(ScriptString UserName, ScriptString Password, ScriptString EmailAddress, ScriptString ProductKey)
+public extern(D):
+final:
+	bool CreateOnlineAccount(ScriptString UserName, ScriptString Password, ScriptString EmailAddress, ScriptString ProductKey)
 	{
 		ubyte params[52];
 		params[] = 0;
@@ -17,36 +19,36 @@ extern(C++) interface OnlineAccountInterface : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21358], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[48];
 	}
-	final void OnCreateOnlineAccountCompleted(OnlineSubsystem.EOnlineAccountCreateStatus ErrorStatus)
+	void OnCreateOnlineAccountCompleted(OnlineSubsystem.EOnlineAccountCreateStatus ErrorStatus)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(OnlineSubsystem.EOnlineAccountCreateStatus*)params.ptr = ErrorStatus;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21364], params.ptr, cast(void*)0);
 	}
-	final void AddCreateOnlineAccountCompletedDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+	void AddCreateOnlineAccountCompletedDelegate(
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* AccountCreateDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21367], params.ptr, cast(void*)0);
 	}
-	final void ClearCreateOnlineAccountCompletedDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+	void ClearCreateOnlineAccountCompletedDelegate(
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* AccountCreateDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21369], params.ptr, cast(void*)0);
 	}
-	final bool CreateLocalAccount(ScriptString UserName, ScriptString Password)
+	bool CreateLocalAccount(ScriptString UserName, ScriptString Password)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -55,7 +57,7 @@ void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21371], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	final bool RenameLocalAccount(ScriptString NewUserName, ScriptString OldUserName, ScriptString Password)
+	bool RenameLocalAccount(ScriptString NewUserName, ScriptString OldUserName, ScriptString Password)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -65,7 +67,7 @@ void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21375], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
-	final bool DeleteLocalAccount(ScriptString UserName, ScriptString Password)
+	bool DeleteLocalAccount(ScriptString UserName, ScriptString Password)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -74,7 +76,7 @@ void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21380], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	final bool GetLocalAccountNames(ScriptArray!(ScriptString)* Accounts)
+	bool GetLocalAccountNames(ScriptArray!(ScriptString)* Accounts)
 	{
 		ubyte params[16];
 		params[] = 0;

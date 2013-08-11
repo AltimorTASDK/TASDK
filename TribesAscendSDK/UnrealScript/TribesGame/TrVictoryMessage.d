@@ -9,18 +9,23 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface TrVictoryMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString TrainingComplete() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
-	public @property final auto ref ScriptString DrawGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 216); }
-	public @property final auto ref ScriptString PlayerWonRound() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-	public @property final auto ref ScriptString DiamondSwordVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
-	public @property final auto ref ScriptString BloodEagleVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
-	public @property final auto ref ScriptString NormalDefeat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
-	public @property final auto ref ScriptString NormalVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
-	public @property final auto ref ScriptString DominantDefeat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref ScriptString DominantVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref SoundCue BloodEagleSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 116); }
-	public @property final auto ref SoundCue DiamondSwordSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString TrainingComplete() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 228); }
+		ScriptString DrawGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 216); }
+		ScriptString PlayerWonRound() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
+		ScriptString DiamondSwordVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 192); }
+		ScriptString BloodEagleVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 180); }
+		ScriptString NormalDefeat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 168); }
+		ScriptString NormalVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 156); }
+		ScriptString DominantDefeat() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 144); }
+		ScriptString DominantVictory() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 132); }
+		SoundCue BloodEagleSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 116); }
+		SoundCue DiamondSwordSounds() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -32,7 +37,7 @@ extern(C++) interface TrVictoryMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[115507], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

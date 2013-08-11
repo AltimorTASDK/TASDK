@@ -5,8 +5,12 @@ import UnrealScript.UDKBase.UDKExplosionLight;
 
 extern(C++) interface UTLinkGunMuzzleFlashLight : UDKExplosionLight
 {
-	public @property final auto ref ScriptArray!(UDKExplosionLight.LightValues) RedTeamTimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 624); }
-	public @property final auto ref ScriptArray!(UDKExplosionLight.LightValues) BlueTeamTimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 636); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(UDKExplosionLight.LightValues) RedTeamTimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 624); }
+		ScriptArray!(UDKExplosionLight.LightValues) BlueTeamTimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 636); }
+	}
 	final void SetTeam(ubyte NewTeam)
 	{
 		ubyte params[1];

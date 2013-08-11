@@ -5,7 +5,8 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TranslatorTag : UObject
 {
-	public @property final auto ref ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
 	final ScriptString Translate(ScriptString InArgument)
 	{
 		ubyte params[24];

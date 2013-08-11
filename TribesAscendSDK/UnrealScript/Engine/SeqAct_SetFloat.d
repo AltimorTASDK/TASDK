@@ -5,8 +5,12 @@ import UnrealScript.Engine.SeqAct_SetSequenceVariable;
 
 extern(C++) interface SeqAct_SetFloat : SeqAct_SetSequenceVariable
 {
-	public @property final auto ref ScriptArray!(float) Value() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref float Target() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(float) Value() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 236); }
+		float Target() { return *cast(float*)(cast(size_t)cast(void*)this + 232); }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

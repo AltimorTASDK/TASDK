@@ -5,5 +5,6 @@ import UnrealScript.Engine.AICommandNodeBase;
 
 extern(C++) interface AICommandNodeRoot : AICommandNodeBase
 {
-	public @property final auto ref ScriptName RootName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref ScriptName RootName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
 }

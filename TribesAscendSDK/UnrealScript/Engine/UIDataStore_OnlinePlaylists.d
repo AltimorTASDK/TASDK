@@ -9,14 +9,22 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 {
-	public static immutable auto RANKEDPROVIDERTAG = "PlaylistsRanked";
-	public static immutable auto UNRANKEDPROVIDERTAG = "PlaylistsUnranked";
-	public @property final auto ref ScriptArray!(UIResourceDataProvider) RankedDataProviders() { return *cast(ScriptArray!(UIResourceDataProvider)*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { return *cast(ScriptArray!(UIResourceDataProvider)*)(cast(size_t)cast(void*)this + 152); }
-	public @property final auto ref ScriptClass ProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString ProviderClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
-	final int GetProviderCount(ScriptName ProviderTag)
+public extern(D):
+	enum
+	{
+		RANKEDPROVIDERTAG = "PlaylistsRanked",
+		UNRANKEDPROVIDERTAG = "PlaylistsUnranked",
+	}
+	@property final auto ref
+	{
+		ScriptArray!(UIResourceDataProvider) RankedDataProviders() { return *cast(ScriptArray!(UIResourceDataProvider)*)(cast(size_t)cast(void*)this + 140); }
+		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { return *cast(ScriptArray!(UIResourceDataProvider)*)(cast(size_t)cast(void*)this + 152); }
+		ScriptClass ProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString ProviderClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		UObject.Pointer VfTable_IUIListElementProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 120); }
+	}
+final:
+	int GetProviderCount(ScriptName ProviderTag)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -24,7 +32,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28789], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final bool GetResourceProviders(ScriptName ProviderTag, ScriptArray!(UIResourceDataProvider)* out_Providers)
+	bool GetResourceProviders(ScriptName ProviderTag, ScriptArray!(UIResourceDataProvider)* out_Providers)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -34,7 +42,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		*out_Providers = *cast(ScriptArray!(UIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetResourceProviderFields(ScriptName ProviderTag, ScriptArray!(ScriptName)* ProviderFieldTags)
+	bool GetResourceProviderFields(ScriptName ProviderTag, ScriptArray!(ScriptName)* ProviderFieldTags)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -44,7 +52,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		*ProviderFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetProviderFieldValue(ScriptName ProviderTag, ScriptName SearchField, int ProviderIndex, UIRoot.UIProviderScriptFieldValue* out_FieldValue)
+	bool GetProviderFieldValue(ScriptName ProviderTag, ScriptName SearchField, int ProviderIndex, UIRoot.UIProviderScriptFieldValue* out_FieldValue)
 	{
 		ubyte params[108];
 		params[] = 0;
@@ -56,7 +64,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		*out_FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[20];
 		return *cast(bool*)&params[104];
 	}
-	final int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, UIRoot.UIProviderScriptFieldValue* ValueToSearchFor)
+	int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, UIRoot.UIProviderScriptFieldValue* ValueToSearchFor)
 	{
 		ubyte params[104];
 		params[] = 0;
@@ -67,7 +75,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		*ValueToSearchFor = *cast(UIRoot.UIProviderScriptFieldValue*)&params[16];
 		return *cast(int*)&params[100];
 	}
-	final bool GetPlaylistProvider(ScriptName ProviderTag, int ProviderIndex, UIResourceDataProvider* out_Provider)
+	bool GetPlaylistProvider(ScriptName ProviderTag, int ProviderIndex, UIResourceDataProvider* out_Provider)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -78,7 +86,7 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 		*out_Provider = *cast(UIResourceDataProvider*)&params[12];
 		return *cast(bool*)&params[16];
 	}
-	final OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex)
+	OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex)
 	{
 		ubyte params[20];
 		params[] = 0;

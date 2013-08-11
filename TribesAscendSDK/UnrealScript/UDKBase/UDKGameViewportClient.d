@@ -5,7 +5,8 @@ import UnrealScript.Engine.GameViewportClient;
 
 extern(C++) interface UDKGameViewportClient : GameViewportClient
 {
-	public @property final auto ref ScriptString HintLocFileName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
+public extern(D):
+	@property final auto ref ScriptString HintLocFileName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 288); }
 	final ScriptString LoadRandomLocalizedHintMessage(ScriptString Category1Name, ScriptString Category2Name)
 	{
 		ubyte params[36];

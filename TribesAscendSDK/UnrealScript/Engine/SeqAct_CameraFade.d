@@ -7,14 +7,21 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_CameraFade : SequenceAction
 {
-	public @property final auto ref ScriptArray!(PlayerController) CachedPCs() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 260); }
-	public @property final auto ref float FadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-	public @property final bool bPersistFade() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x1) != 0; }
-	public @property final bool bPersistFade(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x1; } return val; }
-	public @property final auto ref float FadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref float FadeOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
-	public @property final auto ref UObject.Vector2D FadeAlpha() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref UObject.Color FadeColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(PlayerController) CachedPCs() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 260); }
+			float FadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+			float FadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
+			float FadeOpacity() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
+			UObject.Vector2D FadeAlpha() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 236); }
+			UObject.Color FadeColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 232); }
+		}
+		bool bPersistFade() { return (*cast(uint*)(cast(size_t)cast(void*)this + 252) & 0x1) != 0; }
+		bool bPersistFade(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 252) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 252) &= ~0x1; } return val; }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

@@ -9,9 +9,14 @@ import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface UTKillsRemainingMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString KillsRemainStrings() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref SoundNodeWave KillsRemainSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString KillsRemainStrings() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		SoundNodeWave KillsRemainSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -23,7 +28,7 @@ extern(C++) interface UTKillsRemainingMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48194], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -34,7 +39,7 @@ extern(C++) interface UTKillsRemainingMessage : UTLocalMessage
 		*cast(UObject*)&params[16] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48201], params.ptr, cast(void*)0);
 	}
-	final SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;

@@ -6,13 +6,18 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTSeqEvent_GameEnded : SequenceEvent
 {
-	public @property final auto ref Actor ActualWinner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 260); }
-	public @property final auto ref Actor Winner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 256); }
-	final void Activated()
+public extern(D):
+	@property final auto ref
+	{
+		Actor ActualWinner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 260); }
+		Actor Winner() { return *cast(Actor*)(cast(size_t)cast(void*)this + 256); }
+	}
+final:
+	void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49220], cast(void*)0, cast(void*)0);
 	}
-	final int GetObjClassVersion()
+	int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;

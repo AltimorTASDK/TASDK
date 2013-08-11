@@ -6,7 +6,8 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface PostProcessChain : UObject
 {
-	public @property final auto ref ScriptArray!(PostProcessEffect) Effects() { return *cast(ScriptArray!(PostProcessEffect)*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref ScriptArray!(PostProcessEffect) Effects() { return *cast(ScriptArray!(PostProcessEffect)*)(cast(size_t)cast(void*)this + 60); }
 	final PostProcessEffect FindPostProcessEffect(ScriptName EffectName)
 	{
 		ubyte params[12];

@@ -6,7 +6,9 @@ import UnrealScript.Core.UInterface;
 
 extern(C++) interface GameCrowdSpawnerInterface : UInterface
 {
-	final bool AddToAgentPool(GameCrowdAgent Agent)
+public extern(D):
+final:
+	bool AddToAgentPool(GameCrowdAgent Agent)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -14,14 +16,14 @@ extern(C++) interface GameCrowdSpawnerInterface : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30973], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final float GetMaxSpawnDist()
+	float GetMaxSpawnDist()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31010], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void AgentDestroyed(GameCrowdAgent Agent)
+	void AgentDestroyed(GameCrowdAgent Agent)
 	{
 		ubyte params[4];
 		params[] = 0;

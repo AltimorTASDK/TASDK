@@ -9,22 +9,30 @@ import UnrealScript.Engine.HUD;
 
 extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 {
-	public @property final auto ref int MaxMoveFails() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
-	public @property final auto ref int MoveFailCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
-	public @property final auto ref Vector InitialFinalDestination() { return *cast(Vector*)(cast(size_t)cast(void*)this + 156); }
-	public @property final auto ref Vector LastMoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref Vector MoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref float GoalDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref float SubGoalReachDist() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref float CurrentHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
-	public @property final auto ref float DesiredHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-	public @property final bool bWasFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x1) != 0; }
-	public @property final bool bWasFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x1; } return val; }
-	public @property final auto ref float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-	public @property final auto ref Actor Goal() { return *cast(Actor*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref Actor Find() { return *cast(Actor*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref Vector Transient_FinalDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 88); }
-	final bool HoverToGoal(GameAIController AI, Actor InGoal, float InGoalDistance, float InHoverHeight)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			int MaxMoveFails() { return *cast(int*)(cast(size_t)cast(void*)this + 172); }
+			int MoveFailCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 168); }
+			Vector InitialFinalDestination() { return *cast(Vector*)(cast(size_t)cast(void*)this + 156); }
+			Vector LastMoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 144); }
+			Vector MoveVectDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 132); }
+			float GoalDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 128); }
+			float SubGoalReachDist() { return *cast(float*)(cast(size_t)cast(void*)this + 124); }
+			float CurrentHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
+			float DesiredHoverHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
+			float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
+			Actor Goal() { return *cast(Actor*)(cast(size_t)cast(void*)this + 104); }
+			Actor Find() { return *cast(Actor*)(cast(size_t)cast(void*)this + 100); }
+			Vector Transient_FinalDest() { return *cast(Vector*)(cast(size_t)cast(void*)this + 88); }
+		}
+		bool bWasFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 112) & 0x1) != 0; }
+		bool bWasFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 112) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 112) &= ~0x1; } return val; }
+	}
+final:
+	bool HoverToGoal(GameAIController AI, Actor InGoal, float InGoalDistance, float InHoverHeight)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -35,7 +43,7 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30693], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final bool HoverToPoint(GameAIController AI, Vector InPoint, float InGoalDistance, float InHoverHeight)
+	bool HoverToPoint(GameAIController AI, Vector InPoint, float InGoalDistance, float InHoverHeight)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -46,15 +54,15 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30700], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	final void Pushed()
+	void Pushed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30707], cast(void*)0, cast(void*)0);
 	}
-	final void Popped()
+	void Popped()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30708], cast(void*)0, cast(void*)0);
 	}
-	final bool HandlePathObstruction(Actor BlockedBy)
+	bool HandlePathObstruction(Actor BlockedBy)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -62,7 +70,7 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30709], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool IsEnemyBasedOnInterpActor(Pawn InEnemy)
+	bool IsEnemyBasedOnInterpActor(Pawn InEnemy)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -70,7 +78,7 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30741], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void DrawDebug(HUD H, ScriptName Category)
+	void DrawDebug(HUD H, ScriptName Category)
 	{
 		ubyte params[12];
 		params[] = 0;

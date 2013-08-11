@@ -9,24 +9,29 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTHoldSpot : UTDefensePoint
 {
-	public @property final auto ref NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 744); }
-	public @property final auto ref UTVehicle HoldVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 740); }
-	final void PreBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 744); }
+		UTVehicle HoldVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 740); }
+	}
+final:
+	void PreBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47992], cast(void*)0, cast(void*)0);
 	}
-	final Actor GetMoveTarget()
+	Actor GetMoveTarget()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47993], params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
-	final void FreePoint()
+	void FreePoint()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47995], cast(void*)0, cast(void*)0);
 	}
-	final NavigationPoint SpecifyEndAnchor(Pawn RouteFinder)
+	NavigationPoint SpecifyEndAnchor(Pawn RouteFinder)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -34,7 +39,7 @@ extern(C++) interface UTHoldSpot : UTDefensePoint
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47996], params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[4];
 	}
-	final void NotifyAnchorFindingResult(NavigationPoint EndAnchor, Pawn RouteFinder)
+	void NotifyAnchorFindingResult(NavigationPoint EndAnchor, Pawn RouteFinder)
 	{
 		ubyte params[8];
 		params[] = 0;

@@ -5,6 +5,7 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_UpdatePhysBonesFromAnim : SequenceAction
 {
+public extern(D):
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

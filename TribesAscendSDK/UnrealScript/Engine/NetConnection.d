@@ -6,5 +6,6 @@ import UnrealScript.Engine.ChildConnection;
 
 extern(C++) interface NetConnection : Player
 {
-	public @property final auto ref ScriptArray!(ChildConnection) Children() { return *cast(ScriptArray!(ChildConnection)*)(cast(size_t)cast(void*)this + 20416); }
+public extern(D):
+	@property final auto ref ScriptArray!(ChildConnection) Children() { return *cast(ScriptArray!(ChildConnection)*)(cast(size_t)cast(void*)this + 20416); }
 }

@@ -6,6 +6,7 @@ import UnrealScript.Engine.ParticleModuleTypeDataBase;
 
 extern(C++) interface ParticleModuleTypeDataBeam : ParticleModuleTypeDataBase
 {
+public extern(D):
 	enum EBeamMethod : ubyte
 	{
 		PEBM_Distance = 0,
@@ -22,21 +23,27 @@ extern(C++) interface ParticleModuleTypeDataBeam : ParticleModuleTypeDataBase
 		PEBEPM_Distribution_Constant = 2,
 		PEBEPM_MAX = 3,
 	}
-	public @property final bool RenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x8) != 0; }
-	public @property final bool RenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x8; } return val; }
-	public @property final bool RenderLines() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x4) != 0; }
-	public @property final bool RenderLines(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x4; } return val; }
-	public @property final bool RenderDirectLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x2) != 0; }
-	public @property final bool RenderDirectLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x2; } return val; }
-	public @property final bool RenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x1) != 0; }
-	public @property final bool RenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x1; } return val; }
-	public @property final auto ref int TextureTile() { return *cast(int*)(cast(size_t)cast(void*)this + 220); }
-	public @property final auto ref DistributionVector.RawDistributionVector EndPointDirection() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 192); }
-	public @property final auto ref DistributionFloat.RawDistributionFloat TargetStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 164); }
-	public @property final auto ref DistributionFloat.RawDistributionFloat EmitterStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref int TessellationFactor() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
-	public @property final auto ref DistributionVector.RawDistributionVector EndPoint() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref DistributionFloat.RawDistributionFloat Distance() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamEndPointMethod*)(cast(size_t)cast(void*)this + 73); }
-	public @property final auto ref ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamMethod*)(cast(size_t)cast(void*)this + 72); }
+	@property final
+	{
+		auto ref
+		{
+			int TextureTile() { return *cast(int*)(cast(size_t)cast(void*)this + 220); }
+			DistributionVector.RawDistributionVector EndPointDirection() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 192); }
+			DistributionFloat.RawDistributionFloat TargetStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 164); }
+			DistributionFloat.RawDistributionFloat EmitterStrength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 136); }
+			int TessellationFactor() { return *cast(int*)(cast(size_t)cast(void*)this + 132); }
+			DistributionVector.RawDistributionVector EndPoint() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 104); }
+			DistributionFloat.RawDistributionFloat Distance() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 76); }
+			ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamEndPointMethod*)(cast(size_t)cast(void*)this + 73); }
+			ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { return *cast(ParticleModuleTypeDataBeam.EBeamMethod*)(cast(size_t)cast(void*)this + 72); }
+		}
+		bool RenderTessellation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x8) != 0; }
+		bool RenderTessellation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x8; } return val; }
+		bool RenderLines() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x4) != 0; }
+		bool RenderLines(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x4; } return val; }
+		bool RenderDirectLine() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x2) != 0; }
+		bool RenderDirectLine(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x2; } return val; }
+		bool RenderGeometry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 224) & 0x1) != 0; }
+		bool RenderGeometry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 224) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 224) &= ~0x1; } return val; }
+	}
 }

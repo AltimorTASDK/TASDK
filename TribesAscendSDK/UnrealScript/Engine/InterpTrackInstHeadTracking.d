@@ -8,22 +8,29 @@ import UnrealScript.Engine.InterpTrackHeadTracking;
 
 extern(C++) interface InterpTrackInstHeadTracking : InterpTrackInst
 {
+public extern(D):
 	struct ActorToLookAt
 	{
-		public @property final bool CurrentlyBeingLookedAt() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
-		public @property final bool CurrentlyBeingLookedAt(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
-		private ubyte __CurrentlyBeingLookedAt[4];
-		public @property final auto ref float StartTimeBeingLookedAt() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __StartTimeBeingLookedAt[4];
-		public @property final auto ref float LastKnownDistance() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __LastKnownDistance[4];
-		public @property final auto ref float EnteredTime() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __EnteredTime[4];
-		public @property final auto ref float Rating() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __Rating[4];
-		// WARNING: Property 'Actor' has the same name as a defined type!
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				float StartTimeBeingLookedAt() { return *cast(float*)(cast(size_t)&this + 16); }
+				float LastKnownDistance() { return *cast(float*)(cast(size_t)&this + 12); }
+				float EnteredTime() { return *cast(float*)(cast(size_t)&this + 8); }
+				float Rating() { return *cast(float*)(cast(size_t)&this + 4); }
+				// WARNING: Property 'Actor' has the same name as a defined type!
+			}
+			bool CurrentlyBeingLookedAt() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
+			bool CurrentlyBeingLookedAt(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
+		}
 	}
-	public @property final auto ref ScriptArray!(SkelControlLookAt) TrackControls() { return *cast(ScriptArray!(SkelControlLookAt)*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref float LastUpdatePosition() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref
+	{
+		ScriptArray!(SkelControlLookAt) TrackControls() { return *cast(ScriptArray!(SkelControlLookAt)*)(cast(size_t)cast(void*)this + 128); }
+		float LastUpdatePosition() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
+		InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)cast(void*)this + 60); }
+	}
 }

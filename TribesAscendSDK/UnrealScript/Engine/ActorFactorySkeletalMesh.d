@@ -7,7 +7,11 @@ import UnrealScript.Engine.SkeletalMesh;
 
 extern(C++) interface ActorFactorySkeletalMesh : ActorFactory
 {
-	public @property final auto ref ScriptName AnimSequenceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
-	// WARNING: Property 'AnimSet' has the same name as a defined type!
-	// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
+public extern(D):
+	@property final auto ref
+	{
+		ScriptName AnimSequenceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 100); }
+		// WARNING: Property 'AnimSet' has the same name as a defined type!
+		// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
+	}
 }

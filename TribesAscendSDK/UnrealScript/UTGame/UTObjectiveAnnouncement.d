@@ -10,9 +10,11 @@ import UnrealScript.UTGame.UTQueuedAnnouncement;
 
 extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 {
-	final UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
+public extern(D):
+final:
+	UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		params[0] = MessageIndex;
 		*cast(UObject*)&params[4] = Objective;
@@ -20,7 +22,7 @@ extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48650], params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)&params[12];
 	}
-	final bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
+	bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -30,7 +32,7 @@ extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48660], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;

@@ -10,8 +10,10 @@ import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface UTVictoryMessage : UTLocalMessage
 {
-	public @property final auto ref SoundNodeWave VictorySounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
-	final ubyte AnnouncementLevel(ubyte MessageIndex)
+public extern(D):
+	@property final auto ref SoundNodeWave VictorySounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 100); }
+final:
+	ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
@@ -19,7 +21,7 @@ extern(C++) interface UTVictoryMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49960], params.ptr, cast(void*)0);
 		return params[1];
 	}
-	final SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -29,7 +31,7 @@ extern(C++) interface UTVictoryMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49963], params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -40,7 +42,7 @@ extern(C++) interface UTVictoryMessage : UTLocalMessage
 		*cast(UObject*)&params[16] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49968], params.ptr, cast(void*)0);
 	}
-	final bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

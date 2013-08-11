@@ -5,5 +5,6 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendByDeployableState : TrAnimNodeBlendList
 {
-	public @property final auto ref TrDeployable m_TrDeployable() { return *cast(TrDeployable*)(cast(size_t)cast(void*)this + 292); }
+public extern(D):
+	@property final auto ref TrDeployable m_TrDeployable() { return *cast(TrDeployable*)(cast(size_t)cast(void*)this + 292); }
 }

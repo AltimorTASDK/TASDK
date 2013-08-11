@@ -7,31 +7,36 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_LiveStream : GFxTrPage
 {
-	public @property final bool bValid() { return (*cast(uint*)(cast(size_t)cast(void*)this + 356) & 0x1) != 0; }
-	public @property final bool bValid(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 356) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 356) &= ~0x1; } return val; }
-	final void Initialize()
+public extern(D):
+	@property final
+	{
+		bool bValid() { return (*cast(uint*)(cast(size_t)cast(void*)this + 356) & 0x1) != 0; }
+		bool bValid(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 356) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 356) &= ~0x1; } return val; }
+	}
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59343], cast(void*)0, cast(void*)0);
 	}
-	final void ShowModel()
+	void ShowModel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59344], cast(void*)0, cast(void*)0);
 	}
-	final void SpecialAction(GFxTrAction Action)
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59346], params.ptr, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59348], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -39,7 +44,7 @@ extern(C++) interface GFxTrPage_LiveStream : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59351], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final GFxObject FillDescription(GFxObject DataList)
+	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;

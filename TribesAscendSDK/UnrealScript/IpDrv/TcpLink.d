@@ -5,6 +5,7 @@ import UnrealScript.IpDrv.InternetLink;
 
 extern(C++) interface TcpLink : InternetLink
 {
+public extern(D):
 	enum ELinkState : ubyte
 	{
 		STATE_Initialized = 0,
@@ -18,12 +19,16 @@ extern(C++) interface TcpLink : InternetLink
 		STATE_ConnectClosing = 8,
 		STATE_MAX = 9,
 	}
-	public @property final auto ref ScriptArray!(ubyte) SendFIFO() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 516); }
-	public @property final auto ref ScriptString RecvBuf() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
-	public @property final auto ref ScriptClass AcceptClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 512); }
-	public @property final auto ref InternetLink.IpAddr RemoteAddr() { return *cast(InternetLink.IpAddr*)(cast(size_t)cast(void*)this + 504); }
-	public @property final auto ref TcpLink.ELinkState LinkState() { return *cast(TcpLink.ELinkState*)(cast(size_t)cast(void*)this + 500); }
-	final int BindPort(int PortNum, bool bUseNextAvailable)
+	@property final auto ref
+	{
+		ScriptArray!(ubyte) SendFIFO() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 516); }
+		ScriptString RecvBuf() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 528); }
+		ScriptClass AcceptClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 512); }
+		InternetLink.IpAddr RemoteAddr() { return *cast(InternetLink.IpAddr*)(cast(size_t)cast(void*)this + 504); }
+		TcpLink.ELinkState LinkState() { return *cast(TcpLink.ELinkState*)(cast(size_t)cast(void*)this + 500); }
+	}
+final:
+	int BindPort(int PortNum, bool bUseNextAvailable)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -32,14 +37,14 @@ extern(C++) interface TcpLink : InternetLink
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34054], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final bool Listen()
+	bool Listen()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34058], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool Open(InternetLink.IpAddr Addr)
+	bool Open(InternetLink.IpAddr Addr)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -47,21 +52,21 @@ extern(C++) interface TcpLink : InternetLink
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34060], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool Close()
+	bool Close()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34063], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsConnected()
+	bool IsConnected()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34065], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final int SendText(ScriptString Str)
+	int SendText(ScriptString Str)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -69,7 +74,7 @@ extern(C++) interface TcpLink : InternetLink
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34067], params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	final int SendBinary(int Count, ubyte B)
+	int SendBinary(int Count, ubyte B)
 	{
 		ubyte params[264];
 		params[] = 0;
@@ -78,7 +83,7 @@ extern(C++) interface TcpLink : InternetLink
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34070], params.ptr, cast(void*)0);
 		return *cast(int*)&params[260];
 	}
-	final int ReadText(ScriptString* Str)
+	int ReadText(ScriptString* Str)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -87,7 +92,7 @@ extern(C++) interface TcpLink : InternetLink
 		*Str = *cast(ScriptString*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	final int ReadBinary(int Count, ubyte* B)
+	int ReadBinary(int Count, ubyte* B)
 	{
 		ubyte params[264];
 		params[] = 0;
@@ -97,35 +102,35 @@ extern(C++) interface TcpLink : InternetLink
 		*B = params[4];
 		return *cast(int*)&params[260];
 	}
-	final void Accepted()
+	void Accepted()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34081], cast(void*)0, cast(void*)0);
 	}
-	final void Opened()
+	void Opened()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34082], cast(void*)0, cast(void*)0);
 	}
-	final void Closed()
+	void Closed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34083], cast(void*)0, cast(void*)0);
 	}
-	final void ReceivedText(ScriptString Text)
+	void ReceivedText(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34084], params.ptr, cast(void*)0);
 	}
-	final void ReceivedLine(ScriptString Line)
+	void ReceivedLine(ScriptString Line)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Line;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34086], params.ptr, cast(void*)0);
 	}
-	final void ReceivedBinary(int Count, ubyte B)
+	void ReceivedBinary(int Count, ubyte B)
 	{
-		ubyte params[5];
+		ubyte params[259];
 		params[] = 0;
 		*cast(int*)params.ptr = Count;
 		params[4] = B;

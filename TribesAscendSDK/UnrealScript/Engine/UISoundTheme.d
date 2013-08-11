@@ -7,14 +7,18 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface UISoundTheme : UObject
 {
+public extern(D):
 	struct SoundEventMapping
 	{
-		public @property final auto ref SoundCue SoundToPlay() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
-		private ubyte __SoundToPlay[4];
-		public @property final auto ref ScriptName SoundEventName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __SoundEventName[8];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			SoundCue SoundToPlay() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
+			ScriptName SoundEventName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(UISoundTheme.SoundEventMapping) SoundEventBindings() { return *cast(ScriptArray!(UISoundTheme.SoundEventMapping)*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref ScriptArray!(UISoundTheme.SoundEventMapping) SoundEventBindings() { return *cast(ScriptArray!(UISoundTheme.SoundEventMapping)*)(cast(size_t)cast(void*)this + 60); }
 	final void ProcessSoundEvent(ScriptName SoundEventName, PlayerController SoundOwner)
 	{
 		ubyte params[12];

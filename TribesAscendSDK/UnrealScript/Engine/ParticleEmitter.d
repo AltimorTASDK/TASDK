@@ -6,6 +6,7 @@ import UnrealScript.Engine.ParticleLODLevel;
 
 extern(C++) interface ParticleEmitter : UObject
 {
+public extern(D):
 	enum EEmitterRenderMode : ubyte
 	{
 		ERM_Normal = 0,
@@ -31,26 +32,34 @@ extern(C++) interface ParticleEmitter : UObject
 	}
 	struct ParticleBurst
 	{
-		public @property final auto ref float Time() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __Time[4];
-		public @property final auto ref int CountLow() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __CountLow[4];
-		public @property final auto ref int Count() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Count[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			float Time() { return *cast(float*)(cast(size_t)&this + 8); }
+			int CountLow() { return *cast(int*)(cast(size_t)&this + 4); }
+			int Count() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(ParticleLODLevel) LODLevels() { return *cast(ScriptArray!(ParticleLODLevel)*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref int InitialAllocationCount() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref int PeakActiveParticles() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-	public @property final bool bCookedOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x8) != 0; }
-	public @property final bool bCookedOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x8; } return val; }
-	public @property final bool bIsSoloing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x4) != 0; }
-	public @property final bool bIsSoloing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x4; } return val; }
-	public @property final bool bCollapsed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x2) != 0; }
-	public @property final bool bCollapsed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x2; } return val; }
-	public @property final bool ConvertedModules() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x1) != 0; }
-	public @property final bool ConvertedModules(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x1; } return val; }
-	public @property final auto ref UObject.Color EmitterEditorColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref ParticleEmitter.EEmitterRenderMode EmitterRenderMode() { return *cast(ParticleEmitter.EEmitterRenderMode*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref int SubUVDataOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref ScriptName EmitterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(ParticleLODLevel) LODLevels() { return *cast(ScriptArray!(ParticleLODLevel)*)(cast(size_t)cast(void*)this + 80); }
+			int InitialAllocationCount() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
+			int PeakActiveParticles() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
+			UObject.Color EmitterEditorColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 76); }
+			ParticleEmitter.EEmitterRenderMode EmitterRenderMode() { return *cast(ParticleEmitter.EEmitterRenderMode*)(cast(size_t)cast(void*)this + 72); }
+			int SubUVDataOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
+			ScriptName EmitterName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
+		}
+		bool bCookedOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x8) != 0; }
+		bool bCookedOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x8; } return val; }
+		bool bIsSoloing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x4) != 0; }
+		bool bIsSoloing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x4; } return val; }
+		bool bCollapsed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x2) != 0; }
+		bool bCollapsed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x2; } return val; }
+		bool ConvertedModules() { return (*cast(uint*)(cast(size_t)cast(void*)this + 92) & 0x1) != 0; }
+		bool ConvertedModules(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 92) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 92) &= ~0x1; } return val; }
+	}
 }

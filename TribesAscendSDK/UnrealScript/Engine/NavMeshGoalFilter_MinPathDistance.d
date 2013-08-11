@@ -6,7 +6,8 @@ import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
 extern(C++) interface NavMeshGoalFilter_MinPathDistance : NavMeshGoal_Filter
 {
-	public @property final auto ref int MinDistancePathShouldBe() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref int MinDistancePathShouldBe() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
 	final bool MustBeLongerPathThan(NavMeshGoal_GenericFilterContainer FilterContainer, int InMinDistancePathShouldBe)
 	{
 		ubyte params[12];

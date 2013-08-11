@@ -4,6 +4,7 @@ import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleBeamBase : ParticleModule
 {
+public extern(D):
 	enum Beam2SourceTargetMethod : ubyte
 	{
 		PEB2STM_Default = 0,

@@ -5,12 +5,16 @@ import UnrealScript.GameFramework.SeqEvent_MobileBase;
 
 extern(C++) interface SeqEvent_MobileMotion : SeqEvent_MobileBase
 {
-	public @property final auto ref float DeltaYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
-	public @property final auto ref float DeltaPitch() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
-	public @property final auto ref float DeltaRoll() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
-	public @property final auto ref float Yaw() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
-	public @property final auto ref float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
-	public @property final auto ref float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+public extern(D):
+	@property final auto ref
+	{
+		float DeltaYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
+		float DeltaPitch() { return *cast(float*)(cast(size_t)cast(void*)this + 272); }
+		float DeltaRoll() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
+		float Yaw() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
+		float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
+		float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

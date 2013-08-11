@@ -7,17 +7,22 @@ import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 {
-	public @property final auto ref ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 88); }
-	public @property final auto ref ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref UObject.Map_Mirror RuntimeCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 172); }
-	public @property final auto ref UObject.Map_Mirror PersistentCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 112); }
-	final void InitializeRuntimeFields()
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) PersistentDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 88); }
+		ScriptArray!(UIRoot.UIProviderScriptFieldValue) RuntimeDataFields() { return *cast(ScriptArray!(UIRoot.UIProviderScriptFieldValue)*)(cast(size_t)cast(void*)this + 100); }
+		UObject.Map_Mirror RuntimeCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 172); }
+		UObject.Map_Mirror PersistentCollectionData() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 112); }
+	}
+final:
+	void InitializeRuntimeFields()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28919], cast(void*)0, cast(void*)0);
 	}
-	final bool AddField(ScriptName FieldName, UIRoot.EUIDataProviderFieldType FieldType, bool bPersistent, int* out_InsertPosition)
+	bool AddField(ScriptName FieldName, UIRoot.EUIDataProviderFieldType FieldType, bool bPersistent, int* out_InsertPosition)
 	{
-		ubyte params[21];
+		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(UIRoot.EUIDataProviderFieldType*)&params[8] = FieldType;
@@ -27,7 +32,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*out_InsertPosition = *cast(int*)&params[16];
 		return *cast(bool*)&params[20];
 	}
-	final bool RemoveField(ScriptName FieldName)
+	bool RemoveField(ScriptName FieldName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -35,7 +40,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28926], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final int FindFieldIndex(ScriptName FieldName, bool bSearchPersistentFields)
+	int FindFieldIndex(ScriptName FieldName, bool bSearchPersistentFields)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -44,7 +49,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28929], params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	final bool ClearFields(bool bReinitializeRuntimeFields)
+	bool ClearFields(bool bReinitializeRuntimeFields)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -52,7 +57,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28933], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool GetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* out_Field)
+	bool GetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* out_Field)
 	{
 		ubyte params[96];
 		params[] = 0;
@@ -62,7 +67,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*out_Field = *cast(UIRoot.UIProviderScriptFieldValue*)&params[8];
 		return *cast(bool*)&params[92];
 	}
-	final bool SetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* FieldValue, bool bChangeExistingOnly)
+	bool SetField(ScriptName FieldName, UIRoot.UIProviderScriptFieldValue* FieldValue, bool bChangeExistingOnly)
 	{
 		ubyte params[100];
 		params[] = 0;
@@ -73,11 +78,11 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[8];
 		return *cast(bool*)&params[96];
 	}
-	final void SavePersistentProviderData()
+	void SavePersistentProviderData()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28945], cast(void*)0, cast(void*)0);
 	}
-	final bool GetCollectionValueSchema(ScriptName FieldName, ScriptArray!(ScriptName)* out_CellTagArray, bool bPersistent)
+	bool GetCollectionValueSchema(ScriptName FieldName, ScriptArray!(ScriptName)* out_CellTagArray, bool bPersistent)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -88,7 +93,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*out_CellTagArray = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[24];
 	}
-	final bool GetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* out_DataValueArray, bool bPersistent, ScriptName CellTag)
+	bool GetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* out_DataValueArray, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -100,7 +105,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*out_DataValueArray = *cast(ScriptArray!(ScriptString)*)&params[8];
 		return *cast(bool*)&params[32];
 	}
-	final bool SetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* CollectionValues, bool bClearExisting, int InsertIndex, bool bPersistent, ScriptName CellTag)
+	bool SetCollectionValueArray(ScriptName FieldName, ScriptArray!(ScriptString)* CollectionValues, bool bClearExisting, int InsertIndex, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -114,7 +119,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*CollectionValues = *cast(ScriptArray!(ScriptString)*)&params[8];
 		return *cast(bool*)&params[40];
 	}
-	final bool InsertCollectionValue(ScriptName FieldName, ScriptString* NewValue, int InsertIndex, bool bPersistent, bool bAllowDuplicateValues, ScriptName CellTag)
+	bool InsertCollectionValue(ScriptName FieldName, ScriptString* NewValue, int InsertIndex, bool bPersistent, bool bAllowDuplicateValues, ScriptName CellTag)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -128,7 +133,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[40];
 	}
-	final bool RemoveCollectionValue(ScriptName FieldName, ScriptString* ValueToRemove, bool bPersistent, ScriptName CellTag)
+	bool RemoveCollectionValue(ScriptName FieldName, ScriptString* ValueToRemove, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -140,7 +145,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*ValueToRemove = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[32];
 	}
-	final bool RemoveCollectionValueByIndex(ScriptName FieldName, int ValueIndex, bool bPersistent, ScriptName CellTag)
+	bool RemoveCollectionValueByIndex(ScriptName FieldName, int ValueIndex, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -151,7 +156,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28982], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	final bool ReplaceCollectionValue(ScriptName FieldName, ScriptString* CurrentValue, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
+	bool ReplaceCollectionValue(ScriptName FieldName, ScriptString* CurrentValue, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -165,7 +170,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*NewValue = *cast(ScriptString*)&params[20];
 		return *cast(bool*)&params[44];
 	}
-	final bool ReplaceCollectionValueByIndex(ScriptName FieldName, int ValueIndex, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
+	bool ReplaceCollectionValueByIndex(ScriptName FieldName, int ValueIndex, ScriptString* NewValue, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -178,7 +183,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*NewValue = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[36];
 	}
-	final bool ClearCollectionValueArray(ScriptName FieldName, bool bPersistent, ScriptName CellTag)
+	bool ClearCollectionValueArray(ScriptName FieldName, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -188,7 +193,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29002], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	final bool GetCollectionValue(ScriptName FieldName, int ValueIndex, ScriptString* out_Value, bool bPersistent, ScriptName CellTag)
+	bool GetCollectionValue(ScriptName FieldName, int ValueIndex, ScriptString* out_Value, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -201,7 +206,7 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 		*out_Value = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[36];
 	}
-	final int FindCollectionValueIndex(ScriptName FieldName, ScriptString* ValueToFind, bool bPersistent, ScriptName CellTag)
+	int FindCollectionValueIndex(ScriptName FieldName, ScriptString* ValueToFind, bool bPersistent, ScriptName CellTag)
 	{
 		ubyte params[36];
 		params[] = 0;

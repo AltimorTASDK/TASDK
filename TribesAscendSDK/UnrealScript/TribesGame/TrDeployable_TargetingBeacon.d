@@ -8,7 +8,9 @@ import UnrealScript.TribesGame.TrDeployable_RadarSensor;
 
 extern(C++) interface TrDeployable_TargetingBeacon : TrDeployable_RadarSensor
 {
-	final void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
+public extern(D):
+final:
+	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -18,7 +20,7 @@ extern(C++) interface TrDeployable_TargetingBeacon : TrDeployable_RadarSensor
 		*cast(Vector*)&params[20] = CameraDir;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80396], params.ptr, cast(void*)0);
 	}
-	final void RenderForTeammate(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir, float Distance)
+	void RenderForTeammate(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir, float Distance)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -29,7 +31,7 @@ extern(C++) interface TrDeployable_TargetingBeacon : TrDeployable_RadarSensor
 		*cast(float*)&params[32] = Distance;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80402], params.ptr, cast(void*)0);
 	}
-	final Texture2D GetMarker()
+	Texture2D GetMarker()
 	{
 		ubyte params[4];
 		params[] = 0;

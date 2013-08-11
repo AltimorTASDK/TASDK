@@ -6,7 +6,9 @@ import UnrealScript.UTGame.UTDamageType;
 
 extern(C++) interface UTDmgType_Burning : UTDamageType
 {
-	final void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
+public extern(D):
+final:
+	void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -17,7 +19,7 @@ extern(C++) interface UTDmgType_Burning : UTDamageType
 		*cast(Vector*)&params[28] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47069], params.ptr, cast(void*)0);
 	}
-	final float GetHitEffectDuration(Pawn P, float Damage)
+	float GetHitEffectDuration(Pawn P, float Damage)
 	{
 		ubyte params[12];
 		params[] = 0;

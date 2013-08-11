@@ -8,13 +8,18 @@ import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface GFxDataStoreSubscriber : UObject
 {
-	public @property final auto ref GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref UObject.Pointer VfTable_IUIDataStorePublisher() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
-	final void PublishValues()
+public extern(D):
+	@property final auto ref
+	{
+		GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 64); }
+		UObject.Pointer VfTable_IUIDataStorePublisher() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void PublishValues()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30255], cast(void*)0, cast(void*)0);
 	}
-	final void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
+	void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -22,7 +27,7 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 		*cast(int*)&params[12] = BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30256], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetDataStoreBinding(int BindingIndex)
+	ScriptString GetDataStoreBinding(int BindingIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -30,7 +35,7 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30259], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final bool RefreshSubscriberValue(int BindingIndex)
+	bool RefreshSubscriberValue(int BindingIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -38,7 +43,7 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30262], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void NotifyDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
+	void NotifyDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -49,7 +54,7 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 		*cast(int*)&params[20] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30265], params.ptr, cast(void*)0);
 	}
-	final void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
+	void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -57,11 +62,11 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30271], params.ptr, cast(void*)0);
 		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}
-	final void ClearBoundDataStores()
+	void ClearBoundDataStores()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30274], cast(void*)0, cast(void*)0);
 	}
-	final bool SaveSubscriberValue(ScriptArray!(UIDataStore)* out_BoundDataStores, int BindingIndex)
+	bool SaveSubscriberValue(ScriptArray!(UIDataStore)* out_BoundDataStores, int BindingIndex)
 	{
 		ubyte params[20];
 		params[] = 0;

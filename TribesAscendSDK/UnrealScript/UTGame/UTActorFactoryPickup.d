@@ -6,7 +6,8 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTActorFactoryPickup : ActorFactory
 {
-	public @property final auto ref ScriptClass InventoryClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref ScriptClass InventoryClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

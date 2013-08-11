@@ -6,12 +6,14 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface TrProj_LightStickyGrenade : TrProj_Grenade
 {
-	final void PostBeginPlay()
+public extern(D):
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108623], cast(void*)0, cast(void*)0);
 	}
-	final void HitWall(Vector HitNormal, Actor Wall, 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void HitWall(Vector HitNormal, Actor Wall, 
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* WallComp)
 	{
 		ubyte params[20];
@@ -19,11 +21,11 @@ void* WallComp)
 		*cast(Vector*)params.ptr = HitNormal;
 		*cast(Actor*)&params[12] = Wall;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108624], params.ptr, cast(void*)0);
 	}
-	final void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
+	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
 		ubyte params[28];
 		params[] = 0;

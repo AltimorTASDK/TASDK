@@ -5,5 +5,6 @@ import UnrealScript.Engine.ParticleModuleEventSendToGame;
 
 extern(C++) interface PMESTG_LeaveADecalBase : ParticleModuleEventSendToGame
 {
-	public @property final auto ref ScriptClass PhysicalMaterialPropertyClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref ScriptClass PhysicalMaterialPropertyClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 60); }
 }

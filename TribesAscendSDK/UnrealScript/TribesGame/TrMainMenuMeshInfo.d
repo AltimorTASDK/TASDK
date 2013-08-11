@@ -7,16 +7,24 @@ import UnrealScript.Engine.ParticleSystem;
 
 extern(C++) interface TrMainMenuMeshInfo : UObject
 {
+public extern(D):
 	struct ParticleSystemInfo
 	{
-		public @property final auto ref ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __SocketName[8];
-		// WARNING: Property 'ParticleSystem' has the same name as a defined type!
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			// WARNING: Property 'ParticleSystem' has the same name as a defined type!
+		}
 	}
-	public @property final auto ref ScriptArray!(TrMainMenuMeshInfo) Children() { return *cast(ScriptArray!(TrMainMenuMeshInfo)*)(cast(size_t)cast(void*)this + 116); }
-	public @property final auto ref ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { return *cast(ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo)*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptName ParentSocketName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref TrObject.PaperDollInfo MeshInfo() { return *cast(TrObject.PaperDollInfo*)(cast(size_t)cast(void*)this + 60); }
+	@property final auto ref
+	{
+		ScriptArray!(TrMainMenuMeshInfo) Children() { return *cast(ScriptArray!(TrMainMenuMeshInfo)*)(cast(size_t)cast(void*)this + 116); }
+		ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { return *cast(ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo)*)(cast(size_t)cast(void*)this + 136); }
+		ScriptName ParentSocketName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }
+		TrObject.PaperDollInfo MeshInfo() { return *cast(TrObject.PaperDollInfo*)(cast(size_t)cast(void*)this + 60); }
+	}
 	final void PreloadTextures(float ForceDuration)
 	{
 		ubyte params[4];

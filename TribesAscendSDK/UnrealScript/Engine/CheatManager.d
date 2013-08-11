@@ -7,11 +7,16 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface CheatManager : UObject
 {
-	public @property final auto ref ScriptString OwnCamera() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref ScriptString ViewingFrom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref ScriptClass DebugCameraControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref DebugCameraController DebugCameraControllerRef() { return *cast(DebugCameraController*)(cast(size_t)cast(void*)this + 60); }
-	final void FXPlay(ScriptClass aClass, ScriptString FXAnimPath)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString OwnCamera() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
+		ScriptString ViewingFrom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 68); }
+		ScriptClass DebugCameraControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 64); }
+		DebugCameraController DebugCameraControllerRef() { return *cast(DebugCameraController*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void FXPlay(ScriptClass aClass, ScriptString FXAnimPath)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -19,150 +24,150 @@ extern(C++) interface CheatManager : UObject
 		*cast(ScriptString*)&params[4] = FXAnimPath;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12628], params.ptr, cast(void*)0);
 	}
-	final void FXStop(ScriptClass aClass)
+	void FXStop(ScriptClass aClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = aClass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12638], params.ptr, cast(void*)0);
 	}
-	final void DebugAI(ScriptName Category)
+	void DebugAI(ScriptName Category)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Category;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12644], params.ptr, cast(void*)0);
 	}
-	final void EditAIByTrace()
+	void EditAIByTrace()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12646], cast(void*)0, cast(void*)0);
 	}
-	final void DebugPause()
+	void DebugPause()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12653], cast(void*)0, cast(void*)0);
 	}
-	final void ListDynamicActors()
+	void ListDynamicActors()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12654], cast(void*)0, cast(void*)0);
 	}
-	final void FreezeFrame(float Delay)
+	void FreezeFrame(float Delay)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Delay;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12655], params.ptr, cast(void*)0);
 	}
-	final void WriteToLog(ScriptString Param)
+	void WriteToLog(ScriptString Param)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12658], params.ptr, cast(void*)0);
 	}
-	final void KillViewedActor()
+	void KillViewedActor()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12660], cast(void*)0, cast(void*)0);
 	}
-	final void Teleport()
+	void Teleport()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12661], cast(void*)0, cast(void*)0);
 	}
-	final void ChangeSize(float F)
+	void ChangeSize(float F)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12667], params.ptr, cast(void*)0);
 	}
-	final void EndPath()
+	void EndPath()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12669], cast(void*)0, cast(void*)0);
 	}
-	final void Amphibious()
+	void Amphibious()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12670], cast(void*)0, cast(void*)0);
 	}
-	final void Fly()
+	void Fly()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12671], cast(void*)0, cast(void*)0);
 	}
-	final void Walk()
+	void Walk()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12674], cast(void*)0, cast(void*)0);
 	}
-	final void Ghost()
+	void Ghost()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12677], cast(void*)0, cast(void*)0);
 	}
-	final void AllAmmo()
+	void AllAmmo()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12680], cast(void*)0, cast(void*)0);
 	}
-	final void God()
+	void God()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12681], cast(void*)0, cast(void*)0);
 	}
-	final void Slomo(float T)
+	void Slomo(float T)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = T;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12682], params.ptr, cast(void*)0);
 	}
-	final void SetJumpZ(float F)
+	void SetJumpZ(float F)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12684], params.ptr, cast(void*)0);
 	}
-	final void SetGravity(float F)
+	void SetGravity(float F)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12686], params.ptr, cast(void*)0);
 	}
-	final void SetSpeed(float F)
+	void SetSpeed(float F)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12689], params.ptr, cast(void*)0);
 	}
-	final void KillAll(ScriptClass aClass)
+	void KillAll(ScriptClass aClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = aClass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12691], params.ptr, cast(void*)0);
 	}
-	final void KillAllPawns(ScriptClass aClass)
+	void KillAllPawns(ScriptClass aClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = aClass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12694], params.ptr, cast(void*)0);
 	}
-	final void KillPawns()
+	void KillPawns()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12699], cast(void*)0, cast(void*)0);
 	}
-	final void Avatar(ScriptName ClassName)
+	void Avatar(ScriptName ClassName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ClassName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12700], params.ptr, cast(void*)0);
 	}
-	final void Summon(ScriptString ClassName)
+	void Summon(ScriptString ClassName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ClassName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12707], params.ptr, cast(void*)0);
 	}
-	final Weapon GiveWeapon(ScriptString WeaponClassStr)
+	Weapon GiveWeapon(ScriptString WeaponClassStr)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -170,70 +175,70 @@ extern(C++) interface CheatManager : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12711], params.ptr, cast(void*)0);
 		return *cast(Weapon*)&params[12];
 	}
-	final void PlayersOnly()
+	void PlayersOnly()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12720], cast(void*)0, cast(void*)0);
 	}
-	final void DestroyFractures(float Radius)
+	void DestroyFractures(float Radius)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Radius;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12722], params.ptr, cast(void*)0);
 	}
-	final void FractureAllMeshes()
+	void FractureAllMeshes()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12725], cast(void*)0, cast(void*)0);
 	}
-	final void FractureAllMeshesToMaximizeMemoryUsage()
+	void FractureAllMeshesToMaximizeMemoryUsage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12727], cast(void*)0, cast(void*)0);
 	}
-	final void RememberSpot()
+	void RememberSpot()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12729], cast(void*)0, cast(void*)0);
 	}
-	final void ViewSelf(bool bQuiet)
+	void ViewSelf(bool bQuiet)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bQuiet;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12730], params.ptr, cast(void*)0);
 	}
-	final void ViewPlayer(ScriptString S)
+	void ViewPlayer(ScriptString S)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12732], params.ptr, cast(void*)0);
 	}
-	final void ViewActor(ScriptName ActorName)
+	void ViewActor(ScriptName ActorName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ActorName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12735], params.ptr, cast(void*)0);
 	}
-	final void ViewBot()
+	void ViewBot()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12738], cast(void*)0, cast(void*)0);
 	}
-	final void ViewClass(ScriptClass aClass)
+	void ViewClass(ScriptClass aClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = aClass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12742], params.ptr, cast(void*)0);
 	}
-	final void Loaded()
+	void Loaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12747], cast(void*)0, cast(void*)0);
 	}
-	final void AllWeapons()
+	void AllWeapons()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12748], cast(void*)0, cast(void*)0);
 	}
-	final void SetLevelStreamingStatus(ScriptName PackageName, bool bShouldBeLoaded, bool bShouldBeVisible)
+	void SetLevelStreamingStatus(ScriptName PackageName, bool bShouldBeLoaded, bool bShouldBeVisible)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -242,44 +247,44 @@ extern(C++) interface CheatManager : UObject
 		*cast(bool*)&params[12] = bShouldBeVisible;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12749], params.ptr, cast(void*)0);
 	}
-	final void EnableDebugCamera()
+	void EnableDebugCamera()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12755], cast(void*)0, cast(void*)0);
 	}
-	final void InitCheatManager()
+	void InitCheatManager()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12761], cast(void*)0, cast(void*)0);
 	}
-	final void LogPlaySoundCalls(bool bShouldLog)
+	void LogPlaySoundCalls(bool bShouldLog)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShouldLog;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12762], params.ptr, cast(void*)0);
 	}
-	final void LogParticleActivateSystemCalls(bool bShouldLog)
+	void LogParticleActivateSystemCalls(bool bShouldLog)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShouldLog;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12764], params.ptr, cast(void*)0);
 	}
-	final void VerifyNavMeshObjects()
+	void VerifyNavMeshObjects()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12766], cast(void*)0, cast(void*)0);
 	}
-	final void DrawUnsupportingEdges(ScriptString PawnClassName)
+	void DrawUnsupportingEdges(ScriptString PawnClassName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PawnClassName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12767], params.ptr, cast(void*)0);
 	}
-	final void PrintNavMeshObstacles()
+	void PrintNavMeshObstacles()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12769], cast(void*)0, cast(void*)0);
 	}
-	final void DumpCoverStats()
+	void DumpCoverStats()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12770], cast(void*)0, cast(void*)0);
 	}

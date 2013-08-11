@@ -7,6 +7,7 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNode_MultiBlendPerBone : AnimNodeBlendBase
 {
+public extern(D):
 	enum EWeightCheck : ubyte
 	{
 		EWC_AnimNodeSlotNotPlaying = 0,
@@ -20,60 +21,67 @@ extern(C++) interface AnimNode_MultiBlendPerBone : AnimNodeBlendBase
 	}
 	struct WeightNodeRule
 	{
-		public @property final auto ref int ChildIndex() { return *cast(int*)(cast(size_t)&this + 20); }
-		private ubyte __ChildIndex[4];
-		public @property final auto ref AnimNode_MultiBlendPerBone.EWeightCheck WeightCheck() { return *cast(AnimNode_MultiBlendPerBone.EWeightCheck*)(cast(size_t)&this + 16); }
-		private ubyte __WeightCheck[1];
-		public @property final auto ref AnimNodeSlot CachedSlotNode() { return *cast(AnimNodeSlot*)(cast(size_t)&this + 12); }
-		private ubyte __CachedSlotNode[4];
-		public @property final auto ref AnimNodeBlendBase CachedNode() { return *cast(AnimNodeBlendBase*)(cast(size_t)&this + 8); }
-		private ubyte __CachedNode[4];
-		public @property final auto ref ScriptName NodeName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __NodeName[8];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			int ChildIndex() { return *cast(int*)(cast(size_t)&this + 20); }
+			AnimNode_MultiBlendPerBone.EWeightCheck WeightCheck() { return *cast(AnimNode_MultiBlendPerBone.EWeightCheck*)(cast(size_t)&this + 16); }
+			AnimNodeSlot CachedSlotNode() { return *cast(AnimNodeSlot*)(cast(size_t)&this + 12); }
+			AnimNodeBlendBase CachedNode() { return *cast(AnimNodeBlendBase*)(cast(size_t)&this + 8); }
+			ScriptName NodeName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct WeightRule
 	{
-		public @property final auto ref AnimNode_MultiBlendPerBone.WeightNodeRule SecondNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 24); }
-		private ubyte __SecondNode[24];
-		public @property final auto ref AnimNode_MultiBlendPerBone.WeightNodeRule FirstNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 0); }
-		private ubyte __FirstNode[24];
+		private ubyte __buffer__[48];
+	public extern(D):
+		@property final auto ref
+		{
+			AnimNode_MultiBlendPerBone.WeightNodeRule SecondNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 24); }
+			AnimNode_MultiBlendPerBone.WeightNodeRule FirstNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct BranchInfo
 	{
-		public @property final auto ref float PerBoneWeightIncrease() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __PerBoneWeightIncrease[4];
-		public @property final auto ref ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __BoneName[8];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			float PerBoneWeightIncrease() { return *cast(float*)(cast(size_t)&this + 8); }
+			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct PerBoneMaskInfo
 	{
-		public @property final auto ref ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo) BranchList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo)*)(cast(size_t)&this + 0); }
-		private ubyte __BranchList[12];
-		public @property final auto ref ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule) WeightRuleList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule)*)(cast(size_t)&this + 20); }
-		private ubyte __WeightRuleList[12];
-		public @property final auto ref ScriptArray!(float) PerBoneWeights() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 36); }
-		private ubyte __PerBoneWeights[12];
-		public @property final auto ref ScriptArray!(ubyte) TransformReqBone() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 48); }
-		private ubyte __TransformReqBone[12];
-		public @property final auto ref int TransformReqBoneIndex() { return *cast(int*)(cast(size_t)&this + 60); }
-		private ubyte __TransformReqBoneIndex[4];
-		public @property final bool bPendingBlend() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x4) != 0; }
-		public @property final bool bPendingBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x4; } return val; }
-		private ubyte __bPendingBlend[4];
-		public @property final bool bDisableForNonLocalHumanPlayers() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x2) != 0; }
-		public @property final bool bDisableForNonLocalHumanPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x2; } return val; }
-		private ubyte __bDisableForNonLocalHumanPlayers[4];
-		public @property final bool bWeightBasedOnNodeRules() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x1) != 0; }
-		public @property final bool bWeightBasedOnNodeRules(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x1; } return val; }
-		private ubyte __bWeightBasedOnNodeRules[4];
-		public @property final auto ref float BlendTimeToGo() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __BlendTimeToGo[4];
-		public @property final auto ref float DesiredWeight() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __DesiredWeight[4];
+		private ubyte __buffer__[64];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo) BranchList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.BranchInfo)*)(cast(size_t)&this + 0); }
+				ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule) WeightRuleList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.WeightRule)*)(cast(size_t)&this + 20); }
+				ScriptArray!(float) PerBoneWeights() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 36); }
+				ScriptArray!(ubyte) TransformReqBone() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 48); }
+				int TransformReqBoneIndex() { return *cast(int*)(cast(size_t)&this + 60); }
+				float BlendTimeToGo() { return *cast(float*)(cast(size_t)&this + 16); }
+				float DesiredWeight() { return *cast(float*)(cast(size_t)&this + 12); }
+			}
+			bool bPendingBlend() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x4) != 0; }
+			bool bPendingBlend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x4; } return val; }
+			bool bDisableForNonLocalHumanPlayers() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x2) != 0; }
+			bool bDisableForNonLocalHumanPlayers(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x2; } return val; }
+			bool bWeightBasedOnNodeRules() { return (*cast(uint*)(cast(size_t)&this + 32) & 0x1) != 0; }
+			bool bWeightBasedOnNodeRules(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 32) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 32) &= ~0x1; } return val; }
+		}
 	}
-	public @property final auto ref Pawn PawnOwner() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 244); }
-	public @property final auto ref ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo) MaskList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo)*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref AnimNode_MultiBlendPerBone.EBlendType RotationBlendType() { return *cast(AnimNode_MultiBlendPerBone.EBlendType*)(cast(size_t)cast(void*)this + 260); }
+	@property final auto ref
+	{
+		Pawn PawnOwner() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 244); }
+		ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo) MaskList() { return *cast(ScriptArray!(AnimNode_MultiBlendPerBone.PerBoneMaskInfo)*)(cast(size_t)cast(void*)this + 248); }
+		AnimNode_MultiBlendPerBone.EBlendType RotationBlendType() { return *cast(AnimNode_MultiBlendPerBone.EBlendType*)(cast(size_t)cast(void*)this + 260); }
+	}
 	final void SetMaskWeight(int MaskIndex, float DesiredWeight, float BlendTime)
 	{
 		ubyte params[12];

@@ -5,7 +5,9 @@ import UnrealScript.Engine.FileWriter;
 
 extern(C++) interface FileLog : FileWriter
 {
-	final void OpenLog(ScriptString LogFilename, ScriptString extension, bool bUnique)
+public extern(D):
+final:
+	void OpenLog(ScriptString LogFilename, ScriptString extension, bool bUnique)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -14,7 +16,7 @@ extern(C++) interface FileLog : FileWriter
 		*cast(bool*)&params[24] = bUnique;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15722], params.ptr, cast(void*)0);
 	}
-	final void CloseLog()
+	void CloseLog()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15726], cast(void*)0, cast(void*)0);
 	}

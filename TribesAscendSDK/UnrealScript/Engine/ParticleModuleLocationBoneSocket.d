@@ -6,6 +6,7 @@ import UnrealScript.Engine.SkeletalMesh;
 
 extern(C++) interface ParticleModuleLocationBoneSocket : ParticleModuleLocationBase
 {
+public extern(D):
 	enum ELocationBoneSocketSource : ubyte
 	{
 		BONESOCKETSOURCE_Bones = 0,
@@ -21,19 +22,28 @@ extern(C++) interface ParticleModuleLocationBoneSocket : ParticleModuleLocationB
 	}
 	struct LocationBoneSocketInfo
 	{
-		public @property final auto ref Vector Offset() { return *cast(Vector*)(cast(size_t)&this + 8); }
-		private ubyte __Offset[12];
-		public @property final auto ref ScriptName BoneSocketName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __BoneSocketName[8];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Offset() { return *cast(Vector*)(cast(size_t)&this + 8); }
+			ScriptName BoneSocketName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo) SourceLocations() { return *cast(ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo)*)(cast(size_t)cast(void*)this + 88); }
-	public @property final auto ref SkeletalMesh EditorSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptName SkelMeshActorParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 104); }
-	public @property final bool bOrientMeshEmitters() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x2) != 0; }
-	public @property final bool bOrientMeshEmitters(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x2; } return val; }
-	public @property final bool bUpdatePositionEachFrame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
-	public @property final bool bUpdatePositionEachFrame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
-	public @property final auto ref Vector UniversalOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod SelectionMethod() { return *cast(ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod*)(cast(size_t)cast(void*)this + 73); }
-	public @property final auto ref ParticleModuleLocationBoneSocket.ELocationBoneSocketSource SourceType() { return *cast(ParticleModuleLocationBoneSocket.ELocationBoneSocketSource*)(cast(size_t)cast(void*)this + 72); }
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo) SourceLocations() { return *cast(ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo)*)(cast(size_t)cast(void*)this + 88); }
+			SkeletalMesh EditorSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 112); }
+			ScriptName SkelMeshActorParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 104); }
+			Vector UniversalOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 76); }
+			ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod SelectionMethod() { return *cast(ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod*)(cast(size_t)cast(void*)this + 73); }
+			ParticleModuleLocationBoneSocket.ELocationBoneSocketSource SourceType() { return *cast(ParticleModuleLocationBoneSocket.ELocationBoneSocketSource*)(cast(size_t)cast(void*)this + 72); }
+		}
+		bool bOrientMeshEmitters() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x2) != 0; }
+		bool bOrientMeshEmitters(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x2; } return val; }
+		bool bUpdatePositionEachFrame() { return (*cast(uint*)(cast(size_t)cast(void*)this + 100) & 0x1) != 0; }
+		bool bUpdatePositionEachFrame(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 100) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 100) &= ~0x1; } return val; }
+	}
 }

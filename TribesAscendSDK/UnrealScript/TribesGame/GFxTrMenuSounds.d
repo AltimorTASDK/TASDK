@@ -5,6 +5,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface GFxTrMenuSounds : UObject
 {
+public extern(D):
 	enum EMenuSound : ubyte
 	{
 		EMS_CLASS_ROLLOVER = 0,
@@ -25,67 +26,68 @@ extern(C++) interface GFxTrMenuSounds : UObject
 		EMS_PAGE_BACK = 15,
 		EMS_MAX = 16,
 	}
-	final void SoundToolTip(bool bOpened)
+final:
+	void SoundToolTip(bool bOpened)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOpened;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56597], params.ptr, cast(void*)0);
 	}
-	final void SoundXPGain(int val)
+	void SoundXPGain(int val)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = val;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56599], params.ptr, cast(void*)0);
 	}
-	final void SoundSkillType(int val)
+	void SoundSkillType(int val)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = val;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56601], params.ptr, cast(void*)0);
 	}
-	final void SoundClassType(int val)
+	void SoundClassType(int val)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = val;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56603], params.ptr, cast(void*)0);
 	}
-	final void SoundPurchaseSkill()
+	void SoundPurchaseSkill()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56605], cast(void*)0, cast(void*)0);
 	}
-	final void SoundSelectedQueue()
+	void SoundSelectedQueue()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56606], cast(void*)0, cast(void*)0);
 	}
-	final void LeaveQueue()
+	void LeaveQueue()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56607], cast(void*)0, cast(void*)0);
 	}
-	final void PageForward()
+	void PageForward()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56608], cast(void*)0, cast(void*)0);
 	}
-	final void PageBack()
+	void PageBack()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56609], cast(void*)0, cast(void*)0);
 	}
-	final void ClassRollover()
+	void ClassRollover()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56610], cast(void*)0, cast(void*)0);
 	}
-	final void ClassSelected()
+	void ClassSelected()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56611], cast(void*)0, cast(void*)0);
 	}
-	final void ClassLocked()
+	void ClassLocked()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56612], cast(void*)0, cast(void*)0);
 	}
-	final void PlayMenuSound(GFxTrMenuSounds.EMenuSound MenuSound)
+	void PlayMenuSound(GFxTrMenuSounds.EMenuSound MenuSound)
 	{
 		ubyte params[1];
 		params[] = 0;

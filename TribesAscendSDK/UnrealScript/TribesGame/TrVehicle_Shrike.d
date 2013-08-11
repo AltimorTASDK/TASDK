@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTPawn;
 
 extern(C++) interface TrVehicle_Shrike : TrVehicle_BaseFlying
 {
+public extern(D):
 	final void SitDriver(UTPawn UTP, int SeatIndex)
 	{
 		ubyte params[8];

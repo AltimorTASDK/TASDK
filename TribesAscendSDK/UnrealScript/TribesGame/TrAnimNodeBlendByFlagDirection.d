@@ -7,6 +7,7 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendByFlagDirection : TrAnimNodeBlendList
 {
+public extern(D):
 	enum EFlagAnimTypes : ubyte
 	{
 		FlagAnim_Idle = 0,
@@ -19,11 +20,14 @@ extern(C++) interface TrAnimNodeBlendByFlagDirection : TrAnimNodeBlendList
 		FlagAnim_None = 7,
 		FlagAnim_MAX = 8,
 	}
-	public @property final auto ref float m_fIdleBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
-	public @property final auto ref float m_fIdleBlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
-	public @property final auto ref AnimNodeAdditiveBlending m_AdditiveBlendNode() { return *cast(AnimNodeAdditiveBlending*)(cast(size_t)cast(void*)this + 312); }
-	public @property final auto ref ScriptName m_nmAdditiveAnimNodeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 304); }
-	public @property final auto ref float m_fIdleSpeedSizeSq() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
-	public @property final auto ref TrFlagBase m_TrFlagOwner() { return *cast(TrFlagBase*)(cast(size_t)cast(void*)this + 296); }
-	public @property final auto ref TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { return *cast(TrAnimNodeBlendByFlagDirection.EFlagAnimTypes*)(cast(size_t)cast(void*)this + 292); }
+	@property final auto ref
+	{
+		float m_fIdleBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }
+		float m_fIdleBlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 316); }
+		AnimNodeAdditiveBlending m_AdditiveBlendNode() { return *cast(AnimNodeAdditiveBlending*)(cast(size_t)cast(void*)this + 312); }
+		ScriptName m_nmAdditiveAnimNodeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 304); }
+		float m_fIdleSpeedSizeSq() { return *cast(float*)(cast(size_t)cast(void*)this + 300); }
+		TrFlagBase m_TrFlagOwner() { return *cast(TrFlagBase*)(cast(size_t)cast(void*)this + 296); }
+		TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { return *cast(TrAnimNodeBlendByFlagDirection.EFlagAnimTypes*)(cast(size_t)cast(void*)this + 292); }
+	}
 }

@@ -6,11 +6,13 @@ import UnrealScript.Engine.Volume;
 
 extern(C++) interface TriggerVolume : Volume
 {
-	final void PostBeginPlay()
+public extern(D):
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14906], cast(void*)0, cast(void*)0);
 	}
-	final bool StopsProjectile(Projectile P)
+	bool StopsProjectile(Projectile P)
 	{
 		ubyte params[8];
 		params[] = 0;

@@ -7,7 +7,8 @@ import UnrealScript.TribesGame.TrPawn;
 
 extern(C++) interface TrAnimNodeSequencePose : AnimNodeSequence
 {
-	public @property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { return *cast(ScriptArray!(UObject.BoneAtom)*)(cast(size_t)cast(void*)this + 320); }
+public extern(D):
+	@property final auto ref ScriptArray!(UObject.BoneAtom) m_PoseSpaceBases() { return *cast(ScriptArray!(UObject.BoneAtom)*)(cast(size_t)cast(void*)this + 320); }
 	final void FillWithPose(TrPawn P)
 	{
 		ubyte params[4];

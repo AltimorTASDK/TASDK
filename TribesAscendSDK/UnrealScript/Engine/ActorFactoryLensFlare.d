@@ -5,5 +5,6 @@ import UnrealScript.Engine.ActorFactory;
 
 extern(C++) interface ActorFactoryLensFlare : ActorFactory
 {
-	public @property final auto ref LensFlare LensFlareObject() { return *cast(LensFlare*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref LensFlare LensFlareObject() { return *cast(LensFlare*)(cast(size_t)cast(void*)this + 92); }
 }

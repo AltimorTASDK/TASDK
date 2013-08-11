@@ -9,12 +9,16 @@ import UnrealScript.Engine.SkeletalMesh;
 
 extern(C++) interface PhysicsAsset : UObject
 {
-	public @property final auto ref ScriptArray!(RB_ConstraintSetup) ConstraintSetup() { return *cast(ScriptArray!(RB_ConstraintSetup)*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptArray!(RB_BodySetup) BodySetup() { return *cast(ScriptArray!(RB_BodySetup)*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref ScriptArray!(int) BoundsBodies() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref PhysicsAssetInstance DefaultInstance() { return *cast(PhysicsAssetInstance*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref UObject.Map_Mirror BodySetupIndexMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref SkeletalMesh DefaultSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(RB_ConstraintSetup) ConstraintSetup() { return *cast(ScriptArray!(RB_ConstraintSetup)*)(cast(size_t)cast(void*)this + 148); }
+		ScriptArray!(RB_BodySetup) BodySetup() { return *cast(ScriptArray!(RB_BodySetup)*)(cast(size_t)cast(void*)this + 64); }
+		ScriptArray!(int) BoundsBodies() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 136); }
+		PhysicsAssetInstance DefaultInstance() { return *cast(PhysicsAssetInstance*)(cast(size_t)cast(void*)this + 160); }
+		UObject.Map_Mirror BodySetupIndexMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 76); }
+		SkeletalMesh DefaultSkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)cast(void*)this + 60); }
+	}
 	final int FindBodyIndex(ScriptName BodyName)
 	{
 		ubyte params[12];

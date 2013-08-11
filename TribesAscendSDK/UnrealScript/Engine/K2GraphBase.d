@@ -6,5 +6,6 @@ import UnrealScript.Engine.K2NodeBase;
 
 extern(C++) interface K2GraphBase : UObject
 {
-	public @property final auto ref ScriptArray!(K2NodeBase) Nodes() { return *cast(ScriptArray!(K2NodeBase)*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref ScriptArray!(K2NodeBase) Nodes() { return *cast(ScriptArray!(K2NodeBase)*)(cast(size_t)cast(void*)this + 60); }
 }

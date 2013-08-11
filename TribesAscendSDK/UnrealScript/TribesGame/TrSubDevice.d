@@ -6,11 +6,13 @@ import UnrealScript.TribesGame.TrDevice;
 
 extern(C++) interface TrSubDevice : TrDevice
 {
-	final void Reset()
+public extern(D):
+final:
+	void Reset()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112994], cast(void*)0, cast(void*)0);
 	}
-	final Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
+	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
 	{
 		ubyte params[128];
 		params[] = 0;

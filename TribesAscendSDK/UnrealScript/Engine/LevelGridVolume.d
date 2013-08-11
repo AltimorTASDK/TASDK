@@ -6,6 +6,7 @@ import UnrealScript.Engine.Volume;
 
 extern(C++) interface LevelGridVolume : Volume
 {
+public extern(D):
 	enum LevelGridCellShape : ubyte
 	{
 		LGCS_Box = 0,
@@ -14,17 +15,22 @@ extern(C++) interface LevelGridVolume : Volume
 	}
 	struct LevelGridCellCoordinate
 	{
-		public @property final auto ref int Z() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __Z[4];
-		public @property final auto ref int Y() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __Y[4];
-		public @property final auto ref int X() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __X[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			int Z() { return *cast(int*)(cast(size_t)&this + 8); }
+			int Y() { return *cast(int*)(cast(size_t)&this + 4); }
+			int X() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref KMeshProps.KConvexElem CellConvexElem() { return *cast(KMeshProps.KConvexElem*)(cast(size_t)cast(void*)this + 556); }
-	public @property final auto ref float KeepLoadedRange() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-	public @property final auto ref float LoadingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-	public @property final auto ref int Subdivisions() { return *cast(int*)(cast(size_t)cast(void*)this + 536); }
-	public @property final auto ref LevelGridVolume.LevelGridCellShape CellShape() { return *cast(LevelGridVolume.LevelGridCellShape*)(cast(size_t)cast(void*)this + 532); }
-	public @property final auto ref ScriptString LevelGridVolumeName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 520); }
+	@property final auto ref
+	{
+		KMeshProps.KConvexElem CellConvexElem() { return *cast(KMeshProps.KConvexElem*)(cast(size_t)cast(void*)this + 556); }
+		float KeepLoadedRange() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
+		float LoadingDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
+		int Subdivisions() { return *cast(int*)(cast(size_t)cast(void*)this + 536); }
+		LevelGridVolume.LevelGridCellShape CellShape() { return *cast(LevelGridVolume.LevelGridCellShape*)(cast(size_t)cast(void*)this + 532); }
+		ScriptString LevelGridVolumeName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 520); }
+	}
 }

@@ -7,6 +7,10 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface TrAnimNodeTurnInPlace_Rotator : AnimNodeBlendBase
 {
-	public @property final auto ref ScriptArray!(TrAnimNodeTurnInPlace) c_TurnInPlaceNodes() { return *cast(ScriptArray!(TrAnimNodeTurnInPlace)*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 244); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(TrAnimNodeTurnInPlace) c_TurnInPlaceNodes() { return *cast(ScriptArray!(TrAnimNodeTurnInPlace)*)(cast(size_t)cast(void*)this + 248); }
+		TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 244); }
+	}
 }

@@ -42,6 +42,7 @@ import UnrealScript.Engine.Weapon;
 
 extern(C++) interface Pawn : Actor
 {
+public extern(D):
 	enum EPathSearchType : ubyte
 	{
 		PST_Default = 0,
@@ -52,272 +53,283 @@ extern(C++) interface Pawn : Actor
 	}
 	struct ScalarParameterInterpStruct
 	{
-		public @property final auto ref float WarmupTime() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __WarmupTime[4];
-		public @property final auto ref float InterpTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __InterpTime[4];
-		public @property final auto ref float ParameterValue() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __ParameterValue[4];
-		public @property final auto ref ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __ParameterName[8];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref
+		{
+			float WarmupTime() { return *cast(float*)(cast(size_t)&this + 16); }
+			float InterpTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			float ParameterValue() { return *cast(float*)(cast(size_t)&this + 8); }
+			ScriptName ParameterName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct LastHitInfoStruct
 	{
-		public @property final auto ref ScriptClass Type() { return *cast(ScriptClass*)(cast(size_t)&this + 16); }
-		private ubyte __Type[4];
-		public @property final auto ref Actor Causer() { return *cast(Actor*)(cast(size_t)&this + 12); }
-		private ubyte __Causer[4];
-		public @property final auto ref float Distance() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __Distance[4];
-		public @property final auto ref float Amount() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __Amount[4];
-		public @property final bool bDirectHit() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-		public @property final bool bDirectHit(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-		private ubyte __bDirectHit[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				ScriptClass Type() { return *cast(ScriptClass*)(cast(size_t)&this + 16); }
+				Actor Causer() { return *cast(Actor*)(cast(size_t)&this + 12); }
+				float Distance() { return *cast(float*)(cast(size_t)&this + 8); }
+				float Amount() { return *cast(float*)(cast(size_t)&this + 4); }
+			}
+			bool bDirectHit() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
+			bool bDirectHit(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+		}
 	}
-	// WARNING: Property 'Controller' has the same name as a defined type!
-	public @property final auto ref int MaxPitchLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 664); }
-	// WARNING: Property 'Weapon' has the same name as a defined type!
-	public @property final auto ref InventoryManager InvManager() { return *cast(InventoryManager*)(cast(size_t)cast(void*)this + 980); }
-	public @property final bool bIsWalking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4) != 0; }
-	public @property final bool bIsWalking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4; } return val; }
-	public @property final auto ref float EyeHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 728); }
-	public @property final auto ref float BaseEyeHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 724); }
-	public @property final auto ref int Health() { return *cast(int*)(cast(size_t)cast(void*)this + 752); }
-	public @property final bool bForceRMVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x100000) != 0; }
-	public @property final bool bForceRMVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x100000; } return val; }
-	public @property final auto ref Vector Floor() { return *cast(Vector*)(cast(size_t)cast(void*)this + 732); }
-	public @property final bool bRootMotionFromInterpCurve() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8000000) != 0; }
-	public @property final bool bRootMotionFromInterpCurve(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8000000; } return val; }
-	public @property final auto ref float CrouchHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-	public @property final bool bIsCrouched() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10) != 0; }
-	public @property final bool bIsCrouched(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10; } return val; }
-	public @property final auto ref float MaxStepHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
-	public @property final bool bForceMaxAccel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20000) != 0; }
-	public @property final bool bForceMaxAccel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20000; } return val; }
-	public @property final auto ref float VehicleCheckRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 944); }
-	public @property final auto ref float LastStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 888); }
-	public @property final auto ref PhysicsVolume HeadVolume() { return *cast(PhysicsVolume*)(cast(size_t)cast(void*)this + 748); }
-	public @property final auto ref float BreathTime() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
-	public @property final auto ref float UnderWaterTime() { return *cast(float*)(cast(size_t)cast(void*)this + 764); }
-	public @property final auto ref ScriptName WaterMovementState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 876); }
-	public @property final auto ref ScriptName LandMovementState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 868); }
-	public @property final auto ref float AccelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-	public @property final auto ref Actor.EPhysics WalkingPhysics() { return *cast(Actor.EPhysics*)(cast(size_t)cast(void*)this + 536); }
-	public @property final auto ref LadderVolume OnLadder() { return *cast(LadderVolume*)(cast(size_t)cast(void*)this + 864); }
-	public @property final bool bUpAndOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2) != 0; }
-	public @property final bool bUpAndOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2; } return val; }
-	public @property final auto ref float OutofWaterZ() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
-	public @property final auto ref NavigationPoint Anchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 612); }
-	public @property final auto ref ScriptArray!(AnimNodeSlot) SlotNodes() { return *cast(ScriptArray!(AnimNodeSlot)*)(cast(size_t)cast(void*)this + 1028); }
-	public @property final auto ref ScriptArray!(InterpGroup) InterpGroupList() { return *cast(ScriptArray!(InterpGroup)*)(cast(size_t)cast(void*)this + 1040); }
-	public @property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 1064); }
-	public @property final auto ref Pawn.LastHitInfoStruct LastHitInfo() { return *cast(Pawn.LastHitInfoStruct*)(cast(size_t)cast(void*)this + 1124); }
-	public @property final auto ref Vector RootMotionInterpCurveLastValue() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1112); }
-	public @property final auto ref float RootMotionInterpCurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1108); }
-	public @property final auto ref float RootMotionInterpRate() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
-	public @property final auto ref EngineTypes.RootMotionCurve RootMotionInterpCurve() { return *cast(EngineTypes.RootMotionCurve*)(cast(size_t)cast(void*)this + 1076); }
-	public @property final auto ref MaterialInstanceConstant MIC_PawnHair() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1060); }
-	public @property final auto ref MaterialInstanceConstant MIC_PawnMat() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1056); }
-	public @property final auto ref int FailedLandingCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1024); }
-	public @property final auto ref RB_BodyInstance PhysicsPushBody() { return *cast(RB_BodyInstance*)(cast(size_t)cast(void*)this + 1020); }
-	public @property final auto ref int ShotCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1012); }
-	public @property final auto ref Vector LastFiringFlashLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1000); }
-	public @property final auto ref Vector FlashLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 988); }
-	public @property final auto ref ScriptClass InventoryManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 976); }
-	public @property final auto ref Rotator DesiredRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 964); }
-	public @property final auto ref int AllowedYawError() { return *cast(int*)(cast(size_t)cast(void*)this + 960); }
-	public @property final auto ref float ViewPitchMax() { return *cast(float*)(cast(size_t)cast(void*)this + 956); }
-	public @property final auto ref float ViewPitchMin() { return *cast(float*)(cast(size_t)cast(void*)this + 952); }
-	public @property final auto ref Controller LastHitBy() { return *cast(Controller*)(cast(size_t)cast(void*)this + 948); }
-	public @property final auto ref float AlwaysRelevantDistanceSquared() { return *cast(float*)(cast(size_t)cast(void*)this + 940); }
-	public @property final auto ref Vehicle DrivenVehicle() { return *cast(Vehicle*)(cast(size_t)cast(void*)this + 936); }
-	public @property final auto ref float RBPushStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 932); }
-	public @property final auto ref float RBPushRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 928); }
-	public @property final auto ref Vector TearOffMomentum() { return *cast(Vector*)(cast(size_t)cast(void*)this + 908); }
-	public @property final auto ref ScriptClass HitDamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 904); }
-	public @property final auto ref Vector TakeHitLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 892); }
-	public @property final auto ref PlayerStart LastStartSpot() { return *cast(PlayerStart*)(cast(size_t)cast(void*)this + 884); }
-	// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
-	public @property final auto ref ScriptClass ControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 856); }
-	public @property final auto ref ScriptString MenuName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 844); }
-	public @property final auto ref float DamageScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 840); }
-	public @property final auto ref float SoundDampening() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
-	public @property final auto ref float noise2loudness() { return *cast(float*)(cast(size_t)cast(void*)this + 832); }
-	public @property final auto ref Pawn noise2other() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 828); }
-	public @property final auto ref float noise2time() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
-	public @property final auto ref Vector noise2spot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 812); }
-	public @property final auto ref float noise1loudness() { return *cast(float*)(cast(size_t)cast(void*)this + 808); }
-	public @property final auto ref Pawn noise1other() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 804); }
-	public @property final auto ref float noise1time() { return *cast(float*)(cast(size_t)cast(void*)this + 800); }
-	public @property final auto ref Vector noise1spot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
-	public @property final auto ref Vector RMVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 776); }
-	public @property final auto ref float KismetDeathDelayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 772); }
-	public @property final auto ref float LastPainTime() { return *cast(float*)(cast(size_t)cast(void*)this + 768); }
-	public @property final auto ref int HealthMax() { return *cast(int*)(cast(size_t)cast(void*)this + 756); }
-	public @property final auto ref float SplashTime() { return *cast(float*)(cast(size_t)cast(void*)this + 744); }
-	public @property final auto ref float AIMaxFallSpeedFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
-	public @property final auto ref float MaxFallSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-	public @property final auto ref float CrouchedPct() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
-	public @property final auto ref float MovementSpeedModifier() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
-	public @property final auto ref float WalkingPct() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
-	public @property final auto ref float AirControl() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
-	public @property final auto ref float MaxOutOfWaterStepHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref float JumpZ() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-	public @property final auto ref float LadderSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
-	public @property final auto ref float AirSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-	public @property final auto ref float WaterSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
-	public @property final auto ref float GroundSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 668); }
-	public @property final auto ref float SpawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 660); }
-	public @property final auto ref float SerpentineTime() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
-	public @property final auto ref float SerpentineDist() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-	public @property final auto ref Vector SerpentineDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref float NextPathRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
-	public @property final auto ref float DestinationOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 632); }
-	public @property final auto ref float LastValidAnchorTime() { return *cast(float*)(cast(size_t)cast(void*)this + 628); }
-	public @property final auto ref float FindAnchorFailedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
-	public @property final auto ref NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 620); }
-	public @property final auto ref int AnchorItem() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
-	public @property final auto ref float MeleeRange() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-	public @property final auto ref float Buoyancy() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-	public @property final auto ref float Mass() { return *cast(float*)(cast(size_t)cast(void*)this + 600); }
-	public @property final auto ref float AvgPhysicsTime() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-	public @property final auto ref float PeripheralVision() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref float SightRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
-	public @property final auto ref float Alertness() { return *cast(float*)(cast(size_t)cast(void*)this + 584); }
-	public @property final auto ref float HearingThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
-	public @property final auto ref float MaxDesiredSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-	public @property final auto ref float DesiredSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
-	public @property final auto ref PathGoalEvaluator PathGoalList() { return *cast(PathGoalEvaluator*)(cast(size_t)cast(void*)this + 568); }
-	public @property final auto ref PathConstraint PathConstraintList() { return *cast(PathConstraint*)(cast(size_t)cast(void*)this + 564); }
-	public @property final auto ref float NonPreferredVehiclePathMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
-	public @property final auto ref int FullHeight() { return *cast(int*)(cast(size_t)cast(void*)this + 556); }
-	public @property final auto ref float CrouchRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
-	public @property final auto ref float UncrouchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref ubyte FiringMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 540); }
-	public @property final auto ref ubyte FlashCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 539); }
-	public @property final auto ref ubyte RemoteViewPitch() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 538); }
-	public @property final auto ref Pawn.EPathSearchType PathSearchType() { return *cast(Pawn.EPathSearchType*)(cast(size_t)cast(void*)this + 537); }
-	public @property final auto ref UObject.Pointer VfTable_IInterface_Speaker() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
-	public @property final bool bDebugShowCameraLocation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10000000) != 0; }
-	public @property final bool bDebugShowCameraLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10000000; } return val; }
-	public @property final bool bNeedsBaseTickedFirst() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4000000) != 0; }
-	public @property final bool bNeedsBaseTickedFirst(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4000000; } return val; }
-	public @property final bool bUnlockWhenReached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2000000) != 0; }
-	public @property final bool bUnlockWhenReached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2000000; } return val; }
-	public @property final bool bLockDesiredRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1000000) != 0; }
-	public @property final bool bLockDesiredRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1000000; } return val; }
-	public @property final bool bDesiredRotationSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x800000) != 0; }
-	public @property final bool bDesiredRotationSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x800000; } return val; }
-	public @property final bool bPlayedDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x400000) != 0; }
-	public @property final bool bPlayedDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x400000; } return val; }
-	public @property final bool bForceRegularVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x200000) != 0; }
-	public @property final bool bForceRegularVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x200000; } return val; }
-	public @property final bool bReplicateHealthToAll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80000) != 0; }
-	public @property final bool bReplicateHealthToAll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80000; } return val; }
-	public @property final bool bLimitFallAccel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40000) != 0; }
-	public @property final bool bLimitFallAccel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40000; } return val; }
-	public @property final bool bRunPhysicsWithNoController() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10000) != 0; }
-	public @property final bool bRunPhysicsWithNoController(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10000; } return val; }
-	public @property final bool bPathfindsAsVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8000) != 0; }
-	public @property final bool bPathfindsAsVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8000; } return val; }
-	public @property final bool bModifyNavPointDest() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4000) != 0; }
-	public @property final bool bModifyNavPointDest(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4000; } return val; }
-	public @property final bool bModifyReachSpecCost() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2000) != 0; }
-	public @property final bool bModifyReachSpecCost(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2000; } return val; }
-	public @property final bool bNoWeaponFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1000) != 0; }
-	public @property final bool bNoWeaponFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1000; } return val; }
-	public @property final bool bCachedRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x800) != 0; }
-	public @property final bool bCachedRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x800; } return val; }
-	public @property final bool bStationary() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x400) != 0; }
-	public @property final bool bStationary(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x400; } return val; }
-	public @property final bool bRollToDesired() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x200) != 0; }
-	public @property final bool bRollToDesired(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x200; } return val; }
-	public @property final bool bDontPossess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x100) != 0; }
-	public @property final bool bDontPossess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x100; } return val; }
-	public @property final bool bMuffledHearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80) != 0; }
-	public @property final bool bMuffledHearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80; } return val; }
-	public @property final bool bLOSHearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40) != 0; }
-	public @property final bool bLOSHearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40; } return val; }
-	public @property final bool bAmbientCreature() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20) != 0; }
-	public @property final bool bAmbientCreature(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20; } return val; }
-	public @property final bool bCanPickupInventory() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10) != 0; }
-	public @property final bool bCanPickupInventory(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10; } return val; }
-	public @property final bool bDisplayPathErrors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8) != 0; }
-	public @property final bool bDisplayPathErrors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8; } return val; }
-	public @property final bool bCanCoverSlip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
-	public @property final bool bCanCoverSlip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
-	public @property final bool bCanLeap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
-	public @property final bool bCanLeap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
-	public @property final bool bCanSwatTurn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
-	public @property final bool bCanSwatTurn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
-	public @property final bool bCanClimbCeilings() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80000000) != 0; }
-	public @property final bool bCanClimbCeilings(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80000000; } return val; }
-	public @property final bool bCanClimbUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40000000) != 0; }
-	public @property final bool bCanClimbUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40000000; } return val; }
-	public @property final bool bCanMantle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20000000) != 0; }
-	public @property final bool bCanMantle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20000000; } return val; }
-	public @property final bool bForceKeepAnchor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10000000) != 0; }
-	public @property final bool bForceKeepAnchor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10000000; } return val; }
-	public @property final bool bForceFloorCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8000000) != 0; }
-	public @property final bool bForceFloorCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8000000; } return val; }
-	public @property final bool bPushesRigidBodies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4000000) != 0; }
-	public @property final bool bPushesRigidBodies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4000000; } return val; }
-	public @property final bool bDirectHitWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2000000) != 0; }
-	public @property final bool bDirectHitWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2000000; } return val; }
-	public @property final bool bSimGravityDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1000000) != 0; }
-	public @property final bool bSimGravityDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1000000; } return val; }
-	public @property final bool bCanBeBaseForPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x800000) != 0; }
-	public @property final bool bCanBeBaseForPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x800000; } return val; }
-	public @property final bool bCanWalkOffLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x400000) != 0; }
-	public @property final bool bCanWalkOffLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x400000; } return val; }
-	public @property final bool bIgnoreForces() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x200000) != 0; }
-	public @property final bool bIgnoreForces(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x200000; } return val; }
-	public @property final bool bSimulateGravity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x100000) != 0; }
-	public @property final bool bSimulateGravity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x100000; } return val; }
-	public @property final bool bPartiallyOverLedge() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80000) != 0; }
-	public @property final bool bPartiallyOverLedge(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80000; } return val; }
-	public @property final bool bAllowLedgeOverhang() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40000) != 0; }
-	public @property final bool bAllowLedgeOverhang(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40000; } return val; }
-	public @property final bool bStopAtLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20000) != 0; }
-	public @property final bool bStopAtLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20000; } return val; }
-	public @property final bool bAvoidLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10000) != 0; }
-	public @property final bool bAvoidLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10000; } return val; }
-	public @property final bool bCanStrafe() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8000) != 0; }
-	public @property final bool bCanStrafe(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8000; } return val; }
-	public @property final bool bCanClimbLadders() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4000) != 0; }
-	public @property final bool bCanClimbLadders(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4000; } return val; }
-	public @property final bool bCanFly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2000) != 0; }
-	public @property final bool bCanFly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2000; } return val; }
-	public @property final bool bCanSwim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1000) != 0; }
-	public @property final bool bCanSwim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1000; } return val; }
-	public @property final bool bCanWalk() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x800) != 0; }
-	public @property final bool bCanWalk(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x800; } return val; }
-	public @property final bool bCanJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x400) != 0; }
-	public @property final bool bCanJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x400; } return val; }
-	public @property final bool bJumpCapable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x200) != 0; }
-	public @property final bool bJumpCapable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x200; } return val; }
-	public @property final bool bReducedSpeed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x100) != 0; }
-	public @property final bool bReducedSpeed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x100; } return val; }
-	public @property final bool bCrawler() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80) != 0; }
-	public @property final bool bCrawler(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80; } return val; }
-	public @property final bool bCanCrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40) != 0; }
-	public @property final bool bCanCrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40; } return val; }
-	public @property final bool bTryToUncrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20) != 0; }
-	public @property final bool bTryToUncrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20; } return val; }
-	public @property final bool bWantsToCrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8) != 0; }
-	public @property final bool bWantsToCrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8; } return val; }
-	public @property final bool bScriptTickSpecial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1) != 0; }
-	public @property final bool bScriptTickSpecial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1; } return val; }
-	public @property final auto ref Actor LastViewer() { return *cast(Actor*)(cast(size_t)cast(void*)this + 524); }
-	public @property final auto ref PlayerController LastRealViewer() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref float NetRelevancyTime() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
-	public @property final auto ref Pawn NextPawn() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 512); }
-	public @property final auto ref Vector PartialLedgeMoveDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref float LedgeCheckThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref float WalkableFloorZ() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref float MaxJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-	final bool IsHumanControlled(Controller PawnController)
+	@property final
+	{
+		auto ref
+		{
+			// WARNING: Property 'Controller' has the same name as a defined type!
+			int MaxPitchLimit() { return *cast(int*)(cast(size_t)cast(void*)this + 664); }
+			// WARNING: Property 'Weapon' has the same name as a defined type!
+			InventoryManager InvManager() { return *cast(InventoryManager*)(cast(size_t)cast(void*)this + 980); }
+			float EyeHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 728); }
+			float BaseEyeHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 724); }
+			int Health() { return *cast(int*)(cast(size_t)cast(void*)this + 752); }
+			Vector Floor() { return *cast(Vector*)(cast(size_t)cast(void*)this + 732); }
+			float CrouchHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
+			float MaxStepHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
+			float VehicleCheckRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 944); }
+			float LastStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 888); }
+			PhysicsVolume HeadVolume() { return *cast(PhysicsVolume*)(cast(size_t)cast(void*)this + 748); }
+			float BreathTime() { return *cast(float*)(cast(size_t)cast(void*)this + 760); }
+			float UnderWaterTime() { return *cast(float*)(cast(size_t)cast(void*)this + 764); }
+			ScriptName WaterMovementState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 876); }
+			ScriptName LandMovementState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 868); }
+			float AccelRate() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
+			Actor.EPhysics WalkingPhysics() { return *cast(Actor.EPhysics*)(cast(size_t)cast(void*)this + 536); }
+			LadderVolume OnLadder() { return *cast(LadderVolume*)(cast(size_t)cast(void*)this + 864); }
+			float OutofWaterZ() { return *cast(float*)(cast(size_t)cast(void*)this + 692); }
+			NavigationPoint Anchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 612); }
+			ScriptArray!(AnimNodeSlot) SlotNodes() { return *cast(ScriptArray!(AnimNodeSlot)*)(cast(size_t)cast(void*)this + 1028); }
+			ScriptArray!(InterpGroup) InterpGroupList() { return *cast(ScriptArray!(InterpGroup)*)(cast(size_t)cast(void*)this + 1040); }
+			ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 1064); }
+			Pawn.LastHitInfoStruct LastHitInfo() { return *cast(Pawn.LastHitInfoStruct*)(cast(size_t)cast(void*)this + 1124); }
+			Vector RootMotionInterpCurveLastValue() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1112); }
+			float RootMotionInterpCurrentTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1108); }
+			float RootMotionInterpRate() { return *cast(float*)(cast(size_t)cast(void*)this + 1104); }
+			EngineTypes.RootMotionCurve RootMotionInterpCurve() { return *cast(EngineTypes.RootMotionCurve*)(cast(size_t)cast(void*)this + 1076); }
+			MaterialInstanceConstant MIC_PawnHair() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1060); }
+			MaterialInstanceConstant MIC_PawnMat() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1056); }
+			int FailedLandingCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1024); }
+			RB_BodyInstance PhysicsPushBody() { return *cast(RB_BodyInstance*)(cast(size_t)cast(void*)this + 1020); }
+			int ShotCount() { return *cast(int*)(cast(size_t)cast(void*)this + 1012); }
+			Vector LastFiringFlashLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1000); }
+			Vector FlashLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 988); }
+			ScriptClass InventoryManagerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 976); }
+			Rotator DesiredRotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 964); }
+			int AllowedYawError() { return *cast(int*)(cast(size_t)cast(void*)this + 960); }
+			float ViewPitchMax() { return *cast(float*)(cast(size_t)cast(void*)this + 956); }
+			float ViewPitchMin() { return *cast(float*)(cast(size_t)cast(void*)this + 952); }
+			Controller LastHitBy() { return *cast(Controller*)(cast(size_t)cast(void*)this + 948); }
+			float AlwaysRelevantDistanceSquared() { return *cast(float*)(cast(size_t)cast(void*)this + 940); }
+			Vehicle DrivenVehicle() { return *cast(Vehicle*)(cast(size_t)cast(void*)this + 936); }
+			float RBPushStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 932); }
+			float RBPushRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 928); }
+			Vector TearOffMomentum() { return *cast(Vector*)(cast(size_t)cast(void*)this + 908); }
+			ScriptClass HitDamageType() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 904); }
+			Vector TakeHitLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 892); }
+			PlayerStart LastStartSpot() { return *cast(PlayerStart*)(cast(size_t)cast(void*)this + 884); }
+			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
+			ScriptClass ControllerClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 856); }
+			ScriptString MenuName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 844); }
+			float DamageScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 840); }
+			float SoundDampening() { return *cast(float*)(cast(size_t)cast(void*)this + 836); }
+			float noise2loudness() { return *cast(float*)(cast(size_t)cast(void*)this + 832); }
+			Pawn noise2other() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 828); }
+			float noise2time() { return *cast(float*)(cast(size_t)cast(void*)this + 824); }
+			Vector noise2spot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 812); }
+			float noise1loudness() { return *cast(float*)(cast(size_t)cast(void*)this + 808); }
+			Pawn noise1other() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 804); }
+			float noise1time() { return *cast(float*)(cast(size_t)cast(void*)this + 800); }
+			Vector noise1spot() { return *cast(Vector*)(cast(size_t)cast(void*)this + 788); }
+			Vector RMVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 776); }
+			float KismetDeathDelayTime() { return *cast(float*)(cast(size_t)cast(void*)this + 772); }
+			float LastPainTime() { return *cast(float*)(cast(size_t)cast(void*)this + 768); }
+			int HealthMax() { return *cast(int*)(cast(size_t)cast(void*)this + 756); }
+			float SplashTime() { return *cast(float*)(cast(size_t)cast(void*)this + 744); }
+			float AIMaxFallSpeedFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
+			float MaxFallSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
+			float CrouchedPct() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
+			float MovementSpeedModifier() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
+			float WalkingPct() { return *cast(float*)(cast(size_t)cast(void*)this + 704); }
+			float AirControl() { return *cast(float*)(cast(size_t)cast(void*)this + 700); }
+			float MaxOutOfWaterStepHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 696); }
+			float JumpZ() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
+			float LadderSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 680); }
+			float AirSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+			float WaterSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 672); }
+			float GroundSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 668); }
+			float SpawnTime() { return *cast(float*)(cast(size_t)cast(void*)this + 660); }
+			float SerpentineTime() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
+			float SerpentineDist() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
+			Vector SerpentineDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 640); }
+			float NextPathRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 636); }
+			float DestinationOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 632); }
+			float LastValidAnchorTime() { return *cast(float*)(cast(size_t)cast(void*)this + 628); }
+			float FindAnchorFailedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 624); }
+			NavigationPoint LastAnchor() { return *cast(NavigationPoint*)(cast(size_t)cast(void*)this + 620); }
+			int AnchorItem() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
+			float MeleeRange() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
+			float Buoyancy() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
+			float Mass() { return *cast(float*)(cast(size_t)cast(void*)this + 600); }
+			float AvgPhysicsTime() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
+			float PeripheralVision() { return *cast(float*)(cast(size_t)cast(void*)this + 592); }
+			float SightRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 588); }
+			float Alertness() { return *cast(float*)(cast(size_t)cast(void*)this + 584); }
+			float HearingThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 580); }
+			float MaxDesiredSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
+			float DesiredSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 572); }
+			PathGoalEvaluator PathGoalList() { return *cast(PathGoalEvaluator*)(cast(size_t)cast(void*)this + 568); }
+			PathConstraint PathConstraintList() { return *cast(PathConstraint*)(cast(size_t)cast(void*)this + 564); }
+			float NonPreferredVehiclePathMultiplier() { return *cast(float*)(cast(size_t)cast(void*)this + 560); }
+			int FullHeight() { return *cast(int*)(cast(size_t)cast(void*)this + 556); }
+			float CrouchRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 552); }
+			float UncrouchTime() { return *cast(float*)(cast(size_t)cast(void*)this + 544); }
+			ubyte FiringMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 540); }
+			ubyte FlashCount() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 539); }
+			ubyte RemoteViewPitch() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 538); }
+			Pawn.EPathSearchType PathSearchType() { return *cast(Pawn.EPathSearchType*)(cast(size_t)cast(void*)this + 537); }
+			UObject.Pointer VfTable_IInterface_Speaker() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
+			Actor LastViewer() { return *cast(Actor*)(cast(size_t)cast(void*)this + 524); }
+			PlayerController LastRealViewer() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 520); }
+			float NetRelevancyTime() { return *cast(float*)(cast(size_t)cast(void*)this + 516); }
+			Pawn NextPawn() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 512); }
+			Vector PartialLedgeMoveDir() { return *cast(Vector*)(cast(size_t)cast(void*)this + 496); }
+			float LedgeCheckThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+			float WalkableFloorZ() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+			float MaxJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+		}
+		bool bIsWalking() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4) != 0; }
+		bool bIsWalking(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4; } return val; }
+		bool bForceRMVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x100000) != 0; }
+		bool bForceRMVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x100000; } return val; }
+		bool bRootMotionFromInterpCurve() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8000000) != 0; }
+		bool bRootMotionFromInterpCurve(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8000000; } return val; }
+		bool bIsCrouched() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10) != 0; }
+		bool bIsCrouched(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10; } return val; }
+		bool bForceMaxAccel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20000) != 0; }
+		bool bForceMaxAccel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20000; } return val; }
+		bool bUpAndOut() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2) != 0; }
+		bool bUpAndOut(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2; } return val; }
+		bool bDebugShowCameraLocation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10000000) != 0; }
+		bool bDebugShowCameraLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10000000; } return val; }
+		bool bNeedsBaseTickedFirst() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4000000) != 0; }
+		bool bNeedsBaseTickedFirst(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4000000; } return val; }
+		bool bUnlockWhenReached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2000000) != 0; }
+		bool bUnlockWhenReached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2000000; } return val; }
+		bool bLockDesiredRotation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1000000) != 0; }
+		bool bLockDesiredRotation(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1000000; } return val; }
+		bool bDesiredRotationSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x800000) != 0; }
+		bool bDesiredRotationSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x800000; } return val; }
+		bool bPlayedDeath() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x400000) != 0; }
+		bool bPlayedDeath(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x400000; } return val; }
+		bool bForceRegularVelocity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x200000) != 0; }
+		bool bForceRegularVelocity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x200000; } return val; }
+		bool bReplicateHealthToAll() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80000) != 0; }
+		bool bReplicateHealthToAll(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80000; } return val; }
+		bool bLimitFallAccel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40000) != 0; }
+		bool bLimitFallAccel(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40000; } return val; }
+		bool bRunPhysicsWithNoController() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10000) != 0; }
+		bool bRunPhysicsWithNoController(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10000; } return val; }
+		bool bPathfindsAsVehicle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8000) != 0; }
+		bool bPathfindsAsVehicle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8000; } return val; }
+		bool bModifyNavPointDest() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4000) != 0; }
+		bool bModifyNavPointDest(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4000; } return val; }
+		bool bModifyReachSpecCost() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2000) != 0; }
+		bool bModifyReachSpecCost(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2000; } return val; }
+		bool bNoWeaponFiring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1000) != 0; }
+		bool bNoWeaponFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1000; } return val; }
+		bool bCachedRelevant() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x800) != 0; }
+		bool bCachedRelevant(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x800; } return val; }
+		bool bStationary() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x400) != 0; }
+		bool bStationary(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x400; } return val; }
+		bool bRollToDesired() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x200) != 0; }
+		bool bRollToDesired(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x200; } return val; }
+		bool bDontPossess() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x100) != 0; }
+		bool bDontPossess(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x100; } return val; }
+		bool bMuffledHearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x80) != 0; }
+		bool bMuffledHearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x80; } return val; }
+		bool bLOSHearing() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x40) != 0; }
+		bool bLOSHearing(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x40; } return val; }
+		bool bAmbientCreature() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x20) != 0; }
+		bool bAmbientCreature(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x20; } return val; }
+		bool bCanPickupInventory() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x10) != 0; }
+		bool bCanPickupInventory(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x10; } return val; }
+		bool bDisplayPathErrors() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x8) != 0; }
+		bool bDisplayPathErrors(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x8; } return val; }
+		bool bCanCoverSlip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x4) != 0; }
+		bool bCanCoverSlip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x4; } return val; }
+		bool bCanLeap() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x2) != 0; }
+		bool bCanLeap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x2; } return val; }
+		bool bCanSwatTurn() { return (*cast(uint*)(cast(size_t)cast(void*)this + 532) & 0x1) != 0; }
+		bool bCanSwatTurn(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 532) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 532) &= ~0x1; } return val; }
+		bool bCanClimbCeilings() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80000000) != 0; }
+		bool bCanClimbCeilings(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80000000; } return val; }
+		bool bCanClimbUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40000000) != 0; }
+		bool bCanClimbUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40000000; } return val; }
+		bool bCanMantle() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20000000) != 0; }
+		bool bCanMantle(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20000000; } return val; }
+		bool bForceKeepAnchor() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10000000) != 0; }
+		bool bForceKeepAnchor(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10000000; } return val; }
+		bool bForceFloorCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8000000) != 0; }
+		bool bForceFloorCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8000000; } return val; }
+		bool bPushesRigidBodies() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4000000) != 0; }
+		bool bPushesRigidBodies(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4000000; } return val; }
+		bool bDirectHitWall() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2000000) != 0; }
+		bool bDirectHitWall(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2000000; } return val; }
+		bool bSimGravityDisabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1000000) != 0; }
+		bool bSimGravityDisabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1000000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1000000; } return val; }
+		bool bCanBeBaseForPawns() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x800000) != 0; }
+		bool bCanBeBaseForPawns(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x800000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x800000; } return val; }
+		bool bCanWalkOffLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x400000) != 0; }
+		bool bCanWalkOffLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x400000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x400000; } return val; }
+		bool bIgnoreForces() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x200000) != 0; }
+		bool bIgnoreForces(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x200000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x200000; } return val; }
+		bool bSimulateGravity() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x100000) != 0; }
+		bool bSimulateGravity(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x100000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x100000; } return val; }
+		bool bPartiallyOverLedge() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80000) != 0; }
+		bool bPartiallyOverLedge(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80000; } return val; }
+		bool bAllowLedgeOverhang() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40000) != 0; }
+		bool bAllowLedgeOverhang(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40000; } return val; }
+		bool bStopAtLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20000) != 0; }
+		bool bStopAtLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20000; } return val; }
+		bool bAvoidLedges() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x10000) != 0; }
+		bool bAvoidLedges(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x10000; } return val; }
+		bool bCanStrafe() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8000) != 0; }
+		bool bCanStrafe(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8000; } return val; }
+		bool bCanClimbLadders() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x4000) != 0; }
+		bool bCanClimbLadders(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x4000; } return val; }
+		bool bCanFly() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x2000) != 0; }
+		bool bCanFly(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x2000; } return val; }
+		bool bCanSwim() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1000) != 0; }
+		bool bCanSwim(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1000; } return val; }
+		bool bCanWalk() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x800) != 0; }
+		bool bCanWalk(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x800; } return val; }
+		bool bCanJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x400) != 0; }
+		bool bCanJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x400; } return val; }
+		bool bJumpCapable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x200) != 0; }
+		bool bJumpCapable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x200; } return val; }
+		bool bReducedSpeed() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x100) != 0; }
+		bool bReducedSpeed(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x100; } return val; }
+		bool bCrawler() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x80) != 0; }
+		bool bCrawler(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x80; } return val; }
+		bool bCanCrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x40) != 0; }
+		bool bCanCrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x40; } return val; }
+		bool bTryToUncrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x20) != 0; }
+		bool bTryToUncrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x20; } return val; }
+		bool bWantsToCrouch() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x8) != 0; }
+		bool bWantsToCrouch(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x8; } return val; }
+		bool bScriptTickSpecial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 528) & 0x1) != 0; }
+		bool bScriptTickSpecial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 528) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 528) &= ~0x1; } return val; }
+	}
+final:
+	bool IsHumanControlled(Controller PawnController)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -325,7 +337,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4254], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool IsLocallyControlled(Controller PawnController)
+	bool IsLocallyControlled(Controller PawnController)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -333,49 +345,49 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4256], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool PlayActorFaceFXAnim(FaceFXAnimSet AnimSet, ScriptString GroupName, ScriptString SeqName, SoundCue SoundCueToPlay)
+	bool PlayActorFaceFXAnim(FaceFXAnimSet pAnimSet, ScriptString GroupName, ScriptString SeqName, SoundCue SoundCueToPlay)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(FaceFXAnimSet*)params.ptr = AnimSet;
+		*cast(FaceFXAnimSet*)params.ptr = pAnimSet;
 		*cast(ScriptString*)&params[4] = GroupName;
 		*cast(ScriptString*)&params[16] = SeqName;
 		*cast(SoundCue*)&params[28] = SoundCueToPlay;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5980], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[32];
 	}
-	final bool StopFiring()
+	bool StopFiring()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6070], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final Rotator GetBaseAimRotation()
+	Rotator GetBaseAimRotation()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6080], params.ptr, cast(void*)0);
 		return *cast(Rotator*)params.ptr;
 	}
-	final ScriptString GetHumanReadableName()
+	ScriptString GetHumanReadableName()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6256], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	final bool Died(Controller Killer, ScriptClass DamageType, Vector HitLocation)
+	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
-		*cast(ScriptClass*)&params[4] = DamageType;
+		*cast(ScriptClass*)&params[4] = pDamageType;
 		*cast(Vector*)&params[8] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8006], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	final ScriptName GetDefaultCameraMode(PlayerController RequestedBy)
+	ScriptName GetDefaultCameraMode(PlayerController RequestedBy)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -383,14 +395,14 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8056], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final bool CanThrowWeapon()
+	bool CanThrowWeapon()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8316], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool SetDesiredRotation(Rotator TargetDesiredRotation, bool InLockDesiredRotation, bool InUnlockWhenReached, float InterpolationTime, bool bResetRotationRate)
+	bool SetDesiredRotation(Rotator TargetDesiredRotation, bool InLockDesiredRotation, bool InUnlockWhenReached, float InterpolationTime, bool bResetRotationRate)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -402,7 +414,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8509], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	final bool DoJump(bool bUpdating)
+	bool DoJump(bool bUpdating)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -410,21 +422,21 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8523], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void SetRemoteViewPitch(int NewRemoteViewPitch)
+	void SetRemoteViewPitch(int NewRemoteViewPitch)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = NewRemoteViewPitch;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8543], params.ptr, cast(void*)0);
 	}
-	final bool CannotJumpNow()
+	bool CannotJumpNow()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8558], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CheckWaterJump(Vector* WallNormal)
+	bool CheckWaterJump(Vector* WallNormal)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -433,14 +445,14 @@ extern(C++) interface Pawn : Actor
 		*WallNormal = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
-	final bool TouchingWaterVolume()
+	bool TouchingWaterVolume()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8662], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool ReachedDestination(Actor Goal)
+	bool ReachedDestination(Actor Goal)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -448,7 +460,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9726], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SpecialMoveTo(NavigationPoint Start, NavigationPoint End, Actor Next)
+	bool SpecialMoveTo(NavigationPoint Start, NavigationPoint End, Actor Next)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -458,7 +470,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9868], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final void SetScalarParameterInterp(Pawn.ScalarParameterInterpStruct* ScalarParameterInterp)
+	void SetScalarParameterInterp(Pawn.ScalarParameterInterpStruct* ScalarParameterInterp)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -466,35 +478,35 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11399], params.ptr, cast(void*)0);
 		*ScalarParameterInterp = *cast(Pawn.ScalarParameterInterpStruct*)params.ptr;
 	}
-	final bool CheatFly()
+	bool CheatFly()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12672], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CheatWalk()
+	bool CheatWalk()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12675], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CheatGhost()
+	bool CheatGhost()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12678], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsPlayerPawn()
+	bool IsPlayerPawn()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12697], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final Inventory FindInventoryType(ScriptClass DesiredClass, bool bAllowSubclass)
+	Inventory FindInventoryType(ScriptClass DesiredClass, bool bAllowSubclass)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -503,7 +515,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12716], params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
-	final Inventory CreateInventory(ScriptClass NewInvClass, bool bDoNotActivate)
+	Inventory CreateInventory(ScriptClass NewInvClass, bool bDoNotActivate)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -512,21 +524,21 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12718], params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
-	final bool InGodMode()
+	bool InGodMode()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17088], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool ValidAnchor()
+	bool ValidAnchor()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18180], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final NavigationPoint GetBestAnchor(Actor TestActor, Vector TestLocation, bool bStartPoint, bool bOnlyCheckVisible, float* out_Dist)
+	NavigationPoint GetBestAnchor(Actor TestActor, Vector TestLocation, bool bStartPoint, bool bOnlyCheckVisible, float* out_Dist)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -539,7 +551,7 @@ extern(C++) interface Pawn : Actor
 		*out_Dist = *cast(float*)&params[24];
 		return *cast(NavigationPoint*)&params[28];
 	}
-	final PathGoalEvaluator CreatePathGoalEvaluator(ScriptClass GoalEvalClass)
+	PathGoalEvaluator CreatePathGoalEvaluator(ScriptClass GoalEvalClass)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -547,35 +559,35 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18184], params.ptr, cast(void*)0);
 		return *cast(PathGoalEvaluator*)&params[4];
 	}
-	final float GetCollisionHeight()
+	float GetCollisionHeight()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18391], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final Vector GetCollisionExtent()
+	Vector GetCollisionExtent()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18393], params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	final Rotator GetViewRotation()
+	Rotator GetViewRotation()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18874], params.ptr, cast(void*)0);
 		return *cast(Rotator*)params.ptr;
 	}
-	final bool CanGrabLadder()
+	bool CanGrabLadder()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19149], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool LineOfSightTo(Actor Other)
+	bool LineOfSightTo(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -583,7 +595,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19425], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool PickWallAdjust(Vector WallHitNormal, Actor HitActor)
+	bool PickWallAdjust(Vector WallHitNormal, Actor HitActor)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -592,7 +604,7 @@ extern(C++) interface Pawn : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19944], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void LockDesiredRotation(bool Lock, bool InUnlockWhenReached)
+	void LockDesiredRotation(bool Lock, bool InUnlockWhenReached)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -600,56 +612,56 @@ extern(C++) interface Pawn : Actor
 		*cast(bool*)&params[4] = InUnlockWhenReached;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19953], params.ptr, cast(void*)0);
 	}
-	final void ResetDesiredRotation()
+	void ResetDesiredRotation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19956], cast(void*)0, cast(void*)0);
 	}
-	final void CheckDesiredRotation()
+	void CheckDesiredRotation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19957], cast(void*)0, cast(void*)0);
 	}
-	final bool IsDesiredRotationInUse()
+	bool IsDesiredRotationInUse()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19958], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsDesiredRotationLocked()
+	bool IsDesiredRotationLocked()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19960], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void PostInitAnimTree(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void PostInitAnimTree(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* SkelComp)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19962], params.ptr, cast(void*)0);
 	}
-	final void CacheAnimNodes()
+	void CacheAnimNodes()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19964], cast(void*)0, cast(void*)0);
 	}
-	final void ClearAnimNodes()
+	void ClearAnimNodes()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19965], cast(void*)0, cast(void*)0);
 	}
-	final void UpdateAnimSetList()
+	void UpdateAnimSetList()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19966], cast(void*)0, cast(void*)0);
 	}
-	final void BuildScriptAnimSetList()
+	void BuildScriptAnimSetList()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19967], cast(void*)0, cast(void*)0);
 	}
-	final void AddAnimSets(ScriptArray!(AnimSet)* CustomAnimSets)
+	void AddAnimSets(ScriptArray!(AnimSet)* CustomAnimSets)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -657,46 +669,46 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19968], params.ptr, cast(void*)0);
 		*CustomAnimSets = *cast(ScriptArray!(AnimSet)*)params.ptr;
 	}
-	final void AnimSetListUpdated()
+	void AnimSetListUpdated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19971], cast(void*)0, cast(void*)0);
 	}
-	final bool RestoreAnimSetsToDefault()
+	bool RestoreAnimSetsToDefault()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19972], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void BeginAnimControl(InterpGroup InInterpGroup)
+	void BeginAnimControl(InterpGroup InInterpGroup)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(InterpGroup*)params.ptr = InInterpGroup;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19974], params.ptr, cast(void*)0);
 	}
-	final void MAT_BeginAnimControl(InterpGroup InInterpGroup)
+	void MAT_BeginAnimControl(InterpGroup InInterpGroup)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(InterpGroup*)params.ptr = InInterpGroup;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19976], params.ptr, cast(void*)0);
 	}
-	final void FinishAnimControl(InterpGroup InInterpGroup)
+	void FinishAnimControl(InterpGroup InInterpGroup)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(InterpGroup*)params.ptr = InInterpGroup;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19978], params.ptr, cast(void*)0);
 	}
-	final void MAT_FinishAnimControl(InterpGroup InInterpGroup)
+	void MAT_FinishAnimControl(InterpGroup InInterpGroup)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(InterpGroup*)params.ptr = InInterpGroup;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19980], params.ptr, cast(void*)0);
 	}
-	final void SetAnimPosition(ScriptName SlotName, int ChannelIndex, ScriptName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
+	void SetAnimPosition(ScriptName SlotName, int ChannelIndex, ScriptName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -709,7 +721,7 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[32] = bEnableRootMotion;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19982], params.ptr, cast(void*)0);
 	}
-	final void MAT_SetAnimPosition(ScriptName SlotName, int ChannelIndex, ScriptName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
+	void MAT_SetAnimPosition(ScriptName SlotName, int ChannelIndex, ScriptName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -722,14 +734,14 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[32] = bEnableRootMotion;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19990], params.ptr, cast(void*)0);
 	}
-	final void MAT_SetAnimWeights(ScriptArray!(Actor.AnimSlotInfo) SlotInfos)
+	void MAT_SetAnimWeights(ScriptArray!(Actor.AnimSlotInfo) SlotInfos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(Actor.AnimSlotInfo)*)params.ptr = SlotInfos;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19998], params.ptr, cast(void*)0);
 	}
-	final void MAT_SetMorphWeight(ScriptName MorphNodeName, float MorphWeight)
+	void MAT_SetMorphWeight(ScriptName MorphNodeName, float MorphWeight)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -737,7 +749,7 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[8] = MorphWeight;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20001], params.ptr, cast(void*)0);
 	}
-	final void MAT_SetSkelControlScale(ScriptName SkelControlName, float Scale)
+	void MAT_SetSkelControlScale(ScriptName SkelControlName, float Scale)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -745,7 +757,7 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[8] = Scale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20004], params.ptr, cast(void*)0);
 	}
-	final void InterpolationStarted(SeqAct_Interp InterpAction, InterpGroupInst GroupInst)
+	void InterpolationStarted(SeqAct_Interp InterpAction, InterpGroupInst GroupInst)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -753,14 +765,14 @@ void**)params.ptr = SkelComp;
 		*cast(InterpGroupInst*)&params[4] = GroupInst;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20007], params.ptr, cast(void*)0);
 	}
-	final void InterpolationFinished(SeqAct_Interp InterpAction)
+	void InterpolationFinished(SeqAct_Interp InterpAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Interp*)params.ptr = InterpAction;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20010], params.ptr, cast(void*)0);
 	}
-	final void MAT_BeginAIGroup(Vector StartLoc, Rotator StartRot)
+	void MAT_BeginAIGroup(Vector StartLoc, Rotator StartRot)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -768,65 +780,65 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[12] = StartRot;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20012], params.ptr, cast(void*)0);
 	}
-	final void MAT_FinishAIGroup()
+	void MAT_FinishAIGroup()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20015], cast(void*)0, cast(void*)0);
 	}
-	final void StopActorFaceFXAnim()
+	void StopActorFaceFXAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20020], cast(void*)0, cast(void*)0);
 	}
-	final 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* GetFaceFXAudioComponent()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20021], params.ptr, cast(void*)0);
 		return *cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr;
 	}
-	final bool IsActorPlayingFaceFXAnim()
+	bool IsActorPlayingFaceFXAnim()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20023], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CanActorPlayFaceFXAnim()
+	bool CanActorPlayFaceFXAnim()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20025], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void OnPlayFaceFXAnim(SeqAct_PlayFaceFXAnim inAction)
+	void OnPlayFaceFXAnim(SeqAct_PlayFaceFXAnim inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_PlayFaceFXAnim*)params.ptr = inAction;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20027], params.ptr, cast(void*)0);
 	}
-	final void FaceFXAudioFinished(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void FaceFXAudioFinished(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* AC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20033], params.ptr, cast(void*)0);
 	}
-	final FaceFXAsset GetActorFaceFXAsset()
+	FaceFXAsset GetActorFaceFXAsset()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20035], params.ptr, cast(void*)0);
 		return *cast(FaceFXAsset*)params.ptr;
 	}
-	final void SetMorphWeight(ScriptName MorphNodeName, float MorphWeight)
+	void SetMorphWeight(ScriptName MorphNodeName, float MorphWeight)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -834,7 +846,7 @@ void**)params.ptr = AC;
 		*cast(float*)&params[8] = MorphWeight;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20038], params.ptr, cast(void*)0);
 	}
-	final void SetSkelControlScale(ScriptName SkelControlName, float Scale)
+	void SetSkelControlScale(ScriptName SkelControlName, float Scale)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -842,21 +854,21 @@ void**)params.ptr = AC;
 		*cast(float*)&params[8] = Scale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20041], params.ptr, cast(void*)0);
 	}
-	final void ReplicatedEvent(ScriptName VarName)
+	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20044], params.ptr, cast(void*)0);
 	}
-	final bool IsAliveAndWell()
+	bool IsAliveAndWell()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20046], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final Vector AdjustDestination(Actor GoalActor, Vector Dest)
+	Vector AdjustDestination(Actor GoalActor, Vector Dest)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -865,7 +877,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20048], params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[16];
 	}
-	final bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
+	bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -877,14 +889,14 @@ void**)params.ptr = AC;
 		*JumpVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[40];
 	}
-	final float GetFallDuration()
+	float GetFallDuration()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20058], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final bool IsValidEnemyTargetFor(PlayerReplicationInfo PRI, bool bNoPRIisEnemy)
+	bool IsValidEnemyTargetFor(PlayerReplicationInfo PRI, bool bNoPRIisEnemy)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -893,21 +905,21 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20060], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final bool IsInvisible()
+	bool IsInvisible()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20064], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void SetAnchor(NavigationPoint NewAnchor)
+	void SetAnchor(NavigationPoint NewAnchor)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = NewAnchor;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20067], params.ptr, cast(void*)0);
 	}
-	final bool ReachedPoint(Vector Point, Actor NewAnchor)
+	bool ReachedPoint(Vector Point, Actor NewAnchor)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -916,25 +928,25 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20075], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void ForceCrouch()
+	void ForceCrouch()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20079], cast(void*)0, cast(void*)0);
 	}
-	final void SetPushesRigidBodies(bool NewPush)
+	void SetPushesRigidBodies(bool NewPush)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = NewPush;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20080], params.ptr, cast(void*)0);
 	}
-	final bool ReachedDesiredRotation()
+	bool ReachedDesiredRotation()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20082], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
+	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -944,23 +956,23 @@ void**)params.ptr = AC;
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
 	}
-	final bool InitRagdoll()
+	bool InitRagdoll()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20087], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool TermRagdoll()
+	bool TermRagdoll()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20089], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool SpecialMoveThruEdge(Pylon.ENavMeshEdgeType Type, int Dir, Vector MoveStart, Vector MoveDest, Actor RelActor, int RelItem)
+	bool SpecialMoveThruEdge(Pylon.ENavMeshEdgeType Type, int Dir, Vector MoveStart, Vector MoveDest, Actor RelActor, int RelItem)
 	{
-		ubyte params[41];
+		ubyte params[44];
 		params[] = 0;
 		*cast(Pylon.ENavMeshEdgeType*)params.ptr = Type;
 		*cast(int*)&params[4] = Dir;
@@ -971,33 +983,33 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20094], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}
-	final void SetBaseEyeheight()
+	void SetBaseEyeheight()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20102], cast(void*)0, cast(void*)0);
 	}
-	final void PlayerChangedTeam()
+	void PlayerChangedTeam()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20103], cast(void*)0, cast(void*)0);
 	}
-	final void Reset()
+	void Reset()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20104], cast(void*)0, cast(void*)0);
 	}
-	final void StartFire(ubyte FireModeNum)
+	void StartFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20106], params.ptr, cast(void*)0);
 	}
-	final void StopFire(ubyte FireModeNum)
+	void StopFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20108], params.ptr, cast(void*)0);
 	}
-	final ubyte GetWeaponFiringMode(Weapon InWeapon)
+	ubyte GetWeaponFiringMode(Weapon InWeapon)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -1005,7 +1017,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20110], params.ptr, cast(void*)0);
 		return params[4];
 	}
-	final void SetFiringMode(Weapon InWeapon, ubyte InFiringMode)
+	void SetFiringMode(Weapon InWeapon, ubyte InFiringMode)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -1013,16 +1025,16 @@ void**)params.ptr = AC;
 		params[4] = InFiringMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20113], params.ptr, cast(void*)0);
 	}
-	final void FiringModeUpdated(Weapon InWeapon, ubyte InFiringMode, bool bViaReplication)
+	void FiringModeUpdated(Weapon InWeapon, ubyte InFiringMode, bool bViaReplication)
 	{
-		ubyte params[9];
+		ubyte params[12];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		params[4] = InFiringMode;
 		*cast(bool*)&params[8] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20116], params.ptr, cast(void*)0);
 	}
-	final void IncrementFlashCount(Weapon InWeapon, ubyte InFiringMode)
+	void IncrementFlashCount(Weapon InWeapon, ubyte InFiringMode)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -1030,39 +1042,39 @@ void**)params.ptr = AC;
 		params[4] = InFiringMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20120], params.ptr, cast(void*)0);
 	}
-	final void FlashCountUpdated(Weapon InWeapon, ubyte InFlashCount, bool bViaReplication)
+	void FlashCountUpdated(Weapon InWeapon, ubyte InFlashCount, bool bViaReplication)
 	{
-		ubyte params[9];
+		ubyte params[12];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		params[4] = InFlashCount;
 		*cast(bool*)&params[8] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20123], params.ptr, cast(void*)0);
 	}
-	final void ClearFlashCount(Weapon InWeapon)
+	void ClearFlashCount(Weapon InWeapon)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20127], params.ptr, cast(void*)0);
 	}
-	final void SetFlashLocation(Weapon InWeapon, ubyte InFiringMode, Vector NewLoc)
+	void SetFlashLocation(Weapon InWeapon, ubyte InFiringMode, Vector NewLoc)
 	{
-		ubyte params[17];
+		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		params[4] = InFiringMode;
 		*cast(Vector*)&params[8] = NewLoc;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20129], params.ptr, cast(void*)0);
 	}
-	final void ClearFlashLocation(Weapon InWeapon)
+	void ClearFlashLocation(Weapon InWeapon)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20133], params.ptr, cast(void*)0);
 	}
-	final void FlashLocationUpdated(Weapon InWeapon, Vector InFlashLocation, bool bViaReplication)
+	void FlashLocationUpdated(Weapon InWeapon, Vector InFlashLocation, bool bViaReplication)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -1071,7 +1083,7 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[16] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20135], params.ptr, cast(void*)0);
 	}
-	final void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -1080,7 +1092,7 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[8] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20139], params.ptr, cast(void*)0);
 	}
-	final void WeaponStoppedFiring(Weapon InWeapon, bool bViaReplication)
+	void WeaponStoppedFiring(Weapon InWeapon, bool bViaReplication)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1088,7 +1100,7 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[4] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20143], params.ptr, cast(void*)0);
 	}
-	final bool BotFire(bool bFinished)
+	bool BotFire(bool bFinished)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1096,7 +1108,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20146], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool CanAttack(Actor Other)
+	bool CanAttack(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1104,7 +1116,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20149], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool TooCloseToAttack(Actor Other)
+	bool TooCloseToAttack(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1112,28 +1124,28 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20154], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool FireOnRelease()
+	bool FireOnRelease()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20157], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool HasRangedAttack()
+	bool HasRangedAttack()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20161], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsFiring()
+	bool IsFiring()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20163], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool NeedToTurn(Vector targ)
+	bool NeedToTurn(Vector targ)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -1141,7 +1153,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20167], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final void PlayTeleportEffect(bool bOut, bool bSound)
+	void PlayTeleportEffect(bool bOut, bool bSound)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1149,11 +1161,11 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[4] = bSound;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20172], params.ptr, cast(void*)0);
 	}
-	final void NotifyTeamChanged()
+	void NotifyTeamChanged()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20175], cast(void*)0, cast(void*)0);
 	}
-	final void PossessedBy(Controller C, bool bVehicleTransition)
+	void PossessedBy(Controller C, bool bVehicleTransition)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1161,64 +1173,64 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[4] = bVehicleTransition;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20176], params.ptr, cast(void*)0);
 	}
-	final void UpdateControllerOnPossess(bool bVehicleTransition)
+	void UpdateControllerOnPossess(bool bVehicleTransition)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bVehicleTransition;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20179], params.ptr, cast(void*)0);
 	}
-	final void UnPossessed()
+	void UnPossessed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20181], cast(void*)0, cast(void*)0);
 	}
-	final void DropToGround()
+	void DropToGround()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20183], cast(void*)0, cast(void*)0);
 	}
-	final bool RecommendLongRangedAttack()
+	bool RecommendLongRangedAttack()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20184], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final float RangedAttackTime()
+	float RangedAttackTime()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20186], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void SetWalking(bool bNewIsWalking)
+	void SetWalking(bool bNewIsWalking)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewIsWalking;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20188], params.ptr, cast(void*)0);
 	}
-	final bool CanSplash()
+	bool CanSplash()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20190], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void EndClimbLadder(LadderVolume OldLadder)
+	void EndClimbLadder(LadderVolume OldLadder)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LadderVolume*)params.ptr = OldLadder;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20192], params.ptr, cast(void*)0);
 	}
-	final void ClimbLadder(LadderVolume L)
+	void ClimbLadder(LadderVolume L)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LadderVolume*)params.ptr = L;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20194], params.ptr, cast(void*)0);
 	}
-	final void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -1229,14 +1241,14 @@ void**)params.ptr = AC;
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
-	final bool IsFirstPerson()
+	bool IsFirstPerson()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20206], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void ProcessViewRotation(float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
+	void ProcessViewRotation(float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -1247,7 +1259,7 @@ void**)params.ptr = AC;
 		*out_ViewRotation = *cast(Rotator*)&params[4];
 		*out_DeltaRot = *cast(Rotator*)&params[16];
 	}
-	final void GetActorEyesViewPoint(Vector* out_Location, Rotator* out_Rotation)
+	void GetActorEyesViewPoint(Vector* out_Location, Rotator* out_Rotation)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -1257,14 +1269,14 @@ void**)params.ptr = AC;
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];
 	}
-	final Vector GetPawnViewLocation()
+	Vector GetPawnViewLocation()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20216], params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	final Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -1272,14 +1284,14 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20218], params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
-	final bool InFreeCam()
+	bool InFreeCam()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20225], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final Rotator GetAdjustedAimFor(Weapon W, Vector StartFireLoc)
+	Rotator GetAdjustedAimFor(Weapon W, Vector StartFireLoc)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -1288,28 +1300,28 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20228], params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[16];
 	}
-	final void SetViewRotation(Rotator NewRotation)
+	void SetViewRotation(Rotator NewRotation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20232], params.ptr, cast(void*)0);
 	}
-	final void SetMoveTarget(Actor NewTarget)
+	void SetMoveTarget(Actor NewTarget)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewTarget;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20234], params.ptr, cast(void*)0);
 	}
-	final void HandlePickup(Inventory Inv)
+	void HandlePickup(Inventory Inv)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Inventory*)params.ptr = Inv;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20237], params.ptr, cast(void*)0);
 	}
-	final void ClientMessage(ScriptString S, ScriptName Type)
+	void ClientMessage(ScriptString S, ScriptName Type)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -1317,96 +1329,96 @@ void**)params.ptr = AC;
 		*cast(ScriptName*)&params[12] = Type;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20239], params.ptr, cast(void*)0);
 	}
-	final void FellOutOfWorld(ScriptClass dmgType)
+	void FellOutOfWorld(ScriptClass dmgType)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = dmgType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20242], params.ptr, cast(void*)0);
 	}
-	final void OutsideWorldBounds()
+	void OutsideWorldBounds()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20244], cast(void*)0, cast(void*)0);
 	}
-	final void UnCrouch()
+	void UnCrouch()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20245], cast(void*)0, cast(void*)0);
 	}
-	final void ShouldCrouch(bool bCrouch)
+	void ShouldCrouch(bool bCrouch)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bCrouch;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20246], params.ptr, cast(void*)0);
 	}
-	final void EndCrouch(float HeightAdjust)
+	void EndCrouch(float HeightAdjust)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightAdjust;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20248], params.ptr, cast(void*)0);
 	}
-	final void StartCrouch(float HeightAdjust)
+	void StartCrouch(float HeightAdjust)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightAdjust;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20250], params.ptr, cast(void*)0);
 	}
-	final void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass DamageType, Actor.TraceHitInfo HitInfo)
+	void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Momentum;
 		*cast(Vector*)&params[12] = HitLocation;
-		*cast(ScriptClass*)&params[24] = DamageType;
+		*cast(ScriptClass*)&params[24] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20252], params.ptr, cast(void*)0);
 	}
-	final void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass DamageType, Actor.TraceHitInfo HitInfo)
+	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVelocity;
 		*cast(Vector*)&params[12] = HitLocation;
-		*cast(ScriptClass*)&params[24] = DamageType;
+		*cast(ScriptClass*)&params[24] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20257], params.ptr, cast(void*)0);
 	}
-	final void KilledBy(Pawn EventInstigator)
+	void KilledBy(Pawn EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = EventInstigator;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20262], params.ptr, cast(void*)0);
 	}
-	final void TakeFallingDamage()
+	void TakeFallingDamage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20265], cast(void*)0, cast(void*)0);
 	}
-	final void Restart()
+	void Restart()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20267], cast(void*)0, cast(void*)0);
 	}
-	final void ClientRestart()
+	void ClientRestart()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20268], cast(void*)0, cast(void*)0);
 	}
-	final void ClientSetRotation(Rotator NewRotation)
+	void ClientSetRotation(Rotator NewRotation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20269], params.ptr, cast(void*)0);
 	}
-	final void UpdatePawnRotation(Rotator NewRotation)
+	void UpdatePawnRotation(Rotator NewRotation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20271], params.ptr, cast(void*)0);
 	}
-	final void FaceRotation(Rotator NewRotation, float DeltaTime)
+	void FaceRotation(Rotator NewRotation, float DeltaTime)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -1414,7 +1426,7 @@ void**)params.ptr = AC;
 		*cast(float*)&params[12] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20273], params.ptr, cast(void*)0);
 	}
-	final bool EncroachingOn(Actor Other)
+	bool EncroachingOn(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1422,36 +1434,36 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20276], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void EncroachedBy(Actor Other)
+	void EncroachedBy(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20279], params.ptr, cast(void*)0);
 	}
-	final void gibbedBy(Actor Other)
+	void gibbedBy(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20281], params.ptr, cast(void*)0);
 	}
-	final void JumpOffPawn()
+	void JumpOffPawn()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20283], cast(void*)0, cast(void*)0);
 	}
-	final void StuckOnPawn(Pawn OtherPawn)
+	void StuckOnPawn(Pawn OtherPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = OtherPawn;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20284], params.ptr, cast(void*)0);
 	}
-	final void BaseChange()
+	void BaseChange()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20286], cast(void*)0, cast(void*)0);
 	}
-	final bool CanBeBaseForPawn(Pawn aPawn)
+	bool CanBeBaseForPawn(Pawn aPawn)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1459,66 +1471,66 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20288], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void CrushedBy(Pawn OtherPawn)
+	void CrushedBy(Pawn OtherPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = OtherPawn;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20291], params.ptr, cast(void*)0);
 	}
-	final void DetachFromController(bool bDestroyController)
+	void DetachFromController(bool bDestroyController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDestroyController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20293], params.ptr, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20296], cast(void*)0, cast(void*)0);
 	}
-	final void PreBeginPlay()
+	void PreBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20297], cast(void*)0, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20298], cast(void*)0, cast(void*)0);
 	}
-	final void SpawnDefaultController()
+	void SpawnDefaultController()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20299], cast(void*)0, cast(void*)0);
 	}
-	final void ReceivedNewEvent(SequenceEvent Evt)
+	void ReceivedNewEvent(SequenceEvent Evt)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SequenceEvent*)params.ptr = Evt;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20300], params.ptr, cast(void*)0);
 	}
-	final void OnAssignController(SeqAct_AssignController inAction)
+	void OnAssignController(SeqAct_AssignController inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_AssignController*)params.ptr = inAction;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20302], params.ptr, cast(void*)0);
 	}
-	final void OnGiveInventory(SeqAct_GiveInventory inAction)
+	void OnGiveInventory(SeqAct_GiveInventory inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_GiveInventory*)params.ptr = inAction;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20306], params.ptr, cast(void*)0);
 	}
-	final void Gasp()
+	void Gasp()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20313], cast(void*)0, cast(void*)0);
 	}
-	final void SetMovementPhysics()
+	void SetMovementPhysics()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20314], cast(void*)0, cast(void*)0);
 	}
-	final void AdjustDamage(int* InDamage, Vector* Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass DamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void AdjustDamage(int* InDamage, Vector* Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -1526,24 +1538,24 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[4] = *Momentum;
 		*cast(Controller*)&params[16] = InstigatedBy;
 		*cast(Vector*)&params[20] = HitLocation;
-		*cast(ScriptClass*)&params[32] = DamageType;
+		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20315], params.ptr, cast(void*)0);
 		*InDamage = *cast(int*)params.ptr;
 		*Momentum = *cast(Vector*)&params[4];
 	}
-	final bool HealDamage(int Amount, Controller Healer, ScriptClass DamageType)
+	bool HealDamage(int Amount, Controller Healer, ScriptClass pDamageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Amount;
 		*cast(Controller*)&params[4] = Healer;
-		*cast(ScriptClass*)&params[8] = DamageType;
+		*cast(ScriptClass*)&params[8] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20323], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final void PruneDamagedBoneList(ScriptArray!(ScriptName)* Bones)
+	void PruneDamagedBoneList(ScriptArray!(ScriptName)* Bones)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -1551,14 +1563,14 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20328], params.ptr, cast(void*)0);
 		*Bones = *cast(ScriptArray!(ScriptName)*)params.ptr;
 	}
-	final bool TakeRadiusDamageOnBones(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass DamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, ScriptArray!(ScriptName) Bones)
+	bool TakeRadiusDamageOnBones(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, ScriptArray!(ScriptName) Bones)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Controller*)params.ptr = InstigatedBy;
 		*cast(float*)&params[4] = BaseDamage;
 		*cast(float*)&params[8] = DamageRadius;
-		*cast(ScriptClass*)&params[12] = DamageType;
+		*cast(ScriptClass*)&params[12] = pDamageType;
 		*cast(float*)&params[16] = Momentum;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
@@ -1567,27 +1579,27 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20331], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[52];
 	}
-	final void NotifyTakeHit(Controller InstigatedBy, Vector HitLocation, int Damage, ScriptClass DamageType, Vector Momentum)
+	void NotifyTakeHit(Controller InstigatedBy, Vector HitLocation, int Damage, ScriptClass pDamageType, Vector Momentum)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Controller*)params.ptr = InstigatedBy;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(int*)&params[16] = Damage;
-		*cast(ScriptClass*)&params[20] = DamageType;
+		*cast(ScriptClass*)&params[20] = pDamageType;
 		*cast(Vector*)&params[24] = Momentum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20350], params.ptr, cast(void*)0);
 	}
-	final Controller SetKillInstigator(Controller InstigatedBy, ScriptClass DamageType)
+	Controller SetKillInstigator(Controller InstigatedBy, ScriptClass pDamageType)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Controller*)params.ptr = InstigatedBy;
-		*cast(ScriptClass*)&params[4] = DamageType;
+		*cast(ScriptClass*)&params[4] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20356], params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[8];
 	}
-	final void TakeDamage(int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, ScriptClass DamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -1595,26 +1607,26 @@ void**)params.ptr = AC;
 		*cast(Controller*)&params[4] = InstigatedBy;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
-		*cast(ScriptClass*)&params[32] = DamageType;
+		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20360], params.ptr, cast(void*)0);
 	}
-	final ubyte GetTeamNum()
+	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20371], params.ptr, cast(void*)0);
 		return params[0];
 	}
-	final TeamInfo GetTeam()
+	TeamInfo GetTeam()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20373], params.ptr, cast(void*)0);
 		return *cast(TeamInfo*)params.ptr;
 	}
-	final bool IsSameTeam(Pawn Other)
+	bool IsSameTeam(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1622,19 +1634,19 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20375], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void ThrowWeaponOnDeath()
+	void ThrowWeaponOnDeath()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20378], cast(void*)0, cast(void*)0);
 	}
-	final void DelayTriggerDeath()
+	void DelayTriggerDeath()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20383], cast(void*)0, cast(void*)0);
 	}
-	final void Falling()
+	void Falling()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20384], cast(void*)0, cast(void*)0);
 	}
-	final void Landed(Vector HitNormal, Actor FloorActor)
+	void Landed(Vector HitNormal, Actor FloorActor)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -1642,122 +1654,122 @@ void**)params.ptr = AC;
 		*cast(Actor*)&params[12] = FloorActor;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20385], params.ptr, cast(void*)0);
 	}
-	final void TickSpecial(float DeltaTime)
+	void TickSpecial(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20388], params.ptr, cast(void*)0);
 	}
-	final void HeadVolumeChange(PhysicsVolume newHeadVolume)
+	void HeadVolumeChange(PhysicsVolume newHeadVolume)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicsVolume*)params.ptr = newHeadVolume;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20390], params.ptr, cast(void*)0);
 	}
-	final void BreathTimer()
+	void BreathTimer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20393], cast(void*)0, cast(void*)0);
 	}
-	final void TakeDrowningDamage()
+	void TakeDrowningDamage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20394], cast(void*)0, cast(void*)0);
 	}
-	final void PlayDyingSound()
+	void PlayDyingSound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20404], cast(void*)0, cast(void*)0);
 	}
-	final void PlayHit(float Damage, Controller InstigatedBy, Vector HitLocation, ScriptClass DamageType, Vector Momentum, Actor.TraceHitInfo HitInfo)
+	void PlayHit(float Damage, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Vector Momentum, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(float*)params.ptr = Damage;
 		*cast(Controller*)&params[4] = InstigatedBy;
 		*cast(Vector*)&params[8] = HitLocation;
-		*cast(ScriptClass*)&params[20] = DamageType;
+		*cast(ScriptClass*)&params[20] = pDamageType;
 		*cast(Vector*)&params[24] = Momentum;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20405], params.ptr, cast(void*)0);
 	}
-	final void TurnOff()
+	void TurnOff()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20412], cast(void*)0, cast(void*)0);
 	}
-	final void SetDyingPhysics()
+	void SetDyingPhysics()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20413], cast(void*)0, cast(void*)0);
 	}
-	final void PlayDying(ScriptClass DamageType, Vector HitLoc)
+	void PlayDying(ScriptClass pDamageType, Vector HitLoc)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptClass*)params.ptr = DamageType;
+		*cast(ScriptClass*)params.ptr = pDamageType;
 		*cast(Vector*)&params[4] = HitLoc;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20460], params.ptr, cast(void*)0);
 	}
-	final void TornOff()
+	void TornOff()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20463], cast(void*)0, cast(void*)0);
 	}
-	final void PlayFootStepSound(int FootDown)
+	void PlayFootStepSound(int FootDown)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = FootDown;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20464], params.ptr, cast(void*)0);
 	}
-	final void PlayLanded(float ImpactVel)
+	void PlayLanded(float ImpactVel)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = ImpactVel;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20466], params.ptr, cast(void*)0);
 	}
-	final Vehicle GetVehicleBase()
+	Vehicle GetVehicleBase()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20468], params.ptr, cast(void*)0);
 		return *cast(Vehicle*)params.ptr;
 	}
-	final void Suicide()
+	void Suicide()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20470], cast(void*)0, cast(void*)0);
 	}
-	final void StartDriving(Vehicle V)
+	void StartDriving(Vehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20473], params.ptr, cast(void*)0);
 	}
-	final void StopDriving(Vehicle V)
+	void StopDriving(Vehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20475], params.ptr, cast(void*)0);
 	}
-	final void AddDefaultInventory()
+	void AddDefaultInventory()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20477], cast(void*)0, cast(void*)0);
 	}
-	final void DrawHUD(HUD H)
+	void DrawHUD(HUD H)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(HUD*)params.ptr = H;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20482], params.ptr, cast(void*)0);
 	}
-	final void ThrowActiveWeapon(bool bDestroyWeap)
+	void ThrowActiveWeapon(bool bDestroyWeap)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDestroyWeap;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20484], params.ptr, cast(void*)0);
 	}
-	final void TossInventory(Inventory Inv, Vector ForceVelocity)
+	void TossInventory(Inventory Inv, Vector ForceVelocity)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -1765,14 +1777,14 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[4] = ForceVelocity;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20486], params.ptr, cast(void*)0);
 	}
-	final void SetActiveWeapon(Weapon NewWeapon)
+	void SetActiveWeapon(Weapon NewWeapon)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = NewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20495], params.ptr, cast(void*)0);
 	}
-	final void PlayWeaponSwitch(Weapon OldWeapon, Weapon NewWeapon)
+	void PlayWeaponSwitch(Weapon OldWeapon, Weapon NewWeapon)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1780,90 +1792,90 @@ void**)params.ptr = AC;
 		*cast(Weapon*)&params[4] = NewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20497], params.ptr, cast(void*)0);
 	}
-	final float GetCollisionRadius()
+	float GetCollisionRadius()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20500], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final bool IsStationary()
+	bool IsStationary()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20503], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void SpawnedByKismet()
+	void SpawnedByKismet()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20505], cast(void*)0, cast(void*)0);
 	}
-	final void DoKismetAttachment(Actor Attachment, SeqAct_AttachToActor Action)
+	void DoKismetAttachment(Actor pAttachment, SeqAct_AttachToActor Action)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = Attachment;
+		*cast(Actor*)params.ptr = pAttachment;
 		*cast(SeqAct_AttachToActor*)&params[4] = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20506], params.ptr, cast(void*)0);
 	}
-	final float GetDamageScaling()
+	float GetDamageScaling()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20513], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void OnSetMaterial(SeqAct_SetMaterial Action)
+	void OnSetMaterial(SeqAct_SetMaterial Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_SetMaterial*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20515], params.ptr, cast(void*)0);
 	}
-	final void OnTeleport(SeqAct_Teleport Action)
+	void OnTeleport(SeqAct_Teleport Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Teleport*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20517], params.ptr, cast(void*)0);
 	}
-	final void MessagePlayer(ScriptString msg)
+	void MessagePlayer(ScriptString msg)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = msg;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20529], params.ptr, cast(void*)0);
 	}
-	final void BecomeViewTarget(PlayerController PC)
+	void BecomeViewTarget(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20531], params.ptr, cast(void*)0);
 	}
-	final void SoakPause()
+	void SoakPause()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20533], cast(void*)0, cast(void*)0);
 	}
-	final void ClearConstraints()
+	void ClearConstraints()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20535], cast(void*)0, cast(void*)0);
 	}
-	final void AddPathConstraint(PathConstraint Constraint)
+	void AddPathConstraint(PathConstraint Constraint)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PathConstraint*)params.ptr = Constraint;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20536], params.ptr, cast(void*)0);
 	}
-	final void AddGoalEvaluator(PathGoalEvaluator Evaluator)
+	void AddGoalEvaluator(PathGoalEvaluator Evaluator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PathGoalEvaluator*)params.ptr = Evaluator;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20538], params.ptr, cast(void*)0);
 	}
-	final PathConstraint CreatePathConstraint(ScriptClass ConstraintClass)
+	PathConstraint CreatePathConstraint(ScriptClass ConstraintClass)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1871,7 +1883,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20540], params.ptr, cast(void*)0);
 		return *cast(PathConstraint*)&params[4];
 	}
-	final void IncrementPathStep(int Cnt, Canvas C)
+	void IncrementPathStep(int Cnt, Canvas C)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1879,7 +1891,7 @@ void**)params.ptr = AC;
 		*cast(Canvas*)&params[4] = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20544], params.ptr, cast(void*)0);
 	}
-	final void IncrementPathChild(int Cnt, Canvas C)
+	void IncrementPathChild(int Cnt, Canvas C)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -1887,29 +1899,29 @@ void**)params.ptr = AC;
 		*cast(Canvas*)&params[4] = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20547], params.ptr, cast(void*)0);
 	}
-	final void DrawPathStep(Canvas C)
+	void DrawPathStep(Canvas C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20550], params.ptr, cast(void*)0);
 	}
-	final void ClearPathStep()
+	void ClearPathStep()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20552], cast(void*)0, cast(void*)0);
 	}
-	final void ZeroMovementVariables()
+	void ZeroMovementVariables()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20553], cast(void*)0, cast(void*)0);
 	}
-	final void SetCinematicMode(bool bInCinematicMode)
+	void SetCinematicMode(bool bInCinematicMode)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInCinematicMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20554], params.ptr, cast(void*)0);
 	}
-	final void SetRootMotionInterpCurrentTime(float inTime, float DeltaTime, bool bUpdateSkelPose)
+	void SetRootMotionInterpCurrentTime(float inTime, float DeltaTime, bool bUpdateSkelPose)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -1918,21 +1930,21 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[8] = bUpdateSkelPose;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20556], params.ptr, cast(void*)0);
 	}
-	final void Speak(SoundCue Cue)
+	void Speak(SoundCue Cue)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Cue;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20561], params.ptr, cast(void*)0);
 	}
-	final void OnSetVelocity(SeqAct_SetVelocity Action)
+	void OnSetVelocity(SeqAct_SetVelocity Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_SetVelocity*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20563], params.ptr, cast(void*)0);
 	}
-	final bool CheckClotheslineDamage(Pawn PawnHittingMe)
+	bool CheckClotheslineDamage(Pawn PawnHittingMe)
 	{
 		ubyte params[8];
 		params[] = 0;

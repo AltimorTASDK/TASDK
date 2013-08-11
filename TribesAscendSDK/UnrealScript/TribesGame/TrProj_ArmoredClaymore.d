@@ -6,7 +6,8 @@ import UnrealScript.Engine.Pawn;
 
 extern(C++) interface TrProj_ArmoredClaymore : TrProj_Mine
 {
-	public @property final auto ref float DetonationSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 900); }
+public extern(D):
+	@property final auto ref float DetonationSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 900); }
 	final bool MeetsDetonationRequirements(Pawn Other)
 	{
 		ubyte params[8];

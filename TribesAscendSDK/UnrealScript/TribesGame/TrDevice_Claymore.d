@@ -6,8 +6,10 @@ import UnrealScript.Engine.Projectile;
 
 extern(C++) interface TrDevice_Claymore : TrDevice_AutoFire
 {
-	public @property final auto ref float m_fWorldZPlacementOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 2164); }
-	final Vector GetPhysicalFireStartLoc(Vector AimDir)
+public extern(D):
+	@property final auto ref float m_fWorldZPlacementOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 2164); }
+final:
+	Vector GetPhysicalFireStartLoc(Vector AimDir)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -15,7 +17,7 @@ extern(C++) interface TrDevice_Claymore : TrDevice_AutoFire
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[81013], params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	final Projectile ProjectileFire()
+	Projectile ProjectileFire()
 	{
 		ubyte params[4];
 		params[] = 0;

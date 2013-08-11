@@ -5,6 +5,7 @@ import UnrealScript.TribesGame.TrFlagCTF;
 
 extern(C++) interface TrFlagCTF_DiamondSword : TrFlagCTF
 {
+public extern(D):
 	final ScriptString GetSpectatorName()
 	{
 		ubyte params[12];

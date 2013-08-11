@@ -8,9 +8,11 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface UTKismetAnnouncement : UTObjectiveSpecificMessage
 {
-	final UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
+public extern(D):
+final:
+	UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		params[0] = MessageIndex;
 		*cast(UObject*)&params[4] = Objective;
@@ -18,7 +20,7 @@ extern(C++) interface UTKismetAnnouncement : UTObjectiveSpecificMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48265], params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)&params[12];
 	}
-	final ubyte AnnouncementLevel(ubyte MessageIndex)
+	ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;

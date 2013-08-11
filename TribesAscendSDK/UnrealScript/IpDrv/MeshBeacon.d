@@ -6,6 +6,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface MeshBeacon : UObject
 {
+public extern(D):
 	enum EMeshBeaconPacketType : ubyte
 	{
 		MB_Packet_UnknownType = 0,
@@ -57,41 +58,51 @@ extern(C++) interface MeshBeacon : UObject
 	}
 	struct ConnectionBandwidthStats
 	{
-		public @property final auto ref int RoundtripLatency() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __RoundtripLatency[4];
-		public @property final auto ref int DownstreamRate() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __DownstreamRate[4];
-		public @property final auto ref int UpstreamRate() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __UpstreamRate[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			int RoundtripLatency() { return *cast(int*)(cast(size_t)&this + 8); }
+			int DownstreamRate() { return *cast(int*)(cast(size_t)&this + 4); }
+			int UpstreamRate() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct PlayerMember
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 8); }
-		private ubyte __NetId[8];
-		public @property final auto ref int Skill() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __Skill[4];
-		public @property final auto ref int TeamNum() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __TeamNum[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 8); }
+			int Skill() { return *cast(int*)(cast(size_t)&this + 4); }
+			int TeamNum() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref int MaxBandwidthHistoryEntries() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
-	public @property final auto ref float MaxBandwidthTestReceiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref float MaxBandwidthTestSendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
-	public @property final auto ref int MinBandwidthTestBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref int MaxBandwidthTestBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref int SocketReceiveBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref int SocketSendBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 92); }
-	public @property final auto ref ScriptName BeaconName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref float HeartbeatTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-	public @property final bool bShouldTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-	public @property final bool bShouldTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-	public @property final bool bWantsDeferredDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-	public @property final bool bWantsDeferredDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-	public @property final bool bIsInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-	public @property final bool bIsInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
-	public @property final auto ref UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref int MeshBeaconPort() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+	@property final
+	{
+		auto ref
+		{
+			int MaxBandwidthHistoryEntries() { return *cast(int*)(cast(size_t)cast(void*)this + 116); }
+			float MaxBandwidthTestReceiveTime() { return *cast(float*)(cast(size_t)cast(void*)this + 112); }
+			float MaxBandwidthTestSendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 108); }
+			int MinBandwidthTestBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 104); }
+			int MaxBandwidthTestBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 100); }
+			int SocketReceiveBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 96); }
+			int SocketSendBufferSize() { return *cast(int*)(cast(size_t)cast(void*)this + 92); }
+			ScriptName BeaconName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
+			float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+			float HeartbeatTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
+			UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
+			int MeshBeaconPort() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+			UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+		}
+		bool bShouldTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
+		bool bShouldTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
+		bool bWantsDeferredDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
+		bool bWantsDeferredDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
+		bool bIsInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
+		bool bIsInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+	}
 	final void DestroyBeacon()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33192], cast(void*)0, cast(void*)0);

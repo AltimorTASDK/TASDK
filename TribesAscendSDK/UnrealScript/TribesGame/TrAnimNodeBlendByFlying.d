@@ -5,6 +5,7 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendByFlying : TrAnimNodeBlendList
 {
+public extern(D):
 	enum EFlyDirTypes : ubyte
 	{
 		FLY_Forward = 0,
@@ -17,6 +18,9 @@ extern(C++) interface TrAnimNodeBlendByFlying : TrAnimNodeBlendList
 		FLY_None = 7,
 		FLY_MAX = 8,
 	}
-	public @property final auto ref TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 296); }
-	public @property final auto ref TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { return *cast(TrAnimNodeBlendByFlying.EFlyDirTypes*)(cast(size_t)cast(void*)this + 292); }
+	@property final auto ref
+	{
+		TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 296); }
+		TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { return *cast(TrAnimNodeBlendByFlying.EFlyDirTypes*)(cast(size_t)cast(void*)this + 292); }
+	}
 }

@@ -10,6 +10,7 @@ import UnrealScript.Engine.EngineTypes;
 
 extern(C++) interface LandscapeComponent : PrimitiveComponent
 {
+public extern(D):
 	enum ETerrainComponentNeighbors : ubyte
 	{
 		TCN_NW = 0,
@@ -24,42 +25,50 @@ extern(C++) interface LandscapeComponent : PrimitiveComponent
 	}
 	struct LandscapeComponentAlphaInfo
 	{
-		public @property final auto ref ScriptArray!(ubyte) AlphaValues() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
-		private ubyte __AlphaValues[12];
-		public @property final auto ref int LayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __LayerIndex[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(ubyte) AlphaValues() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
+			int LayerIndex() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct WeightmapLayerAllocationInfo
 	{
-		public @property final auto ref ubyte WeightmapTextureChannel() { return *cast(ubyte*)(cast(size_t)&this + 9); }
-		private ubyte __WeightmapTextureChannel[1];
-		public @property final auto ref ubyte WeightmapTextureIndex() { return *cast(ubyte*)(cast(size_t)&this + 8); }
-		private ubyte __WeightmapTextureIndex[1];
-		public @property final auto ref ScriptName LayerName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __LayerName[8];
+		private ubyte __buffer__[10];
+	public extern(D):
+		@property final auto ref
+		{
+			ubyte WeightmapTextureChannel() { return *cast(ubyte*)(cast(size_t)&this + 9); }
+			ubyte WeightmapTextureIndex() { return *cast(ubyte*)(cast(size_t)&this + 8); }
+			ScriptName LayerName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo) EditingAlphaLayerData() { return *cast(ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo)*)(cast(size_t)cast(void*)this + 512); }
-	public @property final auto ref ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo) WeightmapLayerAllocations() { return *cast(ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo)*)(cast(size_t)cast(void*)this + 532); }
-	public @property final auto ref ScriptArray!(Texture2D) WeightmapTextures() { return *cast(ScriptArray!(Texture2D)*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)cast(void*)this + 672); }
-	public @property final auto ref ScriptArray!(UObject.Guid) IrrelevantLights() { return *cast(ScriptArray!(UObject.Guid)*)(cast(size_t)cast(void*)this + 684); }
-	public @property final auto ref int CollisionMipLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 704); }
-	public @property final auto ref UObject.Pointer EditToolRenderData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 700); }
-	public @property final auto ref EngineTypes.LightMapRef LightMap() { return *cast(EngineTypes.LightMapRef*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref UObject.Guid LightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 656); }
-	public @property final auto ref int StaticLightingResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
-	public @property final auto ref UObject.BoxSphereBounds CachedBoxSphereBounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 624); }
-	public @property final auto ref Texture2D HeightmapTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 620); }
-	public @property final auto ref UObject.Vector2D LayerUVPan() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 612); }
-	public @property final auto ref float HeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-	public @property final auto ref UObject.Vector4 HeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref float WeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
-	public @property final auto ref UObject.Vector4 WeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 560); }
-	public @property final auto ref ScriptName EditingAlphaLayerName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 524); }
-	// WARNING: Property 'MaterialInstance' has the same name as a defined type!
-	public @property final auto ref int NumSubsections() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
-	public @property final auto ref int SubsectionSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-	public @property final auto ref int ComponentSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref int SectionBaseY() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref int SectionBaseX() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
+	@property final auto ref
+	{
+		ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo) EditingAlphaLayerData() { return *cast(ScriptArray!(LandscapeComponent.LandscapeComponentAlphaInfo)*)(cast(size_t)cast(void*)this + 512); }
+		ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo) WeightmapLayerAllocations() { return *cast(ScriptArray!(LandscapeComponent.WeightmapLayerAllocationInfo)*)(cast(size_t)cast(void*)this + 532); }
+		ScriptArray!(Texture2D) WeightmapTextures() { return *cast(ScriptArray!(Texture2D)*)(cast(size_t)cast(void*)this + 544); }
+		ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)cast(void*)this + 672); }
+		ScriptArray!(UObject.Guid) IrrelevantLights() { return *cast(ScriptArray!(UObject.Guid)*)(cast(size_t)cast(void*)this + 684); }
+		int CollisionMipLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 704); }
+		UObject.Pointer EditToolRenderData() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 700); }
+		EngineTypes.LightMapRef LightMap() { return *cast(EngineTypes.LightMapRef*)(cast(size_t)cast(void*)this + 696); }
+		UObject.Guid LightingGuid() { return *cast(UObject.Guid*)(cast(size_t)cast(void*)this + 656); }
+		int StaticLightingResolution() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
+		UObject.BoxSphereBounds CachedBoxSphereBounds() { return *cast(UObject.BoxSphereBounds*)(cast(size_t)cast(void*)this + 624); }
+		Texture2D HeightmapTexture() { return *cast(Texture2D*)(cast(size_t)cast(void*)this + 620); }
+		UObject.Vector2D LayerUVPan() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 612); }
+		float HeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
+		UObject.Vector4 HeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 592); }
+		float WeightmapSubsectionOffset() { return *cast(float*)(cast(size_t)cast(void*)this + 576); }
+		UObject.Vector4 WeightmapScaleBias() { return *cast(UObject.Vector4*)(cast(size_t)cast(void*)this + 560); }
+		ScriptName EditingAlphaLayerName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 524); }
+		// WARNING: Property 'MaterialInstance' has the same name as a defined type!
+		int NumSubsections() { return *cast(int*)(cast(size_t)cast(void*)this + 504); }
+		int SubsectionSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
+		int ComponentSizeQuads() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
+		int SectionBaseY() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
+		int SectionBaseX() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
+	}
 }

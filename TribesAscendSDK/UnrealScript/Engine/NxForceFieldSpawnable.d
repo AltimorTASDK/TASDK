@@ -6,6 +6,7 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface NxForceFieldSpawnable : Actor
 {
+public extern(D):
 	final void OnToggle(SeqAct_Toggle inAction)
 	{
 		ubyte params[4];

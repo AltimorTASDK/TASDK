@@ -6,7 +6,8 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface Trigger_LOS : Trigger
 {
-	public @property final auto ref ScriptArray!(PlayerController) PCsWithLOS() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 488); }
+public extern(D):
+	@property final auto ref ScriptArray!(PlayerController) PCsWithLOS() { return *cast(ScriptArray!(PlayerController)*)(cast(size_t)cast(void*)this + 488); }
 	final void Tick(float DeltaTime)
 	{
 		ubyte params[4];

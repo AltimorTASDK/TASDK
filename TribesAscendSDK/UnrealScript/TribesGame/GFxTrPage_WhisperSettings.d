@@ -7,6 +7,7 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_WhisperSettings : GFxTrPage
 {
+public extern(D):
 	enum MENU_ACTION_WHISPER_NOTIFY_TYPE : ubyte
 	{
 		MAWNT_SHOWALL = 0,
@@ -15,19 +16,20 @@ extern(C++) interface GFxTrPage_WhisperSettings : GFxTrPage
 		MAVNT_MAX = 3,
 		MENU_ACTION_WHISPER_NOTIFY_TYPE_MAX = 4,
 	}
-	public @property final auto ref int CurrSetting() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void Initialize()
+	@property final auto ref int CurrSetting() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61543], cast(void*)0, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61545], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -35,14 +37,14 @@ extern(C++) interface GFxTrPage_WhisperSettings : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61547], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void SpecialAction(GFxTrAction Action)
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61551], params.ptr, cast(void*)0);
 	}
-	final void ShowModel()
+	void ShowModel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61553], cast(void*)0, cast(void*)0);
 	}

@@ -5,5 +5,6 @@ import UnrealScript.Engine.EngineTypes;
 
 extern(C++) interface LightmassPrimitiveSettingsObject : UObject
 {
-	public @property final auto ref EngineTypes.LightmassPrimitiveSettings LightmassSettings() { return *cast(EngineTypes.LightmassPrimitiveSettings*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref EngineTypes.LightmassPrimitiveSettings LightmassSettings() { return *cast(EngineTypes.LightmassPrimitiveSettings*)(cast(size_t)cast(void*)this + 60); }
 }

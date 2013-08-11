@@ -5,5 +5,6 @@ import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface ParticleModuleLocationPrimitiveSphere : ParticleModuleLocationPrimitiveBase
 {
-	public @property final auto ref DistributionFloat.RawDistributionFloat StartRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 132); }
+public extern(D):
+	@property final auto ref DistributionFloat.RawDistributionFloat StartRadius() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 132); }
 }

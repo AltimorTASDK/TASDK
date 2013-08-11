@@ -7,21 +7,23 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_BuyGoldPortal : GFxTrPage
 {
-	final void SpecialAction(GFxTrAction Action)
+public extern(D):
+final:
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57967], params.ptr, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57969], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -29,7 +31,7 @@ extern(C++) interface GFxTrPage_BuyGoldPortal : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57972], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void ShowModel()
+	void ShowModel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57976], cast(void*)0, cast(void*)0);
 	}

@@ -9,11 +9,13 @@ import UnrealScript.TribesGame.TrPowerGenerator;
 
 extern(C++) interface TrGame_TrDaD : TrGame
 {
-	final void ResetScores()
+public extern(D):
+final:
+	void ResetScores()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90706], cast(void*)0, cast(void*)0);
 	}
-	final void SetTeam(Controller Other, UTTeamInfo NewTeam, bool bNewTeam)
+	void SetTeam(Controller Other, UTTeamInfo NewTeam, bool bNewTeam)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -22,30 +24,30 @@ extern(C++) interface TrGame_TrDaD : TrGame
 		*cast(bool*)&params[8] = bNewTeam;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90707], params.ptr, cast(void*)0);
 	}
-	final void Logout(Controller Exiting)
+	void Logout(Controller Exiting)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Exiting;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90711], params.ptr, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90713], cast(void*)0, cast(void*)0);
 	}
-	final void ResetLevel()
+	void ResetLevel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90714], cast(void*)0, cast(void*)0);
 	}
-	final void RespawnPlayers()
+	void RespawnPlayers()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90715], cast(void*)0, cast(void*)0);
 	}
-	final void ResetRound()
+	void ResetRound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90717], cast(void*)0, cast(void*)0);
 	}
-	final void ScoreKill(Controller Killer, Controller Other)
+	void ScoreKill(Controller Killer, Controller Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -53,7 +55,7 @@ extern(C++) interface TrGame_TrDaD : TrGame
 		*cast(Controller*)&params[4] = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90725], params.ptr, cast(void*)0);
 	}
-	final bool CheckScore(PlayerReplicationInfo Scorer)
+	bool CheckScore(PlayerReplicationInfo Scorer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -61,18 +63,18 @@ extern(C++) interface TrGame_TrDaD : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90728], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final int DetermineWinningTeam()
+	int DetermineWinningTeam()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90731], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final void GotoPendingRoundStartTimer()
+	void GotoPendingRoundStartTimer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90734], cast(void*)0, cast(void*)0);
 	}
-	final bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
+	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -81,35 +83,35 @@ extern(C++) interface TrGame_TrDaD : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90735], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void OnCoreBlownUp(ubyte Team)
+	void OnCoreBlownUp(ubyte Team)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = Team;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90739], params.ptr, cast(void*)0);
 	}
-	final void SendMatchCountdown(int Seconds)
+	void SendMatchCountdown(int Seconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Seconds;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90759], params.ptr, cast(void*)0);
 	}
-	final void RestartPlayer(Controller NewPlayer)
+	void RestartPlayer(Controller NewPlayer)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = NewPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90763], params.ptr, cast(void*)0);
 	}
-	final int GetGameTypeId()
+	int GetGameTypeId()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90765], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final void OnGeneratorPowerChange(TrPowerGenerator G)
+	void OnGeneratorPowerChange(TrPowerGenerator G)
 	{
 		ubyte params[4];
 		params[] = 0;

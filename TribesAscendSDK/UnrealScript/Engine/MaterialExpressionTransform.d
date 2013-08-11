@@ -4,6 +4,7 @@ import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionTransform : MaterialExpression
 {
+public extern(D):
 	enum EMaterialVectorCoordTransform : ubyte
 	{
 		TRANSFORM_World = 0,
@@ -19,7 +20,10 @@ extern(C++) interface MaterialExpressionTransform : MaterialExpression
 		TRANSFORMSOURCE_Tangent = 2,
 		TRANSFORMSOURCE_MAX = 3,
 	}
-	public @property final auto ref MaterialExpressionTransform.EMaterialVectorCoordTransform TransformType() { return *cast(MaterialExpressionTransform.EMaterialVectorCoordTransform*)(cast(size_t)cast(void*)this + 137); }
-	public @property final auto ref MaterialExpressionTransform.EMaterialVectorCoordTransformSource TransformSourceType() { return *cast(MaterialExpressionTransform.EMaterialVectorCoordTransformSource*)(cast(size_t)cast(void*)this + 136); }
-	// WARNING: Property 'Input' has the same name as a defined type!
+	@property final auto ref
+	{
+		MaterialExpressionTransform.EMaterialVectorCoordTransform TransformType() { return *cast(MaterialExpressionTransform.EMaterialVectorCoordTransform*)(cast(size_t)cast(void*)this + 137); }
+		MaterialExpressionTransform.EMaterialVectorCoordTransformSource TransformSourceType() { return *cast(MaterialExpressionTransform.EMaterialVectorCoordTransformSource*)(cast(size_t)cast(void*)this + 136); }
+		// WARNING: Property 'Input' has the same name as a defined type!
+	}
 }

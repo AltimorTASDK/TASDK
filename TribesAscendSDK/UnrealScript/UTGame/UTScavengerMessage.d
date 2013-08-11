@@ -7,7 +7,8 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UTScavengerMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptArray!(ScriptString) MessageText() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref ScriptArray!(ScriptString) MessageText() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 100); }
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

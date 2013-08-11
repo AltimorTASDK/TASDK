@@ -5,6 +5,7 @@ import UnrealScript.Engine.SequenceCondition;
 
 extern(C++) interface SeqCond_IsBenchmarking : SequenceCondition
 {
+public extern(D):
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

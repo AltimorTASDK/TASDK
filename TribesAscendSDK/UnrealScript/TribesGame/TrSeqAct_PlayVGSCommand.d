@@ -6,6 +6,10 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface TrSeqAct_PlayVGSCommand : SequenceAction
 {
-	public @property final auto ref ScriptString CommandInstigatorName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref TrVGSCommandList.VGSCommandType VGSCommand() { return *cast(TrVGSCommandList.VGSCommandType*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString CommandInstigatorName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
+		TrVGSCommandList.VGSCommandType VGSCommand() { return *cast(TrVGSCommandList.VGSCommandType*)(cast(size_t)cast(void*)this + 232); }
+	}
 }

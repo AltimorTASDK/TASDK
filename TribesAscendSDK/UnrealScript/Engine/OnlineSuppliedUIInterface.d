@@ -4,16 +4,18 @@ import ScriptClasses;
 import UnrealScript.Engine.OnlineSubsystem;
 import UnrealScript.Engine.OnlineGameSettings;
 import UnrealScript.Engine.OnlineGameSearch;
-import UnrealScript.Core.UInterface;
 import UnrealScript.Engine.OnlineStatsRead;
+import UnrealScript.Core.UInterface;
 
 extern(C++) interface OnlineSuppliedUIInterface : UInterface
 {
-	final void OnShowOnlineStatsUIComplete()
+public extern(D):
+final:
+	void OnShowOnlineStatsUIComplete()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22903], cast(void*)0, cast(void*)0);
 	}
-	final bool ShowOnlineStatsUI(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players, OnlineStatsRead StatsRead)
+	bool ShowOnlineStatsUI(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players, OnlineStatsRead StatsRead)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -23,31 +25,31 @@ extern(C++) interface OnlineSuppliedUIInterface : UInterface
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
-	final void AddShowOnlineStatsUICompleteDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+	void AddShowOnlineStatsUICompleteDelegate(
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* ShowOnlineStatsUICompleteDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ShowOnlineStatsUICompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22910], params.ptr, cast(void*)0);
 	}
-	final void ClearShowOnlineStatsUICompleteDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+	void ClearShowOnlineStatsUICompleteDelegate(
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* ShowOnlineStatsUICompleteDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ShowOnlineStatsUICompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22912], params.ptr, cast(void*)0);
 	}
-	final bool ShowMatchmakingUI(ubyte SearchingPlayerNum, OnlineGameSearch SearchSettings, OnlineGameSettings GameSettings)
+	bool ShowMatchmakingUI(ubyte SearchingPlayerNum, OnlineGameSearch SearchSettings, OnlineGameSettings GameSettings)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		params[0] = SearchingPlayerNum;
 		*cast(OnlineGameSearch*)&params[4] = SearchSettings;

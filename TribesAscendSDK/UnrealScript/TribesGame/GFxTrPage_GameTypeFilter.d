@@ -6,11 +6,13 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_GameTypeFilter : GFxTrPage
 {
-	final void Initialize()
+public extern(D):
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59167], cast(void*)0, cast(void*)0);
 	}
-	final int TakeAction(int ActionIndex, GFxObject DataList)
+	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -19,7 +21,7 @@ extern(C++) interface GFxTrPage_GameTypeFilter : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59168], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final int TakeFocus(int ActionIndex, GFxObject DataList)
+	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -28,14 +30,14 @@ extern(C++) interface GFxTrPage_GameTypeFilter : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59176], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59180], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -43,14 +45,14 @@ extern(C++) interface GFxTrPage_GameTypeFilter : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59182], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void CheckDescription(GFxObject DataList)
+	void CheckDescription(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59188], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillDescription(GFxObject DataList)
+	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;

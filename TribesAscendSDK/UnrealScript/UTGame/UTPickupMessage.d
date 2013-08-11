@@ -8,6 +8,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UTPickupMessage : UTLocalMessage
 {
+public extern(D):
 	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];

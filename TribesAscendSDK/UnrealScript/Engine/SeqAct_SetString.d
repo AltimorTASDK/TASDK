@@ -5,8 +5,12 @@ import UnrealScript.Engine.SeqAct_SetSequenceVariable;
 
 extern(C++) interface SeqAct_SetString : SeqAct_SetSequenceVariable
 {
-	public @property final auto ref ScriptString Value() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 244); }
-	public @property final auto ref ScriptString Target() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString Value() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 244); }
+		ScriptString Target() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 232); }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

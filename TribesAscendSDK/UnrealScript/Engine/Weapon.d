@@ -11,6 +11,7 @@ import UnrealScript.Engine.HUD;
 
 extern(C++) interface Weapon : Inventory
 {
+public extern(D):
 	enum EWeaponFireType : ubyte
 	{
 		EWFT_InstantHit = 0,
@@ -19,80 +20,87 @@ extern(C++) interface Weapon : Inventory
 		EWFT_None = 3,
 		EWFT_MAX = 4,
 	}
-	public @property final bool bInstantHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x10) != 0; }
-	public @property final bool bInstantHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x10; } return val; }
-	public @property final auto ref float WeaponRange() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-	public @property final auto ref ubyte CurrentFireMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 552); }
-	public @property final auto ref ScriptArray!(ScriptName) FiringStatesArray() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 556); }
-	public @property final auto ref ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { return *cast(ScriptArray!(Weapon.EWeaponFireType)*)(cast(size_t)cast(void*)this + 568); }
-	public @property final auto ref ScriptArray!(ScriptClass) WeaponProjectiles() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 580); }
-	public @property final auto ref ScriptArray!(float) FireInterval() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref ScriptArray!(float) Spread() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 604); }
-	public @property final auto ref ScriptArray!(float) InstantHitDamage() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 616); }
-	public @property final auto ref ScriptArray!(float) InstantHitMomentum() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 628); }
-	public @property final auto ref ScriptArray!(ScriptClass) InstantHitDamageTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref ScriptArray!(ubyte) ShouldFireOnRelease() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref float CachedMaxRange() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
-	public @property final auto ref float AIRating() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
-	// WARNING: Property 'AIController' has the same name as a defined type!
-	public @property final auto ref float Priority() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
-	public @property final auto ref float DefaultAnimSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
-	public @property final bool bMeleeWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x20) != 0; }
-	public @property final bool bMeleeWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x20; } return val; }
-	public @property final bool bWasDoNotActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x8) != 0; }
-	public @property final bool bWasDoNotActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x8; } return val; }
-	public @property final bool bWasOptionalSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x4) != 0; }
-	public @property final bool bWasOptionalSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x4; } return val; }
-	public @property final bool bCanThrow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x2) != 0; }
-	public @property final bool bCanThrow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x2; } return val; }
-	public @property final bool bWeaponPutDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x1) != 0; }
-	public @property final bool bWeaponPutDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x1; } return val; }
-	public @property final auto ref Vector FireOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 660); }
-	public @property final auto ref float PutDownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
-	public @property final auto ref float EquipTime() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
-	final float GetTraceRange()
+	@property final
+	{
+		auto ref
+		{
+			float WeaponRange() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+			ubyte CurrentFireMode() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 552); }
+			ScriptArray!(ScriptName) FiringStatesArray() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 556); }
+			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { return *cast(ScriptArray!(Weapon.EWeaponFireType)*)(cast(size_t)cast(void*)this + 568); }
+			ScriptArray!(ScriptClass) WeaponProjectiles() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 580); }
+			ScriptArray!(float) FireInterval() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 592); }
+			ScriptArray!(float) Spread() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 604); }
+			ScriptArray!(float) InstantHitDamage() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 616); }
+			ScriptArray!(float) InstantHitMomentum() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 628); }
+			ScriptArray!(ScriptClass) InstantHitDamageTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 640); }
+			ScriptArray!(ubyte) ShouldFireOnRelease() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 696); }
+			float CachedMaxRange() { return *cast(float*)(cast(size_t)cast(void*)this + 712); }
+			float AIRating() { return *cast(float*)(cast(size_t)cast(void*)this + 708); }
+			// WARNING: Property 'AIController' has the same name as a defined type!
+			float Priority() { return *cast(float*)(cast(size_t)cast(void*)this + 688); }
+			float DefaultAnimSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 684); }
+			Vector FireOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 660); }
+			float PutDownTime() { return *cast(float*)(cast(size_t)cast(void*)this + 656); }
+			float EquipTime() { return *cast(float*)(cast(size_t)cast(void*)this + 652); }
+		}
+		bool bInstantHit() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x10) != 0; }
+		bool bInstantHit(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x10; } return val; }
+		bool bMeleeWeapon() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x20) != 0; }
+		bool bMeleeWeapon(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x20; } return val; }
+		bool bWasDoNotActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x8) != 0; }
+		bool bWasDoNotActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x8; } return val; }
+		bool bWasOptionalSet() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x4) != 0; }
+		bool bWasOptionalSet(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x4; } return val; }
+		bool bCanThrow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x2) != 0; }
+		bool bCanThrow(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x2; } return val; }
+		bool bWeaponPutDown() { return (*cast(uint*)(cast(size_t)cast(void*)this + 672) & 0x1) != 0; }
+		bool bWeaponPutDown(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 672) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 672) &= ~0x1; } return val; }
+	}
+final:
+	float GetTraceRange()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8466], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final bool HasAnyAmmo()
+	bool HasAnyAmmo()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18883], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final float GetAIRating()
+	float GetAIRating()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18885], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final float GetWeaponRating()
+	float GetWeaponRating()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18894], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final bool TryPutDown()
+	bool TryPutDown()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18915], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool DenyClientWeaponSet()
+	bool DenyClientWeaponSet()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18929], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CanAttack(Actor Other)
+	bool CanAttack(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -100,54 +108,54 @@ extern(C++) interface Weapon : Inventory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20152], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool FireOnRelease()
+	bool FireOnRelease()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20159], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool IsFiring()
+	bool IsFiring()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20165], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CanThrow()
+	bool CanThrow()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20471], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29299], cast(void*)0, cast(void*)0);
 	}
-	final void ItemRemovedFromInvManager()
+	void ItemRemovedFromInvManager()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29300], cast(void*)0, cast(void*)0);
 	}
-	final void HolderDied()
+	void HolderDied()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29301], cast(void*)0, cast(void*)0);
 	}
-	final bool DoOverrideNextWeapon()
+	bool DoOverrideNextWeapon()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29302], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool DoOverridePrevWeapon()
+	bool DoOverridePrevWeapon()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29304], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void DropFrom(Vector StartLocation, Vector StartVelocity)
+	void DropFrom(Vector StartLocation, Vector StartVelocity)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -155,11 +163,11 @@ extern(C++) interface Weapon : Inventory
 		*cast(Vector*)&params[12] = StartVelocity;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29306], params.ptr, cast(void*)0);
 	}
-	final void ClientWeaponThrown()
+	void ClientWeaponThrown()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29309], cast(void*)0, cast(void*)0);
 	}
-	final void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -170,7 +178,7 @@ extern(C++) interface Weapon : Inventory
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
-	final void GetWeaponDebug(ScriptArray!(ScriptString)* DebugInfo)
+	void GetWeaponDebug(ScriptArray!(ScriptString)* DebugInfo)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -178,14 +186,14 @@ extern(C++) interface Weapon : Inventory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29317], params.ptr, cast(void*)0);
 		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
-	final int GetPendingFireLength()
+	int GetPendingFireLength()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29322], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final bool PendingFire(int FireMode)
+	bool PendingFire(int FireMode)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -193,14 +201,14 @@ extern(C++) interface Weapon : Inventory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29323], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void ConsumeAmmo(ubyte FireModeNum)
+	void ConsumeAmmo(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29324], params.ptr, cast(void*)0);
 	}
-	final int AddAmmo(int Amount)
+	int AddAmmo(int Amount)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -208,37 +216,37 @@ extern(C++) interface Weapon : Inventory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29326], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int Amount)
 	{
-		ubyte params[9];
+		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
 		*cast(int*)&params[4] = Amount;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29329], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void SetPendingFire(int FireMode)
+	void SetPendingFire(int FireMode)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = FireMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29336], params.ptr, cast(void*)0);
 	}
-	final void ClearPendingFire(int FireMode)
+	void ClearPendingFire(int FireMode)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = FireMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29338], params.ptr, cast(void*)0);
 	}
-	final ScriptClass GetProjectileClass()
+	ScriptClass GetProjectileClass()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29340], params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
-	final Rotator AddSpread(Rotator BaseAim)
+	Rotator AddSpread(Rotator BaseAim)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -246,89 +254,89 @@ extern(C++) interface Weapon : Inventory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29342], params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
-	final float MaxRange()
+	float MaxRange()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29351], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final AnimNodeSequence GetWeaponAnimNodeSeq()
+	AnimNodeSequence GetWeaponAnimNodeSeq()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29355], params.ptr, cast(void*)0);
 		return *cast(AnimNodeSequence*)params.ptr;
 	}
-	final void PlayWeaponAnimation(ScriptName Sequence, float fDesiredDuration, bool bLoop, 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void PlayWeaponAnimation(ScriptName pSequence, float fDesiredDuration, bool bLoop, 
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* SkelMesh)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = Sequence;
+		*cast(ScriptName*)params.ptr = pSequence;
 		*cast(float*)&params[8] = fDesiredDuration;
 		*cast(bool*)&params[12] = bLoop;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29360], params.ptr, cast(void*)0);
 	}
-	final void StopWeaponAnimation()
+	void StopWeaponAnimation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29367], cast(void*)0, cast(void*)0);
 	}
-	final void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
 		*cast(Vector*)&params[4] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29369], params.ptr, cast(void*)0);
 	}
-	final void StopFireEffects(ubyte FireModeNum)
+	void StopFireEffects(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29372], params.ptr, cast(void*)0);
 	}
-	final float GetFireInterval(ubyte FireModeNum)
+	float GetFireInterval(ubyte FireModeNum)
 	{
-		ubyte params[5];
+		ubyte params[8];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29374], params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	final void TimeWeaponFiring(ubyte FireModeNum)
+	void TimeWeaponFiring(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29377], params.ptr, cast(void*)0);
 	}
-	final void RefireCheckTimer()
+	void RefireCheckTimer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29379], cast(void*)0, cast(void*)0);
 	}
-	final void TimeWeaponPutDown()
+	void TimeWeaponPutDown()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29380], cast(void*)0, cast(void*)0);
 	}
-	final void TimeWeaponEquipping()
+	void TimeWeaponEquipping()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29381], cast(void*)0, cast(void*)0);
 	}
-	final void Activate()
+	void Activate()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29382], cast(void*)0, cast(void*)0);
 	}
-	final void PutDownWeapon()
+	void PutDownWeapon()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29383], cast(void*)0, cast(void*)0);
 	}
-	final bool DenyPickupQuery(ScriptClass ItemClass, Actor Pickup)
+	bool DenyPickupQuery(ScriptClass ItemClass, Actor Pickup)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -337,46 +345,46 @@ void**)&params[16] = SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29384], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void WeaponEmpty()
+	void WeaponEmpty()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29388], cast(void*)0, cast(void*)0);
 	}
-	final void IncrementFlashCount()
+	void IncrementFlashCount()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29389], cast(void*)0, cast(void*)0);
 	}
-	final void ClearFlashCount()
+	void ClearFlashCount()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29390], cast(void*)0, cast(void*)0);
 	}
-	final void SetFlashLocation(Vector HitLocation)
+	void SetFlashLocation(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29391], params.ptr, cast(void*)0);
 	}
-	final void ClearFlashLocation()
+	void ClearFlashLocation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29393], cast(void*)0, cast(void*)0);
 	}
-	final void AttachWeaponTo(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void AttachWeaponTo(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* MeshCpnt, ScriptName SocketName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
 		*cast(ScriptName*)&params[4] = SocketName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29394], params.ptr, cast(void*)0);
 	}
-	final void DetachWeapon()
+	void DetachWeapon()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29397], cast(void*)0, cast(void*)0);
 	}
-	final void ClientGivenTo(Pawn NewOwner, bool bDoNotActivate)
+	void ClientGivenTo(Pawn NewOwner, bool bDoNotActivate)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -384,7 +392,7 @@ void**)params.ptr = MeshCpnt;
 		*cast(bool*)&params[4] = bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29398], params.ptr, cast(void*)0);
 	}
-	final void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -392,79 +400,79 @@ void**)params.ptr = MeshCpnt;
 		*cast(bool*)&params[4] = bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29401], params.ptr, cast(void*)0);
 	}
-	final void StartFire(ubyte FireModeNum)
+	void StartFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29404], params.ptr, cast(void*)0);
 	}
-	final void ServerStartFire(ubyte FireModeNum)
+	void ServerStartFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29406], params.ptr, cast(void*)0);
 	}
-	final void BeginFire(ubyte FireModeNum)
+	void BeginFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29408], params.ptr, cast(void*)0);
 	}
-	final void StopFire(ubyte FireModeNum)
+	void StopFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29410], params.ptr, cast(void*)0);
 	}
-	final void ServerStopFire(ubyte FireModeNum)
+	void ServerStopFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29412], params.ptr, cast(void*)0);
 	}
-	final void EndFire(ubyte FireModeNum)
+	void EndFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29414], params.ptr, cast(void*)0);
 	}
-	final void ForceEndFire()
+	void ForceEndFire()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29416], cast(void*)0, cast(void*)0);
 	}
-	final void SendToFiringState(ubyte FireModeNum)
+	void SendToFiringState(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29419], params.ptr, cast(void*)0);
 	}
-	final void SetCurrentFireMode(ubyte FiringModeNum)
+	void SetCurrentFireMode(ubyte FiringModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FiringModeNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29421], params.ptr, cast(void*)0);
 	}
-	final void FireModeUpdated(ubyte FiringMode, bool bViaReplication)
+	void FireModeUpdated(ubyte FiringMode, bool bViaReplication)
 	{
-		ubyte params[5];
+		ubyte params[8];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(bool*)&params[4] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29423], params.ptr, cast(void*)0);
 	}
-	final void FireAmmunition()
+	void FireAmmunition()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29426], cast(void*)0, cast(void*)0);
 	}
-	final Rotator GetAdjustedAim(Vector StartFireLoc)
+	Rotator GetAdjustedAim(Vector StartFireLoc)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -472,14 +480,14 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29427], params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
-	final Actor GetTraceOwner()
+	Actor GetTraceOwner()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29431], params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
-	final Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
+	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
 	{
 		ubyte params[128];
 		params[] = 0;
@@ -491,7 +499,7 @@ void**)params.ptr = MeshCpnt;
 		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
 		return *cast(Actor.ImpactInfo*)&params[48];
 	}
-	final bool PassThroughDamage(Actor HitActor)
+	bool PassThroughDamage(Actor HitActor)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -499,38 +507,38 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29450], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void InstantFire()
+	void InstantFire()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29453], cast(void*)0, cast(void*)0);
 	}
-	final void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
+	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
 	{
-		ubyte params[85];
+		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(int*)&params[84] = NumHits;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29460], params.ptr, cast(void*)0);
 	}
-	final Projectile ProjectileFire()
+	Projectile ProjectileFire()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29467], params.ptr, cast(void*)0);
 		return *cast(Projectile*)params.ptr;
 	}
-	final void CustomFire()
+	void CustomFire()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29475], cast(void*)0, cast(void*)0);
 	}
-	final Vector GetMuzzleLoc()
+	Vector GetMuzzleLoc()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29476], params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	final Vector GetPhysicalFireStartLoc(Vector AimDir)
+	Vector GetPhysicalFireStartLoc(Vector AimDir)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -538,48 +546,48 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29478], params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	final void HandleFinishedFiring()
+	void HandleFinishedFiring()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29515], cast(void*)0, cast(void*)0);
 	}
-	final void NotifyWeaponFired(ubyte FireMode)
+	void NotifyWeaponFired(ubyte FireMode)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29516], params.ptr, cast(void*)0);
 	}
-	final void NotifyWeaponFinishedFiring(ubyte FireMode)
+	void NotifyWeaponFinishedFiring(ubyte FireMode)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29518], params.ptr, cast(void*)0);
 	}
-	final bool ShouldRefire()
+	bool ShouldRefire()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29520], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool StillFiring(ubyte FireMode)
+	bool StillFiring(ubyte FireMode)
 	{
-		ubyte params[5];
+		ubyte params[8];
 		params[] = 0;
 		params[0] = FireMode;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29522], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void WeaponIsDown()
+	void WeaponIsDown()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29541], cast(void*)0, cast(void*)0);
 	}
-	final void CacheAIController()
+	void CacheAIController()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29548], cast(void*)0, cast(void*)0);
 	}
-	final float GetTargetDistance()
+	float GetTargetDistance()
 	{
 		ubyte params[4];
 		params[] = 0;

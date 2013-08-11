@@ -5,6 +5,7 @@ import UnrealScript.Engine.PlayerInput;
 
 extern(C++) interface TrVehicleInput_Flying : PlayerInput
 {
+public extern(D):
 	final void AdjustMouseSensitivity(float FOVScale)
 	{
 		ubyte params[4];

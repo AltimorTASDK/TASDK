@@ -5,5 +5,6 @@ import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleUberBase : ParticleModule
 {
-	public @property final auto ref ScriptArray!(ScriptName) RequiredModules() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref ScriptArray!(ScriptName) RequiredModules() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 72); }
 }

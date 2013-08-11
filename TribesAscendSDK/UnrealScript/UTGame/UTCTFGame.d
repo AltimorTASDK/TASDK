@@ -14,20 +14,25 @@ import UnrealScript.UTGame.UTTeamGame;
 
 extern(C++) interface UTCTFGame : UTTeamGame
 {
-	public @property final auto ref ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1336); }
-	public @property final auto ref UTCTFFlag Flags() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 1328); }
-	final void PostBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1336); }
+		UTCTFFlag Flags() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 1328); }
+	}
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45359], cast(void*)0, cast(void*)0);
 	}
-	final void SetEndGameFocus(PlayerReplicationInfo Winner)
+	void SetEndGameFocus(PlayerReplicationInfo Winner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45365], params.ptr, cast(void*)0);
 	}
-	final int GetHandicapNeed(Pawn Other)
+	int GetHandicapNeed(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -35,7 +40,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45368], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
+	bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -48,7 +53,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		*MessageIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[16];
 	}
-	final void RegisterFlag(UTCarriedObject F, int TeamIndex)
+	void RegisterFlag(UTCarriedObject F, int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -56,7 +61,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		*cast(int*)&params[4] = TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45380], params.ptr, cast(void*)0);
 	}
-	final bool NearGoal(Controller C)
+	bool NearGoal(Controller C)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -64,7 +69,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45383], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool WantFastSpawnFor(AIController B)
+	bool WantFastSpawnFor(AIController B)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -72,7 +77,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45387], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
+	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -81,7 +86,7 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45391], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void ScoreFlag(Controller Scorer, UTCTFFlag theFlag)
+	void ScoreFlag(Controller Scorer, UTCTFFlag theFlag)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -89,14 +94,14 @@ extern(C++) interface UTCTFGame : UTTeamGame
 		*cast(UTCTFFlag*)&params[4] = theFlag;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45398], params.ptr, cast(void*)0);
 	}
-	final void ViewObjective(PlayerController PC)
+	void ViewObjective(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45416], params.ptr, cast(void*)0);
 	}
-	final Actor GetAutoObjectiveFor(UTPlayerController PC)
+	Actor GetAutoObjectiveFor(UTPlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;

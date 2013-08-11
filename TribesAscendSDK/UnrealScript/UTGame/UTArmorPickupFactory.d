@@ -9,26 +9,28 @@ import UnrealScript.UTGame.UTHUD;
 
 extern(C++) interface UTArmorPickupFactory : UTItemPickupFactory
 {
-	public @property final auto ref int ShieldAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 976); }
-	final void UpdateHUD(UTHUD H)
+public extern(D):
+	@property final auto ref int ShieldAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 976); }
+final:
+	void UpdateHUD(UTHUD H)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTHUD*)params.ptr = H;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40619], params.ptr, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40622], cast(void*)0, cast(void*)0);
 	}
-	final void SpawnCopyFor(Pawn Recipient)
+	void SpawnCopyFor(Pawn Recipient)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Recipient;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40623], params.ptr, cast(void*)0);
 	}
-	final int CanUseShield(UTPawn P)
+	int CanUseShield(UTPawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -36,14 +38,14 @@ extern(C++) interface UTArmorPickupFactory : UTItemPickupFactory
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40627], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final void AddShieldStrength(UTPawn P)
+	void AddShieldStrength(UTPawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = P;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40630], params.ptr, cast(void*)0);
 	}
-	final float BotDesireability(Pawn Bot, Controller C)
+	float BotDesireability(Pawn Bot, Controller C)
 	{
 		ubyte params[12];
 		params[] = 0;

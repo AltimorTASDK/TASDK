@@ -9,21 +9,26 @@ import UnrealScript.TribesGame.TrTripActor;
 
 extern(C++) interface TrProj_PrismMine : TrProj_Mine
 {
-	public @property final auto ref Vector r_vRightHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 936); }
-	public @property final auto ref Vector r_vLeftHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 924); }
-	public @property final auto ref ScriptName m_nSocketTraceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 916); }
-	public @property final auto ref ParticleSystem m_LaserTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 912); }
-	public @property final auto ref float m_fTripDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 908); }
-	public @property final auto ref TrTripActor m_TripActor() { return *cast(TrTripActor*)(cast(size_t)cast(void*)this + 904); }
-	public @property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 900); }
-	final void PawnEnteredDetonationArea(Pawn Other)
+public extern(D):
+	@property final auto ref
+	{
+		Vector r_vRightHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 936); }
+		Vector r_vLeftHit() { return *cast(Vector*)(cast(size_t)cast(void*)this + 924); }
+		ScriptName m_nSocketTraceName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 916); }
+		ParticleSystem m_LaserTemplate() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 912); }
+		float m_fTripDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 908); }
+		TrTripActor m_TripActor() { return *cast(TrTripActor*)(cast(size_t)cast(void*)this + 904); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 900); }
+	}
+final:
+	void PawnEnteredDetonationArea(Pawn Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108871], params.ptr, cast(void*)0);
 	}
-	final void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -31,19 +36,19 @@ extern(C++) interface TrProj_PrismMine : TrProj_Mine
 		*cast(ScriptClass*)&params[12] = ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108873], params.ptr, cast(void*)0);
 	}
-	final void ArmedTimer()
+	void ArmedTimer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108876], cast(void*)0, cast(void*)0);
 	}
-	final void ShutDown()
+	void ShutDown()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108885], cast(void*)0, cast(void*)0);
 	}
-	final void CreateTripActor()
+	void CreateTripActor()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108886], cast(void*)0, cast(void*)0);
 	}
-	final void TripActivated(Pawn Other, Vector ActivateLocation, TrTripActor TripActor)
+	void TripActivated(Pawn Other, Vector ActivateLocation, TrTripActor TripActor)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -52,14 +57,14 @@ extern(C++) interface TrProj_PrismMine : TrProj_Mine
 		*cast(TrTripActor*)&params[16] = TripActor;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108890], params.ptr, cast(void*)0);
 	}
-	final ParticleSystem GetParticleSystemName()
+	ParticleSystem GetParticleSystemName()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108894], params.ptr, cast(void*)0);
 		return *cast(ParticleSystem*)params.ptr;
 	}
-	final bool GetTripSocketPosition(bool bIsLeft, Vector* SocketPosition)
+	bool GetTripSocketPosition(bool bIsLeft, Vector* SocketPosition)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -69,22 +74,22 @@ extern(C++) interface TrProj_PrismMine : TrProj_Mine
 		*SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	final void OnTripAwake()
+	void OnTripAwake()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108900], cast(void*)0, cast(void*)0);
 	}
-	final void OnTripSleep()
+	void OnTripSleep()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108901], cast(void*)0, cast(void*)0);
 	}
-	final void AddTripActor(TrTripActor NewTrip)
+	void AddTripActor(TrTripActor NewTrip)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrTripActor*)params.ptr = NewTrip;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108902], params.ptr, cast(void*)0);
 	}
-	final void RemoveTripActor(TrTripActor RemoveTrip)
+	void RemoveTripActor(TrTripActor RemoveTrip)
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -6,7 +6,8 @@ import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
 extern(C++) interface NavMeshGoalFilter_PolyEncompassesAI : NavMeshGoal_Filter
 {
-	public @property final auto ref Vector OverrideExtentToCheck() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref Vector OverrideExtentToCheck() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
 	final bool MakeSureAIFits(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InOverrideExtentToCheck)
 	{
 		ubyte params[20];

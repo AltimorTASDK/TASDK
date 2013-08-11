@@ -5,11 +5,18 @@ import UnrealScript.Engine.Scout;
 
 extern(C++) interface UDKScout : Scout
 {
-	public @property final auto ref ScriptName SizePersonFindName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1296); }
-	public @property final auto ref ScriptClass PrototypePawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1292); }
-	public @property final auto ref float MaxDoubleJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1288); }
-	public @property final bool bRequiresDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1284) & 0x1) != 0; }
-	public @property final bool bRequiresDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1284) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1284) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptName SizePersonFindName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1296); }
+			ScriptClass PrototypePawnClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1292); }
+			float MaxDoubleJumpHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 1288); }
+		}
+		bool bRequiresDoubleJump() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1284) & 0x1) != 0; }
+		bool bRequiresDoubleJump(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1284) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1284) &= ~0x1; } return val; }
+	}
 	final bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
 	{
 		ubyte params[44];

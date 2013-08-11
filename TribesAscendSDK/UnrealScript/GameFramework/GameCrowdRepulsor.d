@@ -6,9 +6,13 @@ import UnrealScript.GameFramework.GameCrowdForcePoint;
 
 extern(C++) interface GameCrowdRepulsor : GameCrowdForcePoint
 {
-	public @property final bool bAttractionFalloff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
-	public @property final bool bAttractionFalloff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
-	public @property final auto ref float Repulsion() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+public extern(D):
+	@property final
+	{
+		@property final auto ref float Repulsion() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+		bool bAttractionFalloff() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x1) != 0; }
+		bool bAttractionFalloff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 488) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 488) &= ~0x1; } return val; }
+	}
 	final Vector AppliedForce(GameCrowdAgent Agent)
 	{
 		ubyte params[16];

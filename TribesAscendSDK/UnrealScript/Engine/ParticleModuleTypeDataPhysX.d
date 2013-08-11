@@ -5,17 +5,22 @@ import UnrealScript.Engine.PhysXParticleSystem;
 
 extern(C++) interface ParticleModuleTypeDataPhysX : ParticleModuleTypeDataBase
 {
+public extern(D):
 	struct PhysXEmitterVerticalLodProperties
 	{
-		public @property final auto ref float RelativeFadeoutTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __RelativeFadeoutTime[4];
-		public @property final auto ref float SpawnLodRateVsLifeBias() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __SpawnLodRateVsLifeBias[4];
-		public @property final auto ref float WeightForSpawnLod() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __WeightForSpawnLod[4];
-		public @property final auto ref float WeightForFifo() { return *cast(float*)(cast(size_t)&this + 0); }
-		private ubyte __WeightForFifo[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			float RelativeFadeoutTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			float SpawnLodRateVsLifeBias() { return *cast(float*)(cast(size_t)&this + 8); }
+			float WeightForSpawnLod() { return *cast(float*)(cast(size_t)&this + 4); }
+			float WeightForFifo() { return *cast(float*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { return *cast(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref PhysXParticleSystem PhysXParSys() { return *cast(PhysXParticleSystem*)(cast(size_t)cast(void*)this + 72); }
+	@property final auto ref
+	{
+		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { return *cast(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties*)(cast(size_t)cast(void*)this + 76); }
+		PhysXParticleSystem PhysXParSys() { return *cast(PhysXParticleSystem*)(cast(size_t)cast(void*)this + 72); }
+	}
 }

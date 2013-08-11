@@ -6,8 +6,10 @@ import UnrealScript.Engine.Settings;
 
 extern(C++) interface OnlineStats : UObject
 {
-	public @property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)cast(void*)this + 60); }
-	final bool GetViewId(ScriptName ViewName, int* ViewId)
+public extern(D):
+	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { return *cast(ScriptArray!(Settings.StringIdToStringMapping)*)(cast(size_t)cast(void*)this + 60); }
+final:
+	bool GetViewId(ScriptName ViewName, int* ViewId)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -17,7 +19,7 @@ extern(C++) interface OnlineStats : UObject
 		*ViewId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final ScriptName GetViewName(int ViewId)
+	ScriptName GetViewName(int ViewId)
 	{
 		ubyte params[12];
 		params[] = 0;

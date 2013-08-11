@@ -5,5 +5,6 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface InterpTrackInstDirector : InterpTrackInst
 {
-	public @property final auto ref Actor OldViewTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref Actor OldViewTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 60); }
 }

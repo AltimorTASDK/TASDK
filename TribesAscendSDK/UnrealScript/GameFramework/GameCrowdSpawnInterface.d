@@ -6,6 +6,7 @@ import UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 
 extern(C++) interface GameCrowdSpawnInterface : UInterface
 {
+public extern(D):
 	final void GetSpawnPosition(SeqAct_GameCrowdSpawner Spawner, Vector* SpawnPos, Rotator* SpawnRot)
 	{
 		ubyte params[28];

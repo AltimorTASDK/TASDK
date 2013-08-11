@@ -6,14 +6,16 @@ import UnrealScript.Engine.OnlineProfileSettings;
 
 extern(C++) interface UDKProfileSettings : OnlineProfileSettings
 {
-	final void ResetToDefault(int ProfileId)
+public extern(D):
+final:
+	void ResetToDefault(int ProfileId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileId;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35286], params.ptr, cast(void*)0);
 	}
-	final void ResetKeysToDefault(LocalPlayer InPlayerOwner)
+	void ResetKeysToDefault(LocalPlayer InPlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -9,33 +9,41 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface FractureManager : Actor
 {
-	public static immutable auto FSM_DEFAULTRECYCLETIME = 0.2;
-	public @property final auto ref ScriptArray!(FracturedStaticMeshPart) PartPool() { return *cast(ScriptArray!(FracturedStaticMeshPart)*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref ScriptArray!(int) FreeParts() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 508); }
-	public @property final auto ref ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { return *cast(ScriptArray!(FracturedStaticMeshActor)*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref float ExplosionVelScale() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref float DestroyMinAngVel() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref float DestroyVibrationLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-	public @property final bool bEnableSpawnChunkEffectForRadialDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }
-	public @property final bool bEnableSpawnChunkEffectForRadialDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x2; } return val; }
-	public @property final bool bEnableAntiVibration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
-	public @property final bool bEnableAntiVibration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
-	public @property final auto ref int FSMPartPoolSize() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
-	final float GetFSMFractureCullDistanceScale()
+public extern(D):
+	enum FSM_DEFAULTRECYCLETIME = 0.2;
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(FracturedStaticMeshPart) PartPool() { return *cast(ScriptArray!(FracturedStaticMeshPart)*)(cast(size_t)cast(void*)this + 496); }
+			ScriptArray!(int) FreeParts() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 508); }
+			ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { return *cast(ScriptArray!(FracturedStaticMeshActor)*)(cast(size_t)cast(void*)this + 520); }
+			float ExplosionVelScale() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+			float DestroyMinAngVel() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+			float DestroyVibrationLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+			int FSMPartPoolSize() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
+		}
+		bool bEnableSpawnChunkEffectForRadialDamage() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }
+		bool bEnableSpawnChunkEffectForRadialDamage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x2; } return val; }
+		bool bEnableAntiVibration() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
+		bool bEnableAntiVibration(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 480) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 480) &= ~0x1; } return val; }
+	}
+final:
+	float GetFSMFractureCullDistanceScale()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16517], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final float GetFSMDirectSpawnChanceScale()
+	float GetFSMDirectSpawnChanceScale()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16549], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void SpawnChunkDestroyEffect(ParticleSystem Effect, UObject.Box ChunkBox, Vector ChunkDir, float Scale)
+	void SpawnChunkDestroyEffect(ParticleSystem Effect, UObject.Box ChunkBox, Vector ChunkDir, float Scale)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -45,41 +53,41 @@ extern(C++) interface FractureManager : Actor
 		*cast(float*)&params[44] = Scale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16637], params.ptr, cast(void*)0);
 	}
-	final float GetNumFSMPartsScale()
+	float GetNumFSMPartsScale()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16644], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final float GetFSMRadialSpawnChanceScale()
+	float GetFSMRadialSpawnChanceScale()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16646], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void PreBeginPlay()
+	void PreBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16648], cast(void*)0, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16649], cast(void*)0, cast(void*)0);
 	}
-	final void CleanUpFSMParts()
+	void CleanUpFSMParts()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16650], cast(void*)0, cast(void*)0);
 	}
-	final void CreateFSMParts()
+	void CreateFSMParts()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16652], cast(void*)0, cast(void*)0);
 	}
-	final void ResetPoolVisibility()
+	void ResetPoolVisibility()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16653], cast(void*)0, cast(void*)0);
 	}
-	final FracturedStaticMeshPart GetFSMPart(FracturedStaticMeshActor Parent, Vector SpawnLocation, Rotator SpawnRotation)
+	FracturedStaticMeshPart GetFSMPart(FracturedStaticMeshActor Parent, Vector SpawnLocation, Rotator SpawnRotation)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -89,7 +97,7 @@ extern(C++) interface FractureManager : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16654], params.ptr, cast(void*)0);
 		return *cast(FracturedStaticMeshPart*)&params[28];
 	}
-	final FracturedStaticMeshPart SpawnPartActor(FracturedStaticMeshActor Parent, Vector SpawnLocation, Rotator SpawnRotation)
+	FracturedStaticMeshPart SpawnPartActor(FracturedStaticMeshActor Parent, Vector SpawnLocation, Rotator SpawnRotation)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -99,14 +107,14 @@ extern(C++) interface FractureManager : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16659], params.ptr, cast(void*)0);
 		return *cast(FracturedStaticMeshPart*)&params[28];
 	}
-	final void ReturnPartActor(FracturedStaticMeshPart Part)
+	void ReturnPartActor(FracturedStaticMeshPart Part)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(FracturedStaticMeshPart*)params.ptr = Part;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16665], params.ptr, cast(void*)0);
 	}
-	final void Tick(float DeltaTime)
+	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;

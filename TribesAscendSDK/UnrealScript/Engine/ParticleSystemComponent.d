@@ -10,6 +10,7 @@ import UnrealScript.Engine.MaterialInterface;
 
 extern(C++) interface ParticleSystemComponent : PrimitiveComponent
 {
+public extern(D):
 	enum EParticleSysParamType : ubyte
 	{
 		PSPT_None = 0,
@@ -40,220 +41,224 @@ extern(C++) interface ParticleSystemComponent : PrimitiveComponent
 	}
 	struct ViewParticleEmitterInstanceMotionBlurInfo
 	{
-		public @property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
-		private ubyte __EmitterInstanceMBInfoMap[60];
+		private ubyte __buffer__[60];
+	public extern(D):
+		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
 	}
 	struct ParticleSysParam
 	{
-		// WARNING: Property 'Material' has the same name as a defined type!
-		// WARNING: Property 'Actor' has the same name as a defined type!
-		// WARNING: Property 'Color' has the same name as a defined type!
-		public @property final auto ref Vector Vector_Low() { return *cast(Vector*)(cast(size_t)&this + 32); }
-		private ubyte __Vector_Low[12];
-		// WARNING: Property 'Vector' has the same name as a defined type!
-		public @property final auto ref float Scalar_Low() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __Scalar_Low[4];
-		public @property final auto ref float Scalar() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __Scalar[4];
-		public @property final auto ref ParticleSystemComponent.EParticleSysParamType ParamType() { return *cast(ParticleSystemComponent.EParticleSysParamType*)(cast(size_t)&this + 8); }
-		private ubyte __ParamType[1];
-		public @property final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __Name[8];
+		private ubyte __buffer__[56];
+	public extern(D):
+		@property final auto ref
+		{
+			// WARNING: Property 'Material' has the same name as a defined type!
+			// WARNING: Property 'Actor' has the same name as a defined type!
+			// WARNING: Property 'Color' has the same name as a defined type!
+			Vector Vector_Low() { return *cast(Vector*)(cast(size_t)&this + 32); }
+			// WARNING: Property 'Vector' has the same name as a defined type!
+			float Scalar_Low() { return *cast(float*)(cast(size_t)&this + 16); }
+			float Scalar() { return *cast(float*)(cast(size_t)&this + 12); }
+			ParticleSystemComponent.EParticleSysParamType ParamType() { return *cast(ParticleSystemComponent.EParticleSysParamType*)(cast(size_t)&this + 8); }
+			ScriptName Name() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct ParticleEventData
 	{
-		public @property final auto ref Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Velocity[12];
-		public @property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Direction[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Location[12];
-		public @property final auto ref float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __EmitterTime[4];
-		public @property final auto ref ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __EventName[8];
-		public @property final auto ref int Type() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Type[4];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct ParticleEventSpawnData
 	{
-		public @property final auto ref Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Velocity[12];
-		public @property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Direction[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Location[12];
-		public @property final auto ref float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __EmitterTime[4];
-		public @property final auto ref ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __EventName[8];
-		public @property final auto ref int Type() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Type[4];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct ParticleEventDeathData
 	{
-		public @property final auto ref Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Velocity[12];
-		public @property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Direction[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Location[12];
-		public @property final auto ref float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __EmitterTime[4];
-		public @property final auto ref ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __EventName[8];
-		public @property final auto ref int Type() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Type[4];
-		public @property final auto ref float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
-		private ubyte __ParticleTime[4];
+		private ubyte __buffer__[56];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
+		@property final auto ref float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
 	}
 	struct ParticleEventCollideData
 	{
-		public @property final auto ref Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Velocity[12];
-		public @property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Direction[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Location[12];
-		public @property final auto ref float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __EmitterTime[4];
-		public @property final auto ref ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __EventName[8];
-		public @property final auto ref int Type() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Type[4];
-		public @property final auto ref ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 76); }
-		private ubyte __BoneName[8];
-		public @property final auto ref int Item() { return *cast(int*)(cast(size_t)&this + 72); }
-		private ubyte __Item[4];
-		public @property final auto ref float Time() { return *cast(float*)(cast(size_t)&this + 68); }
-		private ubyte __Time[4];
-		public @property final auto ref Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
-		private ubyte __Normal[12];
-		public @property final auto ref float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
-		private ubyte __ParticleTime[4];
+		private ubyte __buffer__[84];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
+		@property final auto ref
+		{
+			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 76); }
+			int Item() { return *cast(int*)(cast(size_t)&this + 72); }
+			float Time() { return *cast(float*)(cast(size_t)&this + 68); }
+			Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
+			float ParticleTime() { return *cast(float*)(cast(size_t)&this + 52); }
+		}
 	}
 	struct ParticleEventKismetData
 	{
-		public @property final auto ref Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
-		private ubyte __Velocity[12];
-		public @property final auto ref Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
-		private ubyte __Direction[12];
-		public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Location[12];
-		public @property final auto ref float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __EmitterTime[4];
-		public @property final auto ref ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
-		private ubyte __EventName[8];
-		public @property final auto ref int Type() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Type[4];
-		public @property final auto ref Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
-		private ubyte __Normal[12];
-		public @property final bool UsePSysCompLocation() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
-		public @property final bool UsePSysCompLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
-		private ubyte __UsePSysCompLocation[4];
+		private ubyte __buffer__[68];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
+			Vector Direction() { return *cast(Vector*)(cast(size_t)&this + 28); }
+			Vector Location() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			float EmitterTime() { return *cast(float*)(cast(size_t)&this + 12); }
+			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
+			int Type() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
+		@property final
+		{
+			@property final auto ref Vector Normal() { return *cast(Vector*)(cast(size_t)&this + 56); }
+			bool UsePSysCompLocation() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
+			bool UsePSysCompLocation(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
+		}
 	}
 	struct ParticleEmitterInstanceMotionBlurInfo
 	{
-		public @property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
-		private ubyte __ParticleMBInfoMap[60];
+		private ubyte __buffer__[60];
+	public extern(D):
+		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
 	}
 	struct ParticleEmitterInstance
 	{
+		private ubyte __buffer__[0];
+	public extern(D):
 	}
-	public @property final auto ref ParticleSystem Template() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref ScriptClass LightEnvironmentClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref ScriptArray!(UObject.Pointer) EmitterInstances() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	@property final
+	{
+		auto ref
+		{
+			ParticleSystem Template() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 488); }
+			ScriptClass LightEnvironmentClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 492); }
+			ScriptArray!(UObject.Pointer) EmitterInstances() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 496); }
+			ScriptArray!(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) SMComponents() { return *cast(ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)*)(cast(size_t)cast(void*)this + 508); }
-	public @property final auto ref ScriptArray!(MaterialInterface) SMMaterialInterfaces() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+			ScriptArray!(MaterialInterface) SMMaterialInterfaces() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 520); }
+			ScriptArray!(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) SkelMeshComponents() { return *cast(ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)*)(cast(size_t)cast(void*)this + 532); }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { return *cast(ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo)*)(cast(size_t)cast(void*)this + 544); }
-	public @property final bool bAutoActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1) != 0; }
-	public @property final bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1; } return val; }
-	public @property final bool bWasCompleted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2) != 0; }
-	public @property final bool bWasCompleted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2; } return val; }
-	public @property final bool bSuppressSpawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4) != 0; }
-	public @property final bool bSuppressSpawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4; } return val; }
-	public @property final bool bWasDeactivated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8) != 0; }
-	public @property final bool bWasDeactivated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8; } return val; }
-	public @property final bool bResetOnDetach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10) != 0; }
-	public @property final bool bResetOnDetach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10; } return val; }
-	public @property final bool bUpdateOnDedicatedServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20) != 0; }
-	public @property final bool bUpdateOnDedicatedServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20; } return val; }
-	public @property final bool bJustAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40) != 0; }
-	public @property final bool bJustAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40; } return val; }
-	public @property final bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80) != 0; }
-	public @property final bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80; } return val; }
-	public @property final bool bWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x100) != 0; }
-	public @property final bool bWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x100; } return val; }
-	public @property final bool bIsCachedInPool() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x200) != 0; }
-	public @property final bool bIsCachedInPool(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x200; } return val; }
-	public @property final bool bOverrideLODMethod() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x400) != 0; }
-	public @property final bool bOverrideLODMethod(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x400; } return val; }
-	public @property final bool bSkipUpdateDynamicDataDuringTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x800) != 0; }
-	public @property final bool bSkipUpdateDynamicDataDuringTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x800; } return val; }
-	public @property final bool bUpdateComponentInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1000) != 0; }
-	public @property final bool bUpdateComponentInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1000; } return val; }
-	public @property final bool bDeferredBeamUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2000) != 0; }
-	public @property final bool bDeferredBeamUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2000; } return val; }
-	public @property final bool bForcedInActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4000) != 0; }
-	public @property final bool bForcedInActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4000; } return val; }
-	public @property final bool bIsWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8000) != 0; }
-	public @property final bool bIsWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8000; } return val; }
-	public @property final bool bIsViewRelevanceDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10000) != 0; }
-	public @property final bool bIsViewRelevanceDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10000; } return val; }
-	public @property final bool bRecacheViewRelevance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20000) != 0; }
-	public @property final bool bRecacheViewRelevance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20000; } return val; }
-	public @property final bool bLODUpdatePending() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40000) != 0; }
-	public @property final bool bLODUpdatePending(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40000; } return val; }
-	public @property final bool bSkipSpawnCountCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80000) != 0; }
-	public @property final bool bSkipSpawnCountCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80000; } return val; }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleSysParam)*)(cast(size_t)cast(void*)this + 560); }
-	public @property final auto ref Vector OldPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 572); }
-	public @property final auto ref Vector PartSysVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 584); }
-	public @property final auto ref float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
-	public @property final auto ref int LODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-	public @property final auto ref float SecondsBeforeInactive() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
-	public @property final auto ref float TimeSinceLastForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
-	public @property final auto ref float MaxTimeBeforeForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
-	public @property final auto ref int EditorLODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
-	public @property final auto ref float AccumTickTime() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
-	public @property final auto ref ParticleSystem.ParticleSystemLODMethod LODMethod() { return *cast(ParticleSystem.ParticleSystemLODMethod*)(cast(size_t)cast(void*)this + 624); }
-	public @property final auto ref ParticleSystemComponent.ParticleReplayState ReplayState() { return *cast(ParticleSystemComponent.ParticleReplayState*)(cast(size_t)cast(void*)this + 625); }
-	public @property final auto ref ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { return *cast(ScriptArray!(PrimitiveComponent.MaterialViewRelevance)*)(cast(size_t)cast(void*)this + 628); }
-	public @property final auto ref ScriptArray!(ParticleSystemReplay) ReplayClips() { return *cast(ScriptArray!(ParticleSystemReplay)*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref int ReplayClipIDNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
-	public @property final auto ref int ReplayFrameIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 656); }
-	public @property final auto ref float AccumLODDistanceCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 660); }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData)*)(cast(size_t)cast(void*)this + 664); }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventDeathData)*)(cast(size_t)cast(void*)this + 676); }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventCollideData)*)(cast(size_t)cast(void*)this + 688); }
-	public @property final auto ref ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventKismetData)*)(cast(size_t)cast(void*)this + 700); }
-	public @property final auto ref UObject.Pointer ReleaseResourcesFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
-	public @property final auto ref float CustomTimeDilation() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
-	public @property final auto ref float EmitterDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
-	final void SetTemplate(ParticleSystem NewTemplate)
+			ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { return *cast(ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo)*)(cast(size_t)cast(void*)this + 544); }
+			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleSysParam)*)(cast(size_t)cast(void*)this + 560); }
+			Vector OldPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 572); }
+			Vector PartSysVelocity() { return *cast(Vector*)(cast(size_t)cast(void*)this + 584); }
+			float WarmupTime() { return *cast(float*)(cast(size_t)cast(void*)this + 596); }
+			int LODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
+			float SecondsBeforeInactive() { return *cast(float*)(cast(size_t)cast(void*)this + 604); }
+			float TimeSinceLastForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 608); }
+			float MaxTimeBeforeForceUpdateTransform() { return *cast(float*)(cast(size_t)cast(void*)this + 612); }
+			int EditorLODLevel() { return *cast(int*)(cast(size_t)cast(void*)this + 616); }
+			float AccumTickTime() { return *cast(float*)(cast(size_t)cast(void*)this + 620); }
+			ParticleSystem.ParticleSystemLODMethod LODMethod() { return *cast(ParticleSystem.ParticleSystemLODMethod*)(cast(size_t)cast(void*)this + 624); }
+			ParticleSystemComponent.ParticleReplayState ReplayState() { return *cast(ParticleSystemComponent.ParticleReplayState*)(cast(size_t)cast(void*)this + 625); }
+			ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { return *cast(ScriptArray!(PrimitiveComponent.MaterialViewRelevance)*)(cast(size_t)cast(void*)this + 628); }
+			ScriptArray!(ParticleSystemReplay) ReplayClips() { return *cast(ScriptArray!(ParticleSystemReplay)*)(cast(size_t)cast(void*)this + 640); }
+			int ReplayClipIDNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 652); }
+			int ReplayFrameIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 656); }
+			float AccumLODDistanceCheckTime() { return *cast(float*)(cast(size_t)cast(void*)this + 660); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData)*)(cast(size_t)cast(void*)this + 664); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventDeathData)*)(cast(size_t)cast(void*)this + 676); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventCollideData)*)(cast(size_t)cast(void*)this + 688); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { return *cast(ScriptArray!(ParticleSystemComponent.ParticleEventKismetData)*)(cast(size_t)cast(void*)this + 700); }
+			UObject.Pointer ReleaseResourcesFence() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 712); }
+			float CustomTimeDilation() { return *cast(float*)(cast(size_t)cast(void*)this + 716); }
+			float EmitterDelay() { return *cast(float*)(cast(size_t)cast(void*)this + 720); }
+		}
+		bool bAutoActivate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1) != 0; }
+		bool bAutoActivate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1; } return val; }
+		bool bWasCompleted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2) != 0; }
+		bool bWasCompleted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2; } return val; }
+		bool bSuppressSpawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4) != 0; }
+		bool bSuppressSpawning(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4; } return val; }
+		bool bWasDeactivated() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8) != 0; }
+		bool bWasDeactivated(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8; } return val; }
+		bool bResetOnDetach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10) != 0; }
+		bool bResetOnDetach(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10; } return val; }
+		bool bUpdateOnDedicatedServer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20) != 0; }
+		bool bUpdateOnDedicatedServer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20; } return val; }
+		bool bJustAttached() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40) != 0; }
+		bool bJustAttached(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40; } return val; }
+		bool bIsActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80) != 0; }
+		bool bIsActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80; } return val; }
+		bool bWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x100) != 0; }
+		bool bWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x100; } return val; }
+		bool bIsCachedInPool() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x200) != 0; }
+		bool bIsCachedInPool(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x200; } return val; }
+		bool bOverrideLODMethod() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x400) != 0; }
+		bool bOverrideLODMethod(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x400; } return val; }
+		bool bSkipUpdateDynamicDataDuringTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x800) != 0; }
+		bool bSkipUpdateDynamicDataDuringTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x800; } return val; }
+		bool bUpdateComponentInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x1000) != 0; }
+		bool bUpdateComponentInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x1000; } return val; }
+		bool bDeferredBeamUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x2000) != 0; }
+		bool bDeferredBeamUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x2000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x2000; } return val; }
+		bool bForcedInActive() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x4000) != 0; }
+		bool bForcedInActive(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x4000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x4000; } return val; }
+		bool bIsWarmingUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x8000) != 0; }
+		bool bIsWarmingUp(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x8000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x8000; } return val; }
+		bool bIsViewRelevanceDirty() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x10000) != 0; }
+		bool bIsViewRelevanceDirty(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x10000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x10000; } return val; }
+		bool bRecacheViewRelevance() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x20000) != 0; }
+		bool bRecacheViewRelevance(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x20000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x20000; } return val; }
+		bool bLODUpdatePending() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x40000) != 0; }
+		bool bLODUpdatePending(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x40000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x40000; } return val; }
+		bool bSkipSpawnCountCheck() { return (*cast(uint*)(cast(size_t)cast(void*)this + 556) & 0x80000) != 0; }
+		bool bSkipSpawnCountCheck(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 556) |= 0x80000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 556) &= ~0x80000; } return val; }
+	}
+final:
+	void SetTemplate(ParticleSystem NewTemplate)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7292], params.ptr, cast(void*)0);
 	}
-	final void ActivateSystem(bool bFlagAsJustAttached)
+	void ActivateSystem(bool bFlagAsJustAttached)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bFlagAsJustAttached;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7295], params.ptr, cast(void*)0);
 	}
-	final void SetActive(bool bNowActive, bool bFlagAsJustAttached)
+	void SetActive(bool bNowActive, bool bFlagAsJustAttached)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -261,47 +266,47 @@ void*)*)(cast(size_t)cast(void*)this + 532); }
 		*cast(bool*)&params[4] = bFlagAsJustAttached;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14789], params.ptr, cast(void*)0);
 	}
-	final void OnSystemFinished(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void OnSystemFinished(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* PSystem)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSystem;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14951], params.ptr, cast(void*)0);
 	}
-	final void DeactivateSystem()
+	void DeactivateSystem()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14955], cast(void*)0, cast(void*)0);
 	}
-	final void KillParticlesForced()
+	void KillParticlesForced()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14956], cast(void*)0, cast(void*)0);
 	}
-	final void KillParticlesInEmitter(ScriptName InEmitterName)
+	void KillParticlesInEmitter(ScriptName InEmitterName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InEmitterName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14957], params.ptr, cast(void*)0);
 	}
-	final void SetSkipUpdateDynamicDataDuringTick(bool bInSkipUpdateDynamicDataDuringTick)
+	void SetSkipUpdateDynamicDataDuringTick(bool bInSkipUpdateDynamicDataDuringTick)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInSkipUpdateDynamicDataDuringTick;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14959], params.ptr, cast(void*)0);
 	}
-	final bool GetSkipUpdateDynamicDataDuringTick()
+	bool GetSkipUpdateDynamicDataDuringTick()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14961], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void SetKillOnDeactivate(int EmitterIndex, bool bKill)
+	void SetKillOnDeactivate(int EmitterIndex, bool bKill)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -309,7 +314,7 @@ void**)params.ptr = PSystem;
 		*cast(bool*)&params[4] = bKill;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14963], params.ptr, cast(void*)0);
 	}
-	final void SetKillOnCompleted(int EmitterIndex, bool bKill)
+	void SetKillOnCompleted(int EmitterIndex, bool bKill)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -317,18 +322,18 @@ void**)params.ptr = PSystem;
 		*cast(bool*)&params[4] = bKill;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14966], params.ptr, cast(void*)0);
 	}
-	final void RewindEmitterInstance(int EmitterIndex)
+	void RewindEmitterInstance(int EmitterIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14969], params.ptr, cast(void*)0);
 	}
-	final void RewindEmitterInstances()
+	void RewindEmitterInstances()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14971], cast(void*)0, cast(void*)0);
 	}
-	final void SetBeamType(int EmitterIndex, int NewMethod)
+	void SetBeamType(int EmitterIndex, int NewMethod)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -336,7 +341,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[4] = NewMethod;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14972], params.ptr, cast(void*)0);
 	}
-	final void SetBeamTessellationFactor(int EmitterIndex, float NewFactor)
+	void SetBeamTessellationFactor(int EmitterIndex, float NewFactor)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -344,7 +349,7 @@ void**)params.ptr = PSystem;
 		*cast(float*)&params[4] = NewFactor;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14975], params.ptr, cast(void*)0);
 	}
-	final void SetBeamEndPoint(int EmitterIndex, Vector NewEndPoint)
+	void SetBeamEndPoint(int EmitterIndex, Vector NewEndPoint)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -352,7 +357,7 @@ void**)params.ptr = PSystem;
 		*cast(Vector*)&params[4] = NewEndPoint;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14978], params.ptr, cast(void*)0);
 	}
-	final void SetBeamDistance(int EmitterIndex, float Distance)
+	void SetBeamDistance(int EmitterIndex, float Distance)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -360,7 +365,7 @@ void**)params.ptr = PSystem;
 		*cast(float*)&params[4] = Distance;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14981], params.ptr, cast(void*)0);
 	}
-	final void SetBeamSourcePoint(int EmitterIndex, Vector NewSourcePoint, int SourceIndex)
+	void SetBeamSourcePoint(int EmitterIndex, Vector NewSourcePoint, int SourceIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -369,7 +374,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[16] = SourceIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14984], params.ptr, cast(void*)0);
 	}
-	final void SetBeamSourceTangent(int EmitterIndex, Vector NewTangentPoint, int SourceIndex)
+	void SetBeamSourceTangent(int EmitterIndex, Vector NewTangentPoint, int SourceIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -378,7 +383,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[16] = SourceIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14988], params.ptr, cast(void*)0);
 	}
-	final void SetBeamSourceStrength(int EmitterIndex, float NewSourceStrength, int SourceIndex)
+	void SetBeamSourceStrength(int EmitterIndex, float NewSourceStrength, int SourceIndex)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -387,7 +392,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[8] = SourceIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14992], params.ptr, cast(void*)0);
 	}
-	final void SetBeamTargetPoint(int EmitterIndex, Vector NewTargetPoint, int TargetIndex)
+	void SetBeamTargetPoint(int EmitterIndex, Vector NewTargetPoint, int TargetIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -396,7 +401,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[16] = TargetIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14996], params.ptr, cast(void*)0);
 	}
-	final void SetBeamTargetTangent(int EmitterIndex, Vector NewTangentPoint, int TargetIndex)
+	void SetBeamTargetTangent(int EmitterIndex, Vector NewTangentPoint, int TargetIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -405,7 +410,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[16] = TargetIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15000], params.ptr, cast(void*)0);
 	}
-	final void SetBeamTargetStrength(int EmitterIndex, float NewTargetStrength, int TargetIndex)
+	void SetBeamTargetStrength(int EmitterIndex, float NewTargetStrength, int TargetIndex)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -414,7 +419,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[8] = TargetIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15004], params.ptr, cast(void*)0);
 	}
-	final int DetermineLODLevelForLocation(Vector* EffectLocation)
+	int DetermineLODLevelForLocation(Vector* EffectLocation)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -423,35 +428,35 @@ void**)params.ptr = PSystem;
 		*EffectLocation = *cast(Vector*)params.ptr;
 		return *cast(int*)&params[12];
 	}
-	final void SetLODLevel(int InLODLevel)
+	void SetLODLevel(int InLODLevel)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = InLODLevel;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15011], params.ptr, cast(void*)0);
 	}
-	final void SetEditorLODLevel(int InLODLevel)
+	void SetEditorLODLevel(int InLODLevel)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = InLODLevel;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15013], params.ptr, cast(void*)0);
 	}
-	final int GetLODLevel()
+	int GetLODLevel()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15015], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final int GetEditorLODLevel()
+	int GetEditorLODLevel()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15017], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final void SetFloatParameter(ScriptName ParameterName, float Param)
+	void SetFloatParameter(ScriptName ParameterName, float Param)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -459,7 +464,7 @@ void**)params.ptr = PSystem;
 		*cast(float*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15019], params.ptr, cast(void*)0);
 	}
-	final void SetFloatRandParameter(ScriptName ParameterName, float Param, float ParamLow)
+	void SetFloatRandParameter(ScriptName ParameterName, float Param, float ParamLow)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -468,7 +473,7 @@ void**)params.ptr = PSystem;
 		*cast(float*)&params[12] = ParamLow;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15022], params.ptr, cast(void*)0);
 	}
-	final void SetVectorParameter(ScriptName ParameterName, Vector Param)
+	void SetVectorParameter(ScriptName ParameterName, Vector Param)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -476,7 +481,7 @@ void**)params.ptr = PSystem;
 		*cast(Vector*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15026], params.ptr, cast(void*)0);
 	}
-	final void SetVectorRandParameter(ScriptName ParameterName, Vector* Param, Vector* ParamLow)
+	void SetVectorRandParameter(ScriptName ParameterName, Vector* Param, Vector* ParamLow)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -487,7 +492,7 @@ void**)params.ptr = PSystem;
 		*Param = *cast(Vector*)&params[8];
 		*ParamLow = *cast(Vector*)&params[20];
 	}
-	final void SetColorParameter(ScriptName ParameterName, UObject.Color Param)
+	void SetColorParameter(ScriptName ParameterName, UObject.Color Param)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -495,7 +500,7 @@ void**)params.ptr = PSystem;
 		*cast(UObject.Color*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15033], params.ptr, cast(void*)0);
 	}
-	final void SetActorParameter(ScriptName ParameterName, Actor Param)
+	void SetActorParameter(ScriptName ParameterName, Actor Param)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -503,7 +508,7 @@ void**)params.ptr = PSystem;
 		*cast(Actor*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15036], params.ptr, cast(void*)0);
 	}
-	final void SetMaterialParameter(ScriptName ParameterName, MaterialInterface Param)
+	void SetMaterialParameter(ScriptName ParameterName, MaterialInterface Param)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -511,7 +516,7 @@ void**)params.ptr = PSystem;
 		*cast(MaterialInterface*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15039], params.ptr, cast(void*)0);
 	}
-	final bool GetFloatParameter(ScriptName InName, float* OutFloat)
+	bool GetFloatParameter(ScriptName InName, float* OutFloat)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -521,7 +526,7 @@ void**)params.ptr = PSystem;
 		*OutFloat = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetVectorParameter(ScriptName InName, Vector* OutVector)
+	bool GetVectorParameter(ScriptName InName, Vector* OutVector)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -531,7 +536,7 @@ void**)params.ptr = PSystem;
 		*OutVector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetColorParameter(ScriptName InName, UObject.Color* OutColor)
+	bool GetColorParameter(ScriptName InName, UObject.Color* OutColor)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -541,7 +546,7 @@ void**)params.ptr = PSystem;
 		*OutColor = *cast(UObject.Color*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetActorParameter(ScriptName InName, Actor* OutActor)
+	bool GetActorParameter(ScriptName InName, Actor* OutActor)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -551,7 +556,7 @@ void**)params.ptr = PSystem;
 		*OutActor = *cast(Actor*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetMaterialParameter(ScriptName InName, MaterialInterface* OutMaterial)
+	bool GetMaterialParameter(ScriptName InName, MaterialInterface* OutMaterial)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -561,7 +566,7 @@ void**)params.ptr = PSystem;
 		*OutMaterial = *cast(MaterialInterface*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final void ClearParameter(ScriptName ParameterName, ParticleSystemComponent.EParticleSysParamType ParameterType)
+	void ClearParameter(ScriptName ParameterName, ParticleSystemComponent.EParticleSysParamType ParameterType)
 	{
 		ubyte params[9];
 		params[] = 0;
@@ -569,11 +574,11 @@ void**)params.ptr = PSystem;
 		*cast(ParticleSystemComponent.EParticleSysParamType*)&params[8] = ParameterType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15062], params.ptr, cast(void*)0);
 	}
-	final void ResetToDefaults()
+	void ResetToDefaults()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15067], cast(void*)0, cast(void*)0);
 	}
-	final void SetStopSpawning(int InEmitterIndex, bool bInStopSpawning)
+	void SetStopSpawning(int InEmitterIndex, bool bInStopSpawning)
 	{
 		ubyte params[8];
 		params[] = 0;

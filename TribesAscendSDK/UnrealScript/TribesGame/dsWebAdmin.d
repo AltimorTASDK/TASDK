@@ -7,11 +7,13 @@ import UnrealScript.IpDrv.WebApplication;
 
 extern(C++) interface dsWebAdmin : WebApplication
 {
-	final void Init()
+public extern(D):
+final:
+	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51012], cast(void*)0, cast(void*)0);
 	}
-	final void Query(WebRequest Request, WebResponse Response)
+	void Query(WebRequest Request, WebResponse Response)
 	{
 		ubyte params[8];
 		params[] = 0;

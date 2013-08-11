@@ -11,6 +11,7 @@ import UnrealScript.TribesGame.TrVehicle;
 
 extern(C++) interface TrSeekingMissileManager : Info
 {
+public extern(D):
 	enum ETrackingMissileEvent : ubyte
 	{
 		MissileEvent_NewMissileTracking = 0,
@@ -22,30 +23,40 @@ extern(C++) interface TrSeekingMissileManager : Info
 	}
 	struct TargetingSaberLauncherInfo
 	{
-		public @property final auto ref TrDevice_SaberLauncher SaberLauncher() { return *cast(TrDevice_SaberLauncher*)(cast(size_t)&this + 0); }
-		private ubyte __SaberLauncher[4];
-		public @property final auto ref float RemainingClientNotificationTime() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __RemainingClientNotificationTime[4];
-		public @property final auto ref TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
-		private ubyte __VictimController[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			TrDevice_SaberLauncher SaberLauncher() { return *cast(TrDevice_SaberLauncher*)(cast(size_t)&this + 0); }
+			float RemainingClientNotificationTime() { return *cast(float*)(cast(size_t)&this + 8); }
+			TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
+		}
 	}
 	struct SeekingMissileInfo
 	{
-		// WARNING: Property 'Missile' has the same name as a defined type!
-		public @property final auto ref TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
-		private ubyte __VictimController[4];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref
+		{
+			// WARNING: Property 'Missile' has the same name as a defined type!
+			TrPlayerController VictimController() { return *cast(TrPlayerController*)(cast(size_t)&this + 4); }
+		}
 	}
-	public @property final auto ref ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { return *cast(ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo)*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { return *cast(ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo)*)(cast(size_t)cast(void*)this + 476); }
-	public @property final auto ref int RepCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-	final void Tick(float DeltaTime)
+	@property final auto ref
+	{
+		ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { return *cast(ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo)*)(cast(size_t)cast(void*)this + 488); }
+		ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { return *cast(ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo)*)(cast(size_t)cast(void*)this + 476); }
+		int RepCounter() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
+	}
+final:
+	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110782], params.ptr, cast(void*)0);
 	}
-	final void AddSaberLauncher(TrDevice_SaberLauncher SaberLauncherToAdd, TrObject.EMissileLock MissileLockValue)
+	void AddSaberLauncher(TrDevice_SaberLauncher SaberLauncherToAdd, TrObject.EMissileLock MissileLockValue)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -53,23 +64,23 @@ extern(C++) interface TrSeekingMissileManager : Info
 		*cast(TrObject.EMissileLock*)&params[4] = MissileLockValue;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110792], params.ptr, cast(void*)0);
 	}
-	final void RemoveSaberLauncher(TrDevice_SaberLauncher SaberLauncherToRemove)
+	void RemoveSaberLauncher(TrDevice_SaberLauncher SaberLauncherToRemove)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrDevice_SaberLauncher*)params.ptr = SaberLauncherToRemove;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110802], params.ptr, cast(void*)0);
 	}
-	final int GetNumSaberLaunchersTargetingController(TrPlayerController Controller, bool bOnlyClientNotified)
+	int GetNumSaberLaunchersTargetingController(TrPlayerController pController, bool bOnlyClientNotified)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(TrPlayerController*)params.ptr = Controller;
+		*cast(TrPlayerController*)params.ptr = pController;
 		*cast(bool*)&params[4] = bOnlyClientNotified;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110809], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final int GetNumSaberLaunchersTargetingVehicle(TrVehicle targetVehicle, bool bOnlyClientNotified)
+	int GetNumSaberLaunchersTargetingVehicle(TrVehicle targetVehicle, bool bOnlyClientNotified)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -78,29 +89,29 @@ extern(C++) interface TrSeekingMissileManager : Info
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110815], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void AddMissile(TrProj_TrackingMissile MissileToAdd)
+	void AddMissile(TrProj_TrackingMissile MissileToAdd)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrProj_TrackingMissile*)params.ptr = MissileToAdd;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110821], params.ptr, cast(void*)0);
 	}
-	final void RemoveMissile(TrProj_TrackingMissile MissileToRemove)
+	void RemoveMissile(TrProj_TrackingMissile MissileToRemove)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrProj_TrackingMissile*)params.ptr = MissileToRemove;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110831], params.ptr, cast(void*)0);
 	}
-	final int GetNumMissilesTrackingController(TrPlayerController Controller)
+	int GetNumMissilesTrackingController(TrPlayerController pController)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(TrPlayerController*)params.ptr = Controller;
+		*cast(TrPlayerController*)params.ptr = pController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110837], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final int GetNumMissilesTrackingVehicle(TrVehicle targetVehicle)
+	int GetNumMissilesTrackingVehicle(TrVehicle targetVehicle)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -108,7 +119,7 @@ extern(C++) interface TrSeekingMissileManager : Info
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110842], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final void VictimControllerUpdated(TrPlayerController VictimController, TrSeekingMissileManager.ETrackingMissileEvent MissileEvent)
+	void VictimControllerUpdated(TrPlayerController VictimController, TrSeekingMissileManager.ETrackingMissileEvent MissileEvent)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -116,7 +127,7 @@ extern(C++) interface TrSeekingMissileManager : Info
 		*cast(TrSeekingMissileManager.ETrackingMissileEvent*)&params[4] = MissileEvent;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110847], params.ptr, cast(void*)0);
 	}
-	final void TargetVehicleUpdated(TrVehicle targetVehicle, TrSeekingMissileManager.ETrackingMissileEvent MissileEvent)
+	void TargetVehicleUpdated(TrVehicle targetVehicle, TrSeekingMissileManager.ETrackingMissileEvent MissileEvent)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -124,48 +135,48 @@ extern(C++) interface TrSeekingMissileManager : Info
 		*cast(TrSeekingMissileManager.ETrackingMissileEvent*)&params[4] = MissileEvent;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110852], params.ptr, cast(void*)0);
 	}
-	final void BeginSaberLauncherTargeting(TrPlayerController VictimController)
+	void BeginSaberLauncherTargeting(TrPlayerController VictimController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = VictimController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110859], params.ptr, cast(void*)0);
 	}
-	final void StopSaberLauncherTargeting(TrPlayerController VictimController)
+	void StopSaberLauncherTargeting(TrPlayerController VictimController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = VictimController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110861], params.ptr, cast(void*)0);
 	}
-	final void BeginMissileTracking(TrPlayerController VictimController)
+	void BeginMissileTracking(TrPlayerController VictimController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = VictimController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110863], params.ptr, cast(void*)0);
 	}
-	final void StopMissileTracking(TrPlayerController VictimController)
+	void StopMissileTracking(TrPlayerController VictimController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = VictimController;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110865], params.ptr, cast(void*)0);
 	}
-	final void PawnLeftVehicle(Pawn LeavingPawn, TrVehicle Vehicle)
+	void PawnLeftVehicle(Pawn LeavingPawn, TrVehicle pVehicle)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = LeavingPawn;
-		*cast(TrVehicle*)&params[4] = Vehicle;
+		*cast(TrVehicle*)&params[4] = pVehicle;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110867], params.ptr, cast(void*)0);
 	}
-	final void PawnEnteredVehicle(Pawn EnteringPawn, TrVehicle Vehicle, int SeatIndex)
+	void PawnEnteredVehicle(Pawn EnteringPawn, TrVehicle pVehicle, int SeatIndex)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = EnteringPawn;
-		*cast(TrVehicle*)&params[4] = Vehicle;
+		*cast(TrVehicle*)&params[4] = pVehicle;
 		*cast(int*)&params[8] = SeatIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110875], params.ptr, cast(void*)0);
 	}

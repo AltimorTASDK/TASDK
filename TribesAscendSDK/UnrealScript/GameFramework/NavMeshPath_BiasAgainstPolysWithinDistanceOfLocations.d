@@ -6,11 +6,16 @@ import UnrealScript.Engine.NavMeshPathConstraint;
 
 extern(C++) interface NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations : NavMeshPathConstraint
 {
-	public @property final auto ref ScriptArray!(Vector) LocationsToCheck() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 108); }
-	public @property final auto ref float DistanceToCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 92); }
-	public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 80); }
-	final bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, Vector InLocation, Rotator InRotation, float InDistanceToCheck, ScriptArray!(Vector) InLocationsToCheck)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(Vector) LocationsToCheck() { return *cast(ScriptArray!(Vector)*)(cast(size_t)cast(void*)this + 108); }
+		float DistanceToCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }
+		Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 92); }
+		Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 80); }
+	}
+final:
+	bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, Vector InLocation, Rotator InRotation, float InDistanceToCheck, ScriptArray!(Vector) InLocationsToCheck)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -22,7 +27,7 @@ extern(C++) interface NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations : Na
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32872], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[44];
 	}
-	final void Recycle()
+	void Recycle()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32881], cast(void*)0, cast(void*)0);
 	}

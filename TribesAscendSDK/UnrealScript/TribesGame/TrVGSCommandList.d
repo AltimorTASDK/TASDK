@@ -5,6 +5,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrVGSCommandList : UObject
 {
+public extern(D):
 	enum EVGSContextLocation : ubyte
 	{
 		VGSContext_None = 0,
@@ -192,350 +193,357 @@ extern(C++) interface TrVGSCommandList : UObject
 	}
 	struct TrVGSCommand
 	{
-		public @property final bool bIsContext() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x1) != 0; }
-		public @property final bool bIsContext(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x1; } return val; }
-		private ubyte __bIsContext[4];
-		public @property final auto ref ScriptString MenuString() { return *cast(ScriptString*)(cast(size_t)&this + 36); }
-		private ubyte __MenuString[12];
-		public @property final auto ref ScriptString ChatString() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
-		private ubyte __ChatString[12];
-		public @property final auto ref ScriptString KeyBindPath() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
-		private ubyte __KeyBindPath[12];
-		// WARNING: Property 'KeyBind' has the same name as a defined type!
-		public @property final auto ref TrVGSCommandList.EVGSScope VGSScope() { return *cast(TrVGSCommandList.EVGSScope*)(cast(size_t)&this + 0); }
-		private ubyte __VGSScope[1];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				ScriptString MenuString() { return *cast(ScriptString*)(cast(size_t)&this + 36); }
+				ScriptString ChatString() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
+				ScriptString KeyBindPath() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
+				// WARNING: Property 'KeyBind' has the same name as a defined type!
+				TrVGSCommandList.EVGSScope VGSScope() { return *cast(TrVGSCommandList.EVGSScope*)(cast(size_t)&this + 0); }
+			}
+			bool bIsContext() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x1) != 0; }
+			bool bIsContext(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x1; } return val; }
+		}
 	}
-	public @property final auto ref ScriptString MenuString_TeamWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11724); }
-	public @property final auto ref ScriptString MenuString_TeamThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11712); }
-	public @property final auto ref ScriptString MenuString_TeamSorry() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11700); }
-	public @property final auto ref ScriptString MenuString_TeamMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11688); }
-	public @property final auto ref ScriptString MenuString_TeamHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11676); }
-	public @property final auto ref ScriptString MenuString_TeamDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11664); }
-	public @property final auto ref ScriptString MenuString_TeamCeaseFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11652); }
-	public @property final auto ref ScriptString MenuString_TeamBaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11640); }
-	public @property final auto ref ScriptString MenuString_TeamAnytime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11628); }
-	public @property final auto ref ScriptString MenuString_TeamNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11616); }
-	public @property final auto ref ScriptString MenuString_TeamYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11604); }
-	public @property final auto ref ScriptString MenuString_WarnVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11592); }
-	public @property final auto ref ScriptString MenuString_WarnEnemies() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11580); }
-	public @property final auto ref ScriptString MenuString_UpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11568); }
-	public @property final auto ref ScriptString MenuString_UpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11556); }
-	public @property final auto ref ScriptString MenuString_UpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11544); }
-	public @property final auto ref ScriptString MenuString_TargetWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11532); }
-	public @property final auto ref ScriptString MenuString_TargetVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11520); }
-	public @property final auto ref ScriptString MenuString_TargetTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11508); }
-	public @property final auto ref ScriptString MenuString_TargetSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11496); }
-	public @property final auto ref ScriptString MenuString_TargetNeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11484); }
-	public @property final auto ref ScriptString MenuString_TargetFireOnMy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11472); }
-	public @property final auto ref ScriptString MenuString_TargetFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11460); }
-	public @property final auto ref ScriptString MenuString_TargetDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11448); }
-	public @property final auto ref ScriptString MenuString_TargetBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11436); }
-	public @property final auto ref ScriptString MenuString_TargetAcquired() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11424); }
-	public @property final auto ref ScriptString MenuString_SelfUpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11412); }
-	public @property final auto ref ScriptString MenuString_SelfUpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11400); }
-	public @property final auto ref ScriptString MenuString_SelfUpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11388); }
-	public @property final auto ref ScriptString MenuString_SelfTaskVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11376); }
-	public @property final auto ref ScriptString MenuString_SelfTaskDeployTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11364); }
-	public @property final auto ref ScriptString MenuString_SelfTaskDeploySensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11352); }
-	public @property final auto ref ScriptString MenuString_SelfTaskOnIt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11340); }
-	public @property final auto ref ScriptString MenuString_SelfTaskForcefield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11328); }
-	public @property final auto ref ScriptString MenuString_SelfTaskDefenses() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11316); }
-	public @property final auto ref ScriptString MenuString_SelfTaskCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11304); }
-	public @property final auto ref ScriptString MenuString_SelfRepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11292); }
-	public @property final auto ref ScriptString MenuString_SelfRepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11280); }
-	public @property final auto ref ScriptString MenuString_SelfRepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11268); }
-	public @property final auto ref ScriptString MenuString_SelfRepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11256); }
-	public @property final auto ref ScriptString MenuString_SelfRepairBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11244); }
-	public @property final auto ref ScriptString MenuString_SelfDefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11232); }
-	public @property final auto ref ScriptString MenuString_SelfDefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11220); }
-	public @property final auto ref ScriptString MenuString_SelfDefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11208); }
-	public @property final auto ref ScriptString MenuString_SelfDefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11196); }
-	public @property final auto ref ScriptString MenuString_SelfDefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11184); }
-	public @property final auto ref ScriptString MenuString_SelfDefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11172); }
-	public @property final auto ref ScriptString MenuString_SelfDefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11160); }
-	public @property final auto ref ScriptString MenuString_SelfDefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11148); }
-	public @property final auto ref ScriptString MenuString_SelfDefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11136); }
-	public @property final auto ref ScriptString MenuString_SelfDefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11124); }
-	public @property final auto ref ScriptString MenuString_SelfDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11112); }
-	public @property final auto ref ScriptString MenuString_SelfDefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11100); }
-	public @property final auto ref ScriptString MenuString_SelfAttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11088); }
-	public @property final auto ref ScriptString MenuString_SelfAttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11076); }
-	public @property final auto ref ScriptString MenuString_SelfAttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11064); }
-	public @property final auto ref ScriptString MenuString_SelfAttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11052); }
-	public @property final auto ref ScriptString MenuString_SelfAttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11040); }
-	public @property final auto ref ScriptString MenuString_SelfAttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11028); }
-	public @property final auto ref ScriptString MenuString_SelfAttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11016); }
-	public @property final auto ref ScriptString MenuString_SelfAttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11004); }
-	public @property final auto ref ScriptString MenuString_SelfAttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10992); }
-	public @property final auto ref ScriptString MenuString_SelfAttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10980); }
-	public @property final auto ref ScriptString MenuString_SelfAttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10968); }
-	public @property final auto ref ScriptString MenuString_SelfAttack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10956); }
-	public @property final auto ref ScriptString MenuString_NeedWhereTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10944); }
-	public @property final auto ref ScriptString MenuString_NeedVehicleReady() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10932); }
-	public @property final auto ref ScriptString MenuString_NeedSupport() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10920); }
-	public @property final auto ref ScriptString MenuString_NeedRide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10908); }
-	public @property final auto ref ScriptString MenuString_NeedHoldVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10896); }
-	public @property final auto ref ScriptString MenuString_NeedEscort() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10884); }
-	public @property final auto ref ScriptString MenuString_NeedDriver() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10872); }
-	public @property final auto ref ScriptString MenuString_NeedCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10860); }
-	public @property final auto ref ScriptString MenuString_FlagTake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10848); }
-	public @property final auto ref ScriptString MenuString_FlagSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10836); }
-	public @property final auto ref ScriptString MenuString_FlagSelfRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10824); }
-	public @property final auto ref ScriptString MenuString_FlagRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10812); }
-	public @property final auto ref ScriptString MenuString_FlagGiveMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10800); }
-	public @property final auto ref ScriptString MenuString_FlagIHave() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10788); }
-	public @property final auto ref ScriptString MenuString_FlagDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10776); }
-	public @property final auto ref ScriptString MenuString_EnemyVehicleDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10764); }
-	public @property final auto ref ScriptString MenuString_EnemyTurretsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10752); }
-	public @property final auto ref ScriptString MenuString_EnemySensorsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10740); }
-	public @property final auto ref ScriptString MenuString_EnemyGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10728); }
-	public @property final auto ref ScriptString MenuString_EnemyDisarray() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10716); }
-	public @property final auto ref ScriptString MenuString_CommandAssignment() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10704); }
-	public @property final auto ref ScriptString MenuString_CommandDeclined() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10692); }
-	public @property final auto ref ScriptString MenuString_CommandCompleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10680); }
-	public @property final auto ref ScriptString MenuString_CommandAcknowledged() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10668); }
-	public @property final auto ref ScriptString MenuString_BaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10656); }
-	public @property final auto ref ScriptString MenuString_BaseRetake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10644); }
-	public @property final auto ref ScriptString MenuString_EnemyInBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10632); }
-	public @property final auto ref ScriptString MenuString_BaseClear() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10620); }
-	public @property final auto ref ScriptString MenuString_RepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10608); }
-	public @property final auto ref ScriptString MenuString_RepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10596); }
-	public @property final auto ref ScriptString MenuString_RepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10584); }
-	public @property final auto ref ScriptString MenuString_RepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10572); }
-	public @property final auto ref ScriptString MenuString_DefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10560); }
-	public @property final auto ref ScriptString MenuString_DefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10548); }
-	public @property final auto ref ScriptString MenuString_DefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10536); }
-	public @property final auto ref ScriptString MenuString_DefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10524); }
-	public @property final auto ref ScriptString MenuString_DefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10512); }
-	public @property final auto ref ScriptString MenuString_DefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10500); }
-	public @property final auto ref ScriptString MenuString_DefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10488); }
-	public @property final auto ref ScriptString MenuString_DefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10476); }
-	public @property final auto ref ScriptString MenuString_DefendReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10464); }
-	public @property final auto ref ScriptString MenuString_DefendMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10452); }
-	public @property final auto ref ScriptString MenuString_DefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10440); }
-	public @property final auto ref ScriptString MenuString_DefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10428); }
-	public @property final auto ref ScriptString MenuString_DefendEntrances() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10416); }
-	public @property final auto ref ScriptString MenuString_DefendFlagCarrier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10404); }
-	public @property final auto ref ScriptString MenuString_DefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10392); }
-	public @property final auto ref ScriptString MenuString_AttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10380); }
-	public @property final auto ref ScriptString MenuString_AttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10368); }
-	public @property final auto ref ScriptString MenuString_AttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10356); }
-	public @property final auto ref ScriptString MenuString_AttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10344); }
-	public @property final auto ref ScriptString MenuString_AttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10332); }
-	public @property final auto ref ScriptString MenuString_AttackWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10320); }
-	public @property final auto ref ScriptString MenuString_AttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10308); }
-	public @property final auto ref ScriptString MenuString_AttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10296); }
-	public @property final auto ref ScriptString MenuString_AttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10284); }
-	public @property final auto ref ScriptString MenuString_AttackReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10272); }
-	public @property final auto ref ScriptString MenuString_AttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10260); }
-	public @property final auto ref ScriptString MenuString_AttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10248); }
-	public @property final auto ref ScriptString MenuString_AttackDisrupt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10236); }
-	public @property final auto ref ScriptString MenuString_AttackChase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10224); }
-	public @property final auto ref ScriptString MenuString_AttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10212); }
-	public @property final auto ref ScriptString MenuString_Attack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10200); }
-	public @property final auto ref ScriptString MenuString_GlobalTauntLearn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10188); }
-	public @property final auto ref ScriptString MenuString_GlobalTauntSarcasm() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10176); }
-	public @property final auto ref ScriptString MenuString_GlobalTauntBrag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10164); }
-	public @property final auto ref ScriptString MenuString_GlobalTauntObnoxious() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10152); }
-	public @property final auto ref ScriptString MenuString_GlobalTauntAww() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10140); }
-	public @property final auto ref ScriptString MenuString_GlobalRespondWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10128); }
-	public @property final auto ref ScriptString MenuString_GlobalRespondThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10116); }
-	public @property final auto ref ScriptString MenuString_GlobalRespondDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10104); }
-	public @property final auto ref ScriptString MenuString_GlobalRespondAnyTime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10092); }
-	public @property final auto ref ScriptString MenuString_GlobalComplimentGreatShot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10080); }
-	public @property final auto ref ScriptString MenuString_GlobalComplimentYouRock() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10068); }
-	public @property final auto ref ScriptString MenuString_GlobalComplimentNiceMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10056); }
-	public @property final auto ref ScriptString MenuString_GlobalComplimentGoodGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10044); }
-	public @property final auto ref ScriptString MenuString_GlobalComplimentAwesome() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10032); }
-	public @property final auto ref ScriptString MenuString_GlobalWoohoo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10020); }
-	public @property final auto ref ScriptString MenuString_GlobalShazbot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10008); }
-	public @property final auto ref ScriptString MenuString_GlobalQuiet() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9996); }
-	public @property final auto ref ScriptString MenuString_GlobalOoops() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9984); }
-	public @property final auto ref ScriptString MenuString_GlobalBye() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9972); }
-	public @property final auto ref ScriptString MenuString_GlobalHi() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9960); }
-	public @property final auto ref ScriptString MenuString_GlobalNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9948); }
-	public @property final auto ref ScriptString MenuString_GlobalYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9936); }
-	public @property final auto ref ScriptString ChatString_TeamWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9924); }
-	public @property final auto ref ScriptString ChatString_TeamThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9912); }
-	public @property final auto ref ScriptString ChatString_TeamSorry() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9900); }
-	public @property final auto ref ScriptString ChatString_TeamMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9888); }
-	public @property final auto ref ScriptString ChatString_TeamHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9876); }
-	public @property final auto ref ScriptString ChatString_TeamDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9864); }
-	public @property final auto ref ScriptString ChatString_TeamCeaseFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9852); }
-	public @property final auto ref ScriptString ChatString_TeamBaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9840); }
-	public @property final auto ref ScriptString ChatString_TeamAnytime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9828); }
-	public @property final auto ref ScriptString ChatString_TeamNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9816); }
-	public @property final auto ref ScriptString ChatString_TeamYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9804); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorDeployable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9792); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9780); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorSensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9768); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9756); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorHeavyPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9744); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorMediumPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9732); }
-	public @property final auto ref ScriptString ChatString_WarnContext_ActorLightPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9720); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearby() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9708); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearEnemyVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9696); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearOurVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9684); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearEnemyBaseTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9672); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearOurBaseTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9660); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearEnemyFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9648); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearOurFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9636); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearEnemyGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9624); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyNearOurGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9612); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyInMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9600); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyBehindEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9588); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyBehindOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9576); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyAroundEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9564); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyAroundOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9552); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyInsideEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9540); }
-	public @property final auto ref ScriptString ChatString_WarnContext_EnemyInsideOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9528); }
-	public @property final auto ref ScriptString ChatString_WarnVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9516); }
-	public @property final auto ref ScriptString ChatString_WarnEnemies() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9504); }
-	public @property final auto ref ScriptString ChatString_UpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9492); }
-	public @property final auto ref ScriptString ChatString_UpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9480); }
-	public @property final auto ref ScriptString ChatString_UpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9468); }
-	public @property final auto ref ScriptString ChatString_TargetWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9456); }
-	public @property final auto ref ScriptString ChatString_TargetVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9444); }
-	public @property final auto ref ScriptString ChatString_TargetTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9432); }
-	public @property final auto ref ScriptString ChatString_TargetSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9420); }
-	public @property final auto ref ScriptString ChatString_TargetNeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9408); }
-	public @property final auto ref ScriptString ChatString_TargetFireOnMy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9396); }
-	public @property final auto ref ScriptString ChatString_TargetFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9384); }
-	public @property final auto ref ScriptString ChatString_TargetDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9372); }
-	public @property final auto ref ScriptString ChatString_TargetBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9360); }
-	public @property final auto ref ScriptString ChatString_TargetAcquired() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9348); }
-	public @property final auto ref ScriptString ChatString_SelfUpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9336); }
-	public @property final auto ref ScriptString ChatString_SelfUpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9324); }
-	public @property final auto ref ScriptString ChatString_SelfUpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9312); }
-	public @property final auto ref ScriptString ChatString_SelfTaskVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9300); }
-	public @property final auto ref ScriptString ChatString_SelfTaskDeployTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9288); }
-	public @property final auto ref ScriptString ChatString_SelfTaskDeploySensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9276); }
-	public @property final auto ref ScriptString ChatString_SelfTaskOnIt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9264); }
-	public @property final auto ref ScriptString ChatString_SelfTaskForcefield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9252); }
-	public @property final auto ref ScriptString ChatString_SelfTaskDefenses() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9240); }
-	public @property final auto ref ScriptString ChatString_SelfTaskCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9228); }
-	public @property final auto ref ScriptString ChatString_SelfRepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9216); }
-	public @property final auto ref ScriptString ChatString_SelfRepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9204); }
-	public @property final auto ref ScriptString ChatString_SelfRepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9192); }
-	public @property final auto ref ScriptString ChatString_SelfRepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9180); }
-	public @property final auto ref ScriptString ChatString_SelfRepairBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9168); }
-	public @property final auto ref ScriptString ChatString_SelfDefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9156); }
-	public @property final auto ref ScriptString ChatString_SelfDefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9144); }
-	public @property final auto ref ScriptString ChatString_SelfDefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9132); }
-	public @property final auto ref ScriptString ChatString_SelfDefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9120); }
-	public @property final auto ref ScriptString ChatString_SelfDefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9108); }
-	public @property final auto ref ScriptString ChatString_SelfDefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9096); }
-	public @property final auto ref ScriptString ChatString_SelfDefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9084); }
-	public @property final auto ref ScriptString ChatString_SelfDefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9072); }
-	public @property final auto ref ScriptString ChatString_SelfDefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9060); }
-	public @property final auto ref ScriptString ChatString_SelfDefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9048); }
-	public @property final auto ref ScriptString ChatString_SelfDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9036); }
-	public @property final auto ref ScriptString ChatString_SelfDefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9024); }
-	public @property final auto ref ScriptString ChatString_SelfAttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9012); }
-	public @property final auto ref ScriptString ChatString_SelfAttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9000); }
-	public @property final auto ref ScriptString ChatString_SelfAttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8988); }
-	public @property final auto ref ScriptString ChatString_SelfAttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8976); }
-	public @property final auto ref ScriptString ChatString_SelfAttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8964); }
-	public @property final auto ref ScriptString ChatString_SelfAttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8952); }
-	public @property final auto ref ScriptString ChatString_SelfAttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8940); }
-	public @property final auto ref ScriptString ChatString_SelfAttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8928); }
-	public @property final auto ref ScriptString ChatString_SelfAttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8916); }
-	public @property final auto ref ScriptString ChatString_SelfAttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8904); }
-	public @property final auto ref ScriptString ChatString_SelfAttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8892); }
-	public @property final auto ref ScriptString ChatString_SelfAttack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8880); }
-	public @property final auto ref ScriptString ChatString_NeedWhereTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8868); }
-	public @property final auto ref ScriptString ChatString_NeedVehicleReady() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8856); }
-	public @property final auto ref ScriptString ChatString_NeedSupport() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8844); }
-	public @property final auto ref ScriptString ChatString_NeedRide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8832); }
-	public @property final auto ref ScriptString ChatString_NeedHoldVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8820); }
-	public @property final auto ref ScriptString ChatString_NeedEscort() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8808); }
-	public @property final auto ref ScriptString ChatString_NeedDriver() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8796); }
-	public @property final auto ref ScriptString ChatString_NeedCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8784); }
-	public @property final auto ref ScriptString ChatString_FlagTake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8772); }
-	public @property final auto ref ScriptString ChatString_FlagSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8760); }
-	public @property final auto ref ScriptString ChatString_FlagSelfRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8748); }
-	public @property final auto ref ScriptString ChatString_FlagRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8736); }
-	public @property final auto ref ScriptString ChatString_FlagGiveMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8724); }
-	public @property final auto ref ScriptString ChatString_FlagIHave() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8712); }
-	public @property final auto ref ScriptString ChatString_FlagDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8700); }
-	public @property final auto ref ScriptString ChatString_EnemyVehicleDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8688); }
-	public @property final auto ref ScriptString ChatString_EnemyTurretsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8676); }
-	public @property final auto ref ScriptString ChatString_EnemySensorsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8664); }
-	public @property final auto ref ScriptString ChatString_EnemyGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8652); }
-	public @property final auto ref ScriptString ChatString_EnemyDisarray() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8640); }
-	public @property final auto ref ScriptString ChatString_CommandAssignment() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8628); }
-	public @property final auto ref ScriptString ChatString_CommandDeclined() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8616); }
-	public @property final auto ref ScriptString ChatString_CommandCompleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8604); }
-	public @property final auto ref ScriptString ChatString_CommandAcknowledged() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8592); }
-	public @property final auto ref ScriptString ChatString_BaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8580); }
-	public @property final auto ref ScriptString ChatString_BaseRetake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8568); }
-	public @property final auto ref ScriptString ChatString_EnemyInBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8556); }
-	public @property final auto ref ScriptString ChatString_BaseClear() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8544); }
-	public @property final auto ref ScriptString ChatString_RepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8532); }
-	public @property final auto ref ScriptString ChatString_RepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8520); }
-	public @property final auto ref ScriptString ChatString_RepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8508); }
-	public @property final auto ref ScriptString ChatString_RepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8496); }
-	public @property final auto ref ScriptString ChatString_DefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8484); }
-	public @property final auto ref ScriptString ChatString_DefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8472); }
-	public @property final auto ref ScriptString ChatString_DefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8460); }
-	public @property final auto ref ScriptString ChatString_DefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8448); }
-	public @property final auto ref ScriptString ChatString_DefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8436); }
-	public @property final auto ref ScriptString ChatString_DefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8424); }
-	public @property final auto ref ScriptString ChatString_DefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8412); }
-	public @property final auto ref ScriptString ChatString_DefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8400); }
-	public @property final auto ref ScriptString ChatString_DefendReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8388); }
-	public @property final auto ref ScriptString ChatString_DefendMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8376); }
-	public @property final auto ref ScriptString ChatString_DefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8364); }
-	public @property final auto ref ScriptString ChatString_DefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8352); }
-	public @property final auto ref ScriptString ChatString_DefendEntrances() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8340); }
-	public @property final auto ref ScriptString ChatString_DefendFlagCarrier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8328); }
-	public @property final auto ref ScriptString ChatString_DefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8316); }
-	public @property final auto ref ScriptString ChatString_AttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8304); }
-	public @property final auto ref ScriptString ChatString_AttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8292); }
-	public @property final auto ref ScriptString ChatString_AttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8280); }
-	public @property final auto ref ScriptString ChatString_AttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8268); }
-	public @property final auto ref ScriptString ChatString_AttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8256); }
-	public @property final auto ref ScriptString ChatString_AttackWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8244); }
-	public @property final auto ref ScriptString ChatString_AttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8232); }
-	public @property final auto ref ScriptString ChatString_AttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8220); }
-	public @property final auto ref ScriptString ChatString_AttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8208); }
-	public @property final auto ref ScriptString ChatString_AttackReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8196); }
-	public @property final auto ref ScriptString ChatString_AttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8184); }
-	public @property final auto ref ScriptString ChatString_AttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8172); }
-	public @property final auto ref ScriptString ChatString_AttackDisrupt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8160); }
-	public @property final auto ref ScriptString ChatString_AttackChase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8148); }
-	public @property final auto ref ScriptString ChatString_AttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8136); }
-	public @property final auto ref ScriptString ChatString_Attack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8124); }
-	public @property final auto ref ScriptString ChatString_GlobalTauntLearn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8112); }
-	public @property final auto ref ScriptString ChatString_GlobalTauntSarcasm() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8100); }
-	public @property final auto ref ScriptString ChatString_GlobalTauntBrag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8088); }
-	public @property final auto ref ScriptString ChatString_GlobalTauntObnoxious() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8076); }
-	public @property final auto ref ScriptString ChatString_GlobalTauntAww() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8064); }
-	public @property final auto ref ScriptString ChatString_GlobalRespondWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8052); }
-	public @property final auto ref ScriptString ChatString_GlobalRespondThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8040); }
-	public @property final auto ref ScriptString ChatString_GlobalRespondDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8028); }
-	public @property final auto ref ScriptString ChatString_GlobalRespondAnyTime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8016); }
-	public @property final auto ref ScriptString ChatString_GlobalComplimentGreatShot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8004); }
-	public @property final auto ref ScriptString ChatString_GlobalComplimentYouRock() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7992); }
-	public @property final auto ref ScriptString ChatString_GlobalComplimentNiceMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7980); }
-	public @property final auto ref ScriptString ChatString_GlobalComplimentGoodGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7968); }
-	public @property final auto ref ScriptString ChatString_GlobalComplimentAwesome() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7956); }
-	public @property final auto ref ScriptString ChatString_GlobalWoohoo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7944); }
-	public @property final auto ref ScriptString ChatString_GlobalShazbot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7932); }
-	public @property final auto ref ScriptString ChatString_GlobalQuiet() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7920); }
-	public @property final auto ref ScriptString ChatString_GlobalOoops() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7908); }
-	public @property final auto ref ScriptString ChatString_GlobalBye() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7896); }
-	public @property final auto ref ScriptString ChatString_GlobalHi() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7884); }
-	public @property final auto ref ScriptString ChatString_GlobalNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7872); }
-	public @property final auto ref ScriptString ChatString_GlobalYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7860); }
-	public @property final auto ref TrVGSCommandList.TrVGSCommand m_CommandList() { return *cast(TrVGSCommandList.TrVGSCommand*)(cast(size_t)cast(void*)this + 60); }
-	final void Init()
+	@property final auto ref
+	{
+		ScriptString MenuString_TeamWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11724); }
+		ScriptString MenuString_TeamThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11712); }
+		ScriptString MenuString_TeamSorry() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11700); }
+		ScriptString MenuString_TeamMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11688); }
+		ScriptString MenuString_TeamHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11676); }
+		ScriptString MenuString_TeamDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11664); }
+		ScriptString MenuString_TeamCeaseFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11652); }
+		ScriptString MenuString_TeamBaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11640); }
+		ScriptString MenuString_TeamAnytime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11628); }
+		ScriptString MenuString_TeamNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11616); }
+		ScriptString MenuString_TeamYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11604); }
+		ScriptString MenuString_WarnVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11592); }
+		ScriptString MenuString_WarnEnemies() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11580); }
+		ScriptString MenuString_UpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11568); }
+		ScriptString MenuString_UpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11556); }
+		ScriptString MenuString_UpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11544); }
+		ScriptString MenuString_TargetWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11532); }
+		ScriptString MenuString_TargetVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11520); }
+		ScriptString MenuString_TargetTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11508); }
+		ScriptString MenuString_TargetSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11496); }
+		ScriptString MenuString_TargetNeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11484); }
+		ScriptString MenuString_TargetFireOnMy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11472); }
+		ScriptString MenuString_TargetFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11460); }
+		ScriptString MenuString_TargetDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11448); }
+		ScriptString MenuString_TargetBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11436); }
+		ScriptString MenuString_TargetAcquired() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11424); }
+		ScriptString MenuString_SelfUpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11412); }
+		ScriptString MenuString_SelfUpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11400); }
+		ScriptString MenuString_SelfUpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11388); }
+		ScriptString MenuString_SelfTaskVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11376); }
+		ScriptString MenuString_SelfTaskDeployTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11364); }
+		ScriptString MenuString_SelfTaskDeploySensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11352); }
+		ScriptString MenuString_SelfTaskOnIt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11340); }
+		ScriptString MenuString_SelfTaskForcefield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11328); }
+		ScriptString MenuString_SelfTaskDefenses() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11316); }
+		ScriptString MenuString_SelfTaskCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11304); }
+		ScriptString MenuString_SelfRepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11292); }
+		ScriptString MenuString_SelfRepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11280); }
+		ScriptString MenuString_SelfRepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11268); }
+		ScriptString MenuString_SelfRepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11256); }
+		ScriptString MenuString_SelfRepairBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11244); }
+		ScriptString MenuString_SelfDefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11232); }
+		ScriptString MenuString_SelfDefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11220); }
+		ScriptString MenuString_SelfDefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11208); }
+		ScriptString MenuString_SelfDefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11196); }
+		ScriptString MenuString_SelfDefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11184); }
+		ScriptString MenuString_SelfDefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11172); }
+		ScriptString MenuString_SelfDefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11160); }
+		ScriptString MenuString_SelfDefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11148); }
+		ScriptString MenuString_SelfDefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11136); }
+		ScriptString MenuString_SelfDefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11124); }
+		ScriptString MenuString_SelfDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11112); }
+		ScriptString MenuString_SelfDefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11100); }
+		ScriptString MenuString_SelfAttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11088); }
+		ScriptString MenuString_SelfAttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11076); }
+		ScriptString MenuString_SelfAttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11064); }
+		ScriptString MenuString_SelfAttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11052); }
+		ScriptString MenuString_SelfAttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11040); }
+		ScriptString MenuString_SelfAttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11028); }
+		ScriptString MenuString_SelfAttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11016); }
+		ScriptString MenuString_SelfAttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 11004); }
+		ScriptString MenuString_SelfAttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10992); }
+		ScriptString MenuString_SelfAttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10980); }
+		ScriptString MenuString_SelfAttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10968); }
+		ScriptString MenuString_SelfAttack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10956); }
+		ScriptString MenuString_NeedWhereTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10944); }
+		ScriptString MenuString_NeedVehicleReady() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10932); }
+		ScriptString MenuString_NeedSupport() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10920); }
+		ScriptString MenuString_NeedRide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10908); }
+		ScriptString MenuString_NeedHoldVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10896); }
+		ScriptString MenuString_NeedEscort() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10884); }
+		ScriptString MenuString_NeedDriver() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10872); }
+		ScriptString MenuString_NeedCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10860); }
+		ScriptString MenuString_FlagTake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10848); }
+		ScriptString MenuString_FlagSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10836); }
+		ScriptString MenuString_FlagSelfRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10824); }
+		ScriptString MenuString_FlagRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10812); }
+		ScriptString MenuString_FlagGiveMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10800); }
+		ScriptString MenuString_FlagIHave() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10788); }
+		ScriptString MenuString_FlagDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10776); }
+		ScriptString MenuString_EnemyVehicleDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10764); }
+		ScriptString MenuString_EnemyTurretsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10752); }
+		ScriptString MenuString_EnemySensorsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10740); }
+		ScriptString MenuString_EnemyGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10728); }
+		ScriptString MenuString_EnemyDisarray() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10716); }
+		ScriptString MenuString_CommandAssignment() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10704); }
+		ScriptString MenuString_CommandDeclined() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10692); }
+		ScriptString MenuString_CommandCompleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10680); }
+		ScriptString MenuString_CommandAcknowledged() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10668); }
+		ScriptString MenuString_BaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10656); }
+		ScriptString MenuString_BaseRetake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10644); }
+		ScriptString MenuString_EnemyInBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10632); }
+		ScriptString MenuString_BaseClear() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10620); }
+		ScriptString MenuString_RepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10608); }
+		ScriptString MenuString_RepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10596); }
+		ScriptString MenuString_RepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10584); }
+		ScriptString MenuString_RepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10572); }
+		ScriptString MenuString_DefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10560); }
+		ScriptString MenuString_DefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10548); }
+		ScriptString MenuString_DefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10536); }
+		ScriptString MenuString_DefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10524); }
+		ScriptString MenuString_DefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10512); }
+		ScriptString MenuString_DefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10500); }
+		ScriptString MenuString_DefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10488); }
+		ScriptString MenuString_DefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10476); }
+		ScriptString MenuString_DefendReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10464); }
+		ScriptString MenuString_DefendMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10452); }
+		ScriptString MenuString_DefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10440); }
+		ScriptString MenuString_DefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10428); }
+		ScriptString MenuString_DefendEntrances() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10416); }
+		ScriptString MenuString_DefendFlagCarrier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10404); }
+		ScriptString MenuString_DefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10392); }
+		ScriptString MenuString_AttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10380); }
+		ScriptString MenuString_AttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10368); }
+		ScriptString MenuString_AttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10356); }
+		ScriptString MenuString_AttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10344); }
+		ScriptString MenuString_AttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10332); }
+		ScriptString MenuString_AttackWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10320); }
+		ScriptString MenuString_AttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10308); }
+		ScriptString MenuString_AttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10296); }
+		ScriptString MenuString_AttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10284); }
+		ScriptString MenuString_AttackReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10272); }
+		ScriptString MenuString_AttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10260); }
+		ScriptString MenuString_AttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10248); }
+		ScriptString MenuString_AttackDisrupt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10236); }
+		ScriptString MenuString_AttackChase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10224); }
+		ScriptString MenuString_AttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10212); }
+		ScriptString MenuString_Attack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10200); }
+		ScriptString MenuString_GlobalTauntLearn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10188); }
+		ScriptString MenuString_GlobalTauntSarcasm() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10176); }
+		ScriptString MenuString_GlobalTauntBrag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10164); }
+		ScriptString MenuString_GlobalTauntObnoxious() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10152); }
+		ScriptString MenuString_GlobalTauntAww() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10140); }
+		ScriptString MenuString_GlobalRespondWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10128); }
+		ScriptString MenuString_GlobalRespondThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10116); }
+		ScriptString MenuString_GlobalRespondDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10104); }
+		ScriptString MenuString_GlobalRespondAnyTime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10092); }
+		ScriptString MenuString_GlobalComplimentGreatShot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10080); }
+		ScriptString MenuString_GlobalComplimentYouRock() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10068); }
+		ScriptString MenuString_GlobalComplimentNiceMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10056); }
+		ScriptString MenuString_GlobalComplimentGoodGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10044); }
+		ScriptString MenuString_GlobalComplimentAwesome() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10032); }
+		ScriptString MenuString_GlobalWoohoo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10020); }
+		ScriptString MenuString_GlobalShazbot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 10008); }
+		ScriptString MenuString_GlobalQuiet() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9996); }
+		ScriptString MenuString_GlobalOoops() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9984); }
+		ScriptString MenuString_GlobalBye() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9972); }
+		ScriptString MenuString_GlobalHi() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9960); }
+		ScriptString MenuString_GlobalNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9948); }
+		ScriptString MenuString_GlobalYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9936); }
+		ScriptString ChatString_TeamWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9924); }
+		ScriptString ChatString_TeamThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9912); }
+		ScriptString ChatString_TeamSorry() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9900); }
+		ScriptString ChatString_TeamMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9888); }
+		ScriptString ChatString_TeamHelp() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9876); }
+		ScriptString ChatString_TeamDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9864); }
+		ScriptString ChatString_TeamCeaseFire() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9852); }
+		ScriptString ChatString_TeamBaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9840); }
+		ScriptString ChatString_TeamAnytime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9828); }
+		ScriptString ChatString_TeamNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9816); }
+		ScriptString ChatString_TeamYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9804); }
+		ScriptString ChatString_WarnContext_ActorDeployable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9792); }
+		ScriptString ChatString_WarnContext_ActorVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9780); }
+		ScriptString ChatString_WarnContext_ActorSensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9768); }
+		ScriptString ChatString_WarnContext_ActorTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9756); }
+		ScriptString ChatString_WarnContext_ActorHeavyPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9744); }
+		ScriptString ChatString_WarnContext_ActorMediumPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9732); }
+		ScriptString ChatString_WarnContext_ActorLightPawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9720); }
+		ScriptString ChatString_WarnContext_EnemyNearby() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9708); }
+		ScriptString ChatString_WarnContext_EnemyNearEnemyVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9696); }
+		ScriptString ChatString_WarnContext_EnemyNearOurVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9684); }
+		ScriptString ChatString_WarnContext_EnemyNearEnemyBaseTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9672); }
+		ScriptString ChatString_WarnContext_EnemyNearOurBaseTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9660); }
+		ScriptString ChatString_WarnContext_EnemyNearEnemyFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9648); }
+		ScriptString ChatString_WarnContext_EnemyNearOurFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9636); }
+		ScriptString ChatString_WarnContext_EnemyNearEnemyGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9624); }
+		ScriptString ChatString_WarnContext_EnemyNearOurGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9612); }
+		ScriptString ChatString_WarnContext_EnemyInMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9600); }
+		ScriptString ChatString_WarnContext_EnemyBehindEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9588); }
+		ScriptString ChatString_WarnContext_EnemyBehindOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9576); }
+		ScriptString ChatString_WarnContext_EnemyAroundEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9564); }
+		ScriptString ChatString_WarnContext_EnemyAroundOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9552); }
+		ScriptString ChatString_WarnContext_EnemyInsideEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9540); }
+		ScriptString ChatString_WarnContext_EnemyInsideOurBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9528); }
+		ScriptString ChatString_WarnVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9516); }
+		ScriptString ChatString_WarnEnemies() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9504); }
+		ScriptString ChatString_UpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9492); }
+		ScriptString ChatString_UpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9480); }
+		ScriptString ChatString_UpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9468); }
+		ScriptString ChatString_TargetWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9456); }
+		ScriptString ChatString_TargetVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9444); }
+		ScriptString ChatString_TargetTurret() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9432); }
+		ScriptString ChatString_TargetSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9420); }
+		ScriptString ChatString_TargetNeed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9408); }
+		ScriptString ChatString_TargetFireOnMy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9396); }
+		ScriptString ChatString_TargetFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9384); }
+		ScriptString ChatString_TargetDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9372); }
+		ScriptString ChatString_TargetBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9360); }
+		ScriptString ChatString_TargetAcquired() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9348); }
+		ScriptString ChatString_SelfUpgradeTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9336); }
+		ScriptString ChatString_SelfUpgradeSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9324); }
+		ScriptString ChatString_SelfUpgradeGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9312); }
+		ScriptString ChatString_SelfTaskVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9300); }
+		ScriptString ChatString_SelfTaskDeployTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9288); }
+		ScriptString ChatString_SelfTaskDeploySensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9276); }
+		ScriptString ChatString_SelfTaskOnIt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9264); }
+		ScriptString ChatString_SelfTaskForcefield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9252); }
+		ScriptString ChatString_SelfTaskDefenses() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9240); }
+		ScriptString ChatString_SelfTaskCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9228); }
+		ScriptString ChatString_SelfRepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9216); }
+		ScriptString ChatString_SelfRepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9204); }
+		ScriptString ChatString_SelfRepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9192); }
+		ScriptString ChatString_SelfRepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9180); }
+		ScriptString ChatString_SelfRepairBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9168); }
+		ScriptString ChatString_SelfDefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9156); }
+		ScriptString ChatString_SelfDefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9144); }
+		ScriptString ChatString_SelfDefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9132); }
+		ScriptString ChatString_SelfDefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9120); }
+		ScriptString ChatString_SelfDefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9108); }
+		ScriptString ChatString_SelfDefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9096); }
+		ScriptString ChatString_SelfDefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9084); }
+		ScriptString ChatString_SelfDefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9072); }
+		ScriptString ChatString_SelfDefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9060); }
+		ScriptString ChatString_SelfDefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9048); }
+		ScriptString ChatString_SelfDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9036); }
+		ScriptString ChatString_SelfDefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9024); }
+		ScriptString ChatString_SelfAttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9012); }
+		ScriptString ChatString_SelfAttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 9000); }
+		ScriptString ChatString_SelfAttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8988); }
+		ScriptString ChatString_SelfAttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8976); }
+		ScriptString ChatString_SelfAttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8964); }
+		ScriptString ChatString_SelfAttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8952); }
+		ScriptString ChatString_SelfAttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8940); }
+		ScriptString ChatString_SelfAttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8928); }
+		ScriptString ChatString_SelfAttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8916); }
+		ScriptString ChatString_SelfAttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8904); }
+		ScriptString ChatString_SelfAttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8892); }
+		ScriptString ChatString_SelfAttack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8880); }
+		ScriptString ChatString_NeedWhereTo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8868); }
+		ScriptString ChatString_NeedVehicleReady() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8856); }
+		ScriptString ChatString_NeedSupport() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8844); }
+		ScriptString ChatString_NeedRide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8832); }
+		ScriptString ChatString_NeedHoldVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8820); }
+		ScriptString ChatString_NeedEscort() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8808); }
+		ScriptString ChatString_NeedDriver() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8796); }
+		ScriptString ChatString_NeedCover() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8784); }
+		ScriptString ChatString_FlagTake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8772); }
+		ScriptString ChatString_FlagSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8760); }
+		ScriptString ChatString_FlagSelfRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8748); }
+		ScriptString ChatString_FlagRetrieve() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8736); }
+		ScriptString ChatString_FlagGiveMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8724); }
+		ScriptString ChatString_FlagIHave() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8712); }
+		ScriptString ChatString_FlagDefend() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8700); }
+		ScriptString ChatString_EnemyVehicleDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8688); }
+		ScriptString ChatString_EnemyTurretsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8676); }
+		ScriptString ChatString_EnemySensorsDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8664); }
+		ScriptString ChatString_EnemyGeneratorDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8652); }
+		ScriptString ChatString_EnemyDisarray() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8640); }
+		ScriptString ChatString_CommandAssignment() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8628); }
+		ScriptString ChatString_CommandDeclined() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8616); }
+		ScriptString ChatString_CommandCompleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8604); }
+		ScriptString ChatString_CommandAcknowledged() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8592); }
+		ScriptString ChatString_BaseSecure() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8580); }
+		ScriptString ChatString_BaseRetake() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8568); }
+		ScriptString ChatString_EnemyInBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8556); }
+		ScriptString ChatString_BaseClear() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8544); }
+		ScriptString ChatString_RepairVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8532); }
+		ScriptString ChatString_RepairTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8520); }
+		ScriptString ChatString_RepairSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8508); }
+		ScriptString ChatString_RepairGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8496); }
+		ScriptString ChatString_DefendPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8484); }
+		ScriptString ChatString_DefendPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8472); }
+		ScriptString ChatString_DefendPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8460); }
+		ScriptString ChatString_DefendPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8448); }
+		ScriptString ChatString_DefendPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8436); }
+		ScriptString ChatString_DefendVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8424); }
+		ScriptString ChatString_DefendTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8412); }
+		ScriptString ChatString_DefendSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8400); }
+		ScriptString ChatString_DefendReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8388); }
+		ScriptString ChatString_DefendMe() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8376); }
+		ScriptString ChatString_DefendGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8364); }
+		ScriptString ChatString_DefendFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8352); }
+		ScriptString ChatString_DefendEntrances() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8340); }
+		ScriptString ChatString_DefendFlagCarrier() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8328); }
+		ScriptString ChatString_DefendBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8316); }
+		ScriptString ChatString_AttackPointE() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8304); }
+		ScriptString ChatString_AttackPointD() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8292); }
+		ScriptString ChatString_AttackPointC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8280); }
+		ScriptString ChatString_AttackPointB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8268); }
+		ScriptString ChatString_AttackPointA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8256); }
+		ScriptString ChatString_AttackWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8244); }
+		ScriptString ChatString_AttackVehicle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8232); }
+		ScriptString ChatString_AttackTurrets() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8220); }
+		ScriptString ChatString_AttackSensors() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8208); }
+		ScriptString ChatString_AttackReinforce() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8196); }
+		ScriptString ChatString_AttackGenerator() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8184); }
+		ScriptString ChatString_AttackFlag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8172); }
+		ScriptString ChatString_AttackDisrupt() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8160); }
+		ScriptString ChatString_AttackChase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8148); }
+		ScriptString ChatString_AttackBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8136); }
+		ScriptString ChatString_Attack() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8124); }
+		ScriptString ChatString_GlobalTauntLearn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8112); }
+		ScriptString ChatString_GlobalTauntSarcasm() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8100); }
+		ScriptString ChatString_GlobalTauntBrag() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8088); }
+		ScriptString ChatString_GlobalTauntObnoxious() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8076); }
+		ScriptString ChatString_GlobalTauntAww() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8064); }
+		ScriptString ChatString_GlobalRespondWait() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8052); }
+		ScriptString ChatString_GlobalRespondThanks() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8040); }
+		ScriptString ChatString_GlobalRespondDontKnow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8028); }
+		ScriptString ChatString_GlobalRespondAnyTime() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8016); }
+		ScriptString ChatString_GlobalComplimentGreatShot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 8004); }
+		ScriptString ChatString_GlobalComplimentYouRock() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7992); }
+		ScriptString ChatString_GlobalComplimentNiceMove() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7980); }
+		ScriptString ChatString_GlobalComplimentGoodGame() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7968); }
+		ScriptString ChatString_GlobalComplimentAwesome() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7956); }
+		ScriptString ChatString_GlobalWoohoo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7944); }
+		ScriptString ChatString_GlobalShazbot() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7932); }
+		ScriptString ChatString_GlobalQuiet() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7920); }
+		ScriptString ChatString_GlobalOoops() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7908); }
+		ScriptString ChatString_GlobalBye() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7896); }
+		ScriptString ChatString_GlobalHi() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7884); }
+		ScriptString ChatString_GlobalNo() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7872); }
+		ScriptString ChatString_GlobalYes() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 7860); }
+		TrVGSCommandList.TrVGSCommand m_CommandList() { return *cast(TrVGSCommandList.TrVGSCommand*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51398], cast(void*)0, cast(void*)0);
 	}
-	final ScriptString GetContextLocationString(TrVGSCommandList.EVGSContextLocation Loc, bool bEnemyLocation)
+	ScriptString GetContextLocationString(TrVGSCommandList.EVGSContextLocation Loc, bool bEnemyLocation)
 	{
-		ubyte params[17];
+		ubyte params[20];
 		params[] = 0;
 		*cast(TrVGSCommandList.EVGSContextLocation*)params.ptr = Loc;
 		*cast(bool*)&params[4] = bEnemyLocation;

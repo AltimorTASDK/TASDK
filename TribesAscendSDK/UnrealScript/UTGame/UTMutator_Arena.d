@@ -7,12 +7,14 @@ import UnrealScript.UTGame.UTMutator;
 
 extern(C++) interface UTMutator_Arena : UTMutator
 {
-	public @property final auto ref ScriptString ArenaWeaponClassPath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 496); }
-	final void PostBeginPlay()
+public extern(D):
+	@property final auto ref ScriptString ArenaWeaponClassPath() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 496); }
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48571], cast(void*)0, cast(void*)0);
 	}
-	final bool CheckReplacement(Actor Other)
+	bool CheckReplacement(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -20,7 +22,7 @@ extern(C++) interface UTMutator_Arena : UTMutator
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48573], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void ModifyPlayer(Pawn Other)
+	void ModifyPlayer(Pawn Other)
 	{
 		ubyte params[4];
 		params[] = 0;

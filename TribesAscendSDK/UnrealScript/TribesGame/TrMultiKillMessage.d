@@ -11,9 +11,14 @@ import UnrealScript.UTGame.UTQueuedAnnouncement;
 
 extern(C++) interface TrMultiKillMessage : UTLocalMessage
 {
-	public @property final auto ref SoundNodeWave KillSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString KillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		SoundNodeWave KillSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString KillString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -25,7 +30,7 @@ extern(C++) interface TrMultiKillMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100212], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -36,7 +41,7 @@ extern(C++) interface TrMultiKillMessage : UTLocalMessage
 		*cast(UObject*)&params[16] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100219], params.ptr, cast(void*)0);
 	}
-	final SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -46,18 +51,18 @@ extern(C++) interface TrMultiKillMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100225], params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	final int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo LocalPlayer)
+	int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI2;
-		*cast(PlayerReplicationInfo*)&params[12] = LocalPlayer;
+		*cast(PlayerReplicationInfo*)&params[12] = pLocalPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100230], params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	final bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
+	bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -67,7 +72,7 @@ extern(C++) interface TrMultiKillMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100236], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

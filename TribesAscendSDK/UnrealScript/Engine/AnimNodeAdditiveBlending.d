@@ -5,8 +5,12 @@ import UnrealScript.Engine.AnimNodeBlend;
 
 extern(C++) interface AnimNodeAdditiveBlending : AnimNodeBlend
 {
-	public @property final bool bPassThroughWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-	public @property final bool bPassThroughWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		bool bPassThroughWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
+		bool bPassThroughWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+	}
 	final void SetBlendTarget(float BlendTarget, float BlendTime)
 	{
 		ubyte params[8];

@@ -4,5 +4,6 @@ import UnrealScript.Engine.MaterialExpressionParameter;
 
 extern(C++) interface MaterialExpressionScalarParameter : MaterialExpressionParameter
 {
-	public @property final auto ref float DefaultValue() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
+public extern(D):
+	@property final auto ref float DefaultValue() { return *cast(float*)(cast(size_t)cast(void*)this + 132); }
 }

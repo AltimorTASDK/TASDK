@@ -6,33 +6,35 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface SeqEvent_Mover : SequenceEvent
 {
-	public @property final auto ref float StayOpenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
-	final void RegisterEvent()
+public extern(D):
+	@property final auto ref float StayOpenTime() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
+final:
+	void RegisterEvent()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26111], cast(void*)0, cast(void*)0);
 	}
-	final void NotifyEncroachingOn(Actor Hit)
+	void NotifyEncroachingOn(Actor Hit)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Hit;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26113], params.ptr, cast(void*)0);
 	}
-	final void NotifyAttached(Actor Other)
+	void NotifyAttached(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26118], params.ptr, cast(void*)0);
 	}
-	final void NotifyDetached(Actor Other)
+	void NotifyDetached(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26122], params.ptr, cast(void*)0);
 	}
-	final void NotifyFinishedOpen()
+	void NotifyFinishedOpen()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26127], cast(void*)0, cast(void*)0);
 	}

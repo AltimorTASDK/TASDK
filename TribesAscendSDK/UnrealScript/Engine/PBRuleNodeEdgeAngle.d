@@ -5,6 +5,7 @@ import UnrealScript.Engine.PBRuleNodeBase;
 
 extern(C++) interface PBRuleNodeEdgeAngle : PBRuleNodeBase
 {
+public extern(D):
 	enum EProcBuildingEdge : ubyte
 	{
 		EPBE_Top = 0,
@@ -15,9 +16,13 @@ extern(C++) interface PBRuleNodeEdgeAngle : PBRuleNodeBase
 	}
 	struct RBEdgeAngleInfo
 	{
-		public @property final auto ref float Angle() { return *cast(float*)(cast(size_t)&this + 0); }
-		private ubyte __Angle[4];
+		private ubyte __buffer__[4];
+	public extern(D):
+		@property final auto ref float Angle() { return *cast(float*)(cast(size_t)&this + 0); }
 	}
-	public @property final auto ref ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { return *cast(ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo)*)(cast(size_t)cast(void*)this + 108); }
-	public @property final auto ref PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { return *cast(PBRuleNodeEdgeAngle.EProcBuildingEdge*)(cast(size_t)cast(void*)this + 104); }
+	@property final auto ref
+	{
+		ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { return *cast(ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo)*)(cast(size_t)cast(void*)this + 108); }
+		PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { return *cast(PBRuleNodeEdgeAngle.EProcBuildingEdge*)(cast(size_t)cast(void*)this + 104); }
+	}
 }

@@ -9,6 +9,7 @@ import UnrealScript.Engine.Settings;
 
 extern(C++) interface OnlineSubsystem : UObject
 {
+public extern(D):
 	enum EOnlineNewsType : ubyte
 	{
 		ONT_Unknown = 0,
@@ -117,335 +118,347 @@ extern(C++) interface OnlineSubsystem : UObject
 	}
 	struct NamedSession
 	{
-		public @property final auto ref OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 12); }
-		private ubyte __GameSettings[4];
-		public @property final auto ref ScriptArray!(OnlineSubsystem.OnlineRegistrant) Registrants() { return *cast(ScriptArray!(OnlineSubsystem.OnlineRegistrant)*)(cast(size_t)&this + 16); }
-		private ubyte __Registrants[12];
-		public @property final auto ref ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant) ArbitrationRegistrants() { return *cast(ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant)*)(cast(size_t)&this + 28); }
-		private ubyte __ArbitrationRegistrants[12];
-		public @property final auto ref ScriptName SessionName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __SessionName[8];
-		public @property final auto ref UObject.Pointer SessionInfo() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
-		private ubyte __SessionInfo[4];
+		private ubyte __buffer__[40];
+	public extern(D):
+		@property final auto ref
+		{
+			OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 12); }
+			ScriptArray!(OnlineSubsystem.OnlineRegistrant) Registrants() { return *cast(ScriptArray!(OnlineSubsystem.OnlineRegistrant)*)(cast(size_t)&this + 16); }
+			ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant) ArbitrationRegistrants() { return *cast(ScriptArray!(OnlineSubsystem.OnlineArbitrationRegistrant)*)(cast(size_t)&this + 28); }
+			ScriptName SessionName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			UObject.Pointer SessionInfo() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
+		}
 	}
 	struct OnlineRegistrant
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __PlayerNetId[8];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
 	}
 	struct OnlineArbitrationRegistrant
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __PlayerNetId[8];
-		public @property final auto ref QWord MachineId() { return *cast(QWord*)(cast(size_t)&this + 8); }
-		private ubyte __MachineId[8];
-		public @property final auto ref int Trustworthiness() { return *cast(int*)(cast(size_t)&this + 16); }
-		private ubyte __Trustworthiness[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+		@property final auto ref
+		{
+			QWord MachineId() { return *cast(QWord*)(cast(size_t)&this + 8); }
+			int Trustworthiness() { return *cast(int*)(cast(size_t)&this + 16); }
+		}
 	}
 	struct UniqueNetId
 	{
-		public @property final auto ref QWord Uid() { return *cast(QWord*)(cast(size_t)&this + 0); }
-		private ubyte __Uid[8];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref QWord Uid() { return *cast(QWord*)(cast(size_t)&this + 0); }
 	}
 	struct NamedInterface
 	{
-		public @property final auto ref UObject InterfaceObject() { return *cast(UObject*)(cast(size_t)&this + 8); }
-		private ubyte __InterfaceObject[4];
-		public @property final auto ref ScriptName InterfaceName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __InterfaceName[8];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final auto ref
+		{
+			UObject InterfaceObject() { return *cast(UObject*)(cast(size_t)&this + 8); }
+			ScriptName InterfaceName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct OnlinePartyMember
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __UniqueId[8];
-		public @property final auto ref ScriptString NickName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-		private ubyte __NickName[12];
-		public @property final auto ref ubyte LocalUserNum() { return *cast(ubyte*)(cast(size_t)&this + 20); }
-		private ubyte __LocalUserNum[1];
-		public @property final auto ref OnlineSubsystem.ENATType NatType() { return *cast(OnlineSubsystem.ENATType*)(cast(size_t)&this + 21); }
-		private ubyte __NatType[1];
-		public @property final auto ref int TitleId() { return *cast(int*)(cast(size_t)&this + 24); }
-		private ubyte __TitleId[4];
-		public @property final bool bIsLocal() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-		public @property final bool bIsLocal(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
-		private ubyte __bIsLocal[4];
-		public @property final bool bIsInPartyVoice() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
-		public @property final bool bIsInPartyVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
-		private ubyte __bIsInPartyVoice[4];
-		public @property final bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x4) != 0; }
-		public @property final bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x4; } return val; }
-		private ubyte __bIsTalking[4];
-		public @property final bool bIsInGameSession() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x8) != 0; }
-		public @property final bool bIsInGameSession(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x8; } return val; }
-		private ubyte __bIsInGameSession[4];
-		public @property final bool bIsPlayingThisGame() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x10) != 0; }
-		public @property final bool bIsPlayingThisGame(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x10; } return val; }
-		private ubyte __bIsPlayingThisGame[4];
-		public @property final auto ref QWord SessionId() { return *cast(QWord*)(cast(size_t)&this + 32); }
-		private ubyte __SessionId[8];
-		public @property final auto ref int Data1() { return *cast(int*)(cast(size_t)&this + 40); }
-		private ubyte __Data1[4];
-		public @property final auto ref int Data2() { return *cast(int*)(cast(size_t)&this + 44); }
-		private ubyte __Data2[4];
-		public @property final auto ref int Data3() { return *cast(int*)(cast(size_t)&this + 48); }
-		private ubyte __Data3[4];
-		public @property final auto ref int Data4() { return *cast(int*)(cast(size_t)&this + 52); }
-		private ubyte __Data4[4];
+		private ubyte __buffer__[56];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+				ScriptString NickName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+				ubyte LocalUserNum() { return *cast(ubyte*)(cast(size_t)&this + 20); }
+				OnlineSubsystem.ENATType NatType() { return *cast(OnlineSubsystem.ENATType*)(cast(size_t)&this + 21); }
+				int TitleId() { return *cast(int*)(cast(size_t)&this + 24); }
+				QWord SessionId() { return *cast(QWord*)(cast(size_t)&this + 32); }
+				int Data1() { return *cast(int*)(cast(size_t)&this + 40); }
+				int Data2() { return *cast(int*)(cast(size_t)&this + 44); }
+				int Data3() { return *cast(int*)(cast(size_t)&this + 48); }
+				int Data4() { return *cast(int*)(cast(size_t)&this + 52); }
+			}
+			bool bIsLocal() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
+			bool bIsLocal(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bIsInPartyVoice() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x2) != 0; }
+			bool bIsInPartyVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x2; } return val; }
+			bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x4) != 0; }
+			bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x4; } return val; }
+			bool bIsInGameSession() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x8) != 0; }
+			bool bIsInGameSession(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x8; } return val; }
+			bool bIsPlayingThisGame() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x10) != 0; }
+			bool bIsPlayingThisGame(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x10; } return val; }
+		}
 	}
 	struct AchievementDetails
 	{
-		public @property final auto ref int Id() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Id[4];
-		public @property final auto ref ScriptString AchievementName() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-		private ubyte __AchievementName[12];
-		public @property final auto ref ScriptString Description() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-		private ubyte __Description[12];
-		public @property final auto ref ScriptString HowTo() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
-		private ubyte __HowTo[12];
-		public @property final auto ref Surface Image() { return *cast(Surface*)(cast(size_t)&this + 40); }
-		private ubyte __Image[4];
-		public @property final auto ref int GamerPoints() { return *cast(int*)(cast(size_t)&this + 44); }
-		private ubyte __GamerPoints[4];
-		public @property final bool bIsSecret() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x1) != 0; }
-		public @property final bool bIsSecret(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x1; } return val; }
-		private ubyte __bIsSecret[4];
-		public @property final bool bWasAchievedOnline() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x2) != 0; }
-		public @property final bool bWasAchievedOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x2; } return val; }
-		private ubyte __bWasAchievedOnline[4];
-		public @property final bool bWasAchievedOffline() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x4) != 0; }
-		public @property final bool bWasAchievedOffline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x4; } return val; }
-		private ubyte __bWasAchievedOffline[4];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				int Id() { return *cast(int*)(cast(size_t)&this + 0); }
+				ScriptString AchievementName() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
+				ScriptString Description() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
+				ScriptString HowTo() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
+				Surface Image() { return *cast(Surface*)(cast(size_t)&this + 40); }
+				int GamerPoints() { return *cast(int*)(cast(size_t)&this + 44); }
+			}
+			bool bIsSecret() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x1) != 0; }
+			bool bIsSecret(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x1; } return val; }
+			bool bWasAchievedOnline() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x2) != 0; }
+			bool bWasAchievedOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x2; } return val; }
+			bool bWasAchievedOffline() { return (*cast(uint*)(cast(size_t)&this + 48) & 0x4) != 0; }
+			bool bWasAchievedOffline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 48) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 48) &= ~0x4; } return val; }
+		}
 	}
 	struct CommunityContentMetadata
 	{
-		public @property final auto ref int ContentType() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __ContentType[4];
-		public @property final auto ref ScriptArray!(Settings.SettingsProperty) MetadataItems() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)&this + 4); }
-		private ubyte __MetadataItems[12];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			int ContentType() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptArray!(Settings.SettingsProperty) MetadataItems() { return *cast(ScriptArray!(Settings.SettingsProperty)*)(cast(size_t)&this + 4); }
+		}
 	}
 	struct CommunityContentFile
 	{
-		public @property final auto ref int ContentId() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __ContentId[4];
-		public @property final auto ref int FileId() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __FileId[4];
-		public @property final auto ref int ContentType() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __ContentType[4];
-		public @property final auto ref int FileSize() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __FileSize[4];
-		public @property final auto ref OnlineSubsystem.UniqueNetId Owner() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 16); }
-		private ubyte __Owner[8];
-		public @property final auto ref int DownloadCount() { return *cast(int*)(cast(size_t)&this + 24); }
-		private ubyte __DownloadCount[4];
-		public @property final auto ref float AverageRating() { return *cast(float*)(cast(size_t)&this + 28); }
-		private ubyte __AverageRating[4];
-		public @property final auto ref int RatingCount() { return *cast(int*)(cast(size_t)&this + 32); }
-		private ubyte __RatingCount[4];
-		public @property final auto ref int LastRatingGiven() { return *cast(int*)(cast(size_t)&this + 36); }
-		private ubyte __LastRatingGiven[4];
-		public @property final auto ref ScriptString LocalFilePath() { return *cast(ScriptString*)(cast(size_t)&this + 40); }
-		private ubyte __LocalFilePath[12];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final auto ref
+		{
+			int ContentId() { return *cast(int*)(cast(size_t)&this + 0); }
+			int FileId() { return *cast(int*)(cast(size_t)&this + 4); }
+			int ContentType() { return *cast(int*)(cast(size_t)&this + 8); }
+			int FileSize() { return *cast(int*)(cast(size_t)&this + 12); }
+			OnlineSubsystem.UniqueNetId Owner() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 16); }
+			int DownloadCount() { return *cast(int*)(cast(size_t)&this + 24); }
+			float AverageRating() { return *cast(float*)(cast(size_t)&this + 28); }
+			int RatingCount() { return *cast(int*)(cast(size_t)&this + 32); }
+			int LastRatingGiven() { return *cast(int*)(cast(size_t)&this + 36); }
+			ScriptString LocalFilePath() { return *cast(ScriptString*)(cast(size_t)&this + 40); }
+		}
 	}
 	struct TitleFile
 	{
-		public @property final auto ref ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
-		private ubyte __Filename[12];
-		public @property final auto ref OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
-		private ubyte __AsyncState[1];
-		public @property final auto ref ScriptArray!(ubyte) Data() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 16); }
-		private ubyte __Data[12];
+		private ubyte __buffer__[28];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
+			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
+			ScriptArray!(ubyte) Data() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 16); }
+		}
 	}
 	struct NamedInterfaceDef
 	{
-		public @property final auto ref ScriptName InterfaceName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __InterfaceName[8];
-		public @property final auto ref ScriptString InterfaceClassName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-		private ubyte __InterfaceClassName[12];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptName InterfaceName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+			ScriptString InterfaceClassName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+		}
 	}
 	struct OnlineFriendMessage
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId SendingPlayerId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __SendingPlayerId[8];
-		public @property final auto ref ScriptString SendingPlayerNick() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-		private ubyte __SendingPlayerNick[12];
-		public @property final bool bIsFriendInvite() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
-		public @property final bool bIsFriendInvite(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
-		private ubyte __bIsFriendInvite[4];
-		public @property final bool bIsGameInvite() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x2) != 0; }
-		public @property final bool bIsGameInvite(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x2; } return val; }
-		private ubyte __bIsGameInvite[4];
-		public @property final bool bWasAccepted() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x4) != 0; }
-		public @property final bool bWasAccepted(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x4; } return val; }
-		private ubyte __bWasAccepted[4];
-		public @property final bool bWasDenied() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x8) != 0; }
-		public @property final bool bWasDenied(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x8; } return val; }
-		private ubyte __bWasDenied[4];
-		public @property final auto ref ScriptString Message() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
-		private ubyte __Message[12];
+		private ubyte __buffer__[36];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				OnlineSubsystem.UniqueNetId SendingPlayerId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+				ScriptString SendingPlayerNick() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+				ScriptString Message() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
+			}
+			bool bIsFriendInvite() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x1) != 0; }
+			bool bIsFriendInvite(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x1; } return val; }
+			bool bIsGameInvite() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x2) != 0; }
+			bool bIsGameInvite(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x2; } return val; }
+			bool bWasAccepted() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x4) != 0; }
+			bool bWasAccepted(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x4; } return val; }
+			bool bWasDenied() { return (*cast(uint*)(cast(size_t)&this + 20) & 0x8) != 0; }
+			bool bWasDenied(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 20) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 20) &= ~0x8; } return val; }
+		}
 	}
 	struct RemoteTalker
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId TalkerId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __TalkerId[8];
-		public @property final auto ref float LastNotificationTime() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __LastNotificationTime[4];
-		public @property final bool bWasTalking() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
-		public @property final bool bWasTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
-		private ubyte __bWasTalking[4];
-		public @property final bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x2) != 0; }
-		public @property final bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x2; } return val; }
-		private ubyte __bIsTalking[4];
-		public @property final bool bIsRegistered() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x4) != 0; }
-		public @property final bool bIsRegistered(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x4; } return val; }
-		private ubyte __bIsRegistered[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				OnlineSubsystem.UniqueNetId TalkerId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+				float LastNotificationTime() { return *cast(float*)(cast(size_t)&this + 8); }
+			}
+			bool bWasTalking() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x1) != 0; }
+			bool bWasTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x1; } return val; }
+			bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x2) != 0; }
+			bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x2; } return val; }
+			bool bIsRegistered() { return (*cast(uint*)(cast(size_t)&this + 12) & 0x4) != 0; }
+			bool bIsRegistered(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 12) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 12) &= ~0x4; } return val; }
+		}
 	}
 	struct LocalTalker
 	{
-		public @property final bool bHasVoice() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-		public @property final bool bHasVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-		private ubyte __bHasVoice[4];
-		public @property final bool bHasNetworkedVoice() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
-		public @property final bool bHasNetworkedVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
-		private ubyte __bHasNetworkedVoice[4];
-		public @property final bool bIsRecognizingSpeech() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
-		public @property final bool bIsRecognizingSpeech(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
-		private ubyte __bIsRecognizingSpeech[4];
-		public @property final bool bWasTalking() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x8) != 0; }
-		public @property final bool bWasTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x8; } return val; }
-		private ubyte __bWasTalking[4];
-		public @property final bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10) != 0; }
-		public @property final bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10; } return val; }
-		private ubyte __bIsTalking[4];
-		public @property final bool bIsRegistered() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20) != 0; }
-		public @property final bool bIsRegistered(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20; } return val; }
-		private ubyte __bIsRegistered[4];
+		private ubyte __buffer__[4];
+	public extern(D):
+		@property final
+		{
+			bool bHasVoice() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
+			bool bHasVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+			bool bHasNetworkedVoice() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
+			bool bHasNetworkedVoice(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x2; } return val; }
+			bool bIsRecognizingSpeech() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
+			bool bIsRecognizingSpeech(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x4; } return val; }
+			bool bWasTalking() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x8) != 0; }
+			bool bWasTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x8; } return val; }
+			bool bIsTalking() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x10) != 0; }
+			bool bIsTalking(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x10; } return val; }
+			bool bIsRegistered() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x20) != 0; }
+			bool bIsRegistered(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x20; } return val; }
+		}
 	}
 	struct OnlinePlayerScore
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId PlayerID() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __PlayerID[8];
-		public @property final auto ref int TeamID() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __TeamID[4];
-		public @property final auto ref int Score() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __Score[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			OnlineSubsystem.UniqueNetId PlayerID() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+			int TeamID() { return *cast(int*)(cast(size_t)&this + 8); }
+			int Score() { return *cast(int*)(cast(size_t)&this + 12); }
+		}
 	}
 	struct SpeechRecognizedWord
 	{
-		public @property final auto ref int WordId() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __WordId[4];
-		public @property final auto ref ScriptString WordText() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
-		private ubyte __WordText[12];
-		public @property final auto ref float Confidence() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __Confidence[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref
+		{
+			int WordId() { return *cast(int*)(cast(size_t)&this + 0); }
+			ScriptString WordText() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
+			float Confidence() { return *cast(float*)(cast(size_t)&this + 16); }
+		}
 	}
 	struct OnlineContent
 	{
-		public @property final auto ref OnlineSubsystem.EOnlineContentType ContentType() { return *cast(OnlineSubsystem.EOnlineContentType*)(cast(size_t)&this + 0); }
-		private ubyte __ContentType[1];
-		public @property final auto ref ubyte UserIndex() { return *cast(ubyte*)(cast(size_t)&this + 1); }
-		private ubyte __UserIndex[1];
-		public @property final auto ref int DeviceID() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __DeviceID[4];
-		public @property final auto ref ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
-		private ubyte __FriendlyName[12];
-		public @property final auto ref ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
-		private ubyte __Filename[12];
-		public @property final auto ref ScriptString ContentPath() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
-		private ubyte __ContentPath[12];
-		public @property final auto ref ScriptArray!(ScriptString) ContentPackages() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 44); }
-		private ubyte __ContentPackages[12];
-		public @property final auto ref ScriptArray!(ScriptString) ContentFiles() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 56); }
-		private ubyte __ContentFiles[12];
+		private ubyte __buffer__[68];
+	public extern(D):
+		@property final auto ref
+		{
+			OnlineSubsystem.EOnlineContentType ContentType() { return *cast(OnlineSubsystem.EOnlineContentType*)(cast(size_t)&this + 0); }
+			ubyte UserIndex() { return *cast(ubyte*)(cast(size_t)&this + 1); }
+			int DeviceID() { return *cast(int*)(cast(size_t)&this + 4); }
+			ScriptString FriendlyName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
+			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
+			ScriptString ContentPath() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
+			ScriptArray!(ScriptString) ContentPackages() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 44); }
+			ScriptArray!(ScriptString) ContentFiles() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 56); }
+		}
 	}
 	struct OnlineFriend
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __UniqueId[8];
-		public @property final auto ref QWord SessionId() { return *cast(QWord*)(cast(size_t)&this + 8); }
-		private ubyte __SessionId[8];
-		public @property final auto ref ScriptString NickName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
-		private ubyte __NickName[12];
-		public @property final auto ref ScriptString PresenceInfo() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
-		private ubyte __PresenceInfo[12];
-		public @property final auto ref OnlineSubsystem.EOnlineFriendState FriendState() { return *cast(OnlineSubsystem.EOnlineFriendState*)(cast(size_t)&this + 40); }
-		private ubyte __FriendState[1];
-		public @property final bool bIsOnline() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-		public @property final bool bIsOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-		private ubyte __bIsOnline[4];
-		public @property final bool bIsPlaying() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x2) != 0; }
-		public @property final bool bIsPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x2; } return val; }
-		private ubyte __bIsPlaying[4];
-		public @property final bool bIsPlayingThisGame() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x4) != 0; }
-		public @property final bool bIsPlayingThisGame(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x4; } return val; }
-		private ubyte __bIsPlayingThisGame[4];
-		public @property final bool bIsJoinable() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x8) != 0; }
-		public @property final bool bIsJoinable(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x8; } return val; }
-		private ubyte __bIsJoinable[4];
-		public @property final bool bHasVoiceSupport() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x10) != 0; }
-		public @property final bool bHasVoiceSupport(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x10; } return val; }
-		private ubyte __bHasVoiceSupport[4];
-		public @property final bool bHaveInvited() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x20) != 0; }
-		public @property final bool bHaveInvited(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x20; } return val; }
-		private ubyte __bHaveInvited[4];
-		public @property final bool bHasInvitedYou() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x40) != 0; }
-		public @property final bool bHasInvitedYou(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x40; } return val; }
-		private ubyte __bHasInvitedYou[4];
+		private ubyte __buffer__[48];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+				QWord SessionId() { return *cast(QWord*)(cast(size_t)&this + 8); }
+				ScriptString NickName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
+				ScriptString PresenceInfo() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
+				OnlineSubsystem.EOnlineFriendState FriendState() { return *cast(OnlineSubsystem.EOnlineFriendState*)(cast(size_t)&this + 40); }
+			}
+			bool bIsOnline() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
+			bool bIsOnline(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
+			bool bIsPlaying() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x2) != 0; }
+			bool bIsPlaying(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x2; } return val; }
+			bool bIsPlayingThisGame() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x4) != 0; }
+			bool bIsPlayingThisGame(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x4; } return val; }
+			bool bIsJoinable() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x8) != 0; }
+			bool bIsJoinable(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x8; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x8; } return val; }
+			bool bHasVoiceSupport() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x10) != 0; }
+			bool bHasVoiceSupport(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x10; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x10; } return val; }
+			bool bHaveInvited() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x20) != 0; }
+			bool bHaveInvited(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x20; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x20; } return val; }
+			bool bHasInvitedYou() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x40) != 0; }
+			bool bHasInvitedYou(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x40; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x40; } return val; }
+		}
 	}
 	struct FriendsQuery
 	{
-		public @property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __UniqueId[8];
-		public @property final bool bIsFriend() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
-		public @property final bool bIsFriend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
-		private ubyte __bIsFriend[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final
+		{
+			@property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+			bool bIsFriend() { return (*cast(uint*)(cast(size_t)&this + 8) & 0x1) != 0; }
+			bool bIsFriend(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 8) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 8) &= ~0x1; } return val; }
+		}
 	}
-	public @property final auto ref ScriptArray!(OnlineSubsystem.NamedSession) Sessions() { return *cast(ScriptArray!(OnlineSubsystem.NamedSession)*)(cast(size_t)cast(void*)this + 184); }
-	public @property final auto ref UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref ScriptArray!(OnlineSubsystem.NamedInterface) NamedInterfaces() { return *cast(ScriptArray!(OnlineSubsystem.NamedInterface)*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString IniLocPatcherClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
-	public @property final auto ref IniLocPatcher Patcher() { return *cast(IniLocPatcher*)(cast(size_t)cast(void*)this + 216); }
-	public @property final auto ref ScriptArray!(OnlineSubsystem.NamedInterfaceDef) NamedInterfaceDefs() { return *cast(ScriptArray!(OnlineSubsystem.NamedInterfaceDef)*)(cast(size_t)cast(void*)this + 172); }
-	public @property final bool bUseBuildIdOverride() { return (*cast(uint*)(cast(size_t)cast(void*)this + 196) & 0x1) != 0; }
-	public @property final bool bUseBuildIdOverride(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 196) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 196) &= ~0x1; } return val; }
-	public @property final auto ref int BuildIdOverride() { return *cast(int*)(cast(size_t)cast(void*)this + 200); }
-	public @property final auto ref float AsyncMinCompletionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
-	final void SetDebugSpewLevel(int DebugSpewLevel)
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(OnlineSubsystem.NamedSession) Sessions() { return *cast(ScriptArray!(OnlineSubsystem.NamedSession)*)(cast(size_t)cast(void*)this + 184); }
+			UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+			ScriptArray!(OnlineSubsystem.NamedInterface) NamedInterfaces() { return *cast(ScriptArray!(OnlineSubsystem.NamedInterface)*)(cast(size_t)cast(void*)this + 160); }
+			ScriptString IniLocPatcherClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 204); }
+			IniLocPatcher Patcher() { return *cast(IniLocPatcher*)(cast(size_t)cast(void*)this + 216); }
+			ScriptArray!(OnlineSubsystem.NamedInterfaceDef) NamedInterfaceDefs() { return *cast(ScriptArray!(OnlineSubsystem.NamedInterfaceDef)*)(cast(size_t)cast(void*)this + 172); }
+			int BuildIdOverride() { return *cast(int*)(cast(size_t)cast(void*)this + 200); }
+			float AsyncMinCompletionTime() { return *cast(float*)(cast(size_t)cast(void*)this + 220); }
+		}
+		bool bUseBuildIdOverride() { return (*cast(uint*)(cast(size_t)cast(void*)this + 196) & 0x1) != 0; }
+		bool bUseBuildIdOverride(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 196) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 196) &= ~0x1; } return val; }
+	}
+final:
+	void SetDebugSpewLevel(int DebugSpewLevel)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = DebugSpewLevel;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5436], params.ptr, cast(void*)0);
 	}
-	final void DumpVoiceRegistration()
+	void DumpVoiceRegistration()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5437], cast(void*)0, cast(void*)0);
 	}
-	final void DumpSessionState()
+	void DumpSessionState()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5439], cast(void*)0, cast(void*)0);
 	}
-	final void DumpGameSettings(OnlineGameSettings GameSettings)
+	void DumpGameSettings(OnlineGameSettings GameSettings)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(OnlineGameSettings*)params.ptr = GameSettings;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5440], params.ptr, cast(void*)0);
 	}
-	final int GetNumSupportedLogins()
+	int GetNumSupportedLogins()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5456], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final int GetBuildUniqueId()
+	int GetBuildUniqueId()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5458], params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	final bool StringToUniqueNetId(ScriptString UniqueNetIdString, OnlineSubsystem.UniqueNetId* out_UniqueId)
+	bool StringToUniqueNetId(ScriptString UniqueNetIdString, OnlineSubsystem.UniqueNetId* out_UniqueId)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -455,7 +468,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		*out_UniqueId = *cast(OnlineSubsystem.UniqueNetId*)&params[12];
 		return *cast(bool*)&params[20];
 	}
-	final ScriptString UniqueNetIdToString(OnlineSubsystem.UniqueNetId* IdToConvert)
+	ScriptString UniqueNetIdToString(OnlineSubsystem.UniqueNetId* IdToConvert)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -464,7 +477,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		*IdToConvert = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(ScriptString*)&params[8];
 	}
-	final UObject GetNamedInterface(ScriptName InterfaceName)
+	UObject GetNamedInterface(ScriptName InterfaceName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -472,7 +485,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5466], params.ptr, cast(void*)0);
 		return *cast(UObject*)&params[8];
 	}
-	final void SetNamedInterface(ScriptName InterfaceName, UObject NewInterface)
+	void SetNamedInterface(ScriptName InterfaceName, UObject NewInterface)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -480,7 +493,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		*cast(UObject*)&params[8] = NewInterface;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5469], params.ptr, cast(void*)0);
 	}
-	final bool SetGameChatInterface(UObject NewInterface)
+	bool SetGameChatInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -488,7 +501,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5476], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetTitleFileInterface(UObject NewInterface)
+	bool SetTitleFileInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -496,7 +509,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5481], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetPartyChatInterface(UObject NewInterface)
+	bool SetPartyChatInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -504,7 +517,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5486], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetNewsInterface(UObject NewInterface)
+	bool SetNewsInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -512,7 +525,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5491], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetStatsInterface(UObject NewInterface)
+	bool SetStatsInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -520,7 +533,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5496], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetVoiceInterface(UObject NewInterface)
+	bool SetVoiceInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -528,7 +541,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5501], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetContentInterface(UObject NewInterface)
+	bool SetContentInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -536,7 +549,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5506], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetGameInterface(UObject NewInterface)
+	bool SetGameInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -544,7 +557,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5511], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetSystemInterface(UObject NewInterface)
+	bool SetSystemInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -552,7 +565,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5516], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetPlayerInterfaceEx(UObject NewInterface)
+	bool SetPlayerInterfaceEx(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -560,7 +573,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5521], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetPlayerInterface(UObject NewInterface)
+	bool SetPlayerInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -568,7 +581,7 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5526], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool SetAccountInterface(UObject NewInterface)
+	bool SetAccountInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -576,18 +589,18 @@ extern(C++) interface OnlineSubsystem : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5531], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void Exit()
+	void Exit()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5536], cast(void*)0, cast(void*)0);
 	}
-	final bool PostInit()
+	bool PostInit()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5541], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool Init()
+	bool Init()
 	{
 		ubyte params[4];
 		params[] = 0;

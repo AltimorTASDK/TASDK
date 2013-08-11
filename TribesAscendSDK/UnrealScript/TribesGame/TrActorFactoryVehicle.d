@@ -6,7 +6,8 @@ import UnrealScript.Engine.ActorFactoryVehicle;
 
 extern(C++) interface TrActorFactoryVehicle : ActorFactoryVehicle
 {
-	public @property final auto ref ubyte TeamNum() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 96); }
+public extern(D):
+	@property final auto ref ubyte TeamNum() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 96); }
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

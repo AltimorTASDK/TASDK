@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTClientSideWeaponPawn;
 
 extern(C++) interface TrClientSideWeaponPawn : UTClientSideWeaponPawn
 {
+public extern(D):
 	final void DetachDriver(Pawn P)
 	{
 		ubyte params[4];

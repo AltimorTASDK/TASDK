@@ -5,6 +5,7 @@ import UnrealScript.UTGame.UTMutator;
 
 extern(C++) interface UTMutator_WeaponsRespawn : UTMutator
 {
+public extern(D):
 	final void InitMutator(ScriptString Options, ScriptString* ErrorMessage)
 	{
 		ubyte params[24];

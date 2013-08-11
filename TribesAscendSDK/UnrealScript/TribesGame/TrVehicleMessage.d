@@ -7,8 +7,12 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrVehicleMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString VehicleLocked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString ArmorClassRestricted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString VehicleLocked() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString ArmorClassRestricted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

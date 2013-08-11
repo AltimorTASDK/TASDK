@@ -7,28 +7,33 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxUDKFrontEnd_ServerSettings : GFxUDKFrontEnd_SettingsBase
 {
-	public @property final bool bDataChangedByReqs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
-	public @property final bool bDataChangedByReqs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
-	final void SetSelectedOptionSet()
+public extern(D):
+	@property final
+	{
+		bool bDataChangedByReqs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 260) & 0x1) != 0; }
+		bool bDataChangedByReqs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 260) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 260) &= ~0x1; } return val; }
+	}
+final:
+	void SetSelectedOptionSet()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39027], cast(void*)0, cast(void*)0);
 	}
-	final void OnOptionChanged(GFxClikWidget.EventData ev)
+	void OnOptionChanged(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39028], params.ptr, cast(void*)0);
 	}
-	final void SaveState()
+	void SaveState()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39033], cast(void*)0, cast(void*)0);
 	}
-	final void UpdateListDataProvider()
+	void UpdateListDataProvider()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39043], cast(void*)0, cast(void*)0);
 	}
-	final void PopulateOptionDataProviderForIndex(int Index, GFxObject* OutDataProvider, ScriptString* OutDefaultValue, int* OutDefaultIndex)
+	void PopulateOptionDataProviderForIndex(int Index, GFxObject* OutDataProvider, ScriptString* OutDefaultValue, int* OutDefaultIndex)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -41,9 +46,9 @@ extern(C++) interface GFxUDKFrontEnd_ServerSettings : GFxUDKFrontEnd_SettingsBas
 		*OutDefaultValue = *cast(ScriptString*)&params[8];
 		*OutDefaultIndex = *cast(int*)&params[20];
 	}
-	final ScriptString FindControlByUTClassName(ubyte UTUIControlClass)
+	ScriptString FindControlByUTClassName(ubyte UTUIControlClass)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		params[0] = UTUIControlClass;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39061], params.ptr, cast(void*)0);

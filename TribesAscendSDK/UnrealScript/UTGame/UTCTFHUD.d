@@ -9,28 +9,33 @@ import UnrealScript.UTGame.UTCTFBase;
 
 extern(C++) interface UTCTFHUD : UTTeamHUD
 {
-	public @property final auto ref UTGameReplicationInfo.EFlagState FlagStates() { return *cast(UTGameReplicationInfo.EFlagState*)(cast(size_t)cast(void*)this + 2748); }
-	public @property final auto ref UTCTFBase FlagBases() { return *cast(UTCTFBase*)(cast(size_t)cast(void*)this + 2740); }
-	final void PostBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		UTGameReplicationInfo.EFlagState FlagStates() { return *cast(UTGameReplicationInfo.EFlagState*)(cast(size_t)cast(void*)this + 2748); }
+		UTCTFBase FlagBases() { return *cast(UTCTFBase*)(cast(size_t)cast(void*)this + 2740); }
+	}
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46103], cast(void*)0, cast(void*)0);
 	}
-	final void Timer()
+	void Timer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46105], cast(void*)0, cast(void*)0);
 	}
-	final void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float DestScale)
+	void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float DestScale)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		params[0] = TeamIndex;
 		*cast(UObject.Vector2D*)&params[4] = pos;
 		*cast(float*)&params[12] = DestScale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46108], params.ptr, cast(void*)0);
 	}
-	final Actor GetDirectionalDest(ubyte TeamIndex)
+	Actor GetDirectionalDest(ubyte TeamIndex)
 	{
-		ubyte params[5];
+		ubyte params[8];
 		params[] = 0;
 		params[0] = TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46117], params.ptr, cast(void*)0);

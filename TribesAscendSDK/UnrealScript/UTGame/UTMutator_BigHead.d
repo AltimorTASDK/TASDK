@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTMutator;
 
 extern(C++) interface UTMutator_BigHead : UTMutator
 {
+public extern(D):
 	final void ModifyPlayer(Pawn P)
 	{
 		ubyte params[4];

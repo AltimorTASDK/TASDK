@@ -6,7 +6,8 @@ import UnrealScript.GameFramework.MobilePlayerInput;
 
 extern(C++) interface SeqEvent_MobileZoneBase : SeqEvent_MobileBase
 {
-	public @property final auto ref ScriptString TargetZoneName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 256); }
+public extern(D):
+	@property final auto ref ScriptString TargetZoneName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 256); }
 	final void AddToMobileInput(MobilePlayerInput MPI)
 	{
 		ubyte params[4];

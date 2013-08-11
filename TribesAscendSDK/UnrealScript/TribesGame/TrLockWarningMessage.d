@@ -7,11 +7,16 @@ import UnrealScript.Engine.PlayerReplicationInfo;
 
 extern(C++) interface TrLockWarningMessage : UTLocalMessage
 {
-	public @property final auto ref UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
-	public @property final auto ref UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString RadarLockString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final ubyte AnnouncementLevel(ubyte MessageIndex)
+public extern(D):
+	@property final auto ref
+	{
+		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
+		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString RadarLockString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
@@ -19,7 +24,7 @@ extern(C++) interface TrLockWarningMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98641], params.ptr, cast(void*)0);
 		return params[1];
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -31,7 +36,7 @@ extern(C++) interface TrLockWarningMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98644], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

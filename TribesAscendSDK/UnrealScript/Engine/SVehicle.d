@@ -16,123 +16,132 @@ import UnrealScript.Engine.HUD;
 
 extern(C++) interface SVehicle : Vehicle
 {
+public extern(D):
 	struct VehicleState
 	{
-		public @property final auto ref int ServerView() { return *cast(int*)(cast(size_t)&this + 72); }
-		private ubyte __ServerView[4];
-		public @property final bool bServerHandbrake() { return (*cast(uint*)(cast(size_t)&this + 68) & 0x1) != 0; }
-		public @property final bool bServerHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 68) &= ~0x1; } return val; }
-		private ubyte __bServerHandbrake[4];
-		public @property final auto ref ubyte ServerRise() { return *cast(ubyte*)(cast(size_t)&this + 67); }
-		private ubyte __ServerRise[1];
-		public @property final auto ref ubyte ServerSteering() { return *cast(ubyte*)(cast(size_t)&this + 66); }
-		private ubyte __ServerSteering[1];
-		public @property final auto ref ubyte ServerGas() { return *cast(ubyte*)(cast(size_t)&this + 65); }
-		private ubyte __ServerGas[1];
-		public @property final auto ref ubyte ServerBrake() { return *cast(ubyte*)(cast(size_t)&this + 64); }
-		private ubyte __ServerBrake[1];
-		public @property final auto ref Actor.RigidBodyState RBState() { return *cast(Actor.RigidBodyState*)(cast(size_t)&this + 0); }
-		private ubyte __RBState[64];
+		private ubyte __buffer__[76];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				int ServerView() { return *cast(int*)(cast(size_t)&this + 72); }
+				ubyte ServerRise() { return *cast(ubyte*)(cast(size_t)&this + 67); }
+				ubyte ServerSteering() { return *cast(ubyte*)(cast(size_t)&this + 66); }
+				ubyte ServerGas() { return *cast(ubyte*)(cast(size_t)&this + 65); }
+				ubyte ServerBrake() { return *cast(ubyte*)(cast(size_t)&this + 64); }
+				Actor.RigidBodyState RBState() { return *cast(Actor.RigidBodyState*)(cast(size_t)&this + 0); }
+			}
+			bool bServerHandbrake() { return (*cast(uint*)(cast(size_t)&this + 68) & 0x1) != 0; }
+			bool bServerHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 68) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 68) &= ~0x1; } return val; }
+		}
 	}
-	public @property final auto ref ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*) Wheels() { return *cast(ScriptArray!(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)*)(cast(size_t)cast(void*)this + 1264); }
-	public @property final auto ref float RadialImpulseScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1540); }
-	public @property final auto ref float AngErrorAccumulator() { return *cast(float*)(cast(size_t)cast(void*)this + 1536); }
-	public @property final auto ref SVehicle.VehicleState VState() { return *cast(SVehicle.VehicleState*)(cast(size_t)cast(void*)this + 1456); }
-	public @property final auto ref int DriverViewYaw() { return *cast(int*)(cast(size_t)cast(void*)this + 1452); }
-	public @property final auto ref int DriverViewPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 1448); }
-	public @property final auto ref float CamDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1444); }
-	public @property final auto ref Vector BaseOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1432); }
-	public @property final auto ref int NumPoweredWheels() { return *cast(int*)(cast(size_t)cast(void*)this + 1428); }
-	public @property final auto ref float ForwardVel() { return *cast(float*)(cast(size_t)cast(void*)this + 1424); }
-	public @property final auto ref float OutputRise() { return *cast(float*)(cast(size_t)cast(void*)this + 1420); }
-	public @property final auto ref float OutputSteering() { return *cast(float*)(cast(size_t)cast(void*)this + 1416); }
-	public @property final auto ref float OutputGas() { return *cast(float*)(cast(size_t)cast(void*)this + 1412); }
-	public @property final auto ref float OutputBrake() { return *cast(float*)(cast(size_t)cast(void*)this + 1408); }
-	public @property final auto ref float LastCollisionSoundTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1404); }
-	public @property final auto ref float EngineStopOffsetSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1400); }
-	public @property final auto ref float EngineStartOffsetSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1396); }
-	public @property final auto ref float LatAngleVolumeMult() { return *cast(float*)(cast(size_t)cast(void*)this + 1392); }
-	public @property final auto ref float SquealLatThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1388); }
-	public @property final auto ref float SquealThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1384); }
-	public @property final auto ref float CollisionIntervalSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1380); }
-	public @property final auto ref SoundCue ExitVehicleSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1376); }
-	public @property final auto ref SoundCue EnterVehicleSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1372); }
-	public @property final auto ref SoundCue CollisionSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1368); }
-	public @property final auto ref float UprightStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1356); }
-	public @property final auto ref float UprightTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1352); }
-	public @property final auto ref float UprightTorqueStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 1348); }
-	public @property final auto ref float UprightLiftStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 1344); }
-	public @property final auto ref float TimeOffGround() { return *cast(float*)(cast(size_t)cast(void*)this + 1340); }
-	public @property final auto ref float MaxAngularVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 1336); }
-	public @property final auto ref float MaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1332); }
-	public @property final auto ref float HeavySuspensionShiftPercent() { return *cast(float*)(cast(size_t)cast(void*)this + 1328); }
-	public @property final auto ref RB_ConstraintInstance StayUprightConstraintInstance() { return *cast(RB_ConstraintInstance*)(cast(size_t)cast(void*)this + 1324); }
-	public @property final auto ref RB_StayUprightSetup StayUprightConstraintSetup() { return *cast(RB_StayUprightSetup*)(cast(size_t)cast(void*)this + 1320); }
-	public @property final auto ref float StayUprightDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 1316); }
-	public @property final auto ref float StayUprightStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 1312); }
-	public @property final auto ref float StayUprightPitchResistAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 1308); }
-	public @property final auto ref float StayUprightRollResistAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 1304); }
-	public @property final bool bHoldingDownHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x1000) != 0; }
-	public @property final bool bHoldingDownHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x1000; } return val; }
-	public @property final bool bOutputHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x800) != 0; }
-	public @property final bool bOutputHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x800; } return val; }
-	public @property final bool bIsUprighting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x400) != 0; }
-	public @property final bool bIsUprighting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x400; } return val; }
-	public @property final bool bFlipRight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x200) != 0; }
-	public @property final bool bFlipRight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x200; } return val; }
-	public @property final bool bCanFlip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x100) != 0; }
-	public @property final bool bCanFlip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x100; } return val; }
-	public @property final bool bWasChassisTouchingGroundLastTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x80) != 0; }
-	public @property final bool bWasChassisTouchingGroundLastTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x80; } return val; }
-	public @property final bool bChassisTouchingGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x40) != 0; }
-	public @property final bool bChassisTouchingGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x40; } return val; }
-	public @property final bool bIsInverted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x20) != 0; }
-	public @property final bool bIsInverted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x20; } return val; }
-	public @property final bool bVehicleOnWater() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x10) != 0; }
-	public @property final bool bVehicleOnWater(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x10; } return val; }
-	public @property final bool bVehicleOnGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x8) != 0; }
-	public @property final bool bVehicleOnGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x8; } return val; }
-	public @property final bool bUpdateWheelShapes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x4) != 0; }
-	public @property final bool bUpdateWheelShapes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x4; } return val; }
-	public @property final bool bUseSuspensionAxis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x2) != 0; }
-	public @property final bool bUseSuspensionAxis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x2; } return val; }
-	public @property final bool bStayUpright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x1) != 0; }
-	public @property final bool bStayUpright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x1; } return val; }
-	public @property final auto ref Vector InertiaTensorMultiplier() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1288); }
-	public @property final auto ref Vector COMOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1276); }
-	final void AddForce(Vector Force)
+			float RadialImpulseScaling() { return *cast(float*)(cast(size_t)cast(void*)this + 1540); }
+			float AngErrorAccumulator() { return *cast(float*)(cast(size_t)cast(void*)this + 1536); }
+			SVehicle.VehicleState VState() { return *cast(SVehicle.VehicleState*)(cast(size_t)cast(void*)this + 1456); }
+			int DriverViewYaw() { return *cast(int*)(cast(size_t)cast(void*)this + 1452); }
+			int DriverViewPitch() { return *cast(int*)(cast(size_t)cast(void*)this + 1448); }
+			float CamDist() { return *cast(float*)(cast(size_t)cast(void*)this + 1444); }
+			Vector BaseOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1432); }
+			int NumPoweredWheels() { return *cast(int*)(cast(size_t)cast(void*)this + 1428); }
+			float ForwardVel() { return *cast(float*)(cast(size_t)cast(void*)this + 1424); }
+			float OutputRise() { return *cast(float*)(cast(size_t)cast(void*)this + 1420); }
+			float OutputSteering() { return *cast(float*)(cast(size_t)cast(void*)this + 1416); }
+			float OutputGas() { return *cast(float*)(cast(size_t)cast(void*)this + 1412); }
+			float OutputBrake() { return *cast(float*)(cast(size_t)cast(void*)this + 1408); }
+			float LastCollisionSoundTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1404); }
+			float EngineStopOffsetSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1400); }
+			float EngineStartOffsetSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1396); }
+			float LatAngleVolumeMult() { return *cast(float*)(cast(size_t)cast(void*)this + 1392); }
+			float SquealLatThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1388); }
+			float SquealThreshold() { return *cast(float*)(cast(size_t)cast(void*)this + 1384); }
+			float CollisionIntervalSecs() { return *cast(float*)(cast(size_t)cast(void*)this + 1380); }
+			SoundCue ExitVehicleSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1376); }
+			SoundCue EnterVehicleSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1372); }
+			SoundCue CollisionSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 1368); }
+			float UprightStartTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1356); }
+			float UprightTime() { return *cast(float*)(cast(size_t)cast(void*)this + 1352); }
+			float UprightTorqueStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 1348); }
+			float UprightLiftStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 1344); }
+			float TimeOffGround() { return *cast(float*)(cast(size_t)cast(void*)this + 1340); }
+			float MaxAngularVelocity() { return *cast(float*)(cast(size_t)cast(void*)this + 1336); }
+			float MaxSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 1332); }
+			float HeavySuspensionShiftPercent() { return *cast(float*)(cast(size_t)cast(void*)this + 1328); }
+			RB_ConstraintInstance StayUprightConstraintInstance() { return *cast(RB_ConstraintInstance*)(cast(size_t)cast(void*)this + 1324); }
+			RB_StayUprightSetup StayUprightConstraintSetup() { return *cast(RB_StayUprightSetup*)(cast(size_t)cast(void*)this + 1320); }
+			float StayUprightDamping() { return *cast(float*)(cast(size_t)cast(void*)this + 1316); }
+			float StayUprightStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 1312); }
+			float StayUprightPitchResistAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 1308); }
+			float StayUprightRollResistAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 1304); }
+			Vector InertiaTensorMultiplier() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1288); }
+			Vector COMOffset() { return *cast(Vector*)(cast(size_t)cast(void*)this + 1276); }
+		}
+		bool bHoldingDownHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x1000) != 0; }
+		bool bHoldingDownHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x1000; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x1000; } return val; }
+		bool bOutputHandbrake() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x800) != 0; }
+		bool bOutputHandbrake(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x800; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x800; } return val; }
+		bool bIsUprighting() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x400) != 0; }
+		bool bIsUprighting(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x400; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x400; } return val; }
+		bool bFlipRight() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x200) != 0; }
+		bool bFlipRight(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x200; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x200; } return val; }
+		bool bCanFlip() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x100) != 0; }
+		bool bCanFlip(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x100; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x100; } return val; }
+		bool bWasChassisTouchingGroundLastTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x80) != 0; }
+		bool bWasChassisTouchingGroundLastTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x80; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x80; } return val; }
+		bool bChassisTouchingGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x40) != 0; }
+		bool bChassisTouchingGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x40; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x40; } return val; }
+		bool bIsInverted() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x20) != 0; }
+		bool bIsInverted(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x20; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x20; } return val; }
+		bool bVehicleOnWater() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x10) != 0; }
+		bool bVehicleOnWater(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x10; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x10; } return val; }
+		bool bVehicleOnGround() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x8) != 0; }
+		bool bVehicleOnGround(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x8; } return val; }
+		bool bUpdateWheelShapes() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x4) != 0; }
+		bool bUpdateWheelShapes(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x4; } return val; }
+		bool bUseSuspensionAxis() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x2) != 0; }
+		bool bUseSuspensionAxis(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x2; } return val; }
+		bool bStayUpright() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1300) & 0x1) != 0; }
+		bool bStayUpright(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1300) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1300) &= ~0x1; } return val; }
+	}
+final:
+	void AddForce(Vector Force)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Force;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27501], params.ptr, cast(void*)0);
 	}
-	final void AddImpulse(Vector Impulse)
+	void AddImpulse(Vector Impulse)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Impulse;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27503], params.ptr, cast(void*)0);
 	}
-	final void AddTorque(Vector Torque)
+	void AddTorque(Vector Torque)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Torque;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27505], params.ptr, cast(void*)0);
 	}
-	final bool IsSleeping()
+	bool IsSleeping()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27507], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void SetWheelCollision(int WheelNum, bool bCollision)
+	void SetWheelCollision(int WheelNum, bool bCollision)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -140,41 +149,41 @@ void*)*)(cast(size_t)cast(void*)this + 1264); }
 		*cast(bool*)&params[4] = bCollision;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27509], params.ptr, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27512], cast(void*)0, cast(void*)0);
 	}
-	final void PostInitAnimTree(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void PostInitAnimTree(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* SkelComp)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27513], params.ptr, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27519], cast(void*)0, cast(void*)0);
 	}
-	final void TurnOff()
+	void TurnOff()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27520], cast(void*)0, cast(void*)0);
 	}
-	final void StopVehicleSounds()
+	void StopVehicleSounds()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27521], cast(void*)0, cast(void*)0);
 	}
-	final void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass DamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(Controller*)params.ptr = InstigatedBy;
 		*cast(float*)&params[4] = BaseDamage;
 		*cast(float*)&params[8] = DamageRadius;
-		*cast(ScriptClass*)&params[12] = DamageType;
+		*cast(ScriptClass*)&params[12] = pDamageType;
 		*cast(float*)&params[16] = Momentum;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
@@ -182,7 +191,7 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[40] = DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27522], params.ptr, cast(void*)0);
 	}
-	final void InitVehicleRagdoll(SkeletalMesh RagdollMesh, PhysicsAsset RagdollPhysAsset, Vector ActorMove, bool bClearAnimTree)
+	void InitVehicleRagdoll(SkeletalMesh RagdollMesh, PhysicsAsset RagdollPhysAsset, Vector ActorMove, bool bClearAnimTree)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -192,27 +201,27 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[20] = bClearAnimTree;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27538], params.ptr, cast(void*)0);
 	}
-	final void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass DamageType, Actor.TraceHitInfo HitInfo)
+	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVelocity;
 		*cast(Vector*)&params[12] = HitLocation;
-		*cast(ScriptClass*)&params[24] = DamageType;
+		*cast(ScriptClass*)&params[24] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27543], params.ptr, cast(void*)0);
 	}
-	final bool Died(Controller Killer, ScriptClass DamageType, Vector HitLocation)
+	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
-		*cast(ScriptClass*)&params[4] = DamageType;
+		*cast(ScriptClass*)&params[4] = pDamageType;
 		*cast(Vector*)&params[8] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27548], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	final bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
+	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -226,7 +235,7 @@ void**)params.ptr = SkelComp;
 		*out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
-	final ScriptName GetDefaultCameraMode(PlayerController RequestedBy)
+	ScriptName GetDefaultCameraMode(PlayerController RequestedBy)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -234,7 +243,7 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27562], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
-	final bool TryToDrive(Pawn P)
+	bool TryToDrive(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -242,75 +251,75 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27565], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool HasWheelsOnGround()
+	bool HasWheelsOnGround()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27568], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void StartEngineSound()
+	void StartEngineSound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27570], cast(void*)0, cast(void*)0);
 	}
-	final void StartEngineSoundTimed()
+	void StartEngineSoundTimed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27571], cast(void*)0, cast(void*)0);
 	}
-	final void StopEngineSound()
+	void StopEngineSound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27572], cast(void*)0, cast(void*)0);
 	}
-	final void StopEngineSoundTimed()
+	void StopEngineSoundTimed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27573], cast(void*)0, cast(void*)0);
 	}
-	final void VehiclePlayEnterSound()
+	void VehiclePlayEnterSound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27574], cast(void*)0, cast(void*)0);
 	}
-	final void VehiclePlayExitSound()
+	void VehiclePlayExitSound()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27575], cast(void*)0, cast(void*)0);
 	}
-	final void DrivingStatusChanged()
+	void DrivingStatusChanged()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27576], cast(void*)0, cast(void*)0);
 	}
-	final void RigidBodyCollision(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void RigidBodyCollision(
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComponent, Actor.CollisionImpactData* RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = HitComponent;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
 		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27577], params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
-	final void SuspensionHeavyShift(float Delta)
+	void SuspensionHeavyShift(float Delta)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Delta;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27582], params.ptr, cast(void*)0);
 	}
-	final void PostTeleport(Teleporter OutTeleporter)
+	void PostTeleport(Teleporter OutTeleporter)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Teleporter*)params.ptr = OutTeleporter;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27584], params.ptr, cast(void*)0);
 	}
-	final void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
+	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -321,7 +330,7 @@ void**)&params[4] = OtherComponent;
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
-	final void DisplayWheelsDebug(HUD pHUD, float YL)
+	void DisplayWheelsDebug(HUD pHUD, float YL)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -329,7 +338,7 @@ void**)&params[4] = OtherComponent;
 		*cast(float*)&params[4] = YL;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27593], params.ptr, cast(void*)0);
 	}
-	final float HermiteEval(float Slip)
+	float HermiteEval(float Slip)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -337,7 +346,7 @@ void**)&params[4] = OtherComponent;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27622], params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	final void GetSVehicleDebug(ScriptArray!(ScriptString)* DebugInfo)
+	void GetSVehicleDebug(ScriptArray!(ScriptString)* DebugInfo)
 	{
 		ubyte params[12];
 		params[] = 0;

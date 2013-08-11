@@ -5,6 +5,7 @@ import UnrealScript.Engine.PathNode;
 
 extern(C++) interface PathNode_Dynamic : PathNode
 {
+public extern(D):
 	final ScriptString GetDebugAbbrev()
 	{
 		ubyte params[12];

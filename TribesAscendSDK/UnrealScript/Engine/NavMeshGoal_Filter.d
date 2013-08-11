@@ -5,10 +5,17 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface NavMeshGoal_Filter : UObject
 {
-	public @property final auto ref int NumNodesProcessed() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref int NumNodesThrownOut() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-	public @property final bool bShowDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
-	public @property final bool bShowDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			int NumNodesProcessed() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
+			int NumNodesThrownOut() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+		}
+		bool bShowDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
+		bool bShowDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
+	}
 	final ScriptString GetDumpString()
 	{
 		ubyte params[12];

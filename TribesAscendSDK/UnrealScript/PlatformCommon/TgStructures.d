@@ -4,6 +4,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TgStructures : UObject
 {
+public extern(D):
 	enum CMTargetType : ubyte
 	{
 		CMTT_Pawn = 0,
@@ -12,23 +13,19 @@ extern(C++) interface TgStructures : UObject
 	}
 	struct CombatMessageInfo
 	{
-		public @property final auto ref int nSourceItemId() { return *cast(int*)(cast(size_t)&this + 32); }
-		private ubyte __nSourceItemId[4];
-		public @property final auto ref int nAmount2() { return *cast(int*)(cast(size_t)&this + 28); }
-		private ubyte __nAmount2[4];
-		public @property final auto ref int nAmount1() { return *cast(int*)(cast(size_t)&this + 24); }
-		private ubyte __nAmount1[4];
-		public @property final auto ref TgStructures.CMTargetType eTargetType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 20); }
-		private ubyte __eTargetType[1];
-		public @property final auto ref int nTargetId() { return *cast(int*)(cast(size_t)&this + 16); }
-		private ubyte __nTargetId[4];
-		public @property final auto ref int nSourceOwnerId() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __nSourceOwnerId[4];
-		public @property final auto ref TgStructures.CMTargetType eSourceType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 8); }
-		private ubyte __eSourceType[1];
-		public @property final auto ref int nSourceId() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __nSourceId[4];
-		public @property final auto ref int nMsgId() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __nMsgId[4];
+		private ubyte __buffer__[36];
+	public extern(D):
+		@property final auto ref
+		{
+			int nSourceItemId() { return *cast(int*)(cast(size_t)&this + 32); }
+			int nAmount2() { return *cast(int*)(cast(size_t)&this + 28); }
+			int nAmount1() { return *cast(int*)(cast(size_t)&this + 24); }
+			TgStructures.CMTargetType eTargetType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 20); }
+			int nTargetId() { return *cast(int*)(cast(size_t)&this + 16); }
+			int nSourceOwnerId() { return *cast(int*)(cast(size_t)&this + 12); }
+			TgStructures.CMTargetType eSourceType() { return *cast(TgStructures.CMTargetType*)(cast(size_t)&this + 8); }
+			int nSourceId() { return *cast(int*)(cast(size_t)&this + 4); }
+			int nMsgId() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
 }

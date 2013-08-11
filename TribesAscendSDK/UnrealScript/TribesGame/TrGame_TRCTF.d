@@ -15,17 +15,22 @@ import UnrealScript.TribesGame.TrGame;
 
 extern(C++) interface TrGame_TRCTF : TrGame
 {
-	public @property final auto ref TrFlagCTF m_Flags() { return *cast(TrFlagCTF*)(cast(size_t)cast(void*)this + 1456); }
-	public @property final auto ref ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1464); }
-	final void PostBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		TrFlagCTF m_Flags() { return *cast(TrFlagCTF*)(cast(size_t)cast(void*)this + 1456); }
+		ScriptClass AnnouncerMessageClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 1464); }
+	}
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90617], cast(void*)0, cast(void*)0);
 	}
-	final void ApplyServerSettings()
+	void ApplyServerSettings()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90619], cast(void*)0, cast(void*)0);
 	}
-	final int GetHandicapNeed(Pawn Other)
+	int GetHandicapNeed(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -33,7 +38,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90621], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
+	bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -46,7 +51,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		*MessageIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[16];
 	}
-	final void RegisterFlag(UTCarriedObject F, int TeamIndex)
+	void RegisterFlag(UTCarriedObject F, int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -54,7 +59,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		*cast(int*)&params[4] = TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90633], params.ptr, cast(void*)0);
 	}
-	final bool NearGoal(Controller C)
+	bool NearGoal(Controller C)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -62,7 +67,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90637], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool WantFastSpawnFor(AIController B)
+	bool WantFastSpawnFor(AIController B)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -70,7 +75,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90641], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
+	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -79,7 +84,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90644], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void ScoreFlag(Controller Scorer, TrFlagBase theFlag)
+	void ScoreFlag(Controller Scorer, TrFlagBase theFlag)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -87,14 +92,14 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		*cast(TrFlagBase*)&params[4] = theFlag;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90650], params.ptr, cast(void*)0);
 	}
-	final void ViewObjective(PlayerController PC)
+	void ViewObjective(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90672], params.ptr, cast(void*)0);
 	}
-	final Actor GetAutoObjectiveFor(UTPlayerController PC)
+	Actor GetAutoObjectiveFor(UTPlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -102,14 +107,14 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90675], params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
-	final void AnnounceScore(int ScoringTeam)
+	void AnnounceScore(int ScoringTeam)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ScoringTeam;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90678], params.ptr, cast(void*)0);
 	}
-	final bool CheckScore(PlayerReplicationInfo Scorer)
+	bool CheckScore(PlayerReplicationInfo Scorer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -117,7 +122,7 @@ extern(C++) interface TrGame_TRCTF : TrGame
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90683], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final int GetGameTypeId()
+	int GetGameTypeId()
 	{
 		ubyte params[4];
 		params[] = 0;

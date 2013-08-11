@@ -10,9 +10,14 @@ import UnrealScript.TribesGame.TrGameObjective;
 
 extern(C++) interface TrStormCore : TrGameObjective
 {
-	public @property final auto ref float m_fShieldBarPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
-	public @property final auto ref MaterialInstanceConstant m_ShieldBarMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1360); }
-	final void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass DamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+public extern(D):
+	@property final auto ref
+	{
+		float m_fShieldBarPlacementY() { return *cast(float*)(cast(size_t)cast(void*)this + 1364); }
+		MaterialInstanceConstant m_ShieldBarMIC() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 1360); }
+	}
+final:
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -20,30 +25,30 @@ extern(C++) interface TrStormCore : TrGameObjective
 		*cast(Controller*)&params[4] = EventInstigator;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
-		*cast(ScriptClass*)&params[32] = DamageType;
+		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112838], params.ptr, cast(void*)0);
 	}
-	final float GetHealthAmount()
+	float GetHealthAmount()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112850], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final float GetShieldAmount()
+	float GetShieldAmount()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112853], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void OnCoreDestroyed()
+	void OnCoreDestroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112856], cast(void*)0, cast(void*)0);
 	}
-	final void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
+	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
 		ubyte params[32];
 		params[] = 0;

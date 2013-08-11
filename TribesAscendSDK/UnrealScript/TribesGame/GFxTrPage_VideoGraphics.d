@@ -7,6 +7,7 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_VideoGraphics : GFxTrPage
 {
+public extern(D):
 	enum MENU_ACTION_VIDEOGRAPHICS : ubyte
 	{
 		MAVG_MINIMAL = 0,
@@ -16,26 +17,27 @@ extern(C++) interface GFxTrPage_VideoGraphics : GFxTrPage
 		MAVG_VERYHIGH = 4,
 		MAVG_MAX = 5,
 	}
-	public @property final auto ref int CurrGraphics() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void Initialize()
+	@property final auto ref int CurrGraphics() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61367], cast(void*)0, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61369], params.ptr, cast(void*)0);
 	}
-	final void SpecialAction(GFxTrAction Action)
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61374], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;

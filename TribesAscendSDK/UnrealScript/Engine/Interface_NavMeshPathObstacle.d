@@ -4,6 +4,7 @@ import UnrealScript.Core.UInterface;
 
 extern(C++) interface Interface_NavMeshPathObstacle : UInterface
 {
+public extern(D):
 	enum EEdgeHandlingStatus : ubyte
 	{
 		EHS_AddedBothDirs = 0,

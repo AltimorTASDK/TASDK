@@ -8,8 +8,12 @@ import UnrealScript.Engine.AITree;
 
 extern(C++) interface AICommandNodeBase : K2NodeBase
 {
-	public @property final auto ref DMC_Prototype UtilityDMC() { return *cast(DMC_Prototype*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref ScriptClass CommandClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+public extern(D):
+	@property final auto ref
+	{
+		DMC_Prototype UtilityDMC() { return *cast(DMC_Prototype*)(cast(size_t)cast(void*)this + 96); }
+		ScriptClass CommandClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 92); }
+	}
 	final AICommandNodeBase SelectBestChild(AIController InAI, AITree.AITreeHandle* Handle)
 	{
 		ubyte params[56];

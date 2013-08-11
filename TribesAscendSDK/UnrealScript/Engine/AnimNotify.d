@@ -7,7 +7,8 @@ import UnrealScript.Engine.AnimSequence;
 
 extern(C++) interface AnimNotify : UObject
 {
-	public @property final auto ref UObject.Color NotifyColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 60); }
+public extern(D):
+	@property final auto ref UObject.Color NotifyColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 60); }
 	final bool FindNextNotifyOfClass(AnimNodeSequence AnimSeqInstigator, ScriptClass NotifyClass, AnimSequence.AnimNotifyEvent* OutEvent)
 	{
 		ubyte params[32];

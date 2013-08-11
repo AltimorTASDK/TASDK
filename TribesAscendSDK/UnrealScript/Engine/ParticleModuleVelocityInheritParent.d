@@ -5,5 +5,6 @@ import UnrealScript.Core.DistributionVector;
 
 extern(C++) interface ParticleModuleVelocityInheritParent : ParticleModuleVelocityBase
 {
-	public @property final auto ref DistributionVector.RawDistributionVector Scale() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }
+public extern(D):
+	@property final auto ref DistributionVector.RawDistributionVector Scale() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }
 }

@@ -15,78 +15,86 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 {
+public extern(D):
 	struct MessageRow
 	{
-		public @property final auto ref int Y() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __Y[4];
-		public @property final auto ref float StartFadeTime() { return *cast(float*)(cast(size_t)&this + 8); }
-		private ubyte __StartFadeTime[4];
-		public @property final auto ref GFxObject TF() { return *cast(GFxObject*)(cast(size_t)&this + 4); }
-		private ubyte __TF[4];
-		public @property final auto ref GFxObject MC() { return *cast(GFxObject*)(cast(size_t)&this + 0); }
-		private ubyte __MC[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			int Y() { return *cast(int*)(cast(size_t)&this + 12); }
+			float StartFadeTime() { return *cast(float*)(cast(size_t)&this + 8); }
+			GFxObject TF() { return *cast(GFxObject*)(cast(size_t)&this + 4); }
+			GFxObject MC() { return *cast(GFxObject*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct HeEnDisplay
 	{
-		public @property final auto ref GFxObject EnergyBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 32); }
-		private ubyte __EnergyBarMC[4];
-		public @property final auto ref GFxObject EnergyTF() { return *cast(GFxObject*)(cast(size_t)&this + 28); }
-		private ubyte __EnergyTF[4];
-		public @property final bool HealthNormOn() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
-		public @property final bool HealthNormOn(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
-		private ubyte __HealthNormOn[4];
-		public @property final auto ref GFxObject HealthCritMC() { return *cast(GFxObject*)(cast(size_t)&this + 20); }
-		private ubyte __HealthCritMC[4];
-		public @property final auto ref GFxObject HealthNormMC() { return *cast(GFxObject*)(cast(size_t)&this + 16); }
-		private ubyte __HealthNormMC[4];
-		public @property final auto ref GFxObject HealthBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 12); }
-		private ubyte __HealthBarMC[4];
-		public @property final auto ref GFxObject HealthTF() { return *cast(GFxObject*)(cast(size_t)&this + 8); }
-		private ubyte __HealthTF[4];
-		public @property final auto ref float LastEnergy() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __LastEnergy[4];
-		public @property final auto ref float LastHealth() { return *cast(float*)(cast(size_t)&this + 0); }
-		private ubyte __LastHealth[4];
+		private ubyte __buffer__[36];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				GFxObject EnergyBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 32); }
+				GFxObject EnergyTF() { return *cast(GFxObject*)(cast(size_t)&this + 28); }
+				GFxObject HealthCritMC() { return *cast(GFxObject*)(cast(size_t)&this + 20); }
+				GFxObject HealthNormMC() { return *cast(GFxObject*)(cast(size_t)&this + 16); }
+				GFxObject HealthBarMC() { return *cast(GFxObject*)(cast(size_t)&this + 12); }
+				GFxObject HealthTF() { return *cast(GFxObject*)(cast(size_t)&this + 8); }
+				float LastEnergy() { return *cast(float*)(cast(size_t)&this + 4); }
+				float LastHealth() { return *cast(float*)(cast(size_t)&this + 0); }
+			}
+			bool HealthNormOn() { return (*cast(uint*)(cast(size_t)&this + 24) & 0x1) != 0; }
+			bool HealthNormOn(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 24) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 24) &= ~0x1; } return val; }
+		}
 	}
-	public @property final bool bIsTeamHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x1) != 0; }
-	public @property final bool bIsTeamHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x1; } return val; }
-	public @property final auto ref float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 388); }
-	public @property final auto ref float NormalZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 396); }
-	public @property final auto ref float CurZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 392); }
-	public @property final auto ref ScriptArray!(GFxMinimapHud.MessageRow) Messages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 484); }
-	public @property final auto ref ScriptArray!(GFxMinimapHud.MessageRow) FreeMessages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 496); }
-	public @property final bool bDrawWeaponCrosshairs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x2) != 0; }
-	public @property final bool bDrawWeaponCrosshairs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x2; } return val; }
-	public @property final auto ref UTGameReplicationInfo GRI() { return *cast(UTGameReplicationInfo*)(cast(size_t)cast(void*)this + 628); }
-	public @property final auto ref UTPlayerReplicationInfo LastFlagCarrier() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 620); }
-	public @property final auto ref UTPlayerReplicationInfo LastEnemy() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 616); }
-	public @property final auto ref ubyte LastFlagHome() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 612); }
-	public @property final auto ref int LastScore() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
-	public @property final auto ref int LastAmmoCount() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
-	public @property final auto ref UTWeapon LastWeapon() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 596); }
-	public @property final auto ref UTVehicle LastVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref GFxObject MultiKillMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 588); }
-	public @property final auto ref GFxObject MultiKillMsg_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 584); }
-	public @property final auto ref GFxObject MultiKillN_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 580); }
-	public @property final auto ref GFxObject HitLocMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 548); }
-	public @property final auto ref GFxObject CreditsAndStreaksMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref GFxObject OffhandsAndFlagMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 540); }
-	public @property final auto ref GFxObject EnemyNameTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 536); }
-	public @property final auto ref GFxObject CenterTextTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 532); }
-	public @property final auto ref GFxObject CenterTextMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 528); }
-	public @property final auto ref GFxObject TimeTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 524); }
-	public @property final auto ref GFxObject TeamStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref GFxObject PlayerStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 516); }
-	public @property final auto ref int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
-	public @property final auto ref float MessageHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-	public @property final auto ref GFxObject LogMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 480); }
-	public @property final auto ref GFxMinimapHud.HeEnDisplay VehicleHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 444); }
-	public @property final auto ref GFxMinimapHud.HeEnDisplay PlayerHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 408); }
-	public @property final auto ref float MinZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 404); }
-	public @property final auto ref float MaxZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 400); }
-	public @property final auto ref GFxMinimap Minimap() { return *cast(GFxMinimap*)(cast(size_t)cast(void*)this + 384); }
-	public @property final auto ref WorldInfo ThisWorld() { return *cast(WorldInfo*)(cast(size_t)cast(void*)this + 380); }
-	final void registerMiniMapView(GFxMinimap MC, float R)
+	@property final
+	{
+		auto ref
+		{
+			float Radius() { return *cast(float*)(cast(size_t)cast(void*)this + 388); }
+			float NormalZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 396); }
+			float CurZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 392); }
+			ScriptArray!(GFxMinimapHud.MessageRow) Messages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 484); }
+			ScriptArray!(GFxMinimapHud.MessageRow) FreeMessages() { return *cast(ScriptArray!(GFxMinimapHud.MessageRow)*)(cast(size_t)cast(void*)this + 496); }
+			UTGameReplicationInfo GRI() { return *cast(UTGameReplicationInfo*)(cast(size_t)cast(void*)this + 628); }
+			UTPlayerReplicationInfo LastFlagCarrier() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 620); }
+			UTPlayerReplicationInfo LastEnemy() { return *cast(UTPlayerReplicationInfo*)(cast(size_t)cast(void*)this + 616); }
+			ubyte LastFlagHome() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 612); }
+			int LastScore() { return *cast(int*)(cast(size_t)cast(void*)this + 604); }
+			int LastAmmoCount() { return *cast(int*)(cast(size_t)cast(void*)this + 600); }
+			UTWeapon LastWeapon() { return *cast(UTWeapon*)(cast(size_t)cast(void*)this + 596); }
+			UTVehicle LastVehicle() { return *cast(UTVehicle*)(cast(size_t)cast(void*)this + 592); }
+			GFxObject MultiKillMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 588); }
+			GFxObject MultiKillMsg_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 584); }
+			GFxObject MultiKillN_TF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 580); }
+			GFxObject HitLocMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 548); }
+			GFxObject CreditsAndStreaksMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 544); }
+			GFxObject OffhandsAndFlagMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 540); }
+			GFxObject EnemyNameTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 536); }
+			GFxObject CenterTextTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 532); }
+			GFxObject CenterTextMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 528); }
+			GFxObject TimeTF() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 524); }
+			GFxObject TeamStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 520); }
+			GFxObject PlayerStatsMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 516); }
+			int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 512); }
+			float MessageHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
+			GFxObject LogMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 480); }
+			GFxMinimapHud.HeEnDisplay VehicleHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 444); }
+			GFxMinimapHud.HeEnDisplay PlayerHE() { return *cast(GFxMinimapHud.HeEnDisplay*)(cast(size_t)cast(void*)this + 408); }
+			float MinZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 404); }
+			float MaxZoomf() { return *cast(float*)(cast(size_t)cast(void*)this + 400); }
+			GFxMinimap Minimap() { return *cast(GFxMinimap*)(cast(size_t)cast(void*)this + 384); }
+			WorldInfo ThisWorld() { return *cast(WorldInfo*)(cast(size_t)cast(void*)this + 380); }
+		}
+		bool bIsTeamHUD() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x1) != 0; }
+		bool bIsTeamHUD(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x1; } return val; }
+		bool bDrawWeaponCrosshairs() { return (*cast(uint*)(cast(size_t)cast(void*)this + 632) & 0x2) != 0; }
+		bool bDrawWeaponCrosshairs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 632) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 632) &= ~0x2; } return val; }
+	}
+final:
+	void registerMiniMapView(GFxMinimap MC, float R)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -94,7 +102,7 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		*cast(float*)&params[4] = R;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37442], params.ptr, cast(void*)0);
 	}
-	final void SetAmmoCountTF(Weapon Wep, ScriptString Ammo)
+	void SetAmmoCountTF(Weapon Wep, ScriptString Ammo)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -102,57 +110,57 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		*cast(ScriptString*)&params[4] = Ammo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37445], params.ptr, cast(void*)0);
 	}
-	final GFxObject CreateMessageRow()
+	GFxObject CreateMessageRow()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37448], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
-	final GFxObject InitMessageRow()
+	GFxObject InitMessageRow()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37450], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
-	final void Init(LocalPlayer Player)
+	void Init(LocalPlayer pPlayer)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = Player;
+		*cast(LocalPlayer*)params.ptr = pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37453], params.ptr, cast(void*)0);
 	}
-	final void LoadHeEn(GFxMinimapHud.HeEnDisplay* Info, ScriptString Base)
+	void LoadHeEn(GFxMinimapHud.HeEnDisplay* pInfo, ScriptString Base)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *Info;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
 		*cast(ScriptString*)&params[36] = Base;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37457], params.ptr, cast(void*)0);
-		*Info = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
-	final void UpdateHealth(GFxMinimapHud.HeEnDisplay* Info, float NewHealth, float HealthMax)
+	void UpdateHealth(GFxMinimapHud.HeEnDisplay* pInfo, float NewHealth, float HealthMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *Info;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
 		*cast(float*)&params[36] = NewHealth;
 		*cast(float*)&params[40] = HealthMax;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37460], params.ptr, cast(void*)0);
-		*Info = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
-	final void UpdateEnergy(GFxMinimapHud.HeEnDisplay* Info, float NewEnergy, float EnergyMax)
+	void UpdateEnergy(GFxMinimapHud.HeEnDisplay* pInfo, float NewEnergy, float EnergyMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *Info;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
 		*cast(float*)&params[36] = NewEnergy;
 		*cast(float*)&params[40] = EnergyMax;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37465], params.ptr, cast(void*)0);
-		*Info = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
-	final ScriptString FormatTime(int Seconds)
+	ScriptString FormatTime(int Seconds)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -160,18 +168,18 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37470], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final void ClearStats(bool clearScores)
+	void ClearStats(bool clearScores)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = clearScores;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37476], params.ptr, cast(void*)0);
 	}
-	final void RemoveMessage()
+	void RemoveMessage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37479], cast(void*)0, cast(void*)0);
 	}
-	final void AddMessage(ScriptString Type, ScriptString msg)
+	void AddMessage(ScriptString Type, ScriptString msg)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -179,45 +187,45 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		*cast(ScriptString*)&params[12] = msg;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37480], params.ptr, cast(void*)0);
 	}
-	final void UpdateGameHUD(UTPlayerReplicationInfo PRI)
+	void UpdateGameHUD(UTPlayerReplicationInfo PRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = PRI;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37486], params.ptr, cast(void*)0);
 	}
-	final void TickHud(float DeltaTime)
+	void TickHud(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37491], params.ptr, cast(void*)0);
 	}
-	final void ToggleCrosshair(bool bToggle)
+	void ToggleCrosshair(bool bToggle)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bToggle;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37503], params.ptr, cast(void*)0);
 	}
-	final void MinimapZoomOut()
+	void MinimapZoomOut()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37507], cast(void*)0, cast(void*)0);
 	}
-	final void MinimapZoomIn()
+	void MinimapZoomIn()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37508], cast(void*)0, cast(void*)0);
 	}
-	final void DisplayHit(Vector HitDir, int Damage, ScriptClass DamageType)
+	void DisplayHit(Vector HitDir, int Damage, ScriptClass pDamageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitDir;
 		*cast(int*)&params[12] = Damage;
-		*cast(ScriptClass*)&params[16] = DamageType;
+		*cast(ScriptClass*)&params[16] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37509], params.ptr, cast(void*)0);
 	}
-	final void ShowMultiKill(int N, ScriptString msg)
+	void ShowMultiKill(int N, ScriptString msg)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -225,14 +233,14 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		*cast(ScriptString*)&params[4] = msg;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37523], params.ptr, cast(void*)0);
 	}
-	final void SetCenterText(ScriptString Text)
+	void SetCenterText(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37526], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetRank(PlayerReplicationInfo PRI)
+	ScriptString GetRank(PlayerReplicationInfo PRI)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -240,7 +248,7 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37528], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final void AddDeathMessage(PlayerReplicationInfo Killer, PlayerReplicationInfo Killed, ScriptClass Dmg)
+	void AddDeathMessage(PlayerReplicationInfo Killer, PlayerReplicationInfo Killed, ScriptClass Dmg)
 	{
 		ubyte params[12];
 		params[] = 0;

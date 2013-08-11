@@ -6,8 +6,10 @@ import UnrealScript.Engine.PathConstraint;
 
 extern(C++) interface Path_TowardPoint : PathConstraint
 {
-	public @property final auto ref Vector GoalPoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 68); }
-	final bool TowardPoint(Pawn P, Vector Point)
+public extern(D):
+	@property final auto ref Vector GoalPoint() { return *cast(Vector*)(cast(size_t)cast(void*)this + 68); }
+final:
+	bool TowardPoint(Pawn P, Vector Point)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -16,7 +18,7 @@ extern(C++) interface Path_TowardPoint : PathConstraint
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23992], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	final void Recycle()
+	void Recycle()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23997], cast(void*)0, cast(void*)0);
 	}

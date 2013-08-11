@@ -7,30 +7,38 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 {
-	public @property final auto ref float MaxBOunds() { return *cast(float*)(cast(size_t)cast(void*)this + 368); }
-	public @property final auto ref float MinBounds() { return *cast(float*)(cast(size_t)cast(void*)this + 364); }
-	public @property final bool bBoundsPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-	public @property final bool bBoundsPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
-	public @property final auto ref int PopupNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void Initialize()
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			float MaxBOunds() { return *cast(float*)(cast(size_t)cast(void*)this + 368); }
+			float MinBounds() { return *cast(float*)(cast(size_t)cast(void*)this + 364); }
+			int PopupNumber() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		}
+		bool bBoundsPopup() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
+		bool bBoundsPopup(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+	}
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61116], cast(void*)0, cast(void*)0);
 	}
-	final void SpecialAction(GFxTrAction Action)
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61117], params.ptr, cast(void*)0);
 	}
-	final void PopupData(GFxObject Obj)
+	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61119], params.ptr, cast(void*)0);
 	}
-	final void PopupComplete(int Action, ScriptString TextInput)
+	void PopupComplete(int Action, ScriptString TextInput)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -38,7 +46,7 @@ extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 		*cast(ScriptString*)&params[4] = TextInput;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61124], params.ptr, cast(void*)0);
 	}
-	final void ShowBoundsError(int PropId, int PropType)
+	void ShowBoundsError(int PropId, int PropType)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -46,14 +54,14 @@ extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 		*cast(int*)&params[4] = PropType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61128], params.ptr, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61132], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -61,14 +69,14 @@ extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61134], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void CheckDescription(GFxObject DataList)
+	void CheckDescription(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61139], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillDescription(GFxObject DataList)
+	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -76,7 +84,7 @@ extern(C++) interface GFxTrPage_ServerVehicle : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61143], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void ShowModel()
+	void ShowModel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61147], cast(void*)0, cast(void*)0);
 	}

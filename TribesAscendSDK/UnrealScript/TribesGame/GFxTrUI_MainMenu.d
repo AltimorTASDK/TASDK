@@ -5,7 +5,8 @@ import UnrealScript.UTGame.GFxUI_PauseMenu;
 
 extern(C++) interface GFxTrUI_MainMenu : GFxUI_PauseMenu
 {
-	public @property final auto ref GFxUI_PauseMenu FamilyMenuMovie() { return *cast(GFxUI_PauseMenu*)(cast(size_t)cast(void*)this + 448); }
+public extern(D):
+	@property final auto ref GFxUI_PauseMenu FamilyMenuMovie() { return *cast(GFxUI_PauseMenu*)(cast(size_t)cast(void*)this + 448); }
 	final bool Start(bool StartPaused)
 	{
 		ubyte params[8];

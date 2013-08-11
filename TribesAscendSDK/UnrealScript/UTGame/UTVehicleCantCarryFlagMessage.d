@@ -9,9 +9,14 @@ import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 {
-	public @property final auto ref SoundNodeWave FlagAnnouncement() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString FlagMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		SoundNodeWave FlagAnnouncement() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString FlagMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -22,7 +27,7 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 		*cast(UObject*)&params[16] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49647], params.ptr, cast(void*)0);
 	}
-	final SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -32,7 +37,7 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49653], params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	final ubyte AnnouncementLevel(ubyte MessageIndex)
+	ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
@@ -40,7 +45,7 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49658], params.ptr, cast(void*)0);
 		return params[1];
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;

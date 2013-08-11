@@ -6,9 +6,13 @@ import UnrealScript.Engine.RigidBodyBase;
 
 extern(C++) interface RB_Thruster : RigidBodyBase
 {
-	public @property final auto ref float ThrustStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
-	public @property final bool bThrustEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-	public @property final bool bThrustEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		@property final auto ref float ThrustStrength() { return *cast(float*)(cast(size_t)cast(void*)this + 480); }
+		bool bThrustEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
+		bool bThrustEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+	}
 	final void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];

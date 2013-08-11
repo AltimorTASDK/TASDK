@@ -7,7 +7,9 @@ import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface UIDataStoreSubscriber : UInterface
 {
-	final void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
+public extern(D):
+final:
+	void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -15,7 +17,7 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 		*cast(int*)&params[12] = BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28889], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetDataStoreBinding(int BindingIndex)
+	ScriptString GetDataStoreBinding(int BindingIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -23,7 +25,7 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28892], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final bool RefreshSubscriberValue(int BindingIndex)
+	bool RefreshSubscriberValue(int BindingIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -31,7 +33,7 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28895], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void NotifyDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
+	void NotifyDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -42,7 +44,7 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 		*cast(int*)&params[20] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28898], params.ptr, cast(void*)0);
 	}
-	final void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
+	void GetBoundDataStores(ScriptArray!(UIDataStore)* out_BoundDataStores)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -50,7 +52,7 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28904], params.ptr, cast(void*)0);
 		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}
-	final void ClearBoundDataStores()
+	void ClearBoundDataStores()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28907], cast(void*)0, cast(void*)0);
 	}

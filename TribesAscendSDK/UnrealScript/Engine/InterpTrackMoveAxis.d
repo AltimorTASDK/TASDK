@@ -5,6 +5,7 @@ import UnrealScript.Engine.InterpTrackFloatBase;
 
 extern(C++) interface InterpTrackMoveAxis : InterpTrackFloatBase
 {
+public extern(D):
 	enum EInterpMoveAxis : ubyte
 	{
 		AXIS_TranslationX = 0,
@@ -15,6 +16,9 @@ extern(C++) interface InterpTrackMoveAxis : InterpTrackFloatBase
 		AXIS_RotationZ = 5,
 		AXIS_MAX = 6,
 	}
-	public @property final auto ref InterpTrackMove.InterpLookupTrack LookupTrack() { return *cast(InterpTrackMove.InterpLookupTrack*)(cast(size_t)cast(void*)this + 152); }
-	public @property final auto ref InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { return *cast(InterpTrackMoveAxis.EInterpMoveAxis*)(cast(size_t)cast(void*)this + 148); }
+	@property final auto ref
+	{
+		InterpTrackMove.InterpLookupTrack LookupTrack() { return *cast(InterpTrackMove.InterpLookupTrack*)(cast(size_t)cast(void*)this + 152); }
+		InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { return *cast(InterpTrackMoveAxis.EInterpMoveAxis*)(cast(size_t)cast(void*)this + 148); }
+	}
 }

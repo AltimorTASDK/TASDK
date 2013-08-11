@@ -5,6 +5,7 @@ import UnrealScript.Engine.SequenceCondition;
 
 extern(C++) interface SeqCond_IsPIE : SequenceCondition
 {
+public extern(D):
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

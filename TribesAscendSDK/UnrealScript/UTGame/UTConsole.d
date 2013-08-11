@@ -6,17 +6,19 @@ import UnrealScript.Engine.Console;
 
 extern(C++) interface UTConsole : Console
 {
-	public @property final auto ref int TextCount() { return *cast(int*)(cast(size_t)cast(void*)this + 452); }
-	final bool AnyBrowserOpen()
+public extern(D):
+	@property final auto ref int TextCount() { return *cast(int*)(cast(size_t)cast(void*)this + 452); }
+final:
+	bool AnyBrowserOpen()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44076], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
@@ -26,7 +28,7 @@ extern(C++) interface UTConsole : Console
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44078], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	final void OutputTextLine(ScriptString Text, UObject.Color OverrideColor)
+	void OutputTextLine(ScriptString Text, UObject.Color OverrideColor)
 	{
 		ubyte params[16];
 		params[] = 0;

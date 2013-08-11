@@ -13,38 +13,46 @@ import UnrealScript.Engine.PhysicalMaterial;
 
 extern(C++) interface GameExplosionActor : Actor
 {
-	public @property final auto ref Vector ExplosionDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 552); }
-	public @property final auto ref float DirectionalExplosionMinDot() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
-	public @property final auto ref Controller AttacheeController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref Actor Attachee() { return *cast(Actor*)(cast(size_t)cast(void*)this + 540); }
-	public @property final auto ref Vector HitLocationFromPhysMaterialTrace() { return *cast(Vector*)(cast(size_t)cast(void*)this + 528); }
-	public @property final auto ref Actor HitActorFromPhysMaterialTrace() { return *cast(Actor*)(cast(size_t)cast(void*)this + 524); }
-	public @property final auto ref Controller InstigatorController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 520); }
-	public @property final auto ref GameExplosion ExplosionTemplate() { return *cast(GameExplosion*)(cast(size_t)cast(void*)this + 512); }
-	public @property final auto ref float RadialBlurMaxBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
-	public @property final auto ref float RadialBlurFadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
-	public @property final auto ref float RadialBlurFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
-	public @property final auto ref float LightInitialBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref float LightFadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref float LightFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
-	public @property final bool bDrawDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
-	public @property final bool bDrawDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
-	public @property final bool bExplodeMoreThanOnce() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
-	public @property final bool bExplodeMoreThanOnce(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
-	public @property final bool bHasExploded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
-	public @property final bool bHasExploded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
-	final void PreBeginPlay()
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			Vector ExplosionDirection() { return *cast(Vector*)(cast(size_t)cast(void*)this + 552); }
+			float DirectionalExplosionMinDot() { return *cast(float*)(cast(size_t)cast(void*)this + 548); }
+			Controller AttacheeController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 544); }
+			Actor Attachee() { return *cast(Actor*)(cast(size_t)cast(void*)this + 540); }
+			Vector HitLocationFromPhysMaterialTrace() { return *cast(Vector*)(cast(size_t)cast(void*)this + 528); }
+			Actor HitActorFromPhysMaterialTrace() { return *cast(Actor*)(cast(size_t)cast(void*)this + 524); }
+			Controller InstigatorController() { return *cast(Controller*)(cast(size_t)cast(void*)this + 520); }
+			GameExplosion ExplosionTemplate() { return *cast(GameExplosion*)(cast(size_t)cast(void*)this + 512); }
+			float RadialBlurMaxBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 508); }
+			float RadialBlurFadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 504); }
+			float RadialBlurFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }
+			float LightInitialBrightness() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+			float LightFadeTimeRemaining() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+			float LightFadeTime() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
+		}
+		bool bDrawDebug() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x4) != 0; }
+		bool bDrawDebug(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x4; } return val; }
+		bool bExplodeMoreThanOnce() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x2) != 0; }
+		bool bExplodeMoreThanOnce(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x2; } return val; }
+		bool bHasExploded() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
+		bool bHasExploded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 476) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 476) &= ~0x1; } return val; }
+	}
+final:
+	void PreBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31590], cast(void*)0, cast(void*)0);
 	}
-	final PhysicalMaterial GetPhysicalMaterial()
+	PhysicalMaterial GetPhysicalMaterial()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31591], params.ptr, cast(void*)0);
 		return *cast(PhysicalMaterial*)params.ptr;
 	}
-	final bool DoFullDamageToActor(Actor Victim)
+	bool DoFullDamageToActor(Actor Victim)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -52,7 +60,7 @@ extern(C++) interface GameExplosionActor : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31599], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool IsBehindExplosion(Actor A)
+	bool IsBehindExplosion(Actor A)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -60,7 +68,7 @@ extern(C++) interface GameExplosionActor : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31602], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final float BoxDistanceToPoint(Vector Start, UObject.Box BBox)
+	float BoxDistanceToPoint(Vector Start, UObject.Box BBox)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -69,7 +77,7 @@ extern(C++) interface GameExplosionActor : Actor
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31605], params.ptr, cast(void*)0);
 		return *cast(float*)&params[40];
 	}
-	final void DoExplosionDamage(bool bCauseDamage, bool bCauseEffects)
+	void DoExplosionDamage(bool bCauseDamage, bool bCauseEffects)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -77,14 +85,14 @@ extern(C++) interface GameExplosionActor : Actor
 		*cast(bool*)&params[4] = bCauseEffects;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31609], params.ptr, cast(void*)0);
 	}
-	final float GetEffectCheckRadius()
+	float GetEffectCheckRadius()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31637], params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	final void SpecialPawnEffectsFor(GamePawn VictimPawn, float VictimDist)
+	void SpecialPawnEffectsFor(GamePawn VictimPawn, float VictimDist)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -92,29 +100,29 @@ extern(C++) interface GameExplosionActor : Actor
 		*cast(float*)&params[4] = VictimDist;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31640], params.ptr, cast(void*)0);
 	}
-	final void UpdateExplosionTemplateWithPerMaterialFX(PhysicalMaterial PhysMaterial)
+	void UpdateExplosionTemplateWithPerMaterialFX(PhysicalMaterial PhysMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicalMaterial*)params.ptr = PhysMaterial;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31643], params.ptr, cast(void*)0);
 	}
-	final void SpawnExplosionParticleSystem(ParticleSystem Template)
+	void SpawnExplosionParticleSystem(ParticleSystem Template)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = Template;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31645], params.ptr, cast(void*)0);
 	}
-	final void SpawnExplosionDecal()
+	void SpawnExplosionDecal()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31647], cast(void*)0, cast(void*)0);
 	}
-	final void SpawnExplosionFogVolume()
+	void SpawnExplosionFogVolume()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31648], cast(void*)0, cast(void*)0);
 	}
-	final void Explode(GameExplosion NewExplosionTemplate, Vector Direction)
+	void Explode(GameExplosion NewExplosionTemplate, Vector Direction)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -122,30 +130,30 @@ extern(C++) interface GameExplosionActor : Actor
 		*cast(Vector*)&params[4] = Direction;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31649], params.ptr, cast(void*)0);
 	}
-	final void DelayedExplosionDamage()
+	void DelayedExplosionDamage()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31654], cast(void*)0, cast(void*)0);
 	}
-	final void DrawDebug()
+	void DrawDebug()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31655], cast(void*)0, cast(void*)0);
 	}
-	final void Tick(float DeltaTime)
+	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31658], params.ptr, cast(void*)0);
 	}
-	final void DoExplosionCameraEffects()
+	void DoExplosionCameraEffects()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31661], cast(void*)0, cast(void*)0);
 	}
-	final void SpawnCameraLensEffects()
+	void SpawnCameraLensEffects()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31665], cast(void*)0, cast(void*)0);
 	}
-	final CameraShake ChooseCameraShake(Vector Epicenter, PlayerController PC)
+	CameraShake ChooseCameraShake(Vector Epicenter, PlayerController PC)
 	{
 		ubyte params[20];
 		params[] = 0;

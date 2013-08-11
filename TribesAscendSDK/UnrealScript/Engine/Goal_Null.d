@@ -6,7 +6,9 @@ import UnrealScript.Engine.PathGoalEvaluator;
 
 extern(C++) interface Goal_Null : PathGoalEvaluator
 {
-	final bool GoUntilBust(Pawn P, int InMaxPathVisits)
+public extern(D):
+final:
+	bool GoUntilBust(Pawn P, int InMaxPathVisits)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -15,7 +17,7 @@ extern(C++) interface Goal_Null : PathGoalEvaluator
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18187], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void Recycle()
+	void Recycle()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18192], cast(void*)0, cast(void*)0);
 	}

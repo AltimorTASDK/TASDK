@@ -8,9 +8,14 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface PlayerCollectorGame : GameInfo
 {
-	public @property final auto ref ScriptString URLToLoad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
-	public @property final auto ref int NumberOfClientsToWaitFor() { return *cast(int*)(cast(size_t)cast(void*)this + 884); }
-	final PlayerController Login(ScriptString Portal, ScriptString Options, OnlineSubsystem.UniqueNetId UniqueId, ScriptString* ErrorMessage)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString URLToLoad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
+		int NumberOfClientsToWaitFor() { return *cast(int*)(cast(size_t)cast(void*)this + 884); }
+	}
+final:
+	PlayerController Login(ScriptString Portal, ScriptString Options, OnlineSubsystem.UniqueNetId UniqueId, ScriptString* ErrorMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -22,7 +27,7 @@ extern(C++) interface PlayerCollectorGame : GameInfo
 		*ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
 	}
-	final void GetSeamlessTravelActorList(bool bToEntry, ScriptArray!(Actor)* ActorList)
+	void GetSeamlessTravelActorList(bool bToEntry, ScriptArray!(Actor)* ActorList)
 	{
 		ubyte params[16];
 		params[] = 0;

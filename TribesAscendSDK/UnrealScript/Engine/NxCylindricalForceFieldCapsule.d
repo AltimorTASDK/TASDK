@@ -5,6 +5,7 @@ import UnrealScript.Engine.NxCylindricalForceField;
 
 extern(C++) interface NxCylindricalForceFieldCapsule : NxCylindricalForceField
 {
+public extern(D):
 	final void DoInitRBPhys()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21147], cast(void*)0, cast(void*)0);

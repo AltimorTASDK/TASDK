@@ -6,6 +6,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface AICommandBase : UObject
 {
+public extern(D):
 	final int GetUtility(AIController InAI)
 	{
 		ubyte params[8];

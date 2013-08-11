@@ -5,6 +5,7 @@ import UnrealScript.Engine.SequenceEvent;
 
 extern(C++) interface TrSeqEvent_StormControlPoint : SequenceEvent
 {
+public extern(D):
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

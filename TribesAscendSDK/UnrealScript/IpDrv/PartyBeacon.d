@@ -6,6 +6,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface PartyBeacon : UObject
 {
+public extern(D):
 	enum EReservationPacketType : ubyte
 	{
 		RPT_UnknownPacketType = 0,
@@ -34,45 +35,53 @@ extern(C++) interface PartyBeacon : UObject
 	}
 	struct PlayerReservation
 	{
-		public @property final auto ref float ElapsedSessionTime() { return *cast(float*)(cast(size_t)&this + 32); }
-		private ubyte __ElapsedSessionTime[4];
-		public @property final auto ref UObject.Double Sigma() { return *cast(UObject.Double*)(cast(size_t)&this + 24); }
-		private ubyte __Sigma[8];
-		public @property final auto ref UObject.Double Mu() { return *cast(UObject.Double*)(cast(size_t)&this + 16); }
-		private ubyte __Mu[8];
-		public @property final auto ref int XpLevel() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __XpLevel[4];
-		public @property final auto ref int Skill() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __Skill[4];
-		public @property final auto ref OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
-		private ubyte __NetId[8];
+		private ubyte __buffer__[36];
+	public extern(D):
+		@property final auto ref
+		{
+			float ElapsedSessionTime() { return *cast(float*)(cast(size_t)&this + 32); }
+			UObject.Double Sigma() { return *cast(UObject.Double*)(cast(size_t)&this + 24); }
+			UObject.Double Mu() { return *cast(UObject.Double*)(cast(size_t)&this + 16); }
+			int XpLevel() { return *cast(int*)(cast(size_t)&this + 12); }
+			int Skill() { return *cast(int*)(cast(size_t)&this + 8); }
+			OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct PartyReservation
 	{
-		public @property final auto ref ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { return *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)(cast(size_t)&this + 12); }
-		private ubyte __PartyMembers[12];
-		public @property final auto ref OnlineSubsystem.UniqueNetId PartyLeader() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 4); }
-		private ubyte __PartyLeader[8];
-		public @property final auto ref int TeamNum() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __TeamNum[4];
+		private ubyte __buffer__[24];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { return *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)(cast(size_t)&this + 12); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 4); }
+			int TeamNum() { return *cast(int*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptName BeaconName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
-	public @property final auto ref float HeartbeatTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
-	public @property final bool bShouldTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
-	public @property final bool bShouldTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
-	public @property final bool bWantsDeferredDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
-	public @property final bool bWantsDeferredDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
-	public @property final bool bIsInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
-	public @property final bool bIsInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
-	public @property final auto ref UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
-	public @property final auto ref int PartyBeaconPort() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
-	final void OnDestroyComplete()
+	@property final
+	{
+		auto ref
+		{
+			ScriptName BeaconName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 84); }
+			float ElapsedHeartbeatTime() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }
+			float HeartbeatTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
+			UObject.Pointer Socket() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }
+			int PartyBeaconPort() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }
+			UObject.Pointer VfTable_FTickableObject() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+		}
+		bool bShouldTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x4) != 0; }
+		bool bShouldTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x4; } return val; }
+		bool bWantsDeferredDestroy() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }
+		bool bWantsDeferredDestroy(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x2; } return val; }
+		bool bIsInTick() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }
+		bool bIsInTick(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 72) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 72) &= ~0x1; } return val; }
+	}
+final:
+	void OnDestroyComplete()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33885], cast(void*)0, cast(void*)0);
 	}
-	final void DestroyBeacon()
+	void DestroyBeacon()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33909], cast(void*)0, cast(void*)0);
 	}

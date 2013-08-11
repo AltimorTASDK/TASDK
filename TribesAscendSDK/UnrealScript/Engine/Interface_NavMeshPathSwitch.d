@@ -6,6 +6,7 @@ import UnrealScript.Engine.Interface_NavMeshPathObject;
 
 extern(C++) interface Interface_NavMeshPathSwitch : Interface_NavMeshPathObject
 {
+public extern(D):
 	final bool AIActivateSwitch(AIController AI)
 	{
 		ubyte params[8];

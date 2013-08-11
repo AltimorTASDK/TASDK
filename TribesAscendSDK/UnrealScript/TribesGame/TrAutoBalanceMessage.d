@@ -7,9 +7,13 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrAutoBalanceMessage : UTLocalMessage
 {
-	public @property final auto ref ScriptString TeamsAutoBalanced() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString AutoBalanceInFive() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString AutoBalanceInTwenty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString TeamsAutoBalanced() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString AutoBalanceInFive() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString AutoBalanceInTwenty() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

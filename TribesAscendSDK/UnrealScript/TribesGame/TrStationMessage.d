@@ -9,14 +9,19 @@ import UnrealScript.Engine.PlayerController;
 
 extern(C++) interface TrStationMessage : UTLocalMessage
 {
-	public @property final auto ref SoundCue EnemyStationSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 164); }
-	public @property final auto ref SoundCue StationNotPoweredSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString MustBeHeld() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString ControlPoint() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString NeutralStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString EnemyStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString StationNotPowered() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		SoundCue EnemyStationSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 164); }
+		SoundCue StationNotPoweredSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString MustBeHeld() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		ScriptString ControlPoint() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString NeutralStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString EnemyStation() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString StationNotPowered() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -28,7 +33,7 @@ extern(C++) interface TrStationMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112595], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

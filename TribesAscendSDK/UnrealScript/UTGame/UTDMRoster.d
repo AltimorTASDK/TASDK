@@ -6,8 +6,12 @@ import UnrealScript.UTGame.UTTeamInfo;
 
 extern(C++) interface UTDMRoster : UTTeamInfo
 {
-	public @property final auto ref ScriptClass DMSquadClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 600); }
-	public @property final auto ref int Position() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptClass DMSquadClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 600); }
+		int Position() { return *cast(int*)(cast(size_t)cast(void*)this + 596); }
+	}
 	final bool AddToTeam(Controller Other)
 	{
 		ubyte params[8];

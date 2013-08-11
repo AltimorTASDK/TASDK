@@ -8,22 +8,27 @@ import UnrealScript.Engine.PostProcessChain;
 
 extern(C++) interface UTEntryPlayerController : UTPlayerController
 {
-	public @property final auto ref ScriptArray!(PostProcessChain) OldPostProcessChain() { return *cast(ScriptArray!(PostProcessChain)*)(cast(size_t)cast(void*)this + 2180); }
-	public @property final auto ref LocalPlayer OldPlayer() { return *cast(LocalPlayer*)(cast(size_t)cast(void*)this + 2192); }
-	public @property final auto ref PostProcessChain EntryPostProcessChain() { return *cast(PostProcessChain*)(cast(size_t)cast(void*)this + 2176); }
-	final void InitInputSystem()
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(PostProcessChain) OldPostProcessChain() { return *cast(ScriptArray!(PostProcessChain)*)(cast(size_t)cast(void*)this + 2180); }
+		LocalPlayer OldPlayer() { return *cast(LocalPlayer*)(cast(size_t)cast(void*)this + 2192); }
+		PostProcessChain EntryPostProcessChain() { return *cast(PostProcessChain*)(cast(size_t)cast(void*)this + 2176); }
+	}
+final:
+	void InitInputSystem()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47416], cast(void*)0, cast(void*)0);
 	}
-	final void RestorePostProcessing()
+	void RestorePostProcessing()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47417], cast(void*)0, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47419], cast(void*)0, cast(void*)0);
 	}
-	final void OnControllerChanged(int ControllerId, bool bIsConnected)
+	void OnControllerChanged(int ControllerId, bool bIsConnected)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -31,17 +36,17 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 		*cast(bool*)&params[4] = bIsConnected;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47420], params.ptr, cast(void*)0);
 	}
-	final void OnGameInviteReceived(ubyte LocalUserNum, ScriptString RequestingNick)
+	void OnGameInviteReceived(ubyte LocalUserNum, ScriptString RequestingNick)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptString*)&params[4] = RequestingNick;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47424], params.ptr, cast(void*)0);
 	}
-	final void OnFriendInviteReceived(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId RequestingPlayer, ScriptString RequestingNick, ScriptString Message)
+	void OnFriendInviteReceived(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId RequestingPlayer, ScriptString RequestingNick, ScriptString Message)
 	{
-		ubyte params[33];
+		ubyte params[36];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = RequestingPlayer;
@@ -49,9 +54,9 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 		*cast(ScriptString*)&params[24] = Message;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47427], params.ptr, cast(void*)0);
 	}
-	final void OnFriendMessageReceived(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId SendingPlayer, ScriptString SendingNick, ScriptString Message)
+	void OnFriendMessageReceived(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId SendingPlayer, ScriptString SendingNick, ScriptString Message)
 	{
-		ubyte params[33];
+		ubyte params[36];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = SendingPlayer;
@@ -59,32 +64,32 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 		*cast(ScriptString*)&params[24] = Message;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47432], params.ptr, cast(void*)0);
 	}
-	final void OnConnectionStatusChange(OnlineSubsystem.EOnlineServerConnectionStatus ConnectionStatus)
+	void OnConnectionStatusChange(OnlineSubsystem.EOnlineServerConnectionStatus ConnectionStatus)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(OnlineSubsystem.EOnlineServerConnectionStatus*)params.ptr = ConnectionStatus;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47437], params.ptr, cast(void*)0);
 	}
-	final void OnLinkStatusChanged(bool bConnected)
+	void OnLinkStatusChanged(bool bConnected)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bConnected;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47440], params.ptr, cast(void*)0);
 	}
-	final void QuitToMainMenu()
+	void QuitToMainMenu()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47443], cast(void*)0, cast(void*)0);
 	}
-	final void SetPawnConstructionScene(bool bShow)
+	void SetPawnConstructionScene(bool bShow)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShow;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47444], params.ptr, cast(void*)0);
 	}
-	final void ShowMidGameMenu(ScriptName TabTag, bool bEnableInput)
+	void ShowMidGameMenu(ScriptName TabTag, bool bEnableInput)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -92,7 +97,7 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 		*cast(bool*)&params[8] = bEnableInput;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47446], params.ptr, cast(void*)0);
 	}
-	final void ShowScoreboard()
+	void ShowScoreboard()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47449], cast(void*)0, cast(void*)0);
 	}

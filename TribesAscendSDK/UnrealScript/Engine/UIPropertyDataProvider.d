@@ -7,8 +7,10 @@ import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface UIPropertyDataProvider : UIDataProvider
 {
-	public @property final auto ref ScriptArray!(ScriptClass) ComplexPropertyTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 88); }
-	final bool CanSupportComplexPropertyType(Property UnsupportedProperty)
+public extern(D):
+	@property final auto ref ScriptArray!(ScriptClass) ComplexPropertyTypes() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 88); }
+final:
+	bool CanSupportComplexPropertyType(Property UnsupportedProperty)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -16,7 +18,7 @@ extern(C++) interface UIPropertyDataProvider : UIDataProvider
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22596], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool GetCustomPropertyValue(UIRoot.UIProviderScriptFieldValue* PropertyValue, int ArrayIndex)
+	bool GetCustomPropertyValue(UIRoot.UIProviderScriptFieldValue* PropertyValue, int ArrayIndex)
 	{
 		ubyte params[92];
 		params[] = 0;

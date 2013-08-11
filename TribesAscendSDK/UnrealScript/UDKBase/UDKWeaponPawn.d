@@ -8,9 +8,13 @@ import UnrealScript.UDKBase.UDKWeapon;
 
 extern(C++) interface UDKWeaponPawn : UDKVehicleBase
 {
-	public @property final auto ref int MySeatIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 1556); }
-	public @property final auto ref UDKWeapon MyVehicleWeapon() { return *cast(UDKWeapon*)(cast(size_t)cast(void*)this + 1552); }
-	public @property final auto ref UDKVehicle MyVehicle() { return *cast(UDKVehicle*)(cast(size_t)cast(void*)this + 1548); }
+public extern(D):
+	@property final auto ref
+	{
+		int MySeatIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 1556); }
+		UDKWeapon MyVehicleWeapon() { return *cast(UDKWeapon*)(cast(size_t)cast(void*)this + 1552); }
+		UDKVehicle MyVehicle() { return *cast(UDKVehicle*)(cast(size_t)cast(void*)this + 1548); }
+	}
 	final Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
 	{
 		ubyte params[20];

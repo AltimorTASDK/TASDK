@@ -8,13 +8,18 @@ import UnrealScript.GFxUI.GFxClikWidget;
 
 extern(C++) interface GFxUDKFrontEnd_MapSelect : GFxUDKFrontEnd_Screen
 {
-	public @property final auto ref ScriptArray!(UTUIDataProvider_MapInfo) MapList() { return *cast(ScriptArray!(UTUIDataProvider_MapInfo)*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref int LastSelectedItem() { return *cast(int*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref GFxObject MenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 232); }
-	public @property final auto ref GFxClikWidget ImgScrollerMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 228); }
-	public @property final auto ref GFxObject ListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 224); }
-	public @property final auto ref GFxClikWidget ListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 220); }
-	final ScriptString GetImageMarkupByMapName(ScriptString InMapName)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(UTUIDataProvider_MapInfo) MapList() { return *cast(ScriptArray!(UTUIDataProvider_MapInfo)*)(cast(size_t)cast(void*)this + 236); }
+		int LastSelectedItem() { return *cast(int*)(cast(size_t)cast(void*)this + 248); }
+		GFxObject MenuMC() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 232); }
+		GFxClikWidget ImgScrollerMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 228); }
+		GFxObject ListDataProvider() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 224); }
+		GFxClikWidget ListMC() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 220); }
+	}
+final:
+	ScriptString GetImageMarkupByMapName(ScriptString InMapName)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -22,25 +27,25 @@ extern(C++) interface GFxUDKFrontEnd_MapSelect : GFxUDKFrontEnd_Screen
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38166], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	final void OnViewLoaded()
+	void OnViewLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38638], cast(void*)0, cast(void*)0);
 	}
-	final void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool bPlayOpenAnimation)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38639], params.ptr, cast(void*)0);
 	}
-	final void DisableSubComponents(bool bDisableComponents)
+	void DisableSubComponents(bool bDisableComponents)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDisableComponents;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38641], params.ptr, cast(void*)0);
 	}
-	final void OnMapList_ValueChanged(ScriptString InMapSelected, ScriptString InMapImageSelected)
+	void OnMapList_ValueChanged(ScriptString InMapSelected, ScriptString InMapImageSelected)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -48,25 +53,25 @@ extern(C++) interface GFxUDKFrontEnd_MapSelect : GFxUDKFrontEnd_Screen
 		*cast(ScriptString*)&params[12] = InMapImageSelected;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38643], params.ptr, cast(void*)0);
 	}
-	final void SetList(GFxObject List)
+	void SetList(GFxObject List)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38646], params.ptr, cast(void*)0);
 	}
-	final void OnListItemPress(GFxClikWidget.EventData ev)
+	void OnListItemPress(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38648], params.ptr, cast(void*)0);
 	}
-	final void UpdateListDataProvider()
+	void UpdateListDataProvider()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38653], cast(void*)0, cast(void*)0);
 	}
-	final ScriptString GetMapFriendlyName(ScriptString Map)
+	ScriptString GetMapFriendlyName(ScriptString Map)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -74,35 +79,35 @@ extern(C++) interface GFxUDKFrontEnd_MapSelect : GFxUDKFrontEnd_Screen
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38664], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	final void SetImgScroller(GFxClikWidget InImgScroller)
+	void SetImgScroller(GFxClikWidget InImgScroller)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxClikWidget*)params.ptr = InImgScroller;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38665], params.ptr, cast(void*)0);
 	}
-	final ScriptName GetCurrentGameMode()
+	ScriptName GetCurrentGameMode()
 	{
 		ubyte params[8];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38674], params.ptr, cast(void*)0);
 		return *cast(ScriptName*)params.ptr;
 	}
-	final void SetupMapCycle(ScriptString SelectedMap)
+	void SetupMapCycle(ScriptString SelectedMap)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = SelectedMap;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38780], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetSelectedMap()
+	ScriptString GetSelectedMap()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38785], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	final bool WidgetInitialized(ScriptName WidgetName, ScriptName WidgetPath, GFxObject Widget)
+	bool WidgetInitialized(ScriptName WidgetName, ScriptName WidgetPath, GFxObject Widget)
 	{
 		ubyte params[24];
 		params[] = 0;

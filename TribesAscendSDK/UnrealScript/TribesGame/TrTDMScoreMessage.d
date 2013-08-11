@@ -8,7 +8,9 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrTDMScoreMessage : UTLocalMessage
 {
-	final ubyte AnnouncementLevel(ubyte MessageIndex)
+public extern(D):
+final:
+	ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
@@ -16,7 +18,7 @@ extern(C++) interface TrTDMScoreMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113098], params.ptr, cast(void*)0);
 		return params[1];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

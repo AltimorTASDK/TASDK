@@ -8,12 +8,17 @@ import UnrealScript.UTGame.UTAnnouncer;
 
 extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 {
-	public @property final auto ref UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString BothFlagsString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString EnemyHasFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString YouHaveFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
-	final UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+public extern(D):
+	@property final auto ref
+	{
+		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 140); }
+		UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString BothFlagsString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString EnemyHasFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString YouHaveFlagString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
+final:
+	UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -24,7 +29,7 @@ extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46126], params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -36,7 +41,7 @@ extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46132], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;

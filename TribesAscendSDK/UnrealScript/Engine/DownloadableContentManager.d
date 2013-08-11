@@ -7,13 +7,18 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface DownloadableContentManager : UObject
 {
-	public @property final auto ref ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 60); }
-	public @property final auto ref ScriptArray!(ScriptString) InstalledDLC() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref ScriptArray!(ScriptClass) ClassesToReload() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref ScriptArray!(UObject) ObjectsToReload() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 156); }
-	// WARNING: Property 'GameEngine' has the same name as a defined type!
-	public @property final auto ref UObject.Map_Mirror TextureCachePathMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 84); }
-	final bool InstallDLC(OnlineSubsystem.OnlineContent* DLCBundle)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 60); }
+		ScriptArray!(ScriptString) InstalledDLC() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 72); }
+		ScriptArray!(ScriptClass) ClassesToReload() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 144); }
+		ScriptArray!(UObject) ObjectsToReload() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 156); }
+		// WARNING: Property 'GameEngine' has the same name as a defined type!
+		UObject.Map_Mirror TextureCachePathMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)cast(void*)this + 84); }
+	}
+final:
+	bool InstallDLC(OnlineSubsystem.OnlineContent* DLCBundle)
 	{
 		ubyte params[72];
 		params[] = 0;
@@ -22,7 +27,7 @@ extern(C++) interface DownloadableContentManager : UObject
 		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 		return *cast(bool*)&params[68];
 	}
-	final void InstallDLCs(ScriptArray!(OnlineSubsystem.OnlineContent)* DLCBundles)
+	void InstallDLCs(ScriptArray!(OnlineSubsystem.OnlineContent)* DLCBundles)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -30,11 +35,11 @@ extern(C++) interface DownloadableContentManager : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14714], params.ptr, cast(void*)0);
 		*DLCBundles = *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)params.ptr;
 	}
-	final void ClearDLC()
+	void ClearDLC()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14717], cast(void*)0, cast(void*)0);
 	}
-	final bool GetDLCTextureCachePath(ScriptName TextureCacheName, ScriptString* Path)
+	bool GetDLCTextureCachePath(ScriptName TextureCacheName, ScriptString* Path)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -44,25 +49,25 @@ extern(C++) interface DownloadableContentManager : UObject
 		*Path = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final void AddSectionToObjectList(ScriptString Section)
+	void AddSectionToObjectList(ScriptString Section)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Section;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14722], params.ptr, cast(void*)0);
 	}
-	final void MarkPerObjectConfigPendingKill(ScriptString Section)
+	void MarkPerObjectConfigPendingKill(ScriptString Section)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Section;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14724], params.ptr, cast(void*)0);
 	}
-	final void UpdateObjectLists()
+	void UpdateObjectLists()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14726], cast(void*)0, cast(void*)0);
 	}
-	final void InstallPackages(OnlineSubsystem.OnlineContent* DLCBundle)
+	void InstallPackages(OnlineSubsystem.OnlineContent* DLCBundle)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -70,7 +75,7 @@ extern(C++) interface DownloadableContentManager : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14727], params.ptr, cast(void*)0);
 		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 	}
-	final void InstallNonPackageFiles(OnlineSubsystem.OnlineContent* DLCBundle)
+	void InstallNonPackageFiles(OnlineSubsystem.OnlineContent* DLCBundle)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -78,34 +83,34 @@ extern(C++) interface DownloadableContentManager : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14729], params.ptr, cast(void*)0);
 		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 	}
-	final void Init()
+	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14731], cast(void*)0, cast(void*)0);
 	}
-	final void OnLoginChange(ubyte LocalUserNum)
+	void OnLoginChange(ubyte LocalUserNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14733], params.ptr, cast(void*)0);
 	}
-	final void OnStorageDeviceChange()
+	void OnStorageDeviceChange()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14735], cast(void*)0, cast(void*)0);
 	}
-	final void OnContentChange()
+	void OnContentChange()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14736], cast(void*)0, cast(void*)0);
 	}
-	final void RefreshDLC()
+	void RefreshDLC()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14737], cast(void*)0, cast(void*)0);
 	}
-	final void RefreshDLCEnumComplete()
+	void RefreshDLCEnumComplete()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14741], cast(void*)0, cast(void*)0);
 	}
-	final void AddPackagesToFullyLoad(ScriptString Filename)
+	void AddPackagesToFullyLoad(ScriptString Filename)
 	{
 		ubyte params[12];
 		params[] = 0;

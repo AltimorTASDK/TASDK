@@ -4,7 +4,8 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface Scene : UObject
 {
-	public static immutable auto SDPG_NumBits = 3;
+public extern(D):
+	enum SDPG_NumBits = 3;
 	enum EDetailMode : ubyte
 	{
 		DM_Low = 0,

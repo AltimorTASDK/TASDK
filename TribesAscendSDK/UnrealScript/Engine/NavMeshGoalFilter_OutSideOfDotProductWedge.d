@@ -6,9 +6,13 @@ import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
 extern(C++) interface NavMeshGoalFilter_OutSideOfDotProductWedge : NavMeshGoal_Filter
 {
-	public @property final auto ref float Epsilon() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-	public @property final auto ref Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref
+	{
+		float Epsilon() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
+		Vector Rotation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 84); }
+		Vector Location() { return *cast(Vector*)(cast(size_t)cast(void*)this + 72); }
+	}
 	final bool OutsideOfDotProductWedge(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InLocation, Rotator InRotation, float InEpsilon)
 	{
 		ubyte params[36];

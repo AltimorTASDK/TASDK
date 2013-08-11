@@ -7,13 +7,17 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UTKillerMessage : UTWeaponKillMessage
 {
-	public @property final auto ref ScriptString OtherKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
-	public @property final auto ref ScriptString OtherKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString OtherKilledPrefix() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref ScriptString YouTeamKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref ScriptString YouTeamKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
-	public @property final auto ref ScriptString YouKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptString YouKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptString OtherKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 172); }
+		ScriptString OtherKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString OtherKilledPrefix() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		ScriptString YouTeamKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 136); }
+		ScriptString YouTeamKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 124); }
+		ScriptString YouKilledTrailer() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+		ScriptString YouKilled() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	}
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

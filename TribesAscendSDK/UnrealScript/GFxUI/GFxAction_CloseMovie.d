@@ -6,9 +6,13 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface GFxAction_CloseMovie : SequenceAction
 {
-	public @property final bool bUnload() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1) != 0; }
-	public @property final bool bUnload(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1; } return val; }
-	public @property final auto ref GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final
+	{
+		@property final auto ref GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 232); }
+		bool bUnload() { return (*cast(uint*)(cast(size_t)cast(void*)this + 236) & 0x1) != 0; }
+		bool bUnload(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 236) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 236) &= ~0x1; } return val; }
+	}
 	final bool IsValidLevelSequenceObject()
 	{
 		ubyte params[4];

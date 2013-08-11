@@ -7,6 +7,7 @@ import UnrealScript.GFxUI.GFxEvent_FSCommand;
 
 extern(C++) interface GFxFSCmdHandler_Kismet : GFxFSCmdHandler
 {
+public extern(D):
 	final bool FSCommand(GFxMoviePlayer Movie, GFxEvent_FSCommand Event, ScriptString Cmd, ScriptString Arg)
 	{
 		ubyte params[36];

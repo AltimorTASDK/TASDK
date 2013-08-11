@@ -5,5 +5,6 @@ import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleRotation_Seeded : ParticleModuleRotation
 {
-	public @property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { return *cast(ParticleModule.ParticleRandomSeedInfo*)(cast(size_t)cast(void*)this + 100); }
+public extern(D):
+	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { return *cast(ParticleModule.ParticleRandomSeedInfo*)(cast(size_t)cast(void*)this + 100); }
 }

@@ -5,6 +5,7 @@ import UnrealScript.Engine.Keypoint;
 
 extern(C++) interface PathTargetPoint : Keypoint
 {
+public extern(D):
 	final bool ShouldBeHiddenBySHOW_NavigationNodes()
 	{
 		ubyte params[4];

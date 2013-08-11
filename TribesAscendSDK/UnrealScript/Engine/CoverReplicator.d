@@ -7,52 +7,57 @@ import UnrealScript.Engine.ReplicationInfo;
 
 extern(C++) interface CoverReplicator : ReplicationInfo
 {
+public extern(D):
 	struct CoverReplicationInfo
 	{
-		public @property final auto ref ScriptArray!(ubyte) SlotsEnabled() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
-		private ubyte __SlotsEnabled[12];
-		public @property final auto ref ScriptArray!(ubyte) SlotsDisabled() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 16); }
-		private ubyte __SlotsDisabled[12];
-		public @property final auto ref ScriptArray!(ubyte) SlotsAdjusted() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 28); }
-		private ubyte __SlotsAdjusted[12];
-		public @property final auto ref ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { return *cast(ScriptArray!(CoverReplicator.ManualCoverTypeInfo)*)(cast(size_t)&this + 40); }
-		private ubyte __SlotsCoverTypeChanged[12];
-		public @property final auto ref CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
-		private ubyte __Link[4];
+		private ubyte __buffer__[52];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(ubyte) SlotsEnabled() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
+			ScriptArray!(ubyte) SlotsDisabled() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 16); }
+			ScriptArray!(ubyte) SlotsAdjusted() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 28); }
+			ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { return *cast(ScriptArray!(CoverReplicator.ManualCoverTypeInfo)*)(cast(size_t)&this + 40); }
+			CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct ManualCoverTypeInfo
 	{
-		public @property final auto ref CoverLink.ECoverType ManualCoverType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 1); }
-		private ubyte __ManualCoverType[1];
-		public @property final auto ref ubyte SlotIndex() { return *cast(ubyte*)(cast(size_t)&this + 0); }
-		private ubyte __SlotIndex[1];
+		private ubyte __buffer__[2];
+	public extern(D):
+		@property final auto ref
+		{
+			CoverLink.ECoverType ManualCoverType() { return *cast(CoverLink.ECoverType*)(cast(size_t)&this + 1); }
+			ubyte SlotIndex() { return *cast(ubyte*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { return *cast(ScriptArray!(CoverReplicator.CoverReplicationInfo)*)(cast(size_t)cast(void*)this + 476); }
-	final void PurgeOldEntries()
+	@property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { return *cast(ScriptArray!(CoverReplicator.CoverReplicationInfo)*)(cast(size_t)cast(void*)this + 476); }
+final:
+	void PurgeOldEntries()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13464], cast(void*)0, cast(void*)0);
 	}
-	final void ReplicateInitialCoverInfo()
+	void ReplicateInitialCoverInfo()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13466], cast(void*)0, cast(void*)0);
 	}
-	final void ClientSetOwner(PlayerController PC)
+	void ClientSetOwner(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13468], params.ptr, cast(void*)0);
 	}
-	final void ServerSendInitialCoverReplicationInfo(int Index)
+	void ServerSendInitialCoverReplicationInfo(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13470], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveInitialCoverReplicationInfo(int Index, CoverLink Link, bool bLinkDisabled, ubyte NumSlotsEnabled, ubyte SlotsEnabled, ubyte NumSlotsDisabled, ubyte SlotsDisabled, ubyte NumSlotsAdjusted, ubyte SlotsAdjusted, ubyte NumCoverTypesChanged, CoverReplicator.ManualCoverTypeInfo SlotsCoverTypeChanged, bool bDone)
+	void ClientReceiveInitialCoverReplicationInfo(int Index, CoverLink Link, bool bLinkDisabled, ubyte NumSlotsEnabled, ubyte SlotsEnabled, ubyte NumSlotsDisabled, ubyte SlotsDisabled, ubyte NumSlotsAdjusted, ubyte SlotsAdjusted, ubyte NumCoverTypesChanged, CoverReplicator.ManualCoverTypeInfo SlotsCoverTypeChanged, bool bDone)
 	{
-		ubyte params[78];
+		ubyte params[76];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(CoverLink*)&params[4] = Link;
@@ -68,7 +73,7 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		*cast(bool*)&params[72] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13483], params.ptr, cast(void*)0);
 	}
-	final void NotifyEnabledSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
+	void NotifyEnabledSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -77,14 +82,14 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13497], params.ptr, cast(void*)0);
 		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
-	final void ServerSendEnabledSlots(int Index)
+	void ServerSendEnabledSlots(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13505], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveEnabledSlots(int Index, CoverLink Link, ubyte NumSlotsEnabled, ubyte SlotsEnabled, bool bDone)
+	void ClientReceiveEnabledSlots(int Index, CoverLink Link, ubyte NumSlotsEnabled, ubyte SlotsEnabled, bool bDone)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -95,7 +100,7 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13512], params.ptr, cast(void*)0);
 	}
-	final void NotifyDisabledSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
+	void NotifyDisabledSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -104,14 +109,14 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13519], params.ptr, cast(void*)0);
 		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
-	final void ServerSendDisabledSlots(int Index)
+	void ServerSendDisabledSlots(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13527], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveDisabledSlots(int Index, CoverLink Link, ubyte NumSlotsDisabled, ubyte SlotsDisabled, bool bDone)
+	void ClientReceiveDisabledSlots(int Index, CoverLink Link, ubyte NumSlotsDisabled, ubyte SlotsDisabled, bool bDone)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -122,7 +127,7 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13534], params.ptr, cast(void*)0);
 	}
-	final void NotifyAutoAdjustSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
+	void NotifyAutoAdjustSlots(CoverLink Link, ScriptArray!(int)* SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -131,14 +136,14 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13541], params.ptr, cast(void*)0);
 		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
-	final void ServerSendAdjustedSlots(int Index)
+	void ServerSendAdjustedSlots(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13549], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveAdjustedSlots(int Index, CoverLink Link, ubyte NumSlotsAdjusted, ubyte SlotsAdjusted, bool bDone)
+	void ClientReceiveAdjustedSlots(int Index, CoverLink Link, ubyte NumSlotsAdjusted, ubyte SlotsAdjusted, bool bDone)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -149,7 +154,7 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13556], params.ptr, cast(void*)0);
 	}
-	final void NotifySetManualCoverTypeForSlots(CoverLink Link, ScriptArray!(int)* SlotIndices, CoverLink.ECoverType NewCoverType)
+	void NotifySetManualCoverTypeForSlots(CoverLink Link, ScriptArray!(int)* SlotIndices, CoverLink.ECoverType NewCoverType)
 	{
 		ubyte params[17];
 		params[] = 0;
@@ -159,14 +164,14 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13563], params.ptr, cast(void*)0);
 		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
-	final void ServerSendManualCoverTypeSlots(int Index)
+	void ServerSendManualCoverTypeSlots(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13572], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveManualCoverTypeSlots(int Index, CoverLink Link, ubyte NumCoverTypesChanged, CoverReplicator.ManualCoverTypeInfo SlotsCoverTypeChanged, bool bDone)
+	void ClientReceiveManualCoverTypeSlots(int Index, CoverLink Link, ubyte NumCoverTypesChanged, CoverReplicator.ManualCoverTypeInfo SlotsCoverTypeChanged, bool bDone)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -177,21 +182,21 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 		*cast(bool*)&params[44] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13579], params.ptr, cast(void*)0);
 	}
-	final void NotifyLinkDisabledStateChange(CoverLink Link)
+	void NotifyLinkDisabledStateChange(CoverLink Link)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13586], params.ptr, cast(void*)0);
 	}
-	final void ServerSendLinkDisabledState(int Index)
+	void ServerSendLinkDisabledState(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13590], params.ptr, cast(void*)0);
 	}
-	final void ClientReceiveLinkDisabledState(int Index, CoverLink Link, bool bLinkDisabled)
+	void ClientReceiveLinkDisabledState(int Index, CoverLink Link, bool bLinkDisabled)
 	{
 		ubyte params[12];
 		params[] = 0;

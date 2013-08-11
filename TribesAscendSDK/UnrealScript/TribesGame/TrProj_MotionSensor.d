@@ -5,7 +5,9 @@ import UnrealScript.TribesGame.TrProj_Mine;
 
 extern(C++) interface TrProj_MotionSensor : TrProj_Mine
 {
-	final void Explode(Vector HitLocation, Vector HitNormal)
+public extern(D):
+final:
+	void Explode(Vector HitLocation, Vector HitNormal)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -13,7 +15,7 @@ extern(C++) interface TrProj_MotionSensor : TrProj_Mine
 		*cast(Vector*)&params[12] = HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108757], params.ptr, cast(void*)0);
 	}
-	final void DetonateObsolete(bool bDetonateFromDamage)
+	void DetonateObsolete(bool bDetonateFromDamage)
 	{
 		ubyte params[4];
 		params[] = 0;

@@ -5,6 +5,7 @@ import UnrealScript.Engine.TranslatorTag;
 
 extern(C++) interface StringsTag : TranslatorTag
 {
+public extern(D):
 	final ScriptString Translate(ScriptString InArgument)
 	{
 		ubyte params[24];

@@ -5,6 +5,7 @@ import UnrealScript.Engine.Info;
 
 extern(C++) interface PotentialClimbWatcher : Info
 {
+public extern(D):
 	final void Tick(float DeltaTime)
 	{
 		ubyte params[4];

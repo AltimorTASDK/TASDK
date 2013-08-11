@@ -6,6 +6,10 @@ import UnrealScript.Core.DistributionVector;
 
 extern(C++) interface ParticleModuleVelocity : ParticleModuleVelocityBase
 {
-	public @property final auto ref DistributionFloat.RawDistributionFloat StartVelocityRadial() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref DistributionVector.RawDistributionVector StartVelocity() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }
+public extern(D):
+	@property final auto ref
+	{
+		DistributionFloat.RawDistributionFloat StartVelocityRadial() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }
+		DistributionVector.RawDistributionVector StartVelocity() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }
+	}
 }

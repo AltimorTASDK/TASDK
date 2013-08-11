@@ -8,17 +8,25 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface DebugCameraController : PlayerController
 {
-	public @property final auto ref Player OryginalPlayer() { return *cast(Player*)(cast(size_t)cast(void*)this + 1480); }
-	public @property final auto ref PlayerController OryginalControllerRef() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 1476); }
-	public @property final auto ref Actor SelectedActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1488); }
-	public @property final bool bIsFrozenRendering() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x2) != 0; }
-	public @property final bool bIsFrozenRendering(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x2; } return val; }
-	public @property final bool bShowSelectedInfo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x1) != 0; }
-	public @property final bool bShowSelectedInfo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x1; } return val; }
-	public @property final auto ref ScriptName UnselectKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1464); }
-	public @property final auto ref ScriptName SecondaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1456); }
-	public @property final auto ref ScriptName PrimaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1448); }
-	final void PrimarySelect(Vector HitLoc, Vector HitNormal, Actor.TraceHitInfo HitInfo)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			Player OryginalPlayer() { return *cast(Player*)(cast(size_t)cast(void*)this + 1480); }
+			PlayerController OryginalControllerRef() { return *cast(PlayerController*)(cast(size_t)cast(void*)this + 1476); }
+			Actor SelectedActor() { return *cast(Actor*)(cast(size_t)cast(void*)this + 1488); }
+			ScriptName UnselectKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1464); }
+			ScriptName SecondaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1456); }
+			ScriptName PrimaryKey() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1448); }
+		}
+		bool bIsFrozenRendering() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x2) != 0; }
+		bool bIsFrozenRendering(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x2; } return val; }
+		bool bShowSelectedInfo() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1472) & 0x1) != 0; }
+		bool bShowSelectedInfo(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1472) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1472) &= ~0x1; } return val; }
+	}
+final:
+	void PrimarySelect(Vector HitLoc, Vector HitNormal, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[52];
 		params[] = 0;
@@ -27,7 +35,7 @@ extern(C++) interface DebugCameraController : PlayerController
 		*cast(Actor.TraceHitInfo*)&params[24] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13678], params.ptr, cast(void*)0);
 	}
-	final void SecondarySelect(Vector HitLoc, Vector HitNormal, Actor.TraceHitInfo HitInfo)
+	void SecondarySelect(Vector HitLoc, Vector HitNormal, Actor.TraceHitInfo HitInfo)
 	{
 		ubyte params[52];
 		params[] = 0;
@@ -36,22 +44,22 @@ extern(C++) interface DebugCameraController : PlayerController
 		*cast(Actor.TraceHitInfo*)&params[24] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13682], params.ptr, cast(void*)0);
 	}
-	final void Unselect()
+	void Unselect()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13686], cast(void*)0, cast(void*)0);
 	}
-	final void PostBeginPlay()
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13687], cast(void*)0, cast(void*)0);
 	}
-	final void OnActivate(PlayerController PC)
+	void OnActivate(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13689], params.ptr, cast(void*)0);
 	}
-	final ScriptString ConsoleCommand(ScriptString Command, bool bWriteToLog)
+	ScriptString ConsoleCommand(ScriptString Command, bool bWriteToLog)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -60,20 +68,20 @@ extern(C++) interface DebugCameraController : PlayerController
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13691], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
-	final void OnDeactivate(PlayerController PC)
+	void OnDeactivate(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13693], params.ptr, cast(void*)0);
 	}
-	final void DisableDebugCamera()
+	void DisableDebugCamera()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13695], cast(void*)0, cast(void*)0);
 	}
-	final bool NativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool NativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;

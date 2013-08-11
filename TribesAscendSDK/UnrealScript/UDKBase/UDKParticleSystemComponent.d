@@ -5,10 +5,17 @@ import UnrealScript.Engine.ParticleSystemComponent;
 
 extern(C++) interface UDKParticleSystemComponent : ParticleSystemComponent
 {
-	public @property final auto ref Vector SavedScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 744); }
-	public @property final bool bHasSavedScale3D() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x1) != 0; }
-	public @property final bool bHasSavedScale3D(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x1; } return val; }
-	public @property final auto ref float FOV() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			Vector SavedScale3D() { return *cast(Vector*)(cast(size_t)cast(void*)this + 744); }
+			float FOV() { return *cast(float*)(cast(size_t)cast(void*)this + 736); }
+		}
+		bool bHasSavedScale3D() { return (*cast(uint*)(cast(size_t)cast(void*)this + 740) & 0x1) != 0; }
+		bool bHasSavedScale3D(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 740) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 740) &= ~0x1; } return val; }
+	}
 	final void SetFOV(float NewFOV)
 	{
 		ubyte params[4];

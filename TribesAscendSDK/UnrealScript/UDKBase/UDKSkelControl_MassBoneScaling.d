@@ -5,8 +5,10 @@ import UnrealScript.Engine.SkelControlBase;
 
 extern(C++) interface UDKSkelControl_MassBoneScaling : SkelControlBase
 {
-	public @property final auto ref ScriptArray!(float) BoneScales() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 188); }
-	final void SetBoneScale(ScriptName BoneName, float Scale)
+public extern(D):
+	@property final auto ref ScriptArray!(float) BoneScales() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 188); }
+final:
+	void SetBoneScale(ScriptName BoneName, float Scale)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -14,7 +16,7 @@ extern(C++) interface UDKSkelControl_MassBoneScaling : SkelControlBase
 		*cast(float*)&params[8] = Scale;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35440], params.ptr, cast(void*)0);
 	}
-	final float GetBoneScale(ScriptName BoneName)
+	float GetBoneScale(ScriptName BoneName)
 	{
 		ubyte params[12];
 		params[] = 0;

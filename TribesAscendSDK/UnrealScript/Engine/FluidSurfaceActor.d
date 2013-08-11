@@ -7,8 +7,10 @@ import UnrealScript.Engine.ParticleSystem;
 
 extern(C++) interface FluidSurfaceActor : Actor
 {
-	public @property final auto ref ParticleSystem ProjectileEntryEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 480); }
-	final void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass DamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+public extern(D):
+	@property final auto ref ParticleSystem ProjectileEntryEffect() { return *cast(ParticleSystem*)(cast(size_t)cast(void*)this + 480); }
+final:
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -16,20 +18,20 @@ extern(C++) interface FluidSurfaceActor : Actor
 		*cast(Controller*)&params[4] = EventInstigator;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
-		*cast(ScriptClass*)&params[32] = DamageType;
+		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15827], params.ptr, cast(void*)0);
 	}
-	final void Touch(Actor Other, 
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+	void Touch(Actor Other, 
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		*cast(
-// ERROR: Unknown object class 'Class Core.ComponentProperty'~
+// ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;

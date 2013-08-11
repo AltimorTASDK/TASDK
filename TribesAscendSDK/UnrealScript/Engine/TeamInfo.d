@@ -7,30 +7,35 @@ import UnrealScript.Engine.ReplicationInfo;
 
 extern(C++) interface TeamInfo : ReplicationInfo
 {
-	public @property final auto ref int TeamIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref float Score() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref UObject.Color TeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 500); }
-	public @property final auto ref int Size() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
-	public @property final auto ref ScriptString TeamName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 476); }
-	final ScriptString GetHumanReadableName()
+public extern(D):
+	@property final auto ref
+	{
+		int TeamIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 496); }
+		float Score() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+		UObject.Color TeamColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 500); }
+		int Size() { return *cast(int*)(cast(size_t)cast(void*)this + 488); }
+		ScriptString TeamName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 476); }
+	}
+final:
+	ScriptString GetHumanReadableName()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17470], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	final void ReplicatedEvent(ScriptName VarName)
+	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27715], params.ptr, cast(void*)0);
 	}
-	final void Destroyed()
+	void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27717], cast(void*)0, cast(void*)0);
 	}
-	final bool AddToTeam(Controller Other)
+	bool AddToTeam(Controller Other)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -38,14 +43,14 @@ extern(C++) interface TeamInfo : ReplicationInfo
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27719], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void RemoveFromTeam(Controller Other)
+	void RemoveFromTeam(Controller Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27722], params.ptr, cast(void*)0);
 	}
-	final ubyte GetTeamNum()
+	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;

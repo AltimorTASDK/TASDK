@@ -5,7 +5,9 @@ import UnrealScript.UTGame.UTGFxTweenableMoviePlayer;
 
 extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 {
-	final bool Start(bool StartPaused)
+public extern(D):
+final:
+	bool Start(bool StartPaused)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -13,25 +15,25 @@ extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65218], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void ConfigureOptions(ScriptClass FamilyInfo)
+	void ConfigureOptions(ScriptClass FamilyInfo)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65221], params.ptr, cast(void*)0);
 	}
-	final void VehicleOptionsComplete(int Credits)
+	void VehicleOptionsComplete(int Credits)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Credits;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65233], params.ptr, cast(void*)0);
 	}
-	final void VehicleOptionsClear()
+	void VehicleOptionsClear()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65235], cast(void*)0, cast(void*)0);
 	}
-	final void SetVehicleOption(ScriptString ClassName, ScriptString DisplayName, int Cost, int nIconIndex)
+	void SetVehicleOption(ScriptString ClassName, ScriptString DisplayName, int Cost, int nIconIndex)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -41,14 +43,14 @@ extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 		*cast(int*)&params[28] = nIconIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65236], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetSelectedVehicle()
+	ScriptString GetSelectedVehicle()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65241], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	final void OnVehicleScreenFinished()
+	void OnVehicleScreenFinished()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65243], cast(void*)0, cast(void*)0);
 	}

@@ -6,19 +6,24 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_Classes : GFxTrPage
 {
-	public @property final auto ref int XPAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
-	public @property final auto ref int GPAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
-	public @property final auto ref int PurchasingClass() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
-	public @property final auto ref int FocusedClass() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void Initialize()
+public extern(D):
+	@property final auto ref
+	{
+		int XPAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 368); }
+		int GPAmount() { return *cast(int*)(cast(size_t)cast(void*)this + 364); }
+		int PurchasingClass() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
+		int FocusedClass() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+	}
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58232], cast(void*)0, cast(void*)0);
 	}
-	final void RefreshClassList()
+	void RefreshClassList()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58233], cast(void*)0, cast(void*)0);
 	}
-	final int TakeFocus(int ActionIndex, GFxObject DataList)
+	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -27,22 +32,22 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58240], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void ShowModel()
+	void ShowModel()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58244], cast(void*)0, cast(void*)0);
 	}
-	final void FillData(GFxObject DataList)
+	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58252], params.ptr, cast(void*)0);
 	}
-	final void OnPurchaseSuccess()
+	void OnPurchaseSuccess()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58262], cast(void*)0, cast(void*)0);
 	}
-	final int TakeAction(int ActionIndex, GFxObject DataList)
+	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -51,7 +56,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58263], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final int ModifyAction(int ActionIndex, GFxObject DataList)
+	int ModifyAction(int ActionIndex, GFxObject DataList)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -60,14 +65,14 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58273], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final void PopupData(GFxObject Obj)
+	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58277], params.ptr, cast(void*)0);
 	}
-	final void PopupComplete(int Action, ScriptString TextInput)
+	void PopupComplete(int Action, ScriptString TextInput)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -75,7 +80,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		*cast(ScriptString*)&params[4] = TextInput;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58284], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -83,14 +88,14 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58289], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final bool CheckPurchasable()
+	bool CheckPurchasable()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58293], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final bool CheckPricing(GFxObject DataList)
+	bool CheckPricing(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -98,7 +103,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58295], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final GFxObject FillPricing(GFxObject DataList)
+	GFxObject FillPricing(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -106,14 +111,14 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58300], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void CheckDescription(GFxObject DataList)
+	void CheckDescription(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58307], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillDescription(GFxObject DataList)
+	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -121,7 +126,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58311], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final ScriptString GetArmorName(ScriptClass FamilyInfo)
+	ScriptString GetArmorName(ScriptClass FamilyInfo)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -129,7 +134,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58316], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final ScriptString GetEquipName(int equipType)
+	ScriptString GetEquipName(int equipType)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -137,7 +142,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58319], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	final bool IsOwned(int Index)
+	bool IsOwned(int Index)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -145,7 +150,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58324], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final bool RequestActiveClass(int ClassId, int Loadout)
+	bool RequestActiveClass(int ClassId, int Loadout)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -154,7 +159,7 @@ extern(C++) interface GFxTrPage_Classes : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58328], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void HelpButton(int ActionIndex)
+	void HelpButton(int ActionIndex)
 	{
 		ubyte params[4];
 		params[] = 0;

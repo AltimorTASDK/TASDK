@@ -5,7 +5,9 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface TrContentLoader : UObject
 {
-	final bool StartLoadingDeviceContentPackage(ScriptClass WeaponClass)
+public extern(D):
+final:
+	bool StartLoadingDeviceContentPackage(ScriptClass WeaponClass)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -13,7 +15,7 @@ extern(C++) interface TrContentLoader : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[77166], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	final void StartLoadingPlayerSkin(int ClassId, int skinId, bool bLoad1PData)
+	void StartLoadingPlayerSkin(int ClassId, int skinId, bool bLoad1PData)
 	{
 		ubyte params[12];
 		params[] = 0;

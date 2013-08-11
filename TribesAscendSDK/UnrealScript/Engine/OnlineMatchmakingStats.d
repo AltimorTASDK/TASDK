@@ -5,15 +5,20 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface OnlineMatchmakingStats : UObject
 {
+public extern(D):
 	struct MMStats_Timer
 	{
-		public @property final auto ref UObject.Double MSecs() { return *cast(UObject.Double*)(cast(size_t)&this + 4); }
-		private ubyte __MSecs[8];
-		public @property final bool bInProgress() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
-		public @property final bool bInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
-		private ubyte __bInProgress[4];
+		private ubyte __buffer__[12];
+	public extern(D):
+		@property final
+		{
+			@property final auto ref UObject.Double MSecs() { return *cast(UObject.Double*)(cast(size_t)&this + 4); }
+			bool bInProgress() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
+			bool bInProgress(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 0) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 0) &= ~0x1; } return val; }
+		}
 	}
-	final void StartTimer(OnlineMatchmakingStats.MMStats_Timer* Timer)
+final:
+	void StartTimer(OnlineMatchmakingStats.MMStats_Timer* Timer)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -21,7 +26,7 @@ extern(C++) interface OnlineMatchmakingStats : UObject
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21861], params.ptr, cast(void*)0);
 		*Timer = *cast(OnlineMatchmakingStats.MMStats_Timer*)params.ptr;
 	}
-	final void StopTimer(OnlineMatchmakingStats.MMStats_Timer* Timer)
+	void StopTimer(OnlineMatchmakingStats.MMStats_Timer* Timer)
 	{
 		ubyte params[12];
 		params[] = 0;

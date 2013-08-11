@@ -5,5 +5,6 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface SeqEvent_PlayerSpawned : SequenceEvent
 {
-	public @property final auto ref UObject SpawnPoint() { return *cast(UObject*)(cast(size_t)cast(void*)this + 256); }
+public extern(D):
+	@property final auto ref UObject SpawnPoint() { return *cast(UObject*)(cast(size_t)cast(void*)this + 256); }
 }

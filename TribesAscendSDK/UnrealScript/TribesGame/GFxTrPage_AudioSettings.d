@@ -7,21 +7,26 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface GFxTrPage_AudioSettings : GFxTrPage
 {
-	public @property final bool bWaitingForAudioEntry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
-	public @property final bool bWaitingForAudioEntry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
-	public @property final auto ref int AudioIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
-	final void Initialize()
+public extern(D):
+	@property final
+	{
+		@property final auto ref int AudioIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 356); }
+		bool bWaitingForAudioEntry() { return (*cast(uint*)(cast(size_t)cast(void*)this + 360) & 0x1) != 0; }
+		bool bWaitingForAudioEntry(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 360) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 360) &= ~0x1; } return val; }
+	}
+final:
+	void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57192], cast(void*)0, cast(void*)0);
 	}
-	final void SpecialAction(GFxTrAction Action)
+	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57194], params.ptr, cast(void*)0);
 	}
-	final GFxObject FillOption(int ActionIndex)
+	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -29,7 +34,7 @@ extern(C++) interface GFxTrPage_AudioSettings : GFxTrPage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57198], params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
-	final void SetSubTitle(int Index, int val, GFxObject Obj)
+	void SetSubTitle(int Index, int val, GFxObject Obj)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -38,14 +43,14 @@ extern(C++) interface GFxTrPage_AudioSettings : GFxTrPage
 		*cast(GFxObject*)&params[8] = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57205], params.ptr, cast(void*)0);
 	}
-	final void PopupData(GFxObject Obj)
+	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57210], params.ptr, cast(void*)0);
 	}
-	final void PopupComplete(int Action, ScriptString TextInput)
+	void PopupComplete(int Action, ScriptString TextInput)
 	{
 		ubyte params[16];
 		params[] = 0;

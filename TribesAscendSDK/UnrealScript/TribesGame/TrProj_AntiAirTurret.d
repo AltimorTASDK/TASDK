@@ -5,6 +5,7 @@ import UnrealScript.TribesGame.TrProjectile;
 
 extern(C++) interface TrProj_AntiAirTurret : TrProjectile
 {
+public extern(D):
 	final void Destroyed()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107790], cast(void*)0, cast(void*)0);

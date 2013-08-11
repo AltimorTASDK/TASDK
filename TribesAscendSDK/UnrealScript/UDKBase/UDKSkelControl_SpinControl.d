@@ -5,6 +5,10 @@ import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UDKSkelControl_SpinControl : SkelControlSingleBone
 {
-	public @property final auto ref Vector Axis() { return *cast(Vector*)(cast(size_t)cast(void*)this + 240); }
-	public @property final auto ref float DegreesPerSecond() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+public extern(D):
+	@property final auto ref
+	{
+		Vector Axis() { return *cast(Vector*)(cast(size_t)cast(void*)this + 240); }
+		float DegreesPerSecond() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
+	}
 }

@@ -5,15 +5,17 @@ import UnrealScript.TribesGame.TrProjectile;
 
 extern(C++) interface TrProj_CallInBase : TrProjectile
 {
-	public @property final auto ref Vector r_TargetLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 816); }
-	final void ReplicatedEvent(ScriptName VarName)
+public extern(D):
+	@property final auto ref Vector r_TargetLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 816); }
+final:
+	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108177], params.ptr, cast(void*)0);
 	}
-	final bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float VisibleCullDistance, float HiddenCullDistance)
+	bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float VisibleCullDistance, float HiddenCullDistance)
 	{
 		ubyte params[28];
 		params[] = 0;

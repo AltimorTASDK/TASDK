@@ -5,9 +5,13 @@ import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface TrOrientedBoxComponent : PrimitiveComponent
 {
-	public @property final auto ref float BoxLength() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref float BoxWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
-	public @property final auto ref float BoxHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+public extern(D):
+	@property final auto ref
+	{
+		float BoxLength() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
+		float BoxWidth() { return *cast(float*)(cast(size_t)cast(void*)this + 492); }
+		float BoxHeight() { return *cast(float*)(cast(size_t)cast(void*)this + 488); }
+	}
 	final void SetBoxSize(float NewHeight, float NewLength, float NewWidth, bool IsRadii)
 	{
 		ubyte params[16];

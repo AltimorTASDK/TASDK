@@ -7,8 +7,12 @@ import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 
 extern(C++) interface NavMeshGoalFilter_OutOfViewFrom : NavMeshGoal_Filter
 {
-	public @property final auto ref Vector OutOfViewLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 76); }
-	public @property final auto ref UObject.Pointer GoalPoly() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 72); }
+public extern(D):
+	@property final auto ref
+	{
+		Vector OutOfViewLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 76); }
+		UObject.Pointer GoalPoly() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 72); }
+	}
 	final bool MustBeHiddenFromThisPoint(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InOutOfViewLocation)
 	{
 		ubyte params[20];

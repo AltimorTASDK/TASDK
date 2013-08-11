@@ -6,6 +6,7 @@ import UnrealScript.TribesGame.TrEffect_Managed;
 
 extern(C++) interface TrEffect_Blink : TrEffect_Managed
 {
+public extern(D):
 	final void Apply(Actor Target, Actor.ImpactInfo Impact)
 	{
 		ubyte params[84];

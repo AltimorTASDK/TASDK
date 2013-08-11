@@ -6,6 +6,7 @@ import UnrealScript.Engine.ParticleModuleEventSendToGame;
 
 extern(C++) interface ParticleEventManager : Actor
 {
+public extern(D):
 	final void HandleParticleModuleEventSendToGame(ParticleModuleEventSendToGame InEvent, Vector* InCollideDirection, Vector* InHitLocation, Vector* InHitNormal, ScriptName* InBoneName)
 	{
 		ubyte params[48];

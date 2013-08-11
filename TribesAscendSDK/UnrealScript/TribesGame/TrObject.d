@@ -10,19 +10,23 @@ import UnrealScript.Engine.AnimTree;
 
 extern(C++) interface TrObject : UObject
 {
-	public static immutable auto FEET_TO_UNREAL_UNITS = 16;
-	public static immutable auto INDEX_DISPLAY_TARGET_INGAME = 0;
-	public static immutable auto INDEX_DISPLAY_TARGET_FOREGROUND = 1;
-	public static immutable auto INDEX_SEE_NORMAL_ENEMY = 0;
-	public static immutable auto INDEX_SEE_STEALTHED_ENEMY = 1;
-	public static immutable auto INDEX_SEE_LOW_HEALTH_ENEMY = 2;
-	public static immutable auto TR_TASKFORCE_NONE = 0;
-	public static immutable auto TR_TASKFORCE_BLOODEAGLE = 1;
-	public static immutable auto TR_TASKFORCE_DIAMONDSWORD = 2;
-	public static immutable auto FADE_TIME = 1.0f;
-	public static immutable auto MAX_HEARING_DISTANCE = 1300;
-	public static immutable auto TR_MAX_SLOTS_TO_EQUIP = 5;
-	public static immutable auto UnrealUnitsToKM = 0.072;
+public extern(D):
+	enum
+	{
+		FEET_TO_UNREAL_UNITS = 16,
+		INDEX_DISPLAY_TARGET_INGAME = 0,
+		INDEX_DISPLAY_TARGET_FOREGROUND = 1,
+		INDEX_SEE_NORMAL_ENEMY = 0,
+		INDEX_SEE_STEALTHED_ENEMY = 1,
+		INDEX_SEE_LOW_HEALTH_ENEMY = 2,
+		TR_TASKFORCE_NONE = 0,
+		TR_TASKFORCE_BLOODEAGLE = 1,
+		TR_TASKFORCE_DIAMONDSWORD = 2,
+		FADE_TIME = 1.0f,
+		MAX_HEARING_DISTANCE = 1300,
+		TR_MAX_SLOTS_TO_EQUIP = 5,
+		UnrealUnitsToKM = 0.072,
+	}
 	enum EffectFormMatTypes : ubyte
 	{
 		MAT_None = 0,
@@ -501,129 +505,135 @@ extern(C++) interface TrObject : UObject
 	}
 	struct EffectFormOverwrite
 	{
-		public @property final auto ref Material Mat() { return *cast(Material*)(cast(size_t)&this + 4); }
-		private ubyte __Mat[4];
-		public @property final auto ref TrObject.EffectFormMatTypes eType() { return *cast(TrObject.EffectFormMatTypes*)(cast(size_t)&this + 0); }
-		private ubyte __eType[1];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref
+		{
+			Material Mat() { return *cast(Material*)(cast(size_t)&this + 4); }
+			TrObject.EffectFormMatTypes eType() { return *cast(TrObject.EffectFormMatTypes*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct PaperDollInfo
 	{
-		public @property final bool bIsLoading() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x2) != 0; }
-		public @property final bool bIsLoading(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x2; } return val; }
-		private ubyte __bIsLoading[4];
-		public @property final bool bIsStreaming() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
-		public @property final bool bIsStreaming(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
-		private ubyte __bIsStreaming[4];
-		public @property final auto ref float CharacterLightingContrastFactor() { return *cast(float*)(cast(size_t)&this + 48); }
-		private ubyte __CharacterLightingContrastFactor[4];
-		public @property final bool bOnlySelfShadow() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
-		public @property final bool bOnlySelfShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
-		private ubyte __bOnlySelfShadow[4];
-		// WARNING: Property 'AnimSet' has the same name as a defined type!
-		public @property final auto ref AnimTree AnimTreeTemplate() { return *cast(AnimTree*)(cast(size_t)&this + 36); }
-		private ubyte __AnimTreeTemplate[4];
-		public @property final auto ref PhysicsAsset PhysAsset() { return *cast(PhysicsAsset*)(cast(size_t)&this + 32); }
-		private ubyte __PhysAsset[4];
-		public @property final auto ref SkeletalMesh SkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)&this + 28); }
-		private ubyte __SkelMesh[4];
-		public @property final auto ref float Scale() { return *cast(float*)(cast(size_t)&this + 24); }
-		private ubyte __Scale[4];
-		public @property final auto ref Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 12); }
-		private ubyte __Rotation[12];
-		public @property final auto ref Vector Translation() { return *cast(Vector*)(cast(size_t)&this + 0); }
-		private ubyte __Translation[12];
+		private ubyte __buffer__[56];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				float CharacterLightingContrastFactor() { return *cast(float*)(cast(size_t)&this + 48); }
+				// WARNING: Property 'AnimSet' has the same name as a defined type!
+				AnimTree AnimTreeTemplate() { return *cast(AnimTree*)(cast(size_t)&this + 36); }
+				PhysicsAsset PhysAsset() { return *cast(PhysicsAsset*)(cast(size_t)&this + 32); }
+				SkeletalMesh SkelMesh() { return *cast(SkeletalMesh*)(cast(size_t)&this + 28); }
+				float Scale() { return *cast(float*)(cast(size_t)&this + 24); }
+				Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 12); }
+				Vector Translation() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			}
+			bool bIsLoading() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x2) != 0; }
+			bool bIsLoading(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x2; } return val; }
+			bool bIsStreaming() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
+			bool bIsStreaming(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
+			bool bOnlySelfShadow() { return (*cast(uint*)(cast(size_t)&this + 44) & 0x1) != 0; }
+			bool bOnlySelfShadow(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 44) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 44) &= ~0x1; } return val; }
+		}
 	}
 	struct TrTakeEffectInfo
 	{
-		public @property final auto ref Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
-		private ubyte __HitLocation[12];
-		public @property final auto ref ScriptClass EffectForm() { return *cast(ScriptClass*)(cast(size_t)&this + 12); }
-		private ubyte __EffectForm[4];
+		private ubyte __buffer__[16];
+	public extern(D):
+		@property final auto ref
+		{
+			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
+			ScriptClass EffectForm() { return *cast(ScriptClass*)(cast(size_t)&this + 12); }
+		}
 	}
 	struct TrTakeHitInfo
 	{
-		public @property final auto ref int Damage() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __Damage[4];
-		public @property final auto ref Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 4); }
-		private ubyte __HitLocation[12];
-		public @property final auto ref Vector Momentum() { return *cast(Vector*)(cast(size_t)&this + 16); }
-		private ubyte __Momentum[12];
-		// WARNING: Property 'DamageType' has the same name as a defined type!
-		public @property final auto ref ScriptName HitBone() { return *cast(ScriptName*)(cast(size_t)&this + 32); }
-		private ubyte __HitBone[8];
+		private ubyte __buffer__[40];
+	public extern(D):
+		@property final auto ref
+		{
+			int Damage() { return *cast(int*)(cast(size_t)&this + 0); }
+			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 4); }
+			Vector Momentum() { return *cast(Vector*)(cast(size_t)&this + 16); }
+			// WARNING: Property 'DamageType' has the same name as a defined type!
+			ScriptName HitBone() { return *cast(ScriptName*)(cast(size_t)&this + 32); }
+		}
 	}
 	struct OffhandAnimation
 	{
-		public @property final auto ref ScriptName m_OffhandUseType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __m_OffhandUseType[8];
-		public @property final auto ref ScriptName m_AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
-		private ubyte __m_AnimName[8];
-		public @property final bool m_bFullBody() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-		public @property final bool m_bFullBody(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
-		private ubyte __m_bFullBody[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				ScriptName m_OffhandUseType() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+				ScriptName m_AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
+			}
+			bool m_bFullBody() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
+			bool m_bFullBody(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+		}
 	}
 	struct TrEventCredits
 	{
-		public @property final auto ref TrObject.TrCreditEventType EventType() { return *cast(TrObject.TrCreditEventType*)(cast(size_t)&this + 0); }
-		private ubyte __EventType[1];
-		public @property final auto ref int eventCredits() { return *cast(int*)(cast(size_t)&this + 4); }
-		private ubyte __eventCredits[4];
-		public @property final auto ref int proxyEventCredits() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __proxyEventCredits[4];
-		public @property final auto ref int MsgIdx() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __MsgIdx[4];
-		public @property final bool bIsBroadcast() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
-		public @property final bool bIsBroadcast(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
-		private ubyte __bIsBroadcast[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				TrObject.TrCreditEventType EventType() { return *cast(TrObject.TrCreditEventType*)(cast(size_t)&this + 0); }
+				int eventCredits() { return *cast(int*)(cast(size_t)&this + 4); }
+				int proxyEventCredits() { return *cast(int*)(cast(size_t)&this + 8); }
+				int MsgIdx() { return *cast(int*)(cast(size_t)&this + 12); }
+			}
+			bool bIsBroadcast() { return (*cast(uint*)(cast(size_t)&this + 16) & 0x1) != 0; }
+			bool bIsBroadcast(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 16) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 16) &= ~0x1; } return val; }
+		}
 	}
 	struct TR_HUD_INFO
 	{
-		public @property final auto ref Vector vScreenLoc() { return *cast(Vector*)(cast(size_t)&this + 0); }
-		private ubyte __vScreenLoc[12];
-		public @property final auto ref float fScale() { return *cast(float*)(cast(size_t)&this + 12); }
-		private ubyte __fScale[4];
-		public @property final auto ref float fAlphaLevel() { return *cast(float*)(cast(size_t)&this + 16); }
-		private ubyte __fAlphaLevel[4];
-		public @property final auto ref float fLastSeenTime() { return *cast(float*)(cast(size_t)&this + 20); }
-		private ubyte __fLastSeenTime[4];
-		public @property final auto ref float fLastUnseenTime() { return *cast(float*)(cast(size_t)&this + 24); }
-		private ubyte __fLastUnseenTime[4];
-		public @property final bool bIsTarget() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
-		public @property final bool bIsTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
-		private ubyte __bIsTarget[4];
-		public @property final auto ref ScriptString sName() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
-		private ubyte __sName[12];
-		public @property final auto ref int nHealth() { return *cast(int*)(cast(size_t)&this + 44); }
-		private ubyte __nHealth[4];
-		public @property final auto ref int nMaxHealth() { return *cast(int*)(cast(size_t)&this + 48); }
-		private ubyte __nMaxHealth[4];
-		public @property final bool bEnemy() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
-		public @property final bool bEnemy(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
-		private ubyte __bEnemy[4];
-		public @property final bool bDrawStat() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x2) != 0; }
-		public @property final bool bDrawStat(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x2; } return val; }
-		private ubyte __bDrawStat[4];
-		public @property final bool bDrawHealth() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x4) != 0; }
-		public @property final bool bDrawHealth(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x4; } return val; }
-		private ubyte __bDrawHealth[4];
-		public @property final auto ref float fDistance() { return *cast(float*)(cast(size_t)&this + 56); }
-		private ubyte __fDistance[4];
-		public @property final auto ref TrObject.OverlayType eOverlayType() { return *cast(TrObject.OverlayType*)(cast(size_t)&this + 60); }
-		private ubyte __eOverlayType[1];
-		public @property final auto ref int nActorId() { return *cast(int*)(cast(size_t)&this + 64); }
-		private ubyte __nActorId[4];
+		private ubyte __buffer__[68];
+	public extern(D):
+		@property final
+		{
+			auto ref
+			{
+				Vector vScreenLoc() { return *cast(Vector*)(cast(size_t)&this + 0); }
+				float fScale() { return *cast(float*)(cast(size_t)&this + 12); }
+				float fAlphaLevel() { return *cast(float*)(cast(size_t)&this + 16); }
+				float fLastSeenTime() { return *cast(float*)(cast(size_t)&this + 20); }
+				float fLastUnseenTime() { return *cast(float*)(cast(size_t)&this + 24); }
+				ScriptString sName() { return *cast(ScriptString*)(cast(size_t)&this + 32); }
+				int nHealth() { return *cast(int*)(cast(size_t)&this + 44); }
+				int nMaxHealth() { return *cast(int*)(cast(size_t)&this + 48); }
+				float fDistance() { return *cast(float*)(cast(size_t)&this + 56); }
+				TrObject.OverlayType eOverlayType() { return *cast(TrObject.OverlayType*)(cast(size_t)&this + 60); }
+				int nActorId() { return *cast(int*)(cast(size_t)&this + 64); }
+			}
+			bool bIsTarget() { return (*cast(uint*)(cast(size_t)&this + 28) & 0x1) != 0; }
+			bool bIsTarget(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 28) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 28) &= ~0x1; } return val; }
+			bool bEnemy() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x1) != 0; }
+			bool bEnemy(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x1; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x1; } return val; }
+			bool bDrawStat() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x2) != 0; }
+			bool bDrawStat(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x2; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x2; } return val; }
+			bool bDrawHealth() { return (*cast(uint*)(cast(size_t)&this + 52) & 0x4) != 0; }
+			bool bDrawHealth(bool val) { if (val) { *cast(uint*)(cast(size_t)&this + 52) |= 0x4; } else { *cast(uint*)(cast(size_t)&this + 52) &= ~0x4; } return val; }
+		}
 	}
 	struct ObjectiveMICInfo
 	{
-		public @property final auto ref int MyTeam() { return *cast(int*)(cast(size_t)&this + 0); }
-		private ubyte __MyTeam[4];
-		public @property final auto ref float AmountFilled() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __AmountFilled[4];
-		public @property final auto ref int ObjStatus() { return *cast(int*)(cast(size_t)&this + 8); }
-		private ubyte __ObjStatus[4];
-		public @property final auto ref int IsContested() { return *cast(int*)(cast(size_t)&this + 12); }
-		private ubyte __IsContested[4];
-		public @property final auto ref int Flip() { return *cast(int*)(cast(size_t)&this + 16); }
-		private ubyte __Flip[4];
+		private ubyte __buffer__[20];
+	public extern(D):
+		@property final auto ref
+		{
+			int MyTeam() { return *cast(int*)(cast(size_t)&this + 0); }
+			float AmountFilled() { return *cast(float*)(cast(size_t)&this + 4); }
+			int ObjStatus() { return *cast(int*)(cast(size_t)&this + 8); }
+			int IsContested() { return *cast(int*)(cast(size_t)&this + 12); }
+			int Flip() { return *cast(int*)(cast(size_t)&this + 16); }
+		}
 	}
 }

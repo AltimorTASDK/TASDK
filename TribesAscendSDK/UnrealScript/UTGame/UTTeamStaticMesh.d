@@ -7,13 +7,18 @@ import UnrealScript.Engine.Material;
 
 extern(C++) interface UTTeamStaticMesh : StaticMeshActor
 {
-	public @property final auto ref ScriptArray!(MaterialInterface) TeamMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 484); }
-	public @property final auto ref Material NeutralMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 496); }
-	final void PreBeginPlay()
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(MaterialInterface) TeamMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 484); }
+		Material NeutralMaterial() { return *cast(Material*)(cast(size_t)cast(void*)this + 496); }
+	}
+final:
+	void PreBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49460], cast(void*)0, cast(void*)0);
 	}
-	final void SetTeamNum(ubyte NewTeam)
+	void SetTeamNum(ubyte NewTeam)
 	{
 		ubyte params[1];
 		params[] = 0;

@@ -8,8 +8,10 @@ import UnrealScript.UTGame.UTPlayerController;
 
 extern(C++) interface UTDmgType_RanOver : UTDamageType
 {
-	public @property final auto ref int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
-	final int IncrementKills(UTPlayerReplicationInfo KillerPRI)
+public extern(D):
+	@property final auto ref int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
+final:
+	int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -17,7 +19,7 @@ extern(C++) interface UTDmgType_RanOver : UTDamageType
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47098], params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	final void SmallReward(UTPlayerController Killer, int KillCount)
+	void SmallReward(UTPlayerController Killer, int KillCount)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -25,7 +27,7 @@ extern(C++) interface UTDmgType_RanOver : UTDamageType
 		*cast(int*)&params[4] = KillCount;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47102], params.ptr, cast(void*)0);
 	}
-	final void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
+	void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
 	{
 		ubyte params[40];
 		params[] = 0;

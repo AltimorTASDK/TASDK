@@ -7,7 +7,9 @@ import UnrealScript.Engine.AnimNotify;
 
 extern(C++) interface AnimNotify_Scripted : AnimNotify
 {
-	final void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
+public extern(D):
+final:
+	void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -15,7 +17,7 @@ extern(C++) interface AnimNotify_Scripted : AnimNotify
 		*cast(AnimNodeSequence*)&params[4] = AnimSeqInstigator;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11144], params.ptr, cast(void*)0);
 	}
-	final void NotifyEnd(Actor Owner, AnimNodeSequence AnimSeqInstigator)
+	void NotifyEnd(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
 		ubyte params[8];
 		params[] = 0;

@@ -6,9 +6,14 @@ import UnrealScript.Engine.GameplayEventsWriter;
 
 extern(C++) interface GenericParamListStatEntry : UObject
 {
-	public @property final auto ref GameplayEventsWriter Writer() { return *cast(GameplayEventsWriter*)(cast(size_t)cast(void*)this + 64); }
-	public @property final auto ref UObject.Pointer StatEvent() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
-	final void AddFloat(ScriptName ParamName, float Value)
+public extern(D):
+	@property final auto ref
+	{
+		GameplayEventsWriter Writer() { return *cast(GameplayEventsWriter*)(cast(size_t)cast(void*)this + 64); }
+		UObject.Pointer StatEvent() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 60); }
+	}
+final:
+	void AddFloat(ScriptName ParamName, float Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -16,7 +21,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*cast(float*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18131], params.ptr, cast(void*)0);
 	}
-	final void AddInt(ScriptName ParamName, int Value)
+	void AddInt(ScriptName ParamName, int Value)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -24,7 +29,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*cast(int*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18134], params.ptr, cast(void*)0);
 	}
-	final void AddVector(ScriptName ParamName, Vector Value)
+	void AddVector(ScriptName ParamName, Vector Value)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -32,7 +37,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*cast(Vector*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18137], params.ptr, cast(void*)0);
 	}
-	final void AddString(ScriptName ParamName, ScriptString Value)
+	void AddString(ScriptName ParamName, ScriptString Value)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -40,7 +45,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*cast(ScriptString*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18140], params.ptr, cast(void*)0);
 	}
-	final bool GetFloat(ScriptName ParamName, float* out_Float)
+	bool GetFloat(ScriptName ParamName, float* out_Float)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -50,7 +55,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*out_Float = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetInt(ScriptName ParamName, int* out_int)
+	bool GetInt(ScriptName ParamName, int* out_int)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -60,7 +65,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*out_int = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetVector(ScriptName ParamName, Vector* out_vector)
+	bool GetVector(ScriptName ParamName, Vector* out_vector)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -70,7 +75,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*out_vector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final bool GetString(ScriptName ParamName, ScriptString* out_string)
+	bool GetString(ScriptName ParamName, ScriptString* out_string)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -80,7 +85,7 @@ extern(C++) interface GenericParamListStatEntry : UObject
 		*out_string = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final void CommitToDisk()
+	void CommitToDisk()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18159], cast(void*)0, cast(void*)0);
 	}

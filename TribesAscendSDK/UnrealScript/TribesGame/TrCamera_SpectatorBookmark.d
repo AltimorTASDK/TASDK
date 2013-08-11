@@ -5,6 +5,7 @@ import UnrealScript.Engine.CameraActor;
 
 extern(C++) interface TrCamera_SpectatorBookmark : CameraActor
 {
+public extern(D):
 	enum ESpectatorBookmark : ubyte
 	{
 		Bookmark_BEBase = 0,
@@ -67,73 +68,77 @@ extern(C++) interface TrCamera_SpectatorBookmark : CameraActor
 		Bookmark_GenericCamera = 57,
 		Bookmark_MAX = 58,
 	}
-	public @property final auto ref TrCamera_SpectatorBookmark.ESpectatorBookmark m_BookmarkDescription() { return *cast(TrCamera_SpectatorBookmark.ESpectatorBookmark*)(cast(size_t)cast(void*)this + 1416); }
-	public @property final auto ref ScriptString BEBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 720); }
-	public @property final auto ref ScriptString GenericCamera() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1404); }
-	public @property final auto ref ScriptString BTTunnelWest() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1392); }
-	public @property final auto ref ScriptString BTTunnelEast() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1380); }
-	public @property final auto ref ScriptString BTBaseInterior() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1368); }
-	public @property final auto ref ScriptString BTBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1356); }
-	public @property final auto ref ScriptString NKMountainSide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1344); }
-	public @property final auto ref ScriptString NKMountainView() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1332); }
-	public @property final auto ref ScriptString NKWhalebones() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1320); }
-	public @property final auto ref ScriptString NKTunnel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1308); }
-	public @property final auto ref ScriptString NKTower() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1296); }
-	public @property final auto ref ScriptString XFDSCRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1284); }
-	public @property final auto ref ScriptString XFBECRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1272); }
-	public @property final auto ref ScriptString XFDSBackstop() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1260); }
-	public @property final auto ref ScriptString XFBEBackstop() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1248); }
-	public @property final auto ref ScriptString XFDSBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1236); }
-	public @property final auto ref ScriptString XFBEBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1224); }
-	public @property final auto ref ScriptString XFDSRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1212); }
-	public @property final auto ref ScriptString XFBERed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1200); }
-	public @property final auto ref ScriptString XFRSW() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1188); }
-	public @property final auto ref ScriptString XFBSW() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1176); }
-	public @property final auto ref ScriptString DNFish() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1164); }
-	public @property final auto ref ScriptString DdDSBackEntrance() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1152); }
-	public @property final auto ref ScriptString DdBEBackEntrance() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1140); }
-	public @property final auto ref ScriptString DdDSBunker() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1128); }
-	public @property final auto ref ScriptString DdBEBunker() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1116); }
-	public @property final auto ref ScriptString DdDockLow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1104); }
-	public @property final auto ref ScriptString DdDockHigh() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1092); }
-	public @property final auto ref ScriptString DdDSWide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1080); }
-	public @property final auto ref ScriptString DdBEWide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1068); }
-	public @property final auto ref ScriptString DdDryLow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1056); }
-	public @property final auto ref ScriptString DdDryHigh() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1044); }
-	public @property final auto ref ScriptString TDMMapOverhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1032); }
-	public @property final auto ref ScriptString TDMCenter() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1020); }
-	public @property final auto ref ScriptString TDMSouth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1008); }
-	public @property final auto ref ScriptString TDMNorth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 996); }
-	public @property final auto ref ScriptString TDMWest() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 984); }
-	public @property final auto ref ScriptString TDMEast() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 972); }
-	public @property final auto ref ScriptString CTFDSBackRoute() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 960); }
-	public @property final auto ref ScriptString CTFBEBackRoute() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 948); }
-	public @property final auto ref ScriptString CTFDSTurretC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 936); }
-	public @property final auto ref ScriptString CTFDSTurretB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 924); }
-	public @property final auto ref ScriptString CTFDSTurretA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 912); }
-	public @property final auto ref ScriptString CTFBETurretC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 900); }
-	public @property final auto ref ScriptString CTFBETurretB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
-	public @property final auto ref ScriptString CTFBETurretA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 876); }
-	public @property final auto ref ScriptString CTFDSSensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 864); }
-	public @property final auto ref ScriptString CTFBESensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 852); }
-	public @property final auto ref ScriptString CTFDSSpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 840); }
-	public @property final auto ref ScriptString CTFBESpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 828); }
-	public @property final auto ref ScriptString CTFDSVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 816); }
-	public @property final auto ref ScriptString CTFBEVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 804); }
-	public @property final auto ref ScriptString CTFDSMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 792); }
-	public @property final auto ref ScriptString CTFBEMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 780); }
-	public @property final auto ref ScriptString CTFMapOverhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 768); }
-	public @property final auto ref ScriptString CTFDSGeneratorRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 756); }
-	public @property final auto ref ScriptString CTFBEGeneratorRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 744); }
-	public @property final auto ref ScriptString DSBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 732); }
-	final ScriptString GetDescription()
+	@property final auto ref
+	{
+		TrCamera_SpectatorBookmark.ESpectatorBookmark m_BookmarkDescription() { return *cast(TrCamera_SpectatorBookmark.ESpectatorBookmark*)(cast(size_t)cast(void*)this + 1416); }
+		ScriptString BEBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 720); }
+		ScriptString GenericCamera() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1404); }
+		ScriptString BTTunnelWest() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1392); }
+		ScriptString BTTunnelEast() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1380); }
+		ScriptString BTBaseInterior() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1368); }
+		ScriptString BTBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1356); }
+		ScriptString NKMountainSide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1344); }
+		ScriptString NKMountainView() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1332); }
+		ScriptString NKWhalebones() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1320); }
+		ScriptString NKTunnel() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1308); }
+		ScriptString NKTower() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1296); }
+		ScriptString XFDSCRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1284); }
+		ScriptString XFBECRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1272); }
+		ScriptString XFDSBackstop() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1260); }
+		ScriptString XFBEBackstop() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1248); }
+		ScriptString XFDSBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1236); }
+		ScriptString XFBEBlue() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1224); }
+		ScriptString XFDSRed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1212); }
+		ScriptString XFBERed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1200); }
+		ScriptString XFRSW() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1188); }
+		ScriptString XFBSW() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1176); }
+		ScriptString DNFish() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1164); }
+		ScriptString DdDSBackEntrance() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1152); }
+		ScriptString DdBEBackEntrance() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1140); }
+		ScriptString DdDSBunker() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1128); }
+		ScriptString DdBEBunker() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1116); }
+		ScriptString DdDockLow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1104); }
+		ScriptString DdDockHigh() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1092); }
+		ScriptString DdDSWide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1080); }
+		ScriptString DdBEWide() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1068); }
+		ScriptString DdDryLow() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1056); }
+		ScriptString DdDryHigh() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1044); }
+		ScriptString TDMMapOverhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1032); }
+		ScriptString TDMCenter() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1020); }
+		ScriptString TDMSouth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 1008); }
+		ScriptString TDMNorth() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 996); }
+		ScriptString TDMWest() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 984); }
+		ScriptString TDMEast() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 972); }
+		ScriptString CTFDSBackRoute() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 960); }
+		ScriptString CTFBEBackRoute() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 948); }
+		ScriptString CTFDSTurretC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 936); }
+		ScriptString CTFDSTurretB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 924); }
+		ScriptString CTFDSTurretA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 912); }
+		ScriptString CTFBETurretC() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 900); }
+		ScriptString CTFBETurretB() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 888); }
+		ScriptString CTFBETurretA() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 876); }
+		ScriptString CTFDSSensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 864); }
+		ScriptString CTFBESensor() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 852); }
+		ScriptString CTFDSSpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 840); }
+		ScriptString CTFBESpawn() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 828); }
+		ScriptString CTFDSVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 816); }
+		ScriptString CTFBEVehiclePad() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 804); }
+		ScriptString CTFDSMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 792); }
+		ScriptString CTFBEMidfield() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 780); }
+		ScriptString CTFMapOverhead() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 768); }
+		ScriptString CTFDSGeneratorRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 756); }
+		ScriptString CTFBEGeneratorRoom() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 744); }
+		ScriptString DSBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 732); }
+	}
+final:
+	ScriptString GetDescription()
 	{
 		ubyte params[12];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74224], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	final ScriptString GetSpectatorName()
+	ScriptString GetSpectatorName()
 	{
 		ubyte params[12];
 		params[] = 0;

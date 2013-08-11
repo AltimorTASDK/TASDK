@@ -9,38 +9,46 @@ import UnrealScript.GameFramework.GameCrowdAgentBehavior;
 
 extern(C++) interface GameCrowdBehavior_PlayAnimation : GameCrowdAgentBehavior
 {
-	public @property final auto ref ScriptArray!(ScriptName) AnimationList() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 84); }
-	public @property final auto ref int AnimationIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
-	// WARNING: Property 'AnimSequence' has the same name as a defined type!
-	public @property final auto ref float LoopTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
-	public @property final auto ref int LoopIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref Actor CustomActionTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 108); }
-	public @property final bool bBlendBetweenAnims() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x8) != 0; }
-	public @property final bool bBlendBetweenAnims(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x8; } return val; }
-	public @property final bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x4) != 0; }
-	public @property final bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x4; } return val; }
-	public @property final bool bLookAtPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x2) != 0; }
-	public @property final bool bLookAtPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x2; } return val; }
-	public @property final bool bUseRootMotion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
-	public @property final bool bUseRootMotion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
-	public @property final auto ref float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
-	final void InitBehavior(GameCrowdAgent Agent)
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			ScriptArray!(ScriptName) AnimationList() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 84); }
+			int AnimationIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 124); }
+			// WARNING: Property 'AnimSequence' has the same name as a defined type!
+			float LoopTime() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }
+			int LoopIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 112); }
+			Actor CustomActionTarget() { return *cast(Actor*)(cast(size_t)cast(void*)this + 108); }
+			float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
+			float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 96); }
+		}
+		bool bBlendBetweenAnims() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x8) != 0; }
+		bool bBlendBetweenAnims(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x8; } return val; }
+		bool bLooping() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x4) != 0; }
+		bool bLooping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x4; } return val; }
+		bool bLookAtPlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x2) != 0; }
+		bool bLookAtPlayer(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x2; } return val; }
+		bool bUseRootMotion() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }
+		bool bUseRootMotion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
+	}
+final:
+	void InitBehavior(GameCrowdAgent Agent)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31233], params.ptr, cast(void*)0);
 	}
-	final void FinishedTargetRotation()
+	void FinishedTargetRotation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31240], cast(void*)0, cast(void*)0);
 	}
-	final void SetSequenceOutput()
+	void SetSequenceOutput()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31241], cast(void*)0, cast(void*)0);
 	}
-	final void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)
+	void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -49,15 +57,15 @@ extern(C++) interface GameCrowdBehavior_PlayAnimation : GameCrowdAgentBehavior
 		*cast(float*)&params[8] = ExcessTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31242], params.ptr, cast(void*)0);
 	}
-	final void PlayAgentAnimationNow()
+	void PlayAgentAnimationNow()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31246], cast(void*)0, cast(void*)0);
 	}
-	final void StopBehavior()
+	void StopBehavior()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31250], cast(void*)0, cast(void*)0);
 	}
-	final ScriptString GetBehaviorString()
+	ScriptString GetBehaviorString()
 	{
 		ubyte params[12];
 		params[] = 0;

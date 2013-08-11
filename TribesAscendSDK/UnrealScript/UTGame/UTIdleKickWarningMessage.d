@@ -7,6 +7,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UTIdleKickWarningMessage : UTLocalMessage
 {
+public extern(D):
 	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];

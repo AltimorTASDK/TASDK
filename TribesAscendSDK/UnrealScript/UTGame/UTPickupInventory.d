@@ -8,6 +8,7 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface UTPickupInventory : UTInventory
 {
+public extern(D):
 	final float BotDesireability(Actor PickupHolder, Pawn P, Controller C)
 	{
 		ubyte params[16];

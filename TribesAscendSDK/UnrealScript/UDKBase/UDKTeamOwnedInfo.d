@@ -6,7 +6,8 @@ import UnrealScript.Engine.TeamInfo;
 
 extern(C++) interface UDKTeamOwnedInfo : ReplicationInfo
 {
-	public @property final auto ref TeamInfo Team() { return *cast(TeamInfo*)(cast(size_t)cast(void*)this + 476); }
+public extern(D):
+	@property final auto ref TeamInfo Team() { return *cast(TeamInfo*)(cast(size_t)cast(void*)this + 476); }
 	final ubyte GetTeamNum()
 	{
 		ubyte params[1];

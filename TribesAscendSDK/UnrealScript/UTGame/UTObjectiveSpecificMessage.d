@@ -10,9 +10,11 @@ import UnrealScript.Engine.SoundNodeWave;
 
 extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 {
-	final UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
+public extern(D):
+final:
+	UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		params[0] = MessageIndex;
 		*cast(UObject*)&params[4] = Objective;
@@ -20,7 +22,7 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48229], params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)&params[12];
 	}
-	final SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -30,7 +32,7 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48234], params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	final void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -41,7 +43,7 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 		*cast(UObject*)&params[16] = OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48240], params.ptr, cast(void*)0);
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -53,7 +55,7 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48248], params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	final void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;

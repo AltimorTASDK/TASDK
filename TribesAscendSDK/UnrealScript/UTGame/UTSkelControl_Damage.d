@@ -5,7 +5,9 @@ import UnrealScript.UDKBase.UDKSkelControl_Damage;
 
 extern(C++) interface UTSkelControl_Damage : UDKSkelControl_Damage
 {
-	final void BreakApart(Vector PartLocation, bool bIsVisible)
+public extern(D):
+final:
+	void BreakApart(Vector PartLocation, bool bIsVisible)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -13,7 +15,7 @@ extern(C++) interface UTSkelControl_Damage : UDKSkelControl_Damage
 		*cast(bool*)&params[12] = bIsVisible;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49311], params.ptr, cast(void*)0);
 	}
-	final void BreakApartOnDeath(Vector PartLocation, bool bIsVisible)
+	void BreakApartOnDeath(Vector PartLocation, bool bIsVisible)
 	{
 		ubyte params[16];
 		params[] = 0;

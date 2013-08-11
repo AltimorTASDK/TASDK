@@ -7,9 +7,15 @@ import UnrealScript.Engine.Terrain;
 
 extern(C++) interface TerrainWeightMapTexture : Texture2D
 {
+public extern(D):
 	struct TerrainWeightedMaterial
 	{
+		private ubyte __buffer__[0];
+	public extern(D):
 	}
-	public @property final auto ref ScriptArray!(UObject.Pointer) WeightedMaterials() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 372); }
-	public @property final auto ref Terrain ParentTerrain() { return *cast(Terrain*)(cast(size_t)cast(void*)this + 368); }
+	@property final auto ref
+	{
+		ScriptArray!(UObject.Pointer) WeightedMaterials() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 372); }
+		Terrain ParentTerrain() { return *cast(Terrain*)(cast(size_t)cast(void*)this + 368); }
+	}
 }

@@ -8,6 +8,7 @@ import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface NxGenericForceFieldBrush : Volume
 {
+public extern(D):
 	enum FFB_ForceFieldCoordinates : ubyte
 	{
 		FFB_CARTESIAN = 0,
@@ -16,33 +17,37 @@ extern(C++) interface NxGenericForceFieldBrush : Volume
 		FFB_TOROIDAL = 3,
 		FFB_MAX = 4,
 	}
-	public @property final auto ref ScriptArray!(UObject.Pointer) ConvexMeshes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 684); }
-	public @property final auto ref ScriptArray!(UObject.Pointer) ExclusionShapes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 696); }
-	public @property final auto ref ScriptArray!(UObject.Pointer) ExclusionShapePoses() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 708); }
-	public @property final auto ref UObject.Pointer LinearKernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 720); }
-	public @property final auto ref UObject.Pointer ForceField() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 680); }
-	public @property final auto ref float TorusRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-	public @property final auto ref Vector FalloffQuadratic() { return *cast(Vector*)(cast(size_t)cast(void*)this + 664); }
-	public @property final auto ref Vector FalloffLinear() { return *cast(Vector*)(cast(size_t)cast(void*)this + 652); }
-	public @property final auto ref Vector Noise() { return *cast(Vector*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref Vector VelocityTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 628); }
-	public @property final auto ref Vector VelocityMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 616); }
-	public @property final auto ref Vector VelocityMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 604); }
-	public @property final auto ref Vector VelocityMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 592); }
-	public @property final auto ref Vector PositionTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 580); }
-	public @property final auto ref Vector PositionMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 568); }
-	public @property final auto ref Vector PositionMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 556); }
-	public @property final auto ref Vector PositionMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 544); }
-	public @property final auto ref Vector Constant() { return *cast(Vector*)(cast(size_t)cast(void*)this + 532); }
-	public @property final auto ref NxGenericForceFieldBrush.FFB_ForceFieldCoordinates Coordinates() { return *cast(NxGenericForceFieldBrush.FFB_ForceFieldCoordinates*)(cast(size_t)cast(void*)this + 529); }
-	public @property final auto ref PrimitiveComponent.ERBCollisionChannel RBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 528); }
-	public @property final auto ref PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 524); }
-	public @property final auto ref int ExcludeChannel() { return *cast(int*)(cast(size_t)cast(void*)this + 520); }
-	final void PostBeginPlay()
+	@property final auto ref
+	{
+		ScriptArray!(UObject.Pointer) ConvexMeshes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 684); }
+		ScriptArray!(UObject.Pointer) ExclusionShapes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 696); }
+		ScriptArray!(UObject.Pointer) ExclusionShapePoses() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 708); }
+		UObject.Pointer LinearKernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 720); }
+		UObject.Pointer ForceField() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 680); }
+		float TorusRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+		Vector FalloffQuadratic() { return *cast(Vector*)(cast(size_t)cast(void*)this + 664); }
+		Vector FalloffLinear() { return *cast(Vector*)(cast(size_t)cast(void*)this + 652); }
+		Vector Noise() { return *cast(Vector*)(cast(size_t)cast(void*)this + 640); }
+		Vector VelocityTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 628); }
+		Vector VelocityMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 616); }
+		Vector VelocityMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 604); }
+		Vector VelocityMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 592); }
+		Vector PositionTarget() { return *cast(Vector*)(cast(size_t)cast(void*)this + 580); }
+		Vector PositionMultiplierZ() { return *cast(Vector*)(cast(size_t)cast(void*)this + 568); }
+		Vector PositionMultiplierY() { return *cast(Vector*)(cast(size_t)cast(void*)this + 556); }
+		Vector PositionMultiplierX() { return *cast(Vector*)(cast(size_t)cast(void*)this + 544); }
+		Vector Constant() { return *cast(Vector*)(cast(size_t)cast(void*)this + 532); }
+		NxGenericForceFieldBrush.FFB_ForceFieldCoordinates Coordinates() { return *cast(NxGenericForceFieldBrush.FFB_ForceFieldCoordinates*)(cast(size_t)cast(void*)this + 529); }
+		PrimitiveComponent.ERBCollisionChannel RBChannel() { return *cast(PrimitiveComponent.ERBCollisionChannel*)(cast(size_t)cast(void*)this + 528); }
+		PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { return *cast(PrimitiveComponent.RBCollisionChannelContainer*)(cast(size_t)cast(void*)this + 524); }
+		int ExcludeChannel() { return *cast(int*)(cast(size_t)cast(void*)this + 520); }
+	}
+final:
+	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21311], cast(void*)0, cast(void*)0);
 	}
-	final bool StopsProjectile(Projectile P)
+	bool StopsProjectile(Projectile P)
 	{
 		ubyte params[8];
 		params[] = 0;

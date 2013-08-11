@@ -8,29 +8,37 @@ import UnrealScript.Engine.AICommandNodeRoot;
 
 extern(C++) interface AITree : K2GraphBase
 {
+public extern(D):
 	struct AITreeUtilityInfo
 	{
-		public @property final auto ref float UtilityRating() { return *cast(float*)(cast(size_t)&this + 4); }
-		private ubyte __UtilityRating[4];
-		public @property final auto ref ScriptClass CommandClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
-		private ubyte __CommandClass[4];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref
+		{
+			float UtilityRating() { return *cast(float*)(cast(size_t)&this + 4); }
+			ScriptClass CommandClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
+		}
 	}
 	struct AITreeHandle
 	{
-		public @property final auto ref ScriptArray!(AICommandNodeBase) DisabledNodes() { return *cast(ScriptArray!(AICommandNodeBase)*)(cast(size_t)&this + 12); }
-		private ubyte __DisabledNodes[12];
-		public @property final auto ref ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingList() { return *cast(ScriptArray!(AITree.AITreeUtilityInfo)*)(cast(size_t)&this + 24); }
-		private ubyte __LastUtilityRatingList[12];
-		public @property final auto ref ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingListAtChange() { return *cast(ScriptArray!(AITree.AITreeUtilityInfo)*)(cast(size_t)&this + 36); }
-		private ubyte __LastUtilityRatingListAtChange[12];
-		public @property final auto ref AICommandNodeRoot ActiveRoot() { return *cast(AICommandNodeRoot*)(cast(size_t)&this + 8); }
-		private ubyte __ActiveRoot[4];
-		public @property final auto ref ScriptName ActiveRootName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
-		private ubyte __ActiveRootName[8];
+		private ubyte __buffer__[48];
+	public extern(D):
+		@property final auto ref
+		{
+			ScriptArray!(AICommandNodeBase) DisabledNodes() { return *cast(ScriptArray!(AICommandNodeBase)*)(cast(size_t)&this + 12); }
+			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingList() { return *cast(ScriptArray!(AITree.AITreeUtilityInfo)*)(cast(size_t)&this + 24); }
+			ScriptArray!(AITree.AITreeUtilityInfo) LastUtilityRatingListAtChange() { return *cast(ScriptArray!(AITree.AITreeUtilityInfo)*)(cast(size_t)&this + 36); }
+			AICommandNodeRoot ActiveRoot() { return *cast(AICommandNodeRoot*)(cast(size_t)&this + 8); }
+			ScriptName ActiveRootName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(AICommandNodeRoot) RootList() { return *cast(ScriptArray!(AICommandNodeRoot)*)(cast(size_t)cast(void*)this + 72); }
-	public @property final auto ref K2GraphBase GatherList() { return *cast(K2GraphBase*)(cast(size_t)cast(void*)this + 84); }
-	final bool SetActiveRoot(ScriptName InName, AITree.AITreeHandle* Handle)
+	@property final auto ref
+	{
+		ScriptArray!(AICommandNodeRoot) RootList() { return *cast(ScriptArray!(AICommandNodeRoot)*)(cast(size_t)cast(void*)this + 72); }
+		K2GraphBase GatherList() { return *cast(K2GraphBase*)(cast(size_t)cast(void*)this + 84); }
+	}
+final:
+	bool SetActiveRoot(ScriptName InName, AITree.AITreeHandle* Handle)
 	{
 		ubyte params[60];
 		params[] = 0;
@@ -40,7 +48,7 @@ extern(C++) interface AITree : K2GraphBase
 		*Handle = *cast(AITree.AITreeHandle*)&params[8];
 		return *cast(bool*)&params[56];
 	}
-	final ScriptArray!(ScriptClass) EvaluateTree(AIController InAI, AITree.AITreeHandle* Handle)
+	ScriptArray!(ScriptClass) EvaluateTree(AIController InAI, AITree.AITreeHandle* Handle)
 	{
 		ubyte params[64];
 		params[] = 0;

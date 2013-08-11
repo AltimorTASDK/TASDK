@@ -6,6 +6,7 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendByVehicle : TrAnimNodeBlendList
 {
+public extern(D):
 	enum EVehicleAnims : ubyte
 	{
 		VANIM_NoVehicle = 0,
@@ -15,24 +16,25 @@ extern(C++) interface TrAnimNodeBlendByVehicle : TrAnimNodeBlendList
 		VANIM_ChangeSeat = 4,
 		VANIM_MAX = 5,
 	}
-	public @property final auto ref TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 292); }
-	final void PlayNoVehicleAnim()
+	@property final auto ref TrPawn m_TrPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 292); }
+final:
+	void PlayNoVehicleAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66474], cast(void*)0, cast(void*)0);
 	}
-	final void PlayDrivingAnim()
+	void PlayDrivingAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66475], cast(void*)0, cast(void*)0);
 	}
-	final void PlayEnterAnim()
+	void PlayEnterAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66476], cast(void*)0, cast(void*)0);
 	}
-	final void PlayExitAnim()
+	void PlayExitAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66477], cast(void*)0, cast(void*)0);
 	}
-	final void PlayChangeSeatAnim()
+	void PlayChangeSeatAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66478], cast(void*)0, cast(void*)0);
 	}

@@ -5,6 +5,7 @@ import UnrealScript.GameFramework.MobilePlayerInput;
 
 extern(C++) interface UDKPlayerInput : MobilePlayerInput
 {
+public extern(D):
 	final ScriptString GetUDKBindNameFromCommand(ScriptString BindCommand)
 	{
 		ubyte params[24];

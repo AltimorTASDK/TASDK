@@ -19,8 +19,8 @@ import UnrealScript.TribesGame.TrVehicle;
 
 extern(C++) interface GfxTrHud : GFxMinimapHud
 {
-public:
-	enum 
+public extern(D):
+	enum
 	{
 		THR_SPINFUSOR = 1,
 		THR_SMG = 2,
@@ -544,7 +544,7 @@ public:
 		STAT_VIEW_BASE_PLAYER = 1,
 		STAT_VIEW_BASE_GAME = 101,
 		STAT_VIEW_BASE_WEAPON_TYPE = 1000,
-		GAME_SESSION_NAME = "Gam",
+		GAME_SESSION_NAME = "Game",
 		PROPERTY_CUSTOM_MAPNAME = 0x40000001,
 		PROPERTY_CUSTOM_GAMEMODE = 0x40000002,
 		PROPERTY_SERVER_DESCRIPTION = 0x40000003,
@@ -1899,8 +1899,8 @@ public:
 	}
 	struct TrTempMessage
 	{
-		private ubyte __buffer[23];
-	public:
+		private ubyte __buffer__[21];
+	public extern(D):
 		@property final
 		{
 			auto ref
@@ -1915,7 +1915,7 @@ public:
 	}
 	@property final
 	{
-		auto ref 
+		auto ref
 		{
 			ScriptArray!(ScriptName) m_aDamageEffectNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 3004); }
 			GfxTrHud.TrTempMessage m_HeroStatusTempMessage() { return *cast(GfxTrHud.TrTempMessage*)(cast(size_t)cast(void*)this + 3068); }
@@ -2204,32 +2204,32 @@ final:
 		*cast(GFxTrReticules*)params.ptr = MC;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53543], params.ptr, cast(void*)0);
 	}
-	void Init(LocalPlayer Player)
+	void Init(LocalPlayer pPlayer)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = Player;
+		*cast(LocalPlayer*)params.ptr = pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53545], params.ptr, cast(void*)0);
 	}
 	void SetLoadVGSMenuDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* InDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = InDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53548], params.ptr, cast(void*)0);
 	}
 	void SetSoundAccoladeDelegate(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void* InDelegate)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = InDelegate;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53549], params.ptr, cast(void*)0);
 	}
@@ -2551,24 +2551,24 @@ void**)params.ptr = InDelegate;
 		*cast(float*)params.ptr = Value;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53761], params.ptr, cast(void*)0);
 	}
-	void DisplayHit(Vector HitDir, int Damage, ScriptClass DamageType)
+	void DisplayHit(Vector HitDir, int Damage, ScriptClass pDamageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitDir;
 		*cast(int*)&params[12] = Damage;
-		*cast(ScriptClass*)&params[16] = DamageType;
+		*cast(ScriptClass*)&params[16] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53763], params.ptr, cast(void*)0);
 	}
-	void UpdateHealth(GFxMinimapHud.HeEnDisplay* Info, float NewHealth, float HealthMax)
+	void UpdateHealth(GFxMinimapHud.HeEnDisplay* pInfo, float NewHealth, float HealthMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *Info;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
 		*cast(float*)&params[36] = NewHealth;
 		*cast(float*)&params[40] = HealthMax;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53777], params.ptr, cast(void*)0);
-		*Info = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
 	void TickGhostHealth(float DeltaTime)
 	{
@@ -2577,15 +2577,15 @@ void**)params.ptr = InDelegate;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53783], params.ptr, cast(void*)0);
 	}
-	void UpdateEnergy(GFxMinimapHud.HeEnDisplay* Info, float NewEnergy, float EnergyMax)
+	void UpdateEnergy(GFxMinimapHud.HeEnDisplay* pInfo, float NewEnergy, float EnergyMax)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *Info;
+		*cast(GFxMinimapHud.HeEnDisplay*)params.ptr = *pInfo;
 		*cast(float*)&params[36] = NewEnergy;
 		*cast(float*)&params[40] = EnergyMax;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53786], params.ptr, cast(void*)0);
-		*Info = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
 	void SetOwnership()
 	{
@@ -2999,11 +2999,11 @@ void**)params.ptr = InDelegate;
 		*cast(bool*)params.ptr = bSkiing;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53944], params.ptr, cast(void*)0);
 	}
-	void UpdateSkiLevel(int Level)
+	void UpdateSkiLevel(int pLevel)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = Level;
+		*cast(int*)params.ptr = pLevel;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53946], params.ptr, cast(void*)0);
 	}
 	void UpdateTeamStats(int Team)

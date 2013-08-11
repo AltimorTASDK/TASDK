@@ -6,6 +6,7 @@ import UnrealScript.Core.UInterface;
 
 extern(C++) interface Interface_Speaker : UInterface
 {
+public extern(D):
 	final void Speak(SoundCue Cue)
 	{
 		ubyte params[4];

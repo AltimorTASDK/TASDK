@@ -6,21 +6,23 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UIManager : UObject
 {
-	final UIManager GetUIManager()
+public extern(D):
+final:
+	UIManager GetUIManager()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29127], params.ptr, cast(void*)0);
 		return *cast(UIManager*)params.ptr;
 	}
-	final bool CanUnpauseInternalUI()
+	bool CanUnpauseInternalUI()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29129], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void PauseGame(bool bDesiredPauseState, int PlayerIndex)
+	void PauseGame(bool bDesiredPauseState, int PlayerIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -28,7 +30,7 @@ extern(C++) interface UIManager : UObject
 		*cast(int*)&params[4] = PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29131], params.ptr, cast(void*)0);
 	}
-	final void NotifyPlayerAdded(int PlayerIndex, LocalPlayer AddedPlayer)
+	void NotifyPlayerAdded(int PlayerIndex, LocalPlayer AddedPlayer)
 	{
 		ubyte params[8];
 		params[] = 0;
@@ -36,7 +38,7 @@ extern(C++) interface UIManager : UObject
 		*cast(LocalPlayer*)&params[4] = AddedPlayer;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29136], params.ptr, cast(void*)0);
 	}
-	final void NotifyPlayerRemoved(int PlayerIndex, LocalPlayer RemovedPlayer)
+	void NotifyPlayerRemoved(int PlayerIndex, LocalPlayer RemovedPlayer)
 	{
 		ubyte params[8];
 		params[] = 0;

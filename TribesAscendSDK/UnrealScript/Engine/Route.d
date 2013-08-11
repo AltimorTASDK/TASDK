@@ -8,6 +8,7 @@ import UnrealScript.Engine.Info;
 
 extern(C++) interface Route : Info
 {
+public extern(D):
 	enum ERouteDirection : ubyte
 	{
 		ERD_Forward = 0,
@@ -29,14 +30,18 @@ extern(C++) interface Route : Info
 		ERT_Circle = 2,
 		ERT_MAX = 3,
 	}
-	public @property final auto ref ScriptArray!(Actor.ActorReference) RouteList() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 484); }
-	public @property final auto ref Route.ERouteType RouteType() { return *cast(Route.ERouteType*)(cast(size_t)cast(void*)this + 480); }
-	public @property final auto ref UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
-	public @property final auto ref float FudgeFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
-	public @property final auto ref int RouteIndexOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
-	final int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ubyte* out_bComplete, ubyte* out_bReverse)
+	@property final auto ref
 	{
-		ubyte params[11];
+		ScriptArray!(Actor.ActorReference) RouteList() { return *cast(ScriptArray!(Actor.ActorReference)*)(cast(size_t)cast(void*)this + 484); }
+		Route.ERouteType RouteType() { return *cast(Route.ERouteType*)(cast(size_t)cast(void*)this + 480); }
+		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 476); }
+		float FudgeFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }
+		int RouteIndexOffset() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }
+	}
+final:
+	int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ubyte* out_bComplete, ubyte* out_bReverse)
+	{
+		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Idx;
 		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;
@@ -47,9 +52,9 @@ extern(C++) interface Route : Info
 		*out_bReverse = params[6];
 		return *cast(int*)&params[8];
 	}
-	final int MoveOntoRoutePath(Pawn P, Route.ERouteDirection RouteDirection, float DistFudgeFactor)
+	int MoveOntoRoutePath(Pawn P, Route.ERouteDirection RouteDirection, float DistFudgeFactor)
 	{
-		ubyte params[13];
+		ubyte params[16];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;

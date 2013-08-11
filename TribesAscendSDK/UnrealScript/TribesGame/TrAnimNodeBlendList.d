@@ -5,8 +5,12 @@ import UnrealScript.Engine.AnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendList : AnimNodeBlendList
 {
-	public @property final auto ref ScriptArray!(float) m_ChildBlendInTime() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 276); }
-	public @property final auto ref float m_fBlendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(float) m_ChildBlendInTime() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 276); }
+		float m_fBlendTime() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }
+	}
 	final float GetBlendTime(int ChildIndex, bool bGetDefault)
 	{
 		ubyte params[12];

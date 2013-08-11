@@ -6,6 +6,7 @@ import UnrealScript.Engine.NavMeshPathConstraint;
 
 extern(C++) interface NavMeshPath_EnforceTwoWayEdges : NavMeshPathConstraint
 {
+public extern(D):
 	final bool EnforceTwoWayEdges(NavigationHandle NavHandle)
 	{
 		ubyte params[8];

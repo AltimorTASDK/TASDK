@@ -5,8 +5,12 @@ import UnrealScript.Engine.SequenceCondition;
 
 extern(C++) interface SeqCond_CompareBool : SequenceCondition
 {
-	public @property final bool bResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x1) != 0; }
-	public @property final bool bResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		bool bResult() { return (*cast(uint*)(cast(size_t)cast(void*)this + 208) & 0x1) != 0; }
+		bool bResult(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 208) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 208) &= ~0x1; } return val; }
+	}
 	final int GetObjClassVersion()
 	{
 		ubyte params[4];

@@ -9,10 +9,15 @@ import UnrealScript.UTGame.UTGameObjective;
 
 extern(C++) interface UTCTFTeamAI : UTTeamAI
 {
-	public @property final auto ref UTCTFFlag FriendlyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 668); }
-	public @property final auto ref UTCTFFlag EnemyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 672); }
-	public @property final auto ref float LastGotFlag() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
-	final UTSquadAI AddSquadWithLeader(Controller C, UTGameObjective O)
+public extern(D):
+	@property final auto ref
+	{
+		UTCTFFlag FriendlyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 668); }
+		UTCTFFlag EnemyFlag() { return *cast(UTCTFFlag*)(cast(size_t)cast(void*)this + 672); }
+		float LastGotFlag() { return *cast(float*)(cast(size_t)cast(void*)this + 676); }
+	}
+final:
+	UTSquadAI AddSquadWithLeader(Controller C, UTGameObjective O)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -21,7 +26,7 @@ extern(C++) interface UTCTFTeamAI : UTTeamAI
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46740], params.ptr, cast(void*)0);
 		return *cast(UTSquadAI*)&params[8];
 	}
-	final UTGameObjective GetPriorityFreelanceObjectiveFor(UTSquadAI InFreelanceSquad)
+	UTGameObjective GetPriorityFreelanceObjectiveFor(UTSquadAI InFreelanceSquad)
 	{
 		ubyte params[8];
 		params[] = 0;

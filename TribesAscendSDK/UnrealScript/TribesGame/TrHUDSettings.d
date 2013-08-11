@@ -5,6 +5,7 @@ import UnrealScript.GFxUI.GFxObject;
 
 extern(C++) interface TrHUDSettings : GFxObject
 {
+public extern(D):
 	enum EHUDSettingType : ubyte
 	{
 		EHST_HEROTEXT = 0,
@@ -26,17 +27,21 @@ extern(C++) interface TrHUDSettings : GFxObject
 		EHST_CRACKS = 16,
 		EHST_MAX = 17,
 	}
-	public @property final auto ref int SettingsCount() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
-	public @property final auto ref GFxObject SettingsList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 124); }
-	final float GetCurrentValue(TrHUDSettings.EHUDSettingType Index)
+	@property final auto ref
 	{
-		ubyte params[5];
+		int SettingsCount() { return *cast(int*)(cast(size_t)cast(void*)this + 120); }
+		GFxObject SettingsList() { return *cast(GFxObject*)(cast(size_t)cast(void*)this + 124); }
+	}
+final:
+	float GetCurrentValue(TrHUDSettings.EHUDSettingType Index)
+	{
+		ubyte params[8];
 		params[] = 0;
 		*cast(TrHUDSettings.EHUDSettingType*)params.ptr = Index;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59226], params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	final void SaveSetting(int Index, float val)
+	void SaveSetting(int Index, float val)
 	{
 		ubyte params[8];
 		params[] = 0;

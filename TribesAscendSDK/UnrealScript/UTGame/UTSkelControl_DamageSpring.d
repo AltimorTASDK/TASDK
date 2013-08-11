@@ -5,7 +5,9 @@ import UnrealScript.UDKBase.UDKSkelControl_DamageSpring;
 
 extern(C++) interface UTSkelControl_DamageSpring : UDKSkelControl_DamageSpring
 {
-	final void BreakApart(Vector PartLocation, bool bIsVisible)
+public extern(D):
+final:
+	void BreakApart(Vector PartLocation, bool bIsVisible)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -13,7 +15,7 @@ extern(C++) interface UTSkelControl_DamageSpring : UDKSkelControl_DamageSpring
 		*cast(bool*)&params[12] = bIsVisible;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49331], params.ptr, cast(void*)0);
 	}
-	final void BreakApartOnDeath(Vector PartLocation, bool bIsVisible)
+	void BreakApartOnDeath(Vector PartLocation, bool bIsVisible)
 	{
 		ubyte params[16];
 		params[] = 0;

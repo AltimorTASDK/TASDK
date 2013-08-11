@@ -7,7 +7,8 @@ import UnrealScript.Engine.Actor;
 
 extern(C++) interface PortalMarker : NavigationPoint
 {
-	public @property final auto ref PortalTeleporter MyPortal() { return *cast(PortalTeleporter*)(cast(size_t)cast(void*)this + 692); }
+public extern(D):
+	@property final auto ref PortalTeleporter MyPortal() { return *cast(PortalTeleporter*)(cast(size_t)cast(void*)this + 692); }
 	final bool CanTeleport(Actor A)
 	{
 		ubyte params[8];

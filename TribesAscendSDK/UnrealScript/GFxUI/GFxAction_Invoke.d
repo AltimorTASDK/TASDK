@@ -6,9 +6,13 @@ import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface GFxAction_Invoke : SequenceAction
 {
-	public @property final auto ref ScriptArray!(GFxMoviePlayer.ASValue) Arguments() { return *cast(ScriptArray!(GFxMoviePlayer.ASValue)*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref ScriptString MethodName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
-	public @property final auto ref GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 232); }
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(GFxMoviePlayer.ASValue) Arguments() { return *cast(ScriptArray!(GFxMoviePlayer.ASValue)*)(cast(size_t)cast(void*)this + 248); }
+		ScriptString MethodName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 236); }
+		GFxMoviePlayer Movie() { return *cast(GFxMoviePlayer*)(cast(size_t)cast(void*)this + 232); }
+	}
 	final bool IsValidLevelSequenceObject()
 	{
 		ubyte params[4];

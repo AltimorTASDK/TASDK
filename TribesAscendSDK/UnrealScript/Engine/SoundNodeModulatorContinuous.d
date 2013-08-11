@@ -5,6 +5,10 @@ import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface SoundNodeModulatorContinuous : SoundNode
 {
-	public @property final auto ref DistributionFloat.RawDistributionFloat VolumeModulation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref DistributionFloat.RawDistributionFloat PitchModulation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 76); }
+public extern(D):
+	@property final auto ref
+	{
+		DistributionFloat.RawDistributionFloat VolumeModulation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }
+		DistributionFloat.RawDistributionFloat PitchModulation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 76); }
+	}
 }

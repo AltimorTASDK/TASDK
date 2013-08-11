@@ -5,18 +5,20 @@ import UnrealScript.UTGame.UTTeamGame;
 
 extern(C++) interface UTEntryGame : UTTeamGame
 {
-	final bool NeedPlayers()
+public extern(D):
+final:
+	bool NeedPlayers()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47395], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void StartMatch()
+	void StartMatch()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47397], cast(void*)0, cast(void*)0);
 	}
-	final void InitGame(ScriptString Options, ScriptString* ErrorMessage)
+	void InitGame(ScriptString Options, ScriptString* ErrorMessage)
 	{
 		ubyte params[24];
 		params[] = 0;

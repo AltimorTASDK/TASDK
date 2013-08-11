@@ -7,8 +7,10 @@ import UnrealScript.Engine.NavMeshPathGoalEvaluator;
 
 extern(C++) interface NavMeshGoal_Null : NavMeshPathGoalEvaluator
 {
-	public @property final auto ref UObject.Pointer PartialGoal() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 80); }
-	final bool GoUntilBust(NavigationHandle NavHandle, int InMaxPathVisits)
+public extern(D):
+	@property final auto ref UObject.Pointer PartialGoal() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 80); }
+final:
+	bool GoUntilBust(NavigationHandle NavHandle, int InMaxPathVisits)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -17,11 +19,11 @@ extern(C++) interface NavMeshGoal_Null : NavMeshPathGoalEvaluator
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20975], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void RecycleNative()
+	void RecycleNative()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20980], cast(void*)0, cast(void*)0);
 	}
-	final void Recycle()
+	void Recycle()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20981], cast(void*)0, cast(void*)0);
 	}

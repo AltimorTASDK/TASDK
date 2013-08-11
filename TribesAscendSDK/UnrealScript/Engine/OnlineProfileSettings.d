@@ -6,6 +6,7 @@ import UnrealScript.Engine.Settings;
 
 extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 {
+public extern(D):
 	enum EProfileSettingID : ubyte
 	{
 		PSI_Unknown = 0,
@@ -144,10 +145,14 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 		PVTSO_Both = 2,
 		PVTSO_MAX = 3,
 	}
-	public @property final auto ref ScriptArray!(int) ProfileSettingIds() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 100); }
-	public @property final auto ref ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { return *cast(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)*)(cast(size_t)cast(void*)this + 112); }
-	public @property final auto ref ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)cast(void*)this + 124); }
-	final bool GetProfileSettingDefaultId(int ProfileSettingId, int* DefaultId, int* ListIndex)
+	@property final auto ref
+	{
+		ScriptArray!(int) ProfileSettingIds() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 100); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { return *cast(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)*)(cast(size_t)cast(void*)this + 112); }
+		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { return *cast(ScriptArray!(Settings.IdToStringMapping)*)(cast(size_t)cast(void*)this + 124); }
+	}
+final:
+	bool GetProfileSettingDefaultId(int ProfileSettingId, int* DefaultId, int* ListIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -159,7 +164,7 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 		*ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	final bool GetProfileSettingDefaultInt(int ProfileSettingId, int* DefaultInt)
+	bool GetProfileSettingDefaultInt(int ProfileSettingId, int* DefaultInt)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -169,7 +174,7 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 		*DefaultInt = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final bool GetProfileSettingDefaultFloat(int ProfileSettingId, float* DefaultFloat)
+	bool GetProfileSettingDefaultFloat(int ProfileSettingId, float* DefaultFloat)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -179,15 +184,15 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 		*DefaultFloat = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	final void SetToDefaults()
+	void SetToDefaults()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22658], cast(void*)0, cast(void*)0);
 	}
-	final void AppendVersionToReadIds()
+	void AppendVersionToReadIds()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22659], cast(void*)0, cast(void*)0);
 	}
-	final void ModifyAvailableProfileSettings()
+	void ModifyAvailableProfileSettings()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22660], cast(void*)0, cast(void*)0);
 	}

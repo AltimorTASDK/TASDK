@@ -8,6 +8,7 @@ import UnrealScript.IpDrv.ClientBeaconAddressResolver;
 
 extern(C++) interface PartyBeaconClient : PartyBeacon
 {
+public extern(D):
 	enum EPartyBeaconClientRequest : ubyte
 	{
 		PBClientRequest_NewReservation = 0,
@@ -24,47 +25,51 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 		PBCS_Closed = 5,
 		PBCS_MAX = 6,
 	}
-	public @property final auto ref ClientBeaconAddressResolver Resolver() { return *cast(ClientBeaconAddressResolver*)(cast(size_t)cast(void*)this + 164); }
-	public @property final auto ref ScriptClass ResolverClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 160); }
-	public @property final auto ref ScriptString ResolverClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
-	public @property final auto ref float ReservationRequestElapsedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
-	public @property final auto ref float ReservationRequestTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
-	public @property final auto ref PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { return *cast(PartyBeaconClient.EPartyBeaconClientRequest*)(cast(size_t)cast(void*)this + 137); }
-	public @property final auto ref PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { return *cast(PartyBeaconClient.EPartyBeaconClientState*)(cast(size_t)cast(void*)this + 136); }
-	public @property final auto ref OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { return *cast(OnlineGameSearch.OnlineGameSearchResult*)(cast(size_t)cast(void*)this + 104); }
-	public @property final auto ref PartyBeacon.PartyReservation PendingRequest() { return *cast(PartyBeacon.PartyReservation*)(cast(size_t)cast(void*)this + 112); }
-	final void OnHostHasCancelled()
+	@property final auto ref
+	{
+		ClientBeaconAddressResolver Resolver() { return *cast(ClientBeaconAddressResolver*)(cast(size_t)cast(void*)this + 164); }
+		ScriptClass ResolverClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 160); }
+		ScriptString ResolverClassName() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 148); }
+		float ReservationRequestElapsedTime() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }
+		float ReservationRequestTimeout() { return *cast(float*)(cast(size_t)cast(void*)this + 140); }
+		PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { return *cast(PartyBeaconClient.EPartyBeaconClientRequest*)(cast(size_t)cast(void*)this + 137); }
+		PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { return *cast(PartyBeaconClient.EPartyBeaconClientState*)(cast(size_t)cast(void*)this + 136); }
+		OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { return *cast(OnlineGameSearch.OnlineGameSearchResult*)(cast(size_t)cast(void*)this + 104); }
+		PartyBeacon.PartyReservation PendingRequest() { return *cast(PartyBeacon.PartyReservation*)(cast(size_t)cast(void*)this + 112); }
+	}
+final:
+	void OnHostHasCancelled()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33911], cast(void*)0, cast(void*)0);
 	}
-	final void OnHostIsReady()
+	void OnHostIsReady()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33913], cast(void*)0, cast(void*)0);
 	}
-	final void OnTravelRequestReceived(ScriptName SessionName, ScriptClass SearchClass, ubyte PlatformSpecificInfo)
+	void OnTravelRequestReceived(ScriptName SessionName, ScriptClass SearchClass, ubyte PlatformSpecificInfo)
 	{
-		ubyte params[13];
+		ubyte params[92];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptClass*)&params[8] = SearchClass;
 		params[12] = PlatformSpecificInfo;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33915], params.ptr, cast(void*)0);
 	}
-	final void OnReservationCountUpdated(int ReservationRemaining)
+	void OnReservationCountUpdated(int ReservationRemaining)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ReservationRemaining;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33917], params.ptr, cast(void*)0);
 	}
-	final void OnReservationRequestComplete(PartyBeacon.EPartyReservationResult ReservationResult)
+	void OnReservationRequestComplete(PartyBeacon.EPartyReservationResult ReservationResult)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(PartyBeacon.EPartyReservationResult*)params.ptr = ReservationResult;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33919], params.ptr, cast(void*)0);
 	}
-	final bool RequestReservation(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* Players)
+	bool RequestReservation(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* Players)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -76,7 +81,7 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 		*Players = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	final bool RequestReservationUpdate(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* PlayersToAdd)
+	bool RequestReservationUpdate(OnlineGameSearch.OnlineGameSearchResult* DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ScriptArray!(PartyBeacon.PlayerReservation)* PlayersToAdd)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -88,7 +93,7 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 		*PlayersToAdd = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	final bool CancelReservation(OnlineSubsystem.UniqueNetId CancellingPartyLeader)
+	bool CancelReservation(OnlineSubsystem.UniqueNetId CancellingPartyLeader)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -96,7 +101,7 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33948], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	final void DestroyBeacon()
+	void DestroyBeacon()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33951], cast(void*)0, cast(void*)0);
 	}

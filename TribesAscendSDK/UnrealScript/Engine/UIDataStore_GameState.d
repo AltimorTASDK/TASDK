@@ -5,11 +5,13 @@ import UnrealScript.Engine.UIDataStore;
 
 extern(C++) interface UIDataStore_GameState : UIDataStore
 {
-	final void OnRefreshDataFieldValue()
+public extern(D):
+final:
+	void OnRefreshDataFieldValue()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28557], cast(void*)0, cast(void*)0);
 	}
-	final bool NotifyGameSessionEnded()
+	bool NotifyGameSessionEnded()
 	{
 		ubyte params[4];
 		params[] = 0;

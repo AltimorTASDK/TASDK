@@ -6,6 +6,7 @@ import UnrealScript.UTGame.UTPlayerController;
 
 extern(C++) interface UTDmgType_Pancake : UTDmgType_RanOver
 {
+public extern(D):
 	final void SmallReward(UTPlayerController Killer, int KillCount)
 	{
 		ubyte params[8];

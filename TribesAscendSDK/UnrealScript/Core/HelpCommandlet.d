@@ -5,6 +5,7 @@ import UnrealScript.Core.Commandlet;
 
 extern(C++) interface HelpCommandlet : Commandlet
 {
+public extern(D):
 	final int Main(ScriptString Params)
 	{
 		ubyte params[16];

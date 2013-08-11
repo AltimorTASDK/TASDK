@@ -5,11 +5,18 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeBlend : AnimNodeBlendBase
 {
-	public @property final bool bSkipBlendWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x1) != 0; }
-	public @property final bool bSkipBlendWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x1; } return val; }
-	public @property final auto ref float BlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
-	public @property final auto ref float Child2WeightTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
-	public @property final auto ref float Child2Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
+public extern(D):
+	@property final
+	{
+		auto ref
+		{
+			float BlendTimeToGo() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }
+			float Child2WeightTarget() { return *cast(float*)(cast(size_t)cast(void*)this + 248); }
+			float Child2Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }
+		}
+		bool bSkipBlendWhenNotRendered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 256) & 0x1) != 0; }
+		bool bSkipBlendWhenNotRendered(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 256) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 256) &= ~0x1; } return val; }
+	}
 	final void SetBlendTarget(float BlendTarget, float BlendTime)
 	{
 		ubyte params[8];

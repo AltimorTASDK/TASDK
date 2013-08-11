@@ -5,7 +5,8 @@ import UnrealScript.UTGame.UTDroppedPickup;
 
 extern(C++) interface UTRotatingDroppedPickup : UTDroppedPickup
 {
-	public @property final auto ref float YawRotationRate() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
+public extern(D):
+	@property final auto ref float YawRotationRate() { return *cast(float*)(cast(size_t)cast(void*)this + 512); }
 	final void Tick(float DeltaTime)
 	{
 		ubyte params[4];

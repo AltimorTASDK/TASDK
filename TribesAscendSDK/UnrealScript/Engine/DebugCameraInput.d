@@ -6,9 +6,10 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface DebugCameraInput : PlayerInput
 {
+public extern(D):
 	final bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
-		ubyte params[25];
+		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;

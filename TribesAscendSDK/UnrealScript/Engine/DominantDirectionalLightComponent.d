@@ -6,6 +6,10 @@ import UnrealScript.Engine.EngineTypes;
 
 extern(C++) interface DominantDirectionalLightComponent : DirectionalLightComponent
 {
-	public @property final auto ref UObject.Array_Mirror DominantLightShadowMap() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 640); }
-	public @property final auto ref EngineTypes.DominantShadowInfo DominantLightShadowInfo() { return *cast(EngineTypes.DominantShadowInfo*)(cast(size_t)cast(void*)this + 464); }
+public extern(D):
+	@property final auto ref
+	{
+		UObject.Array_Mirror DominantLightShadowMap() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 640); }
+		EngineTypes.DominantShadowInfo DominantLightShadowInfo() { return *cast(EngineTypes.DominantShadowInfo*)(cast(size_t)cast(void*)this + 464); }
+	}
 }

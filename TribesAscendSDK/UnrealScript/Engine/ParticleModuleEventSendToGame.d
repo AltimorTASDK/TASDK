@@ -5,6 +5,7 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface ParticleModuleEventSendToGame : UObject
 {
+public extern(D):
 	final void DoEvent(Vector* InCollideDirection, Vector* InHitLocation, Vector* InHitNormal, ScriptName* InBoneName)
 	{
 		ubyte params[44];

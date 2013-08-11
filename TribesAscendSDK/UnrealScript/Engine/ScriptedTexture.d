@@ -6,10 +6,14 @@ import UnrealScript.Engine.Canvas;
 
 extern(C++) interface ScriptedTexture : TextureRenderTarget2D
 {
-	public @property final bool bSkipNextClear() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x2) != 0; }
-	public @property final bool bSkipNextClear(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x2; } return val; }
-	public @property final bool bNeedsUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x1) != 0; }
-	public @property final bool bNeedsUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x1; } return val; }
+public extern(D):
+	@property final
+	{
+		bool bSkipNextClear() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x2) != 0; }
+		bool bSkipNextClear(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x2; } return val; }
+		bool bNeedsUpdate() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x1) != 0; }
+		bool bNeedsUpdate(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 276) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 276) &= ~0x1; } return val; }
+	}
 	final void Render(Canvas C)
 	{
 		ubyte params[4];

@@ -5,5 +5,6 @@ import UnrealScript.Engine.ParticleModuleVelocity;
 
 extern(C++) interface ParticleModuleVelocity_Seeded : ParticleModuleVelocity
 {
-	public @property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { return *cast(ParticleModule.ParticleRandomSeedInfo*)(cast(size_t)cast(void*)this + 132); }
+public extern(D):
+	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { return *cast(ParticleModule.ParticleRandomSeedInfo*)(cast(size_t)cast(void*)this + 132); }
 }

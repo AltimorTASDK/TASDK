@@ -6,6 +6,7 @@ import UnrealScript.TribesGame.TrStationCollision;
 
 extern(C++) interface TrInventoryStationCollision : TrStationCollision
 {
+public extern(D):
 	final bool CheckCanPawnUseStationNow(TrPawn P)
 	{
 		ubyte params[8];

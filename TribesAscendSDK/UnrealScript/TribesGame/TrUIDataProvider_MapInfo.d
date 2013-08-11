@@ -5,6 +5,7 @@ import UnrealScript.UDKBase.UDKUIDataProvider_MapInfo;
 
 extern(C++) interface TrUIDataProvider_MapInfo : UDKUIDataProvider_MapInfo
 {
+public extern(D):
 	final bool ShouldBeFiltered()
 	{
 		ubyte params[4];

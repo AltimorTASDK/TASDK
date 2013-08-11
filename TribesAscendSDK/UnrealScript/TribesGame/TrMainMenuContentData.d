@@ -8,15 +8,20 @@ import UnrealScript.TribesGame.TrPaperDollMainMenu;
 
 extern(C++) interface TrMainMenuContentData : UObject
 {
+public extern(D):
 	struct MeshData
 	{
-		public @property final auto ref TrMainMenuMeshInfo MainMeshInfo() { return *cast(TrMainMenuMeshInfo*)(cast(size_t)&this + 4); }
-		private ubyte __MainMeshInfo[4];
-		public @property final auto ref TrObject.EContentDataType ContentDataType() { return *cast(TrObject.EContentDataType*)(cast(size_t)&this + 0); }
-		private ubyte __ContentDataType[1];
+		private ubyte __buffer__[8];
+	public extern(D):
+		@property final auto ref
+		{
+			TrMainMenuMeshInfo MainMeshInfo() { return *cast(TrMainMenuMeshInfo*)(cast(size_t)&this + 4); }
+			TrObject.EContentDataType ContentDataType() { return *cast(TrObject.EContentDataType*)(cast(size_t)&this + 0); }
+		}
 	}
-	public @property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { return *cast(ScriptArray!(TrMainMenuContentData.MeshData)*)(cast(size_t)cast(void*)this + 60); }
-	final void SendPaperDollANewMesh(TrPaperDollMainMenu MainMenuPaperDoll, TrObject.EContentDataType ContentDataType)
+	@property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { return *cast(ScriptArray!(TrMainMenuContentData.MeshData)*)(cast(size_t)cast(void*)this + 60); }
+final:
+	void SendPaperDollANewMesh(TrPaperDollMainMenu MainMenuPaperDoll, TrObject.EContentDataType ContentDataType)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -24,7 +29,7 @@ extern(C++) interface TrMainMenuContentData : UObject
 		*cast(TrObject.EContentDataType*)&params[4] = ContentDataType;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98683], params.ptr, cast(void*)0);
 	}
-	final void PreloadTextures(float ForceDuration)
+	void PreloadTextures(float ForceDuration)
 	{
 		ubyte params[4];
 		params[] = 0;

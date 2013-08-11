@@ -7,13 +7,18 @@ import UnrealScript.Core.UObject;
 
 extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 {
-	public @property final auto ref ScriptArray!(int) EnabledMutators() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 204); }
-	public @property final auto ref ScriptArray!(int) MapCycle() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 216); }
-	public @property final auto ref ScriptArray!(int) WeaponPriority() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 228); }
-	public @property final auto ref int GameModeFilter() { return *cast(int*)(cast(size_t)cast(void*)this + 240); }
-	public @property final auto ref ScriptClass MapInfoDataProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 200); }
-	public @property final auto ref UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 196); }
-	final int GetProviderCount(ScriptName FieldName)
+public extern(D):
+	@property final auto ref
+	{
+		ScriptArray!(int) EnabledMutators() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 204); }
+		ScriptArray!(int) MapCycle() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 216); }
+		ScriptArray!(int) WeaponPriority() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 228); }
+		int GameModeFilter() { return *cast(int*)(cast(size_t)cast(void*)this + 240); }
+		ScriptClass MapInfoDataProviderClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 200); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 196); }
+	}
+final:
+	int GetProviderCount(ScriptName FieldName)
 	{
 		ubyte params[12];
 		params[] = 0;
@@ -21,7 +26,7 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35605], params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	final bool IsProviderFiltered(ScriptName FieldName, int ProviderIdx)
+	bool IsProviderFiltered(ScriptName FieldName, int ProviderIdx)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -30,7 +35,7 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35608], params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	final void GetAllResourceDataProviders(ScriptClass ProviderClass, ScriptArray!(UDKUIResourceDataProvider)* Providers)
+	void GetAllResourceDataProviders(ScriptClass ProviderClass, ScriptArray!(UDKUIResourceDataProvider)* Providers)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -39,7 +44,7 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35612], params.ptr, cast(void*)0);
 		*Providers = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4];
 	}
-	final int FindValueInProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, ScriptString SearchValue)
+	int FindValueInProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, ScriptString SearchValue)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -49,7 +54,7 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35616], params.ptr, cast(void*)0);
 		return *cast(int*)&params[28];
 	}
-	final bool GetValueFromProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, int ListIndex, ScriptString* OutValue)
+	bool GetValueFromProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, int ListIndex, ScriptString* OutValue)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -61,7 +66,7 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		*OutValue = *cast(ScriptString*)&params[20];
 		return *cast(bool*)&params[32];
 	}
-	final bool GetProviderSet(ScriptName ProviderFieldName, ScriptArray!(UDKUIResourceDataProvider)* OutProviders)
+	bool GetProviderSet(ScriptName ProviderFieldName, ScriptArray!(UDKUIResourceDataProvider)* OutProviders)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -71,18 +76,18 @@ extern(C++) interface UDKUIDataStore_MenuItems : UIDataStore_GameResource
 		*OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	final void InitializeListElementProviders()
+	void InitializeListElementProviders()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35632], cast(void*)0, cast(void*)0);
 	}
-	final void RemoveListElementProvidersKey(ScriptName KeyName)
+	void RemoveListElementProvidersKey(ScriptName KeyName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = KeyName;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35637], params.ptr, cast(void*)0);
 	}
-	final void AddListElementProvidersKey(ScriptName KeyName, UDKUIResourceDataProvider Provider)
+	void AddListElementProvidersKey(ScriptName KeyName, UDKUIResourceDataProvider Provider)
 	{
 		ubyte params[12];
 		params[] = 0;

@@ -5,6 +5,7 @@ import UnrealScript.UTGame.UTCTFGame;
 
 extern(C++) interface UTVehicleCTFGame : UTCTFGame
 {
+public extern(D):
 	final bool AllowMutator(ScriptString MutatorClassName)
 	{
 		ubyte params[16];

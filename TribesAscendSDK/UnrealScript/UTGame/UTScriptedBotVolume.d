@@ -6,6 +6,7 @@ import UnrealScript.Engine.PhysicsVolume;
 
 extern(C++) interface UTScriptedBotVolume : PhysicsVolume
 {
+public extern(D):
 	final void PawnLeavingVolume(Pawn Other)
 	{
 		ubyte params[4];

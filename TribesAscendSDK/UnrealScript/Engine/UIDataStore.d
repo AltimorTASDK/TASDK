@@ -7,20 +7,25 @@ import UnrealScript.Engine.UIDataProvider;
 
 extern(C++) interface UIDataStore : UIDataProvider
 {
-	public @property final auto ref ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 88); }
-	public @property final auto ref ScriptArray!(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+public extern(D):
+	@property final auto ref
+	{
+		ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 88); }
+		ScriptArray!(
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void*) RefreshSubscriberNotifies() { return *cast(ScriptArray!(
-// ERROR: Unknown object class 'Class Core.DelegateProperty'~
+// ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void*)*)(cast(size_t)cast(void*)this + 96); }
-	final bool NotifyGameSessionEnded()
+	}
+final:
+	bool NotifyGameSessionEnded()
 	{
 		ubyte params[4];
 		params[] = 0;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13666], params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	final void OnDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
+	void OnDataStoreValueUpdated(UIDataStore SourceDataStore, bool bValuesInvalidated, ScriptName PropertyTag, UIDataProvider SourceProvider, int ArrayIndex)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -31,43 +36,43 @@ void*)*)(cast(size_t)cast(void*)this + 96); }
 		*cast(int*)&params[20] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28432], params.ptr, cast(void*)0);
 	}
-	final void Registered(LocalPlayer PlayerOwner)
+	void Registered(LocalPlayer PlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28439], params.ptr, cast(void*)0);
 	}
-	final void Unregistered(LocalPlayer PlayerOwner)
+	void Unregistered(LocalPlayer PlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28441], params.ptr, cast(void*)0);
 	}
-	final void SubscriberAttached(
-// ERROR: Unknown object class 'Class Core.InterfaceProperty'~
+	void SubscriberAttached(
+// ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void* Subscriber)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.InterfaceProperty'~
+// ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr = Subscriber;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28443], params.ptr, cast(void*)0);
 	}
-	final void SubscriberDetached(
-// ERROR: Unknown object class 'Class Core.InterfaceProperty'~
+	void SubscriberDetached(
+// ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void* Subscriber)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(
-// ERROR: Unknown object class 'Class Core.InterfaceProperty'~
+// ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr = Subscriber;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28446], params.ptr, cast(void*)0);
 	}
-	final void RefreshSubscribers(ScriptName PropertyTag, bool bInvalidateValues, UIDataProvider SourceProvider, int ArrayIndex)
+	void RefreshSubscribers(ScriptName PropertyTag, bool bInvalidateValues, UIDataProvider SourceProvider, int ArrayIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -77,11 +82,11 @@ void**)params.ptr = Subscriber;
 		*cast(int*)&params[16] = ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28449], params.ptr, cast(void*)0);
 	}
-	final void OnCommit()
+	void OnCommit()
 	{
 		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28458], cast(void*)0, cast(void*)0);
 	}
-	final DataStoreClient GetDataStoreClient()
+	DataStoreClient GetDataStoreClient()
 	{
 		ubyte params[4];
 		params[] = 0;
