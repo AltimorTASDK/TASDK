@@ -1,0 +1,45 @@
+module UnrealScript.TribesGame.TrLockWarningMessage;
+
+import ScriptClasses;
+import UnrealScript.UTGame.UTLocalMessage;
+import UnrealScript.Core.UObject;
+import UnrealScript.Engine.PlayerReplicationInfo;
+
+extern(C++) interface TrLockWarningMessage : UTLocalMessage
+{
+	public @property final auto ref UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
+	public @property final auto ref UObject.Color RedColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 124); }
+	public @property final auto ref ScriptString RadarLockString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
+	public @property final auto ref ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
+	final ubyte AnnouncementLevel(ubyte MessageIndex)
+	{
+		ubyte params[2];
+		params[] = 0;
+		params[0] = MessageIndex;
+		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98641], params.ptr, cast(void*)0);
+		return params[1];
+	}
+	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	{
+		ubyte params[32];
+		params[] = 0;
+		*cast(int*)params.ptr = Switch;
+		*cast(bool*)&params[4] = bPRI1HUD;
+		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
+		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
+		*cast(UObject*)&params[16] = OptionalObject;
+		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98644], params.ptr, cast(void*)0);
+		return *cast(ScriptString*)&params[20];
+	}
+	final UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	{
+		ubyte params[20];
+		params[] = 0;
+		*cast(int*)params.ptr = Switch;
+		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
+		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
+		*cast(UObject*)&params[12] = OptionalObject;
+		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98651], params.ptr, cast(void*)0);
+		return *cast(UObject.Color*)&params[16];
+	}
+}

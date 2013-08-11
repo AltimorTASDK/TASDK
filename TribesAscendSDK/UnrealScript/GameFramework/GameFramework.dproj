@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E30BEA82-9A3F-405F-9833-69DA94183C16}</ProjectGuid>
+    <Compiler>DMD2</Compiler>
+    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <UseDefaultCompiler>true</UseDefaultCompiler>
+    <IncrementalLinking>true</IncrementalLinking>
+    <Includes>
+      <Includes>
+        <Path>..\..</Path>
+      </Includes>
+    </Includes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>GameFramework</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>GameFramework</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamicGameCrowdDestination.d">
+      <LastGenOutput>obj\Debug\DynamicGameCrowdDestination.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="DynamicSpriteComponent.d">
+      <LastGenOutput>obj\Debug\DynamicSpriteComponent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="FrameworkGame.d">
+      <LastGenOutput>obj\Debug\FrameworkGame.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameAICmd_Hover_MoveToGoal.d">
+      <LastGenOutput>obj\Debug\GameAICmd_Hover_MoveToGoal.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameAICmd_Hover_MoveToGoal_Mesh.d">
+      <LastGenOutput>obj\Debug\GameAICmd_Hover_MoveToGoal_Mesh.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameAICommand.d">
+      <LastGenOutput>obj\Debug\GameAICommand.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameAIController.d">
+      <LastGenOutput>obj\Debug\GameAIController.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCameraBase.d">
+      <LastGenOutput>obj\Debug\GameCameraBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCameraBlockingVolume.d">
+      <LastGenOutput>obj\Debug\GameCameraBlockingVolume.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowd_ListOfAgents.d">
+      <LastGenOutput>obj\Debug\GameCrowd_ListOfAgents.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdAgent.d">
+      <LastGenOutput>obj\Debug\GameCrowdAgent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdAgentBehavior.d">
+      <LastGenOutput>obj\Debug\GameCrowdAgentBehavior.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdAgentSkeletal.d">
+      <LastGenOutput>obj\Debug\GameCrowdAgentSkeletal.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdAttractor.d">
+      <LastGenOutput>obj\Debug\GameCrowdAttractor.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdBehavior_PlayAnimation.d">
+      <LastGenOutput>obj\Debug\GameCrowdBehavior_PlayAnimation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdBehavior_RunFromPanic.d">
+      <LastGenOutput>obj\Debug\GameCrowdBehavior_RunFromPanic.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdBehavior_WaitForGroup.d">
+      <LastGenOutput>obj\Debug\GameCrowdBehavior_WaitForGroup.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdBehavior_WaitInQueue.d">
+      <LastGenOutput>obj\Debug\GameCrowdBehavior_WaitInQueue.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdDestination.d">
+      <LastGenOutput>obj\Debug\GameCrowdDestination.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdDestinationQueuePoint.d">
+      <LastGenOutput>obj\Debug\GameCrowdDestinationQueuePoint.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdForcePoint.d">
+      <LastGenOutput>obj\Debug\GameCrowdForcePoint.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdGroup.d">
+      <LastGenOutput>obj\Debug\GameCrowdGroup.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdInteractionDestination.d">
+      <LastGenOutput>obj\Debug\GameCrowdInteractionDestination.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdInteractionPoint.d">
+      <LastGenOutput>obj\Debug\GameCrowdInteractionPoint.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdPopulationManager.d">
+      <LastGenOutput>obj\Debug\GameCrowdPopulationManager.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdReplicationActor.d">
+      <LastGenOutput>obj\Debug\GameCrowdReplicationActor.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdRepulsor.d">
+      <LastGenOutput>obj\Debug\GameCrowdRepulsor.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdSpawnerInterface.d">
+      <LastGenOutput>obj\Debug\GameCrowdSpawnerInterface.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameCrowdSpawnInterface.d">
+      <LastGenOutput>obj\Debug\GameCrowdSpawnInterface.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameDestinationConnRenderingComponent.d">
+      <LastGenOutput>obj\Debug\GameDestinationConnRenderingComponent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameExplosion.d">
+      <LastGenOutput>obj\Debug\GameExplosion.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameExplosionActor.d">
+      <LastGenOutput>obj\Debug\GameExplosionActor.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameExplosionContent.d">
+      <LastGenOutput>obj\Debug\GameExplosionContent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameFixedCamera.d">
+      <LastGenOutput>obj\Debug\GameFixedCamera.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameKActorSpawnableEffect.d">
+      <LastGenOutput>obj\Debug\GameKActorSpawnableEffect.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GamePawn.d">
+      <LastGenOutput>obj\Debug\GamePawn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GamePlayerCamera.d">
+      <LastGenOutput>obj\Debug\GamePlayerCamera.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GamePlayerController.d">
+      <LastGenOutput>obj\Debug\GamePlayerController.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameSkelCtrl_Recoil.d">
+      <LastGenOutput>obj\Debug\GameSkelCtrl_Recoil.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameSpecialMove.d">
+      <LastGenOutput>obj\Debug\GameSpecialMove.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameStateObject.d">
+      <LastGenOutput>obj\Debug\GameStateObject.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameStatsAggregator.d">
+      <LastGenOutput>obj\Debug\GameStatsAggregator.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameThirdPersonCamera.d">
+      <LastGenOutput>obj\Debug\GameThirdPersonCamera.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameThirdPersonCameraMode.d">
+      <LastGenOutput>obj\Debug\GameThirdPersonCameraMode.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameThirdPersonCameraMode_Default.d">
+      <LastGenOutput>obj\Debug\GameThirdPersonCameraMode_Default.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameTypes.d">
+      <LastGenOutput>obj\Debug\GameTypes.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GameWaveForms.d">
+      <LastGenOutput>obj\Debug\GameWaveForms.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileHUD.d">
+      <LastGenOutput>obj\Debug\MobileHUD.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileInputZone.d">
+      <LastGenOutput>obj\Debug\MobileInputZone.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuButton.d">
+      <LastGenOutput>obj\Debug\MobileMenuButton.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuGame.d">
+      <LastGenOutput>obj\Debug\MobileMenuGame.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuImage.d">
+      <LastGenOutput>obj\Debug\MobileMenuImage.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuLabel.d">
+      <LastGenOutput>obj\Debug\MobileMenuLabel.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuObject.d">
+      <LastGenOutput>obj\Debug\MobileMenuObject.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuPlayerController.d">
+      <LastGenOutput>obj\Debug\MobileMenuPlayerController.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobileMenuScene.d">
+      <LastGenOutput>obj\Debug\MobileMenuScene.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="MobilePlayerInput.d">
+      <LastGenOutput>obj\Debug\MobilePlayerInput.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="NavMeshGoal_OutOfViewFrom.d">
+      <LastGenOutput>obj\Debug\NavMeshGoal_OutOfViewFrom.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.d">
+      <LastGenOutput>obj\Debug\NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="PlayerCollectorGame.d">
+      <LastGenOutput>obj\Debug\PlayerCollectorGame.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="PMESTG_LeaveADecalBase.d">
+      <LastGenOutput>obj\Debug\PMESTG_LeaveADecalBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_ControlGameMovie.d">
+      <LastGenOutput>obj\Debug\SeqAct_ControlGameMovie.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_Deproject.d">
+      <LastGenOutput>obj\Debug\SeqAct_Deproject.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_GameCrowdPopulationManagerToggle.d">
+      <LastGenOutput>obj\Debug\SeqAct_GameCrowdPopulationManagerToggle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_GameCrowdSpawner.d">
+      <LastGenOutput>obj\Debug\SeqAct_GameCrowdSpawner.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_MobileAddInputZones.d">
+      <LastGenOutput>obj\Debug\SeqAct_MobileAddInputZones.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_MobileClearInputZones.d">
+      <LastGenOutput>obj\Debug\SeqAct_MobileClearInputZones.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_MobileRemoveInputZone.d">
+      <LastGenOutput>obj\Debug\SeqAct_MobileRemoveInputZone.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_MobileSaveLoadValue.d">
+      <LastGenOutput>obj\Debug\SeqAct_MobileSaveLoadValue.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_ModifyProperty.d">
+      <LastGenOutput>obj\Debug\SeqAct_ModifyProperty.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqAct_PlayAgentAnimation.d">
+      <LastGenOutput>obj\Debug\SeqAct_PlayAgentAnimation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_CrowdAgentReachedDestination.d">
+      <LastGenOutput>obj\Debug\SeqEvent_CrowdAgentReachedDestination.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_HudRender.d">
+      <LastGenOutput>obj\Debug\SeqEvent_HudRender.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_HudRenderImage.d">
+      <LastGenOutput>obj\Debug\SeqEvent_HudRenderImage.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_HudRenderText.d">
+      <LastGenOutput>obj\Debug\SeqEvent_HudRenderText.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileBase.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileButton.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileButton.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileInput.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileInput.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileLook.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileLook.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileMotion.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileMotion.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileObjectPicker.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileObjectPicker.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileRawInput.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileRawInput.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileSwipe.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileSwipe.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SeqEvent_MobileZoneBase.d">
+      <LastGenOutput>obj\Debug\SeqEvent_MobileZoneBase.obj</LastGenOutput>
+    </Compile>
+  </ItemGroup>
+</Project>

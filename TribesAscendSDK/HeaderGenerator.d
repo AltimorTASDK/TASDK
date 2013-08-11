@@ -26,22 +26,28 @@ public void Generate()
 				{
 					ClassDescriptor cd = new ClassDescriptor(cast(ScriptClass)classObject);
 					classDescriptors ~= cd;
-					TypeIdentifiers[classObject.GetFullName()] = cd;
+					TypeDescriptorMap[classObject.GetFullName()] = cd;
+					TypeIdentifiersTable[classObject.GetName()] = cd;
 					break;
 				}
 				case "ScriptStruct":
 				{
 					StructDescriptor sd = new StructDescriptor(cast(ScriptStruct)classObject); 
 					structDescriptors ~= sd;
-					TypeIdentifiers[classObject.GetFullName()] = sd;
+					TypeDescriptorMap[classObject.GetFullName()] = sd;
+					TypeIdentifiersTable[classObject.GetName()] = sd;
 					break;
 				}
 				case "Const":
 					constantDescriptors ~= new ConstantDescriptor(cast(ScriptConst)classObject);
 					break;
 				case "Enum":
-					enumDescriptors ~= new EnumDescriptor(cast(ScriptEnum)classObject);
+				{
+					EnumDescriptor ed = new EnumDescriptor(cast(ScriptEnum)classObject);
+					enumDescriptors ~= ed;
+					TypeIdentifiersTable[classObject.GetName()] = ed;
 					break;
+				}
 				case "Function":
 					functionDescriptors ~= new FunctionDescriptor(cast(ScriptFunction)classObject);
 					break;
@@ -83,11 +89,12 @@ public void Generate()
 }
 
 private:
-__gshared Descriptor[string] TypeIdentifiers;
+__gshared Descriptor[string] TypeDescriptorMap;
+__gshared Descriptor[string] TypeIdentifiersTable;
 
 void ProcessNested(Descriptor desc, ScriptObject innerVal)
 {
-	Descriptor parent = TypeIdentifiers.get(innerVal.Outer.GetFullName(), null);
+	Descriptor parent = TypeDescriptorMap.get(innerVal.Outer.GetFullName(), null);
 	if (parent)
 	{
 		switch (parent.Type)
@@ -139,6 +146,8 @@ string EscapeName(string name)
 {
 	switch (name)
 	{
+		case "Interface":
+			return "UInterface";
 		case "Object":
 			return "UObject";
 		default:
@@ -315,9 +324,9 @@ final class EnumDescriptor : Descriptor
 	override void RequireDependencies(DependencyManager mgr) { }
 	override void Write(IndentedStreamWriter wtr)
 	{
-		wtr.Write("enum %s : byte", InnerEnum.GetName());
-		if (InnerEnum.ValueNames.Count > 1)
-		{
+		wtr.Write("enum %s : ubyte", InnerEnum.GetName());
+		//if (InnerEnum.ValueNames.Count > 1)
+		//{
 			wtr.WriteLine();
 			wtr.WriteLine("{");
 			wtr.Indent++;
@@ -329,9 +338,9 @@ final class EnumDescriptor : Descriptor
 
 			wtr.Indent--;
 			wtr.WriteLine("}");
-		}
-		else
-			wtr.WriteLine(" %s = 0;", InnerEnum.ValueNames[0].GetName());
+		//}
+		//else
+		//	wtr.WriteLine(" %s = 0;", InnerEnum.ValueNames[0].GetName());
 	}
 }
 
@@ -348,7 +357,24 @@ final class ConstantDescriptor : Descriptor
 	override void RequireDependencies(DependencyManager mgr) { }
 	override void Write(IndentedStreamWriter wtr)
 	{
-		wtr.WriteLine("public static immutable auto %s = %s;", InnerConstant.GetName(), InnerConstant.Value.ToString());
+		string valString = InnerConstant.Value.ToString();
+		if (valString.length > 2)
+		{
+			switch(valString[valString.length - 1])
+			{
+				case 'f':
+					if (valString[valString.length - 2] == '.')
+						valString = valString[0..(valString.length - 3)] ~ ".0f";
+					break;
+				case '\'':
+					if (valString[0] == '\'')
+						valString = `"` ~ valString[1..(valString.length - 2)] ~ `"`;
+					break;
+				default:
+					break;
+			}
+		}
+		wtr.WriteLine("public static immutable auto %s = %s;", InnerConstant.GetName(), valString);
 	}
 }
 
@@ -371,7 +397,7 @@ final class PropertyDescriptor : Descriptor
 	override void Write(IndentedStreamWriter wtr)
 	{
 		// Check to see if the property name is the same as a valid type.
-		if (TypeIdentifiers.get(InnerProperty.GetName(), null))
+		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
 		{
 			wtr.WriteLine("// WARNING: Property '%s' has the same name as a defined type!", InnerProperty.GetName());
 			return;
@@ -421,6 +447,7 @@ final class FunctionArgumentDescriptor : Descriptor
 {
 	@property final override DescriptorType Type() { return DescriptorType.FunctionArgument; }
 
+	string ArgumentName;
 	ScriptProperty InnerProperty;
 	this(ScriptProperty innerProperty)
 	{
@@ -434,10 +461,15 @@ final class FunctionArgumentDescriptor : Descriptor
 
 	void WriteDeclaration(IndentedStreamWriter wtr)
 	{
+		ArgumentName = InnerProperty.GetName();
+		// Check to see if the parameter name is the same as a valid type.
+		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
+			ArgumentName = "p" ~ ArgumentName;
+
 		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
-			wtr.Write("%s* %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+			wtr.Write("%s* %s", GetTypeName(InnerProperty), ArgumentName);
 		else
-			wtr.Write("%s %s", GetTypeName(InnerProperty), InnerProperty.GetName());
+			wtr.Write("%s %s", GetTypeName(InnerProperty), ArgumentName);
 	}
 
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
@@ -448,16 +480,16 @@ final class FunctionArgumentDescriptor : Descriptor
 			if (InnerProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = *%s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+					wtr.WriteLine("%s[%u] = *%s;", bufName, InnerProperty.Offset, ArgumentName);
 				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = *%s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+					wtr.WriteLine("*cast(%s*)&%s[%u] = *%s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
 			}
 			else
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = *%s;", bufName, InnerProperty.GetName());
+					wtr.WriteLine("%s[0] = *%s;", bufName, ArgumentName);
 				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = *%s;", tpName, bufName, InnerProperty.GetName());
+					wtr.WriteLine("*cast(%s*)%s.ptr = *%s;", tpName, bufName, ArgumentName);
 			}
 		}
 		else
@@ -465,16 +497,16 @@ final class FunctionArgumentDescriptor : Descriptor
 			if (InnerProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, InnerProperty.GetName());
+					wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, ArgumentName);
 				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, InnerProperty.GetName());
+					wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
 			}
 			else
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = %s;", bufName, InnerProperty.GetName());
+					wtr.WriteLine("%s[0] = %s;", bufName, ArgumentName);
 				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, InnerProperty.GetName());
+					wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, ArgumentName);
 			}
 		}
 	}
@@ -487,16 +519,16 @@ final class FunctionArgumentDescriptor : Descriptor
 			if (InnerProperty.Offset != 0)
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("*%s = %s[%u];", InnerProperty.GetName(), bufName, InnerProperty.Offset);
+					wtr.WriteLine("*%s = %s[%u];", ArgumentName, bufName, InnerProperty.Offset);
 				else
-					wtr.WriteLine("*%s = *cast(%s*)&%s[%u];", InnerProperty.GetName(), tpName, bufName, InnerProperty.Offset);
+					wtr.WriteLine("*%s = *cast(%s*)&%s[%u];", ArgumentName, tpName, bufName, InnerProperty.Offset);
 			}
 			else
 			{
 				if (tpName == "ubyte")
-					wtr.WriteLine("*%s = %s[0];", InnerProperty.GetName(), bufName);
+					wtr.WriteLine("*%s = %s[0];", ArgumentName, bufName);
 				else
-					wtr.WriteLine("*%s = *cast(%s*)%s.ptr;", InnerProperty.GetName(), tpName, bufName);
+					wtr.WriteLine("*%s = *cast(%s*)%s.ptr;", ArgumentName, tpName, bufName);
 			}
 		}
 	}
@@ -536,6 +568,7 @@ final class FunctionDescriptor : Descriptor
 
 	override void RequireDependencies(DependencyManager mgr)
 	{
+		mgr.NeedsScriptClasses = true;
 		if (ReturnProperty)
 			mgr.ProcessProperty(ReturnProperty);
 		foreach (arg; Arguments)
@@ -545,7 +578,7 @@ final class FunctionDescriptor : Descriptor
 	override void Write(IndentedStreamWriter wtr)
 	{
 		// Check to see if the function name is the same as a valid type.
-		if (TypeIdentifiers.get(InnerFunction.GetName(), null))
+		if (TypeIdentifiersTable.get(InnerFunction.GetName(), null))
 		{
 			wtr.WriteLine("// WARNING: Function '%s' has the same name as a defined type!", InnerFunction.GetName());
 			return;
@@ -654,8 +687,22 @@ final class ClassDescriptor : NestableContainer
 			f.RequireDependencies(mgr);
 	}
 
+	static bool IsFactory(ScriptClass sc)
+	{
+		if (sc.GetName() == "Factory")
+			return true;
+		if (sc.Super)
+			return IsFactory(cast(ScriptClass)sc.Super);
+		return false;
+	}
+
 	override void Write(IndentedStreamWriter wtr)
 	{
+		if (InnerClass.Super && IsFactory(InnerClass))
+		{
+			wtr.WriteLine("// ERROR: Factories are not generatable!");
+			return;
+		}
 		this.RequireDependencies(DepManager);
 
 		wtr.WriteLine("module %s;", DependencyManager.GetImportName(InnerClass));
@@ -668,6 +715,7 @@ final class ClassDescriptor : NestableContainer
 			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
+		wtr.WriteLine("extern(D):");
 		wtr.Indent++;
 
 		foreach (nc; NestedConstants)
@@ -713,7 +761,7 @@ final class StructDescriptor : NestableContainer
 	override void RequireDependencies(DependencyManager mgr)
 	{
 		if (InnerStruct.Super)
-			(cast(StructDescriptor)TypeIdentifiers[InnerStruct.Super.GetFullName()]).RequireDependencies(mgr);
+			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).RequireDependencies(mgr);
 		
 		foreach (nc; NestedConstants)
 			nc.RequireDependencies(mgr);
@@ -743,7 +791,7 @@ final class StructDescriptor : NestableContainer
 	void WriteBody(IndentedStreamWriter wtr)
 	{
 		if (InnerStruct.Super)
-			(cast(StructDescriptor)TypeIdentifiers[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
+			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
 
 		foreach (nc; NestedConstants)
 			nc.Write(wtr);

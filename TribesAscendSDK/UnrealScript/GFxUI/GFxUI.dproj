@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E775D1A-596A-4A26-89DB-92F85F721AD5}</ProjectGuid>
+    <Compiler>DMD2</Compiler>
+    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <UseDefaultCompiler>true</UseDefaultCompiler>
+    <IncrementalLinking>true</IncrementalLinking>
+    <Includes>
+      <Includes>
+        <Path>..\..</Path>
+      </Includes>
+    </Includes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>GFxUI</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>GFxUI</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FlashMovie.d">
+      <LastGenOutput>obj\Debug\FlashMovie.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_CloseMovie.d">
+      <LastGenOutput>obj\Debug\GFxAction_CloseMovie.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_GetVariable.d">
+      <LastGenOutput>obj\Debug\GFxAction_GetVariable.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_Invoke.d">
+      <LastGenOutput>obj\Debug\GFxAction_Invoke.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_OpenMovie.d">
+      <LastGenOutput>obj\Debug\GFxAction_OpenMovie.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_SetCaptureKeys.d">
+      <LastGenOutput>obj\Debug\GFxAction_SetCaptureKeys.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxAction_SetVariable.d">
+      <LastGenOutput>obj\Debug\GFxAction_SetVariable.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxClikWidget.d">
+      <LastGenOutput>obj\Debug\GFxClikWidget.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxDataStoreSubscriber.d">
+      <LastGenOutput>obj\Debug\GFxDataStoreSubscriber.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxEngine.d">
+      <LastGenOutput>obj\Debug\GFxEngine.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxEvent_FSCommand.d">
+      <LastGenOutput>obj\Debug\GFxEvent_FSCommand.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxFSCmdHandler.d">
+      <LastGenOutput>obj\Debug\GFxFSCmdHandler.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxFSCmdHandler_Kismet.d">
+      <LastGenOutput>obj\Debug\GFxFSCmdHandler_Kismet.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxInteraction.d">
+      <LastGenOutput>obj\Debug\GFxInteraction.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxMoviePlayer.d">
+      <LastGenOutput>obj\Debug\GFxMoviePlayer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxObject.d">
+      <LastGenOutput>obj\Debug\GFxObject.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="GFxRawData.d">
+      <LastGenOutput>obj\Debug\GFxRawData.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="SwfMovie.d">
+      <LastGenOutput>obj\Debug\SwfMovie.obj</LastGenOutput>
+    </Compile>
+  </ItemGroup>
+</Project>

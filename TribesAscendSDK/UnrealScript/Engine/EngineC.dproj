@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{856A8B1D-4CD2-43ED-B906-978536367FA2}</ProjectGuid>
+    <Compiler>DMD2</Compiler>
+    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <UseDefaultCompiler>true</UseDefaultCompiler>
+    <IncrementalLinking>true</IncrementalLinking>
+    <Includes>
+      <Includes>
+        <Path>..\..</Path>
+      </Includes>
+    </Includes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>EngineC</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>EngineC</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="SeqAct_MultiplyInt.d" />
+    <Compile Include="SeqAct_ParticleEventGenerator.d" />
+    <Compile Include="SeqAct_PlayCameraAnim.d" />
+    <Compile Include="SeqAct_PlayFaceFXAnim.d" />
+    <Compile Include="SeqAct_PlayMusicTrack.d" />
+    <Compile Include="SeqAct_PlaySound.d" />
+    <Compile Include="SeqAct_Possess.d" />
+    <Compile Include="SeqAct_PrepareMapChange.d" />
+    <Compile Include="SeqAct_ProjectileFactory.d" />
+    <Compile Include="SeqAct_RandomSwitch.d" />
+    <Compile Include="SeqAct_RangeSwitch.d" />
+    <Compile Include="SeqAct_SetApexClothingParam.d" />
+    <Compile Include="SeqAct_SetBlockRigidBody.d" />
+    <Compile Include="SeqAct_SetBool.d" />
+    <Compile Include="SeqAct_SetCameraTarget.d" />
+    <Compile Include="SeqAct_SetDamageInstigator.d" />
+    <Compile Include="SeqAct_SetDOFParams.d" />
+    <Compile Include="SeqAct_SetFloat.d" />
+    <Compile Include="SeqAct_SetInt.d" />
+    <Compile Include="SeqAct_SetLocation.d" />
+    <Compile Include="SeqAct_SetMaterial.d" />
+    <Compile Include="SeqAct_SetMatInstScalarParam.d" />
+    <Compile Include="SeqAct_SetMatInstTexParam.d" />
+    <Compile Include="SeqAct_SetMatInstVectorParam.d" />
+    <Compile Include="SeqAct_SetMesh.d" />
+    <Compile Include="SeqAct_SetMotionBlurParams.d" />
+    <Compile Include="SeqAct_SetObject.d" />
+    <Compile Include="SeqAct_SetParticleSysParam.d" />
+    <Compile Include="SeqAct_SetPhysics.d" />
+    <Compile Include="SeqAct_SetRigidBodyIgnoreVehicles.d" />
+    <Compile Include="SeqAct_SetSequenceVariable.d" />
+    <Compile Include="SeqAct_SetSkelControlTarget.d" />
+    <Compile Include="SeqAct_SetSoundMode.d" />
+    <Compile Include="SeqAct_SetString.d" />
+    <Compile Include="SeqAct_SetVector.d" />
+    <Compile Include="SeqAct_SetVectorComponents.d" />
+    <Compile Include="SeqAct_SetVelocity.d" />
+    <Compile Include="SeqAct_StreamInTextures.d" />
+    <Compile Include="SeqAct_SubtractFloat.d" />
+    <Compile Include="SeqAct_SubtractInt.d" />
+    <Compile Include="SeqAct_Switch.d" />
+    <Compile Include="SeqAct_Teleport.d" />
+    <Compile Include="SeqAct_Timer.d" />
+    <Compile Include="SeqAct_Toggle.d" />
+    <Compile Include="SeqAct_ToggleAffectedByHitEffects.d" />
+    <Compile Include="SeqAct_ToggleCinematicMode.d" />
+    <Compile Include="SeqAct_ToggleConstraintDrive.d" />
+    <Compile Include="SeqAct_ToggleGodMode.d" />
+    <Compile Include="SeqAct_ToggleHidden.d" />
+    <Compile Include="SeqAct_ToggleHUD.d" />
+    <Compile Include="SeqAct_ToggleInput.d" />
+    <Compile Include="SeqAct_Trace.d" />
+    <Compile Include="SeqAct_UpdatePhysBonesFromAnim.d" />
+    <Compile Include="SeqAct_WaitForLevelsVisible.d" />
+    <Compile Include="SeqCond_CompareBool.d" />
+    <Compile Include="SeqCond_CompareFloat.d" />
+    <Compile Include="SeqCond_CompareInt.d" />
+    <Compile Include="SeqCond_CompareObject.d" />
+    <Compile Include="SeqCond_GetServerType.d" />
+    <Compile Include="SeqCond_Increment.d" />
+    <Compile Include="SeqCond_IncrementFloat.d" />
+    <Compile Include="SeqCond_IsAlive.d" />
+    <Compile Include="SeqCond_IsBenchmarking.d" />
+    <Compile Include="SeqCond_IsConsole.d" />
+    <Compile Include="SeqCond_IsInCombat.d" />
+    <Compile Include="SeqCond_IsLoggedIn.d" />
+    <Compile Include="SeqCond_IsPIE.d" />
+    <Compile Include="SeqCond_IsSameTeam.d" />
+    <Compile Include="SeqCond_MatureLanguage.d" />
+    <Compile Include="SeqCond_ShowGore.d" />
+    <Compile Include="SeqCond_SwitchBase.d" />
+    <Compile Include="SeqCond_SwitchClass.d" />
+    <Compile Include="SeqCond_SwitchObject.d" />
+    <Compile Include="SeqCond_SwitchPlatform.d" />
+    <Compile Include="SeqEvent_AIReachedRouteActor.d" />
+    <Compile Include="SeqEvent_AISeeEnemy.d" />
+    <Compile Include="SeqEvent_AnimNotify.d" />
+    <Compile Include="SeqEvent_Console.d" />
+    <Compile Include="SeqEvent_ConstraintBroken.d" />
+    <Compile Include="SeqEvent_Death.d" />
+    <Compile Include="SeqEvent_Destroyed.d" />
+    <Compile Include="SeqEvent_GetInventory.d" />
+    <Compile Include="SeqEvent_HitWall.d" />
+    <Compile Include="SeqEvent_LevelBeginning.d" />
+    <Compile Include="SeqEvent_LevelLoaded.d" />
+    <Compile Include="SeqEvent_LevelStartup.d" />
+    <Compile Include="SeqEvent_LOS.d" />
+    <Compile Include="SeqEvent_Mover.d" />
+    <Compile Include="SeqEvent_ParticleEvent.d" />
+    <Compile Include="SeqEvent_PickupStatusChange.d" />
+    <Compile Include="SeqEvent_PlayerSpawned.d" />
+    <Compile Include="SeqEvent_ProjectileLanded.d" />
+    <Compile Include="SeqEvent_RemoteEvent.d" />
+    <Compile Include="SeqEvent_RigidBodyCollision.d" />
+    <Compile Include="SeqEvent_SeeDeath.d" />
+    <Compile Include="SeqEvent_SequenceActivated.d" />
+    <Compile Include="SeqEvent_TakeDamage.d" />
+    <Compile Include="SeqEvent_Touch.d" />
+    <Compile Include="SeqEvent_Used.d" />
+    <Compile Include="Sequence.d" />
+    <Compile Include="SequenceAction.d" />
+    <Compile Include="SequenceCondition.d" />
+    <Compile Include="SequenceEvent.d" />
+    <Compile Include="SequenceFrame.d" />
+    <Compile Include="SequenceFrameWrapped.d" />
+    <Compile Include="SequenceObject.d" />
+    <Compile Include="SequenceOp.d" />
+    <Compile Include="SequenceVariable.d" />
+    <Compile Include="SeqVar_Bool.d" />
+    <Compile Include="SeqVar_Byte.d" />
+    <Compile Include="SeqVar_Character.d" />
+    <Compile Include="SeqVar_External.d" />
+    <Compile Include="SeqVar_Float.d" />
+    <Compile Include="SeqVar_Group.d" />
+    <Compile Include="SeqVar_Int.d" />
+    <Compile Include="SeqVar_Name.d" />
+    <Compile Include="SeqVar_Named.d" />
+    <Compile Include="SeqVar_Object.d" />
+    <Compile Include="SeqVar_ObjectList.d" />
+    <Compile Include="SeqVar_ObjectVolume.d" />
+    <Compile Include="SeqVar_Player.d" />
+    <Compile Include="SeqVar_RandomFloat.d" />
+    <Compile Include="SeqVar_RandomInt.d" />
+    <Compile Include="SeqVar_String.d" />
+    <Compile Include="SeqVar_Union.d" />
+    <Compile Include="SeqVar_Vector.d" />
+    <Compile Include="ServerCommandlet.d" />
+    <Compile Include="Settings.d" />
+    <Compile Include="ShaderCache.d" />
+    <Compile Include="ShadowMap1D.d" />
+    <Compile Include="ShadowMap2D.d" />
+    <Compile Include="ShadowMapTexture2D.d" />
+    <Compile Include="SkelControl_CCD_IK.d" />
+    <Compile Include="SkelControl_Multiply.d" />
+    <Compile Include="SkelControl_TwistBone.d" />
+    <Compile Include="SkelControlBase.d" />
+    <Compile Include="SkelControlFootPlacement.d" />
+    <Compile Include="SkelControlHandlebars.d" />
+    <Compile Include="SkelControlLimb.d" />
+    <Compile Include="SkelControlLookAt.d" />
+    <Compile Include="SkelControlSingleBone.d" />
+    <Compile Include="SkelControlSpline.d" />
+    <Compile Include="SkelControlTrail.d" />
+    <Compile Include="SkelControlWheel.d" />
+    <Compile Include="SkeletalMesh.d" />
+    <Compile Include="SkeletalMeshActor.d" />
+    <Compile Include="SkeletalMeshActorBasedOnExtremeContent.d" />
+    <Compile Include="SkeletalMeshActorMAT.d" />
+    <Compile Include="SkeletalMeshActorMATSpawnable.d" />
+    <Compile Include="SkeletalMeshActorMATWalkable.d" />
+    <Compile Include="SkeletalMeshActorSpawnable.d" />
+    <Compile Include="SkeletalMeshCinematicActor.d" />
+    <Compile Include="SkeletalMeshComponent.d" />
+    <Compile Include="SkeletalMeshSocket.d" />
+    <Compile Include="SkyLight.d" />
+    <Compile Include="SkyLightComponent.d" />
+    <Compile Include="SkyLightToggleable.d" />
+    <Compile Include="SlotToSlotReachSpec.d" />
+    <Compile Include="SmokeTestCommandlet.d" />
+    <Compile Include="SoundClass.d" />
+    <Compile Include="SoundCue.d" />
+    <Compile Include="SoundMode.d" />
+    <Compile Include="SoundNode.d" />
+    <Compile Include="SoundNodeAmbient.d" />
+    <Compile Include="SoundNodeAmbientNonLoop.d" />
+    <Compile Include="SoundNodeAmbientNonLoopToggle.d" />
+    <Compile Include="SoundNodeAttenuation.d" />
+    <Compile Include="SoundNodeConcatenator.d" />
+    <Compile Include="SoundNodeConcatenatorRadio.d" />
+    <Compile Include="SoundNodeDelay.d" />
+    <Compile Include="SoundNodeDistanceCrossFade.d" />
+    <Compile Include="SoundNodeLooping.d" />
+    <Compile Include="SoundNodeMature.d" />
+    <Compile Include="SoundNodeMixer.d" />
+    <Compile Include="SoundNodeModulator.d" />
+    <Compile Include="SoundNodeModulatorContinuous.d" />
+    <Compile Include="SoundNodeOscillator.d" />
+    <Compile Include="SoundNodeRandom.d" />
+    <Compile Include="SoundNodeWave.d" />
+    <Compile Include="SoundNodeWaveParam.d" />
+    <Compile Include="SoundNodeWaveStreaming.d" />
+    <Compile Include="SpeechRecognition.d" />
+    <Compile Include="SpeedTree.d" />
+    <Compile Include="SpeedTreeActor.d" />
+    <Compile Include="SpeedTreeActorFactory.d" />
+    <Compile Include="SpeedTreeComponent.d" />
+    <Compile Include="SpeedTreeComponentFactory.d" />
+    <Compile Include="SphericalHarmonicLightComponent.d" />
+    <Compile Include="SplineActor.d" />
+    <Compile Include="SplineComponent.d" />
+    <Compile Include="SplineLoftActor.d" />
+    <Compile Include="SplineLoftActorMovable.d" />
+    <Compile Include="SplineMeshComponent.d" />
+    <Compile Include="SpotLight.d" />
+    <Compile Include="SpotLightComponent.d" />
+    <Compile Include="SpotLightMovable.d" />
+    <Compile Include="SpotLightToggleable.d" />
+    <Compile Include="SpriteComponent.d" />
+    <Compile Include="StaticLightCollectionActor.d" />
+    <Compile Include="StaticMesh.d" />
+    <Compile Include="StaticMeshActor.d" />
+    <Compile Include="StaticMeshActorBase.d" />
+    <Compile Include="StaticMeshActorBasedOnExtremeContent.d" />
+    <Compile Include="StaticMeshCollectionActor.d" />
+    <Compile Include="StaticMeshComponent.d" />
+    <Compile Include="StaticMeshComponentFactory.d" />
+    <Compile Include="StringsTag.d" />
+    <Compile Include="Surface.d" />
+    <Compile Include="SVehicle.d" />
+    <Compile Include="SVehicleSimBase.d" />
+    <Compile Include="SVehicleSimCar.d" />
+    <Compile Include="SVehicleSimTank.d" />
+    <Compile Include="SVehicleWheel.d" />
+    <Compile Include="SwatTurnReachSpec.d" />
+    <Compile Include="TargetPoint.d" />
+    <Compile Include="TeamInfo.d" />
+    <Compile Include="Teleporter.d" />
+    <Compile Include="TeleportReachSpec.d" />
+    <Compile Include="Terrain.d" />
+    <Compile Include="TerrainComponent.d" />
+    <Compile Include="TerrainLayerSetup.d" />
+    <Compile Include="TerrainMaterial.d" />
+    <Compile Include="TerrainWeightMapTexture.d" />
+    <Compile Include="TestSplittingVolume.d" />
+    <Compile Include="Texture.d" />
+    <Compile Include="Texture2D.d" />
+    <Compile Include="Texture2DComposite.d" />
+    <Compile Include="Texture2DDynamic.d" />
+    <Compile Include="TextureCube.d" />
+    <Compile Include="TextureFlipBook.d" />
+    <Compile Include="TextureMovie.d" />
+    <Compile Include="TextureRenderTarget.d" />
+    <Compile Include="TextureRenderTarget2D.d" />
+    <Compile Include="TextureRenderTargetCube.d" />
+    <Compile Include="TranslationContext.d" />
+    <Compile Include="TranslatorTag.d" />
+    <Compile Include="Trigger.d" />
+    <Compile Include="Trigger_Dynamic.d" />
+    <Compile Include="Trigger_LOS.d" />
+    <Compile Include="TriggeredPath.d" />
+    <Compile Include="TriggerStreamingLevel.d" />
+    <Compile Include="TriggerVolume.d" />
+    <Compile Include="UberPostProcessEffect.d" />
+    <Compile Include="UICharacterSummary.d" />
+    <Compile Include="UIConfigFileProvider.d" />
+    <Compile Include="UIConfigProvider.d" />
+    <Compile Include="UIConfigSectionProvider.d" />
+    <Compile Include="UIDataProvider.d" />
+    <Compile Include="UIDataProvider_MenuItem.d" />
+    <Compile Include="UIDataProvider_OnlineFriendMessages.d" />
+    <Compile Include="UIDataProvider_OnlineFriends.d" />
+    <Compile Include="UIDataProvider_OnlinePartyChatList.d" />
+    <Compile Include="UIDataProvider_OnlinePlayerDataBase.d" />
+    <Compile Include="UIDataProvider_OnlinePlayerStorage.d" />
+    <Compile Include="UIDataProvider_OnlinePlayerStorageArray.d" />
+    <Compile Include="UIDataProvider_OnlineProfileSettings.d" />
+    <Compile Include="UIDataProvider_PlayerAchievements.d" />
+    <Compile Include="UIDataProvider_Settings.d" />
+    <Compile Include="UIDataProvider_SettingsArray.d" />
+    <Compile Include="UIDataStore.d" />
+    <Compile Include="UIDataStore_DynamicResource.d" />
+    <Compile Include="UIDataStore_Fonts.d" />
+    <Compile Include="UIDataStore_GameResource.d" />
+    <Compile Include="UIDataStore_GameState.d" />
+    <Compile Include="UIDataStore_InputAlias.d" />
+    <Compile Include="UIDataStore_MenuItems.d" />
+    <Compile Include="UIDataStore_OnlineGameSearch.d" />
+    <Compile Include="UIDataStore_OnlineGameSettings.d" />
+    <Compile Include="UIDataStore_OnlinePlayerData.d" />
+    <Compile Include="UIDataStore_OnlinePlaylists.d" />
+    <Compile Include="UIDataStore_OnlineStats.d" />
+    <Compile Include="UIDataStore_Registry.d" />
+    <Compile Include="UIDataStore_Remote.d" />
+    <Compile Include="UIDataStore_Settings.d" />
+    <Compile Include="UIDataStore_StringAliasMap.d" />
+    <Compile Include="UIDataStore_StringBase.d" />
+    <Compile Include="UIDataStore_Strings.d" />
+    <Compile Include="UIDataStorePublisher.d" />
+    <Compile Include="UIDataStoreSubscriber.d" />
+    <Compile Include="UIDynamicDataProvider.d" />
+    <Compile Include="UIDynamicFieldProvider.d" />
+    <Compile Include="UIGameInfoSummary.d" />
+    <Compile Include="UIInteraction.d" />
+    <Compile Include="UIListElementCellProvider.d" />
+    <Compile Include="UIListElementProvider.d" />
+    <Compile Include="UIManager.d" />
+    <Compile Include="UIMapSummary.d" />
+    <Compile Include="UIPropertyDataProvider.d" />
+    <Compile Include="UIResourceCombinationProvider.d" />
+    <Compile Include="UIResourceDataProvider.d" />
+    <Compile Include="UIRoot.d" />
+    <Compile Include="UISceneClient.d" />
+    <Compile Include="UISoundTheme.d" />
+    <Compile Include="UIWeaponSummary.d" />
+    <Compile Include="Vehicle.d" />
+    <Compile Include="VoiceChannel.d" />
+    <Compile Include="Volume.d" />
+    <Compile Include="VolumePathNode.d" />
+    <Compile Include="VolumeTimer.d" />
+    <Compile Include="WallTransReachSpec.d" />
+    <Compile Include="WaterVolume.d" />
+    <Compile Include="WaveFormBase.d" />
+    <Compile Include="Weapon.d" />
+    <Compile Include="WindDirectionalSource.d" />
+    <Compile Include="WindDirectionalSourceComponent.d" />
+    <Compile Include="WindPointSource.d" />
+    <Compile Include="WindPointSourceComponent.d" />
+    <Compile Include="World.d" />
+    <Compile Include="WorldInfo.d" />
+    <Compile Include="ZoneInfo.d" />
+  </ItemGroup>
+</Project>

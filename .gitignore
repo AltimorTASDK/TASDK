@@ -2,3 +2,6 @@ bin/
 obj/
 *.suo
 *.userprefs
+TribesAscendSDK/lib/
+TribesAscendSDK/UnrealScript/Core/Class__Default.d
+TribesAscendSDK/UnrealScript/TribesGameContent/

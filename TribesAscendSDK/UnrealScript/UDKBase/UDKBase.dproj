@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77B194F3-D905-4B2B-BA17-AC85EE7749D6}</ProjectGuid>
+    <Compiler>DMD2</Compiler>
+    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <UseDefaultCompiler>true</UseDefaultCompiler>
+    <IncrementalLinking>true</IncrementalLinking>
+    <Includes>
+      <Includes>
+        <Path>..\..</Path>
+      </Includes>
+    </Includes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>UDKBase</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\lib\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>UDKBase</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UDKAIDecisionComponent.d">
+      <LastGenOutput>obj\Debug\UDKAIDecisionComponent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendBase.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByDriving.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByDriving.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByFall.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByFall.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByFlying.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByFlying.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByHoverboarding.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByHoverboarding.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByHoverboardTilt.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByHoverboardTilt.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByHoverboardTurn.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByHoverboardTurn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByHoverJump.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByHoverJump.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByIdle.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByIdle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByPhysics.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByPhysics.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByPhysicsVolume.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByPhysicsVolume.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByPosture.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByPosture.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendBySlotActive.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendBySlotActive.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendBySpeed.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendBySpeed.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByTurnInPlace.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByTurnInPlace.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByVehicle.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByVehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByWeapon.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByWeapon.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimBlendByWeapType.d">
+      <LastGenOutput>obj\Debug\UDKAnimBlendByWeapType.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeCopyBoneTranslation.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeCopyBoneTranslation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeFramePlayer.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeFramePlayer.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeJumpLeanOffset.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeJumpLeanOffset.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeSequence.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeSequence.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeSequenceByBoneRotation.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeSequenceByBoneRotation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKAnimNodeSeqWeap.d">
+      <LastGenOutput>obj\Debug\UDKAnimNodeSeqWeap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKBot.d">
+      <LastGenOutput>obj\Debug\UDKBot.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKCarriedObject.d">
+      <LastGenOutput>obj\Debug\UDKCarriedObject.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKDataStore_GameSearchBase.d">
+      <LastGenOutput>obj\Debug\UDKDataStore_GameSearchBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKEmitCameraEffect.d">
+      <LastGenOutput>obj\Debug\UDKEmitCameraEffect.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKEmitterPool.d">
+      <LastGenOutput>obj\Debug\UDKEmitterPool.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKExplosionLight.d">
+      <LastGenOutput>obj\Debug\UDKExplosionLight.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKForcedDirectionVolume.d">
+      <LastGenOutput>obj\Debug\UDKForcedDirectionVolume.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKGame.d">
+      <LastGenOutput>obj\Debug\UDKGame.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKGameInteraction.d">
+      <LastGenOutput>obj\Debug\UDKGameInteraction.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKGameObjective.d">
+      <LastGenOutput>obj\Debug\UDKGameObjective.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKGameSettingsCommon.d">
+      <LastGenOutput>obj\Debug\UDKGameSettingsCommon.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKGameViewportClient.d">
+      <LastGenOutput>obj\Debug\UDKGameViewportClient.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKHUD.d">
+      <LastGenOutput>obj\Debug\UDKHUD.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKJumpPad.d">
+      <LastGenOutput>obj\Debug\UDKJumpPad.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKJumpPadReachSpec.d">
+      <LastGenOutput>obj\Debug\UDKJumpPadReachSpec.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKKActorBreakable.d">
+      <LastGenOutput>obj\Debug\UDKKActorBreakable.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKMapInfo.d">
+      <LastGenOutput>obj\Debug\UDKMapInfo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKMapMusicInfo.d">
+      <LastGenOutput>obj\Debug\UDKMapMusicInfo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKParticleSystemComponent.d">
+      <LastGenOutput>obj\Debug\UDKParticleSystemComponent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKPawn.d">
+      <LastGenOutput>obj\Debug\UDKPawn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKPickupFactory.d">
+      <LastGenOutput>obj\Debug\UDKPickupFactory.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKPlayerController.d">
+      <LastGenOutput>obj\Debug\UDKPlayerController.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKPlayerInput.d">
+      <LastGenOutput>obj\Debug\UDKPlayerInput.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKProfileSettings.d">
+      <LastGenOutput>obj\Debug\UDKProfileSettings.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKProjectile.d">
+      <LastGenOutput>obj\Debug\UDKProjectile.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKScout.d">
+      <LastGenOutput>obj\Debug\UDKScout.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKScriptedNavigationPoint.d">
+      <LastGenOutput>obj\Debug\UDKScriptedNavigationPoint.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_CantileverBeam.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_CantileverBeam.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_Damage.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_Damage.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_DamageHinge.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_DamageHinge.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_DamageSpring.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_DamageSpring.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_HoverboardSuspension.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_HoverboardSuspension.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_HoverboardSwing.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_HoverboardSwing.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_HoverboardVibration.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_HoverboardVibration.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_HugGround.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_HugGround.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_LockRotation.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_LockRotation.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_LookAt.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_LookAt.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_MassBoneScaling.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_MassBoneScaling.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_PropellerBlade.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_PropellerBlade.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_Rotate.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_Rotate.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_SpinControl.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_SpinControl.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_TurretConstrained.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_TurretConstrained.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkelControl_VehicleFlap.d">
+      <LastGenOutput>obj\Debug\UDKSkelControl_VehicleFlap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSkeletalMeshComponent.d">
+      <LastGenOutput>obj\Debug\UDKSkeletalMeshComponent.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKSquadAI.d">
+      <LastGenOutput>obj\Debug\UDKSquadAI.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKTeamOwnedInfo.d">
+      <LastGenOutput>obj\Debug\UDKTeamOwnedInfo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKTeamPlayerStart.d">
+      <LastGenOutput>obj\Debug\UDKTeamPlayerStart.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKTeleporterBase.d">
+      <LastGenOutput>obj\Debug\UDKTeleporterBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKTrajectoryReachSpec.d">
+      <LastGenOutput>obj\Debug\UDKTrajectoryReachSpec.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_MapInfo.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_MapInfo.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_MenuOption.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_MenuOption.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_SearchResult.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_SearchResult.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_ServerDetails.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_ServerDetails.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_SimpleElementProvider.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_SimpleElementProvider.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataProvider_StringArray.d">
+      <LastGenOutput>obj\Debug\UDKUIDataProvider_StringArray.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataStore_MenuItems.d">
+      <LastGenOutput>obj\Debug\UDKUIDataStore_MenuItems.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataStore_Options.d">
+      <LastGenOutput>obj\Debug\UDKUIDataStore_Options.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataStore_StringAliasBindingMap.d">
+      <LastGenOutput>obj\Debug\UDKUIDataStore_StringAliasBindingMap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataStore_StringAliasMap.d">
+      <LastGenOutput>obj\Debug\UDKUIDataStore_StringAliasMap.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIDataStore_StringList.d">
+      <LastGenOutput>obj\Debug\UDKUIDataStore_StringList.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKUIResourceDataProvider.d">
+      <LastGenOutput>obj\Debug\UDKUIResourceDataProvider.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicle.d">
+      <LastGenOutput>obj\Debug\UDKVehicle.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleBase.d">
+      <LastGenOutput>obj\Debug\UDKVehicleBase.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleFactory.d">
+      <LastGenOutput>obj\Debug\UDKVehicleFactory.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleMovementEffect.d">
+      <LastGenOutput>obj\Debug\UDKVehicleMovementEffect.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleSimCar.d">
+      <LastGenOutput>obj\Debug\UDKVehicleSimCar.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleSimChopper.d">
+      <LastGenOutput>obj\Debug\UDKVehicleSimChopper.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleSimHover.d">
+      <LastGenOutput>obj\Debug\UDKVehicleSimHover.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleSimHoverboard.d">
+      <LastGenOutput>obj\Debug\UDKVehicleSimHoverboard.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKVehicleWheel.d">
+      <LastGenOutput>obj\Debug\UDKVehicleWheel.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKWeapon.d">
+      <LastGenOutput>obj\Debug\UDKWeapon.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKWeaponPawn.d">
+      <LastGenOutput>obj\Debug\UDKWeaponPawn.obj</LastGenOutput>
+    </Compile>
+    <Compile Include="UDKWeaponShield.d">
+      <LastGenOutput>obj\Debug\UDKWeaponShield.obj</LastGenOutput>
+    </Compile>
+  </ItemGroup>
+</Project>
