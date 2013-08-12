@@ -840,6 +840,11 @@ final class ClassDescriptor : NestableContainer
 		return false;
 	}
 
+	string GetDefaultFullName(ScriptClass c)
+	{
+		return c.GetName() ~ " " ~ c.Outer.GetName() ~ ".Default__" ~ c.GetName();
+	}
+
 	override void Write(IndentedStreamWriter wtr)
 	{
 		this.RequireDependencies(DepManager);
@@ -859,6 +864,9 @@ final class ClassDescriptor : NestableContainer
 		
 		wtr.WriteLine("private static __gshared ScriptClass mStaticClass;");
 		wtr.WriteLine("@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)(\"%s\")); }", InnerClass.GetFullName());
+
+		wtr.WriteLine("private static __gshared %s mDefaultProperties;", EscapeName(InnerClass.GetName()));
+		wtr.WriteLine("@property final static %s DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(%s)(\"%s\")); }", EscapeName(InnerClass.GetName()), EscapeName(InnerClass.GetName()), GetDefaultFullName(InnerClass));
 		
 		WriteChildren(wtr);
 
