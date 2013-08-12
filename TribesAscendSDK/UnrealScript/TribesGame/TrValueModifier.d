@@ -6,6 +6,27 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrValueModifier : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrValueModifier")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReset;
+			ScriptFunction mMerge;
+			ScriptFunction mMergeClass;
+			ScriptFunction mMergeModification;
+			ScriptFunction mLogModifiedValues;
+		}
+		public @property static final
+		{
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.Reset")); }
+			ScriptFunction Merge() { return mMerge ? mMerge : (mMerge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.Merge")); }
+			ScriptFunction MergeClass() { return mMergeClass ? mMergeClass : (mMergeClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.MergeClass")); }
+			ScriptFunction MergeModification() { return mMergeModification ? mMergeModification : (mMergeModification = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.MergeModification")); }
+			ScriptFunction LogModifiedValues() { return mLogModifiedValues ? mLogModifiedValues : (mLogModifiedValues = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrValueModifier.LogModifiedValues")); }
+		}
+	}
 	enum
 	{
 		THR_SPINFUSOR = 1,
@@ -629,21 +650,21 @@ public extern(D):
 final:
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113990], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void Merge(TrValueModifier ModifierToMerge)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrValueModifier*)params.ptr = ModifierToMerge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113991], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Merge, params.ptr, cast(void*)0);
 	}
 	void MergeClass(ScriptClass ModifierClassToMerge)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = ModifierClassToMerge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113993], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MergeClass, params.ptr, cast(void*)0);
 	}
 	void MergeModification(int ModType, float Value)
 	{
@@ -651,10 +672,10 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ModType;
 		*cast(float*)&params[4] = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113995], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MergeModification, params.ptr, cast(void*)0);
 	}
 	void LogModifiedValues()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113998], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LogModifiedValues, cast(void*)0, cast(void*)0);
 	}
 }

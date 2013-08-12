@@ -7,6 +7,23 @@ import UnrealScript.Engine.SceneCaptureComponent;
 extern(C++) interface SceneCapture2DHitMaskComponent : SceneCaptureComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapture2DHitMaskComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetCaptureTargetTexture;
+			ScriptFunction mSetCaptureParameters;
+			ScriptFunction mSetFadingStartTimeSinceHit;
+		}
+		public @property static final
+		{
+			ScriptFunction SetCaptureTargetTexture() { return mSetCaptureTargetTexture ? mSetCaptureTargetTexture : (mSetCaptureTargetTexture = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DHitMaskComponent.SetCaptureTargetTexture")); }
+			ScriptFunction SetCaptureParameters() { return mSetCaptureParameters ? mSetCaptureParameters : (mSetCaptureParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DHitMaskComponent.SetCaptureParameters")); }
+			ScriptFunction SetFadingStartTimeSinceHit() { return mSetFadingStartTimeSinceHit ? mSetFadingStartTimeSinceHit : (mSetFadingStartTimeSinceHit = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DHitMaskComponent.SetFadingStartTimeSinceHit")); }
+		}
+	}
 	@property final auto ref
 	{
 		float FadingIntervalTime() { return *cast(float*)(cast(size_t)cast(void*)this + 176); }
@@ -24,7 +41,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TextureRenderTarget2D*)params.ptr = InTextureTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25449], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureTargetTexture, params.ptr, cast(void*)0);
 	}
 	void SetCaptureParameters(Vector InMaskPosition, float InMaskRadius, Vector InStartupPosition, bool bOnlyWhenFacing)
 	{
@@ -34,13 +51,13 @@ final:
 		*cast(float*)&params[12] = InMaskRadius;
 		*cast(Vector*)&params[16] = InStartupPosition;
 		*cast(bool*)&params[28] = bOnlyWhenFacing;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
 	void SetFadingStartTimeSinceHit(float InFadingStartTimeSinceHit)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = InFadingStartTimeSinceHit;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25456], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFadingStartTimeSinceHit, params.ptr, cast(void*)0);
 	}
 }

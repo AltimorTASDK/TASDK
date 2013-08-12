@@ -7,17 +7,78 @@ import UnrealScript.Core.UInterface;
 extern(C++) interface OnlineCommunityContentInterface : UInterface
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineCommunityContentInterface")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mExit;
+			ScriptFunction mReadContentList;
+			ScriptFunction mOnReadContentListComplete;
+			ScriptFunction mOnGetContentPayloadComplete;
+			ScriptFunction mOnDownloadContentComplete;
+			ScriptFunction mOnUploadContentComplete;
+			ScriptFunction mOnReadFriendsContentListComplete;
+			ScriptFunction mAddReadContentListCompleteDelegate;
+			ScriptFunction mClearReadContentListCompleteDelegate;
+			ScriptFunction mGetContentList;
+			ScriptFunction mReadFriendsContentList;
+			ScriptFunction mAddReadFriendsContentListCompleteDelegate;
+			ScriptFunction mClearReadFriendsContentListCompleteDelegate;
+			ScriptFunction mGetFriendsContentList;
+			ScriptFunction mUploadContent;
+			ScriptFunction mAddUploadContentCompleteDelegate;
+			ScriptFunction mClearUploadContentCompleteDelegate;
+			ScriptFunction mDownloadContent;
+			ScriptFunction mAddDownloadContentCompleteDelegate;
+			ScriptFunction mClearDownloadContentCompleteDelegate;
+			ScriptFunction mGetContentPayload;
+			ScriptFunction mAddGetContentPayloadCompleteDelegate;
+			ScriptFunction mClearGetContentPayloadCompleteDelegate;
+			ScriptFunction mRateContent;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.Init")); }
+			ScriptFunction Exit() { return mExit ? mExit : (mExit = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.Exit")); }
+			ScriptFunction ReadContentList() { return mReadContentList ? mReadContentList : (mReadContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ReadContentList")); }
+			ScriptFunction OnReadContentListComplete() { return mOnReadContentListComplete ? mOnReadContentListComplete : (mOnReadContentListComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.OnReadContentListComplete")); }
+			ScriptFunction OnGetContentPayloadComplete() { return mOnGetContentPayloadComplete ? mOnGetContentPayloadComplete : (mOnGetContentPayloadComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.OnGetContentPayloadComplete")); }
+			ScriptFunction OnDownloadContentComplete() { return mOnDownloadContentComplete ? mOnDownloadContentComplete : (mOnDownloadContentComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.OnDownloadContentComplete")); }
+			ScriptFunction OnUploadContentComplete() { return mOnUploadContentComplete ? mOnUploadContentComplete : (mOnUploadContentComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.OnUploadContentComplete")); }
+			ScriptFunction OnReadFriendsContentListComplete() { return mOnReadFriendsContentListComplete ? mOnReadFriendsContentListComplete : (mOnReadFriendsContentListComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.OnReadFriendsContentListComplete")); }
+			ScriptFunction AddReadContentListCompleteDelegate() { return mAddReadContentListCompleteDelegate ? mAddReadContentListCompleteDelegate : (mAddReadContentListCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.AddReadContentListCompleteDelegate")); }
+			ScriptFunction ClearReadContentListCompleteDelegate() { return mClearReadContentListCompleteDelegate ? mClearReadContentListCompleteDelegate : (mClearReadContentListCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ClearReadContentListCompleteDelegate")); }
+			ScriptFunction GetContentList() { return mGetContentList ? mGetContentList : (mGetContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.GetContentList")); }
+			ScriptFunction ReadFriendsContentList() { return mReadFriendsContentList ? mReadFriendsContentList : (mReadFriendsContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ReadFriendsContentList")); }
+			ScriptFunction AddReadFriendsContentListCompleteDelegate() { return mAddReadFriendsContentListCompleteDelegate ? mAddReadFriendsContentListCompleteDelegate : (mAddReadFriendsContentListCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.AddReadFriendsContentListCompleteDelegate")); }
+			ScriptFunction ClearReadFriendsContentListCompleteDelegate() { return mClearReadFriendsContentListCompleteDelegate ? mClearReadFriendsContentListCompleteDelegate : (mClearReadFriendsContentListCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ClearReadFriendsContentListCompleteDelegate")); }
+			ScriptFunction GetFriendsContentList() { return mGetFriendsContentList ? mGetFriendsContentList : (mGetFriendsContentList = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.GetFriendsContentList")); }
+			ScriptFunction UploadContent() { return mUploadContent ? mUploadContent : (mUploadContent = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.UploadContent")); }
+			ScriptFunction AddUploadContentCompleteDelegate() { return mAddUploadContentCompleteDelegate ? mAddUploadContentCompleteDelegate : (mAddUploadContentCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.AddUploadContentCompleteDelegate")); }
+			ScriptFunction ClearUploadContentCompleteDelegate() { return mClearUploadContentCompleteDelegate ? mClearUploadContentCompleteDelegate : (mClearUploadContentCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ClearUploadContentCompleteDelegate")); }
+			ScriptFunction DownloadContent() { return mDownloadContent ? mDownloadContent : (mDownloadContent = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.DownloadContent")); }
+			ScriptFunction AddDownloadContentCompleteDelegate() { return mAddDownloadContentCompleteDelegate ? mAddDownloadContentCompleteDelegate : (mAddDownloadContentCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.AddDownloadContentCompleteDelegate")); }
+			ScriptFunction ClearDownloadContentCompleteDelegate() { return mClearDownloadContentCompleteDelegate ? mClearDownloadContentCompleteDelegate : (mClearDownloadContentCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ClearDownloadContentCompleteDelegate")); }
+			ScriptFunction GetContentPayload() { return mGetContentPayload ? mGetContentPayload : (mGetContentPayload = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.GetContentPayload")); }
+			ScriptFunction AddGetContentPayloadCompleteDelegate() { return mAddGetContentPayloadCompleteDelegate ? mAddGetContentPayloadCompleteDelegate : (mAddGetContentPayloadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.AddGetContentPayloadCompleteDelegate")); }
+			ScriptFunction ClearGetContentPayloadCompleteDelegate() { return mClearGetContentPayloadCompleteDelegate ? mClearGetContentPayloadCompleteDelegate : (mClearGetContentPayloadCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.ClearGetContentPayloadCompleteDelegate")); }
+			ScriptFunction RateContent() { return mRateContent ? mRateContent : (mRateContent = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineCommunityContentInterface.RateContent")); }
+		}
+	}
 final:
 	bool Init()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21409], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void Exit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21411], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Exit, cast(void*)0, cast(void*)0);
 	}
 	bool ReadContentList(ubyte PlayerNum, int StartAt, int NumToRead)
 	{
@@ -26,7 +87,7 @@ final:
 		params[0] = PlayerNum;
 		*cast(int*)&params[4] = StartAt;
 		*cast(int*)&params[8] = NumToRead;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21412], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReadContentList, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void OnReadContentListComplete(bool bWasSuccessful)
@@ -34,7 +95,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21417], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadContentListComplete, params.ptr, cast(void*)0);
 	}
 	void OnGetContentPayloadComplete(bool bWasSuccessful, OnlineSubsystem.CommunityContentFile FileDownloaded, ScriptArray!(ubyte)* Payload)
 	{
@@ -43,7 +104,7 @@ final:
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = FileDownloaded;
 		*cast(ScriptArray!(ubyte)*)&params[56] = *Payload;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21420], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnGetContentPayloadComplete, params.ptr, cast(void*)0);
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[56];
 	}
 	void OnDownloadContentComplete(bool bWasSuccessful, OnlineSubsystem.CommunityContentFile FileDownloaded)
@@ -52,7 +113,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = FileDownloaded;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21422], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnDownloadContentComplete, params.ptr, cast(void*)0);
 	}
 	void OnUploadContentComplete(bool bWasSuccessful, OnlineSubsystem.CommunityContentFile UploadedFile)
 	{
@@ -60,14 +121,14 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = UploadedFile;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21424], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUploadContentComplete, params.ptr, cast(void*)0);
 	}
 	void OnReadFriendsContentListComplete(bool bWasSuccessful)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadFriendsContentListComplete, params.ptr, cast(void*)0);
 	}
 	void AddReadContentListCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -78,7 +139,7 @@ void* ReadContentListCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadContentListCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21428], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddReadContentListCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearReadContentListCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -89,7 +150,7 @@ void* ReadContentListCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadContentListCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadContentListCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	bool GetContentList(ubyte PlayerNum, ScriptArray!(OnlineSubsystem.CommunityContentFile)* ContentFiles)
 	{
@@ -97,7 +158,7 @@ void**)params.ptr = ReadContentListCompleteDelegate;
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(ScriptArray!(OnlineSubsystem.CommunityContentFile)*)&params[4] = *ContentFiles;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetContentList, params.ptr, cast(void*)0);
 		*ContentFiles = *cast(ScriptArray!(OnlineSubsystem.CommunityContentFile)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
@@ -109,7 +170,7 @@ void**)params.ptr = ReadContentListCompleteDelegate;
 		*cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)&params[4] = *Friends;
 		*cast(int*)&params[16] = StartAt;
 		*cast(int*)&params[20] = NumToRead;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21437], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReadFriendsContentList, params.ptr, cast(void*)0);
 		*Friends = *cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)&params[4];
 		return *cast(bool*)&params[24];
 	}
@@ -122,7 +183,7 @@ void* ReadFriendsContentListCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadFriendsContentListCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21445], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddReadFriendsContentListCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearReadFriendsContentListCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -133,7 +194,7 @@ void* ReadFriendsContentListCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadFriendsContentListCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21447], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadFriendsContentListCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	bool GetFriendsContentList(ubyte PlayerNum, OnlineSubsystem.OnlineFriend* Friend, ScriptArray!(OnlineSubsystem.CommunityContentFile)* ContentFiles)
 	{
@@ -142,7 +203,7 @@ void**)params.ptr = ReadFriendsContentListCompleteDelegate;
 		params[0] = PlayerNum;
 		*cast(OnlineSubsystem.OnlineFriend*)&params[4] = *Friend;
 		*cast(ScriptArray!(OnlineSubsystem.CommunityContentFile)*)&params[52] = *ContentFiles;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21449], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFriendsContentList, params.ptr, cast(void*)0);
 		*Friend = *cast(OnlineSubsystem.OnlineFriend*)&params[4];
 		*ContentFiles = *cast(ScriptArray!(OnlineSubsystem.CommunityContentFile)*)&params[52];
 		return *cast(bool*)&params[64];
@@ -154,7 +215,7 @@ void**)params.ptr = ReadFriendsContentListCompleteDelegate;
 		params[0] = PlayerNum;
 		*cast(ScriptArray!(ubyte)*)&params[4] = *Payload;
 		*cast(OnlineSubsystem.CommunityContentMetadata*)&params[16] = *pMetaData;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21455], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UploadContent, params.ptr, cast(void*)0);
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[4];
 		*pMetaData = *cast(OnlineSubsystem.CommunityContentMetadata*)&params[16];
 		return *cast(bool*)&params[32];
@@ -168,7 +229,7 @@ void* UploadContentCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = UploadContentCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21463], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddUploadContentCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearUploadContentCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -179,7 +240,7 @@ void* UploadContentCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = UploadContentCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21465], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearUploadContentCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	bool DownloadContent(ubyte PlayerNum, OnlineSubsystem.CommunityContentFile* FileToDownload)
 	{
@@ -187,7 +248,7 @@ void**)params.ptr = UploadContentCompleteDelegate;
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = *FileToDownload;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21467], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DownloadContent, params.ptr, cast(void*)0);
 		*FileToDownload = *cast(OnlineSubsystem.CommunityContentFile*)&params[4];
 		return *cast(bool*)&params[56];
 	}
@@ -200,7 +261,7 @@ void* DownloadContentCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = DownloadContentCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21473], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddDownloadContentCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearDownloadContentCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -211,7 +272,7 @@ void* DownloadContentCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = DownloadContentCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21475], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearDownloadContentCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	bool GetContentPayload(ubyte PlayerNum, OnlineSubsystem.CommunityContentFile* FileDownloaded)
 	{
@@ -219,7 +280,7 @@ void**)params.ptr = DownloadContentCompleteDelegate;
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = *FileDownloaded;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21477], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetContentPayload, params.ptr, cast(void*)0);
 		*FileDownloaded = *cast(OnlineSubsystem.CommunityContentFile*)&params[4];
 		return *cast(bool*)&params[56];
 	}
@@ -232,7 +293,7 @@ void* GetContentPayloadCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = GetContentPayloadCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21485], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddGetContentPayloadCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearGetContentPayloadCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -243,7 +304,7 @@ void* GetContentPayloadCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = GetContentPayloadCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21487], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearGetContentPayloadCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void RateContent(ubyte PlayerNum, OnlineSubsystem.CommunityContentFile* FileToRate, int NewRating)
 	{
@@ -252,7 +313,7 @@ void**)params.ptr = GetContentPayloadCompleteDelegate;
 		params[0] = PlayerNum;
 		*cast(OnlineSubsystem.CommunityContentFile*)&params[4] = *FileToRate;
 		*cast(int*)&params[56] = NewRating;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21489], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RateContent, params.ptr, cast(void*)0);
 		*FileToRate = *cast(OnlineSubsystem.CommunityContentFile*)&params[4];
 	}
 }

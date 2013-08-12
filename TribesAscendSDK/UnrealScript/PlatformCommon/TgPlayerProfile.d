@@ -6,10 +6,14 @@ import UnrealScript.Engine.OnlinePlayerStorage;
 extern(C++) interface TgPlayerProfile : OnlinePlayerStorage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgPlayerProfile")); }
 	struct BadgeStruct
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct PlatformCommon.TgPlayerProfile.BadgeStruct")); }
 		@property final auto ref
 		{
 			ScriptString Description() { return *cast(ScriptString*)(cast(size_t)&this + 40); }
@@ -27,6 +31,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct PlatformCommon.TgPlayerProfile.PropertyPair")); }
 		@property final auto ref
 		{
 			int Value() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -37,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct PlatformCommon.TgPlayerProfile.AccoladeStruct")); }
 		@property final auto ref
 		{
 			int Value() { return *cast(int*)(cast(size_t)&this + 12); }

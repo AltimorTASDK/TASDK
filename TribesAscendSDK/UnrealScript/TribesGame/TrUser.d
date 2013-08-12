@@ -7,10 +7,71 @@ import UnrealScript.TribesGame.GFxTrMenuMoviePlayer;
 extern(C++) interface TrUser : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrUser")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mNeedsToSeeNewItemsClass;
+			ScriptFunction mNeedsToSeeNewItemsType;
+			ScriptFunction mNeedToSeeNewBundle;
+			ScriptFunction mNeedsToSeeClanTags;
+			ScriptFunction mNeedToSeeAnyNewItem;
+			ScriptFunction mIsFavoriteServer;
+			ScriptFunction mNeedsToSeeNewItem;
+			ScriptFunction mDecryptPassword;
+			ScriptFunction mEncryptPassword;
+			ScriptFunction mInitialize;
+			ScriptFunction mSaveCredentials;
+			ScriptFunction mSaveClassId;
+			ScriptFunction mSaveGameType;
+			ScriptFunction mSaveDidLogin;
+			ScriptFunction mSaveChoseRegion;
+			ScriptFunction mSeenNewGametype;
+			ScriptFunction mSeenNewItemsMain;
+			ScriptFunction mSeenNewBundlesMain;
+			ScriptFunction mSeenClanTags;
+			ScriptFunction mSeenNewBundle;
+			ScriptFunction mSeenNewItemsClass;
+			ScriptFunction mSeenNewItemsType;
+			ScriptFunction mNeedsToSeeNewBundle;
+			ScriptFunction mSetFavoriteServer;
+		}
+		public @property static final
+		{
+			ScriptFunction NeedsToSeeNewItemsClass() { return mNeedsToSeeNewItemsClass ? mNeedsToSeeNewItemsClass : (mNeedsToSeeNewItemsClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedsToSeeNewItemsClass")); }
+			ScriptFunction NeedsToSeeNewItemsType() { return mNeedsToSeeNewItemsType ? mNeedsToSeeNewItemsType : (mNeedsToSeeNewItemsType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedsToSeeNewItemsType")); }
+			ScriptFunction NeedToSeeNewBundle() { return mNeedToSeeNewBundle ? mNeedToSeeNewBundle : (mNeedToSeeNewBundle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedToSeeNewBundle")); }
+			ScriptFunction NeedsToSeeClanTags() { return mNeedsToSeeClanTags ? mNeedsToSeeClanTags : (mNeedsToSeeClanTags = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedsToSeeClanTags")); }
+			ScriptFunction NeedToSeeAnyNewItem() { return mNeedToSeeAnyNewItem ? mNeedToSeeAnyNewItem : (mNeedToSeeAnyNewItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedToSeeAnyNewItem")); }
+			ScriptFunction IsFavoriteServer() { return mIsFavoriteServer ? mIsFavoriteServer : (mIsFavoriteServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.IsFavoriteServer")); }
+			ScriptFunction NeedsToSeeNewItem() { return mNeedsToSeeNewItem ? mNeedsToSeeNewItem : (mNeedsToSeeNewItem = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedsToSeeNewItem")); }
+			ScriptFunction DecryptPassword() { return mDecryptPassword ? mDecryptPassword : (mDecryptPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.DecryptPassword")); }
+			ScriptFunction EncryptPassword() { return mEncryptPassword ? mEncryptPassword : (mEncryptPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.EncryptPassword")); }
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.Initialize")); }
+			ScriptFunction SaveCredentials() { return mSaveCredentials ? mSaveCredentials : (mSaveCredentials = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SaveCredentials")); }
+			ScriptFunction SaveClassId() { return mSaveClassId ? mSaveClassId : (mSaveClassId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SaveClassId")); }
+			ScriptFunction SaveGameType() { return mSaveGameType ? mSaveGameType : (mSaveGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SaveGameType")); }
+			ScriptFunction SaveDidLogin() { return mSaveDidLogin ? mSaveDidLogin : (mSaveDidLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SaveDidLogin")); }
+			ScriptFunction SaveChoseRegion() { return mSaveChoseRegion ? mSaveChoseRegion : (mSaveChoseRegion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SaveChoseRegion")); }
+			ScriptFunction SeenNewGametype() { return mSeenNewGametype ? mSeenNewGametype : (mSeenNewGametype = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewGametype")); }
+			ScriptFunction SeenNewItemsMain() { return mSeenNewItemsMain ? mSeenNewItemsMain : (mSeenNewItemsMain = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewItemsMain")); }
+			ScriptFunction SeenNewBundlesMain() { return mSeenNewBundlesMain ? mSeenNewBundlesMain : (mSeenNewBundlesMain = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewBundlesMain")); }
+			ScriptFunction SeenClanTags() { return mSeenClanTags ? mSeenClanTags : (mSeenClanTags = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenClanTags")); }
+			ScriptFunction SeenNewBundle() { return mSeenNewBundle ? mSeenNewBundle : (mSeenNewBundle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewBundle")); }
+			ScriptFunction SeenNewItemsClass() { return mSeenNewItemsClass ? mSeenNewItemsClass : (mSeenNewItemsClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewItemsClass")); }
+			ScriptFunction SeenNewItemsType() { return mSeenNewItemsType ? mSeenNewItemsType : (mSeenNewItemsType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SeenNewItemsType")); }
+			ScriptFunction NeedsToSeeNewBundle() { return mNeedsToSeeNewBundle ? mNeedsToSeeNewBundle : (mNeedsToSeeNewBundle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.NeedsToSeeNewBundle")); }
+			ScriptFunction SetFavoriteServer() { return mSetFavoriteServer ? mSetFavoriteServer : (mSetFavoriteServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrUser.SetFavoriteServer")); }
+		}
+	}
 	struct NewItem
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrUser.NewItem")); }
 		@property final auto ref
 		{
 			int ItemId() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -55,7 +116,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56835], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeNewItemsClass, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NeedsToSeeNewItemsType(int ClassId, int Type)
@@ -64,7 +125,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
 		*cast(int*)&params[4] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56851], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeNewItemsType, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool NeedToSeeNewBundle(int ItemId)
@@ -72,21 +133,21 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ItemId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57849], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedToSeeNewBundle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NeedsToSeeClanTags()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58115], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeClanTags, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool NeedToSeeAnyNewItem()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58259], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedToSeeAnyNewItem, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsFavoriteServer(int ServerID)
@@ -94,7 +155,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ServerID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58555], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFavoriteServer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NeedsToSeeNewItem(int EquipId)
@@ -102,14 +163,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = EquipId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58652], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeNewItem, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptString DecryptPassword()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59483], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DecryptPassword, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString EncryptPassword(ScriptString Password)
@@ -117,7 +178,7 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncryptPassword, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 	void Initialize(GFxTrMenuMoviePlayer Movie)
@@ -125,7 +186,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrMenuMoviePlayer*)params.ptr = Movie;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113429], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 	}
 	void SaveCredentials(ScriptString NewUserName, ScriptString NewPassword)
 	{
@@ -133,59 +194,59 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = NewUserName;
 		*cast(ScriptString*)&params[12] = NewPassword;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113431], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveCredentials, params.ptr, cast(void*)0);
 	}
 	void SaveClassId(int NewClassId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = NewClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113434], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveClassId, params.ptr, cast(void*)0);
 	}
 	void SaveGameType(ScriptString NewGameType)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = NewGameType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveGameType, params.ptr, cast(void*)0);
 	}
 	void SaveDidLogin()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113438], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveDidLogin, cast(void*)0, cast(void*)0);
 	}
 	void SaveChoseRegion()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113439], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveChoseRegion, cast(void*)0, cast(void*)0);
 	}
 	void SeenNewGametype()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113440], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewGametype, cast(void*)0, cast(void*)0);
 	}
 	void SeenNewItemsMain()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113441], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewItemsMain, cast(void*)0, cast(void*)0);
 	}
 	void SeenNewBundlesMain()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113442], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewBundlesMain, cast(void*)0, cast(void*)0);
 	}
 	void SeenClanTags()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113443], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenClanTags, cast(void*)0, cast(void*)0);
 	}
 	void SeenNewBundle(int ItemId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ItemId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113444], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewBundle, params.ptr, cast(void*)0);
 	}
 	void SeenNewItemsClass(int ClassId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113447], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewItemsClass, params.ptr, cast(void*)0);
 	}
 	void SeenNewItemsType(int ClassId, int Type)
 	{
@@ -193,14 +254,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
 		*cast(int*)&params[4] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113450], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeenNewItemsType, params.ptr, cast(void*)0);
 	}
 	bool NeedsToSeeNewBundle(int ItemId)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ItemId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113461], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeNewBundle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetFavoriteServer(int ServerID)
@@ -208,6 +269,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ServerID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113472], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFavoriteServer, params.ptr, cast(void*)0);
 	}
 }

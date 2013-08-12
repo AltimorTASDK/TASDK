@@ -1,5 +1,6 @@
 module UnrealScript.Engine.NxForceFieldRadialComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.NxForceFieldComponent;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface NxForceFieldRadialComponent : NxForceFieldComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldRadialComponent")); }
 	@property final auto ref
 	{
 		UObject.Pointer Kernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 584); }

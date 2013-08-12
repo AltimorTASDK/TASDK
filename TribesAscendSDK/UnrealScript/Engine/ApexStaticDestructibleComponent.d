@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ApexStaticDestructibleComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.ApexStaticComponent;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface ApexStaticDestructibleComponent : ApexStaticComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexStaticDestructibleComponent")); }
 	@property final
 	{
 		auto ref

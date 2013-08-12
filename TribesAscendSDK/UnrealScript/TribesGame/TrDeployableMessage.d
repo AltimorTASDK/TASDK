@@ -8,6 +8,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrDeployableMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployableMessage")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetString;
+		public @property static final ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployableMessage.GetString")); }
+	}
 	@property final auto ref
 	{
 		ScriptString DeployableAmmoDepleted() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }
@@ -17,7 +24,7 @@ public extern(D):
 		ScriptString DeployableHologramTooCloseToAnotherDeployable() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 112); }
 		ScriptString DeployableHologramTooCloseToEnemyBase() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
 	}
-	final ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	final static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -26,7 +33,7 @@ public extern(D):
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[76445], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
 }

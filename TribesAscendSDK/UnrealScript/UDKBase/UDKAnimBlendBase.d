@@ -6,6 +6,23 @@ import UnrealScript.Engine.AnimNodeBlendList;
 extern(C++) interface UDKAnimBlendBase : AnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendBase")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetBlendTime;
+			ScriptFunction mGetAnimDuration;
+			ScriptFunction mTickAnim;
+		}
+		public @property static final
+		{
+			ScriptFunction GetBlendTime() { return mGetBlendTime ? mGetBlendTime : (mGetBlendTime = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.GetBlendTime")); }
+			ScriptFunction GetAnimDuration() { return mGetAnimDuration ? mGetAnimDuration : (mGetAnimDuration = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.GetAnimDuration")); }
+			ScriptFunction TickAnim() { return mTickAnim ? mTickAnim : (mTickAnim = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendBase.TickAnim")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -23,7 +40,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ChildIndex;
 		*cast(bool*)&params[4] = bGetDefault;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34482], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBlendTime, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	float GetAnimDuration(int ChildIndex)
@@ -31,7 +48,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ChildIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34486], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAnimDuration, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void TickAnim(float DeltaSeconds)
@@ -39,6 +56,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34489], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TickAnim, params.ptr, cast(void*)0);
 	}
 }

@@ -7,6 +7,27 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 extern(C++) interface TrAnimNodeBlendByVehicle : TrAnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByVehicle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayNoVehicleAnim;
+			ScriptFunction mPlayDrivingAnim;
+			ScriptFunction mPlayEnterAnim;
+			ScriptFunction mPlayExitAnim;
+			ScriptFunction mPlayChangeSeatAnim;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayNoVehicleAnim() { return mPlayNoVehicleAnim ? mPlayNoVehicleAnim : (mPlayNoVehicleAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayNoVehicleAnim")); }
+			ScriptFunction PlayDrivingAnim() { return mPlayDrivingAnim ? mPlayDrivingAnim : (mPlayDrivingAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayDrivingAnim")); }
+			ScriptFunction PlayEnterAnim() { return mPlayEnterAnim ? mPlayEnterAnim : (mPlayEnterAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayEnterAnim")); }
+			ScriptFunction PlayExitAnim() { return mPlayExitAnim ? mPlayExitAnim : (mPlayExitAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayExitAnim")); }
+			ScriptFunction PlayChangeSeatAnim() { return mPlayChangeSeatAnim ? mPlayChangeSeatAnim : (mPlayChangeSeatAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendByVehicle.PlayChangeSeatAnim")); }
+		}
+	}
 	enum EVehicleAnims : ubyte
 	{
 		VANIM_NoVehicle = 0,
@@ -20,22 +41,22 @@ public extern(D):
 final:
 	void PlayNoVehicleAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66474], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayNoVehicleAnim, cast(void*)0, cast(void*)0);
 	}
 	void PlayDrivingAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66475], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDrivingAnim, cast(void*)0, cast(void*)0);
 	}
 	void PlayEnterAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66476], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayEnterAnim, cast(void*)0, cast(void*)0);
 	}
 	void PlayExitAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66477], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayExitAnim, cast(void*)0, cast(void*)0);
 	}
 	void PlayChangeSeatAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66478], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayChangeSeatAnim, cast(void*)0, cast(void*)0);
 	}
 }

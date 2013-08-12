@@ -1,10 +1,13 @@
 module UnrealScript.Engine.SVehicleSimTank;
 
+import ScriptClasses;
 import UnrealScript.Engine.SVehicleSimCar;
 
 extern(C++) interface SVehicleSimTank : SVehicleSimCar
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleSimTank")); }
 	@property final
 	{
 		auto ref

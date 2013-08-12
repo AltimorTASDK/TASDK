@@ -7,10 +7,14 @@ import UnrealScript.Core.DistributionFloat;
 extern(C++) interface SoundNodeDistanceCrossFade : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeDistanceCrossFade")); }
 	struct DistanceDatum
 	{
 		private ubyte __buffer__[76];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundNodeDistanceCrossFade.DistanceDatum")); }
 		@property final auto ref
 		{
 			DistributionFloat.RawDistributionFloat FadeOutDistance() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)&this + 48); }

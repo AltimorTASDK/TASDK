@@ -11,11 +11,62 @@ import UnrealScript.Engine.ReachSpec;
 extern(C++) interface NavigationPoint : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavigationPoint")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mProceedWithMove;
+			ScriptFunction mGetBoundingCylinder;
+			ScriptFunction mGetReachSpecTo;
+			ScriptFunction mIsUsableAnchorFor;
+			ScriptFunction mCanTeleport;
+			ScriptFunction mSpecialCost;
+			ScriptFunction mAccept;
+			ScriptFunction mDetourWeight;
+			ScriptFunction mSuggestMovePreparation;
+			ScriptFunction mGetNearestNavToActor;
+			ScriptFunction mGetNearestNavToPoint;
+			ScriptFunction mGetAllNavInRadius;
+			ScriptFunction mIsOnDifferentNetwork;
+			ScriptFunction mOnToggle;
+			ScriptFunction mShutDown;
+			ScriptFunction mShouldSaveForCheckpoint;
+			ScriptFunction mCreateCheckpointRecord;
+			ScriptFunction mApplyCheckpointRecord;
+			ScriptFunction mGetDebugAbbrev;
+		}
+		public @property static final
+		{
+			ScriptFunction ProceedWithMove() { return mProceedWithMove ? mProceedWithMove : (mProceedWithMove = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ProceedWithMove")); }
+			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetBoundingCylinder")); }
+			ScriptFunction GetReachSpecTo() { return mGetReachSpecTo ? mGetReachSpecTo : (mGetReachSpecTo = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetReachSpecTo")); }
+			ScriptFunction IsUsableAnchorFor() { return mIsUsableAnchorFor ? mIsUsableAnchorFor : (mIsUsableAnchorFor = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.IsUsableAnchorFor")); }
+			ScriptFunction CanTeleport() { return mCanTeleport ? mCanTeleport : (mCanTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.CanTeleport")); }
+			ScriptFunction SpecialCost() { return mSpecialCost ? mSpecialCost : (mSpecialCost = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.SpecialCost")); }
+			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.Accept")); }
+			ScriptFunction DetourWeight() { return mDetourWeight ? mDetourWeight : (mDetourWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.DetourWeight")); }
+			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.SuggestMovePreparation")); }
+			ScriptFunction GetNearestNavToActor() { return mGetNearestNavToActor ? mGetNearestNavToActor : (mGetNearestNavToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetNearestNavToActor")); }
+			ScriptFunction GetNearestNavToPoint() { return mGetNearestNavToPoint ? mGetNearestNavToPoint : (mGetNearestNavToPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetNearestNavToPoint")); }
+			ScriptFunction GetAllNavInRadius() { return mGetAllNavInRadius ? mGetAllNavInRadius : (mGetAllNavInRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetAllNavInRadius")); }
+			ScriptFunction IsOnDifferentNetwork() { return mIsOnDifferentNetwork ? mIsOnDifferentNetwork : (mIsOnDifferentNetwork = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.IsOnDifferentNetwork")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.OnToggle")); }
+			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ShutDown")); }
+			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.ApplyCheckpointRecord")); }
+			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetDebugAbbrev")); }
+		}
+	}
 	enum INFINITE_PATH_COST = 10000000;
 	struct DebugNavCost
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.DebugNavCost")); }
 		@property final auto ref
 		{
 			int Cost() { return *cast(int*)(cast(size_t)&this + 12); }
@@ -26,6 +77,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[49];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.NavigationOctreeObject")); }
 		@property final auto ref
 		{
 			ubyte OwnerType() { return *cast(ubyte*)(cast(size_t)&this + 48); }
@@ -39,6 +92,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavigationPoint.CheckpointRecord")); }
 		@property final
 		{
 			bool bBlocked() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
@@ -145,7 +200,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6203], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProceedWithMove, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void GetBoundingCylinder(float* CollisionRadius, float* CollisionHeight)
@@ -154,7 +209,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = *CollisionRadius;
 		*cast(float*)&params[4] = *CollisionHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9839], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
 	}
@@ -164,7 +219,7 @@ final:
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = Nav;
 		*cast(ScriptClass*)&params[4] = SpecClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9842], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetReachSpecTo, params.ptr, cast(void*)0);
 		return *cast(ReachSpec*)&params[8];
 	}
 	bool IsUsableAnchorFor(Pawn P)
@@ -172,7 +227,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9846], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsUsableAnchorFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CanTeleport(Actor A)
@@ -180,7 +235,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9849], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanTeleport, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	int SpecialCost(Pawn Seeker, ReachSpec Path)
@@ -189,7 +244,7 @@ final:
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Seeker;
 		*cast(ReachSpec*)&params[4] = Path;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9852], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialCost, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	bool Accept(Actor Incoming, Actor Source)
@@ -198,7 +253,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Incoming;
 		*cast(Actor*)&params[4] = Source;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9856], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Accept, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	float DetourWeight(Pawn Other, float PathWeight)
@@ -207,7 +262,7 @@ final:
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
 		*cast(float*)&params[4] = PathWeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9861], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DetourWeight, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	bool SuggestMovePreparation(Pawn Other)
@@ -215,10 +270,10 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9865], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	NavigationPoint GetNearestNavToActor(Actor ChkActor, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList, float MinDist)
+	static NavigationPoint GetNearestNavToActor(Actor ChkActor, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList, float MinDist)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -226,10 +281,10 @@ final:
 		*cast(ScriptClass*)&params[4] = RequiredClass;
 		*cast(ScriptArray!(NavigationPoint)*)&params[8] = ExcludeList;
 		*cast(float*)&params[20] = MinDist;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9872], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetNearestNavToActor, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[24];
 	}
-	NavigationPoint GetNearestNavToPoint(Actor ChkActor, Vector ChkPoint, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList)
+	static NavigationPoint GetNearestNavToPoint(Actor ChkActor, Vector ChkPoint, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -237,10 +292,10 @@ final:
 		*cast(Vector*)&params[4] = ChkPoint;
 		*cast(ScriptClass*)&params[16] = RequiredClass;
 		*cast(ScriptArray!(NavigationPoint)*)&params[20] = ExcludeList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9883], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetNearestNavToPoint, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[32];
 	}
-	bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ScriptArray!(NavigationPoint)* out_NavList, bool bSkipBlocked, int inNetworkID, UObject.Cylinder MinSize)
+	static bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ScriptArray!(NavigationPoint)* out_NavList, bool bSkipBlocked, int inNetworkID, UObject.Cylinder MinSize)
 	{
 		ubyte params[52];
 		params[] = 0;
@@ -251,7 +306,7 @@ final:
 		*cast(bool*)&params[32] = bSkipBlocked;
 		*cast(int*)&params[36] = inNetworkID;
 		*cast(UObject.Cylinder*)&params[40] = MinSize;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9894], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetAllNavInRadius, params.ptr, cast(void*)0);
 		*out_NavList = *cast(ScriptArray!(NavigationPoint)*)&params[20];
 		return *cast(bool*)&params[48];
 	}
@@ -260,7 +315,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = Nav;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9904], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsOnDifferentNetwork, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void OnToggle(SeqAct_Toggle inAction)
@@ -268,17 +323,17 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9907], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void ShutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9909], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldSaveForCheckpoint()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9910], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CreateCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
@@ -286,7 +341,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9912], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	void ApplyCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
@@ -294,14 +349,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9914], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	ScriptString GetDebugAbbrev()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9916], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugAbbrev, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

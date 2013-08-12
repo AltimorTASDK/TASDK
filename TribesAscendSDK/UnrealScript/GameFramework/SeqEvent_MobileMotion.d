@@ -6,6 +6,13 @@ import UnrealScript.GameFramework.SeqEvent_MobileBase;
 extern(C++) interface SeqEvent_MobileMotion : SeqEvent_MobileBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileMotion")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetObjClassVersion;
+		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_MobileMotion.GetObjClassVersion")); }
+	}
 	@property final auto ref
 	{
 		float DeltaYaw() { return *cast(float*)(cast(size_t)cast(void*)this + 276); }
@@ -15,11 +22,11 @@ public extern(D):
 		float Pitch() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }
 		float Roll() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
 	}
-	final int GetObjClassVersion()
+	final static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33048], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

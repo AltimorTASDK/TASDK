@@ -1,10 +1,13 @@
 module UnrealScript.Engine.Level;
 
+import ScriptClasses;
 import UnrealScript.Engine.LevelBase;
 
 extern(C++) interface Level : LevelBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Level")); }
 	@property final auto ref
 	{
 		float LightmapTotalSize() { return *cast(float*)(cast(size_t)cast(void*)this + 360); }

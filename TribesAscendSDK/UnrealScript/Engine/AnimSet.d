@@ -7,10 +7,14 @@ import UnrealScript.Engine.AnimSequence;
 extern(C++) interface AnimSet : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimSet")); }
 	struct AnimSetMeshLinkup
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSet.AnimSetMeshLinkup")); }
 		@property final auto ref ScriptArray!(int) BoneToTrackTable() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 0); }
 	}
 	@property final

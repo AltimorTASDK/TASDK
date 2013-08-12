@@ -1,10 +1,13 @@
 module UnrealScript.Engine.ParticleModuleTrailSpawn;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleTrailBase;
 
 extern(C++) interface ParticleModuleTrailSpawn : ParticleModuleTrailBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTrailSpawn")); }
 	enum ETrail2SpawnMethod : ubyte
 	{
 		PET2SM_Emitter = 0,

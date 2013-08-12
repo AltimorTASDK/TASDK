@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleBeamNoise;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleBeamBase;
 import UnrealScript.Core.DistributionVector;
@@ -7,6 +8,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface ParticleModuleBeamNoise : ParticleModuleBeamBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamNoise")); }
 	@property final
 	{
 		auto ref

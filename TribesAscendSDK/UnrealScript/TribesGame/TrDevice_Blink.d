@@ -6,6 +6,23 @@ import UnrealScript.TribesGame.TrDevice_Pack;
 extern(C++) interface TrDevice_Blink : TrDevice_Pack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Blink")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetBlinkImpulse;
+			ScriptFunction mToggleActivate;
+			ScriptFunction mOnBlink;
+		}
+		public @property static final
+		{
+			ScriptFunction GetBlinkImpulse() { return mGetBlinkImpulse ? mGetBlinkImpulse : (mGetBlinkImpulse = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Blink.GetBlinkImpulse")); }
+			ScriptFunction ToggleActivate() { return mToggleActivate ? mToggleActivate : (mToggleActivate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Blink.ToggleActivate")); }
+			ScriptFunction OnBlink() { return mOnBlink ? mOnBlink : (mOnBlink = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Blink.OnBlink")); }
+		}
+	}
 	@property final auto ref
 	{
 		float m_fMinZImpulse() { return *cast(float*)(cast(size_t)cast(void*)this + 2180); }
@@ -22,18 +39,18 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[76587], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBlinkImpulse, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	void ToggleActivate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[81098], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleActivate, cast(void*)0, cast(void*)0);
 	}
 	void OnBlink(float PercentEffectiveness)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = PercentEffectiveness;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[81101], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBlink, params.ptr, cast(void*)0);
 	}
 }

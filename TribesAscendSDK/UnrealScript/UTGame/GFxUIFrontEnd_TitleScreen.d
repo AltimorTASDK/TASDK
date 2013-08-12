@@ -9,6 +9,29 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxUIFrontEnd_TitleScreen : GFxMoviePlayer
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUIFrontEnd_TitleScreen")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mStart;
+			ScriptFunction mFilterButtonInput;
+			ScriptFunction mOnMenuButtonPress;
+			ScriptFunction mPlayCloseAnimation;
+			ScriptFunction mOnCloseAnimationComplete;
+			ScriptFunction mUT_ConsoleCommand;
+		}
+		public @property static final
+		{
+			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.Start")); }
+			ScriptFunction FilterButtonInput() { return mFilterButtonInput ? mFilterButtonInput : (mFilterButtonInput = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.FilterButtonInput")); }
+			ScriptFunction OnMenuButtonPress() { return mOnMenuButtonPress ? mOnMenuButtonPress : (mOnMenuButtonPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.OnMenuButtonPress")); }
+			ScriptFunction PlayCloseAnimation() { return mPlayCloseAnimation ? mPlayCloseAnimation : (mPlayCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.PlayCloseAnimation")); }
+			ScriptFunction OnCloseAnimationComplete() { return mOnCloseAnimationComplete ? mOnCloseAnimationComplete : (mOnCloseAnimationComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.OnCloseAnimationComplete")); }
+			ScriptFunction UT_ConsoleCommand() { return mUT_ConsoleCommand ? mUT_ConsoleCommand : (mUT_ConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIFrontEnd_TitleScreen.UT_ConsoleCommand")); }
+		}
+	}
 	enum MenuButtonsType : ubyte
 	{
 		MENU_BTN_CAMPAIGN = 0,
@@ -43,7 +66,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = StartPaused;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39129], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool FilterButtonInput(int ControllerId, ScriptName ButtonName, UObject.EInputEvent InputEvent)
@@ -53,7 +76,7 @@ final:
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = ButtonName;
 		*cast(UObject.EInputEvent*)&params[12] = InputEvent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39132], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FilterButtonInput, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void OnMenuButtonPress(GFxClikWidget.EventData ev)
@@ -61,15 +84,15 @@ final:
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39137], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnMenuButtonPress, params.ptr, cast(void*)0);
 	}
 	void PlayCloseAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39139], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCloseAnimation, cast(void*)0, cast(void*)0);
 	}
 	void OnCloseAnimationComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39140], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCloseAnimationComplete, cast(void*)0, cast(void*)0);
 	}
 	void UT_ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
 	{
@@ -77,6 +100,6 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
 		*cast(bool*)&params[12] = bWriteToLog;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39141], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UT_ConsoleCommand, params.ptr, cast(void*)0);
 	}
 }

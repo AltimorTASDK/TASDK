@@ -8,10 +8,29 @@ import UnrealScript.Engine.EmitterPool;
 extern(C++) interface UDKEmitterPool : EmitterPool
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKEmitterPool")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnEmitter;
+			ScriptFunction mOnExplosionLightFinished;
+			ScriptFunction mSpawnExplosionLight;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnEmitter() { return mSpawnEmitter ? mSpawnEmitter : (mSpawnEmitter = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.SpawnEmitter")); }
+			ScriptFunction OnExplosionLightFinished() { return mOnExplosionLightFinished ? mOnExplosionLightFinished : (mOnExplosionLightFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.OnExplosionLightFinished")); }
+			ScriptFunction SpawnExplosionLight() { return mSpawnExplosionLight ? mSpawnExplosionLight : (mSpawnExplosionLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKEmitterPool.SpawnExplosionLight")); }
+		}
+	}
 	struct AttachedExplosionLight
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")); }
 		@property final auto ref
 		{
 			Vector RelativeLocation() { return *cast(Vector*)(cast(size_t)&this + 8); }
@@ -31,7 +50,7 @@ void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator
 		*cast(Rotator*)&params[16] = SpawnRotation;
 		*cast(Actor*)&params[28] = AttachToActor;
 		*cast(bool*)&params[32] = bInheritScaleFromBase;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34795], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitter, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[36];
@@ -45,7 +64,7 @@ void* pLight)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = pLight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34805], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnExplosionLightFinished, params.ptr, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -56,7 +75,7 @@ void* SpawnExplosionLight(ScriptClass LightClass, Vector SpawnLocation, Actor At
 		*cast(ScriptClass*)params.ptr = LightClass;
 		*cast(Vector*)&params[4] = SpawnLocation;
 		*cast(Actor*)&params[16] = AttachToActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34808], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnExplosionLight, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[20];

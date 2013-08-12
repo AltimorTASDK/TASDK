@@ -7,6 +7,25 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface SkelControlLookAt : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlLookAt")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetTargetLocation;
+			ScriptFunction mInterpolateTargetLocation;
+			ScriptFunction mSetLookAtAlpha;
+			ScriptFunction mCanLookAtPoint;
+		}
+		public @property static final
+		{
+			ScriptFunction SetTargetLocation() { return mSetTargetLocation ? mSetTargetLocation : (mSetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.SetTargetLocation")); }
+			ScriptFunction InterpolateTargetLocation() { return mInterpolateTargetLocation ? mInterpolateTargetLocation : (mInterpolateTargetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.InterpolateTargetLocation")); }
+			ScriptFunction SetLookAtAlpha() { return mSetLookAtAlpha ? mSetLookAtAlpha : (mSetLookAtAlpha = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.SetLookAtAlpha")); }
+			ScriptFunction CanLookAtPoint() { return mCanLookAtPoint ? mCanLookAtPoint : (mCanLookAtPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlLookAt.CanLookAtPoint")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -62,14 +81,14 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewTargetLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26395], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTargetLocation, params.ptr, cast(void*)0);
 	}
 	void InterpolateTargetLocation(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26397], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InterpolateTargetLocation, params.ptr, cast(void*)0);
 	}
 	void SetLookAtAlpha(float DesiredAlpha, float DesiredBlendTime)
 	{
@@ -77,7 +96,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = DesiredAlpha;
 		*cast(float*)&params[4] = DesiredBlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26399], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLookAtAlpha, params.ptr, cast(void*)0);
 	}
 	bool CanLookAtPoint(Vector PointLoc, bool bDrawDebugInfo, bool bDebugUsePersistentLines, bool bDebugFlushLinesFirst)
 	{
@@ -87,7 +106,7 @@ final:
 		*cast(bool*)&params[12] = bDrawDebugInfo;
 		*cast(bool*)&params[16] = bDebugUsePersistentLines;
 		*cast(bool*)&params[20] = bDebugFlushLinesFirst;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26402], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanLookAtPoint, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 }

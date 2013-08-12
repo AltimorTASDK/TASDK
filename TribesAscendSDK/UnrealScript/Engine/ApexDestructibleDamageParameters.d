@@ -6,6 +6,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface ApexDestructibleDamageParameters : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleDamageParameters")); }
 	enum EDamageParameterOverrideMode : ubyte
 	{
 		DPOM_Absolute = 0,
@@ -16,6 +18,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ApexDestructibleDamageParameters.DamagePair")); }
 		@property final auto ref
 		{
 			ApexDestructibleDamageParameters.DamageParameters Params() { return *cast(ApexDestructibleDamageParameters.DamageParameters*)(cast(size_t)&this + 8); }
@@ -26,6 +30,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ApexDestructibleDamageParameters.DamageParameters")); }
 		@property final auto ref
 		{
 			float Momentum() { return *cast(float*)(cast(size_t)&this + 12); }

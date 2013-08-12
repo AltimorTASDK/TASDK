@@ -10,6 +10,13 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface SeqEvent_HudRenderImage : SeqEvent_HudRender
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_HudRenderImage")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mRender;
+		public @property static final ScriptFunction Render() { return mRender ? mRender : (mRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRenderImage.Render")); }
+	}
 	@property final auto ref
 	{
 		float VL() { return *cast(float*)(cast(size_t)cast(void*)this + 328); }
@@ -28,6 +35,6 @@ public extern(D):
 		params[] = 0;
 		*cast(Canvas*)params.ptr = TargetCanvas;
 		*cast(HUD*)&params[4] = TargetHud;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Render, params.ptr, cast(void*)0);
 	}
 }

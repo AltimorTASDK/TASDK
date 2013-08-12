@@ -9,10 +9,27 @@ import UnrealScript.Engine.AICommandNodeRoot;
 extern(C++) interface AITree : K2GraphBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AITree")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetActiveRoot;
+			ScriptFunction mEvaluateTree;
+		}
+		public @property static final
+		{
+			ScriptFunction SetActiveRoot() { return mSetActiveRoot ? mSetActiveRoot : (mSetActiveRoot = ScriptObject.Find!(ScriptFunction)("Function Engine.AITree.SetActiveRoot")); }
+			ScriptFunction EvaluateTree() { return mEvaluateTree ? mEvaluateTree : (mEvaluateTree = ScriptObject.Find!(ScriptFunction)("Function Engine.AITree.EvaluateTree")); }
+		}
+	}
 	struct AITreeUtilityInfo
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AITree.AITreeUtilityInfo")); }
 		@property final auto ref
 		{
 			float UtilityRating() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -23,6 +40,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AITree.AITreeHandle")); }
 		@property final auto ref
 		{
 			ScriptArray!(AICommandNodeBase) DisabledNodes() { return *cast(ScriptArray!(AICommandNodeBase)*)(cast(size_t)&this + 12); }
@@ -44,7 +63,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(AITree.AITreeHandle*)&params[8] = *Handle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveRoot, params.ptr, cast(void*)0);
 		*Handle = *cast(AITree.AITreeHandle*)&params[8];
 		return *cast(bool*)&params[56];
 	}
@@ -54,7 +73,7 @@ final:
 		params[] = 0;
 		*cast(AIController*)params.ptr = InAI;
 		*cast(AITree.AITreeHandle*)&params[4] = *Handle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9996], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EvaluateTree, params.ptr, cast(void*)0);
 		*Handle = *cast(AITree.AITreeHandle*)&params[4];
 		return *cast(ScriptArray!(ScriptClass)*)&params[52];
 	}

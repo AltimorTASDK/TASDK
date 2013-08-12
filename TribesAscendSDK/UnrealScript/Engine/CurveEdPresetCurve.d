@@ -6,10 +6,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface CurveEdPresetCurve : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CurveEdPresetCurve")); }
 	struct PresetGeneratedPoint
 	{
 		private ubyte __buffer__[21];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CurveEdPresetCurve.PresetGeneratedPoint")); }
 		@property final
 		{
 			auto ref

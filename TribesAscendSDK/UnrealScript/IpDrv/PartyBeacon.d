@@ -7,6 +7,21 @@ import UnrealScript.Core.UObject;
 extern(C++) interface PartyBeacon : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.PartyBeacon")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnDestroyComplete;
+			ScriptFunction mDestroyBeacon;
+		}
+		public @property static final
+		{
+			ScriptFunction OnDestroyComplete() { return mOnDestroyComplete ? mOnDestroyComplete : (mOnDestroyComplete = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeacon.OnDestroyComplete")); }
+			ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.PartyBeacon.DestroyBeacon")); }
+		}
+	}
 	enum EReservationPacketType : ubyte
 	{
 		RPT_UnknownPacketType = 0,
@@ -37,6 +52,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")); }
 		@property final auto ref
 		{
 			float ElapsedSessionTime() { return *cast(float*)(cast(size_t)&this + 32); }
@@ -51,6 +68,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.PartyBeacon.PartyReservation")); }
 		@property final auto ref
 		{
 			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { return *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)(cast(size_t)&this + 12); }
@@ -79,10 +98,10 @@ public extern(D):
 final:
 	void OnDestroyComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33885], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnDestroyComplete, cast(void*)0, cast(void*)0);
 	}
 	void DestroyBeacon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33909], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyBeacon, cast(void*)0, cast(void*)0);
 	}
 }

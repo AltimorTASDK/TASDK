@@ -8,6 +8,25 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_VideoWindow : GFxTrPage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_VideoWindow")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mFillData;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mFillOption;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoWindow.Initialize")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoWindow.FillData")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoWindow.SpecialAction")); }
+			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_VideoWindow.FillOption")); }
+		}
+	}
 	enum MENU_ACTION_VIDEOWINDOW : ubyte
 	{
 		MAVW_FULLSCREEN = 0,
@@ -19,28 +38,28 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61477], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61479], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61481], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61483], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillOption, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 }

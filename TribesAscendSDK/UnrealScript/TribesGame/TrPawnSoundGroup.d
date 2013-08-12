@@ -8,6 +8,37 @@ import UnrealScript.Engine.Pawn;
 extern(C++) interface TrPawnSoundGroup : UTPawnSoundGroup
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPawnSoundGroup")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayShieldPackActivateSound;
+			ScriptFunction mPlayShieldPackDeactivateSound;
+			ScriptFunction mPlayStealthPackActivateSound;
+			ScriptFunction mPlayStealthPackDeactivateSound;
+			ScriptFunction mPlayJammerPackActivateSound;
+			ScriptFunction mPlayJammerPackDeactivateSound;
+			ScriptFunction mPlayRageActivateSound;
+			ScriptFunction mPlayRageDeactivateSound;
+			ScriptFunction mPlayDyingSound;
+			ScriptFunction mPlayBlinkPackSound;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayShieldPackActivateSound() { return mPlayShieldPackActivateSound ? mPlayShieldPackActivateSound : (mPlayShieldPackActivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayShieldPackActivateSound")); }
+			ScriptFunction PlayShieldPackDeactivateSound() { return mPlayShieldPackDeactivateSound ? mPlayShieldPackDeactivateSound : (mPlayShieldPackDeactivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayShieldPackDeactivateSound")); }
+			ScriptFunction PlayStealthPackActivateSound() { return mPlayStealthPackActivateSound ? mPlayStealthPackActivateSound : (mPlayStealthPackActivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayStealthPackActivateSound")); }
+			ScriptFunction PlayStealthPackDeactivateSound() { return mPlayStealthPackDeactivateSound ? mPlayStealthPackDeactivateSound : (mPlayStealthPackDeactivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayStealthPackDeactivateSound")); }
+			ScriptFunction PlayJammerPackActivateSound() { return mPlayJammerPackActivateSound ? mPlayJammerPackActivateSound : (mPlayJammerPackActivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayJammerPackActivateSound")); }
+			ScriptFunction PlayJammerPackDeactivateSound() { return mPlayJammerPackDeactivateSound ? mPlayJammerPackDeactivateSound : (mPlayJammerPackDeactivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayJammerPackDeactivateSound")); }
+			ScriptFunction PlayRageActivateSound() { return mPlayRageActivateSound ? mPlayRageActivateSound : (mPlayRageActivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayRageActivateSound")); }
+			ScriptFunction PlayRageDeactivateSound() { return mPlayRageDeactivateSound ? mPlayRageDeactivateSound : (mPlayRageDeactivateSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayRageDeactivateSound")); }
+			ScriptFunction PlayDyingSound() { return mPlayDyingSound ? mPlayDyingSound : (mPlayDyingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayDyingSound")); }
+			ScriptFunction PlayBlinkPackSound() { return mPlayBlinkPackSound ? mPlayBlinkPackSound : (mPlayBlinkPackSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawnSoundGroup.PlayBlinkPackSound")); }
+		}
+	}
 	@property final auto ref
 	{
 		SoundCue m_RechargeHealthSound3p() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 184); }
@@ -44,74 +75,74 @@ public extern(D):
 		SoundCue m_JetpackCooldownSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 172); }
 	}
 final:
-	void PlayShieldPackActivateSound(Pawn P)
+	static void PlayShieldPackActivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100645], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayShieldPackActivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayShieldPackDeactivateSound(Pawn P)
+	static void PlayShieldPackDeactivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100647], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayShieldPackDeactivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayStealthPackActivateSound(Pawn P)
+	static void PlayStealthPackActivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100649], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayStealthPackActivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayStealthPackDeactivateSound(Pawn P)
+	static void PlayStealthPackDeactivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100651], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayStealthPackDeactivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayJammerPackActivateSound(Pawn P)
+	static void PlayJammerPackActivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100653], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayJammerPackActivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayJammerPackDeactivateSound(Pawn P)
+	static void PlayJammerPackDeactivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100655], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayJammerPackDeactivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayRageActivateSound(Pawn P)
+	static void PlayRageActivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100657], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayRageActivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayRageDeactivateSound(Pawn P)
+	static void PlayRageDeactivateSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100659], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayRageDeactivateSound, params.ptr, cast(void*)0);
 	}
-	void PlayDyingSound(Pawn P)
+	static void PlayDyingSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100661], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayDyingSound, params.ptr, cast(void*)0);
 	}
-	void PlayBlinkPackSound(Pawn P)
+	static void PlayBlinkPackSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100663], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayBlinkPackSound, params.ptr, cast(void*)0);
 	}
 }

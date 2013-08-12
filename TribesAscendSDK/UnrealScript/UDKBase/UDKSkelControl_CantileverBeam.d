@@ -6,6 +6,13 @@ import UnrealScript.Engine.SkelControlLookAt;
 extern(C++) interface UDKSkelControl_CantileverBeam : SkelControlLookAt
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_CantileverBeam")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mEntireBeamVelocity;
+		public @property static final ScriptFunction EntireBeamVelocity() { return mEntireBeamVelocity ? mEntireBeamVelocity : (mEntireBeamVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_CantileverBeam.EntireBeamVelocity")); }
+	}
 	@property final auto ref
 	{
 		float PercentBeamVelocityTransfer() { return *cast(float*)(cast(size_t)cast(void*)this + 364); }
@@ -19,7 +26,7 @@ public extern(D):
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35332], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EntireBeamVelocity, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 }

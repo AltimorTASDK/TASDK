@@ -6,6 +6,21 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrVGSCommandList : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVGSCommandList")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mGetContextLocationString;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSCommandList.Init")); }
+			ScriptFunction GetContextLocationString() { return mGetContextLocationString ? mGetContextLocationString : (mGetContextLocationString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSCommandList.GetContextLocationString")); }
+		}
+	}
 	enum EVGSContextLocation : ubyte
 	{
 		VGSContext_None = 0,
@@ -195,6 +210,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrVGSCommandList.TrVGSCommand")); }
 		@property final
 		{
 			auto ref
@@ -539,7 +556,7 @@ public extern(D):
 final:
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51398], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetContextLocationString(TrVGSCommandList.EVGSContextLocation Loc, bool bEnemyLocation)
 	{
@@ -547,7 +564,7 @@ final:
 		params[] = 0;
 		*cast(TrVGSCommandList.EVGSContextLocation*)params.ptr = Loc;
 		*cast(bool*)&params[4] = bEnemyLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51399], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetContextLocationString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
 }

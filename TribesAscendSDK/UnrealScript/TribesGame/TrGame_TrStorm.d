@@ -10,10 +10,43 @@ import UnrealScript.TribesGame.TrStormCore;
 extern(C++) interface TrGame_TrStorm : TrGame
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrStorm")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mMissileFired;
+			ScriptFunction mTick;
+			ScriptFunction mExplodeMissile;
+			ScriptFunction mTakeHealthDamage;
+			ScriptFunction mCarrierDestroyed;
+			ScriptFunction mTakeDamageFromCore;
+			ScriptFunction mCheckEndGame;
+			ScriptFunction mEndGame;
+			ScriptFunction mDetermineWinningTeam;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.PostBeginPlay")); }
+			ScriptFunction MissileFired() { return mMissileFired ? mMissileFired : (mMissileFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.MissileFired")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.Tick")); }
+			ScriptFunction ExplodeMissile() { return mExplodeMissile ? mExplodeMissile : (mExplodeMissile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.ExplodeMissile")); }
+			ScriptFunction TakeHealthDamage() { return mTakeHealthDamage ? mTakeHealthDamage : (mTakeHealthDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.TakeHealthDamage")); }
+			ScriptFunction CarrierDestroyed() { return mCarrierDestroyed ? mCarrierDestroyed : (mCarrierDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.CarrierDestroyed")); }
+			ScriptFunction TakeDamageFromCore() { return mTakeDamageFromCore ? mTakeDamageFromCore : (mTakeDamageFromCore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.TakeDamageFromCore")); }
+			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.CheckEndGame")); }
+			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.EndGame")); }
+			ScriptFunction DetermineWinningTeam() { return mDetermineWinningTeam ? mDetermineWinningTeam : (mDetermineWinningTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrStorm.DetermineWinningTeam")); }
+		}
+	}
 	struct Missile
 	{
 		private ubyte __buffer__[9];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGame_TrStorm.Missile")); }
 		@property final auto ref
 		{
 			ubyte TargetTeam() { return *cast(ubyte*)(cast(size_t)&this + 8); }
@@ -25,6 +58,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[9];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrGame_TrStorm.Carrier")); }
 		@property final auto ref
 		{
 			ubyte TeamNum() { return *cast(ubyte*)(cast(size_t)&this + 8); }
@@ -46,7 +81,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90913], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void MissileFired(TrStormControlPoint FiredFrom, float TimeTillExplosion, ubyte TargetTeam)
 	{
@@ -55,21 +90,21 @@ final:
 		*cast(TrStormControlPoint*)params.ptr = FiredFrom;
 		*cast(float*)&params[4] = TimeTillExplosion;
 		params[8] = TargetTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90919], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MissileFired, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90924], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void ExplodeMissile(ubyte TeamNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90927], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExplodeMissile, params.ptr, cast(void*)0);
 	}
 	void TakeHealthDamage(ubyte TeamNum, int DamageAmount)
 	{
@@ -77,14 +112,14 @@ final:
 		params[] = 0;
 		params[0] = TeamNum;
 		*cast(int*)&params[4] = DamageAmount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90936], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeHealthDamage, params.ptr, cast(void*)0);
 	}
 	void CarrierDestroyed(ubyte TeamNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90940], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CarrierDestroyed, params.ptr, cast(void*)0);
 	}
 	void TakeDamageFromCore(ubyte TeamNum, int DamageAmount)
 	{
@@ -92,7 +127,7 @@ final:
 		params[] = 0;
 		params[0] = TeamNum;
 		*cast(int*)&params[4] = DamageAmount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90942], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamageFromCore, params.ptr, cast(void*)0);
 	}
 	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
@@ -100,7 +135,7 @@ final:
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90962], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckEndGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void EndGame(PlayerReplicationInfo Winner, ScriptString Reason)
@@ -109,13 +144,13 @@ final:
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90968], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndGame, params.ptr, cast(void*)0);
 	}
 	int DetermineWinningTeam()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90971], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DetermineWinningTeam, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

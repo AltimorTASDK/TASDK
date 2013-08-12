@@ -6,6 +6,21 @@ import UnrealScript.Core.UObject;
 extern(C++) interface NavMeshPathConstraint : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPathConstraint")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRecycle;
+			ScriptFunction mGetDumpString;
+		}
+		public @property static final
+		{
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathConstraint.Recycle")); }
+			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathConstraint.GetDumpString")); }
+		}
+	}
 	@property final auto ref
 	{
 		float AddedHeuristicCost() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }
@@ -17,13 +32,13 @@ public extern(D):
 final:
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21046], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetDumpString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21047], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDumpString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleAttractorBase;
 extern(C++) interface ParticleModuleAttractorParticle : ParticleModuleAttractorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorParticle")); }
 	enum EAttractorParticleSelectionMethod : ubyte
 	{
 		EAPSM_Random = 0,

@@ -6,6 +6,8 @@ import UnrealScript.Engine.AnimMetaData;
 extern(C++) interface AnimMetaData_SkelControl : AnimMetaData
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimMetaData_SkelControl")); }
 	@property final
 	{
 		auto ref

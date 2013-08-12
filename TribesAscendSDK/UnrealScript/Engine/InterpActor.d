@@ -11,10 +11,55 @@ import UnrealScript.Engine.InterpGroupInst;
 extern(C++) interface InterpActor : DynamicSMActor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mSetShadowParentOnAllAttachedComponents;
+			ScriptFunction mEncroachingOn;
+			ScriptFunction mRanInto;
+			ScriptFunction mAttach;
+			ScriptFunction mDetach;
+			ScriptFunction mRestart;
+			ScriptFunction mFinishedOpen;
+			ScriptFunction mPlayMovingSound;
+			ScriptFunction mInterpolationStarted;
+			ScriptFunction mInterpolationFinished;
+			ScriptFunction mInterpolationChanged;
+			ScriptFunction mShutDown;
+			ScriptFunction mShouldSaveForCheckpoint;
+			ScriptFunction mCreateCheckpointRecord;
+			ScriptFunction mApplyCheckpointRecord;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.PostBeginPlay")); }
+			ScriptFunction SetShadowParentOnAllAttachedComponents() { return mSetShadowParentOnAllAttachedComponents ? mSetShadowParentOnAllAttachedComponents : (mSetShadowParentOnAllAttachedComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.SetShadowParentOnAllAttachedComponents")); }
+			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.EncroachingOn")); }
+			ScriptFunction RanInto() { return mRanInto ? mRanInto : (mRanInto = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.RanInto")); }
+			ScriptFunction Attach() { return mAttach ? mAttach : (mAttach = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Attach")); }
+			ScriptFunction Detach() { return mDetach ? mDetach : (mDetach = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Detach")); }
+			ScriptFunction Restart() { return mRestart ? mRestart : (mRestart = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.Restart")); }
+			ScriptFunction FinishedOpen() { return mFinishedOpen ? mFinishedOpen : (mFinishedOpen = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.FinishedOpen")); }
+			ScriptFunction PlayMovingSound() { return mPlayMovingSound ? mPlayMovingSound : (mPlayMovingSound = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.PlayMovingSound")); }
+			ScriptFunction InterpolationStarted() { return mInterpolationStarted ? mInterpolationStarted : (mInterpolationStarted = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationStarted")); }
+			ScriptFunction InterpolationFinished() { return mInterpolationFinished ? mInterpolationFinished : (mInterpolationFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationFinished")); }
+			ScriptFunction InterpolationChanged() { return mInterpolationChanged ? mInterpolationChanged : (mInterpolationChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.InterpolationChanged")); }
+			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ShutDown")); }
+			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.InterpActor.ApplyCheckpointRecord")); }
+		}
+	}
 	struct CheckpointRecord
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpActor.CheckpointRecord")); }
 		@property final
 		{
 			auto ref
@@ -65,18 +110,18 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18379], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void SetShadowParentOnAllAttachedComponents()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18380], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetShadowParentOnAllAttachedComponents, cast(void*)0, cast(void*)0);
 	}
 	bool EncroachingOn(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18381], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachingOn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void RanInto(Actor Other)
@@ -84,36 +129,36 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18395], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RanInto, params.ptr, cast(void*)0);
 	}
 	void Attach(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18399], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Attach, params.ptr, cast(void*)0);
 	}
 	void Detach(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18403], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Detach, params.ptr, cast(void*)0);
 	}
 	void Restart()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18407], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Restart, cast(void*)0, cast(void*)0);
 	}
 	void FinishedOpen()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18409], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FinishedOpen, cast(void*)0, cast(void*)0);
 	}
 	void PlayMovingSound(bool bClosing)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bClosing;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18412], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayMovingSound, params.ptr, cast(void*)0);
 	}
 	void InterpolationStarted(SeqAct_Interp InterpAction, InterpGroupInst GroupInst)
 	{
@@ -121,31 +166,31 @@ final:
 		params[] = 0;
 		*cast(SeqAct_Interp*)params.ptr = InterpAction;
 		*cast(InterpGroupInst*)&params[4] = GroupInst;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18416], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InterpolationStarted, params.ptr, cast(void*)0);
 	}
 	void InterpolationFinished(SeqAct_Interp InterpAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Interp*)params.ptr = InterpAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18420], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InterpolationFinished, params.ptr, cast(void*)0);
 	}
 	void InterpolationChanged(SeqAct_Interp InterpAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Interp*)params.ptr = InterpAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18427], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InterpolationChanged, params.ptr, cast(void*)0);
 	}
 	void ShutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18429], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldSaveForCheckpoint()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CreateCheckpointRecord(InterpActor.CheckpointRecord* Record)
@@ -153,7 +198,7 @@ final:
 		ubyte params[32];
 		params[] = 0;
 		*cast(InterpActor.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}
 	void ApplyCheckpointRecord(InterpActor.CheckpointRecord* Record)
@@ -161,7 +206,7 @@ final:
 		ubyte params[32];
 		params[] = 0;
 		*cast(InterpActor.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18434], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}
 }

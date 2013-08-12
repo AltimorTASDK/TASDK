@@ -10,6 +10,25 @@ import UnrealScript.GameFramework.GameAICommand;
 extern(C++) interface GameAICmd_Hover_MoveToGoal : GameAICommand
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAICmd_Hover_MoveToGoal")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mMoveToGoal;
+			ScriptFunction mPushed;
+			ScriptFunction mHandlePathObstruction;
+			ScriptFunction mIsEnemyBasedOnInterpActor;
+		}
+		public @property static final
+		{
+			ScriptFunction MoveToGoal() { return mMoveToGoal ? mMoveToGoal : (mMoveToGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal.MoveToGoal")); }
+			ScriptFunction Pushed() { return mPushed ? mPushed : (mPushed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal.Pushed")); }
+			ScriptFunction HandlePathObstruction() { return mHandlePathObstruction ? mHandlePathObstruction : (mHandlePathObstruction = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal.HandlePathObstruction")); }
+			ScriptFunction IsEnemyBasedOnInterpActor() { return mIsEnemyBasedOnInterpActor ? mIsEnemyBasedOnInterpActor : (mIsEnemyBasedOnInterpActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAICmd_Hover_MoveToGoal.IsEnemyBasedOnInterpActor")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -29,7 +48,7 @@ public extern(D):
 		bool bWasFiring(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 104) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 104) &= ~0x1; } return val; }
 	}
 final:
-	bool MoveToGoal(GameAIController AI, Actor InGoal, float InGoalDistance, float InHoverHeight)
+	static bool MoveToGoal(GameAIController AI, Actor InGoal, float InGoalDistance, float InHoverHeight)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -37,19 +56,19 @@ final:
 		*cast(Actor*)&params[4] = InGoal;
 		*cast(float*)&params[8] = InGoalDistance;
 		*cast(float*)&params[12] = InHoverHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30644], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.MoveToGoal, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void Pushed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30651], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Pushed, cast(void*)0, cast(void*)0);
 	}
 	bool HandlePathObstruction(Actor BlockedBy)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = BlockedBy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30652], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePathObstruction, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsEnemyBasedOnInterpActor(Pawn InEnemy)
@@ -57,7 +76,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = InEnemy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30674], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEnemyBasedOnInterpActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

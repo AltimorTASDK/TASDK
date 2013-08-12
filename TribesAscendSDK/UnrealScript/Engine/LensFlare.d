@@ -13,10 +13,14 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface LensFlare : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlare")); }
 	struct LensFlareElement
 	{
 		private ubyte __buffer__[324];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LensFlare.LensFlareElement")); }
 		@property final
 		{
 			auto ref
@@ -52,6 +56,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LensFlare.LensFlareElementCurvePair")); }
 		@property final auto ref
 		{
 			UObject CurveObject() { return *cast(UObject*)(cast(size_t)&this + 12); }

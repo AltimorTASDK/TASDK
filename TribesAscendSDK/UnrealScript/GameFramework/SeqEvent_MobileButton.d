@@ -1,10 +1,13 @@
 module UnrealScript.GameFramework.SeqEvent_MobileButton;
 
+import ScriptClasses;
 import UnrealScript.GameFramework.SeqEvent_MobileZoneBase;
 
 extern(C++) interface SeqEvent_MobileButton : SeqEvent_MobileZoneBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileButton")); }
 	@property final
 	{
 		bool bSendPressedOnlyOnTouchUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x4) != 0; }

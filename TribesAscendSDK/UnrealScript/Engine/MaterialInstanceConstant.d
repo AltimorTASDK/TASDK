@@ -10,10 +10,35 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface MaterialInstanceConstant : MaterialInstance
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstanceConstant")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetParent;
+			ScriptFunction mSetScalarParameterValue;
+			ScriptFunction mSetTextureParameterValue;
+			ScriptFunction mSetVectorParameterValue;
+			ScriptFunction mSetFontParameterValue;
+			ScriptFunction mClearParameterValues;
+		}
+		public @property static final
+		{
+			ScriptFunction SetParent() { return mSetParent ? mSetParent : (mSetParent = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.SetParent")); }
+			ScriptFunction SetScalarParameterValue() { return mSetScalarParameterValue ? mSetScalarParameterValue : (mSetScalarParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.SetScalarParameterValue")); }
+			ScriptFunction SetTextureParameterValue() { return mSetTextureParameterValue ? mSetTextureParameterValue : (mSetTextureParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.SetTextureParameterValue")); }
+			ScriptFunction SetVectorParameterValue() { return mSetVectorParameterValue ? mSetVectorParameterValue : (mSetVectorParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.SetVectorParameterValue")); }
+			ScriptFunction SetFontParameterValue() { return mSetFontParameterValue ? mSetFontParameterValue : (mSetFontParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.SetFontParameterValue")); }
+			ScriptFunction ClearParameterValues() { return mClearParameterValues ? mClearParameterValues : (mClearParameterValues = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstanceConstant.ClearParameterValues")); }
+		}
+	}
 	struct FontParameterValue
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceConstant.FontParameterValue")); }
 		@property final auto ref
 		{
 			UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 16); }
@@ -26,6 +51,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceConstant.ScalarParameterValue")); }
 		@property final auto ref
 		{
 			UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 12); }
@@ -37,6 +64,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceConstant.TextureParameterValue")); }
 		@property final auto ref
 		{
 			UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 12); }
@@ -48,6 +77,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInstanceConstant.VectorParameterValue")); }
 		@property final auto ref
 		{
 			UObject.Guid ExpressionGUID() { return *cast(UObject.Guid*)(cast(size_t)&this + 24); }
@@ -68,7 +99,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = NewParent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19836], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetParent, params.ptr, cast(void*)0);
 	}
 	void SetScalarParameterValue(ScriptName ParameterName, float Value)
 	{
@@ -76,7 +107,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(float*)&params[8] = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19838], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterValue, params.ptr, cast(void*)0);
 	}
 	void SetTextureParameterValue(ScriptName ParameterName, Texture Value)
 	{
@@ -84,7 +115,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Texture*)&params[8] = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19841], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTextureParameterValue, params.ptr, cast(void*)0);
 	}
 	void SetVectorParameterValue(ScriptName ParameterName, UObject.LinearColor* Value)
 	{
@@ -92,7 +123,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.LinearColor*)&params[8] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19844], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
 	void SetFontParameterValue(ScriptName ParameterName, Font FontValue, int FontPage)
@@ -102,10 +133,10 @@ final:
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Font*)&params[8] = FontValue;
 		*cast(int*)&params[12] = FontPage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19847], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFontParameterValue, params.ptr, cast(void*)0);
 	}
 	void ClearParameterValues()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19851], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearParameterValues, cast(void*)0, cast(void*)0);
 	}
 }

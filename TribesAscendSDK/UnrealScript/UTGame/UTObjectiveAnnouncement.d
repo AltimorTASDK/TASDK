@@ -11,28 +11,45 @@ import UnrealScript.UTGame.UTQueuedAnnouncement;
 extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTObjectiveAnnouncement")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetObjectiveAnnouncement;
+			ScriptFunction mShouldBeRemoved;
+			ScriptFunction mSetHUDDisplay;
+		}
+		public @property static final
+		{
+			ScriptFunction GetObjectiveAnnouncement() { return mGetObjectiveAnnouncement ? mGetObjectiveAnnouncement : (mGetObjectiveAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.GetObjectiveAnnouncement")); }
+			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.ShouldBeRemoved")); }
+			ScriptFunction SetHUDDisplay() { return mSetHUDDisplay ? mSetHUDDisplay : (mSetHUDDisplay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTObjectiveAnnouncement.SetHUDDisplay")); }
+		}
+	}
 final:
-	UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
+	static UDKPlayerController.ObjectiveAnnouncementInfo GetObjectiveAnnouncement(ubyte MessageIndex, UObject Objective, PlayerController PC)
 	{
 		ubyte params[28];
 		params[] = 0;
 		params[0] = MessageIndex;
 		*cast(UObject*)&params[4] = Objective;
 		*cast(PlayerController*)&params[8] = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48650], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjectiveAnnouncement, params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController.ObjectiveAnnouncementInfo*)&params[12];
 	}
-	bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
+	static bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTQueuedAnnouncement*)params.ptr = MyAnnouncement;
 		*cast(ScriptClass*)&params[4] = NewAnnouncementClass;
 		*cast(int*)&params[8] = NewMessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48660], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ShouldBeRemoved, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void SetHUDDisplay(PlayerController P, int Switch, ScriptString Text, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -42,6 +59,6 @@ final:
 		*cast(PlayerReplicationInfo*)&params[20] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[24] = RelatedPRI_2;
 		*cast(UObject*)&params[28] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48665], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetHUDDisplay, params.ptr, cast(void*)0);
 	}
 }

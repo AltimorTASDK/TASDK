@@ -7,6 +7,21 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_Latent : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Latent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAbortFor;
+			ScriptFunction mUpdate;
+		}
+		public @property static final
+		{
+			ScriptFunction AbortFor() { return mAbortFor ? mAbortFor : (mAbortFor = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Latent.AbortFor")); }
+			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Latent.Update")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref ScriptArray!(Actor) LatentActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 232); }
@@ -19,14 +34,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = latentActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25540], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AbortFor, params.ptr, cast(void*)0);
 	}
 	bool Update(float DeltaTime)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25542], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Update, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

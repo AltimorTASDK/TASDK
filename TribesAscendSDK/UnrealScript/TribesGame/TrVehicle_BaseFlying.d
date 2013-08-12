@@ -7,10 +7,31 @@ import UnrealScript.TribesGame.TrVehicle;
 extern(C++) interface TrVehicle_BaseFlying : TrVehicle
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicle_BaseFlying")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mCreateParticleSystems;
+			ScriptFunction mSetInputs;
+			ScriptFunction mVehicleCalcCamera;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_BaseFlying.PostBeginPlay")); }
+			ScriptFunction CreateParticleSystems() { return mCreateParticleSystems ? mCreateParticleSystems : (mCreateParticleSystems = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_BaseFlying.CreateParticleSystems")); }
+			ScriptFunction SetInputs() { return mSetInputs ? mSetInputs : (mSetInputs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_BaseFlying.SetInputs")); }
+			ScriptFunction VehicleCalcCamera() { return mVehicleCalcCamera ? mVehicleCalcCamera : (mVehicleCalcCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicle_BaseFlying.VehicleCalcCamera")); }
+		}
+	}
 	struct FlyingParticleEffects
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrVehicle_BaseFlying.FlyingParticleEffects")); }
 		@property final
 		{
 			auto ref
@@ -44,11 +65,11 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[114668], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void CreateParticleSystems()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[114669], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateParticleSystems, cast(void*)0, cast(void*)0);
 	}
 	void SetInputs(float InForward, float InStrafe, float InUp)
 	{
@@ -57,7 +78,7 @@ final:
 		*cast(float*)params.ptr = InForward;
 		*cast(float*)&params[4] = InStrafe;
 		*cast(float*)&params[8] = InUp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[114671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInputs, params.ptr, cast(void*)0);
 	}
 	void VehicleCalcCamera(float DeltaTime, int SeatIndex, Vector* out_CamLoc, Rotator* out_CamRot, Vector* CamStart, bool bPivotOnly)
 	{
@@ -69,7 +90,7 @@ final:
 		*cast(Rotator*)&params[20] = *out_CamRot;
 		*cast(Vector*)&params[32] = *CamStart;
 		*cast(bool*)&params[44] = bPivotOnly;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[114675], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VehicleCalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[8];
 		*out_CamRot = *cast(Rotator*)&params[20];
 		*CamStart = *cast(Vector*)&params[32];

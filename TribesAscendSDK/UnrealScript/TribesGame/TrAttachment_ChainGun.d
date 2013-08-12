@@ -7,6 +7,21 @@ import UnrealScript.TribesGame.TrDeviceAttachment;
 extern(C++) interface TrAttachment_ChainGun : TrDeviceAttachment
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_ChainGun")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mThirdPersonFireEffects;
+		}
+		public @property static final
+		{
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_ChainGun.PostInitAnimTree")); }
+			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_ChainGun.ThirdPersonFireEffects")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -30,13 +45,13 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68253], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void ThirdPersonFireEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68262], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThirdPersonFireEffects, params.ptr, cast(void*)0);
 	}
 }

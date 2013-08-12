@@ -1,10 +1,13 @@
 module UnrealScript.Engine.TextureRenderTarget;
 
+import ScriptClasses;
 import UnrealScript.Engine.Texture;
 
 extern(C++) interface TextureRenderTarget : Texture
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureRenderTarget")); }
 	@property final
 	{
 		@property final auto ref float TargetGamma() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }

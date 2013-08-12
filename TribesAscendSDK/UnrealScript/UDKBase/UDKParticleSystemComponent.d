@@ -6,6 +6,13 @@ import UnrealScript.Engine.ParticleSystemComponent;
 extern(C++) interface UDKParticleSystemComponent : ParticleSystemComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKParticleSystemComponent")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetFOV;
+		public @property static final ScriptFunction SetFOV() { return mSetFOV ? mSetFOV : (mSetFOV = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKParticleSystemComponent.SetFOV")); }
+	}
 	@property final
 	{
 		auto ref
@@ -21,6 +28,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewFOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35020], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFOV, params.ptr, cast(void*)0);
 	}
 }

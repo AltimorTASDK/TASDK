@@ -8,6 +8,25 @@ import UnrealScript.TribesGame.TrPlayerController;
 extern(C++) interface TrAnnouncer : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnnouncer")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDestroyed;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPlayAnnouncement;
+			ScriptFunction mAnnouncementFinished;
+		}
+		public @property static final
+		{
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnnouncer.Destroyed")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnnouncer.PostBeginPlay")); }
+			ScriptFunction PlayAnnouncement() { return mPlayAnnouncement ? mPlayAnnouncement : (mPlayAnnouncement = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnnouncer.PlayAnnouncement")); }
+			ScriptFunction AnnouncementFinished() { return mAnnouncementFinished ? mAnnouncementFinished : (mAnnouncementFinished = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnnouncer.AnnouncementFinished")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(SoundCue) m_QueuedAnnouncements() { return *cast(ScriptArray!(SoundCue)*)(cast(size_t)cast(void*)this + 476); }
@@ -16,11 +35,11 @@ public extern(D):
 final:
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66546], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66547], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PlayAnnouncement(SoundCue AnnouncementCue, bool bPlayRightNow)
 	{
@@ -28,7 +47,7 @@ final:
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = AnnouncementCue;
 		*cast(bool*)&params[4] = bPlayRightNow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66548], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnnouncement, params.ptr, cast(void*)0);
 	}
 	void AnnouncementFinished(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -39,6 +58,6 @@ void* AC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = AC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66551], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AnnouncementFinished, params.ptr, cast(void*)0);
 	}
 }

@@ -7,6 +7,21 @@ import UnrealScript.TribesGame.TrDevice;
 extern(C++) interface TrDevice_AmmoPack : TrDevice_Pack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_AmmoPack")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAddAmmoBuff;
+			ScriptFunction mApplyAmmoBuff;
+		}
+		public @property static final
+		{
+			ScriptFunction AddAmmoBuff() { return mAddAmmoBuff ? mAddAmmoBuff : (mAddAmmoBuff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AmmoPack.AddAmmoBuff")); }
+			ScriptFunction ApplyAmmoBuff() { return mApplyAmmoBuff ? mApplyAmmoBuff : (mApplyAmmoBuff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_AmmoPack.ApplyAmmoBuff")); }
+		}
+	}
 	@property final auto ref
 	{
 		int m_nAmmoPackMultBelt() { return *cast(int*)(cast(size_t)cast(void*)this + 2176); }
@@ -20,10 +35,10 @@ final:
 		params[] = 0;
 		*cast(TrDevice*)params.ptr = Dev;
 		*cast(float*)&params[4] = Mult;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80717], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddAmmoBuff, params.ptr, cast(void*)0);
 	}
 	void ApplyAmmoBuff()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[80720], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyAmmoBuff, cast(void*)0, cast(void*)0);
 	}
 }

@@ -6,6 +6,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface FontImportOptions : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FontImportOptions")); }
 	enum EFontImportCharacterSet : ubyte
 	{
 		FontICS_Default = 0,
@@ -17,6 +19,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[148];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.FontImportOptions.FontImportOptionsData")); }
 		@property final
 		{
 			auto ref

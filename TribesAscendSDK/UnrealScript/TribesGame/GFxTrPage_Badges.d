@@ -8,6 +8,53 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_Badges : GFxTrPage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Badges")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mTakeAction;
+			ScriptFunction mShowModel;
+			ScriptFunction mTakeFocus;
+			ScriptFunction mFillData;
+			ScriptFunction mFillProfile;
+			ScriptFunction mFillCombatType;
+			ScriptFunction mFillObjectiveType;
+			ScriptFunction mFillVehicleType;
+			ScriptFunction mFillTacticalType;
+			ScriptFunction mFillSingleType;
+			ScriptFunction mFillReferralType;
+			ScriptFunction mFillBadge;
+			ScriptFunction mGetHighestBadgeIndex;
+			ScriptFunction mGetHighestSkiBadgeIndex;
+			ScriptFunction mProfileUp;
+			ScriptFunction mProfileDown;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.Initialize")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.SpecialAction")); }
+			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.TakeAction")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ShowModel")); }
+			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.TakeFocus")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillData")); }
+			ScriptFunction FillProfile() { return mFillProfile ? mFillProfile : (mFillProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillProfile")); }
+			ScriptFunction FillCombatType() { return mFillCombatType ? mFillCombatType : (mFillCombatType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillCombatType")); }
+			ScriptFunction FillObjectiveType() { return mFillObjectiveType ? mFillObjectiveType : (mFillObjectiveType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillObjectiveType")); }
+			ScriptFunction FillVehicleType() { return mFillVehicleType ? mFillVehicleType : (mFillVehicleType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillVehicleType")); }
+			ScriptFunction FillTacticalType() { return mFillTacticalType ? mFillTacticalType : (mFillTacticalType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillTacticalType")); }
+			ScriptFunction FillSingleType() { return mFillSingleType ? mFillSingleType : (mFillSingleType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillSingleType")); }
+			ScriptFunction FillReferralType() { return mFillReferralType ? mFillReferralType : (mFillReferralType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillReferralType")); }
+			ScriptFunction FillBadge() { return mFillBadge ? mFillBadge : (mFillBadge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.FillBadge")); }
+			ScriptFunction GetHighestBadgeIndex() { return mGetHighestBadgeIndex ? mGetHighestBadgeIndex : (mGetHighestBadgeIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.GetHighestBadgeIndex")); }
+			ScriptFunction GetHighestSkiBadgeIndex() { return mGetHighestSkiBadgeIndex ? mGetHighestSkiBadgeIndex : (mGetHighestSkiBadgeIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.GetHighestSkiBadgeIndex")); }
+			ScriptFunction ProfileUp() { return mProfileUp ? mProfileUp : (mProfileUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ProfileUp")); }
+			ScriptFunction ProfileDown() { return mProfileDown ? mProfileDown : (mProfileDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Badges.ProfileDown")); }
+		}
+	}
 	enum
 	{
 		STAT_GAME_MAP = 200001,
@@ -286,14 +333,14 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57494], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57495], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
@@ -301,12 +348,12 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57497], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57501], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
@@ -314,7 +361,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57503], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFocus, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void FillData(GFxObject DataList)
@@ -322,13 +369,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57507], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	GFxObject FillProfile()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57510], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillProfile, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
 	void FillCombatType(GFxObject Obj)
@@ -336,42 +383,42 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57515], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillCombatType, params.ptr, cast(void*)0);
 	}
 	void FillObjectiveType(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57520], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillObjectiveType, params.ptr, cast(void*)0);
 	}
 	void FillVehicleType(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57525], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillVehicleType, params.ptr, cast(void*)0);
 	}
 	void FillTacticalType(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57530], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillTacticalType, params.ptr, cast(void*)0);
 	}
 	void FillSingleType(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57535], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillSingleType, params.ptr, cast(void*)0);
 	}
 	void FillReferralType(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57540], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillReferralType, params.ptr, cast(void*)0);
 	}
 	void FillBadge(GFxObject Obj, int Count, int badgeIndex, bool bSkiBadge, bool bSingle, bool bReferralBadge)
 	{
@@ -383,21 +430,21 @@ final:
 		*cast(bool*)&params[12] = bSkiBadge;
 		*cast(bool*)&params[16] = bSingle;
 		*cast(bool*)&params[20] = bReferralBadge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57546], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillBadge, params.ptr, cast(void*)0);
 	}
 	int GetHighestBadgeIndex(int ActivityId)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ActivityId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57557], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHighestBadgeIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	int GetHighestSkiBadgeIndex()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57564], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHighestSkiBadgeIndex, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void ProfileUp(int ActionIndex)
@@ -405,13 +452,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57569], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProfileUp, params.ptr, cast(void*)0);
 	}
 	void ProfileDown(int ActionIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57571], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProfileDown, params.ptr, cast(void*)0);
 	}
 }

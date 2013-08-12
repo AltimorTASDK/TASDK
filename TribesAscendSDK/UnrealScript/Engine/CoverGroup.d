@@ -8,6 +8,25 @@ import UnrealScript.Engine.Info;
 extern(C++) interface CoverGroup : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverGroup")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mEnableGroup;
+			ScriptFunction mDisableGroup;
+			ScriptFunction mToggleGroup;
+			ScriptFunction mOnToggle;
+		}
+		public @property static final
+		{
+			ScriptFunction EnableGroup() { return mEnableGroup ? mEnableGroup : (mEnableGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.EnableGroup")); }
+			ScriptFunction DisableGroup() { return mDisableGroup ? mDisableGroup : (mDisableGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.DisableGroup")); }
+			ScriptFunction ToggleGroup() { return mToggleGroup ? mToggleGroup : (mToggleGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.ToggleGroup")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverGroup.OnToggle")); }
+		}
+	}
 	enum ECoverGroupFillAction : ubyte
 	{
 		CGFA_Overwrite = 0,
@@ -26,21 +45,21 @@ public extern(D):
 final:
 	void EnableGroup()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13102], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableGroup, cast(void*)0, cast(void*)0);
 	}
 	void DisableGroup()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13103], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableGroup, cast(void*)0, cast(void*)0);
 	}
 	void ToggleGroup()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13104], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleGroup, cast(void*)0, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13105], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 }

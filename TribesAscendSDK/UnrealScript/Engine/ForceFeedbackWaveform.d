@@ -6,6 +6,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface ForceFeedbackWaveform : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFeedbackWaveform")); }
 	enum EWaveformFunction : ubyte
 	{
 		WF_Constant = 0,
@@ -21,6 +23,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ForceFeedbackWaveform.WaveformSample")); }
 		@property final auto ref
 		{
 			float Duration() { return *cast(float*)(cast(size_t)&this + 4); }

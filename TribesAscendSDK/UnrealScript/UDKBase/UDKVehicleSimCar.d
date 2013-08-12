@@ -1,11 +1,14 @@
 module UnrealScript.UDKBase.UDKVehicleSimCar;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SVehicleSimCar;
 
 extern(C++) interface UDKVehicleSimCar : SVehicleSimCar
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimCar")); }
 	@property final
 	{
 		auto ref

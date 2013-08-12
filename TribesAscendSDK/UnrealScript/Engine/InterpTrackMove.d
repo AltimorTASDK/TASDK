@@ -7,6 +7,8 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackMove : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackMove")); }
 	enum EInterpTrackMoveRotMode : ubyte
 	{
 		IMR_Keyframed = 0,
@@ -24,12 +26,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackMove.InterpLookupTrack")); }
 		@property final auto ref ScriptArray!(InterpTrackMove.InterpLookupPoint) Points() { return *cast(ScriptArray!(InterpTrackMove.InterpLookupPoint)*)(cast(size_t)&this + 0); }
 	}
 	struct InterpLookupPoint
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackMove.InterpLookupPoint")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 8); }

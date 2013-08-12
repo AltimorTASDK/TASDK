@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SkelControlSpline;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SkelControlBase;
 
 extern(C++) interface SkelControlSpline : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlSpline")); }
 	enum ESplineControlRotMode : ubyte
 	{
 		SCR_NoChange = 0,

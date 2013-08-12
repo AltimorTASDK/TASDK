@@ -6,10 +6,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface KMeshProps : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KMeshProps")); }
 	struct KSphereElem
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.KMeshProps.KSphereElem")); }
 		@property final
 		{
 			auto ref
@@ -27,6 +31,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.KMeshProps.KBoxElem")); }
 		@property final
 		{
 			auto ref
@@ -46,6 +52,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[76];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.KMeshProps.KSphylElem")); }
 		@property final
 		{
 			auto ref
@@ -64,6 +72,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[100];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.KMeshProps.KConvexElem")); }
 		@property final auto ref
 		{
 			ScriptArray!(Vector) VertexData() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 0); }
@@ -79,6 +89,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.KMeshProps.KAggregateGeom")); }
 		@property final
 		{
 			auto ref

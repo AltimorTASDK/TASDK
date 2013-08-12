@@ -8,10 +8,19 @@ import UnrealScript.Engine.ParticleSystem;
 extern(C++) interface TrMainMenuMeshInfo : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMainMenuMeshInfo")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPreloadTextures;
+		public @property static final ScriptFunction PreloadTextures() { return mPreloadTextures ? mPreloadTextures : (mPreloadTextures = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMainMenuMeshInfo.PreloadTextures")); }
+	}
 	struct ParticleSystemInfo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrMainMenuMeshInfo.ParticleSystemInfo")); }
 		@property final auto ref
 		{
 			ScriptName SocketName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }
@@ -30,6 +39,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = ForceDuration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98700], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreloadTextures, params.ptr, cast(void*)0);
 	}
 }

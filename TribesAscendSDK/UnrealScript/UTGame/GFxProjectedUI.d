@@ -9,10 +9,85 @@ import UnrealScript.GFxUI.GFxClikWidget;
 extern(C++) interface GFxProjectedUI : UTGFxTweenableMoviePlayer
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxProjectedUI")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mStart;
+			ScriptFunction mConfigureInventory;
+			ScriptFunction mAddCaptureKeys;
+			ScriptFunction mStartCloseAnimation;
+			ScriptFunction mOnCloseAnimComplete;
+			ScriptFunction mSetupBG;
+			ScriptFunction mSetupBorder;
+			ScriptFunction mSetupArsenal;
+			ScriptFunction mSetupBackpack;
+			ScriptFunction mSetupInfo;
+			ScriptFunction mPopulateBackpackFake;
+			ScriptFunction mSetupArsenalButtons;
+			ScriptFunction mSetupBackpackButtons;
+			ScriptFunction mSwitchWeapon;
+			ScriptFunction mOnFocusInSelection;
+			ScriptFunction mOnFocusOutSelection;
+			ScriptFunction mOnClickWeaponButton;
+			ScriptFunction mOnFocusUpdateInfo;
+			ScriptFunction mOnFocusArsenalTab;
+			ScriptFunction mOnFocusBackpackTab;
+			ScriptFunction mOnClickFakeItem;
+			ScriptFunction mSetInfo;
+			ScriptFunction mPopulateArsenal;
+			ScriptFunction mFakeUpdateEquippedWeapon;
+			ScriptFunction mUpdateEquippedWeapon;
+			ScriptFunction mProcessTweenCallback;
+			ScriptFunction mTweenTurbines;
+			ScriptFunction mFloatSelectionUp;
+			ScriptFunction mFloatSelectionDown;
+			ScriptFunction mUpdatePos;
+			ScriptFunction mCreateItemData;
+		}
+		public @property static final
+		{
+			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.Start")); }
+			ScriptFunction ConfigureInventory() { return mConfigureInventory ? mConfigureInventory : (mConfigureInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.ConfigureInventory")); }
+			ScriptFunction AddCaptureKeys() { return mAddCaptureKeys ? mAddCaptureKeys : (mAddCaptureKeys = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.AddCaptureKeys")); }
+			ScriptFunction StartCloseAnimation() { return mStartCloseAnimation ? mStartCloseAnimation : (mStartCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.StartCloseAnimation")); }
+			ScriptFunction OnCloseAnimComplete() { return mOnCloseAnimComplete ? mOnCloseAnimComplete : (mOnCloseAnimComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnCloseAnimComplete")); }
+			ScriptFunction SetupBG() { return mSetupBG ? mSetupBG : (mSetupBG = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBG")); }
+			ScriptFunction SetupBorder() { return mSetupBorder ? mSetupBorder : (mSetupBorder = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBorder")); }
+			ScriptFunction SetupArsenal() { return mSetupArsenal ? mSetupArsenal : (mSetupArsenal = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupArsenal")); }
+			ScriptFunction SetupBackpack() { return mSetupBackpack ? mSetupBackpack : (mSetupBackpack = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBackpack")); }
+			ScriptFunction SetupInfo() { return mSetupInfo ? mSetupInfo : (mSetupInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupInfo")); }
+			ScriptFunction PopulateBackpackFake() { return mPopulateBackpackFake ? mPopulateBackpackFake : (mPopulateBackpackFake = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.PopulateBackpackFake")); }
+			ScriptFunction SetupArsenalButtons() { return mSetupArsenalButtons ? mSetupArsenalButtons : (mSetupArsenalButtons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupArsenalButtons")); }
+			ScriptFunction SetupBackpackButtons() { return mSetupBackpackButtons ? mSetupBackpackButtons : (mSetupBackpackButtons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetupBackpackButtons")); }
+			ScriptFunction SwitchWeapon() { return mSwitchWeapon ? mSwitchWeapon : (mSwitchWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SwitchWeapon")); }
+			ScriptFunction OnFocusInSelection() { return mOnFocusInSelection ? mOnFocusInSelection : (mOnFocusInSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusInSelection")); }
+			ScriptFunction OnFocusOutSelection() { return mOnFocusOutSelection ? mOnFocusOutSelection : (mOnFocusOutSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusOutSelection")); }
+			ScriptFunction OnClickWeaponButton() { return mOnClickWeaponButton ? mOnClickWeaponButton : (mOnClickWeaponButton = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnClickWeaponButton")); }
+			ScriptFunction OnFocusUpdateInfo() { return mOnFocusUpdateInfo ? mOnFocusUpdateInfo : (mOnFocusUpdateInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusUpdateInfo")); }
+			ScriptFunction OnFocusArsenalTab() { return mOnFocusArsenalTab ? mOnFocusArsenalTab : (mOnFocusArsenalTab = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusArsenalTab")); }
+			ScriptFunction OnFocusBackpackTab() { return mOnFocusBackpackTab ? mOnFocusBackpackTab : (mOnFocusBackpackTab = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnFocusBackpackTab")); }
+			ScriptFunction OnClickFakeItem() { return mOnClickFakeItem ? mOnClickFakeItem : (mOnClickFakeItem = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.OnClickFakeItem")); }
+			ScriptFunction SetInfo() { return mSetInfo ? mSetInfo : (mSetInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.SetInfo")); }
+			ScriptFunction PopulateArsenal() { return mPopulateArsenal ? mPopulateArsenal : (mPopulateArsenal = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.PopulateArsenal")); }
+			ScriptFunction FakeUpdateEquippedWeapon() { return mFakeUpdateEquippedWeapon ? mFakeUpdateEquippedWeapon : (mFakeUpdateEquippedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FakeUpdateEquippedWeapon")); }
+			ScriptFunction UpdateEquippedWeapon() { return mUpdateEquippedWeapon ? mUpdateEquippedWeapon : (mUpdateEquippedWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.UpdateEquippedWeapon")); }
+			ScriptFunction ProcessTweenCallback() { return mProcessTweenCallback ? mProcessTweenCallback : (mProcessTweenCallback = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.ProcessTweenCallback")); }
+			ScriptFunction TweenTurbines() { return mTweenTurbines ? mTweenTurbines : (mTweenTurbines = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.TweenTurbines")); }
+			ScriptFunction FloatSelectionUp() { return mFloatSelectionUp ? mFloatSelectionUp : (mFloatSelectionUp = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FloatSelectionUp")); }
+			ScriptFunction FloatSelectionDown() { return mFloatSelectionDown ? mFloatSelectionDown : (mFloatSelectionDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.FloatSelectionDown")); }
+			ScriptFunction UpdatePos() { return mUpdatePos ? mUpdatePos : (mUpdatePos = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.UpdatePos")); }
+			ScriptFunction CreateItemData() { return mCreateItemData ? mCreateItemData : (mCreateItemData = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxProjectedUI.CreateItemData")); }
+		}
+	}
 	struct ItemData
 	{
 		private ubyte __buffer__[25];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxProjectedUI.ItemData")); }
 		@property final auto ref
 		{
 			ubyte ItemFrame() { return *cast(ubyte*)(cast(size_t)&this + 24); }
@@ -81,134 +156,134 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = StartPaused;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37640], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void ConfigureInventory()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37643], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConfigureInventory, cast(void*)0, cast(void*)0);
 	}
 	void AddCaptureKeys()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37648], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCaptureKeys, cast(void*)0, cast(void*)0);
 	}
 	void StartCloseAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37649], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartCloseAnimation, cast(void*)0, cast(void*)0);
 	}
 	void OnCloseAnimComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37650], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCloseAnimComplete, cast(void*)0, cast(void*)0);
 	}
 	void SetupBG()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37652], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupBG, cast(void*)0, cast(void*)0);
 	}
 	void SetupBorder()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37653], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupBorder, cast(void*)0, cast(void*)0);
 	}
 	void SetupArsenal()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37654], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupArsenal, cast(void*)0, cast(void*)0);
 	}
 	void SetupBackpack()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37657], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupBackpack, cast(void*)0, cast(void*)0);
 	}
 	void SetupInfo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37659], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupInfo, cast(void*)0, cast(void*)0);
 	}
 	void PopulateBackpackFake()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37660], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateBackpackFake, cast(void*)0, cast(void*)0);
 	}
 	void SetupArsenalButtons()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37662], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupArsenalButtons, cast(void*)0, cast(void*)0);
 	}
 	void SetupBackpackButtons()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37664], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupBackpackButtons, cast(void*)0, cast(void*)0);
 	}
 	void SwitchWeapon(ubyte Index)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37666], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchWeapon, params.ptr, cast(void*)0);
 	}
 	void OnFocusInSelection(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37668], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFocusInSelection, params.ptr, cast(void*)0);
 	}
 	void OnFocusOutSelection(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFocusOutSelection, params.ptr, cast(void*)0);
 	}
 	void OnClickWeaponButton(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37674], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnClickWeaponButton, params.ptr, cast(void*)0);
 	}
 	void OnFocusUpdateInfo(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37677], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFocusUpdateInfo, params.ptr, cast(void*)0);
 	}
 	void OnFocusArsenalTab(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37680], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFocusArsenalTab, params.ptr, cast(void*)0);
 	}
 	void OnFocusBackpackTab(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37682], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFocusBackpackTab, params.ptr, cast(void*)0);
 	}
 	void OnClickFakeItem(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37684], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnClickFakeItem, params.ptr, cast(void*)0);
 	}
 	void SetInfo(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37688], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInfo, params.ptr, cast(void*)0);
 	}
 	void PopulateArsenal()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37691], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateArsenal, cast(void*)0, cast(void*)0);
 	}
 	void FakeUpdateEquippedWeapon(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37693], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FakeUpdateEquippedWeapon, params.ptr, cast(void*)0);
 	}
 	void UpdateEquippedWeapon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37696], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEquippedWeapon, cast(void*)0, cast(void*)0);
 	}
 	void ProcessTweenCallback(ScriptString Callback, GFxObject TargetMC)
 	{
@@ -216,35 +291,35 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Callback;
 		*cast(GFxObject*)&params[12] = TargetMC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37699], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTweenCallback, params.ptr, cast(void*)0);
 	}
 	void TweenTurbines(bool Toggle)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = Toggle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37702], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TweenTurbines, params.ptr, cast(void*)0);
 	}
 	void FloatSelectionUp(GFxObject ButtonIconMC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = ButtonIconMC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37704], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FloatSelectionUp, params.ptr, cast(void*)0);
 	}
 	void FloatSelectionDown(GFxObject ButtonIconMC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = ButtonIconMC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37706], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FloatSelectionDown, params.ptr, cast(void*)0);
 	}
 	void UpdatePos()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37708], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePos, cast(void*)0, cast(void*)0);
 	}
 	void CreateItemData()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37719], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateItemData, cast(void*)0, cast(void*)0);
 	}
 }

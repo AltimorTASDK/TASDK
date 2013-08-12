@@ -11,6 +11,35 @@ import UnrealScript.Engine.SeqAct_SetMesh;
 extern(C++) interface DynamicSMActor : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicSMActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mOnSetMesh;
+			ScriptFunction mOnSetMaterial;
+			ScriptFunction mSetStaticMesh;
+			ScriptFunction mCanBasePawn;
+			ScriptFunction mAttach;
+			ScriptFunction mDetach;
+			ScriptFunction mSetLightEnvironmentToNotBeDynamic;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.ReplicatedEvent")); }
+			ScriptFunction OnSetMesh() { return mOnSetMesh ? mOnSetMesh : (mOnSetMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.OnSetMesh")); }
+			ScriptFunction OnSetMaterial() { return mOnSetMaterial ? mOnSetMaterial : (mOnSetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.OnSetMaterial")); }
+			ScriptFunction SetStaticMesh() { return mSetStaticMesh ? mSetStaticMesh : (mSetStaticMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.SetStaticMesh")); }
+			ScriptFunction CanBasePawn() { return mCanBasePawn ? mCanBasePawn : (mCanBasePawn = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.CanBasePawn")); }
+			ScriptFunction Attach() { return mAttach ? mAttach : (mAttach = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.Attach")); }
+			ScriptFunction Detach() { return mDetach ? mDetach : (mDetach = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.Detach")); }
+			ScriptFunction SetLightEnvironmentToNotBeDynamic() { return mSetLightEnvironmentToNotBeDynamic ? mSetLightEnvironmentToNotBeDynamic : (mSetLightEnvironmentToNotBeDynamic = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicSMActor.SetLightEnvironmentToNotBeDynamic")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -31,28 +60,28 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14868], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14869], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void OnSetMesh(SeqAct_SetMesh Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_SetMesh*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14871], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetMesh, params.ptr, cast(void*)0);
 	}
 	void OnSetMaterial(SeqAct_SetMaterial Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_SetMaterial*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14878], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetMaterial, params.ptr, cast(void*)0);
 	}
 	void SetStaticMesh(StaticMesh NewMesh, Vector NewTranslation, Rotator NewRotation, Vector NewScale3D)
 	{
@@ -62,14 +91,14 @@ final:
 		*cast(Vector*)&params[4] = NewTranslation;
 		*cast(Rotator*)&params[16] = NewRotation;
 		*cast(Vector*)&params[28] = NewScale3D;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14882], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 	}
 	bool CanBasePawn(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14887], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanBasePawn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Attach(Actor Other)
@@ -77,17 +106,17 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14890], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Attach, params.ptr, cast(void*)0);
 	}
 	void Detach(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14893], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Detach, params.ptr, cast(void*)0);
 	}
 	void SetLightEnvironmentToNotBeDynamic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14899], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLightEnvironmentToNotBeDynamic, cast(void*)0, cast(void*)0);
 	}
 }

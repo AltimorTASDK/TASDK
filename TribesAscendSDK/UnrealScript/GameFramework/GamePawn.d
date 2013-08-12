@@ -6,6 +6,23 @@ import UnrealScript.Engine.Pawn;
 extern(C++) interface GamePawn : Pawn
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GamePawn")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mUpdateShadowSettings;
+			ScriptFunction mReattachMesh;
+			ScriptFunction mReattachMeshWithoutBeingSeen;
+		}
+		public @property static final
+		{
+			ScriptFunction UpdateShadowSettings() { return mUpdateShadowSettings ? mUpdateShadowSettings : (mUpdateShadowSettings = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.UpdateShadowSettings")); }
+			ScriptFunction ReattachMesh() { return mReattachMesh ? mReattachMesh : (mReattachMesh = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.ReattachMesh")); }
+			ScriptFunction ReattachMeshWithoutBeingSeen() { return mReattachMeshWithoutBeingSeen ? mReattachMeshWithoutBeingSeen : (mReattachMeshWithoutBeingSeen = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GamePawn.ReattachMeshWithoutBeingSeen")); }
+		}
+	}
 	@property final
 	{
 		bool bRespondToExplosions() { return (*cast(uint*)(cast(size_t)cast(void*)this + 1144) & 0x2) != 0; }
@@ -19,14 +36,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInWantShadow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31725], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateShadowSettings, params.ptr, cast(void*)0);
 	}
 	void ReattachMesh()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31729], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReattachMesh, cast(void*)0, cast(void*)0);
 	}
 	void ReattachMeshWithoutBeingSeen()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31730], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReattachMeshWithoutBeingSeen, cast(void*)0, cast(void*)0);
 	}
 }

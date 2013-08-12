@@ -8,6 +8,43 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_ServerAddTime : GFxTrPage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerAddTime")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mModifyAction;
+			ScriptFunction mTakeFocus;
+			ScriptFunction mPopupData;
+			ScriptFunction mPopupComplete;
+			ScriptFunction mFillData;
+			ScriptFunction mFillOption;
+			ScriptFunction mCheckDescription;
+			ScriptFunction mFillDescription;
+			ScriptFunction mShowModel;
+			ScriptFunction mCheckPricing;
+			ScriptFunction mFillPricing;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.Initialize")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.SpecialAction")); }
+			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.ModifyAction")); }
+			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.TakeFocus")); }
+			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.PopupData")); }
+			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.PopupComplete")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.FillData")); }
+			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.FillOption")); }
+			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.CheckDescription")); }
+			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.FillDescription")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.ShowModel")); }
+			ScriptFunction CheckPricing() { return mCheckPricing ? mCheckPricing : (mCheckPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.CheckPricing")); }
+			ScriptFunction FillPricing() { return mFillPricing ? mFillPricing : (mFillPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_ServerAddTime.FillPricing")); }
+		}
+	}
 	@property final auto ref
 	{
 		int PurchaseIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 360); }
@@ -16,14 +53,14 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60595], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60596], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	int ModifyAction(int ActionIndex, GFxObject DataList)
 	{
@@ -31,7 +68,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60598], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int TakeFocus(int ActionIndex, GFxObject DataList)
@@ -40,7 +77,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60602], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFocus, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void PopupData(GFxObject Obj)
@@ -48,7 +85,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60606], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupData, params.ptr, cast(void*)0);
 	}
 	void PopupComplete(int Action, ScriptString TextInput)
 	{
@@ -56,21 +93,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Action;
 		*cast(ScriptString*)&params[4] = TextInput;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60612], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupComplete, params.ptr, cast(void*)0);
 	}
 	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60618], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	GFxObject FillOption(int ActionIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60621], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillOption, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	void CheckDescription(GFxObject DataList)
@@ -78,26 +115,26 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60626], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckDescription, params.ptr, cast(void*)0);
 	}
 	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60630], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillDescription, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60634], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 	bool CheckPricing(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60636], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckPricing, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	GFxObject FillPricing(GFxObject DataList)
@@ -105,7 +142,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60641], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillPricing, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 }

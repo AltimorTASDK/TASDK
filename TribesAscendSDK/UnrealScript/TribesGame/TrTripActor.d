@@ -7,6 +7,35 @@ import UnrealScript.Engine.ParticleSystem;
 extern(C++) interface TrTripActor : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTripActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mCreateTripComponent;
+			ScriptFunction mClientCreateVisualEffect;
+			ScriptFunction mDestroyNotify;
+			ScriptFunction mDestroyed;
+			ScriptFunction mInitializeTripPhysics;
+			ScriptFunction mGoToSleep;
+			ScriptFunction mTick;
+			ScriptFunction mTouch;
+		}
+		public @property static final
+		{
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.ReplicatedEvent")); }
+			ScriptFunction CreateTripComponent() { return mCreateTripComponent ? mCreateTripComponent : (mCreateTripComponent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.CreateTripComponent")); }
+			ScriptFunction ClientCreateVisualEffect() { return mClientCreateVisualEffect ? mClientCreateVisualEffect : (mClientCreateVisualEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.ClientCreateVisualEffect")); }
+			ScriptFunction DestroyNotify() { return mDestroyNotify ? mDestroyNotify : (mDestroyNotify = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.DestroyNotify")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Destroyed")); }
+			ScriptFunction InitializeTripPhysics() { return mInitializeTripPhysics ? mInitializeTripPhysics : (mInitializeTripPhysics = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.InitializeTripPhysics")); }
+			ScriptFunction GoToSleep() { return mGoToSleep ? mGoToSleep : (mGoToSleep = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.GoToSleep")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Tick")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrTripActor.Touch")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -30,15 +59,15 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113260], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void CreateTripComponent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113262], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateTripComponent, cast(void*)0, cast(void*)0);
 	}
 	void ClientCreateVisualEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113263], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientCreateVisualEffect, cast(void*)0, cast(void*)0);
 	}
 	void DestroyNotify(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
@@ -49,11 +78,11 @@ void* Notifier)
 		*cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr = Notifier;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyNotify, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113269], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void InitializeTripPhysics(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
@@ -69,21 +98,21 @@ void**)params.ptr = Left;
 		*cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)&params[8] = Right;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113270], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeTripPhysics, params.ptr, cast(void*)0);
 	}
 	void GoToSleep(bool bIsPowered)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsPowered;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113273], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GoToSleep, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113275], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -97,6 +126,6 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 }

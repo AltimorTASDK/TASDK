@@ -8,10 +8,33 @@ import UnrealScript.IpDrv.MCPBase;
 extern(C++) interface OnlineNewsInterfaceMcp : MCPBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineNewsInterfaceMcp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnReadNewsCompleted;
+			ScriptFunction mReadNews;
+			ScriptFunction mAddReadNewsCompletedDelegate;
+			ScriptFunction mClearReadNewsCompletedDelegate;
+			ScriptFunction mGetNews;
+		}
+		public @property static final
+		{
+			ScriptFunction OnReadNewsCompleted() { return mOnReadNewsCompleted ? mOnReadNewsCompleted : (mOnReadNewsCompleted = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted")); }
+			ScriptFunction ReadNews() { return mReadNews ? mReadNews : (mReadNews = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.ReadNews")); }
+			ScriptFunction AddReadNewsCompletedDelegate() { return mAddReadNewsCompletedDelegate ? mAddReadNewsCompletedDelegate : (mAddReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate")); }
+			ScriptFunction ClearReadNewsCompletedDelegate() { return mClearReadNewsCompletedDelegate ? mClearReadNewsCompletedDelegate : (mClearReadNewsCompletedDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate")); }
+			ScriptFunction GetNews() { return mGetNews ? mGetNews : (mGetNews = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineNewsInterfaceMcp.GetNews")); }
+		}
+	}
 	struct NewsCacheEntry
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineNewsInterfaceMcp.NewsCacheEntry")); }
 		@property final
 		{
 			auto ref
@@ -48,7 +71,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(OnlineSubsystem.EOnlineNewsType*)&params[4] = NewsType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33649], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadNewsCompleted, params.ptr, cast(void*)0);
 	}
 	bool ReadNews(ubyte LocalUserNum, OnlineSubsystem.EOnlineNewsType NewsType)
 	{
@@ -56,7 +79,7 @@ final:
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.EOnlineNewsType*)&params[1] = NewsType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33659], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReadNews, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void AddReadNewsCompletedDelegate(
@@ -68,7 +91,7 @@ void* ReadNewsDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadNewsDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33665], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddReadNewsCompletedDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearReadNewsCompletedDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -79,7 +102,7 @@ void* ReadGameNewsDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadGameNewsDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33667], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadNewsCompletedDelegate, params.ptr, cast(void*)0);
 	}
 	ScriptString GetNews(ubyte LocalUserNum, OnlineSubsystem.EOnlineNewsType NewsType)
 	{
@@ -87,7 +110,7 @@ void**)params.ptr = ReadGameNewsDelegate;
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.EOnlineNewsType*)&params[1] = NewsType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33670], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNews, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 }

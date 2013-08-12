@@ -9,6 +9,21 @@ import UnrealScript.Engine.Info;
 extern(C++) interface Route : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Route")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mResolveRouteIndex;
+			ScriptFunction mMoveOntoRoutePath;
+		}
+		public @property static final
+		{
+			ScriptFunction ResolveRouteIndex() { return mResolveRouteIndex ? mResolveRouteIndex : (mResolveRouteIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.Route.ResolveRouteIndex")); }
+			ScriptFunction MoveOntoRoutePath() { return mMoveOntoRoutePath ? mMoveOntoRoutePath : (mMoveOntoRoutePath = ScriptObject.Find!(ScriptFunction)("Function Engine.Route.MoveOntoRoutePath")); }
+		}
+	}
 	enum ERouteDirection : ubyte
 	{
 		ERD_Forward = 0,
@@ -47,7 +62,7 @@ final:
 		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;
 		params[5] = *out_bComplete;
 		params[6] = *out_bReverse;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25364], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResolveRouteIndex, params.ptr, cast(void*)0);
 		*out_bComplete = params[5];
 		*out_bReverse = params[6];
 		return *cast(int*)&params[8];
@@ -59,7 +74,7 @@ final:
 		*cast(Pawn*)params.ptr = P;
 		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;
 		*cast(float*)&params[8] = DistFudgeFactor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25370], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoveOntoRoutePath, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
 }

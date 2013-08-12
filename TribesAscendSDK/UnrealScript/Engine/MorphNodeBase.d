@@ -6,6 +6,8 @@ import UnrealScript.Engine.AnimObject;
 extern(C++) interface MorphNodeBase : AnimObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeBase")); }
 	@property final
 	{
 		@property final auto ref ScriptName NodeName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 96); }

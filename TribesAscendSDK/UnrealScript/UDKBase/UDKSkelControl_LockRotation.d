@@ -6,6 +6,8 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface UDKSkelControl_LockRotation : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_LockRotation")); }
 	@property final
 	{
 		auto ref

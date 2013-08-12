@@ -7,6 +7,13 @@ import UnrealScript.Engine.PlayerController;
 extern(C++) interface Player : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Player")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSwitchController;
+		public @property static final ScriptFunction SwitchController() { return mSwitchController ? mSwitchController : (mSwitchController = ScriptObject.Find!(ScriptFunction)("Function Engine.Player.SwitchController")); }
+	}
 	@property final auto ref
 	{
 		int CurrentNetSpeed() { return *cast(int*)(cast(size_t)cast(void*)this + 68); }
@@ -24,6 +31,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19471], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchController, params.ptr, cast(void*)0);
 	}
 }

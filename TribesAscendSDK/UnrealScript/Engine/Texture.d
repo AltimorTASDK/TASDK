@@ -7,6 +7,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface Texture : Surface
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture")); }
 	enum TextureCompressionSettings : ubyte
 	{
 		TC_Default = 0,
@@ -126,6 +128,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Texture.TextureGroupContainer")); }
 		@property final
 		{
 			bool TEXTUREGROUP_ImageBasedReflection() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4000000) != 0; }

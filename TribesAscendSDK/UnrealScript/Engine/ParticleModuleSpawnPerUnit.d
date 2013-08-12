@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleSpawnPerUnit;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleSpawnBase;
 
 extern(C++) interface ParticleModuleSpawnPerUnit : ParticleModuleSpawnBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSpawnPerUnit")); }
 	@property final
 	{
 		auto ref

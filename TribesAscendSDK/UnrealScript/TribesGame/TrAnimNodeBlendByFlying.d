@@ -1,11 +1,14 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByFlying;
 
+import ScriptClasses;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.TribesGame.TrAnimNodeBlendList;
 
 extern(C++) interface TrAnimNodeBlendByFlying : TrAnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlying")); }
 	enum EFlyDirTypes : ubyte
 	{
 		FLY_Forward = 0,

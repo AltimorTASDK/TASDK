@@ -10,6 +10,21 @@ import UnrealScript.TribesGame.TrPlayerController;
 extern(C++) interface TrPromptMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPromptMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetString;
+			ScriptFunction mFormatText;
+		}
+		public @property static final
+		{
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPromptMessage.GetString")); }
+			ScriptFunction FormatText() { return mFormatText ? mFormatText : (mFormatText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPromptMessage.FormatText")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptString YourJackalGrenadesHaveBeenDestroyed() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 176); }
@@ -22,7 +37,7 @@ public extern(D):
 		SoundCue UpgradeDeniedSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 100); }
 	}
 final:
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -31,16 +46,16 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74599], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	ScriptString FormatText(ScriptString InString, TrPlayerController TrPC)
+	static ScriptString FormatText(ScriptString InString, TrPlayerController TrPC)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InString;
 		*cast(TrPlayerController*)&params[12] = TrPC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109465], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.FormatText, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
 }

@@ -10,6 +10,25 @@ import UnrealScript.Engine.TeamInfo;
 extern(C++) interface UDKCarriedObject : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKCarriedObject")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetHUDLocation;
+			ScriptFunction mNotReachableBy;
+			ScriptFunction mOnBaseChainChanged;
+			ScriptFunction mGetTeamNum;
+		}
+		public @property static final
+		{
+			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.SetHUDLocation")); }
+			ScriptFunction NotReachableBy() { return mNotReachableBy ? mNotReachableBy : (mNotReachableBy = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.NotReachableBy")); }
+			ScriptFunction OnBaseChainChanged() { return mOnBaseChainChanged ? mOnBaseChainChanged : (mOnBaseChainChanged = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.OnBaseChainChanged")); }
+			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKCarriedObject.GetTeamNum")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -32,24 +51,24 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewHUDLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34748], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHUDLocation, params.ptr, cast(void*)0);
 	}
 	void NotReachableBy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34750], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotReachableBy, params.ptr, cast(void*)0);
 	}
 	void OnBaseChainChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34752], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBaseChainChanged, cast(void*)0, cast(void*)0);
 	}
 	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34753], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 }

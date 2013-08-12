@@ -48,6 +48,125 @@ import UnrealScript.Engine.FractureManager;
 extern(C++) interface WorldInfo : ZoneInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.WorldInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetGameSequence;
+			ScriptFunction mAllControllers;
+			ScriptFunction mIsConsoleBuild;
+			ScriptFunction mGetWorldInfo;
+			ScriptFunction mGetMapName;
+			ScriptFunction mGetGameClass;
+			ScriptFunction mAllNavigationPoints;
+			ScriptFunction mForceGarbageCollection;
+			ScriptFunction mIsPreparingMapChange;
+			ScriptFunction mPrepareMapChange;
+			ScriptFunction mCommitMapChange;
+			ScriptFunction mCancelPendingMapChange;
+			ScriptFunction mReleaseCachedConstraintsAndEvaluators;
+			ScriptFunction mGetNavMeshPathConstraintFromCache;
+			ScriptFunction mGetNavMeshPathGoalEvaluatorFromCache;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mUpdateMusicTrack;
+			ScriptFunction mAddOnScreenDebugMessage;
+			ScriptFunction mIsMenuLevel;
+			ScriptFunction mGetGravityZ;
+			ScriptFunction mGetAllRootSequences;
+			ScriptFunction mSetLevelRBGravity;
+			ScriptFunction mGetLocalURL;
+			ScriptFunction mIsDemoBuild;
+			ScriptFunction mIsPlayInEditor;
+			ScriptFunction mIsPlayInPreview;
+			ScriptFunction mVerifyNavList;
+			ScriptFunction mGetAddressURL;
+			ScriptFunction mServerTravel;
+			ScriptFunction mIsInSeamlessTravel;
+			ScriptFunction mThisIsNeverExecuted;
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mReset;
+			ScriptFunction mRadiusNavigationPoints;
+			ScriptFunction mNavigationPointCheck;
+			ScriptFunction mAllPawns;
+			ScriptFunction mNotifyMatchStarted;
+			ScriptFunction mIsMapChangeReady;
+			ScriptFunction mSeamlessTravel;
+			ScriptFunction mSetSeamlessTravelMidpointPause;
+			ScriptFunction mGetMapInfo;
+			ScriptFunction mSetMapInfo;
+			ScriptFunction mGetDetailMode;
+			ScriptFunction mIsRecordingDemo;
+			ScriptFunction mIsPlayingDemo;
+			ScriptFunction mGetDemoFrameInfo;
+			ScriptFunction mGetDemoRewindPoints;
+			ScriptFunction mDoMemoryTracking;
+			ScriptFunction mGetWorldFractureSettings;
+			ScriptFunction mFindEnvironmentVolume;
+			ScriptFunction mBeginHostMigration;
+			ScriptFunction mToggleHostMigration;
+			ScriptFunction mClearPhysicsPools;
+		}
+		public @property static final
+		{
+			ScriptFunction GetGameSequence() { return mGetGameSequence ? mGetGameSequence : (mGetGameSequence = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetGameSequence")); }
+			ScriptFunction AllControllers() { return mAllControllers ? mAllControllers : (mAllControllers = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.AllControllers")); }
+			ScriptFunction IsConsoleBuild() { return mIsConsoleBuild ? mIsConsoleBuild : (mIsConsoleBuild = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsConsoleBuild")); }
+			ScriptFunction GetWorldInfo() { return mGetWorldInfo ? mGetWorldInfo : (mGetWorldInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetWorldInfo")); }
+			ScriptFunction GetMapName() { return mGetMapName ? mGetMapName : (mGetMapName = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetMapName")); }
+			ScriptFunction GetGameClass() { return mGetGameClass ? mGetGameClass : (mGetGameClass = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetGameClass")); }
+			ScriptFunction AllNavigationPoints() { return mAllNavigationPoints ? mAllNavigationPoints : (mAllNavigationPoints = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.AllNavigationPoints")); }
+			ScriptFunction ForceGarbageCollection() { return mForceGarbageCollection ? mForceGarbageCollection : (mForceGarbageCollection = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ForceGarbageCollection")); }
+			ScriptFunction IsPreparingMapChange() { return mIsPreparingMapChange ? mIsPreparingMapChange : (mIsPreparingMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsPreparingMapChange")); }
+			ScriptFunction PrepareMapChange() { return mPrepareMapChange ? mPrepareMapChange : (mPrepareMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.PrepareMapChange")); }
+			ScriptFunction CommitMapChange() { return mCommitMapChange ? mCommitMapChange : (mCommitMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.CommitMapChange")); }
+			ScriptFunction CancelPendingMapChange() { return mCancelPendingMapChange ? mCancelPendingMapChange : (mCancelPendingMapChange = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.CancelPendingMapChange")); }
+			ScriptFunction ReleaseCachedConstraintsAndEvaluators() { return mReleaseCachedConstraintsAndEvaluators ? mReleaseCachedConstraintsAndEvaluators : (mReleaseCachedConstraintsAndEvaluators = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ReleaseCachedConstraintsAndEvaluators")); }
+			ScriptFunction GetNavMeshPathConstraintFromCache() { return mGetNavMeshPathConstraintFromCache ? mGetNavMeshPathConstraintFromCache : (mGetNavMeshPathConstraintFromCache = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetNavMeshPathConstraintFromCache")); }
+			ScriptFunction GetNavMeshPathGoalEvaluatorFromCache() { return mGetNavMeshPathGoalEvaluatorFromCache ? mGetNavMeshPathGoalEvaluatorFromCache : (mGetNavMeshPathGoalEvaluatorFromCache = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetNavMeshPathGoalEvaluatorFromCache")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ReplicatedEvent")); }
+			ScriptFunction UpdateMusicTrack() { return mUpdateMusicTrack ? mUpdateMusicTrack : (mUpdateMusicTrack = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.UpdateMusicTrack")); }
+			ScriptFunction AddOnScreenDebugMessage() { return mAddOnScreenDebugMessage ? mAddOnScreenDebugMessage : (mAddOnScreenDebugMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.AddOnScreenDebugMessage")); }
+			ScriptFunction IsMenuLevel() { return mIsMenuLevel ? mIsMenuLevel : (mIsMenuLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsMenuLevel")); }
+			ScriptFunction GetGravityZ() { return mGetGravityZ ? mGetGravityZ : (mGetGravityZ = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetGravityZ")); }
+			ScriptFunction GetAllRootSequences() { return mGetAllRootSequences ? mGetAllRootSequences : (mGetAllRootSequences = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetAllRootSequences")); }
+			ScriptFunction SetLevelRBGravity() { return mSetLevelRBGravity ? mSetLevelRBGravity : (mSetLevelRBGravity = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.SetLevelRBGravity")); }
+			ScriptFunction GetLocalURL() { return mGetLocalURL ? mGetLocalURL : (mGetLocalURL = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetLocalURL")); }
+			ScriptFunction IsDemoBuild() { return mIsDemoBuild ? mIsDemoBuild : (mIsDemoBuild = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsDemoBuild")); }
+			ScriptFunction IsPlayInEditor() { return mIsPlayInEditor ? mIsPlayInEditor : (mIsPlayInEditor = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsPlayInEditor")); }
+			ScriptFunction IsPlayInPreview() { return mIsPlayInPreview ? mIsPlayInPreview : (mIsPlayInPreview = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsPlayInPreview")); }
+			ScriptFunction VerifyNavList() { return mVerifyNavList ? mVerifyNavList : (mVerifyNavList = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.VerifyNavList")); }
+			ScriptFunction GetAddressURL() { return mGetAddressURL ? mGetAddressURL : (mGetAddressURL = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetAddressURL")); }
+			ScriptFunction ServerTravel() { return mServerTravel ? mServerTravel : (mServerTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ServerTravel")); }
+			ScriptFunction IsInSeamlessTravel() { return mIsInSeamlessTravel ? mIsInSeamlessTravel : (mIsInSeamlessTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsInSeamlessTravel")); }
+			ScriptFunction ThisIsNeverExecuted() { return mThisIsNeverExecuted ? mThisIsNeverExecuted : (mThisIsNeverExecuted = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ThisIsNeverExecuted")); }
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.PostBeginPlay")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.Reset")); }
+			ScriptFunction RadiusNavigationPoints() { return mRadiusNavigationPoints ? mRadiusNavigationPoints : (mRadiusNavigationPoints = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.RadiusNavigationPoints")); }
+			ScriptFunction NavigationPointCheck() { return mNavigationPointCheck ? mNavigationPointCheck : (mNavigationPointCheck = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.NavigationPointCheck")); }
+			ScriptFunction AllPawns() { return mAllPawns ? mAllPawns : (mAllPawns = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.AllPawns")); }
+			ScriptFunction NotifyMatchStarted() { return mNotifyMatchStarted ? mNotifyMatchStarted : (mNotifyMatchStarted = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.NotifyMatchStarted")); }
+			ScriptFunction IsMapChangeReady() { return mIsMapChangeReady ? mIsMapChangeReady : (mIsMapChangeReady = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsMapChangeReady")); }
+			ScriptFunction SeamlessTravel() { return mSeamlessTravel ? mSeamlessTravel : (mSeamlessTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.SeamlessTravel")); }
+			ScriptFunction SetSeamlessTravelMidpointPause() { return mSetSeamlessTravelMidpointPause ? mSetSeamlessTravelMidpointPause : (mSetSeamlessTravelMidpointPause = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.SetSeamlessTravelMidpointPause")); }
+			ScriptFunction GetMapInfo() { return mGetMapInfo ? mGetMapInfo : (mGetMapInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetMapInfo")); }
+			ScriptFunction SetMapInfo() { return mSetMapInfo ? mSetMapInfo : (mSetMapInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.SetMapInfo")); }
+			ScriptFunction GetDetailMode() { return mGetDetailMode ? mGetDetailMode : (mGetDetailMode = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetDetailMode")); }
+			ScriptFunction IsRecordingDemo() { return mIsRecordingDemo ? mIsRecordingDemo : (mIsRecordingDemo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsRecordingDemo")); }
+			ScriptFunction IsPlayingDemo() { return mIsPlayingDemo ? mIsPlayingDemo : (mIsPlayingDemo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.IsPlayingDemo")); }
+			ScriptFunction GetDemoFrameInfo() { return mGetDemoFrameInfo ? mGetDemoFrameInfo : (mGetDemoFrameInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetDemoFrameInfo")); }
+			ScriptFunction GetDemoRewindPoints() { return mGetDemoRewindPoints ? mGetDemoRewindPoints : (mGetDemoRewindPoints = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetDemoRewindPoints")); }
+			ScriptFunction DoMemoryTracking() { return mDoMemoryTracking ? mDoMemoryTracking : (mDoMemoryTracking = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.DoMemoryTracking")); }
+			ScriptFunction GetWorldFractureSettings() { return mGetWorldFractureSettings ? mGetWorldFractureSettings : (mGetWorldFractureSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.GetWorldFractureSettings")); }
+			ScriptFunction FindEnvironmentVolume() { return mFindEnvironmentVolume ? mFindEnvironmentVolume : (mFindEnvironmentVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.FindEnvironmentVolume")); }
+			ScriptFunction BeginHostMigration() { return mBeginHostMigration ? mBeginHostMigration : (mBeginHostMigration = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.BeginHostMigration")); }
+			ScriptFunction ToggleHostMigration() { return mToggleHostMigration ? mToggleHostMigration : (mToggleHostMigration = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ToggleHostMigration")); }
+			ScriptFunction ClearPhysicsPools() { return mClearPhysicsPools ? mClearPhysicsPools : (mClearPhysicsPools = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ClearPhysicsPools")); }
+		}
+	}
 	enum MAX_INSTANCES_PER_CLASS = 5;
 	enum EHostMigrationProgress : ubyte
 	{
@@ -87,6 +206,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.NavMeshPathGoalEvaluatorCacheDatum")); }
 		@property final auto ref
 		{
 			int ListIdx() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -97,6 +218,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.HostMigrationState")); }
 		@property final
 		{
 			auto ref
@@ -114,12 +237,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.PhysXVerticalProperties")); }
 		@property final auto ref WorldInfo.PhysXEmitterVerticalProperties Emitters() { return *cast(WorldInfo.PhysXEmitterVerticalProperties*)(cast(size_t)&this + 0); }
 	}
 	struct WorldFractureSettings
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.WorldFractureSettings")); }
 		@property final
 		{
 			auto ref
@@ -142,6 +269,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.NavMeshPathConstraintCacheDatum")); }
 		@property final auto ref
 		{
 			int ListIdx() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -152,6 +281,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.LightmassWorldInfoSettings")); }
 		@property final
 		{
 			auto ref
@@ -186,6 +317,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.ScreenMessageString")); }
 		@property final auto ref
 		{
 			QWord Key() { return *cast(QWord*)(cast(size_t)&this + 0); }
@@ -199,6 +332,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.PhysXEmitterVerticalProperties")); }
 		@property final
 		{
 			auto ref
@@ -218,6 +353,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.ApexModuleDestructibleSettings")); }
 		@property final
 		{
 			auto ref
@@ -234,6 +371,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.PhysXSceneProperties")); }
 		@property final auto ref
 		{
 			WorldInfo.PhysXSimulationProperties PrimaryScene() { return *cast(WorldInfo.PhysXSimulationProperties*)(cast(size_t)&this + 0); }
@@ -247,6 +386,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.PhysXSimulationProperties")); }
 		@property final
 		{
 			auto ref
@@ -264,6 +405,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.CompartmentRunList")); }
 		@property final
 		{
 			bool RigidBody() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -280,6 +423,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.WorldInfo.NetViewer")); }
 		@property final auto ref
 		{
 			PlayerController InViewer() { return *cast(PlayerController*)(cast(size_t)&this + 0); }
@@ -488,7 +633,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4289], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameSequence, params.ptr, cast(void*)0);
 		return *cast(Sequence*)params.ptr;
 	}
 	void AllControllers(ScriptClass BaseClass, Controller* C)
@@ -497,22 +642,22 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Controller*)&params[4] = *C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllControllers, params.ptr, cast(void*)0);
 		*C = *cast(Controller*)&params[4];
 	}
-	bool IsConsoleBuild(WorldInfo.EConsoleType ConsoleType)
+	static bool IsConsoleBuild(WorldInfo.EConsoleType ConsoleType)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(WorldInfo.EConsoleType*)params.ptr = ConsoleType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5728], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsConsoleBuild, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	WorldInfo GetWorldInfo()
+	static WorldInfo GetWorldInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7283], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetWorldInfo, params.ptr, cast(void*)0);
 		return *cast(WorldInfo*)params.ptr;
 	}
 	ScriptString GetMapName(bool bIncludePrefix)
@@ -520,14 +665,14 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIncludePrefix;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	ScriptClass GetGameClass()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
 	void AllNavigationPoints(ScriptClass BaseClass, NavigationPoint* N)
@@ -536,7 +681,7 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(NavigationPoint*)&params[4] = *N;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8413], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllNavigationPoints, params.ptr, cast(void*)0);
 		*N = *cast(NavigationPoint*)&params[4];
 	}
 	void ForceGarbageCollection(bool bFullPurge)
@@ -544,13 +689,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bFullPurge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9153], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceGarbageCollection, params.ptr, cast(void*)0);
 	}
 	bool IsPreparingMapChange()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9175], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPreparingMapChange, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PrepareMapChange(ScriptArray!(ScriptName)* LevelNames)
@@ -558,20 +703,20 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptName)*)params.ptr = *LevelNames;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9177], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PrepareMapChange, params.ptr, cast(void*)0);
 		*LevelNames = *cast(ScriptArray!(ScriptName)*)params.ptr;
 	}
 	void CommitMapChange()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9179], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CommitMapChange, cast(void*)0, cast(void*)0);
 	}
 	void CancelPendingMapChange()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9181], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CancelPendingMapChange, cast(void*)0, cast(void*)0);
 	}
 	void ReleaseCachedConstraintsAndEvaluators()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16085], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReleaseCachedConstraintsAndEvaluators, cast(void*)0, cast(void*)0);
 	}
 	NavMeshPathConstraint GetNavMeshPathConstraintFromCache(ScriptClass ConstraintClass, NavigationHandle Requestor)
 	{
@@ -579,7 +724,7 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = ConstraintClass;
 		*cast(NavigationHandle*)&params[4] = Requestor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16086], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNavMeshPathConstraintFromCache, params.ptr, cast(void*)0);
 		return *cast(NavMeshPathConstraint*)&params[8];
 	}
 	NavMeshPathGoalEvaluator GetNavMeshPathGoalEvaluatorFromCache(ScriptClass GoalEvalClass, NavigationHandle Requestor)
@@ -588,7 +733,7 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = GoalEvalClass;
 		*cast(NavigationHandle*)&params[4] = Requestor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16090], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNavMeshPathGoalEvaluatorFromCache, params.ptr, cast(void*)0);
 		return *cast(NavMeshPathGoalEvaluator*)&params[8];
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -596,14 +741,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16094], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void UpdateMusicTrack(MusicTrackDataStructures.MusicTrackStruct NewMusicTrack)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(MusicTrackDataStructures.MusicTrackStruct*)params.ptr = NewMusicTrack;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16096], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateMusicTrack, params.ptr, cast(void*)0);
 	}
 	void AddOnScreenDebugMessage(int Key, float TimeToDisplay, UObject.Color DisplayColor, ScriptString DebugMessage)
 	{
@@ -613,28 +758,28 @@ final:
 		*cast(float*)&params[4] = TimeToDisplay;
 		*cast(UObject.Color*)&params[8] = DisplayColor;
 		*cast(ScriptString*)&params[12] = DebugMessage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16098], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddOnScreenDebugMessage, params.ptr, cast(void*)0);
 	}
-	bool IsMenuLevel(ScriptString MapName)
+	static bool IsMenuLevel(ScriptString MapName)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MapName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16103], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsMenuLevel, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	float GetGravityZ()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16116], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGravityZ, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	ScriptArray!(Sequence) GetAllRootSequences()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16118], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllRootSequences, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(Sequence)*)params.ptr;
 	}
 	void SetLevelRBGravity(Vector NewGrav)
@@ -642,45 +787,45 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewGrav;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16121], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLevelRBGravity, params.ptr, cast(void*)0);
 	}
 	ScriptString GetLocalURL()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16123], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool IsDemoBuild()
+	static bool IsDemoBuild()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16125], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsDemoBuild, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool IsPlayInEditor()
+	static bool IsPlayInEditor()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16130], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsPlayInEditor, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool IsPlayInPreview()
+	static bool IsPlayInPreview()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16132], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsPlayInPreview, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void VerifyNavList()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16135], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VerifyNavList, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetAddressURL()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16136], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAddressURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void ServerTravel(ScriptString pURL, bool bAbsolute, bool bShouldSkipGameNotify)
@@ -690,13 +835,13 @@ final:
 		*cast(ScriptString*)params.ptr = pURL;
 		*cast(bool*)&params[12] = bAbsolute;
 		*cast(bool*)&params[16] = bShouldSkipGameNotify;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16138], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerTravel, params.ptr, cast(void*)0);
 	}
 	bool IsInSeamlessTravel()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16145], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInSeamlessTravel, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ThisIsNeverExecuted(DefaultPhysicsVolume P)
@@ -704,19 +849,19 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(DefaultPhysicsVolume*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16147], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThisIsNeverExecuted, params.ptr, cast(void*)0);
 	}
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16149], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16161], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16163], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void RadiusNavigationPoints(ScriptClass BaseClass, NavigationPoint* N, Vector Point, float Radius)
 	{
@@ -726,7 +871,7 @@ final:
 		*cast(NavigationPoint*)&params[4] = *N;
 		*cast(Vector*)&params[8] = Point;
 		*cast(float*)&params[20] = Radius;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16166], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RadiusNavigationPoints, params.ptr, cast(void*)0);
 		*N = *cast(NavigationPoint*)&params[4];
 	}
 	void NavigationPointCheck(Vector Point, Vector Extent, ScriptArray!(NavigationPoint)* Navs, ScriptArray!(ReachSpec)* Specs)
@@ -737,7 +882,7 @@ final:
 		*cast(Vector*)&params[12] = Extent;
 		*cast(ScriptArray!(NavigationPoint)*)&params[24] = *Navs;
 		*cast(ScriptArray!(ReachSpec)*)&params[36] = *Specs;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16171], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NavigationPointCheck, params.ptr, cast(void*)0);
 		*Navs = *cast(ScriptArray!(NavigationPoint)*)&params[24];
 		*Specs = *cast(ScriptArray!(ReachSpec)*)&params[36];
 	}
@@ -749,7 +894,7 @@ final:
 		*cast(Pawn*)&params[4] = *P;
 		*cast(Vector*)&params[8] = TestLocation;
 		*cast(float*)&params[20] = TestRadius;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16180], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllPawns, params.ptr, cast(void*)0);
 		*P = *cast(Pawn*)&params[4];
 	}
 	void NotifyMatchStarted(bool bShouldActivateLevelStartupEvents, bool bShouldActivateLevelBeginningEvents, bool bShouldActivateLevelLoadedEvents)
@@ -759,13 +904,13 @@ final:
 		*cast(bool*)params.ptr = bShouldActivateLevelStartupEvents;
 		*cast(bool*)&params[4] = bShouldActivateLevelBeginningEvents;
 		*cast(bool*)&params[8] = bShouldActivateLevelLoadedEvents;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16185], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyMatchStarted, params.ptr, cast(void*)0);
 	}
 	bool IsMapChangeReady()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16191], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsMapChangeReady, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SeamlessTravel(ScriptString pURL, bool bAbsolute, UObject.Guid MapPackageGuid)
@@ -775,20 +920,20 @@ final:
 		*cast(ScriptString*)params.ptr = pURL;
 		*cast(bool*)&params[12] = bAbsolute;
 		*cast(UObject.Guid*)&params[16] = MapPackageGuid;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16193], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeamlessTravel, params.ptr, cast(void*)0);
 	}
 	void SetSeamlessTravelMidpointPause(bool bNowPaused)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowPaused;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16198], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSeamlessTravelMidpointPause, params.ptr, cast(void*)0);
 	}
 	MapInfo GetMapInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16200], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapInfo, params.ptr, cast(void*)0);
 		return *cast(MapInfo*)params.ptr;
 	}
 	void SetMapInfo(MapInfo NewMapInfo)
@@ -796,27 +941,27 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(MapInfo*)params.ptr = NewMapInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16202], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMapInfo, params.ptr, cast(void*)0);
 	}
 	Scene.EDetailMode GetDetailMode()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16205], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDetailMode, params.ptr, cast(void*)0);
 		return *cast(Scene.EDetailMode*)params.ptr;
 	}
 	bool IsRecordingDemo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16207], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsRecordingDemo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsPlayingDemo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16209], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlayingDemo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void GetDemoFrameInfo(int* CurrentFrame, int* TotalFrames)
@@ -825,7 +970,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = *CurrentFrame;
 		*cast(int*)&params[4] = *TotalFrames;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16211], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDemoFrameInfo, params.ptr, cast(void*)0);
 		*CurrentFrame = *cast(int*)params.ptr;
 		*TotalFrames = *cast(int*)&params[4];
 	}
@@ -834,19 +979,19 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(int)*)params.ptr = *OutRewindPoints;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16214], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDemoRewindPoints, params.ptr, cast(void*)0);
 		*OutRewindPoints = *cast(ScriptArray!(int)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	void DoMemoryTracking()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16218], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DoMemoryTracking, cast(void*)0, cast(void*)0);
 	}
 	WorldInfo.WorldFractureSettings GetWorldFractureSettings()
 	{
 		ubyte params[28];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16219], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWorldFractureSettings, params.ptr, cast(void*)0);
 		return *cast(WorldInfo.WorldFractureSettings*)params.ptr;
 	}
 	EnvironmentVolume FindEnvironmentVolume(Vector TestLocation)
@@ -854,14 +999,14 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TestLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16230], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindEnvironmentVolume, params.ptr, cast(void*)0);
 		return *cast(EnvironmentVolume*)&params[12];
 	}
 	bool BeginHostMigration()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16233], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BeginHostMigration, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ToggleHostMigration(bool bEnabled)
@@ -869,10 +1014,10 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16235], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleHostMigration, params.ptr, cast(void*)0);
 	}
 	void ClearPhysicsPools()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16237], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearPhysicsPools, cast(void*)0, cast(void*)0);
 	}
 }

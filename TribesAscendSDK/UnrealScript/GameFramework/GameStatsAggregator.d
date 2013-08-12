@@ -9,6 +9,23 @@ import UnrealScript.Engine.GameplayEvents;
 extern(C++) interface GameStatsAggregator : GameplayEventsHandler
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameStatsAggregator")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreProcessStream;
+			ScriptFunction mPostProcessStream;
+			ScriptFunction mGetAggregateMappingIDs;
+		}
+		public @property static final
+		{
+			ScriptFunction PreProcessStream() { return mPreProcessStream ? mPreProcessStream : (mPreProcessStream = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStatsAggregator.PreProcessStream")); }
+			ScriptFunction PostProcessStream() { return mPostProcessStream ? mPostProcessStream : (mPostProcessStream = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStatsAggregator.PostProcessStream")); }
+			ScriptFunction GetAggregateMappingIDs() { return mGetAggregateMappingIDs ? mGetAggregateMappingIDs : (mGetAggregateMappingIDs = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStatsAggregator.GetAggregateMappingIDs")); }
+		}
+	}
 	enum
 	{
 		GAMEEVENT_AGGREGATED_DATA = 10000,
@@ -38,6 +55,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.AggregateEventMapping")); }
 		@property final auto ref
 		{
 			int TargetAggregateID() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -49,6 +68,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[420];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.TeamEvents")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'PawnEvents' has the same name as a defined type!
@@ -63,6 +84,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[420];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.PlayerEvents")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'PawnEvents' has the same name as a defined type!
@@ -77,6 +100,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.DamageEvents")); }
 		@property final auto ref
 		{
 			ScriptArray!(GameStatsAggregator.GameEvents) EventsByDamageClass() { return *cast(ScriptArray!(GameStatsAggregator.GameEvents)*)(cast(size_t)&this + 60); }
@@ -87,6 +112,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.PawnEvents")); }
 		@property final auto ref
 		{
 			ScriptArray!(GameStatsAggregator.GameEvents) EventsByPawnClass() { return *cast(ScriptArray!(GameStatsAggregator.GameEvents)*)(cast(size_t)&this + 60); }
@@ -97,6 +124,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.ProjectileEvents")); }
 		@property final auto ref
 		{
 			ScriptArray!(GameStatsAggregator.GameEvents) EventsByProjectileClass() { return *cast(ScriptArray!(GameStatsAggregator.GameEvents)*)(cast(size_t)&this + 60); }
@@ -107,6 +136,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.WeaponEvents")); }
 		@property final auto ref
 		{
 			ScriptArray!(GameStatsAggregator.GameEvents) EventsByWeaponClass() { return *cast(ScriptArray!(GameStatsAggregator.GameEvents)*)(cast(size_t)&this + 60); }
@@ -117,12 +148,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.GameEvents")); }
 		@property final auto ref UObject.Map_Mirror Events() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
 	}
 	struct GameEvent
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStatsAggregator.GameEvent")); }
 		@property final auto ref ScriptArray!(float) EventCountByTimePeriod() { return *cast(ScriptArray!(float)*)(cast(size_t)&this + 0); }
 	}
 	@property final auto ref
@@ -142,11 +177,11 @@ public extern(D):
 final:
 	void PreProcessStream()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32033], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreProcessStream, cast(void*)0, cast(void*)0);
 	}
 	void PostProcessStream()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32034], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostProcessStream, cast(void*)0, cast(void*)0);
 	}
 	bool GetAggregateMappingIDs(int EventID, int* AggregateID, int* TargetAggregateID)
 	{
@@ -155,7 +190,7 @@ final:
 		*cast(int*)params.ptr = EventID;
 		*cast(int*)&params[4] = *AggregateID;
 		*cast(int*)&params[8] = *TargetAggregateID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32035], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAggregateMappingIDs, params.ptr, cast(void*)0);
 		*AggregateID = *cast(int*)&params[4];
 		*TargetAggregateID = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];

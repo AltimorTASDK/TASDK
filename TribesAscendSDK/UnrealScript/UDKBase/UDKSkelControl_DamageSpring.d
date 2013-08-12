@@ -6,6 +6,8 @@ import UnrealScript.UDKBase.UDKSkelControl_Damage;
 extern(C++) interface UDKSkelControl_DamageSpring : UDKSkelControl_Damage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_DamageSpring")); }
 	@property final auto ref
 	{
 		float MomentumPortion() { return *cast(float*)(cast(size_t)cast(void*)this + 444); }

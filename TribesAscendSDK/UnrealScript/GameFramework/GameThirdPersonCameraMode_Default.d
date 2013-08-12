@@ -1,10 +1,13 @@
 module UnrealScript.GameFramework.GameThirdPersonCameraMode_Default;
 
+import ScriptClasses;
 import UnrealScript.GameFramework.GameThirdPersonCameraMode;
 
 extern(C++) interface GameThirdPersonCameraMode_Default : GameThirdPersonCameraMode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameThirdPersonCameraMode_Default")); }
 	@property final
 	{
 		auto ref

@@ -7,6 +7,13 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UTActorFactoryAI : ActorFactoryAI
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTActorFactoryAI")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPostCreateActor;
+		public @property static final ScriptFunction PostCreateActor() { return mPostCreateActor ? mPostCreateActor : (mPostCreateActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTActorFactoryAI.PostCreateActor")); }
+	}
 	@property final
 	{
 		bool bUseCompartment() { return (*cast(uint*)(cast(size_t)cast(void*)this + 132) & 0x2) != 0; }
@@ -19,6 +26,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39150], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostCreateActor, params.ptr, cast(void*)0);
 	}
 }

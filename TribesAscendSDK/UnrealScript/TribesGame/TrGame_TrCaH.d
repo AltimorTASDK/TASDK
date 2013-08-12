@@ -12,6 +12,51 @@ import UnrealScript.UTGame.UTTeamInfo;
 extern(C++) interface TrGame_TrCaH : TrGame
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrCaH")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mApplyServerSettings;
+			ScriptFunction mSetTeam;
+			ScriptFunction mLogout;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mResetLevel;
+			ScriptFunction mScoreKill;
+			ScriptFunction mCheckScore;
+			ScriptFunction mGotoPendingRoundStartTimer;
+			ScriptFunction mCheckEndGame;
+			ScriptFunction mAwardPoint;
+			ScriptFunction mRestartPlayer;
+			ScriptFunction mGetGameTypeId;
+			ScriptFunction mOnCapturePointHeld;
+			ScriptFunction mOnCapturePointOwnershipChanged;
+			ScriptFunction mRatePlayerStart;
+			ScriptFunction mChoosePlayerStart;
+		}
+		public @property static final
+		{
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.PreBeginPlay")); }
+			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.ApplyServerSettings")); }
+			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.SetTeam")); }
+			ScriptFunction Logout() { return mLogout ? mLogout : (mLogout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.Logout")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.PostBeginPlay")); }
+			ScriptFunction ResetLevel() { return mResetLevel ? mResetLevel : (mResetLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.ResetLevel")); }
+			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.ScoreKill")); }
+			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.CheckScore")); }
+			ScriptFunction GotoPendingRoundStartTimer() { return mGotoPendingRoundStartTimer ? mGotoPendingRoundStartTimer : (mGotoPendingRoundStartTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.GotoPendingRoundStartTimer")); }
+			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.CheckEndGame")); }
+			ScriptFunction AwardPoint() { return mAwardPoint ? mAwardPoint : (mAwardPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.AwardPoint")); }
+			ScriptFunction RestartPlayer() { return mRestartPlayer ? mRestartPlayer : (mRestartPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.RestartPlayer")); }
+			ScriptFunction GetGameTypeId() { return mGetGameTypeId ? mGetGameTypeId : (mGetGameTypeId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.GetGameTypeId")); }
+			ScriptFunction OnCapturePointHeld() { return mOnCapturePointHeld ? mOnCapturePointHeld : (mOnCapturePointHeld = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.OnCapturePointHeld")); }
+			ScriptFunction OnCapturePointOwnershipChanged() { return mOnCapturePointOwnershipChanged ? mOnCapturePointOwnershipChanged : (mOnCapturePointOwnershipChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.OnCapturePointOwnershipChanged")); }
+			ScriptFunction RatePlayerStart() { return mRatePlayerStart ? mRatePlayerStart : (mRatePlayerStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.RatePlayerStart")); }
+			ScriptFunction ChoosePlayerStart() { return mChoosePlayerStart ? mChoosePlayerStart : (mChoosePlayerStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCaH.ChoosePlayerStart")); }
+		}
+	}
 	@property final auto ref
 	{
 		int m_nPostCapturePointTime() { return *cast(int*)(cast(size_t)cast(void*)this + 1476); }
@@ -25,11 +70,11 @@ public extern(D):
 final:
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90545], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ApplyServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90547], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyServerSettings, cast(void*)0, cast(void*)0);
 	}
 	void SetTeam(Controller Other, UTTeamInfo NewTeam, bool bNewTeam)
 	{
@@ -38,22 +83,22 @@ final:
 		*cast(Controller*)params.ptr = Other;
 		*cast(UTTeamInfo*)&params[4] = NewTeam;
 		*cast(bool*)&params[8] = bNewTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90549], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
 	void Logout(Controller Exiting)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Exiting;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90553], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Logout, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90555], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ResetLevel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90556], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetLevel, cast(void*)0, cast(void*)0);
 	}
 	void ScoreKill(Controller Killer, Controller Other)
 	{
@@ -61,19 +106,19 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(Controller*)&params[4] = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90557], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ScoreKill, params.ptr, cast(void*)0);
 	}
 	bool CheckScore(PlayerReplicationInfo Scorer)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Scorer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90560], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckScore, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void GotoPendingRoundStartTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90563], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GotoPendingRoundStartTimer, cast(void*)0, cast(void*)0);
 	}
 	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
@@ -81,7 +126,7 @@ final:
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90564], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckEndGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void AwardPoint(ubyte TeamIndex)
@@ -89,20 +134,20 @@ final:
 		ubyte params[1];
 		params[] = 0;
 		params[0] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90570], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AwardPoint, params.ptr, cast(void*)0);
 	}
 	void RestartPlayer(Controller NewPlayer)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = NewPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90579], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestartPlayer, params.ptr, cast(void*)0);
 	}
 	int GetGameTypeId()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90581], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameTypeId, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void OnCapturePointHeld(TrCaHCapturePoint HeldPoint)
@@ -110,7 +155,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrCaHCapturePoint*)params.ptr = HeldPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90583], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCapturePointHeld, params.ptr, cast(void*)0);
 	}
 	void OnCapturePointOwnershipChanged(TrCaHCapturePoint PointThatChanged, TrPawn TRP)
 	{
@@ -118,7 +163,7 @@ final:
 		params[] = 0;
 		*cast(TrCaHCapturePoint*)params.ptr = PointThatChanged;
 		*cast(TrPawn*)&params[4] = TRP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90587], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCapturePointOwnershipChanged, params.ptr, cast(void*)0);
 	}
 	float RatePlayerStart(PlayerStart P, ubyte Team, Controller pPlayer)
 	{
@@ -127,7 +172,7 @@ final:
 		*cast(PlayerStart*)params.ptr = P;
 		params[4] = Team;
 		*cast(Controller*)&params[8] = pPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90591], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RatePlayerStart, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
 	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte InTeam)
@@ -136,7 +181,7 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
 		params[4] = InTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90600], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChoosePlayerStart, params.ptr, cast(void*)0);
 		return *cast(PlayerStart*)&params[8];
 	}
 }

@@ -8,6 +8,13 @@ import UnrealScript.Engine.SkeletalMesh;
 extern(C++) interface MorphTargetSet : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphTargetSet")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mFindMorphTarget;
+		public @property static final ScriptFunction FindMorphTarget() { return mFindMorphTarget ? mFindMorphTarget : (mFindMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphTargetSet.FindMorphTarget")); }
+	}
 	@property final auto ref
 	{
 		ScriptArray!(MorphTarget) Targets() { return *cast(ScriptArray!(MorphTarget)*)(cast(size_t)cast(void*)this + 60); }
@@ -19,7 +26,7 @@ public extern(D):
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MorphTargetName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20659], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindMorphTarget, params.ptr, cast(void*)0);
 		return *cast(MorphTarget*)&params[8];
 	}
 }

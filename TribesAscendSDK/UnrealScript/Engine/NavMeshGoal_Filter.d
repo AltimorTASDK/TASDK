@@ -6,6 +6,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface NavMeshGoal_Filter : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_Filter")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetDumpString;
+		public @property static final ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoal_Filter.GetDumpString")); }
+	}
 	@property final
 	{
 		auto ref
@@ -20,7 +27,7 @@ public extern(D):
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20957], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDumpString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

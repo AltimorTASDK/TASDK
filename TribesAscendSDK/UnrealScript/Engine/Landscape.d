@@ -10,10 +10,14 @@ import UnrealScript.Engine.Material;
 extern(C++) interface Landscape : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Landscape")); }
 	struct LandscapeLayerInfo
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Landscape.LandscapeLayerInfo")); }
 		@property final
 		{
 			auto ref
@@ -30,6 +34,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Landscape.LandscapeWeightmapUsage")); }
 	}
 	@property final auto ref
 	{

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.AnimNotify_ClothingMaxDistanceScale;
 
+import ScriptClasses;
 import UnrealScript.Engine.AnimNotify;
 import UnrealScript.Engine.SkeletalMeshComponent;
 
 extern(C++) interface AnimNotify_ClothingMaxDistanceScale : AnimNotify
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_ClothingMaxDistanceScale")); }
 	@property final auto ref
 	{
 		float Duration() { return *cast(float*)(cast(size_t)cast(void*)this + 76); }

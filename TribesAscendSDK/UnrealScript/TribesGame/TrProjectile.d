@@ -13,6 +13,69 @@ import UnrealScript.TribesGame.TrDevice;
 extern(C++) interface TrProjectile : UTProjectile
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProjectile")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsBlockedByBlocker;
+			ScriptFunction mOrientToSlope;
+			ScriptFunction mCalculateHitLocation;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mExplodeFromTimeLimit;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mClientReceivedProjectileToTether;
+			ScriptFunction mCreateProjectileLight;
+			ScriptFunction mDetonateObsolete;
+			ScriptFunction mDestroyOldestOverLimit;
+			ScriptFunction mGetMaxDeployedLimit;
+			ScriptFunction mInit;
+			ScriptFunction mInitProjectile;
+			ScriptFunction mApplyInheritance;
+			ScriptFunction mClientCheckFastSpawnExplode;
+			ScriptFunction mSpawnExplosionEffects;
+			ScriptFunction mGetExplosionSound;
+			ScriptFunction mExplode;
+			ScriptFunction mShutDown;
+			ScriptFunction mBounce;
+			ScriptFunction mProjectileHurtRadius;
+			ScriptFunction mHurtRadius_Internal;
+			ScriptFunction mHitWall;
+			ScriptFunction mTouch;
+			ScriptFunction mProcessTouch;
+		}
+		public @property static final
+		{
+			ScriptFunction IsBlockedByBlocker() { return mIsBlockedByBlocker ? mIsBlockedByBlocker : (mIsBlockedByBlocker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.IsBlockedByBlocker")); }
+			ScriptFunction OrientToSlope() { return mOrientToSlope ? mOrientToSlope : (mOrientToSlope = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.OrientToSlope")); }
+			ScriptFunction CalculateHitLocation() { return mCalculateHitLocation ? mCalculateHitLocation : (mCalculateHitLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.CalculateHitLocation")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ReplicatedEvent")); }
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.PreBeginPlay")); }
+			ScriptFunction ExplodeFromTimeLimit() { return mExplodeFromTimeLimit ? mExplodeFromTimeLimit : (mExplodeFromTimeLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ExplodeFromTimeLimit")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.PostBeginPlay")); }
+			ScriptFunction ClientReceivedProjectileToTether() { return mClientReceivedProjectileToTether ? mClientReceivedProjectileToTether : (mClientReceivedProjectileToTether = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ClientReceivedProjectileToTether")); }
+			ScriptFunction CreateProjectileLight() { return mCreateProjectileLight ? mCreateProjectileLight : (mCreateProjectileLight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.CreateProjectileLight")); }
+			ScriptFunction DetonateObsolete() { return mDetonateObsolete ? mDetonateObsolete : (mDetonateObsolete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.DetonateObsolete")); }
+			ScriptFunction DestroyOldestOverLimit() { return mDestroyOldestOverLimit ? mDestroyOldestOverLimit : (mDestroyOldestOverLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.DestroyOldestOverLimit")); }
+			ScriptFunction GetMaxDeployedLimit() { return mGetMaxDeployedLimit ? mGetMaxDeployedLimit : (mGetMaxDeployedLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.GetMaxDeployedLimit")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Init")); }
+			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.InitProjectile")); }
+			ScriptFunction ApplyInheritance() { return mApplyInheritance ? mApplyInheritance : (mApplyInheritance = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ApplyInheritance")); }
+			ScriptFunction ClientCheckFastSpawnExplode() { return mClientCheckFastSpawnExplode ? mClientCheckFastSpawnExplode : (mClientCheckFastSpawnExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ClientCheckFastSpawnExplode")); }
+			ScriptFunction SpawnExplosionEffects() { return mSpawnExplosionEffects ? mSpawnExplosionEffects : (mSpawnExplosionEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.SpawnExplosionEffects")); }
+			ScriptFunction GetExplosionSound() { return mGetExplosionSound ? mGetExplosionSound : (mGetExplosionSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.GetExplosionSound")); }
+			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Explode")); }
+			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ShutDown")); }
+			ScriptFunction Bounce() { return mBounce ? mBounce : (mBounce = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Bounce")); }
+			ScriptFunction ProjectileHurtRadius() { return mProjectileHurtRadius ? mProjectileHurtRadius : (mProjectileHurtRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ProjectileHurtRadius")); }
+			ScriptFunction HurtRadius_Internal() { return mHurtRadius_Internal ? mHurtRadius_Internal : (mHurtRadius_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.HurtRadius_Internal")); }
+			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.HitWall")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.Touch")); }
+			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProjectile.ProcessTouch")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -73,7 +136,7 @@ final:
 		*cast(Actor*)&params[8] = OriginActor;
 		*cast(bool*)&params[12] = CheckWorldGeometry;
 		*cast(Vector*)&params[16] = AltOriginLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71790], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsBlockedByBlocker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void OrientToSlope(Vector HitNormal)
@@ -81,9 +144,9 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107650], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OrientToSlope, params.ptr, cast(void*)0);
 	}
-	Vector CalculateHitLocation(Actor shooter, Vector ShotDirection, Vector ShotLocation, float ClampedMaxSpeed)
+	static Vector CalculateHitLocation(Actor shooter, Vector ShotDirection, Vector ShotLocation, float ClampedMaxSpeed)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -91,7 +154,7 @@ final:
 		*cast(Vector*)&params[4] = ShotDirection;
 		*cast(Vector*)&params[16] = ShotLocation;
 		*cast(float*)&params[28] = ClampedMaxSpeed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107652], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.CalculateHitLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[32];
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -99,44 +162,44 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107658], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107660], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ExplodeFromTimeLimit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107662], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExplodeFromTimeLimit, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107663], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ClientReceivedProjectileToTether()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107667], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceivedProjectileToTether, cast(void*)0, cast(void*)0);
 	}
 	void CreateProjectileLight()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107673], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateProjectileLight, cast(void*)0, cast(void*)0);
 	}
 	void DetonateObsolete(bool bDetonateFromAOE)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDetonateFromAOE;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107674], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DetonateObsolete, params.ptr, cast(void*)0);
 	}
 	void DestroyOldestOverLimit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107676], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyOldestOverLimit, cast(void*)0, cast(void*)0);
 	}
 	int GetMaxDeployedLimit()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107683], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxDeployedLimit, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void Init(Vector Direction)
@@ -144,7 +207,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107689], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
 	{
@@ -152,18 +215,18 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
 		*cast(ScriptClass*)&params[12] = ClassToInherit;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107691], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void ApplyInheritance(Vector ProjectileDir)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = ProjectileDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107694], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyInheritance, params.ptr, cast(void*)0);
 	}
 	void ClientCheckFastSpawnExplode()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107698], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientCheckFastSpawnExplode, cast(void*)0, cast(void*)0);
 	}
 	void SpawnExplosionEffects(Vector HitLocation, Vector HitNormal)
 	{
@@ -171,7 +234,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107702], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnExplosionEffects, params.ptr, cast(void*)0);
 	}
 	SoundCue GetExplosionSound(PhysicalMaterial HitMaterial, Actor HitActor)
 	{
@@ -179,7 +242,7 @@ final:
 		params[] = 0;
 		*cast(PhysicalMaterial*)params.ptr = HitMaterial;
 		*cast(Actor*)&params[4] = HitActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107716], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetExplosionSound, params.ptr, cast(void*)0);
 		return *cast(SoundCue*)&params[8];
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)
@@ -188,11 +251,11 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107724], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void ShutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107727], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
 	void Bounce(Actor Other, Vector WallNormal)
 	{
@@ -200,7 +263,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = WallNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107729], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Bounce, params.ptr, cast(void*)0);
 	}
 	bool ProjectileHurtRadius(Vector HurtOrigin, Vector HitNormal)
 	{
@@ -208,7 +271,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HurtOrigin;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107732], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileHurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	bool HurtRadius_Internal(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Vector AltHurtOrigin, Actor IgnoredActor, Controller InstigatedByController, bool bDoFullDamage)
@@ -224,7 +287,7 @@ final:
 		*cast(Actor*)&params[40] = IgnoredActor;
 		*cast(Controller*)&params[44] = InstigatedByController;
 		*cast(bool*)&params[48] = bDoFullDamage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107741], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HurtRadius_Internal, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[52];
 	}
 	void HitWall(Vector HitNormal, Actor Wall, 
@@ -238,7 +301,7 @@ void* WallComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107763], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -252,7 +315,7 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107773], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
@@ -261,6 +324,6 @@ void**)&params[4] = OtherComp;
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[107778], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTouch, params.ptr, cast(void*)0);
 	}
 }

@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ActorFactoryApexDestructible;
 
+import ScriptClasses;
 import UnrealScript.Engine.ActorFactory;
 import UnrealScript.Engine.ApexDestructibleAsset;
 import UnrealScript.Engine.PrimitiveComponent;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface ActorFactoryApexDestructible : ActorFactory
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryApexDestructible")); }
 	@property final
 	{
 		auto ref

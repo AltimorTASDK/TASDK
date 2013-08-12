@@ -8,6 +8,27 @@ import UnrealScript.IpDrv.TcpLink;
 extern(C++) interface WebServer : TcpLink
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebServer")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetApplication;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mDestroyed;
+			ScriptFunction mGainedChild;
+			ScriptFunction mLostChild;
+		}
+		public @property static final
+		{
+			ScriptFunction GetApplication() { return mGetApplication ? mGetApplication : (mGetApplication = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.GetApplication")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.PostBeginPlay")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.Destroyed")); }
+			ScriptFunction GainedChild() { return mGainedChild ? mGainedChild : (mGainedChild = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.GainedChild")); }
+			ScriptFunction LostChild() { return mLostChild ? mLostChild : (mLostChild = ScriptObject.Find!(ScriptFunction)("Function IpDrv.WebServer.LostChild")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -34,30 +55,30 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = URI;
 		*cast(ScriptString*)&params[12] = *SubURI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34118], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetApplication, params.ptr, cast(void*)0);
 		*SubURI = *cast(ScriptString*)&params[12];
 		return *cast(WebApplication*)&params[24];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34251], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34256], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void GainedChild(Actor C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34258], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GainedChild, params.ptr, cast(void*)0);
 	}
 	void LostChild(Actor C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34260], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LostChild, params.ptr, cast(void*)0);
 	}
 }

@@ -7,10 +7,14 @@ import UnrealScript.Engine.MaterialExpressionCompound;
 extern(C++) interface MaterialExpression : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpression")); }
 	struct ExpressionInput
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialExpression.ExpressionInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }

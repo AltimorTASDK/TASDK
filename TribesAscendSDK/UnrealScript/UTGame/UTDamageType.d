@@ -16,6 +16,59 @@ import UnrealScript.Engine.CameraAnim;
 extern(C++) interface UTDamageType : DamageType
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDamageType")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetDeathCameraEffectInstigator;
+			ScriptFunction mGetHitEffectDuration;
+			ScriptFunction mShouldGib;
+			ScriptFunction mGetDeathCameraEffectVictim;
+			ScriptFunction mDeathMessage;
+			ScriptFunction mSuicideMessage;
+			ScriptFunction mSpawnHitEffect;
+			ScriptFunction mIncrementKills;
+			ScriptFunction mIncrementDeaths;
+			ScriptFunction mIncrementSuicides;
+			ScriptFunction mGetStatsName;
+			ScriptFunction mScoreKill;
+			ScriptFunction mPawnTornOff;
+			ScriptFunction mSpawnGibEffects;
+			ScriptFunction mDoCustomDamageEffects;
+			ScriptFunction mCreateDeathSkeleton;
+			ScriptFunction mBoneBreaker;
+			ScriptFunction mCreateDeathGoreChunks;
+			ScriptFunction mSpawnExtraGibEffects;
+			ScriptFunction mDrawKillIcon;
+			ScriptFunction mCalcDeathCamera;
+		}
+		public @property static final
+		{
+			ScriptFunction GetDeathCameraEffectInstigator() { return mGetDeathCameraEffectInstigator ? mGetDeathCameraEffectInstigator : (mGetDeathCameraEffectInstigator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetDeathCameraEffectInstigator")); }
+			ScriptFunction GetHitEffectDuration() { return mGetHitEffectDuration ? mGetHitEffectDuration : (mGetHitEffectDuration = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetHitEffectDuration")); }
+			ScriptFunction ShouldGib() { return mShouldGib ? mShouldGib : (mShouldGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.ShouldGib")); }
+			ScriptFunction GetDeathCameraEffectVictim() { return mGetDeathCameraEffectVictim ? mGetDeathCameraEffectVictim : (mGetDeathCameraEffectVictim = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetDeathCameraEffectVictim")); }
+			ScriptFunction DeathMessage() { return mDeathMessage ? mDeathMessage : (mDeathMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DeathMessage")); }
+			ScriptFunction SuicideMessage() { return mSuicideMessage ? mSuicideMessage : (mSuicideMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SuicideMessage")); }
+			ScriptFunction SpawnHitEffect() { return mSpawnHitEffect ? mSpawnHitEffect : (mSpawnHitEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnHitEffect")); }
+			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementKills")); }
+			ScriptFunction IncrementDeaths() { return mIncrementDeaths ? mIncrementDeaths : (mIncrementDeaths = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementDeaths")); }
+			ScriptFunction IncrementSuicides() { return mIncrementSuicides ? mIncrementSuicides : (mIncrementSuicides = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.IncrementSuicides")); }
+			ScriptFunction GetStatsName() { return mGetStatsName ? mGetStatsName : (mGetStatsName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.GetStatsName")); }
+			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.ScoreKill")); }
+			ScriptFunction PawnTornOff() { return mPawnTornOff ? mPawnTornOff : (mPawnTornOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.PawnTornOff")); }
+			ScriptFunction SpawnGibEffects() { return mSpawnGibEffects ? mSpawnGibEffects : (mSpawnGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnGibEffects")); }
+			ScriptFunction DoCustomDamageEffects() { return mDoCustomDamageEffects ? mDoCustomDamageEffects : (mDoCustomDamageEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DoCustomDamageEffects")); }
+			ScriptFunction CreateDeathSkeleton() { return mCreateDeathSkeleton ? mCreateDeathSkeleton : (mCreateDeathSkeleton = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CreateDeathSkeleton")); }
+			ScriptFunction BoneBreaker() { return mBoneBreaker ? mBoneBreaker : (mBoneBreaker = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.BoneBreaker")); }
+			ScriptFunction CreateDeathGoreChunks() { return mCreateDeathGoreChunks ? mCreateDeathGoreChunks : (mCreateDeathGoreChunks = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CreateDeathGoreChunks")); }
+			ScriptFunction SpawnExtraGibEffects() { return mSpawnExtraGibEffects ? mSpawnExtraGibEffects : (mSpawnExtraGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.SpawnExtraGibEffects")); }
+			ScriptFunction DrawKillIcon() { return mDrawKillIcon ? mDrawKillIcon : (mDrawKillIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.DrawKillIcon")); }
+			ScriptFunction CalcDeathCamera() { return mCalcDeathCamera ? mCalcDeathCamera : (mCalcDeathCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDamageType.CalcDeathCamera")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -97,57 +150,57 @@ public extern(D):
 		bool bAlwaysGibs(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x4; } return val; }
 	}
 final:
-	ScriptClass GetDeathCameraEffectInstigator(UTPawn UTP)
+	static ScriptClass GetDeathCameraEffectInstigator(UTPawn UTP)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = UTP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39477], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDeathCameraEffectInstigator, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
-	float GetHitEffectDuration(Pawn P, float Damage)
+	static float GetHitEffectDuration(Pawn P, float Damage)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(float*)&params[4] = Damage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39820], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetHitEffectDuration, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	bool ShouldGib(UTPawn DeadPawn)
+	static bool ShouldGib(UTPawn DeadPawn)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = DeadPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41750], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ShouldGib, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	ScriptClass GetDeathCameraEffectVictim(UTPawn UTP)
+	static ScriptClass GetDeathCameraEffectVictim(UTPawn UTP)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = UTP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41770], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDeathCameraEffectVictim, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
-	ScriptString DeathMessage(PlayerReplicationInfo Killer, PlayerReplicationInfo Victim)
+	static ScriptString DeathMessage(PlayerReplicationInfo Killer, PlayerReplicationInfo Victim)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Killer;
 		*cast(PlayerReplicationInfo*)&params[4] = Victim;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46779], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DeathMessage, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	ScriptString SuicideMessage(PlayerReplicationInfo Victim)
+	static ScriptString SuicideMessage(PlayerReplicationInfo Victim)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Victim;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46783], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SuicideMessage, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
+	static void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -156,62 +209,62 @@ final:
 		*cast(Vector*)&params[8] = Momentum;
 		*cast(ScriptName*)&params[20] = BoneName;
 		*cast(Vector*)&params[28] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46786], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SpawnHitEffect, params.ptr, cast(void*)0);
 	}
-	int IncrementKills(UTPlayerReplicationInfo KillerPRI)
+	static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = KillerPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46794], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IncrementKills, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	void IncrementDeaths(UTPlayerReplicationInfo KilledPRI)
+	static void IncrementDeaths(UTPlayerReplicationInfo KilledPRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = KilledPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46798], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IncrementDeaths, params.ptr, cast(void*)0);
 	}
-	void IncrementSuicides(UTPlayerReplicationInfo KilledPRI)
+	static void IncrementSuicides(UTPlayerReplicationInfo KilledPRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = KilledPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46800], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IncrementSuicides, params.ptr, cast(void*)0);
 	}
-	ScriptName GetStatsName(ScriptName StatType)
+	static ScriptName GetStatsName(ScriptName StatType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StatType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46802], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetStatsName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[8];
 	}
-	void ScoreKill(UTPlayerReplicationInfo KillerPRI, UTPlayerReplicationInfo KilledPRI, Pawn KilledPawn)
+	static void ScoreKill(UTPlayerReplicationInfo KillerPRI, UTPlayerReplicationInfo KilledPRI, Pawn KilledPawn)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = KillerPRI;
 		*cast(UTPlayerReplicationInfo*)&params[4] = KilledPRI;
 		*cast(Pawn*)&params[8] = KilledPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46805], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ScoreKill, params.ptr, cast(void*)0);
 	}
-	void PawnTornOff(UTPawn DeadPawn)
+	static void PawnTornOff(UTPawn DeadPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = DeadPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46809], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PawnTornOff, params.ptr, cast(void*)0);
 	}
-	void SpawnGibEffects(UTGib Gib)
+	static void SpawnGibEffects(UTGib Gib)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTGib*)params.ptr = Gib;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46811], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SpawnGibEffects, params.ptr, cast(void*)0);
 	}
-	void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -219,10 +272,10 @@ final:
 		*cast(ScriptClass*)&params[4] = TheDamageType;
 		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46815], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DoCustomDamageEffects, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
-	void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -230,10 +283,10 @@ final:
 		*cast(ScriptClass*)&params[4] = TheDamageType;
 		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46820], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.CreateDeathSkeleton, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
-	void BoneBreaker(UTPawn ThePawn, 
+	static void BoneBreaker(UTPawn ThePawn, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* TheMesh, Vector Impulse, Vector HitLocation, ScriptName BoneName)
 	{
@@ -246,9 +299,9 @@ void**)&params[4] = TheMesh;
 		*cast(Vector*)&params[8] = Impulse;
 		*cast(Vector*)&params[20] = HitLocation;
 		*cast(ScriptName*)&params[32] = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46837], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.BoneBreaker, params.ptr, cast(void*)0);
 	}
-	void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
+	static void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, Actor.TraceHitInfo* HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -256,17 +309,17 @@ void**)&params[4] = TheMesh;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
 		*cast(Actor.TraceHitInfo*)&params[8] = *HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46846], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.CreateDeathGoreChunks, params.ptr, cast(void*)0);
 		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
-	void SpawnExtraGibEffects(UTGib TheGib)
+	static void SpawnExtraGibEffects(UTGib TheGib)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTGib*)params.ptr = TheGib;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46855], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SpawnExtraGibEffects, params.ptr, cast(void*)0);
 	}
-	void DrawKillIcon(Canvas pCanvas, float ScreenX, float ScreenY, float HUDScaleX, float HUDScaleY)
+	static void DrawKillIcon(Canvas pCanvas, float ScreenX, float ScreenY, float HUDScaleX, float HUDScaleY)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -275,9 +328,9 @@ void**)&params[4] = TheMesh;
 		*cast(float*)&params[8] = ScreenY;
 		*cast(float*)&params[12] = HUDScaleX;
 		*cast(float*)&params[16] = HUDScaleY;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46857], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawKillIcon, params.ptr, cast(void*)0);
 	}
-	void CalcDeathCamera(UTPawn P, float DeltaTime, Vector* CameraLocation, Rotator* CameraRotation, float* CameraFOV)
+	static void CalcDeathCamera(UTPawn P, float DeltaTime, Vector* CameraLocation, Rotator* CameraRotation, float* CameraFOV)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -286,7 +339,7 @@ void**)&params[4] = TheMesh;
 		*cast(Vector*)&params[8] = *CameraLocation;
 		*cast(Rotator*)&params[20] = *CameraRotation;
 		*cast(float*)&params[32] = *CameraFOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46863], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.CalcDeathCamera, params.ptr, cast(void*)0);
 		*CameraLocation = *cast(Vector*)&params[8];
 		*CameraRotation = *cast(Rotator*)&params[20];
 		*CameraFOV = *cast(float*)&params[32];

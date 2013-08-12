@@ -1,11 +1,14 @@
 module UnrealScript.Engine.PBRuleNodeCycle;
 
+import ScriptClasses;
 import UnrealScript.Engine.ProcBuildingRuleset;
 import UnrealScript.Engine.PBRuleNodeBase;
 
 extern(C++) interface PBRuleNodeCycle : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeCycle")); }
 	@property final
 	{
 		auto ref

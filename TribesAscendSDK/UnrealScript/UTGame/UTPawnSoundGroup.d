@@ -8,10 +8,57 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UTPawnSoundGroup : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPawnSoundGroup")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetFootstepSound;
+			ScriptFunction mGetLandSound;
+			ScriptFunction mGetJumpSound;
+			ScriptFunction mPlayInstagibSound;
+			ScriptFunction mPlayBulletImpact;
+			ScriptFunction mPlayCrushedSound;
+			ScriptFunction mPlayBodyExplosion;
+			ScriptFunction mPlayDodgeSound;
+			ScriptFunction mPlayDoubleJumpSound;
+			ScriptFunction mPlayJumpSound;
+			ScriptFunction mPlayLandSound;
+			ScriptFunction mPlayFallingDamageLandSound;
+			ScriptFunction mPlayDyingSound;
+			ScriptFunction mPlayTakeHitSound;
+			ScriptFunction mPlayGibSound;
+			ScriptFunction mPlayGaspSound;
+			ScriptFunction mPlayDrownSound;
+		}
+		public @property static final
+		{
+			ScriptFunction GetFootstepSound() { return mGetFootstepSound ? mGetFootstepSound : (mGetFootstepSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.GetFootstepSound")); }
+			ScriptFunction GetLandSound() { return mGetLandSound ? mGetLandSound : (mGetLandSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.GetLandSound")); }
+			ScriptFunction GetJumpSound() { return mGetJumpSound ? mGetJumpSound : (mGetJumpSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.GetJumpSound")); }
+			ScriptFunction PlayInstagibSound() { return mPlayInstagibSound ? mPlayInstagibSound : (mPlayInstagibSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayInstagibSound")); }
+			ScriptFunction PlayBulletImpact() { return mPlayBulletImpact ? mPlayBulletImpact : (mPlayBulletImpact = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayBulletImpact")); }
+			ScriptFunction PlayCrushedSound() { return mPlayCrushedSound ? mPlayCrushedSound : (mPlayCrushedSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayCrushedSound")); }
+			ScriptFunction PlayBodyExplosion() { return mPlayBodyExplosion ? mPlayBodyExplosion : (mPlayBodyExplosion = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayBodyExplosion")); }
+			ScriptFunction PlayDodgeSound() { return mPlayDodgeSound ? mPlayDodgeSound : (mPlayDodgeSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayDodgeSound")); }
+			ScriptFunction PlayDoubleJumpSound() { return mPlayDoubleJumpSound ? mPlayDoubleJumpSound : (mPlayDoubleJumpSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayDoubleJumpSound")); }
+			ScriptFunction PlayJumpSound() { return mPlayJumpSound ? mPlayJumpSound : (mPlayJumpSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayJumpSound")); }
+			ScriptFunction PlayLandSound() { return mPlayLandSound ? mPlayLandSound : (mPlayLandSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayLandSound")); }
+			ScriptFunction PlayFallingDamageLandSound() { return mPlayFallingDamageLandSound ? mPlayFallingDamageLandSound : (mPlayFallingDamageLandSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayFallingDamageLandSound")); }
+			ScriptFunction PlayDyingSound() { return mPlayDyingSound ? mPlayDyingSound : (mPlayDyingSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayDyingSound")); }
+			ScriptFunction PlayTakeHitSound() { return mPlayTakeHitSound ? mPlayTakeHitSound : (mPlayTakeHitSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayTakeHitSound")); }
+			ScriptFunction PlayGibSound() { return mPlayGibSound ? mPlayGibSound : (mPlayGibSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayGibSound")); }
+			ScriptFunction PlayGaspSound() { return mPlayGaspSound ? mPlayGaspSound : (mPlayGaspSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayGaspSound")); }
+			ScriptFunction PlayDrownSound() { return mPlayDrownSound ? mPlayDrownSound : (mPlayDrownSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawnSoundGroup.PlayDrownSound")); }
+		}
+	}
 	struct FootstepSoundInfo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTPawnSoundGroup.FootstepSoundInfo")); }
 		@property final auto ref
 		{
 			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
@@ -41,128 +88,128 @@ public extern(D):
 		SoundCue DodgeSound() { return *cast(SoundCue*)(cast(size_t)cast(void*)this + 60); }
 	}
 final:
-	SoundCue GetFootstepSound(int FootDown, ScriptName MaterialType)
+	static SoundCue GetFootstepSound(int FootDown, ScriptName MaterialType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = FootDown;
 		*cast(ScriptName*)&params[4] = MaterialType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41726], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFootstepSound, params.ptr, cast(void*)0);
 		return *cast(SoundCue*)&params[12];
 	}
-	SoundCue GetLandSound(ScriptName MaterialType)
+	static SoundCue GetLandSound(ScriptName MaterialType)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MaterialType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41741], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetLandSound, params.ptr, cast(void*)0);
 		return *cast(SoundCue*)&params[8];
 	}
-	SoundCue GetJumpSound(ScriptName MaterialType)
+	static SoundCue GetJumpSound(ScriptName MaterialType)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MaterialType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41745], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetJumpSound, params.ptr, cast(void*)0);
 		return *cast(SoundCue*)&params[8];
 	}
-	void PlayInstagibSound(Pawn P)
+	static void PlayInstagibSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48699], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayInstagibSound, params.ptr, cast(void*)0);
 	}
-	void PlayBulletImpact(Pawn P)
+	static void PlayBulletImpact(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48701], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayBulletImpact, params.ptr, cast(void*)0);
 	}
-	void PlayCrushedSound(Pawn P)
+	static void PlayCrushedSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48703], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayCrushedSound, params.ptr, cast(void*)0);
 	}
-	void PlayBodyExplosion(Pawn P)
+	static void PlayBodyExplosion(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48705], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayBodyExplosion, params.ptr, cast(void*)0);
 	}
-	void PlayDodgeSound(Pawn P)
+	static void PlayDodgeSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48707], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayDodgeSound, params.ptr, cast(void*)0);
 	}
-	void PlayDoubleJumpSound(Pawn P)
+	static void PlayDoubleJumpSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48709], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayDoubleJumpSound, params.ptr, cast(void*)0);
 	}
-	void PlayJumpSound(Pawn P)
+	static void PlayJumpSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48711], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayJumpSound, params.ptr, cast(void*)0);
 	}
-	void PlayLandSound(Pawn P)
+	static void PlayLandSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48713], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayLandSound, params.ptr, cast(void*)0);
 	}
-	void PlayFallingDamageLandSound(Pawn P)
+	static void PlayFallingDamageLandSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48715], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayFallingDamageLandSound, params.ptr, cast(void*)0);
 	}
-	void PlayDyingSound(Pawn P)
+	static void PlayDyingSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48724], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayDyingSound, params.ptr, cast(void*)0);
 	}
-	void PlayTakeHitSound(Pawn P, int Damage)
+	static void PlayTakeHitSound(Pawn P, int Damage)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(int*)&params[4] = Damage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48726], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayTakeHitSound, params.ptr, cast(void*)0);
 	}
-	void PlayGibSound(Pawn P)
+	static void PlayGibSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48729], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayGibSound, params.ptr, cast(void*)0);
 	}
-	void PlayGaspSound(Pawn P)
+	static void PlayGaspSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48731], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayGaspSound, params.ptr, cast(void*)0);
 	}
-	void PlayDrownSound(Pawn P)
+	static void PlayDrownSound(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48733], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayDrownSound, params.ptr, cast(void*)0);
 	}
 }

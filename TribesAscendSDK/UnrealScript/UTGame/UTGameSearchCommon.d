@@ -1,10 +1,13 @@
 module UnrealScript.UTGame.UTGameSearchCommon;
 
+import ScriptClasses;
 import UnrealScript.Engine.OnlineGameSearch;
 
 extern(C++) interface UTGameSearchCommon : OnlineGameSearch
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameSearchCommon")); }
 	enum
 	{
 		GS_USERNAME_MAXLENGTH = 15,

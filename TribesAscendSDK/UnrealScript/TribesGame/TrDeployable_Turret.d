@@ -14,10 +14,57 @@ import UnrealScript.GameFramework.GameSkelCtrl_Recoil;
 extern(C++) interface TrDeployable_Turret : TrDeployable
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_Turret")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mDeployComplete;
+			ScriptFunction mAcquireTarget;
+			ScriptFunction mGetAcquireDelayTime;
+			ScriptFunction mCleanupIgnoreList;
+			ScriptFunction mCanTargetPawn;
+			ScriptFunction mGetTargetPawn;
+			ScriptFunction mTick;
+			ScriptFunction mUpdateAim;
+			ScriptFunction mPlayFireEffects;
+			ScriptFunction mCauseMuzzleFlash;
+			ScriptFunction mMuzzleFlashTimer;
+			ScriptFunction mSetMuzzleFlashParams;
+			ScriptFunction mGetWeaponStartTraceLocation;
+			ScriptFunction mGetMarker;
+			ScriptFunction mAwardKillAssists;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.PostInitAnimTree")); }
+			ScriptFunction DeployComplete() { return mDeployComplete ? mDeployComplete : (mDeployComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.DeployComplete")); }
+			ScriptFunction AcquireTarget() { return mAcquireTarget ? mAcquireTarget : (mAcquireTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.AcquireTarget")); }
+			ScriptFunction GetAcquireDelayTime() { return mGetAcquireDelayTime ? mGetAcquireDelayTime : (mGetAcquireDelayTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.GetAcquireDelayTime")); }
+			ScriptFunction CleanupIgnoreList() { return mCleanupIgnoreList ? mCleanupIgnoreList : (mCleanupIgnoreList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.CleanupIgnoreList")); }
+			ScriptFunction CanTargetPawn() { return mCanTargetPawn ? mCanTargetPawn : (mCanTargetPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.CanTargetPawn")); }
+			ScriptFunction GetTargetPawn() { return mGetTargetPawn ? mGetTargetPawn : (mGetTargetPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.GetTargetPawn")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.Tick")); }
+			ScriptFunction UpdateAim() { return mUpdateAim ? mUpdateAim : (mUpdateAim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.UpdateAim")); }
+			ScriptFunction PlayFireEffects() { return mPlayFireEffects ? mPlayFireEffects : (mPlayFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.PlayFireEffects")); }
+			ScriptFunction CauseMuzzleFlash() { return mCauseMuzzleFlash ? mCauseMuzzleFlash : (mCauseMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.CauseMuzzleFlash")); }
+			ScriptFunction MuzzleFlashTimer() { return mMuzzleFlashTimer ? mMuzzleFlashTimer : (mMuzzleFlashTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.MuzzleFlashTimer")); }
+			ScriptFunction SetMuzzleFlashParams() { return mSetMuzzleFlashParams ? mSetMuzzleFlashParams : (mSetMuzzleFlashParams = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.SetMuzzleFlashParams")); }
+			ScriptFunction GetWeaponStartTraceLocation() { return mGetWeaponStartTraceLocation ? mGetWeaponStartTraceLocation : (mGetWeaponStartTraceLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.GetWeaponStartTraceLocation")); }
+			ScriptFunction GetMarker() { return mGetMarker ? mGetMarker : (mGetMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.GetMarker")); }
+			ScriptFunction AwardKillAssists() { return mAwardKillAssists ? mAwardKillAssists : (mAwardKillAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable_Turret.AwardKillAssists")); }
+		}
+	}
 	struct IgnorePawn
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDeployable_Turret.IgnorePawn")); }
 		@property final auto ref
 		{
 			float UnignoreTime() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -50,7 +97,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71956], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -61,40 +108,40 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71957], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void DeployComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71960], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeployComplete, cast(void*)0, cast(void*)0);
 	}
 	void AcquireTarget()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71961], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AcquireTarget, cast(void*)0, cast(void*)0);
 	}
 	float GetAcquireDelayTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71966], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAcquireDelayTime, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void CleanupIgnoreList()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71975], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CleanupIgnoreList, cast(void*)0, cast(void*)0);
 	}
 	bool CanTargetPawn(Pawn aPawn)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = aPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71978], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanTargetPawn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	Pawn GetTargetPawn()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71990], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetPawn, params.ptr, cast(void*)0);
 		return *cast(Pawn*)params.ptr;
 	}
 	void Tick(float DeltaTime)
@@ -102,14 +149,14 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72004], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void UpdateAim(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72006], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateAim, params.ptr, cast(void*)0);
 	}
 	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
 	{
@@ -118,15 +165,15 @@ void**)params.ptr = SkelComp;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
 		*cast(Vector*)&params[8] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72011], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void CauseMuzzleFlash()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72016], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CauseMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
 	void MuzzleFlashTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72018], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MuzzleFlashTimer, cast(void*)0, cast(void*)0);
 	}
 	void SetMuzzleFlashParams(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -138,25 +185,25 @@ void* PSC, UObject.Color MuzzleFlashColor)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSC;
 		*cast(UObject.Color*)&params[4] = MuzzleFlashColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72019], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMuzzleFlashParams, params.ptr, cast(void*)0);
 	}
 	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = CurrentWeapon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72022], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 	Texture2D GetMarker()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72029], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMarker, params.ptr, cast(void*)0);
 		return *cast(Texture2D*)params.ptr;
 	}
 	void AwardKillAssists()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72032], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AwardKillAssists, cast(void*)0, cast(void*)0);
 	}
 }

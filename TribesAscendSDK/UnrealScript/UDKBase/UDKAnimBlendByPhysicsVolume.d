@@ -7,10 +7,19 @@ import UnrealScript.UDKBase.UDKAnimBlendBase;
 extern(C++) interface UDKAnimBlendByPhysicsVolume : UDKAnimBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByPhysicsVolume")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPhysicsVolumeChanged;
+		public @property static final ScriptFunction PhysicsVolumeChanged() { return mPhysicsVolumeChanged ? mPhysicsVolumeChanged : (mPhysicsVolumeChanged = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByPhysicsVolume.PhysicsVolumeChanged")); }
+	}
 	struct PhysicsVolumeParams
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKAnimBlendByPhysicsVolume.PhysicsVolumeParams")); }
 		@property final
 		{
 			auto ref
@@ -35,6 +44,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicsVolume*)params.ptr = NewVolume;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34539], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PhysicsVolumeChanged, params.ptr, cast(void*)0);
 	}
 }

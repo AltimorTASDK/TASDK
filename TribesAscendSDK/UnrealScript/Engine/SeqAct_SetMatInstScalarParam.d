@@ -7,6 +7,8 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_SetMatInstScalarParam : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMatInstScalarParam")); }
 	@property final auto ref
 	{
 		float ScalarValue() { return *cast(float*)(cast(size_t)cast(void*)this + 244); }

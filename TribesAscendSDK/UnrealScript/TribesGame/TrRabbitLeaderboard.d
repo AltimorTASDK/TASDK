@@ -9,10 +9,41 @@ import UnrealScript.TribesGame.TrGameReplicationInfo;
 extern(C++) interface TrRabbitLeaderboard : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRabbitLeaderboard")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mShow;
+			ScriptFunction mHide;
+			ScriptFunction mTick;
+			ScriptFunction mUpdatePlayers;
+			ScriptFunction mUpdateLeaderboard;
+			ScriptFunction mUpdateTime;
+			ScriptFunction mFormatTime;
+			ScriptFunction mForceUpdate;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.Initialize")); }
+			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.Show")); }
+			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.Hide")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.Tick")); }
+			ScriptFunction UpdatePlayers() { return mUpdatePlayers ? mUpdatePlayers : (mUpdatePlayers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.UpdatePlayers")); }
+			ScriptFunction UpdateLeaderboard() { return mUpdateLeaderboard ? mUpdateLeaderboard : (mUpdateLeaderboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.UpdateLeaderboard")); }
+			ScriptFunction UpdateTime() { return mUpdateTime ? mUpdateTime : (mUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.UpdateTime")); }
+			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.FormatTime")); }
+			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitLeaderboard.ForceUpdate")); }
+		}
+	}
 	struct LeaderboardSlot
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrRabbitLeaderboard.LeaderboardSlot")); }
 		@property final auto ref
 		{
 			int Score() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -43,26 +74,26 @@ final:
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = PC;
 		*cast(GfxTrHud*)&params[4] = MP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109790], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 	}
 	void Show()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109793], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Show, cast(void*)0, cast(void*)0);
 	}
 	void Hide()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109794], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Hide, cast(void*)0, cast(void*)0);
 	}
 	void Tick()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109795], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, cast(void*)0, cast(void*)0);
 	}
 	void UpdatePlayers(TrGameReplicationInfo GRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePlayers, params.ptr, cast(void*)0);
 	}
 	bool UpdateLeaderboard(int Index, ScriptName PRIName, ScriptString PlayerName, int Score)
 	{
@@ -72,7 +103,7 @@ final:
 		*cast(ScriptName*)&params[4] = PRIName;
 		*cast(ScriptString*)&params[12] = PlayerName;
 		*cast(int*)&params[24] = Score;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109801], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLeaderboard, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void UpdateTime(TrGameReplicationInfo GRI)
@@ -80,18 +111,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109808], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTime, params.ptr, cast(void*)0);
 	}
 	ScriptString FormatTime(int Seconds)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Seconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109810], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FormatTime, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	void ForceUpdate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109816], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceUpdate, cast(void*)0, cast(void*)0);
 	}
 }

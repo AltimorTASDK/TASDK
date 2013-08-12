@@ -8,6 +8,29 @@ import UnrealScript.Engine.Info;
 extern(C++) interface TrCallIn_CrashLandInfo : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_CrashLandInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnCrashLandInfo;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInitTimer;
+			ScriptFunction mDeliveryPodLanded;
+			ScriptFunction mMoveSameTeamPawn;
+			ScriptFunction mPerformLandingDamage;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnCrashLandInfo() { return mSpawnCrashLandInfo ? mSpawnCrashLandInfo : (mSpawnCrashLandInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.SpawnCrashLandInfo")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.PostBeginPlay")); }
+			ScriptFunction InitTimer() { return mInitTimer ? mInitTimer : (mInitTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.InitTimer")); }
+			ScriptFunction DeliveryPodLanded() { return mDeliveryPodLanded ? mDeliveryPodLanded : (mDeliveryPodLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.DeliveryPodLanded")); }
+			ScriptFunction MoveSameTeamPawn() { return mMoveSameTeamPawn ? mMoveSameTeamPawn : (mMoveSameTeamPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.MoveSameTeamPawn")); }
+			ScriptFunction PerformLandingDamage() { return mPerformLandingDamage ? mPerformLandingDamage : (mPerformLandingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn_CrashLandInfo.PerformLandingDamage")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -26,7 +49,7 @@ public extern(D):
 		bool r_bPodLanded(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 484) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 484) &= ~0x1; } return val; }
 	}
 final:
-	bool SpawnCrashLandInfo(Controller Initializer, float CrashLandTime, Vector CrashLandPoint, Vector CrashLandNormal, ScriptClass ItemInDeliveryPod)
+	static bool SpawnCrashLandInfo(Controller Initializer, float CrashLandTime, Vector CrashLandPoint, Vector CrashLandNormal, ScriptClass ItemInDeliveryPod)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -35,30 +58,30 @@ final:
 		*cast(Vector*)&params[8] = CrashLandPoint;
 		*cast(Vector*)&params[20] = CrashLandNormal;
 		*cast(ScriptClass*)&params[32] = ItemInDeliveryPod;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73992], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SpawnCrashLandInfo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74000], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void InitTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74001], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitTimer, cast(void*)0, cast(void*)0);
 	}
 	void DeliveryPodLanded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74005], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeliveryPodLanded, cast(void*)0, cast(void*)0);
 	}
 	void MoveSameTeamPawn(TrPawn PawnToMove)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = PawnToMove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74007], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoveSameTeamPawn, params.ptr, cast(void*)0);
 	}
 	void PerformLandingDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74013], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PerformLandingDamage, cast(void*)0, cast(void*)0);
 	}
 }

@@ -7,6 +7,8 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface SkelControlLimb : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlLimb")); }
 	@property final
 	{
 		auto ref

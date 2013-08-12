@@ -14,6 +14,55 @@ import UnrealScript.UTGame.GFxUI_PauseMenu;
 extern(C++) interface UTHUDBase : UDKHUD
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHUDBase")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mTimer;
+			ScriptFunction mShowMenu;
+			ScriptFunction mResolutionChanged;
+			ScriptFunction mDisplayHit;
+			ScriptFunction mPostRender;
+			ScriptFunction mRemoveMovies;
+			ScriptFunction mSetVisible;
+			ScriptFunction mCloseOtherMenus;
+			ScriptFunction mTogglePauseMenu;
+			ScriptFunction mCompletePauseMenuClose;
+			ScriptFunction mReleaseShowScores;
+			ScriptFunction mGetLocalPlayerOwnerIndex;
+			ScriptFunction mDrawToolTip;
+			ScriptFunction mCheckCrosshairOnFriendly;
+			ScriptFunction mClearCrosshairOnFriendly;
+			ScriptFunction mDrawShadowedTile;
+			ScriptFunction mDrawShadowedStretchedTile;
+			ScriptFunction mDrawShadowedRotatedTile;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.PostBeginPlay")); }
+			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.Timer")); }
+			ScriptFunction ShowMenu() { return mShowMenu ? mShowMenu : (mShowMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.ShowMenu")); }
+			ScriptFunction ResolutionChanged() { return mResolutionChanged ? mResolutionChanged : (mResolutionChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.ResolutionChanged")); }
+			ScriptFunction DisplayHit() { return mDisplayHit ? mDisplayHit : (mDisplayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.DisplayHit")); }
+			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.PostRender")); }
+			ScriptFunction RemoveMovies() { return mRemoveMovies ? mRemoveMovies : (mRemoveMovies = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.RemoveMovies")); }
+			ScriptFunction SetVisible() { return mSetVisible ? mSetVisible : (mSetVisible = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.SetVisible")); }
+			ScriptFunction CloseOtherMenus() { return mCloseOtherMenus ? mCloseOtherMenus : (mCloseOtherMenus = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.CloseOtherMenus")); }
+			ScriptFunction TogglePauseMenu() { return mTogglePauseMenu ? mTogglePauseMenu : (mTogglePauseMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.TogglePauseMenu")); }
+			ScriptFunction CompletePauseMenuClose() { return mCompletePauseMenuClose ? mCompletePauseMenuClose : (mCompletePauseMenuClose = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.CompletePauseMenuClose")); }
+			ScriptFunction ReleaseShowScores() { return mReleaseShowScores ? mReleaseShowScores : (mReleaseShowScores = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.ReleaseShowScores")); }
+			ScriptFunction GetLocalPlayerOwnerIndex() { return mGetLocalPlayerOwnerIndex ? mGetLocalPlayerOwnerIndex : (mGetLocalPlayerOwnerIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.GetLocalPlayerOwnerIndex")); }
+			ScriptFunction DrawToolTip() { return mDrawToolTip ? mDrawToolTip : (mDrawToolTip = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.DrawToolTip")); }
+			ScriptFunction CheckCrosshairOnFriendly() { return mCheckCrosshairOnFriendly ? mCheckCrosshairOnFriendly : (mCheckCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.CheckCrosshairOnFriendly")); }
+			ScriptFunction ClearCrosshairOnFriendly() { return mClearCrosshairOnFriendly ? mClearCrosshairOnFriendly : (mClearCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.ClearCrosshairOnFriendly")); }
+			ScriptFunction DrawShadowedTile() { return mDrawShadowedTile ? mDrawShadowedTile : (mDrawShadowedTile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.DrawShadowedTile")); }
+			ScriptFunction DrawShadowedStretchedTile() { return mDrawShadowedStretchedTile ? mDrawShadowedStretchedTile : (mDrawShadowedStretchedTile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.DrawShadowedStretchedTile")); }
+			ScriptFunction DrawShadowedRotatedTile() { return mDrawShadowedRotatedTile ? mDrawShadowedRotatedTile : (mDrawShadowedRotatedTile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUDBase.DrawShadowedRotatedTile")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -51,19 +100,19 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45438], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Timer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45441], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
 	void ShowMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45442], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMenu, cast(void*)0, cast(void*)0);
 	}
 	void ResolutionChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45443], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResolutionChanged, cast(void*)0, cast(void*)0);
 	}
 	void DisplayHit(Vector HitDir, int Damage, ScriptClass pDamageType)
 	{
@@ -72,44 +121,44 @@ final:
 		*cast(Vector*)params.ptr = HitDir;
 		*cast(int*)&params[12] = Damage;
 		*cast(ScriptClass*)&params[16] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45445], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayHit, params.ptr, cast(void*)0);
 	}
 	void PostRender()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45449], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, cast(void*)0, cast(void*)0);
 	}
 	void RemoveMovies()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45450], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveMovies, cast(void*)0, cast(void*)0);
 	}
 	void SetVisible(bool bNewVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVisible, params.ptr, cast(void*)0);
 	}
 	void CloseOtherMenus()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45453], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CloseOtherMenus, cast(void*)0, cast(void*)0);
 	}
 	void TogglePauseMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45454], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TogglePauseMenu, cast(void*)0, cast(void*)0);
 	}
 	void CompletePauseMenuClose()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45455], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CompletePauseMenuClose, cast(void*)0, cast(void*)0);
 	}
 	void ReleaseShowScores()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45456], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReleaseShowScores, cast(void*)0, cast(void*)0);
 	}
 	int GetLocalPlayerOwnerIndex()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45457], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalPlayerOwnerIndex, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void DrawToolTip(Canvas Cvs, PlayerController PC, ScriptString Command, float X, float Y, float U, float V, float UL, float VL, float ResScale, Texture2D IconTexture, float Alpha)
@@ -128,18 +177,18 @@ final:
 		*cast(float*)&params[44] = ResScale;
 		*cast(Texture2D*)&params[48] = IconTexture;
 		*cast(float*)&params[52] = Alpha;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45459], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawToolTip, params.ptr, cast(void*)0);
 	}
 	bool CheckCrosshairOnFriendly()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45482], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckCrosshairOnFriendly, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ClearCrosshairOnFriendly()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45495], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCrosshairOnFriendly, cast(void*)0, cast(void*)0);
 	}
 	void DrawShadowedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
 	{
@@ -156,7 +205,7 @@ final:
 		*cast(float*)&params[32] = VL;
 		*cast(UObject.Color*)&params[36] = TileColor;
 		*cast(bool*)&params[40] = bScaleToRes;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45496], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedTile, params.ptr, cast(void*)0);
 	}
 	void DrawShadowedStretchedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
 	{
@@ -173,7 +222,7 @@ final:
 		*cast(float*)&params[32] = VL;
 		*cast(UObject.Color*)&params[36] = TileColor;
 		*cast(bool*)&params[40] = bScaleToRes;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45509], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedStretchedTile, params.ptr, cast(void*)0);
 	}
 	void DrawShadowedRotatedTile(Texture2D Tex, Rotator Rot, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
 	{
@@ -191,6 +240,6 @@ final:
 		*cast(float*)&params[44] = VL;
 		*cast(UObject.Color*)&params[48] = TileColor;
 		*cast(bool*)&params[52] = bScaleToRes;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45523], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedRotatedTile, params.ptr, cast(void*)0);
 	}
 }

@@ -8,6 +8,13 @@ import UnrealScript.UDKBase.UDKPawn;
 extern(C++) interface UDKAnimBlendByFlying : UDKAnimBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFlying")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mUpdateFlyingState;
+		public @property static final ScriptFunction UpdateFlyingState() { return mUpdateFlyingState ? mUpdateFlyingState : (mUpdateFlyingState = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByFlying.UpdateFlyingState")); }
+	}
 	enum EFlyingState : ubyte
 	{
 		Flying_NotFlying = 0,
@@ -34,6 +41,6 @@ public extern(D):
 	}
 	final void UpdateFlyingState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34511], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFlyingState, cast(void*)0, cast(void*)0);
 	}
 }

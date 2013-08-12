@@ -10,6 +10,51 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface UTGameReplicationInfo : GameReplicationInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameReplicationInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInOrder;
+			ScriptFunction mSortPRIArray;
+			ScriptFunction mCharacterProcessingComplete;
+			ScriptFunction mSetFlagHome;
+			ScriptFunction mFlagIsHome;
+			ScriptFunction mFlagsAreHome;
+			ScriptFunction mSetFlagHeldFriendly;
+			ScriptFunction mFlagIsHeldFriendly;
+			ScriptFunction mSetFlagHeldEnemy;
+			ScriptFunction mFlagIsHeldEnemy;
+			ScriptFunction mSetFlagDown;
+			ScriptFunction mFlagIsDown;
+			ScriptFunction mTimer;
+			ScriptFunction mShowMidGameMenu;
+			ScriptFunction mSetHudShowScores;
+			ScriptFunction mAddGameRule;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.PostBeginPlay")); }
+			ScriptFunction InOrder() { return mInOrder ? mInOrder : (mInOrder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.InOrder")); }
+			ScriptFunction SortPRIArray() { return mSortPRIArray ? mSortPRIArray : (mSortPRIArray = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SortPRIArray")); }
+			ScriptFunction CharacterProcessingComplete() { return mCharacterProcessingComplete ? mCharacterProcessingComplete : (mCharacterProcessingComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.CharacterProcessingComplete")); }
+			ScriptFunction SetFlagHome() { return mSetFlagHome ? mSetFlagHome : (mSetFlagHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHome")); }
+			ScriptFunction FlagIsHome() { return mFlagIsHome ? mFlagIsHome : (mFlagIsHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHome")); }
+			ScriptFunction FlagsAreHome() { return mFlagsAreHome ? mFlagsAreHome : (mFlagsAreHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagsAreHome")); }
+			ScriptFunction SetFlagHeldFriendly() { return mSetFlagHeldFriendly ? mSetFlagHeldFriendly : (mSetFlagHeldFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHeldFriendly")); }
+			ScriptFunction FlagIsHeldFriendly() { return mFlagIsHeldFriendly ? mFlagIsHeldFriendly : (mFlagIsHeldFriendly = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHeldFriendly")); }
+			ScriptFunction SetFlagHeldEnemy() { return mSetFlagHeldEnemy ? mSetFlagHeldEnemy : (mSetFlagHeldEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagHeldEnemy")); }
+			ScriptFunction FlagIsHeldEnemy() { return mFlagIsHeldEnemy ? mFlagIsHeldEnemy : (mFlagIsHeldEnemy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsHeldEnemy")); }
+			ScriptFunction SetFlagDown() { return mSetFlagDown ? mSetFlagDown : (mSetFlagDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetFlagDown")); }
+			ScriptFunction FlagIsDown() { return mFlagIsDown ? mFlagIsDown : (mFlagIsDown = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.FlagIsDown")); }
+			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.Timer")); }
+			ScriptFunction ShowMidGameMenu() { return mShowMidGameMenu ? mShowMidGameMenu : (mShowMidGameMenu = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.ShowMidGameMenu")); }
+			ScriptFunction SetHudShowScores() { return mSetHudShowScores ? mSetHudShowScores : (mSetHudShowScores = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.SetHudShowScores")); }
+			ScriptFunction AddGameRule() { return mAddGameRule ? mAddGameRule : (mAddGameRule = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameReplicationInfo.AddGameRule")); }
+		}
+	}
 	enum EFlagState : ubyte
 	{
 		FLAG_Home = 0,
@@ -22,6 +67,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGameReplicationInfo.MeshEffect")); }
 		@property final auto ref
 		{
 			StaticMesh Mesh() { return *cast(StaticMesh*)(cast(size_t)&this + 0); }
@@ -60,7 +107,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46039], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool InOrder(PlayerReplicationInfo P1, PlayerReplicationInfo P2)
 	{
@@ -68,37 +115,37 @@ final:
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = P1;
 		*cast(PlayerReplicationInfo*)&params[4] = P2;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46048], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InOrder, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void SortPRIArray()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46054], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortPRIArray, cast(void*)0, cast(void*)0);
 	}
 	void CharacterProcessingComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46059], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CharacterProcessingComplete, cast(void*)0, cast(void*)0);
 	}
 	void SetFlagHome(int TeamIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46061], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagHome, params.ptr, cast(void*)0);
 	}
 	bool FlagIsHome(int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46064], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagIsHome, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool FlagsAreHome()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46067], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagsAreHome, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetFlagHeldFriendly(int TeamIndex)
@@ -106,14 +153,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46069], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagHeldFriendly, params.ptr, cast(void*)0);
 	}
 	bool FlagIsHeldFriendly(int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46071], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagIsHeldFriendly, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetFlagHeldEnemy(int TeamIndex)
@@ -121,14 +168,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46074], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagHeldEnemy, params.ptr, cast(void*)0);
 	}
 	bool FlagIsHeldEnemy(int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46076], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagIsHeldEnemy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetFlagDown(int TeamIndex)
@@ -136,19 +183,19 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46079], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagDown, params.ptr, cast(void*)0);
 	}
 	bool FlagIsDown(int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46081], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagIsDown, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Timer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46084], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
 	void ShowMidGameMenu(UTPlayerController InstigatorPC, ScriptName TabTag, bool bEnableInput)
 	{
@@ -157,20 +204,20 @@ final:
 		*cast(UTPlayerController*)params.ptr = InstigatorPC;
 		*cast(ScriptName*)&params[4] = TabTag;
 		*cast(bool*)&params[12] = bEnableInput;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46087], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMidGameMenu, params.ptr, cast(void*)0);
 	}
 	void SetHudShowScores(bool bShow)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46091], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHudShowScores, params.ptr, cast(void*)0);
 	}
 	void AddGameRule(ScriptString Rule)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Rule;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46094], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddGameRule, params.ptr, cast(void*)0);
 	}
 }

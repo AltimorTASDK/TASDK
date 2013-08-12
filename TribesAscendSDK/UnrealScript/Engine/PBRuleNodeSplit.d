@@ -7,10 +7,14 @@ import UnrealScript.Engine.PBRuleNodeBase;
 extern(C++) interface PBRuleNodeSplit : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeSplit")); }
 	struct RBSplitInfo
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeSplit.RBSplitInfo")); }
 		@property final
 		{
 			auto ref

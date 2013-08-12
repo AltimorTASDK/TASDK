@@ -9,10 +9,14 @@ import UnrealScript.UDKBase.UDKAnimBlendByWeapType;
 extern(C++) interface UDKAnimNodeCopyBoneTranslation : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeCopyBoneTranslation")); }
 	struct BoneCopyInfo
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKAnimNodeCopyBoneTranslation.BoneCopyInfo")); }
 		@property final auto ref
 		{
 			int DstBoneIndex() { return *cast(int*)(cast(size_t)&this + 20); }

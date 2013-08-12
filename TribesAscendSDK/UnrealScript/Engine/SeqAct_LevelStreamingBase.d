@@ -1,10 +1,13 @@
 module UnrealScript.Engine.SeqAct_LevelStreamingBase;
 
+import ScriptClasses;
 import UnrealScript.Engine.SeqAct_Latent;
 
 extern(C++) interface SeqAct_LevelStreamingBase : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelStreamingBase")); }
 	@property final
 	{
 		bool bShouldBlockOnLoad() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }

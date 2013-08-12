@@ -9,10 +9,14 @@ import UnrealScript.Engine.SoundNodeWave;
 extern(C++) interface SoundNodeAmbient : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeAmbient")); }
 	struct AmbientSoundSlot
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundNodeAmbient.AmbientSoundSlot")); }
 		@property final auto ref
 		{
 			float Weight() { return *cast(float*)(cast(size_t)&this + 12); }

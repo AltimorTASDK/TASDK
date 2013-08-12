@@ -8,6 +8,23 @@ import UnrealScript.Engine.PlayerReplicationInfo;
 extern(C++) interface TrLockWarningMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLockWarningMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAnnouncementLevel;
+			ScriptFunction mGetString;
+			ScriptFunction mGetColor;
+		}
+		public @property static final
+		{
+			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.AnnouncementLevel")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.GetString")); }
+			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLockWarningMessage.GetColor")); }
+		}
+	}
 	@property final auto ref
 	{
 		UObject.Color YellowColor() { return *cast(UObject.Color*)(cast(size_t)cast(void*)this + 128); }
@@ -16,15 +33,15 @@ public extern(D):
 		ScriptString MissileLockOnString() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
 	}
 final:
-	ubyte AnnouncementLevel(ubyte MessageIndex)
+	static ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
 		params[0] = MessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98641], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementLevel, params.ptr, cast(void*)0);
 		return params[1];
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -33,10 +50,10 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98644], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -44,7 +61,7 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
 		*cast(UObject*)&params[12] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98651], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}
 }

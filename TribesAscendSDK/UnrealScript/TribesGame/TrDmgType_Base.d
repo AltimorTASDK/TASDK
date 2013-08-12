@@ -14,6 +14,31 @@ import UnrealScript.TribesGame.TrPlayerController;
 extern(C++) interface TrDmgType_Base : UTDamageType
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_Base")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCalculateRangeDamageFalloff;
+			ScriptFunction mGetActorCausingDamage;
+			ScriptFunction mModifyOverheadNumberLocation;
+			ScriptFunction mGetDamageScale;
+			ScriptFunction mGetRandomDeathAnimName;
+			ScriptFunction mVehicleDamageScalingFor;
+			ScriptFunction mGetCameraShake;
+		}
+		public @property static final
+		{
+			ScriptFunction CalculateRangeDamageFalloff() { return mCalculateRangeDamageFalloff ? mCalculateRangeDamageFalloff : (mCalculateRangeDamageFalloff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.CalculateRangeDamageFalloff")); }
+			ScriptFunction GetActorCausingDamage() { return mGetActorCausingDamage ? mGetActorCausingDamage : (mGetActorCausingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.GetActorCausingDamage")); }
+			ScriptFunction ModifyOverheadNumberLocation() { return mModifyOverheadNumberLocation ? mModifyOverheadNumberLocation : (mModifyOverheadNumberLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.ModifyOverheadNumberLocation")); }
+			ScriptFunction GetDamageScale() { return mGetDamageScale ? mGetDamageScale : (mGetDamageScale = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.GetDamageScale")); }
+			ScriptFunction GetRandomDeathAnimName() { return mGetRandomDeathAnimName ? mGetRandomDeathAnimName : (mGetRandomDeathAnimName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.GetRandomDeathAnimName")); }
+			ScriptFunction VehicleDamageScalingFor() { return mVehicleDamageScalingFor ? mVehicleDamageScalingFor : (mVehicleDamageScalingFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.VehicleDamageScalingFor")); }
+			ScriptFunction GetCameraShake() { return mGetCameraShake ? mGetCameraShake : (mGetCameraShake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDmgType_Base.GetCameraShake")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -54,7 +79,7 @@ public extern(D):
 		bool m_bIgnoreDamageFalloff(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 344) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 344) &= ~0x4; } return val; }
 	}
 final:
-	float CalculateRangeDamageFalloff(float Dist, float damageRange, TrPlayerController TrPCDamager, TrObject.TR_EQUIP_POINT EquipPoint, bool bMinDamageAlwaysApplied)
+	static float CalculateRangeDamageFalloff(float Dist, float damageRange, TrPlayerController TrPCDamager, TrObject.TR_EQUIP_POINT EquipPoint, bool bMinDamageAlwaysApplied)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -63,59 +88,59 @@ final:
 		*cast(TrPlayerController*)&params[8] = TrPCDamager;
 		*cast(TrObject.TR_EQUIP_POINT*)&params[12] = EquipPoint;
 		*cast(bool*)&params[16] = bMinDamageAlwaysApplied;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67461], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.CalculateRangeDamageFalloff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[20];
 	}
-	Actor GetActorCausingDamage(Controller EventInstigator, Actor DamageCauser)
+	static Actor GetActorCausingDamage(Controller EventInstigator, Actor DamageCauser)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
 		*cast(Actor*)&params[4] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71538], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetActorCausingDamage, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[8];
 	}
-	Vector ModifyOverheadNumberLocation(Vector InLocation)
+	static Vector ModifyOverheadNumberLocation(Vector InLocation)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = InLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71540], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ModifyOverheadNumberLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	float GetDamageScale(Actor DamageCauser, float Dist, ScriptClass dmgType)
+	static float GetDamageScale(Actor DamageCauser, float Dist, ScriptClass dmgType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = DamageCauser;
 		*cast(float*)&params[4] = Dist;
 		*cast(ScriptClass*)&params[8] = dmgType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71815], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDamageScale, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	ScriptName GetRandomDeathAnimName()
+	static ScriptName GetRandomDeathAnimName()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73055], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetRandomDeathAnimName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)params.ptr;
 	}
-	float VehicleDamageScalingFor(Vehicle V)
+	static float VehicleDamageScalingFor(Vehicle V)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[86444], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.VehicleDamageScalingFor, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	void GetCameraShake(int Damage, ScriptName* outCameraShakeName, float* outScale)
+	static void GetCameraShake(int Damage, ScriptName* outCameraShakeName, float* outScale)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Damage;
 		*cast(ScriptName*)&params[4] = *outCameraShakeName;
 		*cast(float*)&params[12] = *outScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[86471], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetCameraShake, params.ptr, cast(void*)0);
 		*outCameraShakeName = *cast(ScriptName*)&params[4];
 		*outScale = *cast(float*)&params[12];
 	}

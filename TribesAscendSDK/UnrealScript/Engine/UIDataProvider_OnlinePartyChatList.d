@@ -9,6 +9,25 @@ import UnrealScript.Engine.UIDataProvider_OnlinePlayerDataBase;
 extern(C++) interface UIDataProvider_OnlinePartyChatList : UIDataProvider_OnlinePlayerDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePartyChatList")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnRegister;
+			ScriptFunction mOnUnregister;
+			ScriptFunction mOnLoginChange;
+			ScriptFunction mRefreshMembersList;
+		}
+		public @property static final
+		{
+			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnRegister")); }
+			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnUnregister")); }
+			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.OnLoginChange")); }
+			ScriptFunction RefreshMembersList() { return mRefreshMembersList ? mRefreshMembersList : (mRefreshMembersList = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlinePartyChatList.RefreshMembersList")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembersList() { return *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)(cast(size_t)cast(void*)this + 96); }
@@ -28,21 +47,21 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = InPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28236], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnRegister, params.ptr, cast(void*)0);
 	}
 	void OnUnregister()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28240], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUnregister, cast(void*)0, cast(void*)0);
 	}
 	void OnLoginChange(ubyte LocalUserNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28243], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnLoginChange, params.ptr, cast(void*)0);
 	}
 	void RefreshMembersList()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28247], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshMembersList, cast(void*)0, cast(void*)0);
 	}
 }

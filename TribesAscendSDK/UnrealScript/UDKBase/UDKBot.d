@@ -14,10 +14,63 @@ import UnrealScript.UDKBase.UDKSquadAI;
 extern(C++) interface UDKBot : AIController
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKBot")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFaceActor;
+			ScriptFunction mExecuteWhatToDoNext;
+			ScriptFunction mReceiveRunOverWarning;
+			ScriptFunction mWaitToSeeEnemy;
+			ScriptFunction mLatentWhatToDoNext;
+			ScriptFunction mCanMakePathTo;
+			ScriptFunction mFindBestInventoryPath;
+			ScriptFunction mFindPathToSquadRoute;
+			ScriptFunction mBuildSquadRoute;
+			ScriptFunction mFindBestSuperPickup;
+			ScriptFunction mWhatToDoNext;
+			ScriptFunction mMonitoredPawnAlert;
+			ScriptFunction mTimeDJReset;
+			ScriptFunction mMayDodgeToMoveTarget;
+			ScriptFunction mSpecialJumpCost;
+			ScriptFunction mSuperDesireability;
+			ScriptFunction mAdjustAimError;
+			ScriptFunction mMissedDodge;
+			ScriptFunction mDelayedWarning;
+			ScriptFunction mDelayedLeaveVehicle;
+		}
+		public @property static final
+		{
+			ScriptFunction FaceActor() { return mFaceActor ? mFaceActor : (mFaceActor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FaceActor")); }
+			ScriptFunction ExecuteWhatToDoNext() { return mExecuteWhatToDoNext ? mExecuteWhatToDoNext : (mExecuteWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.ExecuteWhatToDoNext")); }
+			ScriptFunction ReceiveRunOverWarning() { return mReceiveRunOverWarning ? mReceiveRunOverWarning : (mReceiveRunOverWarning = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.ReceiveRunOverWarning")); }
+			ScriptFunction WaitToSeeEnemy() { return mWaitToSeeEnemy ? mWaitToSeeEnemy : (mWaitToSeeEnemy = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.WaitToSeeEnemy")); }
+			ScriptFunction LatentWhatToDoNext() { return mLatentWhatToDoNext ? mLatentWhatToDoNext : (mLatentWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.LatentWhatToDoNext")); }
+			ScriptFunction CanMakePathTo() { return mCanMakePathTo ? mCanMakePathTo : (mCanMakePathTo = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.CanMakePathTo")); }
+			ScriptFunction FindBestInventoryPath() { return mFindBestInventoryPath ? mFindBestInventoryPath : (mFindBestInventoryPath = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindBestInventoryPath")); }
+			ScriptFunction FindPathToSquadRoute() { return mFindPathToSquadRoute ? mFindPathToSquadRoute : (mFindPathToSquadRoute = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindPathToSquadRoute")); }
+			ScriptFunction BuildSquadRoute() { return mBuildSquadRoute ? mBuildSquadRoute : (mBuildSquadRoute = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.BuildSquadRoute")); }
+			ScriptFunction FindBestSuperPickup() { return mFindBestSuperPickup ? mFindBestSuperPickup : (mFindBestSuperPickup = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.FindBestSuperPickup")); }
+			ScriptFunction WhatToDoNext() { return mWhatToDoNext ? mWhatToDoNext : (mWhatToDoNext = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.WhatToDoNext")); }
+			ScriptFunction MonitoredPawnAlert() { return mMonitoredPawnAlert ? mMonitoredPawnAlert : (mMonitoredPawnAlert = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MonitoredPawnAlert")); }
+			ScriptFunction TimeDJReset() { return mTimeDJReset ? mTimeDJReset : (mTimeDJReset = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.TimeDJReset")); }
+			ScriptFunction MayDodgeToMoveTarget() { return mMayDodgeToMoveTarget ? mMayDodgeToMoveTarget : (mMayDodgeToMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MayDodgeToMoveTarget")); }
+			ScriptFunction SpecialJumpCost() { return mSpecialJumpCost ? mSpecialJumpCost : (mSpecialJumpCost = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.SpecialJumpCost")); }
+			ScriptFunction SuperDesireability() { return mSuperDesireability ? mSuperDesireability : (mSuperDesireability = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.SuperDesireability")); }
+			ScriptFunction AdjustAimError() { return mAdjustAimError ? mAdjustAimError : (mAdjustAimError = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.AdjustAimError")); }
+			ScriptFunction MissedDodge() { return mMissedDodge ? mMissedDodge : (mMissedDodge = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.MissedDodge")); }
+			ScriptFunction DelayedWarning() { return mDelayedWarning ? mDelayedWarning : (mDelayedWarning = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.DelayedWarning")); }
+			ScriptFunction DelayedLeaveVehicle() { return mDelayedLeaveVehicle ? mDelayedLeaveVehicle : (mDelayedLeaveVehicle = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKBot.DelayedLeaveVehicle")); }
+		}
+	}
 	struct EnemyPosition
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKBot.EnemyPosition")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 24); }
@@ -102,12 +155,12 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = StrafingModifier;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34696], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FaceActor, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	void ExecuteWhatToDoNext()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34699], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExecuteWhatToDoNext, cast(void*)0, cast(void*)0);
 	}
 	void ReceiveRunOverWarning(UDKVehicle V, float projSpeed, Vector VehicleDir)
 	{
@@ -116,22 +169,22 @@ final:
 		*cast(UDKVehicle*)params.ptr = V;
 		*cast(float*)&params[4] = projSpeed;
 		*cast(Vector*)&params[8] = VehicleDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34700], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReceiveRunOverWarning, params.ptr, cast(void*)0);
 	}
 	void WaitToSeeEnemy()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34704], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WaitToSeeEnemy, cast(void*)0, cast(void*)0);
 	}
 	void LatentWhatToDoNext()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34705], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LatentWhatToDoNext, cast(void*)0, cast(void*)0);
 	}
 	bool CanMakePathTo(Actor A)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34706], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanMakePathTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	Actor FindBestInventoryPath(float* MinWeight)
@@ -139,7 +192,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = *MinWeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34709], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindBestInventoryPath, params.ptr, cast(void*)0);
 		*MinWeight = *cast(float*)params.ptr;
 		return *cast(Actor*)&params[4];
 	}
@@ -148,36 +201,36 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWeightDetours;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34712], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathToSquadRoute, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	void BuildSquadRoute()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34715], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BuildSquadRoute, cast(void*)0, cast(void*)0);
 	}
 	Actor FindBestSuperPickup(float MaxDist)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = MaxDist;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34716], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindBestSuperPickup, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	void WhatToDoNext()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34719], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WhatToDoNext, cast(void*)0, cast(void*)0);
 	}
 	void MonitoredPawnAlert()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34720], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MonitoredPawnAlert, cast(void*)0, cast(void*)0);
 	}
 	void TimeDJReset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34721], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TimeDJReset, cast(void*)0, cast(void*)0);
 	}
 	void MayDodgeToMoveTarget()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34722], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MayDodgeToMoveTarget, cast(void*)0, cast(void*)0);
 	}
 	bool SpecialJumpCost(float RequiredJumpZ, float* Cost)
 	{
@@ -185,7 +238,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = RequiredJumpZ;
 		*cast(float*)&params[4] = *Cost;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34723], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialJumpCost, params.ptr, cast(void*)0);
 		*Cost = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
@@ -194,7 +247,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(PickupFactory*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34727], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuperDesireability, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	float AdjustAimError(float TargetDist, bool bInstantProj)
@@ -203,19 +256,19 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = TargetDist;
 		*cast(bool*)&params[4] = bInstantProj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34730], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustAimError, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	void MissedDodge()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34734], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MissedDodge, cast(void*)0, cast(void*)0);
 	}
 	void DelayedWarning()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34735], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DelayedWarning, cast(void*)0, cast(void*)0);
 	}
 	void DelayedLeaveVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34736], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DelayedLeaveVehicle, cast(void*)0, cast(void*)0);
 	}
 }

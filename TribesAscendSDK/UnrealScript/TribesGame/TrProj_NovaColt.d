@@ -7,6 +7,13 @@ import UnrealScript.TribesGame.TrProjectile;
 extern(C++) interface TrProj_NovaColt : TrProjectile
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_NovaColt")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mHitWall;
+		public @property static final ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_NovaColt.HitWall")); }
+	}
 	@property final auto ref
 	{
 		int m_nNumberBounces() { return *cast(int*)(cast(size_t)cast(void*)this + 820); }
@@ -23,6 +30,6 @@ void* WallComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108803], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
 }

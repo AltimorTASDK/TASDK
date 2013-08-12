@@ -9,6 +9,21 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface NxGenericForceFieldBrush : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxGenericForceFieldBrush")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mStopsProjectile;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.NxGenericForceFieldBrush.PostBeginPlay")); }
+			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.NxGenericForceFieldBrush.StopsProjectile")); }
+		}
+	}
 	enum FFB_ForceFieldCoordinates : ubyte
 	{
 		FFB_CARTESIAN = 0,
@@ -45,14 +60,14 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21311], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool StopsProjectile(Projectile P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Projectile*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21312], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopsProjectile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

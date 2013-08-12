@@ -12,6 +12,8 @@ import UnrealScript.Engine.ApexClothingAsset;
 extern(C++) interface SkeletalMesh : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMesh")); }
 	enum SoftBodyBoneType : ubyte
 	{
 		SOFTBODYBONE_Fixed = 0,
@@ -62,6 +64,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SoftBodyTetraLink")); }
 		@property final auto ref
 		{
 			int Index() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -72,6 +76,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SoftBodySpecialBoneInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(int) AttachedVertexIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 12); }
@@ -83,6 +89,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.ClothSpecialBoneInfo")); }
 		@property final auto ref
 		{
 			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -94,6 +102,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.SkeletalMeshLODInfo")); }
 		@property final auto ref
 		{
 			float DisplayFactor() { return *cast(float*)(cast(size_t)&this + 0); }
@@ -108,6 +118,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.TriangleSortSettings")); }
 		@property final auto ref
 		{
 			SkeletalMesh.TriangleSortOption TriangleSorting() { return *cast(SkeletalMesh.TriangleSortOption*)(cast(size_t)&this + 0); }
@@ -119,6 +131,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[17];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.BoneMirrorExport")); }
 		@property final auto ref
 		{
 			ScriptName BoneName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -130,6 +144,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[5];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SkeletalMesh.BoneMirrorInfo")); }
 		@property final auto ref
 		{
 			int SourceIndex() { return *cast(int*)(cast(size_t)&this + 0); }

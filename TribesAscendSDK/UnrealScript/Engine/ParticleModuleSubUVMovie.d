@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleSubUVMovie;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleSubUV;
 
 extern(C++) interface ParticleModuleSubUVMovie : ParticleModuleSubUV
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSubUVMovie")); }
 	@property final
 	{
 		auto ref

@@ -6,10 +6,14 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_ModifyProperty : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_ModifyProperty")); }
 	struct PropertyInfo
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.SeqAct_ModifyProperty.PropertyInfo")); }
 		@property final
 		{
 			auto ref

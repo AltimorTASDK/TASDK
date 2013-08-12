@@ -6,10 +6,14 @@ import UnrealScript.Engine.Volume;
 extern(C++) interface CullDistanceVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CullDistanceVolume")); }
 	struct CullDistanceSizePair
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CullDistanceVolume.CullDistanceSizePair")); }
 		@property final auto ref
 		{
 			float CullDistance() { return *cast(float*)(cast(size_t)&this + 4); }

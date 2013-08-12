@@ -14,6 +14,65 @@ import UnrealScript.Engine.Material;
 extern(C++) interface UTWeaponAttachment : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponAttachment")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mCheckToForceRefPose;
+			ScriptFunction mCreateOverlayMesh;
+			ScriptFunction mSetSkin;
+			ScriptFunction mSetMuzzleFlashParams;
+			ScriptFunction mAttachTo;
+			ScriptFunction mSetPuttingDownWeapon;
+			ScriptFunction mDetachFrom;
+			ScriptFunction mMuzzleFlashTimer;
+			ScriptFunction mCauseMuzzleFlash;
+			ScriptFunction mStopMuzzleFlash;
+			ScriptFunction mFirstPersonFireEffects;
+			ScriptFunction mStopFirstPersonFireEffects;
+			ScriptFunction mThirdPersonFireEffects;
+			ScriptFunction mStopThirdPersonFireEffects;
+			ScriptFunction mGetImpactEffect;
+			ScriptFunction mAllowImpactEffects;
+			ScriptFunction mSetImpactedActor;
+			ScriptFunction mPlayImpactEffects;
+			ScriptFunction mCheckBulletWhip;
+			ScriptFunction mSetWeaponOverlayFlags;
+			ScriptFunction mChangeVisibility;
+			ScriptFunction mFireModeUpdated;
+			ScriptFunction mGetEffectLocation;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.PostBeginPlay")); }
+			ScriptFunction CheckToForceRefPose() { return mCheckToForceRefPose ? mCheckToForceRefPose : (mCheckToForceRefPose = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CheckToForceRefPose")); }
+			ScriptFunction CreateOverlayMesh() { return mCreateOverlayMesh ? mCreateOverlayMesh : (mCreateOverlayMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CreateOverlayMesh")); }
+			ScriptFunction SetSkin() { return mSetSkin ? mSetSkin : (mSetSkin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetSkin")); }
+			ScriptFunction SetMuzzleFlashParams() { return mSetMuzzleFlashParams ? mSetMuzzleFlashParams : (mSetMuzzleFlashParams = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetMuzzleFlashParams")); }
+			ScriptFunction AttachTo() { return mAttachTo ? mAttachTo : (mAttachTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.AttachTo")); }
+			ScriptFunction SetPuttingDownWeapon() { return mSetPuttingDownWeapon ? mSetPuttingDownWeapon : (mSetPuttingDownWeapon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetPuttingDownWeapon")); }
+			ScriptFunction DetachFrom() { return mDetachFrom ? mDetachFrom : (mDetachFrom = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.DetachFrom")); }
+			ScriptFunction MuzzleFlashTimer() { return mMuzzleFlashTimer ? mMuzzleFlashTimer : (mMuzzleFlashTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.MuzzleFlashTimer")); }
+			ScriptFunction CauseMuzzleFlash() { return mCauseMuzzleFlash ? mCauseMuzzleFlash : (mCauseMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CauseMuzzleFlash")); }
+			ScriptFunction StopMuzzleFlash() { return mStopMuzzleFlash ? mStopMuzzleFlash : (mStopMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopMuzzleFlash")); }
+			ScriptFunction FirstPersonFireEffects() { return mFirstPersonFireEffects ? mFirstPersonFireEffects : (mFirstPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.FirstPersonFireEffects")); }
+			ScriptFunction StopFirstPersonFireEffects() { return mStopFirstPersonFireEffects ? mStopFirstPersonFireEffects : (mStopFirstPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopFirstPersonFireEffects")); }
+			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.ThirdPersonFireEffects")); }
+			ScriptFunction StopThirdPersonFireEffects() { return mStopThirdPersonFireEffects ? mStopThirdPersonFireEffects : (mStopThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.StopThirdPersonFireEffects")); }
+			ScriptFunction GetImpactEffect() { return mGetImpactEffect ? mGetImpactEffect : (mGetImpactEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.GetImpactEffect")); }
+			ScriptFunction AllowImpactEffects() { return mAllowImpactEffects ? mAllowImpactEffects : (mAllowImpactEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.AllowImpactEffects")); }
+			ScriptFunction SetImpactedActor() { return mSetImpactedActor ? mSetImpactedActor : (mSetImpactedActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetImpactedActor")); }
+			ScriptFunction PlayImpactEffects() { return mPlayImpactEffects ? mPlayImpactEffects : (mPlayImpactEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.PlayImpactEffects")); }
+			ScriptFunction CheckBulletWhip() { return mCheckBulletWhip ? mCheckBulletWhip : (mCheckBulletWhip = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.CheckBulletWhip")); }
+			ScriptFunction SetWeaponOverlayFlags() { return mSetWeaponOverlayFlags ? mSetWeaponOverlayFlags : (mSetWeaponOverlayFlags = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.SetWeaponOverlayFlags")); }
+			ScriptFunction ChangeVisibility() { return mChangeVisibility ? mChangeVisibility : (mChangeVisibility = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.ChangeVisibility")); }
+			ScriptFunction FireModeUpdated() { return mFireModeUpdated ? mFireModeUpdated : (mFireModeUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.FireModeUpdated")); }
+			ScriptFunction GetEffectLocation() { return mGetEffectLocation ? mGetEffectLocation : (mGetEffectLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWeaponAttachment.GetEffectLocation")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -52,22 +111,22 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42331], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void CheckToForceRefPose()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42332], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckToForceRefPose, cast(void*)0, cast(void*)0);
 	}
 	void CreateOverlayMesh()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42333], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateOverlayMesh, cast(void*)0, cast(void*)0);
 	}
 	void SetSkin(Material NewMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Material*)params.ptr = NewMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42334], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkin, params.ptr, cast(void*)0);
 	}
 	void SetMuzzleFlashParams(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -78,21 +137,21 @@ void* PSC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42338], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMuzzleFlashParams, params.ptr, cast(void*)0);
 	}
 	void AttachTo(UTPawn OwnerPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = OwnerPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42340], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AttachTo, params.ptr, cast(void*)0);
 	}
 	void SetPuttingDownWeapon(bool bNowPuttingDown)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowPuttingDown;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42342], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPuttingDownWeapon, params.ptr, cast(void*)0);
 	}
 	void DetachFrom(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -103,19 +162,19 @@ void* MeshCpnt)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42344], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DetachFrom, params.ptr, cast(void*)0);
 	}
 	void MuzzleFlashTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42346], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MuzzleFlashTimer, cast(void*)0, cast(void*)0);
 	}
 	void CauseMuzzleFlash()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42347], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CauseMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
 	void StopMuzzleFlash()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42349], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
 	void FirstPersonFireEffects(Weapon PawnWeapon, Vector HitLocation)
 	{
@@ -123,32 +182,32 @@ void**)params.ptr = MeshCpnt;
 		params[] = 0;
 		*cast(Weapon*)params.ptr = PawnWeapon;
 		*cast(Vector*)&params[4] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42350], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FirstPersonFireEffects, params.ptr, cast(void*)0);
 	}
 	void StopFirstPersonFireEffects(Weapon PawnWeapon)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = PawnWeapon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42353], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopFirstPersonFireEffects, params.ptr, cast(void*)0);
 	}
 	void ThirdPersonFireEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42355], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThirdPersonFireEffects, params.ptr, cast(void*)0);
 	}
 	void StopThirdPersonFireEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42358], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopThirdPersonFireEffects, cast(void*)0, cast(void*)0);
 	}
 	UDKPawn.MaterialImpactEffect GetImpactEffect(PhysicalMaterial HitMaterial)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(PhysicalMaterial*)params.ptr = HitMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42359], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetImpactEffect, params.ptr, cast(void*)0);
 		return *cast(UDKPawn.MaterialImpactEffect*)&params[4];
 	}
 	bool AllowImpactEffects(Actor HitActor, Vector HitLocation, Vector HitNormal)
@@ -158,7 +217,7 @@ void**)params.ptr = MeshCpnt;
 		*cast(Actor*)params.ptr = HitActor;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42364], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowImpactEffects, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void SetImpactedActor(Actor HitActor, Vector HitLocation, Vector HitNormal, Actor.TraceHitInfo HitInfo)
@@ -169,14 +228,14 @@ void**)params.ptr = MeshCpnt;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
 		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42369], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetImpactedActor, params.ptr, cast(void*)0);
 	}
 	void PlayImpactEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayImpactEffects, params.ptr, cast(void*)0);
 	}
 	void CheckBulletWhip(Vector FireDir, Vector HitLocation)
 	{
@@ -184,21 +243,21 @@ void**)params.ptr = MeshCpnt;
 		params[] = 0;
 		*cast(Vector*)params.ptr = FireDir;
 		*cast(Vector*)&params[12] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42389], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckBulletWhip, params.ptr, cast(void*)0);
 	}
 	void SetWeaponOverlayFlags(UTPawn OwnerPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = OwnerPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42394], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWeaponOverlayFlags, params.ptr, cast(void*)0);
 	}
 	void ChangeVisibility(bool bIsVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42400], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeVisibility, params.ptr, cast(void*)0);
 	}
 	void FireModeUpdated(ubyte FiringMode, bool bViaReplication)
 	{
@@ -206,13 +265,13 @@ void**)params.ptr = MeshCpnt;
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(bool*)&params[4] = bViaReplication;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42402], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FireModeUpdated, params.ptr, cast(void*)0);
 	}
 	Vector GetEffectLocation()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42405], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEffectLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 }

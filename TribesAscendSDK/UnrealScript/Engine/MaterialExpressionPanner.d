@@ -1,10 +1,13 @@
 module UnrealScript.Engine.MaterialExpressionPanner;
 
+import ScriptClasses;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionPanner : MaterialExpression
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionPanner")); }
 	@property final auto ref
 	{
 		float SpeedY() { return *cast(float*)(cast(size_t)cast(void*)this + 168); }

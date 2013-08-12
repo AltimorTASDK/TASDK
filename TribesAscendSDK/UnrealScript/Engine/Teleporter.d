@@ -8,6 +8,29 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface Teleporter : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Teleporter")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCanTeleport;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mAccept;
+			ScriptFunction mTouch;
+			ScriptFunction mPostTouch;
+			ScriptFunction mSpecialHandling;
+		}
+		public @property static final
+		{
+			ScriptFunction CanTeleport() { return mCanTeleport ? mCanTeleport : (mCanTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.CanTeleport")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.PostBeginPlay")); }
+			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.Accept")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.Touch")); }
+			ScriptFunction PostTouch() { return mPostTouch ? mPostTouch : (mPostTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.PostTouch")); }
+			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.Teleporter.SpecialHandling")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -38,12 +61,12 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanTeleport, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27740], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool Accept(Actor Incoming, Actor Source)
 	{
@@ -51,7 +74,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Incoming;
 		*cast(Actor*)&params[4] = Source;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27741], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Accept, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void Touch(Actor Other, 
@@ -66,21 +89,21 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27750], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void PostTouch(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27755], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostTouch, params.ptr, cast(void*)0);
 	}
 	Actor SpecialHandling(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialHandling, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 }

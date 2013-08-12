@@ -8,6 +8,27 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrVGSNode : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVGSNode")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mProcessKeyInput;
+			ScriptFunction mVerifyVGSCommandEntry;
+			ScriptFunction mVerifyVGSChild;
+			ScriptFunction mGetGametypeSpecificCommands;
+			ScriptFunction mGetGametypeSpecificChildrenNodes;
+		}
+		public @property static final
+		{
+			ScriptFunction ProcessKeyInput() { return mProcessKeyInput ? mProcessKeyInput : (mProcessKeyInput = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSNode.ProcessKeyInput")); }
+			ScriptFunction VerifyVGSCommandEntry() { return mVerifyVGSCommandEntry ? mVerifyVGSCommandEntry : (mVerifyVGSCommandEntry = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSNode.VerifyVGSCommandEntry")); }
+			ScriptFunction VerifyVGSChild() { return mVerifyVGSChild ? mVerifyVGSChild : (mVerifyVGSChild = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSNode.VerifyVGSChild")); }
+			ScriptFunction GetGametypeSpecificCommands() { return mGetGametypeSpecificCommands ? mGetGametypeSpecificCommands : (mGetGametypeSpecificCommands = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSNode.GetGametypeSpecificCommands")); }
+			ScriptFunction GetGametypeSpecificChildrenNodes() { return mGetGametypeSpecificChildrenNodes ? mGetGametypeSpecificChildrenNodes : (mGetGametypeSpecificChildrenNodes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVGSNode.GetGametypeSpecificChildrenNodes")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -33,50 +54,50 @@ public extern(D):
 		bool m_bIgnoreCTF(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 152) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 152) &= ~0x1; } return val; }
 	}
 final:
-	ScriptClass ProcessKeyInput(ScriptName Key, TrPlayerInput pPlayerInput, ScriptClass GameClass)
+	static ScriptClass ProcessKeyInput(ScriptName Key, TrPlayerInput pPlayerInput, ScriptClass GameClass)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Key;
 		*cast(TrPlayerInput*)&params[8] = pPlayerInput;
 		*cast(ScriptClass*)&params[12] = GameClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[77960], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ProcessKeyInput, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[16];
 	}
-	bool VerifyVGSCommandEntry(TrVGSCommandList.VGSCommandType Command, ScriptClass GameClass)
+	static bool VerifyVGSCommandEntry(TrVGSCommandList.VGSCommandType Command, ScriptClass GameClass)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(TrVGSCommandList.VGSCommandType*)params.ptr = Command;
 		*cast(ScriptClass*)&params[4] = GameClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[77963], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.VerifyVGSCommandEntry, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool VerifyVGSChild(ScriptClass VGSNodeClass, ScriptClass GameClass)
+	static bool VerifyVGSChild(ScriptClass VGSNodeClass, ScriptClass GameClass)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = VGSNodeClass;
 		*cast(ScriptClass*)&params[4] = GameClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[115429], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.VerifyVGSChild, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	void GetGametypeSpecificCommands(ScriptArray!(TrVGSCommandList.VGSCommandType)* outGametypeSpecificCommands, ScriptClass GameClass)
+	static void GetGametypeSpecificCommands(ScriptArray!(TrVGSCommandList.VGSCommandType)* outGametypeSpecificCommands, ScriptClass GameClass)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(TrVGSCommandList.VGSCommandType)*)params.ptr = *outGametypeSpecificCommands;
 		*cast(ScriptClass*)&params[12] = GameClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[115433], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetGametypeSpecificCommands, params.ptr, cast(void*)0);
 		*outGametypeSpecificCommands = *cast(ScriptArray!(TrVGSCommandList.VGSCommandType)*)params.ptr;
 	}
-	void GetGametypeSpecificChildrenNodes(ScriptArray!(ScriptClass)* outVGSNodeChildrenClasses, ScriptClass GameClass)
+	static void GetGametypeSpecificChildrenNodes(ScriptArray!(ScriptClass)* outVGSNodeChildrenClasses, ScriptClass GameClass)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptClass)*)params.ptr = *outVGSNodeChildrenClasses;
 		*cast(ScriptClass*)&params[12] = GameClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[115438], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetGametypeSpecificChildrenNodes, params.ptr, cast(void*)0);
 		*outVGSNodeChildrenClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
 	}
 }

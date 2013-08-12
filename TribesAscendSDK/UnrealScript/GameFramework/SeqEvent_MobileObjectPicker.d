@@ -7,6 +7,8 @@ import UnrealScript.GameFramework.SeqEvent_MobileRawInput;
 extern(C++) interface SeqEvent_MobileObjectPicker : SeqEvent_MobileRawInput
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileObjectPicker")); }
 	@property final auto ref
 	{
 		ScriptArray!(UObject) Targets() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 304); }

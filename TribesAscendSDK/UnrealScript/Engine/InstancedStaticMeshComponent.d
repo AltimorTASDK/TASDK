@@ -9,10 +9,14 @@ import UnrealScript.Engine.ShadowMap2D;
 extern(C++) interface InstancedStaticMeshComponent : StaticMeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InstancedStaticMeshComponent")); }
 	struct InstancedStaticMeshInstanceData
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InstancedStaticMeshComponent.InstancedStaticMeshInstanceData")); }
 		@property final auto ref
 		{
 			UObject.Vector2D ShadowmapUVBias() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 72); }
@@ -24,6 +28,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InstancedStaticMeshComponent.InstancedStaticMeshMappingInfo")); }
 		@property final auto ref
 		{
 			ShadowMap2D ShadowmapTexture() { return *cast(ShadowMap2D*)(cast(size_t)&this + 12); }

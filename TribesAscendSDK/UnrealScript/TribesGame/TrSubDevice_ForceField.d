@@ -7,6 +7,21 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrSubDevice_ForceField : TrSubDevice
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSubDevice_ForceField")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInstantFire;
+			ScriptFunction mModifyInstantHitDamage;
+		}
+		public @property static final
+		{
+			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSubDevice_ForceField.InstantFire")); }
+			ScriptFunction ModifyInstantHitDamage() { return mModifyInstantHitDamage ? mModifyInstantHitDamage : (mModifyInstantHitDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSubDevice_ForceField.ModifyInstantHitDamage")); }
+		}
+	}
 	@property final auto ref
 	{
 		float m_MinSpeed() { return *cast(float*)(cast(size_t)cast(void*)this + 2160); }
@@ -17,7 +32,7 @@ public extern(D):
 final:
 	void InstantFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113041], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InstantFire, cast(void*)0, cast(void*)0);
 	}
 	float ModifyInstantHitDamage(ubyte FiringMode, Actor.ImpactInfo Impact, float Damage)
 	{
@@ -26,7 +41,7 @@ final:
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(float*)&params[84] = Damage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113042], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyInstantHitDamage, params.ptr, cast(void*)0);
 		return *cast(float*)&params[88];
 	}
 }

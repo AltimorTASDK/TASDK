@@ -8,6 +8,27 @@ import UnrealScript.UDKBase.UDKPawn;
 extern(C++) interface UDKWeapon : Weapon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKWeapon")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsAimCorrect;
+			ScriptFunction mBestMode;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mEnsureWeaponOverlayComponentLast;
+			ScriptFunction mSetPosition;
+		}
+		public @property static final
+		{
+			ScriptFunction IsAimCorrect() { return mIsAimCorrect ? mIsAimCorrect : (mIsAimCorrect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKWeapon.IsAimCorrect")); }
+			ScriptFunction BestMode() { return mBestMode ? mBestMode : (mBestMode = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKWeapon.BestMode")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKWeapon.PostBeginPlay")); }
+			ScriptFunction EnsureWeaponOverlayComponentLast() { return mEnsureWeaponOverlayComponentLast ? mEnsureWeaponOverlayComponentLast : (mEnsureWeaponOverlayComponentLast = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKWeapon.EnsureWeaponOverlayComponentLast")); }
+			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKWeapon.SetPosition")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,23 +48,23 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35784], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsAimCorrect, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	ubyte BestMode()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35805], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BestMode, params.ptr, cast(void*)0);
 		return params[0];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36274], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void EnsureWeaponOverlayComponentLast()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36275], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnsureWeaponOverlayComponentLast, cast(void*)0, cast(void*)0);
 	}
 	void SetPosition(UDKPawn Holder, float DeltaSeconds)
 	{
@@ -51,6 +72,6 @@ final:
 		params[] = 0;
 		*cast(UDKPawn*)params.ptr = Holder;
 		*cast(float*)&params[4] = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPosition, params.ptr, cast(void*)0);
 	}
 }

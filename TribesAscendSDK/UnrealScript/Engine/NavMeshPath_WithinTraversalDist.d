@@ -7,6 +7,21 @@ import UnrealScript.Engine.NavMeshPathConstraint;
 extern(C++) interface NavMeshPath_WithinTraversalDist : NavMeshPathConstraint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_WithinTraversalDist")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDontExceedMaxDist;
+			ScriptFunction mRecycle;
+		}
+		public @property static final
+		{
+			ScriptFunction DontExceedMaxDist() { return mDontExceedMaxDist ? mDontExceedMaxDist : (mDontExceedMaxDist = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_WithinTraversalDist.DontExceedMaxDist")); }
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPath_WithinTraversalDist.Recycle")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -18,18 +33,18 @@ public extern(D):
 		bool bSoft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x1; } return val; }
 	}
 final:
-	bool DontExceedMaxDist(NavigationHandle NavHandle, float InMaxTraversalDist, bool bInSoft)
+	static bool DontExceedMaxDist(NavigationHandle NavHandle, float InMaxTraversalDist, bool bInSoft)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
 		*cast(float*)&params[4] = InMaxTraversalDist;
 		*cast(bool*)&params[8] = bInSoft;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21110], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DontExceedMaxDist, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21116], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 }

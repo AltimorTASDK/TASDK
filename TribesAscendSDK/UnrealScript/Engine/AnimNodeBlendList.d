@@ -6,6 +6,13 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface AnimNodeBlendList : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendList")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetActiveChild;
+		public @property static final ScriptFunction SetActiveChild() { return mSetActiveChild ? mSetActiveChild : (mSetActiveChild = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendList.SetActiveChild")); }
+	}
 	@property final
 	{
 		auto ref
@@ -29,6 +36,6 @@ public extern(D):
 		params[] = 0;
 		*cast(int*)params.ptr = ChildIndex;
 		*cast(float*)&params[4] = BlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10822], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveChild, params.ptr, cast(void*)0);
 	}
 }

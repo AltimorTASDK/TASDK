@@ -10,6 +10,23 @@ import UnrealScript.Engine.PlayerController;
 extern(C++) interface TrRabbitScoreMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRabbitScoreMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetString;
+			ScriptFunction mClientReceive;
+			ScriptFunction mAnnouncementLevel;
+		}
+		public @property static final
+		{
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.GetString")); }
+			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.ClientReceive")); }
+			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRabbitScoreMessage.AnnouncementLevel")); }
+		}
+	}
 	enum
 	{
 		THR_SPINFUSOR = 1,
@@ -529,7 +546,7 @@ public extern(D):
 		ScriptString YouScoreFlagTouch() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
 	}
 final:
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -538,10 +555,10 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110330], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -550,14 +567,14 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110338], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	ubyte AnnouncementLevel(ubyte MessageIndex)
+	static ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
 		params[0] = MessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110346], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementLevel, params.ptr, cast(void*)0);
 		return params[1];
 	}
 }

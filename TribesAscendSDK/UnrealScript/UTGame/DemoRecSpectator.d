@@ -9,6 +9,43 @@ import UnrealScript.Engine.Camera;
 extern(C++) interface DemoRecSpectator : UTPlayerController
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.DemoRecSpectator")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mReceivedPlayer;
+			ScriptFunction mInitPlayerReplicationInfo;
+			ScriptFunction mSlomo;
+			ScriptFunction mViewClass;
+			ScriptFunction mDemoViewNextPlayer;
+			ScriptFunction mSetViewTarget;
+			ScriptFunction mServerViewSelf;
+			ScriptFunction mClientSetRealViewTarget;
+			ScriptFunction mSetPause;
+			ScriptFunction mPause;
+			ScriptFunction mGetPlayerViewPoint;
+			ScriptFunction mUpdateRotation;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.PostBeginPlay")); }
+			ScriptFunction ReceivedPlayer() { return mReceivedPlayer ? mReceivedPlayer : (mReceivedPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ReceivedPlayer")); }
+			ScriptFunction InitPlayerReplicationInfo() { return mInitPlayerReplicationInfo ? mInitPlayerReplicationInfo : (mInitPlayerReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.InitPlayerReplicationInfo")); }
+			ScriptFunction Slomo() { return mSlomo ? mSlomo : (mSlomo = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.Slomo")); }
+			ScriptFunction ViewClass() { return mViewClass ? mViewClass : (mViewClass = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ViewClass")); }
+			ScriptFunction DemoViewNextPlayer() { return mDemoViewNextPlayer ? mDemoViewNextPlayer : (mDemoViewNextPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.DemoViewNextPlayer")); }
+			ScriptFunction SetViewTarget() { return mSetViewTarget ? mSetViewTarget : (mSetViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.SetViewTarget")); }
+			ScriptFunction ServerViewSelf() { return mServerViewSelf ? mServerViewSelf : (mServerViewSelf = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ServerViewSelf")); }
+			ScriptFunction ClientSetRealViewTarget() { return mClientSetRealViewTarget ? mClientSetRealViewTarget : (mClientSetRealViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.ClientSetRealViewTarget")); }
+			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.SetPause")); }
+			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.Pause")); }
+			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.GetPlayerViewPoint")); }
+			ScriptFunction UpdateRotation() { return mUpdateRotation ? mUpdateRotation : (mUpdateRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.DemoRecSpectator.UpdateRotation")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -26,22 +63,22 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37236], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ReceivedPlayer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37237], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReceivedPlayer, cast(void*)0, cast(void*)0);
 	}
 	void InitPlayerReplicationInfo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37238], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitPlayerReplicationInfo, cast(void*)0, cast(void*)0);
 	}
 	void Slomo(float NewTimeDilation)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewTimeDilation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37239], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Slomo, params.ptr, cast(void*)0);
 	}
 	void ViewClass(ScriptClass aClass, bool bQuiet, bool bCheat)
 	{
@@ -50,11 +87,11 @@ final:
 		*cast(ScriptClass*)params.ptr = aClass;
 		*cast(bool*)&params[4] = bQuiet;
 		*cast(bool*)&params[8] = bCheat;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37241], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ViewClass, params.ptr, cast(void*)0);
 	}
 	void DemoViewNextPlayer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37248], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DemoViewNextPlayer, cast(void*)0, cast(void*)0);
 	}
 	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams TransitionParams)
 	{
@@ -62,21 +99,21 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
 		*cast(Camera.ViewTargetTransitionParams*)&params[4] = TransitionParams;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37252], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTarget, params.ptr, cast(void*)0);
 	}
 	void ServerViewSelf(Camera.ViewTargetTransitionParams TransitionParams)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Camera.ViewTargetTransitionParams*)params.ptr = TransitionParams;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37255], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerViewSelf, params.ptr, cast(void*)0);
 	}
 	void ClientSetRealViewTarget(PlayerReplicationInfo NewTarget)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = NewTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37257], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetRealViewTarget, params.ptr, cast(void*)0);
 	}
 	bool SetPause(bool bPause, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -88,12 +125,12 @@ void* CanUnpauseDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)&params[4] = CanUnpauseDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37259], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void Pause()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37263], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Pause, cast(void*)0, cast(void*)0);
 	}
 	void GetPlayerViewPoint(Vector* CameraLocation, Rotator* CameraRotation)
 	{
@@ -101,7 +138,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(Vector*)params.ptr = *CameraLocation;
 		*cast(Rotator*)&params[12] = *CameraRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*CameraLocation = *cast(Vector*)params.ptr;
 		*CameraRotation = *cast(Rotator*)&params[12];
 	}
@@ -110,6 +147,6 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37281], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateRotation, params.ptr, cast(void*)0);
 	}
 }

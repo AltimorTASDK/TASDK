@@ -1,5 +1,6 @@
 module UnrealScript.Engine.SeqAct_SetMesh;
 
+import ScriptClasses;
 import UnrealScript.Engine.SkeletalMesh;
 import UnrealScript.Engine.SequenceAction;
 import UnrealScript.Engine.StaticMesh;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface SeqAct_SetMesh : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMesh")); }
 	enum EMeshType : ubyte
 	{
 		MeshType_StaticMesh = 0,

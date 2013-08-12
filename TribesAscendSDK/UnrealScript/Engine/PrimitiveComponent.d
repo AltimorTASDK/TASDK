@@ -11,6 +11,105 @@ import UnrealScript.Engine.LightComponent;
 extern(C++) interface PrimitiveComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrimitiveComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetBlockRigidBody;
+			ScriptFunction mSetRBLinearVelocity;
+			ScriptFunction mAddImpulse;
+			ScriptFunction mAddRadialImpulse;
+			ScriptFunction mAddForce;
+			ScriptFunction mAddRadialForce;
+			ScriptFunction mAddTorque;
+			ScriptFunction mSetRBAngularVelocity;
+			ScriptFunction mRetardRBLinearVelocity;
+			ScriptFunction mSetRBPosition;
+			ScriptFunction mSetRBRotation;
+			ScriptFunction mWakeRigidBody;
+			ScriptFunction mPutRigidBodyToSleep;
+			ScriptFunction mRigidBodyIsAwake;
+			ScriptFunction mSetRBCollidesWithChannel;
+			ScriptFunction mSetRBCollisionChannels;
+			ScriptFunction mSetRBChannel;
+			ScriptFunction mSetNotifyRigidBodyCollision;
+			ScriptFunction mInitRBPhys;
+			ScriptFunction mSetPhysMaterialOverride;
+			ScriptFunction mGetRootBodyInstance;
+			ScriptFunction mSetRBDominanceGroup;
+			ScriptFunction mShouldComponentAddToScene;
+			ScriptFunction mSetHidden;
+			ScriptFunction mSetOwnerNoSee;
+			ScriptFunction mSetOnlyOwnerSee;
+			ScriptFunction mSetIgnoreOwnerHidden;
+			ScriptFunction mSetShadowParent;
+			ScriptFunction mSetLightEnvironment;
+			ScriptFunction mSetCullDistance;
+			ScriptFunction mSetLightingChannels;
+			ScriptFunction mSetDepthPriorityGroup;
+			ScriptFunction mSetViewOwnerDepthPriorityGroup;
+			ScriptFunction mSetTraceBlocking;
+			ScriptFunction mSetActorCollision;
+			ScriptFunction mSetTranslation;
+			ScriptFunction mSetRotation;
+			ScriptFunction mSetScale;
+			ScriptFunction mSetScale3D;
+			ScriptFunction mSetAbsolute;
+			ScriptFunction mGetPosition;
+			ScriptFunction mGetRotation;
+			ScriptFunction mClosestPointOnComponentToPoint;
+			ScriptFunction mClosestPointOnComponentToComponent;
+		}
+		public @property static final
+		{
+			ScriptFunction SetBlockRigidBody() { return mSetBlockRigidBody ? mSetBlockRigidBody : (mSetBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetBlockRigidBody")); }
+			ScriptFunction SetRBLinearVelocity() { return mSetRBLinearVelocity ? mSetRBLinearVelocity : (mSetRBLinearVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBLinearVelocity")); }
+			ScriptFunction AddImpulse() { return mAddImpulse ? mAddImpulse : (mAddImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddImpulse")); }
+			ScriptFunction AddRadialImpulse() { return mAddRadialImpulse ? mAddRadialImpulse : (mAddRadialImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddRadialImpulse")); }
+			ScriptFunction AddForce() { return mAddForce ? mAddForce : (mAddForce = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddForce")); }
+			ScriptFunction AddRadialForce() { return mAddRadialForce ? mAddRadialForce : (mAddRadialForce = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddRadialForce")); }
+			ScriptFunction AddTorque() { return mAddTorque ? mAddTorque : (mAddTorque = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.AddTorque")); }
+			ScriptFunction SetRBAngularVelocity() { return mSetRBAngularVelocity ? mSetRBAngularVelocity : (mSetRBAngularVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBAngularVelocity")); }
+			ScriptFunction RetardRBLinearVelocity() { return mRetardRBLinearVelocity ? mRetardRBLinearVelocity : (mRetardRBLinearVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.RetardRBLinearVelocity")); }
+			ScriptFunction SetRBPosition() { return mSetRBPosition ? mSetRBPosition : (mSetRBPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBPosition")); }
+			ScriptFunction SetRBRotation() { return mSetRBRotation ? mSetRBRotation : (mSetRBRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBRotation")); }
+			ScriptFunction WakeRigidBody() { return mWakeRigidBody ? mWakeRigidBody : (mWakeRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.WakeRigidBody")); }
+			ScriptFunction PutRigidBodyToSleep() { return mPutRigidBodyToSleep ? mPutRigidBodyToSleep : (mPutRigidBodyToSleep = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.PutRigidBodyToSleep")); }
+			ScriptFunction RigidBodyIsAwake() { return mRigidBodyIsAwake ? mRigidBodyIsAwake : (mRigidBodyIsAwake = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.RigidBodyIsAwake")); }
+			ScriptFunction SetRBCollidesWithChannel() { return mSetRBCollidesWithChannel ? mSetRBCollidesWithChannel : (mSetRBCollidesWithChannel = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBCollidesWithChannel")); }
+			ScriptFunction SetRBCollisionChannels() { return mSetRBCollisionChannels ? mSetRBCollisionChannels : (mSetRBCollisionChannels = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBCollisionChannels")); }
+			ScriptFunction SetRBChannel() { return mSetRBChannel ? mSetRBChannel : (mSetRBChannel = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBChannel")); }
+			ScriptFunction SetNotifyRigidBodyCollision() { return mSetNotifyRigidBodyCollision ? mSetNotifyRigidBodyCollision : (mSetNotifyRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetNotifyRigidBodyCollision")); }
+			ScriptFunction InitRBPhys() { return mInitRBPhys ? mInitRBPhys : (mInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.InitRBPhys")); }
+			ScriptFunction SetPhysMaterialOverride() { return mSetPhysMaterialOverride ? mSetPhysMaterialOverride : (mSetPhysMaterialOverride = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetPhysMaterialOverride")); }
+			ScriptFunction GetRootBodyInstance() { return mGetRootBodyInstance ? mGetRootBodyInstance : (mGetRootBodyInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetRootBodyInstance")); }
+			ScriptFunction SetRBDominanceGroup() { return mSetRBDominanceGroup ? mSetRBDominanceGroup : (mSetRBDominanceGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRBDominanceGroup")); }
+			ScriptFunction ShouldComponentAddToScene() { return mShouldComponentAddToScene ? mShouldComponentAddToScene : (mShouldComponentAddToScene = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ShouldComponentAddToScene")); }
+			ScriptFunction SetHidden() { return mSetHidden ? mSetHidden : (mSetHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetHidden")); }
+			ScriptFunction SetOwnerNoSee() { return mSetOwnerNoSee ? mSetOwnerNoSee : (mSetOwnerNoSee = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetOwnerNoSee")); }
+			ScriptFunction SetOnlyOwnerSee() { return mSetOnlyOwnerSee ? mSetOnlyOwnerSee : (mSetOnlyOwnerSee = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetOnlyOwnerSee")); }
+			ScriptFunction SetIgnoreOwnerHidden() { return mSetIgnoreOwnerHidden ? mSetIgnoreOwnerHidden : (mSetIgnoreOwnerHidden = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetIgnoreOwnerHidden")); }
+			ScriptFunction SetShadowParent() { return mSetShadowParent ? mSetShadowParent : (mSetShadowParent = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetShadowParent")); }
+			ScriptFunction SetLightEnvironment() { return mSetLightEnvironment ? mSetLightEnvironment : (mSetLightEnvironment = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetLightEnvironment")); }
+			ScriptFunction SetCullDistance() { return mSetCullDistance ? mSetCullDistance : (mSetCullDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetCullDistance")); }
+			ScriptFunction SetLightingChannels() { return mSetLightingChannels ? mSetLightingChannels : (mSetLightingChannels = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetLightingChannels")); }
+			ScriptFunction SetDepthPriorityGroup() { return mSetDepthPriorityGroup ? mSetDepthPriorityGroup : (mSetDepthPriorityGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetDepthPriorityGroup")); }
+			ScriptFunction SetViewOwnerDepthPriorityGroup() { return mSetViewOwnerDepthPriorityGroup ? mSetViewOwnerDepthPriorityGroup : (mSetViewOwnerDepthPriorityGroup = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetViewOwnerDepthPriorityGroup")); }
+			ScriptFunction SetTraceBlocking() { return mSetTraceBlocking ? mSetTraceBlocking : (mSetTraceBlocking = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetTraceBlocking")); }
+			ScriptFunction SetActorCollision() { return mSetActorCollision ? mSetActorCollision : (mSetActorCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetActorCollision")); }
+			ScriptFunction SetTranslation() { return mSetTranslation ? mSetTranslation : (mSetTranslation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetTranslation")); }
+			ScriptFunction SetRotation() { return mSetRotation ? mSetRotation : (mSetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetRotation")); }
+			ScriptFunction SetScale() { return mSetScale ? mSetScale : (mSetScale = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetScale")); }
+			ScriptFunction SetScale3D() { return mSetScale3D ? mSetScale3D : (mSetScale3D = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetScale3D")); }
+			ScriptFunction SetAbsolute() { return mSetAbsolute ? mSetAbsolute : (mSetAbsolute = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.SetAbsolute")); }
+			ScriptFunction GetPosition() { return mGetPosition ? mGetPosition : (mGetPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetPosition")); }
+			ScriptFunction GetRotation() { return mGetRotation ? mGetRotation : (mGetRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.GetRotation")); }
+			ScriptFunction ClosestPointOnComponentToPoint() { return mClosestPointOnComponentToPoint ? mClosestPointOnComponentToPoint : (mClosestPointOnComponentToPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ClosestPointOnComponentToPoint")); }
+			ScriptFunction ClosestPointOnComponentToComponent() { return mClosestPointOnComponentToComponent ? mClosestPointOnComponentToComponent : (mClosestPointOnComponentToComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.PrimitiveComponent.ClosestPointOnComponentToComponent")); }
+		}
+	}
 	enum GJKResult : ubyte
 	{
 		GJK_Intersect = 0,
@@ -51,6 +150,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PrimitiveComponent.RBCollisionChannelContainer")); }
 		@property final
 		{
 			bool Default() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -94,6 +195,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PrimitiveComponent.MaterialViewRelevance")); }
 		@property final
 		{
 			bool bOpaque() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -283,7 +386,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewBlockRigidBody;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4339], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBlockRigidBody, params.ptr, cast(void*)0);
 	}
 	void SetRBLinearVelocity(Vector NewVel, bool bAddToCurrent)
 	{
@@ -291,7 +394,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVel;
 		*cast(bool*)&params[12] = bAddToCurrent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4385], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBLinearVelocity, params.ptr, cast(void*)0);
 	}
 	void AddImpulse(Vector Impulse, Vector Position, ScriptName BoneName, bool bVelChange)
 	{
@@ -301,7 +404,7 @@ final:
 		*cast(Vector*)&params[12] = Position;
 		*cast(ScriptName*)&params[24] = BoneName;
 		*cast(bool*)&params[32] = bVelChange;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4749], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddImpulse, params.ptr, cast(void*)0);
 	}
 	void AddRadialImpulse(Vector Origin, float Radius, float Strength, PrimitiveComponent.ERadialImpulseFalloff Falloff, bool bVelChange)
 	{
@@ -312,7 +415,7 @@ final:
 		*cast(float*)&params[16] = Strength;
 		*cast(PrimitiveComponent.ERadialImpulseFalloff*)&params[20] = Falloff;
 		*cast(bool*)&params[24] = bVelChange;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4754], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddRadialImpulse, params.ptr, cast(void*)0);
 	}
 	void AddForce(Vector Force, Vector Position, ScriptName BoneName)
 	{
@@ -321,7 +424,7 @@ final:
 		*cast(Vector*)params.ptr = Force;
 		*cast(Vector*)&params[12] = Position;
 		*cast(ScriptName*)&params[24] = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddForce, params.ptr, cast(void*)0);
 	}
 	void AddRadialForce(Vector Origin, float Radius, float Strength, PrimitiveComponent.ERadialImpulseFalloff Falloff)
 	{
@@ -331,7 +434,7 @@ final:
 		*cast(float*)&params[12] = Radius;
 		*cast(float*)&params[16] = Strength;
 		*cast(PrimitiveComponent.ERadialImpulseFalloff*)&params[20] = Falloff;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4764], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddRadialForce, params.ptr, cast(void*)0);
 	}
 	void AddTorque(Vector Torque, ScriptName BoneName)
 	{
@@ -339,7 +442,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = Torque;
 		*cast(ScriptName*)&params[12] = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4769], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddTorque, params.ptr, cast(void*)0);
 	}
 	void SetRBAngularVelocity(Vector NewAngVel, bool bAddToCurrent)
 	{
@@ -347,7 +450,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewAngVel;
 		*cast(bool*)&params[12] = bAddToCurrent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4774], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBAngularVelocity, params.ptr, cast(void*)0);
 	}
 	void RetardRBLinearVelocity(Vector RetardDir, float VelScale)
 	{
@@ -355,7 +458,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = RetardDir;
 		*cast(float*)&params[12] = VelScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4777], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RetardRBLinearVelocity, params.ptr, cast(void*)0);
 	}
 	void SetRBPosition(Vector NewPos, ScriptName BoneName)
 	{
@@ -363,7 +466,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewPos;
 		*cast(ScriptName*)&params[12] = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4780], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBPosition, params.ptr, cast(void*)0);
 	}
 	void SetRBRotation(Rotator NewRot, ScriptName BoneName)
 	{
@@ -371,28 +474,28 @@ final:
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRot;
 		*cast(ScriptName*)&params[12] = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4783], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBRotation, params.ptr, cast(void*)0);
 	}
 	void WakeRigidBody(ScriptName BoneName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4786], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WakeRigidBody, params.ptr, cast(void*)0);
 	}
 	void PutRigidBodyToSleep(ScriptName BoneName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4788], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PutRigidBodyToSleep, params.ptr, cast(void*)0);
 	}
 	bool RigidBodyIsAwake(ScriptName BoneName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4790], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyIsAwake, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void SetRBCollidesWithChannel(PrimitiveComponent.ERBCollisionChannel pChannel, bool bNewCollides)
@@ -401,45 +504,45 @@ final:
 		params[] = 0;
 		*cast(PrimitiveComponent.ERBCollisionChannel*)params.ptr = pChannel;
 		*cast(bool*)&params[4] = bNewCollides;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4794], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBCollidesWithChannel, params.ptr, cast(void*)0);
 	}
 	void SetRBCollisionChannels(PrimitiveComponent.RBCollisionChannelContainer Channels)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PrimitiveComponent.RBCollisionChannelContainer*)params.ptr = Channels;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBCollisionChannels, params.ptr, cast(void*)0);
 	}
 	void SetRBChannel(PrimitiveComponent.ERBCollisionChannel pChannel)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(PrimitiveComponent.ERBCollisionChannel*)params.ptr = pChannel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4818], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBChannel, params.ptr, cast(void*)0);
 	}
 	void SetNotifyRigidBodyCollision(bool bNewNotifyRigidBodyCollision)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewNotifyRigidBodyCollision;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4820], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetNotifyRigidBodyCollision, params.ptr, cast(void*)0);
 	}
 	void InitRBPhys()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4822], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitRBPhys, cast(void*)0, cast(void*)0);
 	}
 	void SetPhysMaterialOverride(PhysicalMaterial NewPhysMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicalMaterial*)params.ptr = NewPhysMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4823], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPhysMaterialOverride, params.ptr, cast(void*)0);
 	}
 	RB_BodyInstance GetRootBodyInstance()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4825], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRootBodyInstance, params.ptr, cast(void*)0);
 		return *cast(RB_BodyInstance*)params.ptr;
 	}
 	void SetRBDominanceGroup(ubyte InDomGroup)
@@ -447,13 +550,13 @@ final:
 		ubyte params[1];
 		params[] = 0;
 		params[0] = InDomGroup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4827], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBDominanceGroup, params.ptr, cast(void*)0);
 	}
 	bool ShouldComponentAddToScene()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4829], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldComponentAddToScene, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetHidden(bool NewHidden)
@@ -461,28 +564,28 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = NewHidden;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4831], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHidden, params.ptr, cast(void*)0);
 	}
 	void SetOwnerNoSee(bool bNewOwnerNoSee)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewOwnerNoSee;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4833], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOwnerNoSee, params.ptr, cast(void*)0);
 	}
 	void SetOnlyOwnerSee(bool bNewOnlyOwnerSee)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewOnlyOwnerSee;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4835], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOnlyOwnerSee, params.ptr, cast(void*)0);
 	}
 	void SetIgnoreOwnerHidden(bool bNewIgnoreOwnerHidden)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewIgnoreOwnerHidden;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4837], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetIgnoreOwnerHidden, params.ptr, cast(void*)0);
 	}
 	void SetShadowParent(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -493,7 +596,7 @@ void* NewShadowParent)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = NewShadowParent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4839], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetShadowParent, params.ptr, cast(void*)0);
 	}
 	void SetLightEnvironment(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -504,28 +607,28 @@ void* NewLightEnvironment)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = NewLightEnvironment;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4841], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLightEnvironment, params.ptr, cast(void*)0);
 	}
 	void SetCullDistance(float NewCullDistance)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewCullDistance;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4843], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCullDistance, params.ptr, cast(void*)0);
 	}
 	void SetLightingChannels(LightComponent.LightingChannelContainer NewLightingChannels)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LightComponent.LightingChannelContainer*)params.ptr = NewLightingChannels;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4873], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLightingChannels, params.ptr, cast(void*)0);
 	}
 	void SetDepthPriorityGroup(Scene.ESceneDepthPriorityGroup NewDepthPriorityGroup)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(Scene.ESceneDepthPriorityGroup*)params.ptr = NewDepthPriorityGroup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4875], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDepthPriorityGroup, params.ptr, cast(void*)0);
 	}
 	void SetViewOwnerDepthPriorityGroup(bool bNewUseViewOwnerDepthPriorityGroup, Scene.ESceneDepthPriorityGroup NewViewOwnerDepthPriorityGroup)
 	{
@@ -533,7 +636,7 @@ void**)params.ptr = NewLightEnvironment;
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewUseViewOwnerDepthPriorityGroup;
 		*cast(Scene.ESceneDepthPriorityGroup*)&params[4] = NewViewOwnerDepthPriorityGroup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewOwnerDepthPriorityGroup, params.ptr, cast(void*)0);
 	}
 	void SetTraceBlocking(bool NewBlockZeroExtent, bool NewBlockNonZeroExtent)
 	{
@@ -541,7 +644,7 @@ void**)params.ptr = NewLightEnvironment;
 		params[] = 0;
 		*cast(bool*)params.ptr = NewBlockZeroExtent;
 		*cast(bool*)&params[4] = NewBlockNonZeroExtent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4880], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTraceBlocking, params.ptr, cast(void*)0);
 	}
 	void SetActorCollision(bool NewCollideActors, bool NewBlockActors, bool NewAlwaysCheckCollision)
 	{
@@ -550,35 +653,35 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(bool*)params.ptr = NewCollideActors;
 		*cast(bool*)&params[4] = NewBlockActors;
 		*cast(bool*)&params[8] = NewAlwaysCheckCollision;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4883], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActorCollision, params.ptr, cast(void*)0);
 	}
 	void SetTranslation(Vector NewTranslation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewTranslation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4887], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTranslation, params.ptr, cast(void*)0);
 	}
 	void SetRotation(Rotator NewRotation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4889], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRotation, params.ptr, cast(void*)0);
 	}
 	void SetScale(float NewScale)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4891], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScale, params.ptr, cast(void*)0);
 	}
 	void SetScale3D(Vector NewScale3D)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewScale3D;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4893], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScale3D, params.ptr, cast(void*)0);
 	}
 	void SetAbsolute(bool NewAbsoluteTranslation, bool NewAbsoluteRotation, bool NewAbsoluteScale)
 	{
@@ -587,20 +690,20 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(bool*)params.ptr = NewAbsoluteTranslation;
 		*cast(bool*)&params[4] = NewAbsoluteRotation;
 		*cast(bool*)&params[8] = NewAbsoluteScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4895], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAbsolute, params.ptr, cast(void*)0);
 	}
 	Vector GetPosition()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4899], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPosition, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	Rotator GetRotation()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4903], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)params.ptr;
 	}
 	PrimitiveComponent.GJKResult ClosestPointOnComponentToPoint(Vector* POI, Vector* Extent, Vector* OutPointA, Vector* OutPointB)
@@ -611,7 +714,7 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(Vector*)&params[12] = *Extent;
 		*cast(Vector*)&params[24] = *OutPointA;
 		*cast(Vector*)&params[36] = *OutPointB;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4905], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToPoint, params.ptr, cast(void*)0);
 		*POI = *cast(Vector*)params.ptr;
 		*Extent = *cast(Vector*)&params[12];
 		*OutPointA = *cast(Vector*)&params[24];
@@ -629,7 +732,7 @@ void** OtherComponent, Vector* PointOnComponentA, Vector* PointOnComponentB)
 void**)params.ptr = *OtherComponent;
 		*cast(Vector*)&params[4] = *PointOnComponentA;
 		*cast(Vector*)&params[16] = *PointOnComponentB;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4911], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToComponent, params.ptr, cast(void*)0);
 		*OtherComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr;

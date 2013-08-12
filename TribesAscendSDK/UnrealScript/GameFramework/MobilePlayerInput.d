@@ -14,6 +14,65 @@ import UnrealScript.GameFramework.MobileMenuObject;
 extern(C++) interface MobilePlayerInput : PlayerInput
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobilePlayerInput")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mHasZones;
+			ScriptFunction mGetCurrentZones;
+			ScriptFunction mOpenMenuScene;
+			ScriptFunction mOnInputTouch;
+			ScriptFunction mOnPreviewTouch;
+			ScriptFunction mOnTouchNotHandledInMenu;
+			ScriptFunction mOnMobileMotion;
+			ScriptFunction mNativeInitializeInputSystem;
+			ScriptFunction mNativeInitializeInputZones;
+			ScriptFunction mSendInputKey;
+			ScriptFunction mSendInputAxis;
+			ScriptFunction mInitInputSystem;
+			ScriptFunction mClientInitInputSystem;
+			ScriptFunction mInitTouchSystem;
+			ScriptFunction mInitializeInputZones;
+			ScriptFunction mRefreshKismetLinks;
+			ScriptFunction mAddKismetEventHandler;
+			ScriptFunction mAddKismetRawInputEventHandler;
+			ScriptFunction mFindZone;
+			ScriptFunction mFindorAddZone;
+			ScriptFunction mCloseMenuScene;
+			ScriptFunction mCloseAllMenus;
+			ScriptFunction mRenderMenus;
+			ScriptFunction mPreClientTravel;
+		}
+		public @property static final
+		{
+			ScriptFunction HasZones() { return mHasZones ? mHasZones : (mHasZones = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.HasZones")); }
+			ScriptFunction GetCurrentZones() { return mGetCurrentZones ? mGetCurrentZones : (mGetCurrentZones = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.GetCurrentZones")); }
+			ScriptFunction OpenMenuScene() { return mOpenMenuScene ? mOpenMenuScene : (mOpenMenuScene = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.OpenMenuScene")); }
+			ScriptFunction OnInputTouch() { return mOnInputTouch ? mOnInputTouch : (mOnInputTouch = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.OnInputTouch")); }
+			ScriptFunction OnPreviewTouch() { return mOnPreviewTouch ? mOnPreviewTouch : (mOnPreviewTouch = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.OnPreviewTouch")); }
+			ScriptFunction OnTouchNotHandledInMenu() { return mOnTouchNotHandledInMenu ? mOnTouchNotHandledInMenu : (mOnTouchNotHandledInMenu = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.OnTouchNotHandledInMenu")); }
+			ScriptFunction OnMobileMotion() { return mOnMobileMotion ? mOnMobileMotion : (mOnMobileMotion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.OnMobileMotion")); }
+			ScriptFunction NativeInitializeInputSystem() { return mNativeInitializeInputSystem ? mNativeInitializeInputSystem : (mNativeInitializeInputSystem = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.NativeInitializeInputSystem")); }
+			ScriptFunction NativeInitializeInputZones() { return mNativeInitializeInputZones ? mNativeInitializeInputZones : (mNativeInitializeInputZones = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.NativeInitializeInputZones")); }
+			ScriptFunction SendInputKey() { return mSendInputKey ? mSendInputKey : (mSendInputKey = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.SendInputKey")); }
+			ScriptFunction SendInputAxis() { return mSendInputAxis ? mSendInputAxis : (mSendInputAxis = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.SendInputAxis")); }
+			ScriptFunction InitInputSystem() { return mInitInputSystem ? mInitInputSystem : (mInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.InitInputSystem")); }
+			ScriptFunction ClientInitInputSystem() { return mClientInitInputSystem ? mClientInitInputSystem : (mClientInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.ClientInitInputSystem")); }
+			ScriptFunction InitTouchSystem() { return mInitTouchSystem ? mInitTouchSystem : (mInitTouchSystem = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.InitTouchSystem")); }
+			ScriptFunction InitializeInputZones() { return mInitializeInputZones ? mInitializeInputZones : (mInitializeInputZones = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.InitializeInputZones")); }
+			ScriptFunction RefreshKismetLinks() { return mRefreshKismetLinks ? mRefreshKismetLinks : (mRefreshKismetLinks = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.RefreshKismetLinks")); }
+			ScriptFunction AddKismetEventHandler() { return mAddKismetEventHandler ? mAddKismetEventHandler : (mAddKismetEventHandler = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.AddKismetEventHandler")); }
+			ScriptFunction AddKismetRawInputEventHandler() { return mAddKismetRawInputEventHandler ? mAddKismetRawInputEventHandler : (mAddKismetRawInputEventHandler = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.AddKismetRawInputEventHandler")); }
+			ScriptFunction FindZone() { return mFindZone ? mFindZone : (mFindZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.FindZone")); }
+			ScriptFunction FindorAddZone() { return mFindorAddZone ? mFindorAddZone : (mFindorAddZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.FindorAddZone")); }
+			ScriptFunction CloseMenuScene() { return mCloseMenuScene ? mCloseMenuScene : (mCloseMenuScene = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.CloseMenuScene")); }
+			ScriptFunction CloseAllMenus() { return mCloseAllMenus ? mCloseAllMenus : (mCloseAllMenus = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.CloseAllMenus")); }
+			ScriptFunction RenderMenus() { return mRenderMenus ? mRenderMenus : (mRenderMenus = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.RenderMenus")); }
+			ScriptFunction PreClientTravel() { return mPreClientTravel ? mPreClientTravel : (mPreClientTravel = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.PreClientTravel")); }
+		}
+	}
 	enum NumTouchDataEntries = 5;
 	enum EUIOrientation : ubyte
 	{
@@ -28,6 +87,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[68];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobilePlayerInput.TouchData")); }
 		@property final
 		{
 			auto ref
@@ -52,6 +113,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobilePlayerInput.MobileInputGroup")); }
 		@property final auto ref
 		{
 			ScriptArray!(MobileInputZone) AssociatedZones() { return *cast(ScriptArray!(MobileInputZone)*)(cast(size_t)&this + 12); }
@@ -62,6 +125,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobilePlayerInput.MobileInputZoneClassMap")); }
 		@property final auto ref
 		{
 			ScriptClass ClassType() { return *cast(ScriptClass*)(cast(size_t)&this + 12); }
@@ -72,6 +137,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobilePlayerInput.TouchDataEvent")); }
 		@property final auto ref
 		{
 			UObject.Double DeviceTime() { return *cast(UObject.Double*)(cast(size_t)&this + 12); }
@@ -131,14 +198,14 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32366], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasZones, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	ScriptArray!(MobileInputZone) GetCurrentZones()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32368], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentZones, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(MobileInputZone)*)params.ptr;
 	}
 	MobileMenuScene OpenMenuScene(ScriptClass SceneClass, ScriptString Mode)
@@ -147,7 +214,7 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SceneClass;
 		*cast(ScriptString*)&params[4] = Mode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32638], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OpenMenuScene, params.ptr, cast(void*)0);
 		return *cast(MobileMenuScene*)&params[16];
 	}
 	void OnInputTouch(int Handle, MobileInputZone.EZoneTouchEvent Type, UObject.Vector2D TouchLocation, float DeviceTimestamp)
@@ -158,7 +225,7 @@ final:
 		*cast(MobileInputZone.EZoneTouchEvent*)&params[4] = Type;
 		*cast(UObject.Vector2D*)&params[8] = TouchLocation;
 		*cast(float*)&params[16] = DeviceTimestamp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32759], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnInputTouch, params.ptr, cast(void*)0);
 	}
 	bool OnPreviewTouch(float X, float Y)
 	{
@@ -166,12 +233,12 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = X;
 		*cast(float*)&params[4] = Y;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32761], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPreviewTouch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void OnTouchNotHandledInMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32763], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTouchNotHandledInMenu, cast(void*)0, cast(void*)0);
 	}
 	void OnMobileMotion(PlayerInput pPlayerInput, Vector CurrentAttitude, Vector CurrentRotationRate, Vector CurrentGravity, Vector CurrentAcceleration)
 	{
@@ -182,15 +249,15 @@ final:
 		*cast(Vector*)&params[16] = CurrentRotationRate;
 		*cast(Vector*)&params[28] = CurrentGravity;
 		*cast(Vector*)&params[40] = CurrentAcceleration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32765], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnMobileMotion, params.ptr, cast(void*)0);
 	}
 	void NativeInitializeInputSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32798], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativeInitializeInputSystem, cast(void*)0, cast(void*)0);
 	}
 	void NativeInitializeInputZones()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32799], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativeInitializeInputZones, cast(void*)0, cast(void*)0);
 	}
 	void SendInputKey(ScriptName Key, UObject.EInputEvent Event, float AmountDepressed)
 	{
@@ -199,7 +266,7 @@ final:
 		*cast(ScriptName*)params.ptr = Key;
 		*cast(UObject.EInputEvent*)&params[8] = Event;
 		*cast(float*)&params[12] = AmountDepressed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32800], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendInputKey, params.ptr, cast(void*)0);
 	}
 	void SendInputAxis(ScriptName Key, float Delta, float DeltaTime)
 	{
@@ -208,48 +275,48 @@ final:
 		*cast(ScriptName*)params.ptr = Key;
 		*cast(float*)&params[8] = Delta;
 		*cast(float*)&params[12] = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32804], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendInputAxis, params.ptr, cast(void*)0);
 	}
 	void InitInputSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32808], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitInputSystem, cast(void*)0, cast(void*)0);
 	}
 	void ClientInitInputSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32809], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientInitInputSystem, cast(void*)0, cast(void*)0);
 	}
 	void InitTouchSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32810], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitTouchSystem, cast(void*)0, cast(void*)0);
 	}
 	void InitializeInputZones()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32811], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeInputZones, cast(void*)0, cast(void*)0);
 	}
 	void RefreshKismetLinks()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32816], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshKismetLinks, cast(void*)0, cast(void*)0);
 	}
 	void AddKismetEventHandler(SeqEvent_MobileBase NewHandler)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqEvent_MobileBase*)params.ptr = NewHandler;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32821], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKismetEventHandler, params.ptr, cast(void*)0);
 	}
 	void AddKismetRawInputEventHandler(SeqEvent_MobileRawInput NewHandler)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqEvent_MobileRawInput*)params.ptr = NewHandler;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKismetRawInputEventHandler, params.ptr, cast(void*)0);
 	}
 	MobileInputZone FindZone(ScriptString ZoneName)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ZoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32827], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindZone, params.ptr, cast(void*)0);
 		return *cast(MobileInputZone*)&params[12];
 	}
 	MobileInputZone FindorAddZone(ScriptString ZoneName)
@@ -257,7 +324,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ZoneName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32831], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindorAddZone, params.ptr, cast(void*)0);
 		return *cast(MobileInputZone*)&params[12];
 	}
 	void CloseMenuScene(MobileMenuScene SceneToClose)
@@ -265,11 +332,11 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobileMenuScene*)params.ptr = SceneToClose;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32842], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CloseMenuScene, params.ptr, cast(void*)0);
 	}
 	void CloseAllMenus()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32847], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CloseAllMenus, cast(void*)0, cast(void*)0);
 	}
 	void RenderMenus(Canvas pCanvas, float RenderDelta)
 	{
@@ -277,7 +344,7 @@ final:
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
 		*cast(float*)&params[4] = RenderDelta;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32848], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderMenus, params.ptr, cast(void*)0);
 	}
 	void PreClientTravel(ScriptString PendingURL, Actor.ETravelType TravelType, bool bIsSeamlessTravel)
 	{
@@ -286,6 +353,6 @@ final:
 		*cast(ScriptString*)params.ptr = PendingURL;
 		*cast(Actor.ETravelType*)&params[12] = TravelType;
 		*cast(bool*)&params[16] = bIsSeamlessTravel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32852], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreClientTravel, params.ptr, cast(void*)0);
 	}
 }

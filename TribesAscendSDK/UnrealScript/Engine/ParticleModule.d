@@ -6,6 +6,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface ParticleModule : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModule")); }
 	enum EModuleType : ubyte
 	{
 		EPMT_General = 0,
@@ -27,6 +29,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModule.ParticleCurvePair")); }
 		@property final auto ref
 		{
 			UObject CurveObject() { return *cast(UObject*)(cast(size_t)&this + 12); }
@@ -37,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModule.ParticleRandomSeedInfo")); }
 		@property final
 		{
 			auto ref

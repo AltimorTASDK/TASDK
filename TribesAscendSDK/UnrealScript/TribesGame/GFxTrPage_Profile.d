@@ -8,6 +8,79 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_Profile : GFxTrPage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Profile")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mShowModel;
+			ScriptFunction mTakeFocus;
+			ScriptFunction mFillData;
+			ScriptFunction mFillProfile;
+			ScriptFunction mGetKDR;
+			ScriptFunction mGetPlayedPercent;
+			ScriptFunction mGetMostPlayed;
+			ScriptFunction mGetTimePlayed;
+			ScriptFunction mGetGamesPlayed;
+			ScriptFunction mGetTotalScore;
+			ScriptFunction mGetScorePerHour;
+			ScriptFunction mGetTotalAccolades;
+			ScriptFunction mGetAccoladesPerHour;
+			ScriptFunction mGetGamesWon;
+			ScriptFunction mGetGamesLost;
+			ScriptFunction mGetWinLossRatio;
+			ScriptFunction mGetAccoladeCount;
+			ScriptFunction mGetTopBadgeIcon;
+			ScriptFunction mGetFlagDefenses;
+			ScriptFunction mGetFlagDefensesPerHour;
+			ScriptFunction mGetFlagCaps;
+			ScriptFunction mGetFlagCapsHour;
+			ScriptFunction mGetGensDestroyed;
+			ScriptFunction mGetGensDestroyedPerHour;
+			ScriptFunction mGetObjsDestroyed;
+			ScriptFunction mGetObjsDestroyedPerHour;
+			ScriptFunction mGetAssists;
+			ScriptFunction mGetMidairCount;
+			ScriptFunction mGetFastestSki;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.Initialize")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.SpecialAction")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.ShowModel")); }
+			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.TakeFocus")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.FillData")); }
+			ScriptFunction FillProfile() { return mFillProfile ? mFillProfile : (mFillProfile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.FillProfile")); }
+			ScriptFunction GetKDR() { return mGetKDR ? mGetKDR : (mGetKDR = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetKDR")); }
+			ScriptFunction GetPlayedPercent() { return mGetPlayedPercent ? mGetPlayedPercent : (mGetPlayedPercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetPlayedPercent")); }
+			ScriptFunction GetMostPlayed() { return mGetMostPlayed ? mGetMostPlayed : (mGetMostPlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetMostPlayed")); }
+			ScriptFunction GetTimePlayed() { return mGetTimePlayed ? mGetTimePlayed : (mGetTimePlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTimePlayed")); }
+			ScriptFunction GetGamesPlayed() { return mGetGamesPlayed ? mGetGamesPlayed : (mGetGamesPlayed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesPlayed")); }
+			ScriptFunction GetTotalScore() { return mGetTotalScore ? mGetTotalScore : (mGetTotalScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTotalScore")); }
+			ScriptFunction GetScorePerHour() { return mGetScorePerHour ? mGetScorePerHour : (mGetScorePerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetScorePerHour")); }
+			ScriptFunction GetTotalAccolades() { return mGetTotalAccolades ? mGetTotalAccolades : (mGetTotalAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTotalAccolades")); }
+			ScriptFunction GetAccoladesPerHour() { return mGetAccoladesPerHour ? mGetAccoladesPerHour : (mGetAccoladesPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAccoladesPerHour")); }
+			ScriptFunction GetGamesWon() { return mGetGamesWon ? mGetGamesWon : (mGetGamesWon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesWon")); }
+			ScriptFunction GetGamesLost() { return mGetGamesLost ? mGetGamesLost : (mGetGamesLost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGamesLost")); }
+			ScriptFunction GetWinLossRatio() { return mGetWinLossRatio ? mGetWinLossRatio : (mGetWinLossRatio = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetWinLossRatio")); }
+			ScriptFunction GetAccoladeCount() { return mGetAccoladeCount ? mGetAccoladeCount : (mGetAccoladeCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAccoladeCount")); }
+			ScriptFunction GetTopBadgeIcon() { return mGetTopBadgeIcon ? mGetTopBadgeIcon : (mGetTopBadgeIcon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetTopBadgeIcon")); }
+			ScriptFunction GetFlagDefenses() { return mGetFlagDefenses ? mGetFlagDefenses : (mGetFlagDefenses = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagDefenses")); }
+			ScriptFunction GetFlagDefensesPerHour() { return mGetFlagDefensesPerHour ? mGetFlagDefensesPerHour : (mGetFlagDefensesPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagDefensesPerHour")); }
+			ScriptFunction GetFlagCaps() { return mGetFlagCaps ? mGetFlagCaps : (mGetFlagCaps = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagCaps")); }
+			ScriptFunction GetFlagCapsHour() { return mGetFlagCapsHour ? mGetFlagCapsHour : (mGetFlagCapsHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFlagCapsHour")); }
+			ScriptFunction GetGensDestroyed() { return mGetGensDestroyed ? mGetGensDestroyed : (mGetGensDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGensDestroyed")); }
+			ScriptFunction GetGensDestroyedPerHour() { return mGetGensDestroyedPerHour ? mGetGensDestroyedPerHour : (mGetGensDestroyedPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetGensDestroyedPerHour")); }
+			ScriptFunction GetObjsDestroyed() { return mGetObjsDestroyed ? mGetObjsDestroyed : (mGetObjsDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetObjsDestroyed")); }
+			ScriptFunction GetObjsDestroyedPerHour() { return mGetObjsDestroyedPerHour ? mGetObjsDestroyedPerHour : (mGetObjsDestroyedPerHour = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetObjsDestroyedPerHour")); }
+			ScriptFunction GetAssists() { return mGetAssists ? mGetAssists : (mGetAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetAssists")); }
+			ScriptFunction GetMidairCount() { return mGetMidairCount ? mGetMidairCount : (mGetMidairCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetMidairCount")); }
+			ScriptFunction GetFastestSki() { return mGetFastestSki ? mGetFastestSki : (mGetFastestSki = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Profile.GetFastestSki")); }
+		}
+	}
 	enum
 	{
 		STAT_GAME_MAP = 200001,
@@ -274,18 +347,18 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60269], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60272], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60274], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
@@ -293,7 +366,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFocus, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void FillData(GFxObject DataList)
@@ -301,20 +374,20 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	GFxObject FillProfile()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60283], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillProfile, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
 	float GetKDR()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetKDR, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetPlayedPercent(int ClassId, bool bResolve)
@@ -323,77 +396,77 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
 		*cast(bool*)&params[4] = bResolve;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60321], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayedPercent, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	ScriptString GetMostPlayed()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60328], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMostPlayed, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetTimePlayed()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60334], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimePlayed, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	int GetGamesPlayed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60341], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGamesPlayed, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetTotalScore()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60343], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTotalScore, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetScorePerHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60345], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScorePerHour, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetTotalAccolades()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60347], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTotalAccolades, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetAccoladesPerHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60349], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAccoladesPerHour, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetGamesWon()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60351], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGamesWon, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetGamesLost()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60353], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGamesLost, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	ScriptString GetWinLossRatio()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60355], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWinLossRatio, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	int GetAccoladeCount(int AccoladeId)
@@ -401,7 +474,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AccoladeId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60359], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAccoladeCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	int GetTopBadgeIcon(int Index)
@@ -409,84 +482,84 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60363], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTopBadgeIcon, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	int GetFlagDefenses()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60366], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagDefenses, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	float GetFlagDefensesPerHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60368], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagDefensesPerHour, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetFlagCaps()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60370], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagCaps, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	float GetFlagCapsHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60372], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagCapsHour, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetGensDestroyed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGensDestroyed, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	float GetGensDestroyedPerHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60376], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGensDestroyedPerHour, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetObjsDestroyed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetObjsDestroyed, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	float GetObjsDestroyedPerHour()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60380], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetObjsDestroyedPerHour, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetAssists()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60382], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAssists, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetMidairCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60384], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMidairCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetFastestSki()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60386], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFastestSki, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

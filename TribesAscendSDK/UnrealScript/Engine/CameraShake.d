@@ -7,6 +7,21 @@ import UnrealScript.Engine.CameraAnim;
 extern(C++) interface CameraShake : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraShake")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetLocOscillationMagnitude;
+			ScriptFunction mGetRotOscillationMagnitude;
+		}
+		public @property static final
+		{
+			ScriptFunction GetLocOscillationMagnitude() { return mGetLocOscillationMagnitude ? mGetLocOscillationMagnitude : (mGetLocOscillationMagnitude = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraShake.GetLocOscillationMagnitude")); }
+			ScriptFunction GetRotOscillationMagnitude() { return mGetRotOscillationMagnitude ? mGetRotOscillationMagnitude : (mGetRotOscillationMagnitude = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraShake.GetRotOscillationMagnitude")); }
+		}
+	}
 	enum EInitialOscillatorOffset : ubyte
 	{
 		EOO_OffsetRandom = 0,
@@ -17,6 +32,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[9];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CameraShake.FOscillator")); }
 		@property final auto ref
 		{
 			float Amplitude() { return *cast(float*)(cast(size_t)&this + 0); }
@@ -28,6 +45,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CameraShake.VOscillator")); }
 		@property final auto ref
 		{
 			CameraShake.FOscillator X() { return *cast(CameraShake.FOscillator*)(cast(size_t)&this + 0); }
@@ -39,6 +58,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CameraShake.ROscillator")); }
 		@property final auto ref
 		{
 			CameraShake.FOscillator Pitch() { return *cast(CameraShake.FOscillator*)(cast(size_t)&this + 0); }
@@ -73,14 +94,14 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12227], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocOscillationMagnitude, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetRotOscillationMagnitude()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12228], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRotOscillationMagnitude, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 }

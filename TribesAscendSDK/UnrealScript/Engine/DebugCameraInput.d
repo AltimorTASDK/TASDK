@@ -7,6 +7,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface DebugCameraInput : PlayerInput
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DebugCameraInput")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mInputKey;
+		public @property static final ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function Engine.DebugCameraInput.InputKey")); }
+	}
 	final bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
 		ubyte params[28];
@@ -16,7 +23,7 @@ public extern(D):
 		*cast(UObject.EInputEvent*)&params[12] = Event;
 		*cast(float*)&params[16] = AmountDepressed;
 		*cast(bool*)&params[20] = bGamepad;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14027], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 }

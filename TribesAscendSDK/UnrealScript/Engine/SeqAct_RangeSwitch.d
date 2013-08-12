@@ -6,10 +6,14 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_RangeSwitch : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_RangeSwitch")); }
 	struct SwitchRange
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SeqAct_RangeSwitch.SwitchRange")); }
 		@property final auto ref
 		{
 			int Max() { return *cast(int*)(cast(size_t)&this + 4); }

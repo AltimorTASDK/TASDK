@@ -7,10 +7,37 @@ import UnrealScript.Engine.AmbientSoundSimple;
 extern(C++) interface AmbientSoundSimpleToggleable : AmbientSoundSimple
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientSoundSimpleToggleable")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mStartPlaying;
+			ScriptFunction mStopPlaying;
+			ScriptFunction mOnToggle;
+			ScriptFunction mCreateCheckpointRecord;
+			ScriptFunction mApplyCheckpointRecord;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.PostBeginPlay")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.ReplicatedEvent")); }
+			ScriptFunction StartPlaying() { return mStartPlaying ? mStartPlaying : (mStartPlaying = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.StartPlaying")); }
+			ScriptFunction StopPlaying() { return mStopPlaying ? mStopPlaying : (mStopPlaying = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.StopPlaying")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.OnToggle")); }
+			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.AmbientSoundSimpleToggleable.ApplyCheckpointRecord")); }
+		}
+	}
 	struct CheckpointRecord
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AmbientSoundSimpleToggleable.CheckpointRecord")); }
 		@property final
 		{
 			bool bCurrentlyPlaying() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -36,36 +63,36 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10477], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10478], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void StartPlaying()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10480], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartPlaying, cast(void*)0, cast(void*)0);
 	}
 	void StopPlaying()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10481], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopPlaying, cast(void*)0, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10482], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void CreateCheckpointRecord(AmbientSoundSimpleToggleable.CheckpointRecord* Record)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10484], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr;
 	}
 	void ApplyCheckpointRecord(AmbientSoundSimpleToggleable.CheckpointRecord* Record)
@@ -73,7 +100,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10486], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr;
 	}
 }

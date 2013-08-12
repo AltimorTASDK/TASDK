@@ -7,6 +7,8 @@ import UnrealScript.Core.DistributionFloat;
 extern(C++) interface ParticleModuleParameterDynamic : ParticleModuleParameterBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleParameterDynamic")); }
 	enum EEmitterDynamicParameterValue : ubyte
 	{
 		EDPV_UserSet = 0,
@@ -20,6 +22,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleParameterDynamic.EmitterDynamicParameter")); }
 		@property final
 		{
 			auto ref

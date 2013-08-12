@@ -1,5 +1,6 @@
 module UnrealScript.Engine.DrawCapsuleComponent;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.Material;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.Material;
 extern(C++) interface DrawCapsuleComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawCapsuleComponent")); }
 	@property final
 	{
 		auto ref

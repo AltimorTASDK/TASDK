@@ -10,6 +10,13 @@ import UnrealScript.Engine.SkeletalMesh;
 extern(C++) interface PhysicsAsset : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsAsset")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mFindBodyIndex;
+		public @property static final ScriptFunction FindBodyIndex() { return mFindBodyIndex ? mFindBodyIndex : (mFindBodyIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsAsset.FindBodyIndex")); }
+	}
 	@property final auto ref
 	{
 		ScriptArray!(RB_ConstraintSetup) ConstraintSetup() { return *cast(ScriptArray!(RB_ConstraintSetup)*)(cast(size_t)cast(void*)this + 148); }
@@ -24,7 +31,7 @@ public extern(D):
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BodyName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24337], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindBodyIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 }

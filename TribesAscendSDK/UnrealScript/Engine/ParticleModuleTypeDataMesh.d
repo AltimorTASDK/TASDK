@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleTypeDataMesh;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleOrientationAxisLock;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 import UnrealScript.Engine.StaticMesh;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMesh")); }
 	enum EMeshCameraFacingOptions : ubyte
 	{
 		XAxisFacing_NoUp = 0,

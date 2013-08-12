@@ -12,6 +12,35 @@ import UnrealScript.Engine.UISceneClient;
 extern(C++) interface GameUISceneClient : UISceneClient
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameUISceneClient")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetCurrentNetMode;
+			ScriptFunction mRequestInputProcessingUpdate;
+			ScriptFunction mCanUnpauseInternalUI;
+			ScriptFunction mPauseGame;
+			ScriptFunction mNotifyClientTravel;
+			ScriptFunction mNotifyGameSessionEnded;
+			ScriptFunction mNotifyPlayerAdded;
+			ScriptFunction mNotifyPlayerRemoved;
+			ScriptFunction mFindLocalPlayerIndex;
+		}
+		public @property static final
+		{
+			ScriptFunction GetCurrentNetMode() { return mGetCurrentNetMode ? mGetCurrentNetMode : (mGetCurrentNetMode = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.GetCurrentNetMode")); }
+			ScriptFunction RequestInputProcessingUpdate() { return mRequestInputProcessingUpdate ? mRequestInputProcessingUpdate : (mRequestInputProcessingUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.RequestInputProcessingUpdate")); }
+			ScriptFunction CanUnpauseInternalUI() { return mCanUnpauseInternalUI ? mCanUnpauseInternalUI : (mCanUnpauseInternalUI = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.CanUnpauseInternalUI")); }
+			ScriptFunction PauseGame() { return mPauseGame ? mPauseGame : (mPauseGame = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.PauseGame")); }
+			ScriptFunction NotifyClientTravel() { return mNotifyClientTravel ? mNotifyClientTravel : (mNotifyClientTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.NotifyClientTravel")); }
+			ScriptFunction NotifyGameSessionEnded() { return mNotifyGameSessionEnded ? mNotifyGameSessionEnded : (mNotifyGameSessionEnded = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.NotifyGameSessionEnded")); }
+			ScriptFunction NotifyPlayerAdded() { return mNotifyPlayerAdded ? mNotifyPlayerAdded : (mNotifyPlayerAdded = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.NotifyPlayerAdded")); }
+			ScriptFunction NotifyPlayerRemoved() { return mNotifyPlayerRemoved ? mNotifyPlayerRemoved : (mNotifyPlayerRemoved = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.NotifyPlayerRemoved")); }
+			ScriptFunction FindLocalPlayerIndex() { return mFindLocalPlayerIndex ? mFindLocalPlayerIndex : (mFindLocalPlayerIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.GameUISceneClient.FindLocalPlayerIndex")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -35,22 +64,22 @@ public extern(D):
 		bool bUpdateInputProcessingStatus(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 296) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 296) &= ~0x1; } return val; }
 	}
 final:
-	WorldInfo.ENetMode GetCurrentNetMode()
+	static WorldInfo.ENetMode GetCurrentNetMode()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17834], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetCurrentNetMode, params.ptr, cast(void*)0);
 		return *cast(WorldInfo.ENetMode*)params.ptr;
 	}
 	void RequestInputProcessingUpdate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17836], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestInputProcessingUpdate, cast(void*)0, cast(void*)0);
 	}
 	bool CanUnpauseInternalUI()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17837], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanUnpauseInternalUI, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PauseGame(bool bDesiredPauseState, int PlayerIndex)
@@ -59,7 +88,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bDesiredPauseState;
 		*cast(int*)&params[4] = PlayerIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17839], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PauseGame, params.ptr, cast(void*)0);
 	}
 	void NotifyClientTravel(PlayerController TravellingPlayer, ScriptString TravelURL, Actor.ETravelType TravelType, bool bIsSeamlessTravel)
 	{
@@ -69,11 +98,11 @@ final:
 		*cast(ScriptString*)&params[4] = TravelURL;
 		*cast(Actor.ETravelType*)&params[16] = TravelType;
 		*cast(bool*)&params[20] = bIsSeamlessTravel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17843], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyClientTravel, params.ptr, cast(void*)0);
 	}
 	void NotifyGameSessionEnded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17848], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyGameSessionEnded, cast(void*)0, cast(void*)0);
 	}
 	void NotifyPlayerAdded(int PlayerIndex, LocalPlayer AddedPlayer)
 	{
@@ -81,7 +110,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = PlayerIndex;
 		*cast(LocalPlayer*)&params[4] = AddedPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17849], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyPlayerAdded, params.ptr, cast(void*)0);
 	}
 	void NotifyPlayerRemoved(int PlayerIndex, LocalPlayer RemovedPlayer)
 	{
@@ -89,14 +118,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = PlayerIndex;
 		*cast(LocalPlayer*)&params[4] = RemovedPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17852], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyPlayerRemoved, params.ptr, cast(void*)0);
 	}
 	int FindLocalPlayerIndex(Player P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Player*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17855], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindLocalPlayerIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 }

@@ -1,10 +1,13 @@
 module UnrealScript.UDKBase.UDKSkelControl_PropellerBlade;
 
+import ScriptClasses;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface UDKSkelControl_PropellerBlade : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_PropellerBlade")); }
 	@property final
 	{
 		auto ref

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.PBRuleNodeComment;
 
+import ScriptClasses;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface PBRuleNodeComment : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeComment")); }
 	@property final
 	{
 		auto ref

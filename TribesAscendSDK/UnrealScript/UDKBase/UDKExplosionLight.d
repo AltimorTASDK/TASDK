@@ -7,10 +7,27 @@ import UnrealScript.Engine.PointLightComponent;
 extern(C++) interface UDKExplosionLight : PointLightComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKExplosionLight")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnLightFinished;
+			ScriptFunction mResetLight;
+		}
+		public @property static final
+		{
+			ScriptFunction OnLightFinished() { return mOnLightFinished ? mOnLightFinished : (mOnLightFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKExplosionLight.OnLightFinished")); }
+			ScriptFunction ResetLight() { return mResetLight ? mResetLight : (mResetLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKExplosionLight.ResetLight")); }
+		}
+	}
 	struct LightValues
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKExplosionLight.LightValues")); }
 		@property final auto ref
 		{
 			UObject.Color LightColor() { return *cast(UObject.Color*)(cast(size_t)&this + 12); }
@@ -43,10 +60,10 @@ void* pLight)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = pLight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34820], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnLightFinished, params.ptr, cast(void*)0);
 	}
 	void ResetLight()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34830], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetLight, cast(void*)0, cast(void*)0);
 	}
 }

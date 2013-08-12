@@ -6,10 +6,29 @@ import UnrealScript.Engine.SkelControlSingleBone;
 extern(C++) interface UDKSkelControl_TurretConstrained : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_TurretConstrained")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnTurretStatusChange;
+			ScriptFunction mInitTurret;
+			ScriptFunction mWouldConstrainPitch;
+		}
+		public @property static final
+		{
+			ScriptFunction OnTurretStatusChange() { return mOnTurretStatusChange ? mOnTurretStatusChange : (mOnTurretStatusChange = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_TurretConstrained.OnTurretStatusChange")); }
+			ScriptFunction InitTurret() { return mInitTurret ? mInitTurret : (mInitTurret = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_TurretConstrained.InitTurret")); }
+			ScriptFunction WouldConstrainPitch() { return mWouldConstrainPitch ? mWouldConstrainPitch : (mWouldConstrainPitch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_TurretConstrained.WouldConstrainPitch")); }
+		}
+	}
 	struct TurretStepData
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKSkelControl_TurretConstrained.TurretStepData")); }
 		@property final auto ref
 		{
 			UDKSkelControl_TurretConstrained.TurretConstraintData MinAngle() { return *cast(UDKSkelControl_TurretConstrained.TurretConstraintData*)(cast(size_t)&this + 20); }
@@ -22,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKSkelControl_TurretConstrained.TurretConstraintData")); }
 		@property final auto ref
 		{
 			int RollConstraint() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -67,7 +88,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsMoving;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35459], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTurretStatusChange, params.ptr, cast(void*)0);
 	}
 	void InitTurret(Rotator InitRot, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -79,7 +100,7 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[12] = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35485], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitTurret, params.ptr, cast(void*)0);
 	}
 	bool WouldConstrainPitch(int TestPitch, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -91,7 +112,7 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35488], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WouldConstrainPitch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

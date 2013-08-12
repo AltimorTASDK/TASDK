@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleAttractorBase;
 extern(C++) interface ParticleModuleAttractorLine : ParticleModuleAttractorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorLine")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat Strength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 124); }

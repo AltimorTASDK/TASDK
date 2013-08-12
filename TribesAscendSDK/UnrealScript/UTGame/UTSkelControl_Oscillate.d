@@ -6,6 +6,13 @@ import UnrealScript.Engine.SkelControlSingleBone;
 extern(C++) interface UTSkelControl_Oscillate : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_Oscillate")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mTickSkelControl;
+		public @property static final ScriptFunction TickSkelControl() { return mTickSkelControl ? mTickSkelControl : (mTickSkelControl = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSkelControl_Oscillate.TickSkelControl")); }
+	}
 	@property final
 	{
 		auto ref
@@ -27,6 +34,6 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49375], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TickSkelControl, params.ptr, cast(void*)0);
 	}
 }

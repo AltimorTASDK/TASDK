@@ -9,6 +9,45 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrScene_PlayerSummary : GFxTrScene
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene_PlayerSummary")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mClearSummary;
+			ScriptFunction mClearEarnedBadgeValue;
+			ScriptFunction mSummaryReady;
+			ScriptFunction mLoadXPData;
+			ScriptFunction mLoadPlayerStatsData;
+			ScriptFunction mLoadPlayerAccoladeData;
+			ScriptFunction mLoadPlayerMiscData;
+			ScriptFunction mAddAward;
+			ScriptFunction mAddBadge;
+			ScriptFunction mAddAccolade;
+			ScriptFunction mAddMiscData;
+			ScriptFunction mGetFlagGrabCount;
+			ScriptFunction mGetFlagReturnCount;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.Initialize")); }
+			ScriptFunction ClearSummary() { return mClearSummary ? mClearSummary : (mClearSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.ClearSummary")); }
+			ScriptFunction ClearEarnedBadgeValue() { return mClearEarnedBadgeValue ? mClearEarnedBadgeValue : (mClearEarnedBadgeValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.ClearEarnedBadgeValue")); }
+			ScriptFunction SummaryReady() { return mSummaryReady ? mSummaryReady : (mSummaryReady = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.SummaryReady")); }
+			ScriptFunction LoadXPData() { return mLoadXPData ? mLoadXPData : (mLoadXPData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.LoadXPData")); }
+			ScriptFunction LoadPlayerStatsData() { return mLoadPlayerStatsData ? mLoadPlayerStatsData : (mLoadPlayerStatsData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.LoadPlayerStatsData")); }
+			ScriptFunction LoadPlayerAccoladeData() { return mLoadPlayerAccoladeData ? mLoadPlayerAccoladeData : (mLoadPlayerAccoladeData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.LoadPlayerAccoladeData")); }
+			ScriptFunction LoadPlayerMiscData() { return mLoadPlayerMiscData ? mLoadPlayerMiscData : (mLoadPlayerMiscData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.LoadPlayerMiscData")); }
+			ScriptFunction AddAward() { return mAddAward ? mAddAward : (mAddAward = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.AddAward")); }
+			ScriptFunction AddBadge() { return mAddBadge ? mAddBadge : (mAddBadge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.AddBadge")); }
+			ScriptFunction AddAccolade() { return mAddAccolade ? mAddAccolade : (mAddAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.AddAccolade")); }
+			ScriptFunction AddMiscData() { return mAddMiscData ? mAddMiscData : (mAddMiscData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.AddMiscData")); }
+			ScriptFunction GetFlagGrabCount() { return mGetFlagGrabCount ? mGetFlagGrabCount : (mGetFlagGrabCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.GetFlagGrabCount")); }
+			ScriptFunction GetFlagReturnCount() { return mGetFlagReturnCount ? mGetFlagReturnCount : (mGetFlagReturnCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene_PlayerSummary.GetFlagReturnCount")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -54,47 +93,47 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63709], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void ClearSummary()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63710], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSummary, cast(void*)0, cast(void*)0);
 	}
 	void ClearEarnedBadgeValue()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63712], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearEarnedBadgeValue, cast(void*)0, cast(void*)0);
 	}
 	void SummaryReady()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63714], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SummaryReady, cast(void*)0, cast(void*)0);
 	}
 	void LoadXPData(GFxObject List)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = List;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63716], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadXPData, params.ptr, cast(void*)0);
 	}
 	void LoadPlayerStatsData(GFxObject List)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = List;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63718], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadPlayerStatsData, params.ptr, cast(void*)0);
 	}
 	void LoadPlayerAccoladeData(GFxObject List)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = List;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63723], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadPlayerAccoladeData, params.ptr, cast(void*)0);
 	}
 	void LoadPlayerMiscData(GFxObject List)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = List;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63726], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadPlayerMiscData, params.ptr, cast(void*)0);
 	}
 	void AddAward(int AwardId, int val)
 	{
@@ -102,14 +141,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = AwardId;
 		*cast(int*)&params[4] = val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63728], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddAward, params.ptr, cast(void*)0);
 	}
 	void AddBadge(TgPlayerProfile.BadgeStruct Badge)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(TgPlayerProfile.BadgeStruct*)params.ptr = Badge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63734], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddBadge, params.ptr, cast(void*)0);
 	}
 	void AddAccolade(int AccoladeId, int val)
 	{
@@ -117,24 +156,24 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = AccoladeId;
 		*cast(int*)&params[4] = val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddAccolade, params.ptr, cast(void*)0);
 	}
 	void AddMiscData()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63742], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddMiscData, cast(void*)0, cast(void*)0);
 	}
 	int GetFlagGrabCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63756], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagGrabCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetFlagReturnCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlagReturnCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

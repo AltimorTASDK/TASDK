@@ -6,6 +6,8 @@ import UnrealScript.UTGame.UTUIResourceDataProvider;
 extern(C++) interface UTUIDataProvider_Weapon : UTUIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_Weapon")); }
 	@property final auto ref
 	{
 		ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 188); }

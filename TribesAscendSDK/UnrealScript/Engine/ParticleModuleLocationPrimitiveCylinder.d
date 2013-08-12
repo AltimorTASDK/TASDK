@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleLocationPrimitiveCylinder;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleLocationPrimitiveBase;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface ParticleModuleLocationPrimitiveCylinder : ParticleModuleLocationPrimitiveBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationPrimitiveCylinder")); }
 	enum CylinderHeightAxis : ubyte
 	{
 		PMLPC_HEIGHTAXIS_X = 0,

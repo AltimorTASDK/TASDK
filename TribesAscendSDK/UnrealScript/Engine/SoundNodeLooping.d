@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SoundNodeLooping;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundNode;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface SoundNodeLooping : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeLooping")); }
 	@property final
 	{
 		auto ref

@@ -7,10 +7,29 @@ import UnrealScript.Engine.AnimNode;
 extern(C++) interface AnimNodeBlendBase : AnimNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendBase")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayAnim;
+			ScriptFunction mStopAnim;
+			ScriptFunction mReplayAnim;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayAnim() { return mPlayAnim ? mPlayAnim : (mPlayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendBase.PlayAnim")); }
+			ScriptFunction StopAnim() { return mStopAnim ? mStopAnim : (mStopAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendBase.StopAnim")); }
+			ScriptFunction ReplayAnim() { return mReplayAnim ? mReplayAnim : (mReplayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlendBase.ReplayAnim")); }
+		}
+	}
 	struct AnimBlendChild
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeBlendBase.AnimBlendChild")); }
 		@property final
 		{
 			auto ref
@@ -45,14 +64,14 @@ final:
 		*cast(bool*)params.ptr = bLoop;
 		*cast(float*)&params[4] = Rate;
 		*cast(float*)&params[8] = StartTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10708], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10712], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopAnim, cast(void*)0, cast(void*)0);
 	}
 	void ReplayAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10713], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplayAnim, cast(void*)0, cast(void*)0);
 	}
 }

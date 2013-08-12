@@ -7,6 +7,13 @@ import UnrealScript.Engine.Volume;
 extern(C++) interface EnvironmentVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EnvironmentVolume")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetSplitNavMesh;
+		public @property static final ScriptFunction SetSplitNavMesh() { return mSetSplitNavMesh ? mSetSplitNavMesh : (mSetSplitNavMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.EnvironmentVolume.SetSplitNavMesh")); }
+	}
 	@property final
 	{
 		auto ref
@@ -22,6 +29,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15594], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSplitNavMesh, params.ptr, cast(void*)0);
 	}
 }

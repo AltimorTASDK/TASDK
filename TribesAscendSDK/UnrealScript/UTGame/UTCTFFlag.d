@@ -11,6 +11,47 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UTCTFFlag : UTCarriedObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFFlag")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mTick;
+			ScriptFunction mOnBaseChainChanged;
+			ScriptFunction mShouldMinimapRenderFor;
+			ScriptFunction mClientReturnedHome;
+			ScriptFunction mSetHolder;
+			ScriptFunction mValidHolder;
+			ScriptFunction mSameTeamTouch;
+			ScriptFunction mCustomRespawnEffects;
+			ScriptFunction mbringUpBrightOff;
+			ScriptFunction mCustomFadeOutEffects;
+			ScriptFunction mDrop;
+			ScriptFunction mSetFlagPropertiesToStationaryFlagState;
+			ScriptFunction mSetFlagDynamicLightToNotBeDynamic;
+		}
+		public @property static final
+		{
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ReplicatedEvent")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.PostBeginPlay")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.Tick")); }
+			ScriptFunction OnBaseChainChanged() { return mOnBaseChainChanged ? mOnBaseChainChanged : (mOnBaseChainChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.OnBaseChainChanged")); }
+			ScriptFunction ShouldMinimapRenderFor() { return mShouldMinimapRenderFor ? mShouldMinimapRenderFor : (mShouldMinimapRenderFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ShouldMinimapRenderFor")); }
+			ScriptFunction ClientReturnedHome() { return mClientReturnedHome ? mClientReturnedHome : (mClientReturnedHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ClientReturnedHome")); }
+			ScriptFunction SetHolder() { return mSetHolder ? mSetHolder : (mSetHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetHolder")); }
+			ScriptFunction ValidHolder() { return mValidHolder ? mValidHolder : (mValidHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.ValidHolder")); }
+			ScriptFunction SameTeamTouch() { return mSameTeamTouch ? mSameTeamTouch : (mSameTeamTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SameTeamTouch")); }
+			ScriptFunction CustomRespawnEffects() { return mCustomRespawnEffects ? mCustomRespawnEffects : (mCustomRespawnEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.CustomRespawnEffects")); }
+			ScriptFunction bringUpBrightOff() { return mbringUpBrightOff ? mbringUpBrightOff : (mbringUpBrightOff = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.bringUpBrightOff")); }
+			ScriptFunction CustomFadeOutEffects() { return mCustomFadeOutEffects ? mCustomFadeOutEffects : (mCustomFadeOutEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.CustomFadeOutEffects")); }
+			ScriptFunction Drop() { return mDrop ? mDrop : (mDrop = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.Drop")); }
+			ScriptFunction SetFlagPropertiesToStationaryFlagState() { return mSetFlagPropertiesToStationaryFlagState ? mSetFlagPropertiesToStationaryFlagState : (mSetFlagPropertiesToStationaryFlagState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetFlagPropertiesToStationaryFlagState")); }
+			ScriptFunction SetFlagDynamicLightToNotBeDynamic() { return mSetFlagDynamicLightToNotBeDynamic ? mSetFlagDynamicLightToNotBeDynamic : (mSetFlagDynamicLightToNotBeDynamic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCTFFlag.SetFlagDynamicLightToNotBeDynamic")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -38,48 +79,48 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44545], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44547], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44549], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void OnBaseChainChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44553], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBaseChainChanged, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldMinimapRenderFor(PlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44555], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldMinimapRenderFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void ClientReturnedHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44558], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReturnedHome, cast(void*)0, cast(void*)0);
 	}
 	void SetHolder(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44559], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHolder, params.ptr, cast(void*)0);
 	}
 	bool ValidHolder(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44568], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidHolder, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SameTeamTouch(Controller C)
@@ -87,19 +128,19 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44572], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SameTeamTouch, params.ptr, cast(void*)0);
 	}
 	void CustomRespawnEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44574], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomRespawnEffects, cast(void*)0, cast(void*)0);
 	}
 	void bringUpBrightOff()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44576], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.bringUpBrightOff, cast(void*)0, cast(void*)0);
 	}
 	void CustomFadeOutEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44578], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomFadeOutEffects, cast(void*)0, cast(void*)0);
 	}
 	void Drop(Controller Killer, bool bNoThrow)
 	{
@@ -107,14 +148,14 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(bool*)&params[4] = bNoThrow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SetFlagPropertiesToStationaryFlagState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44606], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagPropertiesToStationaryFlagState, cast(void*)0, cast(void*)0);
 	}
 	void SetFlagDynamicLightToNotBeDynamic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44607], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagDynamicLightToNotBeDynamic, cast(void*)0, cast(void*)0);
 	}
 }

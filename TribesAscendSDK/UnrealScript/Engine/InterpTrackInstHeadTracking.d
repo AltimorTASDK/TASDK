@@ -9,10 +9,14 @@ import UnrealScript.Engine.InterpTrackHeadTracking;
 extern(C++) interface InterpTrackInstHeadTracking : InterpTrackInst
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstHeadTracking")); }
 	struct ActorToLookAt
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackInstHeadTracking.ActorToLookAt")); }
 		@property final
 		{
 			auto ref

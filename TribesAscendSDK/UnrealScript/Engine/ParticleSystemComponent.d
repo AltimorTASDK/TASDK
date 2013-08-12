@@ -11,6 +11,103 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface ParticleSystemComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSystemComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetTemplate;
+			ScriptFunction mActivateSystem;
+			ScriptFunction mSetActive;
+			ScriptFunction mOnSystemFinished;
+			ScriptFunction mDeactivateSystem;
+			ScriptFunction mKillParticlesForced;
+			ScriptFunction mKillParticlesInEmitter;
+			ScriptFunction mSetSkipUpdateDynamicDataDuringTick;
+			ScriptFunction mGetSkipUpdateDynamicDataDuringTick;
+			ScriptFunction mSetKillOnDeactivate;
+			ScriptFunction mSetKillOnCompleted;
+			ScriptFunction mRewindEmitterInstance;
+			ScriptFunction mRewindEmitterInstances;
+			ScriptFunction mSetBeamType;
+			ScriptFunction mSetBeamTessellationFactor;
+			ScriptFunction mSetBeamEndPoint;
+			ScriptFunction mSetBeamDistance;
+			ScriptFunction mSetBeamSourcePoint;
+			ScriptFunction mSetBeamSourceTangent;
+			ScriptFunction mSetBeamSourceStrength;
+			ScriptFunction mSetBeamTargetPoint;
+			ScriptFunction mSetBeamTargetTangent;
+			ScriptFunction mSetBeamTargetStrength;
+			ScriptFunction mDetermineLODLevelForLocation;
+			ScriptFunction mSetLODLevel;
+			ScriptFunction mSetEditorLODLevel;
+			ScriptFunction mGetLODLevel;
+			ScriptFunction mGetEditorLODLevel;
+			ScriptFunction mSetFloatParameter;
+			ScriptFunction mSetFloatRandParameter;
+			ScriptFunction mSetVectorParameter;
+			ScriptFunction mSetVectorRandParameter;
+			ScriptFunction mSetColorParameter;
+			ScriptFunction mSetActorParameter;
+			ScriptFunction mSetMaterialParameter;
+			ScriptFunction mGetFloatParameter;
+			ScriptFunction mGetVectorParameter;
+			ScriptFunction mGetColorParameter;
+			ScriptFunction mGetActorParameter;
+			ScriptFunction mGetMaterialParameter;
+			ScriptFunction mClearParameter;
+			ScriptFunction mResetToDefaults;
+			ScriptFunction mSetStopSpawning;
+		}
+		public @property static final
+		{
+			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetTemplate")); }
+			ScriptFunction ActivateSystem() { return mActivateSystem ? mActivateSystem : (mActivateSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ActivateSystem")); }
+			ScriptFunction SetActive() { return mSetActive ? mSetActive : (mSetActive = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetActive")); }
+			ScriptFunction OnSystemFinished() { return mOnSystemFinished ? mOnSystemFinished : (mOnSystemFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.OnSystemFinished")); }
+			ScriptFunction DeactivateSystem() { return mDeactivateSystem ? mDeactivateSystem : (mDeactivateSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.DeactivateSystem")); }
+			ScriptFunction KillParticlesForced() { return mKillParticlesForced ? mKillParticlesForced : (mKillParticlesForced = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.KillParticlesForced")); }
+			ScriptFunction KillParticlesInEmitter() { return mKillParticlesInEmitter ? mKillParticlesInEmitter : (mKillParticlesInEmitter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.KillParticlesInEmitter")); }
+			ScriptFunction SetSkipUpdateDynamicDataDuringTick() { return mSetSkipUpdateDynamicDataDuringTick ? mSetSkipUpdateDynamicDataDuringTick : (mSetSkipUpdateDynamicDataDuringTick = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetSkipUpdateDynamicDataDuringTick")); }
+			ScriptFunction GetSkipUpdateDynamicDataDuringTick() { return mGetSkipUpdateDynamicDataDuringTick ? mGetSkipUpdateDynamicDataDuringTick : (mGetSkipUpdateDynamicDataDuringTick = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetSkipUpdateDynamicDataDuringTick")); }
+			ScriptFunction SetKillOnDeactivate() { return mSetKillOnDeactivate ? mSetKillOnDeactivate : (mSetKillOnDeactivate = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetKillOnDeactivate")); }
+			ScriptFunction SetKillOnCompleted() { return mSetKillOnCompleted ? mSetKillOnCompleted : (mSetKillOnCompleted = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetKillOnCompleted")); }
+			ScriptFunction RewindEmitterInstance() { return mRewindEmitterInstance ? mRewindEmitterInstance : (mRewindEmitterInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.RewindEmitterInstance")); }
+			ScriptFunction RewindEmitterInstances() { return mRewindEmitterInstances ? mRewindEmitterInstances : (mRewindEmitterInstances = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.RewindEmitterInstances")); }
+			ScriptFunction SetBeamType() { return mSetBeamType ? mSetBeamType : (mSetBeamType = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamType")); }
+			ScriptFunction SetBeamTessellationFactor() { return mSetBeamTessellationFactor ? mSetBeamTessellationFactor : (mSetBeamTessellationFactor = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTessellationFactor")); }
+			ScriptFunction SetBeamEndPoint() { return mSetBeamEndPoint ? mSetBeamEndPoint : (mSetBeamEndPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamEndPoint")); }
+			ScriptFunction SetBeamDistance() { return mSetBeamDistance ? mSetBeamDistance : (mSetBeamDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamDistance")); }
+			ScriptFunction SetBeamSourcePoint() { return mSetBeamSourcePoint ? mSetBeamSourcePoint : (mSetBeamSourcePoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourcePoint")); }
+			ScriptFunction SetBeamSourceTangent() { return mSetBeamSourceTangent ? mSetBeamSourceTangent : (mSetBeamSourceTangent = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourceTangent")); }
+			ScriptFunction SetBeamSourceStrength() { return mSetBeamSourceStrength ? mSetBeamSourceStrength : (mSetBeamSourceStrength = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamSourceStrength")); }
+			ScriptFunction SetBeamTargetPoint() { return mSetBeamTargetPoint ? mSetBeamTargetPoint : (mSetBeamTargetPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetPoint")); }
+			ScriptFunction SetBeamTargetTangent() { return mSetBeamTargetTangent ? mSetBeamTargetTangent : (mSetBeamTargetTangent = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetTangent")); }
+			ScriptFunction SetBeamTargetStrength() { return mSetBeamTargetStrength ? mSetBeamTargetStrength : (mSetBeamTargetStrength = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetBeamTargetStrength")); }
+			ScriptFunction DetermineLODLevelForLocation() { return mDetermineLODLevelForLocation ? mDetermineLODLevelForLocation : (mDetermineLODLevelForLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.DetermineLODLevelForLocation")); }
+			ScriptFunction SetLODLevel() { return mSetLODLevel ? mSetLODLevel : (mSetLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetLODLevel")); }
+			ScriptFunction SetEditorLODLevel() { return mSetEditorLODLevel ? mSetEditorLODLevel : (mSetEditorLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetEditorLODLevel")); }
+			ScriptFunction GetLODLevel() { return mGetLODLevel ? mGetLODLevel : (mGetLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetLODLevel")); }
+			ScriptFunction GetEditorLODLevel() { return mGetEditorLODLevel ? mGetEditorLODLevel : (mGetEditorLODLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetEditorLODLevel")); }
+			ScriptFunction SetFloatParameter() { return mSetFloatParameter ? mSetFloatParameter : (mSetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetFloatParameter")); }
+			ScriptFunction SetFloatRandParameter() { return mSetFloatRandParameter ? mSetFloatRandParameter : (mSetFloatRandParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetFloatRandParameter")); }
+			ScriptFunction SetVectorParameter() { return mSetVectorParameter ? mSetVectorParameter : (mSetVectorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetVectorParameter")); }
+			ScriptFunction SetVectorRandParameter() { return mSetVectorRandParameter ? mSetVectorRandParameter : (mSetVectorRandParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetVectorRandParameter")); }
+			ScriptFunction SetColorParameter() { return mSetColorParameter ? mSetColorParameter : (mSetColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetColorParameter")); }
+			ScriptFunction SetActorParameter() { return mSetActorParameter ? mSetActorParameter : (mSetActorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetActorParameter")); }
+			ScriptFunction SetMaterialParameter() { return mSetMaterialParameter ? mSetMaterialParameter : (mSetMaterialParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetMaterialParameter")); }
+			ScriptFunction GetFloatParameter() { return mGetFloatParameter ? mGetFloatParameter : (mGetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetFloatParameter")); }
+			ScriptFunction GetVectorParameter() { return mGetVectorParameter ? mGetVectorParameter : (mGetVectorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetVectorParameter")); }
+			ScriptFunction GetColorParameter() { return mGetColorParameter ? mGetColorParameter : (mGetColorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetColorParameter")); }
+			ScriptFunction GetActorParameter() { return mGetActorParameter ? mGetActorParameter : (mGetActorParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetActorParameter")); }
+			ScriptFunction GetMaterialParameter() { return mGetMaterialParameter ? mGetMaterialParameter : (mGetMaterialParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.GetMaterialParameter")); }
+			ScriptFunction ClearParameter() { return mClearParameter ? mClearParameter : (mClearParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ClearParameter")); }
+			ScriptFunction ResetToDefaults() { return mResetToDefaults ? mResetToDefaults : (mResetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.ResetToDefaults")); }
+			ScriptFunction SetStopSpawning() { return mSetStopSpawning ? mSetStopSpawning : (mSetStopSpawning = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystemComponent.SetStopSpawning")); }
+		}
+	}
 	enum EParticleSysParamType : ubyte
 	{
 		PSPT_None = 0,
@@ -43,12 +140,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo")); }
 		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
 	}
 	struct ParticleSysParam
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleSysParam")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
@@ -66,6 +167,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventData")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -80,6 +183,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventSpawnData")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -94,6 +199,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventDeathData")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -109,6 +216,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[84];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventCollideData")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -131,6 +240,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[68];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEventKismetData")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -151,12 +262,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstanceMotionBlurInfo")); }
 		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { return *cast(UObject.Map_Mirror*)(cast(size_t)&this + 0); }
 	}
 	struct ParticleEmitterInstance
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstance")); }
 	}
 	@property final
 	{
@@ -249,14 +364,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7292], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void ActivateSystem(bool bFlagAsJustAttached)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bFlagAsJustAttached;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7295], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateSystem, params.ptr, cast(void*)0);
 	}
 	void SetActive(bool bNowActive, bool bFlagAsJustAttached)
 	{
@@ -264,7 +379,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowActive;
 		*cast(bool*)&params[4] = bFlagAsJustAttached;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14789], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActive, params.ptr, cast(void*)0);
 	}
 	void OnSystemFinished(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -275,35 +390,35 @@ void* PSystem)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSystem;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14951], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSystemFinished, params.ptr, cast(void*)0);
 	}
 	void DeactivateSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14955], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeactivateSystem, cast(void*)0, cast(void*)0);
 	}
 	void KillParticlesForced()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14956], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillParticlesForced, cast(void*)0, cast(void*)0);
 	}
 	void KillParticlesInEmitter(ScriptName InEmitterName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InEmitterName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14957], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillParticlesInEmitter, params.ptr, cast(void*)0);
 	}
 	void SetSkipUpdateDynamicDataDuringTick(bool bInSkipUpdateDynamicDataDuringTick)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInSkipUpdateDynamicDataDuringTick;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14959], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkipUpdateDynamicDataDuringTick, params.ptr, cast(void*)0);
 	}
 	bool GetSkipUpdateDynamicDataDuringTick()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14961], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSkipUpdateDynamicDataDuringTick, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetKillOnDeactivate(int EmitterIndex, bool bKill)
@@ -312,7 +427,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(bool*)&params[4] = bKill;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14963], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetKillOnDeactivate, params.ptr, cast(void*)0);
 	}
 	void SetKillOnCompleted(int EmitterIndex, bool bKill)
 	{
@@ -320,18 +435,18 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(bool*)&params[4] = bKill;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14966], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetKillOnCompleted, params.ptr, cast(void*)0);
 	}
 	void RewindEmitterInstance(int EmitterIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14969], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RewindEmitterInstance, params.ptr, cast(void*)0);
 	}
 	void RewindEmitterInstances()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14971], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RewindEmitterInstances, cast(void*)0, cast(void*)0);
 	}
 	void SetBeamType(int EmitterIndex, int NewMethod)
 	{
@@ -339,7 +454,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(int*)&params[4] = NewMethod;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14972], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamType, params.ptr, cast(void*)0);
 	}
 	void SetBeamTessellationFactor(int EmitterIndex, float NewFactor)
 	{
@@ -347,7 +462,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(float*)&params[4] = NewFactor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14975], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTessellationFactor, params.ptr, cast(void*)0);
 	}
 	void SetBeamEndPoint(int EmitterIndex, Vector NewEndPoint)
 	{
@@ -355,7 +470,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(Vector*)&params[4] = NewEndPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14978], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamEndPoint, params.ptr, cast(void*)0);
 	}
 	void SetBeamDistance(int EmitterIndex, float Distance)
 	{
@@ -363,7 +478,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(float*)&params[4] = Distance;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14981], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamDistance, params.ptr, cast(void*)0);
 	}
 	void SetBeamSourcePoint(int EmitterIndex, Vector NewSourcePoint, int SourceIndex)
 	{
@@ -372,7 +487,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(Vector*)&params[4] = NewSourcePoint;
 		*cast(int*)&params[16] = SourceIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14984], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamSourcePoint, params.ptr, cast(void*)0);
 	}
 	void SetBeamSourceTangent(int EmitterIndex, Vector NewTangentPoint, int SourceIndex)
 	{
@@ -381,7 +496,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(Vector*)&params[4] = NewTangentPoint;
 		*cast(int*)&params[16] = SourceIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14988], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamSourceTangent, params.ptr, cast(void*)0);
 	}
 	void SetBeamSourceStrength(int EmitterIndex, float NewSourceStrength, int SourceIndex)
 	{
@@ -390,7 +505,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(float*)&params[4] = NewSourceStrength;
 		*cast(int*)&params[8] = SourceIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamSourceStrength, params.ptr, cast(void*)0);
 	}
 	void SetBeamTargetPoint(int EmitterIndex, Vector NewTargetPoint, int TargetIndex)
 	{
@@ -399,7 +514,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(Vector*)&params[4] = NewTargetPoint;
 		*cast(int*)&params[16] = TargetIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14996], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTargetPoint, params.ptr, cast(void*)0);
 	}
 	void SetBeamTargetTangent(int EmitterIndex, Vector NewTangentPoint, int TargetIndex)
 	{
@@ -408,7 +523,7 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(Vector*)&params[4] = NewTangentPoint;
 		*cast(int*)&params[16] = TargetIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15000], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTargetTangent, params.ptr, cast(void*)0);
 	}
 	void SetBeamTargetStrength(int EmitterIndex, float NewTargetStrength, int TargetIndex)
 	{
@@ -417,14 +532,14 @@ void**)params.ptr = PSystem;
 		*cast(int*)params.ptr = EmitterIndex;
 		*cast(float*)&params[4] = NewTargetStrength;
 		*cast(int*)&params[8] = TargetIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15004], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTargetStrength, params.ptr, cast(void*)0);
 	}
 	int DetermineLODLevelForLocation(Vector* EffectLocation)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = *EffectLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15008], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DetermineLODLevelForLocation, params.ptr, cast(void*)0);
 		*EffectLocation = *cast(Vector*)params.ptr;
 		return *cast(int*)&params[12];
 	}
@@ -433,27 +548,27 @@ void**)params.ptr = PSystem;
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = InLODLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15011], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLODLevel, params.ptr, cast(void*)0);
 	}
 	void SetEditorLODLevel(int InLODLevel)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = InLODLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15013], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEditorLODLevel, params.ptr, cast(void*)0);
 	}
 	int GetLODLevel()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15015], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLODLevel, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetEditorLODLevel()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15017], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEditorLODLevel, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void SetFloatParameter(ScriptName ParameterName, float Param)
@@ -462,7 +577,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(float*)&params[8] = Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15019], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloatParameter, params.ptr, cast(void*)0);
 	}
 	void SetFloatRandParameter(ScriptName ParameterName, float Param, float ParamLow)
 	{
@@ -471,7 +586,7 @@ void**)params.ptr = PSystem;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(float*)&params[8] = Param;
 		*cast(float*)&params[12] = ParamLow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15022], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloatRandParameter, params.ptr, cast(void*)0);
 	}
 	void SetVectorParameter(ScriptName ParameterName, Vector Param)
 	{
@@ -479,7 +594,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Vector*)&params[8] = Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15026], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameter, params.ptr, cast(void*)0);
 	}
 	void SetVectorRandParameter(ScriptName ParameterName, Vector* Param, Vector* ParamLow)
 	{
@@ -488,7 +603,7 @@ void**)params.ptr = PSystem;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Vector*)&params[8] = *Param;
 		*cast(Vector*)&params[20] = *ParamLow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15029], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorRandParameter, params.ptr, cast(void*)0);
 		*Param = *cast(Vector*)&params[8];
 		*ParamLow = *cast(Vector*)&params[20];
 	}
@@ -498,7 +613,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.Color*)&params[8] = Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15033], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetColorParameter, params.ptr, cast(void*)0);
 	}
 	void SetActorParameter(ScriptName ParameterName, Actor Param)
 	{
@@ -506,7 +621,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Actor*)&params[8] = Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15036], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActorParameter, params.ptr, cast(void*)0);
 	}
 	void SetMaterialParameter(ScriptName ParameterName, MaterialInterface Param)
 	{
@@ -514,7 +629,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(MaterialInterface*)&params[8] = Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15039], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaterialParameter, params.ptr, cast(void*)0);
 	}
 	bool GetFloatParameter(ScriptName InName, float* OutFloat)
 	{
@@ -522,7 +637,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(float*)&params[8] = *OutFloat;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15042], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatParameter, params.ptr, cast(void*)0);
 		*OutFloat = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -532,7 +647,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(Vector*)&params[8] = *OutVector;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15046], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorParameter, params.ptr, cast(void*)0);
 		*OutVector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
@@ -542,7 +657,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(UObject.Color*)&params[8] = *OutColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15050], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetColorParameter, params.ptr, cast(void*)0);
 		*OutColor = *cast(UObject.Color*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -552,7 +667,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(Actor*)&params[8] = *OutActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15054], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorParameter, params.ptr, cast(void*)0);
 		*OutActor = *cast(Actor*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -562,7 +677,7 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(MaterialInterface*)&params[8] = *OutMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15058], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterialParameter, params.ptr, cast(void*)0);
 		*OutMaterial = *cast(MaterialInterface*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -572,11 +687,11 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(ParticleSystemComponent.EParticleSysParamType*)&params[8] = ParameterType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15062], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearParameter, params.ptr, cast(void*)0);
 	}
 	void ResetToDefaults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15067], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetToDefaults, cast(void*)0, cast(void*)0);
 	}
 	void SetStopSpawning(int InEmitterIndex, bool bInStopSpawning)
 	{
@@ -584,6 +699,6 @@ void**)params.ptr = PSystem;
 		params[] = 0;
 		*cast(int*)params.ptr = InEmitterIndex;
 		*cast(bool*)&params[4] = bInStopSpawning;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15068], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStopSpawning, params.ptr, cast(void*)0);
 	}
 }

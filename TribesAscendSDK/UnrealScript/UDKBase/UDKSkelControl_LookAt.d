@@ -1,10 +1,13 @@
 module UnrealScript.UDKBase.UDKSkelControl_LookAt;
 
+import ScriptClasses;
 import UnrealScript.Engine.SkelControlLookAt;
 
 extern(C++) interface UDKSkelControl_LookAt : SkelControlLookAt
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_LookAt")); }
 	@property final
 	{
 		auto ref

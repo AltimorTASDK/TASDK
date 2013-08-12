@@ -1,10 +1,13 @@
 module UnrealScript.Engine.MaterialExpressionComponentMask;
 
+import ScriptClasses;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionComponentMask : MaterialExpression
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionComponentMask")); }
 	@property final
 	{
 		// WARNING: Property 'Input' has the same name as a defined type!

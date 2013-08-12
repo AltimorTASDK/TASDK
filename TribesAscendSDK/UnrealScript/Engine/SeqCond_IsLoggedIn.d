@@ -6,12 +6,19 @@ import UnrealScript.Engine.SequenceCondition;
 extern(C++) interface SeqCond_IsLoggedIn : SequenceCondition
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_IsLoggedIn")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mCheckLogins;
+		public @property static final ScriptFunction CheckLogins() { return mCheckLogins ? mCheckLogins : (mCheckLogins = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqCond_IsLoggedIn.CheckLogins")); }
+	}
 	@property final auto ref int NumNeededLoggedIn() { return *cast(int*)(cast(size_t)cast(void*)this + 208); }
 	final bool CheckLogins()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26031], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckLogins, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

@@ -12,6 +12,21 @@ import UnrealScript.Engine.SoundNodeWave;
 extern(C++) interface AudioDevice : Subsystem
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AudioDevice")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetSoundMode;
+			ScriptFunction mFindSoundClass;
+		}
+		public @property static final
+		{
+			ScriptFunction SetSoundMode() { return mSetSoundMode ? mSetSoundMode : (mSetSoundMode = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioDevice.SetSoundMode")); }
+			ScriptFunction FindSoundClass() { return mFindSoundClass ? mFindSoundClass : (mFindSoundClass = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioDevice.FindSoundClass")); }
+		}
+	}
 	enum EDebugState : ubyte
 	{
 		DEBUGSTATE_None = 0,
@@ -68,6 +83,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AudioDevice.Listener")); }
 		@property final auto ref
 		{
 			Vector Front() { return *cast(Vector*)(cast(size_t)&this + 40); }
@@ -81,6 +98,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AudioDevice.AudioClassInfo")); }
 		@property final auto ref
 		{
 			int SizeRealTime() { return *cast(int*)(cast(size_t)&this + 12); }
@@ -147,7 +166,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = NewMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9511], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSoundMode, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	SoundClass FindSoundClass(ScriptName SoundClassName)
@@ -155,7 +174,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SoundClassName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10363], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSoundClass, params.ptr, cast(void*)0);
 		return *cast(SoundClass*)&params[8];
 	}
 }

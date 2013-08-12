@@ -11,6 +11,33 @@ import UnrealScript.Engine.Font;
 extern(C++) interface MaterialInstance : MaterialInterface
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstance")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetParent;
+			ScriptFunction mSetVectorParameterValue;
+			ScriptFunction mSetScalarParameterValue;
+			ScriptFunction mSetScalarCurveParameterValue;
+			ScriptFunction mSetTextureParameterValue;
+			ScriptFunction mSetFontParameterValue;
+			ScriptFunction mClearParameterValues;
+			ScriptFunction mIsInMapOrTransientPackage;
+		}
+		public @property static final
+		{
+			ScriptFunction SetParent() { return mSetParent ? mSetParent : (mSetParent = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetParent")); }
+			ScriptFunction SetVectorParameterValue() { return mSetVectorParameterValue ? mSetVectorParameterValue : (mSetVectorParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetVectorParameterValue")); }
+			ScriptFunction SetScalarParameterValue() { return mSetScalarParameterValue ? mSetScalarParameterValue : (mSetScalarParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetScalarParameterValue")); }
+			ScriptFunction SetScalarCurveParameterValue() { return mSetScalarCurveParameterValue ? mSetScalarCurveParameterValue : (mSetScalarCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetScalarCurveParameterValue")); }
+			ScriptFunction SetTextureParameterValue() { return mSetTextureParameterValue ? mSetTextureParameterValue : (mSetTextureParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetTextureParameterValue")); }
+			ScriptFunction SetFontParameterValue() { return mSetFontParameterValue ? mSetFontParameterValue : (mSetFontParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.SetFontParameterValue")); }
+			ScriptFunction ClearParameterValues() { return mClearParameterValues ? mClearParameterValues : (mClearParameterValues = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.ClearParameterValues")); }
+			ScriptFunction IsInMapOrTransientPackage() { return mIsInMapOrTransientPackage ? mIsInMapOrTransientPackage : (mIsInMapOrTransientPackage = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInstance.IsInMapOrTransientPackage")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -43,7 +70,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = NewParent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19789], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetParent, params.ptr, cast(void*)0);
 	}
 	void SetVectorParameterValue(ScriptName ParameterName, UObject.LinearColor* Value)
 	{
@@ -51,7 +78,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.LinearColor*)&params[8] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19791], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
 	void SetScalarParameterValue(ScriptName ParameterName, float Value)
@@ -60,7 +87,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(float*)&params[8] = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19794], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterValue, params.ptr, cast(void*)0);
 	}
 	void SetScalarCurveParameterValue(ScriptName ParameterName, UObject.InterpCurveFloat* Value)
 	{
@@ -68,7 +95,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.InterpCurveFloat*)&params[8] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarCurveParameterValue, params.ptr, cast(void*)0);
 		*Value = *cast(UObject.InterpCurveFloat*)&params[8];
 	}
 	void SetTextureParameterValue(ScriptName ParameterName, Texture Value)
@@ -77,7 +104,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Texture*)&params[8] = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19800], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTextureParameterValue, params.ptr, cast(void*)0);
 	}
 	void SetFontParameterValue(ScriptName ParameterName, Font FontValue, int FontPage)
 	{
@@ -86,17 +113,17 @@ final:
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Font*)&params[8] = FontValue;
 		*cast(int*)&params[12] = FontPage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19803], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFontParameterValue, params.ptr, cast(void*)0);
 	}
 	void ClearParameterValues()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19807], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearParameterValues, cast(void*)0, cast(void*)0);
 	}
 	bool IsInMapOrTransientPackage()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19808], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInMapOrTransientPackage, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

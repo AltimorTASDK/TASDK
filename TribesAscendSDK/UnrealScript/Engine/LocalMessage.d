@@ -9,6 +9,35 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface LocalMessage : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LocalMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetConsoleColor;
+			ScriptFunction mPartiallyDuplicates;
+			ScriptFunction mClientReceive;
+			ScriptFunction mGetString;
+			ScriptFunction mGetColor;
+			ScriptFunction mGetPos;
+			ScriptFunction mGetFontSize;
+			ScriptFunction mGetLifeTime;
+			ScriptFunction mIsConsoleMessage;
+		}
+		public @property static final
+		{
+			ScriptFunction GetConsoleColor() { return mGetConsoleColor ? mGetConsoleColor : (mGetConsoleColor = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetConsoleColor")); }
+			ScriptFunction PartiallyDuplicates() { return mPartiallyDuplicates ? mPartiallyDuplicates : (mPartiallyDuplicates = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.PartiallyDuplicates")); }
+			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.ClientReceive")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetString")); }
+			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetColor")); }
+			ScriptFunction GetPos() { return mGetPos ? mGetPos : (mGetPos = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetPos")); }
+			ScriptFunction GetFontSize() { return mGetFontSize ? mGetFontSize : (mGetFontSize = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetFontSize")); }
+			ScriptFunction GetLifeTime() { return mGetLifeTime ? mGetLifeTime : (mGetLifeTime = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.GetLifeTime")); }
+			ScriptFunction IsConsoleMessage() { return mIsConsoleMessage ? mIsConsoleMessage : (mIsConsoleMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.LocalMessage.IsConsoleMessage")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -32,15 +61,15 @@ public extern(D):
 		bool bIsConsoleMessage(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x8; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x8; } return val; }
 	}
 final:
-	UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
+	static UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = RelatedPRI_1;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13793], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetConsoleColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[4];
 	}
-	bool PartiallyDuplicates(int Switch1, int Switch2, UObject OptionalObject1, UObject OptionalObject2)
+	static bool PartiallyDuplicates(int Switch1, int Switch2, UObject OptionalObject1, UObject OptionalObject2)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -48,10 +77,10 @@ final:
 		*cast(int*)&params[4] = Switch2;
 		*cast(UObject*)&params[8] = OptionalObject1;
 		*cast(UObject*)&params[12] = OptionalObject2;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13813], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PartiallyDuplicates, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -60,9 +89,9 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15650], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -71,10 +100,10 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15657], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -82,19 +111,19 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
 		*cast(UObject*)&params[12] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15665], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}
-	float GetPos(int Switch, HUD myHUD)
+	static float GetPos(int Switch, HUD myHUD)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
 		*cast(HUD*)&params[4] = myHUD;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15671], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetPos, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)
+	static int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -102,23 +131,23 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI2;
 		*cast(PlayerReplicationInfo*)&params[12] = pLocalPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15675], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFontSize, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	float GetLifeTime(int Switch)
+	static float GetLifeTime(int Switch)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15681], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetLifeTime, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	bool IsConsoleMessage(int Switch)
+	static bool IsConsoleMessage(int Switch)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15684], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsConsoleMessage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

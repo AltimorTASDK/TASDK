@@ -6,6 +6,8 @@ import UnrealScript.Engine.MaterialExpression;
 extern(C++) interface MaterialExpressionCustom : MaterialExpression
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionCustom")); }
 	enum ECustomMaterialOutputType : ubyte
 	{
 		CMOT_Float1 = 0,
@@ -18,6 +20,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialExpressionCustom.CustomInput")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Input' has the same name as a defined type!

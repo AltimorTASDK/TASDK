@@ -8,6 +8,35 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxUIView : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUIView")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mHasLinkConnection;
+			ScriptFunction mGetPlayerOwner;
+			ScriptFunction mGetUDKPlayerOwner;
+			ScriptFunction mGetPlayerName;
+			ScriptFunction mIsLoggedIn;
+			ScriptFunction mGetCommonOptionsURL;
+			ScriptFunction mGetPlayerIndex;
+			ScriptFunction mGetPlayerControllerId;
+			ScriptFunction mConsoleCommand;
+		}
+		public @property static final
+		{
+			ScriptFunction HasLinkConnection() { return mHasLinkConnection ? mHasLinkConnection : (mHasLinkConnection = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.HasLinkConnection")); }
+			ScriptFunction GetPlayerOwner() { return mGetPlayerOwner ? mGetPlayerOwner : (mGetPlayerOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerOwner")); }
+			ScriptFunction GetUDKPlayerOwner() { return mGetUDKPlayerOwner ? mGetUDKPlayerOwner : (mGetUDKPlayerOwner = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetUDKPlayerOwner")); }
+			ScriptFunction GetPlayerName() { return mGetPlayerName ? mGetPlayerName : (mGetPlayerName = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerName")); }
+			ScriptFunction IsLoggedIn() { return mIsLoggedIn ? mIsLoggedIn : (mIsLoggedIn = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.IsLoggedIn")); }
+			ScriptFunction GetCommonOptionsURL() { return mGetCommonOptionsURL ? mGetCommonOptionsURL : (mGetCommonOptionsURL = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetCommonOptionsURL")); }
+			ScriptFunction GetPlayerIndex() { return mGetPlayerIndex ? mGetPlayerIndex : (mGetPlayerIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerIndex")); }
+			ScriptFunction GetPlayerControllerId() { return mGetPlayerControllerId ? mGetPlayerControllerId : (mGetPlayerControllerId = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.GetPlayerControllerId")); }
+			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUIView.ConsoleCommand")); }
+		}
+	}
 	enum
 	{
 		GS_USERNAME_MAXLENGTH = 15,
@@ -120,11 +149,11 @@ public extern(D):
 		bool bRequiresNetwork(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 120) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 120) &= ~0x1; } return val; }
 	}
 final:
-	bool HasLinkConnection()
+	static bool HasLinkConnection()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37849], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.HasLinkConnection, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	LocalPlayer GetPlayerOwner(int PlayerIndex)
@@ -132,7 +161,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = PlayerIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37968], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerOwner, params.ptr, cast(void*)0);
 		return *cast(LocalPlayer*)&params[4];
 	}
 	UDKPlayerController GetUDKPlayerOwner(int PlayerIndex)
@@ -140,14 +169,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = PlayerIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37971], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUDKPlayerOwner, params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController*)&params[4];
 	}
 	ScriptString GetPlayerName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37974], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	bool IsLoggedIn(int ControllerId, bool bRequireOnlineLogin)
@@ -156,21 +185,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(bool*)&params[4] = bRequireOnlineLogin;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37976], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsLoggedIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	ScriptString GetCommonOptionsURL()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37980], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCommonOptionsURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	int GetPlayerIndex()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37984], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerIndex, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetPlayerControllerId(int PlayerIndex)
@@ -178,7 +207,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = PlayerIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37988], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerControllerId, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
@@ -187,6 +216,6 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
 		*cast(bool*)&params[12] = bWriteToLog;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37991], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 }

@@ -8,6 +8,27 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface FracturedBaseComponent : StaticMeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedBaseComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetStaticMesh;
+			ScriptFunction mGetVisibleFragments;
+			ScriptFunction mIsFragmentVisible;
+			ScriptFunction mGetNumFragments;
+			ScriptFunction mGetNumVisibleFragments;
+		}
+		public @property static final
+		{
+			ScriptFunction SetStaticMesh() { return mSetStaticMesh ? mSetStaticMesh : (mSetStaticMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.SetStaticMesh")); }
+			ScriptFunction GetVisibleFragments() { return mGetVisibleFragments ? mGetVisibleFragments : (mGetVisibleFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetVisibleFragments")); }
+			ScriptFunction IsFragmentVisible() { return mIsFragmentVisible ? mIsFragmentVisible : (mIsFragmentVisible = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.IsFragmentVisible")); }
+			ScriptFunction GetNumFragments() { return mGetNumFragments ? mGetNumFragments : (mGetNumFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetNumFragments")); }
+			ScriptFunction GetNumVisibleFragments() { return mGetNumVisibleFragments ? mGetNumVisibleFragments : (mGetNumVisibleFragments = ScriptObject.Find!(ScriptFunction)("Function Engine.FracturedBaseComponent.GetNumVisibleFragments")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -36,14 +57,14 @@ final:
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewMesh;
 		*cast(bool*)&params[4] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16003], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	ScriptArray!(ubyte) GetVisibleFragments()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16007], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVisibleFragments, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
 	bool IsFragmentVisible(int FragmentIndex)
@@ -51,21 +72,21 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = FragmentIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16010], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFragmentVisible, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	int GetNumFragments()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16013], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumFragments, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetNumVisibleFragments()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16015], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumVisibleFragments, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

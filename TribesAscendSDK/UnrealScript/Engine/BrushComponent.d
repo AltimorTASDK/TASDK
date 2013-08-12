@@ -9,10 +9,14 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface BrushComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BrushComponent")); }
 	struct KCachedConvexData_Mirror
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.BrushComponent.KCachedConvexData_Mirror")); }
 		@property final auto ref ScriptArray!(int) CachedConvexElements() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 0); }
 	}
 	@property final

@@ -7,6 +7,39 @@ import UnrealScript.PlatformCommon.TgPlayerProfile;
 extern(C++) interface TrSummaryHelper : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSummaryHelper")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSortPlayerAwards;
+			ScriptFunction mSortMVPAwards;
+			ScriptFunction mMVPSort;
+			ScriptFunction mAwardSort;
+			ScriptFunction mGetAwardFromId;
+			ScriptFunction mGetTierTitle;
+			ScriptFunction mGetAccoladeFromId;
+			ScriptFunction mGetRankFromXP;
+			ScriptFunction mGetNextRank;
+			ScriptFunction mGetMinTierValue;
+			ScriptFunction mGetTieredWeight;
+		}
+		public @property static final
+		{
+			ScriptFunction SortPlayerAwards() { return mSortPlayerAwards ? mSortPlayerAwards : (mSortPlayerAwards = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.SortPlayerAwards")); }
+			ScriptFunction SortMVPAwards() { return mSortMVPAwards ? mSortMVPAwards : (mSortMVPAwards = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.SortMVPAwards")); }
+			ScriptFunction MVPSort() { return mMVPSort ? mMVPSort : (mMVPSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.MVPSort")); }
+			ScriptFunction AwardSort() { return mAwardSort ? mAwardSort : (mAwardSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.AwardSort")); }
+			ScriptFunction GetAwardFromId() { return mGetAwardFromId ? mGetAwardFromId : (mGetAwardFromId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetAwardFromId")); }
+			ScriptFunction GetTierTitle() { return mGetTierTitle ? mGetTierTitle : (mGetTierTitle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetTierTitle")); }
+			ScriptFunction GetAccoladeFromId() { return mGetAccoladeFromId ? mGetAccoladeFromId : (mGetAccoladeFromId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetAccoladeFromId")); }
+			ScriptFunction GetRankFromXP() { return mGetRankFromXP ? mGetRankFromXP : (mGetRankFromXP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetRankFromXP")); }
+			ScriptFunction GetNextRank() { return mGetNextRank ? mGetNextRank : (mGetNextRank = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetNextRank")); }
+			ScriptFunction GetMinTierValue() { return mGetMinTierValue ? mGetMinTierValue : (mGetMinTierValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetMinTierValue")); }
+			ScriptFunction GetTieredWeight() { return mGetTieredWeight ? mGetTieredWeight : (mGetTieredWeight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSummaryHelper.GetTieredWeight")); }
+		}
+	}
 	enum
 	{
 		STAT_GAME_MAP = 200001,
@@ -274,6 +307,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSummaryHelper.MVPAward")); }
 		@property final auto ref
 		{
 			int Value() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -288,7 +323,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr = *AwardArray;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63316], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortPlayerAwards, params.ptr, cast(void*)0);
 		*AwardArray = *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr;
 	}
 	void SortMVPAwards(ScriptArray!(TrSummaryHelper.MVPAward)* AwardArray)
@@ -296,7 +331,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(TrSummaryHelper.MVPAward)*)params.ptr = *AwardArray;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63324], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortMVPAwards, params.ptr, cast(void*)0);
 		*AwardArray = *cast(ScriptArray!(TrSummaryHelper.MVPAward)*)params.ptr;
 	}
 	int MVPSort(TrSummaryHelper.MVPAward A, TrSummaryHelper.MVPAward B)
@@ -305,7 +340,7 @@ final:
 		params[] = 0;
 		*cast(TrSummaryHelper.MVPAward*)params.ptr = A;
 		*cast(TrSummaryHelper.MVPAward*)&params[12] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63336], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MVPSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[24];
 	}
 	int AwardSort(TgPlayerProfile.PropertyPair A, TgPlayerProfile.PropertyPair B)
@@ -314,7 +349,7 @@ final:
 		params[] = 0;
 		*cast(TgPlayerProfile.PropertyPair*)params.ptr = A;
 		*cast(TgPlayerProfile.PropertyPair*)&params[8] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63340], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AwardSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
 	ScriptClass GetAwardFromId(int AwardId)
@@ -322,7 +357,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AwardId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63625], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAwardFromId, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	ScriptString GetTierTitle(int val, ScriptClass award)
@@ -331,7 +366,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = val;
 		*cast(ScriptClass*)&params[4] = award;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63628], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTierTitle, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
 	ScriptClass GetAccoladeFromId(int AccoladeId)
@@ -339,7 +374,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AccoladeId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63636], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAccoladeFromId, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	ScriptClass GetRankFromXP(int XP)
@@ -347,7 +382,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = XP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63752], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRankFromXP, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	ScriptClass GetNextRank(ScriptClass Rank)
@@ -355,7 +390,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Rank;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63754], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextRank, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	int GetMinTierValue(int AwardId)
@@ -363,7 +398,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AwardId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113073], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMinTierValue, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	float GetTieredWeight(int AwardId, int val)
@@ -372,7 +407,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = AwardId;
 		*cast(int*)&params[4] = val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[113077], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTieredWeight, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 }

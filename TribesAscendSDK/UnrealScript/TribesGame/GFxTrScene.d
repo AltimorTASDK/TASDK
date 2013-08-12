@@ -8,6 +8,13 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrScene : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mInitialize;
+		public @property static final ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrScene.Initialize")); }
+	}
 	enum
 	{
 		STAT_GAME_MAP = 200001,
@@ -1656,6 +1663,6 @@ public extern(D):
 	}
 	final void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[63259], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 }

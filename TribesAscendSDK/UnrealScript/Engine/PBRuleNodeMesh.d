@@ -8,10 +8,19 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface PBRuleNodeMesh : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeMesh")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPickRandomBuildingMesh;
+		public @property static final ScriptFunction PickRandomBuildingMesh() { return mPickRandomBuildingMesh ? mPickRandomBuildingMesh : (mPickRandomBuildingMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.PBRuleNodeMesh.PickRandomBuildingMesh")); }
+	}
 	struct BuildingMeshInfo
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeMesh.BuildingMeshInfo")); }
 		@property final
 		{
 			auto ref
@@ -34,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeMesh.BuildingMatOverrides")); }
 		@property final auto ref ScriptArray!(MaterialInterface) MaterialOptions() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 0); }
 	}
 	@property final
@@ -52,7 +63,7 @@ public extern(D):
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24258], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PickRandomBuildingMesh, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

@@ -7,6 +7,25 @@ import UnrealScript.Engine.SequenceOp;
 extern(C++) interface SequenceEvent : SequenceOp
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceEvent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCheckActivate;
+			ScriptFunction mRegisterEvent;
+			ScriptFunction mReset;
+			ScriptFunction mToggled;
+		}
+		public @property static final
+		{
+			ScriptFunction CheckActivate() { return mCheckActivate ? mCheckActivate : (mCheckActivate = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.CheckActivate")); }
+			ScriptFunction RegisterEvent() { return mRegisterEvent ? mRegisterEvent : (mRegisterEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.RegisterEvent")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.Reset")); }
+			ScriptFunction Toggled() { return mToggled ? mToggled : (mToggled = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceEvent.Toggled")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -40,20 +59,20 @@ final:
 		*cast(bool*)&params[8] = bTest;
 		*cast(ScriptArray!(int)*)&params[12] = *ActivateIndices;
 		*cast(bool*)&params[24] = bPushTop;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4292], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckActivate, params.ptr, cast(void*)0);
 		*ActivateIndices = *cast(ScriptArray!(int)*)&params[12];
 		return *cast(bool*)&params[28];
 	}
 	void RegisterEvent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26085], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterEvent, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26092], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void Toggled()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26093], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Toggled, cast(void*)0, cast(void*)0);
 	}
 }

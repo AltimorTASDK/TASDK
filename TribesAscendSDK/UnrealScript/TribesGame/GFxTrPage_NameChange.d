@@ -7,6 +7,27 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_NameChange : GFxTrPage_VendorTable
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_NameChange")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFillDescription;
+			ScriptFunction mModifyAction;
+			ScriptFunction mPopupData;
+			ScriptFunction mPopupComplete;
+			ScriptFunction mShowModel;
+		}
+		public @property static final
+		{
+			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_NameChange.FillDescription")); }
+			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_NameChange.ModifyAction")); }
+			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_NameChange.PopupData")); }
+			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_NameChange.PopupComplete")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_NameChange.ShowModel")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref ScriptString NamePopupTitle() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 396); }
@@ -19,7 +40,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59755], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillDescription, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	int ModifyAction(int ActionIndex, GFxObject DataList)
@@ -28,7 +49,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59759], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void PopupData(GFxObject Obj)
@@ -36,7 +57,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59763], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupData, params.ptr, cast(void*)0);
 	}
 	void PopupComplete(int Action, ScriptString TextInput)
 	{
@@ -44,10 +65,10 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Action;
 		*cast(ScriptString*)&params[4] = TextInput;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59771], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupComplete, params.ptr, cast(void*)0);
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59774], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 }

@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleLocationPrimitiveBase;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleLocationBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -7,6 +8,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface ParticleModuleLocationPrimitiveBase : ParticleModuleLocationBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationPrimitiveBase")); }
 	@property final
 	{
 		auto ref

@@ -1,5 +1,6 @@
 module UnrealScript.Engine.MaterialExpressionStaticComponentMaskParameter;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.MaterialExpressionParameter;
 import UnrealScript.Engine.MaterialExpression;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.MaterialExpression;
 extern(C++) interface MaterialExpressionStaticComponentMaskParameter : MaterialExpressionParameter
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionStaticComponentMaskParameter")); }
 	@property final
 	{
 		auto ref

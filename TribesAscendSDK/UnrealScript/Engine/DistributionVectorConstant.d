@@ -6,6 +6,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface DistributionVectorConstant : DistributionVector
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorConstant")); }
 	@property final
 	{
 		auto ref

@@ -10,10 +10,55 @@ import UnrealScript.Engine.UIDataProvider_Settings;
 extern(C++) interface UIDataStore_OnlineGameSearch : UIDataStore_Remote
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineGameSearch")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mInvalidateCurrentSearchResults;
+			ScriptFunction mSubmitGameSearch;
+			ScriptFunction mOverrideQuerySubmission;
+			ScriptFunction mOnSearchComplete;
+			ScriptFunction mGetSearchResultFromIndex;
+			ScriptFunction mShowHostGamercard;
+			ScriptFunction mBuildSearchResults;
+			ScriptFunction mGetCurrentGameSearch;
+			ScriptFunction mGetActiveGameSearch;
+			ScriptFunction mFindSearchConfigurationIndex;
+			ScriptFunction mSetCurrentByIndex;
+			ScriptFunction mSetCurrentByName;
+			ScriptFunction mMoveToNext;
+			ScriptFunction mMoveToPrevious;
+			ScriptFunction mClearAllSearchResults;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.Init")); }
+			ScriptFunction InvalidateCurrentSearchResults() { return mInvalidateCurrentSearchResults ? mInvalidateCurrentSearchResults : (mInvalidateCurrentSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.InvalidateCurrentSearchResults")); }
+			ScriptFunction SubmitGameSearch() { return mSubmitGameSearch ? mSubmitGameSearch : (mSubmitGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SubmitGameSearch")); }
+			ScriptFunction OverrideQuerySubmission() { return mOverrideQuerySubmission ? mOverrideQuerySubmission : (mOverrideQuerySubmission = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.OverrideQuerySubmission")); }
+			ScriptFunction OnSearchComplete() { return mOnSearchComplete ? mOnSearchComplete : (mOnSearchComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.OnSearchComplete")); }
+			ScriptFunction GetSearchResultFromIndex() { return mGetSearchResultFromIndex ? mGetSearchResultFromIndex : (mGetSearchResultFromIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetSearchResultFromIndex")); }
+			ScriptFunction ShowHostGamercard() { return mShowHostGamercard ? mShowHostGamercard : (mShowHostGamercard = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.ShowHostGamercard")); }
+			ScriptFunction BuildSearchResults() { return mBuildSearchResults ? mBuildSearchResults : (mBuildSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.BuildSearchResults")); }
+			ScriptFunction GetCurrentGameSearch() { return mGetCurrentGameSearch ? mGetCurrentGameSearch : (mGetCurrentGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetCurrentGameSearch")); }
+			ScriptFunction GetActiveGameSearch() { return mGetActiveGameSearch ? mGetActiveGameSearch : (mGetActiveGameSearch = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.GetActiveGameSearch")); }
+			ScriptFunction FindSearchConfigurationIndex() { return mFindSearchConfigurationIndex ? mFindSearchConfigurationIndex : (mFindSearchConfigurationIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.FindSearchConfigurationIndex")); }
+			ScriptFunction SetCurrentByIndex() { return mSetCurrentByIndex ? mSetCurrentByIndex : (mSetCurrentByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByIndex")); }
+			ScriptFunction SetCurrentByName() { return mSetCurrentByName ? mSetCurrentByName : (mSetCurrentByName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.SetCurrentByName")); }
+			ScriptFunction MoveToNext() { return mMoveToNext ? mMoveToNext : (mMoveToNext = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.MoveToNext")); }
+			ScriptFunction MoveToPrevious() { return mMoveToPrevious ? mMoveToPrevious : (mMoveToPrevious = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.MoveToPrevious")); }
+			ScriptFunction ClearAllSearchResults() { return mClearAllSearchResults ? mClearAllSearchResults : (mClearAllSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineGameSearch.ClearAllSearchResults")); }
+		}
+	}
 	struct GameSearchCfg
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineGameSearch.GameSearchCfg")); }
 		@property final auto ref
 		{
 			ScriptArray!(UIDataProvider_Settings) SearchResults() { return *cast(ScriptArray!(UIDataProvider_Settings)*)(cast(size_t)&this + 16); }
@@ -38,13 +83,13 @@ public extern(D):
 final:
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28644], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	bool InvalidateCurrentSearchResults()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28645], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InvalidateCurrentSearchResults, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool SubmitGameSearch(ubyte ControllerIndex, bool bInvalidateExistingSearchResults)
@@ -53,7 +98,7 @@ final:
 		params[] = 0;
 		params[0] = ControllerIndex;
 		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28649], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SubmitGameSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool OverrideQuerySubmission(ubyte ControllerId, OnlineGameSearch Search)
@@ -62,7 +107,7 @@ final:
 		params[] = 0;
 		params[0] = ControllerId;
 		*cast(OnlineGameSearch*)&params[4] = Search;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28653], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OverrideQuerySubmission, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void OnSearchComplete(bool bWasSuccessful)
@@ -70,7 +115,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28657], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSearchComplete, params.ptr, cast(void*)0);
 	}
 	bool GetSearchResultFromIndex(int ListIndex, OnlineGameSearch.OnlineGameSearchResult* Result)
 	{
@@ -78,7 +123,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ListIndex;
 		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4] = *Result;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28659], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSearchResultFromIndex, params.ptr, cast(void*)0);
 		*Result = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4];
 		return *cast(bool*)&params[12];
 	}
@@ -88,25 +133,25 @@ final:
 		params[] = 0;
 		params[0] = ControllerIndex;
 		*cast(int*)&params[4] = ListIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28663], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowHostGamercard, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void BuildSearchResults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28669], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BuildSearchResults, cast(void*)0, cast(void*)0);
 	}
 	OnlineGameSearch GetCurrentGameSearch()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28670], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentGameSearch, params.ptr, cast(void*)0);
 		return *cast(OnlineGameSearch*)params.ptr;
 	}
 	OnlineGameSearch GetActiveGameSearch()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28672], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActiveGameSearch, params.ptr, cast(void*)0);
 		return *cast(OnlineGameSearch*)params.ptr;
 	}
 	int FindSearchConfigurationIndex(ScriptName SearchTag)
@@ -114,7 +159,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SearchTag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28674], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSearchConfigurationIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void SetCurrentByIndex(int NewIndex, bool bInvalidateExistingSearchResults)
@@ -123,7 +168,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = NewIndex;
 		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28678], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentByIndex, params.ptr, cast(void*)0);
 	}
 	void SetCurrentByName(ScriptName SearchName, bool bInvalidateExistingSearchResults)
 	{
@@ -131,24 +176,24 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SearchName;
 		*cast(bool*)&params[8] = bInvalidateExistingSearchResults;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28681], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentByName, params.ptr, cast(void*)0);
 	}
 	void MoveToNext(bool bInvalidateExistingSearchResults)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInvalidateExistingSearchResults;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28685], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToNext, params.ptr, cast(void*)0);
 	}
 	void MoveToPrevious(bool bInvalidateExistingSearchResults)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInvalidateExistingSearchResults;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28687], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToPrevious, params.ptr, cast(void*)0);
 	}
 	void ClearAllSearchResults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28689], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearAllSearchResults, cast(void*)0, cast(void*)0);
 	}
 }

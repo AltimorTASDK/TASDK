@@ -9,6 +9,65 @@ import UnrealScript.TribesGame.TrDevice_ConstantFire;
 extern(C++) interface TrDevice_LaserTargeter : TrDevice_ConstantFire
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_LaserTargeter")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCalcHUDAimChargePercent;
+			ScriptFunction mIsValidCallIn;
+			ScriptFunction mIsValidTargetLocation;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mUpdateCallins;
+			ScriptFunction mDestroyed;
+			ScriptFunction mCanFireCallIn;
+			ScriptFunction mSetActiveCallIn;
+			ScriptFunction mOnEndConstantFire;
+			ScriptFunction mOnStartConstantFire;
+			ScriptFunction mGetLaserStartAndEnd;
+			ScriptFunction mKillLaserEffect;
+			ScriptFunction mSpawnLaserEffect;
+			ScriptFunction mUpdateLaserEffect;
+			ScriptFunction mCallInConfirmed;
+			ScriptFunction mServerPerformCallIn;
+			ScriptFunction mUpdateTarget;
+			ScriptFunction mGetTraceOwner;
+			ScriptFunction mGetAmmoCount;
+			ScriptFunction mUpdateCreditMaterial;
+			ScriptFunction mPlayWeaponEquip;
+			ScriptFunction mUpdateCallInMaterial;
+			ScriptFunction mUpdateWeaponMICs;
+		}
+		public @property static final
+		{
+			ScriptFunction CalcHUDAimChargePercent() { return mCalcHUDAimChargePercent ? mCalcHUDAimChargePercent : (mCalcHUDAimChargePercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CalcHUDAimChargePercent")); }
+			ScriptFunction IsValidCallIn() { return mIsValidCallIn ? mIsValidCallIn : (mIsValidCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.IsValidCallIn")); }
+			ScriptFunction IsValidTargetLocation() { return mIsValidTargetLocation ? mIsValidTargetLocation : (mIsValidTargetLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.IsValidTargetLocation")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.ReplicatedEvent")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.PostBeginPlay")); }
+			ScriptFunction UpdateCallins() { return mUpdateCallins ? mUpdateCallins : (mUpdateCallins = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCallins")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.Destroyed")); }
+			ScriptFunction CanFireCallIn() { return mCanFireCallIn ? mCanFireCallIn : (mCanFireCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CanFireCallIn")); }
+			ScriptFunction SetActiveCallIn() { return mSetActiveCallIn ? mSetActiveCallIn : (mSetActiveCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.SetActiveCallIn")); }
+			ScriptFunction OnEndConstantFire() { return mOnEndConstantFire ? mOnEndConstantFire : (mOnEndConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.OnEndConstantFire")); }
+			ScriptFunction OnStartConstantFire() { return mOnStartConstantFire ? mOnStartConstantFire : (mOnStartConstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.OnStartConstantFire")); }
+			ScriptFunction GetLaserStartAndEnd() { return mGetLaserStartAndEnd ? mGetLaserStartAndEnd : (mGetLaserStartAndEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetLaserStartAndEnd")); }
+			ScriptFunction KillLaserEffect() { return mKillLaserEffect ? mKillLaserEffect : (mKillLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.KillLaserEffect")); }
+			ScriptFunction SpawnLaserEffect() { return mSpawnLaserEffect ? mSpawnLaserEffect : (mSpawnLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.SpawnLaserEffect")); }
+			ScriptFunction UpdateLaserEffect() { return mUpdateLaserEffect ? mUpdateLaserEffect : (mUpdateLaserEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateLaserEffect")); }
+			ScriptFunction CallInConfirmed() { return mCallInConfirmed ? mCallInConfirmed : (mCallInConfirmed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.CallInConfirmed")); }
+			ScriptFunction ServerPerformCallIn() { return mServerPerformCallIn ? mServerPerformCallIn : (mServerPerformCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.ServerPerformCallIn")); }
+			ScriptFunction UpdateTarget() { return mUpdateTarget ? mUpdateTarget : (mUpdateTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateTarget")); }
+			ScriptFunction GetTraceOwner() { return mGetTraceOwner ? mGetTraceOwner : (mGetTraceOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetTraceOwner")); }
+			ScriptFunction GetAmmoCount() { return mGetAmmoCount ? mGetAmmoCount : (mGetAmmoCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.GetAmmoCount")); }
+			ScriptFunction UpdateCreditMaterial() { return mUpdateCreditMaterial ? mUpdateCreditMaterial : (mUpdateCreditMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCreditMaterial")); }
+			ScriptFunction PlayWeaponEquip() { return mPlayWeaponEquip ? mPlayWeaponEquip : (mPlayWeaponEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.PlayWeaponEquip")); }
+			ScriptFunction UpdateCallInMaterial() { return mUpdateCallInMaterial ? mUpdateCallInMaterial : (mUpdateCallInMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateCallInMaterial")); }
+			ScriptFunction UpdateWeaponMICs() { return mUpdateWeaponMICs ? mUpdateWeaponMICs : (mUpdateWeaponMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_LaserTargeter.UpdateWeaponMICs")); }
+		}
+	}
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,
@@ -1400,7 +1459,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53739], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcHUDAimChargePercent, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	bool IsValidCallIn(ubyte CallInIndex)
@@ -1408,7 +1467,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		params[0] = CallInIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[76800], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidCallIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsValidTargetLocation(Vector CurrentTarget, Vector PreviousTarget, Actor HitTarget)
@@ -1418,7 +1477,7 @@ final:
 		*cast(Vector*)params.ptr = CurrentTarget;
 		*cast(Vector*)&params[12] = PreviousTarget;
 		*cast(Actor*)&params[24] = HitTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82927], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidTargetLocation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -1426,25 +1485,25 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82932], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82934], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void UpdateCallins()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82942], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCallins, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82945], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	bool CanFireCallIn()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82947], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanFireCallIn, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetActiveCallIn(ubyte CallInIndex)
@@ -1452,15 +1511,15 @@ final:
 		ubyte params[1];
 		params[] = 0;
 		params[0] = CallInIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82951], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveCallIn, params.ptr, cast(void*)0);
 	}
 	void OnEndConstantFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82953], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnEndConstantFire, cast(void*)0, cast(void*)0);
 	}
 	void OnStartConstantFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82955], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnStartConstantFire, cast(void*)0, cast(void*)0);
 	}
 	bool GetLaserStartAndEnd(Vector* StartLocation, Vector* EndLocation, Vector* EndLocationNormal)
 	{
@@ -1469,7 +1528,7 @@ final:
 		*cast(Vector*)params.ptr = *StartLocation;
 		*cast(Vector*)&params[12] = *EndLocation;
 		*cast(Vector*)&params[24] = *EndLocationNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82967], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLaserStartAndEnd, params.ptr, cast(void*)0);
 		*StartLocation = *cast(Vector*)params.ptr;
 		*EndLocation = *cast(Vector*)&params[12];
 		*EndLocationNormal = *cast(Vector*)&params[24];
@@ -1477,22 +1536,22 @@ final:
 	}
 	void KillLaserEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82977], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillLaserEffect, cast(void*)0, cast(void*)0);
 	}
 	void SpawnLaserEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82978], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnLaserEffect, cast(void*)0, cast(void*)0);
 	}
 	void UpdateLaserEffect(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLaserEffect, params.ptr, cast(void*)0);
 	}
 	void CallInConfirmed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82995], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallInConfirmed, cast(void*)0, cast(void*)0);
 	}
 	void ServerPerformCallIn(Vector EndLocation, Vector HitNormal)
 	{
@@ -1500,7 +1559,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = EndLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82996], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerPerformCallIn, params.ptr, cast(void*)0);
 	}
 	void UpdateTarget(bool hasHitSomething, Vector End, float DeltaTime)
 	{
@@ -1509,36 +1568,36 @@ final:
 		*cast(bool*)params.ptr = hasHitSomething;
 		*cast(Vector*)&params[4] = End;
 		*cast(float*)&params[16] = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83000], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTarget, params.ptr, cast(void*)0);
 	}
 	Actor GetTraceOwner()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83005], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTraceOwner, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	int GetAmmoCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83007], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAmmoCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void UpdateCreditMaterial()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83009], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCreditMaterial, cast(void*)0, cast(void*)0);
 	}
 	void PlayWeaponEquip()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83011], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWeaponEquip, cast(void*)0, cast(void*)0);
 	}
 	void UpdateCallInMaterial()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83012], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCallInMaterial, cast(void*)0, cast(void*)0);
 	}
 	void UpdateWeaponMICs()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[83014], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateWeaponMICs, cast(void*)0, cast(void*)0);
 	}
 }

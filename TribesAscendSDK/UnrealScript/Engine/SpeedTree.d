@@ -7,6 +7,8 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface SpeedTree : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeedTree")); }
 	@property final
 	{
 		auto ref

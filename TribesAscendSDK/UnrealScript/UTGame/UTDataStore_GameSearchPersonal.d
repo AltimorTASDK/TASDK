@@ -9,6 +9,37 @@ import UnrealScript.UTGame.UTDataStore_GameSearchDM;
 extern(C++) interface UTDataStore_GameSearchPersonal : UDKDataStore_GameSearchBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDataStore_GameSearchPersonal")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mHasOutstandingQueries;
+			ScriptFunction mOverrideQuerySubmission;
+			ScriptFunction mGetPlayerName;
+			ScriptFunction mGetPlayerNetId;
+			ScriptFunction mFindServerIndexByString;
+			ScriptFunction mFindServerIndexById;
+			ScriptFunction mAddServer;
+			ScriptFunction mRemoveServer;
+			ScriptFunction mGetServerIdList;
+			ScriptFunction mGetServerStringList;
+		}
+		public @property static final
+		{
+			ScriptFunction HasOutstandingQueries() { return mHasOutstandingQueries ? mHasOutstandingQueries : (mHasOutstandingQueries = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.HasOutstandingQueries")); }
+			ScriptFunction OverrideQuerySubmission() { return mOverrideQuerySubmission ? mOverrideQuerySubmission : (mOverrideQuerySubmission = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.OverrideQuerySubmission")); }
+			ScriptFunction GetPlayerName() { return mGetPlayerName ? mGetPlayerName : (mGetPlayerName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerName")); }
+			ScriptFunction GetPlayerNetId() { return mGetPlayerNetId ? mGetPlayerNetId : (mGetPlayerNetId = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetPlayerNetId")); }
+			ScriptFunction FindServerIndexByString() { return mFindServerIndexByString ? mFindServerIndexByString : (mFindServerIndexByString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexByString")); }
+			ScriptFunction FindServerIndexById() { return mFindServerIndexById ? mFindServerIndexById : (mFindServerIndexById = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.FindServerIndexById")); }
+			ScriptFunction AddServer() { return mAddServer ? mAddServer : (mAddServer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.AddServer")); }
+			ScriptFunction RemoveServer() { return mRemoveServer ? mRemoveServer : (mRemoveServer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.RemoveServer")); }
+			ScriptFunction GetServerIdList() { return mGetServerIdList ? mGetServerIdList : (mGetServerIdList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetServerIdList")); }
+			ScriptFunction GetServerStringList() { return mGetServerStringList ? mGetServerStringList : (mGetServerStringList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")); }
+		}
+	}
 	enum MAX_PERSONALSERVERS = 15;
 	@property final auto ref
 	{
@@ -21,7 +52,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bRestrictCheckToSelf;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46900], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool OverrideQuerySubmission(ubyte ControllerId, OnlineGameSearch Search)
@@ -30,7 +61,7 @@ final:
 		params[] = 0;
 		params[0] = ControllerId;
 		*cast(OnlineGameSearch*)&params[4] = Search;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46940], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OverrideQuerySubmission, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	ScriptString GetPlayerName(int ControllerId)
@@ -38,7 +69,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46951], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	bool GetPlayerNetId(OnlineSubsystem.UniqueNetId* out_PlayerId, int ControllerId)
@@ -47,7 +78,7 @@ final:
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = *out_PlayerId;
 		*cast(int*)&params[8] = ControllerId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46956], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerNetId, params.ptr, cast(void*)0);
 		*out_PlayerId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
@@ -57,7 +88,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptString*)&params[4] = IdToFind;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46962], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexByString, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
 	int FindServerIndexById(int ControllerId, OnlineSubsystem.UniqueNetId* IdToFind)
@@ -66,7 +97,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = *IdToFind;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46968], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexById, params.ptr, cast(void*)0);
 		*IdToFind = *cast(OnlineSubsystem.UniqueNetId*)&params[4];
 		return *cast(int*)&params[12];
 	}
@@ -76,7 +107,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = IdToAdd;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46972], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddServer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool RemoveServer(int ControllerId, OnlineSubsystem.UniqueNetId IdToRemove)
@@ -85,7 +116,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = IdToRemove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46980], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveServer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void GetServerIdList(ScriptArray!(OnlineSubsystem.UniqueNetId)* out_ServerList)
@@ -93,7 +124,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *out_ServerList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerIdList, params.ptr, cast(void*)0);
 		*out_ServerList = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	void GetServerStringList(ScriptArray!(ScriptString)* out_ServerList)
@@ -101,7 +132,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = *out_ServerList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerStringList, params.ptr, cast(void*)0);
 		*out_ServerList = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 }

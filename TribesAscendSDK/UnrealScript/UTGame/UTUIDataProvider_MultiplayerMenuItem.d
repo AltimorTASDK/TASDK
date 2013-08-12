@@ -6,6 +6,13 @@ import UnrealScript.UTGame.UTUIResourceDataProvider;
 extern(C++) interface UTUIDataProvider_MultiplayerMenuItem : UTUIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_MultiplayerMenuItem")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mShouldBeFiltered;
+		public @property static final ScriptFunction ShouldBeFiltered() { return mShouldBeFiltered ? mShouldBeFiltered : (mShouldBeFiltered = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTUIDataProvider_MultiplayerMenuItem.ShouldBeFiltered")); }
+	}
 	@property final
 	{
 		@property final auto ref ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }
@@ -16,7 +23,7 @@ public extern(D):
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldBeFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

@@ -9,6 +9,27 @@ import UnrealScript.Engine.InterpCurveEdSetup;
 extern(C++) interface ParticleSystem : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSystem")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetCurrentLODMethod;
+			ScriptFunction mGetLODLevelCount;
+			ScriptFunction mGetLODDistance;
+			ScriptFunction mSetCurrentLODMethod;
+			ScriptFunction mSetLODDistance;
+		}
+		public @property static final
+		{
+			ScriptFunction GetCurrentLODMethod() { return mGetCurrentLODMethod ? mGetCurrentLODMethod : (mGetCurrentLODMethod = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetCurrentLODMethod")); }
+			ScriptFunction GetLODLevelCount() { return mGetLODLevelCount ? mGetLODLevelCount : (mGetLODLevelCount = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetLODLevelCount")); }
+			ScriptFunction GetLODDistance() { return mGetLODDistance ? mGetLODDistance : (mGetLODDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.GetLODDistance")); }
+			ScriptFunction SetCurrentLODMethod() { return mSetCurrentLODMethod ? mSetCurrentLODMethod : (mSetCurrentLODMethod = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.SetCurrentLODMethod")); }
+			ScriptFunction SetLODDistance() { return mSetLODDistance ? mSetLODDistance : (mSetLODDistance = ScriptObject.Find!(ScriptFunction)("Function Engine.ParticleSystem.SetLODDistance")); }
+		}
+	}
 	enum ParticleSystemLODMethod : ubyte
 	{
 		PARTICLESYSTEMLODMETHOD_Automatic = 0,
@@ -33,6 +54,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystem.ParticleSystemLOD")); }
 		@property final
 		{
 			bool bLit() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -43,6 +66,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleSystem.LODSoloTrack")); }
 		@property final auto ref ScriptArray!(ubyte) SoloEnableSetting() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
 	}
 	@property final
@@ -108,14 +133,14 @@ final:
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23881], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentLODMethod, params.ptr, cast(void*)0);
 		return *cast(ParticleSystem.ParticleSystemLODMethod*)params.ptr;
 	}
 	int GetLODLevelCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23883], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLODLevelCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	float GetLODDistance(int LODLevelIndex)
@@ -123,7 +148,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = LODLevelIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23885], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLODDistance, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void SetCurrentLODMethod(ParticleSystem.ParticleSystemLODMethod InMethod)
@@ -131,7 +156,7 @@ final:
 		ubyte params[1];
 		params[] = 0;
 		*cast(ParticleSystem.ParticleSystemLODMethod*)params.ptr = InMethod;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23888], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentLODMethod, params.ptr, cast(void*)0);
 	}
 	bool SetLODDistance(int LODLevelIndex, float InDistance)
 	{
@@ -139,7 +164,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = LODLevelIndex;
 		*cast(float*)&params[4] = InDistance;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23890], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLODDistance, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ApexComponentBase;
 
+import ScriptClasses;
 import UnrealScript.Engine.MeshComponent;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ApexAsset;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.ApexAsset;
 extern(C++) interface ApexComponentBase : MeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexComponentBase")); }
 	@property final
 	{
 		auto ref

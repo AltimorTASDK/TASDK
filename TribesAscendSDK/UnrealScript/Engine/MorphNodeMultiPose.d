@@ -7,6 +7,23 @@ import UnrealScript.Engine.MorphNodeBase;
 extern(C++) interface MorphNodeMultiPose : MorphNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeMultiPose")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAddMorphTarget;
+			ScriptFunction mRemoveMorphTarget;
+			ScriptFunction mUpdateMorphTarget;
+		}
+		public @property static final
+		{
+			ScriptFunction AddMorphTarget() { return mAddMorphTarget ? mAddMorphTarget : (mAddMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphNodeMultiPose.AddMorphTarget")); }
+			ScriptFunction RemoveMorphTarget() { return mRemoveMorphTarget ? mRemoveMorphTarget : (mRemoveMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphNodeMultiPose.RemoveMorphTarget")); }
+			ScriptFunction UpdateMorphTarget() { return mUpdateMorphTarget ? mUpdateMorphTarget : (mUpdateMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphNodeMultiPose.UpdateMorphTarget")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(MorphTarget) Targets() { return *cast(ScriptArray!(MorphTarget)*)(cast(size_t)cast(void*)this + 108); }
@@ -20,7 +37,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MorphTargetName;
 		*cast(float*)&params[8] = InWeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20597], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddMorphTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void RemoveMorphTarget(ScriptName MorphTargetName)
@@ -28,7 +45,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MorphTargetName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20601], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveMorphTarget, params.ptr, cast(void*)0);
 	}
 	bool UpdateMorphTarget(MorphTarget Target, float InWeight)
 	{
@@ -36,7 +53,7 @@ final:
 		params[] = 0;
 		*cast(MorphTarget*)params.ptr = Target;
 		*cast(float*)&params[4] = InWeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateMorphTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

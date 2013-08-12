@@ -7,6 +7,23 @@ import UnrealScript.Core.UObject;
 extern(C++) interface GameplayEvents : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameplayEvents")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOpenStatsFile;
+			ScriptFunction mCloseStatsFile;
+			ScriptFunction mGetFilename;
+		}
+		public @property static final
+		{
+			ScriptFunction OpenStatsFile() { return mOpenStatsFile ? mOpenStatsFile : (mOpenStatsFile = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEvents.OpenStatsFile")); }
+			ScriptFunction CloseStatsFile() { return mCloseStatsFile ? mCloseStatsFile : (mCloseStatsFile = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEvents.CloseStatsFile")); }
+			ScriptFunction GetFilename() { return mGetFilename ? mGetFilename : (mGetFilename = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEvents.GetFilename")); }
+		}
+	}
 	enum HeaderFlags_NoEventStrings = 1;
 	enum EGameStatGroups : ubyte
 	{
@@ -26,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.PlayerInformationNew")); }
 		@property final
 		{
 			auto ref
@@ -42,6 +61,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.TeamInformation")); }
 		@property final auto ref
 		{
 			int MaxSize() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -54,6 +75,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.GameplayEventMetaData")); }
 		@property final auto ref
 		{
 			int EventDataType() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -66,30 +89,40 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.WeaponClassEventData")); }
 		@property final auto ref ScriptString WeaponClassName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
 	}
 	struct DamageClassEventData
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.DamageClassEventData")); }
 		@property final auto ref ScriptString DamageClassName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
 	}
 	struct ProjectileClassEventData
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.ProjectileClassEventData")); }
 		@property final auto ref ScriptString ProjectileClassName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
 	}
 	struct PawnClassEventData
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.PawnClassEventData")); }
 		@property final auto ref ScriptString PawnClassName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
 	}
 	struct GameStatGroup
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.GameStatGroup")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Level' has the same name as a defined type!
@@ -100,6 +133,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.GameplayEventsHeader")); }
 		@property final auto ref
 		{
 			int Flags() { return *cast(int*)(cast(size_t)&this + 40); }
@@ -117,6 +152,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[108];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameplayEvents.GameSessionInformation")); }
 		@property final
 		{
 			auto ref
@@ -161,18 +198,18 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17548], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OpenStatsFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void CloseStatsFile()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17551], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CloseStatsFile, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetFilename()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17552], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFilename, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

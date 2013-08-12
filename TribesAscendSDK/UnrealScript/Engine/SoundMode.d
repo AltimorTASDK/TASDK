@@ -7,10 +7,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface SoundMode : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundMode")); }
 	struct SoundClassAdjuster
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundMode.SoundClassAdjuster")); }
 		@property final
 		{
 			auto ref
@@ -29,6 +33,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundMode.AudioEQEffect")); }
 		@property final auto ref
 		{
 			float LFGain() { return *cast(float*)(cast(size_t)&this + 32); }

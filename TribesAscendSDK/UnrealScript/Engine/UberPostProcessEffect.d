@@ -6,6 +6,8 @@ import UnrealScript.Engine.DOFBloomMotionBlurEffect;
 extern(C++) interface UberPostProcessEffect : DOFBloomMotionBlurEffect
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UberPostProcessEffect")); }
 	enum ETonemapperType : ubyte
 	{
 		Tonemapper_Off = 0,

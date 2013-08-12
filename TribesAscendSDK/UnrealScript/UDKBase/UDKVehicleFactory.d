@@ -7,6 +7,23 @@ import UnrealScript.UDKBase.UDKVehicle;
 extern(C++) interface UDKVehicleFactory : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleFactory")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnVehicle;
+			ScriptFunction mSetHUDLocation;
+			ScriptFunction mGetTeamNum;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnVehicle() { return mSpawnVehicle ? mSpawnVehicle : (mSpawnVehicle = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.SpawnVehicle")); }
+			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.SetHUDLocation")); }
+			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleFactory.GetTeamNum")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -26,20 +43,20 @@ public extern(D):
 final:
 	void SpawnVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36132], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnVehicle, cast(void*)0, cast(void*)0);
 	}
 	void SetHUDLocation(Vector NewHUDLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewHUDLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36133], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHUDLocation, params.ptr, cast(void*)0);
 	}
 	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36135], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 }

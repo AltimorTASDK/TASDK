@@ -9,6 +9,29 @@ import UnrealScript.TribesGame.TrPlayerController;
 extern(C++) interface TrCallIn : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mGetCreditCost;
+			ScriptFunction mVerifyCredits;
+			ScriptFunction mVerifyPower;
+			ScriptFunction mFireCompletedCallIn;
+			ScriptFunction mTick;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.Initialize")); }
+			ScriptFunction GetCreditCost() { return mGetCreditCost ? mGetCreditCost : (mGetCreditCost = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.GetCreditCost")); }
+			ScriptFunction VerifyCredits() { return mVerifyCredits ? mVerifyCredits : (mVerifyCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.VerifyCredits")); }
+			ScriptFunction VerifyPower() { return mVerifyPower ? mVerifyPower : (mVerifyPower = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.VerifyPower")); }
+			ScriptFunction FireCompletedCallIn() { return mFireCompletedCallIn ? mFireCompletedCallIn : (mFireCompletedCallIn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.FireCompletedCallIn")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCallIn.Tick")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -43,27 +66,27 @@ final:
 		*cast(int*)params.ptr = NewPrice;
 		*cast(int*)&params[4] = NewBuildup;
 		*cast(int*)&params[8] = NewCooldown;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73958], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 	}
 	int GetCreditCost()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73962], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCreditCost, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool VerifyCredits()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73964], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VerifyCredits, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool VerifyPower()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73966], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VerifyPower, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool FireCompletedCallIn(int CallInOffs, Vector TargetLocation, Vector TargetNormal)
@@ -73,7 +96,7 @@ final:
 		*cast(int*)params.ptr = CallInOffs;
 		*cast(Vector*)&params[4] = TargetLocation;
 		*cast(Vector*)&params[16] = TargetNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73971], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FireCompletedCallIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void Tick(float DeltaTime)
@@ -81,6 +104,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73979], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 }

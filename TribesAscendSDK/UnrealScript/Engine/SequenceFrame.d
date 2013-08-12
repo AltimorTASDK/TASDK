@@ -1,5 +1,6 @@
 module UnrealScript.Engine.SequenceFrame;
 
+import ScriptClasses;
 import UnrealScript.Engine.SequenceObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Core.UObject;
@@ -8,6 +9,8 @@ import UnrealScript.Engine.Material;
 extern(C++) interface SequenceFrame : SequenceObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceFrame")); }
 	@property final
 	{
 		auto ref

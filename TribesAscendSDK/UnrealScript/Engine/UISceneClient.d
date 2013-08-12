@@ -9,6 +9,25 @@ import UnrealScript.Engine.DataStoreClient;
 extern(C++) interface UISceneClient : UIRoot
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UISceneClient")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsUIActive;
+			ScriptFunction mGetCanvasToScreen;
+			ScriptFunction mGetInverseCanvasToScreen;
+			ScriptFunction mInitializeSceneClient;
+		}
+		public @property static final
+		{
+			ScriptFunction IsUIActive() { return mIsUIActive ? mIsUIActive : (mIsUIActive = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.IsUIActive")); }
+			ScriptFunction GetCanvasToScreen() { return mGetCanvasToScreen ? mGetCanvasToScreen : (mGetCanvasToScreen = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.GetCanvasToScreen")); }
+			ScriptFunction GetInverseCanvasToScreen() { return mGetInverseCanvasToScreen ? mGetInverseCanvasToScreen : (mGetInverseCanvasToScreen = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.GetInverseCanvasToScreen")); }
+			ScriptFunction InitializeSceneClient() { return mInitializeSceneClient ? mInitializeSceneClient : (mInitializeSceneClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.InitializeSceneClient")); }
+		}
+	}
 	enum
 	{
 		SCENEFILTER_None = 0x00000000,
@@ -41,25 +60,25 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Flags;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17813], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsUIActive, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	UObject.Matrix GetCanvasToScreen()
 	{
 		ubyte params[64];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17816], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCanvasToScreen, params.ptr, cast(void*)0);
 		return *cast(UObject.Matrix*)params.ptr;
 	}
 	UObject.Matrix GetInverseCanvasToScreen()
 	{
 		ubyte params[64];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17818], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetInverseCanvasToScreen, params.ptr, cast(void*)0);
 		return *cast(UObject.Matrix*)params.ptr;
 	}
 	void InitializeSceneClient()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17820], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeSceneClient, cast(void*)0, cast(void*)0);
 	}
 }

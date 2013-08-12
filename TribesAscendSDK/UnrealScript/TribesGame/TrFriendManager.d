@@ -7,6 +7,43 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface TrFriendManager : TrObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFriendManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRequestFriendsList;
+			ScriptFunction mAddFriend;
+			ScriptFunction mJoinFriend;
+			ScriptFunction mIgnoreFriend;
+			ScriptFunction mRemoveFriend;
+			ScriptFunction mUpdate;
+			ScriptFunction mRemoveFromList;
+			ScriptFunction mGetOnlineFriendCount;
+			ScriptFunction mGetInGameFriendCount;
+			ScriptFunction mGetOnlineFollowerCount;
+			ScriptFunction mIsFriend;
+			ScriptFunction mGetFriendListIndex;
+			ScriptFunction mAddFriendScoreboard;
+		}
+		public @property static final
+		{
+			ScriptFunction RequestFriendsList() { return mRequestFriendsList ? mRequestFriendsList : (mRequestFriendsList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RequestFriendsList")); }
+			ScriptFunction AddFriend() { return mAddFriend ? mAddFriend : (mAddFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.AddFriend")); }
+			ScriptFunction JoinFriend() { return mJoinFriend ? mJoinFriend : (mJoinFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.JoinFriend")); }
+			ScriptFunction IgnoreFriend() { return mIgnoreFriend ? mIgnoreFriend : (mIgnoreFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.IgnoreFriend")); }
+			ScriptFunction RemoveFriend() { return mRemoveFriend ? mRemoveFriend : (mRemoveFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RemoveFriend")); }
+			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.Update")); }
+			ScriptFunction RemoveFromList() { return mRemoveFromList ? mRemoveFromList : (mRemoveFromList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.RemoveFromList")); }
+			ScriptFunction GetOnlineFriendCount() { return mGetOnlineFriendCount ? mGetOnlineFriendCount : (mGetOnlineFriendCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetOnlineFriendCount")); }
+			ScriptFunction GetInGameFriendCount() { return mGetInGameFriendCount ? mGetInGameFriendCount : (mGetInGameFriendCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetInGameFriendCount")); }
+			ScriptFunction GetOnlineFollowerCount() { return mGetOnlineFollowerCount ? mGetOnlineFollowerCount : (mGetOnlineFollowerCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetOnlineFollowerCount")); }
+			ScriptFunction IsFriend() { return mIsFriend ? mIsFriend : (mIsFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.IsFriend")); }
+			ScriptFunction GetFriendListIndex() { return mGetFriendListIndex ? mGetFriendListIndex : (mGetFriendListIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.GetFriendListIndex")); }
+			ScriptFunction AddFriendScoreboard() { return mAddFriendScoreboard ? mAddFriendScoreboard : (mAddFriendScoreboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFriendManager.AddFriendScoreboard")); }
+		}
+	}
 	enum EOnlineState : ubyte
 	{
 		EOS_OFFLINE = 0,
@@ -18,6 +55,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[17];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrFriendManager.FriendStruct")); }
 		@property final auto ref
 		{
 			ScriptString PlayerName() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
@@ -45,14 +84,14 @@ public extern(D):
 final:
 	void RequestFriendsList()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57686], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestFriendsList, cast(void*)0, cast(void*)0);
 	}
 	void AddFriend(ScriptString PlayerName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57687], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddFriend, params.ptr, cast(void*)0);
 	}
 	bool JoinFriend(ScriptString PlayerName, ScriptString Password)
 	{
@@ -60,7 +99,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		*cast(ScriptString*)&params[12] = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57689], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JoinFriend, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	void IgnoreFriend(ScriptString PlayerName, bool bIgnore)
@@ -69,45 +108,45 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		*cast(bool*)&params[12] = bIgnore;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57693], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IgnoreFriend, params.ptr, cast(void*)0);
 	}
 	void RemoveFriend(ScriptString PlayerName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57696], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveFriend, params.ptr, cast(void*)0);
 	}
 	void Update()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57698], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Update, cast(void*)0, cast(void*)0);
 	}
 	void RemoveFromList(ScriptString PlayerName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57703], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveFromList, params.ptr, cast(void*)0);
 	}
 	int GetOnlineFriendCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57707], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetOnlineFriendCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetInGameFriendCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57712], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetInGameFriendCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetOnlineFollowerCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57716], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetOnlineFollowerCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool IsFriend(ScriptString PlayerName)
@@ -115,7 +154,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57720], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFriend, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	int GetFriendListIndex(ScriptString PlayerName)
@@ -123,7 +162,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57724], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFriendListIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
 	void AddFriendScoreboard(ScriptString PlayerName)
@@ -131,6 +170,6 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57728], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddFriendScoreboard, params.ptr, cast(void*)0);
 	}
 }

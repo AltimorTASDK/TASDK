@@ -12,10 +12,69 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface PlayerReplicationInfo : ReplicationInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerReplicationInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDuplicate;
+			ScriptFunction mUpdatePing;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mClientInitialize;
+			ScriptFunction mSetPlayerTeam;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mShouldBroadCastWelcomeMessage;
+			ScriptFunction mDestroyed;
+			ScriptFunction mReset;
+			ScriptFunction mGetHumanReadableName;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mSetPlayerName;
+			ScriptFunction mSetWaitingPlayer;
+			ScriptFunction mOverrideWith;
+			ScriptFunction mCopyProperties;
+			ScriptFunction mIncrementDeaths;
+			ScriptFunction mSeamlessTravelTo;
+			ScriptFunction mSetUniqueId;
+			ScriptFunction mGetTeamNum;
+			ScriptFunction mIsInvalidName;
+			ScriptFunction mRegisterPlayerWithSession;
+			ScriptFunction mUnregisterPlayerFromSession;
+			ScriptFunction mGetSpectatorName;
+		}
+		public @property static final
+		{
+			ScriptFunction Duplicate() { return mDuplicate ? mDuplicate : (mDuplicate = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Duplicate")); }
+			ScriptFunction UpdatePing() { return mUpdatePing ? mUpdatePing : (mUpdatePing = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.UpdatePing")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.PostBeginPlay")); }
+			ScriptFunction ClientInitialize() { return mClientInitialize ? mClientInitialize : (mClientInitialize = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ClientInitialize")); }
+			ScriptFunction SetPlayerTeam() { return mSetPlayerTeam ? mSetPlayerTeam : (mSetPlayerTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetPlayerTeam")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ReplicatedEvent")); }
+			ScriptFunction ShouldBroadCastWelcomeMessage() { return mShouldBroadCastWelcomeMessage ? mShouldBroadCastWelcomeMessage : (mShouldBroadCastWelcomeMessage = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.ShouldBroadCastWelcomeMessage")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Destroyed")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.Reset")); }
+			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetHumanReadableName")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.DisplayDebug")); }
+			ScriptFunction SetPlayerName() { return mSetPlayerName ? mSetPlayerName : (mSetPlayerName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetPlayerName")); }
+			ScriptFunction SetWaitingPlayer() { return mSetWaitingPlayer ? mSetWaitingPlayer : (mSetWaitingPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetWaitingPlayer")); }
+			ScriptFunction OverrideWith() { return mOverrideWith ? mOverrideWith : (mOverrideWith = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.OverrideWith")); }
+			ScriptFunction CopyProperties() { return mCopyProperties ? mCopyProperties : (mCopyProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.CopyProperties")); }
+			ScriptFunction IncrementDeaths() { return mIncrementDeaths ? mIncrementDeaths : (mIncrementDeaths = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.IncrementDeaths")); }
+			ScriptFunction SeamlessTravelTo() { return mSeamlessTravelTo ? mSeamlessTravelTo : (mSeamlessTravelTo = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SeamlessTravelTo")); }
+			ScriptFunction SetUniqueId() { return mSetUniqueId ? mSetUniqueId : (mSetUniqueId = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.SetUniqueId")); }
+			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetTeamNum")); }
+			ScriptFunction IsInvalidName() { return mIsInvalidName ? mIsInvalidName : (mIsInvalidName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.IsInvalidName")); }
+			ScriptFunction RegisterPlayerWithSession() { return mRegisterPlayerWithSession ? mRegisterPlayerWithSession : (mRegisterPlayerWithSession = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.RegisterPlayerWithSession")); }
+			ScriptFunction UnregisterPlayerFromSession() { return mUnregisterPlayerFromSession ? mUnregisterPlayerFromSession : (mUnregisterPlayerFromSession = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.UnregisterPlayerFromSession")); }
+			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerReplicationInfo.GetSpectatorName")); }
+		}
+	}
 	struct AutomatedTestingDatum
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PlayerReplicationInfo.AutomatedTestingDatum")); }
 		@property final auto ref
 		{
 			int NumberOfMatchesPlayed() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -84,7 +143,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[17276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Duplicate, params.ptr, cast(void*)0);
 		return *cast(PlayerReplicationInfo*)params.ptr;
 	}
 	void UpdatePing(float TimeStamp)
@@ -92,54 +151,54 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = TimeStamp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24596], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePing, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24598], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ClientInitialize(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24599], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientInitialize, params.ptr, cast(void*)0);
 	}
 	void SetPlayerTeam(TeamInfo NewTeam)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TeamInfo*)params.ptr = NewTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerTeam, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24605], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	bool ShouldBroadCastWelcomeMessage(bool bExiting)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bExiting;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24612], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldBroadCastWelcomeMessage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24615], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24618], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetHumanReadableName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24619], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHumanReadableName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void DisplayDebug(HUD pHUD, float* YL, float* YPos)
@@ -149,7 +208,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *YL;
 		*cast(float*)&params[8] = *YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24621], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*YL = *cast(float*)&params[4];
 		*YPos = *cast(float*)&params[8];
 	}
@@ -158,77 +217,77 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24627], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerName, params.ptr, cast(void*)0);
 	}
 	void SetWaitingPlayer(bool B)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24629], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWaitingPlayer, params.ptr, cast(void*)0);
 	}
 	void OverrideWith(PlayerReplicationInfo PRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24632], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OverrideWith, params.ptr, cast(void*)0);
 	}
 	void CopyProperties(PlayerReplicationInfo PRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24634], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CopyProperties, params.ptr, cast(void*)0);
 	}
 	void IncrementDeaths(int Amt)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Amt;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24636], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementDeaths, params.ptr, cast(void*)0);
 	}
 	void SeamlessTravelTo(PlayerReplicationInfo NewPRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = NewPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24638], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeamlessTravelTo, params.ptr, cast(void*)0);
 	}
 	void SetUniqueId(OnlineSubsystem.UniqueNetId PlayerUniqueId)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerUniqueId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24640], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetUniqueId, params.ptr, cast(void*)0);
 	}
 	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24642], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 	bool IsInvalidName()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24644], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInvalidName, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void RegisterPlayerWithSession()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24650], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterPlayerWithSession, cast(void*)0, cast(void*)0);
 	}
 	void UnregisterPlayerFromSession()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24653], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnregisterPlayerFromSession, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetSpectatorName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

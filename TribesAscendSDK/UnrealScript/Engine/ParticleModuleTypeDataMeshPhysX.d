@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleTypeDataMeshPhysX;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleTypeDataPhysX;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ParticleModuleTypeDataMesh;
@@ -8,6 +9,8 @@ import UnrealScript.Engine.PhysXParticleSystem;
 extern(C++) interface ParticleModuleTypeDataMeshPhysX : ParticleModuleTypeDataMesh
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMeshPhysX")); }
 	enum EPhysXMeshRotationMethod : ubyte
 	{
 		PMRM_Disabled = 0,

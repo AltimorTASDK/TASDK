@@ -14,10 +14,59 @@ import UnrealScript.Engine.InterpData;
 extern(C++) interface SequenceOp : SequenceObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceOp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetObjectVars;
+			ScriptFunction mHasLinkedOps;
+			ScriptFunction mGetLinkedObjects;
+			ScriptFunction mGetInterpDataVars;
+			ScriptFunction mGetBoolVars;
+			ScriptFunction mLinkedVariables;
+			ScriptFunction mActivateOutputLink;
+			ScriptFunction mActivateNamedOutputLink;
+			ScriptFunction mActivated;
+			ScriptFunction mDeactivated;
+			ScriptFunction mVersionUpdated;
+			ScriptFunction mPopulateLinkedVariableValues;
+			ScriptFunction mPublishLinkedVariableValues;
+			ScriptFunction mReset;
+			ScriptFunction mGetPawn;
+			ScriptFunction mGetController;
+			ScriptFunction mForceActivateInput;
+			ScriptFunction mForceActivateOutput;
+		}
+		public @property static final
+		{
+			ScriptFunction GetObjectVars() { return mGetObjectVars ? mGetObjectVars : (mGetObjectVars = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetObjectVars")); }
+			ScriptFunction HasLinkedOps() { return mHasLinkedOps ? mHasLinkedOps : (mHasLinkedOps = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.HasLinkedOps")); }
+			ScriptFunction GetLinkedObjects() { return mGetLinkedObjects ? mGetLinkedObjects : (mGetLinkedObjects = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetLinkedObjects")); }
+			ScriptFunction GetInterpDataVars() { return mGetInterpDataVars ? mGetInterpDataVars : (mGetInterpDataVars = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetInterpDataVars")); }
+			ScriptFunction GetBoolVars() { return mGetBoolVars ? mGetBoolVars : (mGetBoolVars = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetBoolVars")); }
+			ScriptFunction LinkedVariables() { return mLinkedVariables ? mLinkedVariables : (mLinkedVariables = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.LinkedVariables")); }
+			ScriptFunction ActivateOutputLink() { return mActivateOutputLink ? mActivateOutputLink : (mActivateOutputLink = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.ActivateOutputLink")); }
+			ScriptFunction ActivateNamedOutputLink() { return mActivateNamedOutputLink ? mActivateNamedOutputLink : (mActivateNamedOutputLink = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.ActivateNamedOutputLink")); }
+			ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.Activated")); }
+			ScriptFunction Deactivated() { return mDeactivated ? mDeactivated : (mDeactivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.Deactivated")); }
+			ScriptFunction VersionUpdated() { return mVersionUpdated ? mVersionUpdated : (mVersionUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.VersionUpdated")); }
+			ScriptFunction PopulateLinkedVariableValues() { return mPopulateLinkedVariableValues ? mPopulateLinkedVariableValues : (mPopulateLinkedVariableValues = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.PopulateLinkedVariableValues")); }
+			ScriptFunction PublishLinkedVariableValues() { return mPublishLinkedVariableValues ? mPublishLinkedVariableValues : (mPublishLinkedVariableValues = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.PublishLinkedVariableValues")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.Reset")); }
+			ScriptFunction GetPawn() { return mGetPawn ? mGetPawn : (mGetPawn = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetPawn")); }
+			ScriptFunction GetController() { return mGetController ? mGetController : (mGetController = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.GetController")); }
+			ScriptFunction ForceActivateInput() { return mForceActivateInput ? mForceActivateInput : (mForceActivateInput = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.ForceActivateInput")); }
+			ScriptFunction ForceActivateOutput() { return mForceActivateOutput ? mForceActivateOutput : (mForceActivateOutput = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceOp.ForceActivateOutput")); }
+		}
+	}
 	struct SeqOpInputLink
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SequenceOp.SeqOpInputLink")); }
 		@property final
 		{
 			auto ref
@@ -49,6 +98,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SequenceOp.SeqOpOutputLink")); }
 		@property final
 		{
 			auto ref
@@ -80,6 +131,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SequenceOp.SeqVarLink")); }
 		@property final
 		{
 			auto ref
@@ -117,6 +170,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SequenceOp.SeqEventLink")); }
 		@property final
 		{
 			auto ref
@@ -141,6 +196,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SequenceOp.SeqOpOutputInputLink")); }
 		@property final auto ref
 		{
 			int InputLinkIdx() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -186,7 +243,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(UObject)*)params.ptr = *objVars;
 		*cast(ScriptString*)&params[12] = inDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4369], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetObjectVars, params.ptr, cast(void*)0);
 		*objVars = *cast(ScriptArray!(UObject)*)params.ptr;
 	}
 	bool HasLinkedOps(bool bConsiderInputLinks)
@@ -194,7 +251,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bConsiderInputLinks;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6801], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasLinkedOps, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void GetLinkedObjects(ScriptArray!(SequenceObject)* out_Objects, ScriptClass ObjectType, bool bRecurse)
@@ -204,7 +261,7 @@ final:
 		*cast(ScriptArray!(SequenceObject)*)params.ptr = *out_Objects;
 		*cast(ScriptClass*)&params[12] = ObjectType;
 		*cast(bool*)&params[16] = bRecurse;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6804], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLinkedObjects, params.ptr, cast(void*)0);
 		*out_Objects = *cast(ScriptArray!(SequenceObject)*)params.ptr;
 	}
 	void GetInterpDataVars(ScriptArray!(InterpData)* outIData, ScriptString inDesc)
@@ -213,7 +270,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(InterpData)*)params.ptr = *outIData;
 		*cast(ScriptString*)&params[12] = inDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6812], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetInterpDataVars, params.ptr, cast(void*)0);
 		*outIData = *cast(ScriptArray!(InterpData)*)params.ptr;
 	}
 	void GetBoolVars(ScriptArray!(ubyte)* boolVars, ScriptString inDesc)
@@ -222,7 +279,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ubyte)*)params.ptr = *boolVars;
 		*cast(ScriptString*)&params[12] = inDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6816], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoolVars, params.ptr, cast(void*)0);
 		*boolVars = *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
 	void LinkedVariables(ScriptClass VarClass, SequenceVariable* OutVariable, ScriptString inDesc)
@@ -232,7 +289,7 @@ final:
 		*cast(ScriptClass*)params.ptr = VarClass;
 		*cast(SequenceVariable*)&params[4] = *OutVariable;
 		*cast(ScriptString*)&params[8] = inDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6820], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LinkedVariables, params.ptr, cast(void*)0);
 		*OutVariable = *cast(SequenceVariable*)&params[4];
 	}
 	bool ActivateOutputLink(int OutputIdx)
@@ -240,7 +297,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = OutputIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateOutputLink, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool ActivateNamedOutputLink(ScriptString LinkDesc)
@@ -248,16 +305,16 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LinkDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6827], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateNamedOutputLink, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void Activated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6830], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);
 	}
 	void Deactivated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6831], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Deactivated, cast(void*)0, cast(void*)0);
 	}
 	void VersionUpdated(int OldVersion, int NewVersion)
 	{
@@ -265,26 +322,26 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = OldVersion;
 		*cast(int*)&params[4] = NewVersion;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6832], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VersionUpdated, params.ptr, cast(void*)0);
 	}
 	void PopulateLinkedVariableValues()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6835], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateLinkedVariableValues, cast(void*)0, cast(void*)0);
 	}
 	void PublishLinkedVariableValues()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6836], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PublishLinkedVariableValues, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6837], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	Pawn GetPawn(Actor TheActor)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = TheActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6838], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawn, params.ptr, cast(void*)0);
 		return *cast(Pawn*)&params[4];
 	}
 	Controller GetController(Actor TheActor)
@@ -292,7 +349,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = TheActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6843], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetController, params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[4];
 	}
 	void ForceActivateInput(int InputIdx)
@@ -300,13 +357,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = InputIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6848], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceActivateInput, params.ptr, cast(void*)0);
 	}
 	void ForceActivateOutput(int OutputIdx)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = OutputIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6850], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceActivateOutput, params.ptr, cast(void*)0);
 	}
 }

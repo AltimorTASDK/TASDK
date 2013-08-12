@@ -8,6 +8,8 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface TrAnimNodeTurnInPlace_Rotator : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeTurnInPlace_Rotator")); }
 	@property final auto ref
 	{
 		ScriptArray!(TrAnimNodeTurnInPlace) c_TurnInPlaceNodes() { return *cast(ScriptArray!(TrAnimNodeTurnInPlace)*)(cast(size_t)cast(void*)this + 248); }

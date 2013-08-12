@@ -7,6 +7,13 @@ import UnrealScript.Engine.UIRoot;
 extern(C++) interface UIDataProvider_MenuItem : UIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_MenuItem")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mIsFiltered;
+		public @property static final ScriptFunction IsFiltered() { return mIsFiltered ? mIsFiltered : (mIsFiltered = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_MenuItem.IsFiltered")); }
+	}
 	enum EMenuOptionType : ubyte
 	{
 		MENUOT_ComboReadOnly = 0,
@@ -59,7 +66,7 @@ public extern(D):
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28149], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

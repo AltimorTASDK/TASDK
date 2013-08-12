@@ -7,10 +7,27 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface NavMeshPathGoalEvaluator : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPathGoalEvaluator")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRecycle;
+			ScriptFunction mGetDumpString;
+		}
+		public @property static final
+		{
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathGoalEvaluator.Recycle")); }
+			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshPathGoalEvaluator.GetDumpString")); }
+		}
+	}
 	struct BiasedGoalActor
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.NavMeshPathGoalEvaluator.BiasedGoalActor")); }
 		@property final auto ref
 		{
 			int ExtraCost() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -32,13 +49,13 @@ public extern(D):
 final:
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20914], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetDumpString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20915], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDumpString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

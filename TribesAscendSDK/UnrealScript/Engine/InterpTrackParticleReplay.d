@@ -6,10 +6,14 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackParticleReplay : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackParticleReplay")); }
 	struct ParticleReplayTrackKey
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackParticleReplay.ParticleReplayTrackKey")); }
 		@property final auto ref
 		{
 			int ClipIDNumber() { return *cast(int*)(cast(size_t)&this + 8); }

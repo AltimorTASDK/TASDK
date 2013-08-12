@@ -8,10 +8,39 @@ import UnrealScript.IpDrv.MCPBase;
 extern(C++) interface OnlineTitleFileDownloadMcp : MCPBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineTitleFileDownloadMcp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnReadTitleFileComplete;
+			ScriptFunction mReadTitleFile;
+			ScriptFunction mAddReadTitleFileCompleteDelegate;
+			ScriptFunction mClearReadTitleFileCompleteDelegate;
+			ScriptFunction mGetTitleFileContents;
+			ScriptFunction mGetTitleFileState;
+			ScriptFunction mClearDownloadedFiles;
+			ScriptFunction mClearDownloadedFile;
+		}
+		public @property static final
+		{
+			ScriptFunction OnReadTitleFileComplete() { return mOnReadTitleFileComplete ? mOnReadTitleFileComplete : (mOnReadTitleFileComplete = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete")); }
+			ScriptFunction ReadTitleFile() { return mReadTitleFile ? mReadTitleFile : (mReadTitleFile = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ReadTitleFile")); }
+			ScriptFunction AddReadTitleFileCompleteDelegate() { return mAddReadTitleFileCompleteDelegate ? mAddReadTitleFileCompleteDelegate : (mAddReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate")); }
+			ScriptFunction ClearReadTitleFileCompleteDelegate() { return mClearReadTitleFileCompleteDelegate ? mClearReadTitleFileCompleteDelegate : (mClearReadTitleFileCompleteDelegate = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate")); }
+			ScriptFunction GetTitleFileContents() { return mGetTitleFileContents ? mGetTitleFileContents : (mGetTitleFileContents = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileContents")); }
+			ScriptFunction GetTitleFileState() { return mGetTitleFileState ? mGetTitleFileState : (mGetTitleFileState = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState")); }
+			ScriptFunction ClearDownloadedFiles() { return mClearDownloadedFiles ? mClearDownloadedFiles : (mClearDownloadedFiles = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFiles")); }
+			ScriptFunction ClearDownloadedFile() { return mClearDownloadedFile ? mClearDownloadedFile : (mClearDownloadedFile = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFile")); }
+		}
+	}
 	struct TitleFileMcp
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.TitleFileMcp")); }
 		@property final auto ref
 		{
 			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
@@ -24,6 +53,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.FileNameToURLMapping")); }
 		@property final auto ref
 		{
 			ScriptName UrlMapping() { return *cast(ScriptName*)(cast(size_t)&this + 8); }
@@ -50,14 +81,14 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(ScriptString*)&params[4] = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33846], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadTitleFileComplete, params.ptr, cast(void*)0);
 	}
 	bool ReadTitleFile(ScriptString FileToRead)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FileToRead;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33862], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReadTitleFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void AddReadTitleFileCompleteDelegate(
@@ -69,7 +100,7 @@ void* ReadTitleFileCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadTitleFileCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33865], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddReadTitleFileCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearReadTitleFileCompleteDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -80,7 +111,7 @@ void* ReadTitleFileCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadTitleFileCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33867], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadTitleFileCompleteDelegate, params.ptr, cast(void*)0);
 	}
 	bool GetTitleFileContents(ScriptString Filename, ScriptArray!(ubyte)* FileContents)
 	{
@@ -88,7 +119,7 @@ void**)params.ptr = ReadTitleFileCompleteDelegate;
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
 		*cast(ScriptArray!(ubyte)*)&params[12] = *FileContents;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33870], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileContents, params.ptr, cast(void*)0);
 		*FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
 		return *cast(bool*)&params[24];
 	}
@@ -97,14 +128,14 @@ void**)params.ptr = ReadTitleFileCompleteDelegate;
 		ubyte params[13];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33875], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileState, params.ptr, cast(void*)0);
 		return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)&params[12];
 	}
 	bool ClearDownloadedFiles()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33879], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearDownloadedFiles, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool ClearDownloadedFile(ScriptString Filename)
@@ -112,7 +143,7 @@ void**)params.ptr = ReadTitleFileCompleteDelegate;
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33881], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearDownloadedFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 }

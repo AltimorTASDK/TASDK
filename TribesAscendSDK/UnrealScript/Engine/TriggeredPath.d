@@ -9,6 +9,23 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TriggeredPath : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggeredPath")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnToggle;
+			ScriptFunction mSpecialHandling;
+			ScriptFunction mSuggestMovePreparation;
+		}
+		public @property static final
+		{
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.OnToggle")); }
+			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.SpecialHandling")); }
+			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggeredPath.SuggestMovePreparation")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref Actor MyTrigger() { return *cast(Actor*)(cast(size_t)cast(void*)this + 696); }
@@ -21,14 +38,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28063], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	Actor SpecialHandling(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28065], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialHandling, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	bool SuggestMovePreparation(Pawn Other)
@@ -36,7 +53,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28069], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

@@ -10,11 +10,58 @@ import UnrealScript.Engine.Interaction;
 extern(C++) interface Console : Interaction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Console")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialized;
+			ScriptFunction mSetInputText;
+			ScriptFunction mSetCursorPos;
+			ScriptFunction mPurgeCommandFromHistory;
+			ScriptFunction mConsoleCommand;
+			ScriptFunction mClearOutput;
+			ScriptFunction mOutputTextLine;
+			ScriptFunction mOutputText;
+			ScriptFunction mStartTyping;
+			ScriptFunction mPostRender_Console;
+			ScriptFunction mInputKey;
+			ScriptFunction mInputChar;
+			ScriptFunction mFlushPlayerInput;
+			ScriptFunction mProcessControlKey;
+			ScriptFunction mAppendInputText;
+			ScriptFunction mBuildRuntimeAutoCompleteList;
+			ScriptFunction mUpdateCompleteIndices;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.Initialized")); }
+			ScriptFunction SetInputText() { return mSetInputText ? mSetInputText : (mSetInputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.SetInputText")); }
+			ScriptFunction SetCursorPos() { return mSetCursorPos ? mSetCursorPos : (mSetCursorPos = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.SetCursorPos")); }
+			ScriptFunction PurgeCommandFromHistory() { return mPurgeCommandFromHistory ? mPurgeCommandFromHistory : (mPurgeCommandFromHistory = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.PurgeCommandFromHistory")); }
+			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ConsoleCommand")); }
+			ScriptFunction ClearOutput() { return mClearOutput ? mClearOutput : (mClearOutput = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ClearOutput")); }
+			ScriptFunction OutputTextLine() { return mOutputTextLine ? mOutputTextLine : (mOutputTextLine = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.OutputTextLine")); }
+			ScriptFunction OutputText() { return mOutputText ? mOutputText : (mOutputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.OutputText")); }
+			ScriptFunction StartTyping() { return mStartTyping ? mStartTyping : (mStartTyping = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.StartTyping")); }
+			ScriptFunction PostRender_Console() { return mPostRender_Console ? mPostRender_Console : (mPostRender_Console = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.PostRender_Console")); }
+			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.InputKey")); }
+			ScriptFunction InputChar() { return mInputChar ? mInputChar : (mInputChar = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.InputChar")); }
+			ScriptFunction FlushPlayerInput() { return mFlushPlayerInput ? mFlushPlayerInput : (mFlushPlayerInput = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.FlushPlayerInput")); }
+			ScriptFunction ProcessControlKey() { return mProcessControlKey ? mProcessControlKey : (mProcessControlKey = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.ProcessControlKey")); }
+			ScriptFunction AppendInputText() { return mAppendInputText ? mAppendInputText : (mAppendInputText = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.AppendInputText")); }
+			ScriptFunction BuildRuntimeAutoCompleteList() { return mBuildRuntimeAutoCompleteList ? mBuildRuntimeAutoCompleteList : (mBuildRuntimeAutoCompleteList = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.BuildRuntimeAutoCompleteList")); }
+			ScriptFunction UpdateCompleteIndices() { return mUpdateCompleteIndices ? mUpdateCompleteIndices : (mUpdateCompleteIndices = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.UpdateCompleteIndices")); }
+		}
+	}
 	enum MaxHistory = 16;
 	struct scrollbackData
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.scrollbackData")); }
 		@property final auto ref
 		{
 			UObject.Color OverrideColor() { return *cast(UObject.Color*)(cast(size_t)&this + 12); }
@@ -25,6 +72,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.AutoCompleteCommand")); }
 		@property final auto ref
 		{
 			ScriptString Desc() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
@@ -35,6 +84,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Console.AutoCompleteNode")); }
 		@property final auto ref
 		{
 			ScriptArray!(int) AutoCompleteListIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
@@ -85,39 +136,39 @@ public extern(D):
 final:
 	void Initialized()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12982], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialized, cast(void*)0, cast(void*)0);
 	}
 	void SetInputText(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12983], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInputText, params.ptr, cast(void*)0);
 	}
 	void SetCursorPos(int Position)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Position;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12985], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCursorPos, params.ptr, cast(void*)0);
 	}
 	void PurgeCommandFromHistory(ScriptString Command)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PurgeCommandFromHistory, params.ptr, cast(void*)0);
 	}
 	void ConsoleCommand(ScriptString Command)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 	void ClearOutput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12996], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearOutput, cast(void*)0, cast(void*)0);
 	}
 	void OutputTextLine(ScriptString Text, UObject.Color OverrideColor)
 	{
@@ -125,7 +176,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		*cast(UObject.Color*)&params[12] = OverrideColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12997], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OutputTextLine, params.ptr, cast(void*)0);
 	}
 	void OutputText(ScriptString Text, UObject.Color OverrideColor)
 	{
@@ -133,21 +184,21 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		*cast(UObject.Color*)&params[12] = OverrideColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13001], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OutputText, params.ptr, cast(void*)0);
 	}
 	void StartTyping(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13007], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartTyping, params.ptr, cast(void*)0);
 	}
 	void PostRender_Console(Canvas pCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13009], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
 	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
@@ -158,7 +209,7 @@ final:
 		*cast(UObject.EInputEvent*)&params[12] = Event;
 		*cast(float*)&params[16] = AmountDepressed;
 		*cast(bool*)&params[20] = bGamepad;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13011], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	bool InputChar(int ControllerId, ScriptString Unicode)
@@ -167,12 +218,12 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptString*)&params[4] = Unicode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13018], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputChar, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void FlushPlayerInput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13022], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlushPlayerInput, cast(void*)0, cast(void*)0);
 	}
 	bool ProcessControlKey(ScriptName Key, UObject.EInputEvent Event)
 	{
@@ -180,7 +231,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Key;
 		*cast(UObject.EInputEvent*)&params[8] = Event;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13024], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessControlKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void AppendInputText(ScriptString Text)
@@ -188,17 +239,17 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13028], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AppendInputText, params.ptr, cast(void*)0);
 	}
 	void BuildRuntimeAutoCompleteList(bool bForce)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13031], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BuildRuntimeAutoCompleteList, params.ptr, cast(void*)0);
 	}
 	void UpdateCompleteIndices()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13033], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCompleteIndices, cast(void*)0, cast(void*)0);
 	}
 }

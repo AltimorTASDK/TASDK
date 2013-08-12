@@ -7,6 +7,21 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface DirectionalLightComponent : LightComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DirectionalLightComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnUpdatePropertyLightColor;
+			ScriptFunction mOnUpdatePropertyBrightness;
+		}
+		public @property static final
+		{
+			ScriptFunction OnUpdatePropertyLightColor() { return mOnUpdatePropertyLightColor ? mOnUpdatePropertyLightColor : (mOnUpdatePropertyLightColor = ScriptObject.Find!(ScriptFunction)("Function Engine.DirectionalLightComponent.OnUpdatePropertyLightColor")); }
+			ScriptFunction OnUpdatePropertyBrightness() { return mOnUpdatePropertyBrightness ? mOnUpdatePropertyBrightness : (mOnUpdatePropertyBrightness = ScriptObject.Find!(ScriptFunction)("Function Engine.DirectionalLightComponent.OnUpdatePropertyBrightness")); }
+		}
+	}
 	@property final auto ref
 	{
 		EngineTypes.LightmassDirectionalLightSettings LightmassSettings() { return *cast(EngineTypes.LightmassDirectionalLightSettings*)(cast(size_t)cast(void*)this + 448); }
@@ -18,10 +33,10 @@ public extern(D):
 final:
 	void OnUpdatePropertyLightColor()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14489], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyLightColor, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyBrightness()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14490], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyBrightness, cast(void*)0, cast(void*)0);
 	}
 }

@@ -12,6 +12,45 @@ import UnrealScript.Engine.Font;
 extern(C++) interface MobileHUD : HUD
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileHUD")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostRender;
+			ScriptFunction mDrawMobileDebugString;
+			ScriptFunction mShowMobileHud;
+			ScriptFunction mRenderMobileMenu;
+			ScriptFunction mDrawInputZoneOverlays;
+			ScriptFunction mDrawMobileZone_Button;
+			ScriptFunction mDrawMobileZone_Joystick;
+			ScriptFunction mDrawMobileZone_Trackball;
+			ScriptFunction mDrawMobileTilt;
+			ScriptFunction mDrawMobileZone_Slider;
+			ScriptFunction mRefreshKismetLinks;
+			ScriptFunction mAddKismetRenderEvent;
+			ScriptFunction mRenderKismetHud;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.PostBeginPlay")); }
+			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.PostRender")); }
+			ScriptFunction DrawMobileDebugString() { return mDrawMobileDebugString ? mDrawMobileDebugString : (mDrawMobileDebugString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileDebugString")); }
+			ScriptFunction ShowMobileHud() { return mShowMobileHud ? mShowMobileHud : (mShowMobileHud = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.ShowMobileHud")); }
+			ScriptFunction RenderMobileMenu() { return mRenderMobileMenu ? mRenderMobileMenu : (mRenderMobileMenu = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RenderMobileMenu")); }
+			ScriptFunction DrawInputZoneOverlays() { return mDrawInputZoneOverlays ? mDrawInputZoneOverlays : (mDrawInputZoneOverlays = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawInputZoneOverlays")); }
+			ScriptFunction DrawMobileZone_Button() { return mDrawMobileZone_Button ? mDrawMobileZone_Button : (mDrawMobileZone_Button = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Button")); }
+			ScriptFunction DrawMobileZone_Joystick() { return mDrawMobileZone_Joystick ? mDrawMobileZone_Joystick : (mDrawMobileZone_Joystick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Joystick")); }
+			ScriptFunction DrawMobileZone_Trackball() { return mDrawMobileZone_Trackball ? mDrawMobileZone_Trackball : (mDrawMobileZone_Trackball = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Trackball")); }
+			ScriptFunction DrawMobileTilt() { return mDrawMobileTilt ? mDrawMobileTilt : (mDrawMobileTilt = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileTilt")); }
+			ScriptFunction DrawMobileZone_Slider() { return mDrawMobileZone_Slider ? mDrawMobileZone_Slider : (mDrawMobileZone_Slider = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.DrawMobileZone_Slider")); }
+			ScriptFunction RefreshKismetLinks() { return mRefreshKismetLinks ? mRefreshKismetLinks : (mRefreshKismetLinks = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RefreshKismetLinks")); }
+			ScriptFunction AddKismetRenderEvent() { return mAddKismetRenderEvent ? mAddKismetRenderEvent : (mAddKismetRenderEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.AddKismetRenderEvent")); }
+			ScriptFunction RenderKismetHud() { return mRenderKismetHud ? mRenderKismetHud : (mRenderKismetHud = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileHUD.RenderKismetHud")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -55,11 +94,11 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32333], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostRender()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32334], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, cast(void*)0, cast(void*)0);
 	}
 	void DrawMobileDebugString(float XPos, float YPos, ScriptString Str)
 	{
@@ -68,71 +107,71 @@ final:
 		*cast(float*)params.ptr = XPos;
 		*cast(float*)&params[4] = YPos;
 		*cast(ScriptString*)&params[8] = Str;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32343], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileDebugString, params.ptr, cast(void*)0);
 	}
 	bool ShowMobileHud()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32347], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMobileHud, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void RenderMobileMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32349], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderMobileMenu, cast(void*)0, cast(void*)0);
 	}
 	void DrawInputZoneOverlays()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32359], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawInputZoneOverlays, cast(void*)0, cast(void*)0);
 	}
 	void DrawMobileZone_Button(MobileInputZone Zone)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32387], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileZone_Button, params.ptr, cast(void*)0);
 	}
 	void DrawMobileZone_Joystick(MobileInputZone Zone)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32411], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileZone_Joystick, params.ptr, cast(void*)0);
 	}
 	void DrawMobileZone_Trackball(MobileInputZone Zone)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32425], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileZone_Trackball, params.ptr, cast(void*)0);
 	}
 	void DrawMobileTilt(MobilePlayerInput MobileInput)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobilePlayerInput*)params.ptr = MobileInput;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32429], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileTilt, params.ptr, cast(void*)0);
 	}
 	void DrawMobileZone_Slider(MobileInputZone Zone)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMobileZone_Slider, params.ptr, cast(void*)0);
 	}
 	void RefreshKismetLinks()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32453], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshKismetLinks, cast(void*)0, cast(void*)0);
 	}
 	void AddKismetRenderEvent(SeqEvent_HudRender NewEvent)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqEvent_HudRender*)params.ptr = NewEvent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKismetRenderEvent, params.ptr, cast(void*)0);
 	}
 	void RenderKismetHud()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32461], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderKismetHud, cast(void*)0, cast(void*)0);
 	}
 }

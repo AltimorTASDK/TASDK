@@ -13,6 +13,13 @@ import UnrealScript.TribesGame.TrControlSettings;
 extern(C++) interface TrSettingsManager : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSettingsManager")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mInitialize;
+		public @property static final ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSettingsManager.Initialize")); }
+	}
 	@property final auto ref
 	{
 		TrRegionSettings RegionSettings() { return *cast(TrRegionSettings*)(cast(size_t)cast(void*)this + 76); }
@@ -25,6 +32,6 @@ public extern(D):
 	}
 	final void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112354], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 }

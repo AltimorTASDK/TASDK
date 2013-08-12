@@ -19,6 +19,43 @@ import UnrealScript.UTGame.UTMapMusicInfo;
 extern(C++) interface UTMapInfo : UDKMapInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMapInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mVerifyMapExtent;
+			ScriptFunction mFindObjectives;
+			ScriptFunction mRenderLinks;
+			ScriptFunction mRenderAdditionalInformation;
+			ScriptFunction mUpdateNodes;
+			ScriptFunction mDrawMap;
+			ScriptFunction mAddKeyVehicle;
+			ScriptFunction mDrawRotatedTile;
+			ScriptFunction mDrawRotatedMaterialTile;
+			ScriptFunction mUpdateHUDLocation;
+			ScriptFunction mChangeMapRotation;
+			ScriptFunction mDrawMapImage;
+			ScriptFunction mGetActorHudLocation;
+		}
+		public @property static final
+		{
+			ScriptFunction VerifyMapExtent() { return mVerifyMapExtent ? mVerifyMapExtent : (mVerifyMapExtent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.VerifyMapExtent")); }
+			ScriptFunction FindObjectives() { return mFindObjectives ? mFindObjectives : (mFindObjectives = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.FindObjectives")); }
+			ScriptFunction RenderLinks() { return mRenderLinks ? mRenderLinks : (mRenderLinks = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.RenderLinks")); }
+			ScriptFunction RenderAdditionalInformation() { return mRenderAdditionalInformation ? mRenderAdditionalInformation : (mRenderAdditionalInformation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.RenderAdditionalInformation")); }
+			ScriptFunction UpdateNodes() { return mUpdateNodes ? mUpdateNodes : (mUpdateNodes = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.UpdateNodes")); }
+			ScriptFunction DrawMap() { return mDrawMap ? mDrawMap : (mDrawMap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.DrawMap")); }
+			ScriptFunction AddKeyVehicle() { return mAddKeyVehicle ? mAddKeyVehicle : (mAddKeyVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.AddKeyVehicle")); }
+			ScriptFunction DrawRotatedTile() { return mDrawRotatedTile ? mDrawRotatedTile : (mDrawRotatedTile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.DrawRotatedTile")); }
+			ScriptFunction DrawRotatedMaterialTile() { return mDrawRotatedMaterialTile ? mDrawRotatedMaterialTile : (mDrawRotatedMaterialTile = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.DrawRotatedMaterialTile")); }
+			ScriptFunction UpdateHUDLocation() { return mUpdateHUDLocation ? mUpdateHUDLocation : (mUpdateHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.UpdateHUDLocation")); }
+			ScriptFunction ChangeMapRotation() { return mChangeMapRotation ? mChangeMapRotation : (mChangeMapRotation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.ChangeMapRotation")); }
+			ScriptFunction DrawMapImage() { return mDrawMapImage ? mDrawMapImage : (mDrawMapImage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.DrawMapImage")); }
+			ScriptFunction GetActorHudLocation() { return mGetActorHudLocation ? mGetActorHudLocation : (mGetActorHudLocation = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMapInfo.GetActorHudLocation")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -61,11 +98,11 @@ public extern(D):
 final:
 	void VerifyMapExtent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48361], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VerifyMapExtent, cast(void*)0, cast(void*)0);
 	}
 	void FindObjectives()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48365], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindObjectives, cast(void*)0, cast(void*)0);
 	}
 	void RenderLinks(Canvas pCanvas, UTPlayerController PlayerOwner)
 	{
@@ -73,7 +110,7 @@ final:
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
 		*cast(UTPlayerController*)&params[4] = PlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48367], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderLinks, params.ptr, cast(void*)0);
 	}
 	void RenderAdditionalInformation(Canvas pCanvas, UTPlayerController PlayerOwner)
 	{
@@ -81,14 +118,14 @@ final:
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
 		*cast(UTPlayerController*)&params[4] = PlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderAdditionalInformation, params.ptr, cast(void*)0);
 	}
 	void UpdateNodes(UTPlayerController PlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateNodes, params.ptr, cast(void*)0);
 	}
 	void DrawMap(Canvas pCanvas, UTPlayerController PlayerOwner, float XPos, float YPos, float Width, float Height, bool bFullDetail, float AspectRatio)
 	{
@@ -102,14 +139,14 @@ final:
 		*cast(float*)&params[20] = Height;
 		*cast(bool*)&params[24] = bFullDetail;
 		*cast(float*)&params[28] = AspectRatio;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48381], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMap, params.ptr, cast(void*)0);
 	}
 	void AddKeyVehicle(UTVehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTVehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48421], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKeyVehicle, params.ptr, cast(void*)0);
 	}
 	void DrawRotatedTile(Canvas pCanvas, Texture2D T, Vector MapLocation, int InYaw, float IconScale, UIRoot.TextureCoordinates TexCoords, UObject.LinearColor DrawColor)
 	{
@@ -122,7 +159,7 @@ final:
 		*cast(float*)&params[24] = IconScale;
 		*cast(UIRoot.TextureCoordinates*)&params[28] = TexCoords;
 		*cast(UObject.LinearColor*)&params[44] = DrawColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48424], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedTile, params.ptr, cast(void*)0);
 	}
 	void DrawRotatedMaterialTile(Canvas pCanvas, MaterialInstanceConstant M, Vector MapLocation, int InYaw, float XWidth, float YWidth, float XStart, float YStart, float XLength, float YLength)
 	{
@@ -138,14 +175,14 @@ final:
 		*cast(float*)&params[36] = YStart;
 		*cast(float*)&params[40] = XLength;
 		*cast(float*)&params[44] = YLength;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48435], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedMaterialTile, params.ptr, cast(void*)0);
 	}
 	Vector UpdateHUDLocation(Vector InLocation)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = InLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48447], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHUDLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	void ChangeMapRotation(Rotator NewMapRotation)
@@ -153,7 +190,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewMapRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48453], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeMapRotation, params.ptr, cast(void*)0);
 	}
 	void DrawMapImage(Canvas pCanvas, float X, float Y, float W, float H, float PlayerYaw, float BkgImgScaling)
 	{
@@ -166,14 +203,14 @@ final:
 		*cast(float*)&params[16] = H;
 		*cast(float*)&params[20] = PlayerYaw;
 		*cast(float*)&params[24] = BkgImgScaling;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48456], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMapImage, params.ptr, cast(void*)0);
 	}
 	Vector GetActorHudLocation(Actor CActor)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = CActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48466], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorHudLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 }

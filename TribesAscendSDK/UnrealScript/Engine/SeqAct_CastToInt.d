@@ -1,10 +1,13 @@
 module UnrealScript.Engine.SeqAct_CastToInt;
 
+import ScriptClasses;
 import UnrealScript.Engine.SeqAct_SetSequenceVariable;
 
 extern(C++) interface SeqAct_CastToInt : SeqAct_SetSequenceVariable
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_CastToInt")); }
 	@property final
 	{
 		auto ref

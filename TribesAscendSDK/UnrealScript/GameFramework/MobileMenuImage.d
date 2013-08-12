@@ -9,6 +9,13 @@ import UnrealScript.GameFramework.MobileMenuObject;
 extern(C++) interface MobileMenuImage : MobileMenuObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuImage")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mRenderObject;
+		public @property static final ScriptFunction RenderObject() { return mRenderObject ? mRenderObject : (mRenderObject = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuImage.RenderObject")); }
+	}
 	enum MenuImageDrawStyle : ubyte
 	{
 		IDS_Normal = 0,
@@ -28,6 +35,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32650], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderObject, params.ptr, cast(void*)0);
 	}
 }

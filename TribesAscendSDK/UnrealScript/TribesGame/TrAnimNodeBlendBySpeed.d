@@ -8,6 +8,8 @@ import UnrealScript.Engine.AnimNodeBlendBySpeed;
 extern(C++) interface TrAnimNodeBlendBySpeed : AnimNodeBlendBySpeed
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendBySpeed")); }
 	@property final
 	{
 		auto ref

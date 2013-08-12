@@ -10,18 +10,37 @@ import UnrealScript.Engine.SoundNodeWave;
 extern(C++) interface UTScriptedVoiceMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTScriptedVoiceMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAnnouncementSound;
+			ScriptFunction mClientReceive;
+			ScriptFunction mGetString;
+			ScriptFunction mAnnouncementLevel;
+		}
+		public @property static final
+		{
+			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTScriptedVoiceMessage.AnnouncementSound")); }
+			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTScriptedVoiceMessage.ClientReceive")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTScriptedVoiceMessage.GetString")); }
+			ScriptFunction AnnouncementLevel() { return mAnnouncementLevel ? mAnnouncementLevel : (mAnnouncementLevel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTScriptedVoiceMessage.AnnouncementLevel")); }
+		}
+	}
 final:
-	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = MessageIndex;
 		*cast(UObject*)&params[4] = OptionalObject;
 		*cast(PlayerController*)&params[8] = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49031], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -30,9 +49,9 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49036], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -41,15 +60,15 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49042], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	ubyte AnnouncementLevel(ubyte MessageIndex)
+	static ubyte AnnouncementLevel(ubyte MessageIndex)
 	{
 		ubyte params[2];
 		params[] = 0;
 		params[0] = MessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49049], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementLevel, params.ptr, cast(void*)0);
 		return params[1];
 	}
 }

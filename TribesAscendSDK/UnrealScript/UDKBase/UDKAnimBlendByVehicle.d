@@ -7,6 +7,13 @@ import UnrealScript.UDKBase.UDKAnimBlendBase;
 extern(C++) interface UDKAnimBlendByVehicle : UDKAnimBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByVehicle")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mUpdateVehicleState;
+		public @property static final ScriptFunction UpdateVehicleState() { return mUpdateVehicleState ? mUpdateVehicleState : (mUpdateVehicleState = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByVehicle.UpdateVehicleState")); }
+	}
 	@property final
 	{
 		@property final auto ref Vehicle LastVehicle() { return *cast(Vehicle*)(cast(size_t)cast(void*)this + 300); }
@@ -15,6 +22,6 @@ public extern(D):
 	}
 	final void UpdateVehicleState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34552], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateVehicleState, cast(void*)0, cast(void*)0);
 	}
 }

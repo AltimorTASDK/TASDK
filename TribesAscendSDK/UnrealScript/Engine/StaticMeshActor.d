@@ -6,6 +6,13 @@ import UnrealScript.Engine.StaticMeshActorBase;
 extern(C++) interface StaticMeshActor : StaticMeshActorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshActor")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPreBeginPlay;
+		public @property static final ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshActor.PreBeginPlay")); }
+	}
 	@property final
 	{
 		bool bDisableAutoBaseOnProcBuilding() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x1) != 0; }
@@ -13,6 +20,6 @@ public extern(D):
 	}
 	final void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18317], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 }

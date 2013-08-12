@@ -9,6 +9,27 @@ import UnrealScript.Engine.Projectile;
 extern(C++) interface UDKForcedDirectionVolume : PhysicsVolume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKForcedDirectionVolume")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mActorEnteredVolume;
+			ScriptFunction mTouch;
+			ScriptFunction mUnTouch;
+			ScriptFunction mStopsProjectile;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.PostBeginPlay")); }
+			ScriptFunction ActorEnteredVolume() { return mActorEnteredVolume ? mActorEnteredVolume : (mActorEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.ActorEnteredVolume")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.Touch")); }
+			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.UnTouch")); }
+			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKForcedDirectionVolume.StopsProjectile")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -29,14 +50,14 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34841], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ActorEnteredVolume(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34842], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActorEnteredVolume, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -50,21 +71,21 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34844], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void UnTouch(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34853], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnTouch, params.ptr, cast(void*)0);
 	}
 	bool StopsProjectile(Projectile P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Projectile*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34857], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopsProjectile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

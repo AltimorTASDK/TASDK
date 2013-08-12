@@ -6,6 +6,8 @@ import UnrealScript.Core.UObject;
 extern(C++) interface InterpTrack : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrack")); }
 	enum ETrackActiveCondition : ubyte
 	{
 		ETAC_Always = 0,
@@ -17,6 +19,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrack.SubTrackGroup")); }
 		@property final
 		{
 			auto ref
@@ -34,6 +38,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrack.SupportedSubTrackInfo")); }
 		@property final auto ref
 		{
 			int GroupIndex() { return *cast(int*)(cast(size_t)&this + 16); }

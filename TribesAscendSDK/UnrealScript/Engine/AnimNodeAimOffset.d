@@ -7,6 +7,21 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface AnimNodeAimOffset : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeAimOffset")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetActiveProfileByName;
+			ScriptFunction mSetActiveProfileByIndex;
+		}
+		public @property static final
+		{
+			ScriptFunction SetActiveProfileByName() { return mSetActiveProfileByName ? mSetActiveProfileByName : (mSetActiveProfileByName = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeAimOffset.SetActiveProfileByName")); }
+			ScriptFunction SetActiveProfileByIndex() { return mSetActiveProfileByIndex ? mSetActiveProfileByIndex : (mSetActiveProfileByIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeAimOffset.SetActiveProfileByIndex")); }
+		}
+	}
 	enum EAnimAimDir : ubyte
 	{
 		ANIMAIM_LEFTUP = 0,
@@ -45,6 +60,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimTransform")); }
 		@property final auto ref
 		{
 			Vector Translation() { return *cast(Vector*)(cast(size_t)&this + 16); }
@@ -55,6 +72,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[304];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimComponent")); }
 		@property final auto ref
 		{
 			AnimNodeAimOffset.AimTransform RD() { return *cast(AnimNodeAimOffset.AimTransform*)(cast(size_t)&this + 272); }
@@ -73,6 +92,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[108];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeAimOffset.AimOffsetProfile")); }
 		@property final auto ref
 		{
 			ScriptArray!(AnimNodeAimOffset.AimComponent) AimComponents() { return *cast(ScriptArray!(AnimNodeAimOffset.AimComponent)*)(cast(size_t)&this + 24); }
@@ -119,13 +140,13 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProfileName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10809], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveProfileByName, params.ptr, cast(void*)0);
 	}
 	void SetActiveProfileByIndex(int ProfileIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10811], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveProfileByIndex, params.ptr, cast(void*)0);
 	}
 }

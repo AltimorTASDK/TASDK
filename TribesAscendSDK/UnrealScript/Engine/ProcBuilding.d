@@ -11,6 +11,29 @@ import UnrealScript.Engine.StaticMeshActor;
 extern(C++) interface ProcBuilding : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ProcBuilding")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindEdgeForTopLevelScope;
+			ScriptFunction mBreakFractureComponent;
+			ScriptFunction mGetAllGroupedProcBuildings;
+			ScriptFunction mGetBaseMostBuilding;
+			ScriptFunction mFindComponentsForTopLevelScope;
+			ScriptFunction mClearBuildingMeshes;
+		}
+		public @property static final
+		{
+			ScriptFunction FindEdgeForTopLevelScope() { return mFindEdgeForTopLevelScope ? mFindEdgeForTopLevelScope : (mFindEdgeForTopLevelScope = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.FindEdgeForTopLevelScope")); }
+			ScriptFunction BreakFractureComponent() { return mBreakFractureComponent ? mBreakFractureComponent : (mBreakFractureComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.BreakFractureComponent")); }
+			ScriptFunction GetAllGroupedProcBuildings() { return mGetAllGroupedProcBuildings ? mGetAllGroupedProcBuildings : (mGetAllGroupedProcBuildings = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.GetAllGroupedProcBuildings")); }
+			ScriptFunction GetBaseMostBuilding() { return mGetBaseMostBuilding ? mGetBaseMostBuilding : (mGetBaseMostBuilding = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.GetBaseMostBuilding")); }
+			ScriptFunction FindComponentsForTopLevelScope() { return mFindComponentsForTopLevelScope ? mFindComponentsForTopLevelScope : (mFindComponentsForTopLevelScope = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.FindComponentsForTopLevelScope")); }
+			ScriptFunction ClearBuildingMeshes() { return mClearBuildingMeshes ? mClearBuildingMeshes : (mClearBuildingMeshes = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.ClearBuildingMeshes")); }
+		}
+	}
 	enum
 	{
 		PROCBUILDING_VERSION = 1,
@@ -49,6 +72,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBMaterialParam")); }
 		@property final auto ref
 		{
 			ScriptName ParamName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -59,12 +84,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBFracMeshCompInfo")); }
 		@property final auto ref int TopLevelScopeIndex() { return *cast(int*)(cast(size_t)&this + 4); }
 	}
 	struct PBFaceUVInfo
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBFaceUVInfo")); }
 		@property final auto ref
 		{
 			UObject.Vector2D Offset() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 0); }
@@ -75,6 +104,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBMemUsageInfo")); }
 		@property final auto ref
 		{
 			ProcBuilding Building() { return *cast(ProcBuilding*)(cast(size_t)&this + 0); }
@@ -92,12 +123,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBMeshCompInfo")); }
 		@property final auto ref int TopLevelScopeIndex() { return *cast(int*)(cast(size_t)&this + 4); }
 	}
 	struct PBScopeProcessInfo
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBScopeProcessInfo")); }
 		@property final
 		{
 			auto ref
@@ -116,6 +151,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBScope2D")); }
 		@property final auto ref
 		{
 			UObject.Matrix ScopeFrame() { return *cast(UObject.Matrix*)(cast(size_t)&this + 0); }
@@ -127,6 +164,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuilding.PBEdgeInfo")); }
 		@property final auto ref
 		{
 			Vector EdgeEnd() { return *cast(Vector*)(cast(size_t)&this + 0); }
@@ -200,7 +239,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = TopLevelScopeIndex;
 		*cast(ProcBuilding.EScopeEdge*)&params[4] = Edge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24086], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindEdgeForTopLevelScope, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void BreakFractureComponent(
@@ -214,21 +253,21 @@ void* Comp, Vector BoxMin, Vector BoxMax)
 void**)params.ptr = Comp;
 		*cast(Vector*)&params[4] = BoxMin;
 		*cast(Vector*)&params[16] = BoxMax;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24087], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BreakFractureComponent, params.ptr, cast(void*)0);
 	}
 	void GetAllGroupedProcBuildings(ScriptArray!(ProcBuilding)* OutSet)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(ProcBuilding)*)params.ptr = *OutSet;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24093], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllGroupedProcBuildings, params.ptr, cast(void*)0);
 		*OutSet = *cast(ScriptArray!(ProcBuilding)*)params.ptr;
 	}
 	ProcBuilding GetBaseMostBuilding()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24097], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBaseMostBuilding, params.ptr, cast(void*)0);
 		return *cast(ProcBuilding*)params.ptr;
 	}
 	ScriptArray!(
@@ -238,13 +277,13 @@ void*) FindComponentsForTopLevelScope(int TopLevelScopeIndex)
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = TopLevelScopeIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24100], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindComponentsForTopLevelScope, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void*)*)&params[4];
 	}
 	void ClearBuildingMeshes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24102], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearBuildingMeshes, cast(void*)0, cast(void*)0);
 	}
 }

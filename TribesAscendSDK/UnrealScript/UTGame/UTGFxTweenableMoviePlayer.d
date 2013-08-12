@@ -7,6 +7,29 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface UTGFxTweenableMoviePlayer : GFxMoviePlayer
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGFxTweenableMoviePlayer")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mTweenTo;
+			ScriptFunction mProcessTweenCallback;
+			ScriptFunction mTick;
+			ScriptFunction mClearsTweensOnMovieClip;
+			ScriptFunction mPrintTweensToLog;
+			ScriptFunction mTweenComplete;
+		}
+		public @property static final
+		{
+			ScriptFunction TweenTo() { return mTweenTo ? mTweenTo : (mTweenTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.TweenTo")); }
+			ScriptFunction ProcessTweenCallback() { return mProcessTweenCallback ? mProcessTweenCallback : (mProcessTweenCallback = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.ProcessTweenCallback")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.Tick")); }
+			ScriptFunction ClearsTweensOnMovieClip() { return mClearsTweensOnMovieClip ? mClearsTweensOnMovieClip : (mClearsTweensOnMovieClip = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.ClearsTweensOnMovieClip")); }
+			ScriptFunction PrintTweensToLog() { return mPrintTweensToLog ? mPrintTweensToLog : (mPrintTweensToLog = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.PrintTweensToLog")); }
+			ScriptFunction TweenComplete() { return mTweenComplete ? mTweenComplete : (mTweenComplete = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGFxTweenableMoviePlayer.TweenComplete")); }
+		}
+	}
 	enum TweenType : ubyte
 	{
 		TWEEN_EaseOut = 0,
@@ -18,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[97];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGFxTweenableMoviePlayer.GFxTween")); }
 		@property final
 		{
 			auto ref
@@ -49,7 +74,7 @@ final:
 		*cast(float*)&params[20] = Target;
 		*cast(UTGFxTweenableMoviePlayer.TweenType*)&params[24] = NewTweenType;
 		*cast(ScriptString*)&params[28] = Callback;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37559], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TweenTo, params.ptr, cast(void*)0);
 	}
 	void ProcessTweenCallback(ScriptString Callback, GFxObject TargetMC)
 	{
@@ -57,14 +82,14 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Callback;
 		*cast(GFxObject*)&params[12] = TargetMC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37567], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTweenCallback, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37570], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void ClearsTweensOnMovieClip(GFxObject MC, bool bReset)
 	{
@@ -72,17 +97,17 @@ final:
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = MC;
 		*cast(bool*)&params[4] = bReset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37575], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearsTweensOnMovieClip, params.ptr, cast(void*)0);
 	}
 	void PrintTweensToLog()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37580], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PrintTweensToLog, cast(void*)0, cast(void*)0);
 	}
 	void TweenComplete(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37582], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TweenComplete, params.ptr, cast(void*)0);
 	}
 }

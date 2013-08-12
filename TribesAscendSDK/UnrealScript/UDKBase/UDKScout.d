@@ -6,6 +6,13 @@ import UnrealScript.Engine.Scout;
 extern(C++) interface UDKScout : Scout
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKScout")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSuggestJumpVelocity;
+		public @property static final ScriptFunction SuggestJumpVelocity() { return mSuggestJumpVelocity ? mSuggestJumpVelocity : (mSuggestJumpVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKScout.SuggestJumpVelocity")); }
+	}
 	@property final
 	{
 		auto ref
@@ -25,7 +32,7 @@ public extern(D):
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(bool*)&params[36] = bRequireFallLanding;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35314], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestJumpVelocity, params.ptr, cast(void*)0);
 		*JumpVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[40];
 	}

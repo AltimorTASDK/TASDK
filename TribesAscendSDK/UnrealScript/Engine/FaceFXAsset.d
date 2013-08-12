@@ -10,6 +10,21 @@ import UnrealScript.Engine.SkeletalMesh;
 extern(C++) interface FaceFXAsset : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FaceFXAsset")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mMountFaceFXAnimSet;
+			ScriptFunction mUnmountFaceFXAnimSet;
+		}
+		public @property static final
+		{
+			ScriptFunction MountFaceFXAnimSet() { return mMountFaceFXAnimSet ? mMountFaceFXAnimSet : (mMountFaceFXAnimSet = ScriptObject.Find!(ScriptFunction)("Function Engine.FaceFXAsset.MountFaceFXAnimSet")); }
+			ScriptFunction UnmountFaceFXAnimSet() { return mUnmountFaceFXAnimSet ? mUnmountFaceFXAnimSet : (mUnmountFaceFXAnimSet = ScriptObject.Find!(ScriptFunction)("Function Engine.FaceFXAsset.UnmountFaceFXAnimSet")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(ubyte) RawFaceFXActorBytes() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 68); }
@@ -27,13 +42,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(FaceFXAnimSet*)params.ptr = pAnimSet;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15642], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MountFaceFXAnimSet, params.ptr, cast(void*)0);
 	}
 	void UnmountFaceFXAnimSet(FaceFXAnimSet pAnimSet)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(FaceFXAnimSet*)params.ptr = pAnimSet;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15644], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnmountFaceFXAnimSet, params.ptr, cast(void*)0);
 	}
 }

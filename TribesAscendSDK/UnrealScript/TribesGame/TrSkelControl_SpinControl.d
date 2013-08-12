@@ -6,6 +6,21 @@ import UnrealScript.Engine.SkelControlSingleBone;
 extern(C++) interface TrSkelControl_SpinControl : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControl_SpinControl")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpin;
+			ScriptFunction mSpinToTargetRotation;
+		}
+		public @property static final
+		{
+			ScriptFunction Spin() { return mSpin ? mSpin : (mSpin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSkelControl_SpinControl.Spin")); }
+			ScriptFunction SpinToTargetRotation() { return mSpinToTargetRotation ? mSpinToTargetRotation : (mSpinToTargetRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrSkelControl_SpinControl.SpinToTargetRotation")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -35,7 +50,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112380], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Spin, params.ptr, cast(void*)0);
 	}
 	void SpinToTargetRotation(Rotator TargetRotation, float Time, bool bReset)
 	{
@@ -44,6 +59,6 @@ final:
 		*cast(Rotator*)params.ptr = TargetRotation;
 		*cast(float*)&params[12] = Time;
 		*cast(bool*)&params[16] = bReset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112382], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpinToTargetRotation, params.ptr, cast(void*)0);
 	}
 }

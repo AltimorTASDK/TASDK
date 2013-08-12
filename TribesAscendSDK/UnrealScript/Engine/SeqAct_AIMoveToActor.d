@@ -7,6 +7,21 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface SeqAct_AIMoveToActor : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_AIMoveToActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPickDestination;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction PickDestination() { return mPickDestination ? mPickDestination : (mPickDestination = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_AIMoveToActor.PickDestination")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_AIMoveToActor.GetObjClassVersion")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,14 +42,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Requestor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PickDestination, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25585], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

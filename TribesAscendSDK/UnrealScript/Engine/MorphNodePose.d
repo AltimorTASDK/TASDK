@@ -7,6 +7,13 @@ import UnrealScript.Engine.MorphNodeBase;
 extern(C++) interface MorphNodePose : MorphNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodePose")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetMorphTarget;
+		public @property static final ScriptFunction SetMorphTarget() { return mSetMorphTarget ? mSetMorphTarget : (mSetMorphTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.MorphNodePose.SetMorphTarget")); }
+	}
 	@property final auto ref
 	{
 		float Weight() { return *cast(float*)(cast(size_t)cast(void*)this + 120); }
@@ -18,6 +25,6 @@ public extern(D):
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MorphTargetName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20610], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMorphTarget, params.ptr, cast(void*)0);
 	}
 }

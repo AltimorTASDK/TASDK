@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleTypeDataBase;
 extern(C++) interface ParticleModuleTypeDataBeam2 : ParticleModuleTypeDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataBeam2")); }
 	enum EBeam2Method : ubyte
 	{
 		PEB2M_Distance = 0,
@@ -25,6 +27,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleTypeDataBeam2.BeamTargetData")); }
 		@property final auto ref
 		{
 			float TargetPercentage() { return *cast(float*)(cast(size_t)&this + 8); }

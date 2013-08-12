@@ -7,6 +7,8 @@ import UnrealScript.Engine.SeqAct_LevelStreamingBase;
 extern(C++) interface SeqAct_LevelStreaming : SeqAct_LevelStreamingBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelStreaming")); }
 	@property final
 	{
 		auto ref

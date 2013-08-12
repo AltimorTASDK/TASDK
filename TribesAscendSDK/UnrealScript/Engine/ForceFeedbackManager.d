@@ -8,6 +8,23 @@ import UnrealScript.Engine.ForceFeedbackWaveform;
 extern(C++) interface ForceFeedbackManager : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFeedbackManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayForceFeedbackWaveform;
+			ScriptFunction mStopForceFeedbackWaveform;
+			ScriptFunction mPauseWaveform;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayForceFeedbackWaveform() { return mPlayForceFeedbackWaveform ? mPlayForceFeedbackWaveform : (mPlayForceFeedbackWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.PlayForceFeedbackWaveform")); }
+			ScriptFunction StopForceFeedbackWaveform() { return mStopForceFeedbackWaveform ? mStopForceFeedbackWaveform : (mStopForceFeedbackWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.StopForceFeedbackWaveform")); }
+			ScriptFunction PauseWaveform() { return mPauseWaveform ? mPauseWaveform : (mPauseWaveform = ScriptObject.Find!(ScriptFunction)("Function Engine.ForceFeedbackManager.PauseWaveform")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -30,20 +47,20 @@ final:
 		params[] = 0;
 		*cast(ForceFeedbackWaveform*)params.ptr = WaveForm;
 		*cast(Actor*)&params[4] = WaveInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15899], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
 	void StopForceFeedbackWaveform(ForceFeedbackWaveform WaveForm)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ForceFeedbackWaveform*)params.ptr = WaveForm;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15903], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
 	void PauseWaveform(bool bPause)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPause;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15905], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PauseWaveform, params.ptr, cast(void*)0);
 	}
 }

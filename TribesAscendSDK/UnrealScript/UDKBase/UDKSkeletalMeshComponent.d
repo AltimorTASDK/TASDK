@@ -6,6 +6,21 @@ import UnrealScript.Engine.SkeletalMeshComponent;
 extern(C++) interface UDKSkeletalMeshComponent : SkeletalMeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkeletalMeshComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreloadTextures;
+			ScriptFunction mSetFOV;
+		}
+		public @property static final
+		{
+			ScriptFunction PreloadTextures() { return mPreloadTextures ? mPreloadTextures : (mPreloadTextures = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkeletalMeshComponent.PreloadTextures")); }
+			ScriptFunction SetFOV() { return mSetFOV ? mSetFOV : (mSetFOV = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkeletalMeshComponent.SetFOV")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -23,13 +38,13 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bForcePreload;
 		*cast(float*)&params[4] = ClearTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35501], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreloadTextures, params.ptr, cast(void*)0);
 	}
 	void SetFOV(float NewFOV)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewFOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35505], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFOV, params.ptr, cast(void*)0);
 	}
 }

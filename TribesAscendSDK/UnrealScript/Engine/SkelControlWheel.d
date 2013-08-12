@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SkelControlWheel;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.SkelControlSingleBone;
 
 extern(C++) interface SkelControlWheel : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlWheel")); }
 	@property final
 	{
 		auto ref

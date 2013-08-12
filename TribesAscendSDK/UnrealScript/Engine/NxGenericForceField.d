@@ -8,6 +8,8 @@ import UnrealScript.Engine.NxForceFieldGeneric;
 extern(C++) interface NxGenericForceField : NxForceField
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxGenericForceField")); }
 	@property final auto ref
 	{
 		UObject.Pointer LinearKernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 692); }

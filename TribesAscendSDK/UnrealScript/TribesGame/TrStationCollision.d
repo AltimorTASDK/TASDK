@@ -7,6 +7,25 @@ import UnrealScript.TribesGame.TrPawn;
 extern(C++) interface TrStationCollision : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStationCollision")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetPawnsInStation;
+			ScriptFunction mTouch;
+			ScriptFunction mUnTouch;
+			ScriptFunction mCheckCanPawnUseStationNow;
+		}
+		public @property static final
+		{
+			ScriptFunction GetPawnsInStation() { return mGetPawnsInStation ? mGetPawnsInStation : (mGetPawnsInStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.GetPawnsInStation")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.Touch")); }
+			ScriptFunction UnTouch() { return mUnTouch ? mUnTouch : (mUnTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.UnTouch")); }
+			ScriptFunction CheckCanPawnUseStationNow() { return mCheckCanPawnUseStationNow ? mCheckCanPawnUseStationNow : (mCheckCanPawnUseStationNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStationCollision.CheckCanPawnUseStationNow")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref TrPawn m_OccupiedPawn() { return *cast(TrPawn*)(cast(size_t)cast(void*)this + 480); }
@@ -20,7 +39,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98320], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawnsInStation, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void Touch(Actor Other, 
@@ -35,21 +54,21 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98322], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void UnTouch(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98332], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnTouch, params.ptr, cast(void*)0);
 	}
 	bool CheckCanPawnUseStationNow(TrPawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98336], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckCanPawnUseStationNow, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

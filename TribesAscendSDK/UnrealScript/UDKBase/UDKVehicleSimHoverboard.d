@@ -10,6 +10,21 @@ import UnrealScript.Engine.SVehicleSimBase;
 extern(C++) interface UDKVehicleSimHoverboard : SVehicleSimBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimHoverboard")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitWheels;
+			ScriptFunction mUpdateLeanConstraint;
+		}
+		public @property static final
+		{
+			ScriptFunction InitWheels() { return mInitWheels ? mInitWheels : (mInitWheels = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleSimHoverboard.InitWheels")); }
+			ScriptFunction UpdateLeanConstraint() { return mUpdateLeanConstraint ? mUpdateLeanConstraint : (mUpdateLeanConstraint = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleSimHoverboard.UpdateLeanConstraint")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -53,7 +68,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKVehicle*)params.ptr = pVehicle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitWheels, params.ptr, cast(void*)0);
 	}
 	void UpdateLeanConstraint(RB_ConstraintInstance LeanUprightConstraintInstance, Vector LeanY, Vector LeanZ)
 	{
@@ -62,6 +77,6 @@ final:
 		*cast(RB_ConstraintInstance*)params.ptr = LeanUprightConstraintInstance;
 		*cast(Vector*)&params[4] = LeanY;
 		*cast(Vector*)&params[16] = LeanZ;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36253], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLeanConstraint, params.ptr, cast(void*)0);
 	}
 }

@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleTypeDataBase;
 extern(C++) interface ParticleModuleTypeDataTrail : ParticleModuleTypeDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataTrail")); }
 	@property final
 	{
 		auto ref

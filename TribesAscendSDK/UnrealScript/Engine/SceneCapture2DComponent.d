@@ -8,6 +8,21 @@ import UnrealScript.Engine.SceneCaptureComponent;
 extern(C++) interface SceneCapture2DComponent : SceneCaptureComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapture2DComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetCaptureParameters;
+			ScriptFunction mSetView;
+		}
+		public @property static final
+		{
+			ScriptFunction SetCaptureParameters() { return mSetCaptureParameters ? mSetCaptureParameters : (mSetCaptureParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DComponent.SetCaptureParameters")); }
+			ScriptFunction SetView() { return mSetView ? mSetView : (mSetView = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapture2DComponent.SetView")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -31,7 +46,7 @@ final:
 		*cast(float*)&params[4] = NewFOV;
 		*cast(float*)&params[8] = NewNearPlane;
 		*cast(float*)&params[12] = NewFarPlane;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25429], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
 	void SetView(Vector NewLocation, Rotator NewRotation)
 	{
@@ -39,6 +54,6 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewLocation;
 		*cast(Rotator*)&params[12] = NewRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25434], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetView, params.ptr, cast(void*)0);
 	}
 }

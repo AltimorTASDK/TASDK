@@ -14,10 +14,47 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface AudioComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AudioComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mResetToDefaults;
+			ScriptFunction mPlay;
+			ScriptFunction mFadeIn;
+			ScriptFunction mFadeOut;
+			ScriptFunction mOnQueueSubtitles;
+			ScriptFunction mOnAudioFinished;
+			ScriptFunction mStop;
+			ScriptFunction mIsPlaying;
+			ScriptFunction mAdjustVolume;
+			ScriptFunction mSetFloatParameter;
+			ScriptFunction mSetWaveParameter;
+			ScriptFunction mOcclusionChanged;
+		}
+		public @property static final
+		{
+			ScriptFunction ResetToDefaults() { return mResetToDefaults ? mResetToDefaults : (mResetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.ResetToDefaults")); }
+			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.Play")); }
+			ScriptFunction FadeIn() { return mFadeIn ? mFadeIn : (mFadeIn = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.FadeIn")); }
+			ScriptFunction FadeOut() { return mFadeOut ? mFadeOut : (mFadeOut = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.FadeOut")); }
+			ScriptFunction OnQueueSubtitles() { return mOnQueueSubtitles ? mOnQueueSubtitles : (mOnQueueSubtitles = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.OnQueueSubtitles")); }
+			ScriptFunction OnAudioFinished() { return mOnAudioFinished ? mOnAudioFinished : (mOnAudioFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.OnAudioFinished")); }
+			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.Stop")); }
+			ScriptFunction IsPlaying() { return mIsPlaying ? mIsPlaying : (mIsPlaying = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.IsPlaying")); }
+			ScriptFunction AdjustVolume() { return mAdjustVolume ? mAdjustVolume : (mAdjustVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.AdjustVolume")); }
+			ScriptFunction SetFloatParameter() { return mSetFloatParameter ? mSetFloatParameter : (mSetFloatParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.SetFloatParameter")); }
+			ScriptFunction SetWaveParameter() { return mSetWaveParameter ? mSetWaveParameter : (mSetWaveParameter = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.SetWaveParameter")); }
+			ScriptFunction OcclusionChanged() { return mOcclusionChanged ? mOcclusionChanged : (mOcclusionChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.AudioComponent.OcclusionChanged")); }
+		}
+	}
 	struct AudioComponentParam
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AudioComponent.AudioComponentParam")); }
 		@property final auto ref
 		{
 			SoundNodeWave WaveParam() { return *cast(SoundNodeWave*)(cast(size_t)&this + 12); }
@@ -123,11 +160,11 @@ public extern(D):
 final:
 	void ResetToDefaults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7895], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetToDefaults, cast(void*)0, cast(void*)0);
 	}
 	void Play()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7915], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Play, cast(void*)0, cast(void*)0);
 	}
 	void FadeIn(float FadeInDuration, float FadeVolumeLevel)
 	{
@@ -135,7 +172,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = FadeInDuration;
 		*cast(float*)&params[4] = FadeVolumeLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7937], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FadeIn, params.ptr, cast(void*)0);
 	}
 	void FadeOut(float FadeOutDuration, float FadeVolumeLevel)
 	{
@@ -143,7 +180,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = FadeOutDuration;
 		*cast(float*)&params[4] = FadeVolumeLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7945], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FadeOut, params.ptr, cast(void*)0);
 	}
 	void OnQueueSubtitles(ScriptArray!(EngineTypes.SubtitleCue) Subtitles, float CueDuration)
 	{
@@ -151,7 +188,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(EngineTypes.SubtitleCue)*)params.ptr = Subtitles;
 		*cast(float*)&params[12] = CueDuration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10200], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnQueueSubtitles, params.ptr, cast(void*)0);
 	}
 	void OnAudioFinished(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -162,17 +199,17 @@ void* AC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = AC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10202], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAudioFinished, params.ptr, cast(void*)0);
 	}
 	void Stop()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10266], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, cast(void*)0, cast(void*)0);
 	}
 	bool IsPlaying()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlaying, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel)
@@ -181,7 +218,7 @@ void**)params.ptr = AC;
 		params[] = 0;
 		*cast(float*)params.ptr = AdjustVolumeDuration;
 		*cast(float*)&params[4] = AdjustVolumeLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10273], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustVolume, params.ptr, cast(void*)0);
 	}
 	void SetFloatParameter(ScriptName InName, float InFloat)
 	{
@@ -189,7 +226,7 @@ void**)params.ptr = AC;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(float*)&params[8] = InFloat;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloatParameter, params.ptr, cast(void*)0);
 	}
 	void SetWaveParameter(ScriptName InName, SoundNodeWave InWave)
 	{
@@ -197,13 +234,13 @@ void**)params.ptr = AC;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InName;
 		*cast(SoundNodeWave*)&params[8] = InWave;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10279], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWaveParameter, params.ptr, cast(void*)0);
 	}
 	void OcclusionChanged(bool bNowOccluded)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowOccluded;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10290], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OcclusionChanged, params.ptr, cast(void*)0);
 	}
 }

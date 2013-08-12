@@ -12,6 +12,21 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface SpeedTreeComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeedTreeComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetMaterial;
+			ScriptFunction mSetMaterial;
+		}
+		public @property static final
+		{
+			ScriptFunction GetMaterial() { return mGetMaterial ? mGetMaterial : (mGetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.SpeedTreeComponent.GetMaterial")); }
+			ScriptFunction SetMaterial() { return mSetMaterial ? mSetMaterial : (mSetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.SpeedTreeComponent.SetMaterial")); }
+		}
+	}
 	enum ESpeedTreeMeshType : ubyte
 	{
 		STMT_MinMinusOne = 0,
@@ -27,6 +42,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SpeedTreeComponent.SpeedTreeStaticLight")); }
 		@property final auto ref
 		{
 			ShadowMap1D BillboardShadowMap() { return *cast(ShadowMap1D*)(cast(size_t)&this + 32); }
@@ -80,7 +97,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(SpeedTreeComponent.ESpeedTreeMeshType*)params.ptr = MeshType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27073], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterial, params.ptr, cast(void*)0);
 		return *cast(MaterialInterface*)&params[4];
 	}
 	void SetMaterial(SpeedTreeComponent.ESpeedTreeMeshType MeshType, MaterialInterface pMaterial)
@@ -89,6 +106,6 @@ final:
 		params[] = 0;
 		*cast(SpeedTreeComponent.ESpeedTreeMeshType*)params.ptr = MeshType;
 		*cast(MaterialInterface*)&params[4] = pMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27076], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaterial, params.ptr, cast(void*)0);
 	}
 }

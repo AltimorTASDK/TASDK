@@ -8,17 +8,32 @@ import UnrealScript.Core.UObject;
 extern(C++) interface FailedConnect : LocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FailedConnect")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetFailSwitch;
+			ScriptFunction mGetString;
+		}
+		public @property static final
+		{
+			ScriptFunction GetFailSwitch() { return mGetFailSwitch ? mGetFailSwitch : (mGetFailSwitch = ScriptObject.Find!(ScriptFunction)("Function Engine.FailedConnect.GetFailSwitch")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function Engine.FailedConnect.GetString")); }
+		}
+	}
 	@property final auto ref ScriptString FailMessage() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 80); }
 final:
-	int GetFailSwitch(ScriptString FailString)
+	static int GetFailSwitch(ScriptString FailString)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FailString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15694], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFailSwitch, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -27,7 +42,7 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15697], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
 }

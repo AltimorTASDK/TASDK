@@ -11,6 +11,29 @@ import UnrealScript.UTGame.UTBot;
 extern(C++) interface UTDefensePoint : UDKScriptedNavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDefensePoint")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetMoveTarget;
+			ScriptFunction mHigherPriorityThan;
+			ScriptFunction mReset;
+			ScriptFunction mFreePoint;
+			ScriptFunction mCheckForErrors;
+			ScriptFunction mPreBeginPlay;
+		}
+		public @property static final
+		{
+			ScriptFunction GetMoveTarget() { return mGetMoveTarget ? mGetMoveTarget : (mGetMoveTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.GetMoveTarget")); }
+			ScriptFunction HigherPriorityThan() { return mHigherPriorityThan ? mHigherPriorityThan : (mHigherPriorityThan = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.HigherPriorityThan")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.Reset")); }
+			ScriptFunction FreePoint() { return mFreePoint ? mFreePoint : (mFreePoint = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.FreePoint")); }
+			ScriptFunction CheckForErrors() { return mCheckForErrors ? mCheckForErrors : (mCheckForErrors = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.CheckForErrors")); }
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDefensePoint.PreBeginPlay")); }
+		}
+	}
 	enum EDefensePriority : ubyte
 	{
 		DEFPRI_Low = 0,
@@ -43,7 +66,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42630], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMoveTarget, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	bool HigherPriorityThan(UTDefensePoint S, UTBot B, bool bAutoPointsInUse, bool bPrioritizeSameGroup, int* NumChecked)
@@ -55,27 +78,27 @@ final:
 		*cast(bool*)&params[8] = bAutoPointsInUse;
 		*cast(bool*)&params[12] = bPrioritizeSameGroup;
 		*cast(int*)&params[16] = *NumChecked;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[46332], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HigherPriorityThan, params.ptr, cast(void*)0);
 		*NumChecked = *cast(int*)&params[16];
 		return *cast(bool*)&params[20];
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47055], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void FreePoint()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47056], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FreePoint, cast(void*)0, cast(void*)0);
 	}
 	bool CheckForErrors()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47057], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckForErrors, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47059], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 }

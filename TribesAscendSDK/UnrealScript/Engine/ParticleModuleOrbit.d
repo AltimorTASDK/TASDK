@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleOrbit;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleOrbitBase;
 import UnrealScript.Core.DistributionVector;
 
 extern(C++) interface ParticleModuleOrbit : ParticleModuleOrbitBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleOrbit")); }
 	enum EOrbitChainMode : ubyte
 	{
 		EOChainMode_Add = 0,
@@ -17,6 +20,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleOrbit.OrbitOptions")); }
 		@property final
 		{
 			bool bUseEmitterTime() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }

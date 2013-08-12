@@ -9,6 +9,8 @@ import UnrealScript.Core.Component;
 extern(C++) interface SVehicleWheel : Component
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleWheel")); }
 	enum EWheelSide : ubyte
 	{
 		SIDE_None = 0,

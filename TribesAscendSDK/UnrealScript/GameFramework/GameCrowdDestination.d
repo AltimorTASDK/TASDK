@@ -11,6 +11,37 @@ import UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 extern(C++) interface GameCrowdDestination : GameCrowdInteractionPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdDestination")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReachedByAgent;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mDestroyed;
+			ScriptFunction mReachedDestination;
+			ScriptFunction mPickNewDestinationFor;
+			ScriptFunction mAllowableDestinationFor;
+			ScriptFunction mDecrementCustomerCount;
+			ScriptFunction mIncrementCustomerCount;
+			ScriptFunction mAtCapacity;
+			ScriptFunction mGetSpawnPosition;
+		}
+		public @property static final
+		{
+			ScriptFunction ReachedByAgent() { return mReachedByAgent ? mReachedByAgent : (mReachedByAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.ReachedByAgent")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.PostBeginPlay")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.Destroyed")); }
+			ScriptFunction ReachedDestination() { return mReachedDestination ? mReachedDestination : (mReachedDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.ReachedDestination")); }
+			ScriptFunction PickNewDestinationFor() { return mPickNewDestinationFor ? mPickNewDestinationFor : (mPickNewDestinationFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.PickNewDestinationFor")); }
+			ScriptFunction AllowableDestinationFor() { return mAllowableDestinationFor ? mAllowableDestinationFor : (mAllowableDestinationFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.AllowableDestinationFor")); }
+			ScriptFunction DecrementCustomerCount() { return mDecrementCustomerCount ? mDecrementCustomerCount : (mDecrementCustomerCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.DecrementCustomerCount")); }
+			ScriptFunction IncrementCustomerCount() { return mIncrementCustomerCount ? mIncrementCustomerCount : (mIncrementCustomerCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.IncrementCustomerCount")); }
+			ScriptFunction AtCapacity() { return mAtCapacity ? mAtCapacity : (mAtCapacity = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.AtCapacity")); }
+			ScriptFunction GetSpawnPosition() { return mGetSpawnPosition ? mGetSpawnPosition : (mGetSpawnPosition = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdDestination.GetSpawnPosition")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -80,23 +111,23 @@ final:
 		*cast(GameCrowdAgent*)params.ptr = Agent;
 		*cast(Vector*)&params[4] = TestPosition;
 		*cast(bool*)&params[16] = bTestExactly;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30478], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReachedByAgent, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30483], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30486], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void ReachedDestination(GameCrowdAgent Agent)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30487], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReachedDestination, params.ptr, cast(void*)0);
 	}
 	void PickNewDestinationFor(GameCrowdAgent Agent, bool bIgnoreRestrictions)
 	{
@@ -104,14 +135,14 @@ final:
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
 		*cast(bool*)&params[4] = bIgnoreRestrictions;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30497], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PickNewDestinationFor, params.ptr, cast(void*)0);
 	}
 	bool AllowableDestinationFor(GameCrowdAgent Agent)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30503], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowableDestinationFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void DecrementCustomerCount(GameCrowdAgent DepartingAgent)
@@ -119,20 +150,20 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = DepartingAgent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30505], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DecrementCustomerCount, params.ptr, cast(void*)0);
 	}
 	void IncrementCustomerCount(GameCrowdAgent ArrivingAgent)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = ArrivingAgent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30513], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementCustomerCount, params.ptr, cast(void*)0);
 	}
 	bool AtCapacity()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30518], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AtCapacity, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void GetSpawnPosition(SeqAct_GameCrowdSpawner Spawner, Vector* SpawnPos, Rotator* SpawnRot)
@@ -142,7 +173,7 @@ final:
 		*cast(SeqAct_GameCrowdSpawner*)params.ptr = Spawner;
 		*cast(Vector*)&params[4] = *SpawnPos;
 		*cast(Rotator*)&params[16] = *SpawnRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30526], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpawnPosition, params.ptr, cast(void*)0);
 		*SpawnPos = *cast(Vector*)&params[4];
 		*SpawnRot = *cast(Rotator*)&params[16];
 	}

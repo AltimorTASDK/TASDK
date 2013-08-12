@@ -1,11 +1,14 @@
 module UnrealScript.Engine.PBRuleNodeQuad;
 
+import ScriptClasses;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Engine.MaterialInterface;
 
 extern(C++) interface PBRuleNodeQuad : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeQuad")); }
 	@property final
 	{
 		auto ref

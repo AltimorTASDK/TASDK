@@ -18,10 +18,53 @@ import UnrealScript.TribesGame.TrRadarStation_Neutral;
 extern(C++) interface TrCaHCapturePoint : TrGameObjective
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCaHCapturePoint")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mPulseMarker;
+			ScriptFunction mPointPulseMarker;
+			ScriptFunction mUpdateHologramVisibility;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mTouch;
+			ScriptFunction mOnPawnTouched;
+			ScriptFunction mPostCapturePointTimer;
+			ScriptFunction mAwardPointTimer;
+			ScriptFunction mShouldPostRenderForCaH;
+			ScriptFunction mGetScreenName;
+			ScriptFunction mPostRenderFor;
+			ScriptFunction mCheckNearbyPlayersTimer;
+			ScriptFunction mIsPawnConsideredNearby;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PostInitAnimTree")); }
+			ScriptFunction PulseMarker() { return mPulseMarker ? mPulseMarker : (mPulseMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PulseMarker")); }
+			ScriptFunction PointPulseMarker() { return mPointPulseMarker ? mPointPulseMarker : (mPointPulseMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PointPulseMarker")); }
+			ScriptFunction UpdateHologramVisibility() { return mUpdateHologramVisibility ? mUpdateHologramVisibility : (mUpdateHologramVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.UpdateHologramVisibility")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.ReplicatedEvent")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.Touch")); }
+			ScriptFunction OnPawnTouched() { return mOnPawnTouched ? mOnPawnTouched : (mOnPawnTouched = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.OnPawnTouched")); }
+			ScriptFunction PostCapturePointTimer() { return mPostCapturePointTimer ? mPostCapturePointTimer : (mPostCapturePointTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PostCapturePointTimer")); }
+			ScriptFunction AwardPointTimer() { return mAwardPointTimer ? mAwardPointTimer : (mAwardPointTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.AwardPointTimer")); }
+			ScriptFunction ShouldPostRenderForCaH() { return mShouldPostRenderForCaH ? mShouldPostRenderForCaH : (mShouldPostRenderForCaH = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.ShouldPostRenderForCaH")); }
+			ScriptFunction GetScreenName() { return mGetScreenName ? mGetScreenName : (mGetScreenName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.GetScreenName")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.PostRenderFor")); }
+			ScriptFunction CheckNearbyPlayersTimer() { return mCheckNearbyPlayersTimer ? mCheckNearbyPlayersTimer : (mCheckNearbyPlayersTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.CheckNearbyPlayersTimer")); }
+			ScriptFunction IsPawnConsideredNearby() { return mIsPawnConsideredNearby ? mIsPawnConsideredNearby : (mIsPawnConsideredNearby = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCaHCapturePoint.IsPawnConsideredNearby")); }
+		}
+	}
 	struct NearbyPlayer
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrCaHCapturePoint.NearbyPlayer")); }
 		@property final auto ref
 		{
 			float LastCheckedTimestamp() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -73,7 +116,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73788], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -84,26 +127,26 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73791], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void PulseMarker()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73793], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PulseMarker, cast(void*)0, cast(void*)0);
 	}
 	void PointPulseMarker()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73794], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PointPulseMarker, cast(void*)0, cast(void*)0);
 	}
 	void UpdateHologramVisibility()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73795], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHologramVisibility, cast(void*)0, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -117,28 +160,28 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73799], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void OnPawnTouched(TrPawn TRP)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = TRP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73805], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnTouched, params.ptr, cast(void*)0);
 	}
 	void PostCapturePointTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73813], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostCapturePointTimer, cast(void*)0, cast(void*)0);
 	}
 	void AwardPointTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73817], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AwardPointTimer, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldPostRenderForCaH()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73819], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldPostRenderForCaH, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	ScriptString GetScreenName(PlayerController PC)
@@ -146,7 +189,7 @@ void**)&params[4] = OtherComp;
 		ubyte params[16];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73821], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScreenName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
@@ -157,18 +200,18 @@ void**)&params[4] = OtherComp;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 	void CheckNearbyPlayersTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73835], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckNearbyPlayersTimer, cast(void*)0, cast(void*)0);
 	}
 	bool IsPawnConsideredNearby(TrPawn TRP)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = TRP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73840], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPawnConsideredNearby, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

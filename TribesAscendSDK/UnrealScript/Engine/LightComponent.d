@@ -10,6 +10,39 @@ import UnrealScript.Engine.Brush;
 extern(C++) interface LightComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LightComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetEnabled;
+			ScriptFunction mSetLightProperties;
+			ScriptFunction mGetOrigin;
+			ScriptFunction mGetDirection;
+			ScriptFunction mUpdateColorAndBrightness;
+			ScriptFunction mUpdateLightShaftParameters;
+			ScriptFunction mOnUpdatePropertyBloomScale;
+			ScriptFunction mOnUpdatePropertyBloomTint;
+			ScriptFunction mOnUpdatePropertyOcclusionMaskDarkness;
+			ScriptFunction mOnUpdatePropertyBrightness;
+			ScriptFunction mOnUpdatePropertyLightColor;
+		}
+		public @property static final
+		{
+			ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.SetEnabled")); }
+			ScriptFunction SetLightProperties() { return mSetLightProperties ? mSetLightProperties : (mSetLightProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.SetLightProperties")); }
+			ScriptFunction GetOrigin() { return mGetOrigin ? mGetOrigin : (mGetOrigin = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.GetOrigin")); }
+			ScriptFunction GetDirection() { return mGetDirection ? mGetDirection : (mGetDirection = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.GetDirection")); }
+			ScriptFunction UpdateColorAndBrightness() { return mUpdateColorAndBrightness ? mUpdateColorAndBrightness : (mUpdateColorAndBrightness = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.UpdateColorAndBrightness")); }
+			ScriptFunction UpdateLightShaftParameters() { return mUpdateLightShaftParameters ? mUpdateLightShaftParameters : (mUpdateLightShaftParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.UpdateLightShaftParameters")); }
+			ScriptFunction OnUpdatePropertyBloomScale() { return mOnUpdatePropertyBloomScale ? mOnUpdatePropertyBloomScale : (mOnUpdatePropertyBloomScale = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.OnUpdatePropertyBloomScale")); }
+			ScriptFunction OnUpdatePropertyBloomTint() { return mOnUpdatePropertyBloomTint ? mOnUpdatePropertyBloomTint : (mOnUpdatePropertyBloomTint = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.OnUpdatePropertyBloomTint")); }
+			ScriptFunction OnUpdatePropertyOcclusionMaskDarkness() { return mOnUpdatePropertyOcclusionMaskDarkness ? mOnUpdatePropertyOcclusionMaskDarkness : (mOnUpdatePropertyOcclusionMaskDarkness = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.OnUpdatePropertyOcclusionMaskDarkness")); }
+			ScriptFunction OnUpdatePropertyBrightness() { return mOnUpdatePropertyBrightness ? mOnUpdatePropertyBrightness : (mOnUpdatePropertyBrightness = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.OnUpdatePropertyBrightness")); }
+			ScriptFunction OnUpdatePropertyLightColor() { return mOnUpdatePropertyLightColor ? mOnUpdatePropertyLightColor : (mOnUpdatePropertyLightColor = ScriptObject.Find!(ScriptFunction)("Function Engine.LightComponent.OnUpdatePropertyLightColor")); }
+		}
+	}
 	enum EShadowFilterQuality : ubyte
 	{
 		SFQ_Low = 0,
@@ -46,6 +79,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LightComponent.LightingChannelContainer")); }
 		@property final
 		{
 			bool Crowd() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4000000) != 0; }
@@ -190,7 +225,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bSetEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11644], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
 	void SetLightProperties(float NewBrightness, UObject.Color NewLightColor, LightFunction NewLightFunction)
 	{
@@ -199,48 +234,48 @@ final:
 		*cast(float*)params.ptr = NewBrightness;
 		*cast(UObject.Color*)&params[4] = NewLightColor;
 		*cast(LightFunction*)&params[8] = NewLightFunction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11647], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLightProperties, params.ptr, cast(void*)0);
 	}
 	Vector GetOrigin()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11654], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetOrigin, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	Vector GetDirection()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDirection, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	void UpdateColorAndBrightness()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11658], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateColorAndBrightness, cast(void*)0, cast(void*)0);
 	}
 	void UpdateLightShaftParameters()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11659], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLightShaftParameters, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyBloomScale()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11660], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyBloomScale, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyBloomTint()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11661], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyBloomTint, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyOcclusionMaskDarkness()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11662], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyOcclusionMaskDarkness, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyBrightness()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11663], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyBrightness, cast(void*)0, cast(void*)0);
 	}
 	void OnUpdatePropertyLightColor()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11664], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdatePropertyLightColor, cast(void*)0, cast(void*)0);
 	}
 }

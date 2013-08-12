@@ -6,6 +6,13 @@ import UnrealScript.UDKBase.UDKExplosionLight;
 extern(C++) interface UTLinkGunMuzzleFlashLight : UDKExplosionLight
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLinkGunMuzzleFlashLight")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetTeam;
+		public @property static final ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTLinkGunMuzzleFlashLight.SetTeam")); }
+	}
 	@property final auto ref
 	{
 		ScriptArray!(UDKExplosionLight.LightValues) RedTeamTimeShift() { return *cast(ScriptArray!(UDKExplosionLight.LightValues)*)(cast(size_t)cast(void*)this + 624); }
@@ -16,6 +23,6 @@ public extern(D):
 		ubyte params[1];
 		params[] = 0;
 		params[0] = NewTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48308], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
 }

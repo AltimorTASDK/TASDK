@@ -8,6 +8,21 @@ import UnrealScript.Engine.SVehicleWheel;
 extern(C++) interface UDKVehicleWheel : SVehicleWheel
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleWheel")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetParticleEffect;
+			ScriptFunction mOldEffectFinished;
+		}
+		public @property static final
+		{
+			ScriptFunction SetParticleEffect() { return mSetParticleEffect ? mSetParticleEffect : (mSetParticleEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleWheel.SetParticleEffect")); }
+			ScriptFunction OldEffectFinished() { return mOldEffectFinished ? mOldEffectFinished : (mOldEffectFinished = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicleWheel.OldEffectFinished")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref float EffectDesiredSpinDir() { return *cast(float*)(cast(size_t)cast(void*)this + 284); }
@@ -23,7 +38,7 @@ final:
 		params[] = 0;
 		*cast(UDKVehicle*)params.ptr = OwnerVehicle;
 		*cast(ParticleSystem*)&params[4] = NewTemplate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36261], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetParticleEffect, params.ptr, cast(void*)0);
 	}
 	void OldEffectFinished(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -34,6 +49,6 @@ void* PSystem)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSystem;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36264], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OldEffectFinished, params.ptr, cast(void*)0);
 	}
 }

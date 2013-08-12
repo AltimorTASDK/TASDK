@@ -8,6 +8,8 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface FracturedStaticMesh : StaticMesh
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedStaticMesh")); }
 	@property final
 	{
 		auto ref

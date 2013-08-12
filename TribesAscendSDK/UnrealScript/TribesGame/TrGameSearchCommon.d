@@ -1,10 +1,13 @@
 module UnrealScript.TribesGame.TrGameSearchCommon;
 
+import ScriptClasses;
 import UnrealScript.Engine.OnlineGameSearch;
 
 extern(C++) interface TrGameSearchCommon : OnlineGameSearch
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameSearchCommon")); }
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,

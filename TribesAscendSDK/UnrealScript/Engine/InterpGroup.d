@@ -8,10 +8,14 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpGroup : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroup")); }
 	struct InterpEdSelKey
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpGroup.InterpEdSelKey")); }
 		@property final auto ref
 		{
 			float UnsnappedPosition() { return *cast(float*)(cast(size_t)&this + 12); }

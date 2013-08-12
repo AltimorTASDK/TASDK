@@ -10,6 +10,21 @@ import UnrealScript.TribesGame.TrStormControlPoint;
 extern(C++) interface TrStormControlPointGate : TrGameObjective
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormControlPointGate")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mTouch;
+			ScriptFunction mPostRenderFor;
+		}
+		public @property static final
+		{
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPointGate.Touch")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrStormControlPointGate.PostRenderFor")); }
+		}
+	}
 	@property final auto ref TrStormControlPoint m_ControlPoint() { return *cast(TrStormControlPoint*)(cast(size_t)cast(void*)this + 1360); }
 final:
 	void Touch(Actor Other, 
@@ -24,7 +39,7 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112807], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -34,6 +49,6 @@ void**)&params[4] = OtherComp;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112813], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 }

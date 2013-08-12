@@ -13,6 +13,39 @@ import UnrealScript.Engine.UIDataStore;
 extern(C++) interface UIRoot : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIRoot")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetDataStoreStringValue;
+			ScriptFunction mSetDataStoreStringValue;
+			ScriptFunction mGetInputPlatformType;
+			ScriptFunction mGetCurrentUIController;
+			ScriptFunction mGetSceneClient;
+			ScriptFunction mStaticResolveDataStore;
+			ScriptFunction mSetDataStoreFieldValue;
+			ScriptFunction mGetDataStoreFieldValue;
+			ScriptFunction mGetOnlineGameInterface;
+			ScriptFunction mGetOnlinePlayerInterface;
+			ScriptFunction mGetOnlinePlayerInterfaceEx;
+		}
+		public @property static final
+		{
+			ScriptFunction GetDataStoreStringValue() { return mGetDataStoreStringValue ? mGetDataStoreStringValue : (mGetDataStoreStringValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetDataStoreStringValue")); }
+			ScriptFunction SetDataStoreStringValue() { return mSetDataStoreStringValue ? mSetDataStoreStringValue : (mSetDataStoreStringValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.SetDataStoreStringValue")); }
+			ScriptFunction GetInputPlatformType() { return mGetInputPlatformType ? mGetInputPlatformType : (mGetInputPlatformType = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetInputPlatformType")); }
+			ScriptFunction GetCurrentUIController() { return mGetCurrentUIController ? mGetCurrentUIController : (mGetCurrentUIController = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetCurrentUIController")); }
+			ScriptFunction GetSceneClient() { return mGetSceneClient ? mGetSceneClient : (mGetSceneClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetSceneClient")); }
+			ScriptFunction StaticResolveDataStore() { return mStaticResolveDataStore ? mStaticResolveDataStore : (mStaticResolveDataStore = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.StaticResolveDataStore")); }
+			ScriptFunction SetDataStoreFieldValue() { return mSetDataStoreFieldValue ? mSetDataStoreFieldValue : (mSetDataStoreFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.SetDataStoreFieldValue")); }
+			ScriptFunction GetDataStoreFieldValue() { return mGetDataStoreFieldValue ? mGetDataStoreFieldValue : (mGetDataStoreFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetDataStoreFieldValue")); }
+			ScriptFunction GetOnlineGameInterface() { return mGetOnlineGameInterface ? mGetOnlineGameInterface : (mGetOnlineGameInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlineGameInterface")); }
+			ScriptFunction GetOnlinePlayerInterface() { return mGetOnlinePlayerInterface ? mGetOnlinePlayerInterface : (mGetOnlinePlayerInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlinePlayerInterface")); }
+			ScriptFunction GetOnlinePlayerInterfaceEx() { return mGetOnlinePlayerInterfaceEx ? mGetOnlinePlayerInterfaceEx : (mGetOnlinePlayerInterfaceEx = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")); }
+		}
+	}
 	enum
 	{
 		DEFAULT_SIZE_X = 1024,
@@ -40,6 +73,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIRangeData")); }
 		@property final
 		{
 			auto ref
@@ -57,6 +92,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.TextureCoordinates")); }
 		@property final auto ref
 		{
 			float VL() { return *cast(float*)(cast(size_t)&this + 12); }
@@ -69,6 +106,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[84];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIProviderScriptFieldValue")); }
 		@property final auto ref
 		{
 			ScriptArray!(int) ArrayValue() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 28); }
@@ -85,6 +124,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[88];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIProviderFieldValue")); }
 		@property final auto ref
 		{
 			ScriptArray!(int) ArrayValue() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 28); }
@@ -102,6 +143,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.InputKeyAction")); }
 		@property final auto ref
 		{
 			ScriptArray!(SequenceOp.SeqOpOutputInputLink) TriggeredOps() { return *cast(ScriptArray!(SequenceOp.SeqOpOutputInputLink)*)(cast(size_t)&this + 12); }
@@ -114,6 +157,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIDataStoreBinding")); }
 		@property final auto ref
 		{
 			UIDataStore ResolvedDataStore() { return *cast(UIDataStore*)(cast(size_t)&this + 44); }
@@ -128,6 +173,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.InputEventParameters")); }
 		@property final
 		{
 			auto ref
@@ -151,6 +198,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.SubscribedInputEventParameters")); }
 		@property final
 		{
 			auto ref
@@ -175,6 +224,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.UIAxisEmulationDefinition")); }
 		@property final
 		{
 			auto ref
@@ -191,6 +242,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[9];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIRoot.RawInputKeyEventData")); }
 		@property final auto ref
 		{
 			ubyte ModifierKeyFlags() { return *cast(ubyte*)(cast(size_t)&this + 8); }
@@ -198,109 +251,109 @@ public extern(D):
 		}
 	}
 final:
-	bool GetDataStoreStringValue(ScriptString InDataStoreMarkup, ScriptString* OutStringValue, LocalPlayer OwnerPlayer)
+	static bool GetDataStoreStringValue(ScriptString InDataStoreMarkup, ScriptString* OutStringValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
 		*cast(ScriptString*)&params[12] = *OutStringValue;
 		*cast(LocalPlayer*)&params[24] = OwnerPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9285], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDataStoreStringValue, params.ptr, cast(void*)0);
 		*OutStringValue = *cast(ScriptString*)&params[12];
 		return *cast(bool*)&params[28];
 	}
-	bool SetDataStoreStringValue(ScriptString InDataStoreMarkup, ScriptString InStringValue, LocalPlayer OwnerPlayer)
+	static bool SetDataStoreStringValue(ScriptString InDataStoreMarkup, ScriptString InStringValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
 		*cast(ScriptString*)&params[12] = InStringValue;
 		*cast(LocalPlayer*)&params[24] = OwnerPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9287], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetDataStoreStringValue, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	UIRoot.EInputPlatformType GetInputPlatformType(LocalPlayer OwningPlayer)
+	static UIRoot.EInputPlatformType GetInputPlatformType(LocalPlayer OwningPlayer)
 	{
 		ubyte params[5];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = OwningPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12858], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetInputPlatformType, params.ptr, cast(void*)0);
 		return *cast(UIRoot.EInputPlatformType*)&params[4];
 	}
-	UIInteraction GetCurrentUIController()
+	static UIInteraction GetCurrentUIController()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12861], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetCurrentUIController, params.ptr, cast(void*)0);
 		return *cast(UIInteraction*)params.ptr;
 	}
-	GameUISceneClient GetSceneClient()
+	static GameUISceneClient GetSceneClient()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12863], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetSceneClient, params.ptr, cast(void*)0);
 		return *cast(GameUISceneClient*)params.ptr;
 	}
-	UIDataStore StaticResolveDataStore(ScriptName DataStoreTag, LocalPlayer InPlayerOwner)
+	static UIDataStore StaticResolveDataStore(ScriptName DataStoreTag, LocalPlayer InPlayerOwner)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = DataStoreTag;
 		*cast(LocalPlayer*)&params[8] = InPlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12865], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.StaticResolveDataStore, params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[12];
 	}
-	bool SetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* InFieldValue, LocalPlayer OwnerPlayer)
+	static bool SetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* InFieldValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[108];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
 		*cast(UIRoot.UIProviderFieldValue*)&params[12] = *InFieldValue;
 		*cast(LocalPlayer*)&params[100] = OwnerPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12871], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetDataStoreFieldValue, params.ptr, cast(void*)0);
 		*InFieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[12];
 		return *cast(bool*)&params[104];
 	}
-	bool GetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* OutFieldValue, LocalPlayer OwnerPlayer)
+	static bool GetDataStoreFieldValue(ScriptString InDataStoreMarkup, UIRoot.UIProviderFieldValue* OutFieldValue, LocalPlayer OwnerPlayer)
 	{
 		ubyte params[108];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InDataStoreMarkup;
 		*cast(UIRoot.UIProviderFieldValue*)&params[12] = *OutFieldValue;
 		*cast(LocalPlayer*)&params[100] = OwnerPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12880], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDataStoreFieldValue, params.ptr, cast(void*)0);
 		*OutFieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[12];
 		return *cast(bool*)&params[104];
 	}
-	
+	static 
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void* GetOnlineGameInterface()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12890], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetOnlineGameInterface, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr;
 	}
-	
+	static 
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void* GetOnlinePlayerInterface()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12894], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetOnlinePlayerInterface, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr;
 	}
-	
+	static 
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void* GetOnlinePlayerInterfaceEx()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12898], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetOnlinePlayerInterfaceEx, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)params.ptr;

@@ -34,6 +34,263 @@ import UnrealScript.TribesGame.TrArenaStats;
 extern(C++) interface TrHUD : UTGFxHudWrapper
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUD")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDrawMarkerText;
+			ScriptFunction mDrawMICMarker;
+			ScriptFunction mGetEdgeScreenCoordinates;
+			ScriptFunction mDrawMarker;
+			ScriptFunction mDrawRotatedMarker;
+			ScriptFunction mShowDebugInfo;
+			ScriptFunction mCreateHUDMovie;
+			ScriptFunction mShowSpectatorControls;
+			ScriptFunction mSetShowScores;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInitializeGameHUD;
+			ScriptFunction mFadeInTimer;
+			ScriptFunction mFade;
+			ScriptFunction mPlayRoundOver;
+			ScriptFunction mShowRoundEnding;
+			ScriptFunction mPlayMatchOver;
+			ScriptFunction mShowEnding;
+			ScriptFunction mFadeInSummary;
+			ScriptFunction mScaleformJoystickInputEvent;
+			ScriptFunction mToggleSkiEffect;
+			ScriptFunction mTogglePauseMenu;
+			ScriptFunction mToggleMovieHUD;
+			ScriptFunction mToggleVehicleMenu;
+			ScriptFunction mToggleTeamSelectionMenu;
+			ScriptFunction mSetPowerOscillation;
+			ScriptFunction mAddUpdateToCombatLog;
+			ScriptFunction mAddToPromptPanel;
+			ScriptFunction mAddToPromptPanelTime;
+			ScriptFunction mClearPromptPanel;
+			ScriptFunction mAddToHeroStatus;
+			ScriptFunction mClearHeroStatus;
+			ScriptFunction mClearPromptPanelMessage;
+			ScriptFunction mUpdateVGSMenu;
+			ScriptFunction mHideVGSMenu;
+			ScriptFunction mAddToHelpText;
+			ScriptFunction mClearHelpText;
+			ScriptFunction mAddUpdateToKillMessage;
+			ScriptFunction mAddFlyingIcon;
+			ScriptFunction mOnSpectate;
+			ScriptFunction mCreateSpectatorHUDCache;
+			ScriptFunction mClearSpectatorHUDCache;
+			ScriptFunction mHideHUDElements;
+			ScriptFunction mShowHUDPlayerSpawning;
+			ScriptFunction mShowHUDPlayerAlive;
+			ScriptFunction mShowCenterHUDElements;
+			ScriptFunction mUpdateRespawnText;
+			ScriptFunction mUpdateRespawnTimer;
+			ScriptFunction mUpdateHUDCredits;
+			ScriptFunction mTeamScoreboardShow;
+			ScriptFunction mRabbitScoreboardShow;
+			ScriptFunction mTeamScoreboardUpdateSlot;
+			ScriptFunction mRabbitScoreboardUpdateSlot;
+			ScriptFunction mTeamScoreboardUpdateTeamScore;
+			ScriptFunction mTeamScoreboardUpdateTime;
+			ScriptFunction mRabbitScoreboardUpdateTime;
+			ScriptFunction mTeamScoreboardActivePlayer;
+			ScriptFunction mRabbitScoreboardActivePlayer;
+			ScriptFunction mResolutionChanged;
+			ScriptFunction mRestoreHUDState;
+			ScriptFunction mHideMenus;
+			ScriptFunction mRemoveMovies;
+			ScriptFunction mCompleteVehicleMenuClose;
+			ScriptFunction mCompleteTeamSelectionMenuClose;
+			ScriptFunction mClearCrosshairOnFriendly;
+			ScriptFunction mCheckCrosshairOnFriendly;
+			ScriptFunction mDrawColoredMarkerText;
+			ScriptFunction mDrawSmallText;
+			ScriptFunction mDrawHealthBar;
+			ScriptFunction mPostRender;
+			ScriptFunction mGetRemainingFriendlyGeneratorRestoreTime;
+			ScriptFunction mGetRemainingEnemyGeneratorRestoreTime;
+			ScriptFunction mUpdateSkiEffect;
+			ScriptFunction mUpdatePickupFlashEffect;
+			ScriptFunction mPulsePickupFlashEffect;
+			ScriptFunction mUpdateInvulnerableEfect;
+			ScriptFunction mUpdateShieldEffect;
+			ScriptFunction mPulseShieldEffect;
+			ScriptFunction mUpdateJammerEffect;
+			ScriptFunction mUpdateFadeEffect;
+			ScriptFunction mFumbleFlag;
+			ScriptFunction mUpdateFumbledFlagEffect;
+			ScriptFunction mWhiteout;
+			ScriptFunction mClearWhiteout;
+			ScriptFunction mUpdateWhiteoutEffect;
+			ScriptFunction mLocalizedMessage;
+			ScriptFunction mChatMessageReceived;
+			ScriptFunction mStripTag;
+			ScriptFunction mSendLocalMessageToGlobalAlert;
+			ScriptFunction mSendLocalMessageToChat;
+			ScriptFunction mSetPlayerClassObjects;
+			ScriptFunction mHideGlobalAlert;
+			ScriptFunction mKickVoteMessage;
+			ScriptFunction mEnableGameTypeHUD;
+			ScriptFunction mShowSpectatorPlayer;
+			ScriptFunction mHideSpectatorPlayer;
+			ScriptFunction mUpdateSpectatorPlayerPanel;
+			ScriptFunction mShowSpectatorVehicle;
+			ScriptFunction mHideSpectatorVehicle;
+			ScriptFunction mUpdateSpectatorVehiclePanel;
+			ScriptFunction mShowSpectatorBookmark;
+			ScriptFunction mHideSpectatorBookmark;
+			ScriptFunction mUpdateSpectatorBookmarkPanel;
+			ScriptFunction mShowSpectatorObjectivePanel;
+			ScriptFunction mHideSpectatorObjectivePanel;
+			ScriptFunction mUpdateSpectatorObjectivePanel;
+			ScriptFunction mShowSpectatorFloatCameraPanel;
+			ScriptFunction mHideSpectatorFloatCameraPanel;
+			ScriptFunction mUpdateSpectatorFloatCameraPanel;
+			ScriptFunction mHideAllSpectatorPanels;
+			ScriptFunction mOnViewTargetChange;
+			ScriptFunction mTestNumber;
+			ScriptFunction mAddOverheadNumber;
+			ScriptFunction mUpdateOverheadNumbers;
+			ScriptFunction mTick;
+			ScriptFunction mPostRenderFor;
+			ScriptFunction mPlayAward;
+			ScriptFunction mQueueAccolade;
+			ScriptFunction mCheckQueuedAccolades;
+			ScriptFunction mRunQueuedAccoladesTimer;
+			ScriptFunction mClearQueuedAccoladesTimer;
+			ScriptFunction mDeployableReplicated;
+			ScriptFunction mMineReplicated;
+			ScriptFunction mUpdateOwnedItems;
+		}
+		public @property static final
+		{
+			ScriptFunction DrawMarkerText() { return mDrawMarkerText ? mDrawMarkerText : (mDrawMarkerText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMarkerText")); }
+			ScriptFunction DrawMICMarker() { return mDrawMICMarker ? mDrawMICMarker : (mDrawMICMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMICMarker")); }
+			ScriptFunction GetEdgeScreenCoordinates() { return mGetEdgeScreenCoordinates ? mGetEdgeScreenCoordinates : (mGetEdgeScreenCoordinates = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetEdgeScreenCoordinates")); }
+			ScriptFunction DrawMarker() { return mDrawMarker ? mDrawMarker : (mDrawMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawMarker")); }
+			ScriptFunction DrawRotatedMarker() { return mDrawRotatedMarker ? mDrawRotatedMarker : (mDrawRotatedMarker = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawRotatedMarker")); }
+			ScriptFunction ShowDebugInfo() { return mShowDebugInfo ? mShowDebugInfo : (mShowDebugInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowDebugInfo")); }
+			ScriptFunction CreateHUDMovie() { return mCreateHUDMovie ? mCreateHUDMovie : (mCreateHUDMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CreateHUDMovie")); }
+			ScriptFunction ShowSpectatorControls() { return mShowSpectatorControls ? mShowSpectatorControls : (mShowSpectatorControls = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorControls")); }
+			ScriptFunction SetShowScores() { return mSetShowScores ? mSetShowScores : (mSetShowScores = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetShowScores")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostBeginPlay")); }
+			ScriptFunction InitializeGameHUD() { return mInitializeGameHUD ? mInitializeGameHUD : (mInitializeGameHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.InitializeGameHUD")); }
+			ScriptFunction FadeInTimer() { return mFadeInTimer ? mFadeInTimer : (mFadeInTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FadeInTimer")); }
+			ScriptFunction Fade() { return mFade ? mFade : (mFade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Fade")); }
+			ScriptFunction PlayRoundOver() { return mPlayRoundOver ? mPlayRoundOver : (mPlayRoundOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayRoundOver")); }
+			ScriptFunction ShowRoundEnding() { return mShowRoundEnding ? mShowRoundEnding : (mShowRoundEnding = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowRoundEnding")); }
+			ScriptFunction PlayMatchOver() { return mPlayMatchOver ? mPlayMatchOver : (mPlayMatchOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayMatchOver")); }
+			ScriptFunction ShowEnding() { return mShowEnding ? mShowEnding : (mShowEnding = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowEnding")); }
+			ScriptFunction FadeInSummary() { return mFadeInSummary ? mFadeInSummary : (mFadeInSummary = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FadeInSummary")); }
+			ScriptFunction ScaleformJoystickInputEvent() { return mScaleformJoystickInputEvent ? mScaleformJoystickInputEvent : (mScaleformJoystickInputEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ScaleformJoystickInputEvent")); }
+			ScriptFunction ToggleSkiEffect() { return mToggleSkiEffect ? mToggleSkiEffect : (mToggleSkiEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleSkiEffect")); }
+			ScriptFunction TogglePauseMenu() { return mTogglePauseMenu ? mTogglePauseMenu : (mTogglePauseMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TogglePauseMenu")); }
+			ScriptFunction ToggleMovieHUD() { return mToggleMovieHUD ? mToggleMovieHUD : (mToggleMovieHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleMovieHUD")); }
+			ScriptFunction ToggleVehicleMenu() { return mToggleVehicleMenu ? mToggleVehicleMenu : (mToggleVehicleMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleVehicleMenu")); }
+			ScriptFunction ToggleTeamSelectionMenu() { return mToggleTeamSelectionMenu ? mToggleTeamSelectionMenu : (mToggleTeamSelectionMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ToggleTeamSelectionMenu")); }
+			ScriptFunction SetPowerOscillation() { return mSetPowerOscillation ? mSetPowerOscillation : (mSetPowerOscillation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetPowerOscillation")); }
+			ScriptFunction AddUpdateToCombatLog() { return mAddUpdateToCombatLog ? mAddUpdateToCombatLog : (mAddUpdateToCombatLog = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddUpdateToCombatLog")); }
+			ScriptFunction AddToPromptPanel() { return mAddToPromptPanel ? mAddToPromptPanel : (mAddToPromptPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToPromptPanel")); }
+			ScriptFunction AddToPromptPanelTime() { return mAddToPromptPanelTime ? mAddToPromptPanelTime : (mAddToPromptPanelTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToPromptPanelTime")); }
+			ScriptFunction ClearPromptPanel() { return mClearPromptPanel ? mClearPromptPanel : (mClearPromptPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearPromptPanel")); }
+			ScriptFunction AddToHeroStatus() { return mAddToHeroStatus ? mAddToHeroStatus : (mAddToHeroStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToHeroStatus")); }
+			ScriptFunction ClearHeroStatus() { return mClearHeroStatus ? mClearHeroStatus : (mClearHeroStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearHeroStatus")); }
+			ScriptFunction ClearPromptPanelMessage() { return mClearPromptPanelMessage ? mClearPromptPanelMessage : (mClearPromptPanelMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearPromptPanelMessage")); }
+			ScriptFunction UpdateVGSMenu() { return mUpdateVGSMenu ? mUpdateVGSMenu : (mUpdateVGSMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateVGSMenu")); }
+			ScriptFunction HideVGSMenu() { return mHideVGSMenu ? mHideVGSMenu : (mHideVGSMenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideVGSMenu")); }
+			ScriptFunction AddToHelpText() { return mAddToHelpText ? mAddToHelpText : (mAddToHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddToHelpText")); }
+			ScriptFunction ClearHelpText() { return mClearHelpText ? mClearHelpText : (mClearHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearHelpText")); }
+			ScriptFunction AddUpdateToKillMessage() { return mAddUpdateToKillMessage ? mAddUpdateToKillMessage : (mAddUpdateToKillMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddUpdateToKillMessage")); }
+			ScriptFunction AddFlyingIcon() { return mAddFlyingIcon ? mAddFlyingIcon : (mAddFlyingIcon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddFlyingIcon")); }
+			ScriptFunction OnSpectate() { return mOnSpectate ? mOnSpectate : (mOnSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.OnSpectate")); }
+			ScriptFunction CreateSpectatorHUDCache() { return mCreateSpectatorHUDCache ? mCreateSpectatorHUDCache : (mCreateSpectatorHUDCache = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CreateSpectatorHUDCache")); }
+			ScriptFunction ClearSpectatorHUDCache() { return mClearSpectatorHUDCache ? mClearSpectatorHUDCache : (mClearSpectatorHUDCache = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearSpectatorHUDCache")); }
+			ScriptFunction HideHUDElements() { return mHideHUDElements ? mHideHUDElements : (mHideHUDElements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideHUDElements")); }
+			ScriptFunction ShowHUDPlayerSpawning() { return mShowHUDPlayerSpawning ? mShowHUDPlayerSpawning : (mShowHUDPlayerSpawning = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowHUDPlayerSpawning")); }
+			ScriptFunction ShowHUDPlayerAlive() { return mShowHUDPlayerAlive ? mShowHUDPlayerAlive : (mShowHUDPlayerAlive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowHUDPlayerAlive")); }
+			ScriptFunction ShowCenterHUDElements() { return mShowCenterHUDElements ? mShowCenterHUDElements : (mShowCenterHUDElements = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowCenterHUDElements")); }
+			ScriptFunction UpdateRespawnText() { return mUpdateRespawnText ? mUpdateRespawnText : (mUpdateRespawnText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateRespawnText")); }
+			ScriptFunction UpdateRespawnTimer() { return mUpdateRespawnTimer ? mUpdateRespawnTimer : (mUpdateRespawnTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateRespawnTimer")); }
+			ScriptFunction UpdateHUDCredits() { return mUpdateHUDCredits ? mUpdateHUDCredits : (mUpdateHUDCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateHUDCredits")); }
+			ScriptFunction TeamScoreboardShow() { return mTeamScoreboardShow ? mTeamScoreboardShow : (mTeamScoreboardShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardShow")); }
+			ScriptFunction RabbitScoreboardShow() { return mRabbitScoreboardShow ? mRabbitScoreboardShow : (mRabbitScoreboardShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardShow")); }
+			ScriptFunction TeamScoreboardUpdateSlot() { return mTeamScoreboardUpdateSlot ? mTeamScoreboardUpdateSlot : (mTeamScoreboardUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateSlot")); }
+			ScriptFunction RabbitScoreboardUpdateSlot() { return mRabbitScoreboardUpdateSlot ? mRabbitScoreboardUpdateSlot : (mRabbitScoreboardUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardUpdateSlot")); }
+			ScriptFunction TeamScoreboardUpdateTeamScore() { return mTeamScoreboardUpdateTeamScore ? mTeamScoreboardUpdateTeamScore : (mTeamScoreboardUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateTeamScore")); }
+			ScriptFunction TeamScoreboardUpdateTime() { return mTeamScoreboardUpdateTime ? mTeamScoreboardUpdateTime : (mTeamScoreboardUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardUpdateTime")); }
+			ScriptFunction RabbitScoreboardUpdateTime() { return mRabbitScoreboardUpdateTime ? mRabbitScoreboardUpdateTime : (mRabbitScoreboardUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardUpdateTime")); }
+			ScriptFunction TeamScoreboardActivePlayer() { return mTeamScoreboardActivePlayer ? mTeamScoreboardActivePlayer : (mTeamScoreboardActivePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TeamScoreboardActivePlayer")); }
+			ScriptFunction RabbitScoreboardActivePlayer() { return mRabbitScoreboardActivePlayer ? mRabbitScoreboardActivePlayer : (mRabbitScoreboardActivePlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RabbitScoreboardActivePlayer")); }
+			ScriptFunction ResolutionChanged() { return mResolutionChanged ? mResolutionChanged : (mResolutionChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ResolutionChanged")); }
+			ScriptFunction RestoreHUDState() { return mRestoreHUDState ? mRestoreHUDState : (mRestoreHUDState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RestoreHUDState")); }
+			ScriptFunction HideMenus() { return mHideMenus ? mHideMenus : (mHideMenus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideMenus")); }
+			ScriptFunction RemoveMovies() { return mRemoveMovies ? mRemoveMovies : (mRemoveMovies = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RemoveMovies")); }
+			ScriptFunction CompleteVehicleMenuClose() { return mCompleteVehicleMenuClose ? mCompleteVehicleMenuClose : (mCompleteVehicleMenuClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CompleteVehicleMenuClose")); }
+			ScriptFunction CompleteTeamSelectionMenuClose() { return mCompleteTeamSelectionMenuClose ? mCompleteTeamSelectionMenuClose : (mCompleteTeamSelectionMenuClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CompleteTeamSelectionMenuClose")); }
+			ScriptFunction ClearCrosshairOnFriendly() { return mClearCrosshairOnFriendly ? mClearCrosshairOnFriendly : (mClearCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearCrosshairOnFriendly")); }
+			ScriptFunction CheckCrosshairOnFriendly() { return mCheckCrosshairOnFriendly ? mCheckCrosshairOnFriendly : (mCheckCrosshairOnFriendly = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CheckCrosshairOnFriendly")); }
+			ScriptFunction DrawColoredMarkerText() { return mDrawColoredMarkerText ? mDrawColoredMarkerText : (mDrawColoredMarkerText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawColoredMarkerText")); }
+			ScriptFunction DrawSmallText() { return mDrawSmallText ? mDrawSmallText : (mDrawSmallText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawSmallText")); }
+			ScriptFunction DrawHealthBar() { return mDrawHealthBar ? mDrawHealthBar : (mDrawHealthBar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DrawHealthBar")); }
+			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostRender")); }
+			ScriptFunction GetRemainingFriendlyGeneratorRestoreTime() { return mGetRemainingFriendlyGeneratorRestoreTime ? mGetRemainingFriendlyGeneratorRestoreTime : (mGetRemainingFriendlyGeneratorRestoreTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetRemainingFriendlyGeneratorRestoreTime")); }
+			ScriptFunction GetRemainingEnemyGeneratorRestoreTime() { return mGetRemainingEnemyGeneratorRestoreTime ? mGetRemainingEnemyGeneratorRestoreTime : (mGetRemainingEnemyGeneratorRestoreTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.GetRemainingEnemyGeneratorRestoreTime")); }
+			ScriptFunction UpdateSkiEffect() { return mUpdateSkiEffect ? mUpdateSkiEffect : (mUpdateSkiEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSkiEffect")); }
+			ScriptFunction UpdatePickupFlashEffect() { return mUpdatePickupFlashEffect ? mUpdatePickupFlashEffect : (mUpdatePickupFlashEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdatePickupFlashEffect")); }
+			ScriptFunction PulsePickupFlashEffect() { return mPulsePickupFlashEffect ? mPulsePickupFlashEffect : (mPulsePickupFlashEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PulsePickupFlashEffect")); }
+			ScriptFunction UpdateInvulnerableEfect() { return mUpdateInvulnerableEfect ? mUpdateInvulnerableEfect : (mUpdateInvulnerableEfect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateInvulnerableEfect")); }
+			ScriptFunction UpdateShieldEffect() { return mUpdateShieldEffect ? mUpdateShieldEffect : (mUpdateShieldEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateShieldEffect")); }
+			ScriptFunction PulseShieldEffect() { return mPulseShieldEffect ? mPulseShieldEffect : (mPulseShieldEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PulseShieldEffect")); }
+			ScriptFunction UpdateJammerEffect() { return mUpdateJammerEffect ? mUpdateJammerEffect : (mUpdateJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateJammerEffect")); }
+			ScriptFunction UpdateFadeEffect() { return mUpdateFadeEffect ? mUpdateFadeEffect : (mUpdateFadeEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateFadeEffect")); }
+			ScriptFunction FumbleFlag() { return mFumbleFlag ? mFumbleFlag : (mFumbleFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.FumbleFlag")); }
+			ScriptFunction UpdateFumbledFlagEffect() { return mUpdateFumbledFlagEffect ? mUpdateFumbledFlagEffect : (mUpdateFumbledFlagEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateFumbledFlagEffect")); }
+			ScriptFunction Whiteout() { return mWhiteout ? mWhiteout : (mWhiteout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Whiteout")); }
+			ScriptFunction ClearWhiteout() { return mClearWhiteout ? mClearWhiteout : (mClearWhiteout = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearWhiteout")); }
+			ScriptFunction UpdateWhiteoutEffect() { return mUpdateWhiteoutEffect ? mUpdateWhiteoutEffect : (mUpdateWhiteoutEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateWhiteoutEffect")); }
+			ScriptFunction LocalizedMessage() { return mLocalizedMessage ? mLocalizedMessage : (mLocalizedMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.LocalizedMessage")); }
+			ScriptFunction ChatMessageReceived() { return mChatMessageReceived ? mChatMessageReceived : (mChatMessageReceived = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ChatMessageReceived")); }
+			ScriptFunction StripTag() { return mStripTag ? mStripTag : (mStripTag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.StripTag")); }
+			ScriptFunction SendLocalMessageToGlobalAlert() { return mSendLocalMessageToGlobalAlert ? mSendLocalMessageToGlobalAlert : (mSendLocalMessageToGlobalAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SendLocalMessageToGlobalAlert")); }
+			ScriptFunction SendLocalMessageToChat() { return mSendLocalMessageToChat ? mSendLocalMessageToChat : (mSendLocalMessageToChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SendLocalMessageToChat")); }
+			ScriptFunction SetPlayerClassObjects() { return mSetPlayerClassObjects ? mSetPlayerClassObjects : (mSetPlayerClassObjects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.SetPlayerClassObjects")); }
+			ScriptFunction HideGlobalAlert() { return mHideGlobalAlert ? mHideGlobalAlert : (mHideGlobalAlert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideGlobalAlert")); }
+			ScriptFunction KickVoteMessage() { return mKickVoteMessage ? mKickVoteMessage : (mKickVoteMessage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.KickVoteMessage")); }
+			ScriptFunction EnableGameTypeHUD() { return mEnableGameTypeHUD ? mEnableGameTypeHUD : (mEnableGameTypeHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.EnableGameTypeHUD")); }
+			ScriptFunction ShowSpectatorPlayer() { return mShowSpectatorPlayer ? mShowSpectatorPlayer : (mShowSpectatorPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorPlayer")); }
+			ScriptFunction HideSpectatorPlayer() { return mHideSpectatorPlayer ? mHideSpectatorPlayer : (mHideSpectatorPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorPlayer")); }
+			ScriptFunction UpdateSpectatorPlayerPanel() { return mUpdateSpectatorPlayerPanel ? mUpdateSpectatorPlayerPanel : (mUpdateSpectatorPlayerPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorPlayerPanel")); }
+			ScriptFunction ShowSpectatorVehicle() { return mShowSpectatorVehicle ? mShowSpectatorVehicle : (mShowSpectatorVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorVehicle")); }
+			ScriptFunction HideSpectatorVehicle() { return mHideSpectatorVehicle ? mHideSpectatorVehicle : (mHideSpectatorVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorVehicle")); }
+			ScriptFunction UpdateSpectatorVehiclePanel() { return mUpdateSpectatorVehiclePanel ? mUpdateSpectatorVehiclePanel : (mUpdateSpectatorVehiclePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorVehiclePanel")); }
+			ScriptFunction ShowSpectatorBookmark() { return mShowSpectatorBookmark ? mShowSpectatorBookmark : (mShowSpectatorBookmark = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorBookmark")); }
+			ScriptFunction HideSpectatorBookmark() { return mHideSpectatorBookmark ? mHideSpectatorBookmark : (mHideSpectatorBookmark = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorBookmark")); }
+			ScriptFunction UpdateSpectatorBookmarkPanel() { return mUpdateSpectatorBookmarkPanel ? mUpdateSpectatorBookmarkPanel : (mUpdateSpectatorBookmarkPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorBookmarkPanel")); }
+			ScriptFunction ShowSpectatorObjectivePanel() { return mShowSpectatorObjectivePanel ? mShowSpectatorObjectivePanel : (mShowSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorObjectivePanel")); }
+			ScriptFunction HideSpectatorObjectivePanel() { return mHideSpectatorObjectivePanel ? mHideSpectatorObjectivePanel : (mHideSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorObjectivePanel")); }
+			ScriptFunction UpdateSpectatorObjectivePanel() { return mUpdateSpectatorObjectivePanel ? mUpdateSpectatorObjectivePanel : (mUpdateSpectatorObjectivePanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorObjectivePanel")); }
+			ScriptFunction ShowSpectatorFloatCameraPanel() { return mShowSpectatorFloatCameraPanel ? mShowSpectatorFloatCameraPanel : (mShowSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ShowSpectatorFloatCameraPanel")); }
+			ScriptFunction HideSpectatorFloatCameraPanel() { return mHideSpectatorFloatCameraPanel ? mHideSpectatorFloatCameraPanel : (mHideSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideSpectatorFloatCameraPanel")); }
+			ScriptFunction UpdateSpectatorFloatCameraPanel() { return mUpdateSpectatorFloatCameraPanel ? mUpdateSpectatorFloatCameraPanel : (mUpdateSpectatorFloatCameraPanel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateSpectatorFloatCameraPanel")); }
+			ScriptFunction HideAllSpectatorPanels() { return mHideAllSpectatorPanels ? mHideAllSpectatorPanels : (mHideAllSpectatorPanels = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.HideAllSpectatorPanels")); }
+			ScriptFunction OnViewTargetChange() { return mOnViewTargetChange ? mOnViewTargetChange : (mOnViewTargetChange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.OnViewTargetChange")); }
+			ScriptFunction TestNumber() { return mTestNumber ? mTestNumber : (mTestNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.TestNumber")); }
+			ScriptFunction AddOverheadNumber() { return mAddOverheadNumber ? mAddOverheadNumber : (mAddOverheadNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.AddOverheadNumber")); }
+			ScriptFunction UpdateOverheadNumbers() { return mUpdateOverheadNumbers ? mUpdateOverheadNumbers : (mUpdateOverheadNumbers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateOverheadNumbers")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.Tick")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PostRenderFor")); }
+			ScriptFunction PlayAward() { return mPlayAward ? mPlayAward : (mPlayAward = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.PlayAward")); }
+			ScriptFunction QueueAccolade() { return mQueueAccolade ? mQueueAccolade : (mQueueAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.QueueAccolade")); }
+			ScriptFunction CheckQueuedAccolades() { return mCheckQueuedAccolades ? mCheckQueuedAccolades : (mCheckQueuedAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.CheckQueuedAccolades")); }
+			ScriptFunction RunQueuedAccoladesTimer() { return mRunQueuedAccoladesTimer ? mRunQueuedAccoladesTimer : (mRunQueuedAccoladesTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.RunQueuedAccoladesTimer")); }
+			ScriptFunction ClearQueuedAccoladesTimer() { return mClearQueuedAccoladesTimer ? mClearQueuedAccoladesTimer : (mClearQueuedAccoladesTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.ClearQueuedAccoladesTimer")); }
+			ScriptFunction DeployableReplicated() { return mDeployableReplicated ? mDeployableReplicated : (mDeployableReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.DeployableReplicated")); }
+			ScriptFunction MineReplicated() { return mMineReplicated ? mMineReplicated : (mMineReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.MineReplicated")); }
+			ScriptFunction UpdateOwnedItems() { return mUpdateOwnedItems ? mUpdateOwnedItems : (mUpdateOwnedItems = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUD.UpdateOwnedItems")); }
+		}
+	}
 	enum
 	{
 		THR_SPINFUSOR = 1,
@@ -541,6 +798,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHUD.QueuedAccolade")); }
 		@property final
 		{
 			auto ref
@@ -557,6 +816,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHUD.OverheadNumber")); }
 		@property final auto ref
 		{
 			float CurrentScale() { return *cast(float*)(cast(size_t)&this + 36); }
@@ -822,7 +1083,7 @@ final:
 		*cast(Vector*)&params[16] = Placement;
 		*cast(Canvas*)&params[28] = DrawCanvas;
 		*cast(bool*)&params[32] = bBuddy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71610], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMarkerText, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[36];
 	}
 	Vector DrawMICMarker(MaterialInstanceConstant MarkerMIC, Vector Placement, Canvas DrawCanvas, UObject.Vector2D MarkerSize, ScriptString markText, bool bFriend, float distScale)
@@ -836,10 +1097,10 @@ final:
 		*cast(ScriptString*)&params[28] = markText;
 		*cast(bool*)&params[40] = bFriend;
 		*cast(float*)&params[44] = distScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71612], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMICMarker, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[48];
 	}
-	bool GetEdgeScreenCoordinates(Canvas inCanvas, Vector CameraPosition, Vector CameraDir, Vector ObjectLocation, Vector* ScreenLocation)
+	static bool GetEdgeScreenCoordinates(Canvas inCanvas, Vector CameraPosition, Vector CameraDir, Vector ObjectLocation, Vector* ScreenLocation)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -848,7 +1109,7 @@ final:
 		*cast(Vector*)&params[16] = CameraDir;
 		*cast(Vector*)&params[28] = ObjectLocation;
 		*cast(Vector*)&params[40] = *ScreenLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72894], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEdgeScreenCoordinates, params.ptr, cast(void*)0);
 		*ScreenLocation = *cast(Vector*)&params[40];
 		return *cast(bool*)&params[52];
 	}
@@ -863,7 +1124,7 @@ final:
 		*cast(bool*)&params[32] = bFriend;
 		*cast(float*)&params[36] = Alpha;
 		*cast(float*)&params[40] = distScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72902], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMarker, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[44];
 	}
 	Vector DrawRotatedMarker(Texture2D Marker, Vector Placement, Rotator Rot, Canvas DrawCanvas, ScriptString markText, bool bFriend, float Alpha, float distScale)
@@ -878,7 +1139,7 @@ final:
 		*cast(bool*)&params[44] = bFriend;
 		*cast(float*)&params[48] = Alpha;
 		*cast(float*)&params[52] = distScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72910], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedMarker, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[56];
 	}
 	void ShowDebugInfo(float* out_YL, float* out_YPos)
@@ -887,39 +1148,39 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = *out_YL;
 		*cast(float*)&params[4] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96115], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowDebugInfo, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)params.ptr;
 		*out_YPos = *cast(float*)&params[4];
 	}
 	void CreateHUDMovie()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96120], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateHUDMovie, cast(void*)0, cast(void*)0);
 	}
 	void ShowSpectatorControls(bool bForceEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bForceEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96130], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorControls, params.ptr, cast(void*)0);
 	}
 	void SetShowScores(bool bEnableShowScores)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnableShowScores;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96132], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetShowScores, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96136], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void InitializeGameHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96137], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeGameHUD, cast(void*)0, cast(void*)0);
 	}
 	void FadeInTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96145], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FadeInTimer, cast(void*)0, cast(void*)0);
 	}
 	void Fade(float FadeTarget, float FadeSpeed, float bForceFadeInStartAlpha)
 	{
@@ -928,18 +1189,18 @@ final:
 		*cast(float*)params.ptr = FadeTarget;
 		*cast(float*)&params[4] = FadeSpeed;
 		*cast(float*)&params[8] = bForceFadeInStartAlpha;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96146], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Fade, params.ptr, cast(void*)0);
 	}
 	void PlayRoundOver(int WinningTeam)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = WinningTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96150], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayRoundOver, params.ptr, cast(void*)0);
 	}
 	void ShowRoundEnding()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96152], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowRoundEnding, cast(void*)0, cast(void*)0);
 	}
 	void PlayMatchOver(int Winner, ScriptString WinnerName)
 	{
@@ -947,15 +1208,15 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = WinnerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96153], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayMatchOver, params.ptr, cast(void*)0);
 	}
 	void ShowEnding()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96156], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowEnding, cast(void*)0, cast(void*)0);
 	}
 	void FadeInSummary()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96159], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FadeInSummary, cast(void*)0, cast(void*)0);
 	}
 	void ScaleformJoystickInputEvent(float leftAngle, float rightAngle)
 	{
@@ -963,7 +1224,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = leftAngle;
 		*cast(float*)&params[4] = rightAngle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96160], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ScaleformJoystickInputEvent, params.ptr, cast(void*)0);
 	}
 	void ToggleSkiEffect(bool bEnabled, float fSpeed)
 	{
@@ -971,30 +1232,30 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
 		*cast(float*)&params[4] = fSpeed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96163], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleSkiEffect, params.ptr, cast(void*)0);
 	}
 	void TogglePauseMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96166], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TogglePauseMenu, cast(void*)0, cast(void*)0);
 	}
 	void ToggleMovieHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96168], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleMovieHUD, cast(void*)0, cast(void*)0);
 	}
 	void ToggleVehicleMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96169], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleVehicleMenu, cast(void*)0, cast(void*)0);
 	}
 	void ToggleTeamSelectionMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96172], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleTeamSelectionMenu, cast(void*)0, cast(void*)0);
 	}
 	void SetPowerOscillation(bool bEnable)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96174], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPowerOscillation, params.ptr, cast(void*)0);
 	}
 	void AddUpdateToCombatLog(int CombatType, ScriptString Aggressor, int WeaponIcon, ScriptString Victim)
 	{
@@ -1004,7 +1265,7 @@ final:
 		*cast(ScriptString*)&params[4] = Aggressor;
 		*cast(int*)&params[16] = WeaponIcon;
 		*cast(ScriptString*)&params[20] = Victim;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96176], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddUpdateToCombatLog, params.ptr, cast(void*)0);
 	}
 	void AddToPromptPanel(ScriptString Message, TgSupportCommands.GC_ALERT_PRIORITY Priority)
 	{
@@ -1012,7 +1273,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
 		*cast(TgSupportCommands.GC_ALERT_PRIORITY*)&params[12] = Priority;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96181], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToPromptPanel, params.ptr, cast(void*)0);
 	}
 	void AddToPromptPanelTime(ScriptString Message, float EndTime, TgSupportCommands.GC_ALERT_PRIORITY Priority)
 	{
@@ -1021,11 +1282,11 @@ final:
 		*cast(ScriptString*)params.ptr = Message;
 		*cast(float*)&params[12] = EndTime;
 		*cast(TgSupportCommands.GC_ALERT_PRIORITY*)&params[16] = Priority;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96184], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToPromptPanelTime, params.ptr, cast(void*)0);
 	}
 	void ClearPromptPanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96188], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearPromptPanel, cast(void*)0, cast(void*)0);
 	}
 	void AddToHeroStatus(ScriptString Message, float ShowTime)
 	{
@@ -1033,26 +1294,26 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
 		*cast(float*)&params[12] = ShowTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96189], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToHeroStatus, params.ptr, cast(void*)0);
 	}
 	void ClearHeroStatus()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96192], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearHeroStatus, cast(void*)0, cast(void*)0);
 	}
 	void ClearPromptPanelMessage(ScriptString Message)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96193], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearPromptPanelMessage, params.ptr, cast(void*)0);
 	}
 	void UpdateVGSMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96195], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateVGSMenu, cast(void*)0, cast(void*)0);
 	}
 	void HideVGSMenu()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96196], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideVGSMenu, cast(void*)0, cast(void*)0);
 	}
 	void AddToHelpText(ScriptString Title, ScriptString Body, float PictureIndex, ScriptString footer, ScriptString SuppressString)
 	{
@@ -1063,11 +1324,11 @@ final:
 		*cast(float*)&params[24] = PictureIndex;
 		*cast(ScriptString*)&params[28] = footer;
 		*cast(ScriptString*)&params[40] = SuppressString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96197], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToHelpText, params.ptr, cast(void*)0);
 	}
 	void ClearHelpText()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96203], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearHelpText, cast(void*)0, cast(void*)0);
 	}
 	void AddUpdateToKillMessage(int RankIcon, int PlayerIcon, ScriptString PlayerName, ScriptString Message)
 	{
@@ -1077,7 +1338,7 @@ final:
 		*cast(int*)&params[4] = PlayerIcon;
 		*cast(ScriptString*)&params[8] = PlayerName;
 		*cast(ScriptString*)&params[20] = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96204], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddUpdateToKillMessage, params.ptr, cast(void*)0);
 	}
 	void AddFlyingIcon(int iconNumber, ScriptString Description, ScriptString Points, int bIsBadge)
 	{
@@ -1087,22 +1348,22 @@ final:
 		*cast(ScriptString*)&params[4] = Description;
 		*cast(ScriptString*)&params[16] = Points;
 		*cast(int*)&params[28] = bIsBadge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96209], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddFlyingIcon, params.ptr, cast(void*)0);
 	}
 	void OnSpectate(bool bUpdateTeamState)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bUpdateTeamState;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96214], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSpectate, params.ptr, cast(void*)0);
 	}
 	void CreateSpectatorHUDCache()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96216], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateSpectatorHUDCache, cast(void*)0, cast(void*)0);
 	}
 	void ClearSpectatorHUDCache()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96217], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSpectatorHUDCache, cast(void*)0, cast(void*)0);
 	}
 	void HideHUDElements(bool bShowStats, bool bForceCredits)
 	{
@@ -1110,36 +1371,36 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bShowStats;
 		*cast(bool*)&params[4] = bForceCredits;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96218], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideHUDElements, params.ptr, cast(void*)0);
 	}
 	void ShowHUDPlayerSpawning()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96221], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowHUDPlayerSpawning, cast(void*)0, cast(void*)0);
 	}
 	void ShowHUDPlayerAlive()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96222], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowHUDPlayerAlive, cast(void*)0, cast(void*)0);
 	}
 	void ShowCenterHUDElements(bool bShow)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96223], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowCenterHUDElements, params.ptr, cast(void*)0);
 	}
 	void UpdateRespawnText(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96225], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateRespawnText, params.ptr, cast(void*)0);
 	}
 	void UpdateRespawnTimer(int TimeRemaining)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TimeRemaining;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96227], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateRespawnTimer, params.ptr, cast(void*)0);
 	}
 	void UpdateHUDCredits(int changeAmount, int newTotal)
 	{
@@ -1147,21 +1408,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = changeAmount;
 		*cast(int*)&params[4] = newTotal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96229], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHUDCredits, params.ptr, cast(void*)0);
 	}
 	void TeamScoreboardShow(bool bVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96232], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamScoreboardShow, params.ptr, cast(void*)0);
 	}
 	void RabbitScoreboardShow(bool bVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96234], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RabbitScoreboardShow, params.ptr, cast(void*)0);
 	}
 	void TeamScoreboardUpdateSlot(int Index, ScriptString PlayerName, ScriptString Score, ScriptString Kills, ScriptString Assists, ScriptString Ping, ScriptString ClassAbb, int Rank, int RankIcon)
 	{
@@ -1176,7 +1437,7 @@ final:
 		*cast(ScriptString*)&params[64] = ClassAbb;
 		*cast(int*)&params[76] = Rank;
 		*cast(int*)&params[80] = RankIcon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96236], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamScoreboardUpdateSlot, params.ptr, cast(void*)0);
 	}
 	void RabbitScoreboardUpdateSlot(int Index, ScriptString PlayerName, ScriptString Score, ScriptString Kills, ScriptString Assists, ScriptString Ping, ScriptString ClassAbb, int Rank, int RankIcon)
 	{
@@ -1191,7 +1452,7 @@ final:
 		*cast(ScriptString*)&params[64] = ClassAbb;
 		*cast(int*)&params[76] = Rank;
 		*cast(int*)&params[80] = RankIcon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96246], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RabbitScoreboardUpdateSlot, params.ptr, cast(void*)0);
 	}
 	void TeamScoreboardUpdateTeamScore(int Index, int Score)
 	{
@@ -1199,28 +1460,28 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(int*)&params[4] = Score;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96256], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamScoreboardUpdateTeamScore, params.ptr, cast(void*)0);
 	}
 	void TeamScoreboardUpdateTime(ScriptString Time)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Time;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96259], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamScoreboardUpdateTime, params.ptr, cast(void*)0);
 	}
 	void RabbitScoreboardUpdateTime(ScriptString Time)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Time;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96261], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RabbitScoreboardUpdateTime, params.ptr, cast(void*)0);
 	}
 	void TeamScoreboardActivePlayer(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96263], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamScoreboardActivePlayer, params.ptr, cast(void*)0);
 	}
 	void RabbitScoreboardActivePlayer(int Index, bool bVisible)
 	{
@@ -1228,41 +1489,41 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(bool*)&params[4] = bVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96265], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RabbitScoreboardActivePlayer, params.ptr, cast(void*)0);
 	}
 	void ResolutionChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96268], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResolutionChanged, cast(void*)0, cast(void*)0);
 	}
 	void RestoreHUDState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96271], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestoreHUDState, cast(void*)0, cast(void*)0);
 	}
 	void HideMenus()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96275], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideMenus, cast(void*)0, cast(void*)0);
 	}
 	void RemoveMovies()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96276], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveMovies, cast(void*)0, cast(void*)0);
 	}
 	void CompleteVehicleMenuClose()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96277], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CompleteVehicleMenuClose, cast(void*)0, cast(void*)0);
 	}
 	void CompleteTeamSelectionMenuClose()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96278], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CompleteTeamSelectionMenuClose, cast(void*)0, cast(void*)0);
 	}
 	void ClearCrosshairOnFriendly()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96279], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCrosshairOnFriendly, cast(void*)0, cast(void*)0);
 	}
 	bool CheckCrosshairOnFriendly()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckCrosshairOnFriendly, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	Vector DrawColoredMarkerText(ScriptString ShowText, UObject.Color TextColor, Vector Placement, Canvas DrawCanvas, float ScaleX, float ScaleY)
@@ -1275,10 +1536,10 @@ final:
 		*cast(Canvas*)&params[28] = DrawCanvas;
 		*cast(float*)&params[32] = ScaleX;
 		*cast(float*)&params[36] = ScaleY;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96323], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawColoredMarkerText, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[40];
 	}
-	void DrawSmallText(ScriptString ShowText, bool bFriend, Vector Placement, Canvas DrawCanvas)
+	static void DrawSmallText(ScriptString ShowText, bool bFriend, Vector Placement, Canvas DrawCanvas)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -1286,7 +1547,7 @@ final:
 		*cast(bool*)&params[12] = bFriend;
 		*cast(Vector*)&params[16] = Placement;
 		*cast(Canvas*)&params[28] = DrawCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96333], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawSmallText, params.ptr, cast(void*)0);
 	}
 	void DrawHealthBar(MaterialInstanceConstant HealthBarMIC, bool bFriend, Vector Placement, Canvas DrawCanvas, float PlacementX, float PlacementY, float Width, float Height)
 	{
@@ -1300,33 +1561,33 @@ final:
 		*cast(float*)&params[28] = PlacementY;
 		*cast(float*)&params[32] = Width;
 		*cast(float*)&params[36] = Height;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96340], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHealthBar, params.ptr, cast(void*)0);
 	}
 	void PostRender()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96369], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, cast(void*)0, cast(void*)0);
 	}
 	float GetRemainingFriendlyGeneratorRestoreTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96370], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRemainingFriendlyGeneratorRestoreTime, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetRemainingEnemyGeneratorRestoreTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96372], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRemainingEnemyGeneratorRestoreTime, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void UpdateSkiEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96374], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSkiEffect, cast(void*)0, cast(void*)0);
 	}
 	void UpdatePickupFlashEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96376], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePickupFlashEffect, cast(void*)0, cast(void*)0);
 	}
 	void PulsePickupFlashEffect(float PulseAmount, float PulseSpeed)
 	{
@@ -1334,38 +1595,38 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = PulseAmount;
 		*cast(float*)&params[4] = PulseSpeed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PulsePickupFlashEffect, params.ptr, cast(void*)0);
 	}
 	void UpdateInvulnerableEfect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96381], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateInvulnerableEfect, cast(void*)0, cast(void*)0);
 	}
 	void UpdateShieldEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96385], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateShieldEffect, cast(void*)0, cast(void*)0);
 	}
 	void PulseShieldEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96389], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PulseShieldEffect, cast(void*)0, cast(void*)0);
 	}
 	void UpdateJammerEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96390], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateJammerEffect, cast(void*)0, cast(void*)0);
 	}
 	void UpdateFadeEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96393], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFadeEffect, cast(void*)0, cast(void*)0);
 	}
 	void FumbleFlag(float Speed)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Speed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96395], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FumbleFlag, params.ptr, cast(void*)0);
 	}
 	void UpdateFumbledFlagEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96397], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFumbledFlagEffect, cast(void*)0, cast(void*)0);
 	}
 	void Whiteout(float Speed, float Amount)
 	{
@@ -1373,15 +1634,15 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = Speed;
 		*cast(float*)&params[4] = Amount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96398], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Whiteout, params.ptr, cast(void*)0);
 	}
 	void ClearWhiteout()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96401], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearWhiteout, cast(void*)0, cast(void*)0);
 	}
 	void UpdateWhiteoutEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96402], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateWhiteoutEffect, cast(void*)0, cast(void*)0);
 	}
 	void LocalizedMessage(ScriptClass InMessageClass, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, ScriptString CriticalString, int Switch, float Position, float Lifetime, int FontSize, UObject.Color DrawColor, UObject OptionalObject)
 	{
@@ -1397,7 +1658,7 @@ final:
 		*cast(int*)&params[36] = FontSize;
 		*cast(UObject.Color*)&params[40] = DrawColor;
 		*cast(UObject*)&params[44] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96403], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LocalizedMessage, params.ptr, cast(void*)0);
 	}
 	void ChatMessageReceived(int pChannel, ScriptString Sender, ScriptString Message)
 	{
@@ -1406,14 +1667,14 @@ final:
 		*cast(int*)params.ptr = pChannel;
 		*cast(ScriptString*)&params[4] = Sender;
 		*cast(ScriptString*)&params[16] = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96421], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChatMessageReceived, params.ptr, cast(void*)0);
 	}
 	ScriptString StripTag(ScriptString sValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = sValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StripTag, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 	void SendLocalMessageToGlobalAlert(ScriptString Message)
@@ -1421,14 +1682,14 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96440], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendLocalMessageToGlobalAlert, params.ptr, cast(void*)0);
 	}
 	void SendLocalMessageToChat(ScriptString Message)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96442], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendLocalMessageToChat, params.ptr, cast(void*)0);
 	}
 	void SetPlayerClassObjects(ScriptString ClassName, int PerkIcon1, int PerkIcon2)
 	{
@@ -1437,11 +1698,11 @@ final:
 		*cast(ScriptString*)params.ptr = ClassName;
 		*cast(int*)&params[12] = PerkIcon1;
 		*cast(int*)&params[16] = PerkIcon2;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerClassObjects, params.ptr, cast(void*)0);
 	}
 	void HideGlobalAlert()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96450], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideGlobalAlert, cast(void*)0, cast(void*)0);
 	}
 	void KickVoteMessage(bool bComplete, ScriptString Message)
 	{
@@ -1449,101 +1710,101 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bComplete;
 		*cast(ScriptString*)&params[4] = Message;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KickVoteMessage, params.ptr, cast(void*)0);
 	}
 	void EnableGameTypeHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96455], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableGameTypeHUD, cast(void*)0, cast(void*)0);
 	}
 	void ShowSpectatorPlayer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96456], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorPlayer, cast(void*)0, cast(void*)0);
 	}
 	void HideSpectatorPlayer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96457], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideSpectatorPlayer, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpectatorPlayerPanel(TrPawn ViewTargetTrPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = ViewTargetTrPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpectatorPlayerPanel, params.ptr, cast(void*)0);
 	}
 	void ShowSpectatorVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96466], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorVehicle, cast(void*)0, cast(void*)0);
 	}
 	void HideSpectatorVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96467], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideSpectatorVehicle, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpectatorVehiclePanel(TrVehicle ViewTargetVehicle)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrVehicle*)params.ptr = ViewTargetVehicle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96468], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpectatorVehiclePanel, params.ptr, cast(void*)0);
 	}
 	void ShowSpectatorBookmark()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96474], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorBookmark, cast(void*)0, cast(void*)0);
 	}
 	void HideSpectatorBookmark()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96475], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideSpectatorBookmark, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpectatorBookmarkPanel(TrCamera_SpectatorBookmark pBookMark)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrCamera_SpectatorBookmark*)params.ptr = pBookMark;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96476], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpectatorBookmarkPanel, params.ptr, cast(void*)0);
 	}
 	void ShowSpectatorObjectivePanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96478], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorObjectivePanel, cast(void*)0, cast(void*)0);
 	}
 	void HideSpectatorObjectivePanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96479], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideSpectatorObjectivePanel, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpectatorObjectivePanel(Actor ObjectiveActor)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ObjectiveActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96480], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpectatorObjectivePanel, params.ptr, cast(void*)0);
 	}
 	void ShowSpectatorFloatCameraPanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96484], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowSpectatorFloatCameraPanel, cast(void*)0, cast(void*)0);
 	}
 	void HideSpectatorFloatCameraPanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96485], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideSpectatorFloatCameraPanel, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpectatorFloatCameraPanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96486], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpectatorFloatCameraPanel, cast(void*)0, cast(void*)0);
 	}
 	void HideAllSpectatorPanels()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96487], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HideAllSpectatorPanels, cast(void*)0, cast(void*)0);
 	}
 	void OnViewTargetChange(Actor NewViewTarget)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96488], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewTargetChange, params.ptr, cast(void*)0);
 	}
 	void TestNumber(int Value)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96490], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TestNumber, params.ptr, cast(void*)0);
 	}
 	void AddOverheadNumber(int Value, UObject.Vector4 WorldLocation)
 	{
@@ -1551,21 +1812,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Value;
 		*cast(UObject.Vector4*)&params[16] = WorldLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96492], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddOverheadNumber, params.ptr, cast(void*)0);
 	}
 	void UpdateOverheadNumbers(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96496], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOverheadNumbers, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96505], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas DrawCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -1575,14 +1836,14 @@ final:
 		*cast(Canvas*)&params[4] = DrawCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96507], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 	void PlayAward(Canvas DrawCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = DrawCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96512], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAward, params.ptr, cast(void*)0);
 	}
 	void QueueAccolade(int Icon, ScriptString Title, ScriptString Subtitle, bool bIsBadge)
 	{
@@ -1592,39 +1853,39 @@ final:
 		*cast(ScriptString*)&params[4] = Title;
 		*cast(ScriptString*)&params[16] = Subtitle;
 		*cast(bool*)&params[28] = bIsBadge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96519], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.QueueAccolade, params.ptr, cast(void*)0);
 	}
 	void CheckQueuedAccolades()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96525], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckQueuedAccolades, cast(void*)0, cast(void*)0);
 	}
 	void RunQueuedAccoladesTimer(bool bIsBadge)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsBadge;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96526], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RunQueuedAccoladesTimer, params.ptr, cast(void*)0);
 	}
 	void ClearQueuedAccoladesTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96529], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearQueuedAccoladesTimer, cast(void*)0, cast(void*)0);
 	}
 	void DeployableReplicated(TrDeployable NewDep)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrDeployable*)params.ptr = NewDep;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96530], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeployableReplicated, params.ptr, cast(void*)0);
 	}
 	void MineReplicated(TrProj_Mine NewMine)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrProj_Mine*)params.ptr = NewMine;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96532], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MineReplicated, params.ptr, cast(void*)0);
 	}
 	void UpdateOwnedItems()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96535], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOwnedItems, cast(void*)0, cast(void*)0);
 	}
 }

@@ -17,6 +17,35 @@ import UnrealScript.Engine.OnlinePlayerStorage;
 extern(C++) interface UIDataStore_OnlinePlayerData : UIDataStore_Remote
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlinePlayerData")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnSettingProviderChanged;
+			ScriptFunction mOnRegister;
+			ScriptFunction mOnUnregister;
+			ScriptFunction mOnLoginChange;
+			ScriptFunction mOnPlayerDataChange;
+			ScriptFunction mRegisterDelegates;
+			ScriptFunction mClearDelegates;
+			ScriptFunction mGetCachedPlayerProfile;
+			ScriptFunction mGetCachedPlayerStorage;
+		}
+		public @property static final
+		{
+			ScriptFunction OnSettingProviderChanged() { return mOnSettingProviderChanged ? mOnSettingProviderChanged : (mOnSettingProviderChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.OnSettingProviderChanged")); }
+			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.OnRegister")); }
+			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.OnUnregister")); }
+			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.OnLoginChange")); }
+			ScriptFunction OnPlayerDataChange() { return mOnPlayerDataChange ? mOnPlayerDataChange : (mOnPlayerDataChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.OnPlayerDataChange")); }
+			ScriptFunction RegisterDelegates() { return mRegisterDelegates ? mRegisterDelegates : (mRegisterDelegates = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.RegisterDelegates")); }
+			ScriptFunction ClearDelegates() { return mClearDelegates ? mClearDelegates : (mClearDelegates = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.ClearDelegates")); }
+			ScriptFunction GetCachedPlayerProfile() { return mGetCachedPlayerProfile ? mGetCachedPlayerProfile : (mGetCachedPlayerProfile = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.GetCachedPlayerProfile")); }
+			ScriptFunction GetCachedPlayerStorage() { return mGetCachedPlayerStorage ? mGetCachedPlayerStorage : (mGetCachedPlayerStorage = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlayerData.GetCachedPlayerStorage")); }
+		}
+	}
 	@property final auto ref
 	{
 		UIDataProvider_OnlineProfileSettings ProfileProvider() { return *cast(UIDataProvider_OnlineProfileSettings*)(cast(size_t)cast(void*)this + 160); }
@@ -48,44 +77,44 @@ final:
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
 		*cast(ScriptName*)&params[4] = SettingsName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28750], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSettingProviderChanged, params.ptr, cast(void*)0);
 	}
 	void OnRegister(LocalPlayer InPlayer)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = InPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28753], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnRegister, params.ptr, cast(void*)0);
 	}
 	void OnUnregister()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28757], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUnregister, cast(void*)0, cast(void*)0);
 	}
 	void OnLoginChange(ubyte LocalUserNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnLoginChange, params.ptr, cast(void*)0);
 	}
 	void OnPlayerDataChange()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28764], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPlayerDataChange, cast(void*)0, cast(void*)0);
 	}
 	void RegisterDelegates()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28766], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterDelegates, cast(void*)0, cast(void*)0);
 	}
 	void ClearDelegates()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28767], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearDelegates, cast(void*)0, cast(void*)0);
 	}
 	OnlineProfileSettings GetCachedPlayerProfile(int ControllerId)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28768], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCachedPlayerProfile, params.ptr, cast(void*)0);
 		return *cast(OnlineProfileSettings*)&params[4];
 	}
 	OnlinePlayerStorage GetCachedPlayerStorage(int ControllerId)
@@ -93,7 +122,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28774], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCachedPlayerStorage, params.ptr, cast(void*)0);
 		return *cast(OnlinePlayerStorage*)&params[4];
 	}
 }

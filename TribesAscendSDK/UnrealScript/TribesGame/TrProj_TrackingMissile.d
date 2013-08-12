@@ -11,6 +11,47 @@ import UnrealScript.TribesGame.TrProjectile;
 extern(C++) interface TrProj_TrackingMissile : TrProjectile
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_TrackingMissile")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInit;
+			ScriptFunction mProcessTouch;
+			ScriptFunction mEnableCollisionTimer;
+			ScriptFunction mSetSeekTarget;
+			ScriptFunction mNativeExplode;
+			ScriptFunction mOnExploded;
+			ScriptFunction mExplode;
+			ScriptFunction mDestroyed;
+			ScriptFunction mGetSeekingMissileManager;
+			ScriptFunction mSpawnFlightEffects;
+			ScriptFunction mSpawnFlightEffectsTimer;
+			ScriptFunction mTakeDamage;
+			ScriptFunction mTick;
+			ScriptFunction mPostRenderFor;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.PostBeginPlay")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Init")); }
+			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.ProcessTouch")); }
+			ScriptFunction EnableCollisionTimer() { return mEnableCollisionTimer ? mEnableCollisionTimer : (mEnableCollisionTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.EnableCollisionTimer")); }
+			ScriptFunction SetSeekTarget() { return mSetSeekTarget ? mSetSeekTarget : (mSetSeekTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SetSeekTarget")); }
+			ScriptFunction NativeExplode() { return mNativeExplode ? mNativeExplode : (mNativeExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.NativeExplode")); }
+			ScriptFunction OnExploded() { return mOnExploded ? mOnExploded : (mOnExploded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.OnExploded")); }
+			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Explode")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Destroyed")); }
+			ScriptFunction GetSeekingMissileManager() { return mGetSeekingMissileManager ? mGetSeekingMissileManager : (mGetSeekingMissileManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.GetSeekingMissileManager")); }
+			ScriptFunction SpawnFlightEffects() { return mSpawnFlightEffects ? mSpawnFlightEffects : (mSpawnFlightEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffects")); }
+			ScriptFunction SpawnFlightEffectsTimer() { return mSpawnFlightEffectsTimer ? mSpawnFlightEffectsTimer : (mSpawnFlightEffectsTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.SpawnFlightEffectsTimer")); }
+			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.TakeDamage")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.Tick")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_TrackingMissile.PostRenderFor")); }
+		}
+	}
 	enum ETrackingMissileStage : ubyte
 	{
 		ETrackingMissileStage_JustFired = 0,
@@ -43,14 +84,14 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109357], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Init(Vector Direction)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109359], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
@@ -59,18 +100,18 @@ final:
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109361], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTouch, params.ptr, cast(void*)0);
 	}
 	void EnableCollisionTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109365], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableCollisionTimer, cast(void*)0, cast(void*)0);
 	}
 	void SetSeekTarget(Actor NewSeekTarget)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewSeekTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109366], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSeekTarget, params.ptr, cast(void*)0);
 	}
 	void NativeExplode(Vector HitLocation, Vector HitNormal)
 	{
@@ -78,11 +119,11 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109369], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativeExplode, params.ptr, cast(void*)0);
 	}
 	void OnExploded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109372], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnExploded, cast(void*)0, cast(void*)0);
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)
 	{
@@ -90,26 +131,26 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109377], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	TrSeekingMissileManager GetSeekingMissileManager()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeekingMissileManager, params.ptr, cast(void*)0);
 		return *cast(TrSeekingMissileManager*)params.ptr;
 	}
 	void SpawnFlightEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109381], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnFlightEffects, cast(void*)0, cast(void*)0);
 	}
 	void SpawnFlightEffectsTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109382], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnFlightEffectsTimer, cast(void*)0, cast(void*)0);
 	}
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
@@ -122,14 +163,14 @@ final:
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109388], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109400], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -139,6 +180,6 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109402], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 }

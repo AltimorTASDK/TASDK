@@ -8,6 +8,13 @@ import UnrealScript.Engine.ForceFeedbackWaveform;
 extern(C++) interface DamageType : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DamageType")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mVehicleDamageScalingFor;
+		public @property static final ScriptFunction VehicleDamageScalingFor() { return mVehicleDamageScalingFor ? mVehicleDamageScalingFor : (mVehicleDamageScalingFor = ScriptObject.Find!(ScriptFunction)("Function Engine.DamageType.VehicleDamageScalingFor")); }
+	}
 	@property final
 	{
 		auto ref
@@ -33,12 +40,12 @@ public extern(D):
 		bool bArmorStops() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x1) != 0; }
 		bool bArmorStops(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 60) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 60) &= ~0x1; } return val; }
 	}
-	final float VehicleDamageScalingFor(Vehicle V)
+	final static float VehicleDamageScalingFor(Vehicle V)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13630], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.VehicleDamageScalingFor, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 }

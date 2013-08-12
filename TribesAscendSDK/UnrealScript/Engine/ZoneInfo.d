@@ -6,6 +6,8 @@ import UnrealScript.Engine.Info;
 extern(C++) interface ZoneInfo : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ZoneInfo")); }
 	@property final
 	{
 		auto ref

@@ -7,6 +7,27 @@ import UnrealScript.UTGame.UTReplicatedEmitter;
 extern(C++) interface UTWillowWhisp : UTReplicatedEmitter
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWillowWhisp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mSetInitialState;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mSetTemplate;
+			ScriptFunction mStartNextPath;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.PostBeginPlay")); }
+			ScriptFunction SetInitialState() { return mSetInitialState ? mSetInitialState : (mSetInitialState = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.SetInitialState")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.ReplicatedEvent")); }
+			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.SetTemplate")); }
+			ScriptFunction StartNextPath() { return mStartNextPath ? mStartNextPath : (mStartNextPath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.StartNextPath")); }
+		}
+	}
 	enum MAX_WAYPOINTS = 15;
 	@property final auto ref
 	{
@@ -17,18 +38,18 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50418], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void SetInitialState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50425], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInitialState, cast(void*)0, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
 	{
@@ -36,10 +57,10 @@ final:
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
 		*cast(bool*)&params[4] = bDestroyOnFinish;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50428], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void StartNextPath()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50431], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartNextPath, cast(void*)0, cast(void*)0);
 	}
 }

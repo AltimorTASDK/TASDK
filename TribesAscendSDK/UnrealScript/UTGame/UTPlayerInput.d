@@ -1,11 +1,14 @@
 module UnrealScript.UTGame.UTPlayerInput;
 
+import ScriptClasses;
 import UnrealScript.Engine.Actor;
 import UnrealScript.UDKBase.UDKPlayerInput;
 
 extern(C++) interface UTPlayerInput : UDKPlayerInput
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPlayerInput")); }
 	@property final
 	{
 		auto ref

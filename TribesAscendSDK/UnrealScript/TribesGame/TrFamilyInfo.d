@@ -15,11 +15,28 @@ import UnrealScript.Engine.AnimTree;
 extern(C++) interface TrFamilyInfo : UTFamilyInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFamilyInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetDeviceClassByEquipPoint;
+			ScriptFunction mGetContentDeviceClassStringByEquipPoint;
+		}
+		public @property static final
+		{
+			ScriptFunction GetDeviceClassByEquipPoint() { return mGetDeviceClassByEquipPoint ? mGetDeviceClassByEquipPoint : (mGetDeviceClassByEquipPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFamilyInfo.GetDeviceClassByEquipPoint")); }
+			ScriptFunction GetContentDeviceClassStringByEquipPoint() { return mGetContentDeviceClassStringByEquipPoint ? mGetContentDeviceClassStringByEquipPoint : (mGetContentDeviceClassStringByEquipPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFamilyInfo.GetContentDeviceClassStringByEquipPoint")); }
+		}
+	}
 	enum TR_MAX_FACTION_NBR = 3;
 	struct DeviceSelectionList
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrFamilyInfo.DeviceSelectionList")); }
 		@property final auto ref
 		{
 			ScriptClass DeviceClass() { return *cast(ScriptClass*)(cast(size_t)&this + 4); }
@@ -31,6 +48,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrFamilyInfo.SkillNode")); }
 		@property final auto ref
 		{
 			int Cost() { return *cast(int*)(cast(size_t)&this + 24); }
@@ -138,20 +157,20 @@ public extern(D):
 		bool m_bMomentumDampingEnabled(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 708) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 708) &= ~0x1; } return val; }
 	}
 final:
-	ScriptClass GetDeviceClassByEquipPoint(TrObject.TR_EQUIP_POINT EquipPoint)
+	static ScriptClass GetDeviceClassByEquipPoint(TrObject.TR_EQUIP_POINT EquipPoint)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = EquipPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87674], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDeviceClassByEquipPoint, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
-	ScriptString GetContentDeviceClassStringByEquipPoint(TrObject.TR_EQUIP_POINT EquipPoint)
+	static ScriptString GetContentDeviceClassStringByEquipPoint(TrObject.TR_EQUIP_POINT EquipPoint)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = EquipPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87678], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetContentDeviceClassStringByEquipPoint, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 }

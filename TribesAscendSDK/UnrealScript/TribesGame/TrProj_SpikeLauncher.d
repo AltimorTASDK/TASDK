@@ -8,6 +8,27 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrProj_SpikeLauncher : TrProj_StickyGrenade
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_SpikeLauncher")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mStickToTarget;
+			ScriptFunction mProcessTouch;
+			ScriptFunction mExplode;
+			ScriptFunction mSpawnSecondaryProjectile;
+		}
+		public @property static final
+		{
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeLauncher.PreBeginPlay")); }
+			ScriptFunction StickToTarget() { return mStickToTarget ? mStickToTarget : (mStickToTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeLauncher.StickToTarget")); }
+			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeLauncher.ProcessTouch")); }
+			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeLauncher.Explode")); }
+			ScriptFunction SpawnSecondaryProjectile() { return mSpawnSecondaryProjectile ? mSpawnSecondaryProjectile : (mSpawnSecondaryProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeLauncher.SpawnSecondaryProjectile")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -22,7 +43,7 @@ public extern(D):
 final:
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109140], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool StickToTarget(Actor Target, Vector HitLocation, Vector HitNormal)
 	{
@@ -31,7 +52,7 @@ final:
 		*cast(Actor*)params.ptr = Target;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109141], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StickToTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
@@ -41,7 +62,7 @@ final:
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109146], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTouch, params.ptr, cast(void*)0);
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)
 	{
@@ -49,13 +70,13 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109150], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void SpawnSecondaryProjectile(Vector Direction)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109153], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnSecondaryProjectile, params.ptr, cast(void*)0);
 	}
 }

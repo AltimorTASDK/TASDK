@@ -11,6 +11,23 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface FluidSurfaceComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidSurfaceComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mApplyForce;
+			ScriptFunction mSetDetailPosition;
+			ScriptFunction mSetSimulationPosition;
+		}
+		public @property static final
+		{
+			ScriptFunction ApplyForce() { return mApplyForce ? mApplyForce : (mApplyForce = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.ApplyForce")); }
+			ScriptFunction SetDetailPosition() { return mSetDetailPosition ? mSetDetailPosition : (mSetDetailPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.SetDetailPosition")); }
+			ScriptFunction SetSimulationPosition() { return mSetSimulationPosition ? mSetSimulationPosition : (mSetSimulationPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidSurfaceComponent.SetSimulationPosition")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -90,20 +107,20 @@ final:
 		*cast(float*)&params[12] = Strength;
 		*cast(float*)&params[16] = Radius;
 		*cast(bool*)&params[20] = bImpulse;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4229], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyForce, params.ptr, cast(void*)0);
 	}
 	void SetDetailPosition(Vector WorldPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = WorldPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15822], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDetailPosition, params.ptr, cast(void*)0);
 	}
 	void SetSimulationPosition(Vector WorldPos)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = WorldPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSimulationPosition, params.ptr, cast(void*)0);
 	}
 }

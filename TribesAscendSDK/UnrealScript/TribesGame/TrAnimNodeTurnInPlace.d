@@ -9,6 +9,8 @@ import UnrealScript.TribesGame.TrAnimNodeTurnInPlace_Player;
 extern(C++) interface TrAnimNodeTurnInPlace : AnimNodeBlend
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeTurnInPlace")); }
 	enum ForcedTransitionAngle : ubyte
 	{
 		FTA_NONE = 0,
@@ -20,6 +22,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrAnimNodeTurnInPlace.RotTransitionInfo")); }
 		@property final auto ref
 		{
 			ScriptName TransName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }

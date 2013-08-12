@@ -7,6 +7,8 @@ import UnrealScript.Engine.DistributionVectorConstant;
 extern(C++) interface DistributionVectorParameterBase : DistributionVectorConstant
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorParameterBase")); }
 	@property final auto ref
 	{
 		DistributionFloatParameterBase.DistributionParamMode ParamModes() { return *cast(DistributionFloatParameterBase.DistributionParamMode*)(cast(size_t)cast(void*)this + 156); }

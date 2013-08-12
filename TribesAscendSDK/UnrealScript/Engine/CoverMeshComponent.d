@@ -7,10 +7,14 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface CoverMeshComponent : StaticMeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverMeshComponent")); }
 	struct CoverMeshes
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverMeshComponent.CoverMeshes")); }
 		@property final auto ref
 		{
 			StaticMesh PlayerOnly() { return *cast(StaticMesh*)(cast(size_t)&this + 40); }

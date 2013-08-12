@@ -1,5 +1,6 @@
 module UnrealScript.Engine.DrawFrustumComponent;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.Texture;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface DrawFrustumComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawFrustumComponent")); }
 	@property final auto ref
 	{
 		// WARNING: Property 'Texture' has the same name as a defined type!

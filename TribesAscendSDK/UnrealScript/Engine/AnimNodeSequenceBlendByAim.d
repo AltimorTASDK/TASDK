@@ -7,6 +7,13 @@ import UnrealScript.Engine.AnimNodeSequenceBlendBase;
 extern(C++) interface AnimNodeSequenceBlendByAim : AnimNodeSequenceBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequenceBlendByAim")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mCheckAnimsUpToDate;
+		public @property static final ScriptFunction CheckAnimsUpToDate() { return mCheckAnimsUpToDate ? mCheckAnimsUpToDate : (mCheckAnimsUpToDate = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequenceBlendByAim.CheckAnimsUpToDate")); }
+	}
 	@property final auto ref
 	{
 		ScriptName AnimName_RD() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 436); }
@@ -26,6 +33,6 @@ public extern(D):
 	}
 	final void CheckAnimsUpToDate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11050], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckAnimsUpToDate, cast(void*)0, cast(void*)0);
 	}
 }

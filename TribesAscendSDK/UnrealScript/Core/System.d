@@ -6,6 +6,8 @@ import UnrealScript.Core.Subsystem;
 extern(C++) interface System : Subsystem
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.System")); }
 	@property final auto ref
 	{
 		int StaleCacheDays() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }

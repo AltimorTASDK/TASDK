@@ -6,6 +6,8 @@ import UnrealScript.TribesGame.TrVehicleWeapon;
 extern(C++) interface TrVehicleWeapon_BurstShot : TrVehicleWeapon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_BurstShot")); }
 	@property final auto ref
 	{
 		ScriptName m_PostFireState() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 1788); }

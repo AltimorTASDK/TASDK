@@ -7,6 +7,25 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TextureFlipBook : Texture2D
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureFlipBook")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlay;
+			ScriptFunction mPause;
+			ScriptFunction mStop;
+			ScriptFunction mSetCurrentFrame;
+		}
+		public @property static final
+		{
+			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Play")); }
+			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Pause")); }
+			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.Stop")); }
+			ScriptFunction SetCurrentFrame() { return mSetCurrentFrame ? mSetCurrentFrame : (mSetCurrentFrame = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureFlipBook.SetCurrentFrame")); }
+		}
+	}
 	enum TextureFlipBookMethod : ubyte
 	{
 		TFBM_UL_ROW = 0,
@@ -52,15 +71,15 @@ public extern(D):
 final:
 	void Play()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27984], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Play, cast(void*)0, cast(void*)0);
 	}
 	void Pause()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27985], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Pause, cast(void*)0, cast(void*)0);
 	}
 	void Stop()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27986], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, cast(void*)0, cast(void*)0);
 	}
 	void SetCurrentFrame(int Row, int Col)
 	{
@@ -68,6 +87,6 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Row;
 		*cast(int*)&params[4] = Col;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentFrame, params.ptr, cast(void*)0);
 	}
 }

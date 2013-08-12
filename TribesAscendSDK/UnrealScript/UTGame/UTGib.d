@@ -16,10 +16,51 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface UTGib : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGib")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mSetTexturesToBeResident;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mSetGibStaticMesh;
+			ScriptFunction mChooseGib;
+			ScriptFunction mDoCustomGibEffects;
+			ScriptFunction mTimer;
+			ScriptFunction mBecomeViewTarget;
+			ScriptFunction mCalcCamera;
+			ScriptFunction mRigidBodyCollision;
+			ScriptFunction mLeaveADecal;
+			ScriptFunction mTurnOnCollision;
+			ScriptFunction mLanded;
+			ScriptFunction mHitWall;
+		}
+		public @property static final
+		{
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.PreBeginPlay")); }
+			ScriptFunction SetTexturesToBeResident() { return mSetTexturesToBeResident ? mSetTexturesToBeResident : (mSetTexturesToBeResident = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.SetTexturesToBeResident")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.DisplayDebug")); }
+			ScriptFunction SetGibStaticMesh() { return mSetGibStaticMesh ? mSetGibStaticMesh : (mSetGibStaticMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.SetGibStaticMesh")); }
+			ScriptFunction ChooseGib() { return mChooseGib ? mChooseGib : (mChooseGib = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.ChooseGib")); }
+			ScriptFunction DoCustomGibEffects() { return mDoCustomGibEffects ? mDoCustomGibEffects : (mDoCustomGibEffects = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.DoCustomGibEffects")); }
+			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.Timer")); }
+			ScriptFunction BecomeViewTarget() { return mBecomeViewTarget ? mBecomeViewTarget : (mBecomeViewTarget = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.BecomeViewTarget")); }
+			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.CalcCamera")); }
+			ScriptFunction RigidBodyCollision() { return mRigidBodyCollision ? mRigidBodyCollision : (mRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.RigidBodyCollision")); }
+			ScriptFunction LeaveADecal() { return mLeaveADecal ? mLeaveADecal : (mLeaveADecal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.LeaveADecal")); }
+			ScriptFunction TurnOnCollision() { return mTurnOnCollision ? mTurnOnCollision : (mTurnOnCollision = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.TurnOnCollision")); }
+			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.Landed")); }
+			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib.HitWall")); }
+		}
+	}
 	struct StaticMeshDatum
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGib.StaticMeshDatum")); }
 		@property final
 		{
 			auto ref
@@ -60,14 +101,14 @@ public extern(D):
 final:
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47878], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void SetTexturesToBeResident(float TimeToBeResident)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = TimeToBeResident;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47879], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTexturesToBeResident, params.ptr, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -76,7 +117,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47882], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -85,26 +126,26 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewStaticMesh;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47886], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGibStaticMesh, params.ptr, cast(void*)0);
 	}
 	void ChooseGib()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47890], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChooseGib, cast(void*)0, cast(void*)0);
 	}
 	void DoCustomGibEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47899], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DoCustomGibEffects, cast(void*)0, cast(void*)0);
 	}
 	void Timer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47900], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
 	void BecomeViewTarget(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47902], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BecomeViewTarget, params.ptr, cast(void*)0);
 	}
 	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
 	{
@@ -114,7 +155,7 @@ final:
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47904], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -136,7 +177,7 @@ void**)params.ptr = HitComponent;
 void**)&params[4] = OtherComponent;
 		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47914], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void LeaveADecal(Vector HitLoc, Vector HitNorm)
@@ -145,11 +186,11 @@ void**)&params[4] = OtherComponent;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLoc;
 		*cast(Vector*)&params[12] = HitNorm;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47919], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LeaveADecal, params.ptr, cast(void*)0);
 	}
 	void TurnOnCollision()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47929], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TurnOnCollision, cast(void*)0, cast(void*)0);
 	}
 	void Landed(Vector HitNormal, Actor FloorActor)
 	{
@@ -157,7 +198,7 @@ void**)&params[4] = OtherComponent;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitNormal;
 		*cast(Actor*)&params[12] = FloorActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47930], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Landed, params.ptr, cast(void*)0);
 	}
 	void HitWall(Vector HitNormal, Actor Wall, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -170,6 +211,6 @@ void* WallComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47933], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
 }

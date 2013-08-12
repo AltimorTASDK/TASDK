@@ -11,6 +11,25 @@ import UnrealScript.TribesGame.TrCTFBase_DiamondSword;
 extern(C++) interface TrGame_TrCTFBlitz : TrGame_TRCTF
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrCTFBlitz")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mApplyServerSettings;
+			ScriptFunction mRegisterFlagBase;
+			ScriptFunction mScoreFlag;
+			ScriptFunction mRotateFlag;
+		}
+		public @property static final
+		{
+			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCTFBlitz.ApplyServerSettings")); }
+			ScriptFunction RegisterFlagBase() { return mRegisterFlagBase ? mRegisterFlagBase : (mRegisterFlagBase = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCTFBlitz.RegisterFlagBase")); }
+			ScriptFunction ScoreFlag() { return mScoreFlag ? mScoreFlag : (mScoreFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCTFBlitz.ScoreFlag")); }
+			ScriptFunction RotateFlag() { return mRotateFlag ? mRotateFlag : (mRotateFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrCTFBlitz.RotateFlag")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -24,14 +43,14 @@ public extern(D):
 final:
 	void ApplyServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90692], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyServerSettings, cast(void*)0, cast(void*)0);
 	}
 	void RegisterFlagBase(TrCTFBase FlagBase)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrCTFBase*)params.ptr = FlagBase;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90695], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterFlagBase, params.ptr, cast(void*)0);
 	}
 	void ScoreFlag(Controller Scorer, TrFlagBase theFlag)
 	{
@@ -39,13 +58,13 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Scorer;
 		*cast(TrFlagBase*)&params[4] = theFlag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90697], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ScoreFlag, params.ptr, cast(void*)0);
 	}
 	void RotateFlag(TrFlagBase theFlag)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrFlagBase*)params.ptr = theFlag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[90700], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RotateFlag, params.ptr, cast(void*)0);
 	}
 }

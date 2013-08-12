@@ -7,6 +7,13 @@ import UnrealScript.Engine.SequenceCondition;
 extern(C++) interface UTSeqCond_CheckWeapon : SequenceCondition
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqCond_CheckWeapon")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mActivated;
+		public @property static final ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSeqCond_CheckWeapon.Activated")); }
+	}
 	@property final auto ref
 	{
 		ScriptClass TestForWeaponClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 212); }
@@ -14,6 +21,6 @@ public extern(D):
 	}
 	final void Activated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49167], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);
 	}
 }

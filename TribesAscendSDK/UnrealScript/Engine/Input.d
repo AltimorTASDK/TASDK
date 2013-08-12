@@ -7,10 +7,31 @@ import UnrealScript.Engine.Interaction;
 extern(C++) interface Input : Interaction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Input")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mResetInput;
+			ScriptFunction mGetBind;
+			ScriptFunction mGetBindNameFromCommandScript;
+			ScriptFunction mSetBind;
+		}
+		public @property static final
+		{
+			ScriptFunction ResetInput() { return mResetInput ? mResetInput : (mResetInput = ScriptObject.Find!(ScriptFunction)("Function Engine.Input.ResetInput")); }
+			ScriptFunction GetBind() { return mGetBind ? mGetBind : (mGetBind = ScriptObject.Find!(ScriptFunction)("Function Engine.Input.GetBind")); }
+			ScriptFunction GetBindNameFromCommandScript() { return mGetBindNameFromCommandScript ? mGetBindNameFromCommandScript : (mGetBindNameFromCommandScript = ScriptObject.Find!(ScriptFunction)("Function Engine.Input.GetBindNameFromCommandScript")); }
+			ScriptFunction SetBind() { return mSetBind ? mSetBind : (mSetBind = ScriptObject.Find!(ScriptFunction)("Function Engine.Input.SetBind")); }
+		}
+	}
 	struct KeyBind
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Input.KeyBind")); }
 		@property final
 		{
 			auto ref
@@ -44,14 +65,14 @@ public extern(D):
 final:
 	void ResetInput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13920], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetInput, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetBind(ScriptName* Key)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = *Key;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13921], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBind, params.ptr, cast(void*)0);
 		*Key = *cast(ScriptName*)params.ptr;
 		return *cast(ScriptString*)&params[8];
 	}
@@ -60,7 +81,7 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = *KeyCommand;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13924], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBindNameFromCommandScript, params.ptr, cast(void*)0);
 		*KeyCommand = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[12];
 	}
@@ -70,7 +91,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = *BindName;
 		*cast(ScriptString*)&params[8] = Command;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13927], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBind, params.ptr, cast(void*)0);
 		*BindName = *cast(ScriptName*)params.ptr;
 	}
 }

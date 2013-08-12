@@ -8,10 +8,14 @@ import UnrealScript.Engine.MorphNodeWeightBase;
 extern(C++) interface MorphNodeWeightByBoneAngle : MorphNodeWeightBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeWeightByBoneAngle")); }
 	struct BoneAngleMorph
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MorphNodeWeightByBoneAngle.BoneAngleMorph")); }
 		@property final auto ref
 		{
 			float TargetWeight() { return *cast(float*)(cast(size_t)&this + 4); }

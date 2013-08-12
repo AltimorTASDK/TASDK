@@ -8,6 +8,21 @@ import UnrealScript.Engine.PathGoalEvaluator;
 extern(C++) interface Goal_AtActor : PathGoalEvaluator
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Goal_AtActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAtActor;
+			ScriptFunction mRecycle;
+		}
+		public @property static final
+		{
+			ScriptFunction AtActor() { return mAtActor ? mAtActor : (mAtActor = ScriptObject.Find!(ScriptFunction)("Function Engine.Goal_AtActor.AtActor")); }
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Goal_AtActor.Recycle")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -19,7 +34,7 @@ public extern(D):
 		bool bKeepPartial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 84) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 84) &= ~0x1; } return val; }
 	}
 final:
-	bool AtActor(Pawn P, Actor Goal, float Dist, bool bReturnPartial)
+	static bool AtActor(Pawn P, Actor Goal, float Dist, bool bReturnPartial)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -27,11 +42,11 @@ final:
 		*cast(Actor*)&params[4] = Goal;
 		*cast(float*)&params[8] = Dist;
 		*cast(bool*)&params[12] = bReturnPartial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18170], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AtActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18186], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 }

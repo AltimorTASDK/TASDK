@@ -1,5 +1,6 @@
 module UnrealScript.Engine.InterpGroupInstAI;
 
+import ScriptClasses;
 import UnrealScript.Engine.InterpGroupInst;
 import UnrealScript.Engine.Actor;
 import UnrealScript.Engine.InterpGroupAI;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.InterpGroupAI;
 extern(C++) interface InterpGroupInstAI : InterpGroupInst
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroupInstAI")); }
 	@property final
 	{
 		auto ref

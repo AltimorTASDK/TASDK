@@ -7,10 +7,19 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TerrainLayerSetup : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainLayerSetup")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPostBeginPlay;
+		public @property static final ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TerrainLayerSetup.PostBeginPlay")); }
+	}
 	struct TerrainFilteredMaterial
 	{
 		private ubyte __buffer__[84];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.TerrainLayerSetup.TerrainFilteredMaterial")); }
 		@property final
 		{
 			auto ref
@@ -32,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.TerrainLayerSetup.FilterLimit")); }
 		@property final
 		{
 			auto ref
@@ -47,6 +58,6 @@ public extern(D):
 	@property final auto ref ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial) Materials() { return *cast(ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial)*)(cast(size_t)cast(void*)this + 60); }
 	final void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27917], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 }

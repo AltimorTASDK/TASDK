@@ -7,10 +7,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface OnlineGameplayEvents : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameplayEvents")); }
 	struct PlayerInformation
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameplayEvents.PlayerInformation")); }
 		@property final
 		{
 			auto ref
@@ -28,6 +32,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameplayEvents.GameplayEvent")); }
 		@property final auto ref
 		{
 			int EventNameAndDesc() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -38,6 +44,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameplayEvents.PlayerEvent")); }
 		@property final auto ref
 		{
 			int PlayerPitchAndRoll() { return *cast(int*)(cast(size_t)&this + 20); }

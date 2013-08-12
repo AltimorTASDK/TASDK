@@ -22,6 +22,83 @@ import UnrealScript.Engine.Weapon;
 extern(C++) interface TrDeployable : TrGameObjective
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAdjustMeshToGround;
+			ScriptFunction mCalcMeshOffset;
+			ScriptFunction mIsInLOS;
+			ScriptFunction mApplyServerSettings;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mOnPRIReplicated;
+			ScriptFunction mTick;
+			ScriptFunction mTakeRadiusDamage;
+			ScriptFunction mTakeDamage;
+			ScriptFunction mOnPawnDetectedByCollisionProxy;
+			ScriptFunction mOnPawnExitedCollisionProxy;
+			ScriptFunction mOnVehicleDetectedByCollisionProxy;
+			ScriptFunction mOnVehicleExitedCollisionProxy;
+			ScriptFunction mOnPowerStatusChanged;
+			ScriptFunction mSetInstigatorController;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mGetDamageRadius;
+			ScriptFunction mFinalizeDeployment;
+			ScriptFunction mDeployComplete;
+			ScriptFunction mIsFiring;
+			ScriptFunction mUpdateHealthMaterial;
+			ScriptFunction mOnHealthChanged;
+			ScriptFunction mGetWeaponStartTraceLocation;
+			ScriptFunction mStopsProjectile;
+			ScriptFunction mIncrementFlashCount;
+			ScriptFunction mPlayFireEffects;
+			ScriptFunction mPulseBackupGenerators;
+			ScriptFunction mDestroyed;
+			ScriptFunction mReceivesPowerFromGenerator;
+			ScriptFunction mGetPossessiveInstigatorName;
+			ScriptFunction mCalcOtherWatchingCam;
+			ScriptFunction mOnUpgradePerformed;
+		}
+		public @property static final
+		{
+			ScriptFunction AdjustMeshToGround() { return mAdjustMeshToGround ? mAdjustMeshToGround : (mAdjustMeshToGround = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.AdjustMeshToGround")); }
+			ScriptFunction CalcMeshOffset() { return mCalcMeshOffset ? mCalcMeshOffset : (mCalcMeshOffset = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.CalcMeshOffset")); }
+			ScriptFunction IsInLOS() { return mIsInLOS ? mIsInLOS : (mIsInLOS = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.IsInLOS")); }
+			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.ApplyServerSettings")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.PostInitAnimTree")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.ReplicatedEvent")); }
+			ScriptFunction OnPRIReplicated() { return mOnPRIReplicated ? mOnPRIReplicated : (mOnPRIReplicated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnPRIReplicated")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.Tick")); }
+			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.TakeRadiusDamage")); }
+			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.TakeDamage")); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { return mOnPawnDetectedByCollisionProxy ? mOnPawnDetectedByCollisionProxy : (mOnPawnDetectedByCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnPawnDetectedByCollisionProxy")); }
+			ScriptFunction OnPawnExitedCollisionProxy() { return mOnPawnExitedCollisionProxy ? mOnPawnExitedCollisionProxy : (mOnPawnExitedCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnPawnExitedCollisionProxy")); }
+			ScriptFunction OnVehicleDetectedByCollisionProxy() { return mOnVehicleDetectedByCollisionProxy ? mOnVehicleDetectedByCollisionProxy : (mOnVehicleDetectedByCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnVehicleDetectedByCollisionProxy")); }
+			ScriptFunction OnVehicleExitedCollisionProxy() { return mOnVehicleExitedCollisionProxy ? mOnVehicleExitedCollisionProxy : (mOnVehicleExitedCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnVehicleExitedCollisionProxy")); }
+			ScriptFunction OnPowerStatusChanged() { return mOnPowerStatusChanged ? mOnPowerStatusChanged : (mOnPowerStatusChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnPowerStatusChanged")); }
+			ScriptFunction SetInstigatorController() { return mSetInstigatorController ? mSetInstigatorController : (mSetInstigatorController = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.SetInstigatorController")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.PostBeginPlay")); }
+			ScriptFunction GetDamageRadius() { return mGetDamageRadius ? mGetDamageRadius : (mGetDamageRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.GetDamageRadius")); }
+			ScriptFunction FinalizeDeployment() { return mFinalizeDeployment ? mFinalizeDeployment : (mFinalizeDeployment = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.FinalizeDeployment")); }
+			ScriptFunction DeployComplete() { return mDeployComplete ? mDeployComplete : (mDeployComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.DeployComplete")); }
+			ScriptFunction IsFiring() { return mIsFiring ? mIsFiring : (mIsFiring = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.IsFiring")); }
+			ScriptFunction UpdateHealthMaterial() { return mUpdateHealthMaterial ? mUpdateHealthMaterial : (mUpdateHealthMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.UpdateHealthMaterial")); }
+			ScriptFunction OnHealthChanged() { return mOnHealthChanged ? mOnHealthChanged : (mOnHealthChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnHealthChanged")); }
+			ScriptFunction GetWeaponStartTraceLocation() { return mGetWeaponStartTraceLocation ? mGetWeaponStartTraceLocation : (mGetWeaponStartTraceLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.GetWeaponStartTraceLocation")); }
+			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.StopsProjectile")); }
+			ScriptFunction IncrementFlashCount() { return mIncrementFlashCount ? mIncrementFlashCount : (mIncrementFlashCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.IncrementFlashCount")); }
+			ScriptFunction PlayFireEffects() { return mPlayFireEffects ? mPlayFireEffects : (mPlayFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.PlayFireEffects")); }
+			ScriptFunction PulseBackupGenerators() { return mPulseBackupGenerators ? mPulseBackupGenerators : (mPulseBackupGenerators = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.PulseBackupGenerators")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.Destroyed")); }
+			ScriptFunction ReceivesPowerFromGenerator() { return mReceivesPowerFromGenerator ? mReceivesPowerFromGenerator : (mReceivesPowerFromGenerator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.ReceivesPowerFromGenerator")); }
+			ScriptFunction GetPossessiveInstigatorName() { return mGetPossessiveInstigatorName ? mGetPossessiveInstigatorName : (mGetPossessiveInstigatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.GetPossessiveInstigatorName")); }
+			ScriptFunction CalcOtherWatchingCam() { return mCalcOtherWatchingCam ? mCalcOtherWatchingCam : (mCalcOtherWatchingCam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.CalcOtherWatchingCam")); }
+			ScriptFunction OnUpgradePerformed() { return mOnUpgradePerformed ? mOnUpgradePerformed : (mOnUpgradePerformed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnUpgradePerformed")); }
+		}
+	}
 	enum DEPLOYABLE_STARTING_HEALTH_PCT = 0.10f;
 	@property final
 	{
@@ -80,13 +157,13 @@ public extern(D):
 final:
 	void AdjustMeshToGround()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71758], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustMeshToGround, cast(void*)0, cast(void*)0);
 	}
 	float CalcMeshOffset()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71759], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcMeshOffset, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	bool IsInLOS(Actor TouchedActor, Vector StartLocation, Vector EndLocation, bool CheckBlockedByBlockers, bool CheckBlockedByActors)
@@ -98,12 +175,12 @@ final:
 		*cast(Vector*)&params[16] = EndLocation;
 		*cast(bool*)&params[28] = CheckBlockedByBlockers;
 		*cast(bool*)&params[32] = CheckBlockedByActors;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71761], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInLOS, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
 	void ApplyServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71768], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyServerSettings, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -114,25 +191,25 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71771], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71773], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void OnPRIReplicated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71775], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPRIReplicated, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71777], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
 	{
@@ -147,7 +224,7 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
 		*cast(float*)&params[40] = DamageFalloffExponent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71779], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
@@ -160,90 +237,90 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71793], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void OnPawnDetectedByCollisionProxy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71822], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnDetectedByCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnPawnExitedCollisionProxy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnExitedCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnVehicleDetectedByCollisionProxy(TrVehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrVehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71826], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnVehicleDetectedByCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnVehicleExitedCollisionProxy(TrVehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrVehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71828], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnVehicleExitedCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnPowerStatusChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71830], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPowerStatusChanged, cast(void*)0, cast(void*)0);
 	}
 	void SetInstigatorController(TrPlayerController InstigatorController)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = InstigatorController;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71831], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInstigatorController, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71838], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	float GetDamageRadius()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71841], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDamageRadius, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void FinalizeDeployment()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71848], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FinalizeDeployment, cast(void*)0, cast(void*)0);
 	}
 	void DeployComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71850], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeployComplete, cast(void*)0, cast(void*)0);
 	}
 	bool IsFiring()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71851], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFiring, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void UpdateHealthMaterial()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71860], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHealthMaterial, cast(void*)0, cast(void*)0);
 	}
 	void OnHealthChanged(bool wasDamage)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = wasDamage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71864], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnHealthChanged, params.ptr, cast(void*)0);
 	}
 	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = CurrentWeapon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71866], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 	bool StopsProjectile(Projectile P)
@@ -251,7 +328,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(Projectile*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71869], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopsProjectile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void IncrementFlashCount(Weapon W, ubyte FireModeNum)
@@ -260,7 +337,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Weapon*)params.ptr = W;
 		params[4] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71873], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementFlashCount, params.ptr, cast(void*)0);
 	}
 	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
 	{
@@ -269,21 +346,21 @@ void**)params.ptr = SkelComp;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
 		*cast(Vector*)&params[8] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void PulseBackupGenerators()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71881], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PulseBackupGenerators, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71883], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	bool ReceivesPowerFromGenerator()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71889], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReceivesPowerFromGenerator, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool GetPossessiveInstigatorName(ScriptString* PlayerName)
@@ -291,7 +368,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = *PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71893], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPossessiveInstigatorName, params.ptr, cast(void*)0);
 		*PlayerName = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
@@ -304,7 +381,7 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
 		*cast(TrPlayerController*)&params[32] = WatcherController;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71896], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcOtherWatchingCam, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -315,6 +392,6 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71914], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpgradePerformed, params.ptr, cast(void*)0);
 	}
 }

@@ -7,6 +7,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface ExponentialHeightFogComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ExponentialHeightFogComponent")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetEnabled;
+		public @property static final ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.ExponentialHeightFogComponent.SetEnabled")); }
+	}
 	@property final
 	{
 		auto ref
@@ -30,6 +37,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bSetEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15608], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
 }

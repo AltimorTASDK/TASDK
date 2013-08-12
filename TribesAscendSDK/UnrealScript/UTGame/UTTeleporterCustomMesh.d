@@ -9,6 +9,21 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UTTeleporterCustomMesh : Teleporter
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeleporterCustomMesh")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAccept;
+			ScriptFunction mTouch;
+		}
+		public @property static final
+		{
+			ScriptFunction Accept() { return mAccept ? mAccept : (mAccept = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeleporterCustomMesh.Accept")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeleporterCustomMesh.Touch")); }
+		}
+	}
 	@property final auto ref
 	{
 		float LastTime() { return *cast(float*)(cast(size_t)cast(void*)this + 744); }
@@ -22,7 +37,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Incoming;
 		*cast(Actor*)&params[4] = Source;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49474], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Accept, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void Touch(Actor Other, 
@@ -37,6 +52,6 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49479], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 }

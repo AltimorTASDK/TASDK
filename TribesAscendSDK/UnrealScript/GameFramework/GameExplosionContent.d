@@ -10,6 +10,8 @@ import UnrealScript.Engine.CameraShake;
 extern(C++) interface GameExplosionContent : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameExplosionContent")); }
 	@property final
 	{
 		auto ref

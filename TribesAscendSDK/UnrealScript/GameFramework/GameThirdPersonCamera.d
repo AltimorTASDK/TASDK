@@ -13,10 +13,67 @@ import UnrealScript.GameFramework.GamePlayerCamera;
 extern(C++) interface GameThirdPersonCamera : GameCameraBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameThirdPersonCamera")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCreateCameraMode;
+			ScriptFunction mReset;
+			ScriptFunction mInit;
+			ScriptFunction mGetDesiredFOV;
+			ScriptFunction mUpdateCamera;
+			ScriptFunction mUpdateCameraMode;
+			ScriptFunction mPlayerUpdateCamera;
+			ScriptFunction mBeginTurn;
+			ScriptFunction mEndTurn;
+			ScriptFunction mAdjustTurn;
+			ScriptFunction mSetFocusOnLoc;
+			ScriptFunction mSetFocusOnActor;
+			ScriptFunction mGetFocusActor;
+			ScriptFunction mClearFocusPoint;
+			ScriptFunction mUpdateFocusPoint;
+			ScriptFunction mGetActualFocusLocation;
+			ScriptFunction mAdjustFocusPointInterpolation;
+			ScriptFunction mFindBestCameraMode;
+			ScriptFunction mProcessViewRotation;
+			ScriptFunction mOnBecomeActive;
+			ScriptFunction mModifyPostProcessSettings;
+			ScriptFunction mResetInterpolation;
+		}
+		public @property static final
+		{
+			ScriptFunction CreateCameraMode() { return mCreateCameraMode ? mCreateCameraMode : (mCreateCameraMode = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.CreateCameraMode")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.Reset")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.Init")); }
+			ScriptFunction GetDesiredFOV() { return mGetDesiredFOV ? mGetDesiredFOV : (mGetDesiredFOV = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.GetDesiredFOV")); }
+			ScriptFunction UpdateCamera() { return mUpdateCamera ? mUpdateCamera : (mUpdateCamera = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.UpdateCamera")); }
+			ScriptFunction UpdateCameraMode() { return mUpdateCameraMode ? mUpdateCameraMode : (mUpdateCameraMode = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.UpdateCameraMode")); }
+			ScriptFunction PlayerUpdateCamera() { return mPlayerUpdateCamera ? mPlayerUpdateCamera : (mPlayerUpdateCamera = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.PlayerUpdateCamera")); }
+			ScriptFunction BeginTurn() { return mBeginTurn ? mBeginTurn : (mBeginTurn = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.BeginTurn")); }
+			ScriptFunction EndTurn() { return mEndTurn ? mEndTurn : (mEndTurn = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.EndTurn")); }
+			ScriptFunction AdjustTurn() { return mAdjustTurn ? mAdjustTurn : (mAdjustTurn = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.AdjustTurn")); }
+			ScriptFunction SetFocusOnLoc() { return mSetFocusOnLoc ? mSetFocusOnLoc : (mSetFocusOnLoc = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.SetFocusOnLoc")); }
+			ScriptFunction SetFocusOnActor() { return mSetFocusOnActor ? mSetFocusOnActor : (mSetFocusOnActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.SetFocusOnActor")); }
+			ScriptFunction GetFocusActor() { return mGetFocusActor ? mGetFocusActor : (mGetFocusActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.GetFocusActor")); }
+			ScriptFunction ClearFocusPoint() { return mClearFocusPoint ? mClearFocusPoint : (mClearFocusPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.ClearFocusPoint")); }
+			ScriptFunction UpdateFocusPoint() { return mUpdateFocusPoint ? mUpdateFocusPoint : (mUpdateFocusPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.UpdateFocusPoint")); }
+			ScriptFunction GetActualFocusLocation() { return mGetActualFocusLocation ? mGetActualFocusLocation : (mGetActualFocusLocation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.GetActualFocusLocation")); }
+			ScriptFunction AdjustFocusPointInterpolation() { return mAdjustFocusPointInterpolation ? mAdjustFocusPointInterpolation : (mAdjustFocusPointInterpolation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.AdjustFocusPointInterpolation")); }
+			ScriptFunction FindBestCameraMode() { return mFindBestCameraMode ? mFindBestCameraMode : (mFindBestCameraMode = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.FindBestCameraMode")); }
+			ScriptFunction ProcessViewRotation() { return mProcessViewRotation ? mProcessViewRotation : (mProcessViewRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.ProcessViewRotation")); }
+			ScriptFunction OnBecomeActive() { return mOnBecomeActive ? mOnBecomeActive : (mOnBecomeActive = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.OnBecomeActive")); }
+			ScriptFunction ModifyPostProcessSettings() { return mModifyPostProcessSettings ? mModifyPostProcessSettings : (mModifyPostProcessSettings = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.ModifyPostProcessSettings")); }
+			ScriptFunction ResetInterpolation() { return mResetInterpolation ? mResetInterpolation : (mResetInterpolation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameThirdPersonCamera.ResetInterpolation")); }
+		}
+	}
 	struct PenetrationAvoidanceFeeler
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameThirdPersonCamera.PenetrationAvoidanceFeeler")); }
 		@property final auto ref
 		{
 			int FramesUntilNextTrace() { return *cast(int*)(cast(size_t)&this + 36); }
@@ -31,6 +88,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameThirdPersonCamera.CamFocusPointParams")); }
 		@property final
 		{
 			auto ref
@@ -118,23 +177,23 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = ModeClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32107], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCameraMode, params.ptr, cast(void*)0);
 		return *cast(GameThirdPersonCameraMode*)&params[4];
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32112], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32113], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	float GetDesiredFOV(Pawn ViewedPawn)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = ViewedPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32114], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDesiredFOV, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void UpdateCamera(Pawn P, GamePlayerCamera pCameraActor, float DeltaTime, Camera.TViewTarget* OutVT)
@@ -145,7 +204,7 @@ final:
 		*cast(GamePlayerCamera*)&params[4] = pCameraActor;
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = *OutVT;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32119], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
 	void UpdateCameraMode(Pawn P)
@@ -153,7 +212,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32124], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCameraMode, params.ptr, cast(void*)0);
 	}
 	void PlayerUpdateCamera(Pawn P, GamePlayerCamera pCameraActor, float DeltaTime, Camera.TViewTarget* OutVT)
 	{
@@ -163,7 +222,7 @@ final:
 		*cast(GamePlayerCamera*)&params[4] = pCameraActor;
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = *OutVT;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32125], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayerUpdateCamera, params.ptr, cast(void*)0);
 		*OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
 	void BeginTurn(int StartAngle, int EndAngle, float TimeSec, float DelaySec, bool bAlignTargetWhenFinished)
@@ -175,18 +234,18 @@ final:
 		*cast(float*)&params[8] = TimeSec;
 		*cast(float*)&params[12] = DelaySec;
 		*cast(bool*)&params[16] = bAlignTargetWhenFinished;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32130], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BeginTurn, params.ptr, cast(void*)0);
 	}
 	void EndTurn()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32136], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndTurn, cast(void*)0, cast(void*)0);
 	}
 	void AdjustTurn(int AngleOffset)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = AngleOffset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32137], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustTurn, params.ptr, cast(void*)0);
 	}
 	void SetFocusOnLoc(Vector FocusWorldLoc, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float CameraFOV, bool bAlwaysFocus, bool bAdjustCamera, bool bIgnoreTrace, float FocusPitchOffsetDeg)
 	{
@@ -200,7 +259,7 @@ final:
 		*cast(bool*)&params[36] = bAdjustCamera;
 		*cast(bool*)&params[40] = bIgnoreTrace;
 		*cast(float*)&params[44] = FocusPitchOffsetDeg;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32139], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFocusOnLoc, params.ptr, cast(void*)0);
 	}
 	void SetFocusOnActor(Actor FocusActor, ScriptName FocusBoneName, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float CameraFOV, bool bAlwaysFocus, bool bAdjustCamera, bool bIgnoreTrace, float FocusPitchOffsetDeg)
 	{
@@ -215,13 +274,13 @@ final:
 		*cast(bool*)&params[36] = bAdjustCamera;
 		*cast(bool*)&params[40] = bIgnoreTrace;
 		*cast(float*)&params[44] = FocusPitchOffsetDeg;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32148], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFocusOnActor, params.ptr, cast(void*)0);
 	}
 	Actor GetFocusActor()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32158], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFocusActor, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	void ClearFocusPoint(bool bLeaveCameraRotation)
@@ -229,20 +288,20 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bLeaveCameraRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32160], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearFocusPoint, params.ptr, cast(void*)0);
 	}
 	void UpdateFocusPoint(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32162], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFocusPoint, params.ptr, cast(void*)0);
 	}
 	Vector GetActualFocusLocation()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32166], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActualFocusLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	void AdjustFocusPointInterpolation(Rotator Delta)
@@ -250,14 +309,14 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = Delta;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32170], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustFocusPointInterpolation, params.ptr, cast(void*)0);
 	}
 	GameThirdPersonCameraMode FindBestCameraMode(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32172], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindBestCameraMode, params.ptr, cast(void*)0);
 		return *cast(GameThirdPersonCameraMode*)&params[4];
 	}
 	void ProcessViewRotation(float DeltaTime, Actor ViewTarget, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
@@ -268,7 +327,7 @@ final:
 		*cast(Actor*)&params[4] = ViewTarget;
 		*cast(Rotator*)&params[8] = *out_ViewRotation;
 		*cast(Rotator*)&params[20] = *out_DeltaRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32177], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[8];
 		*out_DeltaRot = *cast(Rotator*)&params[20];
 	}
@@ -277,18 +336,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCameraBase*)params.ptr = OldCamera;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32182], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBecomeActive, params.ptr, cast(void*)0);
 	}
 	void ModifyPostProcessSettings(PostProcessVolume.PostProcessSettings* PP)
 	{
 		ubyte params[220];
 		params[] = 0;
 		*cast(PostProcessVolume.PostProcessSettings*)params.ptr = *PP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32184], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyPostProcessSettings, params.ptr, cast(void*)0);
 		*PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
 	}
 	void ResetInterpolation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32186], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetInterpolation, cast(void*)0, cast(void*)0);
 	}
 }

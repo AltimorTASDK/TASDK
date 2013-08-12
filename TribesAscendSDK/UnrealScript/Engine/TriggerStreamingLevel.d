@@ -8,10 +8,19 @@ import UnrealScript.Engine.LevelStreaming;
 extern(C++) interface TriggerStreamingLevel : Trigger
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggerStreamingLevel")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mTouch;
+		public @property static final ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.TriggerStreamingLevel.Touch")); }
+	}
 	struct LevelStreamingData
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.TriggerStreamingLevel.LevelStreamingData")); }
 		@property final
 		{
 			// WARNING: Property 'Level' has the same name as a defined type!
@@ -36,6 +45,6 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28082], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 }

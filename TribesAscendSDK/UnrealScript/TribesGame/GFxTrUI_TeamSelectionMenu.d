@@ -9,6 +9,45 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrUI_TeamSelectionMenu : GFxMoviePlayer
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_TeamSelectionMenu")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mStart;
+			ScriptFunction mSetFontIndex;
+			ScriptFunction mShow;
+			ScriptFunction mSetLabels;
+			ScriptFunction mTick;
+			ScriptFunction mEnableBloodEagle;
+			ScriptFunction mAsTeamChooseEnableButton;
+			ScriptFunction mEnableDiamondSword;
+			ScriptFunction mEnableSpectate;
+			ScriptFunction mchoseTeamBE;
+			ScriptFunction mchoseTeamDS;
+			ScriptFunction mchoseTeamSpectate;
+			ScriptFunction mCompleteMovie;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Initialize")); }
+			ScriptFunction Start() { return mStart ? mStart : (mStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Start")); }
+			ScriptFunction SetFontIndex() { return mSetFontIndex ? mSetFontIndex : (mSetFontIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.SetFontIndex")); }
+			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Show")); }
+			ScriptFunction SetLabels() { return mSetLabels ? mSetLabels : (mSetLabels = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.SetLabels")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.Tick")); }
+			ScriptFunction EnableBloodEagle() { return mEnableBloodEagle ? mEnableBloodEagle : (mEnableBloodEagle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableBloodEagle")); }
+			ScriptFunction AsTeamChooseEnableButton() { return mAsTeamChooseEnableButton ? mAsTeamChooseEnableButton : (mAsTeamChooseEnableButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.AsTeamChooseEnableButton")); }
+			ScriptFunction EnableDiamondSword() { return mEnableDiamondSword ? mEnableDiamondSword : (mEnableDiamondSword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableDiamondSword")); }
+			ScriptFunction EnableSpectate() { return mEnableSpectate ? mEnableSpectate : (mEnableSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.EnableSpectate")); }
+			ScriptFunction choseTeamBE() { return mchoseTeamBE ? mchoseTeamBE : (mchoseTeamBE = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamBE")); }
+			ScriptFunction choseTeamDS() { return mchoseTeamDS ? mchoseTeamDS : (mchoseTeamDS = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamDS")); }
+			ScriptFunction choseTeamSpectate() { return mchoseTeamSpectate ? mchoseTeamSpectate : (mchoseTeamSpectate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.choseTeamSpectate")); }
+			ScriptFunction CompleteMovie() { return mCompleteMovie ? mCompleteMovie : (mCompleteMovie = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrUI_TeamSelectionMenu.CompleteMovie")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -38,14 +77,14 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65175], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	bool Start(bool StartPaused)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = StartPaused;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65176], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetFontIndex(int FontIdx)
@@ -53,11 +92,11 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = FontIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65179], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFontIndex, params.ptr, cast(void*)0);
 	}
 	void Show()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65181], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Show, cast(void*)0, cast(void*)0);
 	}
 	void SetLabels(ScriptString Title, ScriptString Spectate)
 	{
@@ -65,21 +104,21 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Title;
 		*cast(ScriptString*)&params[12] = Spectate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65182], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLabels, params.ptr, cast(void*)0);
 	}
 	void Tick(GameReplicationInfo GRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65186], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void EnableBloodEagle(bool bEnable)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65196], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableBloodEagle, params.ptr, cast(void*)0);
 	}
 	void AsTeamChooseEnableButton(int TeamID, ScriptString bEnable)
 	{
@@ -87,39 +126,39 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = TeamID;
 		*cast(ScriptString*)&params[4] = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65198], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AsTeamChooseEnableButton, params.ptr, cast(void*)0);
 	}
 	void EnableDiamondSword(bool bEnable)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65199], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableDiamondSword, params.ptr, cast(void*)0);
 	}
 	void EnableSpectate(bool bEnable)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65201], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableSpectate, params.ptr, cast(void*)0);
 	}
 	void choseTeamBE()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65203], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.choseTeamBE, cast(void*)0, cast(void*)0);
 	}
 	void choseTeamDS()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65208], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.choseTeamDS, cast(void*)0, cast(void*)0);
 	}
 	void choseTeamSpectate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65211], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.choseTeamSpectate, cast(void*)0, cast(void*)0);
 	}
 	void CompleteMovie(bool bHaveTeam)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bHaveTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65212], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CompleteMovie, params.ptr, cast(void*)0);
 	}
 }

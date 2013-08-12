@@ -7,10 +7,14 @@ import UnrealScript.Engine.ProcBuilding;
 extern(C++) interface PBRuleNodeCorner : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeCorner")); }
 	struct RBCornerAngleInfo
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PBRuleNodeCorner.RBCornerAngleInfo")); }
 		@property final auto ref
 		{
 			float CornerSize() { return *cast(float*)(cast(size_t)&this + 4); }

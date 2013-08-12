@@ -6,6 +6,8 @@ import UnrealScript.Engine.StaticMeshActorBase;
 extern(C++) interface StaticMeshCollectionActor : StaticMeshActorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshCollectionActor")); }
 	@property final auto ref
 	{
 		ScriptArray!(

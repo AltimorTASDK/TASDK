@@ -1,10 +1,13 @@
 module UnrealScript.Engine.PBRuleNodeVariation;
 
+import ScriptClasses;
 import UnrealScript.Engine.PBRuleNodeBase;
 
 extern(C++) interface PBRuleNodeVariation : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeVariation")); }
 	@property final
 	{
 		bool bVariationOfScopeOnLeft() { return (*cast(uint*)(cast(size_t)cast(void*)this + 104) & 0x1) != 0; }

@@ -12,6 +12,37 @@ import UnrealScript.Engine.Font;
 extern(C++) interface MaterialInterface : Surface
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInterface")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetMaterial;
+			ScriptFunction mGetPhysicalMaterial;
+			ScriptFunction mGetParameterDesc;
+			ScriptFunction mGetFontParameterValue;
+			ScriptFunction mGetScalarParameterValue;
+			ScriptFunction mGetScalarCurveParameterValue;
+			ScriptFunction mGetTextureParameterValue;
+			ScriptFunction mGetVectorParameterValue;
+			ScriptFunction mGetVectorCurveParameterValue;
+			ScriptFunction mSetForceMipLevelsToBeResident;
+		}
+		public @property static final
+		{
+			ScriptFunction GetMaterial() { return mGetMaterial ? mGetMaterial : (mGetMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetMaterial")); }
+			ScriptFunction GetPhysicalMaterial() { return mGetPhysicalMaterial ? mGetPhysicalMaterial : (mGetPhysicalMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetPhysicalMaterial")); }
+			ScriptFunction GetParameterDesc() { return mGetParameterDesc ? mGetParameterDesc : (mGetParameterDesc = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetParameterDesc")); }
+			ScriptFunction GetFontParameterValue() { return mGetFontParameterValue ? mGetFontParameterValue : (mGetFontParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetFontParameterValue")); }
+			ScriptFunction GetScalarParameterValue() { return mGetScalarParameterValue ? mGetScalarParameterValue : (mGetScalarParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetScalarParameterValue")); }
+			ScriptFunction GetScalarCurveParameterValue() { return mGetScalarCurveParameterValue ? mGetScalarCurveParameterValue : (mGetScalarCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetScalarCurveParameterValue")); }
+			ScriptFunction GetTextureParameterValue() { return mGetTextureParameterValue ? mGetTextureParameterValue : (mGetTextureParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetTextureParameterValue")); }
+			ScriptFunction GetVectorParameterValue() { return mGetVectorParameterValue ? mGetVectorParameterValue : (mGetVectorParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetVectorParameterValue")); }
+			ScriptFunction GetVectorCurveParameterValue() { return mGetVectorCurveParameterValue ? mGetVectorCurveParameterValue : (mGetVectorCurveParameterValue = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.GetVectorCurveParameterValue")); }
+			ScriptFunction SetForceMipLevelsToBeResident() { return mSetForceMipLevelsToBeResident ? mSetForceMipLevelsToBeResident : (mSetForceMipLevelsToBeResident = ScriptObject.Find!(ScriptFunction)("Function Engine.MaterialInterface.SetForceMipLevelsToBeResident")); }
+		}
+	}
 	enum EMaterialUsage : ubyte
 	{
 		MATUSAGE_SkeletalMesh = 0,
@@ -42,6 +73,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MaterialInterface.LightmassMaterialInterfaceSettings")); }
 		@property final
 		{
 			auto ref
@@ -152,14 +185,14 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterial, params.ptr, cast(void*)0);
 		return *cast(Material*)params.ptr;
 	}
 	PhysicalMaterial GetPhysicalMaterial()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14253], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalMaterial, params.ptr, cast(void*)0);
 		return *cast(PhysicalMaterial*)params.ptr;
 	}
 	bool GetParameterDesc(ScriptName ParameterName, ScriptString* OutDesc)
@@ -168,7 +201,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(ScriptString*)&params[8] = *OutDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14255], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetParameterDesc, params.ptr, cast(void*)0);
 		*OutDesc = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
@@ -179,7 +212,7 @@ final:
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Font*)&params[8] = *OutFontValue;
 		*cast(int*)&params[12] = *OutFontPage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14259], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFontParameterValue, params.ptr, cast(void*)0);
 		*OutFontValue = *cast(Font*)&params[8];
 		*OutFontPage = *cast(int*)&params[12];
 		return *cast(bool*)&params[16];
@@ -190,7 +223,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(float*)&params[8] = *OutValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14264], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScalarParameterValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -200,7 +233,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.InterpCurveFloat*)&params[8] = *OutValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14268], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScalarCurveParameterValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(UObject.InterpCurveFloat*)&params[8];
 		return *cast(bool*)&params[24];
 	}
@@ -210,7 +243,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(Texture*)&params[8] = *OutValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14272], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTextureParameterValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(Texture*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -220,7 +253,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.LinearColor*)&params[8] = *OutValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorParameterValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(UObject.LinearColor*)&params[8];
 		return *cast(bool*)&params[24];
 	}
@@ -230,7 +263,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
 		*cast(UObject.InterpCurveVector*)&params[8] = *OutValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorCurveParameterValue, params.ptr, cast(void*)0);
 		*OutValue = *cast(UObject.InterpCurveVector*)&params[8];
 		return *cast(bool*)&params[24];
 	}
@@ -242,6 +275,6 @@ final:
 		*cast(bool*)&params[4] = bForceMiplevelsToBeResidentValue;
 		*cast(float*)&params[8] = ForceDuration;
 		*cast(int*)&params[12] = CinematicTextureGroups;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14284], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetForceMipLevelsToBeResident, params.ptr, cast(void*)0);
 	}
 }

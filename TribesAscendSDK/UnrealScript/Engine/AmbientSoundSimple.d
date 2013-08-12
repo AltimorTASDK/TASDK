@@ -1,5 +1,6 @@
 module UnrealScript.Engine.AmbientSoundSimple;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Engine.AmbientSound;
 import UnrealScript.Engine.SoundNodeAmbient;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.SoundNodeAmbient;
 extern(C++) interface AmbientSoundSimple : AmbientSound
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientSoundSimple")); }
 	@property final auto ref
 	{
 		SoundNodeAmbient SoundNodeInstance() { return *cast(SoundNodeAmbient*)(cast(size_t)cast(void*)this + 496); }

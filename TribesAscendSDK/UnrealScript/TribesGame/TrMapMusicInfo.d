@@ -1,15 +1,20 @@
 module UnrealScript.TribesGame.TrMapMusicInfo;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.UDKBase.UDKMapMusicInfo;
 
 extern(C++) interface TrMapMusicInfo : UDKMapMusicInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMapMusicInfo")); }
 	struct TrMapStingers
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrMapMusicInfo.TrMapStingers")); }
 		@property final auto ref
 		{
 			SoundCue TeamRabbitFriendlyPickedUpFlag() { return *cast(SoundCue*)(cast(size_t)&this + 52); }
@@ -32,6 +37,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrMapMusicInfo.TrMapMusic")); }
 		@property final auto ref
 		{
 			SoundCue AmbientMusic() { return *cast(SoundCue*)(cast(size_t)&this + 28); }

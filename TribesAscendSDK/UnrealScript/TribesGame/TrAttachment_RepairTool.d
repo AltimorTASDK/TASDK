@@ -6,6 +6,29 @@ import UnrealScript.TribesGame.TrDeviceAttachment;
 extern(C++) interface TrAttachment_RepairTool : TrDeviceAttachment
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_RepairTool")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mKillRepairEffect;
+			ScriptFunction mSpawnRepairEffect;
+			ScriptFunction mUpdateRepairEffect;
+			ScriptFunction mPlayImpactEffects;
+			ScriptFunction mThirdPersonFireEffects;
+			ScriptFunction mStopThirdPersonFireEffects;
+		}
+		public @property static final
+		{
+			ScriptFunction KillRepairEffect() { return mKillRepairEffect ? mKillRepairEffect : (mKillRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.KillRepairEffect")); }
+			ScriptFunction SpawnRepairEffect() { return mSpawnRepairEffect ? mSpawnRepairEffect : (mSpawnRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.SpawnRepairEffect")); }
+			ScriptFunction UpdateRepairEffect() { return mUpdateRepairEffect ? mUpdateRepairEffect : (mUpdateRepairEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.UpdateRepairEffect")); }
+			ScriptFunction PlayImpactEffects() { return mPlayImpactEffects ? mPlayImpactEffects : (mPlayImpactEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.PlayImpactEffects")); }
+			ScriptFunction ThirdPersonFireEffects() { return mThirdPersonFireEffects ? mThirdPersonFireEffects : (mThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.ThirdPersonFireEffects")); }
+			ScriptFunction StopThirdPersonFireEffects() { return mStopThirdPersonFireEffects ? mStopThirdPersonFireEffects : (mStopThirdPersonFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAttachment_RepairTool.StopThirdPersonFireEffects")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -19,7 +42,7 @@ public extern(D):
 final:
 	void KillRepairEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68655], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillRepairEffect, cast(void*)0, cast(void*)0);
 	}
 	void SpawnRepairEffect(Vector HitLocation, Vector HitNormal)
 	{
@@ -27,7 +50,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnRepairEffect, params.ptr, cast(void*)0);
 	}
 	void UpdateRepairEffect(float DeltaTime, Vector HitLocation, Vector HitNormal)
 	{
@@ -36,24 +59,24 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68659], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateRepairEffect, params.ptr, cast(void*)0);
 	}
 	void PlayImpactEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68663], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayImpactEffects, params.ptr, cast(void*)0);
 	}
 	void ThirdPersonFireEffects(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68670], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThirdPersonFireEffects, params.ptr, cast(void*)0);
 	}
 	void StopThirdPersonFireEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[68674], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopThirdPersonFireEffects, cast(void*)0, cast(void*)0);
 	}
 }

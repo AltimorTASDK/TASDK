@@ -9,25 +9,42 @@ import UnrealScript.UTGame.UTPlayerController;
 extern(C++) interface UTDmgType_RanOver : UTDamageType
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_RanOver")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIncrementKills;
+			ScriptFunction mSmallReward;
+			ScriptFunction mSpawnHitEffect;
+		}
+		public @property static final
+		{
+			ScriptFunction IncrementKills() { return mIncrementKills ? mIncrementKills : (mIncrementKills = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.IncrementKills")); }
+			ScriptFunction SmallReward() { return mSmallReward ? mSmallReward : (mSmallReward = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.SmallReward")); }
+			ScriptFunction SpawnHitEffect() { return mSpawnHitEffect ? mSpawnHitEffect : (mSpawnHitEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDmgType_RanOver.SpawnHitEffect")); }
+		}
+	}
 	@property final auto ref int NumMessages() { return *cast(int*)(cast(size_t)cast(void*)this + 300); }
 final:
-	int IncrementKills(UTPlayerReplicationInfo KillerPRI)
+	static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = KillerPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47098], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IncrementKills, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	void SmallReward(UTPlayerController Killer, int KillCount)
+	static void SmallReward(UTPlayerController Killer, int KillCount)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Killer;
 		*cast(int*)&params[4] = KillCount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47102], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SmallReward, params.ptr, cast(void*)0);
 	}
-	void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
+	static void SpawnHitEffect(Pawn P, float Damage, Vector Momentum, ScriptName BoneName, Vector HitLocation)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -36,6 +53,6 @@ final:
 		*cast(Vector*)&params[8] = Momentum;
 		*cast(ScriptName*)&params[20] = BoneName;
 		*cast(Vector*)&params[28] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47106], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SpawnHitEffect, params.ptr, cast(void*)0);
 	}
 }

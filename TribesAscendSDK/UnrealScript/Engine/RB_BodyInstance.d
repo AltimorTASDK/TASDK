@@ -9,6 +9,53 @@ import UnrealScript.Engine.PhysicsAssetInstance;
 extern(C++) interface RB_BodyInstance : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_BodyInstance")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsFixed;
+			ScriptFunction mSetFixed;
+			ScriptFunction mGetBodyMass;
+			ScriptFunction mIsValidBodyInstance;
+			ScriptFunction mGetPhysicsAssetInstance;
+			ScriptFunction mGetUnrealWorldTM;
+			ScriptFunction mGetUnrealWorldVelocity;
+			ScriptFunction mGetUnrealWorldAngularVelocity;
+			ScriptFunction mGetUnrealWorldVelocityAtPoint;
+			ScriptFunction mEnableBoneSpring;
+			ScriptFunction mSetBoneSpringParams;
+			ScriptFunction mSetBoneSpringTarget;
+			ScriptFunction mSetBlockRigidBody;
+			ScriptFunction mSetPhysMaterialOverride;
+			ScriptFunction mEnableCollisionResponse;
+			ScriptFunction mSetContactReportForceThreshold;
+			ScriptFunction mUpdateMassProperties;
+			ScriptFunction mUpdateDampingProperties;
+		}
+		public @property static final
+		{
+			ScriptFunction IsFixed() { return mIsFixed ? mIsFixed : (mIsFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.IsFixed")); }
+			ScriptFunction SetFixed() { return mSetFixed ? mSetFixed : (mSetFixed = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetFixed")); }
+			ScriptFunction GetBodyMass() { return mGetBodyMass ? mGetBodyMass : (mGetBodyMass = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetBodyMass")); }
+			ScriptFunction IsValidBodyInstance() { return mIsValidBodyInstance ? mIsValidBodyInstance : (mIsValidBodyInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.IsValidBodyInstance")); }
+			ScriptFunction GetPhysicsAssetInstance() { return mGetPhysicsAssetInstance ? mGetPhysicsAssetInstance : (mGetPhysicsAssetInstance = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetPhysicsAssetInstance")); }
+			ScriptFunction GetUnrealWorldTM() { return mGetUnrealWorldTM ? mGetUnrealWorldTM : (mGetUnrealWorldTM = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetUnrealWorldTM")); }
+			ScriptFunction GetUnrealWorldVelocity() { return mGetUnrealWorldVelocity ? mGetUnrealWorldVelocity : (mGetUnrealWorldVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetUnrealWorldVelocity")); }
+			ScriptFunction GetUnrealWorldAngularVelocity() { return mGetUnrealWorldAngularVelocity ? mGetUnrealWorldAngularVelocity : (mGetUnrealWorldAngularVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetUnrealWorldAngularVelocity")); }
+			ScriptFunction GetUnrealWorldVelocityAtPoint() { return mGetUnrealWorldVelocityAtPoint ? mGetUnrealWorldVelocityAtPoint : (mGetUnrealWorldVelocityAtPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.GetUnrealWorldVelocityAtPoint")); }
+			ScriptFunction EnableBoneSpring() { return mEnableBoneSpring ? mEnableBoneSpring : (mEnableBoneSpring = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.EnableBoneSpring")); }
+			ScriptFunction SetBoneSpringParams() { return mSetBoneSpringParams ? mSetBoneSpringParams : (mSetBoneSpringParams = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetBoneSpringParams")); }
+			ScriptFunction SetBoneSpringTarget() { return mSetBoneSpringTarget ? mSetBoneSpringTarget : (mSetBoneSpringTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetBoneSpringTarget")); }
+			ScriptFunction SetBlockRigidBody() { return mSetBlockRigidBody ? mSetBlockRigidBody : (mSetBlockRigidBody = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetBlockRigidBody")); }
+			ScriptFunction SetPhysMaterialOverride() { return mSetPhysMaterialOverride ? mSetPhysMaterialOverride : (mSetPhysMaterialOverride = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetPhysMaterialOverride")); }
+			ScriptFunction EnableCollisionResponse() { return mEnableCollisionResponse ? mEnableCollisionResponse : (mEnableCollisionResponse = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.EnableCollisionResponse")); }
+			ScriptFunction SetContactReportForceThreshold() { return mSetContactReportForceThreshold ? mSetContactReportForceThreshold : (mSetContactReportForceThreshold = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.SetContactReportForceThreshold")); }
+			ScriptFunction UpdateMassProperties() { return mUpdateMassProperties ? mUpdateMassProperties : (mUpdateMassProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.UpdateMassProperties")); }
+			ScriptFunction UpdateDampingProperties() { return mUpdateDampingProperties ? mUpdateDampingProperties : (mUpdateDampingProperties = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_BodyInstance.UpdateDampingProperties")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -62,7 +109,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7324], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFixed, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetFixed(bool bNewFixed)
@@ -70,48 +117,48 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewFixed;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7326], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFixed, params.ptr, cast(void*)0);
 	}
 	float GetBodyMass()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19049], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBodyMass, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	bool IsValidBodyInstance()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidBodyInstance, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	PhysicsAssetInstance GetPhysicsAssetInstance()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24994], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicsAssetInstance, params.ptr, cast(void*)0);
 		return *cast(PhysicsAssetInstance*)params.ptr;
 	}
 	UObject.Matrix GetUnrealWorldTM()
 	{
 		ubyte params[64];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24996], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnrealWorldTM, params.ptr, cast(void*)0);
 		return *cast(UObject.Matrix*)params.ptr;
 	}
 	Vector GetUnrealWorldVelocity()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24998], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnrealWorldVelocity, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	Vector GetUnrealWorldAngularVelocity()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25000], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnrealWorldAngularVelocity, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	Vector GetUnrealWorldVelocityAtPoint(Vector Point)
@@ -119,7 +166,7 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25002], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnrealWorldVelocityAtPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	void EnableBoneSpring(bool bInEnableLinear, bool bInEnableAngular, UObject.Matrix* InBoneTarget)
@@ -129,7 +176,7 @@ final:
 		*cast(bool*)params.ptr = bInEnableLinear;
 		*cast(bool*)&params[4] = bInEnableAngular;
 		*cast(UObject.Matrix*)&params[16] = *InBoneTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25005], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableBoneSpring, params.ptr, cast(void*)0);
 		*InBoneTarget = *cast(UObject.Matrix*)&params[16];
 	}
 	void SetBoneSpringParams(float InLinearSpring, float InLinearDamping, float InAngularSpring, float InAngularDamping)
@@ -140,7 +187,7 @@ final:
 		*cast(float*)&params[4] = InLinearDamping;
 		*cast(float*)&params[8] = InAngularSpring;
 		*cast(float*)&params[12] = InAngularDamping;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25009], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBoneSpringParams, params.ptr, cast(void*)0);
 	}
 	void SetBoneSpringTarget(UObject.Matrix* InBoneTarget, bool bTeleport)
 	{
@@ -148,7 +195,7 @@ final:
 		params[] = 0;
 		*cast(UObject.Matrix*)params.ptr = *InBoneTarget;
 		*cast(bool*)&params[64] = bTeleport;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25014], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBoneSpringTarget, params.ptr, cast(void*)0);
 		*InBoneTarget = *cast(UObject.Matrix*)params.ptr;
 	}
 	void SetBlockRigidBody(bool bNewBlockRigidBody)
@@ -156,38 +203,38 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewBlockRigidBody;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25017], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBlockRigidBody, params.ptr, cast(void*)0);
 	}
 	void SetPhysMaterialOverride(PhysicalMaterial NewPhysMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicalMaterial*)params.ptr = NewPhysMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25019], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPhysMaterialOverride, params.ptr, cast(void*)0);
 	}
 	void EnableCollisionResponse(bool bEnableResponse)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnableResponse;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25021], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableCollisionResponse, params.ptr, cast(void*)0);
 	}
 	void SetContactReportForceThreshold(float Threshold)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Threshold;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25023], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetContactReportForceThreshold, params.ptr, cast(void*)0);
 	}
 	void UpdateMassProperties(RB_BodySetup Setup)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(RB_BodySetup*)params.ptr = Setup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25025], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateMassProperties, params.ptr, cast(void*)0);
 	}
 	void UpdateDampingProperties()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25027], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDampingProperties, cast(void*)0, cast(void*)0);
 	}
 }

@@ -8,10 +8,35 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface DecalManager : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DecalManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAreDynamicDecalsEnabled;
+			ScriptFunction mDecalFinished;
+			ScriptFunction mCanSpawnDecals;
+			ScriptFunction mSetDecalParameters;
+			ScriptFunction mGetPooledComponent;
+			ScriptFunction mSpawnDecal;
+		}
+		public @property static final
+		{
+			ScriptFunction AreDynamicDecalsEnabled() { return mAreDynamicDecalsEnabled ? mAreDynamicDecalsEnabled : (mAreDynamicDecalsEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.AreDynamicDecalsEnabled")); }
+			ScriptFunction DecalFinished() { return mDecalFinished ? mDecalFinished : (mDecalFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.DecalFinished")); }
+			ScriptFunction CanSpawnDecals() { return mCanSpawnDecals ? mCanSpawnDecals : (mCanSpawnDecals = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.CanSpawnDecals")); }
+			ScriptFunction SetDecalParameters() { return mSetDecalParameters ? mSetDecalParameters : (mSetDecalParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.SetDecalParameters")); }
+			ScriptFunction GetPooledComponent() { return mGetPooledComponent ? mGetPooledComponent : (mGetPooledComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.GetPooledComponent")); }
+			ScriptFunction SpawnDecal() { return mSpawnDecal ? mSpawnDecal : (mSpawnDecal = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalManager.SpawnDecal")); }
+		}
+	}
 	struct ActiveDecalInfo
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.DecalManager.ActiveDecalInfo")); }
 		@property final auto ref float LifetimeRemaining() { return *cast(float*)(cast(size_t)&this + 4); }
 	}
 	@property final auto ref
@@ -28,11 +53,11 @@ void*)*)(cast(size_t)cast(void*)this + 480); }
 		int MaxActiveDecals() { return *cast(int*)(cast(size_t)cast(void*)this + 492); }
 	}
 final:
-	bool AreDynamicDecalsEnabled()
+	static bool AreDynamicDecalsEnabled()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14123], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AreDynamicDecalsEnabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void DecalFinished(
@@ -44,16 +69,16 @@ void* Decal)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = Decal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14125], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DecalFinished, params.ptr, cast(void*)0);
 	}
 	bool CanSpawnDecals()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14127], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanSpawnDecals, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void SetDecalParameters(
+	static void SetDecalParameters(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* TheDecal, MaterialInterface pDecalMaterial, Vector DecalLocation, Rotator DecalOrientation, float Width, float Height, float Thickness, bool bNoClip, float DecalRotation, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -83,7 +108,7 @@ void**)&params[52] = HitComponent;
 		*cast(int*)&params[80] = InFracturedStaticMeshComponentIndex;
 		*cast(float*)&params[84] = DepthBias;
 		*cast(UObject.Vector2D*)&params[88] = BlendRange;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14129], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetDecalParameters, params.ptr, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -91,7 +116,7 @@ void* GetPooledComponent()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14148], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPooledComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr;
@@ -124,7 +149,7 @@ void**)&params[48] = HitComponent;
 		*cast(int*)&params[80] = InFracturedStaticMeshComponentIndex;
 		*cast(float*)&params[84] = InDepthBias;
 		*cast(UObject.Vector2D*)&params[88] = InBlendRange;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14152], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnDecal, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[96];

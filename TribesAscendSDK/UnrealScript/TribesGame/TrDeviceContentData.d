@@ -10,6 +10,8 @@ import UnrealScript.Engine.AnimTree;
 extern(C++) interface TrDeviceContentData : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeviceContentData")); }
 	@property final auto ref
 	{
 		ScriptClass m_TrDeviceClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 88); }

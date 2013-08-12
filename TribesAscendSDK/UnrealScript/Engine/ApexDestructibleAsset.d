@@ -10,10 +10,14 @@ import UnrealScript.Engine.PhysicalMaterial;
 extern(C++) interface ApexDestructibleAsset : ApexAsset
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleAsset")); }
 	struct NxDestructibleParameters
 	{
 		private ubyte __buffer__[128];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ApexDestructibleAsset.NxDestructibleParameters")); }
 		@property final
 		{
 			auto ref
@@ -50,6 +54,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ApexDestructibleAsset.NxDestructibleDepthParameters")); }
 		@property final
 		{
 			bool USER_FLAG_3() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x80) != 0; }
@@ -74,6 +80,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ApexDestructibleAsset.NxDestructibleParametersFlag")); }
 		@property final
 		{
 			bool USE_VALID_BOUNDS() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x80) != 0; }

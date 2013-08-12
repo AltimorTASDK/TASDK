@@ -7,6 +7,8 @@ import UnrealScript.Engine.Volume;
 extern(C++) interface PrecomputedVisibilityOverrideVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrecomputedVisibilityOverrideVolume")); }
 	@property final auto ref
 	{
 		ScriptArray!(Actor) OverrideVisibleActors() { return *cast(ScriptArray!(Actor)*)(cast(size_t)cast(void*)this + 520); }

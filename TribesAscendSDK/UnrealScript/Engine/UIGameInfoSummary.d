@@ -6,6 +6,13 @@ import UnrealScript.Engine.UIResourceDataProvider;
 extern(C++) interface UIGameInfoSummary : UIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIGameInfoSummary")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mIsProviderDisabled;
+		public @property static final ScriptFunction IsProviderDisabled() { return mIsProviderDisabled ? mIsProviderDisabled : (mIsProviderDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.UIGameInfoSummary.IsProviderDisabled")); }
+	}
 	@property final
 	{
 		auto ref
@@ -26,7 +33,7 @@ public extern(D):
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[29029], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsProviderDisabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

@@ -18,6 +18,33 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface UTFamilyInfo : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTFamilyInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetFirstPersonArmsMaterial;
+			ScriptFunction mGetFirstPersonArms;
+			ScriptFunction mGetVoiceClass;
+			ScriptFunction mGetCharPortrait;
+			ScriptFunction mGetEmoteIndex;
+			ScriptFunction mGetTeamMaterials;
+			ScriptFunction mGetEmoteGroupCnt;
+			ScriptFunction mGetEmotes;
+		}
+		public @property static final
+		{
+			ScriptFunction GetFirstPersonArmsMaterial() { return mGetFirstPersonArmsMaterial ? mGetFirstPersonArmsMaterial : (mGetFirstPersonArmsMaterial = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetFirstPersonArmsMaterial")); }
+			ScriptFunction GetFirstPersonArms() { return mGetFirstPersonArms ? mGetFirstPersonArms : (mGetFirstPersonArms = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetFirstPersonArms")); }
+			ScriptFunction GetVoiceClass() { return mGetVoiceClass ? mGetVoiceClass : (mGetVoiceClass = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetVoiceClass")); }
+			ScriptFunction GetCharPortrait() { return mGetCharPortrait ? mGetCharPortrait : (mGetCharPortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetCharPortrait")); }
+			ScriptFunction GetEmoteIndex() { return mGetEmoteIndex ? mGetEmoteIndex : (mGetEmoteIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetEmoteIndex")); }
+			ScriptFunction GetTeamMaterials() { return mGetTeamMaterials ? mGetTeamMaterials : (mGetTeamMaterials = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetTeamMaterials")); }
+			ScriptFunction GetEmoteGroupCnt() { return mGetEmoteGroupCnt ? mGetEmoteGroupCnt : (mGetEmoteGroupCnt = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetEmoteGroupCnt")); }
+			ScriptFunction GetEmotes() { return mGetEmotes ? mGetEmotes : (mGetEmotes = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTFamilyInfo.GetEmotes")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -70,71 +97,71 @@ public extern(D):
 		bool bIsFemale(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 400) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 400) &= ~0x1; } return val; }
 	}
 final:
-	MaterialInterface GetFirstPersonArmsMaterial(int TeamNum)
+	static MaterialInterface GetFirstPersonArmsMaterial(int TeamNum)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41402], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFirstPersonArmsMaterial, params.ptr, cast(void*)0);
 		return *cast(MaterialInterface*)&params[4];
 	}
-	SkeletalMesh GetFirstPersonArms()
+	static SkeletalMesh GetFirstPersonArms()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41418], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFirstPersonArms, params.ptr, cast(void*)0);
 		return *cast(SkeletalMesh*)params.ptr;
 	}
-	ScriptClass GetVoiceClass()
+	static ScriptClass GetVoiceClass()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41423], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetVoiceClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
-	Texture GetCharPortrait(int TeamNum)
+	static Texture GetCharPortrait(int TeamNum)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41426], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetCharPortrait, params.ptr, cast(void*)0);
 		return *cast(Texture*)&params[4];
 	}
-	int GetEmoteIndex(ScriptName EmoteTag)
+	static int GetEmoteIndex(ScriptName EmoteTag)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = EmoteTag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41510], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEmoteIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	void GetTeamMaterials(int TeamNum, MaterialInterface* TeamMaterialHead, MaterialInterface* TeamMaterialBody)
+	static void GetTeamMaterials(int TeamNum, MaterialInterface* TeamMaterialHead, MaterialInterface* TeamMaterialBody)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
 		*cast(MaterialInterface*)&params[4] = *TeamMaterialHead;
 		*cast(MaterialInterface*)&params[8] = *TeamMaterialBody;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47481], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetTeamMaterials, params.ptr, cast(void*)0);
 		*TeamMaterialHead = *cast(MaterialInterface*)&params[4];
 		*TeamMaterialBody = *cast(MaterialInterface*)&params[8];
 	}
-	int GetEmoteGroupCnt(ScriptName Category)
+	static int GetEmoteGroupCnt(ScriptName Category)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Category;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47486], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEmoteGroupCnt, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	void GetEmotes(ScriptName Category, ScriptArray!(ScriptString)* Captions, ScriptArray!(ScriptName)* EmoteTags)
+	static void GetEmotes(ScriptName Category, ScriptArray!(ScriptString)* Captions, ScriptArray!(ScriptName)* EmoteTags)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Category;
 		*cast(ScriptArray!(ScriptString)*)&params[8] = *Captions;
 		*cast(ScriptArray!(ScriptName)*)&params[20] = *EmoteTags;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47491], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEmotes, params.ptr, cast(void*)0);
 		*Captions = *cast(ScriptArray!(ScriptString)*)&params[8];
 		*EmoteTags = *cast(ScriptArray!(ScriptName)*)&params[20];
 	}

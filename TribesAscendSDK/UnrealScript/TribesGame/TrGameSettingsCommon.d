@@ -6,6 +6,8 @@ import UnrealScript.UTGame.UTGameSettingsCommon;
 extern(C++) interface TrGameSettingsCommon : UTGameSettingsCommon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameSettingsCommon")); }
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,

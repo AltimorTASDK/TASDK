@@ -1,10 +1,13 @@
 module UnrealScript.Engine.ParticleModuleBeamBase;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModule;
 
 extern(C++) interface ParticleModuleBeamBase : ParticleModule
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamBase")); }
 	enum Beam2SourceTargetMethod : ubyte
 	{
 		PEB2STM_Default = 0,

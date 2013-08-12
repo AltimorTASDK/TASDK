@@ -6,13 +6,20 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TranslatorTag : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TranslatorTag")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mTranslate;
+		public @property static final ScriptFunction Translate() { return mTranslate ? mTranslate : (mTranslate = ScriptObject.Find!(ScriptFunction)("Function Engine.TranslatorTag.Translate")); }
+	}
 	@property final auto ref ScriptName Tag() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 60); }
 	final ScriptString Translate(ScriptString InArgument)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InArgument;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27221], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Translate, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 }

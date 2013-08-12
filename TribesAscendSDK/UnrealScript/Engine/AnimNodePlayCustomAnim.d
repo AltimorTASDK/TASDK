@@ -7,6 +7,31 @@ import UnrealScript.Engine.AnimNodeBlend;
 extern(C++) interface AnimNodePlayCustomAnim : AnimNodeBlend
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodePlayCustomAnim")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayCustomAnim;
+			ScriptFunction mPlayCustomAnimByDuration;
+			ScriptFunction mStopCustomAnim;
+			ScriptFunction mSetCustomAnim;
+			ScriptFunction mSetActorAnimEndNotification;
+			ScriptFunction mGetCustomAnimNodeSeq;
+			ScriptFunction mSetRootBoneAxisOption;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayCustomAnim() { return mPlayCustomAnim ? mPlayCustomAnim : (mPlayCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.PlayCustomAnim")); }
+			ScriptFunction PlayCustomAnimByDuration() { return mPlayCustomAnimByDuration ? mPlayCustomAnimByDuration : (mPlayCustomAnimByDuration = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.PlayCustomAnimByDuration")); }
+			ScriptFunction StopCustomAnim() { return mStopCustomAnim ? mStopCustomAnim : (mStopCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.StopCustomAnim")); }
+			ScriptFunction SetCustomAnim() { return mSetCustomAnim ? mSetCustomAnim : (mSetCustomAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetCustomAnim")); }
+			ScriptFunction SetActorAnimEndNotification() { return mSetActorAnimEndNotification ? mSetActorAnimEndNotification : (mSetActorAnimEndNotification = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetActorAnimEndNotification")); }
+			ScriptFunction GetCustomAnimNodeSeq() { return mGetCustomAnimNodeSeq ? mGetCustomAnimNodeSeq : (mGetCustomAnimNodeSeq = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.GetCustomAnimNodeSeq")); }
+			ScriptFunction SetRootBoneAxisOption() { return mSetRootBoneAxisOption ? mSetRootBoneAxisOption : (mSetRootBoneAxisOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodePlayCustomAnim.SetRootBoneAxisOption")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref float CustomPendingBlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 264); }
@@ -24,7 +49,7 @@ final:
 		*cast(float*)&params[16] = BlendOutTime;
 		*cast(bool*)&params[20] = bLooping;
 		*cast(bool*)&params[24] = bOverride;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10980], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCustomAnim, params.ptr, cast(void*)0);
 		return *cast(float*)&params[28];
 	}
 	void PlayCustomAnimByDuration(ScriptName AnimName, float Duration, float BlendInTime, float BlendOutTime, bool bLooping, bool bOverride)
@@ -37,34 +62,34 @@ final:
 		*cast(float*)&params[16] = BlendOutTime;
 		*cast(bool*)&params[20] = bLooping;
 		*cast(bool*)&params[24] = bOverride;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10988], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCustomAnimByDuration, params.ptr, cast(void*)0);
 	}
 	void StopCustomAnim(float BlendOutTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = BlendOutTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10995], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopCustomAnim, params.ptr, cast(void*)0);
 	}
 	void SetCustomAnim(ScriptName AnimName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = AnimName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10997], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCustomAnim, params.ptr, cast(void*)0);
 	}
 	void SetActorAnimEndNotification(bool bNewStatus)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewStatus;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11000], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActorAnimEndNotification, params.ptr, cast(void*)0);
 	}
 	AnimNodeSequence GetCustomAnimNodeSeq()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11003], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCustomAnimNodeSeq, params.ptr, cast(void*)0);
 		return *cast(AnimNodeSequence*)params.ptr;
 	}
 	void SetRootBoneAxisOption(AnimNodeSequence.ERootBoneAxis AxisX, AnimNodeSequence.ERootBoneAxis AxisY, AnimNodeSequence.ERootBoneAxis AxisZ)
@@ -74,6 +99,6 @@ final:
 		*cast(AnimNodeSequence.ERootBoneAxis*)params.ptr = AxisX;
 		*cast(AnimNodeSequence.ERootBoneAxis*)&params[1] = AxisY;
 		*cast(AnimNodeSequence.ERootBoneAxis*)&params[2] = AxisZ;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11005], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootBoneAxisOption, params.ptr, cast(void*)0);
 	}
 }

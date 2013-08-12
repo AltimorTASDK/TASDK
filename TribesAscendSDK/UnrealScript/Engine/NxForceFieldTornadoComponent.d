@@ -1,11 +1,14 @@
 module UnrealScript.Engine.NxForceFieldTornadoComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.NxForceFieldComponent;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface NxForceFieldTornadoComponent : NxForceFieldComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldTornadoComponent")); }
 	@property final
 	{
 		auto ref

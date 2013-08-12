@@ -1,10 +1,13 @@
 module UnrealScript.Engine.MaterialExpressionTransform;
 
+import ScriptClasses;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionTransform : MaterialExpression
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTransform")); }
 	enum EMaterialVectorCoordTransform : ubyte
 	{
 		TRANSFORM_World = 0,

@@ -7,6 +7,21 @@ import UnrealScript.Engine.GameplayEventsHandler;
 extern(C++) interface GameStateObject : GameplayEventsHandler
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameStateObject")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreProcessStream;
+			ScriptFunction mReset;
+		}
+		public @property static final
+		{
+			ScriptFunction PreProcessStream() { return mPreProcessStream ? mPreProcessStream : (mPreProcessStream = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStateObject.PreProcessStream")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameStateObject.Reset")); }
+		}
+	}
 	enum GameSessionType : ubyte
 	{
 		GT_SessionInvalid = 0,
@@ -19,6 +34,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStateObject.TeamState")); }
 		@property final auto ref
 		{
 			ScriptArray!(int) PlayerIndices() { return *cast(ScriptArray!(int)*)(cast(size_t)&this + 4); }
@@ -29,6 +46,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameStateObject.PlayerState")); }
 		@property final auto ref
 		{
 			float TimeAliveSinceLastDeath() { return *cast(float*)(cast(size_t)&this + 12); }
@@ -55,10 +74,10 @@ public extern(D):
 final:
 	void PreProcessStream()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31955], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreProcessStream, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31956], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 }

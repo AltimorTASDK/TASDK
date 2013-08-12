@@ -9,6 +9,27 @@ import UnrealScript.Engine.Ladder;
 extern(C++) interface LadderVolume : PhysicsVolume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LadderVolume")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInUse;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPawnEnteredVolume;
+			ScriptFunction mPawnLeavingVolume;
+			ScriptFunction mPhysicsChangedFor;
+		}
+		public @property static final
+		{
+			ScriptFunction InUse() { return mInUse ? mInUse : (mInUse = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.InUse")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PostBeginPlay")); }
+			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PawnEnteredVolume")); }
+			ScriptFunction PawnLeavingVolume() { return mPawnLeavingVolume ? mPawnLeavingVolume : (mPawnLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PawnLeavingVolume")); }
+			ScriptFunction PhysicsChangedFor() { return mPhysicsChangedFor ? mPhysicsChangedFor : (mPhysicsChangedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.LadderVolume.PhysicsChangedFor")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -32,32 +53,32 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Ignored;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11896], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InUse, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19140], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PawnEnteredVolume(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19146], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PawnEnteredVolume, params.ptr, cast(void*)0);
 	}
 	void PawnLeavingVolume(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19151], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PawnLeavingVolume, params.ptr, cast(void*)0);
 	}
 	void PhysicsChangedFor(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19154], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PhysicsChangedFor, params.ptr, cast(void*)0);
 	}
 }

@@ -8,6 +8,8 @@ import UnrealScript.Engine.PhysicalMaterial;
 extern(C++) interface RB_BodySetup : KMeshProps
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_BodySetup")); }
 	enum ESleepFamily : ubyte
 	{
 		SF_Normal = 0,
@@ -18,12 +20,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.RB_BodySetup.KCachedConvexData")); }
 		@property final auto ref ScriptArray!(RB_BodySetup.KCachedConvexDataElement) CachedConvexElements() { return *cast(ScriptArray!(RB_BodySetup.KCachedConvexDataElement)*)(cast(size_t)&this + 0); }
 	}
 	struct KCachedConvexDataElement
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.RB_BodySetup.KCachedConvexDataElement")); }
 		@property final auto ref ScriptArray!(ubyte) ConvexElementData() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
 	}
 	@property final

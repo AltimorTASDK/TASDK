@@ -10,6 +10,27 @@ import UnrealScript.Engine.SceneCapturePortalActor;
 extern(C++) interface PortalTeleporter : SceneCapturePortalActor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PortalTeleporter")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mTransformActor;
+			ScriptFunction mTransformVectorDir;
+			ScriptFunction mTransformHitLocation;
+			ScriptFunction mCreatePortalTexture;
+			ScriptFunction mStopsProjectile;
+		}
+		public @property static final
+		{
+			ScriptFunction TransformActor() { return mTransformActor ? mTransformActor : (mTransformActor = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformActor")); }
+			ScriptFunction TransformVectorDir() { return mTransformVectorDir ? mTransformVectorDir : (mTransformVectorDir = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformVectorDir")); }
+			ScriptFunction TransformHitLocation() { return mTransformHitLocation ? mTransformHitLocation : (mTransformHitLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.TransformHitLocation")); }
+			ScriptFunction CreatePortalTexture() { return mCreatePortalTexture ? mCreatePortalTexture : (mCreatePortalTexture = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.CreatePortalTexture")); }
+			ScriptFunction StopsProjectile() { return mStopsProjectile ? mStopsProjectile : (mStopsProjectile = ScriptObject.Find!(ScriptFunction)("Function Engine.PortalTeleporter.StopsProjectile")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -32,7 +53,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24726], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TransformActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	Vector TransformVectorDir(Vector V)
@@ -40,7 +61,7 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24729], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TransformVectorDir, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	Vector TransformHitLocation(Vector HitLocation)
@@ -48,14 +69,14 @@ final:
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24732], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TransformHitLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	TextureRenderTarget2D CreatePortalTexture()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24735], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreatePortalTexture, params.ptr, cast(void*)0);
 		return *cast(TextureRenderTarget2D*)params.ptr;
 	}
 	bool StopsProjectile(Projectile P)
@@ -63,7 +84,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Projectile*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopsProjectile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

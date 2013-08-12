@@ -6,6 +6,31 @@ import UnrealScript.TribesGame.TrHelpTextManager;
 extern(C++) interface TrHelpTextManager_Training : TrHelpTextManager
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHelpTextManager_Training")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitHelpTextManager;
+			ScriptFunction mUpdateTypesToRemoveOnTimers;
+			ScriptFunction mCheckDestroy;
+			ScriptFunction mRequestHelpText;
+			ScriptFunction mRemoveHelpText;
+			ScriptFunction mRequestHelpText_Training;
+			ScriptFunction mUpdateHUD;
+		}
+		public @property static final
+		{
+			ScriptFunction InitHelpTextManager() { return mInitHelpTextManager ? mInitHelpTextManager : (mInitHelpTextManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.InitHelpTextManager")); }
+			ScriptFunction UpdateTypesToRemoveOnTimers() { return mUpdateTypesToRemoveOnTimers ? mUpdateTypesToRemoveOnTimers : (mUpdateTypesToRemoveOnTimers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.UpdateTypesToRemoveOnTimers")); }
+			ScriptFunction CheckDestroy() { return mCheckDestroy ? mCheckDestroy : (mCheckDestroy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.CheckDestroy")); }
+			ScriptFunction RequestHelpText() { return mRequestHelpText ? mRequestHelpText : (mRequestHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RequestHelpText")); }
+			ScriptFunction RemoveHelpText() { return mRemoveHelpText ? mRemoveHelpText : (mRemoveHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RemoveHelpText")); }
+			ScriptFunction RequestHelpText_Training() { return mRequestHelpText_Training ? mRequestHelpText_Training : (mRequestHelpText_Training = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.RequestHelpText_Training")); }
+			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager_Training.UpdateHUD")); }
+		}
+	}
 	enum EHelpTextTrainingType : ubyte
 	{
 		HelpTextTraining_None = 0,
@@ -54,20 +79,20 @@ public extern(D):
 final:
 	void InitHelpTextManager()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95425], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitHelpTextManager, cast(void*)0, cast(void*)0);
 	}
 	void UpdateTypesToRemoveOnTimers(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTypesToRemoveOnTimers, params.ptr, cast(void*)0);
 	}
 	bool CheckDestroy()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95428], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckDestroy, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool RequestHelpText(TrHelpTextManager.EHelpTextType RequestedType)
@@ -75,7 +100,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = RequestedType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestHelpText, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float Time, bool bDoNotSuppress)
@@ -85,17 +110,17 @@ final:
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = TypeToRemove;
 		*cast(float*)&params[4] = Time;
 		*cast(bool*)&params[8] = bDoNotSuppress;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95433], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveHelpText, params.ptr, cast(void*)0);
 	}
 	void RequestHelpText_Training(TrHelpTextManager_Training.EHelpTextTrainingType RequestedType)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrHelpTextManager_Training.EHelpTextTrainingType*)params.ptr = RequestedType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95437], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestHelpText_Training, params.ptr, cast(void*)0);
 	}
 	void UpdateHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[95440], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHUD, cast(void*)0, cast(void*)0);
 	}
 }

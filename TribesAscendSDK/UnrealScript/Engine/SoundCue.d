@@ -9,10 +9,19 @@ import UnrealScript.Engine.FaceFXAnimSet;
 extern(C++) interface SoundCue : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundCue")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetCueDuration;
+		public @property static final ScriptFunction GetCueDuration() { return mGetCueDuration ? mGetCueDuration : (mGetCueDuration = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundCue.GetCueDuration")); }
+	}
 	struct SoundNodeEditorData
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SoundCue.SoundNodeEditorData")); }
 		@property final auto ref
 		{
 			int NodePosY() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -39,7 +48,7 @@ public extern(D):
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10380], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCueDuration, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 }

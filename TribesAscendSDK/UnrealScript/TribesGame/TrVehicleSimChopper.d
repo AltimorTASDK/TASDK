@@ -6,6 +6,13 @@ import UnrealScript.UDKBase.UDKVehicleSimChopper;
 extern(C++) interface TrVehicleSimChopper : UDKVehicleSimChopper
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleSimChopper")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetVehicleControls;
+		public @property static final ScriptFunction SetVehicleControls() { return mSetVehicleControls ? mSetVehicleControls : (mSetVehicleControls = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleSimChopper.SetVehicleControls")); }
+	}
 	@property final
 	{
 		auto ref
@@ -27,6 +34,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInvert;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[114831], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVehicleControls, params.ptr, cast(void*)0);
 	}
 }

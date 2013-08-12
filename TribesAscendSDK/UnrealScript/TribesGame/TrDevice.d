@@ -26,6 +26,301 @@ import UnrealScript.UTGame.UTWeapon;
 extern(C++) interface TrDevice : UTWeapon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCalcHUDAimChargePercent;
+			ScriptFunction mGetAccuracy;
+			ScriptFunction mGetFireModeNum;
+			ScriptFunction mIsValidTarget;
+			ScriptFunction mIsEnemy;
+			ScriptFunction mIsInsideCone;
+			ScriptFunction mShouldAddToImpactList;
+			ScriptFunction mTickInHandWeapon;
+			ScriptFunction mResetLock;
+			ScriptFunction mGetLockedTarget;
+			ScriptFunction mSpawnPet;
+			ScriptFunction mGetTargetAccuracy;
+			ScriptFunction mRestoreAccuracy;
+			ScriptFunction mRestoreKickback;
+			ScriptFunction mIsInLOS;
+			ScriptFunction mAttachHandsMesh;
+			ScriptFunction mLoadMeshData;
+			ScriptFunction mValidateClientReportedHit;
+			ScriptFunction mValidateClientReportedHitInternal;
+			ScriptFunction mGetObjectReferencerName;
+			ScriptFunction mGetObjectReferencerPackageName;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mAddAmmo;
+			ScriptFunction mReplicateAmmoOnWeaponFire;
+			ScriptFunction mConsumeAmmo_Internal;
+			ScriptFunction mConsumeAmmo;
+			ScriptFunction mGetTraceOwner;
+			ScriptFunction mAttachWeaponTo;
+			ScriptFunction mCreateFirstPersonHandsMesh;
+			ScriptFunction mChangeVisibility;
+			ScriptFunction mCentralUpdateHandsMesh;
+			ScriptFunction mUpdateHandsMesh;
+			ScriptFunction mCreateOverlayMesh;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mPlayWeaponEquip;
+			ScriptFunction mOnPlayRetrieveAnim;
+			ScriptFunction mPlayWeaponPutDown;
+			ScriptFunction mWeaponEmpty;
+			ScriptFunction mOnSwitchToWeapon;
+			ScriptFunction mOnSwitchAwayFromWeapon;
+			ScriptFunction mClientWeaponSet;
+			ScriptFunction mPlayFireEffects;
+			ScriptFunction mPlayFireAnimation;
+			ScriptFunction mShakeView;
+			ScriptFunction mShouldFireTracer;
+			ScriptFunction mShouldFireTracerBeam;
+			ScriptFunction mSpawnTracerBeam;
+			ScriptFunction mSpawnTracerEffect;
+			ScriptFunction mGetTracer;
+			ScriptFunction mGetNumRoundsCurrentlyInClip;
+			ScriptFunction mHasAmmo;
+			ScriptFunction mHasAnyAmmo;
+			ScriptFunction mAllowSwitchTo;
+			ScriptFunction mCalculateRangeDamageFalloff;
+			ScriptFunction mInstantFire;
+			ScriptFunction mProcessInstantHit;
+			ScriptFunction mServerNotifyHit;
+			ScriptFunction mProcessInstantHit_Internal;
+			ScriptFunction mModifyInstantHitDamage;
+			ScriptFunction mProcessEffect;
+			ScriptFunction mUsesPower;
+			ScriptFunction mIsDeviceCoolingDown;
+			ScriptFunction mEnterDeployMode;
+			ScriptFunction mExitDeployMode;
+			ScriptFunction mToggleActivate;
+			ScriptFunction mPayAccuracyForJump;
+			ScriptFunction mPayAccuracyForWeaponSwitch;
+			ScriptFunction mPayAccuracyForShot;
+			ScriptFunction mAddSpreadWithAccuracy;
+			ScriptFunction mApplyKickbackToAim;
+			ScriptFunction mGetCurrentKickbackAmount;
+			ScriptFunction mAddKickback;
+			ScriptFunction mGetAdjustedAim;
+			ScriptFunction mShowWeaponRedLowAmmoIndicator;
+			ScriptFunction mNeedToVisitInventoryStation;
+			ScriptFunction mGetAmmoCount;
+			ScriptFunction mUpdateLowAmmoWarning;
+			ScriptFunction mGetProjectileClass;
+			ScriptFunction mGetClientSideProjectileFireStartLoc;
+			ScriptFunction mProjectileFire;
+			ScriptFunction mDestroyOldestProjectileOverLimit;
+			ScriptFunction mFireAmmunition;
+			ScriptFunction mMaxRange;
+			ScriptFunction mGetWeaponRange;
+			ScriptFunction mGetAimForCamera;
+			ScriptFunction mCanClientRequestReloadNow;
+			ScriptFunction mHolderEnteredVehicle;
+			ScriptFunction mGetReloadTime;
+			ScriptFunction mClearMeshAnimSeqNodes;
+			ScriptFunction mCacheMeshAnimSeqNodes;
+			ScriptFunction mSuppressAnimNotifies;
+			ScriptFunction mIsReloading;
+			ScriptFunction mRequestReload;
+			ScriptFunction mOnClientReloaded;
+			ScriptFunction mPerformInactiveReload;
+			ScriptFunction mCalcAmountToLoad;
+			ScriptFunction mClientFinishedReload;
+			ScriptFunction mResumeZoomOnReloadEnd;
+			ScriptFunction mPlayReloadAnim;
+			ScriptFunction mEnableWeaponReadyToFire;
+			ScriptFunction mOnReloadComplete;
+			ScriptFunction mBeginAReload;
+			ScriptFunction mAddCarriedAmmo;
+			ScriptFunction mUpdateReplicatedCarriedAmmo;
+			ScriptFunction mGoInactiveDueToOffhand;
+			ScriptFunction mStopFire;
+			ScriptFunction mBeginFire;
+			ScriptFunction mGetEquipTime;
+			ScriptFunction mTimeWeaponPutDown;
+			ScriptFunction mGetPutDownTime;
+			ScriptFunction mCanFireOffhandNow;
+			ScriptFunction mServerOnClientDeniedFire;
+			ScriptFunction mApplyEquipEffect;
+			ScriptFunction mRemoveEquipEffect;
+			ScriptFunction mSetPosition;
+			ScriptFunction mLagRot;
+			ScriptFunction mShouldRefire;
+			ScriptFunction mStartFire;
+			ScriptFunction mActivate;
+			ScriptFunction mAnnounceInvalidPickup;
+			ScriptFunction mDenyPickupQuery;
+			ScriptFunction mPutDownFast;
+			ScriptFunction mForceEndFire;
+			ScriptFunction mCanAutoDeviceFireNow;
+			ScriptFunction mCustomFire;
+			ScriptFunction mAttachMuzzleFlash;
+			ScriptFunction mWeaponPlaySoundLocal;
+			ScriptFunction mClientWeaponThrown;
+			ScriptFunction mUpdateShotsFired;
+			ScriptFunction mStartZoom;
+			ScriptFunction mEndZoom;
+			ScriptFunction mCanViewZoom;
+			ScriptFunction mSetAltReticule;
+			ScriptFunction mResetAltReticule;
+			ScriptFunction mCalcWeaponFire;
+			ScriptFunction mPlayDryFireZoom;
+			ScriptFunction mBuffMaxCarriedAmmo;
+			ScriptFunction mGetMaxAmmoCount;
+			ScriptFunction mGetBasePickupAmmoAmount;
+			ScriptFunction mServerStartFire;
+			ScriptFunction mUpdateWeaponMICs;
+		}
+		public @property static final
+		{
+			ScriptFunction CalcHUDAimChargePercent() { return mCalcHUDAimChargePercent ? mCalcHUDAimChargePercent : (mCalcHUDAimChargePercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CalcHUDAimChargePercent")); }
+			ScriptFunction GetAccuracy() { return mGetAccuracy ? mGetAccuracy : (mGetAccuracy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetAccuracy")); }
+			ScriptFunction GetFireModeNum() { return mGetFireModeNum ? mGetFireModeNum : (mGetFireModeNum = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetFireModeNum")); }
+			ScriptFunction IsValidTarget() { return mIsValidTarget ? mIsValidTarget : (mIsValidTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsValidTarget")); }
+			ScriptFunction IsEnemy() { return mIsEnemy ? mIsEnemy : (mIsEnemy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsEnemy")); }
+			ScriptFunction IsInsideCone() { return mIsInsideCone ? mIsInsideCone : (mIsInsideCone = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsInsideCone")); }
+			ScriptFunction ShouldAddToImpactList() { return mShouldAddToImpactList ? mShouldAddToImpactList : (mShouldAddToImpactList = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShouldAddToImpactList")); }
+			ScriptFunction TickInHandWeapon() { return mTickInHandWeapon ? mTickInHandWeapon : (mTickInHandWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.TickInHandWeapon")); }
+			ScriptFunction ResetLock() { return mResetLock ? mResetLock : (mResetLock = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ResetLock")); }
+			ScriptFunction GetLockedTarget() { return mGetLockedTarget ? mGetLockedTarget : (mGetLockedTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetLockedTarget")); }
+			ScriptFunction SpawnPet() { return mSpawnPet ? mSpawnPet : (mSpawnPet = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SpawnPet")); }
+			ScriptFunction GetTargetAccuracy() { return mGetTargetAccuracy ? mGetTargetAccuracy : (mGetTargetAccuracy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetTargetAccuracy")); }
+			ScriptFunction RestoreAccuracy() { return mRestoreAccuracy ? mRestoreAccuracy : (mRestoreAccuracy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.RestoreAccuracy")); }
+			ScriptFunction RestoreKickback() { return mRestoreKickback ? mRestoreKickback : (mRestoreKickback = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.RestoreKickback")); }
+			ScriptFunction IsInLOS() { return mIsInLOS ? mIsInLOS : (mIsInLOS = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsInLOS")); }
+			ScriptFunction AttachHandsMesh() { return mAttachHandsMesh ? mAttachHandsMesh : (mAttachHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AttachHandsMesh")); }
+			ScriptFunction LoadMeshData() { return mLoadMeshData ? mLoadMeshData : (mLoadMeshData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.LoadMeshData")); }
+			ScriptFunction ValidateClientReportedHit() { return mValidateClientReportedHit ? mValidateClientReportedHit : (mValidateClientReportedHit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ValidateClientReportedHit")); }
+			ScriptFunction ValidateClientReportedHitInternal() { return mValidateClientReportedHitInternal ? mValidateClientReportedHitInternal : (mValidateClientReportedHitInternal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ValidateClientReportedHitInternal")); }
+			ScriptFunction GetObjectReferencerName() { return mGetObjectReferencerName ? mGetObjectReferencerName : (mGetObjectReferencerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetObjectReferencerName")); }
+			ScriptFunction GetObjectReferencerPackageName() { return mGetObjectReferencerPackageName ? mGetObjectReferencerPackageName : (mGetObjectReferencerPackageName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetObjectReferencerPackageName")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ReplicatedEvent")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PostBeginPlay")); }
+			ScriptFunction AddAmmo() { return mAddAmmo ? mAddAmmo : (mAddAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AddAmmo")); }
+			ScriptFunction ReplicateAmmoOnWeaponFire() { return mReplicateAmmoOnWeaponFire ? mReplicateAmmoOnWeaponFire : (mReplicateAmmoOnWeaponFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ReplicateAmmoOnWeaponFire")); }
+			ScriptFunction ConsumeAmmo_Internal() { return mConsumeAmmo_Internal ? mConsumeAmmo_Internal : (mConsumeAmmo_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ConsumeAmmo_Internal")); }
+			ScriptFunction ConsumeAmmo() { return mConsumeAmmo ? mConsumeAmmo : (mConsumeAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ConsumeAmmo")); }
+			ScriptFunction GetTraceOwner() { return mGetTraceOwner ? mGetTraceOwner : (mGetTraceOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetTraceOwner")); }
+			ScriptFunction AttachWeaponTo() { return mAttachWeaponTo ? mAttachWeaponTo : (mAttachWeaponTo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AttachWeaponTo")); }
+			ScriptFunction CreateFirstPersonHandsMesh() { return mCreateFirstPersonHandsMesh ? mCreateFirstPersonHandsMesh : (mCreateFirstPersonHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CreateFirstPersonHandsMesh")); }
+			ScriptFunction ChangeVisibility() { return mChangeVisibility ? mChangeVisibility : (mChangeVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ChangeVisibility")); }
+			ScriptFunction CentralUpdateHandsMesh() { return mCentralUpdateHandsMesh ? mCentralUpdateHandsMesh : (mCentralUpdateHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CentralUpdateHandsMesh")); }
+			ScriptFunction UpdateHandsMesh() { return mUpdateHandsMesh ? mUpdateHandsMesh : (mUpdateHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UpdateHandsMesh")); }
+			ScriptFunction CreateOverlayMesh() { return mCreateOverlayMesh ? mCreateOverlayMesh : (mCreateOverlayMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CreateOverlayMesh")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PostInitAnimTree")); }
+			ScriptFunction PlayWeaponEquip() { return mPlayWeaponEquip ? mPlayWeaponEquip : (mPlayWeaponEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayWeaponEquip")); }
+			ScriptFunction OnPlayRetrieveAnim() { return mOnPlayRetrieveAnim ? mOnPlayRetrieveAnim : (mOnPlayRetrieveAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.OnPlayRetrieveAnim")); }
+			ScriptFunction PlayWeaponPutDown() { return mPlayWeaponPutDown ? mPlayWeaponPutDown : (mPlayWeaponPutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayWeaponPutDown")); }
+			ScriptFunction WeaponEmpty() { return mWeaponEmpty ? mWeaponEmpty : (mWeaponEmpty = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.WeaponEmpty")); }
+			ScriptFunction OnSwitchToWeapon() { return mOnSwitchToWeapon ? mOnSwitchToWeapon : (mOnSwitchToWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.OnSwitchToWeapon")); }
+			ScriptFunction OnSwitchAwayFromWeapon() { return mOnSwitchAwayFromWeapon ? mOnSwitchAwayFromWeapon : (mOnSwitchAwayFromWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.OnSwitchAwayFromWeapon")); }
+			ScriptFunction ClientWeaponSet() { return mClientWeaponSet ? mClientWeaponSet : (mClientWeaponSet = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ClientWeaponSet")); }
+			ScriptFunction PlayFireEffects() { return mPlayFireEffects ? mPlayFireEffects : (mPlayFireEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayFireEffects")); }
+			ScriptFunction PlayFireAnimation() { return mPlayFireAnimation ? mPlayFireAnimation : (mPlayFireAnimation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayFireAnimation")); }
+			ScriptFunction ShakeView() { return mShakeView ? mShakeView : (mShakeView = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShakeView")); }
+			ScriptFunction ShouldFireTracer() { return mShouldFireTracer ? mShouldFireTracer : (mShouldFireTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShouldFireTracer")); }
+			ScriptFunction ShouldFireTracerBeam() { return mShouldFireTracerBeam ? mShouldFireTracerBeam : (mShouldFireTracerBeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShouldFireTracerBeam")); }
+			ScriptFunction SpawnTracerBeam() { return mSpawnTracerBeam ? mSpawnTracerBeam : (mSpawnTracerBeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SpawnTracerBeam")); }
+			ScriptFunction SpawnTracerEffect() { return mSpawnTracerEffect ? mSpawnTracerEffect : (mSpawnTracerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SpawnTracerEffect")); }
+			ScriptFunction GetTracer() { return mGetTracer ? mGetTracer : (mGetTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetTracer")); }
+			ScriptFunction GetNumRoundsCurrentlyInClip() { return mGetNumRoundsCurrentlyInClip ? mGetNumRoundsCurrentlyInClip : (mGetNumRoundsCurrentlyInClip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetNumRoundsCurrentlyInClip")); }
+			ScriptFunction HasAmmo() { return mHasAmmo ? mHasAmmo : (mHasAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.HasAmmo")); }
+			ScriptFunction HasAnyAmmo() { return mHasAnyAmmo ? mHasAnyAmmo : (mHasAnyAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.HasAnyAmmo")); }
+			ScriptFunction AllowSwitchTo() { return mAllowSwitchTo ? mAllowSwitchTo : (mAllowSwitchTo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AllowSwitchTo")); }
+			ScriptFunction CalculateRangeDamageFalloff() { return mCalculateRangeDamageFalloff ? mCalculateRangeDamageFalloff : (mCalculateRangeDamageFalloff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CalculateRangeDamageFalloff")); }
+			ScriptFunction InstantFire() { return mInstantFire ? mInstantFire : (mInstantFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.InstantFire")); }
+			ScriptFunction ProcessInstantHit() { return mProcessInstantHit ? mProcessInstantHit : (mProcessInstantHit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ProcessInstantHit")); }
+			ScriptFunction ServerNotifyHit() { return mServerNotifyHit ? mServerNotifyHit : (mServerNotifyHit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ServerNotifyHit")); }
+			ScriptFunction ProcessInstantHit_Internal() { return mProcessInstantHit_Internal ? mProcessInstantHit_Internal : (mProcessInstantHit_Internal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ProcessInstantHit_Internal")); }
+			ScriptFunction ModifyInstantHitDamage() { return mModifyInstantHitDamage ? mModifyInstantHitDamage : (mModifyInstantHitDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ModifyInstantHitDamage")); }
+			ScriptFunction ProcessEffect() { return mProcessEffect ? mProcessEffect : (mProcessEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ProcessEffect")); }
+			ScriptFunction UsesPower() { return mUsesPower ? mUsesPower : (mUsesPower = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UsesPower")); }
+			ScriptFunction IsDeviceCoolingDown() { return mIsDeviceCoolingDown ? mIsDeviceCoolingDown : (mIsDeviceCoolingDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsDeviceCoolingDown")); }
+			ScriptFunction EnterDeployMode() { return mEnterDeployMode ? mEnterDeployMode : (mEnterDeployMode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.EnterDeployMode")); }
+			ScriptFunction ExitDeployMode() { return mExitDeployMode ? mExitDeployMode : (mExitDeployMode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ExitDeployMode")); }
+			ScriptFunction ToggleActivate() { return mToggleActivate ? mToggleActivate : (mToggleActivate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ToggleActivate")); }
+			ScriptFunction PayAccuracyForJump() { return mPayAccuracyForJump ? mPayAccuracyForJump : (mPayAccuracyForJump = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PayAccuracyForJump")); }
+			ScriptFunction PayAccuracyForWeaponSwitch() { return mPayAccuracyForWeaponSwitch ? mPayAccuracyForWeaponSwitch : (mPayAccuracyForWeaponSwitch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PayAccuracyForWeaponSwitch")); }
+			ScriptFunction PayAccuracyForShot() { return mPayAccuracyForShot ? mPayAccuracyForShot : (mPayAccuracyForShot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PayAccuracyForShot")); }
+			ScriptFunction AddSpreadWithAccuracy() { return mAddSpreadWithAccuracy ? mAddSpreadWithAccuracy : (mAddSpreadWithAccuracy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AddSpreadWithAccuracy")); }
+			ScriptFunction ApplyKickbackToAim() { return mApplyKickbackToAim ? mApplyKickbackToAim : (mApplyKickbackToAim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ApplyKickbackToAim")); }
+			ScriptFunction GetCurrentKickbackAmount() { return mGetCurrentKickbackAmount ? mGetCurrentKickbackAmount : (mGetCurrentKickbackAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetCurrentKickbackAmount")); }
+			ScriptFunction AddKickback() { return mAddKickback ? mAddKickback : (mAddKickback = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AddKickback")); }
+			ScriptFunction GetAdjustedAim() { return mGetAdjustedAim ? mGetAdjustedAim : (mGetAdjustedAim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetAdjustedAim")); }
+			ScriptFunction ShowWeaponRedLowAmmoIndicator() { return mShowWeaponRedLowAmmoIndicator ? mShowWeaponRedLowAmmoIndicator : (mShowWeaponRedLowAmmoIndicator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShowWeaponRedLowAmmoIndicator")); }
+			ScriptFunction NeedToVisitInventoryStation() { return mNeedToVisitInventoryStation ? mNeedToVisitInventoryStation : (mNeedToVisitInventoryStation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.NeedToVisitInventoryStation")); }
+			ScriptFunction GetAmmoCount() { return mGetAmmoCount ? mGetAmmoCount : (mGetAmmoCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetAmmoCount")); }
+			ScriptFunction UpdateLowAmmoWarning() { return mUpdateLowAmmoWarning ? mUpdateLowAmmoWarning : (mUpdateLowAmmoWarning = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UpdateLowAmmoWarning")); }
+			ScriptFunction GetProjectileClass() { return mGetProjectileClass ? mGetProjectileClass : (mGetProjectileClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetProjectileClass")); }
+			ScriptFunction GetClientSideProjectileFireStartLoc() { return mGetClientSideProjectileFireStartLoc ? mGetClientSideProjectileFireStartLoc : (mGetClientSideProjectileFireStartLoc = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetClientSideProjectileFireStartLoc")); }
+			ScriptFunction ProjectileFire() { return mProjectileFire ? mProjectileFire : (mProjectileFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ProjectileFire")); }
+			ScriptFunction DestroyOldestProjectileOverLimit() { return mDestroyOldestProjectileOverLimit ? mDestroyOldestProjectileOverLimit : (mDestroyOldestProjectileOverLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.DestroyOldestProjectileOverLimit")); }
+			ScriptFunction FireAmmunition() { return mFireAmmunition ? mFireAmmunition : (mFireAmmunition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.FireAmmunition")); }
+			ScriptFunction MaxRange() { return mMaxRange ? mMaxRange : (mMaxRange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.MaxRange")); }
+			ScriptFunction GetWeaponRange() { return mGetWeaponRange ? mGetWeaponRange : (mGetWeaponRange = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetWeaponRange")); }
+			ScriptFunction GetAimForCamera() { return mGetAimForCamera ? mGetAimForCamera : (mGetAimForCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetAimForCamera")); }
+			ScriptFunction CanClientRequestReloadNow() { return mCanClientRequestReloadNow ? mCanClientRequestReloadNow : (mCanClientRequestReloadNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CanClientRequestReloadNow")); }
+			ScriptFunction HolderEnteredVehicle() { return mHolderEnteredVehicle ? mHolderEnteredVehicle : (mHolderEnteredVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.HolderEnteredVehicle")); }
+			ScriptFunction GetReloadTime() { return mGetReloadTime ? mGetReloadTime : (mGetReloadTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetReloadTime")); }
+			ScriptFunction ClearMeshAnimSeqNodes() { return mClearMeshAnimSeqNodes ? mClearMeshAnimSeqNodes : (mClearMeshAnimSeqNodes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ClearMeshAnimSeqNodes")); }
+			ScriptFunction CacheMeshAnimSeqNodes() { return mCacheMeshAnimSeqNodes ? mCacheMeshAnimSeqNodes : (mCacheMeshAnimSeqNodes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CacheMeshAnimSeqNodes")); }
+			ScriptFunction SuppressAnimNotifies() { return mSuppressAnimNotifies ? mSuppressAnimNotifies : (mSuppressAnimNotifies = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SuppressAnimNotifies")); }
+			ScriptFunction IsReloading() { return mIsReloading ? mIsReloading : (mIsReloading = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.IsReloading")); }
+			ScriptFunction RequestReload() { return mRequestReload ? mRequestReload : (mRequestReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.RequestReload")); }
+			ScriptFunction OnClientReloaded() { return mOnClientReloaded ? mOnClientReloaded : (mOnClientReloaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.OnClientReloaded")); }
+			ScriptFunction PerformInactiveReload() { return mPerformInactiveReload ? mPerformInactiveReload : (mPerformInactiveReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PerformInactiveReload")); }
+			ScriptFunction CalcAmountToLoad() { return mCalcAmountToLoad ? mCalcAmountToLoad : (mCalcAmountToLoad = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CalcAmountToLoad")); }
+			ScriptFunction ClientFinishedReload() { return mClientFinishedReload ? mClientFinishedReload : (mClientFinishedReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ClientFinishedReload")); }
+			ScriptFunction ResumeZoomOnReloadEnd() { return mResumeZoomOnReloadEnd ? mResumeZoomOnReloadEnd : (mResumeZoomOnReloadEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ResumeZoomOnReloadEnd")); }
+			ScriptFunction PlayReloadAnim() { return mPlayReloadAnim ? mPlayReloadAnim : (mPlayReloadAnim = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayReloadAnim")); }
+			ScriptFunction EnableWeaponReadyToFire() { return mEnableWeaponReadyToFire ? mEnableWeaponReadyToFire : (mEnableWeaponReadyToFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.EnableWeaponReadyToFire")); }
+			ScriptFunction OnReloadComplete() { return mOnReloadComplete ? mOnReloadComplete : (mOnReloadComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.OnReloadComplete")); }
+			ScriptFunction BeginAReload() { return mBeginAReload ? mBeginAReload : (mBeginAReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.BeginAReload")); }
+			ScriptFunction AddCarriedAmmo() { return mAddCarriedAmmo ? mAddCarriedAmmo : (mAddCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AddCarriedAmmo")); }
+			ScriptFunction UpdateReplicatedCarriedAmmo() { return mUpdateReplicatedCarriedAmmo ? mUpdateReplicatedCarriedAmmo : (mUpdateReplicatedCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UpdateReplicatedCarriedAmmo")); }
+			ScriptFunction GoInactiveDueToOffhand() { return mGoInactiveDueToOffhand ? mGoInactiveDueToOffhand : (mGoInactiveDueToOffhand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GoInactiveDueToOffhand")); }
+			ScriptFunction StopFire() { return mStopFire ? mStopFire : (mStopFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.StopFire")); }
+			ScriptFunction BeginFire() { return mBeginFire ? mBeginFire : (mBeginFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.BeginFire")); }
+			ScriptFunction GetEquipTime() { return mGetEquipTime ? mGetEquipTime : (mGetEquipTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetEquipTime")); }
+			ScriptFunction TimeWeaponPutDown() { return mTimeWeaponPutDown ? mTimeWeaponPutDown : (mTimeWeaponPutDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.TimeWeaponPutDown")); }
+			ScriptFunction GetPutDownTime() { return mGetPutDownTime ? mGetPutDownTime : (mGetPutDownTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetPutDownTime")); }
+			ScriptFunction CanFireOffhandNow() { return mCanFireOffhandNow ? mCanFireOffhandNow : (mCanFireOffhandNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CanFireOffhandNow")); }
+			ScriptFunction ServerOnClientDeniedFire() { return mServerOnClientDeniedFire ? mServerOnClientDeniedFire : (mServerOnClientDeniedFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ServerOnClientDeniedFire")); }
+			ScriptFunction ApplyEquipEffect() { return mApplyEquipEffect ? mApplyEquipEffect : (mApplyEquipEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ApplyEquipEffect")); }
+			ScriptFunction RemoveEquipEffect() { return mRemoveEquipEffect ? mRemoveEquipEffect : (mRemoveEquipEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.RemoveEquipEffect")); }
+			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SetPosition")); }
+			ScriptFunction LagRot() { return mLagRot ? mLagRot : (mLagRot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.LagRot")); }
+			ScriptFunction ShouldRefire() { return mShouldRefire ? mShouldRefire : (mShouldRefire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ShouldRefire")); }
+			ScriptFunction StartFire() { return mStartFire ? mStartFire : (mStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.StartFire")); }
+			ScriptFunction Activate() { return mActivate ? mActivate : (mActivate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.Activate")); }
+			ScriptFunction AnnounceInvalidPickup() { return mAnnounceInvalidPickup ? mAnnounceInvalidPickup : (mAnnounceInvalidPickup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AnnounceInvalidPickup")); }
+			ScriptFunction DenyPickupQuery() { return mDenyPickupQuery ? mDenyPickupQuery : (mDenyPickupQuery = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.DenyPickupQuery")); }
+			ScriptFunction PutDownFast() { return mPutDownFast ? mPutDownFast : (mPutDownFast = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PutDownFast")); }
+			ScriptFunction ForceEndFire() { return mForceEndFire ? mForceEndFire : (mForceEndFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ForceEndFire")); }
+			ScriptFunction CanAutoDeviceFireNow() { return mCanAutoDeviceFireNow ? mCanAutoDeviceFireNow : (mCanAutoDeviceFireNow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CanAutoDeviceFireNow")); }
+			ScriptFunction CustomFire() { return mCustomFire ? mCustomFire : (mCustomFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CustomFire")); }
+			ScriptFunction AttachMuzzleFlash() { return mAttachMuzzleFlash ? mAttachMuzzleFlash : (mAttachMuzzleFlash = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.AttachMuzzleFlash")); }
+			ScriptFunction WeaponPlaySoundLocal() { return mWeaponPlaySoundLocal ? mWeaponPlaySoundLocal : (mWeaponPlaySoundLocal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.WeaponPlaySoundLocal")); }
+			ScriptFunction ClientWeaponThrown() { return mClientWeaponThrown ? mClientWeaponThrown : (mClientWeaponThrown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ClientWeaponThrown")); }
+			ScriptFunction UpdateShotsFired() { return mUpdateShotsFired ? mUpdateShotsFired : (mUpdateShotsFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UpdateShotsFired")); }
+			ScriptFunction StartZoom() { return mStartZoom ? mStartZoom : (mStartZoom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.StartZoom")); }
+			ScriptFunction EndZoom() { return mEndZoom ? mEndZoom : (mEndZoom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.EndZoom")); }
+			ScriptFunction CanViewZoom() { return mCanViewZoom ? mCanViewZoom : (mCanViewZoom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CanViewZoom")); }
+			ScriptFunction SetAltReticule() { return mSetAltReticule ? mSetAltReticule : (mSetAltReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.SetAltReticule")); }
+			ScriptFunction ResetAltReticule() { return mResetAltReticule ? mResetAltReticule : (mResetAltReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ResetAltReticule")); }
+			ScriptFunction CalcWeaponFire() { return mCalcWeaponFire ? mCalcWeaponFire : (mCalcWeaponFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.CalcWeaponFire")); }
+			ScriptFunction PlayDryFireZoom() { return mPlayDryFireZoom ? mPlayDryFireZoom : (mPlayDryFireZoom = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.PlayDryFireZoom")); }
+			ScriptFunction BuffMaxCarriedAmmo() { return mBuffMaxCarriedAmmo ? mBuffMaxCarriedAmmo : (mBuffMaxCarriedAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.BuffMaxCarriedAmmo")); }
+			ScriptFunction GetMaxAmmoCount() { return mGetMaxAmmoCount ? mGetMaxAmmoCount : (mGetMaxAmmoCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetMaxAmmoCount")); }
+			ScriptFunction GetBasePickupAmmoAmount() { return mGetBasePickupAmmoAmount ? mGetBasePickupAmmoAmount : (mGetBasePickupAmmoAmount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.GetBasePickupAmmoAmount")); }
+			ScriptFunction ServerStartFire() { return mServerStartFire ? mServerStartFire : (mServerStartFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.ServerStartFire")); }
+			ScriptFunction UpdateWeaponMICs() { return mUpdateWeaponMICs ? mUpdateWeaponMICs : (mUpdateWeaponMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice.UpdateWeaponMICs")); }
+		}
+	}
 	enum
 	{
 		THR_SPINFUSOR = 1,
@@ -536,6 +831,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDevice.DeviceUpgrade")); }
 		@property final auto ref
 		{
 			int DatabaseItemId() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -547,6 +844,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDevice.EffectInfo")); }
 		@property final auto ref
 		{
 			float interval() { return *cast(float*)(cast(size_t)&this + 20); }
@@ -561,6 +860,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDevice.ReplicatedAmmoCount")); }
 		@property final auto ref
 		{
 			int ClipAmmoCount() { return *cast(int*)(cast(size_t)&this + 4); }
@@ -571,6 +872,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrDevice.DeviceModification")); }
 		@property final auto ref
 		{
 			float Value() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -729,21 +1032,21 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcHUDAimChargePercent, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetAccuracy()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61617], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAccuracy, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	ubyte GetFireModeNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireModeNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 	bool IsValidTarget(Actor Target, int nFireMode)
@@ -752,7 +1055,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
 		*cast(int*)&params[4] = nFireMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool IsEnemy(Actor Target)
@@ -760,7 +1063,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67284], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEnemy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsInsideCone(Vector SourceLookDir, Actor TargetActor, Vector StartCone, float MinCosine)
@@ -771,7 +1074,7 @@ final:
 		*cast(Actor*)&params[12] = TargetActor;
 		*cast(Vector*)&params[16] = StartCone;
 		*cast(float*)&params[28] = MinCosine;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67287], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInsideCone, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[32];
 	}
 	bool ShouldAddToImpactList(Actor HitActor, ScriptArray!(Actor.ImpactInfo) ImpactList)
@@ -780,7 +1083,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = HitActor;
 		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[4] = ImpactList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67293], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldAddToImpactList, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void TickInHandWeapon(float DeltaSeconds)
@@ -788,17 +1091,17 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67298], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TickInHandWeapon, params.ptr, cast(void*)0);
 	}
 	void ResetLock()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67300], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetLock, cast(void*)0, cast(void*)0);
 	}
 	Actor GetLockedTarget()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67301], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLockedTarget, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	TrDeployable SpawnPet(bool bPet)
@@ -806,14 +1109,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPet;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67303], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnPet, params.ptr, cast(void*)0);
 		return *cast(TrDeployable*)&params[4];
 	}
 	float GetTargetAccuracy()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67306], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetAccuracy, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void RestoreAccuracy(float fTimeStep)
@@ -821,14 +1124,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = fTimeStep;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67308], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestoreAccuracy, params.ptr, cast(void*)0);
 	}
 	void RestoreKickback(float DeltaSeconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67310], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestoreKickback, params.ptr, cast(void*)0);
 	}
 	bool IsInLOS(Actor TouchedActor, Vector ExpectedLocation)
 	{
@@ -836,18 +1139,18 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = TouchedActor;
 		*cast(Vector*)&params[4] = ExpectedLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67312], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInLOS, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void AttachHandsMesh()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67316], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AttachHandsMesh, cast(void*)0, cast(void*)0);
 	}
 	TrDeviceContentData LoadMeshData()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67317], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadMeshData, params.ptr, cast(void*)0);
 		return *cast(TrDeviceContentData*)params.ptr;
 	}
 	int ValidateClientReportedHit(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot, bool bDeviceIsFiring)
@@ -858,7 +1161,7 @@ final:
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(bool*)&params[84] = bHeadShot;
 		*cast(bool*)&params[88] = bDeviceIsFiring;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidateClientReportedHit, params.ptr, cast(void*)0);
 		return *cast(int*)&params[92];
 	}
 	int ValidateClientReportedHitInternal(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot, bool bDeviceIsFiring)
@@ -869,21 +1172,21 @@ final:
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(bool*)&params[84] = bHeadShot;
 		*cast(bool*)&params[88] = bDeviceIsFiring;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67325], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidateClientReportedHitInternal, params.ptr, cast(void*)0);
 		return *cast(int*)&params[92];
 	}
-	ScriptString GetObjectReferencerName()
+	static ScriptString GetObjectReferencerName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67331], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjectReferencerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	ScriptString GetObjectReferencerPackageName()
+	static ScriptString GetObjectReferencerPackageName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67333], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjectReferencerPackageName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -891,25 +1194,25 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67338], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67340], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	int AddAmmo(int Amount)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Amount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67341], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddAmmo, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	bool ReplicateAmmoOnWeaponFire()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67344], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicateAmmoOnWeaponFire, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ConsumeAmmo_Internal(ubyte FireModeNum)
@@ -917,20 +1220,20 @@ final:
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67346], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsumeAmmo_Internal, params.ptr, cast(void*)0);
 	}
 	void ConsumeAmmo(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67348], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsumeAmmo, params.ptr, cast(void*)0);
 	}
 	Actor GetTraceOwner()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67350], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTraceOwner, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	void AttachWeaponTo(
@@ -943,36 +1246,36 @@ void* MeshCpnt, ScriptName SocketName)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
 		*cast(ScriptName*)&params[4] = SocketName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67353], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
 	void CreateFirstPersonHandsMesh()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67362], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateFirstPersonHandsMesh, cast(void*)0, cast(void*)0);
 	}
 	void ChangeVisibility(bool bIsVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67365], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeVisibility, params.ptr, cast(void*)0);
 	}
 	void CentralUpdateHandsMesh(ScriptClass FamilyInfo)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67367], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CentralUpdateHandsMesh, params.ptr, cast(void*)0);
 	}
 	void UpdateHandsMesh(ScriptClass FamilyInfo)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67370], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHandsMesh, params.ptr, cast(void*)0);
 	}
 	void CreateOverlayMesh()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67377], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateOverlayMesh, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -983,31 +1286,31 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67383], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void PlayWeaponEquip()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67385], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWeaponEquip, cast(void*)0, cast(void*)0);
 	}
 	void OnPlayRetrieveAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67398], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPlayRetrieveAnim, cast(void*)0, cast(void*)0);
 	}
 	void PlayWeaponPutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67399], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWeaponPutDown, cast(void*)0, cast(void*)0);
 	}
 	void WeaponEmpty()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67404], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponEmpty, cast(void*)0, cast(void*)0);
 	}
 	void OnSwitchToWeapon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67405], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSwitchToWeapon, cast(void*)0, cast(void*)0);
 	}
 	void OnSwitchAwayFromWeapon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67406], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSwitchAwayFromWeapon, cast(void*)0, cast(void*)0);
 	}
 	void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
 	{
@@ -1015,7 +1318,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(bool*)params.ptr = bOptionalSet;
 		*cast(bool*)&params[4] = bDoNotActivate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67407], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
 	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
 	{
@@ -1023,31 +1326,31 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		params[0] = FireModeNum;
 		*cast(Vector*)&params[4] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67411], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void PlayFireAnimation(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67414], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireAnimation, params.ptr, cast(void*)0);
 	}
 	void ShakeView()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67416], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShakeView, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldFireTracer()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67418], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldFireTracer, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool ShouldFireTracerBeam()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67420], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldFireTracerBeam, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SpawnTracerBeam(Vector Start, Vector End)
@@ -1056,7 +1359,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = Start;
 		*cast(Vector*)&params[12] = End;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67422], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnTracerBeam, params.ptr, cast(void*)0);
 	}
 	TrProj_Tracer SpawnTracerEffect(Vector HitLocation, float HitDistance)
 	{
@@ -1064,7 +1367,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(float*)&params[12] = HitDistance;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnTracerEffect, params.ptr, cast(void*)0);
 		return *cast(TrProj_Tracer*)&params[16];
 	}
 	TrProj_Tracer GetTracer(Vector SpawnLocation, Rotator SpawnRotation)
@@ -1073,14 +1376,14 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = SpawnLocation;
 		*cast(Rotator*)&params[12] = SpawnRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67434], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTracer, params.ptr, cast(void*)0);
 		return *cast(TrProj_Tracer*)&params[24];
 	}
 	int GetNumRoundsCurrentlyInClip()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67442], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumRoundsCurrentlyInClip, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool HasAmmo(ubyte FireModeNum, int Amount)
@@ -1089,14 +1392,14 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		params[0] = FireModeNum;
 		*cast(int*)&params[4] = Amount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67444], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool HasAnyAmmo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67450], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasAnyAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool AllowSwitchTo(Weapon NewWeapon)
@@ -1104,7 +1407,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = NewWeapon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67452], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowSwitchTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	float CalculateRangeDamageFalloff(float Dist)
@@ -1112,12 +1415,12 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = Dist;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67455], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalculateRangeDamageFalloff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void InstantFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67463], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InstantFire, cast(void*)0, cast(void*)0);
 	}
 	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
 	{
@@ -1126,7 +1429,7 @@ void**)params.ptr = SkelComp;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(int*)&params[84] = NumHits;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67472], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit, params.ptr, cast(void*)0);
 	}
 	void ServerNotifyHit(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
 	{
@@ -1135,7 +1438,7 @@ void**)params.ptr = SkelComp;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(bool*)&params[84] = bHeadShot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67480], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerNotifyHit, params.ptr, cast(void*)0);
 	}
 	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
 	{
@@ -1144,7 +1447,7 @@ void**)params.ptr = SkelComp;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(bool*)&params[84] = bHeadShot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67489], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit_Internal, params.ptr, cast(void*)0);
 	}
 	float ModifyInstantHitDamage(ubyte FiringMode, Actor.ImpactInfo Impact, float Damage)
 	{
@@ -1153,7 +1456,7 @@ void**)params.ptr = SkelComp;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
 		*cast(float*)&params[84] = Damage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67497], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyInstantHitDamage, params.ptr, cast(void*)0);
 		return *cast(float*)&params[88];
 	}
 	void ProcessEffect(Actor Target, ubyte FiringMode, TrObject.EffectType efType, bool bRemove)
@@ -1164,13 +1467,13 @@ void**)params.ptr = SkelComp;
 		params[4] = FiringMode;
 		*cast(TrObject.EffectType*)&params[5] = efType;
 		*cast(bool*)&params[8] = bRemove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67502], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessEffect, params.ptr, cast(void*)0);
 	}
 	bool UsesPower()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67511], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UsesPower, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsDeviceCoolingDown(ubyte FireModeNum)
@@ -1178,32 +1481,32 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67513], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsDeviceCoolingDown, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void EnterDeployMode()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67516], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnterDeployMode, cast(void*)0, cast(void*)0);
 	}
 	void ExitDeployMode()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67517], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExitDeployMode, cast(void*)0, cast(void*)0);
 	}
 	void ToggleActivate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67518], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleActivate, cast(void*)0, cast(void*)0);
 	}
 	void PayAccuracyForJump()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67519], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PayAccuracyForJump, cast(void*)0, cast(void*)0);
 	}
 	void PayAccuracyForWeaponSwitch()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67522], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PayAccuracyForWeaponSwitch, cast(void*)0, cast(void*)0);
 	}
 	void PayAccuracyForShot()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67524], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PayAccuracyForShot, cast(void*)0, cast(void*)0);
 	}
 	Rotator AddSpreadWithAccuracy(Rotator BaseAim, float fAccuracy)
 	{
@@ -1211,7 +1514,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Rotator*)params.ptr = BaseAim;
 		*cast(float*)&params[12] = fAccuracy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67526], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddSpreadWithAccuracy, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[16];
 	}
 	Rotator ApplyKickbackToAim(Rotator Aim)
@@ -1219,21 +1522,21 @@ void**)params.ptr = SkelComp;
 		ubyte params[24];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = Aim;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67537], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyKickbackToAim, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
 	UObject.Vector2D GetCurrentKickbackAmount()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67544], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentKickbackAmount, params.ptr, cast(void*)0);
 		return *cast(UObject.Vector2D*)params.ptr;
 	}
 	bool AddKickback()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67547], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKickback, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	Rotator GetAdjustedAim(Vector StartFireLoc)
@@ -1241,39 +1544,39 @@ void**)params.ptr = SkelComp;
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartFireLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67550], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAdjustedAim, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
 	bool ShowWeaponRedLowAmmoIndicator()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67556], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowWeaponRedLowAmmoIndicator, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool NeedToVisitInventoryStation()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67558], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedToVisitInventoryStation, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	int GetAmmoCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67560], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAmmoCount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void UpdateLowAmmoWarning()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67562], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLowAmmoWarning, cast(void*)0, cast(void*)0);
 	}
 	ScriptClass GetProjectileClass()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67565], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProjectileClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
 	Vector GetClientSideProjectileFireStartLoc(Vector AimDir)
@@ -1281,14 +1584,14 @@ void**)params.ptr = SkelComp;
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = AimDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67567], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetClientSideProjectileFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	Projectile ProjectileFire()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67581], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileFire, params.ptr, cast(void*)0);
 		return *cast(Projectile*)params.ptr;
 	}
 	void DestroyOldestProjectileOverLimit(Projectile newProjectile)
@@ -1296,24 +1599,24 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Projectile*)params.ptr = newProjectile;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67598], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyOldestProjectileOverLimit, params.ptr, cast(void*)0);
 	}
 	void FireAmmunition()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67604], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FireAmmunition, cast(void*)0, cast(void*)0);
 	}
 	float MaxRange()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67613], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MaxRange, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetWeaponRange()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67616], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponRange, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	Rotator GetAimForCamera(Vector StartFireLoc)
@@ -1321,160 +1624,160 @@ void**)params.ptr = SkelComp;
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartFireLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67618], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAimForCamera, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[12];
 	}
 	bool CanClientRequestReloadNow()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67621], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanClientRequestReloadNow, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void HolderEnteredVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67623], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HolderEnteredVehicle, cast(void*)0, cast(void*)0);
 	}
-	float GetReloadTime(PlayerReplicationInfo PRI, TrObject.TR_EQUIP_POINT EquipPoint)
+	static float GetReloadTime(PlayerReplicationInfo PRI, TrObject.TR_EQUIP_POINT EquipPoint)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
 		*cast(TrObject.TR_EQUIP_POINT*)&params[4] = EquipPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67654], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetReloadTime, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	void ClearMeshAnimSeqNodes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67690], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearMeshAnimSeqNodes, cast(void*)0, cast(void*)0);
 	}
 	void CacheMeshAnimSeqNodes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67691], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CacheMeshAnimSeqNodes, cast(void*)0, cast(void*)0);
 	}
 	void SuppressAnimNotifies(bool bSuppress)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bSuppress;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67694], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuppressAnimNotifies, params.ptr, cast(void*)0);
 	}
 	bool IsReloading()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67697], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsReloading, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void RequestReload()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67699], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestReload, cast(void*)0, cast(void*)0);
 	}
 	void OnClientReloaded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67700], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnClientReloaded, cast(void*)0, cast(void*)0);
 	}
 	void PerformInactiveReload()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67701], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PerformInactiveReload, cast(void*)0, cast(void*)0);
 	}
 	int CalcAmountToLoad()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67703], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcAmountToLoad, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void ClientFinishedReload()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67732], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientFinishedReload, cast(void*)0, cast(void*)0);
 	}
 	void ResumeZoomOnReloadEnd()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67733], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResumeZoomOnReloadEnd, cast(void*)0, cast(void*)0);
 	}
 	void PlayReloadAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67735], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayReloadAnim, cast(void*)0, cast(void*)0);
 	}
 	void EnableWeaponReadyToFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67738], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableWeaponReadyToFire, cast(void*)0, cast(void*)0);
 	}
 	void OnReloadComplete()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67739], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReloadComplete, cast(void*)0, cast(void*)0);
 	}
 	void BeginAReload()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67740], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BeginAReload, cast(void*)0, cast(void*)0);
 	}
 	int AddCarriedAmmo(int Amount)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Amount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67741], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCarriedAmmo, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void UpdateReplicatedCarriedAmmo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67745], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateReplicatedCarriedAmmo, cast(void*)0, cast(void*)0);
 	}
 	void GoInactiveDueToOffhand()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67746], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GoInactiveDueToOffhand, cast(void*)0, cast(void*)0);
 	}
 	void StopFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67747], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopFire, params.ptr, cast(void*)0);
 	}
 	void BeginFire(ubyte FireModeNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67749], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BeginFire, params.ptr, cast(void*)0);
 	}
 	float GetEquipTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67751], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEquipTime, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void TimeWeaponPutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67758], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TimeWeaponPutDown, cast(void*)0, cast(void*)0);
 	}
 	float GetPutDownTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPutDownTime, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	bool CanFireOffhandNow()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67766], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanFireOffhandNow, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ServerOnClientDeniedFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67768], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerOnClientDeniedFire, cast(void*)0, cast(void*)0);
 	}
 	void ApplyEquipEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67786], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyEquipEffect, cast(void*)0, cast(void*)0);
 	}
 	void RemoveEquipEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67787], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveEquipEffect, cast(void*)0, cast(void*)0);
 	}
 	void SetPosition(UDKPawn Holder, float DeltaSeconds)
 	{
@@ -1482,7 +1785,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(UDKPawn*)params.ptr = Holder;
 		*cast(float*)&params[4] = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67788], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPosition, params.ptr, cast(void*)0);
 	}
 	int LagRot(int NewValue, int LastValue, float MaxDiff, int Index, float DeltaSeconds)
 	{
@@ -1493,14 +1796,14 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[8] = MaxDiff;
 		*cast(int*)&params[12] = Index;
 		*cast(float*)&params[16] = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67812], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LagRot, params.ptr, cast(void*)0);
 		return *cast(int*)&params[20];
 	}
 	bool ShouldRefire()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67821], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldRefire, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void StartFire(ubyte FireModeNum)
@@ -1508,18 +1811,18 @@ void**)params.ptr = SkelComp;
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67823], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartFire, params.ptr, cast(void*)0);
 	}
 	void Activate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67825], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activate, cast(void*)0, cast(void*)0);
 	}
 	void AnnounceInvalidPickup(TrPawn Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67826], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AnnounceInvalidPickup, params.ptr, cast(void*)0);
 	}
 	bool DenyPickupQuery(ScriptClass ItemClass, Actor Pickup)
 	{
@@ -1527,31 +1830,31 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = ItemClass;
 		*cast(Actor*)&params[4] = Pickup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67828], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DenyPickupQuery, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void PutDownFast()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67832], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PutDownFast, cast(void*)0, cast(void*)0);
 	}
 	void ForceEndFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67833], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceEndFire, cast(void*)0, cast(void*)0);
 	}
 	bool CanAutoDeviceFireNow()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67847], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanAutoDeviceFireNow, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CustomFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67849], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomFire, cast(void*)0, cast(void*)0);
 	}
 	void AttachMuzzleFlash()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67853], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AttachMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
 	void WeaponPlaySoundLocal(SoundCue Sound, float NoiseLoudness)
 	{
@@ -1559,25 +1862,25 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Sound;
 		*cast(float*)&params[4] = NoiseLoudness;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67854], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponPlaySoundLocal, params.ptr, cast(void*)0);
 	}
 	void ClientWeaponThrown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67857], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponThrown, cast(void*)0, cast(void*)0);
 	}
 	void UpdateShotsFired(bool Reset)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = Reset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67859], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateShotsFired, params.ptr, cast(void*)0);
 	}
 	void StartZoom(UTPlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67861], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartZoom, params.ptr, cast(void*)0);
 	}
 	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
 	{
@@ -1585,22 +1888,22 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
 		*cast(bool*)&params[4] = bReturningTo3P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67866], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 	bool CanViewZoom()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67870], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanViewZoom, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetAltReticule()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67872], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAltReticule, cast(void*)0, cast(void*)0);
 	}
 	void ResetAltReticule()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67879], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetAltReticule, cast(void*)0, cast(void*)0);
 	}
 	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
 	{
@@ -1610,33 +1913,33 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[12] = EndTrace;
 		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = *ImpactList;
 		*cast(Vector*)&params[36] = Extent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67884], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcWeaponFire, params.ptr, cast(void*)0);
 		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
 		return *cast(Actor.ImpactInfo*)&params[48];
 	}
 	void PlayDryFireZoom()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67908], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDryFireZoom, cast(void*)0, cast(void*)0);
 	}
 	void BuffMaxCarriedAmmo(int Amount)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Amount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67909], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BuffMaxCarriedAmmo, params.ptr, cast(void*)0);
 	}
 	float GetMaxAmmoCount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67911], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxAmmoCount, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int GetBasePickupAmmoAmount()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67922], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBasePickupAmmoAmount, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void ServerStartFire(ubyte FireModeNum)
@@ -1644,10 +1947,10 @@ void**)params.ptr = SkelComp;
 		ubyte params[1];
 		params[] = 0;
 		params[0] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67924], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerStartFire, params.ptr, cast(void*)0);
 	}
 	void UpdateWeaponMICs()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67927], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateWeaponMICs, cast(void*)0, cast(void*)0);
 	}
 }

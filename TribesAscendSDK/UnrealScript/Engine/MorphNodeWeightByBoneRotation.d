@@ -9,6 +9,8 @@ import UnrealScript.Engine.MorphNodeWeightBase;
 extern(C++) interface MorphNodeWeightByBoneRotation : MorphNodeWeightBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeWeightByBoneRotation")); }
 	@property final
 	{
 		auto ref

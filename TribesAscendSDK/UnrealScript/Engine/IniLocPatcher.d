@@ -7,10 +7,43 @@ import UnrealScript.Core.UObject;
 extern(C++) interface IniLocPatcher : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.IniLocPatcher")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnReadTitleFileComplete;
+			ScriptFunction mInit;
+			ScriptFunction mDownloadFiles;
+			ScriptFunction mOnReadFileComplete;
+			ScriptFunction mProcessIniLocFile;
+			ScriptFunction mAddFileToDownload;
+			ScriptFunction mAddReadFileDelegate;
+			ScriptFunction mClearReadFileDelegate;
+			ScriptFunction mClearCachedFiles;
+			ScriptFunction mUpdateLocFileName;
+		}
+		public @property static final
+		{
+			ScriptFunction OnReadTitleFileComplete() { return mOnReadTitleFileComplete ? mOnReadTitleFileComplete : (mOnReadTitleFileComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.OnReadTitleFileComplete")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.Init")); }
+			ScriptFunction DownloadFiles() { return mDownloadFiles ? mDownloadFiles : (mDownloadFiles = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.DownloadFiles")); }
+			ScriptFunction OnReadFileComplete() { return mOnReadFileComplete ? mOnReadFileComplete : (mOnReadFileComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.OnReadFileComplete")); }
+			ScriptFunction ProcessIniLocFile() { return mProcessIniLocFile ? mProcessIniLocFile : (mProcessIniLocFile = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ProcessIniLocFile")); }
+			ScriptFunction AddFileToDownload() { return mAddFileToDownload ? mAddFileToDownload : (mAddFileToDownload = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.AddFileToDownload")); }
+			ScriptFunction AddReadFileDelegate() { return mAddReadFileDelegate ? mAddReadFileDelegate : (mAddReadFileDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.AddReadFileDelegate")); }
+			ScriptFunction ClearReadFileDelegate() { return mClearReadFileDelegate ? mClearReadFileDelegate : (mClearReadFileDelegate = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ClearReadFileDelegate")); }
+			ScriptFunction ClearCachedFiles() { return mClearCachedFiles ? mClearCachedFiles : (mClearCachedFiles = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.ClearCachedFiles")); }
+			ScriptFunction UpdateLocFileName() { return mUpdateLocFileName ? mUpdateLocFileName : (mUpdateLocFileName = ScriptObject.Find!(ScriptFunction)("Function Engine.IniLocPatcher.UpdateLocFileName")); }
+		}
+	}
 	struct IniLocFileEntry
 	{
 		private ubyte __buffer__[13];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")); }
 		@property final auto ref
 		{
 			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)(cast(size_t)&this + 12); }
@@ -25,15 +58,15 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(ScriptString*)&params[4] = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18260], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadTitleFileComplete, params.ptr, cast(void*)0);
 	}
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18264], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	void DownloadFiles()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18267], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DownloadFiles, cast(void*)0, cast(void*)0);
 	}
 	void OnReadFileComplete(bool bWasSuccessful, ScriptString Filename)
 	{
@@ -41,7 +74,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		*cast(ScriptString*)&params[4] = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18271], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadFileComplete, params.ptr, cast(void*)0);
 	}
 	void ProcessIniLocFile(ScriptString Filename, ScriptArray!(ubyte)* FileData)
 	{
@@ -49,7 +82,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
 		*cast(ScriptArray!(ubyte)*)&params[12] = *FileData;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18279], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessIniLocFile, params.ptr, cast(void*)0);
 		*FileData = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
 	void AddFileToDownload(ScriptString Filename)
@@ -57,7 +90,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18283], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddFileToDownload, params.ptr, cast(void*)0);
 	}
 	void AddReadFileDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -68,7 +101,7 @@ void* ReadTitleFileCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadTitleFileCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18286], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddReadFileDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearReadFileDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -79,18 +112,18 @@ void* ReadTitleFileCompleteDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ReadTitleFileCompleteDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18288], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadFileDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearCachedFiles()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18290], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCachedFiles, cast(void*)0, cast(void*)0);
 	}
 	ScriptString UpdateLocFileName(ScriptString Filename)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18294], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocFileName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 }

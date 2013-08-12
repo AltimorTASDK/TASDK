@@ -17,10 +17,87 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface SVehicle : Vehicle
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAddForce;
+			ScriptFunction mAddImpulse;
+			ScriptFunction mAddTorque;
+			ScriptFunction mIsSleeping;
+			ScriptFunction mSetWheelCollision;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mDestroyed;
+			ScriptFunction mTurnOff;
+			ScriptFunction mStopVehicleSounds;
+			ScriptFunction mTakeRadiusDamage;
+			ScriptFunction mInitVehicleRagdoll;
+			ScriptFunction mAddVelocity;
+			ScriptFunction mDied;
+			ScriptFunction mCalcCamera;
+			ScriptFunction mGetDefaultCameraMode;
+			ScriptFunction mTryToDrive;
+			ScriptFunction mHasWheelsOnGround;
+			ScriptFunction mStartEngineSound;
+			ScriptFunction mStartEngineSoundTimed;
+			ScriptFunction mStopEngineSound;
+			ScriptFunction mStopEngineSoundTimed;
+			ScriptFunction mVehiclePlayEnterSound;
+			ScriptFunction mVehiclePlayExitSound;
+			ScriptFunction mDrivingStatusChanged;
+			ScriptFunction mRigidBodyCollision;
+			ScriptFunction mSuspensionHeavyShift;
+			ScriptFunction mPostTeleport;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mDisplayWheelsDebug;
+			ScriptFunction mHermiteEval;
+			ScriptFunction mGetSVehicleDebug;
+		}
+		public @property static final
+		{
+			ScriptFunction AddForce() { return mAddForce ? mAddForce : (mAddForce = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.AddForce")); }
+			ScriptFunction AddImpulse() { return mAddImpulse ? mAddImpulse : (mAddImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.AddImpulse")); }
+			ScriptFunction AddTorque() { return mAddTorque ? mAddTorque : (mAddTorque = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.AddTorque")); }
+			ScriptFunction IsSleeping() { return mIsSleeping ? mIsSleeping : (mIsSleeping = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.IsSleeping")); }
+			ScriptFunction SetWheelCollision() { return mSetWheelCollision ? mSetWheelCollision : (mSetWheelCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.SetWheelCollision")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.PostInitAnimTree")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.Destroyed")); }
+			ScriptFunction TurnOff() { return mTurnOff ? mTurnOff : (mTurnOff = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.TurnOff")); }
+			ScriptFunction StopVehicleSounds() { return mStopVehicleSounds ? mStopVehicleSounds : (mStopVehicleSounds = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.StopVehicleSounds")); }
+			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.TakeRadiusDamage")); }
+			ScriptFunction InitVehicleRagdoll() { return mInitVehicleRagdoll ? mInitVehicleRagdoll : (mInitVehicleRagdoll = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.InitVehicleRagdoll")); }
+			ScriptFunction AddVelocity() { return mAddVelocity ? mAddVelocity : (mAddVelocity = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.AddVelocity")); }
+			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.Died")); }
+			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.CalcCamera")); }
+			ScriptFunction GetDefaultCameraMode() { return mGetDefaultCameraMode ? mGetDefaultCameraMode : (mGetDefaultCameraMode = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.GetDefaultCameraMode")); }
+			ScriptFunction TryToDrive() { return mTryToDrive ? mTryToDrive : (mTryToDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.TryToDrive")); }
+			ScriptFunction HasWheelsOnGround() { return mHasWheelsOnGround ? mHasWheelsOnGround : (mHasWheelsOnGround = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.HasWheelsOnGround")); }
+			ScriptFunction StartEngineSound() { return mStartEngineSound ? mStartEngineSound : (mStartEngineSound = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.StartEngineSound")); }
+			ScriptFunction StartEngineSoundTimed() { return mStartEngineSoundTimed ? mStartEngineSoundTimed : (mStartEngineSoundTimed = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.StartEngineSoundTimed")); }
+			ScriptFunction StopEngineSound() { return mStopEngineSound ? mStopEngineSound : (mStopEngineSound = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.StopEngineSound")); }
+			ScriptFunction StopEngineSoundTimed() { return mStopEngineSoundTimed ? mStopEngineSoundTimed : (mStopEngineSoundTimed = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.StopEngineSoundTimed")); }
+			ScriptFunction VehiclePlayEnterSound() { return mVehiclePlayEnterSound ? mVehiclePlayEnterSound : (mVehiclePlayEnterSound = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.VehiclePlayEnterSound")); }
+			ScriptFunction VehiclePlayExitSound() { return mVehiclePlayExitSound ? mVehiclePlayExitSound : (mVehiclePlayExitSound = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.VehiclePlayExitSound")); }
+			ScriptFunction DrivingStatusChanged() { return mDrivingStatusChanged ? mDrivingStatusChanged : (mDrivingStatusChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.DrivingStatusChanged")); }
+			ScriptFunction RigidBodyCollision() { return mRigidBodyCollision ? mRigidBodyCollision : (mRigidBodyCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.RigidBodyCollision")); }
+			ScriptFunction SuspensionHeavyShift() { return mSuspensionHeavyShift ? mSuspensionHeavyShift : (mSuspensionHeavyShift = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.SuspensionHeavyShift")); }
+			ScriptFunction PostTeleport() { return mPostTeleport ? mPostTeleport : (mPostTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.PostTeleport")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.DisplayDebug")); }
+			ScriptFunction DisplayWheelsDebug() { return mDisplayWheelsDebug ? mDisplayWheelsDebug : (mDisplayWheelsDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.DisplayWheelsDebug")); }
+			ScriptFunction HermiteEval() { return mHermiteEval ? mHermiteEval : (mHermiteEval = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.HermiteEval")); }
+			ScriptFunction GetSVehicleDebug() { return mGetSVehicleDebug ? mGetSVehicleDebug : (mGetSVehicleDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.SVehicle.GetSVehicleDebug")); }
+		}
+	}
 	struct VehicleState
 	{
 		private ubyte __buffer__[76];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SVehicle.VehicleState")); }
 		@property final
 		{
 			auto ref
@@ -118,27 +195,27 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Force;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27501], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddForce, params.ptr, cast(void*)0);
 	}
 	void AddImpulse(Vector Impulse)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Impulse;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27503], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddImpulse, params.ptr, cast(void*)0);
 	}
 	void AddTorque(Vector Torque)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Torque;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27505], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddTorque, params.ptr, cast(void*)0);
 	}
 	bool IsSleeping()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27507], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsSleeping, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetWheelCollision(int WheelNum, bool bCollision)
@@ -147,11 +224,11 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = WheelNum;
 		*cast(bool*)&params[4] = bCollision;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27509], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWheelCollision, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27512], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -162,19 +239,19 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27513], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27519], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void TurnOff()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27520], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TurnOff, cast(void*)0, cast(void*)0);
 	}
 	void StopVehicleSounds()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27521], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopVehicleSounds, cast(void*)0, cast(void*)0);
 	}
 	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
 	{
@@ -189,7 +266,7 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
 		*cast(float*)&params[40] = DamageFalloffExponent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27522], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void InitVehicleRagdoll(SkeletalMesh RagdollMesh, PhysicsAsset RagdollPhysAsset, Vector ActorMove, bool bClearAnimTree)
 	{
@@ -199,7 +276,7 @@ void**)params.ptr = SkelComp;
 		*cast(PhysicsAsset*)&params[4] = RagdollPhysAsset;
 		*cast(Vector*)&params[8] = ActorMove;
 		*cast(bool*)&params[20] = bClearAnimTree;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27538], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitVehicleRagdoll, params.ptr, cast(void*)0);
 	}
 	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
 	{
@@ -209,7 +286,7 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27543], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddVelocity, params.ptr, cast(void*)0);
 	}
 	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)
 	{
@@ -218,7 +295,7 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(ScriptClass*)&params[4] = pDamageType;
 		*cast(Vector*)&params[8] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27548], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Died, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
@@ -229,7 +306,7 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27553], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -240,7 +317,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[12];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = RequestedBy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27562], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDefaultCameraMode, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[4];
 	}
 	bool TryToDrive(Pawn P)
@@ -248,43 +325,43 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27565], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TryToDrive, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool HasWheelsOnGround()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27568], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasWheelsOnGround, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void StartEngineSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27570], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartEngineSound, cast(void*)0, cast(void*)0);
 	}
 	void StartEngineSoundTimed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27571], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartEngineSoundTimed, cast(void*)0, cast(void*)0);
 	}
 	void StopEngineSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27572], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopEngineSound, cast(void*)0, cast(void*)0);
 	}
 	void StopEngineSoundTimed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27573], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopEngineSoundTimed, cast(void*)0, cast(void*)0);
 	}
 	void VehiclePlayEnterSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27574], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VehiclePlayEnterSound, cast(void*)0, cast(void*)0);
 	}
 	void VehiclePlayExitSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27575], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.VehiclePlayExitSound, cast(void*)0, cast(void*)0);
 	}
 	void DrivingStatusChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27576], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrivingStatusChanged, cast(void*)0, cast(void*)0);
 	}
 	void RigidBodyCollision(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -302,7 +379,7 @@ void**)params.ptr = HitComponent;
 void**)&params[4] = OtherComponent;
 		*cast(Actor.CollisionImpactData*)&params[8] = *RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27577], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
 		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void SuspensionHeavyShift(float Delta)
@@ -310,14 +387,14 @@ void**)&params[4] = OtherComponent;
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Delta;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27582], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuspensionHeavyShift, params.ptr, cast(void*)0);
 	}
 	void PostTeleport(Teleporter OutTeleporter)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Teleporter*)params.ptr = OutTeleporter;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27584], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostTeleport, params.ptr, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -326,7 +403,7 @@ void**)&params[4] = OtherComponent;
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27586], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -336,14 +413,14 @@ void**)&params[4] = OtherComponent;
 		params[] = 0;
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = YL;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27593], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayWheelsDebug, params.ptr, cast(void*)0);
 	}
 	float HermiteEval(float Slip)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = Slip;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27622], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HermiteEval, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void GetSVehicleDebug(ScriptArray!(ScriptString)* DebugInfo)
@@ -351,7 +428,7 @@ void**)&params[4] = OtherComponent;
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = *DebugInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27637], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSVehicleDebug, params.ptr, cast(void*)0);
 		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 }

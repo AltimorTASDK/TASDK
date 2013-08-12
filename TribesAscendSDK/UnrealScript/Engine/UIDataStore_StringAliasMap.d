@@ -8,10 +8,29 @@ import UnrealScript.Engine.UIDataStore_StringBase;
 extern(C++) interface UIDataStore_StringAliasMap : UIDataStore_StringBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_StringAliasMap")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetPlayerOwner;
+			ScriptFunction mFindMappingWithFieldName;
+			ScriptFunction mGetStringWithFieldName;
+		}
+		public @property static final
+		{
+			ScriptFunction GetPlayerOwner() { return mGetPlayerOwner ? mGetPlayerOwner : (mGetPlayerOwner = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_StringAliasMap.GetPlayerOwner")); }
+			ScriptFunction FindMappingWithFieldName() { return mFindMappingWithFieldName ? mFindMappingWithFieldName : (mFindMappingWithFieldName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_StringAliasMap.FindMappingWithFieldName")); }
+			ScriptFunction GetStringWithFieldName() { return mGetStringWithFieldName ? mGetStringWithFieldName : (mGetStringWithFieldName = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_StringAliasMap.GetStringWithFieldName")); }
+		}
+	}
 	struct UIMenuInputMap
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_StringAliasMap.UIMenuInputMap")); }
 		@property final auto ref
 		{
 			ScriptString MappedText() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
@@ -30,7 +49,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerOwner, params.ptr, cast(void*)0);
 		return *cast(LocalPlayer*)params.ptr;
 	}
 	int FindMappingWithFieldName(ScriptString FieldName, ScriptString SetName)
@@ -39,7 +58,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[12] = SetName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28879], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindMappingWithFieldName, params.ptr, cast(void*)0);
 		return *cast(int*)&params[24];
 	}
 	int GetStringWithFieldName(ScriptString FieldName, ScriptString* MappedString)
@@ -48,7 +67,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[12] = *MappedString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28883], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringWithFieldName, params.ptr, cast(void*)0);
 		*MappedString = *cast(ScriptString*)&params[12];
 		return *cast(int*)&params[24];
 	}

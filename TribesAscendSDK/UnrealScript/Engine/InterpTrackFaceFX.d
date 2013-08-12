@@ -9,10 +9,14 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackFaceFX : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackFaceFX")); }
 	struct FaceFXTrackKey
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackFaceFX.FaceFXTrackKey")); }
 		@property final auto ref
 		{
 			ScriptString FaceFXSeqName() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
@@ -24,6 +28,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackFaceFX.FaceFXSoundCueKey")); }
 		@property final auto ref SoundCue FaceFXSoundCue() { return *cast(SoundCue*)(cast(size_t)&this + 0); }
 	}
 	@property final auto ref

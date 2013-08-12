@@ -8,10 +8,14 @@ import UnrealScript.Engine.AnimSet;
 extern(C++) interface TrSkin : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkin")); }
 	struct SkinStruct
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSkin.SkinStruct")); }
 		@property final auto ref
 		{
 			int skinId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -27,6 +31,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrSkin.VehicleSkinStruct")); }
 		@property final auto ref
 		{
 			AnimSet SeatAnimSet() { return *cast(AnimSet*)(cast(size_t)&this + 4); }

@@ -24,10 +24,59 @@ import UnrealScript.Engine.SoundCue;
 extern(C++) interface UDKPawn : GamePawn
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPawn")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetBoundingCylinder;
+			ScriptFunction mRestorePreRagdollCollisionComponent;
+			ScriptFunction mEnsureOverlayComponentLast;
+			ScriptFunction mGetTargetLocation;
+			ScriptFunction mIsInvisible;
+			ScriptFunction mHoldGameObject;
+			ScriptFunction mStoppedFalling;
+			ScriptFunction mEndCrouch;
+			ScriptFunction mStartCrouch;
+			ScriptFunction mSuggestJumpVelocity;
+			ScriptFunction mSetHUDLocation;
+			ScriptFunction mNativePostRenderFor;
+			ScriptFunction mSetWeaponAttachmentVisibility;
+			ScriptFunction mSetHandIKEnabled;
+			ScriptFunction mStartFeignDeathRecoveryAnim;
+			ScriptFunction mTakeHitBlendedOut;
+			ScriptFunction mUpdateEyeHeight;
+			ScriptFunction mStuckFalling;
+		}
+		public @property static final
+		{
+			ScriptFunction GetBoundingCylinder() { return mGetBoundingCylinder ? mGetBoundingCylinder : (mGetBoundingCylinder = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.GetBoundingCylinder")); }
+			ScriptFunction RestorePreRagdollCollisionComponent() { return mRestorePreRagdollCollisionComponent ? mRestorePreRagdollCollisionComponent : (mRestorePreRagdollCollisionComponent = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.RestorePreRagdollCollisionComponent")); }
+			ScriptFunction EnsureOverlayComponentLast() { return mEnsureOverlayComponentLast ? mEnsureOverlayComponentLast : (mEnsureOverlayComponentLast = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.EnsureOverlayComponentLast")); }
+			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.GetTargetLocation")); }
+			ScriptFunction IsInvisible() { return mIsInvisible ? mIsInvisible : (mIsInvisible = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.IsInvisible")); }
+			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.HoldGameObject")); }
+			ScriptFunction StoppedFalling() { return mStoppedFalling ? mStoppedFalling : (mStoppedFalling = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StoppedFalling")); }
+			ScriptFunction EndCrouch() { return mEndCrouch ? mEndCrouch : (mEndCrouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.EndCrouch")); }
+			ScriptFunction StartCrouch() { return mStartCrouch ? mStartCrouch : (mStartCrouch = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StartCrouch")); }
+			ScriptFunction SuggestJumpVelocity() { return mSuggestJumpVelocity ? mSuggestJumpVelocity : (mSuggestJumpVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SuggestJumpVelocity")); }
+			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetHUDLocation")); }
+			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.NativePostRenderFor")); }
+			ScriptFunction SetWeaponAttachmentVisibility() { return mSetWeaponAttachmentVisibility ? mSetWeaponAttachmentVisibility : (mSetWeaponAttachmentVisibility = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetWeaponAttachmentVisibility")); }
+			ScriptFunction SetHandIKEnabled() { return mSetHandIKEnabled ? mSetHandIKEnabled : (mSetHandIKEnabled = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.SetHandIKEnabled")); }
+			ScriptFunction StartFeignDeathRecoveryAnim() { return mStartFeignDeathRecoveryAnim ? mStartFeignDeathRecoveryAnim : (mStartFeignDeathRecoveryAnim = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StartFeignDeathRecoveryAnim")); }
+			ScriptFunction TakeHitBlendedOut() { return mTakeHitBlendedOut ? mTakeHitBlendedOut : (mTakeHitBlendedOut = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.TakeHitBlendedOut")); }
+			ScriptFunction UpdateEyeHeight() { return mUpdateEyeHeight ? mUpdateEyeHeight : (mUpdateEyeHeight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.UpdateEyeHeight")); }
+			ScriptFunction StuckFalling() { return mStuckFalling ? mStuckFalling : (mStuckFalling = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPawn.StuckFalling")); }
+		}
+	}
 	struct DrivenWeaponPawnInfo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.DrivenWeaponPawnInfo")); }
 		@property final auto ref
 		{
 			PlayerReplicationInfo PRI() { return *cast(PlayerReplicationInfo*)(cast(size_t)&this + 8); }
@@ -39,6 +88,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.UTTakeHitInfo")); }
 		@property final
 		{
 			auto ref
@@ -57,6 +108,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.PlayEmoteInfo")); }
 		@property final
 		{
 			auto ref
@@ -72,6 +125,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialImpactEffect")); }
 		@property final auto ref
 		{
 			ScriptArray!(MaterialInterface) DecalMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 12); }
@@ -88,6 +143,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialSoundEffect")); }
 		@property final auto ref
 		{
 			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 8); }
@@ -98,6 +155,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.MaterialParticleEffect")); }
 		@property final auto ref
 		{
 			ParticleSystem ParticleTemplate() { return *cast(ParticleSystem*)(cast(size_t)&this + 8); }
@@ -108,6 +167,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.DistanceBasedParticleTemplate")); }
 		@property final auto ref
 		{
 			float MinDistance() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -118,6 +179,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPawn.EmoteInfo")); }
 		@property final
 		{
 			auto ref
@@ -255,17 +318,17 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = *CollisionRadius;
 		*cast(float*)&params[4] = *CollisionHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35159], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
 		*CollisionRadius = *cast(float*)params.ptr;
 		*CollisionHeight = *cast(float*)&params[4];
 	}
 	void RestorePreRagdollCollisionComponent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35162], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestorePreRagdollCollisionComponent, cast(void*)0, cast(void*)0);
 	}
 	void EnsureOverlayComponentLast()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35163], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnsureOverlayComponentLast, cast(void*)0, cast(void*)0);
 	}
 	Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
 	{
@@ -273,14 +336,14 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = RequestedBy;
 		*cast(bool*)&params[4] = bRequestAlternateLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35164], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	bool IsInvisible()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35168], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsInvisible, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void HoldGameObject(UDKCarriedObject UDKGameObj)
@@ -288,25 +351,25 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKCarriedObject*)params.ptr = UDKGameObj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35170], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HoldGameObject, params.ptr, cast(void*)0);
 	}
 	void StoppedFalling()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35172], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StoppedFalling, cast(void*)0, cast(void*)0);
 	}
 	void EndCrouch(float HeightAdjust)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightAdjust;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35173], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndCrouch, params.ptr, cast(void*)0);
 	}
 	void StartCrouch(float HeightAdjust)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightAdjust;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35175], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartCrouch, params.ptr, cast(void*)0);
 	}
 	bool SuggestJumpVelocity(Vector* JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
 	{
@@ -316,7 +379,7 @@ final:
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(bool*)&params[36] = bRequireFallLanding;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35177], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestJumpVelocity, params.ptr, cast(void*)0);
 		*JumpVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[40];
 	}
@@ -325,7 +388,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewHUDLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35183], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHUDLocation, params.ptr, cast(void*)0);
 	}
 	void NativePostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -335,39 +398,39 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35185], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativePostRenderFor, params.ptr, cast(void*)0);
 	}
 	void SetWeaponAttachmentVisibility(bool bAttachmentVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bAttachmentVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35190], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWeaponAttachmentVisibility, params.ptr, cast(void*)0);
 	}
 	void SetHandIKEnabled(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35192], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHandIKEnabled, params.ptr, cast(void*)0);
 	}
 	void StartFeignDeathRecoveryAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35194], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartFeignDeathRecoveryAnim, cast(void*)0, cast(void*)0);
 	}
 	void TakeHitBlendedOut()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35195], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeHitBlendedOut, cast(void*)0, cast(void*)0);
 	}
 	void UpdateEyeHeight(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35196], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEyeHeight, params.ptr, cast(void*)0);
 	}
 	void StuckFalling()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35198], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StuckFalling, cast(void*)0, cast(void*)0);
 	}
 }

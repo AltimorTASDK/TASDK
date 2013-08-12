@@ -23,10 +23,109 @@ import UnrealScript.UTGame.UTWeapon;
 extern(C++) interface UTHUD : UTHUDBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHUD")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDrawTileCentered;
+			ScriptFunction mSetDisplayedOrders;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mMessage;
+			ScriptFunction mResolveHUDPosition;
+			ScriptFunction mGetScreenCoords;
+			ScriptFunction mDrawMessageText;
+			ScriptFunction mPostRender;
+			ScriptFunction mDrawHUD;
+			ScriptFunction mDrawGameHud;
+			ScriptFunction mDrawMicIcon;
+			ScriptFunction mDisplayLocalMessages;
+			ScriptFunction mDrawLivingHud;
+			ScriptFunction mDrawPostGameHud;
+			ScriptFunction mDisplayWeaponBar;
+			ScriptFunction mDisplayMap;
+			ScriptFunction mDrawAIOverlays;
+			ScriptFunction mGetUIController;
+			ScriptFunction mStartMusic;
+			ScriptFunction mGetTeamColor;
+			ScriptFunction mDisplayHit;
+			ScriptFunction mFlashDamage;
+			ScriptFunction mUpdateDamage;
+			ScriptFunction mDisplayDamage;
+			ScriptFunction mDrawBackground;
+			ScriptFunction mDrawBeaconBackground;
+			ScriptFunction mDrawHealth;
+			ScriptFunction mDrawBarGraph;
+			ScriptFunction mFormatTime;
+			ScriptFunction mGetFontSizeIndex;
+			ScriptFunction mShowPortrait;
+			ScriptFunction mHidePortrait;
+			ScriptFunction mDisplayPortrait;
+			ScriptFunction mDisplayHUDMessage;
+			ScriptFunction mDisplayClock;
+			ScriptFunction mDisplayPawnDoll;
+			ScriptFunction mDisplayAmmo;
+			ScriptFunction mDisplayPowerups;
+			ScriptFunction mDisplayScoring;
+			ScriptFunction mDisplayFragCount;
+			ScriptFunction mDrawNameplateBackground;
+			ScriptFunction mDisplayLeaderBoard;
+			ScriptFunction mDisplayConsoleMessages;
+		}
+		public @property static final
+		{
+			ScriptFunction DrawTileCentered() { return mDrawTileCentered ? mDrawTileCentered : (mDrawTileCentered = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawTileCentered")); }
+			ScriptFunction SetDisplayedOrders() { return mSetDisplayedOrders ? mSetDisplayedOrders : (mSetDisplayedOrders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.SetDisplayedOrders")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.PostBeginPlay")); }
+			ScriptFunction Message() { return mMessage ? mMessage : (mMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.Message")); }
+			ScriptFunction ResolveHUDPosition() { return mResolveHUDPosition ? mResolveHUDPosition : (mResolveHUDPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.ResolveHUDPosition")); }
+			ScriptFunction GetScreenCoords() { return mGetScreenCoords ? mGetScreenCoords : (mGetScreenCoords = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetScreenCoords")); }
+			ScriptFunction DrawMessageText() { return mDrawMessageText ? mDrawMessageText : (mDrawMessageText = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawMessageText")); }
+			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.PostRender")); }
+			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawHUD")); }
+			ScriptFunction DrawGameHud() { return mDrawGameHud ? mDrawGameHud : (mDrawGameHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawGameHud")); }
+			ScriptFunction DrawMicIcon() { return mDrawMicIcon ? mDrawMicIcon : (mDrawMicIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawMicIcon")); }
+			ScriptFunction DisplayLocalMessages() { return mDisplayLocalMessages ? mDisplayLocalMessages : (mDisplayLocalMessages = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayLocalMessages")); }
+			ScriptFunction DrawLivingHud() { return mDrawLivingHud ? mDrawLivingHud : (mDrawLivingHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawLivingHud")); }
+			ScriptFunction DrawPostGameHud() { return mDrawPostGameHud ? mDrawPostGameHud : (mDrawPostGameHud = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawPostGameHud")); }
+			ScriptFunction DisplayWeaponBar() { return mDisplayWeaponBar ? mDisplayWeaponBar : (mDisplayWeaponBar = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayWeaponBar")); }
+			ScriptFunction DisplayMap() { return mDisplayMap ? mDisplayMap : (mDisplayMap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayMap")); }
+			ScriptFunction DrawAIOverlays() { return mDrawAIOverlays ? mDrawAIOverlays : (mDrawAIOverlays = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawAIOverlays")); }
+			ScriptFunction GetUIController() { return mGetUIController ? mGetUIController : (mGetUIController = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetUIController")); }
+			ScriptFunction StartMusic() { return mStartMusic ? mStartMusic : (mStartMusic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.StartMusic")); }
+			ScriptFunction GetTeamColor() { return mGetTeamColor ? mGetTeamColor : (mGetTeamColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetTeamColor")); }
+			ScriptFunction DisplayHit() { return mDisplayHit ? mDisplayHit : (mDisplayHit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayHit")); }
+			ScriptFunction FlashDamage() { return mFlashDamage ? mFlashDamage : (mFlashDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.FlashDamage")); }
+			ScriptFunction UpdateDamage() { return mUpdateDamage ? mUpdateDamage : (mUpdateDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.UpdateDamage")); }
+			ScriptFunction DisplayDamage() { return mDisplayDamage ? mDisplayDamage : (mDisplayDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayDamage")); }
+			ScriptFunction DrawBackground() { return mDrawBackground ? mDrawBackground : (mDrawBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBackground")); }
+			ScriptFunction DrawBeaconBackground() { return mDrawBeaconBackground ? mDrawBeaconBackground : (mDrawBeaconBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBeaconBackground")); }
+			ScriptFunction DrawHealth() { return mDrawHealth ? mDrawHealth : (mDrawHealth = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawHealth")); }
+			ScriptFunction DrawBarGraph() { return mDrawBarGraph ? mDrawBarGraph : (mDrawBarGraph = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawBarGraph")); }
+			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.FormatTime")); }
+			ScriptFunction GetFontSizeIndex() { return mGetFontSizeIndex ? mGetFontSizeIndex : (mGetFontSizeIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.GetFontSizeIndex")); }
+			ScriptFunction ShowPortrait() { return mShowPortrait ? mShowPortrait : (mShowPortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.ShowPortrait")); }
+			ScriptFunction HidePortrait() { return mHidePortrait ? mHidePortrait : (mHidePortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.HidePortrait")); }
+			ScriptFunction DisplayPortrait() { return mDisplayPortrait ? mDisplayPortrait : (mDisplayPortrait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPortrait")); }
+			ScriptFunction DisplayHUDMessage() { return mDisplayHUDMessage ? mDisplayHUDMessage : (mDisplayHUDMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayHUDMessage")); }
+			ScriptFunction DisplayClock() { return mDisplayClock ? mDisplayClock : (mDisplayClock = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayClock")); }
+			ScriptFunction DisplayPawnDoll() { return mDisplayPawnDoll ? mDisplayPawnDoll : (mDisplayPawnDoll = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPawnDoll")); }
+			ScriptFunction DisplayAmmo() { return mDisplayAmmo ? mDisplayAmmo : (mDisplayAmmo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayAmmo")); }
+			ScriptFunction DisplayPowerups() { return mDisplayPowerups ? mDisplayPowerups : (mDisplayPowerups = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayPowerups")); }
+			ScriptFunction DisplayScoring() { return mDisplayScoring ? mDisplayScoring : (mDisplayScoring = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayScoring")); }
+			ScriptFunction DisplayFragCount() { return mDisplayFragCount ? mDisplayFragCount : (mDisplayFragCount = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayFragCount")); }
+			ScriptFunction DrawNameplateBackground() { return mDrawNameplateBackground ? mDrawNameplateBackground : (mDrawNameplateBackground = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DrawNameplateBackground")); }
+			ScriptFunction DisplayLeaderBoard() { return mDisplayLeaderBoard ? mDisplayLeaderBoard : (mDisplayLeaderBoard = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayLeaderBoard")); }
+			ScriptFunction DisplayConsoleMessages() { return mDisplayConsoleMessages ? mDisplayConsoleMessages : (mDisplayConsoleMessages = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTHUD.DisplayConsoleMessages")); }
+		}
+	}
 	struct DamageInfo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTHUD.DamageInfo")); }
 		@property final auto ref
 		{
 			MaterialInstanceConstant MatConstant() { return *cast(MaterialInstanceConstant*)(cast(size_t)&this + 8); }
@@ -255,18 +354,18 @@ final:
 		*cast(float*)&params[20] = UL;
 		*cast(float*)&params[24] = VL;
 		*cast(UObject.LinearColor*)&params[28] = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45714], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTileCentered, params.ptr, cast(void*)0);
 	}
 	void SetDisplayedOrders(ScriptString OrderText)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = OrderText;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45725], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDisplayedOrders, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45727], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Message(PlayerReplicationInfo PRI, ScriptString msg, ScriptName MsgType, float Lifetime)
 	{
@@ -276,7 +375,7 @@ final:
 		*cast(ScriptString*)&params[4] = msg;
 		*cast(ScriptName*)&params[16] = MsgType;
 		*cast(float*)&params[24] = Lifetime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45729], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Message, params.ptr, cast(void*)0);
 	}
 	UObject.Vector2D ResolveHUDPosition(UObject.Vector2D Position, float Width, float Height)
 	{
@@ -285,7 +384,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = Position;
 		*cast(float*)&params[8] = Width;
 		*cast(float*)&params[12] = Height;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResolveHUDPosition, params.ptr, cast(void*)0);
 		return *cast(UObject.Vector2D*)&params[16];
 	}
 	void GetScreenCoords(float PosY, float* ScreenX, float* ScreenY, HUD.HudLocalizedMessage* InMessage)
@@ -296,7 +395,7 @@ final:
 		*cast(float*)&params[4] = *ScreenX;
 		*cast(float*)&params[8] = *ScreenY;
 		*cast(HUD.HudLocalizedMessage*)&params[12] = *InMessage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45743], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScreenCoords, params.ptr, cast(void*)0);
 		*ScreenX = *cast(float*)&params[4];
 		*ScreenY = *cast(float*)&params[8];
 		*InMessage = *cast(HUD.HudLocalizedMessage*)&params[12];
@@ -308,69 +407,69 @@ final:
 		*cast(HUD.HudLocalizedMessage*)params.ptr = pLocalMessage;
 		*cast(float*)&params[64] = ScreenX;
 		*cast(float*)&params[68] = ScreenY;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45750], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMessageText, params.ptr, cast(void*)0);
 	}
 	void PostRender()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45756], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, cast(void*)0, cast(void*)0);
 	}
 	void DrawHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45759], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHUD, cast(void*)0, cast(void*)0);
 	}
 	void DrawGameHud()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45770], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawGameHud, cast(void*)0, cast(void*)0);
 	}
 	void DrawMicIcon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45779], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMicIcon, cast(void*)0, cast(void*)0);
 	}
 	void DisplayLocalMessages()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45781], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayLocalMessages, cast(void*)0, cast(void*)0);
 	}
 	void DrawLivingHud()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45782], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawLivingHud, cast(void*)0, cast(void*)0);
 	}
 	void DrawPostGameHud()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45786], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawPostGameHud, cast(void*)0, cast(void*)0);
 	}
 	void DisplayWeaponBar()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45788], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayWeaponBar, cast(void*)0, cast(void*)0);
 	}
 	void DisplayMap()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45813], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayMap, cast(void*)0, cast(void*)0);
 	}
 	void DrawAIOverlays()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45829], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawAIOverlays, cast(void*)0, cast(void*)0);
 	}
 	UIInteraction GetUIController(LocalPlayer* LP)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = *LP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45837], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUIController, params.ptr, cast(void*)0);
 		*LP = *cast(LocalPlayer*)params.ptr;
 		return *cast(UIInteraction*)&params[4];
 	}
 	void StartMusic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45840], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartMusic, cast(void*)0, cast(void*)0);
 	}
-	void GetTeamColor(int TeamIndex, UObject.LinearColor* ImageColor, UObject.Color* TextColor)
+	static void GetTeamColor(int TeamIndex, UObject.LinearColor* ImageColor, UObject.Color* TextColor)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
 		*cast(UObject.LinearColor*)&params[4] = *ImageColor;
 		*cast(UObject.Color*)&params[20] = *TextColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45841], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetTeamColor, params.ptr, cast(void*)0);
 		*ImageColor = *cast(UObject.LinearColor*)&params[4];
 		*TextColor = *cast(UObject.Color*)&params[20];
 	}
@@ -381,24 +480,24 @@ final:
 		*cast(Vector*)params.ptr = HitDir;
 		*cast(int*)&params[12] = Damage;
 		*cast(ScriptClass*)&params[16] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45845], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayHit, params.ptr, cast(void*)0);
 	}
 	void FlashDamage(float FlashPosition)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = FlashPosition;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45865], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlashDamage, params.ptr, cast(void*)0);
 	}
 	void UpdateDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45870], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDamage, cast(void*)0, cast(void*)0);
 	}
 	void DisplayDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45874], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDamage, cast(void*)0, cast(void*)0);
 	}
-	void DrawBackground(float X, float Y, float Width, float Height, UObject.LinearColor DrawColor, Canvas DrawCanvas)
+	static void DrawBackground(float X, float Y, float Width, float Height, UObject.LinearColor DrawColor, Canvas DrawCanvas)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -408,9 +507,9 @@ final:
 		*cast(float*)&params[12] = Height;
 		*cast(UObject.LinearColor*)&params[16] = DrawColor;
 		*cast(Canvas*)&params[32] = DrawCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45876], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawBackground, params.ptr, cast(void*)0);
 	}
-	void DrawBeaconBackground(float X, float Y, float Width, float Height, UObject.LinearColor DrawColor, Canvas DrawCanvas)
+	static void DrawBeaconBackground(float X, float Y, float Width, float Height, UObject.LinearColor DrawColor, Canvas DrawCanvas)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -420,9 +519,9 @@ final:
 		*cast(float*)&params[12] = Height;
 		*cast(UObject.LinearColor*)&params[16] = DrawColor;
 		*cast(Canvas*)&params[32] = DrawCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45883], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawBeaconBackground, params.ptr, cast(void*)0);
 	}
-	void DrawHealth(float X, float Y, float Width, float MaxWidth, float Height, Canvas DrawCanvas, ubyte Alpha)
+	static void DrawHealth(float X, float Y, float Width, float MaxWidth, float Height, Canvas DrawCanvas, ubyte Alpha)
 	{
 		ubyte params[25];
 		params[] = 0;
@@ -433,9 +532,9 @@ final:
 		*cast(float*)&params[16] = Height;
 		*cast(Canvas*)&params[20] = DrawCanvas;
 		params[24] = Alpha;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45890], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawHealth, params.ptr, cast(void*)0);
 	}
-	void DrawBarGraph(float X, float Y, float Width, float MaxWidth, float Height, Canvas DrawCanvas, UObject.Color BarColor, UObject.Color BackColor)
+	static void DrawBarGraph(float X, float Y, float Width, float MaxWidth, float Height, Canvas DrawCanvas, UObject.Color BarColor, UObject.Color BackColor)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -447,22 +546,22 @@ final:
 		*cast(Canvas*)&params[20] = DrawCanvas;
 		*cast(UObject.Color*)&params[24] = BarColor;
 		*cast(UObject.Color*)&params[28] = BackColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45901], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DrawBarGraph, params.ptr, cast(void*)0);
 	}
-	ScriptString FormatTime(int Seconds)
+	static ScriptString FormatTime(int Seconds)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Seconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45910], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.FormatTime, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	Font GetFontSizeIndex(int FontSize)
+	static Font GetFontSizeIndex(int FontSize)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = FontSize;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45916], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFontSizeIndex, params.ptr, cast(void*)0);
 		return *cast(Font*)&params[4];
 	}
 	void ShowPortrait(UTPlayerReplicationInfo ShowPRI, float PortraitDuration, bool bOverrideCurrentSpeaker)
@@ -472,18 +571,18 @@ final:
 		*cast(UTPlayerReplicationInfo*)params.ptr = ShowPRI;
 		*cast(float*)&params[4] = PortraitDuration;
 		*cast(bool*)&params[8] = bOverrideCurrentSpeaker;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45919], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowPortrait, params.ptr, cast(void*)0);
 	}
 	void HidePortrait()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45923], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HidePortrait, cast(void*)0, cast(void*)0);
 	}
 	void DisplayPortrait(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45925], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayPortrait, params.ptr, cast(void*)0);
 	}
 	void DisplayHUDMessage(ScriptString Message, float XOffsetPct, float YOffsetPct)
 	{
@@ -492,37 +591,37 @@ final:
 		*cast(ScriptString*)params.ptr = Message;
 		*cast(float*)&params[12] = XOffsetPct;
 		*cast(float*)&params[16] = YOffsetPct;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45933], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayHUDMessage, params.ptr, cast(void*)0);
 	}
 	void DisplayClock()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45944], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayClock, cast(void*)0, cast(void*)0);
 	}
 	void DisplayPawnDoll()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45947], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayPawnDoll, cast(void*)0, cast(void*)0);
 	}
 	void DisplayAmmo(UTWeapon pWeapon)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTWeapon*)params.ptr = pWeapon;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45956], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayAmmo, params.ptr, cast(void*)0);
 	}
 	void DisplayPowerups()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45963], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayPowerups, cast(void*)0, cast(void*)0);
 	}
 	void DisplayScoring()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45966], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayScoring, cast(void*)0, cast(void*)0);
 	}
 	void DisplayFragCount(UObject.Vector2D pos)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject.Vector2D*)params.ptr = pos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45968], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayFragCount, params.ptr, cast(void*)0);
 	}
 	void DrawNameplateBackground(UObject.Vector2D pos, float WordWidth, UObject.LinearColor NameplateColor, float WordHeight)
 	{
@@ -532,17 +631,17 @@ final:
 		*cast(float*)&params[8] = WordWidth;
 		*cast(UObject.LinearColor*)&params[12] = NameplateColor;
 		*cast(float*)&params[28] = WordHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45972], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawNameplateBackground, params.ptr, cast(void*)0);
 	}
 	void DisplayLeaderBoard(UObject.Vector2D pos)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject.Vector2D*)params.ptr = pos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45979], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayLeaderBoard, params.ptr, cast(void*)0);
 	}
 	void DisplayConsoleMessages()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45992], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayConsoleMessages, cast(void*)0, cast(void*)0);
 	}
 }

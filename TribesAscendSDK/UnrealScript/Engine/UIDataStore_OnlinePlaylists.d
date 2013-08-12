@@ -10,6 +10,31 @@ import UnrealScript.Engine.UIDataStore;
 extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlinePlaylists")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetProviderCount;
+			ScriptFunction mGetResourceProviders;
+			ScriptFunction mGetResourceProviderFields;
+			ScriptFunction mGetProviderFieldValue;
+			ScriptFunction mFindProviderIndexByFieldValue;
+			ScriptFunction mGetPlaylistProvider;
+			ScriptFunction mGetOnlinePlaylistProvider;
+		}
+		public @property static final
+		{
+			ScriptFunction GetProviderCount() { return mGetProviderCount ? mGetProviderCount : (mGetProviderCount = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetProviderCount")); }
+			ScriptFunction GetResourceProviders() { return mGetResourceProviders ? mGetResourceProviders : (mGetResourceProviders = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviders")); }
+			ScriptFunction GetResourceProviderFields() { return mGetResourceProviderFields ? mGetResourceProviderFields : (mGetResourceProviderFields = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetResourceProviderFields")); }
+			ScriptFunction GetProviderFieldValue() { return mGetProviderFieldValue ? mGetProviderFieldValue : (mGetProviderFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetProviderFieldValue")); }
+			ScriptFunction FindProviderIndexByFieldValue() { return mFindProviderIndexByFieldValue ? mFindProviderIndexByFieldValue : (mFindProviderIndexByFieldValue = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.FindProviderIndexByFieldValue")); }
+			ScriptFunction GetPlaylistProvider() { return mGetPlaylistProvider ? mGetPlaylistProvider : (mGetPlaylistProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetPlaylistProvider")); }
+			ScriptFunction GetOnlinePlaylistProvider() { return mGetOnlinePlaylistProvider ? mGetOnlinePlaylistProvider : (mGetOnlinePlaylistProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider")); }
+		}
+	}
 	enum
 	{
 		RANKEDPROVIDERTAG = "PlaylistsRanked",
@@ -29,7 +54,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28789], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	bool GetResourceProviders(ScriptName ProviderTag, ScriptArray!(UIResourceDataProvider)* out_Providers)
@@ -38,7 +63,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptArray!(UIResourceDataProvider)*)&params[8] = *out_Providers;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28792], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetResourceProviders, params.ptr, cast(void*)0);
 		*out_Providers = *cast(ScriptArray!(UIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
@@ -48,7 +73,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptArray!(ScriptName)*)&params[8] = *ProviderFieldTags;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetResourceProviderFields, params.ptr, cast(void*)0);
 		*ProviderFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
@@ -60,7 +85,7 @@ final:
 		*cast(ScriptName*)&params[8] = SearchField;
 		*cast(int*)&params[16] = ProviderIndex;
 		*cast(UIRoot.UIProviderScriptFieldValue*)&params[20] = *out_FieldValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28802], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderFieldValue, params.ptr, cast(void*)0);
 		*out_FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[20];
 		return *cast(bool*)&params[104];
 	}
@@ -71,7 +96,7 @@ final:
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptName*)&params[8] = SearchField;
 		*cast(UIRoot.UIProviderScriptFieldValue*)&params[16] = *ValueToSearchFor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28808], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindProviderIndexByFieldValue, params.ptr, cast(void*)0);
 		*ValueToSearchFor = *cast(UIRoot.UIProviderScriptFieldValue*)&params[16];
 		return *cast(int*)&params[100];
 	}
@@ -82,18 +107,18 @@ final:
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(int*)&params[8] = ProviderIndex;
 		*cast(UIResourceDataProvider*)&params[12] = *out_Provider;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28813], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlaylistProvider, params.ptr, cast(void*)0);
 		*out_Provider = *cast(UIResourceDataProvider*)&params[12];
 		return *cast(bool*)&params[16];
 	}
-	OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex)
+	static OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(int*)&params[8] = PlaylistId;
 		*cast(int*)&params[12] = *ProviderIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28818], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetOnlinePlaylistProvider, params.ptr, cast(void*)0);
 		*ProviderIndex = *cast(int*)&params[12];
 		return *cast(OnlinePlaylistProvider*)&params[16];
 	}

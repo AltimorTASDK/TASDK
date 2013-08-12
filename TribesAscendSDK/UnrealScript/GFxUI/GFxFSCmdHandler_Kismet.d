@@ -8,6 +8,13 @@ import UnrealScript.GFxUI.GFxEvent_FSCommand;
 extern(C++) interface GFxFSCmdHandler_Kismet : GFxFSCmdHandler
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxFSCmdHandler_Kismet")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mFSCommand;
+		public @property static final ScriptFunction FSCommand() { return mFSCommand ? mFSCommand : (mFSCommand = ScriptObject.Find!(ScriptFunction)("Function GFxUI.GFxFSCmdHandler_Kismet.FSCommand")); }
+	}
 	final bool FSCommand(GFxMoviePlayer Movie, GFxEvent_FSCommand Event, ScriptString Cmd, ScriptString Arg)
 	{
 		ubyte params[36];
@@ -16,7 +23,7 @@ public extern(D):
 		*cast(GFxEvent_FSCommand*)&params[4] = Event;
 		*cast(ScriptString*)&params[8] = Cmd;
 		*cast(ScriptString*)&params[20] = Arg;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30296], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FSCommand, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[32];
 	}
 }

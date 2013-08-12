@@ -7,6 +7,8 @@ import UnrealScript.Engine.Texture2D;
 extern(C++) interface SeqEvent_Used : SequenceEvent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Used")); }
 	@property final
 	{
 		auto ref

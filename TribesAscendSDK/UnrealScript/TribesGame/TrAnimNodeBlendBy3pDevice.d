@@ -8,6 +8,31 @@ import UnrealScript.GameFramework.GameSkelCtrl_Recoil;
 extern(C++) interface TrAnimNodeBlendBy3pDevice : TrAnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendBy3pDevice")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlayIdle;
+			ScriptFunction mPlayBuildup;
+			ScriptFunction mPlayFire;
+			ScriptFunction mPlayPutaway;
+			ScriptFunction mPlayRetrieve;
+			ScriptFunction mPlayReload;
+			ScriptFunction mPlayOffhand;
+		}
+		public @property static final
+		{
+			ScriptFunction PlayIdle() { return mPlayIdle ? mPlayIdle : (mPlayIdle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayIdle")); }
+			ScriptFunction PlayBuildup() { return mPlayBuildup ? mPlayBuildup : (mPlayBuildup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayBuildup")); }
+			ScriptFunction PlayFire() { return mPlayFire ? mPlayFire : (mPlayFire = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayFire")); }
+			ScriptFunction PlayPutaway() { return mPlayPutaway ? mPlayPutaway : (mPlayPutaway = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayPutaway")); }
+			ScriptFunction PlayRetrieve() { return mPlayRetrieve ? mPlayRetrieve : (mPlayRetrieve = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayRetrieve")); }
+			ScriptFunction PlayReload() { return mPlayReload ? mPlayReload : (mPlayReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayReload")); }
+			ScriptFunction PlayOffhand() { return mPlayOffhand ? mPlayOffhand : (mPlayOffhand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrAnimNodeBlendBy3pDevice.PlayOffhand")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -35,18 +60,18 @@ public extern(D):
 final:
 	void PlayIdle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66339], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayIdle, cast(void*)0, cast(void*)0);
 	}
 	void PlayBuildup()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66340], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayBuildup, cast(void*)0, cast(void*)0);
 	}
 	void PlayFire(float RefireTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = RefireTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66341], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFire, params.ptr, cast(void*)0);
 	}
 	void PlayPutaway(float PutAwayTime, float ForcedRateBuff)
 	{
@@ -54,7 +79,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = PutAwayTime;
 		*cast(float*)&params[4] = ForcedRateBuff;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66343], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayPutaway, params.ptr, cast(void*)0);
 	}
 	void PlayRetrieve(float RetrieveTime, float ForcedRateBuff)
 	{
@@ -62,20 +87,20 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = RetrieveTime;
 		*cast(float*)&params[4] = ForcedRateBuff;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66346], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayRetrieve, params.ptr, cast(void*)0);
 	}
 	void PlayReload(float ReloadTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = ReloadTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66349], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayReload, params.ptr, cast(void*)0);
 	}
 	void PlayOffhand(ScriptName OffhandAnimName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = OffhandAnimName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66351], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayOffhand, params.ptr, cast(void*)0);
 	}
 }

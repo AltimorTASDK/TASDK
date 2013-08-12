@@ -11,6 +11,25 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface StaticMeshComponent : MeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCanBecomeDynamic;
+			ScriptFunction mSetStaticMesh;
+			ScriptFunction mDisableRBCollisionWithSMC;
+			ScriptFunction mSetForceStaticDecals;
+		}
+		public @property static final
+		{
+			ScriptFunction CanBecomeDynamic() { return mCanBecomeDynamic ? mCanBecomeDynamic : (mCanBecomeDynamic = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.CanBecomeDynamic")); }
+			ScriptFunction SetStaticMesh() { return mSetStaticMesh ? mSetStaticMesh : (mSetStaticMesh = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.SetStaticMesh")); }
+			ScriptFunction DisableRBCollisionWithSMC() { return mDisableRBCollisionWithSMC ? mDisableRBCollisionWithSMC : (mDisableRBCollisionWithSMC = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.DisableRBCollisionWithSMC")); }
+			ScriptFunction SetForceStaticDecals() { return mSetForceStaticDecals ? mSetForceStaticDecals : (mSetForceStaticDecals = ScriptObject.Find!(ScriptFunction)("Function Engine.StaticMeshComponent.SetForceStaticDecals")); }
+		}
+	}
 	enum ELightmapModificationFunction : ubyte
 	{
 		MLMF_Modulate = 0,
@@ -21,6 +40,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.StaticMeshComponent.StaticMeshComponentLODInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(ShadowMap2D) ShadowMaps() { return *cast(ScriptArray!(ShadowMap2D)*)(cast(size_t)&this + 0); }
@@ -71,7 +92,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4080], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanBecomeDynamic, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool SetStaticMesh(StaticMesh NewMesh, bool bForce)
@@ -80,7 +101,7 @@ final:
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewMesh;
 		*cast(bool*)&params[4] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12100], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void DisableRBCollisionWithSMC(
@@ -93,13 +114,13 @@ void* OtherSMC, bool bDisabled)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = OtherSMC;
 		*cast(bool*)&params[4] = bDisabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12104], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableRBCollisionWithSMC, params.ptr, cast(void*)0);
 	}
 	void SetForceStaticDecals(bool bInForceStaticDecals)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInForceStaticDecals;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12107], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetForceStaticDecals, params.ptr, cast(void*)0);
 	}
 }

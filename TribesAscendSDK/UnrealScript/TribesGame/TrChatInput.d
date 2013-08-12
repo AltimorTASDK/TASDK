@@ -10,6 +10,39 @@ import UnrealScript.Engine.Interaction;
 extern(C++) interface TrChatInput : Interaction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatInput")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialized;
+			ScriptFunction mSetInputText;
+			ScriptFunction mSetCursorPos;
+			ScriptFunction mConsoleCommand;
+			ScriptFunction mStartTyping;
+			ScriptFunction mPostRender_Console;
+			ScriptFunction mInputKey;
+			ScriptFunction mInputChar;
+			ScriptFunction mFlushPlayerInput;
+			ScriptFunction mProcessControlKey;
+			ScriptFunction mAppendInputText;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.Initialized")); }
+			ScriptFunction SetInputText() { return mSetInputText ? mSetInputText : (mSetInputText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.SetInputText")); }
+			ScriptFunction SetCursorPos() { return mSetCursorPos ? mSetCursorPos : (mSetCursorPos = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.SetCursorPos")); }
+			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.ConsoleCommand")); }
+			ScriptFunction StartTyping() { return mStartTyping ? mStartTyping : (mStartTyping = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.StartTyping")); }
+			ScriptFunction PostRender_Console() { return mPostRender_Console ? mPostRender_Console : (mPostRender_Console = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.PostRender_Console")); }
+			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.InputKey")); }
+			ScriptFunction InputChar() { return mInputChar ? mInputChar : (mInputChar = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.InputChar")); }
+			ScriptFunction FlushPlayerInput() { return mFlushPlayerInput ? mFlushPlayerInput : (mFlushPlayerInput = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.FlushPlayerInput")); }
+			ScriptFunction ProcessControlKey() { return mProcessControlKey ? mProcessControlKey : (mProcessControlKey = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.ProcessControlKey")); }
+			ScriptFunction AppendInputText() { return mAppendInputText ? mAppendInputText : (mAppendInputText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatInput.AppendInputText")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -31,42 +64,42 @@ public extern(D):
 final:
 	void Initialized()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74419], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialized, cast(void*)0, cast(void*)0);
 	}
 	void SetInputText(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74420], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInputText, params.ptr, cast(void*)0);
 	}
 	void SetCursorPos(int Position)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Position;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74422], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCursorPos, params.ptr, cast(void*)0);
 	}
 	void ConsoleCommand(ScriptString Command)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74424], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 	void StartTyping(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74426], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartTyping, params.ptr, cast(void*)0);
 	}
 	void PostRender_Console(Canvas pCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74428], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
 	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
@@ -77,7 +110,7 @@ final:
 		*cast(UObject.EInputEvent*)&params[12] = Event;
 		*cast(float*)&params[16] = AmountDepressed;
 		*cast(bool*)&params[20] = bGamepad;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	bool InputChar(int ControllerId, ScriptString Unicode)
@@ -86,12 +119,12 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptString*)&params[4] = Unicode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74437], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputChar, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void FlushPlayerInput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74441], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlushPlayerInput, cast(void*)0, cast(void*)0);
 	}
 	bool ProcessControlKey(ScriptName Key, UObject.EInputEvent Event)
 	{
@@ -99,7 +132,7 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = Key;
 		*cast(UObject.EInputEvent*)&params[8] = Event;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74443], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessControlKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	void AppendInputText(ScriptString Text)
@@ -107,6 +140,6 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74447], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AppendInputText, params.ptr, cast(void*)0);
 	}
 }

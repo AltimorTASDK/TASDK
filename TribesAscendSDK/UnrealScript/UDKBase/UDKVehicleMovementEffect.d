@@ -6,6 +6,8 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UDKVehicleMovementEffect : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleMovementEffect")); }
 	@property final auto ref
 	{
 		float AirCurrentLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }

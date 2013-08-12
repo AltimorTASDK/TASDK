@@ -1,5 +1,6 @@
 module UnrealScript.TribesGame.TrAnimNodeAimOffset;
 
+import ScriptClasses;
 import UnrealScript.Engine.AnimNodeAimOffset;
 import UnrealScript.Core.UObject;
 import UnrealScript.TribesGame.TrPawn;
@@ -8,6 +9,8 @@ import UnrealScript.TribesGame.TrDevice;
 extern(C++) interface TrAnimNodeAimOffset : AnimNodeAimOffset
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeAimOffset")); }
 	@property final
 	{
 		auto ref

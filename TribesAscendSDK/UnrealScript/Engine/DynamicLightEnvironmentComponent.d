@@ -8,6 +8,13 @@ import UnrealScript.Engine.LightComponent;
 extern(C++) interface DynamicLightEnvironmentComponent : LightEnvironmentComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicLightEnvironmentComponent")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mResetEnvironment;
+		public @property static final ScriptFunction ResetEnvironment() { return mResetEnvironment ? mResetEnvironment : (mResetEnvironment = ScriptObject.Find!(ScriptFunction)("Function Engine.DynamicLightEnvironmentComponent.ResetEnvironment")); }
+	}
 	enum EDynamicLightEnvironmentBoundsMethod : ubyte
 	{
 		DLEB_OwnerComponents = 0,
@@ -83,6 +90,6 @@ void*)*)(cast(size_t)cast(void*)this + 284); }
 	}
 	final void ResetEnvironment()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11772], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetEnvironment, cast(void*)0, cast(void*)0);
 	}
 }

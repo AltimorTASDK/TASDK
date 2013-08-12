@@ -6,6 +6,8 @@ import UnrealScript.Engine.SkelControlSingleBone;
 extern(C++) interface UDKSkelControl_HugGround : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_HugGround")); }
 	@property final
 	{
 		auto ref

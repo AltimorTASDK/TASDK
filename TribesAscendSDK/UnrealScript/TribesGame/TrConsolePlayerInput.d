@@ -9,6 +9,35 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrConsolePlayerInput : TrPlayerInput
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrConsolePlayerInput")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPreProcessInput;
+			ScriptFunction mApplyViewAutoPitchCentering;
+			ScriptFunction mApplyViewAutoVehiclePitchCentering;
+			ScriptFunction mApplyViewAcceleration;
+			ScriptFunction mApplyTargetAdhesion;
+			ScriptFunction mAdjustMouseSensitivity;
+			ScriptFunction mApplyTargetFriction;
+			ScriptFunction mCheckForDoubleClickMove;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.PostBeginPlay")); }
+			ScriptFunction PreProcessInput() { return mPreProcessInput ? mPreProcessInput : (mPreProcessInput = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.PreProcessInput")); }
+			ScriptFunction ApplyViewAutoPitchCentering() { return mApplyViewAutoPitchCentering ? mApplyViewAutoPitchCentering : (mApplyViewAutoPitchCentering = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.ApplyViewAutoPitchCentering")); }
+			ScriptFunction ApplyViewAutoVehiclePitchCentering() { return mApplyViewAutoVehiclePitchCentering ? mApplyViewAutoVehiclePitchCentering : (mApplyViewAutoVehiclePitchCentering = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.ApplyViewAutoVehiclePitchCentering")); }
+			ScriptFunction ApplyViewAcceleration() { return mApplyViewAcceleration ? mApplyViewAcceleration : (mApplyViewAcceleration = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.ApplyViewAcceleration")); }
+			ScriptFunction ApplyTargetAdhesion() { return mApplyTargetAdhesion ? mApplyTargetAdhesion : (mApplyTargetAdhesion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.ApplyTargetAdhesion")); }
+			ScriptFunction AdjustMouseSensitivity() { return mAdjustMouseSensitivity ? mAdjustMouseSensitivity : (mAdjustMouseSensitivity = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.AdjustMouseSensitivity")); }
+			ScriptFunction ApplyTargetFriction() { return mApplyTargetFriction ? mApplyTargetFriction : (mApplyTargetFriction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.ApplyTargetFriction")); }
+			ScriptFunction CheckForDoubleClickMove() { return mCheckForDoubleClickMove ? mCheckForDoubleClickMove : (mCheckForDoubleClickMove = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrConsolePlayerInput.CheckForDoubleClickMove")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -80,35 +109,35 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78083], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PreProcessInput(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78084], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreProcessInput, params.ptr, cast(void*)0);
 	}
 	void ApplyViewAutoPitchCentering(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78088], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyViewAutoPitchCentering, params.ptr, cast(void*)0);
 	}
 	void ApplyViewAutoVehiclePitchCentering(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78092], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyViewAutoVehiclePitchCentering, params.ptr, cast(void*)0);
 	}
 	void ApplyViewAcceleration(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78100], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyViewAcceleration, params.ptr, cast(void*)0);
 	}
 	void ApplyTargetAdhesion(float DeltaTime, UTWeapon W, int* out_YawRot, int* out_PitchRot)
 	{
@@ -118,7 +147,7 @@ final:
 		*cast(UTWeapon*)&params[4] = W;
 		*cast(int*)&params[8] = *out_YawRot;
 		*cast(int*)&params[12] = *out_PitchRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78104], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyTargetAdhesion, params.ptr, cast(void*)0);
 		*out_YawRot = *cast(int*)&params[8];
 		*out_PitchRot = *cast(int*)&params[12];
 	}
@@ -127,7 +156,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = FOVScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78132], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustMouseSensitivity, params.ptr, cast(void*)0);
 	}
 	void ApplyTargetFriction(float DeltaTime, UTWeapon W)
 	{
@@ -135,14 +164,14 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(UTWeapon*)&params[4] = W;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78134], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyTargetFriction, params.ptr, cast(void*)0);
 	}
 	Actor.EDoubleClickDir CheckForDoubleClickMove(float DeltaTime)
 	{
 		ubyte params[5];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[78154], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckForDoubleClickMove, params.ptr, cast(void*)0);
 		return *cast(Actor.EDoubleClickDir*)&params[4];
 	}
 }

@@ -31,10 +31,91 @@ import UnrealScript.UDKBase.UDKSkelControl_TurretConstrained;
 extern(C++) interface UDKVehicle : UDKVehicleBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnTouchForcedDirVolume;
+			ScriptFunction mGetRanOverDamageType;
+			ScriptFunction mSeatWeaponRotation;
+			ScriptFunction mSeatFlashLocation;
+			ScriptFunction mSeatFlashCount;
+			ScriptFunction mSeatFiringMode;
+			ScriptFunction mForceWeaponRotation;
+			ScriptFunction mGetSeatPivotPoint;
+			ScriptFunction mGetBarrelIndex;
+			ScriptFunction mIsSeatControllerReplicationViewer;
+			ScriptFunction mIsLocalOnVehicle;
+			ScriptFunction mLockOnWarning;
+			ScriptFunction mOnPropertyChange;
+			ScriptFunction mGetGravityZ;
+			ScriptFunction mPlayTakeHitEffects;
+			ScriptFunction mReceivedHealthChange;
+			ScriptFunction mJumpOutCheck;
+			ScriptFunction mGetMaxRiseForce;
+			ScriptFunction mCheckAutoDestruct;
+			ScriptFunction mSelfDestruct;
+			ScriptFunction mGetTeamNum;
+			ScriptFunction mNativePostRenderFor;
+			ScriptFunction mInUseableRange;
+			ScriptFunction mSetHUDLocation;
+			ScriptFunction mInitDamageSkel;
+			ScriptFunction mUpdateDamageMaterial;
+			ScriptFunction mApplyMorphDamage;
+			ScriptFunction mMorphTargetDestroyed;
+			ScriptFunction mRBPenetrationDestroy;
+			ScriptFunction mTakeWaterDamage;
+			ScriptFunction mCheckReset;
+			ScriptFunction mTakeFireDamage;
+			ScriptFunction mPostInitRigidBody;
+			ScriptFunction mUpdateHoverboardDustEffect;
+		}
+		public @property static final
+		{
+			ScriptFunction OnTouchForcedDirVolume() { return mOnTouchForcedDirVolume ? mOnTouchForcedDirVolume : (mOnTouchForcedDirVolume = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.OnTouchForcedDirVolume")); }
+			ScriptFunction GetRanOverDamageType() { return mGetRanOverDamageType ? mGetRanOverDamageType : (mGetRanOverDamageType = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetRanOverDamageType")); }
+			ScriptFunction SeatWeaponRotation() { return mSeatWeaponRotation ? mSeatWeaponRotation : (mSeatWeaponRotation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SeatWeaponRotation")); }
+			ScriptFunction SeatFlashLocation() { return mSeatFlashLocation ? mSeatFlashLocation : (mSeatFlashLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SeatFlashLocation")); }
+			ScriptFunction SeatFlashCount() { return mSeatFlashCount ? mSeatFlashCount : (mSeatFlashCount = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SeatFlashCount")); }
+			ScriptFunction SeatFiringMode() { return mSeatFiringMode ? mSeatFiringMode : (mSeatFiringMode = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SeatFiringMode")); }
+			ScriptFunction ForceWeaponRotation() { return mForceWeaponRotation ? mForceWeaponRotation : (mForceWeaponRotation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.ForceWeaponRotation")); }
+			ScriptFunction GetSeatPivotPoint() { return mGetSeatPivotPoint ? mGetSeatPivotPoint : (mGetSeatPivotPoint = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetSeatPivotPoint")); }
+			ScriptFunction GetBarrelIndex() { return mGetBarrelIndex ? mGetBarrelIndex : (mGetBarrelIndex = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetBarrelIndex")); }
+			ScriptFunction IsSeatControllerReplicationViewer() { return mIsSeatControllerReplicationViewer ? mIsSeatControllerReplicationViewer : (mIsSeatControllerReplicationViewer = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.IsSeatControllerReplicationViewer")); }
+			ScriptFunction IsLocalOnVehicle() { return mIsLocalOnVehicle ? mIsLocalOnVehicle : (mIsLocalOnVehicle = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.IsLocalOnVehicle")); }
+			ScriptFunction LockOnWarning() { return mLockOnWarning ? mLockOnWarning : (mLockOnWarning = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.LockOnWarning")); }
+			ScriptFunction OnPropertyChange() { return mOnPropertyChange ? mOnPropertyChange : (mOnPropertyChange = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.OnPropertyChange")); }
+			ScriptFunction GetGravityZ() { return mGetGravityZ ? mGetGravityZ : (mGetGravityZ = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetGravityZ")); }
+			ScriptFunction PlayTakeHitEffects() { return mPlayTakeHitEffects ? mPlayTakeHitEffects : (mPlayTakeHitEffects = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.PlayTakeHitEffects")); }
+			ScriptFunction ReceivedHealthChange() { return mReceivedHealthChange ? mReceivedHealthChange : (mReceivedHealthChange = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.ReceivedHealthChange")); }
+			ScriptFunction JumpOutCheck() { return mJumpOutCheck ? mJumpOutCheck : (mJumpOutCheck = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.JumpOutCheck")); }
+			ScriptFunction GetMaxRiseForce() { return mGetMaxRiseForce ? mGetMaxRiseForce : (mGetMaxRiseForce = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetMaxRiseForce")); }
+			ScriptFunction CheckAutoDestruct() { return mCheckAutoDestruct ? mCheckAutoDestruct : (mCheckAutoDestruct = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.CheckAutoDestruct")); }
+			ScriptFunction SelfDestruct() { return mSelfDestruct ? mSelfDestruct : (mSelfDestruct = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SelfDestruct")); }
+			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.GetTeamNum")); }
+			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.NativePostRenderFor")); }
+			ScriptFunction InUseableRange() { return mInUseableRange ? mInUseableRange : (mInUseableRange = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.InUseableRange")); }
+			ScriptFunction SetHUDLocation() { return mSetHUDLocation ? mSetHUDLocation : (mSetHUDLocation = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.SetHUDLocation")); }
+			ScriptFunction InitDamageSkel() { return mInitDamageSkel ? mInitDamageSkel : (mInitDamageSkel = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.InitDamageSkel")); }
+			ScriptFunction UpdateDamageMaterial() { return mUpdateDamageMaterial ? mUpdateDamageMaterial : (mUpdateDamageMaterial = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.UpdateDamageMaterial")); }
+			ScriptFunction ApplyMorphDamage() { return mApplyMorphDamage ? mApplyMorphDamage : (mApplyMorphDamage = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.ApplyMorphDamage")); }
+			ScriptFunction MorphTargetDestroyed() { return mMorphTargetDestroyed ? mMorphTargetDestroyed : (mMorphTargetDestroyed = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.MorphTargetDestroyed")); }
+			ScriptFunction RBPenetrationDestroy() { return mRBPenetrationDestroy ? mRBPenetrationDestroy : (mRBPenetrationDestroy = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.RBPenetrationDestroy")); }
+			ScriptFunction TakeWaterDamage() { return mTakeWaterDamage ? mTakeWaterDamage : (mTakeWaterDamage = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.TakeWaterDamage")); }
+			ScriptFunction CheckReset() { return mCheckReset ? mCheckReset : (mCheckReset = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.CheckReset")); }
+			ScriptFunction TakeFireDamage() { return mTakeFireDamage ? mTakeFireDamage : (mTakeFireDamage = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.TakeFireDamage")); }
+			ScriptFunction PostInitRigidBody() { return mPostInitRigidBody ? mPostInitRigidBody : (mPostInitRigidBody = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.PostInitRigidBody")); }
+			ScriptFunction UpdateHoverboardDustEffect() { return mUpdateHoverboardDustEffect ? mUpdateHoverboardDustEffect : (mUpdateHoverboardDustEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKVehicle.UpdateHoverboardDustEffect")); }
+		}
+	}
 	struct BurnOutDatum
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.BurnOutDatum")); }
 		@property final auto ref
 		{
 			float CurrValue() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -45,6 +126,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[432];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.VehicleSeat")); }
 		@property final
 		{
 			auto ref
@@ -116,6 +199,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.VehicleAnim")); }
 		@property final
 		{
 			auto ref
@@ -133,6 +218,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.VehicleSound")); }
 		@property final auto ref
 		{
 			SoundCue SoundTemplate() { return *cast(SoundCue*)(cast(size_t)&this + 16); }
@@ -144,6 +231,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.DamageParamScales")); }
 		@property final auto ref
 		{
 			float Scale() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -154,6 +243,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.FDamageMorphTargets")); }
 		@property final auto ref
 		{
 			ScriptArray!(ScriptName) DamagePropNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 36); }
@@ -169,6 +260,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.VehicleEffect")); }
 		@property final
 		{
 			auto ref
@@ -189,6 +282,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.WeaponEffectInfo")); }
 		@property final auto ref
 		{
 			Vector Scale3D() { return *cast(Vector*)(cast(size_t)&this + 20); }
@@ -200,6 +295,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicle.VehicleSeatAnimInfo")); }
 		@property final
 		{
 			auto ref
@@ -334,14 +431,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UDKForcedDirectionVolume*)params.ptr = Vol;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34850], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTouchForcedDirVolume, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptClass GetRanOverDamageType()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35818], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRanOverDamageType, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
 	Rotator SeatWeaponRotation(int SeatIndex, Rotator NewRot, bool bReadValue)
@@ -351,7 +448,7 @@ final:
 		*cast(int*)params.ptr = SeatIndex;
 		*cast(Rotator*)&params[4] = NewRot;
 		*cast(bool*)&params[16] = bReadValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36035], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeatWeaponRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[20];
 	}
 	Vector SeatFlashLocation(int SeatIndex, Vector NewLoc, bool bReadValue)
@@ -361,7 +458,7 @@ final:
 		*cast(int*)params.ptr = SeatIndex;
 		*cast(Vector*)&params[4] = NewLoc;
 		*cast(bool*)&params[16] = bReadValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36040], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFlashLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[20];
 	}
 	ubyte SeatFlashCount(int SeatIndex, ubyte NewCount, bool bReadValue)
@@ -371,7 +468,7 @@ final:
 		*cast(int*)params.ptr = SeatIndex;
 		params[4] = NewCount;
 		*cast(bool*)&params[8] = bReadValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36045], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFlashCount, params.ptr, cast(void*)0);
 		return params[12];
 	}
 	ubyte SeatFiringMode(int SeatIndex, ubyte NewFireMode, bool bReadValue)
@@ -381,7 +478,7 @@ final:
 		*cast(int*)params.ptr = SeatIndex;
 		params[4] = NewFireMode;
 		*cast(bool*)&params[8] = bReadValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36050], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFiringMode, params.ptr, cast(void*)0);
 		return params[12];
 	}
 	void ForceWeaponRotation(int SeatIndex, Rotator NewRotation)
@@ -390,14 +487,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
 		*cast(Rotator*)&params[4] = NewRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36055], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceWeaponRotation, params.ptr, cast(void*)0);
 	}
 	Vector GetSeatPivotPoint(int SeatIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36058], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeatPivotPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 	int GetBarrelIndex(int SeatIndex)
@@ -405,7 +502,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36061], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBarrelIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	bool IsSeatControllerReplicationViewer(int SeatIndex)
@@ -413,7 +510,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36064], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsSeatControllerReplicationViewer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsLocalOnVehicle(Pawn InP)
@@ -421,7 +518,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = InP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36067], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocalOnVehicle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void LockOnWarning(UDKProjectile IncomingMissile)
@@ -429,39 +526,39 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKProjectile*)params.ptr = IncomingMissile;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36073], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LockOnWarning, params.ptr, cast(void*)0);
 	}
 	void OnPropertyChange(ScriptName PropName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = PropName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36075], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPropertyChange, params.ptr, cast(void*)0);
 	}
 	float GetGravityZ()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36077], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGravityZ, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void PlayTakeHitEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36080], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayTakeHitEffects, cast(void*)0, cast(void*)0);
 	}
 	void ReceivedHealthChange()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36081], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReceivedHealthChange, cast(void*)0, cast(void*)0);
 	}
 	void JumpOutCheck()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36082], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JumpOutCheck, cast(void*)0, cast(void*)0);
 	}
 	float GetMaxRiseForce()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36083], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxRiseForce, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	bool CheckAutoDestruct(TeamInfo InstigatorTeam, float CheckRadius)
@@ -470,7 +567,7 @@ final:
 		params[] = 0;
 		*cast(TeamInfo*)params.ptr = InstigatorTeam;
 		*cast(float*)&params[4] = CheckRadius;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36085], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckAutoDestruct, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void SelfDestruct(Actor ImpactedActor)
@@ -478,13 +575,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ImpactedActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36089], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SelfDestruct, params.ptr, cast(void*)0);
 	}
 	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36091], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 	void NativePostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
@@ -495,7 +592,7 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36093], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativePostRenderFor, params.ptr, cast(void*)0);
 	}
 	bool InUseableRange(UDKPlayerController PC, float Dist)
 	{
@@ -503,7 +600,7 @@ final:
 		params[] = 0;
 		*cast(UDKPlayerController*)params.ptr = PC;
 		*cast(float*)&params[4] = Dist;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36098], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InUseableRange, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void SetHUDLocation(Vector NewHUDLocation)
@@ -511,15 +608,15 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewHUDLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36102], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHUDLocation, params.ptr, cast(void*)0);
 	}
 	void InitDamageSkel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36104], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitDamageSkel, cast(void*)0, cast(void*)0);
 	}
 	void UpdateDamageMaterial()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36105], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDamageMaterial, cast(void*)0, cast(void*)0);
 	}
 	void ApplyMorphDamage(Vector HitLocation, int Damage, Vector Momentum)
 	{
@@ -528,30 +625,30 @@ final:
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(int*)&params[12] = Damage;
 		*cast(Vector*)&params[16] = Momentum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36106], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyMorphDamage, params.ptr, cast(void*)0);
 	}
 	void MorphTargetDestroyed(int MorphNodeIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = MorphNodeIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36110], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MorphTargetDestroyed, params.ptr, cast(void*)0);
 	}
 	void RBPenetrationDestroy()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36112], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RBPenetrationDestroy, cast(void*)0, cast(void*)0);
 	}
 	void TakeWaterDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36113], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeWaterDamage, cast(void*)0, cast(void*)0);
 	}
 	void CheckReset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36114], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckReset, cast(void*)0, cast(void*)0);
 	}
 	void TakeFireDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36115], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFireDamage, cast(void*)0, cast(void*)0);
 	}
 	void PostInitRigidBody(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -562,13 +659,13 @@ void* PrimComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PrimComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36116], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitRigidBody, params.ptr, cast(void*)0);
 	}
 	void UpdateHoverboardDustEffect(float DustHeight)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DustHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36118], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHoverboardDustEffect, params.ptr, cast(void*)0);
 	}
 }

@@ -11,6 +11,8 @@ import UnrealScript.Engine.PBRuleNodeComment;
 extern(C++) interface ProcBuildingRuleset : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ProcBuildingRuleset")); }
 	enum EProcBuildingAxis : ubyte
 	{
 		EPBAxis_X = 0,
@@ -21,6 +23,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuildingRuleset.PBParamSwatch")); }
 		@property final auto ref
 		{
 			ScriptName SwatchName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -31,6 +35,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ProcBuildingRuleset.PBVariationInfo")); }
 		@property final
 		{
 			@property final auto ref ScriptName VariationName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }

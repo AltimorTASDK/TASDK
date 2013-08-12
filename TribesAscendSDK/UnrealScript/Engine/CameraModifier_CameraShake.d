@@ -10,10 +10,39 @@ import UnrealScript.Engine.CameraShake;
 extern(C++) interface CameraModifier_CameraShake : CameraModifier
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraModifier_CameraShake")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitializeOffset;
+			ScriptFunction mReinitShake;
+			ScriptFunction mInitializeShake;
+			ScriptFunction mAddCameraShake;
+			ScriptFunction mRemoveCameraShake;
+			ScriptFunction mRemoveAllCameraShakes;
+			ScriptFunction mUpdateCameraShake;
+			ScriptFunction mModifyCamera;
+		}
+		public @property static final
+		{
+			ScriptFunction InitializeOffset() { return mInitializeOffset ? mInitializeOffset : (mInitializeOffset = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.InitializeOffset")); }
+			ScriptFunction ReinitShake() { return mReinitShake ? mReinitShake : (mReinitShake = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.ReinitShake")); }
+			ScriptFunction InitializeShake() { return mInitializeShake ? mInitializeShake : (mInitializeShake = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.InitializeShake")); }
+			ScriptFunction AddCameraShake() { return mAddCameraShake ? mAddCameraShake : (mAddCameraShake = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.AddCameraShake")); }
+			ScriptFunction RemoveCameraShake() { return mRemoveCameraShake ? mRemoveCameraShake : (mRemoveCameraShake = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.RemoveCameraShake")); }
+			ScriptFunction RemoveAllCameraShakes() { return mRemoveAllCameraShakes ? mRemoveAllCameraShakes : (mRemoveAllCameraShakes = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.RemoveAllCameraShakes")); }
+			ScriptFunction UpdateCameraShake() { return mUpdateCameraShake ? mUpdateCameraShake : (mUpdateCameraShake = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.UpdateCameraShake")); }
+			ScriptFunction ModifyCamera() { return mModifyCamera ? mModifyCamera : (mModifyCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier_CameraShake.ModifyCamera")); }
+		}
+	}
 	struct CameraShakeInstance
 	{
 		private ubyte __buffer__[144];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CameraModifier_CameraShake.CameraShakeInstance")); }
 		@property final
 		{
 			auto ref
@@ -43,12 +72,12 @@ public extern(D):
 		float SplitScreenShakeScale() { return *cast(float*)(cast(size_t)cast(void*)this + 100); }
 	}
 final:
-	float InitializeOffset(CameraShake.FOscillator* Param)
+	static float InitializeOffset(CameraShake.FOscillator* Param)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(CameraShake.FOscillator*)params.ptr = *Param;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12278], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.InitializeOffset, params.ptr, cast(void*)0);
 		*Param = *cast(CameraShake.FOscillator*)params.ptr;
 		return *cast(float*)&params[12];
 	}
@@ -58,7 +87,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActiveShakeIdx;
 		*cast(float*)&params[4] = Scale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12281], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReinitShake, params.ptr, cast(void*)0);
 	}
 	CameraModifier_CameraShake.CameraShakeInstance InitializeShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
 	{
@@ -68,7 +97,7 @@ final:
 		*cast(float*)&params[4] = Scale;
 		*cast(Camera.ECameraAnimPlaySpace*)&params[8] = PlaySpace;
 		*cast(Rotator*)&params[12] = UserPlaySpaceRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12290], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeShake, params.ptr, cast(void*)0);
 		return *cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[32];
 	}
 	void AddCameraShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
@@ -79,18 +108,18 @@ final:
 		*cast(float*)&params[4] = Scale;
 		*cast(Camera.ECameraAnimPlaySpace*)&params[8] = PlaySpace;
 		*cast(Rotator*)&params[12] = UserPlaySpaceRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12300], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCameraShake, params.ptr, cast(void*)0);
 	}
 	void RemoveCameraShake(CameraShake Shake)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(CameraShake*)params.ptr = Shake;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12307], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCameraShake, params.ptr, cast(void*)0);
 	}
 	void RemoveAllCameraShakes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12311], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveAllCameraShakes, cast(void*)0, cast(void*)0);
 	}
 	void UpdateCameraShake(float DeltaTime, CameraModifier_CameraShake.CameraShakeInstance* Shake, UObject.TPOV* OutPOV)
 	{
@@ -99,7 +128,7 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[16] = *Shake;
 		*cast(UObject.TPOV*)&params[160] = *OutPOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12314], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCameraShake, params.ptr, cast(void*)0);
 		*Shake = *cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[16];
 		*OutPOV = *cast(UObject.TPOV*)&params[160];
 	}
@@ -110,7 +139,7 @@ final:
 		*cast(Camera*)params.ptr = pCamera;
 		*cast(float*)&params[4] = DeltaTime;
 		*cast(UObject.TPOV*)&params[8] = *OutPOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12318], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyCamera, params.ptr, cast(void*)0);
 		*OutPOV = *cast(UObject.TPOV*)&params[8];
 		return *cast(bool*)&params[36];
 	}

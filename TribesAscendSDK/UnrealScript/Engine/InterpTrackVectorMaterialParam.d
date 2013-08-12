@@ -8,6 +8,8 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface InterpTrackVectorMaterialParam : InterpTrackVectorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVectorMaterialParam")); }
 	@property final
 	{
 		auto ref

@@ -30,6 +30,217 @@ import UnrealScript.UTGame.UTVehicleFactory;
 extern(C++) interface UTGame : UDKGame
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGame")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetAutoObjectiveFor;
+			ScriptFunction mForceRespawn;
+			ScriptFunction mJustStarted;
+			ScriptFunction mGetBotTeam;
+			ScriptFunction mUseLowGore;
+			ScriptFunction mTooManyBots;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mAllowMutator;
+			ScriptFunction mSetGameType;
+			ScriptFunction mDriverEnteredVehicle;
+			ScriptFunction mDriverLeftVehicle;
+			ScriptFunction mAllowBecomeActivePlayer;
+			ScriptFunction mReset;
+			ScriptFunction mFindNewObjectives;
+			ScriptFunction mNotifyNavigationChanged;
+			ScriptFunction mParseKillMessage;
+			ScriptFunction mSkipPlaySound;
+			ScriptFunction mSetGameSpeed;
+			ScriptFunction mBroadcastDeathMessage;
+			ScriptFunction mScoreKill;
+			ScriptFunction mAdjustSkill;
+			ScriptFunction mKilled;
+			ScriptFunction mInitGame;
+			ScriptFunction mGenericPlayerInitialization;
+			ScriptFunction mSetPause;
+			ScriptFunction mLevelRecommendedPlayers;
+			ScriptFunction mLogin;
+			ScriptFunction mShouldRespawn;
+			ScriptFunction mWantFastSpawnFor;
+			ScriptFunction mSpawnWait;
+			ScriptFunction mRestartGame;
+			ScriptFunction mCheckEndGame;
+			ScriptFunction mSetEndGameFocus;
+			ScriptFunction mAtCapacity;
+			ScriptFunction mPostLogin;
+			ScriptFunction mUpdateGameSettingsCounts;
+			ScriptFunction mAssignHoverboard;
+			ScriptFunction mGetHandicapNeed;
+			ScriptFunction mRestartPlayer;
+			ScriptFunction mCampaignSkillAdjust;
+			ScriptFunction mAddDefaultInventory;
+			ScriptFunction mCanSpectate;
+			ScriptFunction mChangeName;
+			ScriptFunction mDiscardInventory;
+			ScriptFunction mLogout;
+			ScriptFunction mKillBots;
+			ScriptFunction mKillOthers;
+			ScriptFunction mKillThis;
+			ScriptFunction mKillBot;
+			ScriptFunction mNeedPlayers;
+			ScriptFunction mAddBot;
+			ScriptFunction mSpawnBot;
+			ScriptFunction mInitializeBot;
+			ScriptFunction mInitGameReplicationInfo;
+			ScriptFunction mGetMapTypeRule;
+			ScriptFunction mGetEndGameConditionRule;
+			ScriptFunction mNotifySpree;
+			ScriptFunction mEndSpree;
+			ScriptFunction mUpdateGameplayMuteList;
+			ScriptFunction mSetupPlayerMuteList;
+			ScriptFunction mRemovePlayerFromMuteLists;
+			ScriptFunction mResetAllPlayerMuteListsToSpectatorChannel;
+			ScriptFunction mStartMatch;
+			ScriptFunction mEndGame;
+			ScriptFunction mEndLogging;
+			ScriptFunction mFindPlayerStart;
+			ScriptFunction mDominatingVictory;
+			ScriptFunction mIsAWinner;
+			ScriptFunction mPlayEndOfMatchMessage;
+			ScriptFunction mPlayRegularEndOfMatchMessage;
+			ScriptFunction mPlayStartupMessage;
+			ScriptFunction mEndRound;
+			ScriptFunction mMatchIsInProgress;
+			ScriptFunction mAddInitialBots;
+			ScriptFunction mCalculatedNetSpeed;
+			ScriptFunction mIsConsoleDedicatedServer;
+			ScriptFunction mChoosePlayerStart;
+			ScriptFunction mRatePlayerStart;
+			ScriptFunction mCheckMaxLives;
+			ScriptFunction mCheckScore;
+			ScriptFunction mRegisterVehicle;
+			ScriptFunction mActivateVehicleFactory;
+			ScriptFunction mViewObjective;
+			ScriptFunction mAddMutator;
+			ScriptFunction mAllowClientToTeleport;
+			ScriptFunction mShowPathTo;
+			ScriptFunction mGetSeamlessTravelActorList;
+			ScriptFunction mPostSeamlessTravel;
+			ScriptFunction mHandleSeamlessTravelPlayer;
+			ScriptFunction mGetBaseUTMutator;
+			ScriptFunction mProcessSpeechRecognition;
+			ScriptFunction mWriteOnlinePlayerScores;
+			ScriptFunction mGetCurrentMapCycleIndex;
+			ScriptFunction mGetNextMap;
+			ScriptFunction mProcessServerTravel;
+			ScriptFunction mContinueSeamlessTravel;
+			ScriptFunction mGetEndOfMatchRules;
+			ScriptFunction mGetLocationFor;
+			ScriptFunction mAllowCheats;
+			ScriptFunction mUpdateGameSettings;
+		}
+		public @property static final
+		{
+			ScriptFunction GetAutoObjectiveFor() { return mGetAutoObjectiveFor ? mGetAutoObjectiveFor : (mGetAutoObjectiveFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetAutoObjectiveFor")); }
+			ScriptFunction ForceRespawn() { return mForceRespawn ? mForceRespawn : (mForceRespawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ForceRespawn")); }
+			ScriptFunction JustStarted() { return mJustStarted ? mJustStarted : (mJustStarted = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.JustStarted")); }
+			ScriptFunction GetBotTeam() { return mGetBotTeam ? mGetBotTeam : (mGetBotTeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetBotTeam")); }
+			ScriptFunction UseLowGore() { return mUseLowGore ? mUseLowGore : (mUseLowGore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.UseLowGore")); }
+			ScriptFunction TooManyBots() { return mTooManyBots ? mTooManyBots : (mTooManyBots = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.TooManyBots")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PostBeginPlay")); }
+			ScriptFunction AllowMutator() { return mAllowMutator ? mAllowMutator : (mAllowMutator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AllowMutator")); }
+			ScriptFunction SetGameType() { return mSetGameType ? mSetGameType : (mSetGameType = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SetGameType")); }
+			ScriptFunction DriverEnteredVehicle() { return mDriverEnteredVehicle ? mDriverEnteredVehicle : (mDriverEnteredVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.DriverEnteredVehicle")); }
+			ScriptFunction DriverLeftVehicle() { return mDriverLeftVehicle ? mDriverLeftVehicle : (mDriverLeftVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.DriverLeftVehicle")); }
+			ScriptFunction AllowBecomeActivePlayer() { return mAllowBecomeActivePlayer ? mAllowBecomeActivePlayer : (mAllowBecomeActivePlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AllowBecomeActivePlayer")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.Reset")); }
+			ScriptFunction FindNewObjectives() { return mFindNewObjectives ? mFindNewObjectives : (mFindNewObjectives = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.FindNewObjectives")); }
+			ScriptFunction NotifyNavigationChanged() { return mNotifyNavigationChanged ? mNotifyNavigationChanged : (mNotifyNavigationChanged = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.NotifyNavigationChanged")); }
+			ScriptFunction ParseKillMessage() { return mParseKillMessage ? mParseKillMessage : (mParseKillMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ParseKillMessage")); }
+			ScriptFunction SkipPlaySound() { return mSkipPlaySound ? mSkipPlaySound : (mSkipPlaySound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SkipPlaySound")); }
+			ScriptFunction SetGameSpeed() { return mSetGameSpeed ? mSetGameSpeed : (mSetGameSpeed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SetGameSpeed")); }
+			ScriptFunction BroadcastDeathMessage() { return mBroadcastDeathMessage ? mBroadcastDeathMessage : (mBroadcastDeathMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.BroadcastDeathMessage")); }
+			ScriptFunction ScoreKill() { return mScoreKill ? mScoreKill : (mScoreKill = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ScoreKill")); }
+			ScriptFunction AdjustSkill() { return mAdjustSkill ? mAdjustSkill : (mAdjustSkill = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AdjustSkill")); }
+			ScriptFunction Killed() { return mKilled ? mKilled : (mKilled = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.Killed")); }
+			ScriptFunction InitGame() { return mInitGame ? mInitGame : (mInitGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.InitGame")); }
+			ScriptFunction GenericPlayerInitialization() { return mGenericPlayerInitialization ? mGenericPlayerInitialization : (mGenericPlayerInitialization = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GenericPlayerInitialization")); }
+			ScriptFunction SetPause() { return mSetPause ? mSetPause : (mSetPause = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SetPause")); }
+			ScriptFunction LevelRecommendedPlayers() { return mLevelRecommendedPlayers ? mLevelRecommendedPlayers : (mLevelRecommendedPlayers = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.LevelRecommendedPlayers")); }
+			ScriptFunction Login() { return mLogin ? mLogin : (mLogin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.Login")); }
+			ScriptFunction ShouldRespawn() { return mShouldRespawn ? mShouldRespawn : (mShouldRespawn = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ShouldRespawn")); }
+			ScriptFunction WantFastSpawnFor() { return mWantFastSpawnFor ? mWantFastSpawnFor : (mWantFastSpawnFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.WantFastSpawnFor")); }
+			ScriptFunction SpawnWait() { return mSpawnWait ? mSpawnWait : (mSpawnWait = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SpawnWait")); }
+			ScriptFunction RestartGame() { return mRestartGame ? mRestartGame : (mRestartGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.RestartGame")); }
+			ScriptFunction CheckEndGame() { return mCheckEndGame ? mCheckEndGame : (mCheckEndGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CheckEndGame")); }
+			ScriptFunction SetEndGameFocus() { return mSetEndGameFocus ? mSetEndGameFocus : (mSetEndGameFocus = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SetEndGameFocus")); }
+			ScriptFunction AtCapacity() { return mAtCapacity ? mAtCapacity : (mAtCapacity = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AtCapacity")); }
+			ScriptFunction PostLogin() { return mPostLogin ? mPostLogin : (mPostLogin = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PostLogin")); }
+			ScriptFunction UpdateGameSettingsCounts() { return mUpdateGameSettingsCounts ? mUpdateGameSettingsCounts : (mUpdateGameSettingsCounts = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.UpdateGameSettingsCounts")); }
+			ScriptFunction AssignHoverboard() { return mAssignHoverboard ? mAssignHoverboard : (mAssignHoverboard = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AssignHoverboard")); }
+			ScriptFunction GetHandicapNeed() { return mGetHandicapNeed ? mGetHandicapNeed : (mGetHandicapNeed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetHandicapNeed")); }
+			ScriptFunction RestartPlayer() { return mRestartPlayer ? mRestartPlayer : (mRestartPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.RestartPlayer")); }
+			ScriptFunction CampaignSkillAdjust() { return mCampaignSkillAdjust ? mCampaignSkillAdjust : (mCampaignSkillAdjust = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CampaignSkillAdjust")); }
+			ScriptFunction AddDefaultInventory() { return mAddDefaultInventory ? mAddDefaultInventory : (mAddDefaultInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AddDefaultInventory")); }
+			ScriptFunction CanSpectate() { return mCanSpectate ? mCanSpectate : (mCanSpectate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CanSpectate")); }
+			ScriptFunction ChangeName() { return mChangeName ? mChangeName : (mChangeName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ChangeName")); }
+			ScriptFunction DiscardInventory() { return mDiscardInventory ? mDiscardInventory : (mDiscardInventory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.DiscardInventory")); }
+			ScriptFunction Logout() { return mLogout ? mLogout : (mLogout = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.Logout")); }
+			ScriptFunction KillBots() { return mKillBots ? mKillBots : (mKillBots = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.KillBots")); }
+			ScriptFunction KillOthers() { return mKillOthers ? mKillOthers : (mKillOthers = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.KillOthers")); }
+			ScriptFunction KillThis() { return mKillThis ? mKillThis : (mKillThis = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.KillThis")); }
+			ScriptFunction KillBot() { return mKillBot ? mKillBot : (mKillBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.KillBot")); }
+			ScriptFunction NeedPlayers() { return mNeedPlayers ? mNeedPlayers : (mNeedPlayers = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.NeedPlayers")); }
+			ScriptFunction AddBot() { return mAddBot ? mAddBot : (mAddBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AddBot")); }
+			ScriptFunction SpawnBot() { return mSpawnBot ? mSpawnBot : (mSpawnBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SpawnBot")); }
+			ScriptFunction InitializeBot() { return mInitializeBot ? mInitializeBot : (mInitializeBot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.InitializeBot")); }
+			ScriptFunction InitGameReplicationInfo() { return mInitGameReplicationInfo ? mInitGameReplicationInfo : (mInitGameReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.InitGameReplicationInfo")); }
+			ScriptFunction GetMapTypeRule() { return mGetMapTypeRule ? mGetMapTypeRule : (mGetMapTypeRule = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetMapTypeRule")); }
+			ScriptFunction GetEndGameConditionRule() { return mGetEndGameConditionRule ? mGetEndGameConditionRule : (mGetEndGameConditionRule = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetEndGameConditionRule")); }
+			ScriptFunction NotifySpree() { return mNotifySpree ? mNotifySpree : (mNotifySpree = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.NotifySpree")); }
+			ScriptFunction EndSpree() { return mEndSpree ? mEndSpree : (mEndSpree = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.EndSpree")); }
+			ScriptFunction UpdateGameplayMuteList() { return mUpdateGameplayMuteList ? mUpdateGameplayMuteList : (mUpdateGameplayMuteList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.UpdateGameplayMuteList")); }
+			ScriptFunction SetupPlayerMuteList() { return mSetupPlayerMuteList ? mSetupPlayerMuteList : (mSetupPlayerMuteList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.SetupPlayerMuteList")); }
+			ScriptFunction RemovePlayerFromMuteLists() { return mRemovePlayerFromMuteLists ? mRemovePlayerFromMuteLists : (mRemovePlayerFromMuteLists = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.RemovePlayerFromMuteLists")); }
+			ScriptFunction ResetAllPlayerMuteListsToSpectatorChannel() { return mResetAllPlayerMuteListsToSpectatorChannel ? mResetAllPlayerMuteListsToSpectatorChannel : (mResetAllPlayerMuteListsToSpectatorChannel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ResetAllPlayerMuteListsToSpectatorChannel")); }
+			ScriptFunction StartMatch() { return mStartMatch ? mStartMatch : (mStartMatch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.StartMatch")); }
+			ScriptFunction EndGame() { return mEndGame ? mEndGame : (mEndGame = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.EndGame")); }
+			ScriptFunction EndLogging() { return mEndLogging ? mEndLogging : (mEndLogging = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.EndLogging")); }
+			ScriptFunction FindPlayerStart() { return mFindPlayerStart ? mFindPlayerStart : (mFindPlayerStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.FindPlayerStart")); }
+			ScriptFunction DominatingVictory() { return mDominatingVictory ? mDominatingVictory : (mDominatingVictory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.DominatingVictory")); }
+			ScriptFunction IsAWinner() { return mIsAWinner ? mIsAWinner : (mIsAWinner = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.IsAWinner")); }
+			ScriptFunction PlayEndOfMatchMessage() { return mPlayEndOfMatchMessage ? mPlayEndOfMatchMessage : (mPlayEndOfMatchMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PlayEndOfMatchMessage")); }
+			ScriptFunction PlayRegularEndOfMatchMessage() { return mPlayRegularEndOfMatchMessage ? mPlayRegularEndOfMatchMessage : (mPlayRegularEndOfMatchMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PlayRegularEndOfMatchMessage")); }
+			ScriptFunction PlayStartupMessage() { return mPlayStartupMessage ? mPlayStartupMessage : (mPlayStartupMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PlayStartupMessage")); }
+			ScriptFunction EndRound() { return mEndRound ? mEndRound : (mEndRound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.EndRound")); }
+			ScriptFunction MatchIsInProgress() { return mMatchIsInProgress ? mMatchIsInProgress : (mMatchIsInProgress = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.MatchIsInProgress")); }
+			ScriptFunction AddInitialBots() { return mAddInitialBots ? mAddInitialBots : (mAddInitialBots = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AddInitialBots")); }
+			ScriptFunction CalculatedNetSpeed() { return mCalculatedNetSpeed ? mCalculatedNetSpeed : (mCalculatedNetSpeed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CalculatedNetSpeed")); }
+			ScriptFunction IsConsoleDedicatedServer() { return mIsConsoleDedicatedServer ? mIsConsoleDedicatedServer : (mIsConsoleDedicatedServer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.IsConsoleDedicatedServer")); }
+			ScriptFunction ChoosePlayerStart() { return mChoosePlayerStart ? mChoosePlayerStart : (mChoosePlayerStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ChoosePlayerStart")); }
+			ScriptFunction RatePlayerStart() { return mRatePlayerStart ? mRatePlayerStart : (mRatePlayerStart = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.RatePlayerStart")); }
+			ScriptFunction CheckMaxLives() { return mCheckMaxLives ? mCheckMaxLives : (mCheckMaxLives = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CheckMaxLives")); }
+			ScriptFunction CheckScore() { return mCheckScore ? mCheckScore : (mCheckScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.CheckScore")); }
+			ScriptFunction RegisterVehicle() { return mRegisterVehicle ? mRegisterVehicle : (mRegisterVehicle = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.RegisterVehicle")); }
+			ScriptFunction ActivateVehicleFactory() { return mActivateVehicleFactory ? mActivateVehicleFactory : (mActivateVehicleFactory = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ActivateVehicleFactory")); }
+			ScriptFunction ViewObjective() { return mViewObjective ? mViewObjective : (mViewObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ViewObjective")); }
+			ScriptFunction AddMutator() { return mAddMutator ? mAddMutator : (mAddMutator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AddMutator")); }
+			ScriptFunction AllowClientToTeleport() { return mAllowClientToTeleport ? mAllowClientToTeleport : (mAllowClientToTeleport = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AllowClientToTeleport")); }
+			ScriptFunction ShowPathTo() { return mShowPathTo ? mShowPathTo : (mShowPathTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ShowPathTo")); }
+			ScriptFunction GetSeamlessTravelActorList() { return mGetSeamlessTravelActorList ? mGetSeamlessTravelActorList : (mGetSeamlessTravelActorList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetSeamlessTravelActorList")); }
+			ScriptFunction PostSeamlessTravel() { return mPostSeamlessTravel ? mPostSeamlessTravel : (mPostSeamlessTravel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.PostSeamlessTravel")); }
+			ScriptFunction HandleSeamlessTravelPlayer() { return mHandleSeamlessTravelPlayer ? mHandleSeamlessTravelPlayer : (mHandleSeamlessTravelPlayer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.HandleSeamlessTravelPlayer")); }
+			ScriptFunction GetBaseUTMutator() { return mGetBaseUTMutator ? mGetBaseUTMutator : (mGetBaseUTMutator = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetBaseUTMutator")); }
+			ScriptFunction ProcessSpeechRecognition() { return mProcessSpeechRecognition ? mProcessSpeechRecognition : (mProcessSpeechRecognition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ProcessSpeechRecognition")); }
+			ScriptFunction WriteOnlinePlayerScores() { return mWriteOnlinePlayerScores ? mWriteOnlinePlayerScores : (mWriteOnlinePlayerScores = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.WriteOnlinePlayerScores")); }
+			ScriptFunction GetCurrentMapCycleIndex() { return mGetCurrentMapCycleIndex ? mGetCurrentMapCycleIndex : (mGetCurrentMapCycleIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetCurrentMapCycleIndex")); }
+			ScriptFunction GetNextMap() { return mGetNextMap ? mGetNextMap : (mGetNextMap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetNextMap")); }
+			ScriptFunction ProcessServerTravel() { return mProcessServerTravel ? mProcessServerTravel : (mProcessServerTravel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ProcessServerTravel")); }
+			ScriptFunction ContinueSeamlessTravel() { return mContinueSeamlessTravel ? mContinueSeamlessTravel : (mContinueSeamlessTravel = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.ContinueSeamlessTravel")); }
+			ScriptFunction GetEndOfMatchRules() { return mGetEndOfMatchRules ? mGetEndOfMatchRules : (mGetEndOfMatchRules = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetEndOfMatchRules")); }
+			ScriptFunction GetLocationFor() { return mGetLocationFor ? mGetLocationFor : (mGetLocationFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.GetLocationFor")); }
+			ScriptFunction AllowCheats() { return mAllowCheats ? mAllowCheats : (mAllowCheats = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.AllowCheats")); }
+			ScriptFunction UpdateGameSettings() { return mUpdateGameSettings ? mUpdateGameSettings : (mUpdateGameSettings = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGame.UpdateGameSettings")); }
+		}
+	}
 	enum EVoiceChannel : ubyte
 	{
 		VC_Spectators = 0,
@@ -41,6 +252,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGame.GameMapCycle")); }
 		@property final auto ref
 		{
 			ScriptArray!(ScriptString) Maps() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 8); }
@@ -51,6 +264,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGame.ActiveBotInfo")); }
 		@property final
 		{
 			@property final auto ref ScriptString BotName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
@@ -203,14 +418,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36535], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAutoObjectiveFor, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	bool ForceRespawn()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36762], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceRespawn, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool JustStarted(float MaxElapsedTime)
@@ -218,7 +433,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = MaxElapsedTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[39767], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JustStarted, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	UTTeamInfo GetBotTeam(int TeamBots, bool bUseTeamIndex, int TeamIndex)
@@ -228,15 +443,15 @@ final:
 		*cast(int*)params.ptr = TeamBots;
 		*cast(bool*)&params[4] = bUseTeamIndex;
 		*cast(int*)&params[8] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41546], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBotTeam, params.ptr, cast(void*)0);
 		return *cast(UTTeamInfo*)&params[12];
 	}
-	bool UseLowGore(WorldInfo WI)
+	static bool UseLowGore(WorldInfo WI)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(WorldInfo*)params.ptr = WI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[41762], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.UseLowGore, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool TooManyBots(Controller botToRemove)
@@ -244,29 +459,29 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Controller*)params.ptr = botToRemove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42769], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TooManyBots, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44615], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	bool AllowMutator(ScriptString MutatorClassName)
+	static bool AllowMutator(ScriptString MutatorClassName)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MutatorClassName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44618], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AllowMutator, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	ScriptClass SetGameType(ScriptString MapName, ScriptString Options, ScriptString Portal)
+	static ScriptClass SetGameType(ScriptString MapName, ScriptString Options, ScriptString Portal)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MapName;
 		*cast(ScriptString*)&params[12] = Options;
 		*cast(ScriptString*)&params[24] = Portal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44621], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetGameType, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[36];
 	}
 	void DriverEnteredVehicle(Vehicle V, Pawn P)
@@ -275,7 +490,7 @@ final:
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
 		*cast(Pawn*)&params[4] = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44631], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DriverEnteredVehicle, params.ptr, cast(void*)0);
 	}
 	void DriverLeftVehicle(Vehicle V, Pawn P)
 	{
@@ -283,49 +498,49 @@ final:
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
 		*cast(Pawn*)&params[4] = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44636], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DriverLeftVehicle, params.ptr, cast(void*)0);
 	}
 	bool AllowBecomeActivePlayer(PlayerController P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44640], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBecomeActivePlayer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44643], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void FindNewObjectives(UTGameObjective DisabledObjective)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTGameObjective*)params.ptr = DisabledObjective;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44646], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindNewObjectives, params.ptr, cast(void*)0);
 	}
 	void NotifyNavigationChanged(NavigationPoint N)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = N;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44648], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyNavigationChanged, params.ptr, cast(void*)0);
 	}
-	ScriptString ParseKillMessage(ScriptString KillerName, ScriptString VictimName, ScriptString DeathMessage)
+	static ScriptString ParseKillMessage(ScriptString KillerName, ScriptString VictimName, ScriptString DeathMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = KillerName;
 		*cast(ScriptString*)&params[12] = VictimName;
 		*cast(ScriptString*)&params[24] = DeathMessage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44651], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ParseKillMessage, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[36];
 	}
 	bool SkipPlaySound()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SkipPlaySound, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetGameSpeed(float T)
@@ -333,7 +548,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = T;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44658], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGameSpeed, params.ptr, cast(void*)0);
 	}
 	void BroadcastDeathMessage(Controller Killer, Controller Other, ScriptClass pDamageType)
 	{
@@ -342,7 +557,7 @@ final:
 		*cast(Controller*)params.ptr = Killer;
 		*cast(Controller*)&params[4] = Other;
 		*cast(ScriptClass*)&params[8] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44661], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastDeathMessage, params.ptr, cast(void*)0);
 	}
 	void ScoreKill(Controller Killer, Controller Other)
 	{
@@ -350,7 +565,7 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(Controller*)&params[4] = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44665], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ScoreKill, params.ptr, cast(void*)0);
 	}
 	void AdjustSkill(AIController B, PlayerController P, bool bWinner)
 	{
@@ -359,7 +574,7 @@ final:
 		*cast(AIController*)params.ptr = B;
 		*cast(PlayerController*)&params[4] = P;
 		*cast(bool*)&params[8] = bWinner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustSkill, params.ptr, cast(void*)0);
 	}
 	void Killed(Controller Killer, Controller KilledPlayer, Pawn KilledPawn, ScriptClass pDamageType)
 	{
@@ -369,7 +584,7 @@ final:
 		*cast(Controller*)&params[4] = KilledPlayer;
 		*cast(Pawn*)&params[8] = KilledPawn;
 		*cast(ScriptClass*)&params[12] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44676], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Killed, params.ptr, cast(void*)0);
 	}
 	void InitGame(ScriptString Options, ScriptString* ErrorMessage)
 	{
@@ -377,7 +592,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = *ErrorMessage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44695], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitGame, params.ptr, cast(void*)0);
 		*ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 	void GenericPlayerInitialization(Controller C)
@@ -385,7 +600,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44700], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GenericPlayerInitialization, params.ptr, cast(void*)0);
 	}
 	bool SetPause(PlayerController PC, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -397,14 +612,14 @@ void* CanUnpauseDelegate)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)&params[4] = CanUnpauseDelegate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44702], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	int LevelRecommendedPlayers()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44706], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LevelRecommendedPlayers, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	PlayerController Login(ScriptString Portal, ScriptString Options, OnlineSubsystem.UniqueNetId UniqueId, ScriptString* ErrorMessage)
@@ -415,7 +630,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(ScriptString*)&params[12] = Options;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = UniqueId;
 		*cast(ScriptString*)&params[32] = *ErrorMessage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44711], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
 		*ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
 	}
@@ -424,7 +639,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(PickupFactory*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44721], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldRespawn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool WantFastSpawnFor(AIController B)
@@ -432,7 +647,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(AIController*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44724], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WantFastSpawnFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	float SpawnWait(AIController B)
@@ -440,12 +655,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(AIController*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44727], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnWait, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void RestartGame()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44731], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestartGame, cast(void*)0, cast(void*)0);
 	}
 	bool CheckEndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
@@ -453,7 +668,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44732], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckEndGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void SetEndGameFocus(PlayerReplicationInfo Winner)
@@ -461,14 +676,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44738], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEndGameFocus, params.ptr, cast(void*)0);
 	}
 	bool AtCapacity(bool bSpectator)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bSpectator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44742], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AtCapacity, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostLogin(PlayerController NewPlayer)
@@ -476,25 +691,25 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = NewPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44747], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostLogin, params.ptr, cast(void*)0);
 	}
 	void UpdateGameSettingsCounts()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44751], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameSettingsCounts, cast(void*)0, cast(void*)0);
 	}
 	void AssignHoverboard(UTPawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44755], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AssignHoverboard, params.ptr, cast(void*)0);
 	}
 	int GetHandicapNeed(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44757], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHandicapNeed, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void RestartPlayer(Controller aPlayer)
@@ -502,21 +717,21 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = aPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44760], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestartPlayer, params.ptr, cast(void*)0);
 	}
 	void CampaignSkillAdjust(UTBot aBot)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = aBot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44768], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CampaignSkillAdjust, params.ptr, cast(void*)0);
 	}
 	void AddDefaultInventory(Pawn PlayerPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = PlayerPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44770], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddDefaultInventory, params.ptr, cast(void*)0);
 	}
 	bool CanSpectate(PlayerController Viewer, PlayerReplicationInfo ViewTarget)
 	{
@@ -524,7 +739,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = Viewer;
 		*cast(PlayerReplicationInfo*)&params[4] = ViewTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44777], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanSpectate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void ChangeName(Controller Other, ScriptString S, bool bNameChange)
@@ -534,7 +749,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Controller*)params.ptr = Other;
 		*cast(ScriptString*)&params[4] = S;
 		*cast(bool*)&params[16] = bNameChange;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44781], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeName, params.ptr, cast(void*)0);
 	}
 	void DiscardInventory(Pawn Other, Controller Killer)
 	{
@@ -542,39 +757,39 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
 		*cast(Controller*)&params[4] = Killer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44786], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DiscardInventory, params.ptr, cast(void*)0);
 	}
 	void Logout(Controller Exiting)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Exiting;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44790], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Logout, params.ptr, cast(void*)0);
 	}
 	void KillBots()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44795], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillBots, cast(void*)0, cast(void*)0);
 	}
 	void KillOthers()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44797], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillOthers, cast(void*)0, cast(void*)0);
 	}
 	void KillThis()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44801], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillThis, cast(void*)0, cast(void*)0);
 	}
 	void KillBot(UTBot B)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44804], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillBot, params.ptr, cast(void*)0);
 	}
 	bool NeedPlayers()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44806], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedPlayers, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	UTBot AddBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
@@ -584,7 +799,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(ScriptString*)params.ptr = BotName;
 		*cast(bool*)&params[12] = bUseTeamIndex;
 		*cast(int*)&params[16] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44808], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
 	UTBot SpawnBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
@@ -594,7 +809,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(ScriptString*)params.ptr = BotName;
 		*cast(bool*)&params[12] = bUseTeamIndex;
 		*cast(int*)&params[16] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44815], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
 	void InitializeBot(UTBot NewBot, UTTeamInfo BotTeam, UTCharInfo.CharacterInfo* BotInfo)
@@ -604,25 +819,25 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(UTBot*)params.ptr = NewBot;
 		*cast(UTTeamInfo*)&params[4] = BotTeam;
 		*cast(UTCharInfo.CharacterInfo*)&params[8] = *BotInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44825], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeBot, params.ptr, cast(void*)0);
 		*BotInfo = *cast(UTCharInfo.CharacterInfo*)&params[8];
 	}
 	void InitGameReplicationInfo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44834], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitGameReplicationInfo, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetMapTypeRule()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44844], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapTypeRule, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetEndGameConditionRule()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44846], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEndGameConditionRule, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void NotifySpree(UTPlayerReplicationInfo Other, int Num)
@@ -631,7 +846,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = Other;
 		*cast(int*)&params[4] = Num;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44848], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifySpree, params.ptr, cast(void*)0);
 	}
 	void EndSpree(UTPlayerReplicationInfo Killer, UTPlayerReplicationInfo Other)
 	{
@@ -639,14 +854,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = Killer;
 		*cast(UTPlayerReplicationInfo*)&params[4] = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44853], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndSpree, params.ptr, cast(void*)0);
 	}
 	void UpdateGameplayMuteList(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44857], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameplayMuteList, params.ptr, cast(void*)0);
 	}
 	void SetupPlayerMuteList(UTPlayerController PC, bool bForceSpectatorChannel)
 	{
@@ -654,22 +869,22 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
 		*cast(bool*)&params[4] = bForceSpectatorChannel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44860], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetupPlayerMuteList, params.ptr, cast(void*)0);
 	}
 	void RemovePlayerFromMuteLists(UTPlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44869], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemovePlayerFromMuteLists, params.ptr, cast(void*)0);
 	}
 	void ResetAllPlayerMuteListsToSpectatorChannel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44872], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetAllPlayerMuteListsToSpectatorChannel, cast(void*)0, cast(void*)0);
 	}
 	void StartMatch()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44874], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartMatch, cast(void*)0, cast(void*)0);
 	}
 	void EndGame(PlayerReplicationInfo Winner, ScriptString Reason)
 	{
@@ -677,14 +892,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Winner;
 		*cast(ScriptString*)&params[4] = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndGame, params.ptr, cast(void*)0);
 	}
 	void EndLogging(ScriptString Reason)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44885], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndLogging, params.ptr, cast(void*)0);
 	}
 	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte InTeam, ScriptString IncomingName)
 	{
@@ -693,14 +908,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Controller*)params.ptr = pPlayer;
 		params[4] = InTeam;
 		*cast(ScriptString*)&params[8] = IncomingName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44887], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindPlayerStart, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[20];
 	}
 	bool DominatingVictory()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44893], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DominatingVictory, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsAWinner(PlayerController C)
@@ -708,51 +923,51 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44895], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsAWinner, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PlayEndOfMatchMessage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44898], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayEndOfMatchMessage, cast(void*)0, cast(void*)0);
 	}
 	void PlayRegularEndOfMatchMessage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44900], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayRegularEndOfMatchMessage, cast(void*)0, cast(void*)0);
 	}
 	void PlayStartupMessage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44902], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayStartupMessage, cast(void*)0, cast(void*)0);
 	}
 	void EndRound(Actor EndRoundFocus)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = EndRoundFocus;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44905], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndRound, params.ptr, cast(void*)0);
 	}
 	bool MatchIsInProgress()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44908], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MatchIsInProgress, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void AddInitialBots()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44910], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddInitialBots, cast(void*)0, cast(void*)0);
 	}
 	int CalculatedNetSpeed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44912], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalculatedNetSpeed, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool IsConsoleDedicatedServer()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44915], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsConsoleDedicatedServer, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte InTeam)
@@ -761,7 +976,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
 		params[4] = InTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45001], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChoosePlayerStart, params.ptr, cast(void*)0);
 		return *cast(PlayerStart*)&params[8];
 	}
 	float RatePlayerStart(PlayerStart P, ubyte Team, Controller pPlayer)
@@ -771,7 +986,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(PlayerStart*)params.ptr = P;
 		params[4] = Team;
 		*cast(Controller*)&params[8] = pPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45014], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RatePlayerStart, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
 	bool CheckMaxLives(PlayerReplicationInfo Scorer)
@@ -779,7 +994,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Scorer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45023], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckMaxLives, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CheckScore(PlayerReplicationInfo Scorer)
@@ -787,7 +1002,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Scorer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45029], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckScore, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void RegisterVehicle(UTVehicle V)
@@ -795,21 +1010,21 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTVehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45034], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterVehicle, params.ptr, cast(void*)0);
 	}
 	void ActivateVehicleFactory(UTVehicleFactory VF)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTVehicleFactory*)params.ptr = VF;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45036], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateVehicleFactory, params.ptr, cast(void*)0);
 	}
 	void ViewObjective(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45043], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ViewObjective, params.ptr, cast(void*)0);
 	}
 	void AddMutator(ScriptString mutname, bool bUserAdded)
 	{
@@ -817,7 +1032,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = mutname;
 		*cast(bool*)&params[12] = bUserAdded;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45049], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddMutator, params.ptr, cast(void*)0);
 	}
 	bool AllowClientToTeleport(UTPlayerReplicationInfo ClientPRI, Actor DestinationActor)
 	{
@@ -825,7 +1040,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = ClientPRI;
 		*cast(Actor*)&params[4] = DestinationActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45052], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowClientToTeleport, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void ShowPathTo(PlayerController P, int TeamNum)
@@ -834,7 +1049,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
 		*cast(int*)&params[4] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45056], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowPathTo, params.ptr, cast(void*)0);
 	}
 	void GetSeamlessTravelActorList(bool bToEntry, ScriptArray!(Actor)* ActorList)
 	{
@@ -842,26 +1057,26 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = *ActorList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45059], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
 		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 	void PostSeamlessTravel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45064], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostSeamlessTravel, cast(void*)0, cast(void*)0);
 	}
 	void HandleSeamlessTravelPlayer(Controller* C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = *C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45067], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HandleSeamlessTravelPlayer, params.ptr, cast(void*)0);
 		*C = *cast(Controller*)params.ptr;
 	}
 	UTMutator GetBaseUTMutator()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45074], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBaseUTMutator, params.ptr, cast(void*)0);
 		return *cast(UTMutator*)params.ptr;
 	}
 	void ProcessSpeechRecognition(UTPlayerController Speaker, ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)* Words)
@@ -870,19 +1085,19 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
 		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = *Words;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45078], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechRecognition, params.ptr, cast(void*)0);
 		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 	}
 	void WriteOnlinePlayerScores()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45083], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WriteOnlinePlayerScores, cast(void*)0, cast(void*)0);
 	}
 	int GetCurrentMapCycleIndex(ScriptArray!(ScriptString)* MapList)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = *MapList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45090], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentMapCycleIndex, params.ptr, cast(void*)0);
 		*MapList = *cast(ScriptArray!(ScriptString)*)params.ptr;
 		return *cast(int*)&params[12];
 	}
@@ -890,7 +1105,7 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45094], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMap, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void ProcessServerTravel(ScriptString pURL, bool bAbsolute)
@@ -899,19 +1114,19 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		*cast(bool*)&params[12] = bAbsolute;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45099], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessServerTravel, params.ptr, cast(void*)0);
 	}
 	void ContinueSeamlessTravel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45103], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ContinueSeamlessTravel, cast(void*)0, cast(void*)0);
 	}
-	ScriptString GetEndOfMatchRules(int InGoalScore, int InTimeLimit)
+	static ScriptString GetEndOfMatchRules(int InGoalScore, int InTimeLimit)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = InGoalScore;
 		*cast(int*)&params[4] = InTimeLimit;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45104], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEndOfMatchRules, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
 	bool GetLocationFor(Pawn StatusPawn, Actor* LocationObject, int* MessageIndex, int LocationSpeechOffset)
@@ -922,7 +1137,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Actor*)&params[4] = *LocationObject;
 		*cast(int*)&params[8] = *MessageIndex;
 		*cast(int*)&params[12] = LocationSpeechOffset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45109], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationFor, params.ptr, cast(void*)0);
 		*LocationObject = *cast(Actor*)&params[4];
 		*MessageIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[16];
@@ -932,11 +1147,11 @@ void**)&params[4] = CanUnpauseDelegate;
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45121], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowCheats, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void UpdateGameSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[45124], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameSettings, cast(void*)0, cast(void*)0);
 	}
 }

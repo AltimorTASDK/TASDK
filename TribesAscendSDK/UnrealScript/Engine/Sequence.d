@@ -10,10 +10,31 @@ import UnrealScript.Engine.SequenceOp;
 extern(C++) interface Sequence : SequenceOp
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Sequence")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindSeqObjectsByClass;
+			ScriptFunction mFindSeqObjectsByName;
+			ScriptFunction mReset;
+			ScriptFunction mSetEnabled;
+		}
+		public @property static final
+		{
+			ScriptFunction FindSeqObjectsByClass() { return mFindSeqObjectsByClass ? mFindSeqObjectsByClass : (mFindSeqObjectsByClass = ScriptObject.Find!(ScriptFunction)("Function Engine.Sequence.FindSeqObjectsByClass")); }
+			ScriptFunction FindSeqObjectsByName() { return mFindSeqObjectsByName ? mFindSeqObjectsByName : (mFindSeqObjectsByName = ScriptObject.Find!(ScriptFunction)("Function Engine.Sequence.FindSeqObjectsByName")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Sequence.Reset")); }
+			ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.Sequence.SetEnabled")); }
+		}
+	}
 	struct ActivateOp
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Sequence.ActivateOp")); }
 		@property final auto ref
 		{
 			float RemainingDelay() { return *cast(float*)(cast(size_t)&this + 12); }
@@ -26,6 +47,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Sequence.QueuedActivationInfo")); }
 		@property final
 		{
 			auto ref
@@ -65,7 +88,7 @@ final:
 		*cast(ScriptClass*)params.ptr = DesiredClass;
 		*cast(bool*)&params[4] = bRecursive;
 		*cast(ScriptArray!(SequenceObject)*)&params[8] = *OutputObjects;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4291], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSeqObjectsByClass, params.ptr, cast(void*)0);
 		*OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[8];
 	}
 	void FindSeqObjectsByName(ScriptString SeqObjName, bool bCheckComment, ScriptArray!(SequenceObject)* OutputObjects, bool bRecursive)
@@ -76,18 +99,18 @@ final:
 		*cast(bool*)&params[12] = bCheckComment;
 		*cast(ScriptArray!(SequenceObject)*)&params[16] = *OutputObjects;
 		*cast(bool*)&params[28] = bRecursive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24824], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSeqObjectsByName, params.ptr, cast(void*)0);
 		*OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[16];
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24830], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void SetEnabled(bool bInEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24833], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
 }

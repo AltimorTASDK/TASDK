@@ -8,6 +8,21 @@ import UnrealScript.GameFramework.GameCrowdAgentSkeletal;
 extern(C++) interface SeqAct_PlayAgentAnimation : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_PlayAgentAnimation")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetObjClassVersion;
+			ScriptFunction mSetCurrentAnimationActionFor;
+		}
+		public @property static final
+		{
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_PlayAgentAnimation.GetObjClassVersion")); }
+			ScriptFunction SetCurrentAnimationActionFor() { return mSetCurrentAnimationActionFor ? mSetCurrentAnimationActionFor : (mSetCurrentAnimationActionFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_PlayAgentAnimation.SetCurrentAnimationActionFor")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -29,11 +44,11 @@ public extern(D):
 		bool bUseRootMotion(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 268) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 268) &= ~0x1; } return val; }
 	}
 final:
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32961], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void SetCurrentAnimationActionFor(GameCrowdAgentSkeletal Agent)
@@ -41,6 +56,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgentSkeletal*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32963], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentAnimationActionFor, params.ptr, cast(void*)0);
 	}
 }

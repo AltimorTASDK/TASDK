@@ -15,6 +15,63 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface TrFlagBase : UTCarriedObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagBase")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mTick;
+			ScriptFunction mOnBaseChainChanged;
+			ScriptFunction mShouldMinimapRenderFor;
+			ScriptFunction mClientReturnedHome;
+			ScriptFunction mSetHolder;
+			ScriptFunction mValidHolder;
+			ScriptFunction mSameTeamTouch;
+			ScriptFunction mCustomRespawnEffects;
+			ScriptFunction mbringUpBrightOff;
+			ScriptFunction mCustomFadeOutEffects;
+			ScriptFunction mLanded;
+			ScriptFunction mEncroachedBy;
+			ScriptFunction mDrop;
+			ScriptFunction mSetFlagPropertiesToStationaryFlagState;
+			ScriptFunction mSetFlagDynamicLightToNotBeDynamic;
+			ScriptFunction mDestroyed;
+			ScriptFunction mPostRenderFor;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mGetSpectatorName;
+			ScriptFunction mGetSpectatorDescription;
+			ScriptFunction mOnCollisionProxyTouched;
+		}
+		public @property static final
+		{
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.ReplicatedEvent")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.PostBeginPlay")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.Tick")); }
+			ScriptFunction OnBaseChainChanged() { return mOnBaseChainChanged ? mOnBaseChainChanged : (mOnBaseChainChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.OnBaseChainChanged")); }
+			ScriptFunction ShouldMinimapRenderFor() { return mShouldMinimapRenderFor ? mShouldMinimapRenderFor : (mShouldMinimapRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.ShouldMinimapRenderFor")); }
+			ScriptFunction ClientReturnedHome() { return mClientReturnedHome ? mClientReturnedHome : (mClientReturnedHome = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.ClientReturnedHome")); }
+			ScriptFunction SetHolder() { return mSetHolder ? mSetHolder : (mSetHolder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.SetHolder")); }
+			ScriptFunction ValidHolder() { return mValidHolder ? mValidHolder : (mValidHolder = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.ValidHolder")); }
+			ScriptFunction SameTeamTouch() { return mSameTeamTouch ? mSameTeamTouch : (mSameTeamTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.SameTeamTouch")); }
+			ScriptFunction CustomRespawnEffects() { return mCustomRespawnEffects ? mCustomRespawnEffects : (mCustomRespawnEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.CustomRespawnEffects")); }
+			ScriptFunction bringUpBrightOff() { return mbringUpBrightOff ? mbringUpBrightOff : (mbringUpBrightOff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.bringUpBrightOff")); }
+			ScriptFunction CustomFadeOutEffects() { return mCustomFadeOutEffects ? mCustomFadeOutEffects : (mCustomFadeOutEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.CustomFadeOutEffects")); }
+			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.Landed")); }
+			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.EncroachedBy")); }
+			ScriptFunction Drop() { return mDrop ? mDrop : (mDrop = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.Drop")); }
+			ScriptFunction SetFlagPropertiesToStationaryFlagState() { return mSetFlagPropertiesToStationaryFlagState ? mSetFlagPropertiesToStationaryFlagState : (mSetFlagPropertiesToStationaryFlagState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.SetFlagPropertiesToStationaryFlagState")); }
+			ScriptFunction SetFlagDynamicLightToNotBeDynamic() { return mSetFlagDynamicLightToNotBeDynamic ? mSetFlagDynamicLightToNotBeDynamic : (mSetFlagDynamicLightToNotBeDynamic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.SetFlagDynamicLightToNotBeDynamic")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.Destroyed")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.PostRenderFor")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.DisplayDebug")); }
+			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.GetSpectatorName")); }
+			ScriptFunction GetSpectatorDescription() { return mGetSpectatorDescription ? mGetSpectatorDescription : (mGetSpectatorDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.GetSpectatorDescription")); }
+			ScriptFunction OnCollisionProxyTouched() { return mOnCollisionProxyTouched ? mOnCollisionProxyTouched : (mOnCollisionProxyTouched = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFlagBase.OnCollisionProxyTouched")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -69,48 +126,48 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88438], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88441], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void OnBaseChainChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88448], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBaseChainChanged, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldMinimapRenderFor(PlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldMinimapRenderFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void ClientReturnedHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88454], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReturnedHome, cast(void*)0, cast(void*)0);
 	}
 	void SetHolder(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88455], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHolder, params.ptr, cast(void*)0);
 	}
 	bool ValidHolder(Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88463], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidHolder, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SameTeamTouch(Controller C)
@@ -118,19 +175,19 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88468], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SameTeamTouch, params.ptr, cast(void*)0);
 	}
 	void CustomRespawnEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88470], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomRespawnEffects, cast(void*)0, cast(void*)0);
 	}
 	void bringUpBrightOff()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88472], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.bringUpBrightOff, cast(void*)0, cast(void*)0);
 	}
 	void CustomFadeOutEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88474], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomFadeOutEffects, cast(void*)0, cast(void*)0);
 	}
 	void Landed(Vector HitNormal, Actor FloorActor)
 	{
@@ -138,14 +195,14 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitNormal;
 		*cast(Actor*)&params[12] = FloorActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88509], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Landed, params.ptr, cast(void*)0);
 	}
 	void EncroachedBy(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88517], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachedBy, params.ptr, cast(void*)0);
 	}
 	void Drop(Controller Killer, bool bNoThrow)
 	{
@@ -153,19 +210,19 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(bool*)&params[4] = bNoThrow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88519], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SetFlagPropertiesToStationaryFlagState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88529], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagPropertiesToStationaryFlagState, cast(void*)0, cast(void*)0);
 	}
 	void SetFlagDynamicLightToNotBeDynamic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88530], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlagDynamicLightToNotBeDynamic, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88531], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -175,7 +232,7 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88533], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -184,7 +241,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88548], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -192,14 +249,14 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88553], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetSpectatorDescription()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88555], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorDescription, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void OnCollisionProxyTouched(TrPawn TRP)
@@ -207,6 +264,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = TRP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[88557], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCollisionProxyTouched, params.ptr, cast(void*)0);
 	}
 }

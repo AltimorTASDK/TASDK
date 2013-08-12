@@ -6,10 +6,14 @@ import UnrealScript.Engine.AnimNodeSequence;
 extern(C++) interface TrAnimNodeTurnInPlace_Player : AnimNodeSequence
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeTurnInPlace_Player")); }
 	struct TIP_Transition
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrAnimNodeTurnInPlace_Player.TIP_Transition")); }
 		@property final auto ref
 		{
 			ScriptName AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 8); }

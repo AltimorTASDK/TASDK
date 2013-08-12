@@ -7,10 +7,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface MusicTrackDataStructures : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MusicTrackDataStructures")); }
 	struct MusicTrackStruct
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.MusicTrackDataStructures.MusicTrackStruct")); }
 		@property final
 		{
 			auto ref

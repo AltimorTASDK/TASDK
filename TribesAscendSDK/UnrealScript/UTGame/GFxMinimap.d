@@ -12,6 +12,31 @@ import UnrealScript.UTGame.UTGameObjective;
 extern(C++) interface GFxMinimap : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxMinimap")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mUpdateData;
+			ScriptFunction mGenFriendIcons;
+			ScriptFunction mGenEnemyIcons;
+			ScriptFunction mGenFlagIcons;
+			ScriptFunction mUpdateIcons;
+			ScriptFunction mUpdate;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.Init")); }
+			ScriptFunction UpdateData() { return mUpdateData ? mUpdateData : (mUpdateData = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.UpdateData")); }
+			ScriptFunction GenFriendIcons() { return mGenFriendIcons ? mGenFriendIcons : (mGenFriendIcons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.GenFriendIcons")); }
+			ScriptFunction GenEnemyIcons() { return mGenEnemyIcons ? mGenEnemyIcons : (mGenEnemyIcons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.GenEnemyIcons")); }
+			ScriptFunction GenFlagIcons() { return mGenFlagIcons ? mGenFlagIcons : (mGenFlagIcons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.GenFlagIcons")); }
+			ScriptFunction UpdateIcons() { return mUpdateIcons ? mUpdateIcons : (mUpdateIcons = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.UpdateIcons")); }
+			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxMinimap.Update")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -45,18 +70,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxMinimapHud*)params.ptr = H;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void UpdateData()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37330], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateData, cast(void*)0, cast(void*)0);
 	}
 	ScriptArray!(GFxObject) GenFriendIcons(int N)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = N;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37331], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GenFriendIcons, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(GFxObject)*)&params[4];
 	}
 	ScriptArray!(GFxObject) GenEnemyIcons(int N)
@@ -64,7 +89,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = N;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37339], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GenEnemyIcons, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(GFxObject)*)&params[4];
 	}
 	ScriptArray!(GFxObject) GenFlagIcons(int N)
@@ -72,7 +97,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = N;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37347], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GenFlagIcons, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(GFxObject)*)&params[4];
 	}
 	void UpdateIcons(ScriptArray!(Actor)* Actors, ScriptArray!(GFxObject)* ActorIcons, bool bIsRedIconType)
@@ -82,7 +107,7 @@ final:
 		*cast(ScriptArray!(Actor)*)params.ptr = *Actors;
 		*cast(ScriptArray!(GFxObject)*)&params[12] = *ActorIcons;
 		*cast(bool*)&params[24] = bIsRedIconType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37355], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateIcons, params.ptr, cast(void*)0);
 		*Actors = *cast(ScriptArray!(Actor)*)params.ptr;
 		*ActorIcons = *cast(ScriptArray!(GFxObject)*)&params[12];
 	}
@@ -91,6 +116,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Scale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[37368], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Update, params.ptr, cast(void*)0);
 	}
 }

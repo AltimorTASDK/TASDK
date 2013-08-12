@@ -7,6 +7,13 @@ import UnrealScript.TribesGame.TrGameObjective;
 extern(C++) interface TrGameObjectiveUpgrade : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameObjectiveUpgrade")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mInitUpgrade;
+		public @property static final ScriptFunction InitUpgrade() { return mInitUpgrade ? mInitUpgrade : (mInitUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameObjectiveUpgrade.InitUpgrade")); }
+	}
 	@property final auto ref
 	{
 		float m_fNewValue() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }
@@ -19,6 +26,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameObjective*)params.ptr = OwnerObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[91139], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitUpgrade, params.ptr, cast(void*)0);
 	}
 }

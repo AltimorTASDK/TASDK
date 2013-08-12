@@ -9,6 +9,39 @@ import UnrealScript.Engine.SkelControlSingleBone;
 extern(C++) interface TrProj_SpikeGrenade : TrProj_Grenade
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_SpikeGrenade")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mInitProjectile;
+			ScriptFunction mExplode;
+			ScriptFunction mClientReceivedExplosionLocation;
+			ScriptFunction mIsFractalActive;
+			ScriptFunction mStartFractalShots;
+			ScriptFunction mShootFractalShot;
+			ScriptFunction mSpawnFractalExplosionEffects;
+			ScriptFunction mEndFractal;
+			ScriptFunction mSpawnExplosionEffects;
+		}
+		public @property static final
+		{
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.ReplicatedEvent")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.PostInitAnimTree")); }
+			ScriptFunction InitProjectile() { return mInitProjectile ? mInitProjectile : (mInitProjectile = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.InitProjectile")); }
+			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.Explode")); }
+			ScriptFunction ClientReceivedExplosionLocation() { return mClientReceivedExplosionLocation ? mClientReceivedExplosionLocation : (mClientReceivedExplosionLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.ClientReceivedExplosionLocation")); }
+			ScriptFunction IsFractalActive() { return mIsFractalActive ? mIsFractalActive : (mIsFractalActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.IsFractalActive")); }
+			ScriptFunction StartFractalShots() { return mStartFractalShots ? mStartFractalShots : (mStartFractalShots = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.StartFractalShots")); }
+			ScriptFunction ShootFractalShot() { return mShootFractalShot ? mShootFractalShot : (mShootFractalShot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.ShootFractalShot")); }
+			ScriptFunction SpawnFractalExplosionEffects() { return mSpawnFractalExplosionEffects ? mSpawnFractalExplosionEffects : (mSpawnFractalExplosionEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.SpawnFractalExplosionEffects")); }
+			ScriptFunction EndFractal() { return mEndFractal ? mEndFractal : (mEndFractal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.EndFractal")); }
+			ScriptFunction SpawnExplosionEffects() { return mSpawnExplosionEffects ? mSpawnExplosionEffects : (mSpawnExplosionEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_SpikeGrenade.SpawnExplosionEffects")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -39,7 +72,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109075], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -50,7 +83,7 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109077], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
 	{
@@ -58,7 +91,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
 		*cast(ScriptClass*)&params[12] = ClassToInherit;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109079], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)
 	{
@@ -66,37 +99,37 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109082], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void ClientReceivedExplosionLocation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109087], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceivedExplosionLocation, cast(void*)0, cast(void*)0);
 	}
 	bool IsFractalActive()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109088], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFractalActive, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void StartFractalShots()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109090], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartFractalShots, cast(void*)0, cast(void*)0);
 	}
 	void ShootFractalShot()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109091], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShootFractalShot, cast(void*)0, cast(void*)0);
 	}
 	void SpawnFractalExplosionEffects(Vector ShotLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = ShotLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109095], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnFractalExplosionEffects, params.ptr, cast(void*)0);
 	}
 	void EndFractal()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109098], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EndFractal, cast(void*)0, cast(void*)0);
 	}
 	void SpawnExplosionEffects(Vector HitLocation, Vector HitNormal)
 	{
@@ -104,6 +137,6 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109099], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnExplosionEffects, params.ptr, cast(void*)0);
 	}
 }

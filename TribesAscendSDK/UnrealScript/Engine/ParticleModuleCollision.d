@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleCollision;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleCollisionBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -7,6 +8,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface ParticleModuleCollision : ParticleModuleCollisionBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCollision")); }
 	@property final
 	{
 		auto ref

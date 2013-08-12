@@ -12,6 +12,29 @@ import UnrealScript.Engine.SeqAct_Destroy;
 extern(C++) interface RB_ConstraintActor : RigidBodyBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_ConstraintActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetDisableCollision;
+			ScriptFunction mInitConstraint;
+			ScriptFunction mTermConstraint;
+			ScriptFunction mOnDestroy;
+			ScriptFunction mOnToggle;
+			ScriptFunction mOnToggleConstraintDrive;
+		}
+		public @property static final
+		{
+			ScriptFunction SetDisableCollision() { return mSetDisableCollision ? mSetDisableCollision : (mSetDisableCollision = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.SetDisableCollision")); }
+			ScriptFunction InitConstraint() { return mInitConstraint ? mInitConstraint : (mInitConstraint = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.InitConstraint")); }
+			ScriptFunction TermConstraint() { return mTermConstraint ? mTermConstraint : (mTermConstraint = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.TermConstraint")); }
+			ScriptFunction OnDestroy() { return mOnDestroy ? mOnDestroy : (mOnDestroy = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.OnDestroy")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.OnToggle")); }
+			ScriptFunction OnToggleConstraintDrive() { return mOnToggleConstraintDrive ? mOnToggleConstraintDrive : (mOnToggleConstraintDrive = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_ConstraintActor.OnToggleConstraintDrive")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -36,7 +59,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = NewDisableCollision;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25143], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDisableCollision, params.ptr, cast(void*)0);
 	}
 	void InitConstraint(Actor Actor1, Actor Actor2, ScriptName Actor1Bone, ScriptName Actor2Bone, float BreakThreshold)
 	{
@@ -47,31 +70,31 @@ final:
 		*cast(ScriptName*)&params[8] = Actor1Bone;
 		*cast(ScriptName*)&params[16] = Actor2Bone;
 		*cast(float*)&params[24] = BreakThreshold;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25145], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitConstraint, params.ptr, cast(void*)0);
 	}
 	void TermConstraint()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25151], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TermConstraint, cast(void*)0, cast(void*)0);
 	}
 	void OnDestroy(SeqAct_Destroy Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Destroy*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25152], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnDestroy, params.ptr, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25154], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void OnToggleConstraintDrive(SeqAct_ToggleConstraintDrive Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_ToggleConstraintDrive*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25158], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggleConstraintDrive, params.ptr, cast(void*)0);
 	}
 }

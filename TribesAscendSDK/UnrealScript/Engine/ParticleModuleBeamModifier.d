@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleBeamModifier;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Engine.ParticleModuleBeamBase;
 import UnrealScript.Core.DistributionVector;
@@ -7,6 +8,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface ParticleModuleBeamModifier : ParticleModuleBeamBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamModifier")); }
 	enum BeamModifierType : ubyte
 	{
 		PEB2MT_Source = 0,
@@ -17,6 +20,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleBeamModifier.BeamModifierOptions")); }
 		@property final
 		{
 			bool Block() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }

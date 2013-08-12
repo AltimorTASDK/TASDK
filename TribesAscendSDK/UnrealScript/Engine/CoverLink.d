@@ -13,6 +13,99 @@ import UnrealScript.Engine.Scout;
 extern(C++) interface CoverLink : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverLink")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetFireLinkTargetCoverInfo;
+			ScriptFunction mPackFireLinkInteractionInfo;
+			ScriptFunction mUnPackFireLinkInteractionInfo;
+			ScriptFunction mGetSlotLocation;
+			ScriptFunction mGetSlotRotation;
+			ScriptFunction mGetSlotViewPoint;
+			ScriptFunction mIsExposedTo;
+			ScriptFunction mSetInvalidUntil;
+			ScriptFunction mClaim;
+			ScriptFunction mUnClaim;
+			ScriptFunction mIsValidClaim;
+			ScriptFunction mIsValidClaimBetween;
+			ScriptFunction mIsStationarySlot;
+			ScriptFunction mIsEdgeSlot;
+			ScriptFunction mFindSlots;
+			ScriptFunction mIsLeftEdgeSlot;
+			ScriptFunction mIsRightEdgeSlot;
+			ScriptFunction mGetSlotIdxToLeft;
+			ScriptFunction mGetSlotIdxToRight;
+			ScriptFunction mAllowRightTransition;
+			ScriptFunction mAllowLeftTransition;
+			ScriptFunction mGetFireLinkTo;
+			ScriptFunction mHasFireLinkTo;
+			ScriptFunction mGetSlotActions;
+			ScriptFunction mSetDisabled;
+			ScriptFunction mSetSlotEnabled;
+			ScriptFunction mNotifySlotOwnerCoverDisabled;
+			ScriptFunction mSetSlotPlayerOnly;
+			ScriptFunction mOnModifyCover;
+			ScriptFunction mAutoAdjustSlot;
+			ScriptFunction mIsEnabled;
+			ScriptFunction mOnToggle;
+			ScriptFunction mCreateCheckpointRecord;
+			ScriptFunction mApplyCheckpointRecord;
+			ScriptFunction mShutDown;
+			ScriptFunction mGetSwatTurnTarget;
+			ScriptFunction mBreakFracturedMeshes;
+			ScriptFunction mAddCoverSlot;
+			ScriptFunction mGetDebugString;
+			ScriptFunction mGetLocationDescription;
+			ScriptFunction mGetDebugAbbrev;
+		}
+		public @property static final
+		{
+			ScriptFunction GetFireLinkTargetCoverInfo() { return mGetFireLinkTargetCoverInfo ? mGetFireLinkTargetCoverInfo : (mGetFireLinkTargetCoverInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetFireLinkTargetCoverInfo")); }
+			ScriptFunction PackFireLinkInteractionInfo() { return mPackFireLinkInteractionInfo ? mPackFireLinkInteractionInfo : (mPackFireLinkInteractionInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.PackFireLinkInteractionInfo")); }
+			ScriptFunction UnPackFireLinkInteractionInfo() { return mUnPackFireLinkInteractionInfo ? mUnPackFireLinkInteractionInfo : (mUnPackFireLinkInteractionInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.UnPackFireLinkInteractionInfo")); }
+			ScriptFunction GetSlotLocation() { return mGetSlotLocation ? mGetSlotLocation : (mGetSlotLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotLocation")); }
+			ScriptFunction GetSlotRotation() { return mGetSlotRotation ? mGetSlotRotation : (mGetSlotRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotRotation")); }
+			ScriptFunction GetSlotViewPoint() { return mGetSlotViewPoint ? mGetSlotViewPoint : (mGetSlotViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotViewPoint")); }
+			ScriptFunction IsExposedTo() { return mIsExposedTo ? mIsExposedTo : (mIsExposedTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsExposedTo")); }
+			ScriptFunction SetInvalidUntil() { return mSetInvalidUntil ? mSetInvalidUntil : (mSetInvalidUntil = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetInvalidUntil")); }
+			ScriptFunction Claim() { return mClaim ? mClaim : (mClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.Claim")); }
+			ScriptFunction UnClaim() { return mUnClaim ? mUnClaim : (mUnClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.UnClaim")); }
+			ScriptFunction IsValidClaim() { return mIsValidClaim ? mIsValidClaim : (mIsValidClaim = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsValidClaim")); }
+			ScriptFunction IsValidClaimBetween() { return mIsValidClaimBetween ? mIsValidClaimBetween : (mIsValidClaimBetween = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsValidClaimBetween")); }
+			ScriptFunction IsStationarySlot() { return mIsStationarySlot ? mIsStationarySlot : (mIsStationarySlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsStationarySlot")); }
+			ScriptFunction IsEdgeSlot() { return mIsEdgeSlot ? mIsEdgeSlot : (mIsEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsEdgeSlot")); }
+			ScriptFunction FindSlots() { return mFindSlots ? mFindSlots : (mFindSlots = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.FindSlots")); }
+			ScriptFunction IsLeftEdgeSlot() { return mIsLeftEdgeSlot ? mIsLeftEdgeSlot : (mIsLeftEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsLeftEdgeSlot")); }
+			ScriptFunction IsRightEdgeSlot() { return mIsRightEdgeSlot ? mIsRightEdgeSlot : (mIsRightEdgeSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsRightEdgeSlot")); }
+			ScriptFunction GetSlotIdxToLeft() { return mGetSlotIdxToLeft ? mGetSlotIdxToLeft : (mGetSlotIdxToLeft = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotIdxToLeft")); }
+			ScriptFunction GetSlotIdxToRight() { return mGetSlotIdxToRight ? mGetSlotIdxToRight : (mGetSlotIdxToRight = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotIdxToRight")); }
+			ScriptFunction AllowRightTransition() { return mAllowRightTransition ? mAllowRightTransition : (mAllowRightTransition = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AllowRightTransition")); }
+			ScriptFunction AllowLeftTransition() { return mAllowLeftTransition ? mAllowLeftTransition : (mAllowLeftTransition = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AllowLeftTransition")); }
+			ScriptFunction GetFireLinkTo() { return mGetFireLinkTo ? mGetFireLinkTo : (mGetFireLinkTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetFireLinkTo")); }
+			ScriptFunction HasFireLinkTo() { return mHasFireLinkTo ? mHasFireLinkTo : (mHasFireLinkTo = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.HasFireLinkTo")); }
+			ScriptFunction GetSlotActions() { return mGetSlotActions ? mGetSlotActions : (mGetSlotActions = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSlotActions")); }
+			ScriptFunction SetDisabled() { return mSetDisabled ? mSetDisabled : (mSetDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetDisabled")); }
+			ScriptFunction SetSlotEnabled() { return mSetSlotEnabled ? mSetSlotEnabled : (mSetSlotEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetSlotEnabled")); }
+			ScriptFunction NotifySlotOwnerCoverDisabled() { return mNotifySlotOwnerCoverDisabled ? mNotifySlotOwnerCoverDisabled : (mNotifySlotOwnerCoverDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.NotifySlotOwnerCoverDisabled")); }
+			ScriptFunction SetSlotPlayerOnly() { return mSetSlotPlayerOnly ? mSetSlotPlayerOnly : (mSetSlotPlayerOnly = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.SetSlotPlayerOnly")); }
+			ScriptFunction OnModifyCover() { return mOnModifyCover ? mOnModifyCover : (mOnModifyCover = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.OnModifyCover")); }
+			ScriptFunction AutoAdjustSlot() { return mAutoAdjustSlot ? mAutoAdjustSlot : (mAutoAdjustSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AutoAdjustSlot")); }
+			ScriptFunction IsEnabled() { return mIsEnabled ? mIsEnabled : (mIsEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.IsEnabled")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.OnToggle")); }
+			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.ApplyCheckpointRecord")); }
+			ScriptFunction ShutDown() { return mShutDown ? mShutDown : (mShutDown = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.ShutDown")); }
+			ScriptFunction GetSwatTurnTarget() { return mGetSwatTurnTarget ? mGetSwatTurnTarget : (mGetSwatTurnTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetSwatTurnTarget")); }
+			ScriptFunction BreakFracturedMeshes() { return mBreakFracturedMeshes ? mBreakFracturedMeshes : (mBreakFracturedMeshes = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.BreakFracturedMeshes")); }
+			ScriptFunction AddCoverSlot() { return mAddCoverSlot ? mAddCoverSlot : (mAddCoverSlot = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.AddCoverSlot")); }
+			ScriptFunction GetDebugString() { return mGetDebugString ? mGetDebugString : (mGetDebugString = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetDebugString")); }
+			ScriptFunction GetLocationDescription() { return mGetLocationDescription ? mGetLocationDescription : (mGetLocationDescription = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetLocationDescription")); }
+			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetDebugAbbrev")); }
+		}
+	}
 	enum
 	{
 		COVERLINK_DangerDist = 153.0f,
@@ -75,6 +168,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CovPosInfo")); }
 		@property final auto ref
 		{
 			CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
@@ -90,6 +185,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.FireLinkItem")); }
 		@property final auto ref
 		{
 			CoverLink.ECoverAction DestAction() { return *cast(CoverLink.ECoverAction*)(cast(size_t)&this + 3); }
@@ -102,6 +199,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.FireLink")); }
 		@property final
 		{
 			auto ref
@@ -119,6 +218,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.DynamicLinkInfo")); }
 		@property final auto ref
 		{
 			Vector LastSrcLocation() { return *cast(Vector*)(cast(size_t)&this + 12); }
@@ -129,6 +230,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[25];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.ExposedLink")); }
 		@property final auto ref
 		{
 			ubyte ExposedScale() { return *cast(ubyte*)(cast(size_t)&this + 24); }
@@ -139,6 +242,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverReference")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
@@ -150,6 +255,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.SlotMoveRef")); }
 		@property final auto ref
 		{
 			int Direction() { return *cast(int*)(cast(size_t)&this + 76); }
@@ -161,6 +268,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[116];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverSlot")); }
 		@property final
 		{
 			auto ref
@@ -230,6 +339,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.CoverLink.CoverInfo")); }
 		@property final auto ref
 		{
 			CoverLink Link() { return *cast(CoverLink*)(cast(size_t)&this + 0); }
@@ -299,11 +410,11 @@ final:
 		*cast(int*)&params[4] = FireLinkIdx;
 		*cast(CoverLink.CoverInfo*)&params[8] = *out_Info;
 		*cast(CoverLink.EFireLinkID*)&params[16] = ArrayID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13204], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTargetCoverInfo, params.ptr, cast(void*)0);
 		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	ubyte PackFireLinkInteractionInfo(CoverLink.ECoverType SrcType, CoverLink.ECoverAction SrcAction, CoverLink.ECoverType DestType, CoverLink.ECoverAction DestAction)
+	static ubyte PackFireLinkInteractionInfo(CoverLink.ECoverType SrcType, CoverLink.ECoverAction SrcAction, CoverLink.ECoverType DestType, CoverLink.ECoverAction DestAction)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -311,10 +422,10 @@ final:
 		*cast(CoverLink.ECoverAction*)&params[1] = SrcAction;
 		*cast(CoverLink.ECoverType*)&params[2] = DestType;
 		*cast(CoverLink.ECoverAction*)&params[3] = DestAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13210], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PackFireLinkInteractionInfo, params.ptr, cast(void*)0);
 		return params[4];
 	}
-	void UnPackFireLinkInteractionInfo(ubyte PackedByte, CoverLink.ECoverType* SrcType, CoverLink.ECoverAction* SrcAction, CoverLink.ECoverType* DestType, CoverLink.ECoverAction* DestAction)
+	static void UnPackFireLinkInteractionInfo(ubyte PackedByte, CoverLink.ECoverType* SrcType, CoverLink.ECoverAction* SrcAction, CoverLink.ECoverType* DestType, CoverLink.ECoverAction* DestAction)
 	{
 		ubyte params[5];
 		params[] = 0;
@@ -323,7 +434,7 @@ final:
 		*cast(CoverLink.ECoverAction*)&params[2] = *SrcAction;
 		*cast(CoverLink.ECoverType*)&params[3] = *DestType;
 		*cast(CoverLink.ECoverAction*)&params[4] = *DestAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13216], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.UnPackFireLinkInteractionInfo, params.ptr, cast(void*)0);
 		*SrcType = *cast(CoverLink.ECoverType*)&params[1];
 		*SrcAction = *cast(CoverLink.ECoverAction*)&params[2];
 		*DestType = *cast(CoverLink.ECoverType*)&params[3];
@@ -335,7 +446,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bForceUseOffset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13222], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	Rotator GetSlotRotation(int SlotIdx, bool bForceUseOffset)
@@ -344,7 +455,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bForceUseOffset;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13226], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[8];
 	}
 	Vector GetSlotViewPoint(int SlotIdx, CoverLink.ECoverType Type, CoverLink.ECoverAction Action)
@@ -354,7 +465,7 @@ final:
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(CoverLink.ECoverType*)&params[4] = Type;
 		*cast(CoverLink.ECoverAction*)&params[5] = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13230], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotViewPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	bool IsExposedTo(int SlotIdx, CoverLink.CoverInfo ChkSlot, float* out_ExposedScale)
@@ -364,7 +475,7 @@ final:
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkSlot;
 		*cast(float*)&params[12] = *out_ExposedScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13235], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsExposedTo, params.ptr, cast(void*)0);
 		*out_ExposedScale = *cast(float*)&params[12];
 		return *cast(bool*)&params[16];
 	}
@@ -374,7 +485,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(float*)&params[4] = TimeToBecomeValid;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13240], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetInvalidUntil, params.ptr, cast(void*)0);
 	}
 	bool Claim(Pawn NewClaim, int SlotIdx)
 	{
@@ -382,7 +493,7 @@ final:
 		params[] = 0;
 		*cast(Pawn*)params.ptr = NewClaim;
 		*cast(int*)&params[4] = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13244], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Claim, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool UnClaim(Pawn OldClaim, int SlotIdx, bool bUnclaimAll)
@@ -392,7 +503,7 @@ final:
 		*cast(Pawn*)params.ptr = OldClaim;
 		*cast(int*)&params[4] = SlotIdx;
 		*cast(bool*)&params[8] = bUnclaimAll;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13255], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnClaim, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool IsValidClaim(Pawn ChkClaim, int SlotIdx, bool bSkipTeamCheck, bool bSkipOverlapCheck)
@@ -403,7 +514,7 @@ final:
 		*cast(int*)&params[4] = SlotIdx;
 		*cast(bool*)&params[8] = bSkipTeamCheck;
 		*cast(bool*)&params[12] = bSkipOverlapCheck;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13263], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidClaim, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	bool IsValidClaimBetween(Pawn ChkClaim, int StartSlotIdx, int EndSlotIdx, bool bSkipTeamCheck, bool bSkipOverlapCheck)
@@ -415,7 +526,7 @@ final:
 		*cast(int*)&params[8] = EndSlotIdx;
 		*cast(bool*)&params[12] = bSkipTeamCheck;
 		*cast(bool*)&params[16] = bSkipOverlapCheck;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13269], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidClaimBetween, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	bool IsStationarySlot(int SlotIdx)
@@ -423,7 +534,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsStationarySlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsEdgeSlot(int SlotIdx, bool bIgnoreLeans)
@@ -432,7 +543,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bIgnoreLeans;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool FindSlots(Vector CheckLocation, float MaxDistance, int* LeftSlotIdx, int* RightSlotIdx)
@@ -443,7 +554,7 @@ final:
 		*cast(float*)&params[12] = MaxDistance;
 		*cast(int*)&params[16] = *LeftSlotIdx;
 		*cast(int*)&params[20] = *RightSlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13281], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSlots, params.ptr, cast(void*)0);
 		*LeftSlotIdx = *cast(int*)&params[16];
 		*RightSlotIdx = *cast(int*)&params[20];
 		return *cast(bool*)&params[24];
@@ -454,7 +565,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bIgnoreLeans;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13290], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsLeftEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool IsRightEdgeSlot(int SlotIdx, bool bIgnoreLeans)
@@ -463,7 +574,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bIgnoreLeans;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13294], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsRightEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	int GetSlotIdxToLeft(int SlotIdx, int Cnt)
@@ -472,7 +583,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = Cnt;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13298], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotIdxToLeft, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int GetSlotIdxToRight(int SlotIdx, int Cnt)
@@ -481,7 +592,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = Cnt;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13302], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotIdxToRight, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	bool AllowRightTransition(int SlotIdx)
@@ -489,7 +600,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13306], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowRightTransition, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool AllowLeftTransition(int SlotIdx)
@@ -497,7 +608,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13310], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowLeftTransition, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool GetFireLinkTo(int SlotIdx, CoverLink.CoverInfo ChkCover, CoverLink.ECoverAction ChkAction, CoverLink.ECoverType ChkType, int* out_FireLinkIdx, ScriptArray!(int)* out_Items)
@@ -510,7 +621,7 @@ final:
 		*cast(CoverLink.ECoverType*)&params[13] = ChkType;
 		*cast(int*)&params[16] = *out_FireLinkIdx;
 		*cast(ScriptArray!(int)*)&params[20] = *out_Items;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13314], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTo, params.ptr, cast(void*)0);
 		*out_FireLinkIdx = *cast(int*)&params[16];
 		*out_Items = *cast(ScriptArray!(int)*)&params[20];
 		return *cast(bool*)&params[32];
@@ -522,7 +633,7 @@ final:
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkCover;
 		*cast(bool*)&params[12] = bAllowFallbackLinks;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13323], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasFireLinkTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void GetSlotActions(int SlotIdx, ScriptArray!(CoverLink.ECoverAction)* Actions)
@@ -531,7 +642,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4] = *Actions;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13328], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotActions, params.ptr, cast(void*)0);
 		*Actions = *cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4];
 	}
 	void SetDisabled(bool bNewDisabled)
@@ -539,7 +650,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewDisabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13332], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDisabled, params.ptr, cast(void*)0);
 	}
 	void SetSlotEnabled(int SlotIdx, bool bEnable)
 	{
@@ -547,7 +658,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13339], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSlotEnabled, params.ptr, cast(void*)0);
 	}
 	void NotifySlotOwnerCoverDisabled(int SlotIdx, bool bAIOnly)
 	{
@@ -555,7 +666,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bAIOnly;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13342], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifySlotOwnerCoverDisabled, params.ptr, cast(void*)0);
 	}
 	void SetSlotPlayerOnly(int SlotIdx, bool bInPlayerOnly)
 	{
@@ -563,14 +674,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bInPlayerOnly;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13347], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSlotPlayerOnly, params.ptr, cast(void*)0);
 	}
 	void OnModifyCover(SeqAct_ModifyCover Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_ModifyCover*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13350], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnModifyCover, params.ptr, cast(void*)0);
 	}
 	bool AutoAdjustSlot(int SlotIdx, bool bOnlyCheckLeans)
 	{
@@ -578,14 +689,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(bool*)&params[4] = bOnlyCheckLeans;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13358], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AutoAdjustSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool IsEnabled()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13364], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEnabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void OnToggle(SeqAct_Toggle inAction)
@@ -593,14 +704,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13366], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void CreateCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13369], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	void ApplyCheckpointRecord(NavigationPoint.CheckpointRecord* Record)
@@ -608,12 +719,12 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13371], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	void ShutDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13374], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
 	bool GetSwatTurnTarget(int SlotIdx, int Direction, CoverLink.CoverInfo* out_Info)
 	{
@@ -622,7 +733,7 @@ final:
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = Direction;
 		*cast(CoverLink.CoverInfo*)&params[8] = *out_Info;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13375], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSwatTurnTarget, params.ptr, cast(void*)0);
 		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
 		return *cast(bool*)&params[16];
 	}
@@ -634,7 +745,7 @@ final:
 		*cast(float*)&params[12] = Radius;
 		*cast(float*)&params[16] = RBStrength;
 		*cast(ScriptClass*)&params[20] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13380], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BreakFracturedMeshes, params.ptr, cast(void*)0);
 	}
 	int AddCoverSlot(Vector SlotLocation, Rotator SlotRotation, int SlotIdx, bool bForceSlotUpdate, Scout pScout)
 	{
@@ -645,7 +756,7 @@ final:
 		*cast(int*)&params[24] = SlotIdx;
 		*cast(bool*)&params[28] = bForceSlotUpdate;
 		*cast(Scout*)&params[32] = pScout;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13392], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCoverSlot, params.ptr, cast(void*)0);
 		return *cast(int*)&params[36];
 	}
 	ScriptString GetDebugString(int SlotIdx)
@@ -653,7 +764,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13399], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	CoverLink.ECoverLocationDescription GetLocationDescription(int SlotIdx)
@@ -661,14 +772,14 @@ final:
 		ubyte params[5];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13402], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationDescription, params.ptr, cast(void*)0);
 		return *cast(CoverLink.ECoverLocationDescription*)&params[4];
 	}
 	ScriptString GetDebugAbbrev()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13405], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugAbbrev, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

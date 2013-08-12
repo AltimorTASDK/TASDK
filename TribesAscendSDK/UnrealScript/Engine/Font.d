@@ -8,11 +8,34 @@ import UnrealScript.Engine.FontImportOptions;
 extern(C++) interface Font : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Font")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetResolutionPageIndex;
+			ScriptFunction mGetScalingFactor;
+			ScriptFunction mGetAuthoredViewportHeight;
+			ScriptFunction mGetMaxCharHeight;
+			ScriptFunction mGetStringHeightAndWidth;
+		}
+		public @property static final
+		{
+			ScriptFunction GetResolutionPageIndex() { return mGetResolutionPageIndex ? mGetResolutionPageIndex : (mGetResolutionPageIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetResolutionPageIndex")); }
+			ScriptFunction GetScalingFactor() { return mGetScalingFactor ? mGetScalingFactor : (mGetScalingFactor = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetScalingFactor")); }
+			ScriptFunction GetAuthoredViewportHeight() { return mGetAuthoredViewportHeight ? mGetAuthoredViewportHeight : (mGetAuthoredViewportHeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetAuthoredViewportHeight")); }
+			ScriptFunction GetMaxCharHeight() { return mGetMaxCharHeight ? mGetMaxCharHeight : (mGetMaxCharHeight = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetMaxCharHeight")); }
+			ScriptFunction GetStringHeightAndWidth() { return mGetStringHeightAndWidth ? mGetStringHeightAndWidth : (mGetStringHeightAndWidth = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetStringHeightAndWidth")); }
+		}
+	}
 	enum NULLCHARACTER = 127;
 	struct FontCharacter
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Font.FontCharacter")); }
 		@property final auto ref
 		{
 			int VerticalOffset() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -43,7 +66,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightTest;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetResolutionPageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	float GetScalingFactor(float HeightTest)
@@ -51,7 +74,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = HeightTest;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12381], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetScalingFactor, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	float GetAuthoredViewportHeight(float ViewportHeight)
@@ -59,14 +82,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = ViewportHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12384], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAuthoredViewportHeight, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	float GetMaxCharHeight()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12387], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxCharHeight, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void GetStringHeightAndWidth(ScriptString* InString, int* Height, int* Width)
@@ -76,7 +99,7 @@ final:
 		*cast(ScriptString*)params.ptr = *InString;
 		*cast(int*)&params[12] = *Height;
 		*cast(int*)&params[16] = *Width;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12389], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringHeightAndWidth, params.ptr, cast(void*)0);
 		*InString = *cast(ScriptString*)params.ptr;
 		*Height = *cast(int*)&params[12];
 		*Width = *cast(int*)&params[16];

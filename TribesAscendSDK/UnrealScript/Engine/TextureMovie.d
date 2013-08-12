@@ -8,6 +8,23 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface TextureMovie : Texture
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureMovie")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPlay;
+			ScriptFunction mPause;
+			ScriptFunction mStop;
+		}
+		public @property static final
+		{
+			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Play")); }
+			ScriptFunction Pause() { return mPause ? mPause : (mPause = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Pause")); }
+			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.TextureMovie.Stop")); }
+		}
+	}
 	enum EMovieStreamSource : ubyte
 	{
 		MovieStream_File = 0,
@@ -41,14 +58,14 @@ public extern(D):
 final:
 	void Play()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28005], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Play, cast(void*)0, cast(void*)0);
 	}
 	void Pause()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28006], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Pause, cast(void*)0, cast(void*)0);
 	}
 	void Stop()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28007], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, cast(void*)0, cast(void*)0);
 	}
 }

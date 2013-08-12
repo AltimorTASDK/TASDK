@@ -8,6 +8,23 @@ import UnrealScript.Engine.AnimNode;
 extern(C++) interface SkelControlBase : AnimObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlBase")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetSkelControlActive;
+			ScriptFunction mSetSkelControlStrength;
+			ScriptFunction mTickSkelControl;
+		}
+		public @property static final
+		{
+			ScriptFunction SetSkelControlActive() { return mSetSkelControlActive ? mSetSkelControlActive : (mSetSkelControlActive = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlBase.SetSkelControlActive")); }
+			ScriptFunction SetSkelControlStrength() { return mSetSkelControlStrength ? mSetSkelControlStrength : (mSetSkelControlStrength = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlBase.SetSkelControlStrength")); }
+			ScriptFunction TickSkelControl() { return mTickSkelControl ? mTickSkelControl : (mTickSkelControl = ScriptObject.Find!(ScriptFunction)("Function Engine.SkelControlBase.TickSkelControl")); }
+		}
+	}
 	enum EBoneControlSpace : ubyte
 	{
 		BCS_WorldSpace = 0,
@@ -64,7 +81,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26298], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkelControlActive, params.ptr, cast(void*)0);
 	}
 	void SetSkelControlStrength(float NewStrength, float InBlendTime)
 	{
@@ -72,7 +89,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = NewStrength;
 		*cast(float*)&params[4] = InBlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26300], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkelControlStrength, params.ptr, cast(void*)0);
 	}
 	void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -84,6 +101,6 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26303], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TickSkelControl, params.ptr, cast(void*)0);
 	}
 }

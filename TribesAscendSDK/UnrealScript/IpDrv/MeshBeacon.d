@@ -7,6 +7,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface MeshBeacon : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.MeshBeacon")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mDestroyBeacon;
+		public @property static final ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeacon.DestroyBeacon")); }
+	}
 	enum EMeshBeaconPacketType : ubyte
 	{
 		MB_Packet_UnknownType = 0,
@@ -60,6 +67,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.MeshBeacon.ConnectionBandwidthStats")); }
 		@property final auto ref
 		{
 			int RoundtripLatency() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -71,6 +80,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.MeshBeacon.PlayerMember")); }
 		@property final auto ref
 		{
 			OnlineSubsystem.UniqueNetId NetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 8); }
@@ -105,6 +116,6 @@ public extern(D):
 	}
 	final void DestroyBeacon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33192], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyBeacon, cast(void*)0, cast(void*)0);
 	}
 }

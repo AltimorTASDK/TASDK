@@ -15,10 +15,45 @@ import UnrealScript.Engine.AnimNode;
 extern(C++) interface AnimTree : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimTree")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindSkelControl;
+			ScriptFunction mFindMorphNode;
+			ScriptFunction mSetUseSavedPose;
+			ScriptFunction mSetAnimGroupForNode;
+			ScriptFunction mGetGroupSynchMaster;
+			ScriptFunction mGetGroupNotifyMaster;
+			ScriptFunction mForceGroupRelativePosition;
+			ScriptFunction mGetGroupRelativePosition;
+			ScriptFunction mSetGroupRateScale;
+			ScriptFunction mGetGroupRateScale;
+			ScriptFunction mGetGroupIndex;
+		}
+		public @property static final
+		{
+			ScriptFunction FindSkelControl() { return mFindSkelControl ? mFindSkelControl : (mFindSkelControl = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.FindSkelControl")); }
+			ScriptFunction FindMorphNode() { return mFindMorphNode ? mFindMorphNode : (mFindMorphNode = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.FindMorphNode")); }
+			ScriptFunction SetUseSavedPose() { return mSetUseSavedPose ? mSetUseSavedPose : (mSetUseSavedPose = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.SetUseSavedPose")); }
+			ScriptFunction SetAnimGroupForNode() { return mSetAnimGroupForNode ? mSetAnimGroupForNode : (mSetAnimGroupForNode = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.SetAnimGroupForNode")); }
+			ScriptFunction GetGroupSynchMaster() { return mGetGroupSynchMaster ? mGetGroupSynchMaster : (mGetGroupSynchMaster = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.GetGroupSynchMaster")); }
+			ScriptFunction GetGroupNotifyMaster() { return mGetGroupNotifyMaster ? mGetGroupNotifyMaster : (mGetGroupNotifyMaster = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.GetGroupNotifyMaster")); }
+			ScriptFunction ForceGroupRelativePosition() { return mForceGroupRelativePosition ? mForceGroupRelativePosition : (mForceGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.ForceGroupRelativePosition")); }
+			ScriptFunction GetGroupRelativePosition() { return mGetGroupRelativePosition ? mGetGroupRelativePosition : (mGetGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.GetGroupRelativePosition")); }
+			ScriptFunction SetGroupRateScale() { return mSetGroupRateScale ? mSetGroupRateScale : (mSetGroupRateScale = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.SetGroupRateScale")); }
+			ScriptFunction GetGroupRateScale() { return mGetGroupRateScale ? mGetGroupRateScale : (mGetGroupRateScale = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.GetGroupRateScale")); }
+			ScriptFunction GetGroupIndex() { return mGetGroupIndex ? mGetGroupIndex : (mGetGroupIndex = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimTree.GetGroupIndex")); }
+		}
+	}
 	struct AnimGroup
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimTree.AnimGroup")); }
 		@property final auto ref
 		{
 			ScriptArray!(AnimNodeSequence) SeqNodes() { return *cast(ScriptArray!(AnimNodeSequence)*)(cast(size_t)&this + 0); }
@@ -33,6 +68,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimTree.SkelControlListHead")); }
 		@property final auto ref
 		{
 			int DrawY() { return *cast(int*)(cast(size_t)&this + 12); }
@@ -44,6 +81,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimTree.PreviewSkelMeshStruct")); }
 		@property final auto ref
 		{
 			ScriptArray!(MorphTargetSet) PreviewMorphSets() { return *cast(ScriptArray!(MorphTargetSet)*)(cast(size_t)&this + 12); }
@@ -55,6 +94,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimTree.PreviewSocketStruct")); }
 		@property final auto ref
 		{
 			StaticMesh PreviewStaticMesh() { return *cast(StaticMesh*)(cast(size_t)&this + 20); }
@@ -67,6 +108,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimTree.PreviewAnimSetsStruct")); }
 		@property final auto ref
 		{
 			ScriptArray!(AnimSet) PreviewAnimSets() { return *cast(ScriptArray!(AnimSet)*)(cast(size_t)&this + 8); }
@@ -120,7 +163,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InControlName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11570], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindSkelControl, params.ptr, cast(void*)0);
 		return *cast(SkelControlBase*)&params[8];
 	}
 	MorphNodeBase FindMorphNode(ScriptName InNodeName)
@@ -128,7 +171,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InNodeName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11573], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindMorphNode, params.ptr, cast(void*)0);
 		return *cast(MorphNodeBase*)&params[8];
 	}
 	void SetUseSavedPose(bool bUseSaved)
@@ -136,7 +179,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bUseSaved;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11576], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetUseSavedPose, params.ptr, cast(void*)0);
 	}
 	bool SetAnimGroupForNode(AnimNodeSequence SeqNode, ScriptName GroupName, bool bCreateIfNotFound)
 	{
@@ -145,7 +188,7 @@ final:
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		*cast(ScriptName*)&params[4] = GroupName;
 		*cast(bool*)&params[12] = bCreateIfNotFound;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11578], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAnimGroupForNode, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	AnimNodeSequence GetGroupSynchMaster(ScriptName GroupName)
@@ -153,7 +196,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11583], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupSynchMaster, params.ptr, cast(void*)0);
 		return *cast(AnimNodeSequence*)&params[8];
 	}
 	AnimNodeSequence GetGroupNotifyMaster(ScriptName GroupName)
@@ -161,7 +204,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11586], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupNotifyMaster, params.ptr, cast(void*)0);
 		return *cast(AnimNodeSequence*)&params[8];
 	}
 	void ForceGroupRelativePosition(ScriptName GroupName, float RelativePosition)
@@ -170,14 +213,14 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
 		*cast(float*)&params[8] = RelativePosition;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11589], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceGroupRelativePosition, params.ptr, cast(void*)0);
 	}
 	float GetGroupRelativePosition(ScriptName GroupName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11592], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupRelativePosition, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	void SetGroupRateScale(ScriptName GroupName, float NewRateScale)
@@ -186,14 +229,14 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
 		*cast(float*)&params[8] = NewRateScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11595], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGroupRateScale, params.ptr, cast(void*)0);
 	}
 	float GetGroupRateScale(ScriptName GroupName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11598], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupRateScale, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 	int GetGroupIndex(ScriptName GroupName)
@@ -201,7 +244,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = GroupName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11601], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 }

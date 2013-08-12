@@ -10,6 +10,8 @@ import UnrealScript.Engine.ParticleSpriteEmitter;
 extern(C++) interface ParticleModuleRequired : ParticleModule
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRequired")); }
 	enum EEmitterNormalsMode : ubyte
 	{
 		ENM_CameraFacing = 0,

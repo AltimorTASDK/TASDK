@@ -1,11 +1,14 @@
 module UnrealScript.Engine.DistributionVectorUniformCurve;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Core.DistributionVector;
 
 extern(C++) interface DistributionVectorUniformCurve : DistributionVector
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorUniformCurve")); }
 	@property final
 	{
 		auto ref

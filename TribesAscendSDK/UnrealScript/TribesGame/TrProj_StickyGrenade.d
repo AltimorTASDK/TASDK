@@ -7,6 +7,27 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrProj_StickyGrenade : TrProj_Grenade
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_StickyGrenade")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mHitWall;
+			ScriptFunction mProcessTouch;
+			ScriptFunction mStickToTarget;
+			ScriptFunction mOnBaseChanged;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_StickyGrenade.PostBeginPlay")); }
+			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_StickyGrenade.HitWall")); }
+			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_StickyGrenade.ProcessTouch")); }
+			ScriptFunction StickToTarget() { return mStickToTarget ? mStickToTarget : (mStickToTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_StickyGrenade.StickToTarget")); }
+			ScriptFunction OnBaseChanged() { return mOnBaseChanged ? mOnBaseChanged : (mOnBaseChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrProj_StickyGrenade.OnBaseChanged")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref Actor m_OldBase() { return *cast(Actor*)(cast(size_t)cast(void*)this + 888); }
@@ -16,7 +37,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108038], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void HitWall(Vector HitNormal, Actor Wall, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -29,7 +50,7 @@ void* WallComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108039], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
 	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
@@ -38,7 +59,7 @@ void**)&params[16] = WallComp;
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108043], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTouch, params.ptr, cast(void*)0);
 	}
 	bool StickToTarget(Actor Target, Vector HitLocation, Vector HitNormal)
 	{
@@ -47,11 +68,11 @@ void**)&params[16] = WallComp;
 		*cast(Actor*)params.ptr = Target;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108047], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StickToTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void OnBaseChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[108052], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBaseChanged, cast(void*)0, cast(void*)0);
 	}
 }

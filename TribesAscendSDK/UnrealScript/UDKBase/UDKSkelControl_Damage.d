@@ -9,6 +9,23 @@ import UnrealScript.Engine.StaticMesh;
 extern(C++) interface UDKSkelControl_Damage : SkelControlSingleBone
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_Damage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mBreakApart;
+			ScriptFunction mBreakApartOnDeath;
+			ScriptFunction mRestorePart;
+		}
+		public @property static final
+		{
+			ScriptFunction BreakApart() { return mBreakApart ? mBreakApart : (mBreakApart = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_Damage.BreakApart")); }
+			ScriptFunction BreakApartOnDeath() { return mBreakApartOnDeath ? mBreakApartOnDeath : (mBreakApartOnDeath = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_Damage.BreakApartOnDeath")); }
+			ScriptFunction RestorePart() { return mRestorePart ? mRestorePart : (mRestorePart = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKSkelControl_Damage.RestorePart")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -61,7 +78,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = PartLocation;
 		*cast(bool*)&params[12] = bIsVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35371], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BreakApart, params.ptr, cast(void*)0);
 	}
 	void BreakApartOnDeath(Vector PartLocation, bool bIsVisible)
 	{
@@ -69,13 +86,13 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = PartLocation;
 		*cast(bool*)&params[12] = bIsVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BreakApartOnDeath, params.ptr, cast(void*)0);
 	}
 	float RestorePart()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35377], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RestorePart, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 }

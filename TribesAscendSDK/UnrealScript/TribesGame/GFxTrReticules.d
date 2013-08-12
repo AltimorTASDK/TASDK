@@ -10,6 +10,55 @@ import UnrealScript.TribesGame.GfxTrHud;
 extern(C++) interface GFxTrReticules : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrReticules")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCallShowReticule;
+			ScriptFunction mCallSetReticuleColor;
+			ScriptFunction mASC_SetCustomReticule;
+			ScriptFunction mCallSetReticuleDepth;
+			ScriptFunction mChangeReticule;
+			ScriptFunction mSetCustomReticule;
+			ScriptFunction mGetCurrentReticuleIndex;
+			ScriptFunction mCallSetAccuracy;
+			ScriptFunction mCallShowHit;
+			ScriptFunction mDisableVehicleAmmoClip;
+			ScriptFunction mEnableVehicleAmmoClip;
+			ScriptFunction mSetVehicleAmmoClip;
+			ScriptFunction mSetPowerupPercentage;
+			ScriptFunction mSetLaserPowerupPercentage;
+			ScriptFunction mSetVehiclePowerupPercentage;
+			ScriptFunction mSetGenericPowerupPercentage;
+			ScriptFunction mInit;
+			ScriptFunction mSetReticuleVisible;
+			ScriptFunction mUpdateReticule;
+		}
+		public @property static final
+		{
+			ScriptFunction CallShowReticule() { return mCallShowReticule ? mCallShowReticule : (mCallShowReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.CallShowReticule")); }
+			ScriptFunction CallSetReticuleColor() { return mCallSetReticuleColor ? mCallSetReticuleColor : (mCallSetReticuleColor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.CallSetReticuleColor")); }
+			ScriptFunction ASC_SetCustomReticule() { return mASC_SetCustomReticule ? mASC_SetCustomReticule : (mASC_SetCustomReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.ASC_SetCustomReticule")); }
+			ScriptFunction CallSetReticuleDepth() { return mCallSetReticuleDepth ? mCallSetReticuleDepth : (mCallSetReticuleDepth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.CallSetReticuleDepth")); }
+			ScriptFunction ChangeReticule() { return mChangeReticule ? mChangeReticule : (mChangeReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.ChangeReticule")); }
+			ScriptFunction SetCustomReticule() { return mSetCustomReticule ? mSetCustomReticule : (mSetCustomReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetCustomReticule")); }
+			ScriptFunction GetCurrentReticuleIndex() { return mGetCurrentReticuleIndex ? mGetCurrentReticuleIndex : (mGetCurrentReticuleIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.GetCurrentReticuleIndex")); }
+			ScriptFunction CallSetAccuracy() { return mCallSetAccuracy ? mCallSetAccuracy : (mCallSetAccuracy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.CallSetAccuracy")); }
+			ScriptFunction CallShowHit() { return mCallShowHit ? mCallShowHit : (mCallShowHit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.CallShowHit")); }
+			ScriptFunction DisableVehicleAmmoClip() { return mDisableVehicleAmmoClip ? mDisableVehicleAmmoClip : (mDisableVehicleAmmoClip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.DisableVehicleAmmoClip")); }
+			ScriptFunction EnableVehicleAmmoClip() { return mEnableVehicleAmmoClip ? mEnableVehicleAmmoClip : (mEnableVehicleAmmoClip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.EnableVehicleAmmoClip")); }
+			ScriptFunction SetVehicleAmmoClip() { return mSetVehicleAmmoClip ? mSetVehicleAmmoClip : (mSetVehicleAmmoClip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetVehicleAmmoClip")); }
+			ScriptFunction SetPowerupPercentage() { return mSetPowerupPercentage ? mSetPowerupPercentage : (mSetPowerupPercentage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetPowerupPercentage")); }
+			ScriptFunction SetLaserPowerupPercentage() { return mSetLaserPowerupPercentage ? mSetLaserPowerupPercentage : (mSetLaserPowerupPercentage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetLaserPowerupPercentage")); }
+			ScriptFunction SetVehiclePowerupPercentage() { return mSetVehiclePowerupPercentage ? mSetVehiclePowerupPercentage : (mSetVehiclePowerupPercentage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetVehiclePowerupPercentage")); }
+			ScriptFunction SetGenericPowerupPercentage() { return mSetGenericPowerupPercentage ? mSetGenericPowerupPercentage : (mSetGenericPowerupPercentage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetGenericPowerupPercentage")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.Init")); }
+			ScriptFunction SetReticuleVisible() { return mSetReticuleVisible ? mSetReticuleVisible : (mSetReticuleVisible = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.SetReticuleVisible")); }
+			ScriptFunction UpdateReticule() { return mUpdateReticule ? mUpdateReticule : (mUpdateReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrReticules.UpdateReticule")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -34,48 +83,48 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61567], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallShowReticule, params.ptr, cast(void*)0);
 	}
 	void CallSetReticuleColor(int nType)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61569], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallSetReticuleColor, params.ptr, cast(void*)0);
 	}
 	void ASC_SetCustomReticule(GFxObject Data)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Data;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61571], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ASC_SetCustomReticule, params.ptr, cast(void*)0);
 	}
 	void CallSetReticuleDepth(float fDepth)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = fDepth;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61573], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallSetReticuleDepth, params.ptr, cast(void*)0);
 	}
 	void ChangeReticule(int nIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61576], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeReticule, params.ptr, cast(void*)0);
 	}
 	bool SetCustomReticule()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61578], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCustomReticule, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	int GetCurrentReticuleIndex()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61586], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentReticuleIndex, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void CallSetAccuracy(int nAccuracy)
@@ -83,68 +132,68 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nAccuracy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61588], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallSetAccuracy, params.ptr, cast(void*)0);
 	}
 	void CallShowHit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61590], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CallShowHit, cast(void*)0, cast(void*)0);
 	}
 	void DisableVehicleAmmoClip()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61591], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableVehicleAmmoClip, cast(void*)0, cast(void*)0);
 	}
 	void EnableVehicleAmmoClip()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61592], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableVehicleAmmoClip, cast(void*)0, cast(void*)0);
 	}
 	void SetVehicleAmmoClip(ScriptString AmmoCount)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = AmmoCount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61593], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVehicleAmmoClip, params.ptr, cast(void*)0);
 	}
 	void SetPowerupPercentage(int pPercentage)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = pPercentage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61595], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPowerupPercentage, params.ptr, cast(void*)0);
 	}
 	void SetLaserPowerupPercentage(int pPercentage)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = pPercentage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61597], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLaserPowerupPercentage, params.ptr, cast(void*)0);
 	}
 	void SetVehiclePowerupPercentage(int pPercentage)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = pPercentage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61599], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVehiclePowerupPercentage, params.ptr, cast(void*)0);
 	}
 	void SetGenericPowerupPercentage(int pPercentage)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = pPercentage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61601], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGenericPowerupPercentage, params.ptr, cast(void*)0);
 	}
 	void Init(GfxTrHud H)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GfxTrHud*)params.ptr = H;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void SetReticuleVisible(bool bNewVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61605], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetReticuleVisible, params.ptr, cast(void*)0);
 	}
 	void UpdateReticule(Pawn pPawn, bool bForceUpdate)
 	{
@@ -152,6 +201,6 @@ final:
 		params[] = 0;
 		*cast(Pawn*)params.ptr = pPawn;
 		*cast(bool*)&params[4] = bForceUpdate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[61607], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateReticule, params.ptr, cast(void*)0);
 	}
 }

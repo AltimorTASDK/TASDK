@@ -9,6 +9,8 @@ import UnrealScript.Engine.ApexGenericAsset;
 extern(C++) interface ApexClothingAsset : ApexAsset
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexClothingAsset")); }
 	@property final
 	{
 		auto ref

@@ -7,6 +7,25 @@ import UnrealScript.Engine.Info;
 extern(C++) interface FileWriter : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FileWriter")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOpenFile;
+			ScriptFunction mCloseFile;
+			ScriptFunction mLogf;
+			ScriptFunction mDestroyed;
+		}
+		public @property static final
+		{
+			ScriptFunction OpenFile() { return mOpenFile ? mOpenFile : (mOpenFile = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.OpenFile")); }
+			ScriptFunction CloseFile() { return mCloseFile ? mCloseFile : (mCloseFile = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.CloseFile")); }
+			ScriptFunction Logf() { return mLogf ? mLogf : (mLogf = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.Logf")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function Engine.FileWriter.Destroyed")); }
+		}
+	}
 	enum FWFileType : ubyte
 	{
 		FWFT_Log = 0,
@@ -39,22 +58,22 @@ final:
 		*cast(ScriptString*)&params[16] = InExtension;
 		*cast(bool*)&params[28] = bUnique;
 		*cast(bool*)&params[32] = bIncludeTimeStamp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15707], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OpenFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
 	void CloseFile()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15714], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CloseFile, cast(void*)0, cast(void*)0);
 	}
 	void Logf(ScriptString logString)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = logString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Logf, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15717], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 }

@@ -7,11 +7,18 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface NxForceFieldSpawnable : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldSpawnable")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mOnToggle;
+		public @property static final ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceFieldSpawnable.OnToggle")); }
+	}
 	final void OnToggle(SeqAct_Toggle inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21236], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 }

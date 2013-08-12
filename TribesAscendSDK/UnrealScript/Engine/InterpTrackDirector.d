@@ -6,10 +6,14 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackDirector : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackDirector")); }
 	struct DirectorTrackCut
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackDirector.DirectorTrackCut")); }
 		@property final auto ref
 		{
 			ScriptName TargetCamGroup() { return *cast(ScriptName*)(cast(size_t)&this + 8); }

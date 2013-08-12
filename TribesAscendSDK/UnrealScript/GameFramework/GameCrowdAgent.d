@@ -21,6 +21,95 @@ import UnrealScript.Engine.LightComponent;
 extern(C++) interface GameCrowdAgent : CrowdAgentBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPickBehaviorFrom;
+			ScriptFunction mFellOutOfWorld;
+			ScriptFunction mIsPanicked;
+			ScriptFunction mSetPanic;
+			ScriptFunction mWaitForGroupMembers;
+			ScriptFunction mSetCurrentDestination;
+			ScriptFunction mSetMaxSpeed;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mKillAgent;
+			ScriptFunction mResetPooledAgent;
+			ScriptFunction mDestroyed;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mSetLighting;
+			ScriptFunction mInitializeAgent;
+			ScriptFunction mOnPlayAgentAnimation;
+			ScriptFunction mPlayIdleAnimation;
+			ScriptFunction mStopIdleAnimation;
+			ScriptFunction mHandlePotentialAgentEncounter;
+			ScriptFunction mPlaySpawnBehavior;
+			ScriptFunction mNotifySeePlayer;
+			ScriptFunction mTryRandomBehavior;
+			ScriptFunction mResetSeePlayer;
+			ScriptFunction mActivateBehavior;
+			ScriptFunction mSetCurrentBehavior;
+			ScriptFunction mActivateInstancedBehavior;
+			ScriptFunction mStopBehavior;
+			ScriptFunction mIsIdle;
+			ScriptFunction mCalcCamera;
+			ScriptFunction mUpdateIntermediatePoint;
+			ScriptFunction mPlayDeath;
+			ScriptFunction mFireDeathEvent;
+			ScriptFunction mTakeDamage;
+			ScriptFunction mOverlappedActorEvent;
+			ScriptFunction mInitNavigationHandle;
+			ScriptFunction mGeneratePathToActor;
+			ScriptFunction mNativePostRenderFor;
+			ScriptFunction mPostRenderFor;
+			ScriptFunction mGetDestString;
+			ScriptFunction mGetBehaviorString;
+		}
+		public @property static final
+		{
+			ScriptFunction PickBehaviorFrom() { return mPickBehaviorFrom ? mPickBehaviorFrom : (mPickBehaviorFrom = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PickBehaviorFrom")); }
+			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.FellOutOfWorld")); }
+			ScriptFunction IsPanicked() { return mIsPanicked ? mIsPanicked : (mIsPanicked = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.IsPanicked")); }
+			ScriptFunction SetPanic() { return mSetPanic ? mSetPanic : (mSetPanic = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetPanic")); }
+			ScriptFunction WaitForGroupMembers() { return mWaitForGroupMembers ? mWaitForGroupMembers : (mWaitForGroupMembers = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.WaitForGroupMembers")); }
+			ScriptFunction SetCurrentDestination() { return mSetCurrentDestination ? mSetCurrentDestination : (mSetCurrentDestination = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetCurrentDestination")); }
+			ScriptFunction SetMaxSpeed() { return mSetMaxSpeed ? mSetMaxSpeed : (mSetMaxSpeed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetMaxSpeed")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PostBeginPlay")); }
+			ScriptFunction KillAgent() { return mKillAgent ? mKillAgent : (mKillAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.KillAgent")); }
+			ScriptFunction ResetPooledAgent() { return mResetPooledAgent ? mResetPooledAgent : (mResetPooledAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ResetPooledAgent")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.Destroyed")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.DisplayDebug")); }
+			ScriptFunction SetLighting() { return mSetLighting ? mSetLighting : (mSetLighting = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetLighting")); }
+			ScriptFunction InitializeAgent() { return mInitializeAgent ? mInitializeAgent : (mInitializeAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.InitializeAgent")); }
+			ScriptFunction OnPlayAgentAnimation() { return mOnPlayAgentAnimation ? mOnPlayAgentAnimation : (mOnPlayAgentAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.OnPlayAgentAnimation")); }
+			ScriptFunction PlayIdleAnimation() { return mPlayIdleAnimation ? mPlayIdleAnimation : (mPlayIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlayIdleAnimation")); }
+			ScriptFunction StopIdleAnimation() { return mStopIdleAnimation ? mStopIdleAnimation : (mStopIdleAnimation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.StopIdleAnimation")); }
+			ScriptFunction HandlePotentialAgentEncounter() { return mHandlePotentialAgentEncounter ? mHandlePotentialAgentEncounter : (mHandlePotentialAgentEncounter = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.HandlePotentialAgentEncounter")); }
+			ScriptFunction PlaySpawnBehavior() { return mPlaySpawnBehavior ? mPlaySpawnBehavior : (mPlaySpawnBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlaySpawnBehavior")); }
+			ScriptFunction NotifySeePlayer() { return mNotifySeePlayer ? mNotifySeePlayer : (mNotifySeePlayer = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.NotifySeePlayer")); }
+			ScriptFunction TryRandomBehavior() { return mTryRandomBehavior ? mTryRandomBehavior : (mTryRandomBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.TryRandomBehavior")); }
+			ScriptFunction ResetSeePlayer() { return mResetSeePlayer ? mResetSeePlayer : (mResetSeePlayer = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ResetSeePlayer")); }
+			ScriptFunction ActivateBehavior() { return mActivateBehavior ? mActivateBehavior : (mActivateBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ActivateBehavior")); }
+			ScriptFunction SetCurrentBehavior() { return mSetCurrentBehavior ? mSetCurrentBehavior : (mSetCurrentBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.SetCurrentBehavior")); }
+			ScriptFunction ActivateInstancedBehavior() { return mActivateInstancedBehavior ? mActivateInstancedBehavior : (mActivateInstancedBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.ActivateInstancedBehavior")); }
+			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.StopBehavior")); }
+			ScriptFunction IsIdle() { return mIsIdle ? mIsIdle : (mIsIdle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.IsIdle")); }
+			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.CalcCamera")); }
+			ScriptFunction UpdateIntermediatePoint() { return mUpdateIntermediatePoint ? mUpdateIntermediatePoint : (mUpdateIntermediatePoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.UpdateIntermediatePoint")); }
+			ScriptFunction PlayDeath() { return mPlayDeath ? mPlayDeath : (mPlayDeath = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PlayDeath")); }
+			ScriptFunction FireDeathEvent() { return mFireDeathEvent ? mFireDeathEvent : (mFireDeathEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.FireDeathEvent")); }
+			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.TakeDamage")); }
+			ScriptFunction OverlappedActorEvent() { return mOverlappedActorEvent ? mOverlappedActorEvent : (mOverlappedActorEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.OverlappedActorEvent")); }
+			ScriptFunction InitNavigationHandle() { return mInitNavigationHandle ? mInitNavigationHandle : (mInitNavigationHandle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.InitNavigationHandle")); }
+			ScriptFunction GeneratePathToActor() { return mGeneratePathToActor ? mGeneratePathToActor : (mGeneratePathToActor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GeneratePathToActor")); }
+			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.NativePostRenderFor")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.PostRenderFor")); }
+			ScriptFunction GetDestString() { return mGetDestString ? mGetDestString : (mGetDestString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GetDestString")); }
+			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAgent.GetBehaviorString")); }
+		}
+	}
 	enum EConformType : ubyte
 	{
 		CFM_NavMesh = 0,
@@ -33,6 +122,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgent.RecentInteraction")); }
 		@property final auto ref
 		{
 			float InteractionDelay() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -43,6 +134,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameCrowdAgent.BehaviorEntry")); }
 		@property final
 		{
 			auto ref
@@ -179,7 +272,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)params.ptr = BehaviorList;
 		*cast(Vector*)&params[12] = BestCameraLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30495], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PickBehaviorFrom, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	void FellOutOfWorld(ScriptClass dmgType)
@@ -187,13 +280,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = dmgType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30941], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FellOutOfWorld, params.ptr, cast(void*)0);
 	}
 	bool IsPanicked()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30943], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPanicked, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetPanic(Actor PanicActor, bool bNewPanic)
@@ -202,38 +295,38 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = PanicActor;
 		*cast(bool*)&params[4] = bNewPanic;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30945], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPanic, params.ptr, cast(void*)0);
 	}
 	void WaitForGroupMembers()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30961], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WaitForGroupMembers, cast(void*)0, cast(void*)0);
 	}
 	void SetCurrentDestination(GameCrowdDestination NewDest)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = NewDest;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30964], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentDestination, params.ptr, cast(void*)0);
 	}
 	void SetMaxSpeed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30966], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaxSpeed, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30967], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void KillAgent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30972], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillAgent, cast(void*)0, cast(void*)0);
 	}
 	void ResetPooledAgent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30975], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetPooledAgent, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30976], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -242,7 +335,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30977], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -253,7 +346,7 @@ final:
 		*cast(bool*)params.ptr = bEnableLightEnvironment;
 		*cast(LightComponent.LightingChannelContainer*)&params[4] = AgentLightingChannel;
 		*cast(bool*)&params[8] = bCastShadows;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30983], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLighting, params.ptr, cast(void*)0);
 	}
 	void InitializeAgent(Actor SpawnLoc, GameCrowdAgent AgentTemplate, GameCrowdGroup NewGroup, float AgentWarmupTime, bool bWarmupPosition, bool bCheckWarmupVisibility)
 	{
@@ -265,45 +358,45 @@ final:
 		*cast(float*)&params[12] = AgentWarmupTime;
 		*cast(bool*)&params[16] = bWarmupPosition;
 		*cast(bool*)&params[20] = bCheckWarmupVisibility;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeAgent, params.ptr, cast(void*)0);
 	}
 	void OnPlayAgentAnimation(SeqAct_PlayAgentAnimation Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_PlayAgentAnimation*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31012], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPlayAgentAnimation, params.ptr, cast(void*)0);
 	}
 	void PlayIdleAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31014], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayIdleAnimation, cast(void*)0, cast(void*)0);
 	}
 	void StopIdleAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31015], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopIdleAnimation, cast(void*)0, cast(void*)0);
 	}
 	void HandlePotentialAgentEncounter()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31016], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePotentialAgentEncounter, cast(void*)0, cast(void*)0);
 	}
 	void PlaySpawnBehavior()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31017], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySpawnBehavior, cast(void*)0, cast(void*)0);
 	}
 	void NotifySeePlayer(PlayerController PC)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31018], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifySeePlayer, params.ptr, cast(void*)0);
 	}
 	void TryRandomBehavior()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31022], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TryRandomBehavior, cast(void*)0, cast(void*)0);
 	}
 	void ResetSeePlayer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31025], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetSeePlayer, cast(void*)0, cast(void*)0);
 	}
 	void ActivateBehavior(GameCrowdAgentBehavior NewBehaviorArchetype, Actor LookAtActor)
 	{
@@ -311,31 +404,31 @@ final:
 		params[] = 0;
 		*cast(GameCrowdAgentBehavior*)params.ptr = NewBehaviorArchetype;
 		*cast(Actor*)&params[4] = LookAtActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31026], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateBehavior, params.ptr, cast(void*)0);
 	}
 	void SetCurrentBehavior(GameCrowdAgentBehavior BehaviorArchetype)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgentBehavior*)params.ptr = BehaviorArchetype;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31029], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentBehavior, params.ptr, cast(void*)0);
 	}
 	void ActivateInstancedBehavior(GameCrowdAgentBehavior NewBehaviorObject)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgentBehavior*)params.ptr = NewBehaviorObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31030], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateInstancedBehavior, params.ptr, cast(void*)0);
 	}
 	void StopBehavior()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31032], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopBehavior, cast(void*)0, cast(void*)0);
 	}
 	bool IsIdle()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31034], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsIdle, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
@@ -346,7 +439,7 @@ final:
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31036], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -357,18 +450,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = DestinationActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31044], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateIntermediatePoint, params.ptr, cast(void*)0);
 	}
 	void PlayDeath(Vector KillMomentum)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = KillMomentum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31048], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDeath, params.ptr, cast(void*)0);
 	}
 	void FireDeathEvent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31050], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FireDeathEvent, cast(void*)0, cast(void*)0);
 	}
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
@@ -381,18 +474,18 @@ final:
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31051], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void OverlappedActorEvent(Actor A)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31059], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OverlappedActorEvent, params.ptr, cast(void*)0);
 	}
 	void InitNavigationHandle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31061], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitNavigationHandle, cast(void*)0, cast(void*)0);
 	}
 	Vector GeneratePathToActor(Actor Goal, float WithinDistance, bool bAllowPartialPath)
 	{
@@ -401,7 +494,7 @@ final:
 		*cast(Actor*)params.ptr = Goal;
 		*cast(float*)&params[4] = WithinDistance;
 		*cast(bool*)&params[8] = bAllowPartialPath;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31062], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePathToActor, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
 	void NativePostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
@@ -412,7 +505,7 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31068], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativePostRenderFor, params.ptr, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
 	{
@@ -422,20 +515,20 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31073], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 	ScriptString GetDestString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31089], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDestString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetBehaviorString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31092], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBehaviorString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

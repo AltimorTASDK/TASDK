@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SphericalHarmonicLightComponent;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.LightComponent;
 
 extern(C++) interface SphericalHarmonicLightComponent : LightComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SphericalHarmonicLightComponent")); }
 	@property final
 	{
 		@property final auto ref UObject.SHVectorRGB WorldSpaceIncidentLighting() { return *cast(UObject.SHVectorRGB*)(cast(size_t)cast(void*)this + 432); }

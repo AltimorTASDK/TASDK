@@ -12,6 +12,8 @@ import UnrealScript.Engine.CameraAnim;
 extern(C++) interface GameTypes : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameTypes")); }
 	enum LOADING_MOVIE = "LoadingMovie";
 	enum EShakeParam : ubyte
 	{
@@ -23,6 +25,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.AICmdHistoryItem")); }
 		@property final auto ref
 		{
 			ScriptClass CmdClass() { return *cast(ScriptClass*)(cast(size_t)&this + 0); }
@@ -34,6 +38,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.SpecialMoveStruct")); }
 		@property final auto ref
 		{
 			ScriptName SpecialMoveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -46,6 +52,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.GameSpecialMoveInfo")); }
 		@property final auto ref
 		{
 			ScriptName SpecialMoveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -57,6 +65,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.TakeHitInfo")); }
 		@property final auto ref
 		{
 			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
@@ -73,6 +83,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[120];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ScreenShakeStruct")); }
 		@property final
 		{
 			auto ref
@@ -102,6 +114,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ShakeParams")); }
 		@property final auto ref
 		{
 			GameTypes.EShakeParam X() { return *cast(GameTypes.EShakeParam*)(cast(size_t)&this + 0); }
@@ -114,6 +128,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameTypes.ScreenShakeAnimStruct")); }
 		@property final
 		{
 			auto ref

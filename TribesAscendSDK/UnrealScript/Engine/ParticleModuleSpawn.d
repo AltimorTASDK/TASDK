@@ -8,6 +8,8 @@ import UnrealScript.Engine.ParticleModuleSpawnBase;
 extern(C++) interface ParticleModuleSpawn : ParticleModuleSpawnBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSpawn")); }
 	@property final auto ref
 	{
 		ScriptArray!(ParticleEmitter.ParticleBurst) BurstList() { return *cast(ScriptArray!(ParticleEmitter.ParticleBurst)*)(cast(size_t)cast(void*)this + 136); }

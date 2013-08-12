@@ -9,10 +9,191 @@ import UnrealScript.TribesGame.GFxTrMenuMoviePlayer;
 extern(C++) interface TrQueueManager : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrQueueManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetStatus;
+			ScriptFunction mSetPropNumber;
+			ScriptFunction mGetNextMapId;
+			ScriptFunction mGetMapName;
+			ScriptFunction mGetProfileName;
+			ScriptFunction mGetProfileDesc;
+			ScriptFunction mGetServerGameTypeName;
+			ScriptFunction mGetProfileGameType;
+			ScriptFunction mGetServerRotationName;
+			ScriptFunction mIsGameTypeFiltered;
+			ScriptFunction mAmServerOwner;
+			ScriptFunction mGetPropNumber;
+			ScriptFunction mGetServerTimeFormat;
+			ScriptFunction mGetQueueCaseId;
+			ScriptFunction mGetServerOnline;
+			ScriptFunction mGetServerName;
+			ScriptFunction mAddCustomServer;
+			ScriptFunction mGetProfileRotation;
+			ScriptFunction mGetServerExpired;
+			ScriptFunction mGetServerTime;
+			ScriptFunction mCustomStart;
+			ScriptFunction mCustomStop;
+			ScriptFunction mCustomShutdown;
+			ScriptFunction mCustomNextMap;
+			ScriptFunction mCustomKick;
+			ScriptFunction mCustomBan;
+			ScriptFunction mAddCustomServerTime;
+			ScriptFunction mGetPropMin;
+			ScriptFunction mGetPropMax;
+			ScriptFunction mGetAdminPassword;
+			ScriptFunction mGetPublicPassword;
+			ScriptFunction mCustomSetName;
+			ScriptFunction mSetPropString;
+			ScriptFunction mGetProfileRegion;
+			ScriptFunction mCustomLogin;
+			ScriptFunction mFavoriteSortB;
+			ScriptFunction mPasswordSortB;
+			ScriptFunction mSlotsSortB;
+			ScriptFunction mRangeSortB;
+			ScriptFunction mRulesSortB;
+			ScriptFunction mTypeSortB;
+			ScriptFunction mPingSortB;
+			ScriptFunction mNameSortB;
+			ScriptFunction mMapSortB;
+			ScriptFunction mFavoriteSortA;
+			ScriptFunction mPasswordSortA;
+			ScriptFunction mSlotsSortA;
+			ScriptFunction mRangeSortA;
+			ScriptFunction mRulesSortA;
+			ScriptFunction mTypeSortA;
+			ScriptFunction mPingSortA;
+			ScriptFunction mNameSortA;
+			ScriptFunction mMapSortA;
+			ScriptFunction mForceGoHome;
+			ScriptFunction mOpenLocal;
+			ScriptFunction mGetCustomServers;
+			ScriptFunction mRequestCustomServers;
+			ScriptFunction mRefreshRentedServers;
+			ScriptFunction mGetPropString;
+			ScriptFunction mSetLocalName;
+			ScriptFunction mMatchQueueJoin;
+			ScriptFunction mInitialize;
+			ScriptFunction mLeaveMatchmaking;
+			ScriptFunction mJoinQueue;
+			ScriptFunction mSetPlayerQueued;
+			ScriptFunction mJoinFriend;
+			ScriptFunction mExitGameInProgress;
+			ScriptFunction mServerInfoLoaded;
+			ScriptFunction mJoinCustomServer;
+			ScriptFunction mJoinProtectedServer;
+			ScriptFunction mFavoriteServer;
+			ScriptFunction mPasswordServer;
+			ScriptFunction mSetActiveServer;
+			ScriptFunction mServerPage;
+			ScriptFunction mServerSort;
+			ScriptFunction mSortOn;
+			ScriptFunction mGetSlots;
+			ScriptFunction mGetGameCaseId;
+			ScriptFunction mAddServerConfig;
+			ScriptFunction mAddProfileConfig;
+			ScriptFunction mResetRotation;
+			ScriptFunction mGetDefaultMapId;
+			ScriptFunction mMarkFavorite;
+			ScriptFunction mFilterGameType;
+		}
+		public @property static final
+		{
+			ScriptFunction GetStatus() { return mGetStatus ? mGetStatus : (mGetStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetStatus")); }
+			ScriptFunction SetPropNumber() { return mSetPropNumber ? mSetPropNumber : (mSetPropNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPropNumber")); }
+			ScriptFunction GetNextMapId() { return mGetNextMapId ? mGetNextMapId : (mGetNextMapId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetNextMapId")); }
+			ScriptFunction GetMapName() { return mGetMapName ? mGetMapName : (mGetMapName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetMapName")); }
+			ScriptFunction GetProfileName() { return mGetProfileName ? mGetProfileName : (mGetProfileName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileName")); }
+			ScriptFunction GetProfileDesc() { return mGetProfileDesc ? mGetProfileDesc : (mGetProfileDesc = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileDesc")); }
+			ScriptFunction GetServerGameTypeName() { return mGetServerGameTypeName ? mGetServerGameTypeName : (mGetServerGameTypeName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerGameTypeName")); }
+			ScriptFunction GetProfileGameType() { return mGetProfileGameType ? mGetProfileGameType : (mGetProfileGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileGameType")); }
+			ScriptFunction GetServerRotationName() { return mGetServerRotationName ? mGetServerRotationName : (mGetServerRotationName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerRotationName")); }
+			ScriptFunction IsGameTypeFiltered() { return mIsGameTypeFiltered ? mIsGameTypeFiltered : (mIsGameTypeFiltered = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.IsGameTypeFiltered")); }
+			ScriptFunction AmServerOwner() { return mAmServerOwner ? mAmServerOwner : (mAmServerOwner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AmServerOwner")); }
+			ScriptFunction GetPropNumber() { return mGetPropNumber ? mGetPropNumber : (mGetPropNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropNumber")); }
+			ScriptFunction GetServerTimeFormat() { return mGetServerTimeFormat ? mGetServerTimeFormat : (mGetServerTimeFormat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerTimeFormat")); }
+			ScriptFunction GetQueueCaseId() { return mGetQueueCaseId ? mGetQueueCaseId : (mGetQueueCaseId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetQueueCaseId")); }
+			ScriptFunction GetServerOnline() { return mGetServerOnline ? mGetServerOnline : (mGetServerOnline = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerOnline")); }
+			ScriptFunction GetServerName() { return mGetServerName ? mGetServerName : (mGetServerName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerName")); }
+			ScriptFunction AddCustomServer() { return mAddCustomServer ? mAddCustomServer : (mAddCustomServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddCustomServer")); }
+			ScriptFunction GetProfileRotation() { return mGetProfileRotation ? mGetProfileRotation : (mGetProfileRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileRotation")); }
+			ScriptFunction GetServerExpired() { return mGetServerExpired ? mGetServerExpired : (mGetServerExpired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerExpired")); }
+			ScriptFunction GetServerTime() { return mGetServerTime ? mGetServerTime : (mGetServerTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetServerTime")); }
+			ScriptFunction CustomStart() { return mCustomStart ? mCustomStart : (mCustomStart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomStart")); }
+			ScriptFunction CustomStop() { return mCustomStop ? mCustomStop : (mCustomStop = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomStop")); }
+			ScriptFunction CustomShutdown() { return mCustomShutdown ? mCustomShutdown : (mCustomShutdown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomShutdown")); }
+			ScriptFunction CustomNextMap() { return mCustomNextMap ? mCustomNextMap : (mCustomNextMap = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomNextMap")); }
+			ScriptFunction CustomKick() { return mCustomKick ? mCustomKick : (mCustomKick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomKick")); }
+			ScriptFunction CustomBan() { return mCustomBan ? mCustomBan : (mCustomBan = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomBan")); }
+			ScriptFunction AddCustomServerTime() { return mAddCustomServerTime ? mAddCustomServerTime : (mAddCustomServerTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddCustomServerTime")); }
+			ScriptFunction GetPropMin() { return mGetPropMin ? mGetPropMin : (mGetPropMin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropMin")); }
+			ScriptFunction GetPropMax() { return mGetPropMax ? mGetPropMax : (mGetPropMax = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropMax")); }
+			ScriptFunction GetAdminPassword() { return mGetAdminPassword ? mGetAdminPassword : (mGetAdminPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetAdminPassword")); }
+			ScriptFunction GetPublicPassword() { return mGetPublicPassword ? mGetPublicPassword : (mGetPublicPassword = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPublicPassword")); }
+			ScriptFunction CustomSetName() { return mCustomSetName ? mCustomSetName : (mCustomSetName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomSetName")); }
+			ScriptFunction SetPropString() { return mSetPropString ? mSetPropString : (mSetPropString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPropString")); }
+			ScriptFunction GetProfileRegion() { return mGetProfileRegion ? mGetProfileRegion : (mGetProfileRegion = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetProfileRegion")); }
+			ScriptFunction CustomLogin() { return mCustomLogin ? mCustomLogin : (mCustomLogin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.CustomLogin")); }
+			ScriptFunction FavoriteSortB() { return mFavoriteSortB ? mFavoriteSortB : (mFavoriteSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteSortB")); }
+			ScriptFunction PasswordSortB() { return mPasswordSortB ? mPasswordSortB : (mPasswordSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordSortB")); }
+			ScriptFunction SlotsSortB() { return mSlotsSortB ? mSlotsSortB : (mSlotsSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SlotsSortB")); }
+			ScriptFunction RangeSortB() { return mRangeSortB ? mRangeSortB : (mRangeSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RangeSortB")); }
+			ScriptFunction RulesSortB() { return mRulesSortB ? mRulesSortB : (mRulesSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RulesSortB")); }
+			ScriptFunction TypeSortB() { return mTypeSortB ? mTypeSortB : (mTypeSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.TypeSortB")); }
+			ScriptFunction PingSortB() { return mPingSortB ? mPingSortB : (mPingSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PingSortB")); }
+			ScriptFunction NameSortB() { return mNameSortB ? mNameSortB : (mNameSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.NameSortB")); }
+			ScriptFunction MapSortB() { return mMapSortB ? mMapSortB : (mMapSortB = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MapSortB")); }
+			ScriptFunction FavoriteSortA() { return mFavoriteSortA ? mFavoriteSortA : (mFavoriteSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteSortA")); }
+			ScriptFunction PasswordSortA() { return mPasswordSortA ? mPasswordSortA : (mPasswordSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordSortA")); }
+			ScriptFunction SlotsSortA() { return mSlotsSortA ? mSlotsSortA : (mSlotsSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SlotsSortA")); }
+			ScriptFunction RangeSortA() { return mRangeSortA ? mRangeSortA : (mRangeSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RangeSortA")); }
+			ScriptFunction RulesSortA() { return mRulesSortA ? mRulesSortA : (mRulesSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RulesSortA")); }
+			ScriptFunction TypeSortA() { return mTypeSortA ? mTypeSortA : (mTypeSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.TypeSortA")); }
+			ScriptFunction PingSortA() { return mPingSortA ? mPingSortA : (mPingSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PingSortA")); }
+			ScriptFunction NameSortA() { return mNameSortA ? mNameSortA : (mNameSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.NameSortA")); }
+			ScriptFunction MapSortA() { return mMapSortA ? mMapSortA : (mMapSortA = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MapSortA")); }
+			ScriptFunction ForceGoHome() { return mForceGoHome ? mForceGoHome : (mForceGoHome = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ForceGoHome")); }
+			ScriptFunction OpenLocal() { return mOpenLocal ? mOpenLocal : (mOpenLocal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.OpenLocal")); }
+			ScriptFunction GetCustomServers() { return mGetCustomServers ? mGetCustomServers : (mGetCustomServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetCustomServers")); }
+			ScriptFunction RequestCustomServers() { return mRequestCustomServers ? mRequestCustomServers : (mRequestCustomServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RequestCustomServers")); }
+			ScriptFunction RefreshRentedServers() { return mRefreshRentedServers ? mRefreshRentedServers : (mRefreshRentedServers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.RefreshRentedServers")); }
+			ScriptFunction GetPropString() { return mGetPropString ? mGetPropString : (mGetPropString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetPropString")); }
+			ScriptFunction SetLocalName() { return mSetLocalName ? mSetLocalName : (mSetLocalName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetLocalName")); }
+			ScriptFunction MatchQueueJoin() { return mMatchQueueJoin ? mMatchQueueJoin : (mMatchQueueJoin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MatchQueueJoin")); }
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.Initialize")); }
+			ScriptFunction LeaveMatchmaking() { return mLeaveMatchmaking ? mLeaveMatchmaking : (mLeaveMatchmaking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.LeaveMatchmaking")); }
+			ScriptFunction JoinQueue() { return mJoinQueue ? mJoinQueue : (mJoinQueue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinQueue")); }
+			ScriptFunction SetPlayerQueued() { return mSetPlayerQueued ? mSetPlayerQueued : (mSetPlayerQueued = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetPlayerQueued")); }
+			ScriptFunction JoinFriend() { return mJoinFriend ? mJoinFriend : (mJoinFriend = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinFriend")); }
+			ScriptFunction ExitGameInProgress() { return mExitGameInProgress ? mExitGameInProgress : (mExitGameInProgress = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ExitGameInProgress")); }
+			ScriptFunction ServerInfoLoaded() { return mServerInfoLoaded ? mServerInfoLoaded : (mServerInfoLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerInfoLoaded")); }
+			ScriptFunction JoinCustomServer() { return mJoinCustomServer ? mJoinCustomServer : (mJoinCustomServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinCustomServer")); }
+			ScriptFunction JoinProtectedServer() { return mJoinProtectedServer ? mJoinProtectedServer : (mJoinProtectedServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.JoinProtectedServer")); }
+			ScriptFunction FavoriteServer() { return mFavoriteServer ? mFavoriteServer : (mFavoriteServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FavoriteServer")); }
+			ScriptFunction PasswordServer() { return mPasswordServer ? mPasswordServer : (mPasswordServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.PasswordServer")); }
+			ScriptFunction SetActiveServer() { return mSetActiveServer ? mSetActiveServer : (mSetActiveServer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SetActiveServer")); }
+			ScriptFunction ServerPage() { return mServerPage ? mServerPage : (mServerPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerPage")); }
+			ScriptFunction ServerSort() { return mServerSort ? mServerSort : (mServerSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ServerSort")); }
+			ScriptFunction SortOn() { return mSortOn ? mSortOn : (mSortOn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.SortOn")); }
+			ScriptFunction GetSlots() { return mGetSlots ? mGetSlots : (mGetSlots = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetSlots")); }
+			ScriptFunction GetGameCaseId() { return mGetGameCaseId ? mGetGameCaseId : (mGetGameCaseId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetGameCaseId")); }
+			ScriptFunction AddServerConfig() { return mAddServerConfig ? mAddServerConfig : (mAddServerConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddServerConfig")); }
+			ScriptFunction AddProfileConfig() { return mAddProfileConfig ? mAddProfileConfig : (mAddProfileConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.AddProfileConfig")); }
+			ScriptFunction ResetRotation() { return mResetRotation ? mResetRotation : (mResetRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.ResetRotation")); }
+			ScriptFunction GetDefaultMapId() { return mGetDefaultMapId ? mGetDefaultMapId : (mGetDefaultMapId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.GetDefaultMapId")); }
+			ScriptFunction MarkFavorite() { return mMarkFavorite ? mMarkFavorite : (mMarkFavorite = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.MarkFavorite")); }
+			ScriptFunction FilterGameType() { return mFilterGameType ? mFilterGameType : (mFilterGameType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrQueueManager.FilterGameType")); }
+		}
+	}
 	struct ServerInfo
 	{
 		private ubyte __buffer__[80];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ServerInfo")); }
 		@property final
 		{
 			auto ref
@@ -39,6 +220,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.RentalItem")); }
 		@property final auto ref
 		{
 			ScriptString RentalName() { return *cast(ScriptString*)(cast(size_t)&this + 12); }
@@ -51,6 +234,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ServerConfig")); }
 		@property final
 		{
 			auto ref
@@ -75,6 +260,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrQueueManager.ProfileConfig")); }
 		@property final auto ref
 		{
 			ScriptString PasswordPublic() { return *cast(ScriptString*)(cast(size_t)&this + 48); }
@@ -138,7 +325,7 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[54699], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetStatus, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	bool SetPropNumber(int PropId, int val, int PropType)
@@ -148,7 +335,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = val;
 		*cast(int*)&params[8] = PropType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58002], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropNumber, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool GetNextMapId(bool bStart, int* MapId)
@@ -157,7 +344,7 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bStart;
 		*cast(int*)&params[4] = *MapId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58012], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMapId, params.ptr, cast(void*)0);
 		*MapId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
@@ -166,21 +353,21 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = MapId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58021], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	ScriptString GetProfileName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58031], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetProfileDesc()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58033], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileDesc, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetServerGameTypeName(int Index)
@@ -188,21 +375,21 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58560], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerGameTypeName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	int GetProfileGameType()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59097], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileGameType, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	ScriptString GetServerRotationName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59103], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerRotationName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	bool IsGameTypeFiltered(int Id)
@@ -210,14 +397,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Id;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59174], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsGameTypeFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool AmServerOwner()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59650], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AmServerOwner, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	int GetPropNumber(int PropId, int PropType)
@@ -226,21 +413,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59655], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropNumber, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	ScriptString GetServerTimeFormat()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59661], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerTimeFormat, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	int GetQueueCaseId()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59690], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetQueueCaseId, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool GetServerOnline(int Index)
@@ -248,7 +435,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59697], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerOnline, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptString GetServerName(int Index)
@@ -256,56 +443,56 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59699], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	bool AddCustomServer()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59711], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCustomServer, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	int GetProfileRotation()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60518], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileRotation, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool GetServerExpired()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60547], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerExpired, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	int GetServerTime()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60551], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerTime, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool CustomStart()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60569], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomStart, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool CustomStop()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60571], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomStop, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool CustomShutdown()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60573], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomShutdown, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool CustomNextMap(int MapId)
@@ -313,7 +500,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = MapId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60575], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomNextMap, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CustomKick(ScriptString PlayerName)
@@ -321,7 +508,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60577], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomKick, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool CustomBan(ScriptString PlayerName)
@@ -329,7 +516,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60579], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomBan, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool AddCustomServerTime(int LootId)
@@ -337,7 +524,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = LootId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60615], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCustomServerTime, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool GetPropMin(int PropId, int PropType, int* val)
@@ -347,7 +534,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
 		*cast(int*)&params[8] = *val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60746], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMin, params.ptr, cast(void*)0);
 		*val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -358,7 +545,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
 		*cast(int*)&params[8] = *val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60748], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMax, params.ptr, cast(void*)0);
 		*val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
@@ -366,14 +553,14 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60942], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAdminPassword, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetPublicPassword()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60945], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPublicPassword, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	bool CustomSetName(ScriptString QueueName)
@@ -381,7 +568,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = QueueName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60951], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomSetName, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool SetPropString(int PropId, ScriptString val, int PropType)
@@ -391,14 +578,14 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(ScriptString*)&params[4] = val;
 		*cast(int*)&params[16] = PropType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60953], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropString, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	int GetProfileRegion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[60961], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileRegion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool CustomLogin(ScriptString Password)
@@ -406,7 +593,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100339], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CustomLogin, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	int FavoriteSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -415,7 +602,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109504], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FavoriteSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int PasswordSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -424,7 +611,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109506], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PasswordSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int SlotsSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -433,7 +620,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109508], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SlotsSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int RangeSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -442,7 +629,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109510], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RangeSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int RulesSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -451,7 +638,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109512], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RulesSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int TypeSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -460,7 +647,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109514], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TypeSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int PingSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -469,7 +656,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109516], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PingSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int NameSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -478,7 +665,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109518], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NameSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int MapSortB(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -487,7 +674,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109520], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MapSortB, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int FavoriteSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -496,7 +683,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109522], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FavoriteSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int PasswordSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -505,7 +692,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109524], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PasswordSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int SlotsSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -514,7 +701,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109526], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SlotsSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int RangeSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -523,7 +710,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109528], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RangeSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int RulesSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -532,7 +719,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109530], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RulesSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int TypeSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -541,7 +728,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109532], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TypeSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int PingSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -550,7 +737,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109534], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PingSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int NameSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -559,7 +746,7 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109536], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NameSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	int MapSortA(TrQueueManager.ServerInfo A, TrQueueManager.ServerInfo B)
@@ -568,31 +755,31 @@ final:
 		params[] = 0;
 		*cast(TrQueueManager.ServerInfo*)params.ptr = A;
 		*cast(TrQueueManager.ServerInfo*)&params[80] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109538], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MapSortA, params.ptr, cast(void*)0);
 		return *cast(int*)&params[160];
 	}
 	void ForceGoHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109574], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceGoHome, cast(void*)0, cast(void*)0);
 	}
 	void OpenLocal(ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109575], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OpenLocal, params.ptr, cast(void*)0);
 	}
 	void GetCustomServers()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109577], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCustomServers, cast(void*)0, cast(void*)0);
 	}
 	void RequestCustomServers()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109578], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestCustomServers, cast(void*)0, cast(void*)0);
 	}
 	void RefreshRentedServers()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109579], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshRentedServers, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetPropString(int PropId, int PropType)
 	{
@@ -600,7 +787,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = PropType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109585], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
 	bool SetLocalName(ScriptString val)
@@ -608,7 +795,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109595], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLocalName, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 	bool MatchQueueJoin(int Queue, ScriptString Password)
@@ -617,30 +804,30 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Queue;
 		*cast(ScriptString*)&params[4] = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109610], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MatchQueueJoin, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109614], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void LeaveMatchmaking(bool bForced)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bForced;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109616], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LeaveMatchmaking, params.ptr, cast(void*)0);
 	}
 	void JoinQueue(int nQueueId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = nQueueId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109618], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JoinQueue, params.ptr, cast(void*)0);
 	}
 	void SetPlayerQueued()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109620], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerQueued, cast(void*)0, cast(void*)0);
 	}
 	void JoinFriend(ScriptString PlayerName, ScriptString Password)
 	{
@@ -648,7 +835,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		*cast(ScriptString*)&params[12] = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109621], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JoinFriend, params.ptr, cast(void*)0);
 	}
 	void ExitGameInProgress(bool bForceDrop, bool bKicked)
 	{
@@ -656,80 +843,80 @@ final:
 		params[] = 0;
 		*cast(bool*)params.ptr = bForceDrop;
 		*cast(bool*)&params[4] = bKicked;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109624], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExitGameInProgress, params.ptr, cast(void*)0);
 	}
 	void ServerInfoLoaded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109628], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerInfoLoaded, cast(void*)0, cast(void*)0);
 	}
 	void JoinCustomServer(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109629], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JoinCustomServer, params.ptr, cast(void*)0);
 	}
 	void JoinProtectedServer(ScriptString Password)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Password;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109631], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.JoinProtectedServer, params.ptr, cast(void*)0);
 	}
 	void FavoriteServer(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109633], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FavoriteServer, params.ptr, cast(void*)0);
 	}
 	void PasswordServer(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109635], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PasswordServer, params.ptr, cast(void*)0);
 	}
 	void SetActiveServer(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109637], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveServer, params.ptr, cast(void*)0);
 	}
 	void ServerPage(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109639], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerPage, params.ptr, cast(void*)0);
 	}
 	void ServerSort(ScriptString SortName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = SortName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109641], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerSort, params.ptr, cast(void*)0);
 	}
 	void SortOn(ScriptString SortName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = SortName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109643], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortOn, params.ptr, cast(void*)0);
 	}
 	int GetSlots()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109699], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlots, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetGameCaseId()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109701], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameCaseId, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void AddServerConfig(int MatchQueueId)
@@ -737,7 +924,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = MatchQueueId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddServerConfig, params.ptr, cast(void*)0);
 	}
 	void AddProfileConfig(int Index, TrQueueManager.ProfileConfig Data)
 	{
@@ -745,17 +932,17 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(TrQueueManager.ProfileConfig*)&params[4] = Data;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109716], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddProfileConfig, params.ptr, cast(void*)0);
 	}
 	void ResetRotation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109719], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetRotation, cast(void*)0, cast(void*)0);
 	}
 	int GetDefaultMapId()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109721], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDefaultMapId, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void MarkFavorite(int Index)
@@ -763,7 +950,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109723], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MarkFavorite, params.ptr, cast(void*)0);
 	}
 	void FilterGameType(int Id, bool bFilter)
 	{
@@ -771,6 +958,6 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Id;
 		*cast(bool*)&params[4] = bFilter;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[109725], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FilterGameType, params.ptr, cast(void*)0);
 	}
 }

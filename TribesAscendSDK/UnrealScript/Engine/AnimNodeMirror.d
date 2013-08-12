@@ -1,10 +1,13 @@
 module UnrealScript.Engine.AnimNodeMirror;
 
+import ScriptClasses;
 import UnrealScript.Engine.AnimNodeBlendBase;
 
 extern(C++) interface AnimNodeMirror : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeMirror")); }
 	@property final
 	{
 		bool bEnableMirroring() { return (*cast(uint*)(cast(size_t)cast(void*)this + 244) & 0x1) != 0; }

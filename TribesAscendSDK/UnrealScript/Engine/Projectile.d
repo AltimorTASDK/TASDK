@@ -9,6 +9,59 @@ import UnrealScript.Engine.FluidSurfaceActor;
 extern(C++) interface Projectile : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Projectile")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mEncroachingOn;
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInit;
+			ScriptFunction mGetTeamNum;
+			ScriptFunction mCanSplash;
+			ScriptFunction mReset;
+			ScriptFunction mProjectileHurtRadius;
+			ScriptFunction mHurtRadius;
+			ScriptFunction mTouch;
+			ScriptFunction mProcessTouch;
+			ScriptFunction mHitWall;
+			ScriptFunction mEncroachedBy;
+			ScriptFunction mExplode;
+			ScriptFunction mRandSpin;
+			ScriptFunction mIsStationary;
+			ScriptFunction mFellOutOfWorld;
+			ScriptFunction mGetTimeToLocation;
+			ScriptFunction mStaticGetTimeToLocation;
+			ScriptFunction mGetRange;
+			ScriptFunction mApplyFluidSurfaceImpact;
+		}
+		public @property static final
+		{
+			ScriptFunction EncroachingOn() { return mEncroachingOn ? mEncroachingOn : (mEncroachingOn = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.EncroachingOn")); }
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.PostBeginPlay")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Init")); }
+			ScriptFunction GetTeamNum() { return mGetTeamNum ? mGetTeamNum : (mGetTeamNum = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetTeamNum")); }
+			ScriptFunction CanSplash() { return mCanSplash ? mCanSplash : (mCanSplash = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.CanSplash")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Reset")); }
+			ScriptFunction ProjectileHurtRadius() { return mProjectileHurtRadius ? mProjectileHurtRadius : (mProjectileHurtRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ProjectileHurtRadius")); }
+			ScriptFunction HurtRadius() { return mHurtRadius ? mHurtRadius : (mHurtRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.HurtRadius")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Touch")); }
+			ScriptFunction ProcessTouch() { return mProcessTouch ? mProcessTouch : (mProcessTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ProcessTouch")); }
+			ScriptFunction HitWall() { return mHitWall ? mHitWall : (mHitWall = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.HitWall")); }
+			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.EncroachedBy")); }
+			ScriptFunction Explode() { return mExplode ? mExplode : (mExplode = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.Explode")); }
+			ScriptFunction RandSpin() { return mRandSpin ? mRandSpin : (mRandSpin = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.RandSpin")); }
+			ScriptFunction IsStationary() { return mIsStationary ? mIsStationary : (mIsStationary = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.IsStationary")); }
+			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.FellOutOfWorld")); }
+			ScriptFunction GetTimeToLocation() { return mGetTimeToLocation ? mGetTimeToLocation : (mGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetTimeToLocation")); }
+			ScriptFunction StaticGetTimeToLocation() { return mStaticGetTimeToLocation ? mStaticGetTimeToLocation : (mStaticGetTimeToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.StaticGetTimeToLocation")); }
+			ScriptFunction GetRange() { return mGetRange ? mGetRange : (mGetRange = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.GetRange")); }
+			ScriptFunction ApplyFluidSurfaceImpact() { return mApplyFluidSurfaceImpact ? mApplyFluidSurfaceImpact : (mApplyFluidSurfaceImpact = ScriptObject.Find!(ScriptFunction)("Function Engine.Projectile.ApplyFluidSurfaceImpact")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -41,41 +94,41 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24859], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachingOn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24862], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24863], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Init(Vector Direction)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24864], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	ubyte GetTeamNum()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24866], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
 	bool CanSplash()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24868], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanSplash, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24870], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	bool ProjectileHurtRadius(Vector HurtOrigin, Vector HitNormal)
 	{
@@ -83,7 +136,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = HurtOrigin;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24871], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileHurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	bool HurtRadius(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Actor IgnoredActor, Controller InstigatedByController, bool bDoFullDamage)
@@ -98,7 +151,7 @@ final:
 		*cast(Actor*)&params[28] = IgnoredActor;
 		*cast(Controller*)&params[32] = InstigatedByController;
 		*cast(bool*)&params[36] = bDoFullDamage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24879], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}
 	void Touch(Actor Other, 
@@ -113,7 +166,7 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24891], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void ProcessTouch(Actor Other, Vector HitLocation, Vector HitNormal)
 	{
@@ -122,7 +175,7 @@ void**)&params[4] = OtherComp;
 		*cast(Actor*)params.ptr = Other;
 		*cast(Vector*)&params[4] = HitLocation;
 		*cast(Vector*)&params[16] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24896], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessTouch, params.ptr, cast(void*)0);
 	}
 	void HitWall(Vector HitNormal, Actor Wall, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -135,14 +188,14 @@ void* WallComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = WallComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24900], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
 	void EncroachedBy(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24906], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachedBy, params.ptr, cast(void*)0);
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)
 	{
@@ -150,20 +203,20 @@ void**)&params[16] = WallComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24908], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void RandSpin(float spinRate)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = spinRate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24911], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RandSpin, params.ptr, cast(void*)0);
 	}
 	bool IsStationary()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24913], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsStationary, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void FellOutOfWorld(ScriptClass dmgType)
@@ -171,31 +224,31 @@ void**)&params[16] = WallComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = dmgType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24915], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FellOutOfWorld, params.ptr, cast(void*)0);
 	}
 	float GetTimeToLocation(Vector TargetLoc)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TargetLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24917], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimeToLocation, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	float StaticGetTimeToLocation(Vector TargetLoc, Vector StartLoc, Controller RequestedBy)
+	static float StaticGetTimeToLocation(Vector TargetLoc, Vector StartLoc, Controller RequestedBy)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TargetLoc;
 		*cast(Vector*)&params[12] = StartLoc;
 		*cast(Controller*)&params[24] = RequestedBy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24920], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.StaticGetTimeToLocation, params.ptr, cast(void*)0);
 		return *cast(float*)&params[28];
 	}
-	float GetRange()
+	static float GetRange()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24925], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetRange, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void ApplyFluidSurfaceImpact(FluidSurfaceActor Fluid, Vector HitLocation)
@@ -204,6 +257,6 @@ void**)&params[16] = WallComp;
 		params[] = 0;
 		*cast(FluidSurfaceActor*)params.ptr = Fluid;
 		*cast(Vector*)&params[4] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24927], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyFluidSurfaceImpact, params.ptr, cast(void*)0);
 	}
 }

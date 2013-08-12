@@ -6,8 +6,15 @@ import UnrealScript.Engine.AnimNodeBlend;
 extern(C++) interface UDKAnimBlendByDriving : AnimNodeBlend
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByDriving")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mUpdateDrivingState;
+		public @property static final ScriptFunction UpdateDrivingState() { return mUpdateDrivingState ? mUpdateDrivingState : (mUpdateDrivingState = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimBlendByDriving.UpdateDrivingState")); }
+	}
 	final void UpdateDrivingState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34491], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDrivingState, cast(void*)0, cast(void*)0);
 	}
 }

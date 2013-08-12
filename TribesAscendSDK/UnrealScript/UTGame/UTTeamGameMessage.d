@@ -11,6 +11,29 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface UTTeamGameMessage : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamGameMessage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mClientReceive;
+			ScriptFunction mGetString;
+			ScriptFunction mAnnouncementSound;
+			ScriptFunction mGetFontSize;
+			ScriptFunction mGetPos;
+			ScriptFunction mGetColor;
+		}
+		public @property static final
+		{
+			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.ClientReceive")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.GetString")); }
+			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.AnnouncementSound")); }
+			ScriptFunction GetFontSize() { return mGetFontSize ? mGetFontSize : (mGetFontSize = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.GetFontSize")); }
+			ScriptFunction GetPos() { return mGetPos ? mGetPos : (mGetPos = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.GetPos")); }
+			ScriptFunction GetColor() { return mGetColor ? mGetColor : (mGetColor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTTeamGameMessage.GetColor")); }
+		}
+	}
 	@property final auto ref
 	{
 		SoundNodeWave AnnouncerSounds() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 156); }
@@ -22,7 +45,7 @@ public extern(D):
 		ScriptString RequestTeamSwapPrefix() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 100); }
 	}
 final:
-	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -31,9 +54,9 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49419], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -42,20 +65,20 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49425], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = MessageIndex;
 		*cast(UObject*)&params[4] = OptionalObject;
 		*cast(PlayerController*)&params[8] = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49432], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)
+	static int GetFontSize(int Switch, PlayerReplicationInfo RelatedPRI1, PlayerReplicationInfo RelatedPRI2, PlayerReplicationInfo pLocalPlayer)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -63,19 +86,19 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI2;
 		*cast(PlayerReplicationInfo*)&params[12] = pLocalPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49437], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFontSize, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	float GetPos(int Switch, HUD myHUD)
+	static float GetPos(int Switch, HUD myHUD)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
 		*cast(HUD*)&params[4] = myHUD;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49443], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetPos, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -83,7 +106,7 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
 		*cast(UObject*)&params[12] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49447], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}
 }

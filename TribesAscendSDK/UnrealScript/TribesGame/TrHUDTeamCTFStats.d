@@ -11,6 +11,41 @@ import UnrealScript.TribesGame.TrGameReplicationInfo;
 extern(C++) interface TrHUDTeamCTFStats : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUDTeamCTFStats")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mShow;
+			ScriptFunction mHide;
+			ScriptFunction mTick;
+			ScriptFunction mUpdateTeam;
+			ScriptFunction mGetTeamIndex;
+			ScriptFunction mUpdateFlagStatus;
+			ScriptFunction mUpdateGeneratorStatus;
+			ScriptFunction mUpdateTeamScore;
+			ScriptFunction mUpdateTime;
+			ScriptFunction mFormatTime;
+			ScriptFunction mForceUpdate;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.Initialize")); }
+			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.Show")); }
+			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.Hide")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.Tick")); }
+			ScriptFunction UpdateTeam() { return mUpdateTeam ? mUpdateTeam : (mUpdateTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.UpdateTeam")); }
+			ScriptFunction GetTeamIndex() { return mGetTeamIndex ? mGetTeamIndex : (mGetTeamIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.GetTeamIndex")); }
+			ScriptFunction UpdateFlagStatus() { return mUpdateFlagStatus ? mUpdateFlagStatus : (mUpdateFlagStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.UpdateFlagStatus")); }
+			ScriptFunction UpdateGeneratorStatus() { return mUpdateGeneratorStatus ? mUpdateGeneratorStatus : (mUpdateGeneratorStatus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.UpdateGeneratorStatus")); }
+			ScriptFunction UpdateTeamScore() { return mUpdateTeamScore ? mUpdateTeamScore : (mUpdateTeamScore = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.UpdateTeamScore")); }
+			ScriptFunction UpdateTime() { return mUpdateTime ? mUpdateTime : (mUpdateTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.UpdateTime")); }
+			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.FormatTime")); }
+			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDTeamCTFStats.ForceUpdate")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -37,30 +72,30 @@ final:
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = PC;
 		*cast(GfxTrHud*)&params[4] = MP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96637], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 	}
 	void Show()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96640], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Show, cast(void*)0, cast(void*)0);
 	}
 	void Hide()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96641], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Hide, cast(void*)0, cast(void*)0);
 	}
 	void Tick()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96642], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, cast(void*)0, cast(void*)0);
 	}
 	void UpdateTeam()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96644], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTeam, cast(void*)0, cast(void*)0);
 	}
 	int GetTeamIndex(int I)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = I;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96645], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void UpdateFlagStatus(TrGameReplicationInfo GRI)
@@ -68,39 +103,39 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96648], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFlagStatus, params.ptr, cast(void*)0);
 	}
 	void UpdateGeneratorStatus(TrGameReplicationInfo GRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96652], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGeneratorStatus, params.ptr, cast(void*)0);
 	}
 	void UpdateTeamScore(TrGameReplicationInfo GRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTeamScore, params.ptr, cast(void*)0);
 	}
 	void UpdateTime(TrGameReplicationInfo GRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96660], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTime, params.ptr, cast(void*)0);
 	}
 	ScriptString FormatTime(int Seconds)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Seconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96662], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FormatTime, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	void ForceUpdate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96668], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceUpdate, cast(void*)0, cast(void*)0);
 	}
 }

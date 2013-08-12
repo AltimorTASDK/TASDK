@@ -11,11 +11,54 @@ import UnrealScript.UTGame.UTUIDataStore_StringList;
 extern(C++) interface GFxUDKFrontEnd_LaunchGame : GFxUDKFrontEnd_Screen
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_LaunchGame")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetGameModeFriendlyString;
+			ScriptFunction mOnViewLoaded;
+			ScriptFunction mOnViewActivated;
+			ScriptFunction mDisableSubComponents;
+			ScriptFunction mOnTopMostView;
+			ScriptFunction mUpdateGameSettingsPanel;
+			ScriptFunction mPlayOpenAnimation;
+			ScriptFunction mPlayCloseAnimation;
+			ScriptFunction mOnStartGame_Confirm;
+			ScriptFunction mOnListItemPress;
+			ScriptFunction mOnListChange;
+			ScriptFunction mUpdateDescription;
+			ScriptFunction mUpdateListDataProvider;
+			ScriptFunction mWidgetInitialized;
+			ScriptFunction mGetStringFromMarkup;
+		}
+		public @property static final
+		{
+			ScriptFunction GetGameModeFriendlyString() { return mGetGameModeFriendlyString ? mGetGameModeFriendlyString : (mGetGameModeFriendlyString = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.GetGameModeFriendlyString")); }
+			ScriptFunction OnViewLoaded() { return mOnViewLoaded ? mOnViewLoaded : (mOnViewLoaded = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnViewLoaded")); }
+			ScriptFunction OnViewActivated() { return mOnViewActivated ? mOnViewActivated : (mOnViewActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnViewActivated")); }
+			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.DisableSubComponents")); }
+			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnTopMostView")); }
+			ScriptFunction UpdateGameSettingsPanel() { return mUpdateGameSettingsPanel ? mUpdateGameSettingsPanel : (mUpdateGameSettingsPanel = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.UpdateGameSettingsPanel")); }
+			ScriptFunction PlayOpenAnimation() { return mPlayOpenAnimation ? mPlayOpenAnimation : (mPlayOpenAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.PlayOpenAnimation")); }
+			ScriptFunction PlayCloseAnimation() { return mPlayCloseAnimation ? mPlayCloseAnimation : (mPlayCloseAnimation = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.PlayCloseAnimation")); }
+			ScriptFunction OnStartGame_Confirm() { return mOnStartGame_Confirm ? mOnStartGame_Confirm : (mOnStartGame_Confirm = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnStartGame_Confirm")); }
+			ScriptFunction OnListItemPress() { return mOnListItemPress ? mOnListItemPress : (mOnListItemPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnListItemPress")); }
+			ScriptFunction OnListChange() { return mOnListChange ? mOnListChange : (mOnListChange = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.OnListChange")); }
+			ScriptFunction UpdateDescription() { return mUpdateDescription ? mUpdateDescription : (mUpdateDescription = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.UpdateDescription")); }
+			ScriptFunction UpdateListDataProvider() { return mUpdateListDataProvider ? mUpdateListDataProvider : (mUpdateListDataProvider = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.UpdateListDataProvider")); }
+			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.WidgetInitialized")); }
+			ScriptFunction GetStringFromMarkup() { return mGetStringFromMarkup ? mGetStringFromMarkup : (mGetStringFromMarkup = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.GetStringFromMarkup")); }
+		}
+	}
 	enum MarkupForNoMapImage = "UDKFrontEnd.gm_map_none";
 	struct Option
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.GFxUDKFrontEnd_LaunchGame.Option")); }
 		@property final auto ref
 		{
 			ScriptString OptionDesc() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
@@ -56,73 +99,73 @@ public extern(D):
 		UIDataStore_OnlineGameSettings SettingsDataStore() { return *cast(UIDataStore_OnlineGameSettings*)(cast(size_t)cast(void*)this + 220); }
 	}
 final:
-	ScriptString GetGameModeFriendlyString(ScriptString InGameMode)
+	static ScriptString GetGameModeFriendlyString(ScriptString InGameMode)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InGameMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38192], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetGameModeFriendlyString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 	void OnViewLoaded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38240], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
 	void OnViewActivated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38242], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewActivated, cast(void*)0, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDisableComponents;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38248], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
 	void OnTopMostView(bool bPlayOpenAnimation)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPlayOpenAnimation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38250], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void UpdateGameSettingsPanel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38252], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameSettingsPanel, cast(void*)0, cast(void*)0);
 	}
 	void PlayOpenAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38253], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayOpenAnimation, cast(void*)0, cast(void*)0);
 	}
 	void PlayCloseAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38254], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCloseAnimation, cast(void*)0, cast(void*)0);
 	}
 	void OnStartGame_Confirm()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38255], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnStartGame_Confirm, cast(void*)0, cast(void*)0);
 	}
 	void OnListItemPress(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38263], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnListItemPress, params.ptr, cast(void*)0);
 	}
 	void OnListChange(GFxClikWidget.EventData ev)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(GFxClikWidget.EventData*)params.ptr = ev;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnListChange, params.ptr, cast(void*)0);
 	}
 	void UpdateDescription()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38269], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDescription, cast(void*)0, cast(void*)0);
 	}
 	void UpdateListDataProvider()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38272], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateListDataProvider, cast(void*)0, cast(void*)0);
 	}
 	bool WidgetInitialized(ScriptName WidgetName, ScriptName WidgetPath, GFxObject Widget)
 	{
@@ -131,15 +174,15 @@ final:
 		*cast(ScriptName*)params.ptr = WidgetName;
 		*cast(ScriptName*)&params[8] = WidgetPath;
 		*cast(GFxObject*)&params[16] = Widget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WidgetInitialized, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	ScriptString GetStringFromMarkup(ScriptString MarkupString)
+	static ScriptString GetStringFromMarkup(ScriptString MarkupString)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MarkupString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38284], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetStringFromMarkup, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 }

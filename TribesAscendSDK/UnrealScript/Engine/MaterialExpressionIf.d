@@ -1,10 +1,13 @@
 module UnrealScript.Engine.MaterialExpressionIf;
 
+import ScriptClasses;
 import UnrealScript.Engine.MaterialExpression;
 
 extern(C++) interface MaterialExpressionIf : MaterialExpression
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionIf")); }
 	@property final auto ref
 	{
 		MaterialExpression.ExpressionInput ALessThanB() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 220); }

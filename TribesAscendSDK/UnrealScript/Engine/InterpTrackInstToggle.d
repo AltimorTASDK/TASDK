@@ -1,11 +1,14 @@
 module UnrealScript.Engine.InterpTrackInstToggle;
 
+import ScriptClasses;
 import UnrealScript.Engine.InterpTrackInst;
 import UnrealScript.Engine.InterpTrackToggle;
 
 extern(C++) interface InterpTrackInstToggle : InterpTrackInst
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstToggle")); }
 	@property final
 	{
 		auto ref

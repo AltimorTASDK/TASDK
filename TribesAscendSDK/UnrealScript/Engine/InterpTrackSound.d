@@ -7,10 +7,14 @@ import UnrealScript.Engine.InterpTrackVectorBase;
 extern(C++) interface InterpTrackSound : InterpTrackVectorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackSound")); }
 	struct SoundTrackKey
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackSound.SoundTrackKey")); }
 		@property final auto ref
 		{
 			SoundCue Sound() { return *cast(SoundCue*)(cast(size_t)&this + 12); }

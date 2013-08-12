@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleUberRainSplashA;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleUberBase;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
@@ -7,6 +8,8 @@ import UnrealScript.Core.DistributionVector;
 extern(C++) interface ParticleModuleUberRainSplashA : ParticleModuleUberBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberRainSplashA")); }
 	@property final
 	{
 		auto ref

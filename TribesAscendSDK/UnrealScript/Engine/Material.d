@@ -14,10 +14,14 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface Material : MaterialInterface
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Material")); }
 	struct MaterialInput
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Material.MaterialInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }
@@ -33,6 +37,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Material.ColorMaterialInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }
@@ -54,6 +60,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Material.ScalarMaterialInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }
@@ -75,6 +83,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Material.VectorMaterialInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }
@@ -96,6 +106,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Material.Vector2MaterialInput")); }
 		@property final auto ref
 		{
 			int GCC64_Padding() { return *cast(int*)(cast(size_t)&this + 24); }

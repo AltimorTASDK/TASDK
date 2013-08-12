@@ -6,10 +6,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface InterpCurveEdSetup : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpCurveEdSetup")); }
 	struct CurveEdTab
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpCurveEdSetup.CurveEdTab")); }
 		@property final auto ref
 		{
 			ScriptArray!(InterpCurveEdSetup.CurveEdEntry) Curves() { return *cast(ScriptArray!(InterpCurveEdSetup.CurveEdEntry)*)(cast(size_t)&this + 12); }
@@ -24,6 +28,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[44];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpCurveEdSetup.CurveEdEntry")); }
 		@property final auto ref
 		{
 			float ClampHigh() { return *cast(float*)(cast(size_t)&this + 40); }

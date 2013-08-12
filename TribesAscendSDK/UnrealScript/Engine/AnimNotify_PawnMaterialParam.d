@@ -9,6 +9,13 @@ import UnrealScript.Engine.AnimNotify_Scripted;
 extern(C++) interface AnimNotify_PawnMaterialParam : AnimNotify_Scripted
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_PawnMaterialParam")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mNotify;
+		public @property static final ScriptFunction Notify() { return mNotify ? mNotify : (mNotify = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNotify_PawnMaterialParam.Notify")); }
+	}
 	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { return *cast(ScriptArray!(Pawn.ScalarParameterInterpStruct)*)(cast(size_t)cast(void*)this + 64); }
 	final void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
@@ -16,6 +23,6 @@ public extern(D):
 		params[] = 0;
 		*cast(Actor*)params.ptr = Owner;
 		*cast(AnimNodeSequence*)&params[4] = AnimSeqInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11393], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Notify, params.ptr, cast(void*)0);
 	}
 }

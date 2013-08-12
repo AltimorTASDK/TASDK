@@ -7,12 +7,19 @@ import UnrealScript.Engine.UIDataStore;
 extern(C++) interface UIDataStore_Registry : UIDataStore
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_Registry")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetDataProvider;
+		public @property static final ScriptFunction GetDataProvider() { return mGetDataProvider ? mGetDataProvider : (mGetDataProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_Registry.GetDataProvider")); }
+	}
 	@property final auto ref UIDynamicFieldProvider RegistryDataProvider() { return *cast(UIDynamicFieldProvider*)(cast(size_t)cast(void*)this + 120); }
 	final UIDynamicFieldProvider GetDataProvider()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28867], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDataProvider, params.ptr, cast(void*)0);
 		return *cast(UIDynamicFieldProvider*)params.ptr;
 	}
 }

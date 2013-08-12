@@ -40,6 +40,385 @@ import UnrealScript.Engine.Weapon;
 extern(C++) interface TrPawn : UTPawn
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPawn")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetCurrentPowerPool;
+			ScriptFunction mGetMaxPowerPool;
+			ScriptFunction mCalculatePawnSpeed;
+			ScriptFunction mGetCurrCharClassInfo;
+			ScriptFunction mIsFirstPerson;
+			ScriptFunction mGetHandsMesh;
+			ScriptFunction mGetTribesReplicationInfo;
+			ScriptFunction mCheckHeadShot;
+			ScriptFunction mGetPawnViewLocation;
+			ScriptFunction mGetTrHud;
+			ScriptFunction mIsPulseStealthed;
+			ScriptFunction mIsJammedByFriendOrSelf;
+			ScriptFunction mCheckGrabSpeed;
+			ScriptFunction mNativeGetCollisionHeight;
+			ScriptFunction mNativeGetCollisionRadius;
+			ScriptFunction mSyncClientCurrentPowerPool;
+			ScriptFunction mConsumePowerPool;
+			ScriptFunction mRegainPowerPool;
+			ScriptFunction mGetPowerPoolPercent;
+			ScriptFunction mGetCurrentDeviceAccuracyInfo;
+			ScriptFunction mSetOverlayMaterial;
+			ScriptFunction mServerUpdateLockedTarget;
+			ScriptFunction mNativePostRenderFor;
+			ScriptFunction mGetTargetLocation;
+			ScriptFunction mSetFlashNormal;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mTick;
+			ScriptFunction mGetCurrentCredits;
+			ScriptFunction mClientRestart;
+			ScriptFunction mCurrentDeployedCount;
+			ScriptFunction mExitDeployMode;
+			ScriptFunction mGetArmorType;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mReplicateMultiFlashLocation;
+			ScriptFunction mEquipBestPossibleDevice;
+			ScriptFunction mInitDefaultAnims;
+			ScriptFunction mSetCharacterClassFromInfo;
+			ScriptFunction mActivatePendingClass;
+			ScriptFunction mRefreshInventoryTimer;
+			ScriptFunction mSetValuesFromCurrentFamilyInfo;
+			ScriptFunction mRefreshInventory;
+			ScriptFunction mActivateSelectedDeployable;
+			ScriptFunction mRemoveEffectByClass;
+			ScriptFunction mProcessEffectForm;
+			ScriptFunction mGetShieldStrength;
+			ScriptFunction mAdjustAmmoPool;
+			ScriptFunction mAdjustMaxPowerPool;
+			ScriptFunction mSetMaxPowerPool;
+			ScriptFunction mSetMaxHealthPool;
+			ScriptFunction mClientUpdateHUDHealth;
+			ScriptFunction mShouldRechargePowerPool;
+			ScriptFunction mForceHealthRegen;
+			ScriptFunction mRechargeHealthPool;
+			ScriptFunction mGetJetpackAirControl;
+			ScriptFunction mUpdateSkiEffects;
+			ScriptFunction mPlayJetpackEffects;
+			ScriptFunction mUpdateJetpackEffects;
+			ScriptFunction mStopJetpackEffects;
+			ScriptFunction mPlayLandingSound;
+			ScriptFunction mPlayJumpingSound;
+			ScriptFunction mRememberLastDamager;
+			ScriptFunction mGetHealthPct;
+			ScriptFunction mCreateAssistRecord;
+			ScriptFunction mGetLastDamager;
+			ScriptFunction mProcessKillAssists;
+			ScriptFunction mGetUnshieldedDamage;
+			ScriptFunction mGetPawnCausingDamage;
+			ScriptFunction mGetDamageScale;
+			ScriptFunction mDoRepairs;
+			ScriptFunction mCheckTribesTurretInstigator;
+			ScriptFunction mTakeDamage;
+			ScriptFunction mPlayWhiteoutEffect;
+			ScriptFunction mTakeRadiusDamage;
+			ScriptFunction mRecentlyGrabbedFlag;
+			ScriptFunction mGetShowDistanceThreshold;
+			ScriptFunction mPostRenderFor;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mLanded;
+			ScriptFunction mTakeFallingDamage;
+			ScriptFunction mPlayHardLandingEffect;
+			ScriptFunction mPlaySonicPunchEffect;
+			ScriptFunction mTakeFallDamage;
+			ScriptFunction mProcessCreditEvent;
+			ScriptFunction mFlashLocationUpdated;
+			ScriptFunction mWeaponFired;
+			ScriptFunction mDodge;
+			ScriptFunction mPerformDodge;
+			ScriptFunction mgibbedBy;
+			ScriptFunction mEncroachedBy;
+			ScriptFunction mShouldGib;
+			ScriptFunction mSetHandIKEnabled;
+			ScriptFunction mPlayDamageCameraShake;
+			ScriptFunction mIsLastHitFromNinjaSmoke;
+			ScriptFunction mPlayTakeHitEffects;
+			ScriptFunction mFellOutOfWorld;
+			ScriptFunction mDied;
+			ScriptFunction mStopLocalEffectsAndSounds;
+			ScriptFunction mSetOverlayMeshHidden;
+			ScriptFunction mPlayDying;
+			ScriptFunction mNotifyTeamChanged;
+			ScriptFunction mUpdateTeamBlockerMaterials;
+			ScriptFunction mPossessedBy;
+			ScriptFunction mResetSkin;
+			ScriptFunction mSetSkin;
+			ScriptFunction mInitializeOverlayMaterials;
+			ScriptFunction mClientPlayHealthRegenEffect;
+			ScriptFunction mSetShieldPackActive;
+			ScriptFunction mPlayShieldPackEffect;
+			ScriptFunction mSetStealthPackActive;
+			ScriptFunction mPlayStealthPackEffect;
+			ScriptFunction mPulseStealth;
+			ScriptFunction mSetRagePerkActive;
+			ScriptFunction mClearRagePerk;
+			ScriptFunction mPlayRageEffect;
+			ScriptFunction mPlayInvulnerabilityEffect;
+			ScriptFunction mStartRidingInVehicle;
+			ScriptFunction mStopRidingInVehicle;
+			ScriptFunction mStartDriving;
+			ScriptFunction mStopDriving;
+			ScriptFunction mOnRanOver;
+			ScriptFunction mEnableJamming;
+			ScriptFunction mDisableJamming;
+			ScriptFunction mDisableJammingOtherPawns;
+			ScriptFunction mEnteredFriendJammingRadius;
+			ScriptFunction mExitFriendJammingRadius;
+			ScriptFunction mEnteredEnemyJammingRadius;
+			ScriptFunction mExitEnemyJammingRadius;
+			ScriptFunction mIsJammedByEnemy;
+			ScriptFunction mPlayJammerPackEffect;
+			ScriptFunction mPlayJammingByFriendEffect;
+			ScriptFunction mPlayEnemyJammerPackEffect;
+			ScriptFunction mOnPawnDetectedByCollisionProxy;
+			ScriptFunction mOnPawnExitedCollisionProxy;
+			ScriptFunction mOnEnteredDropJammer;
+			ScriptFunction mOnExitedDropJammer;
+			ScriptFunction mUpdateEnemyDropJammer;
+			ScriptFunction mUpdateFriendlyDropJammer;
+			ScriptFunction mPlayJammingByEnemyDropJammerEffect;
+			ScriptFunction mPlayJammingByFriendlyDropJammerEffect;
+			ScriptFunction mOnChangeJammingTeam;
+			ScriptFunction mDestroyed;
+			ScriptFunction mSetMeshVisibility;
+			ScriptFunction mSetFirstPersonBodyVisibility;
+			ScriptFunction mWeaponAttachmentChanged;
+			ScriptFunction mForceCrouch;
+			ScriptFunction mFindClosestStickyGrenadeSocketIndex;
+			ScriptFunction mStickGrenadeToPawn;
+			ScriptFunction mUpdateStickyGrenades;
+			ScriptFunction mSetSkiing;
+			ScriptFunction mPlaySkiEffects;
+			ScriptFunction mStopSkiEffects;
+			ScriptFunction mPlaySkiEffectsSound;
+			ScriptFunction mStopSkiEffectsSound;
+			ScriptFunction mFaceRotation;
+			ScriptFunction mPlayDyingSound;
+			ScriptFunction mHoldGameObject;
+			ScriptFunction mAdjustDamage;
+			ScriptFunction mGoInvulnerable;
+			ScriptFunction mClearInvulnerability;
+			ScriptFunction mSetMovementPhysics;
+			ScriptFunction mOnAnimEnd;
+			ScriptFunction mPlayTeleportEffect;
+			ScriptFunction mTurnOff;
+			ScriptFunction mSetDetectedByEnemyScanner;
+			ScriptFunction mGetDetectedByEnemyScanner;
+			ScriptFunction mSetScannerDetect;
+			ScriptFunction mGetFamilyInfo;
+			ScriptFunction mLockedOutFromFlagPickupTimer;
+			ScriptFunction mLockFromFlagPickup;
+			ScriptFunction mBlink;
+			ScriptFunction mPlayBlinkPackEffect;
+			ScriptFunction mDoJump;
+			ScriptFunction mCheckClotheslineDamage;
+			ScriptFunction mGetSpectatorName;
+			ScriptFunction mCrushedBy;
+			ScriptFunction mStuckOnPawn;
+			ScriptFunction mSetPending3PSkin;
+			ScriptFunction mCheckApplyPending3PSkin;
+			ScriptFunction mThrowActiveWeapon;
+			ScriptFunction mThrowWeaponOnDeath;
+			ScriptFunction mClearSkiParticleEffects;
+			ScriptFunction mClearJetpackParticleEffects;
+			ScriptFunction mAlienFXOverlay;
+		}
+		public @property static final
+		{
+			ScriptFunction GetCurrentPowerPool() { return mGetCurrentPowerPool ? mGetCurrentPowerPool : (mGetCurrentPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentPowerPool")); }
+			ScriptFunction GetMaxPowerPool() { return mGetMaxPowerPool ? mGetMaxPowerPool : (mGetMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetMaxPowerPool")); }
+			ScriptFunction CalculatePawnSpeed() { return mCalculatePawnSpeed ? mCalculatePawnSpeed : (mCalculatePawnSpeed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CalculatePawnSpeed")); }
+			ScriptFunction GetCurrCharClassInfo() { return mGetCurrCharClassInfo ? mGetCurrCharClassInfo : (mGetCurrCharClassInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrCharClassInfo")); }
+			ScriptFunction IsFirstPerson() { return mIsFirstPerson ? mIsFirstPerson : (mIsFirstPerson = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsFirstPerson")); }
+			ScriptFunction GetHandsMesh() { return mGetHandsMesh ? mGetHandsMesh : (mGetHandsMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetHandsMesh")); }
+			ScriptFunction GetTribesReplicationInfo() { return mGetTribesReplicationInfo ? mGetTribesReplicationInfo : (mGetTribesReplicationInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTribesReplicationInfo")); }
+			ScriptFunction CheckHeadShot() { return mCheckHeadShot ? mCheckHeadShot : (mCheckHeadShot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckHeadShot")); }
+			ScriptFunction GetPawnViewLocation() { return mGetPawnViewLocation ? mGetPawnViewLocation : (mGetPawnViewLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPawnViewLocation")); }
+			ScriptFunction GetTrHud() { return mGetTrHud ? mGetTrHud : (mGetTrHud = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTrHud")); }
+			ScriptFunction IsPulseStealthed() { return mIsPulseStealthed ? mIsPulseStealthed : (mIsPulseStealthed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsPulseStealthed")); }
+			ScriptFunction IsJammedByFriendOrSelf() { return mIsJammedByFriendOrSelf ? mIsJammedByFriendOrSelf : (mIsJammedByFriendOrSelf = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsJammedByFriendOrSelf")); }
+			ScriptFunction CheckGrabSpeed() { return mCheckGrabSpeed ? mCheckGrabSpeed : (mCheckGrabSpeed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckGrabSpeed")); }
+			ScriptFunction NativeGetCollisionHeight() { return mNativeGetCollisionHeight ? mNativeGetCollisionHeight : (mNativeGetCollisionHeight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativeGetCollisionHeight")); }
+			ScriptFunction NativeGetCollisionRadius() { return mNativeGetCollisionRadius ? mNativeGetCollisionRadius : (mNativeGetCollisionRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativeGetCollisionRadius")); }
+			ScriptFunction SyncClientCurrentPowerPool() { return mSyncClientCurrentPowerPool ? mSyncClientCurrentPowerPool : (mSyncClientCurrentPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SyncClientCurrentPowerPool")); }
+			ScriptFunction ConsumePowerPool() { return mConsumePowerPool ? mConsumePowerPool : (mConsumePowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ConsumePowerPool")); }
+			ScriptFunction RegainPowerPool() { return mRegainPowerPool ? mRegainPowerPool : (mRegainPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RegainPowerPool")); }
+			ScriptFunction GetPowerPoolPercent() { return mGetPowerPoolPercent ? mGetPowerPoolPercent : (mGetPowerPoolPercent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPowerPoolPercent")); }
+			ScriptFunction GetCurrentDeviceAccuracyInfo() { return mGetCurrentDeviceAccuracyInfo ? mGetCurrentDeviceAccuracyInfo : (mGetCurrentDeviceAccuracyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentDeviceAccuracyInfo")); }
+			ScriptFunction SetOverlayMaterial() { return mSetOverlayMaterial ? mSetOverlayMaterial : (mSetOverlayMaterial = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetOverlayMaterial")); }
+			ScriptFunction ServerUpdateLockedTarget() { return mServerUpdateLockedTarget ? mServerUpdateLockedTarget : (mServerUpdateLockedTarget = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ServerUpdateLockedTarget")); }
+			ScriptFunction NativePostRenderFor() { return mNativePostRenderFor ? mNativePostRenderFor : (mNativePostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NativePostRenderFor")); }
+			ScriptFunction GetTargetLocation() { return mGetTargetLocation ? mGetTargetLocation : (mGetTargetLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetTargetLocation")); }
+			ScriptFunction SetFlashNormal() { return mSetFlashNormal ? mSetFlashNormal : (mSetFlashNormal = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetFlashNormal")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostInitAnimTree")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Tick")); }
+			ScriptFunction GetCurrentCredits() { return mGetCurrentCredits ? mGetCurrentCredits : (mGetCurrentCredits = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetCurrentCredits")); }
+			ScriptFunction ClientRestart() { return mClientRestart ? mClientRestart : (mClientRestart = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientRestart")); }
+			ScriptFunction CurrentDeployedCount() { return mCurrentDeployedCount ? mCurrentDeployedCount : (mCurrentDeployedCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CurrentDeployedCount")); }
+			ScriptFunction ExitDeployMode() { return mExitDeployMode ? mExitDeployMode : (mExitDeployMode = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitDeployMode")); }
+			ScriptFunction GetArmorType() { return mGetArmorType ? mGetArmorType : (mGetArmorType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetArmorType")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ReplicatedEvent")); }
+			ScriptFunction ReplicateMultiFlashLocation() { return mReplicateMultiFlashLocation ? mReplicateMultiFlashLocation : (mReplicateMultiFlashLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ReplicateMultiFlashLocation")); }
+			ScriptFunction EquipBestPossibleDevice() { return mEquipBestPossibleDevice ? mEquipBestPossibleDevice : (mEquipBestPossibleDevice = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EquipBestPossibleDevice")); }
+			ScriptFunction InitDefaultAnims() { return mInitDefaultAnims ? mInitDefaultAnims : (mInitDefaultAnims = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.InitDefaultAnims")); }
+			ScriptFunction SetCharacterClassFromInfo() { return mSetCharacterClassFromInfo ? mSetCharacterClassFromInfo : (mSetCharacterClassFromInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetCharacterClassFromInfo")); }
+			ScriptFunction ActivatePendingClass() { return mActivatePendingClass ? mActivatePendingClass : (mActivatePendingClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ActivatePendingClass")); }
+			ScriptFunction RefreshInventoryTimer() { return mRefreshInventoryTimer ? mRefreshInventoryTimer : (mRefreshInventoryTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RefreshInventoryTimer")); }
+			ScriptFunction SetValuesFromCurrentFamilyInfo() { return mSetValuesFromCurrentFamilyInfo ? mSetValuesFromCurrentFamilyInfo : (mSetValuesFromCurrentFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetValuesFromCurrentFamilyInfo")); }
+			ScriptFunction RefreshInventory() { return mRefreshInventory ? mRefreshInventory : (mRefreshInventory = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RefreshInventory")); }
+			ScriptFunction ActivateSelectedDeployable() { return mActivateSelectedDeployable ? mActivateSelectedDeployable : (mActivateSelectedDeployable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ActivateSelectedDeployable")); }
+			ScriptFunction RemoveEffectByClass() { return mRemoveEffectByClass ? mRemoveEffectByClass : (mRemoveEffectByClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RemoveEffectByClass")); }
+			ScriptFunction ProcessEffectForm() { return mProcessEffectForm ? mProcessEffectForm : (mProcessEffectForm = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessEffectForm")); }
+			ScriptFunction GetShieldStrength() { return mGetShieldStrength ? mGetShieldStrength : (mGetShieldStrength = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetShieldStrength")); }
+			ScriptFunction AdjustAmmoPool() { return mAdjustAmmoPool ? mAdjustAmmoPool : (mAdjustAmmoPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustAmmoPool")); }
+			ScriptFunction AdjustMaxPowerPool() { return mAdjustMaxPowerPool ? mAdjustMaxPowerPool : (mAdjustMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustMaxPowerPool")); }
+			ScriptFunction SetMaxPowerPool() { return mSetMaxPowerPool ? mSetMaxPowerPool : (mSetMaxPowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMaxPowerPool")); }
+			ScriptFunction SetMaxHealthPool() { return mSetMaxHealthPool ? mSetMaxHealthPool : (mSetMaxHealthPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMaxHealthPool")); }
+			ScriptFunction ClientUpdateHUDHealth() { return mClientUpdateHUDHealth ? mClientUpdateHUDHealth : (mClientUpdateHUDHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientUpdateHUDHealth")); }
+			ScriptFunction ShouldRechargePowerPool() { return mShouldRechargePowerPool ? mShouldRechargePowerPool : (mShouldRechargePowerPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ShouldRechargePowerPool")); }
+			ScriptFunction ForceHealthRegen() { return mForceHealthRegen ? mForceHealthRegen : (mForceHealthRegen = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ForceHealthRegen")); }
+			ScriptFunction RechargeHealthPool() { return mRechargeHealthPool ? mRechargeHealthPool : (mRechargeHealthPool = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RechargeHealthPool")); }
+			ScriptFunction GetJetpackAirControl() { return mGetJetpackAirControl ? mGetJetpackAirControl : (mGetJetpackAirControl = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetJetpackAirControl")); }
+			ScriptFunction UpdateSkiEffects() { return mUpdateSkiEffects ? mUpdateSkiEffects : (mUpdateSkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateSkiEffects")); }
+			ScriptFunction PlayJetpackEffects() { return mPlayJetpackEffects ? mPlayJetpackEffects : (mPlayJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJetpackEffects")); }
+			ScriptFunction UpdateJetpackEffects() { return mUpdateJetpackEffects ? mUpdateJetpackEffects : (mUpdateJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateJetpackEffects")); }
+			ScriptFunction StopJetpackEffects() { return mStopJetpackEffects ? mStopJetpackEffects : (mStopJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopJetpackEffects")); }
+			ScriptFunction PlayLandingSound() { return mPlayLandingSound ? mPlayLandingSound : (mPlayLandingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayLandingSound")); }
+			ScriptFunction PlayJumpingSound() { return mPlayJumpingSound ? mPlayJumpingSound : (mPlayJumpingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJumpingSound")); }
+			ScriptFunction RememberLastDamager() { return mRememberLastDamager ? mRememberLastDamager : (mRememberLastDamager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RememberLastDamager")); }
+			ScriptFunction GetHealthPct() { return mGetHealthPct ? mGetHealthPct : (mGetHealthPct = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetHealthPct")); }
+			ScriptFunction CreateAssistRecord() { return mCreateAssistRecord ? mCreateAssistRecord : (mCreateAssistRecord = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CreateAssistRecord")); }
+			ScriptFunction GetLastDamager() { return mGetLastDamager ? mGetLastDamager : (mGetLastDamager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetLastDamager")); }
+			ScriptFunction ProcessKillAssists() { return mProcessKillAssists ? mProcessKillAssists : (mProcessKillAssists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessKillAssists")); }
+			ScriptFunction GetUnshieldedDamage() { return mGetUnshieldedDamage ? mGetUnshieldedDamage : (mGetUnshieldedDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetUnshieldedDamage")); }
+			ScriptFunction GetPawnCausingDamage() { return mGetPawnCausingDamage ? mGetPawnCausingDamage : (mGetPawnCausingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetPawnCausingDamage")); }
+			ScriptFunction GetDamageScale() { return mGetDamageScale ? mGetDamageScale : (mGetDamageScale = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetDamageScale")); }
+			ScriptFunction DoRepairs() { return mDoRepairs ? mDoRepairs : (mDoRepairs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DoRepairs")); }
+			ScriptFunction CheckTribesTurretInstigator() { return mCheckTribesTurretInstigator ? mCheckTribesTurretInstigator : (mCheckTribesTurretInstigator = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckTribesTurretInstigator")); }
+			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeDamage")); }
+			ScriptFunction PlayWhiteoutEffect() { return mPlayWhiteoutEffect ? mPlayWhiteoutEffect : (mPlayWhiteoutEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayWhiteoutEffect")); }
+			ScriptFunction TakeRadiusDamage() { return mTakeRadiusDamage ? mTakeRadiusDamage : (mTakeRadiusDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeRadiusDamage")); }
+			ScriptFunction RecentlyGrabbedFlag() { return mRecentlyGrabbedFlag ? mRecentlyGrabbedFlag : (mRecentlyGrabbedFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.RecentlyGrabbedFlag")); }
+			ScriptFunction GetShowDistanceThreshold() { return mGetShowDistanceThreshold ? mGetShowDistanceThreshold : (mGetShowDistanceThreshold = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetShowDistanceThreshold")); }
+			ScriptFunction PostRenderFor() { return mPostRenderFor ? mPostRenderFor : (mPostRenderFor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PostRenderFor")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisplayDebug")); }
+			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Landed")); }
+			ScriptFunction TakeFallingDamage() { return mTakeFallingDamage ? mTakeFallingDamage : (mTakeFallingDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeFallingDamage")); }
+			ScriptFunction PlayHardLandingEffect() { return mPlayHardLandingEffect ? mPlayHardLandingEffect : (mPlayHardLandingEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayHardLandingEffect")); }
+			ScriptFunction PlaySonicPunchEffect() { return mPlaySonicPunchEffect ? mPlaySonicPunchEffect : (mPlaySonicPunchEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySonicPunchEffect")); }
+			ScriptFunction TakeFallDamage() { return mTakeFallDamage ? mTakeFallDamage : (mTakeFallDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TakeFallDamage")); }
+			ScriptFunction ProcessCreditEvent() { return mProcessCreditEvent ? mProcessCreditEvent : (mProcessCreditEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ProcessCreditEvent")); }
+			ScriptFunction FlashLocationUpdated() { return mFlashLocationUpdated ? mFlashLocationUpdated : (mFlashLocationUpdated = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FlashLocationUpdated")); }
+			ScriptFunction WeaponFired() { return mWeaponFired ? mWeaponFired : (mWeaponFired = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.WeaponFired")); }
+			ScriptFunction Dodge() { return mDodge ? mDodge : (mDodge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Dodge")); }
+			ScriptFunction PerformDodge() { return mPerformDodge ? mPerformDodge : (mPerformDodge = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PerformDodge")); }
+			ScriptFunction gibbedBy() { return mgibbedBy ? mgibbedBy : (mgibbedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.gibbedBy")); }
+			ScriptFunction EncroachedBy() { return mEncroachedBy ? mEncroachedBy : (mEncroachedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EncroachedBy")); }
+			ScriptFunction ShouldGib() { return mShouldGib ? mShouldGib : (mShouldGib = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ShouldGib")); }
+			ScriptFunction SetHandIKEnabled() { return mSetHandIKEnabled ? mSetHandIKEnabled : (mSetHandIKEnabled = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetHandIKEnabled")); }
+			ScriptFunction PlayDamageCameraShake() { return mPlayDamageCameraShake ? mPlayDamageCameraShake : (mPlayDamageCameraShake = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDamageCameraShake")); }
+			ScriptFunction IsLastHitFromNinjaSmoke() { return mIsLastHitFromNinjaSmoke ? mIsLastHitFromNinjaSmoke : (mIsLastHitFromNinjaSmoke = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsLastHitFromNinjaSmoke")); }
+			ScriptFunction PlayTakeHitEffects() { return mPlayTakeHitEffects ? mPlayTakeHitEffects : (mPlayTakeHitEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayTakeHitEffects")); }
+			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FellOutOfWorld")); }
+			ScriptFunction Died() { return mDied ? mDied : (mDied = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Died")); }
+			ScriptFunction StopLocalEffectsAndSounds() { return mStopLocalEffectsAndSounds ? mStopLocalEffectsAndSounds : (mStopLocalEffectsAndSounds = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopLocalEffectsAndSounds")); }
+			ScriptFunction SetOverlayMeshHidden() { return mSetOverlayMeshHidden ? mSetOverlayMeshHidden : (mSetOverlayMeshHidden = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetOverlayMeshHidden")); }
+			ScriptFunction PlayDying() { return mPlayDying ? mPlayDying : (mPlayDying = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDying")); }
+			ScriptFunction NotifyTeamChanged() { return mNotifyTeamChanged ? mNotifyTeamChanged : (mNotifyTeamChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.NotifyTeamChanged")); }
+			ScriptFunction UpdateTeamBlockerMaterials() { return mUpdateTeamBlockerMaterials ? mUpdateTeamBlockerMaterials : (mUpdateTeamBlockerMaterials = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateTeamBlockerMaterials")); }
+			ScriptFunction PossessedBy() { return mPossessedBy ? mPossessedBy : (mPossessedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PossessedBy")); }
+			ScriptFunction ResetSkin() { return mResetSkin ? mResetSkin : (mResetSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ResetSkin")); }
+			ScriptFunction SetSkin() { return mSetSkin ? mSetSkin : (mSetSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetSkin")); }
+			ScriptFunction InitializeOverlayMaterials() { return mInitializeOverlayMaterials ? mInitializeOverlayMaterials : (mInitializeOverlayMaterials = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.InitializeOverlayMaterials")); }
+			ScriptFunction ClientPlayHealthRegenEffect() { return mClientPlayHealthRegenEffect ? mClientPlayHealthRegenEffect : (mClientPlayHealthRegenEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClientPlayHealthRegenEffect")); }
+			ScriptFunction SetShieldPackActive() { return mSetShieldPackActive ? mSetShieldPackActive : (mSetShieldPackActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetShieldPackActive")); }
+			ScriptFunction PlayShieldPackEffect() { return mPlayShieldPackEffect ? mPlayShieldPackEffect : (mPlayShieldPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayShieldPackEffect")); }
+			ScriptFunction SetStealthPackActive() { return mSetStealthPackActive ? mSetStealthPackActive : (mSetStealthPackActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetStealthPackActive")); }
+			ScriptFunction PlayStealthPackEffect() { return mPlayStealthPackEffect ? mPlayStealthPackEffect : (mPlayStealthPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayStealthPackEffect")); }
+			ScriptFunction PulseStealth() { return mPulseStealth ? mPulseStealth : (mPulseStealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PulseStealth")); }
+			ScriptFunction SetRagePerkActive() { return mSetRagePerkActive ? mSetRagePerkActive : (mSetRagePerkActive = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetRagePerkActive")); }
+			ScriptFunction ClearRagePerk() { return mClearRagePerk ? mClearRagePerk : (mClearRagePerk = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearRagePerk")); }
+			ScriptFunction PlayRageEffect() { return mPlayRageEffect ? mPlayRageEffect : (mPlayRageEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayRageEffect")); }
+			ScriptFunction PlayInvulnerabilityEffect() { return mPlayInvulnerabilityEffect ? mPlayInvulnerabilityEffect : (mPlayInvulnerabilityEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayInvulnerabilityEffect")); }
+			ScriptFunction StartRidingInVehicle() { return mStartRidingInVehicle ? mStartRidingInVehicle : (mStartRidingInVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StartRidingInVehicle")); }
+			ScriptFunction StopRidingInVehicle() { return mStopRidingInVehicle ? mStopRidingInVehicle : (mStopRidingInVehicle = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopRidingInVehicle")); }
+			ScriptFunction StartDriving() { return mStartDriving ? mStartDriving : (mStartDriving = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StartDriving")); }
+			ScriptFunction StopDriving() { return mStopDriving ? mStopDriving : (mStopDriving = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopDriving")); }
+			ScriptFunction OnRanOver() { return mOnRanOver ? mOnRanOver : (mOnRanOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnRanOver")); }
+			ScriptFunction EnableJamming() { return mEnableJamming ? mEnableJamming : (mEnableJamming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnableJamming")); }
+			ScriptFunction DisableJamming() { return mDisableJamming ? mDisableJamming : (mDisableJamming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisableJamming")); }
+			ScriptFunction DisableJammingOtherPawns() { return mDisableJammingOtherPawns ? mDisableJammingOtherPawns : (mDisableJammingOtherPawns = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DisableJammingOtherPawns")); }
+			ScriptFunction EnteredFriendJammingRadius() { return mEnteredFriendJammingRadius ? mEnteredFriendJammingRadius : (mEnteredFriendJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnteredFriendJammingRadius")); }
+			ScriptFunction ExitFriendJammingRadius() { return mExitFriendJammingRadius ? mExitFriendJammingRadius : (mExitFriendJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitFriendJammingRadius")); }
+			ScriptFunction EnteredEnemyJammingRadius() { return mEnteredEnemyJammingRadius ? mEnteredEnemyJammingRadius : (mEnteredEnemyJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.EnteredEnemyJammingRadius")); }
+			ScriptFunction ExitEnemyJammingRadius() { return mExitEnemyJammingRadius ? mExitEnemyJammingRadius : (mExitEnemyJammingRadius = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ExitEnemyJammingRadius")); }
+			ScriptFunction IsJammedByEnemy() { return mIsJammedByEnemy ? mIsJammedByEnemy : (mIsJammedByEnemy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.IsJammedByEnemy")); }
+			ScriptFunction PlayJammerPackEffect() { return mPlayJammerPackEffect ? mPlayJammerPackEffect : (mPlayJammerPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammerPackEffect")); }
+			ScriptFunction PlayJammingByFriendEffect() { return mPlayJammingByFriendEffect ? mPlayJammingByFriendEffect : (mPlayJammingByFriendEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByFriendEffect")); }
+			ScriptFunction PlayEnemyJammerPackEffect() { return mPlayEnemyJammerPackEffect ? mPlayEnemyJammerPackEffect : (mPlayEnemyJammerPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayEnemyJammerPackEffect")); }
+			ScriptFunction OnPawnDetectedByCollisionProxy() { return mOnPawnDetectedByCollisionProxy ? mOnPawnDetectedByCollisionProxy : (mOnPawnDetectedByCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnPawnDetectedByCollisionProxy")); }
+			ScriptFunction OnPawnExitedCollisionProxy() { return mOnPawnExitedCollisionProxy ? mOnPawnExitedCollisionProxy : (mOnPawnExitedCollisionProxy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnPawnExitedCollisionProxy")); }
+			ScriptFunction OnEnteredDropJammer() { return mOnEnteredDropJammer ? mOnEnteredDropJammer : (mOnEnteredDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnEnteredDropJammer")); }
+			ScriptFunction OnExitedDropJammer() { return mOnExitedDropJammer ? mOnExitedDropJammer : (mOnExitedDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnExitedDropJammer")); }
+			ScriptFunction UpdateEnemyDropJammer() { return mUpdateEnemyDropJammer ? mUpdateEnemyDropJammer : (mUpdateEnemyDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateEnemyDropJammer")); }
+			ScriptFunction UpdateFriendlyDropJammer() { return mUpdateFriendlyDropJammer ? mUpdateFriendlyDropJammer : (mUpdateFriendlyDropJammer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateFriendlyDropJammer")); }
+			ScriptFunction PlayJammingByEnemyDropJammerEffect() { return mPlayJammingByEnemyDropJammerEffect ? mPlayJammingByEnemyDropJammerEffect : (mPlayJammingByEnemyDropJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByEnemyDropJammerEffect")); }
+			ScriptFunction PlayJammingByFriendlyDropJammerEffect() { return mPlayJammingByFriendlyDropJammerEffect ? mPlayJammingByFriendlyDropJammerEffect : (mPlayJammingByFriendlyDropJammerEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayJammingByFriendlyDropJammerEffect")); }
+			ScriptFunction OnChangeJammingTeam() { return mOnChangeJammingTeam ? mOnChangeJammingTeam : (mOnChangeJammingTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnChangeJammingTeam")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Destroyed")); }
+			ScriptFunction SetMeshVisibility() { return mSetMeshVisibility ? mSetMeshVisibility : (mSetMeshVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMeshVisibility")); }
+			ScriptFunction SetFirstPersonBodyVisibility() { return mSetFirstPersonBodyVisibility ? mSetFirstPersonBodyVisibility : (mSetFirstPersonBodyVisibility = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetFirstPersonBodyVisibility")); }
+			ScriptFunction WeaponAttachmentChanged() { return mWeaponAttachmentChanged ? mWeaponAttachmentChanged : (mWeaponAttachmentChanged = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.WeaponAttachmentChanged")); }
+			ScriptFunction ForceCrouch() { return mForceCrouch ? mForceCrouch : (mForceCrouch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ForceCrouch")); }
+			ScriptFunction FindClosestStickyGrenadeSocketIndex() { return mFindClosestStickyGrenadeSocketIndex ? mFindClosestStickyGrenadeSocketIndex : (mFindClosestStickyGrenadeSocketIndex = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FindClosestStickyGrenadeSocketIndex")); }
+			ScriptFunction StickGrenadeToPawn() { return mStickGrenadeToPawn ? mStickGrenadeToPawn : (mStickGrenadeToPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StickGrenadeToPawn")); }
+			ScriptFunction UpdateStickyGrenades() { return mUpdateStickyGrenades ? mUpdateStickyGrenades : (mUpdateStickyGrenades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.UpdateStickyGrenades")); }
+			ScriptFunction SetSkiing() { return mSetSkiing ? mSetSkiing : (mSetSkiing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetSkiing")); }
+			ScriptFunction PlaySkiEffects() { return mPlaySkiEffects ? mPlaySkiEffects : (mPlaySkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySkiEffects")); }
+			ScriptFunction StopSkiEffects() { return mStopSkiEffects ? mStopSkiEffects : (mStopSkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopSkiEffects")); }
+			ScriptFunction PlaySkiEffectsSound() { return mPlaySkiEffectsSound ? mPlaySkiEffectsSound : (mPlaySkiEffectsSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlaySkiEffectsSound")); }
+			ScriptFunction StopSkiEffectsSound() { return mStopSkiEffectsSound ? mStopSkiEffectsSound : (mStopSkiEffectsSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StopSkiEffectsSound")); }
+			ScriptFunction FaceRotation() { return mFaceRotation ? mFaceRotation : (mFaceRotation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.FaceRotation")); }
+			ScriptFunction PlayDyingSound() { return mPlayDyingSound ? mPlayDyingSound : (mPlayDyingSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayDyingSound")); }
+			ScriptFunction HoldGameObject() { return mHoldGameObject ? mHoldGameObject : (mHoldGameObject = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.HoldGameObject")); }
+			ScriptFunction AdjustDamage() { return mAdjustDamage ? mAdjustDamage : (mAdjustDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AdjustDamage")); }
+			ScriptFunction GoInvulnerable() { return mGoInvulnerable ? mGoInvulnerable : (mGoInvulnerable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GoInvulnerable")); }
+			ScriptFunction ClearInvulnerability() { return mClearInvulnerability ? mClearInvulnerability : (mClearInvulnerability = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearInvulnerability")); }
+			ScriptFunction SetMovementPhysics() { return mSetMovementPhysics ? mSetMovementPhysics : (mSetMovementPhysics = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetMovementPhysics")); }
+			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.OnAnimEnd")); }
+			ScriptFunction PlayTeleportEffect() { return mPlayTeleportEffect ? mPlayTeleportEffect : (mPlayTeleportEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayTeleportEffect")); }
+			ScriptFunction TurnOff() { return mTurnOff ? mTurnOff : (mTurnOff = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.TurnOff")); }
+			ScriptFunction SetDetectedByEnemyScanner() { return mSetDetectedByEnemyScanner ? mSetDetectedByEnemyScanner : (mSetDetectedByEnemyScanner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetDetectedByEnemyScanner")); }
+			ScriptFunction GetDetectedByEnemyScanner() { return mGetDetectedByEnemyScanner ? mGetDetectedByEnemyScanner : (mGetDetectedByEnemyScanner = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetDetectedByEnemyScanner")); }
+			ScriptFunction SetScannerDetect() { return mSetScannerDetect ? mSetScannerDetect : (mSetScannerDetect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetScannerDetect")); }
+			ScriptFunction GetFamilyInfo() { return mGetFamilyInfo ? mGetFamilyInfo : (mGetFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetFamilyInfo")); }
+			ScriptFunction LockedOutFromFlagPickupTimer() { return mLockedOutFromFlagPickupTimer ? mLockedOutFromFlagPickupTimer : (mLockedOutFromFlagPickupTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.LockedOutFromFlagPickupTimer")); }
+			ScriptFunction LockFromFlagPickup() { return mLockFromFlagPickup ? mLockFromFlagPickup : (mLockFromFlagPickup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.LockFromFlagPickup")); }
+			ScriptFunction Blink() { return mBlink ? mBlink : (mBlink = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.Blink")); }
+			ScriptFunction PlayBlinkPackEffect() { return mPlayBlinkPackEffect ? mPlayBlinkPackEffect : (mPlayBlinkPackEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.PlayBlinkPackEffect")); }
+			ScriptFunction DoJump() { return mDoJump ? mDoJump : (mDoJump = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.DoJump")); }
+			ScriptFunction CheckClotheslineDamage() { return mCheckClotheslineDamage ? mCheckClotheslineDamage : (mCheckClotheslineDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckClotheslineDamage")); }
+			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.GetSpectatorName")); }
+			ScriptFunction CrushedBy() { return mCrushedBy ? mCrushedBy : (mCrushedBy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CrushedBy")); }
+			ScriptFunction StuckOnPawn() { return mStuckOnPawn ? mStuckOnPawn : (mStuckOnPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.StuckOnPawn")); }
+			ScriptFunction SetPending3PSkin() { return mSetPending3PSkin ? mSetPending3PSkin : (mSetPending3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.SetPending3PSkin")); }
+			ScriptFunction CheckApplyPending3PSkin() { return mCheckApplyPending3PSkin ? mCheckApplyPending3PSkin : (mCheckApplyPending3PSkin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.CheckApplyPending3PSkin")); }
+			ScriptFunction ThrowActiveWeapon() { return mThrowActiveWeapon ? mThrowActiveWeapon : (mThrowActiveWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ThrowActiveWeapon")); }
+			ScriptFunction ThrowWeaponOnDeath() { return mThrowWeaponOnDeath ? mThrowWeaponOnDeath : (mThrowWeaponOnDeath = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ThrowWeaponOnDeath")); }
+			ScriptFunction ClearSkiParticleEffects() { return mClearSkiParticleEffects ? mClearSkiParticleEffects : (mClearSkiParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearSkiParticleEffects")); }
+			ScriptFunction ClearJetpackParticleEffects() { return mClearJetpackParticleEffects ? mClearJetpackParticleEffects : (mClearJetpackParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.ClearJetpackParticleEffects")); }
+			ScriptFunction AlienFXOverlay() { return mAlienFXOverlay ? mAlienFXOverlay : (mAlienFXOverlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AlienFXOverlay")); }
+		}
+	}
 	enum
 	{
 		MAX_SCANNER_SEE_FLAG = 2,
@@ -68,6 +447,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.AssistInfo")); }
 		@property final auto ref
 		{
 			float m_fDamagerTime() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -79,6 +460,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.FootstepParticleInfo")); }
 		@property final auto ref
 		{
 			ParticleSystem FootParticle() { return *cast(ParticleSystem*)(cast(size_t)&this + 8); }
@@ -89,6 +472,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrPawn.StickyGrenadeSocketInfo")); }
 		@property final auto ref
 		{
 			Vector ViewOffset() { return *cast(Vector*)(cast(size_t)&this + 16); }
@@ -315,35 +700,35 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentPowerPool, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetMaxPowerPool()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxPowerPool, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	int CalculatePawnSpeed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[53741], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalculatePawnSpeed, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	ScriptClass GetCurrCharClassInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67358], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrCharClassInfo, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
 	bool IsFirstPerson()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67360], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFirstPerson, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	SkeletalMesh GetHandsMesh(ScriptClass FamilyInfo)
@@ -351,14 +736,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67375], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHandsMesh, params.ptr, cast(void*)0);
 		return *cast(SkeletalMesh*)&params[4];
 	}
 	TrPlayerReplicationInfo GetTribesReplicationInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67392], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTribesReplicationInfo, params.ptr, cast(void*)0);
 		return *cast(TrPlayerReplicationInfo*)params.ptr;
 	}
 	bool CheckHeadShot(Actor.ImpactInfo* Impact)
@@ -366,7 +751,7 @@ final:
 		ubyte params[84];
 		params[] = 0;
 		*cast(Actor.ImpactInfo*)params.ptr = *Impact;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67478], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHeadShot, params.ptr, cast(void*)0);
 		*Impact = *cast(Actor.ImpactInfo*)params.ptr;
 		return *cast(bool*)&params[80];
 	}
@@ -374,71 +759,71 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67611], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawnViewLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	TrHUD GetTrHud()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTrHud, params.ptr, cast(void*)0);
 		return *cast(TrHUD*)params.ptr;
 	}
 	bool IsPulseStealthed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71985], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPulseStealthed, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsJammedByFriendOrSelf()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[71987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsJammedByFriendOrSelf, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CheckGrabSpeed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72429], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckGrabSpeed, cast(void*)0, cast(void*)0);
 	}
 	float NativeGetCollisionHeight()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativeGetCollisionHeight, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float NativeGetCollisionRadius()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativeGetCollisionRadius, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void SyncClientCurrentPowerPool()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72434], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SyncClientCurrentPowerPool, cast(void*)0, cast(void*)0);
 	}
 	void ConsumePowerPool(float fAmount)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = fAmount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72435], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsumePowerPool, params.ptr, cast(void*)0);
 	}
 	void RegainPowerPool(float fDeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = fDeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72437], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegainPowerPool, params.ptr, cast(void*)0);
 	}
 	float GetPowerPoolPercent()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72439], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPowerPoolPercent, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void GetCurrentDeviceAccuracyInfo(float* fAccuracy, float* fAmountCurrentlyOffOfTargetAccuray)
@@ -447,7 +832,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = *fAccuracy;
 		*cast(float*)&params[4] = *fAmountCurrentlyOffOfTargetAccuray;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72441], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentDeviceAccuracyInfo, params.ptr, cast(void*)0);
 		*fAccuracy = *cast(float*)params.ptr;
 		*fAmountCurrentlyOffOfTargetAccuray = *cast(float*)&params[4];
 	}
@@ -456,14 +841,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = NewOverlay;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72444], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOverlayMaterial, params.ptr, cast(void*)0);
 	}
 	bool ServerUpdateLockedTarget(Actor Locked)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Locked;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ServerUpdateLockedTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void NativePostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
@@ -474,7 +859,7 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72449], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NativePostRenderFor, params.ptr, cast(void*)0);
 	}
 	Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
 	{
@@ -482,7 +867,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = RequestedBy;
 		*cast(bool*)&params[4] = bRequestAlternateLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72454], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	void SetFlashNormal(Vector FlashNormal)
@@ -490,11 +875,11 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = FlashNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFlashNormal, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72460], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -505,43 +890,43 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72461], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72463], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	int GetCurrentCredits()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72466], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentCredits, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void ClientRestart()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72468], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientRestart, cast(void*)0, cast(void*)0);
 	}
 	int CurrentDeployedCount(ScriptClass DeviceClass)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = DeviceClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72469], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CurrentDeployedCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void ExitDeployMode()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72476], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExitDeployMode, cast(void*)0, cast(void*)0);
 	}
 	TrObject.EArmorType GetArmorType()
 	{
 		ubyte params[1];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72479], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetArmorType, params.ptr, cast(void*)0);
 		return *cast(TrObject.EArmorType*)params.ptr;
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -549,7 +934,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72484], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void ReplicateMultiFlashLocation(int shotNumber, Vector HitLocation)
 	{
@@ -557,21 +942,21 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(int*)params.ptr = shotNumber;
 		*cast(Vector*)&params[4] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72487], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicateMultiFlashLocation, params.ptr, cast(void*)0);
 	}
 	void EquipBestPossibleDevice(TrObject.TR_EQUIP_POINT eqpPoint)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = eqpPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72490], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EquipBestPossibleDevice, params.ptr, cast(void*)0);
 	}
 	void InitDefaultAnims(ScriptClass pInfo)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72502], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitDefaultAnims, params.ptr, cast(void*)0);
 	}
 	void SetCharacterClassFromInfo(ScriptClass pInfo, bool bForce)
 	{
@@ -579,7 +964,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
 		*cast(bool*)&params[4] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72507], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacterClassFromInfo, params.ptr, cast(void*)0);
 	}
 	void ActivatePendingClass(bool bIsRespawn, bool bCallin)
 	{
@@ -587,15 +972,15 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsRespawn;
 		*cast(bool*)&params[4] = bCallin;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72540], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivatePendingClass, params.ptr, cast(void*)0);
 	}
 	void RefreshInventoryTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72546], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshInventoryTimer, cast(void*)0, cast(void*)0);
 	}
 	void SetValuesFromCurrentFamilyInfo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72547], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetValuesFromCurrentFamilyInfo, cast(void*)0, cast(void*)0);
 	}
 	void RefreshInventory(bool bIsRespawn, bool bCallin)
 	{
@@ -603,18 +988,18 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsRespawn;
 		*cast(bool*)&params[4] = bCallin;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72596], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshInventory, params.ptr, cast(void*)0);
 	}
 	void ActivateSelectedDeployable()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72631], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateSelectedDeployable, cast(void*)0, cast(void*)0);
 	}
 	void RemoveEffectByClass(ScriptClass efClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = efClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72632], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveEffectByClass, params.ptr, cast(void*)0);
 	}
 	void ProcessEffectForm(ScriptClass efClass, bool bRemove)
 	{
@@ -622,13 +1007,13 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = efClass;
 		*cast(bool*)&params[4] = bRemove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72635], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessEffectForm, params.ptr, cast(void*)0);
 	}
 	int GetShieldStrength()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72650], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetShieldStrength, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void AdjustAmmoPool(float Change)
@@ -636,28 +1021,28 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Change;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72652], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustAmmoPool, params.ptr, cast(void*)0);
 	}
 	void AdjustMaxPowerPool(float Change)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Change;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72654], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustMaxPowerPool, params.ptr, cast(void*)0);
 	}
 	void SetMaxPowerPool(int Value)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaxPowerPool, params.ptr, cast(void*)0);
 	}
 	void SetMaxHealthPool(int Value)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72658], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaxHealthPool, params.ptr, cast(void*)0);
 	}
 	void ClientUpdateHUDHealth(int NewHealth, int NewHealthMax)
 	{
@@ -665,25 +1050,25 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(int*)params.ptr = NewHealth;
 		*cast(int*)&params[4] = NewHealthMax;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72660], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientUpdateHUDHealth, params.ptr, cast(void*)0);
 	}
 	bool ShouldRechargePowerPool()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72664], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldRechargePowerPool, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void ForceHealthRegen()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72670], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceHealthRegen, cast(void*)0, cast(void*)0);
 	}
 	void RechargeHealthPool(float DeltaSeconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RechargeHealthPool, params.ptr, cast(void*)0);
 	}
 	Vector GetJetpackAirControl(Vector InAcceleration, Vector ZAxis)
 	{
@@ -691,32 +1076,32 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = InAcceleration;
 		*cast(Vector*)&params[12] = ZAxis;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72680], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetJetpackAirControl, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[24];
 	}
 	void UpdateSkiEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72691], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSkiEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlayJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72692], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void UpdateJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72693], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void StopJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72694], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlayLandingSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72695], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayLandingSound, cast(void*)0, cast(void*)0);
 	}
 	void PlayJumpingSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72696], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJumpingSound, cast(void*)0, cast(void*)0);
 	}
 	void RememberLastDamager(Controller Damager, int DamageAmount, Actor DamagingActor)
 	{
@@ -725,13 +1110,13 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)params.ptr = Damager;
 		*cast(int*)&params[4] = DamageAmount;
 		*cast(Actor*)&params[8] = DamagingActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72697], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RememberLastDamager, params.ptr, cast(void*)0);
 	}
 	float GetHealthPct()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72707], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHealthPct, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	TrPawn.AssistInfo CreateAssistRecord(Controller Damager, int DamageAmount)
@@ -740,14 +1125,14 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Controller*)params.ptr = Damager;
 		*cast(int*)&params[4] = DamageAmount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72710], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateAssistRecord, params.ptr, cast(void*)0);
 		return *cast(TrPawn.AssistInfo*)&params[8];
 	}
 	TrPlayerController GetLastDamager()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLastDamager, params.ptr, cast(void*)0);
 		return *cast(TrPlayerController*)params.ptr;
 	}
 	void ProcessKillAssists(Controller Killer)
@@ -755,14 +1140,14 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72720], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessKillAssists, params.ptr, cast(void*)0);
 	}
 	float GetUnshieldedDamage(float inputDamage)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = inputDamage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72723], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnshieldedDamage, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	TrPawn GetPawnCausingDamage(Controller EventInstigator, Actor DamageCauser)
@@ -771,7 +1156,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
 		*cast(Actor*)&params[4] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72731], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawnCausingDamage, params.ptr, cast(void*)0);
 		return *cast(TrPawn*)&params[8];
 	}
 	float GetDamageScale(Actor DamageCauser, float Dist, ScriptClass dmgType, Controller EventInstigator, TrValueModifier VM, float* DamageScaleWithoutNewPlayerAssist)
@@ -784,7 +1169,7 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)&params[12] = EventInstigator;
 		*cast(TrValueModifier*)&params[16] = VM;
 		*cast(float*)&params[20] = *DamageScaleWithoutNewPlayerAssist;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72737], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDamageScale, params.ptr, cast(void*)0);
 		*DamageScaleWithoutNewPlayerAssist = *cast(float*)&params[20];
 		return *cast(float*)&params[24];
 	}
@@ -796,7 +1181,7 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)&params[4] = EventInstigator;
 		*cast(Actor*)&params[8] = DamageCauser;
 		*cast(ScriptClass*)&params[12] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72753], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DoRepairs, params.ptr, cast(void*)0);
 	}
 	Controller CheckTribesTurretInstigator(Controller EventInstigator, Actor DamageCauser)
 	{
@@ -804,7 +1189,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
 		*cast(Actor*)&params[4] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72758], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckTribesTurretInstigator, params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[8];
 	}
 	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
@@ -818,11 +1203,11 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72762], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void PlayWhiteoutEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72800], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWhiteoutEffect, cast(void*)0, cast(void*)0);
 	}
 	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
 	{
@@ -837,13 +1222,13 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
 		*cast(float*)&params[40] = DamageFalloffExponent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72810], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	bool RecentlyGrabbedFlag()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72847], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RecentlyGrabbedFlag, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	float GetShowDistanceThreshold(bool bIsEnemy)
@@ -851,7 +1236,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsEnemy;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72851], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetShowDistanceThreshold, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)
@@ -862,7 +1247,7 @@ void**)params.ptr = SkelComp;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(Vector*)&params[8] = CameraPosition;
 		*cast(Vector*)&params[20] = CameraDir;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72855], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRenderFor, params.ptr, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -871,7 +1256,7 @@ void**)params.ptr = SkelComp;
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72945], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -881,22 +1266,22 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitNormal;
 		*cast(Actor*)&params[12] = FloorActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72958], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Landed, params.ptr, cast(void*)0);
 	}
 	void TakeFallingDamage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72964], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFallingDamage, cast(void*)0, cast(void*)0);
 	}
 	void PlayHardLandingEffect(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72965], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayHardLandingEffect, params.ptr, cast(void*)0);
 	}
 	void PlaySonicPunchEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72967], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySonicPunchEffect, cast(void*)0, cast(void*)0);
 	}
 	void TakeFallDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum)
 	{
@@ -906,7 +1291,7 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)&params[4] = EventInstigator;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72968], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFallDamage, params.ptr, cast(void*)0);
 	}
 	void ProcessCreditEvent(TrObject.TrCreditEventType EventType, bool bProxyEvent)
 	{
@@ -914,7 +1299,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(TrObject.TrCreditEventType*)params.ptr = EventType;
 		*cast(bool*)&params[4] = bProxyEvent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72973], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessCreditEvent, params.ptr, cast(void*)0);
 	}
 	void FlashLocationUpdated(Weapon InWeapon, Vector InFlashLocation, bool bViaReplication)
 	{
@@ -923,7 +1308,7 @@ void**)params.ptr = SkelComp;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(Vector*)&params[4] = InFlashLocation;
 		*cast(bool*)&params[16] = bViaReplication;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72976], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlashLocationUpdated, params.ptr, cast(void*)0);
 	}
 	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
 	{
@@ -932,14 +1317,14 @@ void**)params.ptr = SkelComp;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
 		*cast(Vector*)&params[8] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72980], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponFired, params.ptr, cast(void*)0);
 	}
 	bool Dodge(Actor.EDoubleClickDir DoubleClickMove)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor.EDoubleClickDir*)params.ptr = DoubleClickMove;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72984], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Dodge, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool PerformDodge(Actor.EDoubleClickDir DoubleClickMove, Vector Dir, Vector Cross)
@@ -949,7 +1334,7 @@ void**)params.ptr = SkelComp;
 		*cast(Actor.EDoubleClickDir*)params.ptr = DoubleClickMove;
 		*cast(Vector*)&params[4] = Dir;
 		*cast(Vector*)&params[16] = Cross;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PerformDodge, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	void gibbedBy(Actor Other)
@@ -957,21 +1342,21 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72992], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.gibbedBy, params.ptr, cast(void*)0);
 	}
 	void EncroachedBy(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72994], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachedBy, params.ptr, cast(void*)0);
 	}
 	bool ShouldGib(ScriptClass pUTDamageType)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pUTDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72996], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldGib, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetHandIKEnabled(bool bEnabled)
@@ -979,29 +1364,29 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72999], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHandIKEnabled, params.ptr, cast(void*)0);
 	}
 	void PlayDamageCameraShake()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73001], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDamageCameraShake, cast(void*)0, cast(void*)0);
 	}
 	bool IsLastHitFromNinjaSmoke()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73006], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsLastHitFromNinjaSmoke, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PlayTakeHitEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73008], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayTakeHitEffects, cast(void*)0, cast(void*)0);
 	}
 	void FellOutOfWorld(ScriptClass dmgType)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = dmgType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73017], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FellOutOfWorld, params.ptr, cast(void*)0);
 	}
 	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)
 	{
@@ -1010,19 +1395,19 @@ void**)params.ptr = SkelComp;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(ScriptClass*)&params[4] = pDamageType;
 		*cast(Vector*)&params[8] = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73020], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Died, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	void StopLocalEffectsAndSounds()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73033], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopLocalEffectsAndSounds, cast(void*)0, cast(void*)0);
 	}
 	void SetOverlayMeshHidden(bool bNewHidden)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewHidden;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73034], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOverlayMeshHidden, params.ptr, cast(void*)0);
 	}
 	void PlayDying(ScriptClass pDamageType, Vector HitLoc)
 	{
@@ -1030,15 +1415,15 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pDamageType;
 		*cast(Vector*)&params[4] = HitLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73036], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDying, params.ptr, cast(void*)0);
 	}
 	void NotifyTeamChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73058], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyTeamChanged, cast(void*)0, cast(void*)0);
 	}
 	void UpdateTeamBlockerMaterials()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73061], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTeamBlockerMaterials, cast(void*)0, cast(void*)0);
 	}
 	void PossessedBy(Controller C, bool bVehicleTransition)
 	{
@@ -1046,71 +1431,71 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		*cast(bool*)&params[4] = bVehicleTransition;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73063], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PossessedBy, params.ptr, cast(void*)0);
 	}
 	void ResetSkin()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73067], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetSkin, cast(void*)0, cast(void*)0);
 	}
 	void SetSkin(Material NewMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Material*)params.ptr = NewMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73068], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkin, params.ptr, cast(void*)0);
 	}
 	void InitializeOverlayMaterials()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73072], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeOverlayMaterials, cast(void*)0, cast(void*)0);
 	}
 	void ClientPlayHealthRegenEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73074], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayHealthRegenEffect, cast(void*)0, cast(void*)0);
 	}
 	void SetShieldPackActive(bool bActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73078], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetShieldPackActive, params.ptr, cast(void*)0);
 	}
 	void PlayShieldPackEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73080], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayShieldPackEffect, cast(void*)0, cast(void*)0);
 	}
 	void SetStealthPackActive(bool bActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73084], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStealthPackActive, params.ptr, cast(void*)0);
 	}
 	void PlayStealthPackEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73086], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayStealthPackEffect, cast(void*)0, cast(void*)0);
 	}
 	void PulseStealth(bool bOverrideIgnore)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOverrideIgnore;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73090], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PulseStealth, params.ptr, cast(void*)0);
 	}
 	void SetRagePerkActive()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73092], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRagePerkActive, cast(void*)0, cast(void*)0);
 	}
 	void ClearRagePerk()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73101], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearRagePerk, cast(void*)0, cast(void*)0);
 	}
 	void PlayRageEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73105], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayRageEffect, cast(void*)0, cast(void*)0);
 	}
 	void PlayInvulnerabilityEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73110], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayInvulnerabilityEffect, cast(void*)0, cast(void*)0);
 	}
 	void StartRidingInVehicle(TrVehicle V, int SeatIndex)
 	{
@@ -1118,25 +1503,25 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(TrVehicle*)params.ptr = V;
 		*cast(int*)&params[4] = SeatIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73111], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartRidingInVehicle, params.ptr, cast(void*)0);
 	}
 	void StopRidingInVehicle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73118], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopRidingInVehicle, cast(void*)0, cast(void*)0);
 	}
 	void StartDriving(Vehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73123], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartDriving, params.ptr, cast(void*)0);
 	}
 	void StopDriving(Vehicle V)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Vehicle*)params.ptr = V;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73126], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopDriving, params.ptr, cast(void*)0);
 	}
 	void OnRanOver(SVehicle pVehicle, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -1149,137 +1534,137 @@ void* RunOverComponent, int WheelIndex)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = RunOverComponent;
 		*cast(int*)&params[8] = WheelIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73133], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnRanOver, params.ptr, cast(void*)0);
 	}
 	void EnableJamming()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73141], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableJamming, cast(void*)0, cast(void*)0);
 	}
 	void DisableJamming()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73146], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableJamming, cast(void*)0, cast(void*)0);
 	}
 	void DisableJammingOtherPawns()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73147], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableJammingOtherPawns, cast(void*)0, cast(void*)0);
 	}
 	void EnteredFriendJammingRadius(TrPawn JammingFriend)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = JammingFriend;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73148], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnteredFriendJammingRadius, params.ptr, cast(void*)0);
 	}
 	void ExitFriendJammingRadius(TrPawn JammingFriend)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = JammingFriend;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73153], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExitFriendJammingRadius, params.ptr, cast(void*)0);
 	}
 	void EnteredEnemyJammingRadius()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73156], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnteredEnemyJammingRadius, cast(void*)0, cast(void*)0);
 	}
 	void ExitEnemyJammingRadius()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73157], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ExitEnemyJammingRadius, cast(void*)0, cast(void*)0);
 	}
 	bool IsJammedByEnemy()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73158], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsJammedByEnemy, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PlayJammerPackEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73160], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJammerPackEffect, cast(void*)0, cast(void*)0);
 	}
 	void PlayJammingByFriendEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73163], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJammingByFriendEffect, cast(void*)0, cast(void*)0);
 	}
 	void PlayEnemyJammerPackEffect(bool enteredJammingRadius)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = enteredJammingRadius;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73166], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayEnemyJammerPackEffect, params.ptr, cast(void*)0);
 	}
 	void OnPawnDetectedByCollisionProxy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73171], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnDetectedByCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnPawnExitedCollisionProxy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73174], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnExitedCollisionProxy, params.ptr, cast(void*)0);
 	}
 	void OnEnteredDropJammer(TrDeployable_DropJammer DropJammer)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrDeployable_DropJammer*)params.ptr = DropJammer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73177], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnEnteredDropJammer, params.ptr, cast(void*)0);
 	}
 	void OnExitedDropJammer(TrDeployable_DropJammer DropJammer)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrDeployable_DropJammer*)params.ptr = DropJammer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73179], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnExitedDropJammer, params.ptr, cast(void*)0);
 	}
 	void UpdateEnemyDropJammer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73181], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEnemyDropJammer, cast(void*)0, cast(void*)0);
 	}
 	void UpdateFriendlyDropJammer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73182], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFriendlyDropJammer, cast(void*)0, cast(void*)0);
 	}
 	void PlayJammingByEnemyDropJammerEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73183], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJammingByEnemyDropJammerEffect, cast(void*)0, cast(void*)0);
 	}
 	void PlayJammingByFriendlyDropJammerEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73187], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJammingByFriendlyDropJammerEffect, cast(void*)0, cast(void*)0);
 	}
 	void OnChangeJammingTeam()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73190], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnChangeJammingTeam, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73199], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void SetMeshVisibility(bool bVisible)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bVisible;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73200], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMeshVisibility, params.ptr, cast(void*)0);
 	}
 	void SetFirstPersonBodyVisibility(bool bHide)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bHide;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73203], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFirstPersonBodyVisibility, params.ptr, cast(void*)0);
 	}
 	void WeaponAttachmentChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73206], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponAttachmentChanged, cast(void*)0, cast(void*)0);
 	}
 	void ForceCrouch()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73207], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ForceCrouch, cast(void*)0, cast(void*)0);
 	}
 	int FindClosestStickyGrenadeSocketIndex(Vector ProjectileLocation, bool bOnlyFindAvailableSlots)
 	{
@@ -1287,7 +1672,7 @@ void**)&params[4] = RunOverComponent;
 		params[] = 0;
 		*cast(Vector*)params.ptr = ProjectileLocation;
 		*cast(bool*)&params[12] = bOnlyFindAvailableSlots;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73208], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindClosestStickyGrenadeSocketIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
 	void StickGrenadeToPawn(TrProjectile pProjectile)
@@ -1295,14 +1680,14 @@ void**)&params[4] = RunOverComponent;
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrProjectile*)params.ptr = pProjectile;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73218], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StickGrenadeToPawn, params.ptr, cast(void*)0);
 	}
 	void UpdateStickyGrenades(float DeltaSeconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73222], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateStickyGrenades, params.ptr, cast(void*)0);
 	}
 	void SetSkiing(bool bEnabled, bool bJump)
 	{
@@ -1310,23 +1695,23 @@ void**)&params[4] = RunOverComponent;
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
 		*cast(bool*)&params[4] = bJump;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73224], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkiing, params.ptr, cast(void*)0);
 	}
 	void PlaySkiEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73230], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySkiEffects, cast(void*)0, cast(void*)0);
 	}
 	void StopSkiEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73231], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopSkiEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlaySkiEffectsSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73232], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySkiEffectsSound, cast(void*)0, cast(void*)0);
 	}
 	void StopSkiEffectsSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73233], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopSkiEffectsSound, cast(void*)0, cast(void*)0);
 	}
 	void FaceRotation(Rotator NewRotation, float DeltaTime)
 	{
@@ -1334,18 +1719,18 @@ void**)&params[4] = RunOverComponent;
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
 		*cast(float*)&params[12] = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73234], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FaceRotation, params.ptr, cast(void*)0);
 	}
 	void PlayDyingSound()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73237], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayDyingSound, cast(void*)0, cast(void*)0);
 	}
 	void HoldGameObject(UDKCarriedObject GameObj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKCarriedObject*)params.ptr = GameObj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73238], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HoldGameObject, params.ptr, cast(void*)0);
 	}
 	void AdjustDamage(int* InDamage, Vector* Momentum, Controller InstigatedBy, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
@@ -1358,7 +1743,7 @@ void**)&params[4] = RunOverComponent;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73244], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDamage, params.ptr, cast(void*)0);
 		*InDamage = *cast(int*)params.ptr;
 		*Momentum = *cast(Vector*)&params[4];
 	}
@@ -1367,15 +1752,15 @@ void**)&params[4] = RunOverComponent;
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = InvulnerableTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73253], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GoInvulnerable, params.ptr, cast(void*)0);
 	}
 	void ClearInvulnerability()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73255], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearInvulnerability, cast(void*)0, cast(void*)0);
 	}
 	void SetMovementPhysics()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73256], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMovementPhysics, cast(void*)0, cast(void*)0);
 	}
 	void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)
 	{
@@ -1384,7 +1769,7 @@ void**)&params[4] = RunOverComponent;
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		*cast(float*)&params[4] = PlayedTime;
 		*cast(float*)&params[8] = ExcessTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73257], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAnimEnd, params.ptr, cast(void*)0);
 	}
 	void PlayTeleportEffect(bool bOut, bool bSound)
 	{
@@ -1392,24 +1777,24 @@ void**)&params[4] = RunOverComponent;
 		params[] = 0;
 		*cast(bool*)params.ptr = bOut;
 		*cast(bool*)&params[4] = bSound;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73261], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayTeleportEffect, params.ptr, cast(void*)0);
 	}
 	void TurnOff()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73264], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TurnOff, cast(void*)0, cast(void*)0);
 	}
 	void SetDetectedByEnemyScanner(bool detected)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = detected;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73265], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDetectedByEnemyScanner, params.ptr, cast(void*)0);
 	}
 	bool GetDetectedByEnemyScanner()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDetectedByEnemyScanner, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool SetScannerDetect(bool detected)
@@ -1417,26 +1802,26 @@ void**)&params[4] = RunOverComponent;
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = detected;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73269], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetScannerDetect, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptClass GetFamilyInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73272], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFamilyInfo, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
 	void LockedOutFromFlagPickupTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73275], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LockedOutFromFlagPickupTimer, cast(void*)0, cast(void*)0);
 	}
 	void LockFromFlagPickup(float TimeToLock)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = TimeToLock;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LockFromFlagPickup, params.ptr, cast(void*)0);
 	}
 	void Blink(Vector Impulse, float MinZ, float PctEffectiveness)
 	{
@@ -1445,18 +1830,18 @@ void**)&params[4] = RunOverComponent;
 		*cast(Vector*)params.ptr = Impulse;
 		*cast(float*)&params[12] = MinZ;
 		*cast(float*)&params[16] = PctEffectiveness;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Blink, params.ptr, cast(void*)0);
 	}
 	void PlayBlinkPackEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73285], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayBlinkPackEffect, cast(void*)0, cast(void*)0);
 	}
 	bool DoJump(bool bUpdating)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bUpdating;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73290], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DoJump, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CheckClotheslineDamage(Pawn PawnHittingMe)
@@ -1464,14 +1849,14 @@ void**)&params[4] = RunOverComponent;
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = PawnHittingMe;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73293], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckClotheslineDamage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptString GetSpectatorName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73315], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	void CrushedBy(Pawn OtherPawn)
@@ -1479,50 +1864,50 @@ void**)&params[4] = RunOverComponent;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = OtherPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73317], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CrushedBy, params.ptr, cast(void*)0);
 	}
 	void StuckOnPawn(Pawn OtherPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = OtherPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StuckOnPawn, params.ptr, cast(void*)0);
 	}
 	void SetPending3PSkin(ScriptClass NewPendingSkin)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = NewPendingSkin;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73324], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPending3PSkin, params.ptr, cast(void*)0);
 	}
 	void CheckApplyPending3PSkin()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73326], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckApplyPending3PSkin, cast(void*)0, cast(void*)0);
 	}
 	void ThrowActiveWeapon(bool bDestroyWeap)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDestroyWeap;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73343], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThrowActiveWeapon, params.ptr, cast(void*)0);
 	}
 	void ThrowWeaponOnDeath()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73345], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ThrowWeaponOnDeath, cast(void*)0, cast(void*)0);
 	}
 	void ClearSkiParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73360], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSkiParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void ClearJetpackParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73361], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearJetpackParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void AlienFXOverlay(AlienFXManager.FXOverlay Type)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(AlienFXManager.FXOverlay*)params.ptr = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73362], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AlienFXOverlay, params.ptr, cast(void*)0);
 	}
 }

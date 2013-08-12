@@ -1,10 +1,13 @@
 module UnrealScript.Engine.SeqAct_Timer;
 
+import ScriptClasses;
 import UnrealScript.Engine.SequenceAction;
 
 extern(C++) interface SeqAct_Timer : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Timer")); }
 	@property final auto ref
 	{
 		float Time() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }

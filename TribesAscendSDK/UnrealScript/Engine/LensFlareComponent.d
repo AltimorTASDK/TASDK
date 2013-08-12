@@ -9,16 +9,37 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface LensFlareComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlareComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetTemplate;
+			ScriptFunction mSetSourceColor;
+			ScriptFunction mSetIsActive;
+		}
+		public @property static final
+		{
+			ScriptFunction SetTemplate() { return mSetTemplate ? mSetTemplate : (mSetTemplate = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareComponent.SetTemplate")); }
+			ScriptFunction SetSourceColor() { return mSetSourceColor ? mSetSourceColor : (mSetSourceColor = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareComponent.SetSourceColor")); }
+			ScriptFunction SetIsActive() { return mSetIsActive ? mSetIsActive : (mSetIsActive = ScriptObject.Find!(ScriptFunction)("Function Engine.LensFlareComponent.SetIsActive")); }
+		}
+	}
 	struct LensFlareElementMaterials
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LensFlareComponent.LensFlareElementMaterials")); }
 		@property final auto ref ScriptArray!(MaterialInterface) ElementMaterials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)&this + 0); }
 	}
 	struct LensFlareElementInstance
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LensFlareComponent.LensFlareElementInstance")); }
 	}
 	@property final
 	{
@@ -56,20 +77,20 @@ final:
 		params[] = 0;
 		*cast(LensFlare*)params.ptr = NewTemplate;
 		*cast(bool*)&params[4] = bForceSet;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19314], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void SetSourceColor(UObject.LinearColor InSourceColor)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UObject.LinearColor*)params.ptr = InSourceColor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19317], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSourceColor, params.ptr, cast(void*)0);
 	}
 	void SetIsActive(bool bInIsActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInIsActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[19319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetIsActive, params.ptr, cast(void*)0);
 	}
 }

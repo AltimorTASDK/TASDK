@@ -7,6 +7,13 @@ import UnrealScript.Engine.Canvas;
 extern(C++) interface ScriptedTexture : TextureRenderTarget2D
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ScriptedTexture")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mRender;
+		public @property static final ScriptFunction Render() { return mRender ? mRender : (mRender = ScriptObject.Find!(ScriptFunction)("Function Engine.ScriptedTexture.Render")); }
+	}
 	@property final
 	{
 		bool bSkipNextClear() { return (*cast(uint*)(cast(size_t)cast(void*)this + 276) & 0x2) != 0; }
@@ -19,6 +26,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25527], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Render, params.ptr, cast(void*)0);
 	}
 }

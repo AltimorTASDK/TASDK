@@ -6,6 +6,21 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface TrHUDSettings : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUDSettings")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetCurrentValue;
+			ScriptFunction mSaveSetting;
+		}
+		public @property static final
+		{
+			ScriptFunction GetCurrentValue() { return mGetCurrentValue ? mGetCurrentValue : (mGetCurrentValue = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDSettings.GetCurrentValue")); }
+			ScriptFunction SaveSetting() { return mSaveSetting ? mSaveSetting : (mSaveSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHUDSettings.SaveSetting")); }
+		}
+	}
 	enum EHUDSettingType : ubyte
 	{
 		EHST_HEROTEXT = 0,
@@ -38,7 +53,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrHUDSettings.EHUDSettingType*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[59226], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentValue, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	void SaveSetting(int Index, float val)
@@ -47,6 +62,6 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(float*)&params[4] = val;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[96612], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveSetting, params.ptr, cast(void*)0);
 	}
 }

@@ -9,10 +9,14 @@ import UnrealScript.Engine.InterpCurveEdSetup;
 extern(C++) interface InterpData : SequenceVariable
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpData")); }
 	struct AnimSetBakeAndPruneStatus
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpData.AnimSetBakeAndPruneStatus")); }
 		@property final
 		{
 			@property final auto ref ScriptString AnimSetName() { return *cast(ScriptString*)(cast(size_t)&this + 0); }

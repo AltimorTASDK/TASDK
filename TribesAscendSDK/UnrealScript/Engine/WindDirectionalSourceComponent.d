@@ -1,11 +1,14 @@
 module UnrealScript.Engine.WindDirectionalSourceComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.ActorComponent;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface WindDirectionalSourceComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.WindDirectionalSourceComponent")); }
 	@property final auto ref
 	{
 		float Speed() { return *cast(float*)(cast(size_t)cast(void*)this + 104); }

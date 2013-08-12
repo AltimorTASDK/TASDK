@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleEventBase;
 extern(C++) interface ParticleModuleEventReceiverBase : ParticleModuleEventBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleEventReceiverBase")); }
 	@property final auto ref
 	{
 		ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 76); }

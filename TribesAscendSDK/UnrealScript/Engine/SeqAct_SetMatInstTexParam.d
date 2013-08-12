@@ -8,6 +8,8 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface SeqAct_SetMatInstTexParam : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMatInstTexParam")); }
 	@property final auto ref
 	{
 		ScriptName ParamName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 240); }

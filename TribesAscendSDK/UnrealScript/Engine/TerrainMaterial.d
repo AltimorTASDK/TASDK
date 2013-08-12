@@ -1,5 +1,6 @@
 module UnrealScript.Engine.TerrainMaterial;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.Texture2D;
 import UnrealScript.Engine.MaterialInterface;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface TerrainMaterial : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainMaterial")); }
 	enum ETerrainMappingType : ubyte
 	{
 		TMT_Auto = 0,

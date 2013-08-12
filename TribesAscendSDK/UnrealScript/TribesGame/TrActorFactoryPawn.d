@@ -7,6 +7,13 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrActorFactoryPawn : UTActorFactoryAI
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrActorFactoryPawn")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPostCreateActor;
+		public @property static final ScriptFunction PostCreateActor() { return mPostCreateActor ? mPostCreateActor : (mPostCreateActor = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrActorFactoryPawn.PostCreateActor")); }
+	}
 	@property final auto ref
 	{
 		ScriptClass FamilyInfo() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 144); }
@@ -18,6 +25,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[66285], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostCreateActor, params.ptr, cast(void*)0);
 	}
 }

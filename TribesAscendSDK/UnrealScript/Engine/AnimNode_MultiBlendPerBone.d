@@ -8,6 +8,13 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface AnimNode_MultiBlendPerBone : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNode_MultiBlendPerBone")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetMaskWeight;
+		public @property static final ScriptFunction SetMaskWeight() { return mSetMaskWeight ? mSetMaskWeight : (mSetMaskWeight = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode_MultiBlendPerBone.SetMaskWeight")); }
+	}
 	enum EWeightCheck : ubyte
 	{
 		EWC_AnimNodeSlotNotPlaying = 0,
@@ -23,6 +30,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightNodeRule")); }
 		@property final auto ref
 		{
 			int ChildIndex() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -36,6 +45,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.WeightRule")); }
 		@property final auto ref
 		{
 			AnimNode_MultiBlendPerBone.WeightNodeRule SecondNode() { return *cast(AnimNode_MultiBlendPerBone.WeightNodeRule*)(cast(size_t)&this + 24); }
@@ -46,6 +57,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.BranchInfo")); }
 		@property final auto ref
 		{
 			float PerBoneWeightIncrease() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -56,6 +69,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[64];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode_MultiBlendPerBone.PerBoneMaskInfo")); }
 		@property final
 		{
 			auto ref
@@ -89,6 +104,6 @@ public extern(D):
 		*cast(int*)params.ptr = MaskIndex;
 		*cast(float*)&params[4] = DesiredWeight;
 		*cast(float*)&params[8] = BlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10744], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaskWeight, params.ptr, cast(void*)0);
 	}
 }

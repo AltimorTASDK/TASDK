@@ -10,6 +10,67 @@ import UnrealScript.Engine.Settings;
 extern(C++) interface OnlineSubsystem : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineSubsystem")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetDebugSpewLevel;
+			ScriptFunction mDumpVoiceRegistration;
+			ScriptFunction mDumpSessionState;
+			ScriptFunction mDumpGameSettings;
+			ScriptFunction mGetNumSupportedLogins;
+			ScriptFunction mGetBuildUniqueId;
+			ScriptFunction mStringToUniqueNetId;
+			ScriptFunction mUniqueNetIdToString;
+			ScriptFunction mGetNamedInterface;
+			ScriptFunction mSetNamedInterface;
+			ScriptFunction mSetGameChatInterface;
+			ScriptFunction mSetTitleFileInterface;
+			ScriptFunction mSetPartyChatInterface;
+			ScriptFunction mSetNewsInterface;
+			ScriptFunction mSetStatsInterface;
+			ScriptFunction mSetVoiceInterface;
+			ScriptFunction mSetContentInterface;
+			ScriptFunction mSetGameInterface;
+			ScriptFunction mSetSystemInterface;
+			ScriptFunction mSetPlayerInterfaceEx;
+			ScriptFunction mSetPlayerInterface;
+			ScriptFunction mSetAccountInterface;
+			ScriptFunction mExit;
+			ScriptFunction mPostInit;
+			ScriptFunction mInit;
+		}
+		public @property static final
+		{
+			ScriptFunction SetDebugSpewLevel() { return mSetDebugSpewLevel ? mSetDebugSpewLevel : (mSetDebugSpewLevel = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetDebugSpewLevel")); }
+			ScriptFunction DumpVoiceRegistration() { return mDumpVoiceRegistration ? mDumpVoiceRegistration : (mDumpVoiceRegistration = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.DumpVoiceRegistration")); }
+			ScriptFunction DumpSessionState() { return mDumpSessionState ? mDumpSessionState : (mDumpSessionState = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.DumpSessionState")); }
+			ScriptFunction DumpGameSettings() { return mDumpGameSettings ? mDumpGameSettings : (mDumpGameSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.DumpGameSettings")); }
+			ScriptFunction GetNumSupportedLogins() { return mGetNumSupportedLogins ? mGetNumSupportedLogins : (mGetNumSupportedLogins = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.GetNumSupportedLogins")); }
+			ScriptFunction GetBuildUniqueId() { return mGetBuildUniqueId ? mGetBuildUniqueId : (mGetBuildUniqueId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.GetBuildUniqueId")); }
+			ScriptFunction StringToUniqueNetId() { return mStringToUniqueNetId ? mStringToUniqueNetId : (mStringToUniqueNetId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.StringToUniqueNetId")); }
+			ScriptFunction UniqueNetIdToString() { return mUniqueNetIdToString ? mUniqueNetIdToString : (mUniqueNetIdToString = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.UniqueNetIdToString")); }
+			ScriptFunction GetNamedInterface() { return mGetNamedInterface ? mGetNamedInterface : (mGetNamedInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.GetNamedInterface")); }
+			ScriptFunction SetNamedInterface() { return mSetNamedInterface ? mSetNamedInterface : (mSetNamedInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetNamedInterface")); }
+			ScriptFunction SetGameChatInterface() { return mSetGameChatInterface ? mSetGameChatInterface : (mSetGameChatInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetGameChatInterface")); }
+			ScriptFunction SetTitleFileInterface() { return mSetTitleFileInterface ? mSetTitleFileInterface : (mSetTitleFileInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetTitleFileInterface")); }
+			ScriptFunction SetPartyChatInterface() { return mSetPartyChatInterface ? mSetPartyChatInterface : (mSetPartyChatInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetPartyChatInterface")); }
+			ScriptFunction SetNewsInterface() { return mSetNewsInterface ? mSetNewsInterface : (mSetNewsInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetNewsInterface")); }
+			ScriptFunction SetStatsInterface() { return mSetStatsInterface ? mSetStatsInterface : (mSetStatsInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetStatsInterface")); }
+			ScriptFunction SetVoiceInterface() { return mSetVoiceInterface ? mSetVoiceInterface : (mSetVoiceInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetVoiceInterface")); }
+			ScriptFunction SetContentInterface() { return mSetContentInterface ? mSetContentInterface : (mSetContentInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetContentInterface")); }
+			ScriptFunction SetGameInterface() { return mSetGameInterface ? mSetGameInterface : (mSetGameInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetGameInterface")); }
+			ScriptFunction SetSystemInterface() { return mSetSystemInterface ? mSetSystemInterface : (mSetSystemInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetSystemInterface")); }
+			ScriptFunction SetPlayerInterfaceEx() { return mSetPlayerInterfaceEx ? mSetPlayerInterfaceEx : (mSetPlayerInterfaceEx = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetPlayerInterfaceEx")); }
+			ScriptFunction SetPlayerInterface() { return mSetPlayerInterface ? mSetPlayerInterface : (mSetPlayerInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetPlayerInterface")); }
+			ScriptFunction SetAccountInterface() { return mSetAccountInterface ? mSetAccountInterface : (mSetAccountInterface = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.SetAccountInterface")); }
+			ScriptFunction Exit() { return mExit ? mExit : (mExit = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.Exit")); }
+			ScriptFunction PostInit() { return mPostInit ? mPostInit : (mPostInit = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.PostInit")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineSubsystem.Init")); }
+		}
+	}
 	enum EOnlineNewsType : ubyte
 	{
 		ONT_Unknown = 0,
@@ -120,6 +181,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.NamedSession")); }
 		@property final auto ref
 		{
 			OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 12); }
@@ -133,12 +196,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlineRegistrant")); }
 		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
 	}
 	struct OnlineArbitrationRegistrant
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlineArbitrationRegistrant")); }
 		@property final auto ref OnlineSubsystem.UniqueNetId PlayerNetId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
 		@property final auto ref
 		{
@@ -150,12 +217,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.UniqueNetId")); }
 		@property final auto ref QWord Uid() { return *cast(QWord*)(cast(size_t)&this + 0); }
 	}
 	struct NamedInterface
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.NamedInterface")); }
 		@property final auto ref
 		{
 			UObject InterfaceObject() { return *cast(UObject*)(cast(size_t)&this + 8); }
@@ -166,6 +237,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlinePartyMember")); }
 		@property final
 		{
 			auto ref
@@ -197,6 +270,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.AchievementDetails")); }
 		@property final
 		{
 			auto ref
@@ -220,6 +295,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.CommunityContentMetadata")); }
 		@property final auto ref
 		{
 			int ContentType() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -230,6 +307,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[52];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.CommunityContentFile")); }
 		@property final auto ref
 		{
 			int ContentId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -248,6 +327,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.TitleFile")); }
 		@property final auto ref
 		{
 			ScriptString Filename() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
@@ -259,6 +340,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.NamedInterfaceDef")); }
 		@property final auto ref
 		{
 			ScriptName InterfaceName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -269,6 +352,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlineFriendMessage")); }
 		@property final
 		{
 			auto ref
@@ -291,6 +376,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.RemoteTalker")); }
 		@property final
 		{
 			auto ref
@@ -310,6 +397,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.LocalTalker")); }
 		@property final
 		{
 			bool bHasVoice() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x1) != 0; }
@@ -330,6 +419,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlinePlayerScore")); }
 		@property final auto ref
 		{
 			OnlineSubsystem.UniqueNetId PlayerID() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
@@ -341,6 +432,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.SpeechRecognizedWord")); }
 		@property final auto ref
 		{
 			int WordId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -352,6 +445,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[68];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlineContent")); }
 		@property final auto ref
 		{
 			OnlineSubsystem.EOnlineContentType ContentType() { return *cast(OnlineSubsystem.EOnlineContentType*)(cast(size_t)&this + 0); }
@@ -368,6 +463,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.OnlineFriend")); }
 		@property final
 		{
 			auto ref
@@ -398,6 +495,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineSubsystem.FriendsQuery")); }
 		@property final
 		{
 			@property final auto ref OnlineSubsystem.UniqueNetId UniqueId() { return *cast(OnlineSubsystem.UniqueNetId*)(cast(size_t)&this + 0); }
@@ -427,53 +526,53 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = DebugSpewLevel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDebugSpewLevel, params.ptr, cast(void*)0);
 	}
 	void DumpVoiceRegistration()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5437], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DumpVoiceRegistration, cast(void*)0, cast(void*)0);
 	}
 	void DumpSessionState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5439], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DumpSessionState, cast(void*)0, cast(void*)0);
 	}
-	void DumpGameSettings(OnlineGameSettings GameSettings)
+	static void DumpGameSettings(OnlineGameSettings GameSettings)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(OnlineGameSettings*)params.ptr = GameSettings;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5440], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DumpGameSettings, params.ptr, cast(void*)0);
 	}
-	int GetNumSupportedLogins()
+	static int GetNumSupportedLogins()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5456], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetNumSupportedLogins, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	int GetBuildUniqueId()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBuildUniqueId, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	bool StringToUniqueNetId(ScriptString UniqueNetIdString, OnlineSubsystem.UniqueNetId* out_UniqueId)
+	static bool StringToUniqueNetId(ScriptString UniqueNetIdString, OnlineSubsystem.UniqueNetId* out_UniqueId)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = UniqueNetIdString;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[12] = *out_UniqueId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5460], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.StringToUniqueNetId, params.ptr, cast(void*)0);
 		*out_UniqueId = *cast(OnlineSubsystem.UniqueNetId*)&params[12];
 		return *cast(bool*)&params[20];
 	}
-	ScriptString UniqueNetIdToString(OnlineSubsystem.UniqueNetId* IdToConvert)
+	static ScriptString UniqueNetIdToString(OnlineSubsystem.UniqueNetId* IdToConvert)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = *IdToConvert;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5462], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.UniqueNetIdToString, params.ptr, cast(void*)0);
 		*IdToConvert = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(ScriptString*)&params[8];
 	}
@@ -482,7 +581,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InterfaceName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5466], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNamedInterface, params.ptr, cast(void*)0);
 		return *cast(UObject*)&params[8];
 	}
 	void SetNamedInterface(ScriptName InterfaceName, UObject NewInterface)
@@ -491,14 +590,14 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InterfaceName;
 		*cast(UObject*)&params[8] = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5469], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetNamedInterface, params.ptr, cast(void*)0);
 	}
 	bool SetGameChatInterface(UObject NewInterface)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5476], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGameChatInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetTitleFileInterface(UObject NewInterface)
@@ -506,7 +605,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5481], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTitleFileInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetPartyChatInterface(UObject NewInterface)
@@ -514,7 +613,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5486], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPartyChatInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetNewsInterface(UObject NewInterface)
@@ -522,7 +621,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5491], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetNewsInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetStatsInterface(UObject NewInterface)
@@ -530,7 +629,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5496], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStatsInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetVoiceInterface(UObject NewInterface)
@@ -538,7 +637,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5501], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetVoiceInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetContentInterface(UObject NewInterface)
@@ -546,7 +645,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5506], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetContentInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetGameInterface(UObject NewInterface)
@@ -554,7 +653,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5511], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGameInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetSystemInterface(UObject NewInterface)
@@ -562,7 +661,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5516], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSystemInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetPlayerInterfaceEx(UObject NewInterface)
@@ -570,7 +669,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5521], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerInterfaceEx, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetPlayerInterface(UObject NewInterface)
@@ -578,7 +677,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5526], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SetAccountInterface(UObject NewInterface)
@@ -586,25 +685,25 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UObject*)params.ptr = NewInterface;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5531], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAccountInterface, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Exit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5536], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Exit, cast(void*)0, cast(void*)0);
 	}
 	bool PostInit()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5541], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInit, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool Init()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5542], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

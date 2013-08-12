@@ -7,6 +7,13 @@ import UnrealScript.TribesGame.TrVehicleWeapon;
 extern(C++) interface TrVehicleWeapon_FullAuto : TrVehicleWeapon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_FullAuto")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mRefireCheckTimer;
+		public @property static final ScriptFunction RefireCheckTimer() { return mRefireCheckTimer ? mRefireCheckTimer : (mRefireCheckTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleWeapon_FullAuto.RefireCheckTimer")); }
+	}
 	@property final auto ref
 	{
 		ScriptArray!(SoundCue) WeaponFireFullAutoSnd() { return *cast(ScriptArray!(SoundCue)*)(cast(size_t)cast(void*)this + 1780); }
@@ -15,6 +22,6 @@ public extern(D):
 	}
 	final void RefireCheckTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[115283], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefireCheckTimer, cast(void*)0, cast(void*)0);
 	}
 }

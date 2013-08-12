@@ -8,6 +8,35 @@ import UnrealScript.TribesGame.TrPlayerController;
 extern(C++) interface TrMusicManager : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMusicManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mCreateNewTrack;
+			ScriptFunction mStartMusic;
+			ScriptFunction mSetStateBasedOnGameState;
+			ScriptFunction mTick;
+			ScriptFunction mMusicEvent;
+			ScriptFunction mSetPendingState;
+			ScriptFunction mSetCurrentState;
+			ScriptFunction mPlayerScoredFlag;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.PostBeginPlay")); }
+			ScriptFunction CreateNewTrack() { return mCreateNewTrack ? mCreateNewTrack : (mCreateNewTrack = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.CreateNewTrack")); }
+			ScriptFunction StartMusic() { return mStartMusic ? mStartMusic : (mStartMusic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.StartMusic")); }
+			ScriptFunction SetStateBasedOnGameState() { return mSetStateBasedOnGameState ? mSetStateBasedOnGameState : (mSetStateBasedOnGameState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.SetStateBasedOnGameState")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.Tick")); }
+			ScriptFunction MusicEvent() { return mMusicEvent ? mMusicEvent : (mMusicEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.MusicEvent")); }
+			ScriptFunction SetPendingState() { return mSetPendingState ? mSetPendingState : (mSetPendingState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.SetPendingState")); }
+			ScriptFunction SetCurrentState() { return mSetCurrentState ? mSetCurrentState : (mSetCurrentState = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.SetCurrentState")); }
+			ScriptFunction PlayerScoredFlag() { return mPlayerScoredFlag ? mPlayerScoredFlag : (mPlayerScoredFlag = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMusicManager.PlayerScoredFlag")); }
+		}
+	}
 	enum ETgMusicState : ubyte
 	{
 		MUSICSTATE_BattleLow = 0,
@@ -33,7 +62,7 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100250], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -42,49 +71,49 @@ void* CreateNewTrack(SoundCue MusicCue)
 		ubyte params[8];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = MusicCue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateNewTrack, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
 	void StartMusic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100256], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartMusic, cast(void*)0, cast(void*)0);
 	}
 	void SetStateBasedOnGameState()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100258], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStateBasedOnGameState, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100263], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void MusicEvent(int NewEventIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = NewEventIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MusicEvent, params.ptr, cast(void*)0);
 	}
 	void SetPendingState(TrMusicManager.ETgMusicState NewState)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrMusicManager.ETgMusicState*)params.ptr = NewState;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100273], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPendingState, params.ptr, cast(void*)0);
 	}
 	void SetCurrentState(TrMusicManager.ETgMusicState NewState)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrMusicManager.ETgMusicState*)params.ptr = NewState;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100275], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentState, params.ptr, cast(void*)0);
 	}
 	void PlayerScoredFlag()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100280], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayerScoredFlag, cast(void*)0, cast(void*)0);
 	}
 }

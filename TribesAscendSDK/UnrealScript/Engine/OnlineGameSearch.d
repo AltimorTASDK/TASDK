@@ -9,6 +9,21 @@ import UnrealScript.Engine.Settings;
 extern(C++) interface OnlineGameSearch : Settings
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameSearch")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSortSearchResults;
+			ScriptFunction mSetSkillOverride;
+		}
+		public @property static final
+		{
+			ScriptFunction SortSearchResults() { return mSortSearchResults ? mSortSearchResults : (mSortSearchResults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineGameSearch.SortSearchResults")); }
+			ScriptFunction SetSkillOverride() { return mSetSkillOverride ? mSetSkillOverride : (mSetSkillOverride = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineGameSearch.SetSkillOverride")); }
+		}
+	}
 	enum EOnlineGameSearchComparisonType : ubyte
 	{
 		OGSCT_Equals = 0,
@@ -36,6 +51,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchQuery")); }
 		@property final auto ref
 		{
 			ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause) OrClauses() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchORClause)*)(cast(size_t)&this + 0); }
@@ -46,6 +63,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OverrideSkill")); }
 		@property final auto ref
 		{
 			int LeaderboardId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -58,12 +77,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchORClause")); }
 		@property final auto ref ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter) OrParams() { return *cast(ScriptArray!(OnlineGameSearch.OnlineGameSearchParameter)*)(cast(size_t)&this + 0); }
 	}
 	struct OnlineGameSearchSortClause
 	{
 		private ubyte __buffer__[14];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchSortClause")); }
 		@property final auto ref
 		{
 			int EntryId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -76,6 +99,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[14];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchParameter")); }
 		@property final auto ref
 		{
 			int EntryId() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -88,6 +113,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.NamedObjectProperty")); }
 		@property final auto ref
 		{
 			ScriptName ObjectPropertyName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -98,6 +125,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineGameSearch.OnlineGameSearchResult")); }
 		@property final auto ref
 		{
 			OnlineGameSettings GameSettings() { return *cast(OnlineGameSettings*)(cast(size_t)&this + 0); }
@@ -128,7 +157,7 @@ public extern(D):
 final:
 	void SortSearchResults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6865], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortSearchResults, cast(void*)0, cast(void*)0);
 	}
 	void SetSkillOverride(int LeaderboardId, ScriptArray!(OnlineSubsystem.UniqueNetId)* Players)
 	{
@@ -136,7 +165,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = LeaderboardId;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = *Players;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6866], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkillOverride, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4];
 	}
 }

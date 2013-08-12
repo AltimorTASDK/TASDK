@@ -12,6 +12,57 @@ import UnrealScript.Engine.SkeletalMesh;
 extern(C++) interface TrPaperDoll : SkeletalMeshActorMAT
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDoll")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsFullyStreamed;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mGetCharacterSkeletalMesh;
+			ScriptFunction mOnCharacterMeshContentDataClassLoaded;
+			ScriptFunction mOnSkeletalMeshFinishedStreaming;
+			ScriptFunction mTryUpdatingPaperDoll;
+			ScriptFunction mSetFamilyInfo;
+			ScriptFunction mPlayCustomAnimation;
+			ScriptFunction mStopCustomAnimation;
+			ScriptFunction mResetCustomAnimTimer;
+			ScriptFunction mOnAnimEnd;
+			ScriptFunction mOnDeviceContentDataClassLoaded;
+			ScriptFunction mPlayLoadingGraphic;
+			ScriptFunction mStopLoadingGraphic;
+			ScriptFunction mOnWeaponFinishedStreaming;
+			ScriptFunction mSetWeaponOnlyMesh;
+			ScriptFunction mGetDevicePaperDollInfo;
+			ScriptFunction mSetMainMesh;
+			ScriptFunction mDestroyed;
+		}
+		public @property static final
+		{
+			ScriptFunction IsFullyStreamed() { return mIsFullyStreamed ? mIsFullyStreamed : (mIsFullyStreamed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.IsFullyStreamed")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.PostBeginPlay")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.PostInitAnimTree")); }
+			ScriptFunction GetCharacterSkeletalMesh() { return mGetCharacterSkeletalMesh ? mGetCharacterSkeletalMesh : (mGetCharacterSkeletalMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.GetCharacterSkeletalMesh")); }
+			ScriptFunction OnCharacterMeshContentDataClassLoaded() { return mOnCharacterMeshContentDataClassLoaded ? mOnCharacterMeshContentDataClassLoaded : (mOnCharacterMeshContentDataClassLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.OnCharacterMeshContentDataClassLoaded")); }
+			ScriptFunction OnSkeletalMeshFinishedStreaming() { return mOnSkeletalMeshFinishedStreaming ? mOnSkeletalMeshFinishedStreaming : (mOnSkeletalMeshFinishedStreaming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.OnSkeletalMeshFinishedStreaming")); }
+			ScriptFunction TryUpdatingPaperDoll() { return mTryUpdatingPaperDoll ? mTryUpdatingPaperDoll : (mTryUpdatingPaperDoll = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.TryUpdatingPaperDoll")); }
+			ScriptFunction SetFamilyInfo() { return mSetFamilyInfo ? mSetFamilyInfo : (mSetFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.SetFamilyInfo")); }
+			ScriptFunction PlayCustomAnimation() { return mPlayCustomAnimation ? mPlayCustomAnimation : (mPlayCustomAnimation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.PlayCustomAnimation")); }
+			ScriptFunction StopCustomAnimation() { return mStopCustomAnimation ? mStopCustomAnimation : (mStopCustomAnimation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.StopCustomAnimation")); }
+			ScriptFunction ResetCustomAnimTimer() { return mResetCustomAnimTimer ? mResetCustomAnimTimer : (mResetCustomAnimTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.ResetCustomAnimTimer")); }
+			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.OnAnimEnd")); }
+			ScriptFunction OnDeviceContentDataClassLoaded() { return mOnDeviceContentDataClassLoaded ? mOnDeviceContentDataClassLoaded : (mOnDeviceContentDataClassLoaded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.OnDeviceContentDataClassLoaded")); }
+			ScriptFunction PlayLoadingGraphic() { return mPlayLoadingGraphic ? mPlayLoadingGraphic : (mPlayLoadingGraphic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.PlayLoadingGraphic")); }
+			ScriptFunction StopLoadingGraphic() { return mStopLoadingGraphic ? mStopLoadingGraphic : (mStopLoadingGraphic = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.StopLoadingGraphic")); }
+			ScriptFunction OnWeaponFinishedStreaming() { return mOnWeaponFinishedStreaming ? mOnWeaponFinishedStreaming : (mOnWeaponFinishedStreaming = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.OnWeaponFinishedStreaming")); }
+			ScriptFunction SetWeaponOnlyMesh() { return mSetWeaponOnlyMesh ? mSetWeaponOnlyMesh : (mSetWeaponOnlyMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.SetWeaponOnlyMesh")); }
+			ScriptFunction GetDevicePaperDollInfo() { return mGetDevicePaperDollInfo ? mGetDevicePaperDollInfo : (mGetDevicePaperDollInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.GetDevicePaperDollInfo")); }
+			ScriptFunction SetMainMesh() { return mSetMainMesh ? mSetMainMesh : (mSetMainMesh = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.SetMainMesh")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPaperDoll.Destroyed")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -60,12 +111,12 @@ final:
 		ubyte params[60];
 		params[] = 0;
 		*cast(TrObject.PaperDollInfo*)params.ptr = PaperDoll;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100424], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFullyStreamed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[56];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100427], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -76,7 +127,7 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100429], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	SkeletalMesh GetCharacterSkeletalMesh(ScriptClass FamilyInfoClass, ubyte TeamNum)
 	{
@@ -84,7 +135,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfoClass;
 		params[4] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCharacterSkeletalMesh, params.ptr, cast(void*)0);
 		return *cast(SkeletalMesh*)&params[8];
 	}
 	void OnCharacterMeshContentDataClassLoaded(ScriptClass Skin3PDataClass)
@@ -92,18 +143,18 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Skin3PDataClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100438], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCharacterMeshContentDataClassLoaded, params.ptr, cast(void*)0);
 	}
 	void OnSkeletalMeshFinishedStreaming(SkeletalMesh NewSkelMesh)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SkeletalMesh*)params.ptr = NewSkelMesh;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100442], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSkeletalMeshFinishedStreaming, params.ptr, cast(void*)0);
 	}
 	void TryUpdatingPaperDoll()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100444], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TryUpdatingPaperDoll, cast(void*)0, cast(void*)0);
 	}
 	void SetFamilyInfo(ScriptClass NewFamilyInfoClass, ScriptClass DeviceClass, ScriptClass skinClass, int TeamNum)
 	{
@@ -113,22 +164,22 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)&params[4] = DeviceClass;
 		*cast(ScriptClass*)&params[8] = skinClass;
 		*cast(int*)&params[12] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100447], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFamilyInfo, params.ptr, cast(void*)0);
 	}
 	void PlayCustomAnimation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100453], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCustomAnimation, cast(void*)0, cast(void*)0);
 	}
 	void StopCustomAnimation(float FadeOutTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = FadeOutTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100454], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopCustomAnimation, params.ptr, cast(void*)0);
 	}
 	void ResetCustomAnimTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100456], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetCustomAnimTimer, cast(void*)0, cast(void*)0);
 	}
 	void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)
 	{
@@ -137,43 +188,43 @@ void**)params.ptr = SkelComp;
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		*cast(float*)&params[4] = PlayedTime;
 		*cast(float*)&params[8] = ExcessTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100457], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAnimEnd, params.ptr, cast(void*)0);
 	}
 	void OnDeviceContentDataClassLoaded(ScriptClass DeviceContentDataClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = DeviceContentDataClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100461], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnDeviceContentDataClassLoaded, params.ptr, cast(void*)0);
 	}
 	void PlayLoadingGraphic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100467], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayLoadingGraphic, cast(void*)0, cast(void*)0);
 	}
 	void StopLoadingGraphic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100468], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopLoadingGraphic, cast(void*)0, cast(void*)0);
 	}
 	void OnWeaponFinishedStreaming(TrObject.PaperDollInfo NewPaperDollInfo)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(TrObject.PaperDollInfo*)params.ptr = NewPaperDollInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100469], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnWeaponFinishedStreaming, params.ptr, cast(void*)0);
 	}
 	void SetWeaponOnlyMesh(ScriptClass WeaponClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = WeaponClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100471], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWeaponOnlyMesh, params.ptr, cast(void*)0);
 	}
 	TrObject.PaperDollInfo GetDevicePaperDollInfo(ScriptClass WeaponClass)
 	{
 		ubyte params[60];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = WeaponClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100473], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDevicePaperDollInfo, params.ptr, cast(void*)0);
 		return *cast(TrObject.PaperDollInfo*)&params[4];
 	}
 	void SetMainMesh(TrObject.PaperDollInfo NewInfo)
@@ -181,10 +232,10 @@ void**)params.ptr = SkelComp;
 		ubyte params[56];
 		params[] = 0;
 		*cast(TrObject.PaperDollInfo*)params.ptr = NewInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100476], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetMainMesh, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100481], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 }

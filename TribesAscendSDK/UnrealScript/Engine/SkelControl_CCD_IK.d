@@ -6,6 +6,8 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface SkelControl_CCD_IK : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControl_CCD_IK")); }
 	@property final
 	{
 		auto ref

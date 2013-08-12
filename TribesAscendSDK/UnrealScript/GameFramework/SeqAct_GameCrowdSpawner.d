@@ -13,10 +13,37 @@ import UnrealScript.Engine.LightComponent;
 extern(C++) interface SeqAct_GameCrowdSpawner : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdSpawner")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnedAgent;
+			ScriptFunction mCacheSpawnerVars;
+			ScriptFunction mKillAgents;
+			ScriptFunction mUpdateSpawning;
+			ScriptFunction mSpawnAgent;
+			ScriptFunction mCreateNewAgent;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnedAgent() { return mSpawnedAgent ? mSpawnedAgent : (mSpawnedAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.SpawnedAgent")); }
+			ScriptFunction CacheSpawnerVars() { return mCacheSpawnerVars ? mCacheSpawnerVars : (mCacheSpawnerVars = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.CacheSpawnerVars")); }
+			ScriptFunction KillAgents() { return mKillAgents ? mKillAgents : (mKillAgents = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.KillAgents")); }
+			ScriptFunction UpdateSpawning() { return mUpdateSpawning ? mUpdateSpawning : (mUpdateSpawning = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.UpdateSpawning")); }
+			ScriptFunction SpawnAgent() { return mSpawnAgent ? mSpawnAgent : (mSpawnAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.SpawnAgent")); }
+			ScriptFunction CreateNewAgent() { return mCreateNewAgent ? mCreateNewAgent : (mCreateNewAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.CreateNewAgent")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdSpawner.GetObjClassVersion")); }
+		}
+	}
 	struct AgentArchetypeInfo
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.SeqAct_GameCrowdSpawner.AgentArchetypeInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(UObject) GroupMembers() { return *cast(ScriptArray!(UObject)*)(cast(size_t)&this + 16); }
@@ -73,29 +100,29 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = NewAgent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32913], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnedAgent, params.ptr, cast(void*)0);
 	}
 	void CacheSpawnerVars()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32915], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CacheSpawnerVars, cast(void*)0, cast(void*)0);
 	}
 	void KillAgents()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32916], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillAgents, cast(void*)0, cast(void*)0);
 	}
 	void UpdateSpawning(float DeltaSeconds)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32917], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpawning, params.ptr, cast(void*)0);
 	}
 	GameCrowdAgent SpawnAgent(Actor SpawnLoc)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = SpawnLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32919], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnAgent, params.ptr, cast(void*)0);
 		return *cast(GameCrowdAgent*)&params[4];
 	}
 	GameCrowdAgent CreateNewAgent(Actor SpawnLoc, GameCrowdAgent AgentTemplate, GameCrowdGroup NewGroup)
@@ -105,14 +132,14 @@ final:
 		*cast(Actor*)params.ptr = SpawnLoc;
 		*cast(GameCrowdAgent*)&params[4] = AgentTemplate;
 		*cast(GameCrowdGroup*)&params[8] = NewGroup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32929], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateNewAgent, params.ptr, cast(void*)0);
 		return *cast(GameCrowdAgent*)&params[12];
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32937], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

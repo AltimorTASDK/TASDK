@@ -8,6 +8,21 @@ import UnrealScript.Engine.Font;
 extern(C++) interface UDKHUD : MobileHUD
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKHUD")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDrawGlowText;
+			ScriptFunction mTranslateBindToFont;
+		}
+		public @property static final
+		{
+			ScriptFunction DrawGlowText() { return mDrawGlowText ? mDrawGlowText : (mDrawGlowText = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKHUD.DrawGlowText")); }
+			ScriptFunction TranslateBindToFont() { return mTranslateBindToFont ? mTranslateBindToFont : (mTranslateBindToFont = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKHUD.TranslateBindToFont")); }
+		}
+	}
 	@property final auto ref
 	{
 		Font BindTextFont() { return *cast(Font*)(cast(size_t)cast(void*)this + 1424); }
@@ -29,16 +44,16 @@ final:
 		*cast(float*)&params[20] = MaxHeightInPixels;
 		*cast(float*)&params[24] = PulseTime;
 		*cast(bool*)&params[28] = bRightJustified;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34916], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawGlowText, params.ptr, cast(void*)0);
 	}
-	void TranslateBindToFont(ScriptString InBindStr, Font* DrawFont, ScriptString* OutBindStr)
+	static void TranslateBindToFont(ScriptString InBindStr, Font* DrawFont, ScriptString* OutBindStr)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InBindStr;
 		*cast(Font*)&params[12] = *DrawFont;
 		*cast(ScriptString*)&params[16] = *OutBindStr;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34923], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.TranslateBindToFont, params.ptr, cast(void*)0);
 		*DrawFont = *cast(Font*)&params[12];
 		*OutBindStr = *cast(ScriptString*)&params[16];
 	}

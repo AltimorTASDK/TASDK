@@ -7,6 +7,8 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface EngineTypes : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EngineTypes")); }
 	enum EPathFindingError : ubyte
 	{
 		PATHERROR_STARTPOLYNOTFOUND = 0,
@@ -128,6 +130,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.SubtitleCue")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 12); }
@@ -138,6 +142,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LocalizedSubtitle")); }
 		@property final
 		{
 			auto ref
@@ -155,12 +161,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightMapRef")); }
 		@property final auto ref UObject.Pointer Reference() { return *cast(UObject.Pointer*)(cast(size_t)&this + 0); }
 	}
 	struct DominantShadowInfo
 	{
 		private ubyte __buffer__[164];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.DominantShadowInfo")); }
 		@property final auto ref
 		{
 			int ShadowMapSizeY() { return *cast(int*)(cast(size_t)&this + 160); }
@@ -174,6 +184,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassLightSettings")); }
 		@property final auto ref
 		{
 			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -185,6 +197,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassPointLightSettings")); }
 		@property final auto ref
 		{
 			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -197,6 +211,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassDirectionalLightSettings")); }
 		@property final auto ref
 		{
 			float ShadowExponent() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -209,6 +225,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassPrimitiveSettings")); }
 		@property final
 		{
 			auto ref
@@ -232,6 +250,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.LightmassDebugOptions")); }
 		@property final
 		{
 			auto ref
@@ -277,6 +297,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.SwarmDebugOptions")); }
 		@property final
 		{
 			bool bInitialized() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x4) != 0; }
@@ -291,6 +313,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.RootMotionCurve")); }
 		@property final auto ref
 		{
 			float MaxCurveTime() { return *cast(float*)(cast(size_t)&this + 24); }
@@ -302,12 +326,16 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.PrimitiveMaterialRef")); }
 		@property final auto ref int MaterialIndex() { return *cast(int*)(cast(size_t)&this + 4); }
 	}
 	struct MaterialReferenceList
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EngineTypes.MaterialReferenceList")); }
 		@property final auto ref
 		{
 			ScriptArray!(EngineTypes.PrimitiveMaterialRef) AffectedMaterialRefs() { return *cast(ScriptArray!(EngineTypes.PrimitiveMaterialRef)*)(cast(size_t)&this + 4); }

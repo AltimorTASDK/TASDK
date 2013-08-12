@@ -1,5 +1,6 @@
 module UnrealScript.Engine.CameraAnim;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PostProcessVolume;
 import UnrealScript.Engine.InterpGroup;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.InterpGroup;
 extern(C++) interface CameraAnim : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnim")); }
 	@property final auto ref
 	{
 		float BaseFOV() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }

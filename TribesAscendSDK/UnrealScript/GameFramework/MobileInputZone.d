@@ -10,6 +10,35 @@ import UnrealScript.GameFramework.MobilePlayerInput;
 extern(C++) interface MobileInputZone : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileInputZone")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnPreDrawZone;
+			ScriptFunction mOnPostDrawZone;
+			ScriptFunction mOnProcessSlide;
+			ScriptFunction mOnDoubleTapDelegate;
+			ScriptFunction mOnTapDelegate;
+			ScriptFunction mOnProcessInputDelegate;
+			ScriptFunction mActivateZone;
+			ScriptFunction mDeactivateZone;
+			ScriptFunction mAddKismetEventHandler;
+		}
+		public @property static final
+		{
+			ScriptFunction OnPreDrawZone() { return mOnPreDrawZone ? mOnPreDrawZone : (mOnPreDrawZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnPreDrawZone")); }
+			ScriptFunction OnPostDrawZone() { return mOnPostDrawZone ? mOnPostDrawZone : (mOnPostDrawZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnPostDrawZone")); }
+			ScriptFunction OnProcessSlide() { return mOnProcessSlide ? mOnProcessSlide : (mOnProcessSlide = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnProcessSlide")); }
+			ScriptFunction OnDoubleTapDelegate() { return mOnDoubleTapDelegate ? mOnDoubleTapDelegate : (mOnDoubleTapDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnDoubleTapDelegate")); }
+			ScriptFunction OnTapDelegate() { return mOnTapDelegate ? mOnTapDelegate : (mOnTapDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnTapDelegate")); }
+			ScriptFunction OnProcessInputDelegate() { return mOnProcessInputDelegate ? mOnProcessInputDelegate : (mOnProcessInputDelegate = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.OnProcessInputDelegate")); }
+			ScriptFunction ActivateZone() { return mActivateZone ? mActivateZone : (mActivateZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.ActivateZone")); }
+			ScriptFunction DeactivateZone() { return mDeactivateZone ? mDeactivateZone : (mDeactivateZone = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.DeactivateZone")); }
+			ScriptFunction AddKismetEventHandler() { return mAddKismetEventHandler ? mAddKismetEventHandler : (mAddKismetEventHandler = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileInputZone.AddKismetEventHandler")); }
+		}
+	}
 	enum EZoneType : ubyte
 	{
 		ZoneType_Button = 0,
@@ -45,6 +74,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobileInputZone.TextureUVs")); }
 		@property final auto ref
 		{
 			float U() { return *cast(float*)(cast(size_t)&this + 0); }
@@ -152,7 +183,7 @@ final:
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
 		*cast(Canvas*)&params[4] = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32378], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPreDrawZone, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void OnPostDrawZone(MobileInputZone Zone, Canvas pCanvas)
@@ -161,7 +192,7 @@ final:
 		params[] = 0;
 		*cast(MobileInputZone*)params.ptr = Zone;
 		*cast(Canvas*)&params[4] = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32471], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPostDrawZone, params.ptr, cast(void*)0);
 	}
 	bool OnProcessSlide(MobileInputZone Zone, MobileInputZone.EZoneTouchEvent EventType, int SlideValue, UObject.Vector2D ViewportSize)
 	{
@@ -171,7 +202,7 @@ final:
 		*cast(MobileInputZone.EZoneTouchEvent*)&params[4] = EventType;
 		*cast(int*)&params[8] = SlideValue;
 		*cast(UObject.Vector2D*)&params[12] = ViewportSize;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32473], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnProcessSlide, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 	bool OnDoubleTapDelegate(MobileInputZone Zone, MobileInputZone.EZoneTouchEvent EventType, UObject.Vector2D TouchLocation)
@@ -181,7 +212,7 @@ final:
 		*cast(MobileInputZone*)params.ptr = Zone;
 		*cast(MobileInputZone.EZoneTouchEvent*)&params[4] = EventType;
 		*cast(UObject.Vector2D*)&params[8] = TouchLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32475], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnDoubleTapDelegate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	bool OnTapDelegate(MobileInputZone Zone, MobileInputZone.EZoneTouchEvent EventType, UObject.Vector2D TouchLocation)
@@ -191,7 +222,7 @@ final:
 		*cast(MobileInputZone*)params.ptr = Zone;
 		*cast(MobileInputZone.EZoneTouchEvent*)&params[4] = EventType;
 		*cast(UObject.Vector2D*)&params[8] = TouchLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32477], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTapDelegate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	bool OnProcessInputDelegate(MobileInputZone Zone, float DeltaTime, int Handle, MobileInputZone.EZoneTouchEvent EventType, UObject.Vector2D TouchLocation)
@@ -203,22 +234,22 @@ final:
 		*cast(int*)&params[8] = Handle;
 		*cast(MobileInputZone.EZoneTouchEvent*)&params[12] = EventType;
 		*cast(UObject.Vector2D*)&params[16] = TouchLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32479], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnProcessInputDelegate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	void ActivateZone()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32522], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateZone, cast(void*)0, cast(void*)0);
 	}
 	void DeactivateZone()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32523], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DeactivateZone, cast(void*)0, cast(void*)0);
 	}
 	void AddKismetEventHandler(SeqEvent_MobileZoneBase NewHandler)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqEvent_MobileZoneBase*)params.ptr = NewHandler;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32547], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddKismetEventHandler, params.ptr, cast(void*)0);
 	}
 }

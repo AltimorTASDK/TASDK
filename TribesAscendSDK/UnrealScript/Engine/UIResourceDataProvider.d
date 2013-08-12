@@ -7,6 +7,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UIResourceDataProvider : UIPropertyDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIResourceDataProvider")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mInitializeProvider;
+		public @property static final ScriptFunction InitializeProvider() { return mInitializeProvider ? mInitializeProvider : (mInitializeProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIResourceDataProvider.InitializeProvider")); }
+	}
 	@property final
 	{
 		auto ref
@@ -24,6 +31,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsEditor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22607], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeProvider, params.ptr, cast(void*)0);
 	}
 }

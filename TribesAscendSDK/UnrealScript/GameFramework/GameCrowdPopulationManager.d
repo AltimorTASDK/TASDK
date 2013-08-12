@@ -15,6 +15,55 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface GameCrowdPopulationManager : CrowdPopulationManagerBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdPopulationManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mNotifyPathChanged;
+			ScriptFunction mGetMaxSpawnDist;
+			ScriptFunction mAddSpawnPoint;
+			ScriptFunction mRemoveSpawnPoint;
+			ScriptFunction mOnGameCrowdPopulationManagerToggle;
+			ScriptFunction mFlushAgents;
+			ScriptFunction mAgentDestroyed;
+			ScriptFunction mAddToAgentPool;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mIsSpawningActive;
+			ScriptFunction mTick;
+			ScriptFunction mPickSpawnPoint;
+			ScriptFunction mPrioritizeSpawnPoints;
+			ScriptFunction mAnalyzeSpawnPoints;
+			ScriptFunction mAddPrioritizedSpawnPoint;
+			ScriptFunction mValidateSpawnAt;
+			ScriptFunction mSpawnAgent;
+			ScriptFunction mCreateNewAgent;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.PostBeginPlay")); }
+			ScriptFunction NotifyPathChanged() { return mNotifyPathChanged ? mNotifyPathChanged : (mNotifyPathChanged = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.NotifyPathChanged")); }
+			ScriptFunction GetMaxSpawnDist() { return mGetMaxSpawnDist ? mGetMaxSpawnDist : (mGetMaxSpawnDist = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.GetMaxSpawnDist")); }
+			ScriptFunction AddSpawnPoint() { return mAddSpawnPoint ? mAddSpawnPoint : (mAddSpawnPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.AddSpawnPoint")); }
+			ScriptFunction RemoveSpawnPoint() { return mRemoveSpawnPoint ? mRemoveSpawnPoint : (mRemoveSpawnPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.RemoveSpawnPoint")); }
+			ScriptFunction OnGameCrowdPopulationManagerToggle() { return mOnGameCrowdPopulationManagerToggle ? mOnGameCrowdPopulationManagerToggle : (mOnGameCrowdPopulationManagerToggle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.OnGameCrowdPopulationManagerToggle")); }
+			ScriptFunction FlushAgents() { return mFlushAgents ? mFlushAgents : (mFlushAgents = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.FlushAgents")); }
+			ScriptFunction AgentDestroyed() { return mAgentDestroyed ? mAgentDestroyed : (mAgentDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.AgentDestroyed")); }
+			ScriptFunction AddToAgentPool() { return mAddToAgentPool ? mAddToAgentPool : (mAddToAgentPool = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.AddToAgentPool")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.DisplayDebug")); }
+			ScriptFunction IsSpawningActive() { return mIsSpawningActive ? mIsSpawningActive : (mIsSpawningActive = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.IsSpawningActive")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.Tick")); }
+			ScriptFunction PickSpawnPoint() { return mPickSpawnPoint ? mPickSpawnPoint : (mPickSpawnPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.PickSpawnPoint")); }
+			ScriptFunction PrioritizeSpawnPoints() { return mPrioritizeSpawnPoints ? mPrioritizeSpawnPoints : (mPrioritizeSpawnPoints = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.PrioritizeSpawnPoints")); }
+			ScriptFunction AnalyzeSpawnPoints() { return mAnalyzeSpawnPoints ? mAnalyzeSpawnPoints : (mAnalyzeSpawnPoints = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.AnalyzeSpawnPoints")); }
+			ScriptFunction AddPrioritizedSpawnPoint() { return mAddPrioritizedSpawnPoint ? mAddPrioritizedSpawnPoint : (mAddPrioritizedSpawnPoint = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.AddPrioritizedSpawnPoint")); }
+			ScriptFunction ValidateSpawnAt() { return mValidateSpawnAt ? mValidateSpawnAt : (mValidateSpawnAt = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.ValidateSpawnAt")); }
+			ScriptFunction SpawnAgent() { return mSpawnAgent ? mSpawnAgent : (mSpawnAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.SpawnAgent")); }
+			ScriptFunction CreateNewAgent() { return mCreateNewAgent ? mCreateNewAgent : (mCreateNewAgent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdPopulationManager.CreateNewAgent")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -67,17 +116,17 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31372], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void NotifyPathChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31374], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyPathChanged, cast(void*)0, cast(void*)0);
 	}
 	float GetMaxSpawnDist()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31375], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxSpawnDist, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void AddSpawnPoint(GameCrowdDestination GCD)
@@ -85,39 +134,39 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = GCD;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31377], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddSpawnPoint, params.ptr, cast(void*)0);
 	}
 	void RemoveSpawnPoint(GameCrowdDestination GCD)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = GCD;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31388], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveSpawnPoint, params.ptr, cast(void*)0);
 	}
 	void OnGameCrowdPopulationManagerToggle(SeqAct_GameCrowdPopulationManagerToggle inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_GameCrowdPopulationManagerToggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31390], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameCrowdPopulationManagerToggle, params.ptr, cast(void*)0);
 	}
 	void FlushAgents()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31402], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlushAgents, cast(void*)0, cast(void*)0);
 	}
 	void AgentDestroyed(GameCrowdAgent Agent)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31404], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AgentDestroyed, params.ptr, cast(void*)0);
 	}
 	bool AddToAgentPool(GameCrowdAgent Agent)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31407], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToAgentPool, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
@@ -127,7 +176,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31410], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -135,7 +184,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsSpawningActive, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void Tick(float DeltaSeconds)
@@ -143,13 +192,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	GameCrowdDestination PickSpawnPoint()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31437], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PickSpawnPoint, params.ptr, cast(void*)0);
 		return *cast(GameCrowdDestination*)params.ptr;
 	}
 	void PrioritizeSpawnPoints(float DeltaSeconds)
@@ -157,7 +206,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaSeconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31441], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PrioritizeSpawnPoints, params.ptr, cast(void*)0);
 	}
 	void AnalyzeSpawnPoints(int StartIndex, int StopIndex, Vector ViewLocation, Vector PredictionLocation)
 	{
@@ -167,7 +216,7 @@ final:
 		*cast(int*)&params[4] = StopIndex;
 		*cast(Vector*)&params[8] = ViewLocation;
 		*cast(Vector*)&params[20] = PredictionLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AnalyzeSpawnPoints, params.ptr, cast(void*)0);
 	}
 	void AddPrioritizedSpawnPoint(GameCrowdDestination GCD, Vector ViewLocation)
 	{
@@ -175,14 +224,14 @@ final:
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = GCD;
 		*cast(Vector*)&params[4] = ViewLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31463], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddPrioritizedSpawnPoint, params.ptr, cast(void*)0);
 	}
 	bool ValidateSpawnAt(GameCrowdDestination Candidate)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = Candidate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31467], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidateSpawnAt, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	GameCrowdAgent SpawnAgent(GameCrowdDestination SpawnLoc)
@@ -190,7 +239,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GameCrowdDestination*)params.ptr = SpawnLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31477], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnAgent, params.ptr, cast(void*)0);
 		return *cast(GameCrowdAgent*)&params[4];
 	}
 	GameCrowdAgent CreateNewAgent(GameCrowdDestination SpawnLoc, GameCrowdAgent AgentTemplate, GameCrowdGroup NewGroup)
@@ -200,7 +249,7 @@ final:
 		*cast(GameCrowdDestination*)params.ptr = SpawnLoc;
 		*cast(GameCrowdAgent*)&params[4] = AgentTemplate;
 		*cast(GameCrowdGroup*)&params[8] = NewGroup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31487], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateNewAgent, params.ptr, cast(void*)0);
 		return *cast(GameCrowdAgent*)&params[12];
 	}
 }

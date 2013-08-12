@@ -6,6 +6,8 @@ import UnrealScript.Engine.Download;
 extern(C++) interface HTTPDownload : Download
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.HTTPDownload")); }
 	@property final
 	{
 		auto ref

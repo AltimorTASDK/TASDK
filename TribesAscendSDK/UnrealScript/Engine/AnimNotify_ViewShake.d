@@ -9,6 +9,13 @@ import UnrealScript.Engine.AnimNotify_Scripted;
 extern(C++) interface AnimNotify_ViewShake : AnimNotify_Scripted
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_ViewShake")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mNotify;
+		public @property static final ScriptFunction Notify() { return mNotify ? mNotify : (mNotify = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNotify_ViewShake.Notify")); }
+	}
 	@property final
 	{
 		auto ref
@@ -35,6 +42,6 @@ public extern(D):
 		params[] = 0;
 		*cast(Actor*)params.ptr = Owner;
 		*cast(AnimNodeSequence*)&params[4] = AnimSeqInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11472], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Notify, params.ptr, cast(void*)0);
 	}
 }

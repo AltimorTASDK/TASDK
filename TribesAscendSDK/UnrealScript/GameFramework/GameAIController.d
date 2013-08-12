@@ -10,6 +10,51 @@ import UnrealScript.GameFramework.GameAICommand;
 extern(C++) interface GameAIController : AIController
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAIController")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAllCommands;
+			ScriptFunction mPushCommand;
+			ScriptFunction mPopCommand;
+			ScriptFunction mAbortCommand;
+			ScriptFunction mGetActiveCommand;
+			ScriptFunction mCheckCommandCount;
+			ScriptFunction mDumpCommandStack;
+			ScriptFunction mFindCommandOfClass;
+			ScriptFunction mGetAICommandInStack;
+			ScriptFunction mGetDestinationOffset;
+			ScriptFunction mReachedMoveGoal;
+			ScriptFunction mReachedIntermediateMoveGoal;
+			ScriptFunction mDestroyed;
+			ScriptFunction mRecordDemoAILog;
+			ScriptFunction mAILog_Internal;
+			ScriptFunction mSetDesiredRotation;
+			ScriptFunction mGetActionString;
+		}
+		public @property static final
+		{
+			ScriptFunction AllCommands() { return mAllCommands ? mAllCommands : (mAllCommands = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AllCommands")); }
+			ScriptFunction PushCommand() { return mPushCommand ? mPushCommand : (mPushCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.PushCommand")); }
+			ScriptFunction PopCommand() { return mPopCommand ? mPopCommand : (mPopCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.PopCommand")); }
+			ScriptFunction AbortCommand() { return mAbortCommand ? mAbortCommand : (mAbortCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AbortCommand")); }
+			ScriptFunction GetActiveCommand() { return mGetActiveCommand ? mGetActiveCommand : (mGetActiveCommand = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetActiveCommand")); }
+			ScriptFunction CheckCommandCount() { return mCheckCommandCount ? mCheckCommandCount : (mCheckCommandCount = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.CheckCommandCount")); }
+			ScriptFunction DumpCommandStack() { return mDumpCommandStack ? mDumpCommandStack : (mDumpCommandStack = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.DumpCommandStack")); }
+			ScriptFunction FindCommandOfClass() { return mFindCommandOfClass ? mFindCommandOfClass : (mFindCommandOfClass = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.FindCommandOfClass")); }
+			ScriptFunction GetAICommandInStack() { return mGetAICommandInStack ? mGetAICommandInStack : (mGetAICommandInStack = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetAICommandInStack")); }
+			ScriptFunction GetDestinationOffset() { return mGetDestinationOffset ? mGetDestinationOffset : (mGetDestinationOffset = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetDestinationOffset")); }
+			ScriptFunction ReachedMoveGoal() { return mReachedMoveGoal ? mReachedMoveGoal : (mReachedMoveGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.ReachedMoveGoal")); }
+			ScriptFunction ReachedIntermediateMoveGoal() { return mReachedIntermediateMoveGoal ? mReachedIntermediateMoveGoal : (mReachedIntermediateMoveGoal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.ReachedIntermediateMoveGoal")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.Destroyed")); }
+			ScriptFunction RecordDemoAILog() { return mRecordDemoAILog ? mRecordDemoAILog : (mRecordDemoAILog = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.RecordDemoAILog")); }
+			ScriptFunction AILog_Internal() { return mAILog_Internal ? mAILog_Internal : (mAILog_Internal = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.AILog_Internal")); }
+			ScriptFunction SetDesiredRotation() { return mSetDesiredRotation ? mSetDesiredRotation : (mSetDesiredRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.SetDesiredRotation")); }
+			ScriptFunction GetActionString() { return mGetActionString ? mGetActionString : (mGetActionString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameAIController.GetActionString")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -48,7 +93,7 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(GameAICommand*)&params[4] = *Cmd;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30827], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllCommands, params.ptr, cast(void*)0);
 		*Cmd = *cast(GameAICommand*)&params[4];
 	}
 	void PushCommand(GameAICommand NewCommand)
@@ -56,14 +101,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameAICommand*)params.ptr = NewCommand;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30830], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PushCommand, params.ptr, cast(void*)0);
 	}
 	void PopCommand(GameAICommand ToBePoppedCommand)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameAICommand*)params.ptr = ToBePoppedCommand;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30832], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopCommand, params.ptr, cast(void*)0);
 	}
 	bool AbortCommand(GameAICommand AbortCmd, ScriptClass AbortClass)
 	{
@@ -71,30 +116,30 @@ final:
 		params[] = 0;
 		*cast(GameAICommand*)params.ptr = AbortCmd;
 		*cast(ScriptClass*)&params[4] = AbortClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30834], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AbortCommand, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	GameAICommand GetActiveCommand()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30838], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActiveCommand, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)params.ptr;
 	}
 	void CheckCommandCount()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30840], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckCommandCount, cast(void*)0, cast(void*)0);
 	}
 	void DumpCommandStack()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30841], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DumpCommandStack, cast(void*)0, cast(void*)0);
 	}
 	GameAICommand FindCommandOfClass(ScriptClass SearchClass)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SearchClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30842], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindCommandOfClass, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)&params[4];
 	}
 	GameAICommand GetAICommandInStack(ScriptClass InClass)
@@ -102,34 +147,34 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30845], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAICommandInStack, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)&params[4];
 	}
 	float GetDestinationOffset()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30848], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDestinationOffset, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void ReachedMoveGoal()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30850], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReachedMoveGoal, cast(void*)0, cast(void*)0);
 	}
 	void ReachedIntermediateMoveGoal()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30851], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReachedIntermediateMoveGoal, cast(void*)0, cast(void*)0);
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30852], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void RecordDemoAILog(ScriptString LogText)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogText;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30853], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RecordDemoAILog, params.ptr, cast(void*)0);
 	}
 	void AILog_Internal(ScriptString LogText, ScriptName LogCategory, bool bForce)
 	{
@@ -138,7 +183,7 @@ final:
 		*cast(ScriptString*)params.ptr = LogText;
 		*cast(ScriptName*)&params[12] = LogCategory;
 		*cast(bool*)&params[20] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30855], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AILog_Internal, params.ptr, cast(void*)0);
 	}
 	void SetDesiredRotation(Rotator TargetDesiredRotation, bool InLockDesiredRotation, bool InUnlockWhenReached, float InterpolationTime)
 	{
@@ -148,13 +193,13 @@ final:
 		*cast(bool*)&params[12] = InLockDesiredRotation;
 		*cast(bool*)&params[16] = InUnlockWhenReached;
 		*cast(float*)&params[20] = InterpolationTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30859], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDesiredRotation, params.ptr, cast(void*)0);
 	}
 	ScriptString GetActionString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30873], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetActionString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

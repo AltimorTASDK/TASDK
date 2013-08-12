@@ -7,6 +7,21 @@ import UnrealScript.Core.UObject;
 extern(C++) interface RB_Spring : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Spring")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetComponents;
+			ScriptFunction mClear;
+		}
+		public @property static final
+		{
+			ScriptFunction SetComponents() { return mSetComponents ? mSetComponents : (mSetComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Spring.SetComponents")); }
+			ScriptFunction Clear() { return mClear ? mClear : (mClear = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Spring.Clear")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -48,10 +63,10 @@ void**)params.ptr = InComponent1;
 void**)&params[24] = InComponent2;
 		*cast(ScriptName*)&params[28] = InBoneName2;
 		*cast(Vector*)&params[36] = Position2;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25344], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetComponents, params.ptr, cast(void*)0);
 	}
 	void Clear()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25351], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Clear, cast(void*)0, cast(void*)0);
 	}
 }

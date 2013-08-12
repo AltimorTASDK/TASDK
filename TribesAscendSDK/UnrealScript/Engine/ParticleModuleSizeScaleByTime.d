@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleSizeScaleByTime;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleSizeBase;
 import UnrealScript.Core.DistributionVector;
 
 extern(C++) interface ParticleModuleSizeScaleByTime : ParticleModuleSizeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSizeScaleByTime")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector SizeScaleByTime() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }

@@ -11,6 +11,29 @@ import UnrealScript.Engine.Volume;
 extern(C++) interface Pylon : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Pylon")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnPylonStatusChange;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mSetEnabled;
+			ScriptFunction mIsEnabled;
+			ScriptFunction mOnToggle;
+			ScriptFunction mCanReachPylon;
+		}
+		public @property static final
+		{
+			ScriptFunction OnPylonStatusChange() { return mOnPylonStatusChange ? mOnPylonStatusChange : (mOnPylonStatusChange = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.OnPylonStatusChange")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.PostBeginPlay")); }
+			ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.SetEnabled")); }
+			ScriptFunction IsEnabled() { return mIsEnabled ? mIsEnabled : (mIsEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.IsEnabled")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.OnToggle")); }
+			ScriptFunction CanReachPylon() { return mCanReachPylon ? mCanReachPylon : (mCanReachPylon = ScriptObject.Find!(ScriptFunction)("Function Engine.Pylon.CanReachPylon")); }
+		}
+	}
 	enum ENavMeshEdgeType : ubyte
 	{
 		NAVEDGE_Normal = 0,
@@ -27,6 +50,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Pylon.PolyReference")); }
 		@property final auto ref
 		{
 			int PolyId() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -82,24 +107,24 @@ public extern(D):
 final:
 	void OnPylonStatusChange()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9967], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPylonStatusChange, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9968], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void SetEnabled(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9969], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
 	bool IsEnabled()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9971], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEnabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void OnToggle(SeqAct_Toggle Action)
@@ -107,7 +132,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9973], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	bool CanReachPylon(Pylon DestPylon, Controller C)
 	{
@@ -115,7 +140,7 @@ final:
 		params[] = 0;
 		*cast(Pylon*)params.ptr = DestPylon;
 		*cast(Controller*)&params[4] = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9975], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanReachPylon, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

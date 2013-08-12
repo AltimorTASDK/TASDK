@@ -7,6 +7,13 @@ import UnrealScript.GameFramework.SeqAct_GameCrowdSpawner;
 extern(C++) interface GameCrowdReplicationActor : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdReplicationActor")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mReplicatedEvent;
+		public @property static final ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdReplicationActor.ReplicatedEvent")); }
+	}
 	@property final
 	{
 		auto ref
@@ -22,6 +29,6 @@ public extern(D):
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31500], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 }

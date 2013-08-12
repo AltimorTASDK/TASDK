@@ -6,10 +6,27 @@ import UnrealScript.Core.UObject;
 extern(C++) interface OnlineMatchmakingStats : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineMatchmakingStats")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mStartTimer;
+			ScriptFunction mStopTimer;
+		}
+		public @property static final
+		{
+			ScriptFunction StartTimer() { return mStartTimer ? mStartTimer : (mStartTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineMatchmakingStats.StartTimer")); }
+			ScriptFunction StopTimer() { return mStopTimer ? mStopTimer : (mStopTimer = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineMatchmakingStats.StopTimer")); }
+		}
+	}
 	struct MMStats_Timer
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.OnlineMatchmakingStats.MMStats_Timer")); }
 		@property final
 		{
 			@property final auto ref UObject.Double MSecs() { return *cast(UObject.Double*)(cast(size_t)&this + 4); }
@@ -23,7 +40,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(OnlineMatchmakingStats.MMStats_Timer*)params.ptr = *Timer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21861], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartTimer, params.ptr, cast(void*)0);
 		*Timer = *cast(OnlineMatchmakingStats.MMStats_Timer*)params.ptr;
 	}
 	void StopTimer(OnlineMatchmakingStats.MMStats_Timer* Timer)
@@ -31,7 +48,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(OnlineMatchmakingStats.MMStats_Timer*)params.ptr = *Timer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21863], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopTimer, params.ptr, cast(void*)0);
 		*Timer = *cast(OnlineMatchmakingStats.MMStats_Timer*)params.ptr;
 	}
 }

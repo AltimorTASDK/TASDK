@@ -7,10 +7,19 @@ import UnrealScript.Core.UObject;
 extern(C++) interface Scout : Pawn
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Scout")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPreBeginPlay;
+		public @property static final ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Scout.PreBeginPlay")); }
+	}
 	struct PathSizeInfo
 	{
 		private ubyte __buffer__[21];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Scout.PathSizeInfo")); }
 		@property final auto ref
 		{
 			ubyte PathColor() { return *cast(ubyte*)(cast(size_t)&this + 20); }
@@ -62,6 +71,6 @@ public extern(D):
 	}
 	final void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25506], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 }

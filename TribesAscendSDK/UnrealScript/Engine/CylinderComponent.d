@@ -7,6 +7,13 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface CylinderComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CylinderComponent")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetCylinderSize;
+		public @property static final ScriptFunction SetCylinderSize() { return mSetCylinderSize ? mSetCylinderSize : (mSetCylinderSize = ScriptObject.Find!(ScriptFunction)("Function Engine.CylinderComponent.SetCylinderSize")); }
+	}
 	@property final
 	{
 		auto ref
@@ -28,6 +35,6 @@ public extern(D):
 		params[] = 0;
 		*cast(float*)params.ptr = NewRadius;
 		*cast(float*)&params[4] = NewHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6374], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCylinderSize, params.ptr, cast(void*)0);
 	}
 }

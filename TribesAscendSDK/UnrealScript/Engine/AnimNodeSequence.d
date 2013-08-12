@@ -10,6 +10,45 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface AnimNodeSequence : AnimNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequence")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetAnim;
+			ScriptFunction mPlayAnim;
+			ScriptFunction mStopAnim;
+			ScriptFunction mReplayAnim;
+			ScriptFunction mSetPosition;
+			ScriptFunction mGetNormalizedPosition;
+			ScriptFunction mFindGroupRelativePosition;
+			ScriptFunction mFindGroupPosition;
+			ScriptFunction mGetGroupRelativePosition;
+			ScriptFunction mGetGlobalPlayRate;
+			ScriptFunction mGetAnimPlaybackLength;
+			ScriptFunction mGetTimeLeft;
+			ScriptFunction mSetRootBoneAxisOption;
+			ScriptFunction mSetRootBoneRotationOption;
+		}
+		public @property static final
+		{
+			ScriptFunction SetAnim() { return mSetAnim ? mSetAnim : (mSetAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetAnim")); }
+			ScriptFunction PlayAnim() { return mPlayAnim ? mPlayAnim : (mPlayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.PlayAnim")); }
+			ScriptFunction StopAnim() { return mStopAnim ? mStopAnim : (mStopAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.StopAnim")); }
+			ScriptFunction ReplayAnim() { return mReplayAnim ? mReplayAnim : (mReplayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.ReplayAnim")); }
+			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetPosition")); }
+			ScriptFunction GetNormalizedPosition() { return mGetNormalizedPosition ? mGetNormalizedPosition : (mGetNormalizedPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetNormalizedPosition")); }
+			ScriptFunction FindGroupRelativePosition() { return mFindGroupRelativePosition ? mFindGroupRelativePosition : (mFindGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.FindGroupRelativePosition")); }
+			ScriptFunction FindGroupPosition() { return mFindGroupPosition ? mFindGroupPosition : (mFindGroupPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.FindGroupPosition")); }
+			ScriptFunction GetGroupRelativePosition() { return mGetGroupRelativePosition ? mGetGroupRelativePosition : (mGetGroupRelativePosition = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetGroupRelativePosition")); }
+			ScriptFunction GetGlobalPlayRate() { return mGetGlobalPlayRate ? mGetGlobalPlayRate : (mGetGlobalPlayRate = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetGlobalPlayRate")); }
+			ScriptFunction GetAnimPlaybackLength() { return mGetAnimPlaybackLength ? mGetAnimPlaybackLength : (mGetAnimPlaybackLength = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetAnimPlaybackLength")); }
+			ScriptFunction GetTimeLeft() { return mGetTimeLeft ? mGetTimeLeft : (mGetTimeLeft = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.GetTimeLeft")); }
+			ScriptFunction SetRootBoneAxisOption() { return mSetRootBoneAxisOption ? mSetRootBoneAxisOption : (mSetRootBoneAxisOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetRootBoneAxisOption")); }
+			ScriptFunction SetRootBoneRotationOption() { return mSetRootBoneRotationOption ? mSetRootBoneRotationOption : (mSetRootBoneRotationOption = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeSequence.SetRootBoneRotationOption")); }
+		}
+	}
 	enum ERootRotationOption : ubyte
 	{
 		RRO_Default = 0,
@@ -91,7 +130,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = pSequence;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10909], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAnim, params.ptr, cast(void*)0);
 	}
 	void PlayAnim(bool bLoop, float InRate, float StartTime)
 	{
@@ -100,15 +139,15 @@ final:
 		*cast(bool*)params.ptr = bLoop;
 		*cast(float*)&params[4] = InRate;
 		*cast(float*)&params[8] = StartTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10911], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10915], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopAnim, cast(void*)0, cast(void*)0);
 	}
 	void ReplayAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10916], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplayAnim, cast(void*)0, cast(void*)0);
 	}
 	void SetPosition(float NewTime, bool bFireNotifies)
 	{
@@ -116,13 +155,13 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = NewTime;
 		*cast(bool*)&params[4] = bFireNotifies;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10917], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPosition, params.ptr, cast(void*)0);
 	}
 	float GetNormalizedPosition()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10920], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNormalizedPosition, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float FindGroupRelativePosition(float GroupRelativePosition)
@@ -130,7 +169,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = GroupRelativePosition;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10922], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindGroupRelativePosition, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	float FindGroupPosition(float GroupRelativePosition)
@@ -138,35 +177,35 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = GroupRelativePosition;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10925], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindGroupPosition, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 	float GetGroupRelativePosition()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10928], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGroupRelativePosition, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetGlobalPlayRate()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10930], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGlobalPlayRate, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetAnimPlaybackLength()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10932], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAnimPlaybackLength, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetTimeLeft()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10934], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimeLeft, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void SetRootBoneAxisOption(AnimNodeSequence.ERootBoneAxis AxisX, AnimNodeSequence.ERootBoneAxis AxisY, AnimNodeSequence.ERootBoneAxis AxisZ)
@@ -176,7 +215,7 @@ final:
 		*cast(AnimNodeSequence.ERootBoneAxis*)params.ptr = AxisX;
 		*cast(AnimNodeSequence.ERootBoneAxis*)&params[1] = AxisY;
 		*cast(AnimNodeSequence.ERootBoneAxis*)&params[2] = AxisZ;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10936], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootBoneAxisOption, params.ptr, cast(void*)0);
 	}
 	void SetRootBoneRotationOption(AnimNodeSequence.ERootRotationOption AxisX, AnimNodeSequence.ERootRotationOption AxisY, AnimNodeSequence.ERootRotationOption AxisZ)
 	{
@@ -185,6 +224,6 @@ final:
 		*cast(AnimNodeSequence.ERootRotationOption*)params.ptr = AxisX;
 		*cast(AnimNodeSequence.ERootRotationOption*)&params[1] = AxisY;
 		*cast(AnimNodeSequence.ERootRotationOption*)&params[2] = AxisZ;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10941], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootBoneRotationOption, params.ptr, cast(void*)0);
 	}
 }

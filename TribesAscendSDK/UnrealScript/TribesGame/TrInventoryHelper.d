@@ -6,6 +6,23 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrInventoryHelper : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryHelper")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetEquipClass;
+			ScriptFunction mGetFamilyClass;
+			ScriptFunction mGetSkinClass;
+		}
+		public @property static final
+		{
+			ScriptFunction GetEquipClass() { return mGetEquipClass ? mGetEquipClass : (mGetEquipClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetEquipClass")); }
+			ScriptFunction GetFamilyClass() { return mGetFamilyClass ? mGetFamilyClass : (mGetFamilyClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetFamilyClass")); }
+			ScriptFunction GetSkinClass() { return mGetSkinClass ? mGetSkinClass : (mGetSkinClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrInventoryHelper.GetSkinClass")); }
+		}
+	}
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,
@@ -1388,7 +1405,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = DeviceID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[54043], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEquipClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	ScriptClass GetFamilyClass(int ClassId)
@@ -1396,7 +1413,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[54704], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFamilyClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 	ScriptClass GetSkinClass(int skinId)
@@ -1404,7 +1421,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = skinId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[54815], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSkinClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 }

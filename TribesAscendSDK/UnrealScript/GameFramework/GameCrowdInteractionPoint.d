@@ -7,6 +7,13 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface GameCrowdInteractionPoint : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdInteractionPoint")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mOnToggle;
+		public @property static final ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdInteractionPoint.OnToggle")); }
+	}
 	@property final
 	{
 		bool bIsEnabled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 476) & 0x1) != 0; }
@@ -17,6 +24,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[30316], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 }

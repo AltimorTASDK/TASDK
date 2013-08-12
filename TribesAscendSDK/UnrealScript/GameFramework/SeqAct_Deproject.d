@@ -7,6 +7,8 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_Deproject : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_Deproject")); }
 	@property final auto ref
 	{
 		Vector HitNormal() { return *cast(Vector*)(cast(size_t)cast(void*)this + 260); }

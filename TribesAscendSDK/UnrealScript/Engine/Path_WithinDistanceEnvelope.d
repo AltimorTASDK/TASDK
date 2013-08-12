@@ -7,6 +7,21 @@ import UnrealScript.Engine.PathConstraint;
 extern(C++) interface Path_WithinDistanceEnvelope : PathConstraint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_WithinDistanceEnvelope")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mStayWithinEnvelopeToLoc;
+			ScriptFunction mRecycle;
+		}
+		public @property static final
+		{
+			ScriptFunction StayWithinEnvelopeToLoc() { return mStayWithinEnvelopeToLoc ? mStayWithinEnvelopeToLoc : (mStayWithinEnvelopeToLoc = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_WithinDistanceEnvelope.StayWithinEnvelopeToLoc")); }
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_WithinDistanceEnvelope.Recycle")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -22,7 +37,7 @@ public extern(D):
 		bool bSoft(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 76) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 76) &= ~0x1; } return val; }
 	}
 final:
-	bool StayWithinEnvelopeToLoc(Pawn P, Vector InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool bInSoft, float InSoftStartPenalty, bool bOnlyTossOutSpecsThatLeave)
+	static bool StayWithinEnvelopeToLoc(Pawn P, Vector InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool bInSoft, float InSoftStartPenalty, bool bOnlyTossOutSpecsThatLeave)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -33,11 +48,11 @@ final:
 		*cast(bool*)&params[24] = bInSoft;
 		*cast(float*)&params[28] = InSoftStartPenalty;
 		*cast(bool*)&params[32] = bOnlyTossOutSpecsThatLeave;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24004], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.StayWithinEnvelopeToLoc, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24014], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 }

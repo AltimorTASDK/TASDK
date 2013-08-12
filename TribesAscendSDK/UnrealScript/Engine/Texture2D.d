@@ -7,10 +7,27 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface Texture2D : Texture
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture2D")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetForceMipLevelsToBeResident;
+			ScriptFunction mCreate;
+		}
+		public @property static final
+		{
+			ScriptFunction SetForceMipLevelsToBeResident() { return mSetForceMipLevelsToBeResident ? mSetForceMipLevelsToBeResident : (mSetForceMipLevelsToBeResident = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2D.SetForceMipLevelsToBeResident")); }
+			ScriptFunction Create() { return mCreate ? mCreate : (mCreate = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2D.Create")); }
+		}
+	}
 	struct Texture2DMipMap
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Texture2D.Texture2DMipMap")); }
 		@property final auto ref
 		{
 			int SizeY() { return *cast(int*)(cast(size_t)&this + 56); }
@@ -22,6 +39,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Texture2D.TextureLinkedListMirror")); }
 		@property final auto ref
 		{
 			UObject.Pointer PrevLink() { return *cast(UObject.Pointer*)(cast(size_t)&this + 8); }
@@ -74,16 +93,16 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = Seconds;
 		*cast(int*)&params[4] = CinematicTextureGroups;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5141], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetForceMipLevelsToBeResident, params.ptr, cast(void*)0);
 	}
-	Texture2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat)
+	static Texture2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = InSizeX;
 		*cast(int*)&params[4] = InSizeY;
 		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5144], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.Create, params.ptr, cast(void*)0);
 		return *cast(Texture2D*)&params[12];
 	}
 }

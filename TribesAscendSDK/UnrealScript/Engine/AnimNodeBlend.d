@@ -6,6 +6,13 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface AnimNodeBlend : AnimNodeBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlend")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetBlendTarget;
+		public @property static final ScriptFunction SetBlendTarget() { return mSetBlendTarget ? mSetBlendTarget : (mSetBlendTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNodeBlend.SetBlendTarget")); }
+	}
 	@property final
 	{
 		auto ref
@@ -23,6 +30,6 @@ public extern(D):
 		params[] = 0;
 		*cast(float*)params.ptr = BlendTarget;
 		*cast(float*)&params[4] = BlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10755], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetBlendTarget, params.ptr, cast(void*)0);
 	}
 }

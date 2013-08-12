@@ -8,6 +8,21 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_Teleport : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Teleport")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mShouldTeleport;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction ShouldTeleport() { return mShouldTeleport ? mShouldTeleport : (mShouldTeleport = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Teleport.ShouldTeleport")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Teleport.GetObjClassVersion")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,14 +42,14 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = TestActor;
 		*cast(Vector*)&params[4] = TeleportLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4372], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldTeleport, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25976], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

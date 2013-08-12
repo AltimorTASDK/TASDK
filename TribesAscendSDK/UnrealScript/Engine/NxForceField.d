@@ -9,6 +9,21 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface NxForceField : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceField")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mDoInitRBPhys;
+			ScriptFunction mOnToggle;
+		}
+		public @property static final
+		{
+			ScriptFunction DoInitRBPhys() { return mDoInitRBPhys ? mDoInitRBPhys : (mDoInitRBPhys = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceField.DoInitRBPhys")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.NxForceField.OnToggle")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -29,13 +44,13 @@ public extern(D):
 final:
 	void DoInitRBPhys()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21131], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DoInitRBPhys, cast(void*)0, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[21132], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 }

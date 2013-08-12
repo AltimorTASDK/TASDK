@@ -9,6 +9,25 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface DecalComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DecalComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mResetToDefaults;
+			ScriptFunction mSetDecalMaterial;
+			ScriptFunction mGetDecalMaterial;
+			ScriptFunction mSetGameplayRequired;
+		}
+		public @property static final
+		{
+			ScriptFunction ResetToDefaults() { return mResetToDefaults ? mResetToDefaults : (mResetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.ResetToDefaults")); }
+			ScriptFunction SetDecalMaterial() { return mSetDecalMaterial ? mSetDecalMaterial : (mSetDecalMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.SetDecalMaterial")); }
+			ScriptFunction GetDecalMaterial() { return mGetDecalMaterial ? mGetDecalMaterial : (mGetDecalMaterial = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.GetDecalMaterial")); }
+			ScriptFunction SetGameplayRequired() { return mSetGameplayRequired ? mSetGameplayRequired : (mSetGameplayRequired = ScriptObject.Find!(ScriptFunction)("Function Engine.DecalComponent.SetGameplayRequired")); }
+		}
+	}
 	enum EFilterMode : ubyte
 	{
 		FM_None = 0,
@@ -27,6 +46,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.DecalComponent.DecalReceiver")); }
 		@property final auto ref UObject.Pointer RenderData() { return *cast(UObject.Pointer*)(cast(size_t)&this + 4); }
 	}
 	@property final
@@ -105,20 +126,20 @@ void*)*)(cast(size_t)cast(void*)this + 724); }
 final:
 	void ResetToDefaults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14100], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetToDefaults, cast(void*)0, cast(void*)0);
 	}
 	void SetDecalMaterial(MaterialInterface NewDecalMaterial)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = NewDecalMaterial;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14101], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDecalMaterial, params.ptr, cast(void*)0);
 	}
 	MaterialInterface GetDecalMaterial()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14103], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDecalMaterial, params.ptr, cast(void*)0);
 		return *cast(MaterialInterface*)params.ptr;
 	}
 	void SetGameplayRequired(bool bIsGameplayRelevant)
@@ -126,6 +147,6 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsGameplayRelevant;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14105], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGameplayRequired, params.ptr, cast(void*)0);
 	}
 }

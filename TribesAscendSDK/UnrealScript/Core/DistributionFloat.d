@@ -7,10 +7,19 @@ import UnrealScript.Core.Component;
 extern(C++) interface DistributionFloat : Component
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.DistributionFloat")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetFloatValue;
+		public @property static final ScriptFunction GetFloatValue() { return mGetFloatValue ? mGetFloatValue : (mGetFloatValue = ScriptObject.Find!(ScriptFunction)("Function Core.DistributionFloat.GetFloatValue")); }
+	}
 	struct RawDistributionFloat
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.DistributionFloat.RawDistributionFloat")); }
 		@property final auto ref
 		{
 			ubyte Type() { return *cast(ubyte*)(cast(size_t)&this + 0); }
@@ -35,7 +44,7 @@ public extern(D):
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[3432], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatValue, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
 }

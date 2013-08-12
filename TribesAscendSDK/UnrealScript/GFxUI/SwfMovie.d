@@ -6,6 +6,8 @@ import UnrealScript.GFxUI.GFxRawData;
 extern(C++) interface SwfMovie : GFxRawData
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.SwfMovie")); }
 	enum FlashTextureRescale : ubyte
 	{
 		FlashTextureScale_High = 0,

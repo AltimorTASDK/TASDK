@@ -6,10 +6,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface SpeechRecognition : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeechRecognition")); }
 	struct RecogVocabulary
 	{
 		private ubyte __buffer__[72];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SpeechRecognition.RecogVocabulary")); }
 		@property final auto ref
 		{
 			ScriptArray!(SpeechRecognition.RecognisableWord) WhoDictionary() { return *cast(ScriptArray!(SpeechRecognition.RecognisableWord)*)(cast(size_t)&this + 0); }
@@ -24,6 +28,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SpeechRecognition.RecognisableWord")); }
 		@property final auto ref
 		{
 			ScriptString PhoneticWord() { return *cast(ScriptString*)(cast(size_t)&this + 16); }
@@ -35,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SpeechRecognition.RecogUserData")); }
 		@property final auto ref
 		{
 			ScriptArray!(ubyte) UserData() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }

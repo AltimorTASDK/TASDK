@@ -7,6 +7,13 @@ import UnrealScript.UTGame.UTTeamInfo;
 extern(C++) interface UTDMRoster : UTTeamInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDMRoster")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mAddToTeam;
+		public @property static final ScriptFunction AddToTeam() { return mAddToTeam ? mAddToTeam : (mAddToTeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDMRoster.AddToTeam")); }
+	}
 	@property final auto ref
 	{
 		ScriptClass DMSquadClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 600); }
@@ -17,7 +24,7 @@ public extern(D):
 		ubyte params[8];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47180], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddToTeam, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

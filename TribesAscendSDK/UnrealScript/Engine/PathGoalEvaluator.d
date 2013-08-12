@@ -7,6 +7,21 @@ import UnrealScript.Core.UObject;
 extern(C++) interface PathGoalEvaluator : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PathGoalEvaluator")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRecycle;
+			ScriptFunction mGetDumpString;
+		}
+		public @property static final
+		{
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.PathGoalEvaluator.Recycle")); }
+			ScriptFunction GetDumpString() { return mGetDumpString ? mGetDumpString : (mGetDumpString = ScriptObject.Find!(ScriptFunction)("Function Engine.PathGoalEvaluator.GetDumpString")); }
+		}
+	}
 	@property final auto ref
 	{
 		int CacheIdx() { return *cast(int*)(cast(size_t)cast(void*)this + 72); }
@@ -17,13 +32,13 @@ public extern(D):
 final:
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18164], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetDumpString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[18165], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDumpString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

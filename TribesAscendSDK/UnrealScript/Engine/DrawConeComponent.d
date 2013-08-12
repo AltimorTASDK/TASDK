@@ -1,11 +1,14 @@
 module UnrealScript.Engine.DrawConeComponent;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.PrimitiveComponent;
 
 extern(C++) interface DrawConeComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawConeComponent")); }
 	@property final auto ref
 	{
 		int ConeSides() { return *cast(int*)(cast(size_t)cast(void*)this + 500); }

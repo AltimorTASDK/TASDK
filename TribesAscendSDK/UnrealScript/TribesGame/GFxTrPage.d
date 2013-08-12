@@ -8,6 +8,115 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage : GFxObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mAddAction;
+			ScriptFunction mAddActionNumber;
+			ScriptFunction mAddActionString;
+			ScriptFunction mAddActionPage;
+			ScriptFunction mAddActionSet;
+			ScriptFunction mTakeFocus;
+			ScriptFunction mTakeAction;
+			ScriptFunction mModifyAction;
+			ScriptFunction mModifyFocus;
+			ScriptFunction mHelpButton;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mPopupData;
+			ScriptFunction mPopupComplete;
+			ScriptFunction mFillData;
+			ScriptFunction mFillOptions;
+			ScriptFunction mIsOwned;
+			ScriptFunction mCheckPurchasable;
+			ScriptFunction mIsEquipMaxed;
+			ScriptFunction mFillOption;
+			ScriptFunction mFillDefault;
+			ScriptFunction mCheckUpgrades;
+			ScriptFunction mCheckPricing;
+			ScriptFunction mFillUpgrades;
+			ScriptFunction mFillPricing;
+			ScriptFunction mCheckDescription;
+			ScriptFunction mFillDescription;
+			ScriptFunction mFillPage;
+			ScriptFunction mClearActions;
+			ScriptFunction mShowModel;
+			ScriptFunction mFillClass;
+			ScriptFunction mFillEquipTypes;
+			ScriptFunction mNewClassEquip;
+			ScriptFunction mNewClassUpgrade;
+			ScriptFunction mNewEquipUpgrade;
+			ScriptFunction mRevertSetting;
+			ScriptFunction mOnPurchaseSuccess;
+			ScriptFunction mActionUp;
+			ScriptFunction mActionDown;
+			ScriptFunction mRefreshButtons;
+			ScriptFunction mKeyEvent;
+			ScriptFunction mUpdateDealTimer;
+			ScriptFunction mUpdateQueueTimer;
+			ScriptFunction mProfileUp;
+			ScriptFunction mProfileDown;
+			ScriptFunction mResetRunaway;
+			ScriptFunction mShowReticule;
+			ScriptFunction mSaveReticule;
+			ScriptFunction mOnClose;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.Initialize")); }
+			ScriptFunction AddAction() { return mAddAction ? mAddAction : (mAddAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddAction")); }
+			ScriptFunction AddActionNumber() { return mAddActionNumber ? mAddActionNumber : (mAddActionNumber = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionNumber")); }
+			ScriptFunction AddActionString() { return mAddActionString ? mAddActionString : (mAddActionString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionString")); }
+			ScriptFunction AddActionPage() { return mAddActionPage ? mAddActionPage : (mAddActionPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionPage")); }
+			ScriptFunction AddActionSet() { return mAddActionSet ? mAddActionSet : (mAddActionSet = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.AddActionSet")); }
+			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.TakeFocus")); }
+			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.TakeAction")); }
+			ScriptFunction ModifyAction() { return mModifyAction ? mModifyAction : (mModifyAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ModifyAction")); }
+			ScriptFunction ModifyFocus() { return mModifyFocus ? mModifyFocus : (mModifyFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ModifyFocus")); }
+			ScriptFunction HelpButton() { return mHelpButton ? mHelpButton : (mHelpButton = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.HelpButton")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.SpecialAction")); }
+			ScriptFunction PopupData() { return mPopupData ? mPopupData : (mPopupData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.PopupData")); }
+			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.PopupComplete")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillData")); }
+			ScriptFunction FillOptions() { return mFillOptions ? mFillOptions : (mFillOptions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillOptions")); }
+			ScriptFunction IsOwned() { return mIsOwned ? mIsOwned : (mIsOwned = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.IsOwned")); }
+			ScriptFunction CheckPurchasable() { return mCheckPurchasable ? mCheckPurchasable : (mCheckPurchasable = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckPurchasable")); }
+			ScriptFunction IsEquipMaxed() { return mIsEquipMaxed ? mIsEquipMaxed : (mIsEquipMaxed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.IsEquipMaxed")); }
+			ScriptFunction FillOption() { return mFillOption ? mFillOption : (mFillOption = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillOption")); }
+			ScriptFunction FillDefault() { return mFillDefault ? mFillDefault : (mFillDefault = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillDefault")); }
+			ScriptFunction CheckUpgrades() { return mCheckUpgrades ? mCheckUpgrades : (mCheckUpgrades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckUpgrades")); }
+			ScriptFunction CheckPricing() { return mCheckPricing ? mCheckPricing : (mCheckPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckPricing")); }
+			ScriptFunction FillUpgrades() { return mFillUpgrades ? mFillUpgrades : (mFillUpgrades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillUpgrades")); }
+			ScriptFunction FillPricing() { return mFillPricing ? mFillPricing : (mFillPricing = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillPricing")); }
+			ScriptFunction CheckDescription() { return mCheckDescription ? mCheckDescription : (mCheckDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.CheckDescription")); }
+			ScriptFunction FillDescription() { return mFillDescription ? mFillDescription : (mFillDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillDescription")); }
+			ScriptFunction FillPage() { return mFillPage ? mFillPage : (mFillPage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillPage")); }
+			ScriptFunction ClearActions() { return mClearActions ? mClearActions : (mClearActions = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ClearActions")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ShowModel")); }
+			ScriptFunction FillClass() { return mFillClass ? mFillClass : (mFillClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillClass")); }
+			ScriptFunction FillEquipTypes() { return mFillEquipTypes ? mFillEquipTypes : (mFillEquipTypes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.FillEquipTypes")); }
+			ScriptFunction NewClassEquip() { return mNewClassEquip ? mNewClassEquip : (mNewClassEquip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewClassEquip")); }
+			ScriptFunction NewClassUpgrade() { return mNewClassUpgrade ? mNewClassUpgrade : (mNewClassUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewClassUpgrade")); }
+			ScriptFunction NewEquipUpgrade() { return mNewEquipUpgrade ? mNewEquipUpgrade : (mNewEquipUpgrade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.NewEquipUpgrade")); }
+			ScriptFunction RevertSetting() { return mRevertSetting ? mRevertSetting : (mRevertSetting = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.RevertSetting")); }
+			ScriptFunction OnPurchaseSuccess() { return mOnPurchaseSuccess ? mOnPurchaseSuccess : (mOnPurchaseSuccess = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.OnPurchaseSuccess")); }
+			ScriptFunction ActionUp() { return mActionUp ? mActionUp : (mActionUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ActionUp")); }
+			ScriptFunction ActionDown() { return mActionDown ? mActionDown : (mActionDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ActionDown")); }
+			ScriptFunction RefreshButtons() { return mRefreshButtons ? mRefreshButtons : (mRefreshButtons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.RefreshButtons")); }
+			ScriptFunction KeyEvent() { return mKeyEvent ? mKeyEvent : (mKeyEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.KeyEvent")); }
+			ScriptFunction UpdateDealTimer() { return mUpdateDealTimer ? mUpdateDealTimer : (mUpdateDealTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.UpdateDealTimer")); }
+			ScriptFunction UpdateQueueTimer() { return mUpdateQueueTimer ? mUpdateQueueTimer : (mUpdateQueueTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.UpdateQueueTimer")); }
+			ScriptFunction ProfileUp() { return mProfileUp ? mProfileUp : (mProfileUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ProfileUp")); }
+			ScriptFunction ProfileDown() { return mProfileDown ? mProfileDown : (mProfileDown = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ProfileDown")); }
+			ScriptFunction ResetRunaway() { return mResetRunaway ? mResetRunaway : (mResetRunaway = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ResetRunaway")); }
+			ScriptFunction ShowReticule() { return mShowReticule ? mShowReticule : (mShowReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.ShowReticule")); }
+			ScriptFunction SaveReticule() { return mSaveReticule ? mSaveReticule : (mSaveReticule = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.SaveReticule")); }
+			ScriptFunction OnClose() { return mOnClose ? mOnClose : (mOnClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage.OnClose")); }
+		}
+	}
 	enum
 	{
 		MENU_ELEMENT_LOGIN = 1,
@@ -31,6 +140,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")); }
 		@property final auto ref
 		{
 			TgPlayerProfile.PropertyPair Res() { return *cast(TgPlayerProfile.PropertyPair*)(cast(size_t)&this + 4); }
@@ -94,13 +205,13 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56697], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	GFxTrAction AddAction()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56698], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddAction, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)params.ptr;
 	}
 	GFxTrAction AddActionNumber(int ActionNumber)
@@ -108,7 +219,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionNumber;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56701], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionNumber, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[4];
 	}
 	GFxTrAction AddActionString(ScriptString ActionString)
@@ -116,7 +227,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ActionString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56705], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionString, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[12];
 	}
 	GFxTrAction AddActionPage(GFxTrPage ActionPage)
@@ -124,7 +235,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxTrPage*)params.ptr = ActionPage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56709], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionPage, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[4];
 	}
 	GFxTrAction AddActionSet(GFxTrPage ActionPage, int ActionNumber, ScriptString ActionString)
@@ -134,7 +245,7 @@ final:
 		*cast(GFxTrPage*)params.ptr = ActionPage;
 		*cast(int*)&params[4] = ActionNumber;
 		*cast(ScriptString*)&params[8] = ActionString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionSet, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[20];
 	}
 	int TakeFocus(int ActionIndex, GFxObject DataList)
@@ -143,7 +254,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56719], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFocus, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int TakeAction(int ActionIndex, GFxObject DataList)
@@ -152,7 +263,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56724], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int ModifyAction(int ActionIndex, GFxObject DataList)
@@ -161,7 +272,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56730], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void ModifyFocus(int ActionIndex)
@@ -169,28 +280,28 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56734], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyFocus, params.ptr, cast(void*)0);
 	}
 	void HelpButton(int ActionIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56736], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HelpButton, params.ptr, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56741], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	void PopupData(GFxObject Obj)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56743], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupData, params.ptr, cast(void*)0);
 	}
 	void PopupComplete(int Action, ScriptString TextInput)
 	{
@@ -198,21 +309,21 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Action;
 		*cast(ScriptString*)&params[4] = TextInput;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56745], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopupComplete, params.ptr, cast(void*)0);
 	}
 	void FillData(GFxObject DataList)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56748], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	GFxObject FillOptions(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56752], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillOptions, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	bool IsOwned(int Index)
@@ -220,14 +331,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56758], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsOwned, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CheckPurchasable()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56761], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckPurchasable, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsEquipMaxed(int Index)
@@ -235,7 +346,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56763], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsEquipMaxed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	GFxObject FillOption(int ActionIndex)
@@ -243,14 +354,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56766], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillOption, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	GFxObject FillDefault()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56770], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillDefault, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
 	bool CheckUpgrades(GFxObject DataList)
@@ -258,7 +369,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56773], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckUpgrades, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool CheckPricing(GFxObject DataList)
@@ -266,7 +377,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56776], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckPricing, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	GFxObject FillUpgrades(GFxObject DataList)
@@ -274,7 +385,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56779], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillUpgrades, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	GFxObject FillPricing(GFxObject DataList)
@@ -282,7 +393,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56782], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillPricing, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	void CheckDescription(GFxObject DataList)
@@ -290,14 +401,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56785], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckDescription, params.ptr, cast(void*)0);
 	}
 	GFxObject FillDescription(GFxObject DataList)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56789], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillDescription, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[4];
 	}
 	void FillPage(GFxObject DataList)
@@ -305,15 +416,15 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56792], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillPage, params.ptr, cast(void*)0);
 	}
 	void ClearActions()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56794], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearActions, cast(void*)0, cast(void*)0);
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56796], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 	GFxObject FillClass(int ClassId, int ActionIndex, bool bShowActive)
 	{
@@ -322,7 +433,7 @@ final:
 		*cast(int*)params.ptr = ClassId;
 		*cast(int*)&params[4] = ActionIndex;
 		*cast(bool*)&params[8] = bShowActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56797], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillClass, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[12];
 	}
 	GFxObject FillEquipTypes(int EquipId, int ActionIndex)
@@ -331,7 +442,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = EquipId;
 		*cast(int*)&params[4] = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56844], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillEquipTypes, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[8];
 	}
 	bool NewClassEquip(int ClassId)
@@ -339,7 +450,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56855], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NewClassEquip, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NewClassUpgrade(int ClassId)
@@ -347,7 +458,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56858], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NewClassUpgrade, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NewEquipUpgrade(int EquipId)
@@ -355,75 +466,75 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = EquipId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56861], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NewEquipUpgrade, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void RevertSetting()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56864], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RevertSetting, cast(void*)0, cast(void*)0);
 	}
 	void OnPurchaseSuccess()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56865], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPurchaseSuccess, cast(void*)0, cast(void*)0);
 	}
 	void ActionUp()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56866], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActionUp, cast(void*)0, cast(void*)0);
 	}
 	void ActionDown()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56867], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActionDown, cast(void*)0, cast(void*)0);
 	}
 	void RefreshButtons()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56868], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshButtons, cast(void*)0, cast(void*)0);
 	}
 	void KeyEvent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56872], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KeyEvent, cast(void*)0, cast(void*)0);
 	}
 	void UpdateDealTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56873], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateDealTimer, cast(void*)0, cast(void*)0);
 	}
 	void UpdateQueueTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56874], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateQueueTimer, cast(void*)0, cast(void*)0);
 	}
 	void ProfileUp(int ActionIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56875], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProfileUp, params.ptr, cast(void*)0);
 	}
 	void ProfileDown(int ActionIndex)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56877], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProfileDown, params.ptr, cast(void*)0);
 	}
 	void ResetRunaway()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56879], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetRunaway, cast(void*)0, cast(void*)0);
 	}
 	void ShowReticule(int Index)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56881], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowReticule, params.ptr, cast(void*)0);
 	}
 	void SaveReticule(GFxObject Data)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Data;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56883], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SaveReticule, params.ptr, cast(void*)0);
 	}
 	void OnClose()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56885], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnClose, cast(void*)0, cast(void*)0);
 	}
 }

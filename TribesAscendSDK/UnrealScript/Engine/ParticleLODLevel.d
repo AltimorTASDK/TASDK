@@ -13,6 +13,8 @@ import UnrealScript.Engine.ParticleModuleEventGenerator;
 extern(C++) interface ParticleLODLevel : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleLODLevel")); }
 	@property final
 	{
 		auto ref

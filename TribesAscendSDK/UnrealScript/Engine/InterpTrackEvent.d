@@ -6,10 +6,14 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackEvent : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackEvent")); }
 	struct EventTrackKey
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackEvent.EventTrackKey")); }
 		@property final auto ref
 		{
 			ScriptName EventName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }

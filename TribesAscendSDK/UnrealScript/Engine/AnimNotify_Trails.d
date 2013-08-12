@@ -8,10 +8,19 @@ import UnrealScript.Engine.AnimNotify;
 extern(C++) interface AnimNotify_Trails : AnimNotify
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_Trails")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetNumSteps;
+		public @property static final ScriptFunction GetNumSteps() { return mGetNumSteps ? mGetNumSteps : (mGetNumSteps = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNotify_Trails.GetNumSteps")); }
+	}
 	struct TrailSamplePoint
 	{
 		private ubyte __buffer__[76];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNotify_Trails.TrailSamplePoint")); }
 		@property final auto ref
 		{
 			AnimNotify_Trails.TrailSocketSamplePoint SecondEdgeSample() { return *cast(AnimNotify_Trails.TrailSocketSamplePoint*)(cast(size_t)&this + 52); }
@@ -24,6 +33,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNotify_Trails.TrailSample")); }
 		@property final auto ref
 		{
 			Vector SecondEdgeSample() { return *cast(Vector*)(cast(size_t)&this + 28); }
@@ -36,6 +47,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNotify_Trails.TrailSocketSamplePoint")); }
 		@property final auto ref
 		{
 			Vector Velocity() { return *cast(Vector*)(cast(size_t)&this + 12); }
@@ -74,7 +87,7 @@ public extern(D):
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = InLastTrailIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[11457], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumSteps, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 }

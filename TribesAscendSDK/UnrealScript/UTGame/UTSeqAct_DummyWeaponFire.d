@@ -8,6 +8,23 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UTSeqAct_DummyWeaponFire : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_DummyWeaponFire")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mActivated;
+			ScriptFunction mNotifyDummyFire;
+			ScriptFunction mUpdate;
+		}
+		public @property static final
+		{
+			ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSeqAct_DummyWeaponFire.Activated")); }
+			ScriptFunction NotifyDummyFire() { return mNotifyDummyFire ? mNotifyDummyFire : (mNotifyDummyFire = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSeqAct_DummyWeaponFire.NotifyDummyFire")); }
+			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSeqAct_DummyWeaponFire.Update")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,18 +44,18 @@ public extern(D):
 final:
 	void Activated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49086], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);
 	}
 	void NotifyDummyFire()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49088], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyDummyFire, cast(void*)0, cast(void*)0);
 	}
 	bool Update(float DeltaTime)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49089], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Update, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

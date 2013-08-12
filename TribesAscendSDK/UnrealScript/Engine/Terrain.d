@@ -13,20 +13,41 @@ import UnrealScript.Engine.LightComponent;
 extern(C++) interface Terrain : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Terrain")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCalcLayerBounds;
+			ScriptFunction mPostBeginPlay;
+		}
+		public @property static final
+		{
+			ScriptFunction CalcLayerBounds() { return mCalcLayerBounds ? mCalcLayerBounds : (mCalcLayerBounds = ScriptObject.Find!(ScriptFunction)("Function Engine.Terrain.CalcLayerBounds")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Terrain.PostBeginPlay")); }
+		}
+	}
 	struct TerrainHeight
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainHeight")); }
 	}
 	struct TerrainInfoData
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainInfoData")); }
 	}
 	struct TerrainLayer
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainLayer")); }
 		@property final
 		{
 			auto ref
@@ -53,6 +74,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainDecoLayer")); }
 		@property final auto ref
 		{
 			ScriptArray!(Terrain.TerrainDecoration) Decorations() { return *cast(ScriptArray!(Terrain.TerrainDecoration)*)(cast(size_t)&this + 12); }
@@ -64,16 +87,22 @@ public extern(D):
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.AlphaMap")); }
 	}
 	struct TerrainWeightedMaterial
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainWeightedMaterial")); }
 	}
 	struct SelectedTerrainVertex
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.SelectedTerrainVertex")); }
 		@property final auto ref
 		{
 			int Weight() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -85,6 +114,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainDecorationInstance")); }
 		@property final auto ref
 		{
 			int Yaw() { return *cast(int*)(cast(size_t)&this + 16); }
@@ -97,6 +128,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainDecoration")); }
 		@property final auto ref
 		{
 			ScriptArray!(Terrain.TerrainDecorationInstance) Instances() { return *cast(ScriptArray!(Terrain.TerrainDecorationInstance)*)(cast(size_t)&this + 24); }
@@ -112,11 +145,15 @@ public extern(D):
 	{
 		private ubyte __buffer__[0];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.TerrainMaterialResource")); }
 	}
 	struct CachedTerrainMaterialArray
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Terrain.CachedTerrainMaterialArray")); }
 		@property final auto ref ScriptArray!(UObject.Pointer) CachedMaterials() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)&this + 0); }
 	}
 	@property final
@@ -195,10 +232,10 @@ void*)*)(cast(size_t)cast(void*)this + 540); }
 final:
 	void CalcLayerBounds()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27865], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcLayerBounds, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27866], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 }

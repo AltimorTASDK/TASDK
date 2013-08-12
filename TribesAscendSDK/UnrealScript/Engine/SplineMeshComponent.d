@@ -7,10 +7,14 @@ import UnrealScript.Engine.StaticMeshComponent;
 extern(C++) interface SplineMeshComponent : StaticMeshComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineMeshComponent")); }
 	struct SplineMeshParams
 	{
 		private ubyte __buffer__[88];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SplineMeshComponent.SplineMeshParams")); }
 		@property final auto ref
 		{
 			UObject.Vector2D EndOffset() { return *cast(UObject.Vector2D*)(cast(size_t)&this + 80); }

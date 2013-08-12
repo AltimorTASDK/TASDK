@@ -7,6 +7,21 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_GameCrowdPopulationManagerToggle : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdPopulationManagerToggle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindPopMgrTarget;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction FindPopMgrTarget() { return mFindPopMgrTarget ? mFindPopMgrTarget : (mFindPopMgrTarget = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.FindPopMgrTarget")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqAct_GameCrowdPopulationManagerToggle.GetObjClassVersion")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -30,13 +45,13 @@ public extern(D):
 final:
 	void FindPopMgrTarget()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32910], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindPopMgrTarget, cast(void*)0, cast(void*)0);
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32911], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

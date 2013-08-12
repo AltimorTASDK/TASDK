@@ -7,6 +7,8 @@ import UnrealScript.Engine.SkeletalMesh;
 extern(C++) interface ParticleModuleLocationBoneSocket : ParticleModuleLocationBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationBoneSocket")); }
 	enum ELocationBoneSocketSource : ubyte
 	{
 		BONESOCKETSOURCE_Bones = 0,
@@ -24,6 +26,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleLocationBoneSocket.LocationBoneSocketInfo")); }
 		@property final auto ref
 		{
 			Vector Offset() { return *cast(Vector*)(cast(size_t)&this + 8); }

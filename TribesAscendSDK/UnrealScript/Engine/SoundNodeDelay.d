@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SoundNodeDelay;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundNode;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface SoundNodeDelay : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeDelay")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat DelayDuration() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 84); }

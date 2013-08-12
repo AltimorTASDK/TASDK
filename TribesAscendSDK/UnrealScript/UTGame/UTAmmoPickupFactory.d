@@ -9,6 +9,23 @@ import UnrealScript.UTGame.UTHUD;
 extern(C++) interface UTAmmoPickupFactory : UTItemPickupFactory
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAmmoPickupFactory")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnCopyFor;
+			ScriptFunction mUpdateHUD;
+			ScriptFunction mBotDesireability;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnCopyFor() { return mSpawnCopyFor ? mSpawnCopyFor : (mSpawnCopyFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.SpawnCopyFor")); }
+			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.UpdateHUD")); }
+			ScriptFunction BotDesireability() { return mBotDesireability ? mBotDesireability : (mBotDesireability = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTAmmoPickupFactory.BotDesireability")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptClass TargetWeapon() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 980); }
@@ -20,14 +37,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Recipient;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40485], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnCopyFor, params.ptr, cast(void*)0);
 	}
-	void UpdateHUD(UTHUD H)
+	static void UpdateHUD(UTHUD H)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTHUD*)params.ptr = H;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40487], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.UpdateHUD, params.ptr, cast(void*)0);
 	}
 	float BotDesireability(Pawn P, Controller C)
 	{
@@ -35,7 +52,7 @@ final:
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(Controller*)&params[4] = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[40506], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BotDesireability, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
 }

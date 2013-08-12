@@ -6,10 +6,27 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UTCharInfo : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCharInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindFamilyInfo;
+			ScriptFunction mGetRandomCharClassName;
+		}
+		public @property static final
+		{
+			ScriptFunction FindFamilyInfo() { return mFindFamilyInfo ? mFindFamilyInfo : (mFindFamilyInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCharInfo.FindFamilyInfo")); }
+			ScriptFunction GetRandomCharClassName() { return mGetRandomCharClassName ? mGetRandomCharClassName : (mGetRandomCharClassName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCharInfo.GetRandomCharClassName")); }
+		}
+	}
 	struct CustomAIData
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTCharInfo.CustomAIData")); }
 		@property final auto ref
 		{
 			ScriptString FavoriteWeapon() { return *cast(ScriptString*)(cast(size_t)&this + 28); }
@@ -26,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[112];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTCharInfo.CharacterInfo")); }
 		@property final auto ref
 		{
 			UTCharInfo.CustomAIData AIData() { return *cast(UTCharInfo.CustomAIData*)(cast(size_t)&this + 72); }
@@ -46,19 +65,19 @@ public extern(D):
 		float LOD1DisplayFactor() { return *cast(float*)(cast(size_t)cast(void*)this + 84); }
 	}
 final:
-	ScriptClass FindFamilyInfo(ScriptString InFamilyID)
+	static ScriptClass FindFamilyInfo(ScriptString InFamilyID)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InFamilyID;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42761], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.FindFamilyInfo, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[12];
 	}
-	ScriptString GetRandomCharClassName()
+	static ScriptString GetRandomCharClassName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43892], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetRandomCharClassName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

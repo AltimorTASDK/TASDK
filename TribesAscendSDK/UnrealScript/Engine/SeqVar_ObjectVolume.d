@@ -7,6 +7,8 @@ import UnrealScript.Engine.SeqVar_Object;
 extern(C++) interface SeqVar_ObjectVolume : SeqVar_Object
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_ObjectVolume")); }
 	@property final
 	{
 		auto ref

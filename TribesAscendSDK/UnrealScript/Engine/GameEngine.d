@@ -14,6 +14,29 @@ import UnrealScript.Engine.InGameAdManager;
 extern(C++) interface GameEngine : Engine
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameEngine")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetOnlineSubsystem;
+			ScriptFunction mGetDLCManager;
+			ScriptFunction mGetDLCEnumerator;
+			ScriptFunction mCreateNamedNetDriver;
+			ScriptFunction mDestroyNamedNetDriver;
+			ScriptFunction mGetAdManager;
+		}
+		public @property static final
+		{
+			ScriptFunction GetOnlineSubsystem() { return mGetOnlineSubsystem ? mGetOnlineSubsystem : (mGetOnlineSubsystem = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetOnlineSubsystem")); }
+			ScriptFunction GetDLCManager() { return mGetDLCManager ? mGetDLCManager : (mGetDLCManager = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetDLCManager")); }
+			ScriptFunction GetDLCEnumerator() { return mGetDLCEnumerator ? mGetDLCEnumerator : (mGetDLCEnumerator = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetDLCEnumerator")); }
+			ScriptFunction CreateNamedNetDriver() { return mCreateNamedNetDriver ? mCreateNamedNetDriver : (mCreateNamedNetDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.CreateNamedNetDriver")); }
+			ScriptFunction DestroyNamedNetDriver() { return mDestroyNamedNetDriver ? mDestroyNamedNetDriver : (mDestroyNamedNetDriver = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.DestroyNamedNetDriver")); }
+			ScriptFunction GetAdManager() { return mGetAdManager ? mGetAdManager : (mGetAdManager = ScriptObject.Find!(ScriptFunction)("Function Engine.GameEngine.GetAdManager")); }
+		}
+	}
 	enum EFullyLoadPackageType : ubyte
 	{
 		FULLYLOAD_Map = 0,
@@ -27,6 +50,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.LevelStreamingStatus")); }
 		@property final
 		{
 			@property final auto ref ScriptName PackageName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -40,6 +65,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.FullyLoadedPackagesInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(ScriptName) PackagesToLoad() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)&this + 16); }
@@ -52,6 +79,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.NamedNetDriver")); }
 		@property final auto ref
 		{
 			// WARNING: Property 'NetDriver' has the same name as a defined type!
@@ -62,6 +91,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[68];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.GameEngine.URL")); }
 		@property final auto ref
 		{
 			ScriptString Protocol() { return *cast(ScriptString*)(cast(size_t)&this + 0); }
@@ -108,25 +139,25 @@ public extern(D):
 		bool bClearAnimSetLinkupCachesOnLoadMap(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 1664) |= 0x4; } else { *cast(uint*)(cast(size_t)cast(void*)this + 1664) &= ~0x4; } return val; }
 	}
 final:
-	OnlineSubsystem GetOnlineSubsystem()
+	static OnlineSubsystem GetOnlineSubsystem()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7627], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetOnlineSubsystem, params.ptr, cast(void*)0);
 		return *cast(OnlineSubsystem*)params.ptr;
 	}
-	DownloadableContentManager GetDLCManager()
+	static DownloadableContentManager GetDLCManager()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14696], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDLCManager, params.ptr, cast(void*)0);
 		return *cast(DownloadableContentManager*)params.ptr;
 	}
-	DownloadableContentEnumerator GetDLCEnumerator()
+	static DownloadableContentEnumerator GetDLCEnumerator()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14739], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetDLCEnumerator, params.ptr, cast(void*)0);
 		return *cast(DownloadableContentEnumerator*)params.ptr;
 	}
 	bool CreateNamedNetDriver(ScriptName NetDriverName)
@@ -134,7 +165,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = NetDriverName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16684], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateNamedNetDriver, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void DestroyNamedNetDriver(ScriptName NetDriverName)
@@ -142,13 +173,13 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = NetDriverName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16687], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyNamedNetDriver, params.ptr, cast(void*)0);
 	}
-	InGameAdManager GetAdManager()
+	static InGameAdManager GetAdManager()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16689], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetAdManager, params.ptr, cast(void*)0);
 		return *cast(InGameAdManager*)params.ptr;
 	}
 }

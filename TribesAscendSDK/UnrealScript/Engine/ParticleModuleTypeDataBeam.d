@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleTypeDataBeam;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.ParticleModuleTypeDataBase;
 extern(C++) interface ParticleModuleTypeDataBeam : ParticleModuleTypeDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataBeam")); }
 	enum EBeamMethod : ubyte
 	{
 		PEBM_Distance = 0,

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.SoundNodeOscillator;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundNode;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface SoundNodeOscillator : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeOscillator")); }
 	@property final
 	{
 		auto ref

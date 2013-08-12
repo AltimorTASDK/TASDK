@@ -11,6 +11,29 @@ import UnrealScript.Engine.Material;
 extern(C++) interface TrDaDCoreShield : DynamicSMActor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCoreShield")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mDisableBlocking;
+			ScriptFunction mEnableBlocking;
+			ScriptFunction mUpdateMaterialForPawn;
+			ScriptFunction mCreateMICs;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.Init")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.PostBeginPlay")); }
+			ScriptFunction DisableBlocking() { return mDisableBlocking ? mDisableBlocking : (mDisableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.DisableBlocking")); }
+			ScriptFunction EnableBlocking() { return mEnableBlocking ? mEnableBlocking : (mEnableBlocking = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.EnableBlocking")); }
+			ScriptFunction UpdateMaterialForPawn() { return mUpdateMaterialForPawn ? mUpdateMaterialForPawn : (mUpdateMaterialForPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.UpdateMaterialForPawn")); }
+			ScriptFunction CreateMICs() { return mCreateMICs ? mCreateMICs : (mCreateMICs = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDaDCoreShield.CreateMICs")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(MaterialInstanceConstant) m_MICs() { return *cast(ScriptArray!(MaterialInstanceConstant)*)(cast(size_t)cast(void*)this + 536); }
@@ -28,29 +51,29 @@ final:
 		*cast(int*)params.ptr = ShieldIndex;
 		*cast(TrDaDCore*)&params[4] = Core;
 		*cast(TrDaDShell*)&params[8] = Shell;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79660], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79667], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void DisableBlocking()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79668], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableBlocking, cast(void*)0, cast(void*)0);
 	}
 	void EnableBlocking()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79669], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableBlocking, cast(void*)0, cast(void*)0);
 	}
 	void UpdateMaterialForPawn(TrPawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrPawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79670], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateMaterialForPawn, params.ptr, cast(void*)0);
 	}
 	void CreateMICs()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[79673], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateMICs, cast(void*)0, cast(void*)0);
 	}
 }

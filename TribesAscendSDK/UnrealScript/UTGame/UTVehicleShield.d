@@ -9,6 +9,23 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UTVehicleShield : UDKWeaponShield
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleShield")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetActive;
+			ScriptFunction mShieldFullyOnline;
+			ScriptFunction mTakeDamage;
+		}
+		public @property static final
+		{
+			ScriptFunction SetActive() { return mSetActive ? mSetActive : (mSetActive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.SetActive")); }
+			ScriptFunction ShieldFullyOnline() { return mShieldFullyOnline ? mShieldFullyOnline : (mShieldFullyOnline = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.ShieldFullyOnline")); }
+			ScriptFunction TakeDamage() { return mTakeDamage ? mTakeDamage : (mTakeDamage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicleShield.TakeDamage")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -26,11 +43,11 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49803], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetActive, params.ptr, cast(void*)0);
 	}
 	void ShieldFullyOnline()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49805], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShieldFullyOnline, cast(void*)0, cast(void*)0);
 	}
 	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
 	{
@@ -43,6 +60,6 @@ final:
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49806], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 }

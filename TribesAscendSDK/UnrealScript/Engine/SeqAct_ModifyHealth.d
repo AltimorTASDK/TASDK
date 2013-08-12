@@ -7,6 +7,13 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_ModifyHealth : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ModifyHealth")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetObjClassVersion;
+		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ModifyHealth.GetObjClassVersion")); }
+	}
 	@property final
 	{
 		auto ref
@@ -24,11 +31,11 @@ public extern(D):
 		bool bRadial() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }
 		bool bRadial(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 248) |= 0x2; } else { *cast(uint*)(cast(size_t)cast(void*)this + 248) &= ~0x2; } return val; }
 	}
-	final int GetObjClassVersion()
+	final static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25773], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

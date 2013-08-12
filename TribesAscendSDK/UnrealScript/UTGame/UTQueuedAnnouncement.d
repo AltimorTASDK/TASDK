@@ -8,6 +8,8 @@ import UnrealScript.Engine.Info;
 extern(C++) interface UTQueuedAnnouncement : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTQueuedAnnouncement")); }
 	@property final auto ref
 	{
 		UTQueuedAnnouncement nextAnnouncement() { return *cast(UTQueuedAnnouncement*)(cast(size_t)cast(void*)this + 476); }

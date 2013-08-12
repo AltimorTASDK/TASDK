@@ -8,6 +8,21 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface UDKProjectile : Projectile
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProjectile")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetTerminalVelocity;
+			ScriptFunction mCreateProjectileLight;
+		}
+		public @property static final
+		{
+			ScriptFunction GetTerminalVelocity() { return mGetTerminalVelocity ? mGetTerminalVelocity : (mGetTerminalVelocity = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProjectile.GetTerminalVelocity")); }
+			ScriptFunction CreateProjectileLight() { return mCreateProjectileLight ? mCreateProjectileLight : (mCreateProjectileLight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProjectile.CreateProjectileLight")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -39,11 +54,11 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35306], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTerminalVelocity, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void CreateProjectileLight()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35308], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateProjectileLight, cast(void*)0, cast(void*)0);
 	}
 }

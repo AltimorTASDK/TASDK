@@ -7,6 +7,23 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface SpriteComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpriteComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetSprite;
+			ScriptFunction mSetUV;
+			ScriptFunction mSetSpriteAndUV;
+		}
+		public @property static final
+		{
+			ScriptFunction SetSprite() { return mSetSprite ? mSetSprite : (mSetSprite = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetSprite")); }
+			ScriptFunction SetUV() { return mSetUV ? mSetUV : (mSetUV = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetUV")); }
+			ScriptFunction SetSpriteAndUV() { return mSetSpriteAndUV ? mSetSpriteAndUV : (mSetSpriteAndUV = ScriptObject.Find!(ScriptFunction)("Function Engine.SpriteComponent.SetSpriteAndUV")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,7 +44,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Texture2D*)params.ptr = NewSprite;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5156], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSprite, params.ptr, cast(void*)0);
 	}
 	void SetUV(int NewU, int NewUL, int NewV, int NewVL)
 	{
@@ -37,7 +54,7 @@ final:
 		*cast(int*)&params[4] = NewUL;
 		*cast(int*)&params[8] = NewV;
 		*cast(int*)&params[12] = NewVL;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5158], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetUV, params.ptr, cast(void*)0);
 	}
 	void SetSpriteAndUV(Texture2D NewSprite, int NewU, int NewUL, int NewV, int NewVL)
 	{
@@ -48,6 +65,6 @@ final:
 		*cast(int*)&params[8] = NewUL;
 		*cast(int*)&params[12] = NewV;
 		*cast(int*)&params[16] = NewVL;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[5163], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSpriteAndUV, params.ptr, cast(void*)0);
 	}
 }

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleCameraOffset;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleCameraBase;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface ParticleModuleCameraOffset : ParticleModuleCameraBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCameraOffset")); }
 	enum EParticleCameraOffsetUpdateMethod : ubyte
 	{
 		EPCOUM_DirectSet = 0,

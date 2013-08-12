@@ -8,10 +8,45 @@ import UnrealScript.Engine.ParticleSystem;
 extern(C++) interface EmitterPool : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterPool")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpawnEmitter;
+			ScriptFunction mOnParticleSystemFinished;
+			ScriptFunction mReturnToPool;
+			ScriptFunction mClearPoolComponents;
+			ScriptFunction mFreeStaticMeshComponents;
+			ScriptFunction mGetFreeStaticMeshComponent;
+			ScriptFunction mFreeMaterialInstanceConstants;
+			ScriptFunction mGetFreeMatInstConsts;
+			ScriptFunction mGetPooledComponent;
+			ScriptFunction mSpawnEmitterMeshAttachment;
+			ScriptFunction mSpawnEmitterCustomLifetime;
+		}
+		public @property static final
+		{
+			ScriptFunction SpawnEmitter() { return mSpawnEmitter ? mSpawnEmitter : (mSpawnEmitter = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitter")); }
+			ScriptFunction OnParticleSystemFinished() { return mOnParticleSystemFinished ? mOnParticleSystemFinished : (mOnParticleSystemFinished = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.OnParticleSystemFinished")); }
+			ScriptFunction ReturnToPool() { return mReturnToPool ? mReturnToPool : (mReturnToPool = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.ReturnToPool")); }
+			ScriptFunction ClearPoolComponents() { return mClearPoolComponents ? mClearPoolComponents : (mClearPoolComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.ClearPoolComponents")); }
+			ScriptFunction FreeStaticMeshComponents() { return mFreeStaticMeshComponents ? mFreeStaticMeshComponents : (mFreeStaticMeshComponents = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.FreeStaticMeshComponents")); }
+			ScriptFunction GetFreeStaticMeshComponent() { return mGetFreeStaticMeshComponent ? mGetFreeStaticMeshComponent : (mGetFreeStaticMeshComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetFreeStaticMeshComponent")); }
+			ScriptFunction FreeMaterialInstanceConstants() { return mFreeMaterialInstanceConstants ? mFreeMaterialInstanceConstants : (mFreeMaterialInstanceConstants = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.FreeMaterialInstanceConstants")); }
+			ScriptFunction GetFreeMatInstConsts() { return mGetFreeMatInstConsts ? mGetFreeMatInstConsts : (mGetFreeMatInstConsts = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetFreeMatInstConsts")); }
+			ScriptFunction GetPooledComponent() { return mGetPooledComponent ? mGetPooledComponent : (mGetPooledComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.GetPooledComponent")); }
+			ScriptFunction SpawnEmitterMeshAttachment() { return mSpawnEmitterMeshAttachment ? mSpawnEmitterMeshAttachment : (mSpawnEmitterMeshAttachment = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitterMeshAttachment")); }
+			ScriptFunction SpawnEmitterCustomLifetime() { return mSpawnEmitterCustomLifetime ? mSpawnEmitterCustomLifetime : (mSpawnEmitterCustomLifetime = ScriptObject.Find!(ScriptFunction)("Function Engine.EmitterPool.SpawnEmitterCustomLifetime")); }
+		}
+	}
 	struct EmitterBaseInfo
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.EmitterPool.EmitterBaseInfo")); }
 		@property final
 		{
 			auto ref
@@ -68,7 +103,7 @@ void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator
 		*cast(Rotator*)&params[16] = SpawnRotation;
 		*cast(Actor*)&params[28] = AttachToActor;
 		*cast(bool*)&params[32] = bInheritScaleFromBase;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7298], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitter, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[36];
@@ -82,7 +117,7 @@ void* PSC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15237], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnParticleSystemFinished, params.ptr, cast(void*)0);
 	}
 	void ReturnToPool(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -93,14 +128,14 @@ void* PSC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15240], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReturnToPool, params.ptr, cast(void*)0);
 	}
 	void ClearPoolComponents(bool bClearActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bClearActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15241], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearPoolComponents, params.ptr, cast(void*)0);
 	}
 	void FreeStaticMeshComponents(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -111,7 +146,7 @@ void* PSC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = PSC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15244], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FreeStaticMeshComponents, params.ptr, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -120,7 +155,7 @@ void* GetFreeStaticMeshComponent(bool bCreateNewObject)
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bCreateNewObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15246], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFreeStaticMeshComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
@@ -134,14 +169,14 @@ void* SMC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SMC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15249], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FreeMaterialInstanceConstants, params.ptr, cast(void*)0);
 	}
 	MaterialInstanceConstant GetFreeMatInstConsts(bool bCreateNewObject)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bCreateNewObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFreeMatInstConsts, params.ptr, cast(void*)0);
 		return *cast(MaterialInstanceConstant*)&params[4];
 	}
 	
@@ -152,7 +187,7 @@ void* GetPooledComponent(ParticleSystem EmitterTemplate, bool bAutoActivate)
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = EmitterTemplate;
 		*cast(bool*)&params[4] = bAutoActivate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15254], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPooledComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[8];
@@ -173,7 +208,7 @@ void**)&params[4] = Mesh;
 		*cast(bool*)&params[16] = bAttachToSocket;
 		*cast(Vector*)&params[20] = RelativeLoc;
 		*cast(Rotator*)&params[32] = RelativeRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15265], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitterMeshAttachment, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[44];
@@ -186,7 +221,7 @@ void* SpawnEmitterCustomLifetime(ParticleSystem EmitterTemplate, bool bSkipAutoA
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = EmitterTemplate;
 		*cast(bool*)&params[4] = bSkipAutoActivate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15274], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitterCustomLifetime, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[8];

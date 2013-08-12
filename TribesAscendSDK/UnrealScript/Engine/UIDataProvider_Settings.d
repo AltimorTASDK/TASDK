@@ -9,10 +9,27 @@ import UnrealScript.Engine.UIDataProvider;
 extern(C++) interface UIDataProvider_Settings : UIDynamicDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_Settings")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mArrayProviderPropertyChanged;
+			ScriptFunction mOnSettingValueUpdated;
+		}
+		public @property static final
+		{
+			ScriptFunction ArrayProviderPropertyChanged() { return mArrayProviderPropertyChanged ? mArrayProviderPropertyChanged : (mArrayProviderPropertyChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_Settings.ArrayProviderPropertyChanged")); }
+			ScriptFunction OnSettingValueUpdated() { return mOnSettingValueUpdated ? mOnSettingValueUpdated : (mOnSettingValueUpdated = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_Settings.OnSettingValueUpdated")); }
+		}
+	}
 	struct SettingsArrayProvider
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataProvider_Settings.SettingsArrayProvider")); }
 		@property final auto ref
 		{
 			UIDataProvider_SettingsArray Provider() { return *cast(UIDataProvider_SettingsArray*)(cast(size_t)&this + 12); }
@@ -37,13 +54,13 @@ final:
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
 		*cast(ScriptName*)&params[4] = PropTag;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28413], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ArrayProviderPropertyChanged, params.ptr, cast(void*)0);
 	}
 	void OnSettingValueUpdated(ScriptName SettingName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SettingName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28418], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSettingValueUpdated, params.ptr, cast(void*)0);
 	}
 }

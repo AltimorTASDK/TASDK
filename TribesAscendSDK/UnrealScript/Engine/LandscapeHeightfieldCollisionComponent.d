@@ -8,6 +8,8 @@ import UnrealScript.Engine.PhysicalMaterial;
 extern(C++) interface LandscapeHeightfieldCollisionComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LandscapeHeightfieldCollisionComponent")); }
 	@property final auto ref
 	{
 		ScriptArray!(ubyte) CollisionQuadFlags() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 556); }

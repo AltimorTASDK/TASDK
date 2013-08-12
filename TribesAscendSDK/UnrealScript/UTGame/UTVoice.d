@@ -16,6 +16,65 @@ import UnrealScript.UTGame.UTQueuedAnnouncement;
 extern(C++) interface UTVoice : UTLocalMessage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVoice")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetAckMessageIndex;
+			ScriptFunction mGetFriendlyFireMessageIndex;
+			ScriptFunction mGetGotYourBackMessageIndex;
+			ScriptFunction mGetNeedOurFlagMessageIndex;
+			ScriptFunction mClientReceive;
+			ScriptFunction mAnnouncementSound;
+			ScriptFunction mEnemySound;
+			ScriptFunction mGetString;
+			ScriptFunction mAllowVoiceMessage;
+			ScriptFunction mSendVoiceMessage;
+			ScriptFunction mGetMessageIndex;
+			ScriptFunction mInitStatusUpdate;
+			ScriptFunction mInitCombatUpdate;
+			ScriptFunction mSetHoldingFlagUpdate;
+			ScriptFunction mSendLocalizedMessage;
+			ScriptFunction mSendEnemyFlagCarrierHereUpdate;
+			ScriptFunction mInitSniperUpdate;
+			ScriptFunction mSendEnemyStatusUpdate;
+			ScriptFunction mSendKilledVehicleMessage;
+			ScriptFunction mKilledVehicleSound;
+			ScriptFunction mSendLocationUpdate;
+			ScriptFunction mSendInPositionMessage;
+			ScriptFunction mShouldBeRemoved;
+			ScriptFunction mAddAnnouncement;
+		}
+		public @property static final
+		{
+			ScriptFunction GetAckMessageIndex() { return mGetAckMessageIndex ? mGetAckMessageIndex : (mGetAckMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetAckMessageIndex")); }
+			ScriptFunction GetFriendlyFireMessageIndex() { return mGetFriendlyFireMessageIndex ? mGetFriendlyFireMessageIndex : (mGetFriendlyFireMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetFriendlyFireMessageIndex")); }
+			ScriptFunction GetGotYourBackMessageIndex() { return mGetGotYourBackMessageIndex ? mGetGotYourBackMessageIndex : (mGetGotYourBackMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetGotYourBackMessageIndex")); }
+			ScriptFunction GetNeedOurFlagMessageIndex() { return mGetNeedOurFlagMessageIndex ? mGetNeedOurFlagMessageIndex : (mGetNeedOurFlagMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetNeedOurFlagMessageIndex")); }
+			ScriptFunction ClientReceive() { return mClientReceive ? mClientReceive : (mClientReceive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.ClientReceive")); }
+			ScriptFunction AnnouncementSound() { return mAnnouncementSound ? mAnnouncementSound : (mAnnouncementSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.AnnouncementSound")); }
+			ScriptFunction EnemySound() { return mEnemySound ? mEnemySound : (mEnemySound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.EnemySound")); }
+			ScriptFunction GetString() { return mGetString ? mGetString : (mGetString = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetString")); }
+			ScriptFunction AllowVoiceMessage() { return mAllowVoiceMessage ? mAllowVoiceMessage : (mAllowVoiceMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.AllowVoiceMessage")); }
+			ScriptFunction SendVoiceMessage() { return mSendVoiceMessage ? mSendVoiceMessage : (mSendVoiceMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendVoiceMessage")); }
+			ScriptFunction GetMessageIndex() { return mGetMessageIndex ? mGetMessageIndex : (mGetMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.GetMessageIndex")); }
+			ScriptFunction InitStatusUpdate() { return mInitStatusUpdate ? mInitStatusUpdate : (mInitStatusUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.InitStatusUpdate")); }
+			ScriptFunction InitCombatUpdate() { return mInitCombatUpdate ? mInitCombatUpdate : (mInitCombatUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.InitCombatUpdate")); }
+			ScriptFunction SetHoldingFlagUpdate() { return mSetHoldingFlagUpdate ? mSetHoldingFlagUpdate : (mSetHoldingFlagUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SetHoldingFlagUpdate")); }
+			ScriptFunction SendLocalizedMessage() { return mSendLocalizedMessage ? mSendLocalizedMessage : (mSendLocalizedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendLocalizedMessage")); }
+			ScriptFunction SendEnemyFlagCarrierHereUpdate() { return mSendEnemyFlagCarrierHereUpdate ? mSendEnemyFlagCarrierHereUpdate : (mSendEnemyFlagCarrierHereUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendEnemyFlagCarrierHereUpdate")); }
+			ScriptFunction InitSniperUpdate() { return mInitSniperUpdate ? mInitSniperUpdate : (mInitSniperUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.InitSniperUpdate")); }
+			ScriptFunction SendEnemyStatusUpdate() { return mSendEnemyStatusUpdate ? mSendEnemyStatusUpdate : (mSendEnemyStatusUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendEnemyStatusUpdate")); }
+			ScriptFunction SendKilledVehicleMessage() { return mSendKilledVehicleMessage ? mSendKilledVehicleMessage : (mSendKilledVehicleMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendKilledVehicleMessage")); }
+			ScriptFunction KilledVehicleSound() { return mKilledVehicleSound ? mKilledVehicleSound : (mKilledVehicleSound = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.KilledVehicleSound")); }
+			ScriptFunction SendLocationUpdate() { return mSendLocationUpdate ? mSendLocationUpdate : (mSendLocationUpdate = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendLocationUpdate")); }
+			ScriptFunction SendInPositionMessage() { return mSendInPositionMessage ? mSendInPositionMessage : (mSendInPositionMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.SendInPositionMessage")); }
+			ScriptFunction ShouldBeRemoved() { return mShouldBeRemoved ? mShouldBeRemoved : (mShouldBeRemoved = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.ShouldBeRemoved")); }
+			ScriptFunction AddAnnouncement() { return mAddAnnouncement ? mAddAnnouncement : (mAddAnnouncement = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVoice.AddAnnouncement")); }
+		}
+	}
 	enum
 	{
 		ACKINDEXSTART = 600,
@@ -53,47 +112,47 @@ public extern(D):
 		SoundNodeWave IncomingSound() { return *cast(SoundNodeWave*)(cast(size_t)cast(void*)this + 196); }
 	}
 final:
-	int GetAckMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static int GetAckMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50021], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetAckMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	int GetFriendlyFireMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static int GetFriendlyFireMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50026], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetFriendlyFireMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	int GetGotYourBackMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static int GetGotYourBackMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50031], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetGotYourBackMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	int GetNeedOurFlagMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static int GetNeedOurFlagMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50036], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetNeedOurFlagMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -102,28 +161,28 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50041], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
+	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = MessageIndex;
 		*cast(UObject*)&params[4] = OptionalObject;
 		*cast(PlayerController*)&params[8] = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50047], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AnnouncementSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	SoundNodeWave EnemySound(PlayerController PC, UObject OptionalObject)
+	static SoundNodeWave EnemySound(PlayerController PC, UObject OptionalObject)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(UObject*)&params[4] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50055], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.EnemySound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[8];
 	}
-	ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -132,20 +191,20 @@ final:
 		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
 		*cast(UObject*)&params[16] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50063], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	bool AllowVoiceMessage(ScriptName MessageType, UTPlayerController PC, PlayerController Recipient)
+	static bool AllowVoiceMessage(ScriptName MessageType, UTPlayerController PC, PlayerController Recipient)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MessageType;
 		*cast(UTPlayerController*)&params[8] = PC;
 		*cast(PlayerController*)&params[12] = Recipient;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50070], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AllowVoiceMessage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void SendVoiceMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, ScriptClass pDamageType)
+	static void SendVoiceMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, ScriptClass pDamageType)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -153,9 +212,9 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
 		*cast(ScriptClass*)&params[16] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50076], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendVoiceMessage, params.ptr, cast(void*)0);
 	}
-	int GetMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, ScriptClass pDamageType)
+	static int GetMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, ScriptClass pDamageType)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -163,37 +222,37 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
 		*cast(ScriptClass*)&params[16] = pDamageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50087], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[20];
 	}
-	void InitStatusUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void InitStatusUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50093], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.InitStatusUpdate, params.ptr, cast(void*)0);
 	}
-	void InitCombatUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void InitCombatUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50099], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.InitCombatUpdate, params.ptr, cast(void*)0);
 	}
-	void SetHoldingFlagUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void SetHoldingFlagUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50104], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SetHoldingFlagUpdate, params.ptr, cast(void*)0);
 	}
-	void SendLocalizedMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, int MessageIndex, UObject LocationObject)
+	static void SendLocalizedMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, int MessageIndex, UObject LocationObject)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -202,54 +261,54 @@ final:
 		*cast(ScriptName*)&params[8] = MessageType;
 		*cast(int*)&params[16] = MessageIndex;
 		*cast(UObject*)&params[20] = LocationObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50109], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendLocalizedMessage, params.ptr, cast(void*)0);
 	}
-	void SendEnemyFlagCarrierHereUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void SendEnemyFlagCarrierHereUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50117], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendEnemyFlagCarrierHereUpdate, params.ptr, cast(void*)0);
 	}
-	void InitSniperUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void InitSniperUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50126], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.InitSniperUpdate, params.ptr, cast(void*)0);
 	}
-	void SendEnemyStatusUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void SendEnemyStatusUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50132], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendEnemyStatusUpdate, params.ptr, cast(void*)0);
 	}
-	void SendKilledVehicleMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void SendKilledVehicleMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50140], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendKilledVehicleMessage, params.ptr, cast(void*)0);
 	}
-	SoundNodeWave KilledVehicleSound(PlayerController PC, UObject OptionalObject)
+	static SoundNodeWave KilledVehicleSound(PlayerController PC, UObject OptionalObject)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(UObject*)&params[4] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50145], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.KilledVehicleSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[8];
 	}
-	bool SendLocationUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, UTGame G, Pawn StatusPawn, bool bDontSendMidfield)
+	static bool SendLocationUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, UTGame G, Pawn StatusPawn, bool bDontSendMidfield)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -259,29 +318,29 @@ final:
 		*cast(UTGame*)&params[16] = G;
 		*cast(Pawn*)&params[20] = StatusPawn;
 		*cast(bool*)&params[24] = bDontSendMidfield;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50150], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendLocationUpdate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	void SendInPositionMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
+	static void SendInPositionMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50160], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.SendInPositionMessage, params.ptr, cast(void*)0);
 	}
-	bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
+	static bool ShouldBeRemoved(UTQueuedAnnouncement MyAnnouncement, ScriptClass NewAnnouncementClass, int NewMessageIndex)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTQueuedAnnouncement*)params.ptr = MyAnnouncement;
 		*cast(ScriptClass*)&params[4] = NewAnnouncementClass;
 		*cast(int*)&params[8] = NewMessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50164], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ShouldBeRemoved, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	static bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -289,7 +348,7 @@ final:
 		*cast(int*)&params[4] = MessageIndex;
 		*cast(PlayerReplicationInfo*)&params[8] = PRI;
 		*cast(UObject*)&params[12] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50172], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AddAnnouncement, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 }

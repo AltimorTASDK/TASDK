@@ -13,6 +13,73 @@ import UnrealScript.TribesGame.TrAnimNodeBlendBy3pDevice;
 extern(C++) interface TrPlayerPawn : TrPawn
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerPawn")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetCharacterClassFromInfo;
+			ScriptFunction mUpdateEyeHeight;
+			ScriptFunction mGetMaterialBelowFeetByLoc;
+			ScriptFunction mGetMaterialBelowFeet;
+			ScriptFunction mActuallyPlayFootstepSound;
+			ScriptFunction mWeaponBob;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPostInitAnimTree;
+			ScriptFunction mPlayHardLandingEffect;
+			ScriptFunction mPlaySonicPunchEffect;
+			ScriptFunction mCreateSkiParticleEffects;
+			ScriptFunction mClearSkiParticleEffects;
+			ScriptFunction mPlaySkiEffects;
+			ScriptFunction mStopSkiEffects;
+			ScriptFunction mCreateJetpackParticleEffects;
+			ScriptFunction mClearJetpackParticleEffects;
+			ScriptFunction mPlayJetpackEffects;
+			ScriptFunction mUpdateJetpackEffects;
+			ScriptFunction mStopJetpackEffects;
+			ScriptFunction mPlayReload;
+			ScriptFunction mTick;
+			ScriptFunction mCalcCamera;
+			ScriptFunction mSetThirdPersonCamera;
+			ScriptFunction mCalcThirdPersonCam;
+			ScriptFunction mCalcOtherWatchingCam;
+			ScriptFunction mClearMeshAnimSeqNodes;
+			ScriptFunction mCacheMeshAnimSeqNodes;
+			ScriptFunction mSuppressAnimNotifies;
+		}
+		public @property static final
+		{
+			ScriptFunction SetCharacterClassFromInfo() { return mSetCharacterClassFromInfo ? mSetCharacterClassFromInfo : (mSetCharacterClassFromInfo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.SetCharacterClassFromInfo")); }
+			ScriptFunction UpdateEyeHeight() { return mUpdateEyeHeight ? mUpdateEyeHeight : (mUpdateEyeHeight = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.UpdateEyeHeight")); }
+			ScriptFunction GetMaterialBelowFeetByLoc() { return mGetMaterialBelowFeetByLoc ? mGetMaterialBelowFeetByLoc : (mGetMaterialBelowFeetByLoc = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.GetMaterialBelowFeetByLoc")); }
+			ScriptFunction GetMaterialBelowFeet() { return mGetMaterialBelowFeet ? mGetMaterialBelowFeet : (mGetMaterialBelowFeet = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.GetMaterialBelowFeet")); }
+			ScriptFunction ActuallyPlayFootstepSound() { return mActuallyPlayFootstepSound ? mActuallyPlayFootstepSound : (mActuallyPlayFootstepSound = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.ActuallyPlayFootstepSound")); }
+			ScriptFunction WeaponBob() { return mWeaponBob ? mWeaponBob : (mWeaponBob = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.WeaponBob")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.ReplicatedEvent")); }
+			ScriptFunction PostInitAnimTree() { return mPostInitAnimTree ? mPostInitAnimTree : (mPostInitAnimTree = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PostInitAnimTree")); }
+			ScriptFunction PlayHardLandingEffect() { return mPlayHardLandingEffect ? mPlayHardLandingEffect : (mPlayHardLandingEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PlayHardLandingEffect")); }
+			ScriptFunction PlaySonicPunchEffect() { return mPlaySonicPunchEffect ? mPlaySonicPunchEffect : (mPlaySonicPunchEffect = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PlaySonicPunchEffect")); }
+			ScriptFunction CreateSkiParticleEffects() { return mCreateSkiParticleEffects ? mCreateSkiParticleEffects : (mCreateSkiParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CreateSkiParticleEffects")); }
+			ScriptFunction ClearSkiParticleEffects() { return mClearSkiParticleEffects ? mClearSkiParticleEffects : (mClearSkiParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.ClearSkiParticleEffects")); }
+			ScriptFunction PlaySkiEffects() { return mPlaySkiEffects ? mPlaySkiEffects : (mPlaySkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PlaySkiEffects")); }
+			ScriptFunction StopSkiEffects() { return mStopSkiEffects ? mStopSkiEffects : (mStopSkiEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.StopSkiEffects")); }
+			ScriptFunction CreateJetpackParticleEffects() { return mCreateJetpackParticleEffects ? mCreateJetpackParticleEffects : (mCreateJetpackParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CreateJetpackParticleEffects")); }
+			ScriptFunction ClearJetpackParticleEffects() { return mClearJetpackParticleEffects ? mClearJetpackParticleEffects : (mClearJetpackParticleEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.ClearJetpackParticleEffects")); }
+			ScriptFunction PlayJetpackEffects() { return mPlayJetpackEffects ? mPlayJetpackEffects : (mPlayJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PlayJetpackEffects")); }
+			ScriptFunction UpdateJetpackEffects() { return mUpdateJetpackEffects ? mUpdateJetpackEffects : (mUpdateJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.UpdateJetpackEffects")); }
+			ScriptFunction StopJetpackEffects() { return mStopJetpackEffects ? mStopJetpackEffects : (mStopJetpackEffects = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.StopJetpackEffects")); }
+			ScriptFunction PlayReload() { return mPlayReload ? mPlayReload : (mPlayReload = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.PlayReload")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.Tick")); }
+			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CalcCamera")); }
+			ScriptFunction SetThirdPersonCamera() { return mSetThirdPersonCamera ? mSetThirdPersonCamera : (mSetThirdPersonCamera = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.SetThirdPersonCamera")); }
+			ScriptFunction CalcThirdPersonCam() { return mCalcThirdPersonCam ? mCalcThirdPersonCam : (mCalcThirdPersonCam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CalcThirdPersonCam")); }
+			ScriptFunction CalcOtherWatchingCam() { return mCalcOtherWatchingCam ? mCalcOtherWatchingCam : (mCalcOtherWatchingCam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CalcOtherWatchingCam")); }
+			ScriptFunction ClearMeshAnimSeqNodes() { return mClearMeshAnimSeqNodes ? mClearMeshAnimSeqNodes : (mClearMeshAnimSeqNodes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.ClearMeshAnimSeqNodes")); }
+			ScriptFunction CacheMeshAnimSeqNodes() { return mCacheMeshAnimSeqNodes ? mCacheMeshAnimSeqNodes : (mCacheMeshAnimSeqNodes = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.CacheMeshAnimSeqNodes")); }
+			ScriptFunction SuppressAnimNotifies() { return mSuppressAnimNotifies ? mSuppressAnimNotifies : (mSuppressAnimNotifies = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPlayerPawn.SuppressAnimNotifies")); }
+		}
+	}
 	@property final auto ref
 	{
 		ubyte r_nFlashReloadPrimaryWeapon() { return *cast(ubyte*)(cast(size_t)cast(void*)this + 3212); }
@@ -85,28 +152,28 @@ final:
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
 		*cast(bool*)&params[4] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacterClassFromInfo, params.ptr, cast(void*)0);
 	}
 	void UpdateEyeHeight(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73451], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEyeHeight, params.ptr, cast(void*)0);
 	}
 	ScriptName GetMaterialBelowFeetByLoc(Vector TestLocation)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TestLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73466], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterialBelowFeetByLoc, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[12];
 	}
 	ScriptName GetMaterialBelowFeet()
 	{
 		ubyte params[8];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73477], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterialBelowFeet, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)params.ptr;
 	}
 	void ActuallyPlayFootstepSound(int FootDown)
@@ -114,7 +181,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = FootDown;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73479], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActuallyPlayFootstepSound, params.ptr, cast(void*)0);
 	}
 	Vector WeaponBob(float BobDamping, float JumpDamping)
 	{
@@ -122,7 +189,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = BobDamping;
 		*cast(float*)&params[4] = JumpDamping;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73488], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponBob, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -130,7 +197,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73493], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -141,68 +208,68 @@ void* SkelComp)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = SkelComp;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73495], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
 	void PlayHardLandingEffect(Vector HitLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73498], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayHardLandingEffect, params.ptr, cast(void*)0);
 	}
 	void PlaySonicPunchEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73503], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySonicPunchEffect, cast(void*)0, cast(void*)0);
 	}
 	void CreateSkiParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73508], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateSkiParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void ClearSkiParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73516], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSkiParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlaySkiEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73518], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySkiEffects, cast(void*)0, cast(void*)0);
 	}
 	void StopSkiEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73520], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopSkiEffects, cast(void*)0, cast(void*)0);
 	}
 	void CreateJetpackParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73522], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateJetpackParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void ClearJetpackParticleEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73535], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearJetpackParticleEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlayJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73537], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void UpdateJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73540], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void StopJetpackEffects()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73542], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopJetpackEffects, cast(void*)0, cast(void*)0);
 	}
 	void PlayReload(TrObject.TR_EQUIP_POINT EquipPoint)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = EquipPoint;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73544], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayReload, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73549], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
 	{
@@ -212,7 +279,7 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73551], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -223,7 +290,7 @@ void**)params.ptr = SkelComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNewBehindView;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73557], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetThirdPersonCamera, params.ptr, cast(void*)0);
 	}
 	bool CalcThirdPersonCam(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
 	{
@@ -233,7 +300,7 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73559], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcThirdPersonCam, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -248,7 +315,7 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
 		*cast(TrPlayerController*)&params[32] = WatcherController;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73576], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcOtherWatchingCam, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -256,17 +323,17 @@ void**)params.ptr = SkelComp;
 	}
 	void ClearMeshAnimSeqNodes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73590], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearMeshAnimSeqNodes, cast(void*)0, cast(void*)0);
 	}
 	void CacheMeshAnimSeqNodes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73591], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CacheMeshAnimSeqNodes, cast(void*)0, cast(void*)0);
 	}
 	void SuppressAnimNotifies(bool bSuppress)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bSuppress;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[73593], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuppressAnimNotifies, params.ptr, cast(void*)0);
 	}
 }

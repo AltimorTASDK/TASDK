@@ -1,11 +1,14 @@
 module UnrealScript.TribesGame.TrSVehicleSimHover;
 
+import ScriptClasses;
 import UnrealScript.UDKBase.UDKVehicleSimChopper;
 import UnrealScript.UDKBase.UDKVehicleSimHover;
 
 extern(C++) interface TrSVehicleSimHover : UDKVehicleSimHover
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSVehicleSimHover")); }
 	@property final
 	{
 		@property final auto ref UDKVehicleSimChopper.AnglePID RollGain() { return *cast(UDKVehicleSimChopper.AnglePID*)(cast(size_t)cast(void*)this + 312); }

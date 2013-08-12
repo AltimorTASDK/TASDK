@@ -17,6 +17,61 @@ import UnrealScript.TribesGame.TrTeamBlockerStaticMeshActor;
 extern(C++) interface TrGameReplicationInfo : UTGameReplicationInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameReplicationInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsClassAllowed;
+			ScriptFunction mGetTeamSize;
+			ScriptFunction mCanJoinTeam;
+			ScriptFunction mGetGlobalSpeedCapMultiplier;
+			ScriptFunction mGetGlobalAccelerationMultiplier;
+			ScriptFunction mGetGlobalAirSpeedMultiplier;
+			ScriptFunction mGetGlobalMaxJetpackThrustSpeedMultiplier;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mApplyServerSettings;
+			ScriptFunction mCanPlaceDeployables;
+			ScriptFunction mOnPhase0SiegeEnded;
+			ScriptFunction mOnResetGame;
+			ScriptFunction mTimer;
+			ScriptFunction mOnSameTeam;
+			ScriptFunction mBlip;
+			ScriptFunction mTick;
+			ScriptFunction mChangePhysicsType;
+			ScriptFunction mIsValidTeamPlayer;
+			ScriptFunction mSetWarmingUp;
+			ScriptFunction mAddPRI;
+		}
+		public @property static final
+		{
+			ScriptFunction IsClassAllowed() { return mIsClassAllowed ? mIsClassAllowed : (mIsClassAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.IsClassAllowed")); }
+			ScriptFunction GetTeamSize() { return mGetTeamSize ? mGetTeamSize : (mGetTeamSize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.GetTeamSize")); }
+			ScriptFunction CanJoinTeam() { return mCanJoinTeam ? mCanJoinTeam : (mCanJoinTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.CanJoinTeam")); }
+			ScriptFunction GetGlobalSpeedCapMultiplier() { return mGetGlobalSpeedCapMultiplier ? mGetGlobalSpeedCapMultiplier : (mGetGlobalSpeedCapMultiplier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.GetGlobalSpeedCapMultiplier")); }
+			ScriptFunction GetGlobalAccelerationMultiplier() { return mGetGlobalAccelerationMultiplier ? mGetGlobalAccelerationMultiplier : (mGetGlobalAccelerationMultiplier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.GetGlobalAccelerationMultiplier")); }
+			ScriptFunction GetGlobalAirSpeedMultiplier() { return mGetGlobalAirSpeedMultiplier ? mGetGlobalAirSpeedMultiplier : (mGetGlobalAirSpeedMultiplier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.GetGlobalAirSpeedMultiplier")); }
+			ScriptFunction GetGlobalMaxJetpackThrustSpeedMultiplier() { return mGetGlobalMaxJetpackThrustSpeedMultiplier ? mGetGlobalMaxJetpackThrustSpeedMultiplier : (mGetGlobalMaxJetpackThrustSpeedMultiplier = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.GetGlobalMaxJetpackThrustSpeedMultiplier")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.ReplicatedEvent")); }
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.PreBeginPlay")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.PostBeginPlay")); }
+			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.ApplyServerSettings")); }
+			ScriptFunction CanPlaceDeployables() { return mCanPlaceDeployables ? mCanPlaceDeployables : (mCanPlaceDeployables = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.CanPlaceDeployables")); }
+			ScriptFunction OnPhase0SiegeEnded() { return mOnPhase0SiegeEnded ? mOnPhase0SiegeEnded : (mOnPhase0SiegeEnded = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.OnPhase0SiegeEnded")); }
+			ScriptFunction OnResetGame() { return mOnResetGame ? mOnResetGame : (mOnResetGame = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.OnResetGame")); }
+			ScriptFunction Timer() { return mTimer ? mTimer : (mTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.Timer")); }
+			ScriptFunction OnSameTeam() { return mOnSameTeam ? mOnSameTeam : (mOnSameTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.OnSameTeam")); }
+			ScriptFunction Blip() { return mBlip ? mBlip : (mBlip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.Blip")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.Tick")); }
+			ScriptFunction ChangePhysicsType() { return mChangePhysicsType ? mChangePhysicsType : (mChangePhysicsType = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.ChangePhysicsType")); }
+			ScriptFunction IsValidTeamPlayer() { return mIsValidTeamPlayer ? mIsValidTeamPlayer : (mIsValidTeamPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.IsValidTeamPlayer")); }
+			ScriptFunction SetWarmingUp() { return mSetWarmingUp ? mSetWarmingUp : (mSetWarmingUp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.SetWarmingUp")); }
+			ScriptFunction AddPRI() { return mAddPRI ? mAddPRI : (mAddPRI = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGameReplicationInfo.AddPRI")); }
+		}
+	}
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,
@@ -1449,7 +1504,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
 		*cast(ScriptClass*)&params[4] = FamilyInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56815], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsClassAllowed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	int GetTeamSize(ubyte TeamNum)
@@ -1457,7 +1512,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		params[0] = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65192], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamSize, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	bool CanJoinTeam(ubyte RequestedTeam, ubyte CurrentTeam)
@@ -1466,35 +1521,35 @@ final:
 		params[] = 0;
 		params[0] = RequestedTeam;
 		params[1] = CurrentTeam;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[65194], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanJoinTeam, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	float GetGlobalSpeedCapMultiplier()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72521], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGlobalSpeedCapMultiplier, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetGlobalAccelerationMultiplier()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72556], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGlobalAccelerationMultiplier, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetGlobalAirSpeedMultiplier()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72558], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGlobalAirSpeedMultiplier, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	float GetGlobalMaxJetpackThrustSpeedMultiplier()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[72560], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGlobalMaxJetpackThrustSpeedMultiplier, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -1502,38 +1557,38 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92532], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92534], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92535], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ApplyServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92538], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyServerSettings, cast(void*)0, cast(void*)0);
 	}
 	void CanPlaceDeployables(bool Value)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92542], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanPlaceDeployables, params.ptr, cast(void*)0);
 	}
 	void OnPhase0SiegeEnded()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92544], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnPhase0SiegeEnded, cast(void*)0, cast(void*)0);
 	}
 	void OnResetGame()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92546], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnResetGame, cast(void*)0, cast(void*)0);
 	}
 	void Timer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92548], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
 	bool OnSameTeam(Actor A, Actor B)
 	{
@@ -1541,33 +1596,33 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
 		*cast(Actor*)&params[4] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92551], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSameTeam, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void Blip()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92555], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Blip, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92556], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void ChangePhysicsType(int Type)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92558], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangePhysicsType, params.ptr, cast(void*)0);
 	}
 	bool IsValidTeamPlayer(TrPlayerReplicationInfo TrPRI)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrPlayerReplicationInfo*)params.ptr = TrPRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92568], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidTeamPlayer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetWarmingUp(bool bWarmup)
@@ -1575,13 +1630,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWarmup;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92571], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetWarmingUp, params.ptr, cast(void*)0);
 	}
 	void AddPRI(PlayerReplicationInfo PRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92574], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddPRI, params.ptr, cast(void*)0);
 	}
 }

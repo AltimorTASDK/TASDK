@@ -8,6 +8,21 @@ import UnrealScript.Engine.PostProcessChain;
 extern(C++) interface SceneCaptureComponent : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCaptureComponent")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetEnabled;
+			ScriptFunction mSetFrameRate;
+		}
+		public @property static final
+		{
+			ScriptFunction SetEnabled() { return mSetEnabled ? mSetEnabled : (mSetEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCaptureComponent.SetEnabled")); }
+			ScriptFunction SetFrameRate() { return mSetFrameRate ? mSetFrameRate : (mSetFrameRate = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCaptureComponent.SetFrameRate")); }
+		}
+	}
 	enum ESceneCaptureViewMode : ubyte
 	{
 		SceneCapView_Lit = 0,
@@ -53,13 +68,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24681], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
 	void SetFrameRate(float NewFrameRate)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = NewFrameRate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24701], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetFrameRate, params.ptr, cast(void*)0);
 	}
 }

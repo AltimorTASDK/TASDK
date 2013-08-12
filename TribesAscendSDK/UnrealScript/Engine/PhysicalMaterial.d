@@ -10,6 +10,23 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface PhysicalMaterial : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicalMaterial")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFindPhysEffectInfo;
+			ScriptFunction mFindFractureSounds;
+			ScriptFunction mGetPhysicalMaterialProperty;
+		}
+		public @property static final
+		{
+			ScriptFunction FindPhysEffectInfo() { return mFindPhysEffectInfo ? mFindPhysEffectInfo : (mFindPhysEffectInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicalMaterial.FindPhysEffectInfo")); }
+			ScriptFunction FindFractureSounds() { return mFindFractureSounds ? mFindFractureSounds : (mFindFractureSounds = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicalMaterial.FindFractureSounds")); }
+			ScriptFunction GetPhysicalMaterialProperty() { return mGetPhysicalMaterialProperty ? mGetPhysicalMaterialProperty : (mGetPhysicalMaterialProperty = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicalMaterial.GetPhysicalMaterialProperty")); }
+		}
+	}
 	enum EPhysEffectType : ubyte
 	{
 		EPMET_Impact = 0,
@@ -54,7 +71,7 @@ final:
 		ubyte params[20];
 		params[] = 0;
 		*cast(PhysicalMaterial.EPhysEffectType*)params.ptr = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[16492], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindPhysEffectInfo, params.ptr, cast(void*)0);
 		return *cast(Actor.PhysEffectInfo*)&params[4];
 	}
 	void FindFractureSounds(SoundCue* OutSoundExplosion, SoundCue* OutSoundSingle)
@@ -63,7 +80,7 @@ final:
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = *OutSoundExplosion;
 		*cast(SoundCue*)&params[4] = *OutSoundSingle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24299], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindFractureSounds, params.ptr, cast(void*)0);
 		*OutSoundExplosion = *cast(SoundCue*)params.ptr;
 		*OutSoundSingle = *cast(SoundCue*)&params[4];
 	}
@@ -72,7 +89,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = DesiredClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24306], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalMaterialProperty, params.ptr, cast(void*)0);
 		return *cast(PhysicalMaterialPropertyBase*)&params[4];
 	}
 }

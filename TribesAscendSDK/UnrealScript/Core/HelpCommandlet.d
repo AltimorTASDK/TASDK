@@ -6,12 +6,19 @@ import UnrealScript.Core.Commandlet;
 extern(C++) interface HelpCommandlet : Commandlet
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.HelpCommandlet")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mMain;
+		public @property static final ScriptFunction Main() { return mMain ? mMain : (mMain = ScriptObject.Find!(ScriptFunction)("Function Core.HelpCommandlet.Main")); }
+	}
 	final int Main(ScriptString Params)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Params;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[3458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Main, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
 }

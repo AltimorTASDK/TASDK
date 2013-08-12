@@ -9,6 +9,13 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface SoundNodeWave : SoundNode
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeWave")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGeneratePCMData;
+		public @property static final ScriptFunction GeneratePCMData() { return mGeneratePCMData ? mGeneratePCMData : (mGeneratePCMData = ScriptObject.Find!(ScriptFunction)("Function Engine.SoundNodeWave.GeneratePCMData")); }
+	}
 	enum EDecompressionType : ubyte
 	{
 		DTYPE_Setup = 0,
@@ -72,7 +79,7 @@ public extern(D):
 		params[] = 0;
 		*cast(ScriptArray!(ubyte)*)params.ptr = *Buffer;
 		*cast(int*)&params[12] = SamplesNeeded;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[26975], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePCMData, params.ptr, cast(void*)0);
 		*Buffer = *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
 }

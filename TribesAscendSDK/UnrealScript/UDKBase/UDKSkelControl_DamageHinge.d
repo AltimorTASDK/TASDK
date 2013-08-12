@@ -1,11 +1,14 @@
 module UnrealScript.UDKBase.UDKSkelControl_DamageHinge;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.UDKBase.UDKSkelControl_Damage;
 
 extern(C++) interface UDKSkelControl_DamageHinge : UDKSkelControl_Damage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_DamageHinge")); }
 	@property final auto ref
 	{
 		float SpringStiffness() { return *cast(float*)(cast(size_t)cast(void*)this + 392); }

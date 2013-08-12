@@ -6,10 +6,14 @@ import UnrealScript.Engine.SVehicleSimBase;
 extern(C++) interface UDKVehicleSimChopper : SVehicleSimBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimChopper")); }
 	struct AnglePID
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKVehicleSimChopper.AnglePID")); }
 		@property final auto ref
 		{
 			float PrevError() { return *cast(float*)(cast(size_t)&this + 16); }

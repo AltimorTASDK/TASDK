@@ -8,6 +8,35 @@ import UnrealScript.Engine.Info;
 extern(C++) interface UTMusicManager : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMusicManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAlreadyInActionMusic;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mStartMusic;
+			ScriptFunction mIntroFinished;
+			ScriptFunction mCreateNewTrack;
+			ScriptFunction mMusicEvent;
+			ScriptFunction mProcessMusicEvent;
+			ScriptFunction mTick;
+			ScriptFunction mChangeTrack;
+		}
+		public @property static final
+		{
+			ScriptFunction AlreadyInActionMusic() { return mAlreadyInActionMusic ? mAlreadyInActionMusic : (mAlreadyInActionMusic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.AlreadyInActionMusic")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.PostBeginPlay")); }
+			ScriptFunction StartMusic() { return mStartMusic ? mStartMusic : (mStartMusic = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.StartMusic")); }
+			ScriptFunction IntroFinished() { return mIntroFinished ? mIntroFinished : (mIntroFinished = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.IntroFinished")); }
+			ScriptFunction CreateNewTrack() { return mCreateNewTrack ? mCreateNewTrack : (mCreateNewTrack = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.CreateNewTrack")); }
+			ScriptFunction MusicEvent() { return mMusicEvent ? mMusicEvent : (mMusicEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.MusicEvent")); }
+			ScriptFunction ProcessMusicEvent() { return mProcessMusicEvent ? mProcessMusicEvent : (mProcessMusicEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.ProcessMusicEvent")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.Tick")); }
+			ScriptFunction ChangeTrack() { return mChangeTrack ? mChangeTrack : (mChangeTrack = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTMusicManager.ChangeTrack")); }
+		}
+	}
 	enum EMusicState : ubyte
 	{
 		MST_Ambient = 0,
@@ -42,16 +71,16 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36812], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AlreadyInActionMusic, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48511], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void StartMusic()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48512], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartMusic, cast(void*)0, cast(void*)0);
 	}
 	void IntroFinished(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -62,7 +91,7 @@ void* AC)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = AC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48522], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IntroFinished, params.ptr, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -71,7 +100,7 @@ void* CreateNewTrack(SoundCue MusicCue)
 		ubyte params[8];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = MusicCue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48525], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateNewTrack, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
@@ -81,24 +110,24 @@ void**)&params[4];
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = NewEventIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48529], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MusicEvent, params.ptr, cast(void*)0);
 	}
 	void ProcessMusicEvent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48536], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessMusicEvent, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48541], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void ChangeTrack(UTMusicManager.EMusicState NewState)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(UTMusicManager.EMusicState*)params.ptr = NewState;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[48546], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeTrack, params.ptr, cast(void*)0);
 	}
 }

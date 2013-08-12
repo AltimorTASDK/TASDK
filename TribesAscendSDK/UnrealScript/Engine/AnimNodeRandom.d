@@ -8,10 +8,14 @@ import UnrealScript.Core.UObject;
 extern(C++) interface AnimNodeRandom : AnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeRandom")); }
 	struct RandomAnimInfo
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNodeRandom.RandomAnimInfo")); }
 		@property final
 		{
 			auto ref

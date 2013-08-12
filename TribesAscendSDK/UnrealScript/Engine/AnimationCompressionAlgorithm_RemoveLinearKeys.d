@@ -1,10 +1,13 @@
 module UnrealScript.Engine.AnimationCompressionAlgorithm_RemoveLinearKeys;
 
+import ScriptClasses;
 import UnrealScript.Engine.AnimationCompressionAlgorithm;
 
 extern(C++) interface AnimationCompressionAlgorithm_RemoveLinearKeys : AnimationCompressionAlgorithm
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys")); }
 	@property final
 	{
 		auto ref

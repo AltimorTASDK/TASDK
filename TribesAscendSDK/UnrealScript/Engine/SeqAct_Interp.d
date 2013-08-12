@@ -11,10 +11,33 @@ import UnrealScript.Engine.InterpData;
 extern(C++) interface SeqAct_Interp : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Interp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAddPlayerToDirectorTracks;
+			ScriptFunction mSetPosition;
+			ScriptFunction mStop;
+			ScriptFunction mReset;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction AddPlayerToDirectorTracks() { return mAddPlayerToDirectorTracks ? mAddPlayerToDirectorTracks : (mAddPlayerToDirectorTracks = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Interp.AddPlayerToDirectorTracks")); }
+			ScriptFunction SetPosition() { return mSetPosition ? mSetPosition : (mSetPosition = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Interp.SetPosition")); }
+			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Interp.Stop")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Interp.Reset")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_Interp.GetObjClassVersion")); }
+		}
+	}
 	struct CameraCutInfo
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SeqAct_Interp.CameraCutInfo")); }
 		@property final auto ref
 		{
 			float TimeStamp() { return *cast(float*)(cast(size_t)&this + 12); }
@@ -25,6 +48,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SeqAct_Interp.SavedTransform")); }
 		@property final auto ref
 		{
 			Rotator Rotation() { return *cast(Rotator*)(cast(size_t)&this + 12); }
@@ -84,7 +109,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7793], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddPlayerToDirectorTracks, params.ptr, cast(void*)0);
 	}
 	void SetPosition(float NewPosition, bool bJump)
 	{
@@ -92,21 +117,21 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = NewPosition;
 		*cast(bool*)&params[4] = bJump;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25736], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPosition, params.ptr, cast(void*)0);
 	}
 	void Stop()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25739], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25741], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25742], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

@@ -7,6 +7,8 @@ import UnrealScript.Engine.K2NodeBase;
 extern(C++) interface K2Connector : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.K2Connector")); }
 	enum EK2ConnectorType : ubyte
 	{
 		K2CT_Bool = 0,

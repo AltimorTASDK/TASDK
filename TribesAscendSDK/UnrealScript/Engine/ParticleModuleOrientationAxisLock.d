@@ -1,10 +1,13 @@
 module UnrealScript.Engine.ParticleModuleOrientationAxisLock;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleOrientationBase;
 
 extern(C++) interface ParticleModuleOrientationAxisLock : ParticleModuleOrientationBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleOrientationAxisLock")); }
 	enum EParticleAxisLock : ubyte
 	{
 		EPAL_NONE = 0,

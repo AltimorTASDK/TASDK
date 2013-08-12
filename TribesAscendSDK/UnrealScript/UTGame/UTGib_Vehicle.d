@@ -9,6 +9,21 @@ import UnrealScript.Engine.MaterialInstanceTimeVarying;
 extern(C++) interface UTGib_Vehicle : UTGib
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGib_Vehicle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mActivateGibExplosionEffect;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib_Vehicle.PostBeginPlay")); }
+			ScriptFunction ActivateGibExplosionEffect() { return mActivateGibExplosionEffect ? mActivateGibExplosionEffect : (mActivateGibExplosionEffect = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGib_Vehicle.ActivateGibExplosionEffect")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptClass OwningClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 612); }
@@ -23,10 +38,10 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47946], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void ActivateGibExplosionEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47947], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateGibExplosionEffect, cast(void*)0, cast(void*)0);
 	}
 }

@@ -7,11 +7,34 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UDKUIDataStore_StringAliasBindingMap : UIDataStore_StringAliasMap
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_StringAliasBindingMap")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetStringWithFieldName;
+			ScriptFunction mGetBoundStringWithFieldName;
+			ScriptFunction mFindMappingInBoundKeyCache;
+			ScriptFunction mAddMappingToBoundKeyCache;
+			ScriptFunction mClearBoundKeyCache;
+		}
+		public @property static final
+		{
+			ScriptFunction GetStringWithFieldName() { return mGetStringWithFieldName ? mGetStringWithFieldName : (mGetStringWithFieldName = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetStringWithFieldName")); }
+			ScriptFunction GetBoundStringWithFieldName() { return mGetBoundStringWithFieldName ? mGetBoundStringWithFieldName : (mGetBoundStringWithFieldName = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.GetBoundStringWithFieldName")); }
+			ScriptFunction FindMappingInBoundKeyCache() { return mFindMappingInBoundKeyCache ? mFindMappingInBoundKeyCache : (mFindMappingInBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.FindMappingInBoundKeyCache")); }
+			ScriptFunction AddMappingToBoundKeyCache() { return mAddMappingToBoundKeyCache ? mAddMappingToBoundKeyCache : (mAddMappingToBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.AddMappingToBoundKeyCache")); }
+			ScriptFunction ClearBoundKeyCache() { return mClearBoundKeyCache ? mClearBoundKeyCache : (mClearBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.ClearBoundKeyCache")); }
+		}
+	}
 	enum SABM_FIND_FIRST_BIND = -2;
 	struct ControllerMap
 	{
 		private ubyte __buffer__[32];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.ControllerMap")); }
 		@property final auto ref
 		{
 			ScriptString PS3Mapping() { return *cast(ScriptString*)(cast(size_t)&this + 20); }
@@ -23,6 +46,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKUIDataStore_StringAliasBindingMap.BindCacheElement")); }
 		@property final auto ref
 		{
 			int FieldIndex() { return *cast(int*)(cast(size_t)&this + 20); }
@@ -43,7 +68,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[12] = *MappedString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35667], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringWithFieldName, params.ptr, cast(void*)0);
 		*MappedString = *cast(ScriptString*)&params[12];
 		return *cast(int*)&params[24];
 	}
@@ -55,7 +80,7 @@ final:
 		*cast(ScriptString*)&params[12] = *MappedString;
 		*cast(int*)&params[24] = *StartIndex;
 		*cast(ScriptString*)&params[28] = *BindString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundStringWithFieldName, params.ptr, cast(void*)0);
 		*MappedString = *cast(ScriptString*)&params[12];
 		*StartIndex = *cast(int*)&params[24];
 		*BindString = *cast(ScriptString*)&params[28];
@@ -68,7 +93,7 @@ final:
 		*cast(ScriptString*)params.ptr = Command;
 		*cast(ScriptString*)&params[12] = *MappingStr;
 		*cast(int*)&params[24] = *FieldIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35677], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindMappingInBoundKeyCache, params.ptr, cast(void*)0);
 		*MappingStr = *cast(ScriptString*)&params[12];
 		*FieldIndex = *cast(int*)&params[24];
 		return *cast(bool*)&params[28];
@@ -80,10 +105,10 @@ final:
 		*cast(ScriptString*)params.ptr = Command;
 		*cast(ScriptString*)&params[12] = MappingStr;
 		*cast(int*)&params[24] = FieldIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35682], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddMappingToBoundKeyCache, params.ptr, cast(void*)0);
 	}
 	void ClearBoundKeyCache()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35686], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearBoundKeyCache, cast(void*)0, cast(void*)0);
 	}
 }

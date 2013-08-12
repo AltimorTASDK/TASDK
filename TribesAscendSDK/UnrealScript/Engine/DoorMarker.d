@@ -9,6 +9,29 @@ import UnrealScript.Engine.InterpActor;
 extern(C++) interface DoorMarker : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DoorMarker")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mMoverOpened;
+			ScriptFunction mMoverClosed;
+			ScriptFunction mSpecialHandling;
+			ScriptFunction mProceedWithMove;
+			ScriptFunction mSuggestMovePreparation;
+		}
+		public @property static final
+		{
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.PostBeginPlay")); }
+			ScriptFunction MoverOpened() { return mMoverOpened ? mMoverOpened : (mMoverOpened = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.MoverOpened")); }
+			ScriptFunction MoverClosed() { return mMoverClosed ? mMoverClosed : (mMoverClosed = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.MoverClosed")); }
+			ScriptFunction SpecialHandling() { return mSpecialHandling ? mSpecialHandling : (mSpecialHandling = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.SpecialHandling")); }
+			ScriptFunction ProceedWithMove() { return mProceedWithMove ? mProceedWithMove : (mProceedWithMove = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.ProceedWithMove")); }
+			ScriptFunction SuggestMovePreparation() { return mSuggestMovePreparation ? mSuggestMovePreparation : (mSuggestMovePreparation = ScriptObject.Find!(ScriptFunction)("Function Engine.DoorMarker.SuggestMovePreparation")); }
+		}
+	}
 	enum EDoorType : ubyte
 	{
 		DOOR_Shoot = 0,
@@ -37,22 +60,22 @@ public extern(D):
 final:
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14665], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void MoverOpened()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14666], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoverOpened, cast(void*)0, cast(void*)0);
 	}
 	void MoverClosed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14667], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MoverClosed, cast(void*)0, cast(void*)0);
 	}
 	Actor SpecialHandling(Pawn Other)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14668], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialHandling, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	bool ProceedWithMove(Pawn Other)
@@ -60,7 +83,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14672], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProceedWithMove, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool SuggestMovePreparation(Pawn Other)
@@ -68,7 +91,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14675], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

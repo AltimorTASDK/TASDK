@@ -12,6 +12,39 @@ import UnrealScript.TribesGame.TrGameSearchCommon;
 extern(C++) interface TrMakeQuickMatch : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMakeQuickMatch")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mLaunch;
+			ScriptFunction mCleanup;
+			ScriptFunction mSubmitGameSearch;
+			ScriptFunction mGetLP;
+			ScriptFunction mGetPC;
+			ScriptFunction mConsoleCommand;
+			ScriptFunction mBuildJoinURL;
+			ScriptFunction mRequestJoin;
+			ScriptFunction mOnSearchComplete;
+			ScriptFunction mOnJoinGameComplete;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Init")); }
+			ScriptFunction Launch() { return mLaunch ? mLaunch : (mLaunch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Launch")); }
+			ScriptFunction Cleanup() { return mCleanup ? mCleanup : (mCleanup = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.Cleanup")); }
+			ScriptFunction SubmitGameSearch() { return mSubmitGameSearch ? mSubmitGameSearch : (mSubmitGameSearch = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.SubmitGameSearch")); }
+			ScriptFunction GetLP() { return mGetLP ? mGetLP : (mGetLP = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.GetLP")); }
+			ScriptFunction GetPC() { return mGetPC ? mGetPC : (mGetPC = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.GetPC")); }
+			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.ConsoleCommand")); }
+			ScriptFunction BuildJoinURL() { return mBuildJoinURL ? mBuildJoinURL : (mBuildJoinURL = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.BuildJoinURL")); }
+			ScriptFunction RequestJoin() { return mRequestJoin ? mRequestJoin : (mRequestJoin = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.RequestJoin")); }
+			ScriptFunction OnSearchComplete() { return mOnSearchComplete ? mOnSearchComplete : (mOnSearchComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.OnSearchComplete")); }
+			ScriptFunction OnJoinGameComplete() { return mOnJoinGameComplete ? mOnJoinGameComplete : (mOnJoinGameComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrMakeQuickMatch.OnJoinGameComplete")); }
+		}
+	}
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,
@@ -1410,36 +1443,36 @@ final:
 		params[] = 0;
 		params[0] = ControllerIndex;
 		*cast(int*)&params[4] = GameMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100087], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void Launch()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100091], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Launch, cast(void*)0, cast(void*)0);
 	}
 	void Cleanup()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100092], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Cleanup, cast(void*)0, cast(void*)0);
 	}
 	bool SubmitGameSearch()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100093], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SubmitGameSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	LocalPlayer GetLP()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100095], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLP, params.ptr, cast(void*)0);
 		return *cast(LocalPlayer*)params.ptr;
 	}
 	PlayerController GetPC()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100099], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPC, params.ptr, cast(void*)0);
 		return *cast(PlayerController*)params.ptr;
 	}
 	void ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
@@ -1448,14 +1481,14 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
 		*cast(bool*)&params[12] = bWriteToLog;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100102], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 	ScriptString BuildJoinURL(ScriptString ResolvedConnectionURL)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ResolvedConnectionURL;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100106], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BuildJoinURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 	bool RequestJoin(OnlineGameSearch.OnlineGameSearchResult GameToJoin)
@@ -1463,7 +1496,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = GameToJoin;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100110], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestJoin, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void OnSearchComplete(bool bWasSuccessful)
@@ -1471,7 +1504,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100113], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSearchComplete, params.ptr, cast(void*)0);
 	}
 	void OnJoinGameComplete(ScriptName SessionName, bool bSuccessful)
 	{
@@ -1479,6 +1512,6 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(bool*)&params[8] = bSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[100116], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnJoinGameComplete, params.ptr, cast(void*)0);
 	}
 }

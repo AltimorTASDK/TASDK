@@ -8,10 +8,14 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 extern(C++) interface TrAnimNodeBlendByPhysics : TrAnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByPhysics")); }
 	struct ChildrenBlendInfo
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrAnimNodeBlendByPhysics.ChildrenBlendInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo) m_ChildBlendInfo() { return *cast(ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo)*)(cast(size_t)&this + 4); }
@@ -22,6 +26,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrAnimNodeBlendByPhysics.ChildBlendInfo")); }
 		@property final auto ref
 		{
 			float m_fBlendTime() { return *cast(float*)(cast(size_t)&this + 4); }

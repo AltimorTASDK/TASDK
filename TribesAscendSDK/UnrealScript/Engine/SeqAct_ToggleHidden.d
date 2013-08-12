@@ -6,6 +6,8 @@ import UnrealScript.Engine.SeqAct_Toggle;
 extern(C++) interface SeqAct_ToggleHidden : SeqAct_Toggle
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ToggleHidden")); }
 	@property final
 	{
 		@property final auto ref ScriptArray!(ScriptClass) IgnoreBasedClasses() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 236); }

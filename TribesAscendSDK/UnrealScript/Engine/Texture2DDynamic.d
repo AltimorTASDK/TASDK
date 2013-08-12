@@ -6,6 +6,21 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface Texture2DDynamic : Texture
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture2DDynamic")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mCreate;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2DDynamic.Init")); }
+			ScriptFunction Create() { return mCreate ? mCreate : (mCreate = ScriptObject.Find!(ScriptFunction)("Function Engine.Texture2DDynamic.Create")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,9 +42,9 @@ final:
 		*cast(int*)&params[4] = InSizeY;
 		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
 		*cast(bool*)&params[12] = InIsResolveTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27953], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
-	Texture2DDynamic Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, bool InIsResolveTarget)
+	static Texture2DDynamic Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, bool InIsResolveTarget)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -37,7 +52,7 @@ final:
 		*cast(int*)&params[4] = InSizeY;
 		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
 		*cast(bool*)&params[12] = InIsResolveTarget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[27958], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.Create, params.ptr, cast(void*)0);
 		return *cast(Texture2DDynamic*)&params[16];
 	}
 }

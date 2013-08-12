@@ -6,6 +6,21 @@ import UnrealScript.Engine.CameraActor;
 extern(C++) interface TrCamera_SpectatorBookmark : CameraActor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCamera_SpectatorBookmark")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetDescription;
+			ScriptFunction mGetSpectatorName;
+		}
+		public @property static final
+		{
+			ScriptFunction GetDescription() { return mGetDescription ? mGetDescription : (mGetDescription = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_SpectatorBookmark.GetDescription")); }
+			ScriptFunction GetSpectatorName() { return mGetSpectatorName ? mGetSpectatorName : (mGetSpectatorName = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrCamera_SpectatorBookmark.GetSpectatorName")); }
+		}
+	}
 	enum ESpectatorBookmark : ubyte
 	{
 		Bookmark_BEBase = 0,
@@ -135,14 +150,14 @@ final:
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74224], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDescription, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	ScriptString GetSpectatorName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74226], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

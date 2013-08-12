@@ -9,6 +9,35 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxTrPage_Accolades : GFxTrPage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Accolades")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialize;
+			ScriptFunction mSpecialAction;
+			ScriptFunction mTakeAction;
+			ScriptFunction mShowModel;
+			ScriptFunction mTakeFocus;
+			ScriptFunction mFillData;
+			ScriptFunction mFillAccolades;
+			ScriptFunction mFillAccolade;
+			ScriptFunction mGetAccoladeClass;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.Initialize")); }
+			ScriptFunction SpecialAction() { return mSpecialAction ? mSpecialAction : (mSpecialAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.SpecialAction")); }
+			ScriptFunction TakeAction() { return mTakeAction ? mTakeAction : (mTakeAction = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.TakeAction")); }
+			ScriptFunction ShowModel() { return mShowModel ? mShowModel : (mShowModel = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.ShowModel")); }
+			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.TakeFocus")); }
+			ScriptFunction FillData() { return mFillData ? mFillData : (mFillData = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.FillData")); }
+			ScriptFunction FillAccolades() { return mFillAccolades ? mFillAccolades : (mFillAccolades = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.FillAccolades")); }
+			ScriptFunction FillAccolade() { return mFillAccolade ? mFillAccolade : (mFillAccolade = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.FillAccolade")); }
+			ScriptFunction GetAccoladeClass() { return mGetAccoladeClass ? mGetAccoladeClass : (mGetAccoladeClass = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_Accolades.GetAccoladeClass")); }
+		}
+	}
 	enum
 	{
 		STAT_GAME_MAP = 200001,
@@ -276,14 +305,14 @@ public extern(D):
 final:
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57149], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void SpecialAction(GFxTrAction Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxTrAction*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57150], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialAction, params.ptr, cast(void*)0);
 	}
 	int TakeAction(int ActionIndex, GFxObject DataList)
 	{
@@ -291,12 +320,12 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57152], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeAction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void ShowModel()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57156], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
 	int TakeFocus(int ActionIndex, GFxObject DataList)
 	{
@@ -304,7 +333,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ActionIndex;
 		*cast(GFxObject*)&params[4] = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57158], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TakeFocus, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void FillData(GFxObject DataList)
@@ -312,13 +341,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = DataList;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57162], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillData, params.ptr, cast(void*)0);
 	}
 	GFxObject FillAccolades()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57165], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillAccolades, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
 	GFxObject FillAccolade(TgPlayerProfile.AccoladeStruct Accolade)
@@ -326,7 +355,7 @@ final:
 		ubyte params[20];
 		params[] = 0;
 		*cast(TgPlayerProfile.AccoladeStruct*)params.ptr = Accolade;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57174], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FillAccolade, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[16];
 	}
 	ScriptClass GetAccoladeClass(int AccoladeId)
@@ -334,7 +363,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AccoladeId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[57182], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAccoladeClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)&params[4];
 	}
 }

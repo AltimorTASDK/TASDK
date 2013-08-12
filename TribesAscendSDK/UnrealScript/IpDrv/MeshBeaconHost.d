@@ -8,10 +8,59 @@ import UnrealScript.IpDrv.MeshBeacon;
 extern(C++) interface MeshBeaconHost : MeshBeacon
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.MeshBeaconHost")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnReceivedClientCreateNewSessionResult;
+			ScriptFunction mOnAllPendingPlayersConnected;
+			ScriptFunction mOnFinishedBandwidthTest;
+			ScriptFunction mOnStartedBandwidthTest;
+			ScriptFunction mOnReceivedClientConnectionRequest;
+			ScriptFunction mInitHostBeacon;
+			ScriptFunction mDestroyBeacon;
+			ScriptFunction mRequestClientBandwidthTest;
+			ScriptFunction mHasInProgressBandwidthTest;
+			ScriptFunction mCancelInProgressBandwidthTests;
+			ScriptFunction mHasPendingBandwidthTest;
+			ScriptFunction mCancelPendingBandwidthTests;
+			ScriptFunction mAllowBandwidthTesting;
+			ScriptFunction mSetPendingPlayerConnections;
+			ScriptFunction mGetConnectionIndexForPlayer;
+			ScriptFunction mAllPlayersConnected;
+			ScriptFunction mTellClientsToTravel;
+			ScriptFunction mRequestClientCreateNewSession;
+		}
+		public @property static final
+		{
+			ScriptFunction OnReceivedClientCreateNewSessionResult() { return mOnReceivedClientCreateNewSessionResult ? mOnReceivedClientCreateNewSessionResult : (mOnReceivedClientCreateNewSessionResult = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult")); }
+			ScriptFunction OnAllPendingPlayersConnected() { return mOnAllPendingPlayersConnected ? mOnAllPendingPlayersConnected : (mOnAllPendingPlayersConnected = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected")); }
+			ScriptFunction OnFinishedBandwidthTest() { return mOnFinishedBandwidthTest ? mOnFinishedBandwidthTest : (mOnFinishedBandwidthTest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.OnFinishedBandwidthTest")); }
+			ScriptFunction OnStartedBandwidthTest() { return mOnStartedBandwidthTest ? mOnStartedBandwidthTest : (mOnStartedBandwidthTest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.OnStartedBandwidthTest")); }
+			ScriptFunction OnReceivedClientConnectionRequest() { return mOnReceivedClientConnectionRequest ? mOnReceivedClientConnectionRequest : (mOnReceivedClientConnectionRequest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest")); }
+			ScriptFunction InitHostBeacon() { return mInitHostBeacon ? mInitHostBeacon : (mInitHostBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.InitHostBeacon")); }
+			ScriptFunction DestroyBeacon() { return mDestroyBeacon ? mDestroyBeacon : (mDestroyBeacon = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.DestroyBeacon")); }
+			ScriptFunction RequestClientBandwidthTest() { return mRequestClientBandwidthTest ? mRequestClientBandwidthTest : (mRequestClientBandwidthTest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.RequestClientBandwidthTest")); }
+			ScriptFunction HasInProgressBandwidthTest() { return mHasInProgressBandwidthTest ? mHasInProgressBandwidthTest : (mHasInProgressBandwidthTest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.HasInProgressBandwidthTest")); }
+			ScriptFunction CancelInProgressBandwidthTests() { return mCancelInProgressBandwidthTests ? mCancelInProgressBandwidthTests : (mCancelInProgressBandwidthTests = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.CancelInProgressBandwidthTests")); }
+			ScriptFunction HasPendingBandwidthTest() { return mHasPendingBandwidthTest ? mHasPendingBandwidthTest : (mHasPendingBandwidthTest = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.HasPendingBandwidthTest")); }
+			ScriptFunction CancelPendingBandwidthTests() { return mCancelPendingBandwidthTests ? mCancelPendingBandwidthTests : (mCancelPendingBandwidthTests = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.CancelPendingBandwidthTests")); }
+			ScriptFunction AllowBandwidthTesting() { return mAllowBandwidthTesting ? mAllowBandwidthTesting : (mAllowBandwidthTesting = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.AllowBandwidthTesting")); }
+			ScriptFunction SetPendingPlayerConnections() { return mSetPendingPlayerConnections ? mSetPendingPlayerConnections : (mSetPendingPlayerConnections = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.SetPendingPlayerConnections")); }
+			ScriptFunction GetConnectionIndexForPlayer() { return mGetConnectionIndexForPlayer ? mGetConnectionIndexForPlayer : (mGetConnectionIndexForPlayer = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.GetConnectionIndexForPlayer")); }
+			ScriptFunction AllPlayersConnected() { return mAllPlayersConnected ? mAllPlayersConnected : (mAllPlayersConnected = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.AllPlayersConnected")); }
+			ScriptFunction TellClientsToTravel() { return mTellClientsToTravel ? mTellClientsToTravel : (mTellClientsToTravel = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.TellClientsToTravel")); }
+			ScriptFunction RequestClientCreateNewSession() { return mRequestClientCreateNewSession ? mRequestClientCreateNewSession : (mRequestClientCreateNewSession = ScriptObject.Find!(ScriptFunction)("Function IpDrv.MeshBeaconHost.RequestClientCreateNewSession")); }
+		}
+	}
 	struct ClientMeshBeaconConnection
 	{
 		private ubyte __buffer__[88];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.MeshBeaconHost.ClientMeshBeaconConnection")); }
 		@property final
 		{
 			auto ref
@@ -35,6 +84,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.MeshBeaconHost.ClientConnectionBandwidthTestData")); }
 		@property final auto ref
 		{
 			MeshBeacon.ConnectionBandwidthStats BandwidthStats() { return *cast(MeshBeacon.ConnectionBandwidthStats*)(cast(size_t)&this + 28); }
@@ -67,12 +118,12 @@ final:
 		*cast(ScriptName*)&params[4] = SessionName;
 		*cast(ScriptClass*)&params[12] = SearchClass;
 		params[16] = *PlatformSpecificInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33283], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReceivedClientCreateNewSessionResult, params.ptr, cast(void*)0);
 		*PlatformSpecificInfo = params[16];
 	}
 	void OnAllPendingPlayersConnected()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33285], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAllPendingPlayersConnected, cast(void*)0, cast(void*)0);
 	}
 	void OnFinishedBandwidthTest(OnlineSubsystem.UniqueNetId PlayerNetId, MeshBeacon.EMeshBeaconBandwidthTestType TestType, MeshBeacon.EMeshBeaconBandwidthTestResult TestResult, MeshBeacon.ConnectionBandwidthStats* BandwidthStats)
 	{
@@ -82,7 +133,7 @@ final:
 		*cast(MeshBeacon.EMeshBeaconBandwidthTestType*)&params[8] = TestType;
 		*cast(MeshBeacon.EMeshBeaconBandwidthTestResult*)&params[9] = TestResult;
 		*cast(MeshBeacon.ConnectionBandwidthStats*)&params[12] = *BandwidthStats;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33287], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFinishedBandwidthTest, params.ptr, cast(void*)0);
 		*BandwidthStats = *cast(MeshBeacon.ConnectionBandwidthStats*)&params[12];
 	}
 	void OnStartedBandwidthTest(OnlineSubsystem.UniqueNetId PlayerNetId, MeshBeacon.EMeshBeaconBandwidthTestType TestType)
@@ -91,14 +142,14 @@ final:
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerNetId;
 		*cast(MeshBeacon.EMeshBeaconBandwidthTestType*)&params[8] = TestType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33289], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnStartedBandwidthTest, params.ptr, cast(void*)0);
 	}
 	void OnReceivedClientConnectionRequest(MeshBeaconHost.ClientMeshBeaconConnection* NewClientConnection)
 	{
 		ubyte params[88];
 		params[] = 0;
 		*cast(MeshBeaconHost.ClientMeshBeaconConnection*)params.ptr = *NewClientConnection;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33291], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReceivedClientConnectionRequest, params.ptr, cast(void*)0);
 		*NewClientConnection = *cast(MeshBeaconHost.ClientMeshBeaconConnection*)params.ptr;
 	}
 	bool InitHostBeacon(OnlineSubsystem.UniqueNetId InOwningPlayerId)
@@ -106,12 +157,12 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = InOwningPlayerId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33295], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitHostBeacon, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void DestroyBeacon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33298], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyBeacon, cast(void*)0, cast(void*)0);
 	}
 	bool RequestClientBandwidthTest(OnlineSubsystem.UniqueNetId PlayerNetId, MeshBeacon.EMeshBeaconBandwidthTestType TestType, int TestBufferSize)
 	{
@@ -120,44 +171,44 @@ final:
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerNetId;
 		*cast(MeshBeacon.EMeshBeaconBandwidthTestType*)&params[8] = TestType;
 		*cast(int*)&params[12] = TestBufferSize;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33299], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestClientBandwidthTest, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
 	bool HasInProgressBandwidthTest()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33304], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasInProgressBandwidthTest, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CancelInProgressBandwidthTests()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33306], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CancelInProgressBandwidthTests, cast(void*)0, cast(void*)0);
 	}
 	bool HasPendingBandwidthTest()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33307], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HasPendingBandwidthTest, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CancelPendingBandwidthTests()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33309], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CancelPendingBandwidthTests, cast(void*)0, cast(void*)0);
 	}
 	void AllowBandwidthTesting(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33310], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBandwidthTesting, params.ptr, cast(void*)0);
 	}
 	void SetPendingPlayerConnections(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *Players;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33319], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPendingPlayerConnections, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	int GetConnectionIndexForPlayer(OnlineSubsystem.UniqueNetId PlayerNetId)
@@ -165,7 +216,7 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerNetId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33322], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetConnectionIndexForPlayer, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	bool AllPlayersConnected(ScriptArray!(OnlineSubsystem.UniqueNetId)* Players)
@@ -173,7 +224,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = *Players;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33325], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllPlayersConnected, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
@@ -184,7 +235,7 @@ final:
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptClass*)&params[8] = SearchClass;
 		params[12] = *PlatformSpecificInfo;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33329], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TellClientsToTravel, params.ptr, cast(void*)0);
 		*PlatformSpecificInfo = params[12];
 	}
 	bool RequestClientCreateNewSession(OnlineSubsystem.UniqueNetId PlayerNetId, ScriptName SessionName, ScriptClass SearchClass, ScriptArray!(MeshBeacon.PlayerMember)* Players)
@@ -195,7 +246,7 @@ final:
 		*cast(ScriptName*)&params[8] = SessionName;
 		*cast(ScriptClass*)&params[16] = SearchClass;
 		*cast(ScriptArray!(MeshBeacon.PlayerMember)*)&params[20] = *Players;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33333], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestClientCreateNewSession, params.ptr, cast(void*)0);
 		*Players = *cast(ScriptArray!(MeshBeacon.PlayerMember)*)&params[20];
 		return *cast(bool*)&params[32];
 	}

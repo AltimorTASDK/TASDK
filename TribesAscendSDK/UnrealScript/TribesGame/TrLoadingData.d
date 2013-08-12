@@ -6,6 +6,23 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrLoadingData : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLoadingData")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetRandomTip;
+			ScriptFunction mInitialize;
+			ScriptFunction mSetDataFields;
+		}
+		public @property static final
+		{
+			ScriptFunction GetRandomTip() { return mGetRandomTip ? mGetRandomTip : (mGetRandomTip = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoadingData.GetRandomTip")); }
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoadingData.Initialize")); }
+			ScriptFunction SetDataFields() { return mSetDataFields ? mSetDataFields : (mSetDataFields = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrLoadingData.SetDataFields")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(ScriptString) CTFTips() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 204); }
@@ -33,15 +50,15 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = GameIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98606], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRandomTip, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	void Initialize()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98609], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
 	void SetDataFields()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[98610], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetDataFields, cast(void*)0, cast(void*)0);
 	}
 }

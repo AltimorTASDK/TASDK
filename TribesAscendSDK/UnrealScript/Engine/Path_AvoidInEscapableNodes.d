@@ -7,6 +7,23 @@ import UnrealScript.Engine.PathConstraint;
 extern(C++) interface Path_AvoidInEscapableNodes : PathConstraint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_AvoidInEscapableNodes")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCachePawnReacFlags;
+			ScriptFunction mDontGetStuck;
+			ScriptFunction mRecycle;
+		}
+		public @property static final
+		{
+			ScriptFunction CachePawnReacFlags() { return mCachePawnReacFlags ? mCachePawnReacFlags : (mCachePawnReacFlags = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.CachePawnReacFlags")); }
+			ScriptFunction DontGetStuck() { return mDontGetStuck ? mDontGetStuck : (mDontGetStuck = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.DontGetStuck")); }
+			ScriptFunction Recycle() { return mRecycle ? mRecycle : (mRecycle = ScriptObject.Find!(ScriptFunction)("Function Engine.Path_AvoidInEscapableNodes.Recycle")); }
+		}
+	}
 	@property final auto ref
 	{
 		int MoveFlags() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }
@@ -20,18 +37,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23966], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CachePawnReacFlags, params.ptr, cast(void*)0);
 	}
-	bool DontGetStuck(Pawn P)
+	static bool DontGetStuck(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23968], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.DontGetStuck, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Recycle()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[23972], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Recycle, cast(void*)0, cast(void*)0);
 	}
 }

@@ -7,10 +7,14 @@ import UnrealScript.Engine.SeqAct_LevelStreamingBase;
 extern(C++) interface SeqAct_MultiLevelStreaming : SeqAct_LevelStreamingBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_MultiLevelStreaming")); }
 	struct LevelStreamingNameCombo
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.SeqAct_MultiLevelStreaming.LevelStreamingNameCombo")); }
 		@property final auto ref
 		{
 			ScriptName LevelName() { return *cast(ScriptName*)(cast(size_t)&this + 4); }

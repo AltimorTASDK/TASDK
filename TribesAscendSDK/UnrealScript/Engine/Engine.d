@@ -22,6 +22,63 @@ import UnrealScript.Engine.Font;
 extern(C++) interface Engine : Subsystem
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Engine")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsGame;
+			ScriptFunction mIsEditor;
+			ScriptFunction mGetSmallFont;
+			ScriptFunction mGetAudioDevice;
+			ScriptFunction mIsSplitScreen;
+			ScriptFunction mGetTinyFont;
+			ScriptFunction mGetMediumFont;
+			ScriptFunction mGetLargeFont;
+			ScriptFunction mGetCurrentWorldInfo;
+			ScriptFunction mGetBuildDate;
+			ScriptFunction mGetSubtitleFont;
+			ScriptFunction mGetAdditionalFont;
+			ScriptFunction mGetLastMovieName;
+			ScriptFunction mPlayLoadMapMovie;
+			ScriptFunction mStopMovie;
+			ScriptFunction mRemoveAllOverlays;
+			ScriptFunction mAddOverlay;
+			ScriptFunction mAddOverlayWrapped;
+			ScriptFunction mGetEngine;
+			ScriptFunction mGetWorldPostProcessChain;
+			ScriptFunction mAddTextureStreamingSlaveLoc;
+			ScriptFunction mBasicSaveObject;
+			ScriptFunction mBasicLoadObject;
+		}
+		public @property static final
+		{
+			ScriptFunction IsGame() { return mIsGame ? mIsGame : (mIsGame = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.IsGame")); }
+			ScriptFunction IsEditor() { return mIsEditor ? mIsEditor : (mIsEditor = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.IsEditor")); }
+			ScriptFunction GetSmallFont() { return mGetSmallFont ? mGetSmallFont : (mGetSmallFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetSmallFont")); }
+			ScriptFunction GetAudioDevice() { return mGetAudioDevice ? mGetAudioDevice : (mGetAudioDevice = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetAudioDevice")); }
+			ScriptFunction IsSplitScreen() { return mIsSplitScreen ? mIsSplitScreen : (mIsSplitScreen = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.IsSplitScreen")); }
+			ScriptFunction GetTinyFont() { return mGetTinyFont ? mGetTinyFont : (mGetTinyFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetTinyFont")); }
+			ScriptFunction GetMediumFont() { return mGetMediumFont ? mGetMediumFont : (mGetMediumFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetMediumFont")); }
+			ScriptFunction GetLargeFont() { return mGetLargeFont ? mGetLargeFont : (mGetLargeFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetLargeFont")); }
+			ScriptFunction GetCurrentWorldInfo() { return mGetCurrentWorldInfo ? mGetCurrentWorldInfo : (mGetCurrentWorldInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetCurrentWorldInfo")); }
+			ScriptFunction GetBuildDate() { return mGetBuildDate ? mGetBuildDate : (mGetBuildDate = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetBuildDate")); }
+			ScriptFunction GetSubtitleFont() { return mGetSubtitleFont ? mGetSubtitleFont : (mGetSubtitleFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetSubtitleFont")); }
+			ScriptFunction GetAdditionalFont() { return mGetAdditionalFont ? mGetAdditionalFont : (mGetAdditionalFont = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetAdditionalFont")); }
+			ScriptFunction GetLastMovieName() { return mGetLastMovieName ? mGetLastMovieName : (mGetLastMovieName = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetLastMovieName")); }
+			ScriptFunction PlayLoadMapMovie() { return mPlayLoadMapMovie ? mPlayLoadMapMovie : (mPlayLoadMapMovie = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.PlayLoadMapMovie")); }
+			ScriptFunction StopMovie() { return mStopMovie ? mStopMovie : (mStopMovie = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.StopMovie")); }
+			ScriptFunction RemoveAllOverlays() { return mRemoveAllOverlays ? mRemoveAllOverlays : (mRemoveAllOverlays = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.RemoveAllOverlays")); }
+			ScriptFunction AddOverlay() { return mAddOverlay ? mAddOverlay : (mAddOverlay = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.AddOverlay")); }
+			ScriptFunction AddOverlayWrapped() { return mAddOverlayWrapped ? mAddOverlayWrapped : (mAddOverlayWrapped = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.AddOverlayWrapped")); }
+			ScriptFunction GetEngine() { return mGetEngine ? mGetEngine : (mGetEngine = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetEngine")); }
+			ScriptFunction GetWorldPostProcessChain() { return mGetWorldPostProcessChain ? mGetWorldPostProcessChain : (mGetWorldPostProcessChain = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.GetWorldPostProcessChain")); }
+			ScriptFunction AddTextureStreamingSlaveLoc() { return mAddTextureStreamingSlaveLoc ? mAddTextureStreamingSlaveLoc : (mAddTextureStreamingSlaveLoc = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.AddTextureStreamingSlaveLoc")); }
+			ScriptFunction BasicSaveObject() { return mBasicSaveObject ? mBasicSaveObject : (mBasicSaveObject = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.BasicSaveObject")); }
+			ScriptFunction BasicLoadObject() { return mBasicLoadObject ? mBasicLoadObject : (mBasicLoadObject = ScriptObject.Find!(ScriptFunction)("Function Engine.Engine.BasicLoadObject")); }
+		}
+	}
 	enum ETransitionType : ubyte
 	{
 		TT_None = 0,
@@ -36,6 +93,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Engine.StatColorMapping")); }
 		@property final
 		{
 			auto ref
@@ -51,6 +110,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Engine.DropNoteInfo")); }
 		@property final auto ref
 		{
 			ScriptString Comment() { return *cast(ScriptString*)(cast(size_t)&this + 24); }
@@ -62,6 +123,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.Engine.StatColorMapEntry")); }
 		@property final auto ref
 		{
 			UObject.Color Out() { return *cast(UObject.Color*)(cast(size_t)&this + 4); }
@@ -332,117 +395,117 @@ public extern(D):
 		bool UseProcBuildingLODTextureCropping(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 664) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 664) &= ~0x1; } return val; }
 	}
 final:
-	bool IsGame()
+	static bool IsGame()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7287], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsGame, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool IsEditor()
+	static bool IsEditor()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[7300], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsEditor, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	Font GetSmallFont()
+	static Font GetSmallFont()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9330], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetSmallFont, params.ptr, cast(void*)0);
 		return *cast(Font*)params.ptr;
 	}
-	AudioDevice GetAudioDevice()
+	static AudioDevice GetAudioDevice()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9508], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetAudioDevice, params.ptr, cast(void*)0);
 		return *cast(AudioDevice*)params.ptr;
 	}
-	bool IsSplitScreen()
+	static bool IsSplitScreen()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12288], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.IsSplitScreen, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	Font GetTinyFont()
+	static Font GetTinyFont()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13765], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetTinyFont, params.ptr, cast(void*)0);
 		return *cast(Font*)params.ptr;
 	}
-	Font GetMediumFont()
+	static Font GetMediumFont()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13867], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetMediumFont, params.ptr, cast(void*)0);
 		return *cast(Font*)params.ptr;
 	}
-	Font GetLargeFont()
+	static Font GetLargeFont()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13869], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetLargeFont, params.ptr, cast(void*)0);
 		return *cast(Font*)params.ptr;
 	}
-	WorldInfo GetCurrentWorldInfo()
+	static WorldInfo GetCurrentWorldInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15534], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetCurrentWorldInfo, params.ptr, cast(void*)0);
 		return *cast(WorldInfo*)params.ptr;
 	}
-	ScriptString GetBuildDate()
+	static ScriptString GetBuildDate()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15536], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetBuildDate, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	Font GetSubtitleFont()
+	static Font GetSubtitleFont()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15538], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetSubtitleFont, params.ptr, cast(void*)0);
 		return *cast(Font*)params.ptr;
 	}
-	Font GetAdditionalFont(int AdditionalFontIndex)
+	static Font GetAdditionalFont(int AdditionalFontIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = AdditionalFontIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15540], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetAdditionalFont, params.ptr, cast(void*)0);
 		return *cast(Font*)&params[4];
 	}
-	ScriptString GetLastMovieName()
+	static ScriptString GetLastMovieName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15543], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetLastMovieName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool PlayLoadMapMovie()
+	static bool PlayLoadMapMovie()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15545], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.PlayLoadMapMovie, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void StopMovie(bool bDelayStopUntilGameHasRendered)
+	static void StopMovie(bool bDelayStopUntilGameHasRendered)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDelayStopUntilGameHasRendered;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15547], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.StopMovie, params.ptr, cast(void*)0);
 	}
-	void RemoveAllOverlays()
+	static void RemoveAllOverlays()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15549], cast(void*)0, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.RemoveAllOverlays, cast(void*)0, cast(void*)0);
 	}
-	void AddOverlay(Font pFont, ScriptString Text, float X, float Y, float ScaleX, float ScaleY, bool bIsCentered)
+	static void AddOverlay(Font pFont, ScriptString Text, float X, float Y, float ScaleX, float ScaleY, bool bIsCentered)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -453,9 +516,9 @@ final:
 		*cast(float*)&params[24] = ScaleX;
 		*cast(float*)&params[28] = ScaleY;
 		*cast(bool*)&params[32] = bIsCentered;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15550], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AddOverlay, params.ptr, cast(void*)0);
 	}
-	void AddOverlayWrapped(Font pFont, ScriptString Text, float X, float Y, float ScaleX, float ScaleY, float WrapWidth)
+	static void AddOverlayWrapped(Font pFont, ScriptString Text, float X, float Y, float ScaleX, float ScaleY, float WrapWidth)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -466,20 +529,20 @@ final:
 		*cast(float*)&params[24] = ScaleX;
 		*cast(float*)&params[28] = ScaleY;
 		*cast(float*)&params[32] = WrapWidth;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15558], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.AddOverlayWrapped, params.ptr, cast(void*)0);
 	}
-	Engine GetEngine()
+	static Engine GetEngine()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15566], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetEngine, params.ptr, cast(void*)0);
 		return *cast(Engine*)params.ptr;
 	}
-	PostProcessChain GetWorldPostProcessChain()
+	static PostProcessChain GetWorldPostProcessChain()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15568], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetWorldPostProcessChain, params.ptr, cast(void*)0);
 		return *cast(PostProcessChain*)params.ptr;
 	}
 	void AddTextureStreamingSlaveLoc(Vector InLoc)
@@ -487,9 +550,9 @@ final:
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = InLoc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15570], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddTextureStreamingSlaveLoc, params.ptr, cast(void*)0);
 	}
-	bool BasicSaveObject(UObject Obj, ScriptString PathName, bool bIsSaveGame, int Version)
+	static bool BasicSaveObject(UObject Obj, ScriptString PathName, bool bIsSaveGame, int Version)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -497,10 +560,10 @@ final:
 		*cast(ScriptString*)&params[4] = PathName;
 		*cast(bool*)&params[16] = bIsSaveGame;
 		*cast(int*)&params[20] = Version;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15572], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.BasicSaveObject, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool BasicLoadObject(UObject Obj, ScriptString PathName, bool bIsSaveGame, int Version)
+	static bool BasicLoadObject(UObject Obj, ScriptString PathName, bool bIsSaveGame, int Version)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -508,7 +571,7 @@ final:
 		*cast(ScriptString*)&params[4] = PathName;
 		*cast(bool*)&params[16] = bIsSaveGame;
 		*cast(int*)&params[20] = Version;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15578], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.BasicLoadObject, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 }

@@ -11,6 +11,8 @@ import UnrealScript.Engine.EngineTypes;
 extern(C++) interface LandscapeComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LandscapeComponent")); }
 	enum ETerrainComponentNeighbors : ubyte
 	{
 		TCN_NW = 0,
@@ -27,6 +29,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LandscapeComponent.LandscapeComponentAlphaInfo")); }
 		@property final auto ref
 		{
 			ScriptArray!(ubyte) AlphaValues() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 4); }
@@ -37,6 +41,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[10];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LandscapeComponent.WeightmapLayerAllocationInfo")); }
 		@property final auto ref
 		{
 			ubyte WeightmapTextureChannel() { return *cast(ubyte*)(cast(size_t)&this + 9); }

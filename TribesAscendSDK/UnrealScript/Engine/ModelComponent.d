@@ -7,6 +7,8 @@ import UnrealScript.Engine.PrimitiveComponent;
 extern(C++) interface ModelComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ModelComponent")); }
 	@property final auto ref
 	{
 		ScriptArray!(UObject.Pointer) Nodes() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 500); }

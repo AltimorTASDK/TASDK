@@ -30,10 +30,117 @@ import UnrealScript.UTGame.UTPlayerReplicationInfo;
 extern(C++) interface UTGameObjective : UDKGameObjective
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameObjective")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mUsedBy;
+			ScriptFunction mGetAutoObjectiveActor;
+			ScriptFunction mGetFlag;
+			ScriptFunction mShootable;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mIsStandalone;
+			ScriptFunction mGetHUDOffset;
+			ScriptFunction mGetLocationMessageIndex;
+			ScriptFunction mGetLocationSpeechFor;
+			ScriptFunction mDestroyed;
+			ScriptFunction mAddTeamStaticMesh;
+			ScriptFunction mUpdateTeamStaticMeshes;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mFindNearestFriendlyNode;
+			ScriptFunction mCalcCamera;
+			ScriptFunction mHighlightOnMinimap;
+			ScriptFunction mRenderMinimap;
+			ScriptFunction mRenderExtraDetails;
+			ScriptFunction mDrawMapSelection;
+			ScriptFunction mIsCritical;
+			ScriptFunction mIsNeutral;
+			ScriptFunction mIsActive;
+			ScriptFunction mTellBotHowToHeal;
+			ScriptFunction mTeamLink;
+			ScriptFunction mNeedsHealing;
+			ScriptFunction mCanDoubleJump;
+			ScriptFunction mBotNearObjective;
+			ScriptFunction mNearObjective;
+			ScriptFunction mGetHumanReadableName;
+			ScriptFunction mTellBotHowToDisable;
+			ScriptFunction mGetNumDefenders;
+			ScriptFunction mBetterObjectiveThan;
+			ScriptFunction mReset;
+			ScriptFunction mClientReset;
+			ScriptFunction mAddScorer;
+			ScriptFunction mShareScore;
+			ScriptFunction mSetTeam;
+			ScriptFunction mFindGoodEndView;
+			ScriptFunction mTeleportTo;
+			ScriptFunction mValidSpawnPointFor;
+			ScriptFunction mSetAlarm;
+			ScriptFunction mTriggerFlagEvent;
+			ScriptFunction mMarkShootSpotsFor;
+			ScriptFunction mReachedParkingSpot;
+			ScriptFunction mFlagUpdated;
+			ScriptFunction mOnFlagComesHome;
+			ScriptFunction mOnFlagTaken;
+		}
+		public @property static final
+		{
+			ScriptFunction UsedBy() { return mUsedBy ? mUsedBy : (mUsedBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.UsedBy")); }
+			ScriptFunction GetAutoObjectiveActor() { return mGetAutoObjectiveActor ? mGetAutoObjectiveActor : (mGetAutoObjectiveActor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetAutoObjectiveActor")); }
+			ScriptFunction GetFlag() { return mGetFlag ? mGetFlag : (mGetFlag = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetFlag")); }
+			ScriptFunction Shootable() { return mShootable ? mShootable : (mShootable = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Shootable")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.PostBeginPlay")); }
+			ScriptFunction IsStandalone() { return mIsStandalone ? mIsStandalone : (mIsStandalone = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsStandalone")); }
+			ScriptFunction GetHUDOffset() { return mGetHUDOffset ? mGetHUDOffset : (mGetHUDOffset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetHUDOffset")); }
+			ScriptFunction GetLocationMessageIndex() { return mGetLocationMessageIndex ? mGetLocationMessageIndex : (mGetLocationMessageIndex = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetLocationMessageIndex")); }
+			ScriptFunction GetLocationSpeechFor() { return mGetLocationSpeechFor ? mGetLocationSpeechFor : (mGetLocationSpeechFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetLocationSpeechFor")); }
+			ScriptFunction Destroyed() { return mDestroyed ? mDestroyed : (mDestroyed = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Destroyed")); }
+			ScriptFunction AddTeamStaticMesh() { return mAddTeamStaticMesh ? mAddTeamStaticMesh : (mAddTeamStaticMesh = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.AddTeamStaticMesh")); }
+			ScriptFunction UpdateTeamStaticMeshes() { return mUpdateTeamStaticMeshes ? mUpdateTeamStaticMeshes : (mUpdateTeamStaticMeshes = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.UpdateTeamStaticMeshes")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ReplicatedEvent")); }
+			ScriptFunction FindNearestFriendlyNode() { return mFindNearestFriendlyNode ? mFindNearestFriendlyNode : (mFindNearestFriendlyNode = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FindNearestFriendlyNode")); }
+			ScriptFunction CalcCamera() { return mCalcCamera ? mCalcCamera : (mCalcCamera = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.CalcCamera")); }
+			ScriptFunction HighlightOnMinimap() { return mHighlightOnMinimap ? mHighlightOnMinimap : (mHighlightOnMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.HighlightOnMinimap")); }
+			ScriptFunction RenderMinimap() { return mRenderMinimap ? mRenderMinimap : (mRenderMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.RenderMinimap")); }
+			ScriptFunction RenderExtraDetails() { return mRenderExtraDetails ? mRenderExtraDetails : (mRenderExtraDetails = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.RenderExtraDetails")); }
+			ScriptFunction DrawMapSelection() { return mDrawMapSelection ? mDrawMapSelection : (mDrawMapSelection = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.DrawMapSelection")); }
+			ScriptFunction IsCritical() { return mIsCritical ? mIsCritical : (mIsCritical = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsCritical")); }
+			ScriptFunction IsNeutral() { return mIsNeutral ? mIsNeutral : (mIsNeutral = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsNeutral")); }
+			ScriptFunction IsActive() { return mIsActive ? mIsActive : (mIsActive = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.IsActive")); }
+			ScriptFunction TellBotHowToHeal() { return mTellBotHowToHeal ? mTellBotHowToHeal : (mTellBotHowToHeal = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TellBotHowToHeal")); }
+			ScriptFunction TeamLink() { return mTeamLink ? mTeamLink : (mTeamLink = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TeamLink")); }
+			ScriptFunction NeedsHealing() { return mNeedsHealing ? mNeedsHealing : (mNeedsHealing = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.NeedsHealing")); }
+			ScriptFunction CanDoubleJump() { return mCanDoubleJump ? mCanDoubleJump : (mCanDoubleJump = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.CanDoubleJump")); }
+			ScriptFunction BotNearObjective() { return mBotNearObjective ? mBotNearObjective : (mBotNearObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.BotNearObjective")); }
+			ScriptFunction NearObjective() { return mNearObjective ? mNearObjective : (mNearObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.NearObjective")); }
+			ScriptFunction GetHumanReadableName() { return mGetHumanReadableName ? mGetHumanReadableName : (mGetHumanReadableName = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetHumanReadableName")); }
+			ScriptFunction TellBotHowToDisable() { return mTellBotHowToDisable ? mTellBotHowToDisable : (mTellBotHowToDisable = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TellBotHowToDisable")); }
+			ScriptFunction GetNumDefenders() { return mGetNumDefenders ? mGetNumDefenders : (mGetNumDefenders = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.GetNumDefenders")); }
+			ScriptFunction BetterObjectiveThan() { return mBetterObjectiveThan ? mBetterObjectiveThan : (mBetterObjectiveThan = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.BetterObjectiveThan")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.Reset")); }
+			ScriptFunction ClientReset() { return mClientReset ? mClientReset : (mClientReset = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ClientReset")); }
+			ScriptFunction AddScorer() { return mAddScorer ? mAddScorer : (mAddScorer = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.AddScorer")); }
+			ScriptFunction ShareScore() { return mShareScore ? mShareScore : (mShareScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ShareScore")); }
+			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.SetTeam")); }
+			ScriptFunction FindGoodEndView() { return mFindGoodEndView ? mFindGoodEndView : (mFindGoodEndView = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FindGoodEndView")); }
+			ScriptFunction TeleportTo() { return mTeleportTo ? mTeleportTo : (mTeleportTo = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TeleportTo")); }
+			ScriptFunction ValidSpawnPointFor() { return mValidSpawnPointFor ? mValidSpawnPointFor : (mValidSpawnPointFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ValidSpawnPointFor")); }
+			ScriptFunction SetAlarm() { return mSetAlarm ? mSetAlarm : (mSetAlarm = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.SetAlarm")); }
+			ScriptFunction TriggerFlagEvent() { return mTriggerFlagEvent ? mTriggerFlagEvent : (mTriggerFlagEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.TriggerFlagEvent")); }
+			ScriptFunction MarkShootSpotsFor() { return mMarkShootSpotsFor ? mMarkShootSpotsFor : (mMarkShootSpotsFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.MarkShootSpotsFor")); }
+			ScriptFunction ReachedParkingSpot() { return mReachedParkingSpot ? mReachedParkingSpot : (mReachedParkingSpot = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.ReachedParkingSpot")); }
+			ScriptFunction FlagUpdated() { return mFlagUpdated ? mFlagUpdated : (mFlagUpdated = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.FlagUpdated")); }
+			ScriptFunction OnFlagComesHome() { return mOnFlagComesHome ? mOnFlagComesHome : (mOnFlagComesHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.OnFlagComesHome")); }
+			ScriptFunction OnFlagTaken() { return mOnFlagTaken ? mOnFlagTaken : (mOnFlagTaken = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameObjective.OnFlagTaken")); }
+		}
+	}
 	struct ScorerRecord
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UTGame.UTGameObjective.ScorerRecord")); }
 		@property final auto ref
 		{
 			float Pct() { return *cast(float*)(cast(size_t)&this + 4); }
@@ -106,7 +213,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36480], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UsedBy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	Actor GetAutoObjectiveActor(UTPlayerController PC)
@@ -114,32 +221,32 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36543], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetAutoObjectiveActor, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
 	UTCarriedObject GetFlag()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[42577], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetFlag, params.ptr, cast(void*)0);
 		return *cast(UTCarriedObject*)params.ptr;
 	}
 	bool Shootable()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43024], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Shootable, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44331], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool IsStandalone()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44338], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsStandalone, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	Vector GetHUDOffset(PlayerController PC, Canvas pCanvas)
@@ -148,7 +255,7 @@ final:
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(Canvas*)&params[4] = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44340], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHUDOffset, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 	int GetLocationMessageIndex(UTBot B, Pawn StatusPawn)
@@ -157,7 +264,7 @@ final:
 		params[] = 0;
 		*cast(UTBot*)params.ptr = B;
 		*cast(Pawn*)&params[4] = StatusPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44345], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	SoundNodeWave GetLocationSpeechFor(PlayerController PC, int LocationSpeechOffset, int MessageIndex)
@@ -167,37 +274,37 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(int*)&params[4] = LocationSpeechOffset;
 		*cast(int*)&params[8] = MessageIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44349], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationSpeechFor, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
 	void Destroyed()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44355], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
 	void AddTeamStaticMesh(UTTeamStaticMesh SMesh)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(UTTeamStaticMesh*)params.ptr = SMesh;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44357], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddTeamStaticMesh, params.ptr, cast(void*)0);
 	}
 	void UpdateTeamStaticMeshes()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44359], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTeamStaticMeshes, cast(void*)0, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44361], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	UTGameObjective FindNearestFriendlyNode(int TeamIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44363], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindNearestFriendlyNode, params.ptr, cast(void*)0);
 		return *cast(UTGameObjective*)&params[4];
 	}
 	bool CalcCamera(float fDeltaTime, Vector* out_CamLoc, Rotator* out_CamRot, float* out_FOV)
@@ -208,7 +315,7 @@ final:
 		*cast(Vector*)&params[4] = *out_CamLoc;
 		*cast(Rotator*)&params[16] = *out_CamRot;
 		*cast(float*)&params[28] = *out_FOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44367], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
 		*out_CamLoc = *cast(Vector*)&params[4];
 		*out_CamRot = *cast(Rotator*)&params[16];
 		*out_FOV = *cast(float*)&params[28];
@@ -219,7 +326,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44375], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HighlightOnMinimap, params.ptr, cast(void*)0);
 	}
 	void RenderMinimap(UTMapInfo MP, Canvas pCanvas, UTPlayerController PlayerOwner, float ColorPercent)
 	{
@@ -229,7 +336,7 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(UTPlayerController*)&params[8] = PlayerOwner;
 		*cast(float*)&params[12] = ColorPercent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44377], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderMinimap, params.ptr, cast(void*)0);
 	}
 	void RenderExtraDetails(UTMapInfo MP, Canvas pCanvas, UTPlayerController PlayerOwner, float ColorPercent, bool bSelected)
 	{
@@ -240,7 +347,7 @@ final:
 		*cast(UTPlayerController*)&params[8] = PlayerOwner;
 		*cast(float*)&params[12] = ColorPercent;
 		*cast(bool*)&params[16] = bSelected;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44382], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderExtraDetails, params.ptr, cast(void*)0);
 	}
 	void DrawMapSelection(UTMapInfo MP, Canvas pCanvas, UTPlayerController PlayerOwner)
 	{
@@ -249,27 +356,27 @@ final:
 		*cast(UTMapInfo*)params.ptr = MP;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(UTPlayerController*)&params[8] = PlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44388], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMapSelection, params.ptr, cast(void*)0);
 	}
 	bool IsCritical()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44393], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsCritical, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsNeutral()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44395], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsNeutral, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsActive()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44397], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsActive, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool TellBotHowToHeal(UTBot B)
@@ -277,7 +384,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44399], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TellBotHowToHeal, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool TeamLink(int TeamNum)
@@ -285,14 +392,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44402], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeamLink, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NeedsHealing()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44405], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsHealing, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool CanDoubleJump(Pawn Other)
@@ -300,7 +407,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44407], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanDoubleJump, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool BotNearObjective(AIController C)
@@ -308,7 +415,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(AIController*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44410], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BotNearObjective, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool NearObjective(Pawn P)
@@ -316,14 +423,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44414], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NearObjective, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	ScriptString GetHumanReadableName()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44418], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetHumanReadableName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 	bool TellBotHowToDisable(UTBot B)
@@ -331,14 +438,14 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44420], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TellBotHowToDisable, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	int GetNumDefenders()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44425], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumDefenders, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	bool BetterObjectiveThan(UTGameObjective Best, ubyte DesiredTeamNum, ubyte RequesterTeamNum)
@@ -348,16 +455,16 @@ final:
 		*cast(UTGameObjective*)params.ptr = Best;
 		params[4] = DesiredTeamNum;
 		params[5] = RequesterTeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44429], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BetterObjectiveThan, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44434], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void ClientReset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44435], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReset, cast(void*)0, cast(void*)0);
 	}
 	void AddScorer(UTPlayerReplicationInfo PRI, float Pct)
 	{
@@ -365,7 +472,7 @@ final:
 		params[] = 0;
 		*cast(UTPlayerReplicationInfo*)params.ptr = PRI;
 		*cast(float*)&params[4] = Pct;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddScorer, params.ptr, cast(void*)0);
 	}
 	void ShareScore(int TotalScore, ScriptString EventDesc)
 	{
@@ -373,14 +480,14 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = TotalScore;
 		*cast(ScriptString*)&params[4] = EventDesc;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44441], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShareScore, params.ptr, cast(void*)0);
 	}
 	void SetTeam(ubyte TeamIndex)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
 	void FindGoodEndView(PlayerController PC, Rotator* GoodRotation)
 	{
@@ -388,7 +495,7 @@ final:
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(Rotator*)&params[4] = *GoodRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44448], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
 		*GoodRotation = *cast(Rotator*)&params[4];
 	}
 	bool TeleportTo(UTPawn Traveler)
@@ -396,7 +503,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = Traveler;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44458], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TeleportTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool ValidSpawnPointFor(ubyte TeamIndex)
@@ -404,7 +511,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		params[0] = TeamIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44461], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidSpawnPointFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void SetAlarm(bool bNowOn)
@@ -412,7 +519,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowOn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44464], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetAlarm, params.ptr, cast(void*)0);
 	}
 	void TriggerFlagEvent(ScriptName EventType, Controller EventInstigator)
 	{
@@ -420,21 +527,21 @@ final:
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = EventType;
 		*cast(Controller*)&params[8] = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44466], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TriggerFlagEvent, params.ptr, cast(void*)0);
 	}
 	void MarkShootSpotsFor(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44472], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.MarkShootSpotsFor, params.ptr, cast(void*)0);
 	}
 	bool ReachedParkingSpot(Pawn P)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44476], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReachedParkingSpot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void FlagUpdated(bool bFlagHome)
@@ -442,14 +549,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bFlagHome;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44480], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagUpdated, params.ptr, cast(void*)0);
 	}
 	void OnFlagComesHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44482], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFlagComesHome, cast(void*)0, cast(void*)0);
 	}
 	void OnFlagTaken()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[44483], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFlagTaken, cast(void*)0, cast(void*)0);
 	}
 }

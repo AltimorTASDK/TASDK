@@ -7,6 +7,8 @@ import UnrealScript.Engine.SkelControl_CCD_IK;
 extern(C++) interface TrSkelControlFootPlacement_CCD : SkelControl_CCD_IK
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControlFootPlacement_CCD")); }
 	@property final
 	{
 		auto ref

@@ -1,10 +1,13 @@
 module UnrealScript.IpDrv.TcpNetDriver;
 
+import ScriptClasses;
 import UnrealScript.Engine.NetDriver;
 
 extern(C++) interface TcpNetDriver : NetDriver
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.TcpNetDriver")); }
 	@property final
 	{
 		bool AllowPlayerPortUnreach() { return (*cast(uint*)(cast(size_t)cast(void*)this + 404) & 0x1) != 0; }

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ShadowMap2D;
 
+import ScriptClasses;
 import UnrealScript.Core.UObject;
 import UnrealScript.Engine.ShadowMapTexture2D;
 
 extern(C++) interface ShadowMap2D : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ShadowMap2D")); }
 	@property final
 	{
 		auto ref

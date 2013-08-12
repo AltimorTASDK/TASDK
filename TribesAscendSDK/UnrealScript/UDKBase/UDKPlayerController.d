@@ -12,10 +12,49 @@ import UnrealScript.Engine.SoundNodeWave;
 extern(C++) interface UDKPlayerController : GamePlayerController
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPlayerController")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetGamma;
+			ScriptFunction mSetHardwarePhysicsEnabled;
+			ScriptFunction mIsKeyboardAvailable;
+			ScriptFunction mIsMouseAvailable;
+			ScriptFunction mRemoveCameraEffect;
+			ScriptFunction mClientSpawnCameraEffect;
+			ScriptFunction mClearCameraEffect;
+			ScriptFunction mGetTargetAdhesionFrictionTarget;
+			ScriptFunction mIsControllerTiltActive;
+			ScriptFunction mSetControllerTiltDesiredIfAvailable;
+			ScriptFunction mSetControllerTiltActive;
+			ScriptFunction mSetOnlyUseControllerTiltInput;
+			ScriptFunction mSetUseTiltForwardAndBack;
+		}
+		public @property static final
+		{
+			ScriptFunction SetGamma() { return mSetGamma ? mSetGamma : (mSetGamma = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetGamma")); }
+			ScriptFunction SetHardwarePhysicsEnabled() { return mSetHardwarePhysicsEnabled ? mSetHardwarePhysicsEnabled : (mSetHardwarePhysicsEnabled = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetHardwarePhysicsEnabled")); }
+			ScriptFunction IsKeyboardAvailable() { return mIsKeyboardAvailable ? mIsKeyboardAvailable : (mIsKeyboardAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsKeyboardAvailable")); }
+			ScriptFunction IsMouseAvailable() { return mIsMouseAvailable ? mIsMouseAvailable : (mIsMouseAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsMouseAvailable")); }
+			ScriptFunction RemoveCameraEffect() { return mRemoveCameraEffect ? mRemoveCameraEffect : (mRemoveCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.RemoveCameraEffect")); }
+			ScriptFunction ClientSpawnCameraEffect() { return mClientSpawnCameraEffect ? mClientSpawnCameraEffect : (mClientSpawnCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.ClientSpawnCameraEffect")); }
+			ScriptFunction ClearCameraEffect() { return mClearCameraEffect ? mClearCameraEffect : (mClearCameraEffect = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.ClearCameraEffect")); }
+			ScriptFunction GetTargetAdhesionFrictionTarget() { return mGetTargetAdhesionFrictionTarget ? mGetTargetAdhesionFrictionTarget : (mGetTargetAdhesionFrictionTarget = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.GetTargetAdhesionFrictionTarget")); }
+			ScriptFunction IsControllerTiltActive() { return mIsControllerTiltActive ? mIsControllerTiltActive : (mIsControllerTiltActive = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.IsControllerTiltActive")); }
+			ScriptFunction SetControllerTiltDesiredIfAvailable() { return mSetControllerTiltDesiredIfAvailable ? mSetControllerTiltDesiredIfAvailable : (mSetControllerTiltDesiredIfAvailable = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetControllerTiltDesiredIfAvailable")); }
+			ScriptFunction SetControllerTiltActive() { return mSetControllerTiltActive ? mSetControllerTiltActive : (mSetControllerTiltActive = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetControllerTiltActive")); }
+			ScriptFunction SetOnlyUseControllerTiltInput() { return mSetOnlyUseControllerTiltInput ? mSetOnlyUseControllerTiltInput : (mSetOnlyUseControllerTiltInput = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetOnlyUseControllerTiltInput")); }
+			ScriptFunction SetUseTiltForwardAndBack() { return mSetUseTiltForwardAndBack ? mSetUseTiltForwardAndBack : (mSetUseTiltForwardAndBack = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPlayerController.SetUseTiltForwardAndBack")); }
+		}
+	}
 	struct ObjectiveAnnouncementInfo
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKPlayerController.ObjectiveAnnouncementInfo")); }
 		@property final auto ref
 		{
 			ScriptString AnnouncementText() { return *cast(ScriptString*)(cast(size_t)&this + 4); }
@@ -53,27 +92,27 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = GammaValue;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35252], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetGamma, params.ptr, cast(void*)0);
 	}
 	void SetHardwarePhysicsEnabled(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35254], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHardwarePhysicsEnabled, params.ptr, cast(void*)0);
 	}
 	bool IsKeyboardAvailable()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35256], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsKeyboardAvailable, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsMouseAvailable()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35258], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsMouseAvailable, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void RemoveCameraEffect(UDKEmitCameraEffect CamEmitter)
@@ -81,18 +120,18 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(UDKEmitCameraEffect*)params.ptr = CamEmitter;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35260], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCameraEffect, params.ptr, cast(void*)0);
 	}
 	void ClientSpawnCameraEffect(ScriptClass CameraEffectClass)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = CameraEffectClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35262], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSpawnCameraEffect, params.ptr, cast(void*)0);
 	}
 	void ClearCameraEffect()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35266], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCameraEffect, cast(void*)0, cast(void*)0);
 	}
 	Pawn GetTargetAdhesionFrictionTarget(float MaxDistance, Vector* CamLoc, Rotator* CamRot)
 	{
@@ -101,7 +140,7 @@ final:
 		*cast(float*)params.ptr = MaxDistance;
 		*cast(Vector*)&params[4] = *CamLoc;
 		*cast(Rotator*)&params[16] = *CamRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35267], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetAdhesionFrictionTarget, params.ptr, cast(void*)0);
 		*CamLoc = *cast(Vector*)&params[4];
 		*CamRot = *cast(Rotator*)&params[16];
 		return *cast(Pawn*)&params[28];
@@ -110,7 +149,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35272], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsControllerTiltActive, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetControllerTiltDesiredIfAvailable(bool bActive)
@@ -118,27 +157,27 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35274], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetControllerTiltDesiredIfAvailable, params.ptr, cast(void*)0);
 	}
 	void SetControllerTiltActive(bool bActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35276], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetControllerTiltActive, params.ptr, cast(void*)0);
 	}
 	void SetOnlyUseControllerTiltInput(bool bActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35278], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOnlyUseControllerTiltInput, params.ptr, cast(void*)0);
 	}
 	void SetUseTiltForwardAndBack(bool bActive)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bActive;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35280], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetUseTiltForwardAndBack, params.ptr, cast(void*)0);
 	}
 }

@@ -8,10 +8,14 @@ import UnrealScript.Engine.ParticleModuleEventSendToGame;
 extern(C++) interface ParticleModuleEventGenerator : ParticleModuleEventBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleEventGenerator")); }
 	struct ParticleEvent_GenerateInfo
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleModuleEventGenerator.ParticleEvent_GenerateInfo")); }
 		@property final
 		{
 			auto ref

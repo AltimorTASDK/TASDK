@@ -1,10 +1,13 @@
 module UnrealScript.Engine.ReverbVolume;
 
+import ScriptClasses;
 import UnrealScript.Engine.Volume;
 
 extern(C++) interface ReverbVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReverbVolume")); }
 	enum ReverbPreset : ubyte
 	{
 		REVERB_Default = 0,
@@ -36,6 +39,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[36];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ReverbVolume.InteriorSettings")); }
 		@property final
 		{
 			auto ref
@@ -57,6 +62,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ReverbVolume.ReverbSettings")); }
 		@property final
 		{
 			auto ref

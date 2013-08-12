@@ -7,6 +7,29 @@ import UnrealScript.Engine.Settings;
 extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineProfileSettings")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetProfileSettingDefaultId;
+			ScriptFunction mGetProfileSettingDefaultInt;
+			ScriptFunction mGetProfileSettingDefaultFloat;
+			ScriptFunction mSetToDefaults;
+			ScriptFunction mAppendVersionToReadIds;
+			ScriptFunction mModifyAvailableProfileSettings;
+		}
+		public @property static final
+		{
+			ScriptFunction GetProfileSettingDefaultId() { return mGetProfileSettingDefaultId ? mGetProfileSettingDefaultId : (mGetProfileSettingDefaultId = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultId")); }
+			ScriptFunction GetProfileSettingDefaultInt() { return mGetProfileSettingDefaultInt ? mGetProfileSettingDefaultInt : (mGetProfileSettingDefaultInt = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultInt")); }
+			ScriptFunction GetProfileSettingDefaultFloat() { return mGetProfileSettingDefaultFloat ? mGetProfileSettingDefaultFloat : (mGetProfileSettingDefaultFloat = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat")); }
+			ScriptFunction SetToDefaults() { return mSetToDefaults ? mSetToDefaults : (mSetToDefaults = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.SetToDefaults")); }
+			ScriptFunction AppendVersionToReadIds() { return mAppendVersionToReadIds ? mAppendVersionToReadIds : (mAppendVersionToReadIds = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.AppendVersionToReadIds")); }
+			ScriptFunction ModifyAvailableProfileSettings() { return mModifyAvailableProfileSettings ? mModifyAvailableProfileSettings : (mModifyAvailableProfileSettings = ScriptObject.Find!(ScriptFunction)("Function Engine.OnlineProfileSettings.ModifyAvailableProfileSettings")); }
+		}
+	}
 	enum EProfileSettingID : ubyte
 	{
 		PSI_Unknown = 0,
@@ -159,7 +182,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(int*)&params[4] = *DefaultId;
 		*cast(int*)&params[8] = *ListIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22645], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultId, params.ptr, cast(void*)0);
 		*DefaultId = *cast(int*)&params[4];
 		*ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
@@ -170,7 +193,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(int*)&params[4] = *DefaultInt;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22650], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultInt, params.ptr, cast(void*)0);
 		*DefaultInt = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
@@ -180,20 +203,20 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(float*)&params[4] = *DefaultFloat;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22654], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultFloat, params.ptr, cast(void*)0);
 		*DefaultFloat = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void SetToDefaults()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22658], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetToDefaults, cast(void*)0, cast(void*)0);
 	}
 	void AppendVersionToReadIds()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22659], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AppendVersionToReadIds, cast(void*)0, cast(void*)0);
 	}
 	void ModifyAvailableProfileSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[22660], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAvailableProfileSettings, cast(void*)0, cast(void*)0);
 	}
 }

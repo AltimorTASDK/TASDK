@@ -6,6 +6,13 @@ import UnrealScript.Engine.SequenceEvent;
 extern(C++) interface SeqEvent_MobileRawInput : SequenceEvent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileRawInput")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mRegisterEvent;
+		public @property static final ScriptFunction RegisterEvent() { return mRegisterEvent ? mRegisterEvent : (mRegisterEvent = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_MobileRawInput.RegisterEvent")); }
+	}
 	@property final auto ref
 	{
 		float TimeStamp() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }
@@ -15,6 +22,6 @@ public extern(D):
 	}
 	final void RegisterEvent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33054], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterEvent, cast(void*)0, cast(void*)0);
 	}
 }

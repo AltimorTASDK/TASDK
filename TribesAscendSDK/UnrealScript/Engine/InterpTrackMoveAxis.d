@@ -1,11 +1,14 @@
 module UnrealScript.Engine.InterpTrackMoveAxis;
 
+import ScriptClasses;
 import UnrealScript.Engine.InterpTrackMove;
 import UnrealScript.Engine.InterpTrackFloatBase;
 
 extern(C++) interface InterpTrackMoveAxis : InterpTrackFloatBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackMoveAxis")); }
 	enum EInterpMoveAxis : ubyte
 	{
 		AXIS_TranslationX = 0,

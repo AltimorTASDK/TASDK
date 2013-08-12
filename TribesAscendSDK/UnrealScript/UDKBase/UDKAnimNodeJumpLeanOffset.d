@@ -7,6 +7,13 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UDKAnimNodeJumpLeanOffset : AnimNodeAimOffset
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeJumpLeanOffset")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetLeanWeight;
+		public @property static final ScriptFunction SetLeanWeight() { return mSetLeanWeight ? mSetLeanWeight : (mSetLeanWeight = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimNodeJumpLeanOffset.SetLeanWeight")); }
+	}
 	@property final
 	{
 		auto ref
@@ -37,6 +44,6 @@ public extern(D):
 		params[] = 0;
 		*cast(float*)params.ptr = WeightTarget;
 		*cast(float*)&params[4] = BlendTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34603], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLeanWeight, params.ptr, cast(void*)0);
 	}
 }

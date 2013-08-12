@@ -6,8 +6,15 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface UTEntryHUD : HUD
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEntryHUD")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mPostRender;
+		public @property static final ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTEntryHUD.PostRender")); }
+	}
 	final void PostRender()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47410], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, cast(void*)0, cast(void*)0);
 	}
 }

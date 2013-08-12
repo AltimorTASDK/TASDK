@@ -14,10 +14,63 @@ import UnrealScript.Engine.SeqAct_SetDamageInstigator;
 extern(C++) interface PhysicsVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsVolume")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetGravityZ;
+			ScriptFunction mGetZoneVelocityForActor;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mReset;
+			ScriptFunction mPhysicsChangedFor;
+			ScriptFunction mActorEnteredVolume;
+			ScriptFunction mActorLeavingVolume;
+			ScriptFunction mPawnEnteredVolume;
+			ScriptFunction mPawnLeavingVolume;
+			ScriptFunction mOnToggle;
+			ScriptFunction mCollisionChanged;
+			ScriptFunction mTimerPop;
+			ScriptFunction mTouch;
+			ScriptFunction mCausePainTo;
+			ScriptFunction mModifyPlayer;
+			ScriptFunction mNotifyPawnBecameViewTarget;
+			ScriptFunction mOnSetDamageInstigator;
+			ScriptFunction mShouldSaveForCheckpoint;
+			ScriptFunction mCreateCheckpointRecord;
+			ScriptFunction mApplyCheckpointRecord;
+		}
+		public @property static final
+		{
+			ScriptFunction GetGravityZ() { return mGetGravityZ ? mGetGravityZ : (mGetGravityZ = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.GetGravityZ")); }
+			ScriptFunction GetZoneVelocityForActor() { return mGetZoneVelocityForActor ? mGetZoneVelocityForActor : (mGetZoneVelocityForActor = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.GetZoneVelocityForActor")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PostBeginPlay")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.Reset")); }
+			ScriptFunction PhysicsChangedFor() { return mPhysicsChangedFor ? mPhysicsChangedFor : (mPhysicsChangedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PhysicsChangedFor")); }
+			ScriptFunction ActorEnteredVolume() { return mActorEnteredVolume ? mActorEnteredVolume : (mActorEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ActorEnteredVolume")); }
+			ScriptFunction ActorLeavingVolume() { return mActorLeavingVolume ? mActorLeavingVolume : (mActorLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ActorLeavingVolume")); }
+			ScriptFunction PawnEnteredVolume() { return mPawnEnteredVolume ? mPawnEnteredVolume : (mPawnEnteredVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PawnEnteredVolume")); }
+			ScriptFunction PawnLeavingVolume() { return mPawnLeavingVolume ? mPawnLeavingVolume : (mPawnLeavingVolume = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.PawnLeavingVolume")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.OnToggle")); }
+			ScriptFunction CollisionChanged() { return mCollisionChanged ? mCollisionChanged : (mCollisionChanged = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CollisionChanged")); }
+			ScriptFunction TimerPop() { return mTimerPop ? mTimerPop : (mTimerPop = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.TimerPop")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.Touch")); }
+			ScriptFunction CausePainTo() { return mCausePainTo ? mCausePainTo : (mCausePainTo = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CausePainTo")); }
+			ScriptFunction ModifyPlayer() { return mModifyPlayer ? mModifyPlayer : (mModifyPlayer = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ModifyPlayer")); }
+			ScriptFunction NotifyPawnBecameViewTarget() { return mNotifyPawnBecameViewTarget ? mNotifyPawnBecameViewTarget : (mNotifyPawnBecameViewTarget = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.NotifyPawnBecameViewTarget")); }
+			ScriptFunction OnSetDamageInstigator() { return mOnSetDamageInstigator ? mOnSetDamageInstigator : (mOnSetDamageInstigator = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.OnSetDamageInstigator")); }
+			ScriptFunction ShouldSaveForCheckpoint() { return mShouldSaveForCheckpoint ? mShouldSaveForCheckpoint : (mShouldSaveForCheckpoint = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ShouldSaveForCheckpoint")); }
+			ScriptFunction CreateCheckpointRecord() { return mCreateCheckpointRecord ? mCreateCheckpointRecord : (mCreateCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.CreateCheckpointRecord")); }
+			ScriptFunction ApplyCheckpointRecord() { return mApplyCheckpointRecord ? mApplyCheckpointRecord : (mApplyCheckpointRecord = ScriptObject.Find!(ScriptFunction)("Function Engine.PhysicsVolume.ApplyCheckpointRecord")); }
+		}
+	}
 	struct CheckpointRecord
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PhysicsVolume.CheckpointRecord")); }
 		@property final
 		{
 			bool bActive() { return (*cast(uint*)(cast(size_t)&this + 0) & 0x2) != 0; }
@@ -76,7 +129,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14428], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetGravityZ, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
 	Vector GetZoneVelocityForActor(Actor TheActor)
@@ -84,69 +137,69 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = TheActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14430], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetZoneVelocityForActor, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14433], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14435], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void PhysicsChangedFor(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14436], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PhysicsChangedFor, params.ptr, cast(void*)0);
 	}
 	void ActorEnteredVolume(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14438], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActorEnteredVolume, params.ptr, cast(void*)0);
 	}
 	void ActorLeavingVolume(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14440], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ActorLeavingVolume, params.ptr, cast(void*)0);
 	}
 	void PawnEnteredVolume(Pawn Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14442], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PawnEnteredVolume, params.ptr, cast(void*)0);
 	}
 	void PawnLeavingVolume(Pawn Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14444], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PawnLeavingVolume, params.ptr, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14446], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void CollisionChanged()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14448], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CollisionChanged, cast(void*)0, cast(void*)0);
 	}
 	void TimerPop(VolumeTimer T)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(VolumeTimer*)params.ptr = T;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14449], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.TimerPop, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -160,21 +213,21 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14452], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void CausePainTo(Actor Other)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14457], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CausePainTo, params.ptr, cast(void*)0);
 	}
 	void ModifyPlayer(Pawn PlayerPawn)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = PlayerPawn;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14460], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyPlayer, params.ptr, cast(void*)0);
 	}
 	void NotifyPawnBecameViewTarget(Pawn P, PlayerController PC)
 	{
@@ -182,20 +235,20 @@ void**)&params[4] = OtherComp;
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(PlayerController*)&params[4] = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14462], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyPawnBecameViewTarget, params.ptr, cast(void*)0);
 	}
 	void OnSetDamageInstigator(SeqAct_SetDamageInstigator Action)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_SetDamageInstigator*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14465], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetDamageInstigator, params.ptr, cast(void*)0);
 	}
 	bool ShouldSaveForCheckpoint()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14469], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldSaveForCheckpoint, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void CreateCheckpointRecord(PhysicsVolume.CheckpointRecord* Record)
@@ -203,7 +256,7 @@ void**)&params[4] = OtherComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14471], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}
 	void ApplyCheckpointRecord(PhysicsVolume.CheckpointRecord* Record)
@@ -211,7 +264,7 @@ void**)&params[4] = OtherComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = *Record;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14473], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
 		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}
 }

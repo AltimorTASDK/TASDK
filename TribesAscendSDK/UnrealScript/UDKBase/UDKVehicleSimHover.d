@@ -1,10 +1,13 @@
 module UnrealScript.UDKBase.UDKVehicleSimHover;
 
+import ScriptClasses;
 import UnrealScript.UDKBase.UDKVehicleSimChopper;
 
 extern(C++) interface UDKVehicleSimHover : UDKVehicleSimChopper
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimHover")); }
 	@property final
 	{
 		bool bUnPoweredDriving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 308) & 0x8) != 0; }

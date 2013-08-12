@@ -7,19 +7,34 @@ import UnrealScript.Engine.OnlineProfileSettings;
 extern(C++) interface UDKProfileSettings : OnlineProfileSettings
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProfileSettings")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mResetToDefault;
+			ScriptFunction mResetKeysToDefault;
+		}
+		public @property static final
+		{
+			ScriptFunction ResetToDefault() { return mResetToDefault ? mResetToDefault : (mResetToDefault = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProfileSettings.ResetToDefault")); }
+			ScriptFunction ResetKeysToDefault() { return mResetKeysToDefault ? mResetKeysToDefault : (mResetKeysToDefault = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKProfileSettings.ResetKeysToDefault")); }
+		}
+	}
 final:
 	void ResetToDefault(int ProfileId)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35286], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetToDefault, params.ptr, cast(void*)0);
 	}
-	void ResetKeysToDefault(LocalPlayer InPlayerOwner)
+	static void ResetKeysToDefault(LocalPlayer InPlayerOwner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = InPlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35288], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.ResetKeysToDefault, params.ptr, cast(void*)0);
 	}
 }

@@ -1,11 +1,14 @@
 module UnrealScript.UDKBase.UDKMapMusicInfo;
 
+import ScriptClasses;
 import UnrealScript.Engine.SoundCue;
 import UnrealScript.Core.UObject;
 
 extern(C++) interface UDKMapMusicInfo : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKMapMusicInfo")); }
 	enum ECrossfadeType : ubyte
 	{
 		CFT_BeginningOfMeasure = 0,
@@ -16,6 +19,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKMapMusicInfo.MusicSegment")); }
 		@property final auto ref
 		{
 			SoundCue TheCue() { return *cast(SoundCue*)(cast(size_t)&this + 12); }
@@ -28,6 +33,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[60];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKMapMusicInfo.StingersForAMap")); }
 		@property final auto ref
 		{
 			SoundCue ScoreWinning() { return *cast(SoundCue*)(cast(size_t)&this + 56); }
@@ -51,6 +58,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[100];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKMapMusicInfo.MusicForAMap")); }
 		@property final auto ref
 		{
 			UDKMapMusicInfo.MusicSegment Victory() { return *cast(UDKMapMusicInfo.MusicSegment*)(cast(size_t)&this + 84); }

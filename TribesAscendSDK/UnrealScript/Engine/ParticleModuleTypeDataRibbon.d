@@ -1,10 +1,13 @@
 module UnrealScript.Engine.ParticleModuleTypeDataRibbon;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleTypeDataBase;
 
 extern(C++) interface ParticleModuleTypeDataRibbon : ParticleModuleTypeDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataRibbon")); }
 	enum ETrailsRenderAxisOption : ubyte
 	{
 		Trails_CameraUp = 0,

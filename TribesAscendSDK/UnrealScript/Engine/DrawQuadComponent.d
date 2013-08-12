@@ -1,11 +1,14 @@
 module UnrealScript.Engine.DrawQuadComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.Texture;
 
 extern(C++) interface DrawQuadComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawQuadComponent")); }
 	@property final auto ref
 	{
 		float Height() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }

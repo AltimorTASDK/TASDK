@@ -11,6 +11,33 @@ import UnrealScript.Engine.Info;
 extern(C++) interface BroadcastHandler : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BroadcastHandler")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mUpdateSentText;
+			ScriptFunction mAllowsBroadcast;
+			ScriptFunction mBroadcastText;
+			ScriptFunction mBroadcastLocalized;
+			ScriptFunction mBroadcast;
+			ScriptFunction mBroadcastTeam;
+			ScriptFunction mAllowBroadcastLocalized;
+			ScriptFunction mAllowBroadcastLocalizedTeam;
+		}
+		public @property static final
+		{
+			ScriptFunction UpdateSentText() { return mUpdateSentText ? mUpdateSentText : (mUpdateSentText = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.UpdateSentText")); }
+			ScriptFunction AllowsBroadcast() { return mAllowsBroadcast ? mAllowsBroadcast : (mAllowsBroadcast = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowsBroadcast")); }
+			ScriptFunction BroadcastText() { return mBroadcastText ? mBroadcastText : (mBroadcastText = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastText")); }
+			ScriptFunction BroadcastLocalized() { return mBroadcastLocalized ? mBroadcastLocalized : (mBroadcastLocalized = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastLocalized")); }
+			ScriptFunction Broadcast() { return mBroadcast ? mBroadcast : (mBroadcast = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.Broadcast")); }
+			ScriptFunction BroadcastTeam() { return mBroadcastTeam ? mBroadcastTeam : (mBroadcastTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.BroadcastTeam")); }
+			ScriptFunction AllowBroadcastLocalized() { return mAllowBroadcastLocalized ? mAllowBroadcastLocalized : (mAllowBroadcastLocalized = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowBroadcastLocalized")); }
+			ScriptFunction AllowBroadcastLocalizedTeam() { return mAllowBroadcastLocalizedTeam ? mAllowBroadcastLocalizedTeam : (mAllowBroadcastLocalizedTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.BroadcastHandler.AllowBroadcastLocalizedTeam")); }
+		}
+	}
 	@property final
 	{
 		@property final auto ref int SentText() { return *cast(int*)(cast(size_t)cast(void*)this + 476); }
@@ -20,7 +47,7 @@ public extern(D):
 final:
 	void UpdateSentText()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12018], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSentText, cast(void*)0, cast(void*)0);
 	}
 	bool AllowsBroadcast(Actor broadcaster, int InLen)
 	{
@@ -28,7 +55,7 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = broadcaster;
 		*cast(int*)&params[4] = InLen;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12019], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowsBroadcast, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void BroadcastText(PlayerReplicationInfo SenderPRI, PlayerController Receiver, ScriptString msg, ScriptName Type)
@@ -39,7 +66,7 @@ final:
 		*cast(PlayerController*)&params[4] = Receiver;
 		*cast(ScriptString*)&params[8] = msg;
 		*cast(ScriptName*)&params[20] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12023], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastText, params.ptr, cast(void*)0);
 	}
 	void BroadcastLocalized(Actor Sender, PlayerController Receiver, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
@@ -52,7 +79,7 @@ final:
 		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[20] = RelatedPRI_2;
 		*cast(UObject*)&params[24] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12028], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastLocalized, params.ptr, cast(void*)0);
 	}
 	void Broadcast(Actor Sender, ScriptString msg, ScriptName Type)
 	{
@@ -61,7 +88,7 @@ final:
 		*cast(Actor*)params.ptr = Sender;
 		*cast(ScriptString*)&params[4] = msg;
 		*cast(ScriptName*)&params[16] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12036], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Broadcast, params.ptr, cast(void*)0);
 	}
 	void BroadcastTeam(Controller Sender, ScriptString msg, ScriptName Type)
 	{
@@ -70,7 +97,7 @@ final:
 		*cast(Controller*)params.ptr = Sender;
 		*cast(ScriptString*)&params[4] = msg;
 		*cast(ScriptName*)&params[16] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12042], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastTeam, params.ptr, cast(void*)0);
 	}
 	void AllowBroadcastLocalized(Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
@@ -82,7 +109,7 @@ final:
 		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_2;
 		*cast(UObject*)&params[20] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12047], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBroadcastLocalized, params.ptr, cast(void*)0);
 	}
 	void AllowBroadcastLocalizedTeam(int TeamIndex, Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
 	{
@@ -95,6 +122,6 @@ final:
 		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_1;
 		*cast(PlayerReplicationInfo*)&params[20] = RelatedPRI_2;
 		*cast(UObject*)&params[24] = OptionalObject;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12055], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBroadcastLocalizedTeam, params.ptr, cast(void*)0);
 	}
 }

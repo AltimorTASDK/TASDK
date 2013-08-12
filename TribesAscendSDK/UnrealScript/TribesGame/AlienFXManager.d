@@ -6,6 +6,43 @@ import UnrealScript.Core.UObject;
 extern(C++) interface AlienFXManager : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.AlienFXManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mClose;
+			ScriptFunction mQueued;
+			ScriptFunction mObjective;
+			ScriptFunction mSwapWeapon;
+			ScriptFunction mCheckHealth;
+			ScriptFunction mmenu;
+			ScriptFunction mDamage;
+			ScriptFunction mSetTeam;
+			ScriptFunction mSetHealth;
+			ScriptFunction mTick;
+			ScriptFunction mOverlay;
+			ScriptFunction mDamageConvert;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Init")); }
+			ScriptFunction Close() { return mClose ? mClose : (mClose = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Close")); }
+			ScriptFunction Queued() { return mQueued ? mQueued : (mQueued = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Queued")); }
+			ScriptFunction Objective() { return mObjective ? mObjective : (mObjective = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Objective")); }
+			ScriptFunction SwapWeapon() { return mSwapWeapon ? mSwapWeapon : (mSwapWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.SwapWeapon")); }
+			ScriptFunction CheckHealth() { return mCheckHealth ? mCheckHealth : (mCheckHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.CheckHealth")); }
+			ScriptFunction menu() { return mmenu ? mmenu : (mmenu = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.menu")); }
+			ScriptFunction Damage() { return mDamage ? mDamage : (mDamage = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Damage")); }
+			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.SetTeam")); }
+			ScriptFunction SetHealth() { return mSetHealth ? mSetHealth : (mSetHealth = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.SetHealth")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Tick")); }
+			ScriptFunction Overlay() { return mOverlay ? mOverlay : (mOverlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.Overlay")); }
+			ScriptFunction DamageConvert() { return mDamageConvert ? mDamageConvert : (mDamageConvert = ScriptObject.Find!(ScriptFunction)("Function TribesGame.AlienFXManager.DamageConvert")); }
+		}
+	}
 	enum FXOverlay : ubyte
 	{
 		FXO_NONE = 0,
@@ -63,75 +100,75 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnable;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50990], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void Close()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50992], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Close, cast(void*)0, cast(void*)0);
 	}
 	void Queued()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50993], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Queued, cast(void*)0, cast(void*)0);
 	}
 	void Objective()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50994], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Objective, cast(void*)0, cast(void*)0);
 	}
 	void SwapWeapon()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50995], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SwapWeapon, cast(void*)0, cast(void*)0);
 	}
 	void CheckHealth()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50996], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHealth, cast(void*)0, cast(void*)0);
 	}
 	void menu(bool bOpen)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOpen;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50997], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.menu, params.ptr, cast(void*)0);
 	}
 	void Damage(AlienFXManager.FXArea Area)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(AlienFXManager.FXArea*)params.ptr = Area;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[50999], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Damage, params.ptr, cast(void*)0);
 	}
 	void SetTeam(int TeamNum)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51001], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
 	void SetHealth(int Health)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Health;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51003], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHealth, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51005], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void Overlay(AlienFXManager.FXOverlay Type)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(AlienFXManager.FXOverlay*)params.ptr = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51007], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Overlay, params.ptr, cast(void*)0);
 	}
 	void DamageConvert(ScriptString Area)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Area;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[51009], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DamageConvert, params.ptr, cast(void*)0);
 	}
 }

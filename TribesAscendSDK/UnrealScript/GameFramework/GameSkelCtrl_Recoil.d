@@ -7,6 +7,8 @@ import UnrealScript.Engine.SkelControlBase;
 extern(C++) interface GameSkelCtrl_Recoil : SkelControlBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameSkelCtrl_Recoil")); }
 	enum ERecoilStart : ubyte
 	{
 		ERS_Zero = 0,
@@ -17,6 +19,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[4];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilParams")); }
 		@property final auto ref
 		{
 			ubyte Padding() { return *cast(ubyte*)(cast(size_t)&this + 3); }
@@ -29,6 +33,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[112];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilDef")); }
 		@property final auto ref
 		{
 			Vector LocOffset() { return *cast(Vector*)(cast(size_t)&this + 100); }

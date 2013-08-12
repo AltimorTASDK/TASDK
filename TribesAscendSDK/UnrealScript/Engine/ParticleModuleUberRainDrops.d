@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleModuleLocationPrimitiveCylinder;
 extern(C++) interface ParticleModuleUberRainDrops : ParticleModuleUberBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberRainDrops")); }
 	@property final
 	{
 		auto ref

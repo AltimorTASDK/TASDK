@@ -10,6 +10,31 @@ import UnrealScript.GameFramework.GameCrowdAgentBehavior;
 extern(C++) interface GameCrowdBehavior_PlayAnimation : GameCrowdAgentBehavior
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_PlayAnimation")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitBehavior;
+			ScriptFunction mFinishedTargetRotation;
+			ScriptFunction mSetSequenceOutput;
+			ScriptFunction mOnAnimEnd;
+			ScriptFunction mPlayAgentAnimationNow;
+			ScriptFunction mStopBehavior;
+			ScriptFunction mGetBehaviorString;
+		}
+		public @property static final
+		{
+			ScriptFunction InitBehavior() { return mInitBehavior ? mInitBehavior : (mInitBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.InitBehavior")); }
+			ScriptFunction FinishedTargetRotation() { return mFinishedTargetRotation ? mFinishedTargetRotation : (mFinishedTargetRotation = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.FinishedTargetRotation")); }
+			ScriptFunction SetSequenceOutput() { return mSetSequenceOutput ? mSetSequenceOutput : (mSetSequenceOutput = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.SetSequenceOutput")); }
+			ScriptFunction OnAnimEnd() { return mOnAnimEnd ? mOnAnimEnd : (mOnAnimEnd = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.OnAnimEnd")); }
+			ScriptFunction PlayAgentAnimationNow() { return mPlayAgentAnimationNow ? mPlayAgentAnimationNow : (mPlayAgentAnimationNow = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.PlayAgentAnimationNow")); }
+			ScriptFunction StopBehavior() { return mStopBehavior ? mStopBehavior : (mStopBehavior = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.StopBehavior")); }
+			ScriptFunction GetBehaviorString() { return mGetBehaviorString ? mGetBehaviorString : (mGetBehaviorString = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdBehavior_PlayAnimation.GetBehaviorString")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -38,15 +63,15 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31233], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitBehavior, params.ptr, cast(void*)0);
 	}
 	void FinishedTargetRotation()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31240], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FinishedTargetRotation, cast(void*)0, cast(void*)0);
 	}
 	void SetSequenceOutput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31241], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSequenceOutput, cast(void*)0, cast(void*)0);
 	}
 	void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)
 	{
@@ -55,21 +80,21 @@ final:
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		*cast(float*)&params[4] = PlayedTime;
 		*cast(float*)&params[8] = ExcessTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31242], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAnimEnd, params.ptr, cast(void*)0);
 	}
 	void PlayAgentAnimationNow()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31246], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAgentAnimationNow, cast(void*)0, cast(void*)0);
 	}
 	void StopBehavior()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31250], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopBehavior, cast(void*)0, cast(void*)0);
 	}
 	ScriptString GetBehaviorString()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBehaviorString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
 }

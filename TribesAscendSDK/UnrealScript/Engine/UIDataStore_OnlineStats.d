@@ -8,6 +8,29 @@ import UnrealScript.Engine.OnlineStatsRead;
 extern(C++) interface UIDataStore_OnlineStats : UIDataStore_Remote
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineStats")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInit;
+			ScriptFunction mSetStatsReadInfo;
+			ScriptFunction mRefreshStats;
+			ScriptFunction mShowGamercard;
+			ScriptFunction mOnReadComplete;
+			ScriptFunction mSortResultsByRank;
+		}
+		public @property static final
+		{
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.Init")); }
+			ScriptFunction SetStatsReadInfo() { return mSetStatsReadInfo ? mSetStatsReadInfo : (mSetStatsReadInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.SetStatsReadInfo")); }
+			ScriptFunction RefreshStats() { return mRefreshStats ? mRefreshStats : (mRefreshStats = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.RefreshStats")); }
+			ScriptFunction ShowGamercard() { return mShowGamercard ? mShowGamercard : (mShowGamercard = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.ShowGamercard")); }
+			ScriptFunction OnReadComplete() { return mOnReadComplete ? mOnReadComplete : (mOnReadComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.OnReadComplete")); }
+			ScriptFunction SortResultsByRank() { return mSortResultsByRank ? mSortResultsByRank : (mSortResultsByRank = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlineStats.SortResultsByRank")); }
+		}
+	}
 	enum EStatsFetchType : ubyte
 	{
 		SFT_Player = 0,
@@ -20,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")); }
 		@property final auto ref
 		{
 			ScriptString RankColumnName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
@@ -30,6 +55,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")); }
 		@property final auto ref
 		{
 			ScriptString PlayerNickColumnName() { return *cast(ScriptString*)(cast(size_t)&this + 8); }
@@ -52,18 +79,18 @@ public extern(D):
 final:
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28847], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	void SetStatsReadInfo()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28849], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetStatsReadInfo, cast(void*)0, cast(void*)0);
 	}
 	bool RefreshStats(ubyte ControllerIndex)
 	{
 		ubyte params[8];
 		params[] = 0;
 		params[0] = ControllerIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28850], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshStats, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool ShowGamercard(ubyte ConrollerIndex, int ListIndex)
@@ -72,7 +99,7 @@ final:
 		params[] = 0;
 		params[0] = ConrollerIndex;
 		*cast(int*)&params[4] = ListIndex;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28856], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShowGamercard, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	void OnReadComplete(bool bWasSuccessful)
@@ -80,10 +107,10 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28863], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadComplete, params.ptr, cast(void*)0);
 	}
 	void SortResultsByRank()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28865], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SortResultsByRank, cast(void*)0, cast(void*)0);
 	}
 }

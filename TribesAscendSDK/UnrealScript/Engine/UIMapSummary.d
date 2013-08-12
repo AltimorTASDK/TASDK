@@ -6,6 +6,8 @@ import UnrealScript.Engine.UIResourceDataProvider;
 extern(C++) interface UIMapSummary : UIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIMapSummary")); }
 	@property final auto ref
 	{
 		ScriptString Description() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 160); }

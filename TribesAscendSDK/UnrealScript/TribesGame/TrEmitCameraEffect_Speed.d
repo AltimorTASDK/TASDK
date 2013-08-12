@@ -7,6 +7,23 @@ import UnrealScript.Engine.SoundCue;
 extern(C++) interface TrEmitCameraEffect_Speed : UDKEmitCameraEffect
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEmitCameraEffect_Speed")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mUpdateLocation;
+			ScriptFunction mActivate;
+			ScriptFunction mDeactivate;
+		}
+		public @property static final
+		{
+			ScriptFunction UpdateLocation() { return mUpdateLocation ? mUpdateLocation : (mUpdateLocation = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEmitCameraEffect_Speed.UpdateLocation")); }
+			ScriptFunction Activate() { return mActivate ? mActivate : (mActivate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEmitCameraEffect_Speed.Activate")); }
+			ScriptFunction Deactivate() { return mDeactivate ? mDeactivate : (mDeactivate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEmitCameraEffect_Speed.Deactivate")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -28,16 +45,16 @@ final:
 		*cast(Vector*)params.ptr = *CamLoc;
 		*cast(Rotator*)&params[12] = *CamRot;
 		*cast(float*)&params[24] = CamFOVDeg;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87248], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocation, params.ptr, cast(void*)0);
 		*CamLoc = *cast(Vector*)params.ptr;
 		*CamRot = *cast(Rotator*)&params[12];
 	}
 	void Activate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87252], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activate, cast(void*)0, cast(void*)0);
 	}
 	void Deactivate()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87253], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Deactivate, cast(void*)0, cast(void*)0);
 	}
 }

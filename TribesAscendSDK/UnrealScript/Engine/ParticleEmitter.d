@@ -7,6 +7,8 @@ import UnrealScript.Engine.ParticleLODLevel;
 extern(C++) interface ParticleEmitter : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleEmitter")); }
 	enum EEmitterRenderMode : ubyte
 	{
 		ERM_Normal = 0,
@@ -34,6 +36,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.ParticleEmitter.ParticleBurst")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 8); }

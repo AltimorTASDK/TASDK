@@ -7,6 +7,21 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface FluidInfluenceActor : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidInfluenceActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnToggle;
+			ScriptFunction mReplicatedEvent;
+		}
+		public @property static final
+		{
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidInfluenceActor.OnToggle")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.FluidInfluenceActor.ReplicatedEvent")); }
+		}
+	}
 	@property final
 	{
 		bool bToggled() { return (*cast(uint*)(cast(size_t)cast(void*)this + 488) & 0x2) != 0; }
@@ -20,13 +35,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15759], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[15761], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 }

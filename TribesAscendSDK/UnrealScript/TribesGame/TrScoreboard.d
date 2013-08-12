@@ -11,10 +11,55 @@ import UnrealScript.TribesGame.TrGameReplicationInfo;
 extern(C++) interface TrScoreboard : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrScoreboard")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCreditsSort;
+			ScriptFunction mAssistsSort;
+			ScriptFunction mKillsSort;
+			ScriptFunction mInitialize;
+			ScriptFunction mShow;
+			ScriptFunction mHide;
+			ScriptFunction mConfigScoreboard;
+			ScriptFunction mTick;
+			ScriptFunction mUpdatePRILists;
+			ScriptFunction mGetBestSortArray;
+			ScriptFunction mGetRank;
+			ScriptFunction mClearSlot;
+			ScriptFunction mUpdateSlot;
+			ScriptFunction mFormatTime;
+			ScriptFunction mUpdateHeaders;
+			ScriptFunction mIsValidScoreboardPlayer;
+		}
+		public @property static final
+		{
+			ScriptFunction CreditsSort() { return mCreditsSort ? mCreditsSort : (mCreditsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.CreditsSort")); }
+			ScriptFunction AssistsSort() { return mAssistsSort ? mAssistsSort : (mAssistsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.AssistsSort")); }
+			ScriptFunction KillsSort() { return mKillsSort ? mKillsSort : (mKillsSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.KillsSort")); }
+			ScriptFunction Initialize() { return mInitialize ? mInitialize : (mInitialize = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Initialize")); }
+			ScriptFunction Show() { return mShow ? mShow : (mShow = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Show")); }
+			ScriptFunction Hide() { return mHide ? mHide : (mHide = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Hide")); }
+			ScriptFunction ConfigScoreboard() { return mConfigScoreboard ? mConfigScoreboard : (mConfigScoreboard = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.ConfigScoreboard")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.Tick")); }
+			ScriptFunction UpdatePRILists() { return mUpdatePRILists ? mUpdatePRILists : (mUpdatePRILists = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdatePRILists")); }
+			ScriptFunction GetBestSortArray() { return mGetBestSortArray ? mGetBestSortArray : (mGetBestSortArray = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.GetBestSortArray")); }
+			ScriptFunction GetRank() { return mGetRank ? mGetRank : (mGetRank = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.GetRank")); }
+			ScriptFunction ClearSlot() { return mClearSlot ? mClearSlot : (mClearSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.ClearSlot")); }
+			ScriptFunction UpdateSlot() { return mUpdateSlot ? mUpdateSlot : (mUpdateSlot = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdateSlot")); }
+			ScriptFunction FormatTime() { return mFormatTime ? mFormatTime : (mFormatTime = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.FormatTime")); }
+			ScriptFunction UpdateHeaders() { return mUpdateHeaders ? mUpdateHeaders : (mUpdateHeaders = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.UpdateHeaders")); }
+			ScriptFunction IsValidScoreboardPlayer() { return mIsValidScoreboardPlayer ? mIsValidScoreboardPlayer : (mIsValidScoreboardPlayer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrScoreboard.IsValidScoreboardPlayer")); }
+		}
+	}
 	struct TrScoreboardState
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrScoreboard.TrScoreboardState")); }
 		@property final auto ref
 		{
 			int DiamondSwordScore() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -26,6 +71,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrScoreboard.TrScoreSlot")); }
 		@property final auto ref
 		{
 			int RankIcon() { return *cast(int*)(cast(size_t)&this + 44); }
@@ -74,7 +121,7 @@ final:
 		params[] = 0;
 		*cast(TrPlayerReplicationInfo*)params.ptr = A;
 		*cast(TrPlayerReplicationInfo*)&params[4] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110681], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CreditsSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int AssistsSort(TrPlayerReplicationInfo A, TrPlayerReplicationInfo B)
@@ -83,7 +130,7 @@ final:
 		params[] = 0;
 		*cast(TrPlayerReplicationInfo*)params.ptr = A;
 		*cast(TrPlayerReplicationInfo*)&params[4] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110683], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AssistsSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int KillsSort(TrPlayerReplicationInfo A, TrPlayerReplicationInfo B)
@@ -92,7 +139,7 @@ final:
 		params[] = 0;
 		*cast(TrPlayerReplicationInfo*)params.ptr = A;
 		*cast(TrPlayerReplicationInfo*)&params[4] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110685], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KillsSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	void Initialize(TrPlayerController PC, GfxTrHud MP)
@@ -101,43 +148,43 @@ final:
 		params[] = 0;
 		*cast(TrPlayerController*)params.ptr = PC;
 		*cast(GfxTrHud*)&params[4] = MP;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
 	}
 	void Show(bool bIsTeamGame)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsTeamGame;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110718], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Show, params.ptr, cast(void*)0);
 	}
 	void Hide()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110720], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Hide, cast(void*)0, cast(void*)0);
 	}
 	void ConfigScoreboard()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110721], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConfigScoreboard, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110723], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	void UpdatePRILists(TrGameReplicationInfo TrGRI)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = TrGRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110726], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePRILists, params.ptr, cast(void*)0);
 	}
 	ScriptArray!(PlayerReplicationInfo) GetBestSortArray(ScriptArray!(PlayerReplicationInfo) PRIArray)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptArray!(PlayerReplicationInfo)*)params.ptr = PRIArray;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110734], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetBestSortArray, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(PlayerReplicationInfo)*)&params[12];
 	}
 	int GetRank(ScriptArray!(PlayerReplicationInfo) PRIArray)
@@ -145,7 +192,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(PlayerReplicationInfo)*)params.ptr = PRIArray;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110745], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetRank, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
 	bool ClearSlot(int Index)
@@ -153,7 +200,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110759], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool UpdateSlot(int Index, TrPlayerReplicationInfo PRI)
@@ -162,7 +209,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(TrPlayerReplicationInfo*)&params[4] = PRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110762], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	ScriptString FormatTime(int Seconds)
@@ -170,7 +217,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Seconds;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110766], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FormatTime, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
 	void UpdateHeaders(TrGameReplicationInfo GRI)
@@ -178,14 +225,14 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(TrGameReplicationInfo*)params.ptr = GRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110772], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHeaders, params.ptr, cast(void*)0);
 	}
 	bool IsValidScoreboardPlayer(TrPlayerReplicationInfo PRI)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrPlayerReplicationInfo*)params.ptr = PRI;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110776], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidScoreboardPlayer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

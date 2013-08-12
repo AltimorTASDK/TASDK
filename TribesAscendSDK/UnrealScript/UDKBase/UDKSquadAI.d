@@ -9,10 +9,14 @@ import UnrealScript.UDKBase.UDKTeamOwnedInfo;
 extern(C++) interface UDKSquadAI : UDKTeamOwnedInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSquadAI")); }
 	struct AlternateRoute
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKSquadAI.AlternateRoute")); }
 		@property final auto ref ScriptArray!(NavigationPoint) RouteCache() { return *cast(ScriptArray!(NavigationPoint)*)(cast(size_t)&this + 0); }
 	}
 	@property final auto ref

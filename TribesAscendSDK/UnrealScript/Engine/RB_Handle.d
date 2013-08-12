@@ -7,6 +7,31 @@ import UnrealScript.Core.UObject;
 extern(C++) interface RB_Handle : ActorComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Handle")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGrabComponent;
+			ScriptFunction mReleaseComponent;
+			ScriptFunction mSetLocation;
+			ScriptFunction mSetSmoothLocation;
+			ScriptFunction mUpdateSmoothLocation;
+			ScriptFunction mSetOrientation;
+			ScriptFunction mGetOrientation;
+		}
+		public @property static final
+		{
+			ScriptFunction GrabComponent() { return mGrabComponent ? mGrabComponent : (mGrabComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.GrabComponent")); }
+			ScriptFunction ReleaseComponent() { return mReleaseComponent ? mReleaseComponent : (mReleaseComponent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.ReleaseComponent")); }
+			ScriptFunction SetLocation() { return mSetLocation ? mSetLocation : (mSetLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetLocation")); }
+			ScriptFunction SetSmoothLocation() { return mSetSmoothLocation ? mSetSmoothLocation : (mSetSmoothLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetSmoothLocation")); }
+			ScriptFunction UpdateSmoothLocation() { return mUpdateSmoothLocation ? mUpdateSmoothLocation : (mUpdateSmoothLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.UpdateSmoothLocation")); }
+			ScriptFunction SetOrientation() { return mSetOrientation ? mSetOrientation : (mSetOrientation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.SetOrientation")); }
+			ScriptFunction GetOrientation() { return mGetOrientation ? mGetOrientation : (mGetOrientation = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_Handle.GetOrientation")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -45,18 +70,18 @@ void**)params.ptr = pComponent;
 		*cast(ScriptName*)&params[4] = InBoneName;
 		*cast(Vector*)&params[12] = GrabLocation;
 		*cast(bool*)&params[24] = bConstrainRotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25251], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GrabComponent, params.ptr, cast(void*)0);
 	}
 	void ReleaseComponent()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25256], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReleaseComponent, cast(void*)0, cast(void*)0);
 	}
 	void SetLocation(Vector NewLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25257], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetLocation, params.ptr, cast(void*)0);
 	}
 	void SetSmoothLocation(Vector NewLocation, float MoveTime)
 	{
@@ -64,14 +89,14 @@ void**)params.ptr = pComponent;
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewLocation;
 		*cast(float*)&params[12] = MoveTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25259], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSmoothLocation, params.ptr, cast(void*)0);
 	}
 	void UpdateSmoothLocation(Vector* NewLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Vector*)params.ptr = *NewLocation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25262], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSmoothLocation, params.ptr, cast(void*)0);
 		*NewLocation = *cast(Vector*)params.ptr;
 	}
 	void SetOrientation(UObject.Quat* NewOrientation)
@@ -79,14 +104,14 @@ void**)params.ptr = pComponent;
 		ubyte params[16];
 		params[] = 0;
 		*cast(UObject.Quat*)params.ptr = *NewOrientation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25264], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetOrientation, params.ptr, cast(void*)0);
 		*NewOrientation = *cast(UObject.Quat*)params.ptr;
 	}
 	UObject.Quat GetOrientation()
 	{
 		ubyte params[16];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25266], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetOrientation, params.ptr, cast(void*)0);
 		return *cast(UObject.Quat*)params.ptr;
 	}
 }

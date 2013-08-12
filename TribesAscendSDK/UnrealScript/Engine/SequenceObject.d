@@ -8,6 +8,27 @@ import UnrealScript.Engine.Sequence;
 extern(C++) interface SequenceObject : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceObject")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetObjClassVersion;
+			ScriptFunction mScriptLog;
+			ScriptFunction mGetWorldInfo;
+			ScriptFunction mIsValidLevelSequenceObject;
+			ScriptFunction mIsPastingIntoLevelSequenceAllowed;
+		}
+		public @property static final
+		{
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.GetObjClassVersion")); }
+			ScriptFunction ScriptLog() { return mScriptLog ? mScriptLog : (mScriptLog = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.ScriptLog")); }
+			ScriptFunction GetWorldInfo() { return mGetWorldInfo ? mGetWorldInfo : (mGetWorldInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.GetWorldInfo")); }
+			ScriptFunction IsValidLevelSequenceObject() { return mIsValidLevelSequenceObject ? mIsValidLevelSequenceObject : (mIsValidLevelSequenceObject = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.IsValidLevelSequenceObject")); }
+			ScriptFunction IsPastingIntoLevelSequenceAllowed() { return mIsPastingIntoLevelSequenceAllowed ? mIsPastingIntoLevelSequenceAllowed : (mIsPastingIntoLevelSequenceAllowed = ScriptObject.Find!(ScriptFunction)("Function Engine.SequenceObject.IsPastingIntoLevelSequenceAllowed")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -36,11 +57,11 @@ public extern(D):
 		bool bDeletable(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + 128) |= 0x1; } else { *cast(uint*)(cast(size_t)cast(void*)this + 128) &= ~0x1; } return val; }
 	}
 final:
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[4399], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 	void ScriptLog(ScriptString LogText, bool bWarning)
@@ -49,27 +70,27 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogText;
 		*cast(bool*)&params[12] = bWarning;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6710], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ScriptLog, params.ptr, cast(void*)0);
 	}
 	WorldInfo GetWorldInfo()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetWorldInfo, params.ptr, cast(void*)0);
 		return *cast(WorldInfo*)params.ptr;
 	}
 	bool IsValidLevelSequenceObject()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidLevelSequenceObject, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsPastingIntoLevelSequenceAllowed()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6717], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPastingIntoLevelSequenceAllowed, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

@@ -7,10 +7,19 @@ import UnrealScript.Core.UObject;
 extern(C++) interface UDKAnimNodeSequenceByBoneRotation : AnimNodeSequence
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeSequenceByBoneRotation")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mOnBecomeRelevant;
+		public @property static final ScriptFunction OnBecomeRelevant() { return mOnBecomeRelevant ? mOnBecomeRelevant : (mOnBecomeRelevant = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKAnimNodeSequenceByBoneRotation.OnBecomeRelevant")); }
+	}
 	struct AnimByRotation
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct UDKBase.UDKAnimNodeSequenceByBoneRotation.AnimByRotation")); }
 		@property final auto ref
 		{
 			ScriptName AnimName() { return *cast(ScriptName*)(cast(size_t)&this + 12); }
@@ -25,6 +34,6 @@ public extern(D):
 	}
 	final void OnBecomeRelevant()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[34628], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBecomeRelevant, cast(void*)0, cast(void*)0);
 	}
 }

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.ParticleModuleTrailTaper;
 
+import ScriptClasses;
 import UnrealScript.Engine.ParticleModuleTrailBase;
 import UnrealScript.Core.DistributionFloat;
 
 extern(C++) interface ParticleModuleTrailTaper : ParticleModuleTrailBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTrailTaper")); }
 	enum ETrailTaperMethod : ubyte
 	{
 		PETTM_None = 0,

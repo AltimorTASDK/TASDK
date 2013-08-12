@@ -6,6 +6,8 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackHeadTracking : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackHeadTracking")); }
 	enum EHeadTrackingAction : ubyte
 	{
 		EHTA_DisableHeadTracking = 0,
@@ -16,6 +18,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[5];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackHeadTracking.HeadTrackingKey")); }
 		@property final auto ref
 		{
 			InterpTrackHeadTracking.EHeadTrackingAction Action() { return *cast(InterpTrackHeadTracking.EHeadTrackingAction*)(cast(size_t)&this + 4); }

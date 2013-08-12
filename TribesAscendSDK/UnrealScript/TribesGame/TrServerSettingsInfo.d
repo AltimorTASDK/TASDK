@@ -7,6 +7,35 @@ import UnrealScript.Engine.Info;
 extern(C++) interface TrServerSettingsInfo : Info
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrServerSettingsInfo")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetClassCount;
+			ScriptFunction mIsCallinAllowed;
+			ScriptFunction mIsClassAllowed;
+			ScriptFunction mGetPropAsFloat;
+			ScriptFunction mGetPropAsInt;
+			ScriptFunction mGetPropAsString;
+			ScriptFunction mApplyServerSettings;
+			ScriptFunction mLoadServerSettings;
+			ScriptFunction mGetVehicleLimit;
+		}
+		public @property static final
+		{
+			ScriptFunction GetClassCount() { return mGetClassCount ? mGetClassCount : (mGetClassCount = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetClassCount")); }
+			ScriptFunction IsCallinAllowed() { return mIsCallinAllowed ? mIsCallinAllowed : (mIsCallinAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.IsCallinAllowed")); }
+			ScriptFunction IsClassAllowed() { return mIsClassAllowed ? mIsClassAllowed : (mIsClassAllowed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.IsClassAllowed")); }
+			ScriptFunction GetPropAsFloat() { return mGetPropAsFloat ? mGetPropAsFloat : (mGetPropAsFloat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsFloat")); }
+			ScriptFunction GetPropAsInt() { return mGetPropAsInt ? mGetPropAsInt : (mGetPropAsInt = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsInt")); }
+			ScriptFunction GetPropAsString() { return mGetPropAsString ? mGetPropAsString : (mGetPropAsString = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetPropAsString")); }
+			ScriptFunction ApplyServerSettings() { return mApplyServerSettings ? mApplyServerSettings : (mApplyServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.ApplyServerSettings")); }
+			ScriptFunction LoadServerSettings() { return mLoadServerSettings ? mLoadServerSettings : (mLoadServerSettings = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.LoadServerSettings")); }
+			ScriptFunction GetVehicleLimit() { return mGetVehicleLimit ? mGetVehicleLimit : (mGetVehicleLimit = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrServerSettingsInfo.GetVehicleLimit")); }
+		}
+	}
 	enum
 	{
 		MAX_CLASS_SLOTS = 10,
@@ -1452,7 +1481,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrObject.TrClassType*)params.ptr = ClassType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56819], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetClassCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	bool IsCallinAllowed(int Index)
@@ -1460,7 +1489,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[82937], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsCallinAllowed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool IsClassAllowed(TrObject.TrClassType ClassType, int CurrentCount)
@@ -1469,53 +1498,53 @@ final:
 		params[] = 0;
 		*cast(TrObject.TrClassType*)params.ptr = ClassType;
 		*cast(int*)&params[4] = CurrentCount;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[92566], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsClassAllowed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool GetPropAsFloat(int PropId, float* Value)
+	static bool GetPropAsFloat(int PropId, float* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(float*)&params[4] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112331], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetPropAsFloat, params.ptr, cast(void*)0);
 		*Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool GetPropAsInt(int PropId, int* Value)
+	static bool GetPropAsInt(int PropId, int* Value)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112335], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetPropAsInt, params.ptr, cast(void*)0);
 		*Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	bool GetPropAsString(int PropId, ScriptString* Value)
+	static bool GetPropAsString(int PropId, ScriptString* Value)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = PropId;
 		*cast(ScriptString*)&params[4] = *Value;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112339], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetPropAsString, params.ptr, cast(void*)0);
 		*Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void ApplyServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112343], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyServerSettings, cast(void*)0, cast(void*)0);
 	}
 	void LoadServerSettings()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112344], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LoadServerSettings, cast(void*)0, cast(void*)0);
 	}
 	int GetVehicleLimit(int Index)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[112346], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVehicleLimit, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 }

@@ -9,6 +9,13 @@ import UnrealScript.Engine.AnimNotify;
 extern(C++) interface AnimSequence : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimSequence")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetNotifyTimeByClass;
+		public @property static final ScriptFunction GetNotifyTimeByClass() { return mGetNotifyTimeByClass ? mGetNotifyTimeByClass : (mGetNotifyTimeByClass = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimSequence.GetNotifyTimeByClass")); }
+	}
 	enum AnimationCompressionFormat : ubyte
 	{
 		ACF_None = 0,
@@ -31,6 +38,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[48];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.CompressedTrack")); }
 		@property final auto ref
 		{
 			ScriptArray!(ubyte) ByteStream() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)&this + 0); }
@@ -43,6 +52,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.AnimTag")); }
 		@property final auto ref
 		{
 			ScriptArray!(ScriptString) Contains() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)&this + 12); }
@@ -53,6 +64,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.CurveTrack")); }
 		@property final auto ref
 		{
 			ScriptName CurveName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -63,6 +76,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.RotationTrack")); }
 		@property final auto ref
 		{
 			ScriptArray!(UObject.Quat) RotKeys() { return *cast(ScriptArray!(UObject.Quat)*)(cast(size_t)&this + 0); }
@@ -73,6 +88,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.TranslationTrack")); }
 		@property final auto ref
 		{
 			ScriptArray!(Vector) PosKeys() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 0); }
@@ -83,6 +100,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.SkelControlModifier")); }
 		@property final auto ref
 		{
 			ScriptName SkelControlName() { return *cast(ScriptName*)(cast(size_t)&this + 0); }
@@ -93,6 +112,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.TimeModifier")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
@@ -103,6 +124,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.AnimNotifyEvent")); }
 		@property final auto ref
 		{
 			float Time() { return *cast(float*)(cast(size_t)&this + 0); }
@@ -115,6 +138,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimSequence.RawAnimSequenceTrack")); }
 		@property final auto ref
 		{
 			ScriptArray!(Vector) PosKeys() { return *cast(ScriptArray!(Vector)*)(cast(size_t)&this + 0); }
@@ -176,7 +201,7 @@ public extern(D):
 		*cast(float*)&params[8] = StartPosition;
 		*cast(AnimNotify*)&params[12] = *out_Notify;
 		*cast(float*)&params[16] = *out_Duration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10514], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetNotifyTimeByClass, params.ptr, cast(void*)0);
 		*out_Notify = *cast(AnimNotify*)&params[12];
 		*out_Duration = *cast(float*)&params[16];
 		return *cast(float*)&params[20];

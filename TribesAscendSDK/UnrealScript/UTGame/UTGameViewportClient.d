@@ -9,6 +9,29 @@ import UnrealScript.Engine.Font;
 extern(C++) interface UTGameViewportClient : UDKGameViewportClient
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameViewportClient")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPostRender;
+			ScriptFunction mDrawTransition;
+			ScriptFunction mRenderHeader;
+			ScriptFunction mUpdateActiveSplitscreenType;
+			ScriptFunction mSetProgressMessage;
+			ScriptFunction mNotifyConnectionError;
+		}
+		public @property static final
+		{
+			ScriptFunction PostRender() { return mPostRender ? mPostRender : (mPostRender = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.PostRender")); }
+			ScriptFunction DrawTransition() { return mDrawTransition ? mDrawTransition : (mDrawTransition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.DrawTransition")); }
+			ScriptFunction RenderHeader() { return mRenderHeader ? mRenderHeader : (mRenderHeader = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.RenderHeader")); }
+			ScriptFunction UpdateActiveSplitscreenType() { return mUpdateActiveSplitscreenType ? mUpdateActiveSplitscreenType : (mUpdateActiveSplitscreenType = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.UpdateActiveSplitscreenType")); }
+			ScriptFunction SetProgressMessage() { return mSetProgressMessage ? mSetProgressMessage : (mSetProgressMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.SetProgressMessage")); }
+			ScriptFunction NotifyConnectionError() { return mNotifyConnectionError ? mNotifyConnectionError : (mNotifyConnectionError = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTGameViewportClient.NotifyConnectionError")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptString LevelActionMessages() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 300); }
@@ -24,25 +47,25 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47783], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender, params.ptr, cast(void*)0);
 	}
 	void DrawTransition(Canvas pCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47788], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTransition, params.ptr, cast(void*)0);
 	}
 	void RenderHeader(Canvas pCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47798], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderHeader, params.ptr, cast(void*)0);
 	}
 	void UpdateActiveSplitscreenType()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47800], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateActiveSplitscreenType, cast(void*)0, cast(void*)0);
 	}
 	void SetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString Title, bool bIgnoreFutureNetworkMessages)
 	{
@@ -52,7 +75,7 @@ final:
 		*cast(ScriptString*)&params[4] = Message;
 		*cast(ScriptString*)&params[16] = Title;
 		*cast(bool*)&params[28] = bIgnoreFutureNetworkMessages;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47801], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetProgressMessage, params.ptr, cast(void*)0);
 	}
 	void NotifyConnectionError(ScriptString Message, ScriptString Title)
 	{
@@ -60,6 +83,6 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Message;
 		*cast(ScriptString*)&params[12] = Title;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[47806], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyConnectionError, params.ptr, cast(void*)0);
 	}
 }

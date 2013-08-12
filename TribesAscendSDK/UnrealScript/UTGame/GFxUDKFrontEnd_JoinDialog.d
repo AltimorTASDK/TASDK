@@ -9,6 +9,29 @@ import UnrealScript.GFxUI.GFxObject;
 extern(C++) interface GFxUDKFrontEnd_JoinDialog : GFxUDKFrontEnd_Dialog
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_JoinDialog")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnTopMostView;
+			ScriptFunction mDisableSubComponents;
+			ScriptFunction mPopulateServerInfo;
+			ScriptFunction mSetJoinButtonPress;
+			ScriptFunction mSetSpectateButtonPress;
+			ScriptFunction mWidgetInitialized;
+		}
+		public @property static final
+		{
+			ScriptFunction OnTopMostView() { return mOnTopMostView ? mOnTopMostView : (mOnTopMostView = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.OnTopMostView")); }
+			ScriptFunction DisableSubComponents() { return mDisableSubComponents ? mDisableSubComponents : (mDisableSubComponents = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.DisableSubComponents")); }
+			ScriptFunction PopulateServerInfo() { return mPopulateServerInfo ? mPopulateServerInfo : (mPopulateServerInfo = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.PopulateServerInfo")); }
+			ScriptFunction SetJoinButtonPress() { return mSetJoinButtonPress ? mSetJoinButtonPress : (mSetJoinButtonPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.SetJoinButtonPress")); }
+			ScriptFunction SetSpectateButtonPress() { return mSetSpectateButtonPress ? mSetSpectateButtonPress : (mSetSpectateButtonPress = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.SetSpectateButtonPress")); }
+			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinDialog.WidgetInitialized")); }
+		}
+	}
 	@property final auto ref
 	{
 		GFxClikWidget SpectateBtn() { return *cast(GFxClikWidget*)(cast(size_t)cast(void*)this + 180); }
@@ -22,21 +45,21 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPlayOpenAnimation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38377], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDisableComponents;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38379], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
 	void PopulateServerInfo(OnlineGameSettings GameSettings)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(OnlineGameSettings*)params.ptr = GameSettings;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38381], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateServerInfo, params.ptr, cast(void*)0);
 	}
 	void SetJoinButtonPress(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -47,7 +70,7 @@ void* JoinButtonListener)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = JoinButtonListener;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38401], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetJoinButtonPress, params.ptr, cast(void*)0);
 	}
 	void SetSpectateButtonPress(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -58,7 +81,7 @@ void* SpectateButtonListener)
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = SpectateButtonListener;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38403], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSpectateButtonPress, params.ptr, cast(void*)0);
 	}
 	bool WidgetInitialized(ScriptName WidgetName, ScriptName WidgetPath, GFxObject Widget)
 	{
@@ -67,7 +90,7 @@ void**)params.ptr = SpectateButtonListener;
 		*cast(ScriptName*)params.ptr = WidgetName;
 		*cast(ScriptName*)&params[8] = WidgetPath;
 		*cast(GFxObject*)&params[16] = Widget;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[38405], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.WidgetInitialized, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
 }

@@ -11,6 +11,8 @@ import UnrealScript.Engine.AnimTree;
 extern(C++) interface TrObject : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrObject")); }
 	enum
 	{
 		FEET_TO_UNREAL_UNITS = 16,
@@ -507,6 +509,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[8];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.EffectFormOverwrite")); }
 		@property final auto ref
 		{
 			Material Mat() { return *cast(Material*)(cast(size_t)&this + 4); }
@@ -517,6 +521,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[56];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.PaperDollInfo")); }
 		@property final
 		{
 			auto ref
@@ -542,6 +548,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.TrTakeEffectInfo")); }
 		@property final auto ref
 		{
 			Vector HitLocation() { return *cast(Vector*)(cast(size_t)&this + 0); }
@@ -552,6 +560,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[40];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.TrTakeHitInfo")); }
 		@property final auto ref
 		{
 			int Damage() { return *cast(int*)(cast(size_t)&this + 0); }
@@ -565,6 +575,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.OffhandAnimation")); }
 		@property final
 		{
 			auto ref
@@ -580,6 +592,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.TrEventCredits")); }
 		@property final
 		{
 			auto ref
@@ -597,6 +611,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[68];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.TR_HUD_INFO")); }
 		@property final
 		{
 			auto ref
@@ -627,6 +643,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrObject.ObjectiveMICInfo")); }
 		@property final auto ref
 		{
 			int MyTeam() { return *cast(int*)(cast(size_t)&this + 0); }

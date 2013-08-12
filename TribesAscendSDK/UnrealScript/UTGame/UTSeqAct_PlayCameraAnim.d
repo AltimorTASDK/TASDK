@@ -7,6 +7,13 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface UTSeqAct_PlayCameraAnim : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_PlayCameraAnim")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetObjClassVersion;
+		public @property static final ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSeqAct_PlayCameraAnim.GetObjClassVersion")); }
+	}
 	@property final auto ref
 	{
 		CameraAnim AnimToPlay() { return *cast(CameraAnim*)(cast(size_t)cast(void*)this + 232); }
@@ -15,11 +22,11 @@ public extern(D):
 		float BlendInTime() { return *cast(float*)(cast(size_t)cast(void*)this + 236); }
 		float BlendOutTime() { return *cast(float*)(cast(size_t)cast(void*)this + 240); }
 	}
-	final int GetObjClassVersion()
+	final static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[49115], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

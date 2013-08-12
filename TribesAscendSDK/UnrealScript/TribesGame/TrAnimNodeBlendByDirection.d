@@ -1,11 +1,14 @@
 module UnrealScript.TribesGame.TrAnimNodeBlendByDirection;
 
+import ScriptClasses;
 import UnrealScript.TribesGame.TrPawn;
 import UnrealScript.Engine.AnimNodeSequenceBlendBase;
 
 extern(C++) interface TrAnimNodeBlendByDirection : AnimNodeSequenceBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByDirection")); }
 	@property final
 	{
 		auto ref

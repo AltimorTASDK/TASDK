@@ -7,14 +7,21 @@ import UnrealScript.Engine.NavMeshGoal_GenericFilterContainer;
 extern(C++) interface NavMeshGoalFilter_NotNearOtherAI : NavMeshGoal_Filter
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_NotNearOtherAI")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mNotNearOtherAI;
+		public @property static final ScriptFunction NotNearOtherAI() { return mNotNearOtherAI ? mNotNearOtherAI : (mNotNearOtherAI = ScriptObject.Find!(ScriptFunction)("Function Engine.NavMeshGoalFilter_NotNearOtherAI.NotNearOtherAI")); }
+	}
 	@property final auto ref float DistanceToCheck() { return *cast(float*)(cast(size_t)cast(void*)this + 72); }
-	final bool NotNearOtherAI(NavMeshGoal_GenericFilterContainer FilterContainer, float InDistanceToCheck)
+	final static bool NotNearOtherAI(NavMeshGoal_GenericFilterContainer FilterContainer, float InDistanceToCheck)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(NavMeshGoal_GenericFilterContainer*)params.ptr = FilterContainer;
 		*cast(float*)&params[4] = InDistanceToCheck;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[20996], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.NotNearOtherAI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

@@ -8,6 +8,8 @@ import UnrealScript.TribesGame.TrAnimNodeBlendList;
 extern(C++) interface TrAnimNodeBlendByFlagDirection : TrAnimNodeBlendList
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlagDirection")); }
 	enum EFlagAnimTypes : ubyte
 	{
 		FlagAnim_Idle = 0,

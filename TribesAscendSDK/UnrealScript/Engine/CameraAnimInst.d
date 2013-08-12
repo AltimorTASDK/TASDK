@@ -14,6 +14,29 @@ import UnrealScript.Engine.CameraAnim;
 extern(C++) interface CameraAnimInst : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnimInst")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetPlaySpace;
+			ScriptFunction mPlay;
+			ScriptFunction mUpdate;
+			ScriptFunction mAdvanceAnim;
+			ScriptFunction mStop;
+			ScriptFunction mApplyTransientScaling;
+		}
+		public @property static final
+		{
+			ScriptFunction SetPlaySpace() { return mSetPlaySpace ? mSetPlaySpace : (mSetPlaySpace = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.SetPlaySpace")); }
+			ScriptFunction Play() { return mPlay ? mPlay : (mPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Play")); }
+			ScriptFunction Update() { return mUpdate ? mUpdate : (mUpdate = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Update")); }
+			ScriptFunction AdvanceAnim() { return mAdvanceAnim ? mAdvanceAnim : (mAdvanceAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.AdvanceAnim")); }
+			ScriptFunction Stop() { return mStop ? mStop : (mStop = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.Stop")); }
+			ScriptFunction ApplyTransientScaling() { return mApplyTransientScaling ? mApplyTransientScaling : (mApplyTransientScaling = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraAnimInst.ApplyTransientScaling")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -57,7 +80,7 @@ final:
 		params[] = 0;
 		*cast(Camera.ECameraAnimPlaySpace*)params.ptr = NewSpace;
 		*cast(Rotator*)&params[4] = UserPlaySpace;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9499], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlaySpace, params.ptr, cast(void*)0);
 	}
 	void Play(CameraAnim Anim, Actor CamActor, float InRate, float InScale, float InBlendInTime, float InBlendOutTime, bool bInLoop, bool bRandomStartTime, float Duration)
 	{
@@ -72,7 +95,7 @@ final:
 		*cast(bool*)&params[24] = bInLoop;
 		*cast(bool*)&params[28] = bRandomStartTime;
 		*cast(float*)&params[32] = Duration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12164], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Play, params.ptr, cast(void*)0);
 	}
 	void Update(float NewRate, float NewScale, float NewBlendInTime, float NewBlendOutTime, float NewDuration)
 	{
@@ -83,7 +106,7 @@ final:
 		*cast(float*)&params[8] = NewBlendInTime;
 		*cast(float*)&params[12] = NewBlendOutTime;
 		*cast(float*)&params[16] = NewDuration;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12174], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Update, params.ptr, cast(void*)0);
 	}
 	void AdvanceAnim(float DeltaTime, bool bJump)
 	{
@@ -91,20 +114,20 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(bool*)&params[4] = bJump;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12180], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdvanceAnim, params.ptr, cast(void*)0);
 	}
 	void Stop(bool bImmediate)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bImmediate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12183], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, params.ptr, cast(void*)0);
 	}
 	void ApplyTransientScaling(float Scalar)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = Scalar;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12185], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyTransientScaling, params.ptr, cast(void*)0);
 	}
 }

@@ -7,6 +7,21 @@ import UnrealScript.Engine.Pawn;
 extern(C++) interface UDKScriptedNavigationPoint : NavigationPoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKScriptedNavigationPoint")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSpecifyEndAnchor;
+			ScriptFunction mNotifyAnchorFindingResult;
+		}
+		public @property static final
+		{
+			ScriptFunction SpecifyEndAnchor() { return mSpecifyEndAnchor ? mSpecifyEndAnchor : (mSpecifyEndAnchor = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKScriptedNavigationPoint.SpecifyEndAnchor")); }
+			ScriptFunction NotifyAnchorFindingResult() { return mNotifyAnchorFindingResult ? mNotifyAnchorFindingResult : (mNotifyAnchorFindingResult = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKScriptedNavigationPoint.NotifyAnchorFindingResult")); }
+		}
+	}
 	@property final
 	{
 		bool bAnchorMustBeReachable() { return (*cast(uint*)(cast(size_t)cast(void*)this + 692) & 0x4) != 0; }
@@ -22,7 +37,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = RouteFinder;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35324], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpecifyEndAnchor, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[4];
 	}
 	void NotifyAnchorFindingResult(NavigationPoint EndAnchor, Pawn RouteFinder)
@@ -31,6 +46,6 @@ final:
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = EndAnchor;
 		*cast(Pawn*)&params[4] = RouteFinder;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35327], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyAnchorFindingResult, params.ptr, cast(void*)0);
 	}
 }

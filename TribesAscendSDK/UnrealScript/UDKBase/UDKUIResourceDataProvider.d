@@ -6,6 +6,21 @@ import UnrealScript.Engine.UIResourceDataProvider;
 extern(C++) interface UDKUIResourceDataProvider : UIResourceDataProvider
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIResourceDataProvider")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mIsFiltered;
+			ScriptFunction mShouldBeFiltered;
+		}
+		public @property static final
+		{
+			ScriptFunction IsFiltered() { return mIsFiltered ? mIsFiltered : (mIsFiltered = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIResourceDataProvider.IsFiltered")); }
+			ScriptFunction ShouldBeFiltered() { return mShouldBeFiltered ? mShouldBeFiltered : (mShouldBeFiltered = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIResourceDataProvider.ShouldBeFiltered")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -27,14 +42,14 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35553], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool ShouldBeFiltered()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35555], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldBeFiltered, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 }

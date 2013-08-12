@@ -7,6 +7,21 @@ import UnrealScript.TribesGame.TrEffect_Managed;
 extern(C++) interface TrEffect_Sensor : TrEffect_Managed
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_Sensor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mApply;
+			ScriptFunction mRemove;
+		}
+		public @property static final
+		{
+			ScriptFunction Apply() { return mApply ? mApply : (mApply = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_Sensor.Apply")); }
+			ScriptFunction Remove() { return mRemove ? mRemove : (mRemove = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffect_Sensor.Remove")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -34,13 +49,13 @@ final:
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87197], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Apply, params.ptr, cast(void*)0);
 	}
 	void Remove(Actor Target)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87201], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Remove, params.ptr, cast(void*)0);
 	}
 }

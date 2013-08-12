@@ -8,10 +8,14 @@ import UnrealScript.Engine.MaterialInterface;
 extern(C++) interface StaticMesh : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMesh")); }
 	struct StaticMeshLODElement
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.StaticMesh.StaticMeshLODElement")); }
 		@property final
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
@@ -25,6 +29,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.StaticMesh.StaticMeshLODInfo")); }
 		@property final auto ref ScriptArray!(StaticMesh.StaticMeshLODElement) Elements() { return *cast(ScriptArray!(StaticMesh.StaticMeshLODElement)*)(cast(size_t)&this + 0); }
 	}
 	@property final

@@ -1,11 +1,14 @@
 module UnrealScript.UDKBase.UDKAnimBlendByFall;
 
+import ScriptClasses;
 import UnrealScript.UDKBase.UDKAnimNodeJumpLeanOffset;
 import UnrealScript.UDKBase.UDKAnimBlendBase;
 
 extern(C++) interface UDKAnimBlendByFall : UDKAnimBlendBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFall")); }
 	enum EBlendFallTypes : ubyte
 	{
 		FBT_Up = 0,

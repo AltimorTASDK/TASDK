@@ -7,6 +7,8 @@ import UnrealScript.Engine.Volume;
 extern(C++) interface LevelGridVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelGridVolume")); }
 	enum LevelGridCellShape : ubyte
 	{
 		LGCS_Box = 0,
@@ -17,6 +19,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.LevelGridVolume.LevelGridCellCoordinate")); }
 		@property final auto ref
 		{
 			int Z() { return *cast(int*)(cast(size_t)&this + 8); }

@@ -7,10 +7,14 @@ import UnrealScript.Engine.InterpTrackFloatBase;
 extern(C++) interface InterpTrackAnimControl : InterpTrackFloatBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackAnimControl")); }
 	struct AnimControlTrackKey
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackAnimControl.AnimControlTrackKey")); }
 		@property final
 		{
 			auto ref

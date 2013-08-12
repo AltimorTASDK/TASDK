@@ -7,6 +7,13 @@ import UnrealScript.GameFramework.GameCrowdForcePoint;
 extern(C++) interface GameCrowdAttractor : GameCrowdForcePoint
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAttractor")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mAppliedForce;
+		public @property static final ScriptFunction AppliedForce() { return mAppliedForce ? mAppliedForce : (mAppliedForce = ScriptObject.Find!(ScriptFunction)("Function GameFramework.GameCrowdAttractor.AppliedForce")); }
+	}
 	@property final
 	{
 		@property final auto ref float Attraction() { return *cast(float*)(cast(size_t)cast(void*)this + 484); }
@@ -18,7 +25,7 @@ public extern(D):
 		ubyte params[16];
 		params[] = 0;
 		*cast(GameCrowdAgent*)params.ptr = Agent;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[31213], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AppliedForce, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
 }

@@ -6,6 +6,8 @@ import UnrealScript.Engine.SeqAct_Latent;
 extern(C++) interface SeqAct_WaitForLevelsVisible : SeqAct_Latent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_WaitForLevelsVisible")); }
 	@property final
 	{
 		@property final auto ref ScriptArray!(ScriptName) LevelNames() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 248); }

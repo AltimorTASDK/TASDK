@@ -8,6 +8,31 @@ import UnrealScript.Engine.AnimNodeBlendBase;
 extern(C++) interface AnimNode : AnimObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNode")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnInit;
+			ScriptFunction mOnBecomeRelevant;
+			ScriptFunction mOnCeaseRelevant;
+			ScriptFunction mFindAnimNode;
+			ScriptFunction mPlayAnim;
+			ScriptFunction mStopAnim;
+			ScriptFunction mReplayAnim;
+		}
+		public @property static final
+		{
+			ScriptFunction OnInit() { return mOnInit ? mOnInit : (mOnInit = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.OnInit")); }
+			ScriptFunction OnBecomeRelevant() { return mOnBecomeRelevant ? mOnBecomeRelevant : (mOnBecomeRelevant = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.OnBecomeRelevant")); }
+			ScriptFunction OnCeaseRelevant() { return mOnCeaseRelevant ? mOnCeaseRelevant : (mOnCeaseRelevant = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.OnCeaseRelevant")); }
+			ScriptFunction FindAnimNode() { return mFindAnimNode ? mFindAnimNode : (mFindAnimNode = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.FindAnimNode")); }
+			ScriptFunction PlayAnim() { return mPlayAnim ? mPlayAnim : (mPlayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.PlayAnim")); }
+			ScriptFunction StopAnim() { return mStopAnim ? mStopAnim : (mStopAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.StopAnim")); }
+			ScriptFunction ReplayAnim() { return mReplayAnim ? mReplayAnim : (mReplayAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.AnimNode.ReplayAnim")); }
+		}
+	}
 	enum ESliderType : ubyte
 	{
 		ST_1D = 0,
@@ -18,6 +43,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.AnimNode.CurveKey")); }
 		@property final auto ref
 		{
 			float Weight() { return *cast(float*)(cast(size_t)&this + 8); }
@@ -61,22 +88,22 @@ public extern(D):
 final:
 	void OnInit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10687], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnInit, cast(void*)0, cast(void*)0);
 	}
 	void OnBecomeRelevant()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10688], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnBecomeRelevant, cast(void*)0, cast(void*)0);
 	}
 	void OnCeaseRelevant()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10689], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnCeaseRelevant, cast(void*)0, cast(void*)0);
 	}
 	AnimNode FindAnimNode(ScriptName InNodeName)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InNodeName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10690], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FindAnimNode, params.ptr, cast(void*)0);
 		return *cast(AnimNode*)&params[8];
 	}
 	void PlayAnim(bool bLoop, float Rate, float StartTime)
@@ -86,14 +113,14 @@ final:
 		*cast(bool*)params.ptr = bLoop;
 		*cast(float*)&params[4] = Rate;
 		*cast(float*)&params[8] = StartTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10693], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10697], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StopAnim, cast(void*)0, cast(void*)0);
 	}
 	void ReplayAnim()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[10698], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplayAnim, cast(void*)0, cast(void*)0);
 	}
 }

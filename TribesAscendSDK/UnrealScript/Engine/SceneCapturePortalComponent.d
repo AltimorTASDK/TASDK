@@ -8,6 +8,13 @@ import UnrealScript.Engine.SceneCaptureComponent;
 extern(C++) interface SceneCapturePortalComponent : SceneCaptureComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapturePortalComponent")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSetCaptureParameters;
+		public @property static final ScriptFunction SetCaptureParameters() { return mSetCaptureParameters ? mSetCaptureParameters : (mSetCaptureParameters = ScriptObject.Find!(ScriptFunction)("Function Engine.SceneCapturePortalComponent.SetCaptureParameters")); }
+	}
 	@property final auto ref
 	{
 		Actor ViewDestination() { return *cast(Actor*)(cast(size_t)cast(void*)this + 152); }
@@ -21,6 +28,6 @@ public extern(D):
 		*cast(TextureRenderTarget2D*)params.ptr = NewTextureTarget;
 		*cast(float*)&params[4] = NewScaleFOV;
 		*cast(Actor*)&params[8] = NewViewDest;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24713], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
 }

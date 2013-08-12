@@ -1,5 +1,6 @@
 module UnrealScript.UDKBase.UDKAnimBlendByHoverJump;
 
+import ScriptClasses;
 import UnrealScript.Engine.Pawn;
 import UnrealScript.UDKBase.UDKVehicle;
 import UnrealScript.UDKBase.UDKAnimBlendByFall;
@@ -7,6 +8,8 @@ import UnrealScript.UDKBase.UDKAnimBlendByFall;
 extern(C++) interface UDKAnimBlendByHoverJump : UDKAnimBlendByFall
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByHoverJump")); }
 	@property final auto ref
 	{
 		UDKVehicle OwnerHV() { return *cast(UDKVehicle*)(cast(size_t)cast(void*)this + 328); }

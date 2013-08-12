@@ -6,10 +6,14 @@ import UnrealScript.Engine.K2GraphBase;
 extern(C++) interface DMC_Prototype : K2GraphBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DMC_Prototype")); }
 	struct DMCNewVar
 	{
 		private ubyte __buffer__[16];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.DMC_Prototype.DMCNewVar")); }
 		@property final auto ref
 		{
 			ScriptName VarType() { return *cast(ScriptName*)(cast(size_t)&this + 8); }

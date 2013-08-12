@@ -8,6 +8,21 @@ import UnrealScript.Engine.PickupFactory;
 extern(C++) interface UDKPickupFactory : PickupFactory
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPickupFactory")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mSetPickupVisible;
+			ScriptFunction mSetPickupHidden;
+		}
+		public @property static final
+		{
+			ScriptFunction SetPickupVisible() { return mSetPickupVisible ? mSetPickupVisible : (mSetPickupVisible = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPickupFactory.SetPickupVisible")); }
+			ScriptFunction SetPickupHidden() { return mSetPickupHidden ? mSetPickupHidden : (mSetPickupHidden = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKPickupFactory.SetPickupHidden")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -52,10 +67,10 @@ public extern(D):
 final:
 	void SetPickupVisible()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35231], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPickupVisible, cast(void*)0, cast(void*)0);
 	}
 	void SetPickupHidden()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[35232], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetPickupHidden, cast(void*)0, cast(void*)0);
 	}
 }

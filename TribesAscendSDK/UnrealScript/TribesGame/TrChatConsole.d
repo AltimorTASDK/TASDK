@@ -10,6 +10,37 @@ import UnrealScript.Engine.Console;
 extern(C++) interface TrChatConsole : UTConsole
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatConsole")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitialized;
+			ScriptFunction mGetPlayerController;
+			ScriptFunction mConsoleCommand;
+			ScriptFunction mStartTypingChat;
+			ScriptFunction mStartTyping;
+			ScriptFunction mIsSlashCommand;
+			ScriptFunction mIsPlayerTell;
+			ScriptFunction mPostRender_Console;
+			ScriptFunction mInputKey;
+			ScriptFunction mAddOnlineFriendHelp;
+		}
+		public @property static final
+		{
+			ScriptFunction Initialized() { return mInitialized ? mInitialized : (mInitialized = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.Initialized")); }
+			ScriptFunction GetPlayerController() { return mGetPlayerController ? mGetPlayerController : (mGetPlayerController = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.GetPlayerController")); }
+			ScriptFunction ConsoleCommand() { return mConsoleCommand ? mConsoleCommand : (mConsoleCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.ConsoleCommand")); }
+			ScriptFunction StartTypingChat() { return mStartTypingChat ? mStartTypingChat : (mStartTypingChat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.StartTypingChat")); }
+			ScriptFunction StartTyping() { return mStartTyping ? mStartTyping : (mStartTyping = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.StartTyping")); }
+			ScriptFunction IsSlashCommand() { return mIsSlashCommand ? mIsSlashCommand : (mIsSlashCommand = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.IsSlashCommand")); }
+			ScriptFunction IsPlayerTell() { return mIsPlayerTell ? mIsPlayerTell : (mIsPlayerTell = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.IsPlayerTell")); }
+			ScriptFunction PostRender_Console() { return mPostRender_Console ? mPostRender_Console : (mPostRender_Console = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.PostRender_Console")); }
+			ScriptFunction InputKey() { return mInputKey ? mInputKey : (mInputKey = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.InputKey")); }
+			ScriptFunction AddOnlineFriendHelp() { return mAddOnlineFriendHelp ? mAddOnlineFriendHelp : (mAddOnlineFriendHelp = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrChatConsole.AddOnlineFriendHelp")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(Console.AutoCompleteCommand) TribesAutoCompleteList() { return *cast(ScriptArray!(Console.AutoCompleteCommand)*)(cast(size_t)cast(void*)this + 468); }
@@ -25,18 +56,18 @@ public extern(D):
 final:
 	void Initialized()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74294], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Initialized, cast(void*)0, cast(void*)0);
 	}
 	void GetPlayerController()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74295], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerController, cast(void*)0, cast(void*)0);
 	}
 	void ConsoleCommand(ScriptString Command)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74297], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 	void StartTypingChat(ScriptString Text, bool bFullConsole, ScriptString startText)
 	{
@@ -45,27 +76,27 @@ final:
 		*cast(ScriptString*)params.ptr = Text;
 		*cast(bool*)&params[12] = bFullConsole;
 		*cast(ScriptString*)&params[16] = startText;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74300], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartTypingChat, params.ptr, cast(void*)0);
 	}
 	void StartTyping(ScriptString Text)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74304], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.StartTyping, params.ptr, cast(void*)0);
 	}
 	bool IsSlashCommand()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74306], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsSlashCommand, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsPlayerTell()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74308], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlayerTell, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void PostRender_Console(Canvas pCanvas)
@@ -73,7 +104,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74310], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
 	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
 	{
@@ -84,11 +115,11 @@ final:
 		*cast(UObject.EInputEvent*)&params[12] = Event;
 		*cast(float*)&params[16] = AmountDepressed;
 		*cast(bool*)&params[20] = bGamepad;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74312], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
 	void AddOnlineFriendHelp()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[74319], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddOnlineFriendHelp, cast(void*)0, cast(void*)0);
 	}
 }

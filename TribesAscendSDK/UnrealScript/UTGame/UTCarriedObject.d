@@ -22,6 +22,89 @@ import UnrealScript.UTGame.UTPlayerReplicationInfo;
 extern(C++) interface UTCarriedObject : UDKCarriedObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCarriedObject")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFlagUse;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mShouldMinimapRenderFor;
+			ScriptFunction mHighlightOnMinimap;
+			ScriptFunction mGetIconTexture;
+			ScriptFunction mDrawIcon;
+			ScriptFunction mRenderMapIcon;
+			ScriptFunction mRenderEnemyMapIcon;
+			ScriptFunction mSetHolder;
+			ScriptFunction mSendFlagMessage;
+			ScriptFunction mScore;
+			ScriptFunction mDrop;
+			ScriptFunction mSendHome;
+			ScriptFunction mKismetSendHome;
+			ScriptFunction mBroadcastReturnedMessage;
+			ScriptFunction mBroadcastDroppedMessage;
+			ScriptFunction mBroadcastTakenFromBaseMessage;
+			ScriptFunction mBroadcastTakenDroppedMessage;
+			ScriptFunction mCalcSetHome;
+			ScriptFunction mClearHolder;
+			ScriptFunction mPosition;
+			ScriptFunction mValidHolder;
+			ScriptFunction mTouch;
+			ScriptFunction mFellOutOfWorld;
+			ScriptFunction mReplicatedEvent;
+			ScriptFunction mClientReturnedHome;
+			ScriptFunction mNotReachableBy;
+			ScriptFunction mLanded;
+			ScriptFunction mGetKismetEventObjective;
+			ScriptFunction mLogTaken;
+			ScriptFunction mLogReturned;
+			ScriptFunction mLogDropped;
+			ScriptFunction mCheckTouching;
+			ScriptFunction mAutoSendHome;
+			ScriptFunction mCheckFit;
+			ScriptFunction mCheckPain;
+		}
+		public @property static final
+		{
+			ScriptFunction FlagUse() { return mFlagUse ? mFlagUse : (mFlagUse = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.FlagUse")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.PostBeginPlay")); }
+			ScriptFunction ShouldMinimapRenderFor() { return mShouldMinimapRenderFor ? mShouldMinimapRenderFor : (mShouldMinimapRenderFor = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ShouldMinimapRenderFor")); }
+			ScriptFunction HighlightOnMinimap() { return mHighlightOnMinimap ? mHighlightOnMinimap : (mHighlightOnMinimap = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.HighlightOnMinimap")); }
+			ScriptFunction GetIconTexture() { return mGetIconTexture ? mGetIconTexture : (mGetIconTexture = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.GetIconTexture")); }
+			ScriptFunction DrawIcon() { return mDrawIcon ? mDrawIcon : (mDrawIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.DrawIcon")); }
+			ScriptFunction RenderMapIcon() { return mRenderMapIcon ? mRenderMapIcon : (mRenderMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.RenderMapIcon")); }
+			ScriptFunction RenderEnemyMapIcon() { return mRenderEnemyMapIcon ? mRenderEnemyMapIcon : (mRenderEnemyMapIcon = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.RenderEnemyMapIcon")); }
+			ScriptFunction SetHolder() { return mSetHolder ? mSetHolder : (mSetHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SetHolder")); }
+			ScriptFunction SendFlagMessage() { return mSendFlagMessage ? mSendFlagMessage : (mSendFlagMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SendFlagMessage")); }
+			ScriptFunction Score() { return mScore ? mScore : (mScore = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Score")); }
+			ScriptFunction Drop() { return mDrop ? mDrop : (mDrop = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Drop")); }
+			ScriptFunction SendHome() { return mSendHome ? mSendHome : (mSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.SendHome")); }
+			ScriptFunction KismetSendHome() { return mKismetSendHome ? mKismetSendHome : (mKismetSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.KismetSendHome")); }
+			ScriptFunction BroadcastReturnedMessage() { return mBroadcastReturnedMessage ? mBroadcastReturnedMessage : (mBroadcastReturnedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastReturnedMessage")); }
+			ScriptFunction BroadcastDroppedMessage() { return mBroadcastDroppedMessage ? mBroadcastDroppedMessage : (mBroadcastDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastDroppedMessage")); }
+			ScriptFunction BroadcastTakenFromBaseMessage() { return mBroadcastTakenFromBaseMessage ? mBroadcastTakenFromBaseMessage : (mBroadcastTakenFromBaseMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastTakenFromBaseMessage")); }
+			ScriptFunction BroadcastTakenDroppedMessage() { return mBroadcastTakenDroppedMessage ? mBroadcastTakenDroppedMessage : (mBroadcastTakenDroppedMessage = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.BroadcastTakenDroppedMessage")); }
+			ScriptFunction CalcSetHome() { return mCalcSetHome ? mCalcSetHome : (mCalcSetHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CalcSetHome")); }
+			ScriptFunction ClearHolder() { return mClearHolder ? mClearHolder : (mClearHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ClearHolder")); }
+			ScriptFunction Position() { return mPosition ? mPosition : (mPosition = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Position")); }
+			ScriptFunction ValidHolder() { return mValidHolder ? mValidHolder : (mValidHolder = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ValidHolder")); }
+			ScriptFunction Touch() { return mTouch ? mTouch : (mTouch = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Touch")); }
+			ScriptFunction FellOutOfWorld() { return mFellOutOfWorld ? mFellOutOfWorld : (mFellOutOfWorld = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.FellOutOfWorld")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ReplicatedEvent")); }
+			ScriptFunction ClientReturnedHome() { return mClientReturnedHome ? mClientReturnedHome : (mClientReturnedHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.ClientReturnedHome")); }
+			ScriptFunction NotReachableBy() { return mNotReachableBy ? mNotReachableBy : (mNotReachableBy = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.NotReachableBy")); }
+			ScriptFunction Landed() { return mLanded ? mLanded : (mLanded = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.Landed")); }
+			ScriptFunction GetKismetEventObjective() { return mGetKismetEventObjective ? mGetKismetEventObjective : (mGetKismetEventObjective = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.GetKismetEventObjective")); }
+			ScriptFunction LogTaken() { return mLogTaken ? mLogTaken : (mLogTaken = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogTaken")); }
+			ScriptFunction LogReturned() { return mLogReturned ? mLogReturned : (mLogReturned = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogReturned")); }
+			ScriptFunction LogDropped() { return mLogDropped ? mLogDropped : (mLogDropped = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.LogDropped")); }
+			ScriptFunction CheckTouching() { return mCheckTouching ? mCheckTouching : (mCheckTouching = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckTouching")); }
+			ScriptFunction AutoSendHome() { return mAutoSendHome ? mAutoSendHome : (mAutoSendHome = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.AutoSendHome")); }
+			ScriptFunction CheckFit() { return mCheckFit ? mCheckFit : (mCheckFit = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckFit")); }
+			ScriptFunction CheckPain() { return mCheckPain ? mCheckPain : (mCheckPain = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTCarriedObject.CheckPain")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -72,19 +155,19 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[36609], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FlagUse, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43635], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	bool ShouldMinimapRenderFor(PlayerController PC)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43637], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldMinimapRenderFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void HighlightOnMinimap(int Switch)
@@ -92,13 +175,13 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = Switch;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43640], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HighlightOnMinimap, params.ptr, cast(void*)0);
 	}
 	Texture2D GetIconTexture()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43642], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetIconTexture, params.ptr, cast(void*)0);
 		return *cast(Texture2D*)params.ptr;
 	}
 	void DrawIcon(Canvas pCanvas, Vector IconLocation, float IconWidth, float IconAlpha)
@@ -109,7 +192,7 @@ final:
 		*cast(Vector*)&params[4] = IconLocation;
 		*cast(float*)&params[16] = IconWidth;
 		*cast(float*)&params[20] = IconAlpha;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43644], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawIcon, params.ptr, cast(void*)0);
 	}
 	void RenderMapIcon(UTMapInfo MP, Canvas pCanvas, UTPlayerController PlayerOwner)
 	{
@@ -118,7 +201,7 @@ final:
 		*cast(UTMapInfo*)params.ptr = MP;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(UTPlayerController*)&params[8] = PlayerOwner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43651], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderMapIcon, params.ptr, cast(void*)0);
 	}
 	void RenderEnemyMapIcon(UTMapInfo MP, Canvas pCanvas, UTPlayerController PlayerOwner, UTGameObjective NearbyObjective)
 	{
@@ -128,25 +211,25 @@ final:
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(UTPlayerController*)&params[8] = PlayerOwner;
 		*cast(UTGameObjective*)&params[12] = NearbyObjective;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderEnemyMapIcon, params.ptr, cast(void*)0);
 	}
 	void SetHolder(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43666], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetHolder, params.ptr, cast(void*)0);
 	}
 	void SendFlagMessage(Controller C)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43672], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendFlagMessage, params.ptr, cast(void*)0);
 	}
 	void Score()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43674], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Score, cast(void*)0, cast(void*)0);
 	}
 	void Drop(Controller Killer, bool bNoThrow)
 	{
@@ -154,57 +237,57 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = Killer;
 		*cast(bool*)&params[4] = bNoThrow;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43675], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SendHome(Controller Returner)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Returner;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43679], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SendHome, params.ptr, cast(void*)0);
 	}
 	void KismetSendHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43682], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.KismetSendHome, cast(void*)0, cast(void*)0);
 	}
 	void BroadcastReturnedMessage()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43683], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastReturnedMessage, cast(void*)0, cast(void*)0);
 	}
 	void BroadcastDroppedMessage(Controller EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43684], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastDroppedMessage, params.ptr, cast(void*)0);
 	}
 	void BroadcastTakenFromBaseMessage(Controller EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43686], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastTakenFromBaseMessage, params.ptr, cast(void*)0);
 	}
 	void BroadcastTakenDroppedMessage(Controller EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43688], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastTakenDroppedMessage, params.ptr, cast(void*)0);
 	}
 	void CalcSetHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43690], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalcSetHome, cast(void*)0, cast(void*)0);
 	}
 	void ClearHolder()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43692], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearHolder, cast(void*)0, cast(void*)0);
 	}
 	Actor Position()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43697], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Position, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
 	bool ValidHolder(Actor Other)
@@ -212,7 +295,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43699], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ValidHolder, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void Touch(Actor Other, 
@@ -227,32 +310,32 @@ void* OtherComp, Vector HitLocation, Vector HitNormal)
 void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = HitNormal;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43705], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
 	void FellOutOfWorld(ScriptClass dmgType)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = dmgType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43710], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FellOutOfWorld, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43712], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 	void ClientReturnedHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43714], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReturnedHome, cast(void*)0, cast(void*)0);
 	}
 	void NotReachableBy(Pawn P)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43715], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotReachableBy, params.ptr, cast(void*)0);
 	}
 	void Landed(Vector HitNormal, Actor FloorActor)
 	{
@@ -260,13 +343,13 @@ void**)&params[4] = OtherComp;
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitNormal;
 		*cast(Actor*)&params[12] = FloorActor;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43717], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Landed, params.ptr, cast(void*)0);
 	}
 	UDKGameObjective GetKismetEventObjective()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43720], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetKismetEventObjective, params.ptr, cast(void*)0);
 		return *cast(UDKGameObjective*)params.ptr;
 	}
 	void LogTaken(Controller EventInstigator)
@@ -274,36 +357,36 @@ void**)&params[4] = OtherComp;
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43722], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LogTaken, params.ptr, cast(void*)0);
 	}
 	void LogReturned(Controller EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43724], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LogReturned, params.ptr, cast(void*)0);
 	}
 	void LogDropped(Controller EventInstigator)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Controller*)params.ptr = EventInstigator;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43726], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LogDropped, params.ptr, cast(void*)0);
 	}
 	void CheckTouching()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43729], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckTouching, cast(void*)0, cast(void*)0);
 	}
 	void AutoSendHome()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43733], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AutoSendHome, cast(void*)0, cast(void*)0);
 	}
 	void CheckFit()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43761], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckFit, cast(void*)0, cast(void*)0);
 	}
 	void CheckPain()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[43762], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckPain, cast(void*)0, cast(void*)0);
 	}
 }

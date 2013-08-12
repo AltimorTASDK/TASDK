@@ -9,6 +9,13 @@ import UnrealScript.Engine.AITree;
 extern(C++) interface AICommandNodeBase : K2NodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AICommandNodeBase")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mSelectBestChild;
+		public @property static final ScriptFunction SelectBestChild() { return mSelectBestChild ? mSelectBestChild : (mSelectBestChild = ScriptObject.Find!(ScriptFunction)("Function Engine.AICommandNodeBase.SelectBestChild")); }
+	}
 	@property final auto ref
 	{
 		DMC_Prototype UtilityDMC() { return *cast(DMC_Prototype*)(cast(size_t)cast(void*)this + 96); }
@@ -20,7 +27,7 @@ public extern(D):
 		params[] = 0;
 		*cast(AIController*)params.ptr = InAI;
 		*cast(AITree.AITreeHandle*)&params[4] = *Handle;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9704], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SelectBestChild, params.ptr, cast(void*)0);
 		*Handle = *cast(AITree.AITreeHandle*)&params[4];
 		return *cast(AICommandNodeBase*)&params[52];
 	}

@@ -1,11 +1,14 @@
 module UnrealScript.Engine.FluidInfluenceComponent;
 
+import ScriptClasses;
 import UnrealScript.Engine.PrimitiveComponent;
 import UnrealScript.Engine.FluidSurfaceActor;
 
 extern(C++) interface FluidInfluenceComponent : PrimitiveComponent
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidInfluenceComponent")); }
 	enum EInfluenceType : ubyte
 	{
 		Fluid_Flow = 0,

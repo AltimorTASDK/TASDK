@@ -11,6 +11,35 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface AIController : Controller
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AIController")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mPreBeginPlay;
+			ScriptFunction mReset;
+			ScriptFunction mDisplayDebug;
+			ScriptFunction mSetTeam;
+			ScriptFunction mGetPlayerViewPoint;
+			ScriptFunction mOnAIMoveToActor;
+			ScriptFunction mNotifyWeaponFired;
+			ScriptFunction mNotifyWeaponFinishedFiring;
+			ScriptFunction mCanFireWeapon;
+		}
+		public @property static final
+		{
+			ScriptFunction PreBeginPlay() { return mPreBeginPlay ? mPreBeginPlay : (mPreBeginPlay = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.PreBeginPlay")); }
+			ScriptFunction Reset() { return mReset ? mReset : (mReset = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.Reset")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.DisplayDebug")); }
+			ScriptFunction SetTeam() { return mSetTeam ? mSetTeam : (mSetTeam = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.SetTeam")); }
+			ScriptFunction GetPlayerViewPoint() { return mGetPlayerViewPoint ? mGetPlayerViewPoint : (mGetPlayerViewPoint = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.GetPlayerViewPoint")); }
+			ScriptFunction OnAIMoveToActor() { return mOnAIMoveToActor ? mOnAIMoveToActor : (mOnAIMoveToActor = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.OnAIMoveToActor")); }
+			ScriptFunction NotifyWeaponFired() { return mNotifyWeaponFired ? mNotifyWeaponFired : (mNotifyWeaponFired = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.NotifyWeaponFired")); }
+			ScriptFunction NotifyWeaponFinishedFiring() { return mNotifyWeaponFinishedFiring ? mNotifyWeaponFinishedFiring : (mNotifyWeaponFinishedFiring = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.NotifyWeaponFinishedFiring")); }
+			ScriptFunction CanFireWeapon() { return mCanFireWeapon ? mCanFireWeapon : (mCanFireWeapon = ScriptObject.Find!(ScriptFunction)("Function Engine.AIController.CanFireWeapon")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -29,11 +58,11 @@ public extern(D):
 final:
 	void PreBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9716], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void Reset()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9718], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
 	{
@@ -42,7 +71,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9719], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}
@@ -51,7 +80,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(int*)params.ptr = inTeamIdx;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9728], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetTeam, params.ptr, cast(void*)0);
 	}
 	void GetPlayerViewPoint(Vector* out_Location, Rotator* out_Rotation)
 	{
@@ -59,7 +88,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = *out_Location;
 		*cast(Rotator*)&params[12] = *out_Rotation;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9730], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
 		*out_Location = *cast(Vector*)params.ptr;
 		*out_Rotation = *cast(Rotator*)&params[12];
 	}
@@ -68,7 +97,7 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_AIMoveToActor*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9733], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnAIMoveToActor, params.ptr, cast(void*)0);
 	}
 	void NotifyWeaponFired(Weapon W, ubyte FireMode)
 	{
@@ -76,7 +105,7 @@ final:
 		params[] = 0;
 		*cast(Weapon*)params.ptr = W;
 		params[4] = FireMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9748], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyWeaponFired, params.ptr, cast(void*)0);
 	}
 	void NotifyWeaponFinishedFiring(Weapon W, ubyte FireMode)
 	{
@@ -84,7 +113,7 @@ final:
 		params[] = 0;
 		*cast(Weapon*)params.ptr = W;
 		params[4] = FireMode;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9751], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyWeaponFinishedFiring, params.ptr, cast(void*)0);
 	}
 	bool CanFireWeapon(Weapon Wpn, ubyte FireModeNum)
 	{
@@ -92,7 +121,7 @@ final:
 		params[] = 0;
 		*cast(Weapon*)params.ptr = Wpn;
 		params[4] = FireModeNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9754], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CanFireWeapon, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 }

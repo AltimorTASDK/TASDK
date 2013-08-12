@@ -7,6 +7,23 @@ import UnrealScript.Engine.RigidBodyBase;
 extern(C++) interface RB_LineImpulseActor : RigidBodyBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_LineImpulseActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mFireLineImpulse;
+			ScriptFunction mOnToggle;
+			ScriptFunction mReplicatedEvent;
+		}
+		public @property static final
+		{
+			ScriptFunction FireLineImpulse() { return mFireLineImpulse ? mFireLineImpulse : (mFireLineImpulse = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_LineImpulseActor.FireLineImpulse")); }
+			ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_LineImpulseActor.OnToggle")); }
+			ScriptFunction ReplicatedEvent() { return mReplicatedEvent ? mReplicatedEvent : (mReplicatedEvent = ScriptObject.Find!(ScriptFunction)("Function Engine.RB_LineImpulseActor.ReplicatedEvent")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -25,20 +42,20 @@ public extern(D):
 final:
 	void FireLineImpulse()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25280], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FireLineImpulse, cast(void*)0, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle inAction)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = inAction;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25281], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = VarName;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25283], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
 }

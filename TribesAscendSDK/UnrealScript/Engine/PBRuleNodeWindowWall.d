@@ -1,11 +1,14 @@
 module UnrealScript.Engine.PBRuleNodeWindowWall;
 
+import ScriptClasses;
 import UnrealScript.Engine.PBRuleNodeBase;
 import UnrealScript.Engine.MaterialInterface;
 
 extern(C++) interface PBRuleNodeWindowWall : PBRuleNodeBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeWindowWall")); }
 	@property final
 	{
 		auto ref

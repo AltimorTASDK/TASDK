@@ -8,6 +8,37 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface CameraModifier : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraModifier")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mAddCameraModifier;
+			ScriptFunction mProcessViewRotation;
+			ScriptFunction mInit;
+			ScriptFunction mModifyCamera;
+			ScriptFunction mIsDisabled;
+			ScriptFunction mRemoveCameraModifier;
+			ScriptFunction mDisableModifier;
+			ScriptFunction mEnableModifier;
+			ScriptFunction mToggleModifier;
+			ScriptFunction mUpdateAlpha;
+		}
+		public @property static final
+		{
+			ScriptFunction AddCameraModifier() { return mAddCameraModifier ? mAddCameraModifier : (mAddCameraModifier = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.AddCameraModifier")); }
+			ScriptFunction ProcessViewRotation() { return mProcessViewRotation ? mProcessViewRotation : (mProcessViewRotation = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.ProcessViewRotation")); }
+			ScriptFunction Init() { return mInit ? mInit : (mInit = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.Init")); }
+			ScriptFunction ModifyCamera() { return mModifyCamera ? mModifyCamera : (mModifyCamera = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.ModifyCamera")); }
+			ScriptFunction IsDisabled() { return mIsDisabled ? mIsDisabled : (mIsDisabled = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.IsDisabled")); }
+			ScriptFunction RemoveCameraModifier() { return mRemoveCameraModifier ? mRemoveCameraModifier : (mRemoveCameraModifier = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.RemoveCameraModifier")); }
+			ScriptFunction DisableModifier() { return mDisableModifier ? mDisableModifier : (mDisableModifier = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.DisableModifier")); }
+			ScriptFunction EnableModifier() { return mEnableModifier ? mEnableModifier : (mEnableModifier = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.EnableModifier")); }
+			ScriptFunction ToggleModifier() { return mToggleModifier ? mToggleModifier : (mToggleModifier = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.ToggleModifier")); }
+			ScriptFunction UpdateAlpha() { return mUpdateAlpha ? mUpdateAlpha : (mUpdateAlpha = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraModifier.UpdateAlpha")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -34,7 +65,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Camera*)params.ptr = pCamera;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6408], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AddCameraModifier, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	bool ProcessViewRotation(Actor ViewTarget, float DeltaTime, Rotator* out_ViewRotation, Rotator* out_DeltaRot)
@@ -45,14 +76,14 @@ final:
 		*cast(float*)&params[4] = DeltaTime;
 		*cast(Rotator*)&params[8] = *out_ViewRotation;
 		*cast(Rotator*)&params[20] = *out_DeltaRot;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[6618], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
 		*out_ViewRotation = *cast(Rotator*)&params[8];
 		*out_DeltaRot = *cast(Rotator*)&params[20];
 		return *cast(bool*)&params[32];
 	}
 	void Init()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12200], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
 	bool ModifyCamera(Camera pCamera, float DeltaTime, UObject.TPOV* OutPOV)
 	{
@@ -61,7 +92,7 @@ final:
 		*cast(Camera*)params.ptr = pCamera;
 		*cast(float*)&params[4] = DeltaTime;
 		*cast(UObject.TPOV*)&params[8] = *OutPOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12201], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyCamera, params.ptr, cast(void*)0);
 		*OutPOV = *cast(UObject.TPOV*)&params[8];
 		return *cast(bool*)&params[36];
 	}
@@ -69,7 +100,7 @@ final:
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12206], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsDisabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool RemoveCameraModifier(Camera pCamera)
@@ -77,7 +108,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Camera*)params.ptr = pCamera;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12212], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCameraModifier, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void DisableModifier(bool bImmediate)
@@ -85,15 +116,15 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bImmediate;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12216], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisableModifier, params.ptr, cast(void*)0);
 	}
 	void EnableModifier()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12218], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableModifier, cast(void*)0, cast(void*)0);
 	}
 	void ToggleModifier()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12219], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleModifier, cast(void*)0, cast(void*)0);
 	}
 	void UpdateAlpha(Camera pCamera, float DeltaTime)
 	{
@@ -101,6 +132,6 @@ final:
 		params[] = 0;
 		*cast(Camera*)params.ptr = pCamera;
 		*cast(float*)&params[4] = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12224], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateAlpha, params.ptr, cast(void*)0);
 	}
 }

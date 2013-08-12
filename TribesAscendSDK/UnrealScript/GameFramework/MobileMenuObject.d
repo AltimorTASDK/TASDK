@@ -9,10 +9,27 @@ import UnrealScript.GameFramework.MobilePlayerInput;
 extern(C++) interface MobileMenuObject : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuObject")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mInitMenuObject;
+			ScriptFunction mRenderObject;
+		}
+		public @property static final
+		{
+			ScriptFunction InitMenuObject() { return mInitMenuObject ? mInitMenuObject : (mInitMenuObject = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuObject.InitMenuObject")); }
+			ScriptFunction RenderObject() { return mRenderObject ? mRenderObject : (mRenderObject = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobileMenuObject.RenderObject")); }
+		}
+	}
 	struct UVCoords
 	{
 		private ubyte __buffer__[20];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct GameFramework.MobileMenuObject.UVCoords")); }
 		@property final
 		{
 			auto ref
@@ -88,13 +105,13 @@ final:
 		*cast(MobileMenuScene*)&params[4] = pScene;
 		*cast(int*)&params[8] = ScreenWidth;
 		*cast(int*)&params[12] = ScreenHeight;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32587], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitMenuObject, params.ptr, cast(void*)0);
 	}
 	void RenderObject(Canvas pCanvas)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(Canvas*)params.ptr = pCanvas;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[32604], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RenderObject, params.ptr, cast(void*)0);
 	}
 }

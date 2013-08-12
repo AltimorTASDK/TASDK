@@ -10,6 +10,21 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface SeqEvent_HudRenderText : SeqEvent_HudRender
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_HudRenderText")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRender;
+			ScriptFunction mGetObjClassVersion;
+		}
+		public @property static final
+		{
+			ScriptFunction Render() { return mRender ? mRender : (mRender = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRenderText.Render")); }
+			ScriptFunction GetObjClassVersion() { return mGetObjClassVersion ? mGetObjClassVersion : (mGetObjClassVersion = ScriptObject.Find!(ScriptFunction)("Function GameFramework.SeqEvent_HudRenderText.GetObjClassVersion")); }
+		}
+	}
 	enum ETextDrawMethod : ubyte
 	{
 		DRAW_CenterText = 0,
@@ -31,13 +46,13 @@ final:
 		params[] = 0;
 		*cast(Canvas*)params.ptr = TargetCanvas;
 		*cast(HUD*)&params[4] = TargetHud;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33005], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Render, params.ptr, cast(void*)0);
 	}
-	int GetObjClassVersion()
+	static int GetObjClassVersion()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33017], params.ptr, cast(void*)0);
+		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
 }

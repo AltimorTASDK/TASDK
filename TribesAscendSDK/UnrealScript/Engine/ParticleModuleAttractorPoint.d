@@ -1,5 +1,6 @@
 module UnrealScript.Engine.ParticleModuleAttractorPoint;
 
+import ScriptClasses;
 import UnrealScript.Core.DistributionFloat;
 import UnrealScript.Core.DistributionVector;
 import UnrealScript.Engine.ParticleModuleAttractorBase;
@@ -7,6 +8,8 @@ import UnrealScript.Engine.ParticleModuleAttractorBase;
 extern(C++) interface ParticleModuleAttractorPoint : ParticleModuleAttractorBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorPoint")); }
 	@property final
 	{
 		auto ref

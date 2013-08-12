@@ -9,6 +9,25 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface ReachSpec : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReachSpec")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCostFor;
+			ScriptFunction mGetEnd;
+			ScriptFunction mGetDirection;
+			ScriptFunction mIsBlockedFor;
+		}
+		public @property static final
+		{
+			ScriptFunction CostFor() { return mCostFor ? mCostFor : (mCostFor = ScriptObject.Find!(ScriptFunction)("Function Engine.ReachSpec.CostFor")); }
+			ScriptFunction GetEnd() { return mGetEnd ? mGetEnd : (mGetEnd = ScriptObject.Find!(ScriptFunction)("Function Engine.ReachSpec.GetEnd")); }
+			ScriptFunction GetDirection() { return mGetDirection ? mGetDirection : (mGetDirection = ScriptObject.Find!(ScriptFunction)("Function Engine.ReachSpec.GetDirection")); }
+			ScriptFunction IsBlockedFor() { return mIsBlockedFor ? mIsBlockedFor : (mIsBlockedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.ReachSpec.IsBlockedFor")); }
+		}
+	}
 	enum BLOCKEDPATHCOST = 10000000;
 	@property final
 	{
@@ -45,21 +64,21 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9671], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CostFor, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	NavigationPoint GetEnd()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9674], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEnd, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)params.ptr;
 	}
 	Vector GetDirection()
 	{
 		ubyte params[12];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9676], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetDirection, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
 	bool IsBlockedFor(Pawn P)
@@ -67,7 +86,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[9678], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsBlockedFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 }

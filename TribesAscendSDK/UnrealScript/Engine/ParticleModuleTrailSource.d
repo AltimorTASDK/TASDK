@@ -8,6 +8,8 @@ import UnrealScript.Engine.ParticleModule;
 extern(C++) interface ParticleModuleTrailSource : ParticleModuleTrailBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTrailSource")); }
 	enum ETrail2SourceMethod : ubyte
 	{
 		PET2SRCM_Default = 0,

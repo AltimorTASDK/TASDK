@@ -7,6 +7,8 @@ import UnrealScript.Engine.AnimSequence;
 extern(C++) interface AnimationCompressionAlgorithm : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm")); }
 	@property final
 	{
 		auto ref

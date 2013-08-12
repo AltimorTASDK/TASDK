@@ -6,6 +6,13 @@ import UnrealScript.Engine.SequenceAction;
 extern(C++) interface SeqAct_ToggleCinematicMode : SequenceAction
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ToggleCinematicMode")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mActivated;
+		public @property static final ScriptFunction Activated() { return mActivated ? mActivated : (mActivated = ScriptObject.Find!(ScriptFunction)("Function Engine.SeqAct_ToggleCinematicMode.Activated")); }
+	}
 	@property final
 	{
 		bool bHidePlayer() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x4) != 0; }
@@ -25,6 +32,6 @@ public extern(D):
 	}
 	final void Activated()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[25985], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);
 	}
 }

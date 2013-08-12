@@ -6,6 +6,8 @@ import UnrealScript.Engine.InterpTrack;
 extern(C++) interface InterpTrackVisibility : InterpTrack
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVisibility")); }
 	enum EVisibilityTrackCondition : ubyte
 	{
 		EVTC_Always = 0,
@@ -24,6 +26,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[6];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.InterpTrackVisibility.VisibilityTrackKey")); }
 		@property final auto ref
 		{
 			InterpTrackVisibility.EVisibilityTrackCondition ActiveCondition() { return *cast(InterpTrackVisibility.EVisibilityTrackCondition*)(cast(size_t)&this + 5); }

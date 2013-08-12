@@ -7,6 +7,13 @@ import UnrealScript.Core.Component;
 extern(C++) interface DistributionVector : Component
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.DistributionVector")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mGetVectorValue;
+		public @property static final ScriptFunction GetVectorValue() { return mGetVectorValue ? mGetVectorValue : (mGetVectorValue = ScriptObject.Find!(ScriptFunction)("Function Core.DistributionVector.GetVectorValue")); }
+	}
 	enum EDistributionVectorLockFlags : ubyte
 	{
 		EDVLF_None = 0,
@@ -27,6 +34,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[28];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Core.DistributionVector.RawDistributionVector")); }
 		@property final auto ref
 		{
 			ubyte Type() { return *cast(ubyte*)(cast(size_t)&this + 0); }
@@ -52,7 +61,7 @@ public extern(D):
 		params[] = 0;
 		*cast(float*)params.ptr = F;
 		*cast(int*)&params[4] = LastExtreme;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[3442], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorValue, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
 }

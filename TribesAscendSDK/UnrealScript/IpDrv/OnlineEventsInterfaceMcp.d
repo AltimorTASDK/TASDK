@@ -11,6 +11,25 @@ import UnrealScript.Engine.OnlinePlayerStorage;
 extern(C++) interface OnlineEventsInterfaceMcp : MCPBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineEventsInterfaceMcp")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mUploadPlayerData;
+			ScriptFunction mUploadGameplayEventsData;
+			ScriptFunction mUpdatePlaylistPopulation;
+			ScriptFunction mUploadMatchmakingStats;
+		}
+		public @property static final
+		{
+			ScriptFunction UploadPlayerData() { return mUploadPlayerData ? mUploadPlayerData : (mUploadPlayerData = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData")); }
+			ScriptFunction UploadGameplayEventsData() { return mUploadGameplayEventsData ? mUploadGameplayEventsData : (mUploadGameplayEventsData = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData")); }
+			ScriptFunction UpdatePlaylistPopulation() { return mUpdatePlaylistPopulation ? mUpdatePlaylistPopulation : (mUpdatePlaylistPopulation = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation")); }
+			ScriptFunction UploadMatchmakingStats() { return mUploadMatchmakingStats ? mUploadMatchmakingStats : (mUploadMatchmakingStats = ScriptObject.Find!(ScriptFunction)("Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats")); }
+		}
+	}
 	enum EEventUploadType : ubyte
 	{
 		EUT_GenericStats = 0,
@@ -23,6 +42,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig")); }
 		@property final
 		{
 			auto ref
@@ -55,7 +76,7 @@ final:
 		*cast(ScriptString*)&params[8] = PlayerNick;
 		*cast(OnlineProfileSettings*)&params[20] = ProfileSettings;
 		*cast(OnlinePlayerStorage*)&params[24] = PlayerStorage;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33357], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UploadPlayerData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
 	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ScriptArray!(ubyte)* Payload)
@@ -64,7 +85,7 @@ final:
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
 		*cast(ScriptArray!(ubyte)*)&params[8] = *Payload;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33363], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UploadGameplayEventsData, params.ptr, cast(void*)0);
 		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
@@ -74,7 +95,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = PlaylistId;
 		*cast(int*)&params[4] = NumPlayers;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33368], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePlaylistPopulation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
 	bool UploadMatchmakingStats(OnlineSubsystem.UniqueNetId UniqueId, OnlineMatchmakingStats MMStats)
@@ -83,7 +104,7 @@ final:
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
 		*cast(OnlineMatchmakingStats*)&params[8] = MMStats;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[33372], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UploadMatchmakingStats, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
 }

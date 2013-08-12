@@ -6,6 +6,57 @@ import UnrealScript.Engine.Actor;
 extern(C++) interface TrHelpTextManager : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHelpTextManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mRequestHelpText;
+			ScriptFunction mPostBeginPlay;
+			ScriptFunction mInitHelpTextManager;
+			ScriptFunction mLevelLoadCompleted;
+			ScriptFunction mTick;
+			ScriptFunction mCheckDestroy;
+			ScriptFunction mIsSuppressed;
+			ScriptFunction mRemoveHelpText;
+			ScriptFunction mSuppressHelpText;
+			ScriptFunction mUpdateHUD;
+			ScriptFunction mFormatText;
+			ScriptFunction mHelpTextQueueSort;
+			ScriptFunction mUnsuppressedHelpTextsExist;
+			ScriptFunction mOffhandReminderTimer;
+			ScriptFunction mClearOffhandReminderTimer;
+			ScriptFunction mSpotTargetReminderTimer;
+			ScriptFunction mClearSpotTargetReminderTimer;
+			ScriptFunction mUpdateTypesToRemoveOnTimers;
+			ScriptFunction mResetConfig;
+			ScriptFunction mEnableHelpText;
+		}
+		public @property static final
+		{
+			ScriptFunction RequestHelpText() { return mRequestHelpText ? mRequestHelpText : (mRequestHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.RequestHelpText")); }
+			ScriptFunction PostBeginPlay() { return mPostBeginPlay ? mPostBeginPlay : (mPostBeginPlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.PostBeginPlay")); }
+			ScriptFunction InitHelpTextManager() { return mInitHelpTextManager ? mInitHelpTextManager : (mInitHelpTextManager = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.InitHelpTextManager")); }
+			ScriptFunction LevelLoadCompleted() { return mLevelLoadCompleted ? mLevelLoadCompleted : (mLevelLoadCompleted = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.LevelLoadCompleted")); }
+			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.Tick")); }
+			ScriptFunction CheckDestroy() { return mCheckDestroy ? mCheckDestroy : (mCheckDestroy = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.CheckDestroy")); }
+			ScriptFunction IsSuppressed() { return mIsSuppressed ? mIsSuppressed : (mIsSuppressed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.IsSuppressed")); }
+			ScriptFunction RemoveHelpText() { return mRemoveHelpText ? mRemoveHelpText : (mRemoveHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.RemoveHelpText")); }
+			ScriptFunction SuppressHelpText() { return mSuppressHelpText ? mSuppressHelpText : (mSuppressHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.SuppressHelpText")); }
+			ScriptFunction UpdateHUD() { return mUpdateHUD ? mUpdateHUD : (mUpdateHUD = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UpdateHUD")); }
+			ScriptFunction FormatText() { return mFormatText ? mFormatText : (mFormatText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.FormatText")); }
+			ScriptFunction HelpTextQueueSort() { return mHelpTextQueueSort ? mHelpTextQueueSort : (mHelpTextQueueSort = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.HelpTextQueueSort")); }
+			ScriptFunction UnsuppressedHelpTextsExist() { return mUnsuppressedHelpTextsExist ? mUnsuppressedHelpTextsExist : (mUnsuppressedHelpTextsExist = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UnsuppressedHelpTextsExist")); }
+			ScriptFunction OffhandReminderTimer() { return mOffhandReminderTimer ? mOffhandReminderTimer : (mOffhandReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.OffhandReminderTimer")); }
+			ScriptFunction ClearOffhandReminderTimer() { return mClearOffhandReminderTimer ? mClearOffhandReminderTimer : (mClearOffhandReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ClearOffhandReminderTimer")); }
+			ScriptFunction SpotTargetReminderTimer() { return mSpotTargetReminderTimer ? mSpotTargetReminderTimer : (mSpotTargetReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.SpotTargetReminderTimer")); }
+			ScriptFunction ClearSpotTargetReminderTimer() { return mClearSpotTargetReminderTimer ? mClearSpotTargetReminderTimer : (mClearSpotTargetReminderTimer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ClearSpotTargetReminderTimer")); }
+			ScriptFunction UpdateTypesToRemoveOnTimers() { return mUpdateTypesToRemoveOnTimers ? mUpdateTypesToRemoveOnTimers : (mUpdateTypesToRemoveOnTimers = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.UpdateTypesToRemoveOnTimers")); }
+			ScriptFunction ResetConfig() { return mResetConfig ? mResetConfig : (mResetConfig = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.ResetConfig")); }
+			ScriptFunction EnableHelpText() { return mEnableHelpText ? mEnableHelpText : (mEnableHelpText = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrHelpTextManager.EnableHelpText")); }
+		}
+	}
 	enum EHelpTextType : ubyte
 	{
 		HelpText_SkiingHowTo = 0,
@@ -44,6 +95,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHelpTextManager.HelpTextInfo")); }
 		@property final
 		{
 			auto ref
@@ -59,6 +112,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrHelpTextManager.HelpTextTypeRemovalTimerInfo")); }
 		@property final
 		{
 			auto ref
@@ -212,33 +267,33 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = RequestedType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[67677], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RequestHelpText, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void PostBeginPlay()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69822], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
 	void InitHelpTextManager()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69823], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitHelpTextManager, cast(void*)0, cast(void*)0);
 	}
 	void LevelLoadCompleted()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69826], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.LevelLoadCompleted, cast(void*)0, cast(void*)0);
 	}
 	void Tick(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69856], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
 	bool CheckDestroy()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69858], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckDestroy, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool IsSuppressed(TrHelpTextManager.EHelpTextType RequestedType)
@@ -246,7 +301,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = RequestedType;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69861], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsSuppressed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
 	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float Time, bool bDoNotSuppress)
@@ -256,25 +311,25 @@ final:
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = TypeToRemove;
 		*cast(float*)&params[4] = Time;
 		*cast(bool*)&params[8] = bDoNotSuppress;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69880], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveHelpText, params.ptr, cast(void*)0);
 	}
 	void SuppressHelpText(TrHelpTextManager.EHelpTextType TypeToSuppress)
 	{
 		ubyte params[1];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = TypeToSuppress;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69887], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SuppressHelpText, params.ptr, cast(void*)0);
 	}
 	void UpdateHUD()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69889], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHUD, cast(void*)0, cast(void*)0);
 	}
 	ScriptString FormatText(ScriptString InString)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InString;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69959], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.FormatText, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
 	int HelpTextQueueSort(TrHelpTextManager.EHelpTextType A, TrHelpTextManager.EHelpTextType B)
@@ -283,48 +338,48 @@ final:
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = A;
 		*cast(TrHelpTextManager.EHelpTextType*)&params[1] = B;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69969], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.HelpTextQueueSort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	bool UnsuppressedHelpTextsExist()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69973], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UnsuppressedHelpTextsExist, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void OffhandReminderTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69975], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OffhandReminderTimer, cast(void*)0, cast(void*)0);
 	}
 	void ClearOffhandReminderTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69978], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearOffhandReminderTimer, cast(void*)0, cast(void*)0);
 	}
 	void SpotTargetReminderTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69979], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SpotTargetReminderTimer, cast(void*)0, cast(void*)0);
 	}
 	void ClearSpotTargetReminderTimer()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69984], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSpotTargetReminderTimer, cast(void*)0, cast(void*)0);
 	}
 	void UpdateTypesToRemoveOnTimers(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69985], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTypesToRemoveOnTimers, params.ptr, cast(void*)0);
 	}
 	void ResetConfig()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69988], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ResetConfig, cast(void*)0, cast(void*)0);
 	}
 	void EnableHelpText(bool bEnabled)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[69989], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.EnableHelpText, params.ptr, cast(void*)0);
 	}
 }

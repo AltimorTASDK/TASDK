@@ -1,10 +1,13 @@
 module UnrealScript.Engine.AnimationCompressionAlgorithm_Automatic;
 
+import ScriptClasses;
 import UnrealScript.Engine.AnimationCompressionAlgorithm;
 
 extern(C++) interface AnimationCompressionAlgorithm_Automatic : AnimationCompressionAlgorithm
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_Automatic")); }
 	@property final
 	{
 		@property final auto ref float MaxEndEffectorError() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }

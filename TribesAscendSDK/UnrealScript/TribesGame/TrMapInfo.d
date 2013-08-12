@@ -8,6 +8,8 @@ import UnrealScript.UDKBase.UDKMapInfo;
 extern(C++) interface TrMapInfo : UDKMapInfo
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMapInfo")); }
 	@property final auto ref
 	{
 		ScriptName m_DefaultPhysicalMaterialName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 104); }

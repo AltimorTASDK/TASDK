@@ -10,10 +10,19 @@ import UnrealScript.Engine.Texture;
 extern(C++) interface PostProcessVolume : Volume
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PostProcessVolume")); }
+	static struct Functions
+	{
+		private static __gshared ScriptFunction mOnToggle;
+		public @property static final ScriptFunction OnToggle() { return mOnToggle ? mOnToggle : (mOnToggle = ScriptObject.Find!(ScriptFunction)("Function Engine.PostProcessVolume.OnToggle")); }
+	}
 	struct LUTBlender
 	{
 		private ubyte __buffer__[24];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PostProcessVolume.LUTBlender")); }
 		@property final auto ref
 		{
 			ScriptArray!(Texture) LUTTextures() { return *cast(ScriptArray!(Texture)*)(cast(size_t)&this + 0); }
@@ -24,6 +33,8 @@ public extern(D):
 	{
 		private ubyte __buffer__[220];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct Engine.PostProcessVolume.PostProcessSettings")); }
 		@property final
 		{
 			auto ref
@@ -175,6 +186,6 @@ public extern(D):
 		ubyte params[4];
 		params[] = 0;
 		*cast(SeqAct_Toggle*)params.ptr = Action;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[24755], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnToggle, params.ptr, cast(void*)0);
 	}
 }

@@ -10,6 +10,25 @@ import UnrealScript.Engine.Material;
 extern(C++) interface TrEffectForm : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffectForm")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetOverwriteMat;
+			ScriptFunction mGetMatApplyToPawn;
+			ScriptFunction mGetMatApplyToWeapon;
+			ScriptFunction mGetMatApplyToAttachment;
+		}
+		public @property static final
+		{
+			ScriptFunction GetOverwriteMat() { return mGetOverwriteMat ? mGetOverwriteMat : (mGetOverwriteMat = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetOverwriteMat")); }
+			ScriptFunction GetMatApplyToPawn() { return mGetMatApplyToPawn ? mGetMatApplyToPawn : (mGetMatApplyToPawn = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToPawn")); }
+			ScriptFunction GetMatApplyToWeapon() { return mGetMatApplyToWeapon ? mGetMatApplyToWeapon : (mGetMatApplyToWeapon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToWeapon")); }
+			ScriptFunction GetMatApplyToAttachment() { return mGetMatApplyToAttachment ? mGetMatApplyToAttachment : (mGetMatApplyToAttachment = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrEffectForm.GetMatApplyToAttachment")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -33,7 +52,7 @@ final:
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(TrObject.EffectFormOverwrite)*)params.ptr = List;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87227], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetOverwriteMat, params.ptr, cast(void*)0);
 		return *cast(Material*)&params[12];
 	}
 	Material GetMatApplyToPawn(ScriptClass PawnClass)
@@ -41,7 +60,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = PawnClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87232], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMatApplyToPawn, params.ptr, cast(void*)0);
 		return *cast(Material*)&params[4];
 	}
 	Material GetMatApplyToWeapon(ScriptClass devClass)
@@ -49,7 +68,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = devClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87235], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMatApplyToWeapon, params.ptr, cast(void*)0);
 		return *cast(Material*)&params[4];
 	}
 	Material GetMatApplyToAttachment(ScriptClass attClass)
@@ -57,7 +76,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = attClass;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[87238], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetMatApplyToAttachment, params.ptr, cast(void*)0);
 		return *cast(Material*)&params[4];
 	}
 }

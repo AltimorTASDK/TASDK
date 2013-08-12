@@ -8,6 +8,55 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface PlayerInput : Input
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerInput")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mCheckForDoubleClickMove;
+			ScriptFunction mInvertMouse;
+			ScriptFunction mInvertTurn;
+			ScriptFunction mSetSensitivity;
+			ScriptFunction mDrawHUD;
+			ScriptFunction mPreProcessInput;
+			ScriptFunction mPostProcessInput;
+			ScriptFunction mAdjustMouseSensitivity;
+			ScriptFunction mIsMouseSmoothEnabled;
+			ScriptFunction mPlayerInput;
+			ScriptFunction mProcessInputMatching;
+			ScriptFunction mCatchDoubleClickInput;
+			ScriptFunction mJump;
+			ScriptFunction mSmartJump;
+			ScriptFunction mClearSmoothing;
+			ScriptFunction mSmoothMouse;
+			ScriptFunction mInitInputSystem;
+			ScriptFunction mClientInitInputSystem;
+			ScriptFunction mPreClientTravel;
+		}
+		public @property static final
+		{
+			ScriptFunction CheckForDoubleClickMove() { return mCheckForDoubleClickMove ? mCheckForDoubleClickMove : (mCheckForDoubleClickMove = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.CheckForDoubleClickMove")); }
+			ScriptFunction InvertMouse() { return mInvertMouse ? mInvertMouse : (mInvertMouse = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InvertMouse")); }
+			ScriptFunction InvertTurn() { return mInvertTurn ? mInvertTurn : (mInvertTurn = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InvertTurn")); }
+			ScriptFunction SetSensitivity() { return mSetSensitivity ? mSetSensitivity : (mSetSensitivity = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SetSensitivity")); }
+			ScriptFunction DrawHUD() { return mDrawHUD ? mDrawHUD : (mDrawHUD = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.DrawHUD")); }
+			ScriptFunction PreProcessInput() { return mPreProcessInput ? mPreProcessInput : (mPreProcessInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PreProcessInput")); }
+			ScriptFunction PostProcessInput() { return mPostProcessInput ? mPostProcessInput : (mPostProcessInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PostProcessInput")); }
+			ScriptFunction AdjustMouseSensitivity() { return mAdjustMouseSensitivity ? mAdjustMouseSensitivity : (mAdjustMouseSensitivity = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.AdjustMouseSensitivity")); }
+			ScriptFunction IsMouseSmoothEnabled() { return mIsMouseSmoothEnabled ? mIsMouseSmoothEnabled : (mIsMouseSmoothEnabled = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.IsMouseSmoothEnabled")); }
+			ScriptFunction PlayerInput() { return mPlayerInput ? mPlayerInput : (mPlayerInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PlayerInput")); }
+			ScriptFunction ProcessInputMatching() { return mProcessInputMatching ? mProcessInputMatching : (mProcessInputMatching = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ProcessInputMatching")); }
+			ScriptFunction CatchDoubleClickInput() { return mCatchDoubleClickInput ? mCatchDoubleClickInput : (mCatchDoubleClickInput = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.CatchDoubleClickInput")); }
+			ScriptFunction Jump() { return mJump ? mJump : (mJump = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.Jump")); }
+			ScriptFunction SmartJump() { return mSmartJump ? mSmartJump : (mSmartJump = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SmartJump")); }
+			ScriptFunction ClearSmoothing() { return mClearSmoothing ? mClearSmoothing : (mClearSmoothing = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ClearSmoothing")); }
+			ScriptFunction SmoothMouse() { return mSmoothMouse ? mSmoothMouse : (mSmoothMouse = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.SmoothMouse")); }
+			ScriptFunction InitInputSystem() { return mInitInputSystem ? mInitInputSystem : (mInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.InitInputSystem")); }
+			ScriptFunction ClientInitInputSystem() { return mClientInitInputSystem ? mClientInitInputSystem : (mClientInitInputSystem = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.ClientInitInputSystem")); }
+			ScriptFunction PreClientTravel() { return mPreClientTravel ? mPreClientTravel : (mPreClientTravel = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerInput.PreClientTravel")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -91,21 +140,21 @@ final:
 		ubyte params[5];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[8556], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CheckForDoubleClickMove, params.ptr, cast(void*)0);
 		return *cast(Actor.EDoubleClickDir*)&params[4];
 	}
 	bool InvertMouse()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13979], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InvertMouse, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	bool InvertTurn()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13981], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InvertTurn, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	void SetSensitivity(float F)
@@ -113,41 +162,41 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = F;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13983], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SetSensitivity, params.ptr, cast(void*)0);
 	}
 	void DrawHUD(HUD H)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(HUD*)params.ptr = H;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13985], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHUD, params.ptr, cast(void*)0);
 	}
 	void PreProcessInput(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13987], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreProcessInput, params.ptr, cast(void*)0);
 	}
 	void PostProcessInput(float DeltaTime)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13989], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PostProcessInput, params.ptr, cast(void*)0);
 	}
 	void AdjustMouseSensitivity(float FOVScale)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = FOVScale;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13991], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustMouseSensitivity, params.ptr, cast(void*)0);
 	}
 	bool IsMouseSmoothEnabled()
 	{
 		ubyte params[4];
 		params[] = 0;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[13993], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.IsMouseSmoothEnabled, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
 	// WARNING: Function 'PlayerInput' has the same name as a defined type!
@@ -156,23 +205,23 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14000], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInputMatching, params.ptr, cast(void*)0);
 	}
 	void CatchDoubleClickInput()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14001], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CatchDoubleClickInput, cast(void*)0, cast(void*)0);
 	}
 	void Jump()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14010], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.Jump, cast(void*)0, cast(void*)0);
 	}
 	void SmartJump()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14011], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SmartJump, cast(void*)0, cast(void*)0);
 	}
 	void ClearSmoothing()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14012], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClearSmoothing, cast(void*)0, cast(void*)0);
 	}
 	float SmoothMouse(float aMouse, float DeltaTime, ubyte* SampleCount, int Index)
 	{
@@ -182,17 +231,17 @@ final:
 		*cast(float*)&params[4] = DeltaTime;
 		params[8] = *SampleCount;
 		*cast(int*)&params[12] = Index;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14014], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.SmoothMouse, params.ptr, cast(void*)0);
 		*SampleCount = params[8];
 		return *cast(float*)&params[16];
 	}
 	void InitInputSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14021], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.InitInputSystem, cast(void*)0, cast(void*)0);
 	}
 	void ClientInitInputSystem()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14022], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.ClientInitInputSystem, cast(void*)0, cast(void*)0);
 	}
 	void PreClientTravel(ScriptString PendingURL, Actor.ETravelType TravelType, bool bIsSeamlessTravel)
 	{
@@ -201,6 +250,6 @@ final:
 		*cast(ScriptString*)params.ptr = PendingURL;
 		*cast(Actor.ETravelType*)&params[12] = TravelType;
 		*cast(bool*)&params[16] = bIsSeamlessTravel;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[14023], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.PreClientTravel, params.ptr, cast(void*)0);
 	}
 }

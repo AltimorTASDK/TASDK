@@ -9,6 +9,27 @@ import UnrealScript.Engine.UIDataProvider_OnlinePlayerDataBase;
 extern(C++) interface UIDataProvider_OnlineFriends : UIDataProvider_OnlinePlayerDataBase
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineFriends")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mOnRegister;
+			ScriptFunction mOnUnregister;
+			ScriptFunction mOnFriendsReadComplete;
+			ScriptFunction mOnLoginChange;
+			ScriptFunction mRefreshFriendsList;
+		}
+		public @property static final
+		{
+			ScriptFunction OnRegister() { return mOnRegister ? mOnRegister : (mOnRegister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnRegister")); }
+			ScriptFunction OnUnregister() { return mOnUnregister ? mOnUnregister : (mOnUnregister = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnUnregister")); }
+			ScriptFunction OnFriendsReadComplete() { return mOnFriendsReadComplete ? mOnFriendsReadComplete : (mOnFriendsReadComplete = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnFriendsReadComplete")); }
+			ScriptFunction OnLoginChange() { return mOnLoginChange ? mOnLoginChange : (mOnLoginChange = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.OnLoginChange")); }
+			ScriptFunction RefreshFriendsList() { return mRefreshFriendsList ? mRefreshFriendsList : (mRefreshFriendsList = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataProvider_OnlineFriends.RefreshFriendsList")); }
+		}
+	}
 	@property final auto ref
 	{
 		ScriptArray!(OnlineSubsystem.OnlineFriend) FriendsList() { return *cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)(cast(size_t)cast(void*)this + 96); }
@@ -34,28 +55,28 @@ final:
 		ubyte params[4];
 		params[] = 0;
 		*cast(LocalPlayer*)params.ptr = InPlayer;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28206], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnRegister, params.ptr, cast(void*)0);
 	}
 	void OnUnregister()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28210], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnUnregister, cast(void*)0, cast(void*)0);
 	}
 	void OnFriendsReadComplete(bool bWasSuccessful)
 	{
 		ubyte params[4];
 		params[] = 0;
 		*cast(bool*)params.ptr = bWasSuccessful;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28213], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnFriendsReadComplete, params.ptr, cast(void*)0);
 	}
 	void OnLoginChange(ubyte LocalUserNum)
 	{
 		ubyte params[1];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28217], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.OnLoginChange, params.ptr, cast(void*)0);
 	}
 	void RefreshFriendsList()
 	{
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[28221], cast(void*)0, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshFriendsList, cast(void*)0, cast(void*)0);
 	}
 }

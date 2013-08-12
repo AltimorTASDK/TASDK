@@ -9,6 +9,21 @@ import UnrealScript.Engine.HUD;
 extern(C++) interface CameraActor : Actor
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraActor")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetCameraView;
+			ScriptFunction mDisplayDebug;
+		}
+		public @property static final
+		{
+			ScriptFunction GetCameraView() { return mGetCameraView ? mGetCameraView : (mGetCameraView = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraActor.GetCameraView")); }
+			ScriptFunction DisplayDebug() { return mDisplayDebug ? mDisplayDebug : (mDisplayDebug = ScriptObject.Find!(ScriptFunction)("Function Engine.CameraActor.DisplayDebug")); }
+		}
+	}
 	@property final
 	{
 		auto ref
@@ -30,7 +45,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(UObject.TPOV*)&params[4] = *OutPOV;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12119], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetCameraView, params.ptr, cast(void*)0);
 		*OutPOV = *cast(UObject.TPOV*)&params[4];
 	}
 	void DisplayDebug(HUD pHUD, float* out_YL, float* out_YPos)
@@ -40,7 +55,7 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		*cast(float*)&params[4] = *out_YL;
 		*cast(float*)&params[8] = *out_YPos;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[12122], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
 		*out_YL = *cast(float*)&params[4];
 		*out_YPos = *cast(float*)&params[8];
 	}

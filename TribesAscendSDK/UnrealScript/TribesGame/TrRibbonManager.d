@@ -6,10 +6,31 @@ import UnrealScript.Core.UObject;
 extern(C++) interface TrRibbonManager : UObject
 {
 public extern(D):
+	private static __gshared ScriptClass mStaticClass;
+	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRibbonManager")); }
+	static struct Functions
+	{
+		private static __gshared
+		{
+			ScriptFunction mGetClassRibbon;
+			ScriptFunction mGetTypeRibbon;
+			ScriptFunction mGetEquipRibbon;
+			ScriptFunction mCalculateRibbons;
+		}
+		public @property static final
+		{
+			ScriptFunction GetClassRibbon() { return mGetClassRibbon ? mGetClassRibbon : (mGetClassRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetClassRibbon")); }
+			ScriptFunction GetTypeRibbon() { return mGetTypeRibbon ? mGetTypeRibbon : (mGetTypeRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetTypeRibbon")); }
+			ScriptFunction GetEquipRibbon() { return mGetEquipRibbon ? mGetEquipRibbon : (mGetEquipRibbon = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.GetEquipRibbon")); }
+			ScriptFunction CalculateRibbons() { return mCalculateRibbons ? mCalculateRibbons : (mCalculateRibbons = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrRibbonManager.CalculateRibbons")); }
+		}
+	}
 	struct RibbonData
 	{
 		private ubyte __buffer__[12];
 	public extern(D):
+		private static __gshared ScriptStruct mStaticClass;
+		@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)("ScriptStruct TribesGame.TrRibbonManager.RibbonData")); }
 		@property final auto ref
 		{
 			int Ribbon() { return *cast(int*)(cast(size_t)&this + 8); }
@@ -44,7 +65,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56839], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetClassRibbon, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	int GetTypeRibbon(int ClassId, int Type)
@@ -53,7 +74,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
 		*cast(int*)&params[4] = Type;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[56853], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetTypeRibbon, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
 	int GetEquipRibbon(int EquipId)
@@ -61,7 +82,7 @@ final:
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = EquipId;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[58656], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.GetEquipRibbon, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
 	void CalculateRibbons(int Gold, int XP, bool bForce)
@@ -71,6 +92,6 @@ final:
 		*cast(int*)params.ptr = Gold;
 		*cast(int*)&params[4] = XP;
 		*cast(bool*)&params[8] = bForce;
-		(cast(ScriptObject)this).ProcessEvent(cast(ScriptFunction)(*ScriptObject.ObjectArray)[110627], params.ptr, cast(void*)0);
+		(cast(ScriptObject)this).ProcessEvent(Functions.CalculateRibbons, params.ptr, cast(void*)0);
 	}
 }
