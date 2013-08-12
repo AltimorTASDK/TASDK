@@ -574,14 +574,18 @@ final class FunctionDescriptor : Descriptor
 
 	override void Write(IndentedStreamWriter wtr) { assert(0, "This method is not implemented!"); }
 
-	void WriteField(IndentedStreamWriter wtr)
+	void WriteField(IndentedStreamWriter wtr, bool alone)
 	{
+		if (alone)
+			wtr.Write("private static __gshared ");
 		wtr.WriteLine("ScriptFunction m%s;", InnerFunction.GetName());
 	}
 
-	void WriteProperty(IndentedStreamWriter wtr)
+	void WriteProperty(IndentedStreamWriter wtr, bool alone)
 	{
-		wtr.WriteLine("%s() { return m%s || (m%s = ScriptObject.Find!(ScriptFunction)(\"%s\")); }", InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
+		if (alone)
+			wtr.Write("public @property static final ");
+		wtr.WriteLine("ScriptFunction %s() { return m%s ? m%s : (m%s = ScriptObject.Find!(ScriptFunction)(\"%s\")); }", InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
 	}
 
 	void Write(IndentedStreamWriter wtr, bool alone)
@@ -679,23 +683,33 @@ abstract class NestableContainer : Descriptor
 			wtr.WriteLine("{");
 			wtr.Indent++;
 
-			// TODO: Implement the alone mechanism here.
-			wtr.WriteLine("private static __gshared");
-			wtr.WriteLine("{");
-			wtr.Indent++;
+			if (Functions.length > 1)
+			{
+				wtr.WriteLine("private static __gshared");
+				wtr.WriteLine("{");
+				wtr.Indent++;
+			}
 			foreach (f; Functions)
-				f.WriteField(wtr);
-			wtr.Indent--;
-			wtr.WriteLine("}");
+				f.WriteField(wtr, Functions.length <= 1);
+			if (Functions.length > 1)
+			{
+				wtr.Indent--;
+				wtr.WriteLine("}");
+			}
 			
-			// TODO: Implement the alone mechanism here.
-			wtr.WriteLine("public @property static final");
-			wtr.WriteLine("{");
-			wtr.Indent++;
+			if (Functions.length > 1)
+			{
+				wtr.WriteLine("public @property static final");
+				wtr.WriteLine("{");
+				wtr.Indent++;
+			}
 			foreach (f; Functions)
-				f.WriteProperty(wtr);
-			wtr.Indent--;
-			wtr.WriteLine("}");
+				f.WriteProperty(wtr, Functions.length <= 1);
+			if (Functions.length > 1)
+			{
+				wtr.Indent--;
+				wtr.WriteLine("}");
+			}
 
 			wtr.Indent--;
 			wtr.WriteLine("}");
@@ -772,7 +786,7 @@ abstract class NestableContainer : Descriptor
 			wtr.Indent++;
 		}
 		foreach (f; Functions)
-			f.Write(wtr, Functions.length > 1);
+			f.Write(wtr, Functions.length <= 1);
 	}
 }
 
@@ -834,7 +848,7 @@ final class ClassDescriptor : NestableContainer
 		wtr.Indent++;
 		
 		wtr.WriteLine("private static __gshared ScriptClass mStaticClass;");
-		wtr.WriteLine("@property final static ScriptClass StaticClass() { return mStaticClass || (mStaticClass = ScriptObject.Find!(ScriptClass)(\"%s\")); }", InnerClass.GetFullName());
+		wtr.WriteLine("@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)(\"%s\")); }", InnerClass.GetFullName());
 		
 		WriteChildren(wtr);
 
@@ -910,7 +924,7 @@ final class StructDescriptor : NestableContainer
 		wtr.Indent++;
 
 		wtr.WriteLine("private static __gshared ScriptStruct mStaticClass;");
-		wtr.WriteLine("@property final static ScriptStruct StaticClass() { return mStaticClass || (mStaticClass = ScriptObject.Find!(ScriptStruct)(\"%s\")); }", InnerStruct.GetFullName());
+		wtr.WriteLine("@property final static ScriptStruct StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptStruct)(\"%s\")); }", InnerStruct.GetFullName());
 
 		WriteBody(wtr);
 		
