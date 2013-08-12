@@ -11,6 +11,8 @@ extern(C++) interface GameFixedCamera : GameCameraBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameFixedCamera")); }
+	private static __gshared GameFixedCamera mDefaultProperties;
+	@property final static GameFixedCamera DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameFixedCamera)("GameFixedCamera GameFramework.Default__GameFixedCamera")); }
 	static struct Functions
 	{
 		private static __gshared

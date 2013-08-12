@@ -10,6 +10,8 @@ extern(C++) interface UTDataStore_GameSearchDM : UDKDataStore_GameSearchBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDataStore_GameSearchDM")); }
+	private static __gshared UTDataStore_GameSearchDM mDefaultProperties;
+	@property final static UTDataStore_GameSearchDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDataStore_GameSearchDM)("UTDataStore_GameSearchDM UTGame.Default__UTDataStore_GameSearchDM")); }
 	static struct Functions
 	{
 		private static __gshared

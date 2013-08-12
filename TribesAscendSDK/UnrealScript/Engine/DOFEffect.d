@@ -9,6 +9,8 @@ extern(C++) interface DOFEffect : PostProcessEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DOFEffect")); }
+	private static __gshared DOFEffect mDefaultProperties;
+	@property final static DOFEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DOFEffect)("DOFEffect Engine.Default__DOFEffect")); }
 	enum EFocusType : ubyte
 	{
 		FOCUS_Distance = 0,

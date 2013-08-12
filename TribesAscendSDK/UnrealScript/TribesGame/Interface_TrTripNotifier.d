@@ -11,6 +11,8 @@ extern(C++) interface Interface_TrTripNotifier : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.Interface_TrTripNotifier")); }
+	private static __gshared Interface_TrTripNotifier mDefaultProperties;
+	@property final static Interface_TrTripNotifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Interface_TrTripNotifier)("Interface_TrTripNotifier TribesGame.Default__Interface_TrTripNotifier")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface TrRepairStationCollision : TrStationCollision
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRepairStationCollision")); }
+	private static __gshared TrRepairStationCollision mDefaultProperties;
+	@property final static TrRepairStationCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRepairStationCollision)("TrRepairStationCollision TribesGame.Default__TrRepairStationCollision")); }
 	static struct Functions
 	{
 		private static __gshared

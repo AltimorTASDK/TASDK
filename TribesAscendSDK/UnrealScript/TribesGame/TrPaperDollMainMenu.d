@@ -10,6 +10,8 @@ extern(C++) interface TrPaperDollMainMenu : TrPaperDoll
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDollMainMenu")); }
+	private static __gshared TrPaperDollMainMenu mDefaultProperties;
+	@property final static TrPaperDollMainMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPaperDollMainMenu)("TrPaperDollMainMenu TribesGame.Default__TrPaperDollMainMenu")); }
 	static struct Functions
 	{
 		private static __gshared

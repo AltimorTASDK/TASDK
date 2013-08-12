@@ -13,6 +13,8 @@ extern(C++) interface UTAnnouncer : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAnnouncer")); }
+	private static __gshared UTAnnouncer mDefaultProperties;
+	@property final static UTAnnouncer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAnnouncer)("UTAnnouncer UTGame.Default__UTAnnouncer")); }
 	static struct Functions
 	{
 		private static __gshared

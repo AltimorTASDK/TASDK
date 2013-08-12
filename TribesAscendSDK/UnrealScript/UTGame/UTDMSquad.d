@@ -13,6 +13,8 @@ extern(C++) interface UTDMSquad : UTSquadAI
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDMSquad")); }
+	private static __gshared UTDMSquad mDefaultProperties;
+	@property final static UTDMSquad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDMSquad)("UTDMSquad UTGame.Default__UTDMSquad")); }
 	static struct Functions
 	{
 		private static __gshared

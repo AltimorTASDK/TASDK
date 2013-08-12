@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleBeamTarget : ParticleModuleBeamBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamTarget")); }
+	private static __gshared ParticleModuleBeamTarget mDefaultProperties;
+	@property final static ParticleModuleBeamTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleBeamTarget)("ParticleModuleBeamTarget Engine.Default__ParticleModuleBeamTarget")); }
 	@property final
 	{
 		auto ref

@@ -9,6 +9,8 @@ extern(C++) interface SceneCaptureCubeMapComponent : SceneCaptureComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCaptureCubeMapComponent")); }
+	private static __gshared SceneCaptureCubeMapComponent mDefaultProperties;
+	@property final static SceneCaptureCubeMapComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCaptureCubeMapComponent)("SceneCaptureCubeMapComponent Engine.Default__SceneCaptureCubeMapComponent")); }
 	@property final auto ref
 	{
 		Vector WorldLocation() { return *cast(Vector*)(cast(size_t)cast(void*)this + 156); }

@@ -9,6 +9,8 @@ extern(C++) interface NavMeshPathGoalEvaluator : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPathGoalEvaluator")); }
+	private static __gshared NavMeshPathGoalEvaluator mDefaultProperties;
+	@property final static NavMeshPathGoalEvaluator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPathGoalEvaluator)("NavMeshPathGoalEvaluator Engine.Default__NavMeshPathGoalEvaluator")); }
 	static struct Functions
 	{
 		private static __gshared

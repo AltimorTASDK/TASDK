@@ -10,6 +10,8 @@ extern(C++) interface TrDeployableController : AIController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployableController")); }
+	private static __gshared TrDeployableController mDefaultProperties;
+	@property final static TrDeployableController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployableController)("TrDeployableController TribesGame.Default__TrDeployableController")); }
 	static struct Functions
 	{
 		private static __gshared

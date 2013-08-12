@@ -15,6 +15,8 @@ extern(C++) interface LensFlare : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlare")); }
+	private static __gshared LensFlare mDefaultProperties;
+	@property final static LensFlare DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LensFlare)("LensFlare Engine.Default__LensFlare")); }
 	struct LensFlareElement
 	{
 		private ubyte __buffer__[324];

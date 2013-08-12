@@ -9,6 +9,8 @@ extern(C++) interface MaterialExpression : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpression")); }
+	private static __gshared MaterialExpression mDefaultProperties;
+	@property final static MaterialExpression DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpression)("MaterialExpression Engine.Default__MaterialExpression")); }
 	struct ExpressionInput
 	{
 		private ubyte __buffer__[28];

@@ -8,6 +8,8 @@ extern(C++) interface GFxTrUI_ClassMenu : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_ClassMenu")); }
+	private static __gshared GFxTrUI_ClassMenu mDefaultProperties;
+	@property final static GFxTrUI_ClassMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrUI_ClassMenu)("GFxTrUI_ClassMenu TribesGame.Default__GFxTrUI_ClassMenu")); }
 	static struct Constants
 	{
 		enum

@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionParticleMacroUV : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionParticleMacroUV")); }
+	private static __gshared MaterialExpressionParticleMacroUV mDefaultProperties;
+	@property final static MaterialExpressionParticleMacroUV DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionParticleMacroUV)("MaterialExpressionParticleMacroUV Engine.Default__MaterialExpressionParticleMacroUV")); }
 	@property final
 	{
 		bool bUseViewSpace() { return (*cast(uint*)(cast(size_t)cast(void*)this + 108) & 0x1) != 0; }

@@ -12,6 +12,8 @@ extern(C++) interface PhysicsAsset : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsAsset")); }
+	private static __gshared PhysicsAsset mDefaultProperties;
+	@property final static PhysicsAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysicsAsset)("PhysicsAsset Engine.Default__PhysicsAsset")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFindBodyIndex;

@@ -9,6 +9,8 @@ extern(C++) interface PlayerStart : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerStart")); }
+	private static __gshared PlayerStart mDefaultProperties;
+	@property final static PlayerStart DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerStart)("PlayerStart Engine.Default__PlayerStart")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

@@ -9,6 +9,8 @@ extern(C++) interface TrMapMusicInfo : UDKMapMusicInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMapMusicInfo")); }
+	private static __gshared TrMapMusicInfo mDefaultProperties;
+	@property final static TrMapMusicInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMapMusicInfo)("TrMapMusicInfo TribesGame.Default__TrMapMusicInfo")); }
 	struct TrMapStingers
 	{
 		private ubyte __buffer__[56];

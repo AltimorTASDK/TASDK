@@ -9,6 +9,8 @@ extern(C++) interface UTSeqCond_HasInventory : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqCond_HasInventory")); }
+	private static __gshared UTSeqCond_HasInventory mDefaultProperties;
+	@property final static UTSeqCond_HasInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqCond_HasInventory)("UTSeqCond_HasInventory UTGame.Default__UTSeqCond_HasInventory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

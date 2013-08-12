@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_AIMoveToActor : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_AIMoveToActor")); }
+	private static __gshared SeqAct_AIMoveToActor mDefaultProperties;
+	@property final static SeqAct_AIMoveToActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_AIMoveToActor)("SeqAct_AIMoveToActor Engine.Default__SeqAct_AIMoveToActor")); }
 	static struct Functions
 	{
 		private static __gshared

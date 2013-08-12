@@ -9,6 +9,8 @@ extern(C++) interface PrefabSequence : Sequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrefabSequence")); }
+	private static __gshared PrefabSequence mDefaultProperties;
+	@property final static PrefabSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrefabSequence)("PrefabSequence Engine.Default__PrefabSequence")); }
 	static struct Functions
 	{
 		private static __gshared

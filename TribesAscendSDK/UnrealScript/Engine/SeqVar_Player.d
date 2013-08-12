@@ -9,6 +9,8 @@ extern(C++) interface SeqVar_Player : SeqVar_Object
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_Player")); }
+	private static __gshared SeqVar_Player mDefaultProperties;
+	@property final static SeqVar_Player DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_Player)("SeqVar_Player Engine.Default__SeqVar_Player")); }
 	static struct Functions
 	{
 		private static __gshared

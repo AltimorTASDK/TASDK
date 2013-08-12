@@ -15,6 +15,8 @@ extern(C++) interface TrProjectile : UTProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProjectile")); }
+	private static __gshared TrProjectile mDefaultProperties;
+	@property final static TrProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProjectile)("TrProjectile TribesGame.Default__TrProjectile")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_LevelStreamingBase : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelStreamingBase")); }
+	private static __gshared SeqAct_LevelStreamingBase mDefaultProperties;
+	@property final static SeqAct_LevelStreamingBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_LevelStreamingBase)("SeqAct_LevelStreamingBase Engine.Default__SeqAct_LevelStreamingBase")); }
 	@property final
 	{
 		bool bShouldBlockOnLoad() { return (*cast(uint*)(cast(size_t)cast(void*)this + 248) & 0x2) != 0; }

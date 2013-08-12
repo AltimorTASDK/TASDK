@@ -11,6 +11,8 @@ extern(C++) interface SoundNodeAmbient : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeAmbient")); }
+	private static __gshared SoundNodeAmbient mDefaultProperties;
+	@property final static SoundNodeAmbient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeAmbient)("SoundNodeAmbient Engine.Default__SoundNodeAmbient")); }
 	struct AmbientSoundSlot
 	{
 		private ubyte __buffer__[16];

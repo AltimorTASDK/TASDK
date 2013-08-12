@@ -8,6 +8,8 @@ extern(C++) interface TrRank : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRank")); }
+	private static __gshared TrRank mDefaultProperties;
+	@property final static TrRank DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRank)("TrRank TribesGame.Default__TrRank")); }
 	@property final auto ref
 	{
 		int IconIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 64); }

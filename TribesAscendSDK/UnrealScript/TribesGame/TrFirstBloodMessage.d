@@ -10,6 +10,8 @@ extern(C++) interface TrFirstBloodMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFirstBloodMessage")); }
+	private static __gshared TrFirstBloodMessage mDefaultProperties;
+	@property final static TrFirstBloodMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFirstBloodMessage)("TrFirstBloodMessage TribesGame.Default__TrFirstBloodMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

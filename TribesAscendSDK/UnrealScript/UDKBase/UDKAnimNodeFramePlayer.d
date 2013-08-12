@@ -8,6 +8,8 @@ extern(C++) interface UDKAnimNodeFramePlayer : AnimNodeSequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeFramePlayer")); }
+	private static __gshared UDKAnimNodeFramePlayer mDefaultProperties;
+	@property final static UDKAnimNodeFramePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeFramePlayer)("UDKAnimNodeFramePlayer UDKBase.Default__UDKAnimNodeFramePlayer")); }
 	static struct Functions
 	{
 		private static __gshared

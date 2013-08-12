@@ -11,6 +11,8 @@ extern(C++) interface GFxTrPage_Accolades : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Accolades")); }
+	private static __gshared GFxTrPage_Accolades mDefaultProperties;
+	@property final static GFxTrPage_Accolades DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Accolades)("GFxTrPage_Accolades TribesGame.Default__GFxTrPage_Accolades")); }
 	static struct Functions
 	{
 		private static __gshared

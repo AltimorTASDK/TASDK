@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackMoveAxis : InterpTrackFloatBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackMoveAxis")); }
+	private static __gshared InterpTrackMoveAxis mDefaultProperties;
+	@property final static InterpTrackMoveAxis DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackMoveAxis)("InterpTrackMoveAxis Engine.Default__InterpTrackMoveAxis")); }
 	enum EInterpMoveAxis : ubyte
 	{
 		AXIS_TranslationX = 0,

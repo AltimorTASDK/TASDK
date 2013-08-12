@@ -13,6 +13,8 @@ extern(C++) interface OnlineGameInterfaceMcts : OnlineGameInterfaceImpl
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class OnlineSubsystemMcts.OnlineGameInterfaceMcts")); }
+	private static __gshared OnlineGameInterfaceMcts mDefaultProperties;
+	@property final static OnlineGameInterfaceMcts DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameInterfaceMcts)("OnlineGameInterfaceMcts OnlineSubsystemMcts.Default__OnlineGameInterfaceMcts")); }
 	static struct Functions
 	{
 		private static __gshared

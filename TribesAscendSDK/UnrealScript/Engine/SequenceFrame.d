@@ -11,6 +11,8 @@ extern(C++) interface SequenceFrame : SequenceObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceFrame")); }
+	private static __gshared SequenceFrame mDefaultProperties;
+	@property final static SequenceFrame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SequenceFrame)("SequenceFrame Engine.Default__SequenceFrame")); }
 	@property final
 	{
 		auto ref

@@ -8,6 +8,8 @@ extern(C++) interface TrSpectatorHUDCache : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpectatorHUDCache")); }
+	private static __gshared TrSpectatorHUDCache mDefaultProperties;
+	@property final static TrSpectatorHUDCache DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpectatorHUDCache)("TrSpectatorHUDCache TribesGame.Default__TrSpectatorHUDCache")); }
 	@property final
 	{
 		auto ref

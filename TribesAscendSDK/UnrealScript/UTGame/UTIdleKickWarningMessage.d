@@ -10,6 +10,8 @@ extern(C++) interface UTIdleKickWarningMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTIdleKickWarningMessage")); }
+	private static __gshared UTIdleKickWarningMessage mDefaultProperties;
+	@property final static UTIdleKickWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTIdleKickWarningMessage)("UTIdleKickWarningMessage UTGame.Default__UTIdleKickWarningMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

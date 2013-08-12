@@ -13,6 +13,8 @@ extern(C++) interface TrProj_Lacerator : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Lacerator")); }
+	private static __gshared TrProj_Lacerator mDefaultProperties;
+	@property final static TrProj_Lacerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Lacerator)("TrProj_Lacerator TribesGame.Default__TrProj_Lacerator")); }
 	static struct Functions
 	{
 		private static __gshared

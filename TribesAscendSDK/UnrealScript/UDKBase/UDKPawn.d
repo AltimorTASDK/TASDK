@@ -26,6 +26,8 @@ extern(C++) interface UDKPawn : GamePawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPawn")); }
+	private static __gshared UDKPawn mDefaultProperties;
+	@property final static UDKPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKPawn)("UDKPawn UDKBase.Default__UDKPawn")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface InterpTrackInstFloatMaterialParam : InterpTrackInst
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstFloatMaterialParam")); }
+	private static __gshared InterpTrackInstFloatMaterialParam mDefaultProperties;
+	@property final static InterpTrackInstFloatMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstFloatMaterialParam)("InterpTrackInstFloatMaterialParam Engine.Default__InterpTrackInstFloatMaterialParam")); }
 	struct FloatMaterialParamMICData
 	{
 		private ubyte __buffer__[24];

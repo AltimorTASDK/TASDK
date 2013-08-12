@@ -13,6 +13,8 @@ extern(C++) interface Canvas : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Canvas")); }
+	private static __gshared Canvas mDefaultProperties;
+	@property final static Canvas DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Canvas)("Canvas Engine.Default__Canvas")); }
 	static struct Functions
 	{
 		private static __gshared

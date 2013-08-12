@@ -8,6 +8,8 @@ extern(C++) interface AnimationCompressionAlgorithm_RemoveLinearKeys : Animation
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys")); }
+	private static __gshared AnimationCompressionAlgorithm_RemoveLinearKeys mDefaultProperties;
+	@property final static AnimationCompressionAlgorithm_RemoveLinearKeys DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimationCompressionAlgorithm_RemoveLinearKeys)("AnimationCompressionAlgorithm_RemoveLinearKeys Engine.Default__AnimationCompressionAlgorithm_RemoveLinearKeys")); }
 	@property final
 	{
 		auto ref

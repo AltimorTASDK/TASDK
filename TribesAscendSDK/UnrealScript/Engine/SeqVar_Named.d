@@ -8,6 +8,8 @@ extern(C++) interface SeqVar_Named : SequenceVariable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_Named")); }
+	private static __gshared SeqVar_Named mDefaultProperties;
+	@property final static SeqVar_Named DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_Named)("SeqVar_Named Engine.Default__SeqVar_Named")); }
 	@property final
 	{
 		auto ref

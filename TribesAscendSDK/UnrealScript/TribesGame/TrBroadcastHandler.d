@@ -12,6 +12,8 @@ extern(C++) interface TrBroadcastHandler : BroadcastHandler
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBroadcastHandler")); }
+	private static __gshared TrBroadcastHandler mDefaultProperties;
+	@property final static TrBroadcastHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBroadcastHandler)("TrBroadcastHandler TribesGame.Default__TrBroadcastHandler")); }
 	static struct Functions
 	{
 		private static __gshared

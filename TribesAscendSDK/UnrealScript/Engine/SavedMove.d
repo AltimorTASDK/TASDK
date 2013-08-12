@@ -12,6 +12,8 @@ extern(C++) interface SavedMove : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SavedMove")); }
+	private static __gshared SavedMove mDefaultProperties;
+	@property final static SavedMove DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SavedMove)("SavedMove Engine.Default__SavedMove")); }
 	static struct Functions
 	{
 		private static __gshared

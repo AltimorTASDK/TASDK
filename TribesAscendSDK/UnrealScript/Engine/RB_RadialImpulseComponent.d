@@ -8,6 +8,8 @@ extern(C++) interface RB_RadialImpulseComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_RadialImpulseComponent")); }
+	private static __gshared RB_RadialImpulseComponent mDefaultProperties;
+	@property final static RB_RadialImpulseComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_RadialImpulseComponent)("RB_RadialImpulseComponent Engine.Default__RB_RadialImpulseComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFireImpulse;

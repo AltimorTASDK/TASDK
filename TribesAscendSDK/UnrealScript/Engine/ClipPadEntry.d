@@ -8,6 +8,8 @@ extern(C++) interface ClipPadEntry : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ClipPadEntry")); }
+	private static __gshared ClipPadEntry mDefaultProperties;
+	@property final static ClipPadEntry DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ClipPadEntry)("ClipPadEntry Engine.Default__ClipPadEntry")); }
 	@property final auto ref
 	{
 		ScriptString Text() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 72); }

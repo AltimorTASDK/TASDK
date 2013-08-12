@@ -8,6 +8,8 @@ extern(C++) interface TrAttachment_RepairTool : TrDeviceAttachment
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_RepairTool")); }
+	private static __gshared TrAttachment_RepairTool mDefaultProperties;
+	@property final static TrAttachment_RepairTool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAttachment_RepairTool)("TrAttachment_RepairTool TribesGame.Default__TrAttachment_RepairTool")); }
 	static struct Functions
 	{
 		private static __gshared

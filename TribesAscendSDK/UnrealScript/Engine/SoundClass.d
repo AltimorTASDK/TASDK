@@ -8,6 +8,8 @@ extern(C++) interface SoundClass : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundClass")); }
+	private static __gshared SoundClass mDefaultProperties;
+	@property final static SoundClass DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundClass)("SoundClass Engine.Default__SoundClass")); }
 	struct SoundClassEditorData
 	{
 		private ubyte __buffer__[8];

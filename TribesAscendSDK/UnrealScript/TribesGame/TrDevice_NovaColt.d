@@ -8,6 +8,8 @@ extern(C++) interface TrDevice_NovaColt : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_NovaColt")); }
+	private static __gshared TrDevice_NovaColt mDefaultProperties;
+	@property final static TrDevice_NovaColt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_NovaColt)("TrDevice_NovaColt TribesGame.Default__TrDevice_NovaColt")); }
 	static struct Functions
 	{
 		private static __gshared

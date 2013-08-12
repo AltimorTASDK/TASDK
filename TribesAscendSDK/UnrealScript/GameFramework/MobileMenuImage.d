@@ -11,6 +11,8 @@ extern(C++) interface MobileMenuImage : MobileMenuObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuImage")); }
+	private static __gshared MobileMenuImage mDefaultProperties;
+	@property final static MobileMenuImage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileMenuImage)("MobileMenuImage GameFramework.Default__MobileMenuImage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRenderObject;

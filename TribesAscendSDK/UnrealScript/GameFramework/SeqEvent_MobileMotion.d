@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_MobileMotion : SeqEvent_MobileBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileMotion")); }
+	private static __gshared SeqEvent_MobileMotion mDefaultProperties;
+	@property final static SeqEvent_MobileMotion DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileMotion)("SeqEvent_MobileMotion GameFramework.Default__SeqEvent_MobileMotion")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

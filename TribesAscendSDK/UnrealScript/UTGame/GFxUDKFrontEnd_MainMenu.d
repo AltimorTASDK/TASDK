@@ -10,6 +10,8 @@ extern(C++) interface GFxUDKFrontEnd_MainMenu : GFxUDKFrontEnd_Screen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_MainMenu")); }
+	private static __gshared GFxUDKFrontEnd_MainMenu mDefaultProperties;
+	@property final static GFxUDKFrontEnd_MainMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_MainMenu)("GFxUDKFrontEnd_MainMenu UTGame.Default__GFxUDKFrontEnd_MainMenu")); }
 	static struct Functions
 	{
 		private static __gshared

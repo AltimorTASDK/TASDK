@@ -10,6 +10,8 @@ extern(C++) interface Brush : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Brush")); }
+	private static __gshared Brush mDefaultProperties;
+	@property final static Brush DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Brush)("Brush Engine.Default__Brush")); }
 	enum ECsgOper : ubyte
 	{
 		CSG_Active = 0,

@@ -9,6 +9,8 @@ extern(C++) interface SeqEvent_MobileSwipe : SeqEvent_MobileRawInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileSwipe")); }
+	private static __gshared SeqEvent_MobileSwipe mDefaultProperties;
+	@property final static SeqEvent_MobileSwipe DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileSwipe)("SeqEvent_MobileSwipe GameFramework.Default__SeqEvent_MobileSwipe")); }
 	@property final auto ref
 	{
 		UObject.Vector2D InitialTouch() { return *cast(UObject.Vector2D*)(cast(size_t)cast(void*)this + 280); }

@@ -11,6 +11,8 @@ extern(C++) interface TrMainMenuContentData : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMainMenuContentData")); }
+	private static __gshared TrMainMenuContentData mDefaultProperties;
+	@property final static TrMainMenuContentData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMainMenuContentData)("TrMainMenuContentData TribesGame.Default__TrMainMenuContentData")); }
 	static struct Functions
 	{
 		private static __gshared

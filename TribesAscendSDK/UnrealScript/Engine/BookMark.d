@@ -8,6 +8,8 @@ extern(C++) interface BookMark : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BookMark")); }
+	private static __gshared BookMark mDefaultProperties;
+	@property final static BookMark DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(BookMark)("BookMark Engine.Default__BookMark")); }
 	@property final auto ref
 	{
 		Rotator Rotation() { return *cast(Rotator*)(cast(size_t)cast(void*)this + 72); }

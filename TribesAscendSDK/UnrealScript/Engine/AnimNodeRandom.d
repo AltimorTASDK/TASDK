@@ -10,6 +10,8 @@ extern(C++) interface AnimNodeRandom : AnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeRandom")); }
+	private static __gshared AnimNodeRandom mDefaultProperties;
+	@property final static AnimNodeRandom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeRandom)("AnimNodeRandom Engine.Default__AnimNodeRandom")); }
 	struct RandomAnimInfo
 	{
 		private ubyte __buffer__[32];

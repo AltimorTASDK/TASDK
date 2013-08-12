@@ -8,6 +8,8 @@ extern(C++) interface AnimNodeBlendDirectional : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendDirectional")); }
+	private static __gshared AnimNodeBlendDirectional mDefaultProperties;
+	@property final static AnimNodeBlendDirectional DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendDirectional)("AnimNodeBlendDirectional Engine.Default__AnimNodeBlendDirectional")); }
 	@property final
 	{
 		auto ref

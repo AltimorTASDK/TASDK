@@ -8,6 +8,8 @@ extern(C++) interface TrProj_Spinfusor : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Spinfusor")); }
+	private static __gshared TrProj_Spinfusor mDefaultProperties;
+	@property final static TrProj_Spinfusor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Spinfusor)("TrProj_Spinfusor TribesGame.Default__TrProj_Spinfusor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSpawnFlightEffects;

@@ -9,6 +9,8 @@ extern(C++) interface DMC_Base : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DMC_Base")); }
+	private static __gshared DMC_Base mDefaultProperties;
+	@property final static DMC_Base DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DMC_Base)("DMC_Base Engine.Default__DMC_Base")); }
 	static struct Functions
 	{
 		private static __gshared

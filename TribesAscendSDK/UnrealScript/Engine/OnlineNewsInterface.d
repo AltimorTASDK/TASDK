@@ -9,6 +9,8 @@ extern(C++) interface OnlineNewsInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineNewsInterface")); }
+	private static __gshared OnlineNewsInterface mDefaultProperties;
+	@property final static OnlineNewsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineNewsInterface)("OnlineNewsInterface Engine.Default__OnlineNewsInterface")); }
 	static struct Functions
 	{
 		private static __gshared

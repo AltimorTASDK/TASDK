@@ -8,6 +8,8 @@ extern(C++) interface TrFlagCTF_DiamondSword : TrFlagCTF
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagCTF_DiamondSword")); }
+	private static __gshared TrFlagCTF_DiamondSword mDefaultProperties;
+	@property final static TrFlagCTF_DiamondSword DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagCTF_DiamondSword)("TrFlagCTF_DiamondSword TribesGame.Default__TrFlagCTF_DiamondSword")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetSpectatorName;

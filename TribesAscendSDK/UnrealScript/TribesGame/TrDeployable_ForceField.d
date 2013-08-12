@@ -11,6 +11,8 @@ extern(C++) interface TrDeployable_ForceField : TrDeployable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_ForceField")); }
+	private static __gshared TrDeployable_ForceField mDefaultProperties;
+	@property final static TrDeployable_ForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_ForceField)("TrDeployable_ForceField TribesGame.Default__TrDeployable_ForceField")); }
 	static struct Functions
 	{
 		private static __gshared

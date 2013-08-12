@@ -9,5 +9,7 @@ extern(C++) interface MeshComponentFactory : PrimitiveComponentFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MeshComponentFactory")); }
+	private static __gshared MeshComponentFactory mDefaultProperties;
+	@property final static MeshComponentFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MeshComponentFactory)("MeshComponentFactory Engine.Default__MeshComponentFactory")); }
 	@property final auto ref ScriptArray!(MaterialInterface) Materials() { return *cast(ScriptArray!(MaterialInterface)*)(cast(size_t)cast(void*)this + 64); }
 }

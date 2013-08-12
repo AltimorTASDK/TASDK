@@ -9,6 +9,8 @@ extern(C++) interface CylinderComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CylinderComponent")); }
+	private static __gshared CylinderComponent mDefaultProperties;
+	@property final static CylinderComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CylinderComponent)("CylinderComponent Engine.Default__CylinderComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetCylinderSize;

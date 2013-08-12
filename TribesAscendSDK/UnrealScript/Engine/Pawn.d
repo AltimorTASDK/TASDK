@@ -45,6 +45,8 @@ extern(C++) interface Pawn : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Pawn")); }
+	private static __gshared Pawn mDefaultProperties;
+	@property final static Pawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Pawn)("Pawn Engine.Default__Pawn")); }
 	static struct Functions
 	{
 		private static __gshared

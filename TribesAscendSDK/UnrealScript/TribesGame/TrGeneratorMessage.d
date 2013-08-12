@@ -12,6 +12,8 @@ extern(C++) interface TrGeneratorMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGeneratorMessage")); }
+	private static __gshared TrGeneratorMessage mDefaultProperties;
+	@property final static TrGeneratorMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGeneratorMessage)("TrGeneratorMessage TribesGame.Default__TrGeneratorMessage")); }
 	static struct Functions
 	{
 		private static __gshared

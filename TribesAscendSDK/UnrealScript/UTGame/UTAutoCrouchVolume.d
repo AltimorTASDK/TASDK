@@ -10,6 +10,8 @@ extern(C++) interface UTAutoCrouchVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAutoCrouchVolume")); }
+	private static __gshared UTAutoCrouchVolume mDefaultProperties;
+	@property final static UTAutoCrouchVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAutoCrouchVolume)("UTAutoCrouchVolume UTGame.Default__UTAutoCrouchVolume")); }
 	static struct Functions
 	{
 		private static __gshared

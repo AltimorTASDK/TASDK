@@ -8,4 +8,6 @@ extern(C++) interface TrAccolade_FlagGrabDM : TrAccolade_FlagGrab
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccolade_FlagGrabDM")); }
+	private static __gshared TrAccolade_FlagGrabDM mDefaultProperties;
+	@property final static TrAccolade_FlagGrabDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccolade_FlagGrabDM)("TrAccolade_FlagGrabDM TribesGame.Default__TrAccolade_FlagGrabDM")); }
 }

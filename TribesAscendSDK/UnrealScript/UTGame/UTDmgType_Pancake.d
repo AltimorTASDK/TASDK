@@ -9,6 +9,8 @@ extern(C++) interface UTDmgType_Pancake : UTDmgType_RanOver
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_Pancake")); }
+	private static __gshared UTDmgType_Pancake mDefaultProperties;
+	@property final static UTDmgType_Pancake DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_Pancake)("UTDmgType_Pancake UTGame.Default__UTDmgType_Pancake")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSmallReward;

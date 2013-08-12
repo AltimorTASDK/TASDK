@@ -12,6 +12,8 @@ extern(C++) interface UTKillsRemainingMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillsRemainingMessage")); }
+	private static __gshared UTKillsRemainingMessage mDefaultProperties;
+	@property final static UTKillsRemainingMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillsRemainingMessage)("UTKillsRemainingMessage UTGame.Default__UTKillsRemainingMessage")); }
 	static struct Functions
 	{
 		private static __gshared

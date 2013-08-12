@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleLocationPrimitiveBase : ParticleModuleLocati
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationPrimitiveBase")); }
+	private static __gshared ParticleModuleLocationPrimitiveBase mDefaultProperties;
+	@property final static ParticleModuleLocationPrimitiveBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleLocationPrimitiveBase)("ParticleModuleLocationPrimitiveBase Engine.Default__ParticleModuleLocationPrimitiveBase")); }
 	@property final
 	{
 		auto ref

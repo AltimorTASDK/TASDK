@@ -11,6 +11,8 @@ extern(C++) interface UTMutator : Mutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator")); }
+	private static __gshared UTMutator mDefaultProperties;
+	@property final static UTMutator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator)("UTMutator UTGame.Default__UTMutator")); }
 	static struct Functions
 	{
 		private static __gshared

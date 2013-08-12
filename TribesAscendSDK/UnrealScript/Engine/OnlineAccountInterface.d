@@ -9,6 +9,8 @@ extern(C++) interface OnlineAccountInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineAccountInterface")); }
+	private static __gshared OnlineAccountInterface mDefaultProperties;
+	@property final static OnlineAccountInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineAccountInterface)("OnlineAccountInterface Engine.Default__OnlineAccountInterface")); }
 	static struct Functions
 	{
 		private static __gshared

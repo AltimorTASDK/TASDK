@@ -10,6 +10,8 @@ extern(C++) interface TrInventoryStation_Spawnable : TrInventoryStation
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryStation_Spawnable")); }
+	private static __gshared TrInventoryStation_Spawnable mDefaultProperties;
+	@property final static TrInventoryStation_Spawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryStation_Spawnable)("TrInventoryStation_Spawnable TribesGame.Default__TrInventoryStation_Spawnable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTakeDamage;

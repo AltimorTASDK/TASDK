@@ -11,6 +11,8 @@ extern(C++) interface TrTeamBlockerStaticMeshActor : StaticMeshActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTeamBlockerStaticMeshActor")); }
+	private static __gshared TrTeamBlockerStaticMeshActor mDefaultProperties;
+	@property final static TrTeamBlockerStaticMeshActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTeamBlockerStaticMeshActor)("TrTeamBlockerStaticMeshActor TribesGame.Default__TrTeamBlockerStaticMeshActor")); }
 	static struct Functions
 	{
 		private static __gshared

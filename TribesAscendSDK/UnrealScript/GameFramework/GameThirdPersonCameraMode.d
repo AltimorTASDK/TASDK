@@ -13,6 +13,8 @@ extern(C++) interface GameThirdPersonCameraMode : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameThirdPersonCameraMode")); }
+	private static __gshared GameThirdPersonCameraMode mDefaultProperties;
+	@property final static GameThirdPersonCameraMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameThirdPersonCameraMode)("GameThirdPersonCameraMode GameFramework.Default__GameThirdPersonCameraMode")); }
 	static struct Functions
 	{
 		private static __gshared

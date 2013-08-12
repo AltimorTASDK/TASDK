@@ -8,4 +8,6 @@ extern(C++) interface TrDmgType_Fell : TrDmgType_Base
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_Fell")); }
+	private static __gshared TrDmgType_Fell mDefaultProperties;
+	@property final static TrDmgType_Fell DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDmgType_Fell)("TrDmgType_Fell TribesGame.Default__TrDmgType_Fell")); }
 }

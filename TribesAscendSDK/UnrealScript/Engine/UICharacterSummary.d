@@ -8,6 +8,8 @@ extern(C++) interface UICharacterSummary : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UICharacterSummary")); }
+	private static __gshared UICharacterSummary mDefaultProperties;
+	@property final static UICharacterSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UICharacterSummary)("UICharacterSummary Engine.Default__UICharacterSummary")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsProviderDisabled;

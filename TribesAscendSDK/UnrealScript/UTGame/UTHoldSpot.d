@@ -12,6 +12,8 @@ extern(C++) interface UTHoldSpot : UTDefensePoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHoldSpot")); }
+	private static __gshared UTHoldSpot mDefaultProperties;
+	@property final static UTHoldSpot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTHoldSpot)("UTHoldSpot UTGame.Default__UTHoldSpot")); }
 	static struct Functions
 	{
 		private static __gshared

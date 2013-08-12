@@ -12,6 +12,8 @@ extern(C++) interface UIDataProvider_OnlinePlayerStorage : UIDataProvider_Online
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePlayerStorage")); }
+	private static __gshared UIDataProvider_OnlinePlayerStorage mDefaultProperties;
+	@property final static UIDataProvider_OnlinePlayerStorage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlinePlayerStorage)("UIDataProvider_OnlinePlayerStorage Engine.Default__UIDataProvider_OnlinePlayerStorage")); }
 	static struct Functions
 	{
 		private static __gshared

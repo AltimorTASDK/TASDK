@@ -12,6 +12,8 @@ extern(C++) interface PostProcessVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PostProcessVolume")); }
+	private static __gshared PostProcessVolume mDefaultProperties;
+	@property final static PostProcessVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PostProcessVolume)("PostProcessVolume Engine.Default__PostProcessVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

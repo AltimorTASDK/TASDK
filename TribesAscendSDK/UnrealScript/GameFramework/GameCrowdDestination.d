@@ -13,6 +13,8 @@ extern(C++) interface GameCrowdDestination : GameCrowdInteractionPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdDestination")); }
+	private static __gshared GameCrowdDestination mDefaultProperties;
+	@property final static GameCrowdDestination DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdDestination)("GameCrowdDestination GameFramework.Default__GameCrowdDestination")); }
 	static struct Functions
 	{
 		private static __gshared

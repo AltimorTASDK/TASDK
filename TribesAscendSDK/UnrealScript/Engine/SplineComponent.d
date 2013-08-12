@@ -9,6 +9,8 @@ extern(C++) interface SplineComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineComponent")); }
+	private static __gshared SplineComponent mDefaultProperties;
+	@property final static SplineComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineComponent)("SplineComponent Engine.Default__SplineComponent")); }
 	static struct Functions
 	{
 		private static __gshared

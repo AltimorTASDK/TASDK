@@ -9,6 +9,8 @@ extern(C++) interface EngineTypes : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EngineTypes")); }
+	private static __gshared EngineTypes mDefaultProperties;
+	@property final static EngineTypes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EngineTypes)("EngineTypes Engine.Default__EngineTypes")); }
 	enum EPathFindingError : ubyte
 	{
 		PATHERROR_STARTPOLYNOTFOUND = 0,

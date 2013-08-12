@@ -8,6 +8,8 @@ extern(C++) interface TrSeqEvent_Generator : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqEvent_Generator")); }
+	private static __gshared TrSeqEvent_Generator mDefaultProperties;
+	@property final static TrSeqEvent_Generator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqEvent_Generator)("TrSeqEvent_Generator TribesGame.Default__TrSeqEvent_Generator")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

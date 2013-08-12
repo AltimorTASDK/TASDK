@@ -17,6 +17,8 @@ extern(C++) interface AnimTree : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimTree")); }
+	private static __gshared AnimTree mDefaultProperties;
+	@property final static AnimTree DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimTree)("AnimTree Engine.Default__AnimTree")); }
 	static struct Functions
 	{
 		private static __gshared

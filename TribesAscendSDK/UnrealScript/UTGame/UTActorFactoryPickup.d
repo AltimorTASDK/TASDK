@@ -9,6 +9,8 @@ extern(C++) interface UTActorFactoryPickup : ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTActorFactoryPickup")); }
+	private static __gshared UTActorFactoryPickup mDefaultProperties;
+	@property final static UTActorFactoryPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTActorFactoryPickup)("UTActorFactoryPickup UTGame.Default__UTActorFactoryPickup")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;

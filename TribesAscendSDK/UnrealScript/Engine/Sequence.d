@@ -12,6 +12,8 @@ extern(C++) interface Sequence : SequenceOp
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Sequence")); }
+	private static __gshared Sequence mDefaultProperties;
+	@property final static Sequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Sequence)("Sequence Engine.Default__Sequence")); }
 	static struct Functions
 	{
 		private static __gshared

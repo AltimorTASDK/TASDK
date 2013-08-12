@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_SetMesh : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMesh")); }
+	private static __gshared SeqAct_SetMesh mDefaultProperties;
+	@property final static SeqAct_SetMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetMesh)("SeqAct_SetMesh Engine.Default__SeqAct_SetMesh")); }
 	enum EMeshType : ubyte
 	{
 		MeshType_StaticMesh = 0,

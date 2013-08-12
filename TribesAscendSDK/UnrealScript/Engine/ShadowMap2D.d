@@ -9,6 +9,8 @@ extern(C++) interface ShadowMap2D : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ShadowMap2D")); }
+	private static __gshared ShadowMap2D mDefaultProperties;
+	@property final static ShadowMap2D DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ShadowMap2D)("ShadowMap2D Engine.Default__ShadowMap2D")); }
 	@property final
 	{
 		auto ref

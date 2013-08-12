@@ -9,6 +9,8 @@ extern(C++) interface K2Connector : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.K2Connector")); }
+	private static __gshared K2Connector mDefaultProperties;
+	@property final static K2Connector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(K2Connector)("K2Connector Engine.Default__K2Connector")); }
 	enum EK2ConnectorType : ubyte
 	{
 		K2CT_Bool = 0,

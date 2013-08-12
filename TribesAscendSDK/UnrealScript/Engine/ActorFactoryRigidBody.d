@@ -9,6 +9,8 @@ extern(C++) interface ActorFactoryRigidBody : ActorFactoryDynamicSM
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryRigidBody")); }
+	private static __gshared ActorFactoryRigidBody mDefaultProperties;
+	@property final static ActorFactoryRigidBody DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryRigidBody)("ActorFactoryRigidBody Engine.Default__ActorFactoryRigidBody")); }
 	@property final
 	{
 		auto ref

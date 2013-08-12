@@ -15,6 +15,8 @@ extern(C++) interface LocalPlayer : Player
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LocalPlayer")); }
+	private static __gshared LocalPlayer mDefaultProperties;
+	@property final static LocalPlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LocalPlayer)("LocalPlayer Engine.Default__LocalPlayer")); }
 	static struct Functions
 	{
 		private static __gshared

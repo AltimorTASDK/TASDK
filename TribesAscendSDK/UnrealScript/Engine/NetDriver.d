@@ -8,6 +8,8 @@ extern(C++) interface NetDriver : Subsystem
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NetDriver")); }
+	private static __gshared NetDriver mDefaultProperties;
+	@property final static NetDriver DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NetDriver)("NetDriver Engine.Default__NetDriver")); }
 	@property final
 	{
 		auto ref

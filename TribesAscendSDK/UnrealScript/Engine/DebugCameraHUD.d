@@ -8,6 +8,8 @@ extern(C++) interface DebugCameraHUD : HUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DebugCameraHUD")); }
+	private static __gshared DebugCameraHUD mDefaultProperties;
+	@property final static DebugCameraHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DebugCameraHUD)("DebugCameraHUD Engine.Default__DebugCameraHUD")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface TrDevice_Claymore : TrDevice_AutoFire
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Claymore")); }
+	private static __gshared TrDevice_Claymore mDefaultProperties;
+	@property final static TrDevice_Claymore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Claymore)("TrDevice_Claymore TribesGame.Default__TrDevice_Claymore")); }
 	static struct Functions
 	{
 		private static __gshared

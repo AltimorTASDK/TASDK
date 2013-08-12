@@ -10,6 +10,8 @@ extern(C++) interface ActorFactoryDynamicSM : ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryDynamicSM")); }
+	private static __gshared ActorFactoryDynamicSM mDefaultProperties;
+	@property final static ActorFactoryDynamicSM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryDynamicSM)("ActorFactoryDynamicSM Engine.Default__ActorFactoryDynamicSM")); }
 	@property final
 	{
 		auto ref

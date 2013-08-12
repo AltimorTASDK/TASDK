@@ -8,6 +8,8 @@ extern(C++) interface PrimitiveComponentFactory : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrimitiveComponentFactory")); }
+	private static __gshared PrimitiveComponentFactory mDefaultProperties;
+	@property final static PrimitiveComponentFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrimitiveComponentFactory)("PrimitiveComponentFactory Engine.Default__PrimitiveComponentFactory")); }
 	@property final
 	{
 		bool CastShadow() { return (*cast(uint*)(cast(size_t)cast(void*)this + 60) & 0x80) != 0; }

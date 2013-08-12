@@ -11,6 +11,8 @@ extern(C++) interface GFxInteraction : Interaction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxInteraction")); }
+	private static __gshared GFxInteraction mDefaultProperties;
+	@property final static GFxInteraction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxInteraction)("GFxInteraction GFxUI.Default__GFxInteraction")); }
 	static struct Functions
 	{
 		private static __gshared

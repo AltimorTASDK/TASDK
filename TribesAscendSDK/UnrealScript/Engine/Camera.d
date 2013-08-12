@@ -21,6 +21,8 @@ extern(C++) interface Camera : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Camera")); }
+	private static __gshared Camera mDefaultProperties;
+	@property final static Camera DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Camera)("Camera Engine.Default__Camera")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_RoamTDM : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_RoamTDM")); }
+	private static __gshared GFxTrPage_RoamTDM mDefaultProperties;
+	@property final static GFxTrPage_RoamTDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_RoamTDM)("GFxTrPage_RoamTDM TribesGame.Default__GFxTrPage_RoamTDM")); }
 	static struct Functions
 	{
 		private static __gshared

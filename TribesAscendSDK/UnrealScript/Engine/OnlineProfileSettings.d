@@ -9,6 +9,8 @@ extern(C++) interface OnlineProfileSettings : OnlinePlayerStorage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineProfileSettings")); }
+	private static __gshared OnlineProfileSettings mDefaultProperties;
+	@property final static OnlineProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineProfileSettings)("OnlineProfileSettings Engine.Default__OnlineProfileSettings")); }
 	static struct Functions
 	{
 		private static __gshared

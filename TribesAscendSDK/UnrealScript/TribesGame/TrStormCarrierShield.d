@@ -10,6 +10,8 @@ extern(C++) interface TrStormCarrierShield : DynamicSMActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormCarrierShield")); }
+	private static __gshared TrStormCarrierShield mDefaultProperties;
+	@property final static TrStormCarrierShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStormCarrierShield)("TrStormCarrierShield TribesGame.Default__TrStormCarrierShield")); }
 	static struct Functions
 	{
 		private static __gshared

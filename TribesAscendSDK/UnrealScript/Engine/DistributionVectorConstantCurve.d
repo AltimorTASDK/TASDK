@@ -9,6 +9,8 @@ extern(C++) interface DistributionVectorConstantCurve : DistributionVector
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorConstantCurve")); }
+	private static __gshared DistributionVectorConstantCurve mDefaultProperties;
+	@property final static DistributionVectorConstantCurve DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionVectorConstantCurve)("DistributionVectorConstantCurve Engine.Default__DistributionVectorConstantCurve")); }
 	@property final
 	{
 		auto ref

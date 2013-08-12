@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackAnimControl : InterpTrackFloatBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackAnimControl")); }
+	private static __gshared InterpTrackAnimControl mDefaultProperties;
+	@property final static InterpTrackAnimControl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackAnimControl)("InterpTrackAnimControl Engine.Default__InterpTrackAnimControl")); }
 	struct AnimControlTrackKey
 	{
 		private ubyte __buffer__[28];

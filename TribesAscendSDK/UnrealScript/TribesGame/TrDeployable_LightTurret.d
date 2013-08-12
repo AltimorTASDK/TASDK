@@ -8,4 +8,6 @@ extern(C++) interface TrDeployable_LightTurret : TrDeployable_Turret
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_LightTurret")); }
+	private static __gshared TrDeployable_LightTurret mDefaultProperties;
+	@property final static TrDeployable_LightTurret DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_LightTurret)("TrDeployable_LightTurret TribesGame.Default__TrDeployable_LightTurret")); }
 }

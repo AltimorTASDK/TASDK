@@ -10,6 +10,8 @@ extern(C++) interface GFxUI_PauseMenu : UTGFxTweenableMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUI_PauseMenu")); }
+	private static __gshared GFxUI_PauseMenu mDefaultProperties;
+	@property final static GFxUI_PauseMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUI_PauseMenu)("GFxUI_PauseMenu UTGame.Default__GFxUI_PauseMenu")); }
 	static struct Functions
 	{
 		private static __gshared

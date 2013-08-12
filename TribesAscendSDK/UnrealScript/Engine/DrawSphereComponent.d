@@ -10,6 +10,8 @@ extern(C++) interface DrawSphereComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawSphereComponent")); }
+	private static __gshared DrawSphereComponent mDefaultProperties;
+	@property final static DrawSphereComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawSphereComponent)("DrawSphereComponent Engine.Default__DrawSphereComponent")); }
 	@property final
 	{
 		auto ref

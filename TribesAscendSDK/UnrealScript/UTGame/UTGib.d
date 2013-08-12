@@ -18,6 +18,8 @@ extern(C++) interface UTGib : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGib")); }
+	private static __gshared UTGib mDefaultProperties;
+	@property final static UTGib DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGib)("UTGib UTGame.Default__UTGib")); }
 	static struct Functions
 	{
 		private static __gshared

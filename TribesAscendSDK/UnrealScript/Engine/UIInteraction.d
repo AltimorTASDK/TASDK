@@ -15,6 +15,8 @@ extern(C++) interface UIInteraction : Interaction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIInteraction")); }
+	private static __gshared UIInteraction mDefaultProperties;
+	@property final static UIInteraction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIInteraction)("UIInteraction Engine.Default__UIInteraction")); }
 	static struct Functions
 	{
 		private static __gshared

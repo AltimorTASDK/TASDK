@@ -10,6 +10,8 @@ extern(C++) interface MobileMenuGame : GameInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuGame")); }
+	private static __gshared MobileMenuGame mDefaultProperties;
+	@property final static MobileMenuGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileMenuGame)("MobileMenuGame GameFramework.Default__MobileMenuGame")); }
 	static struct Functions
 	{
 		private static __gshared

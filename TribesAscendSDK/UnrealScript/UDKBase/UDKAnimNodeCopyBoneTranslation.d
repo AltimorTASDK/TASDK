@@ -11,6 +11,8 @@ extern(C++) interface UDKAnimNodeCopyBoneTranslation : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeCopyBoneTranslation")); }
+	private static __gshared UDKAnimNodeCopyBoneTranslation mDefaultProperties;
+	@property final static UDKAnimNodeCopyBoneTranslation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeCopyBoneTranslation)("UDKAnimNodeCopyBoneTranslation UDKBase.Default__UDKAnimNodeCopyBoneTranslation")); }
 	struct BoneCopyInfo
 	{
 		private ubyte __buffer__[24];

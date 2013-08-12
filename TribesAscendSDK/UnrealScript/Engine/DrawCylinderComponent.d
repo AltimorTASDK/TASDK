@@ -10,6 +10,8 @@ extern(C++) interface DrawCylinderComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawCylinderComponent")); }
+	private static __gshared DrawCylinderComponent mDefaultProperties;
+	@property final static DrawCylinderComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawCylinderComponent)("DrawCylinderComponent Engine.Default__DrawCylinderComponent")); }
 	@property final
 	{
 		auto ref

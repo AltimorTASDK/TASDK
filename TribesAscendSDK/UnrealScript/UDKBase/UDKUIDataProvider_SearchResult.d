@@ -8,6 +8,8 @@ extern(C++) interface UDKUIDataProvider_SearchResult : UIDataProvider_Settings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_SearchResult")); }
+	private static __gshared UDKUIDataProvider_SearchResult mDefaultProperties;
+	@property final static UDKUIDataProvider_SearchResult DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_SearchResult)("UDKUIDataProvider_SearchResult UDKBase.Default__UDKUIDataProvider_SearchResult")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsPrivateServer;

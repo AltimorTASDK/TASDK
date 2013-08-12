@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_MapRotation : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_MapRotation")); }
+	private static __gshared GFxTrPage_MapRotation mDefaultProperties;
+	@property final static GFxTrPage_MapRotation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_MapRotation)("GFxTrPage_MapRotation TribesGame.Default__GFxTrPage_MapRotation")); }
 	static struct Functions
 	{
 		private static __gshared

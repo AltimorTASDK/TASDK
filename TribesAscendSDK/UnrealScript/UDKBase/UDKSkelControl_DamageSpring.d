@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_DamageSpring : UDKSkelControl_Damage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_DamageSpring")); }
+	private static __gshared UDKSkelControl_DamageSpring mDefaultProperties;
+	@property final static UDKSkelControl_DamageSpring DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_DamageSpring)("UDKSkelControl_DamageSpring UDKBase.Default__UDKSkelControl_DamageSpring")); }
 	@property final auto ref
 	{
 		float MomentumPortion() { return *cast(float*)(cast(size_t)cast(void*)this + 444); }

@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_MassBoneScaling : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_MassBoneScaling")); }
+	private static __gshared UDKSkelControl_MassBoneScaling mDefaultProperties;
+	@property final static UDKSkelControl_MassBoneScaling DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_MassBoneScaling)("UDKSkelControl_MassBoneScaling UDKBase.Default__UDKSkelControl_MassBoneScaling")); }
 	static struct Functions
 	{
 		private static __gshared

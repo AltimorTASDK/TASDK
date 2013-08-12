@@ -9,6 +9,8 @@ extern(C++) interface UDKUIDataProvider_ServerDetails : UDKUIDataProvider_Simple
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_ServerDetails")); }
+	private static __gshared UDKUIDataProvider_ServerDetails mDefaultProperties;
+	@property final static UDKUIDataProvider_ServerDetails DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_ServerDetails)("UDKUIDataProvider_ServerDetails UDKBase.Default__UDKUIDataProvider_ServerDetails")); }
 	static struct Functions
 	{
 		private static __gshared

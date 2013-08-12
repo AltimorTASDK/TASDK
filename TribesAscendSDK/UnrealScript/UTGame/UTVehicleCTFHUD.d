@@ -8,4 +8,6 @@ extern(C++) interface UTVehicleCTFHUD : UTCTFHUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleCTFHUD")); }
+	private static __gshared UTVehicleCTFHUD mDefaultProperties;
+	@property final static UTVehicleCTFHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleCTFHUD)("UTVehicleCTFHUD UTGame.Default__UTVehicleCTFHUD")); }
 }

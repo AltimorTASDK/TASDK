@@ -12,6 +12,8 @@ extern(C++) interface WebConnection : TcpLink
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebConnection")); }
+	private static __gshared WebConnection mDefaultProperties;
+	@property final static WebConnection DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebConnection)("WebConnection IpDrv.Default__WebConnection")); }
 	static struct Functions
 	{
 		private static __gshared

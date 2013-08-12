@@ -9,6 +9,8 @@ extern(C++) interface OnlinePlaylistManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlinePlaylistManager")); }
+	private static __gshared OnlinePlaylistManager mDefaultProperties;
+	@property final static OnlinePlaylistManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePlaylistManager)("OnlinePlaylistManager IpDrv.Default__OnlinePlaylistManager")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,4 +8,6 @@ extern(C++) interface GenericBrowserType_ApexDestructibleDamageParameters : Gene
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.GenericBrowserType_ApexDestructibleDamageParameters")); }
+	private static __gshared GenericBrowserType_ApexDestructibleDamageParameters mDefaultProperties;
+	@property final static GenericBrowserType_ApexDestructibleDamageParameters DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GenericBrowserType_ApexDestructibleDamageParameters)("GenericBrowserType_ApexDestructibleDamageParameters UnrealEd.Default__GenericBrowserType_ApexDestructibleDamageParameters")); }
 }

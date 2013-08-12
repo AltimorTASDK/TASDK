@@ -9,6 +9,8 @@ extern(C++) interface DebugCameraInput : PlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DebugCameraInput")); }
+	private static __gshared DebugCameraInput mDefaultProperties;
+	@property final static DebugCameraInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DebugCameraInput)("DebugCameraInput Engine.Default__DebugCameraInput")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInputKey;

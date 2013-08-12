@@ -24,6 +24,8 @@ extern(C++) interface UTCarriedObject : UDKCarriedObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCarriedObject")); }
+	private static __gshared UTCarriedObject mDefaultProperties;
+	@property final static UTCarriedObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCarriedObject)("UTCarriedObject UTGame.Default__UTCarriedObject")); }
 	static struct Functions
 	{
 		private static __gshared

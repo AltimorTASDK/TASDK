@@ -8,6 +8,8 @@ extern(C++) interface SVehicleSimBase : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleSimBase")); }
+	private static __gshared SVehicleSimBase mDefaultProperties;
+	@property final static SVehicleSimBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SVehicleSimBase)("SVehicleSimBase Engine.Default__SVehicleSimBase")); }
 	@property final
 	{
 		auto ref

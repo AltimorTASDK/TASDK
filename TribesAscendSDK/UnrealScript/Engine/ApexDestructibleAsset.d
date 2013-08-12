@@ -12,6 +12,8 @@ extern(C++) interface ApexDestructibleAsset : ApexAsset
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleAsset")); }
+	private static __gshared ApexDestructibleAsset mDefaultProperties;
+	@property final static ApexDestructibleAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexDestructibleAsset)("ApexDestructibleAsset Engine.Default__ApexDestructibleAsset")); }
 	struct NxDestructibleParameters
 	{
 		private ubyte __buffer__[128];

@@ -8,4 +8,6 @@ extern(C++) interface ParticleModuleColorBase : ParticleModule
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleColorBase")); }
+	private static __gshared ParticleModuleColorBase mDefaultProperties;
+	@property final static ParticleModuleColorBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleColorBase)("ParticleModuleColorBase Engine.Default__ParticleModuleColorBase")); }
 }

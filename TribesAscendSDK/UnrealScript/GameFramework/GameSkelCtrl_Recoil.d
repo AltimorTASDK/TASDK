@@ -9,6 +9,8 @@ extern(C++) interface GameSkelCtrl_Recoil : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameSkelCtrl_Recoil")); }
+	private static __gshared GameSkelCtrl_Recoil mDefaultProperties;
+	@property final static GameSkelCtrl_Recoil DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameSkelCtrl_Recoil)("GameSkelCtrl_Recoil GameFramework.Default__GameSkelCtrl_Recoil")); }
 	enum ERecoilStart : ubyte
 	{
 		ERS_Zero = 0,

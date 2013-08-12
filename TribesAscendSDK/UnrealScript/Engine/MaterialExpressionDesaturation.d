@@ -9,6 +9,8 @@ extern(C++) interface MaterialExpressionDesaturation : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionDesaturation")); }
+	private static __gshared MaterialExpressionDesaturation mDefaultProperties;
+	@property final static MaterialExpressionDesaturation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionDesaturation)("MaterialExpressionDesaturation Engine.Default__MaterialExpressionDesaturation")); }
 	@property final auto ref
 	{
 		UObject.LinearColor LuminanceFactors() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 164); }

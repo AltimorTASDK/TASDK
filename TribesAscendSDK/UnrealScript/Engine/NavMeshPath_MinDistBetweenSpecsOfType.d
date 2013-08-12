@@ -10,6 +10,8 @@ extern(C++) interface NavMeshPath_MinDistBetweenSpecsOfType : NavMeshPathConstra
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_MinDistBetweenSpecsOfType")); }
+	private static __gshared NavMeshPath_MinDistBetweenSpecsOfType mDefaultProperties;
+	@property final static NavMeshPath_MinDistBetweenSpecsOfType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_MinDistBetweenSpecsOfType)("NavMeshPath_MinDistBetweenSpecsOfType Engine.Default__NavMeshPath_MinDistBetweenSpecsOfType")); }
 	static struct Functions
 	{
 		private static __gshared

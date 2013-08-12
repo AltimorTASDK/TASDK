@@ -8,6 +8,8 @@ extern(C++) interface TrVGSCommandList : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVGSCommandList")); }
+	private static __gshared TrVGSCommandList mDefaultProperties;
+	@property final static TrVGSCommandList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVGSCommandList)("TrVGSCommandList TribesGame.Default__TrVGSCommandList")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface PBRuleNodeMesh : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeMesh")); }
+	private static __gshared PBRuleNodeMesh mDefaultProperties;
+	@property final static PBRuleNodeMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeMesh)("PBRuleNodeMesh Engine.Default__PBRuleNodeMesh")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPickRandomBuildingMesh;

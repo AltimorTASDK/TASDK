@@ -11,6 +11,8 @@ extern(C++) interface SeqAct_CameraShake : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_CameraShake")); }
+	private static __gshared SeqAct_CameraShake mDefaultProperties;
+	@property final static SeqAct_CameraShake DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_CameraShake)("SeqAct_CameraShake Engine.Default__SeqAct_CameraShake")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

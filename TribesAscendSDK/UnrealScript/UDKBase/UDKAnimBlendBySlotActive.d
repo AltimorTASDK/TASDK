@@ -9,5 +9,7 @@ extern(C++) interface UDKAnimBlendBySlotActive : AnimNodeBlendPerBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendBySlotActive")); }
+	private static __gshared UDKAnimBlendBySlotActive mDefaultProperties;
+	@property final static UDKAnimBlendBySlotActive DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendBySlotActive)("UDKAnimBlendBySlotActive UDKBase.Default__UDKAnimBlendBySlotActive")); }
 	@property final auto ref AnimNodeSlot ChildSlot() { return *cast(AnimNodeSlot*)(cast(size_t)cast(void*)this + 300); }
 }

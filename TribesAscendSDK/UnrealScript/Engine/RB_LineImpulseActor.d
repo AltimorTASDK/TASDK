@@ -9,6 +9,8 @@ extern(C++) interface RB_LineImpulseActor : RigidBodyBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_LineImpulseActor")); }
+	private static __gshared RB_LineImpulseActor mDefaultProperties;
+	@property final static RB_LineImpulseActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_LineImpulseActor)("RB_LineImpulseActor Engine.Default__RB_LineImpulseActor")); }
 	static struct Functions
 	{
 		private static __gshared

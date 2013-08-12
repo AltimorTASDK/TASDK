@@ -10,6 +10,8 @@ extern(C++) interface UTWaterVolume : WaterVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWaterVolume")); }
+	private static __gshared UTWaterVolume mDefaultProperties;
+	@property final static UTWaterVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWaterVolume)("UTWaterVolume UTGame.Default__UTWaterVolume")); }
 	static struct Functions
 	{
 		private static __gshared

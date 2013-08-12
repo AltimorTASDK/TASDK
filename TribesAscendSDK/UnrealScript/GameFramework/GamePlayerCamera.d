@@ -13,6 +13,8 @@ extern(C++) interface GamePlayerCamera : Camera
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GamePlayerCamera")); }
+	private static __gshared GamePlayerCamera mDefaultProperties;
+	@property final static GamePlayerCamera DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GamePlayerCamera)("GamePlayerCamera GameFramework.Default__GamePlayerCamera")); }
 	static struct Functions
 	{
 		private static __gshared

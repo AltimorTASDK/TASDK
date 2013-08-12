@@ -10,6 +10,8 @@ extern(C++) interface WaterVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.WaterVolume")); }
+	private static __gshared WaterVolume mDefaultProperties;
+	@property final static WaterVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WaterVolume)("WaterVolume Engine.Default__WaterVolume")); }
 	static struct Functions
 	{
 		private static __gshared

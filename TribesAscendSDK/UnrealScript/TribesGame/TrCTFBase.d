@@ -13,6 +13,8 @@ extern(C++) interface TrCTFBase : UTCTFBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFBase")); }
+	private static __gshared TrCTFBase mDefaultProperties;
+	@property final static TrCTFBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFBase)("TrCTFBase TribesGame.Default__TrCTFBase")); }
 	static struct Functions
 	{
 		private static __gshared

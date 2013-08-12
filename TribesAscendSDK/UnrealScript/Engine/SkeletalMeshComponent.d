@@ -28,6 +28,8 @@ extern(C++) interface SkeletalMeshComponent : MeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshComponent")); }
+	private static __gshared SkeletalMeshComponent mDefaultProperties;
+	@property final static SkeletalMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshComponent)("SkeletalMeshComponent Engine.Default__SkeletalMeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared

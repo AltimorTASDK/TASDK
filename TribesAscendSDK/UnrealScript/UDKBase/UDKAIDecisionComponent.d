@@ -8,6 +8,8 @@ extern(C++) interface UDKAIDecisionComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAIDecisionComponent")); }
+	private static __gshared UDKAIDecisionComponent mDefaultProperties;
+	@property final static UDKAIDecisionComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAIDecisionComponent)("UDKAIDecisionComponent UDKBase.Default__UDKAIDecisionComponent")); }
 	@property final
 	{
 		bool bTriggered() { return (*cast(uint*)(cast(size_t)cast(void*)this + 88) & 0x1) != 0; }

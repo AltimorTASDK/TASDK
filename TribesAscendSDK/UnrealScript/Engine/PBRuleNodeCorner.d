@@ -9,6 +9,8 @@ extern(C++) interface PBRuleNodeCorner : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeCorner")); }
+	private static __gshared PBRuleNodeCorner mDefaultProperties;
+	@property final static PBRuleNodeCorner DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeCorner)("PBRuleNodeCorner Engine.Default__PBRuleNodeCorner")); }
 	struct RBCornerAngleInfo
 	{
 		private ubyte __buffer__[8];

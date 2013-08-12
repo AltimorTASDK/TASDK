@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_HeavyShield : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_HeavyShield")); }
+	private static __gshared TrEffect_HeavyShield mDefaultProperties;
+	@property final static TrEffect_HeavyShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_HeavyShield)("TrEffect_HeavyShield TribesGame.Default__TrEffect_HeavyShield")); }
 	static struct Functions
 	{
 		private static __gshared

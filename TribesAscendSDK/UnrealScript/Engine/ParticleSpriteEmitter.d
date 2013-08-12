@@ -8,6 +8,8 @@ extern(C++) interface ParticleSpriteEmitter : ParticleEmitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSpriteEmitter")); }
+	private static __gshared ParticleSpriteEmitter mDefaultProperties;
+	@property final static ParticleSpriteEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleSpriteEmitter)("ParticleSpriteEmitter Engine.Default__ParticleSpriteEmitter")); }
 	enum EParticleScreenAlignment : ubyte
 	{
 		PSA_Square = 0,

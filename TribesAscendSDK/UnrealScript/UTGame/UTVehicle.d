@@ -48,6 +48,8 @@ extern(C++) interface UTVehicle : UDKVehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicle")); }
+	private static __gshared UTVehicle mDefaultProperties;
+	@property final static UTVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicle)("UTVehicle UTGame.Default__UTVehicle")); }
 	static struct Functions
 	{
 		private static __gshared

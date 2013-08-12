@@ -9,6 +9,8 @@ extern(C++) interface TrFriendManager : TrObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFriendManager")); }
+	private static __gshared TrFriendManager mDefaultProperties;
+	@property final static TrFriendManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFriendManager)("TrFriendManager TribesGame.Default__TrFriendManager")); }
 	static struct Functions
 	{
 		private static __gshared

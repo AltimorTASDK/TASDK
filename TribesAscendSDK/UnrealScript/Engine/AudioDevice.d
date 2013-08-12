@@ -14,6 +14,8 @@ extern(C++) interface AudioDevice : Subsystem
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AudioDevice")); }
+	private static __gshared AudioDevice mDefaultProperties;
+	@property final static AudioDevice DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AudioDevice)("AudioDevice Engine.Default__AudioDevice")); }
 	static struct Functions
 	{
 		private static __gshared

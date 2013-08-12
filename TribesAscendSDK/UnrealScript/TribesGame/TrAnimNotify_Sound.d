@@ -9,6 +9,8 @@ extern(C++) interface TrAnimNotify_Sound : AnimNotify_Sound
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNotify_Sound")); }
+	private static __gshared TrAnimNotify_Sound mDefaultProperties;
+	@property final static TrAnimNotify_Sound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNotify_Sound)("TrAnimNotify_Sound TribesGame.Default__TrAnimNotify_Sound")); }
 	struct DeviceOverride
 	{
 		private ubyte __buffer__[8];

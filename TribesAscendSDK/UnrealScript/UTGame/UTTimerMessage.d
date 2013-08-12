@@ -13,6 +13,8 @@ extern(C++) interface UTTimerMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTimerMessage")); }
+	private static __gshared UTTimerMessage mDefaultProperties;
+	@property final static UTTimerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTimerMessage)("UTTimerMessage UTGame.Default__UTTimerMessage")); }
 	static struct Functions
 	{
 		private static __gshared

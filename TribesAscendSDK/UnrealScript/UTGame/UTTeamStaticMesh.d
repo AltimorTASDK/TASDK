@@ -10,6 +10,8 @@ extern(C++) interface UTTeamStaticMesh : StaticMeshActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamStaticMesh")); }
+	private static __gshared UTTeamStaticMesh mDefaultProperties;
+	@property final static UTTeamStaticMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamStaticMesh)("UTTeamStaticMesh UTGame.Default__UTTeamStaticMesh")); }
 	static struct Functions
 	{
 		private static __gshared

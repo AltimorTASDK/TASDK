@@ -14,6 +14,8 @@ extern(C++) interface SkeletalMesh : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMesh")); }
+	private static __gshared SkeletalMesh mDefaultProperties;
+	@property final static SkeletalMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMesh)("SkeletalMesh Engine.Default__SkeletalMesh")); }
 	enum SoftBodyBoneType : ubyte
 	{
 		SOFTBODYBONE_Fixed = 0,

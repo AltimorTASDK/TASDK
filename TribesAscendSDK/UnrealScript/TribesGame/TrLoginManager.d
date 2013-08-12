@@ -10,6 +10,8 @@ extern(C++) interface TrLoginManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLoginManager")); }
+	private static __gshared TrLoginManager mDefaultProperties;
+	@property final static TrLoginManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLoginManager)("TrLoginManager TribesGame.Default__TrLoginManager")); }
 	static struct Functions
 	{
 		private static __gshared

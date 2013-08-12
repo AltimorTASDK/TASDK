@@ -10,6 +10,8 @@ extern(C++) interface InterpTrackVectorMaterialParam : InterpTrackVectorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVectorMaterialParam")); }
+	private static __gshared InterpTrackVectorMaterialParam mDefaultProperties;
+	@property final static InterpTrackVectorMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackVectorMaterialParam)("InterpTrackVectorMaterialParam Engine.Default__InterpTrackVectorMaterialParam")); }
 	@property final
 	{
 		auto ref

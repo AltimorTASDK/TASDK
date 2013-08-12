@@ -11,6 +11,8 @@ extern(C++) interface NxGenericForceFieldBrush : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxGenericForceFieldBrush")); }
+	private static __gshared NxGenericForceFieldBrush mDefaultProperties;
+	@property final static NxGenericForceFieldBrush DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxGenericForceFieldBrush)("NxGenericForceFieldBrush Engine.Default__NxGenericForceFieldBrush")); }
 	static struct Functions
 	{
 		private static __gshared

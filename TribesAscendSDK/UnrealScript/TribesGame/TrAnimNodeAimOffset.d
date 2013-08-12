@@ -11,6 +11,8 @@ extern(C++) interface TrAnimNodeAimOffset : AnimNodeAimOffset
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeAimOffset")); }
+	private static __gshared TrAnimNodeAimOffset mDefaultProperties;
+	@property final static TrAnimNodeAimOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeAimOffset)("TrAnimNodeAimOffset TribesGame.Default__TrAnimNodeAimOffset")); }
 	@property final
 	{
 		auto ref

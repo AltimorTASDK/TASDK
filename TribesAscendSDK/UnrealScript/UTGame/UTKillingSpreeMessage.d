@@ -12,6 +12,8 @@ extern(C++) interface UTKillingSpreeMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillingSpreeMessage")); }
+	private static __gshared UTKillingSpreeMessage mDefaultProperties;
+	@property final static UTKillingSpreeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillingSpreeMessage)("UTKillingSpreeMessage UTGame.Default__UTKillingSpreeMessage")); }
 	static struct Functions
 	{
 		private static __gshared

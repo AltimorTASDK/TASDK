@@ -8,6 +8,8 @@ extern(C++) interface NxGenericForceFieldBox : NxGenericForceField
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxGenericForceFieldBox")); }
+	private static __gshared NxGenericForceFieldBox mDefaultProperties;
+	@property final static NxGenericForceFieldBox DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxGenericForceFieldBox)("NxGenericForceFieldBox Engine.Default__NxGenericForceFieldBox")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;

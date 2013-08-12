@@ -10,6 +10,8 @@ extern(C++) interface SeqEvent_Touch : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Touch")); }
+	private static __gshared SeqEvent_Touch mDefaultProperties;
+	@property final static SeqEvent_Touch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_Touch)("SeqEvent_Touch Engine.Default__SeqEvent_Touch")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface Texture : Surface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture")); }
+	private static __gshared Texture mDefaultProperties;
+	@property final static Texture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Texture)("Texture Engine.Default__Texture")); }
 	enum TextureCompressionSettings : ubyte
 	{
 		TC_Default = 0,

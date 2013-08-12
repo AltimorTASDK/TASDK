@@ -8,6 +8,8 @@ extern(C++) interface TrDevice_Eagle : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Eagle")); }
+	private static __gshared TrDevice_Eagle mDefaultProperties;
+	@property final static TrDevice_Eagle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Eagle)("TrDevice_Eagle TribesGame.Default__TrDevice_Eagle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInstantFire;

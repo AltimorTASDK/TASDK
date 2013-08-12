@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleAttractorLine : ParticleModuleAttractorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorLine")); }
+	private static __gshared ParticleModuleAttractorLine mDefaultProperties;
+	@property final static ParticleModuleAttractorLine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleAttractorLine)("ParticleModuleAttractorLine Engine.Default__ParticleModuleAttractorLine")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat Strength() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 124); }

@@ -8,4 +8,6 @@ extern(C++) interface ThumbnailManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.ThumbnailManager")); }
+	private static __gshared ThumbnailManager mDefaultProperties;
+	@property final static ThumbnailManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ThumbnailManager)("ThumbnailManager UnrealEd.Default__ThumbnailManager")); }
 }

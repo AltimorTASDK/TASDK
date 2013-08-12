@@ -9,6 +9,8 @@ extern(C++) interface UTJumpLiftExit : LiftExit
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTJumpLiftExit")); }
+	private static __gshared UTJumpLiftExit mDefaultProperties;
+	@property final static UTJumpLiftExit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTJumpLiftExit)("UTJumpLiftExit UTGame.Default__UTJumpLiftExit")); }
 	static struct Functions
 	{
 		private static __gshared

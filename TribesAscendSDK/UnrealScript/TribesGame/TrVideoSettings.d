@@ -9,6 +9,8 @@ extern(C++) interface TrVideoSettings : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVideoSettings")); }
+	private static __gshared TrVideoSettings mDefaultProperties;
+	@property final static TrVideoSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVideoSettings)("TrVideoSettings TribesGame.Default__TrVideoSettings")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -13,6 +13,8 @@ extern(C++) interface UTObjectiveAnnouncement : UTObjectiveSpecificMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTObjectiveAnnouncement")); }
+	private static __gshared UTObjectiveAnnouncement mDefaultProperties;
+	@property final static UTObjectiveAnnouncement DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTObjectiveAnnouncement)("UTObjectiveAnnouncement UTGame.Default__UTObjectiveAnnouncement")); }
 	static struct Functions
 	{
 		private static __gshared

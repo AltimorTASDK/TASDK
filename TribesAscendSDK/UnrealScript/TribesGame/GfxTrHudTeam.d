@@ -12,6 +12,8 @@ extern(C++) interface GfxTrHudTeam : GfxTrHud
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GfxTrHudTeam")); }
+	private static __gshared GfxTrHudTeam mDefaultProperties;
+	@property final static GfxTrHudTeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GfxTrHudTeam)("GfxTrHudTeam TribesGame.Default__GfxTrHudTeam")); }
 	static struct Functions
 	{
 		private static __gshared

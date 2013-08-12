@@ -10,6 +10,8 @@ extern(C++) interface TrPartySettings : OnlineGameSettings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPartySettings")); }
+	private static __gshared TrPartySettings mDefaultProperties;
+	@property final static TrPartySettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPartySettings)("TrPartySettings TribesGame.Default__TrPartySettings")); }
 	static struct Functions
 	{
 		private static __gshared

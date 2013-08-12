@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_HoverboardSwing : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_HoverboardSwing")); }
+	private static __gshared UDKSkelControl_HoverboardSwing mDefaultProperties;
+	@property final static UDKSkelControl_HoverboardSwing DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_HoverboardSwing)("UDKSkelControl_HoverboardSwing UDKBase.Default__UDKSkelControl_HoverboardSwing")); }
 	@property final auto ref
 	{
 		ScriptArray!(float) SwingHistory() { return *cast(ScriptArray!(float)*)(cast(size_t)cast(void*)this + 244); }

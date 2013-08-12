@@ -12,6 +12,8 @@ extern(C++) interface UTVehicleCantCarryFlagMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleCantCarryFlagMessage")); }
+	private static __gshared UTVehicleCantCarryFlagMessage mDefaultProperties;
+	@property final static UTVehicleCantCarryFlagMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleCantCarryFlagMessage)("UTVehicleCantCarryFlagMessage UTGame.Default__UTVehicleCantCarryFlagMessage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface TeamInfo : ReplicationInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TeamInfo")); }
+	private static __gshared TeamInfo mDefaultProperties;
+	@property final static TeamInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TeamInfo)("TeamInfo Engine.Default__TeamInfo")); }
 	static struct Functions
 	{
 		private static __gshared

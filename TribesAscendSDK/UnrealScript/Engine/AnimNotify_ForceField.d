@@ -8,6 +8,8 @@ extern(C++) interface AnimNotify_ForceField : AnimNotify
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_ForceField")); }
+	private static __gshared AnimNotify_ForceField mDefaultProperties;
+	@property final static AnimNotify_ForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_ForceField)("AnimNotify_ForceField Engine.Default__AnimNotify_ForceField")); }
 	@property final
 	{
 		auto ref

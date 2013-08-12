@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackInstToggle : InterpTrackInst
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstToggle")); }
+	private static __gshared InterpTrackInstToggle mDefaultProperties;
+	@property final static InterpTrackInstToggle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstToggle)("InterpTrackInstToggle Engine.Default__InterpTrackInstToggle")); }
 	@property final
 	{
 		auto ref

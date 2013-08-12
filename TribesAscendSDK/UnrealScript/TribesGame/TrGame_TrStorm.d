@@ -12,6 +12,8 @@ extern(C++) interface TrGame_TrStorm : TrGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrStorm")); }
+	private static __gshared TrGame_TrStorm mDefaultProperties;
+	@property final static TrGame_TrStorm DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TrStorm)("TrGame_TrStorm TribesGame.Default__TrGame_TrStorm")); }
 	static struct Functions
 	{
 		private static __gshared

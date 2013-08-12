@@ -8,6 +8,8 @@ extern(C++) interface SkelControlSingleBone : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlSingleBone")); }
+	private static __gshared SkelControlSingleBone mDefaultProperties;
+	@property final static SkelControlSingleBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlSingleBone)("SkelControlSingleBone Engine.Default__SkelControlSingleBone")); }
 	@property final
 	{
 		auto ref

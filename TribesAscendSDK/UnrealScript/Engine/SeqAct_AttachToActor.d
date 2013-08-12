@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_AttachToActor : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_AttachToActor")); }
+	private static __gshared SeqAct_AttachToActor mDefaultProperties;
+	@property final static SeqAct_AttachToActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_AttachToActor)("SeqAct_AttachToActor Engine.Default__SeqAct_AttachToActor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

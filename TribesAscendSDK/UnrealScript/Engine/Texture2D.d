@@ -9,6 +9,8 @@ extern(C++) interface Texture2D : Texture
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture2D")); }
+	private static __gshared Texture2D mDefaultProperties;
+	@property final static Texture2D DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Texture2D)("Texture2D Engine.Default__Texture2D")); }
 	static struct Functions
 	{
 		private static __gshared

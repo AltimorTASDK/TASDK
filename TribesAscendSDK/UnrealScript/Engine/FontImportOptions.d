@@ -8,6 +8,8 @@ extern(C++) interface FontImportOptions : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FontImportOptions")); }
+	private static __gshared FontImportOptions mDefaultProperties;
+	@property final static FontImportOptions DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FontImportOptions)("FontImportOptions Engine.Default__FontImportOptions")); }
 	enum EFontImportCharacterSet : ubyte
 	{
 		FontICS_Default = 0,

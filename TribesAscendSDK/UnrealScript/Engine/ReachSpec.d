@@ -11,6 +11,8 @@ extern(C++) interface ReachSpec : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReachSpec")); }
+	private static __gshared ReachSpec mDefaultProperties;
+	@property final static ReachSpec DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ReachSpec)("ReachSpec Engine.Default__ReachSpec")); }
 	static struct Functions
 	{
 		private static __gshared

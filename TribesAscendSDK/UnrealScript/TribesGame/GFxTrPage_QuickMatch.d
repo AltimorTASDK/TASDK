@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_QuickMatch : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_QuickMatch")); }
+	private static __gshared GFxTrPage_QuickMatch mDefaultProperties;
+	@property final static GFxTrPage_QuickMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_QuickMatch)("GFxTrPage_QuickMatch TribesGame.Default__GFxTrPage_QuickMatch")); }
 	static struct Functions
 	{
 		private static __gshared

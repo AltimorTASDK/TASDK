@@ -10,6 +10,8 @@ extern(C++) interface AnimNotify_Trails : AnimNotify
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_Trails")); }
+	private static __gshared AnimNotify_Trails mDefaultProperties;
+	@property final static AnimNotify_Trails DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_Trails)("AnimNotify_Trails Engine.Default__AnimNotify_Trails")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetNumSteps;

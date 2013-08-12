@@ -11,6 +11,8 @@ extern(C++) interface UIDataProvider_PlayerAchievements : UIDataProvider_OnlineP
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_PlayerAchievements")); }
+	private static __gshared UIDataProvider_PlayerAchievements mDefaultProperties;
+	@property final static UIDataProvider_PlayerAchievements DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_PlayerAchievements)("UIDataProvider_PlayerAchievements Engine.Default__UIDataProvider_PlayerAchievements")); }
 	static struct Functions
 	{
 		private static __gshared

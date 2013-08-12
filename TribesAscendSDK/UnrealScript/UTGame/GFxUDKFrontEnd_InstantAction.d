@@ -8,6 +8,8 @@ extern(C++) interface GFxUDKFrontEnd_InstantAction : GFxUDKFrontEnd_LaunchGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_InstantAction")); }
+	private static __gshared GFxUDKFrontEnd_InstantAction mDefaultProperties;
+	@property final static GFxUDKFrontEnd_InstantAction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_InstantAction)("GFxUDKFrontEnd_InstantAction UTGame.Default__GFxUDKFrontEnd_InstantAction")); }
 	static struct Functions
 	{
 		private static __gshared

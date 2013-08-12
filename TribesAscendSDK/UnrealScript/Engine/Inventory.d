@@ -13,6 +13,8 @@ extern(C++) interface Inventory : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Inventory")); }
+	private static __gshared Inventory mDefaultProperties;
+	@property final static Inventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Inventory)("Inventory Engine.Default__Inventory")); }
 	static struct Functions
 	{
 		private static __gshared

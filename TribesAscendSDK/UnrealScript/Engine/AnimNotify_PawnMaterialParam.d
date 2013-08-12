@@ -11,6 +11,8 @@ extern(C++) interface AnimNotify_PawnMaterialParam : AnimNotify_Scripted
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_PawnMaterialParam")); }
+	private static __gshared AnimNotify_PawnMaterialParam mDefaultProperties;
+	@property final static AnimNotify_PawnMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_PawnMaterialParam)("AnimNotify_PawnMaterialParam Engine.Default__AnimNotify_PawnMaterialParam")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotify;

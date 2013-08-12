@@ -9,6 +9,8 @@ extern(C++) interface SceneCaptureActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCaptureActor")); }
+	private static __gshared SceneCaptureActor mDefaultProperties;
+	@property final static SceneCaptureActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCaptureActor)("SceneCaptureActor Engine.Default__SceneCaptureActor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

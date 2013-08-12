@@ -10,6 +10,8 @@ extern(C++) interface UTDeathmatch : UTGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDeathmatch")); }
+	private static __gshared UTDeathmatch mDefaultProperties;
+	@property final static UTDeathmatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDeathmatch)("UTDeathmatch UTGame.Default__UTDeathmatch")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface OnlineStatsRead : OnlineStats
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStatsRead")); }
+	private static __gshared OnlineStatsRead mDefaultProperties;
+	@property final static OnlineStatsRead DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStatsRead)("OnlineStatsRead Engine.Default__OnlineStatsRead")); }
 	static struct Functions
 	{
 		private static __gshared

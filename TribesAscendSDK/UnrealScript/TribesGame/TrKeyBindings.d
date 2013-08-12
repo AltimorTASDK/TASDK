@@ -11,6 +11,8 @@ extern(C++) interface TrKeyBindings : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrKeyBindings")); }
+	private static __gshared TrKeyBindings mDefaultProperties;
+	@property final static TrKeyBindings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrKeyBindings)("TrKeyBindings TribesGame.Default__TrKeyBindings")); }
 	static struct Functions
 	{
 		private static __gshared

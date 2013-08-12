@@ -16,6 +16,8 @@ extern(C++) interface MobilePlayerInput : PlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobilePlayerInput")); }
+	private static __gshared MobilePlayerInput mDefaultProperties;
+	@property final static MobilePlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobilePlayerInput)("MobilePlayerInput GameFramework.Default__MobilePlayerInput")); }
 	static struct Functions
 	{
 		private static __gshared

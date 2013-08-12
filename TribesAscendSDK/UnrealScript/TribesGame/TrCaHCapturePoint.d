@@ -20,6 +20,8 @@ extern(C++) interface TrCaHCapturePoint : TrGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCaHCapturePoint")); }
+	private static __gshared TrCaHCapturePoint mDefaultProperties;
+	@property final static TrCaHCapturePoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCaHCapturePoint)("TrCaHCapturePoint TribesGame.Default__TrCaHCapturePoint")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface LightEnvironmentComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LightEnvironmentComponent")); }
+	private static __gshared LightEnvironmentComponent mDefaultProperties;
+	@property final static LightEnvironmentComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LightEnvironmentComponent)("LightEnvironmentComponent Engine.Default__LightEnvironmentComponent")); }
 	static struct Functions
 	{
 		private static __gshared

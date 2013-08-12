@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackMove : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackMove")); }
+	private static __gshared InterpTrackMove mDefaultProperties;
+	@property final static InterpTrackMove DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackMove)("InterpTrackMove Engine.Default__InterpTrackMove")); }
 	enum EInterpTrackMoveRotMode : ubyte
 	{
 		IMR_Keyframed = 0,

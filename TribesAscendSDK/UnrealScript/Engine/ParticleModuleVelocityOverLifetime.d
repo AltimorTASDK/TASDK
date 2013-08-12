@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleVelocityOverLifetime : ParticleModuleVelocit
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleVelocityOverLifetime")); }
+	private static __gshared ParticleModuleVelocityOverLifetime mDefaultProperties;
+	@property final static ParticleModuleVelocityOverLifetime DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleVelocityOverLifetime)("ParticleModuleVelocityOverLifetime Engine.Default__ParticleModuleVelocityOverLifetime")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector VelOverLife() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }

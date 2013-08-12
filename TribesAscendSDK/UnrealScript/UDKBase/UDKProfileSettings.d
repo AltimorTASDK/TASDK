@@ -9,6 +9,8 @@ extern(C++) interface UDKProfileSettings : OnlineProfileSettings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProfileSettings")); }
+	private static __gshared UDKProfileSettings mDefaultProperties;
+	@property final static UDKProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKProfileSettings)("UDKProfileSettings UDKBase.Default__UDKProfileSettings")); }
 	static struct Functions
 	{
 		private static __gshared

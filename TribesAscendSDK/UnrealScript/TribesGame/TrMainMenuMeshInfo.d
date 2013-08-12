@@ -10,6 +10,8 @@ extern(C++) interface TrMainMenuMeshInfo : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMainMenuMeshInfo")); }
+	private static __gshared TrMainMenuMeshInfo mDefaultProperties;
+	@property final static TrMainMenuMeshInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMainMenuMeshInfo)("TrMainMenuMeshInfo TribesGame.Default__TrMainMenuMeshInfo")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreloadTextures;

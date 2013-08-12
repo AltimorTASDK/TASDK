@@ -10,6 +10,8 @@ extern(C++) interface DrawFrustumComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawFrustumComponent")); }
+	private static __gshared DrawFrustumComponent mDefaultProperties;
+	@property final static DrawFrustumComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawFrustumComponent)("DrawFrustumComponent Engine.Default__DrawFrustumComponent")); }
 	@property final auto ref
 	{
 		// WARNING: Property 'Texture' has the same name as a defined type!

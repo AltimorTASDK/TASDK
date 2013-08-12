@@ -13,6 +13,8 @@ extern(C++) interface UTSimpleDestroyable : DynamicSMActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSimpleDestroyable")); }
+	private static __gshared UTSimpleDestroyable mDefaultProperties;
+	@property final static UTSimpleDestroyable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSimpleDestroyable)("UTSimpleDestroyable UTGame.Default__UTSimpleDestroyable")); }
 	static struct Functions
 	{
 		private static __gshared

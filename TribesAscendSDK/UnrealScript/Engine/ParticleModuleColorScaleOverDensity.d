@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleColorScaleOverDensity : ParticleModuleColorB
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleColorScaleOverDensity")); }
+	private static __gshared ParticleModuleColorScaleOverDensity mDefaultProperties;
+	@property final static ParticleModuleColorScaleOverDensity DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleColorScaleOverDensity)("ParticleModuleColorScaleOverDensity Engine.Default__ParticleModuleColorScaleOverDensity")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat AlphaScaleOverDensity() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 100); }

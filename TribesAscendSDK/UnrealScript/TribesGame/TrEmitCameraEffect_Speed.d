@@ -9,6 +9,8 @@ extern(C++) interface TrEmitCameraEffect_Speed : UDKEmitCameraEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEmitCameraEffect_Speed")); }
+	private static __gshared TrEmitCameraEffect_Speed mDefaultProperties;
+	@property final static TrEmitCameraEffect_Speed DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEmitCameraEffect_Speed)("TrEmitCameraEffect_Speed TribesGame.Default__TrEmitCameraEffect_Speed")); }
 	static struct Functions
 	{
 		private static __gshared

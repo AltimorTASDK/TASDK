@@ -15,6 +15,8 @@ extern(C++) interface TrDaDCapacitor : TrGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCapacitor")); }
+	private static __gshared TrDaDCapacitor mDefaultProperties;
+	@property final static TrDaDCapacitor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDCapacitor)("TrDaDCapacitor TribesGame.Default__TrDaDCapacitor")); }
 	static struct Functions
 	{
 		private static __gshared

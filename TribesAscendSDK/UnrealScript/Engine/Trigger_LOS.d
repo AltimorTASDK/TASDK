@@ -9,6 +9,8 @@ extern(C++) interface Trigger_LOS : Trigger
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Trigger_LOS")); }
+	private static __gshared Trigger_LOS mDefaultProperties;
+	@property final static Trigger_LOS DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Trigger_LOS)("Trigger_LOS Engine.Default__Trigger_LOS")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTick;

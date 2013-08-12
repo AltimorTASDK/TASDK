@@ -9,6 +9,8 @@ extern(C++) interface OnlineGameplayEvents : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameplayEvents")); }
+	private static __gshared OnlineGameplayEvents mDefaultProperties;
+	@property final static OnlineGameplayEvents DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameplayEvents)("OnlineGameplayEvents Engine.Default__OnlineGameplayEvents")); }
 	struct PlayerInformation
 	{
 		private ubyte __buffer__[40];

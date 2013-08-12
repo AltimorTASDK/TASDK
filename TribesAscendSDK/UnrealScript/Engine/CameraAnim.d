@@ -10,6 +10,8 @@ extern(C++) interface CameraAnim : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnim")); }
+	private static __gshared CameraAnim mDefaultProperties;
+	@property final static CameraAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraAnim)("CameraAnim Engine.Default__CameraAnim")); }
 	@property final auto ref
 	{
 		float BaseFOV() { return *cast(float*)(cast(size_t)cast(void*)this + 320); }

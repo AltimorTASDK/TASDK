@@ -9,6 +9,8 @@ extern(C++) interface LineBatchComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LineBatchComponent")); }
+	private static __gshared LineBatchComponent mDefaultProperties;
+	@property final static LineBatchComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LineBatchComponent)("LineBatchComponent Engine.Default__LineBatchComponent")); }
 	@property final auto ref
 	{
 		ScriptArray!(UObject.Pointer) BatchedLines() { return *cast(ScriptArray!(UObject.Pointer)*)(cast(size_t)cast(void*)this + 496); }

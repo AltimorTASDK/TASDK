@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_Loadouts : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Loadouts")); }
+	private static __gshared GFxTrPage_Loadouts mDefaultProperties;
+	@property final static GFxTrPage_Loadouts DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Loadouts)("GFxTrPage_Loadouts TribesGame.Default__GFxTrPage_Loadouts")); }
 	static struct Functions
 	{
 		private static __gshared

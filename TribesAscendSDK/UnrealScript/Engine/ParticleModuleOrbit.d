@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleOrbit : ParticleModuleOrbitBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleOrbit")); }
+	private static __gshared ParticleModuleOrbit mDefaultProperties;
+	@property final static ParticleModuleOrbit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleOrbit)("ParticleModuleOrbit Engine.Default__ParticleModuleOrbit")); }
 	enum EOrbitChainMode : ubyte
 	{
 		EOChainMode_Add = 0,

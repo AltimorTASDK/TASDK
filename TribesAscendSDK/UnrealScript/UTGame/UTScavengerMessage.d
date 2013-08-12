@@ -10,6 +10,8 @@ extern(C++) interface UTScavengerMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTScavengerMessage")); }
+	private static __gshared UTScavengerMessage mDefaultProperties;
+	@property final static UTScavengerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTScavengerMessage)("UTScavengerMessage UTGame.Default__UTScavengerMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleSizeScale : ParticleModuleSizeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSizeScale")); }
+	private static __gshared ParticleModuleSizeScale mDefaultProperties;
+	@property final static ParticleModuleSizeScale DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleSizeScale)("ParticleModuleSizeScale Engine.Default__ParticleModuleSizeScale")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector SizeScale() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }

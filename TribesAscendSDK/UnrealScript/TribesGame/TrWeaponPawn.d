@@ -9,6 +9,8 @@ extern(C++) interface TrWeaponPawn : UTWeaponPawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrWeaponPawn")); }
+	private static __gshared TrWeaponPawn mDefaultProperties;
+	@property final static TrWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrWeaponPawn)("TrWeaponPawn TribesGame.Default__TrWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared

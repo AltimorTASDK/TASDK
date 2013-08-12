@@ -10,6 +10,8 @@ extern(C++) interface SceneCapture2DComponent : SceneCaptureComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapture2DComponent")); }
+	private static __gshared SceneCapture2DComponent mDefaultProperties;
+	@property final static SceneCapture2DComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCapture2DComponent)("SceneCapture2DComponent Engine.Default__SceneCapture2DComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface NavMeshGoal_PolyEncompassesAI : NavMeshPathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_PolyEncompassesAI")); }
+	private static __gshared NavMeshGoal_PolyEncompassesAI mDefaultProperties;
+	@property final static NavMeshGoal_PolyEncompassesAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_PolyEncompassesAI)("NavMeshGoal_PolyEncompassesAI Engine.Default__NavMeshGoal_PolyEncompassesAI")); }
 	static struct Functions
 	{
 		private static __gshared

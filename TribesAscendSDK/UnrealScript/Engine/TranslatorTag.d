@@ -8,6 +8,8 @@ extern(C++) interface TranslatorTag : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TranslatorTag")); }
+	private static __gshared TranslatorTag mDefaultProperties;
+	@property final static TranslatorTag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TranslatorTag)("TranslatorTag Engine.Default__TranslatorTag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTranslate;

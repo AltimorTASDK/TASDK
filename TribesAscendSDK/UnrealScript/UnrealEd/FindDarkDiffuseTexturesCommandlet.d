@@ -8,4 +8,6 @@ extern(C++) interface FindDarkDiffuseTexturesCommandlet : Commandlet
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.FindDarkDiffuseTexturesCommandlet")); }
+	private static __gshared FindDarkDiffuseTexturesCommandlet mDefaultProperties;
+	@property final static FindDarkDiffuseTexturesCommandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FindDarkDiffuseTexturesCommandlet)("FindDarkDiffuseTexturesCommandlet UnrealEd.Default__FindDarkDiffuseTexturesCommandlet")); }
 }

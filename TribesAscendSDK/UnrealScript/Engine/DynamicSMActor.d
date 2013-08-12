@@ -13,6 +13,8 @@ extern(C++) interface DynamicSMActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicSMActor")); }
+	private static __gshared DynamicSMActor mDefaultProperties;
+	@property final static DynamicSMActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicSMActor)("DynamicSMActor Engine.Default__DynamicSMActor")); }
 	static struct Functions
 	{
 		private static __gshared

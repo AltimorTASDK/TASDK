@@ -8,6 +8,8 @@ extern(C++) interface TrVehicleSimChopper : UDKVehicleSimChopper
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleSimChopper")); }
+	private static __gshared TrVehicleSimChopper mDefaultProperties;
+	@property final static TrVehicleSimChopper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleSimChopper)("TrVehicleSimChopper TribesGame.Default__TrVehicleSimChopper")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetVehicleControls;

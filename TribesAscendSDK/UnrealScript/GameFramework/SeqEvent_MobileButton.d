@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_MobileButton : SeqEvent_MobileZoneBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileButton")); }
+	private static __gshared SeqEvent_MobileButton mDefaultProperties;
+	@property final static SeqEvent_MobileButton DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileButton)("SeqEvent_MobileButton GameFramework.Default__SeqEvent_MobileButton")); }
 	@property final
 	{
 		bool bSendPressedOnlyOnTouchUp() { return (*cast(uint*)(cast(size_t)cast(void*)this + 268) & 0x4) != 0; }

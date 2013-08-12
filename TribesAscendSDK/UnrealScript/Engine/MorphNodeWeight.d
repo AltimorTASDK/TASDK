@@ -8,6 +8,8 @@ extern(C++) interface MorphNodeWeight : MorphNodeWeightBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeWeight")); }
+	private static __gshared MorphNodeWeight mDefaultProperties;
+	@property final static MorphNodeWeight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphNodeWeight)("MorphNodeWeight Engine.Default__MorphNodeWeight")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetNodeWeight;

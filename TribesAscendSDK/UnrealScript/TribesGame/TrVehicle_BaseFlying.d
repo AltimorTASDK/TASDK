@@ -9,6 +9,8 @@ extern(C++) interface TrVehicle_BaseFlying : TrVehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicle_BaseFlying")); }
+	private static __gshared TrVehicle_BaseFlying mDefaultProperties;
+	@property final static TrVehicle_BaseFlying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicle_BaseFlying)("TrVehicle_BaseFlying TribesGame.Default__TrVehicle_BaseFlying")); }
 	static struct Functions
 	{
 		private static __gshared

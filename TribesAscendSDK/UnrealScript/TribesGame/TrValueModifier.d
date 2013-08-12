@@ -8,6 +8,8 @@ extern(C++) interface TrValueModifier : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrValueModifier")); }
+	private static __gshared TrValueModifier mDefaultProperties;
+	@property final static TrValueModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrValueModifier)("TrValueModifier TribesGame.Default__TrValueModifier")); }
 	static struct Functions
 	{
 		private static __gshared

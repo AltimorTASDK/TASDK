@@ -11,6 +11,8 @@ extern(C++) interface RB_ConstraintInstance : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_ConstraintInstance")); }
+	private static __gshared RB_ConstraintInstance mDefaultProperties;
+	@property final static RB_ConstraintInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_ConstraintInstance)("RB_ConstraintInstance Engine.Default__RB_ConstraintInstance")); }
 	static struct Functions
 	{
 		private static __gshared

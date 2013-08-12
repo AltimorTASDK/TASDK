@@ -8,6 +8,8 @@ extern(C++) interface Admin : PlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Admin")); }
+	private static __gshared Admin mDefaultProperties;
+	@property final static Admin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Admin)("Admin Engine.Default__Admin")); }
 	static struct Functions
 	{
 		private static __gshared

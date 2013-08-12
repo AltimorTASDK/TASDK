@@ -9,6 +9,8 @@ extern(C++) interface UIDataProvider_MenuItem : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_MenuItem")); }
+	private static __gshared UIDataProvider_MenuItem mDefaultProperties;
+	@property final static UIDataProvider_MenuItem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_MenuItem)("UIDataProvider_MenuItem Engine.Default__UIDataProvider_MenuItem")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsFiltered;

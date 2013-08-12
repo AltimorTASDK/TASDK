@@ -8,4 +8,6 @@ extern(C++) interface TrFamilyInfo_Light_Wraith_BE : TrFamilyInfo_Light_Wraith
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFamilyInfo_Light_Wraith_BE")); }
+	private static __gshared TrFamilyInfo_Light_Wraith_BE mDefaultProperties;
+	@property final static TrFamilyInfo_Light_Wraith_BE DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFamilyInfo_Light_Wraith_BE)("TrFamilyInfo_Light_Wraith_BE TribesGame.Default__TrFamilyInfo_Light_Wraith_BE")); }
 }

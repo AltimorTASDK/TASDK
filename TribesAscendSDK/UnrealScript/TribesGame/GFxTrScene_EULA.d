@@ -8,6 +8,8 @@ extern(C++) interface GFxTrScene_EULA : GFxTrScene
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene_EULA")); }
+	private static __gshared GFxTrScene_EULA mDefaultProperties;
+	@property final static GFxTrScene_EULA DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrScene_EULA)("GFxTrScene_EULA TribesGame.Default__GFxTrScene_EULA")); }
 	static struct Functions
 	{
 		private static __gshared

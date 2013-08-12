@@ -11,6 +11,8 @@ extern(C++) interface TrCallIn : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn")); }
+	private static __gshared TrCallIn mDefaultProperties;
+	@property final static TrCallIn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn)("TrCallIn TribesGame.Default__TrCallIn")); }
 	static struct Functions
 	{
 		private static __gshared

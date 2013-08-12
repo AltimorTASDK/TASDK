@@ -9,6 +9,8 @@ extern(C++) interface AnimSet : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimSet")); }
+	private static __gshared AnimSet mDefaultProperties;
+	@property final static AnimSet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimSet)("AnimSet Engine.Default__AnimSet")); }
 	struct AnimSetMeshLinkup
 	{
 		private ubyte __buffer__[12];

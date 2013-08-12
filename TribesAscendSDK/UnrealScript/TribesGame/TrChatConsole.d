@@ -12,6 +12,8 @@ extern(C++) interface TrChatConsole : UTConsole
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatConsole")); }
+	private static __gshared TrChatConsole mDefaultProperties;
+	@property final static TrChatConsole DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrChatConsole)("TrChatConsole TribesGame.Default__TrChatConsole")); }
 	static struct Functions
 	{
 		private static __gshared

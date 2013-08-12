@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_Switch : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Switch")); }
+	private static __gshared SeqAct_Switch mDefaultProperties;
+	@property final static SeqAct_Switch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Switch)("SeqAct_Switch Engine.Default__SeqAct_Switch")); }
 	@property final
 	{
 		auto ref

@@ -8,6 +8,8 @@ extern(C++) interface UTSkelControl_DamageSpring : UDKSkelControl_DamageSpring
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_DamageSpring")); }
+	private static __gshared UTSkelControl_DamageSpring mDefaultProperties;
+	@property final static UTSkelControl_DamageSpring DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_DamageSpring)("UTSkelControl_DamageSpring UTGame.Default__UTSkelControl_DamageSpring")); }
 	static struct Functions
 	{
 		private static __gshared

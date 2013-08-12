@@ -31,6 +31,8 @@ extern(C++) interface GFxTrMenuMoviePlayer : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrMenuMoviePlayer")); }
+	private static __gshared GFxTrMenuMoviePlayer mDefaultProperties;
+	@property final static GFxTrMenuMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrMenuMoviePlayer)("GFxTrMenuMoviePlayer TribesGame.Default__GFxTrMenuMoviePlayer")); }
 	static struct Functions
 	{
 		private static __gshared

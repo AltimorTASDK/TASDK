@@ -9,6 +9,8 @@ extern(C++) interface InternetLink : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.InternetLink")); }
+	private static __gshared InternetLink mDefaultProperties;
+	@property final static InternetLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InternetLink)("InternetLink IpDrv.Default__InternetLink")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface FogVolumeDensityInfo : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FogVolumeDensityInfo")); }
+	private static __gshared FogVolumeDensityInfo mDefaultProperties;
+	@property final static FogVolumeDensityInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FogVolumeDensityInfo)("FogVolumeDensityInfo Engine.Default__FogVolumeDensityInfo")); }
 	static struct Functions
 	{
 		private static __gshared

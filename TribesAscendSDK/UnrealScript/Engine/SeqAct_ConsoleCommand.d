@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_ConsoleCommand : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ConsoleCommand")); }
+	private static __gshared SeqAct_ConsoleCommand mDefaultProperties;
+	@property final static SeqAct_ConsoleCommand DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ConsoleCommand)("SeqAct_ConsoleCommand Engine.Default__SeqAct_ConsoleCommand")); }
 	static struct Functions
 	{
 		private static __gshared

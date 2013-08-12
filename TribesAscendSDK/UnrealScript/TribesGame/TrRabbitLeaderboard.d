@@ -11,6 +11,8 @@ extern(C++) interface TrRabbitLeaderboard : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRabbitLeaderboard")); }
+	private static __gshared TrRabbitLeaderboard mDefaultProperties;
+	@property final static TrRabbitLeaderboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRabbitLeaderboard)("TrRabbitLeaderboard TribesGame.Default__TrRabbitLeaderboard")); }
 	static struct Functions
 	{
 		private static __gshared

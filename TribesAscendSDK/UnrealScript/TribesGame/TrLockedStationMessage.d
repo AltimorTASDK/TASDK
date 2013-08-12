@@ -12,6 +12,8 @@ extern(C++) interface TrLockedStationMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLockedStationMessage")); }
+	private static __gshared TrLockedStationMessage mDefaultProperties;
+	@property final static TrLockedStationMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLockedStationMessage)("TrLockedStationMessage TribesGame.Default__TrLockedStationMessage")); }
 	static struct Functions
 	{
 		private static __gshared

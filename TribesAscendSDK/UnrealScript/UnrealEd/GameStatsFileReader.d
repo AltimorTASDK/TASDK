@@ -8,4 +8,6 @@ extern(C++) interface GameStatsFileReader : GameplayEventsHandler
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.GameStatsFileReader")); }
+	private static __gshared GameStatsFileReader mDefaultProperties;
+	@property final static GameStatsFileReader DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameStatsFileReader)("GameStatsFileReader UnrealEd.Default__GameStatsFileReader")); }
 }

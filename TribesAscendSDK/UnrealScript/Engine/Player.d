@@ -9,6 +9,8 @@ extern(C++) interface Player : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Player")); }
+	private static __gshared Player mDefaultProperties;
+	@property final static Player DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Player)("Player Engine.Default__Player")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSwitchController;

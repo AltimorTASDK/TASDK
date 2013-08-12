@@ -11,6 +11,8 @@ extern(C++) interface AnimSequence : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimSequence")); }
+	private static __gshared AnimSequence mDefaultProperties;
+	@property final static AnimSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimSequence)("AnimSequence Engine.Default__AnimSequence")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetNotifyTimeByClass;

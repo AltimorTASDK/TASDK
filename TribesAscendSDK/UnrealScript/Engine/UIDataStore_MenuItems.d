@@ -12,6 +12,8 @@ extern(C++) interface UIDataStore_MenuItems : UIDataStore_GameResource
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_MenuItems")); }
+	private static __gshared UIDataStore_MenuItems mDefaultProperties;
+	@property final static UIDataStore_MenuItems DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_MenuItems)("UIDataStore_MenuItems Engine.Default__UIDataStore_MenuItems")); }
 	static struct Functions
 	{
 		private static __gshared

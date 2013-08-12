@@ -10,6 +10,8 @@ extern(C++) interface TrLaserTarget : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLaserTarget")); }
+	private static __gshared TrLaserTarget mDefaultProperties;
+	@property final static TrLaserTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLaserTarget)("TrLaserTarget TribesGame.Default__TrLaserTarget")); }
 	static struct Functions
 	{
 		private static __gshared

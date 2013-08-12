@@ -10,6 +10,8 @@ extern(C++) interface UIDataStore_StringAliasMap : UIDataStore_StringBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_StringAliasMap")); }
+	private static __gshared UIDataStore_StringAliasMap mDefaultProperties;
+	@property final static UIDataStore_StringAliasMap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_StringAliasMap)("UIDataStore_StringAliasMap Engine.Default__UIDataStore_StringAliasMap")); }
 	static struct Functions
 	{
 		private static __gshared

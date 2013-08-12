@@ -8,4 +8,6 @@ extern(C++) interface PrefabSequenceContainer : Sequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrefabSequenceContainer")); }
+	private static __gshared PrefabSequenceContainer mDefaultProperties;
+	@property final static PrefabSequenceContainer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrefabSequenceContainer)("PrefabSequenceContainer Engine.Default__PrefabSequenceContainer")); }
 }

@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleLocationPrimitiveCylinder : ParticleModuleLo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationPrimitiveCylinder")); }
+	private static __gshared ParticleModuleLocationPrimitiveCylinder mDefaultProperties;
+	@property final static ParticleModuleLocationPrimitiveCylinder DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleLocationPrimitiveCylinder)("ParticleModuleLocationPrimitiveCylinder Engine.Default__ParticleModuleLocationPrimitiveCylinder")); }
 	enum CylinderHeightAxis : ubyte
 	{
 		PMLPC_HEIGHTAXIS_X = 0,

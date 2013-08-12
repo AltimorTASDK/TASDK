@@ -9,6 +9,8 @@ extern(C++) interface ExponentialHeightFog : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ExponentialHeightFog")); }
+	private static __gshared ExponentialHeightFog mDefaultProperties;
+	@property final static ExponentialHeightFog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ExponentialHeightFog)("ExponentialHeightFog Engine.Default__ExponentialHeightFog")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_Latent : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Latent")); }
+	private static __gshared SeqAct_Latent mDefaultProperties;
+	@property final static SeqAct_Latent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Latent)("SeqAct_Latent Engine.Default__SeqAct_Latent")); }
 	static struct Functions
 	{
 		private static __gshared

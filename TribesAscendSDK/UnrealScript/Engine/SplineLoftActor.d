@@ -11,6 +11,8 @@ extern(C++) interface SplineLoftActor : SplineActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineLoftActor")); }
+	private static __gshared SplineLoftActor mDefaultProperties;
+	@property final static SplineLoftActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineLoftActor)("SplineLoftActor Engine.Default__SplineLoftActor")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ChangeCollision : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ChangeCollision")); }
+	private static __gshared SeqAct_ChangeCollision mDefaultProperties;
+	@property final static SeqAct_ChangeCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ChangeCollision)("SeqAct_ChangeCollision Engine.Default__SeqAct_ChangeCollision")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

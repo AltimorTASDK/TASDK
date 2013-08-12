@@ -9,6 +9,8 @@ extern(C++) interface UDKTeamOwnedInfo : ReplicationInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKTeamOwnedInfo")); }
+	private static __gshared UDKTeamOwnedInfo mDefaultProperties;
+	@property final static UDKTeamOwnedInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKTeamOwnedInfo)("UDKTeamOwnedInfo UDKBase.Default__UDKTeamOwnedInfo")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetTeamNum;

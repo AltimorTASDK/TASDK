@@ -12,6 +12,8 @@ extern(C++) interface TrStormControlPointGate : TrGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStormControlPointGate")); }
+	private static __gshared TrStormControlPointGate mDefaultProperties;
+	@property final static TrStormControlPointGate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStormControlPointGate)("TrStormControlPointGate TribesGame.Default__TrStormControlPointGate")); }
 	static struct Functions
 	{
 		private static __gshared

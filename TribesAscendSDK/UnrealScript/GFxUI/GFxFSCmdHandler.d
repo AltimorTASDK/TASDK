@@ -10,6 +10,8 @@ extern(C++) interface GFxFSCmdHandler : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxFSCmdHandler")); }
+	private static __gshared GFxFSCmdHandler mDefaultProperties;
+	@property final static GFxFSCmdHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxFSCmdHandler)("GFxFSCmdHandler GFxUI.Default__GFxFSCmdHandler")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFSCommand;

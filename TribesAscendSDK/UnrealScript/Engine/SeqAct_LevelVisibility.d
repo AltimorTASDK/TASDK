@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_LevelVisibility : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelVisibility")); }
+	private static __gshared SeqAct_LevelVisibility mDefaultProperties;
+	@property final static SeqAct_LevelVisibility DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_LevelVisibility)("SeqAct_LevelVisibility Engine.Default__SeqAct_LevelVisibility")); }
 	@property final
 	{
 		auto ref

@@ -12,6 +12,8 @@ extern(C++) interface TrTimerMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTimerMessage")); }
+	private static __gshared TrTimerMessage mDefaultProperties;
+	@property final static TrTimerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTimerMessage)("TrTimerMessage TribesGame.Default__TrTimerMessage")); }
 	static struct Functions
 	{
 		private static __gshared

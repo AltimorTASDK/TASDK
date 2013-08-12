@@ -11,6 +11,8 @@ extern(C++) interface UTEmitter : Emitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEmitter")); }
+	private static __gshared UTEmitter mDefaultProperties;
+	@property final static UTEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTEmitter)("UTEmitter UTGame.Default__UTEmitter")); }
 	static struct Functions
 	{
 		private static __gshared

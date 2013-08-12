@@ -11,6 +11,8 @@ extern(C++) interface UTDmgType_RanOver : UTDamageType
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_RanOver")); }
+	private static __gshared UTDmgType_RanOver mDefaultProperties;
+	@property final static UTDmgType_RanOver DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_RanOver)("UTDmgType_RanOver UTGame.Default__UTDmgType_RanOver")); }
 	static struct Functions
 	{
 		private static __gshared

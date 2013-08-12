@@ -12,6 +12,8 @@ extern(C++) interface TrSavedMove : SavedMove
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSavedMove")); }
+	private static __gshared TrSavedMove mDefaultProperties;
+	@property final static TrSavedMove DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSavedMove)("TrSavedMove TribesGame.Default__TrSavedMove")); }
 	static struct Functions
 	{
 		private static __gshared

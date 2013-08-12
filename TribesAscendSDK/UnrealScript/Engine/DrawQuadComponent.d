@@ -9,6 +9,8 @@ extern(C++) interface DrawQuadComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawQuadComponent")); }
+	private static __gshared DrawQuadComponent mDefaultProperties;
+	@property final static DrawQuadComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawQuadComponent)("DrawQuadComponent Engine.Default__DrawQuadComponent")); }
 	@property final auto ref
 	{
 		float Height() { return *cast(float*)(cast(size_t)cast(void*)this + 496); }

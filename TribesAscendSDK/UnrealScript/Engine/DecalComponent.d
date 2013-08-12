@@ -11,6 +11,8 @@ extern(C++) interface DecalComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DecalComponent")); }
+	private static __gshared DecalComponent mDefaultProperties;
+	@property final static DecalComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DecalComponent)("DecalComponent Engine.Default__DecalComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface TrCamera_Spectator : Camera
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCamera_Spectator")); }
+	private static __gshared TrCamera_Spectator mDefaultProperties;
+	@property final static TrCamera_Spectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCamera_Spectator)("TrCamera_Spectator TribesGame.Default__TrCamera_Spectator")); }
 	static struct Functions
 	{
 		private static __gshared

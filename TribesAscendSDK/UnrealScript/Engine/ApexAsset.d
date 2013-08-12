@@ -8,6 +8,8 @@ extern(C++) interface ApexAsset : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexAsset")); }
+	private static __gshared ApexAsset mDefaultProperties;
+	@property final static ApexAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexAsset)("ApexAsset Engine.Default__ApexAsset")); }
 	@property final auto ref
 	{
 		ScriptArray!(

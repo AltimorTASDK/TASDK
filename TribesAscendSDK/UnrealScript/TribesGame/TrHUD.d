@@ -36,6 +36,8 @@ extern(C++) interface TrHUD : UTGFxHudWrapper
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUD")); }
+	private static __gshared TrHUD mDefaultProperties;
+	@property final static TrHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHUD)("TrHUD TribesGame.Default__TrHUD")); }
 	static struct Functions
 	{
 		private static __gshared

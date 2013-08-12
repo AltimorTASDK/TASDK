@@ -11,6 +11,8 @@ extern(C++) interface TgGameEngine : GameEngine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgGameEngine")); }
+	private static __gshared TgGameEngine mDefaultProperties;
+	@property final static TgGameEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgGameEngine)("TgGameEngine PlatformCommon.Default__TgGameEngine")); }
 	static struct Functions
 	{
 		private static __gshared

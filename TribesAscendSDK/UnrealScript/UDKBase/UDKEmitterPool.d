@@ -10,6 +10,8 @@ extern(C++) interface UDKEmitterPool : EmitterPool
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKEmitterPool")); }
+	private static __gshared UDKEmitterPool mDefaultProperties;
+	@property final static UDKEmitterPool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKEmitterPool)("UDKEmitterPool UDKBase.Default__UDKEmitterPool")); }
 	static struct Functions
 	{
 		private static __gshared

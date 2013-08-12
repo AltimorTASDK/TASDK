@@ -11,6 +11,8 @@ extern(C++) interface DroppedPickup : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DroppedPickup")); }
+	private static __gshared DroppedPickup mDefaultProperties;
+	@property final static DroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DroppedPickup)("DroppedPickup Engine.Default__DroppedPickup")); }
 	static struct Functions
 	{
 		private static __gshared

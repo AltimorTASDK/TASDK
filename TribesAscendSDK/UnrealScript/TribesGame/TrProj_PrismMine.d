@@ -12,6 +12,8 @@ extern(C++) interface TrProj_PrismMine : TrProj_Mine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_PrismMine")); }
+	private static __gshared TrProj_PrismMine mDefaultProperties;
+	@property final static TrProj_PrismMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_PrismMine)("TrProj_PrismMine TribesGame.Default__TrProj_PrismMine")); }
 	static struct Functions
 	{
 		private static __gshared

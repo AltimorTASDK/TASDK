@@ -11,6 +11,8 @@ extern(C++) interface OnlineEventsInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineEventsInterface")); }
+	private static __gshared OnlineEventsInterface mDefaultProperties;
+	@property final static OnlineEventsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineEventsInterface)("OnlineEventsInterface Engine.Default__OnlineEventsInterface")); }
 	static struct Functions
 	{
 		private static __gshared

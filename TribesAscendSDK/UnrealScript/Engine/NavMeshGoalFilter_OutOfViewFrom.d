@@ -10,6 +10,8 @@ extern(C++) interface NavMeshGoalFilter_OutOfViewFrom : NavMeshGoal_Filter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_OutOfViewFrom")); }
+	private static __gshared NavMeshGoalFilter_OutOfViewFrom mDefaultProperties;
+	@property final static NavMeshGoalFilter_OutOfViewFrom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoalFilter_OutOfViewFrom)("NavMeshGoalFilter_OutOfViewFrom Engine.Default__NavMeshGoalFilter_OutOfViewFrom")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMustBeHiddenFromThisPoint;

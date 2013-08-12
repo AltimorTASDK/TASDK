@@ -13,6 +13,8 @@ extern(C++) interface GFxUDKFrontEnd_FilterDialog : GFxUDKFrontEnd_Dialog
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_FilterDialog")); }
+	private static __gshared GFxUDKFrontEnd_FilterDialog mDefaultProperties;
+	@property final static GFxUDKFrontEnd_FilterDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_FilterDialog)("GFxUDKFrontEnd_FilterDialog UTGame.Default__GFxUDKFrontEnd_FilterDialog")); }
 	static struct Functions
 	{
 		private static __gshared

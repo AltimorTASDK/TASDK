@@ -10,6 +10,8 @@ extern(C++) interface TrSpottedTarget_MotionMine : TrSpottedTarget
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpottedTarget_MotionMine")); }
+	private static __gshared TrSpottedTarget_MotionMine mDefaultProperties;
+	@property final static TrSpottedTarget_MotionMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpottedTarget_MotionMine)("TrSpottedTarget_MotionMine TribesGame.Default__TrSpottedTarget_MotionMine")); }
 	static struct Functions
 	{
 		private static __gshared

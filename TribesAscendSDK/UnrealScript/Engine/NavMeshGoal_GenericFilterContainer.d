@@ -11,6 +11,8 @@ extern(C++) interface NavMeshGoal_GenericFilterContainer : NavMeshPathGoalEvalua
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_GenericFilterContainer")); }
+	private static __gshared NavMeshGoal_GenericFilterContainer mDefaultProperties;
+	@property final static NavMeshGoal_GenericFilterContainer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_GenericFilterContainer)("NavMeshGoal_GenericFilterContainer Engine.Default__NavMeshGoal_GenericFilterContainer")); }
 	static struct Functions
 	{
 		private static __gshared

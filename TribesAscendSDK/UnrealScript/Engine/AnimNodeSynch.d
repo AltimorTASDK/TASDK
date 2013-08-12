@@ -9,6 +9,8 @@ extern(C++) interface AnimNodeSynch : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSynch")); }
+	private static __gshared AnimNodeSynch mDefaultProperties;
+	@property final static AnimNodeSynch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSynch)("AnimNodeSynch Engine.Default__AnimNodeSynch")); }
 	static struct Functions
 	{
 		private static __gshared

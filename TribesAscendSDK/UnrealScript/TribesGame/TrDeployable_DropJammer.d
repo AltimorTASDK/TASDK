@@ -10,6 +10,8 @@ extern(C++) interface TrDeployable_DropJammer : TrDeployable_Sensor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_DropJammer")); }
+	private static __gshared TrDeployable_DropJammer mDefaultProperties;
+	@property final static TrDeployable_DropJammer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_DropJammer)("TrDeployable_DropJammer TribesGame.Default__TrDeployable_DropJammer")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -13,6 +13,8 @@ extern(C++) interface MobileMenuButton : MobileMenuObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileMenuButton")); }
+	private static __gshared MobileMenuButton mDefaultProperties;
+	@property final static MobileMenuButton DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileMenuButton)("MobileMenuButton GameFramework.Default__MobileMenuButton")); }
 	static struct Functions
 	{
 		private static __gshared

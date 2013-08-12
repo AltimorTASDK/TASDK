@@ -9,6 +9,8 @@ extern(C++) interface AnimNodeBlendByBase : AnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendByBase")); }
+	private static __gshared AnimNodeBlendByBase mDefaultProperties;
+	@property final static AnimNodeBlendByBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendByBase)("AnimNodeBlendByBase Engine.Default__AnimNodeBlendByBase")); }
 	enum EBaseBlendType : ubyte
 	{
 		BBT_ByActorTag = 0,

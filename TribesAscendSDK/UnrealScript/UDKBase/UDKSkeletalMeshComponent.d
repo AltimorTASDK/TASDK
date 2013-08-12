@@ -8,6 +8,8 @@ extern(C++) interface UDKSkeletalMeshComponent : SkeletalMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkeletalMeshComponent")); }
+	private static __gshared UDKSkeletalMeshComponent mDefaultProperties;
+	@property final static UDKSkeletalMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkeletalMeshComponent)("UDKSkeletalMeshComponent UDKBase.Default__UDKSkeletalMeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared

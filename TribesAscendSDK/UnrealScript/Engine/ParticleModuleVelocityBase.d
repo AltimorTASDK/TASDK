@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleVelocityBase : ParticleModule
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleVelocityBase")); }
+	private static __gshared ParticleModuleVelocityBase mDefaultProperties;
+	@property final static ParticleModuleVelocityBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleVelocityBase)("ParticleModuleVelocityBase Engine.Default__ParticleModuleVelocityBase")); }
 	@property final
 	{
 		bool bApplyOwnerScale() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x2) != 0; }

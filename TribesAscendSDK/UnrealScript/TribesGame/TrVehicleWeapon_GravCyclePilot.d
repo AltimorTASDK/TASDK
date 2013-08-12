@@ -8,4 +8,6 @@ extern(C++) interface TrVehicleWeapon_GravCyclePilot : TrVehicleWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_GravCyclePilot")); }
+	private static __gshared TrVehicleWeapon_GravCyclePilot mDefaultProperties;
+	@property final static TrVehicleWeapon_GravCyclePilot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleWeapon_GravCyclePilot)("TrVehicleWeapon_GravCyclePilot TribesGame.Default__TrVehicleWeapon_GravCyclePilot")); }
 }

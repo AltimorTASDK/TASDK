@@ -9,6 +9,8 @@ extern(C++) interface ActorFactory : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactory")); }
+	private static __gshared ActorFactory mDefaultProperties;
+	@property final static ActorFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactory)("ActorFactory Engine.Default__ActorFactory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;

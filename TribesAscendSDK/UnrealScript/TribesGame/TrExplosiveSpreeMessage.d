@@ -12,6 +12,8 @@ extern(C++) interface TrExplosiveSpreeMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrExplosiveSpreeMessage")); }
+	private static __gshared TrExplosiveSpreeMessage mDefaultProperties;
+	@property final static TrExplosiveSpreeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrExplosiveSpreeMessage)("TrExplosiveSpreeMessage TribesGame.Default__TrExplosiveSpreeMessage")); }
 	static struct Functions
 	{
 		private static __gshared

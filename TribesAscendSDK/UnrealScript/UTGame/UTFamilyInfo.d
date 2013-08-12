@@ -20,6 +20,8 @@ extern(C++) interface UTFamilyInfo : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTFamilyInfo")); }
+	private static __gshared UTFamilyInfo mDefaultProperties;
+	@property final static UTFamilyInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTFamilyInfo)("UTFamilyInfo UTGame.Default__UTFamilyInfo")); }
 	static struct Functions
 	{
 		private static __gshared

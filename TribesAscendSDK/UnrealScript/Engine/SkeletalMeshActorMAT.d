@@ -11,6 +11,8 @@ extern(C++) interface SkeletalMeshActorMAT : SkeletalMeshCinematicActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshActorMAT")); }
+	private static __gshared SkeletalMeshActorMAT mDefaultProperties;
+	@property final static SkeletalMeshActorMAT DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshActorMAT)("SkeletalMeshActorMAT Engine.Default__SkeletalMeshActorMAT")); }
 	static struct Functions
 	{
 		private static __gshared

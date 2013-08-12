@@ -9,6 +9,8 @@ extern(C++) interface GameplayEventsReader : GameplayEvents
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameplayEventsReader")); }
+	private static __gshared GameplayEventsReader mDefaultProperties;
+	@property final static GameplayEventsReader DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameplayEventsReader)("GameplayEventsReader Engine.Default__GameplayEventsReader")); }
 	static struct Functions
 	{
 		private static __gshared

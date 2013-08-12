@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeBlendByFlagDirection : TrAnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlagDirection")); }
+	private static __gshared TrAnimNodeBlendByFlagDirection mDefaultProperties;
+	@property final static TrAnimNodeBlendByFlagDirection DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByFlagDirection)("TrAnimNodeBlendByFlagDirection TribesGame.Default__TrAnimNodeBlendByFlagDirection")); }
 	enum EFlagAnimTypes : ubyte
 	{
 		FlagAnim_Idle = 0,

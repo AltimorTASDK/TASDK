@@ -50,6 +50,8 @@ extern(C++) interface WorldInfo : ZoneInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.WorldInfo")); }
+	private static __gshared WorldInfo mDefaultProperties;
+	@property final static WorldInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WorldInfo)("WorldInfo Engine.Default__WorldInfo")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionSceneTexture : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionSceneTexture")); }
+	private static __gshared MaterialExpressionSceneTexture mDefaultProperties;
+	@property final static MaterialExpressionSceneTexture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionSceneTexture)("MaterialExpressionSceneTexture Engine.Default__MaterialExpressionSceneTexture")); }
 	enum ESceneTextureType : ubyte
 	{
 		SceneTex_Lighting = 0,

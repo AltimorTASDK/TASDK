@@ -9,6 +9,8 @@ extern(C++) interface TrCallIn_SupportItemPlatform : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_SupportItemPlatform")); }
+	private static __gshared TrCallIn_SupportItemPlatform mDefaultProperties;
+	@property final static TrCallIn_SupportItemPlatform DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_SupportItemPlatform)("TrCallIn_SupportItemPlatform TribesGame.Default__TrCallIn_SupportItemPlatform")); }
 	static struct Functions
 	{
 		private static __gshared

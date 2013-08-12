@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackInstBoolProp : InterpTrackInstProperty
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstBoolProp")); }
+	private static __gshared InterpTrackInstBoolProp mDefaultProperties;
+	@property final static InterpTrackInstBoolProp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstBoolProp)("InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")); }
 	@property final
 	{
 		@property final auto ref UObject.Pointer BoolProp() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 68); }

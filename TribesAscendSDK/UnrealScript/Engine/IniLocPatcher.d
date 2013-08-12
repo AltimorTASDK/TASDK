@@ -9,6 +9,8 @@ extern(C++) interface IniLocPatcher : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.IniLocPatcher")); }
+	private static __gshared IniLocPatcher mDefaultProperties;
+	@property final static IniLocPatcher DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(IniLocPatcher)("IniLocPatcher Engine.Default__IniLocPatcher")); }
 	static struct Functions
 	{
 		private static __gshared

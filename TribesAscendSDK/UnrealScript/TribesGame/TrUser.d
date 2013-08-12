@@ -9,6 +9,8 @@ extern(C++) interface TrUser : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrUser")); }
+	private static __gshared TrUser mDefaultProperties;
+	@property final static TrUser DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrUser)("TrUser TribesGame.Default__TrUser")); }
 	static struct Functions
 	{
 		private static __gshared

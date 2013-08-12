@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_ConvertToString : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ConvertToString")); }
+	private static __gshared SeqAct_ConvertToString mDefaultProperties;
+	@property final static SeqAct_ConvertToString DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ConvertToString)("SeqAct_ConvertToString Engine.Default__SeqAct_ConvertToString")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

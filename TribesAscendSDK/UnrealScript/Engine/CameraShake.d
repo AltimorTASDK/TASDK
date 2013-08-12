@@ -9,6 +9,8 @@ extern(C++) interface CameraShake : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraShake")); }
+	private static __gshared CameraShake mDefaultProperties;
+	@property final static CameraShake DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraShake)("CameraShake Engine.Default__CameraShake")); }
 	static struct Functions
 	{
 		private static __gshared

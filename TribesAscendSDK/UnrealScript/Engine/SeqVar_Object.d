@@ -9,6 +9,8 @@ extern(C++) interface SeqVar_Object : SequenceVariable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_Object")); }
+	private static __gshared SeqVar_Object mDefaultProperties;
+	@property final static SeqVar_Object DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_Object)("SeqVar_Object Engine.Default__SeqVar_Object")); }
 	static struct Functions
 	{
 		private static __gshared

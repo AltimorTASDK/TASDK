@@ -8,6 +8,8 @@ extern(C++) interface UDKVehicleMovementEffect : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleMovementEffect")); }
+	private static __gshared UDKVehicleMovementEffect mDefaultProperties;
+	@property final static UDKVehicleMovementEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleMovementEffect)("UDKVehicleMovementEffect UDKBase.Default__UDKVehicleMovementEffect")); }
 	@property final auto ref
 	{
 		float AirCurrentLevel() { return *cast(float*)(cast(size_t)cast(void*)this + 500); }

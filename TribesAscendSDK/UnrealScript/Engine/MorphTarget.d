@@ -9,6 +9,8 @@ extern(C++) interface MorphTarget : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphTarget")); }
+	private static __gshared MorphTarget mDefaultProperties;
+	@property final static MorphTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphTarget)("MorphTarget Engine.Default__MorphTarget")); }
 	@property final auto ref
 	{
 		ScriptArray!(int) MorphLODModels() { return *cast(ScriptArray!(int)*)(cast(size_t)cast(void*)this + 60); }

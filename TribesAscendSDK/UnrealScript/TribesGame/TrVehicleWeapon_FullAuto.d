@@ -9,6 +9,8 @@ extern(C++) interface TrVehicleWeapon_FullAuto : TrVehicleWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_FullAuto")); }
+	private static __gshared TrVehicleWeapon_FullAuto mDefaultProperties;
+	@property final static TrVehicleWeapon_FullAuto DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleWeapon_FullAuto)("TrVehicleWeapon_FullAuto TribesGame.Default__TrVehicleWeapon_FullAuto")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRefireCheckTimer;

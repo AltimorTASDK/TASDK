@@ -9,6 +9,8 @@ extern(C++) interface TrGameObjectiveUpgrade : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameObjectiveUpgrade")); }
+	private static __gshared TrGameObjectiveUpgrade mDefaultProperties;
+	@property final static TrGameObjectiveUpgrade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameObjectiveUpgrade)("TrGameObjectiveUpgrade TribesGame.Default__TrGameObjectiveUpgrade")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitUpgrade;

@@ -14,6 +14,8 @@ extern(C++) interface UTMultiKillMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMultiKillMessage")); }
+	private static __gshared UTMultiKillMessage mDefaultProperties;
+	@property final static UTMultiKillMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMultiKillMessage)("UTMultiKillMessage UTGame.Default__UTMultiKillMessage")); }
 	static struct Functions
 	{
 		private static __gshared

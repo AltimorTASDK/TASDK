@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeBlendByRidingPassenger : TrAnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByRidingPassenger")); }
+	private static __gshared TrAnimNodeBlendByRidingPassenger mDefaultProperties;
+	@property final static TrAnimNodeBlendByRidingPassenger DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByRidingPassenger)("TrAnimNodeBlendByRidingPassenger TribesGame.Default__TrAnimNodeBlendByRidingPassenger")); }
 	static struct Functions
 	{
 		private static __gshared

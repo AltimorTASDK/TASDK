@@ -11,6 +11,8 @@ extern(C++) interface BrushComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BrushComponent")); }
+	private static __gshared BrushComponent mDefaultProperties;
+	@property final static BrushComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(BrushComponent)("BrushComponent Engine.Default__BrushComponent")); }
 	struct KCachedConvexData_Mirror
 	{
 		private ubyte __buffer__[12];

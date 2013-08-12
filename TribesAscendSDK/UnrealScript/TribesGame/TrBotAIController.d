@@ -14,6 +14,8 @@ extern(C++) interface TrBotAIController : UTBot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBotAIController")); }
+	private static __gshared TrBotAIController mDefaultProperties;
+	@property final static TrBotAIController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBotAIController)("TrBotAIController TribesGame.Default__TrBotAIController")); }
 	static struct Functions
 	{
 		private static __gshared

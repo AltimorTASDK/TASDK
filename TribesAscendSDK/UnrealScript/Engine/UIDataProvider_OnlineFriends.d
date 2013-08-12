@@ -11,6 +11,8 @@ extern(C++) interface UIDataProvider_OnlineFriends : UIDataProvider_OnlinePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineFriends")); }
+	private static __gshared UIDataProvider_OnlineFriends mDefaultProperties;
+	@property final static UIDataProvider_OnlineFriends DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlineFriends)("UIDataProvider_OnlineFriends Engine.Default__UIDataProvider_OnlineFriends")); }
 	static struct Functions
 	{
 		private static __gshared

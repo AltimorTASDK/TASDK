@@ -9,6 +9,8 @@ extern(C++) interface NavMeshGoalFilter_NotNearOtherAI : NavMeshGoal_Filter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_NotNearOtherAI")); }
+	private static __gshared NavMeshGoalFilter_NotNearOtherAI mDefaultProperties;
+	@property final static NavMeshGoalFilter_NotNearOtherAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoalFilter_NotNearOtherAI)("NavMeshGoalFilter_NotNearOtherAI Engine.Default__NavMeshGoalFilter_NotNearOtherAI")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotNearOtherAI;

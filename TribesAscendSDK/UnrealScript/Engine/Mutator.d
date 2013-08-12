@@ -15,6 +15,8 @@ extern(C++) interface Mutator : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Mutator")); }
+	private static __gshared Mutator mDefaultProperties;
+	@property final static Mutator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Mutator)("Mutator Engine.Default__Mutator")); }
 	static struct Functions
 	{
 		private static __gshared

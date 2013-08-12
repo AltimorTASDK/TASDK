@@ -18,6 +18,8 @@ extern(C++) interface UTDamageType : DamageType
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDamageType")); }
+	private static __gshared UTDamageType mDefaultProperties;
+	@property final static UTDamageType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDamageType)("UTDamageType UTGame.Default__UTDamageType")); }
 	static struct Functions
 	{
 		private static __gshared

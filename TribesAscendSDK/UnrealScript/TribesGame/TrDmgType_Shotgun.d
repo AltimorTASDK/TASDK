@@ -8,4 +8,6 @@ extern(C++) interface TrDmgType_Shotgun : TrDmgType_Bullet
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_Shotgun")); }
+	private static __gshared TrDmgType_Shotgun mDefaultProperties;
+	@property final static TrDmgType_Shotgun DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDmgType_Shotgun)("TrDmgType_Shotgun TribesGame.Default__TrDmgType_Shotgun")); }
 }

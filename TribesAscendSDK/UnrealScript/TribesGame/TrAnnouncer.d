@@ -10,6 +10,8 @@ extern(C++) interface TrAnnouncer : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnnouncer")); }
+	private static __gshared TrAnnouncer mDefaultProperties;
+	@property final static TrAnnouncer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnnouncer)("TrAnnouncer TribesGame.Default__TrAnnouncer")); }
 	static struct Functions
 	{
 		private static __gshared

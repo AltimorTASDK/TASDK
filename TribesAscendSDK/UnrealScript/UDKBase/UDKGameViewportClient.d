@@ -8,6 +8,8 @@ extern(C++) interface UDKGameViewportClient : GameViewportClient
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameViewportClient")); }
+	private static __gshared UDKGameViewportClient mDefaultProperties;
+	@property final static UDKGameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameViewportClient)("UDKGameViewportClient UDKBase.Default__UDKGameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mLoadRandomLocalizedHintMessage;

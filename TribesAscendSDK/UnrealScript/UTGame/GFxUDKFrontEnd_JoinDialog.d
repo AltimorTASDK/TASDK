@@ -11,6 +11,8 @@ extern(C++) interface GFxUDKFrontEnd_JoinDialog : GFxUDKFrontEnd_Dialog
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_JoinDialog")); }
+	private static __gshared GFxUDKFrontEnd_JoinDialog mDefaultProperties;
+	@property final static GFxUDKFrontEnd_JoinDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_JoinDialog)("GFxUDKFrontEnd_JoinDialog UTGame.Default__GFxUDKFrontEnd_JoinDialog")); }
 	static struct Functions
 	{
 		private static __gshared

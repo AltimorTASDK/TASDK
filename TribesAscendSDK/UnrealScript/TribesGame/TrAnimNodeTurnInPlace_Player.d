@@ -8,6 +8,8 @@ extern(C++) interface TrAnimNodeTurnInPlace_Player : AnimNodeSequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeTurnInPlace_Player")); }
+	private static __gshared TrAnimNodeTurnInPlace_Player mDefaultProperties;
+	@property final static TrAnimNodeTurnInPlace_Player DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeTurnInPlace_Player)("TrAnimNodeTurnInPlace_Player TribesGame.Default__TrAnimNodeTurnInPlace_Player")); }
 	struct TIP_Transition
 	{
 		private ubyte __buffer__[16];

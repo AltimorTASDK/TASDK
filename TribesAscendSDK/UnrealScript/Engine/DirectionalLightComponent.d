@@ -9,6 +9,8 @@ extern(C++) interface DirectionalLightComponent : LightComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DirectionalLightComponent")); }
+	private static __gshared DirectionalLightComponent mDefaultProperties;
+	@property final static DirectionalLightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DirectionalLightComponent)("DirectionalLightComponent Engine.Default__DirectionalLightComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface GFxDataStoreSubscriber : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxDataStoreSubscriber")); }
+	private static __gshared GFxDataStoreSubscriber mDefaultProperties;
+	@property final static GFxDataStoreSubscriber DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxDataStoreSubscriber)("GFxDataStoreSubscriber GFxUI.Default__GFxDataStoreSubscriber")); }
 	static struct Functions
 	{
 		private static __gshared

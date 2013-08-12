@@ -10,6 +10,8 @@ extern(C++) interface UTMutator_Arena : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_Arena")); }
+	private static __gshared UTMutator_Arena mDefaultProperties;
+	@property final static UTMutator_Arena DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_Arena)("UTMutator_Arena UTGame.Default__UTMutator_Arena")); }
 	static struct Functions
 	{
 		private static __gshared

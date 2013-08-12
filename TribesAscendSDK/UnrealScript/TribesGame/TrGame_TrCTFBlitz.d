@@ -13,6 +13,8 @@ extern(C++) interface TrGame_TrCTFBlitz : TrGame_TRCTF
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TrCTFBlitz")); }
+	private static __gshared TrGame_TrCTFBlitz mDefaultProperties;
+	@property final static TrGame_TrCTFBlitz DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TrCTFBlitz)("TrGame_TrCTFBlitz TribesGame.Default__TrGame_TrCTFBlitz")); }
 	static struct Functions
 	{
 		private static __gshared

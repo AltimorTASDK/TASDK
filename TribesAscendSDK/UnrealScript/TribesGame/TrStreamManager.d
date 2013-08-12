@@ -8,6 +8,8 @@ extern(C++) interface TrStreamManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStreamManager")); }
+	private static __gshared TrStreamManager mDefaultProperties;
+	@property final static TrStreamManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStreamManager)("TrStreamManager TribesGame.Default__TrStreamManager")); }
 	static struct Functions
 	{
 		private static __gshared

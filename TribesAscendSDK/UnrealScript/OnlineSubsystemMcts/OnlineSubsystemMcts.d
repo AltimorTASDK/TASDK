@@ -15,6 +15,8 @@ extern(C++) interface OnlineSubsystemMcts : OnlineSubsystemCommonImpl
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class OnlineSubsystemMcts.OnlineSubsystemMcts")); }
+	private static __gshared OnlineSubsystemMcts mDefaultProperties;
+	@property final static OnlineSubsystemMcts DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSubsystemMcts)("OnlineSubsystemMcts OnlineSubsystemMcts.Default__OnlineSubsystemMcts")); }
 	static struct Functions
 	{
 		private static __gshared

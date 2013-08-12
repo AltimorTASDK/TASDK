@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_MultiLevelStreaming : SeqAct_LevelStreamingBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_MultiLevelStreaming")); }
+	private static __gshared SeqAct_MultiLevelStreaming mDefaultProperties;
+	@property final static SeqAct_MultiLevelStreaming DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_MultiLevelStreaming)("SeqAct_MultiLevelStreaming Engine.Default__SeqAct_MultiLevelStreaming")); }
 	struct LevelStreamingNameCombo
 	{
 		private ubyte __buffer__[12];

@@ -11,6 +11,8 @@ extern(C++) interface Route : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Route")); }
+	private static __gshared Route mDefaultProperties;
+	@property final static Route DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Route)("Route Engine.Default__Route")); }
 	static struct Functions
 	{
 		private static __gshared

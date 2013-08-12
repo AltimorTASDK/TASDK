@@ -8,6 +8,8 @@ extern(C++) interface TrRibbonManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRibbonManager")); }
+	private static __gshared TrRibbonManager mDefaultProperties;
+	@property final static TrRibbonManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRibbonManager)("TrRibbonManager TribesGame.Default__TrRibbonManager")); }
 	static struct Functions
 	{
 		private static __gshared

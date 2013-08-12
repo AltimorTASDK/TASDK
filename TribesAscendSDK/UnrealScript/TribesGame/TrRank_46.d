@@ -8,4 +8,6 @@ extern(C++) interface TrRank_46 : TrRank
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRank_46")); }
+	private static __gshared TrRank_46 mDefaultProperties;
+	@property final static TrRank_46 DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRank_46)("TrRank_46 TribesGame.Default__TrRank_46")); }
 }

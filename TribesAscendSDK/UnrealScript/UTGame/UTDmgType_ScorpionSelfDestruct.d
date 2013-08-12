@@ -9,6 +9,8 @@ extern(C++) interface UTDmgType_ScorpionSelfDestruct : UTDmgType_Burning
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_ScorpionSelfDestruct")); }
+	private static __gshared UTDmgType_ScorpionSelfDestruct mDefaultProperties;
+	@property final static UTDmgType_ScorpionSelfDestruct DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_ScorpionSelfDestruct)("UTDmgType_ScorpionSelfDestruct UTGame.Default__UTDmgType_ScorpionSelfDestruct")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIncrementKills;

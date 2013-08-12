@@ -8,6 +8,8 @@ extern(C++) interface ReverbVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReverbVolume")); }
+	private static __gshared ReverbVolume mDefaultProperties;
+	@property final static ReverbVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ReverbVolume)("ReverbVolume Engine.Default__ReverbVolume")); }
 	enum ReverbPreset : ubyte
 	{
 		REVERB_Default = 0,

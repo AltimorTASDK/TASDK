@@ -8,6 +8,8 @@ extern(C++) interface SeqCond_SwitchBase : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_SwitchBase")); }
+	private static __gshared SeqCond_SwitchBase mDefaultProperties;
+	@property final static SeqCond_SwitchBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_SwitchBase)("SeqCond_SwitchBase Engine.Default__SeqCond_SwitchBase")); }
 	static struct Functions
 	{
 		private static __gshared

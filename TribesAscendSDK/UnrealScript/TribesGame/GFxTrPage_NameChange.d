@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_NameChange : GFxTrPage_VendorTable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_NameChange")); }
+	private static __gshared GFxTrPage_NameChange mDefaultProperties;
+	@property final static GFxTrPage_NameChange DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_NameChange)("GFxTrPage_NameChange TribesGame.Default__GFxTrPage_NameChange")); }
 	static struct Functions
 	{
 		private static __gshared

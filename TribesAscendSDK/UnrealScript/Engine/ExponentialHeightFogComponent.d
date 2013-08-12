@@ -9,6 +9,8 @@ extern(C++) interface ExponentialHeightFogComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ExponentialHeightFogComponent")); }
+	private static __gshared ExponentialHeightFogComponent mDefaultProperties;
+	@property final static ExponentialHeightFogComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ExponentialHeightFogComponent)("ExponentialHeightFogComponent Engine.Default__ExponentialHeightFogComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetEnabled;

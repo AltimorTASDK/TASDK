@@ -8,6 +8,8 @@ extern(C++) interface StringsTag : TranslatorTag
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StringsTag")); }
+	private static __gshared StringsTag mDefaultProperties;
+	@property final static StringsTag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StringsTag)("StringsTag Engine.Default__StringsTag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTranslate;

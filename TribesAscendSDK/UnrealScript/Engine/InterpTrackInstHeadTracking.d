@@ -11,6 +11,8 @@ extern(C++) interface InterpTrackInstHeadTracking : InterpTrackInst
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstHeadTracking")); }
+	private static __gshared InterpTrackInstHeadTracking mDefaultProperties;
+	@property final static InterpTrackInstHeadTracking DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstHeadTracking)("InterpTrackInstHeadTracking Engine.Default__InterpTrackInstHeadTracking")); }
 	struct ActorToLookAt
 	{
 		private ubyte __buffer__[24];

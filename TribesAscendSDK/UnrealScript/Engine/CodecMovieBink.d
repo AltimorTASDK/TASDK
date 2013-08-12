@@ -8,4 +8,6 @@ extern(C++) interface CodecMovieBink : CodecMovie
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CodecMovieBink")); }
+	private static __gshared CodecMovieBink mDefaultProperties;
+	@property final static CodecMovieBink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CodecMovieBink)("CodecMovieBink Engine.Default__CodecMovieBink")); }
 }

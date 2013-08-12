@@ -12,6 +12,8 @@ extern(C++) interface TrSensorMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSensorMessage")); }
+	private static __gshared TrSensorMessage mDefaultProperties;
+	@property final static TrSensorMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSensorMessage)("TrSensorMessage TribesGame.Default__TrSensorMessage")); }
 	static struct Functions
 	{
 		private static __gshared

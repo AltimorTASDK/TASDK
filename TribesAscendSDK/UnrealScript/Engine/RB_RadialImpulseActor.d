@@ -9,6 +9,8 @@ extern(C++) interface RB_RadialImpulseActor : RigidBodyBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_RadialImpulseActor")); }
+	private static __gshared RB_RadialImpulseActor mDefaultProperties;
+	@property final static RB_RadialImpulseActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_RadialImpulseActor)("RB_RadialImpulseActor Engine.Default__RB_RadialImpulseActor")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_ServerScoring : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerScoring")); }
+	private static __gshared GFxTrPage_ServerScoring mDefaultProperties;
+	@property final static GFxTrPage_ServerScoring DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ServerScoring)("GFxTrPage_ServerScoring TribesGame.Default__GFxTrPage_ServerScoring")); }
 	static struct Functions
 	{
 		private static __gshared

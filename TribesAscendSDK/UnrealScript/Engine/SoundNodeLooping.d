@@ -9,6 +9,8 @@ extern(C++) interface SoundNodeLooping : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeLooping")); }
+	private static __gshared SoundNodeLooping mDefaultProperties;
+	@property final static SoundNodeLooping DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeLooping)("SoundNodeLooping Engine.Default__SoundNodeLooping")); }
 	@property final
 	{
 		auto ref

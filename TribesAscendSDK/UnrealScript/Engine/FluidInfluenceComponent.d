@@ -9,6 +9,8 @@ extern(C++) interface FluidInfluenceComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidInfluenceComponent")); }
+	private static __gshared FluidInfluenceComponent mDefaultProperties;
+	@property final static FluidInfluenceComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidInfluenceComponent)("FluidInfluenceComponent Engine.Default__FluidInfluenceComponent")); }
 	enum EInfluenceType : ubyte
 	{
 		Fluid_Flow = 0,

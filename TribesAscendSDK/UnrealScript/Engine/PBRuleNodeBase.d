@@ -8,6 +8,8 @@ extern(C++) interface PBRuleNodeBase : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeBase")); }
+	private static __gshared PBRuleNodeBase mDefaultProperties;
+	@property final static PBRuleNodeBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeBase)("PBRuleNodeBase Engine.Default__PBRuleNodeBase")); }
 	struct PBRuleLink
 	{
 		private ubyte __buffer__[16];

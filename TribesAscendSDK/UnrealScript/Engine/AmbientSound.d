@@ -8,6 +8,8 @@ extern(C++) interface AmbientSound : Keypoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientSound")); }
+	private static __gshared AmbientSound mDefaultProperties;
+	@property final static AmbientSound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AmbientSound)("AmbientSound Engine.Default__AmbientSound")); }
 	@property final
 	{
 		bool bIsPlaying() { return (*cast(uint*)(cast(size_t)cast(void*)this + 480) & 0x2) != 0; }

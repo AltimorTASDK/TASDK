@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_HiRezVideo : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_HiRezVideo")); }
+	private static __gshared GFxTrPage_HiRezVideo mDefaultProperties;
+	@property final static GFxTrPage_HiRezVideo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_HiRezVideo)("GFxTrPage_HiRezVideo TribesGame.Default__GFxTrPage_HiRezVideo")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface Texture2DDynamic : Texture
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Texture2DDynamic")); }
+	private static __gshared Texture2DDynamic mDefaultProperties;
+	@property final static Texture2DDynamic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Texture2DDynamic)("Texture2DDynamic Engine.Default__Texture2DDynamic")); }
 	static struct Functions
 	{
 		private static __gshared

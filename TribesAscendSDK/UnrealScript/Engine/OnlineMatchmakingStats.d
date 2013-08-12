@@ -8,6 +8,8 @@ extern(C++) interface OnlineMatchmakingStats : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineMatchmakingStats")); }
+	private static __gshared OnlineMatchmakingStats mDefaultProperties;
+	@property final static OnlineMatchmakingStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineMatchmakingStats)("OnlineMatchmakingStats Engine.Default__OnlineMatchmakingStats")); }
 	static struct Functions
 	{
 		private static __gshared

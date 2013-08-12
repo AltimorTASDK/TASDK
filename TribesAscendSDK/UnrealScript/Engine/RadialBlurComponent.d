@@ -11,6 +11,8 @@ extern(C++) interface RadialBlurComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RadialBlurComponent")); }
+	private static __gshared RadialBlurComponent mDefaultProperties;
+	@property final static RadialBlurComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RadialBlurComponent)("RadialBlurComponent Engine.Default__RadialBlurComponent")); }
 	static struct Functions
 	{
 		private static __gshared

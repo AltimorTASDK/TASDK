@@ -11,6 +11,8 @@ extern(C++) interface GFxAction_OpenMovie : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxAction_OpenMovie")); }
+	private static __gshared GFxAction_OpenMovie mDefaultProperties;
+	@property final static GFxAction_OpenMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxAction_OpenMovie)("GFxAction_OpenMovie GFxUI.Default__GFxAction_OpenMovie")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsValidLevelSequenceObject;

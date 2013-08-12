@@ -14,6 +14,8 @@ extern(C++) interface UDKPlayerController : GamePlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPlayerController")); }
+	private static __gshared UDKPlayerController mDefaultProperties;
+	@property final static UDKPlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKPlayerController)("UDKPlayerController UDKBase.Default__UDKPlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

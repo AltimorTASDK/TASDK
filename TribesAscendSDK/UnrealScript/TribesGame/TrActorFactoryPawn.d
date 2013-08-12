@@ -9,6 +9,8 @@ extern(C++) interface TrActorFactoryPawn : UTActorFactoryAI
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrActorFactoryPawn")); }
+	private static __gshared TrActorFactoryPawn mDefaultProperties;
+	@property final static TrActorFactoryPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrActorFactoryPawn)("TrActorFactoryPawn TribesGame.Default__TrActorFactoryPawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;

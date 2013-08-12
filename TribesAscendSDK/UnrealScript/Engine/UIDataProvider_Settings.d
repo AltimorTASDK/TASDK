@@ -11,6 +11,8 @@ extern(C++) interface UIDataProvider_Settings : UIDynamicDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_Settings")); }
+	private static __gshared UIDataProvider_Settings mDefaultProperties;
+	@property final static UIDataProvider_Settings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_Settings)("UIDataProvider_Settings Engine.Default__UIDataProvider_Settings")); }
 	static struct Functions
 	{
 		private static __gshared

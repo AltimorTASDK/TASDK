@@ -9,6 +9,8 @@ extern(C++) interface TrDevice_RepairTool : TrDevice_ConstantFire
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_RepairTool")); }
+	private static __gshared TrDevice_RepairTool mDefaultProperties;
+	@property final static TrDevice_RepairTool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_RepairTool)("TrDevice_RepairTool TribesGame.Default__TrDevice_RepairTool")); }
 	static struct Functions
 	{
 		private static __gshared

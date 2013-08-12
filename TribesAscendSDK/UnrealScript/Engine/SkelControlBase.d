@@ -10,6 +10,8 @@ extern(C++) interface SkelControlBase : AnimObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlBase")); }
+	private static __gshared SkelControlBase mDefaultProperties;
+	@property final static SkelControlBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlBase)("SkelControlBase Engine.Default__SkelControlBase")); }
 	static struct Functions
 	{
 		private static __gshared

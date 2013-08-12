@@ -14,6 +14,8 @@ extern(C++) interface TrVehicleStation : TrStation
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleStation")); }
+	private static __gshared TrVehicleStation mDefaultProperties;
+	@property final static TrVehicleStation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleStation)("TrVehicleStation TribesGame.Default__TrVehicleStation")); }
 	static struct Functions
 	{
 		private static __gshared

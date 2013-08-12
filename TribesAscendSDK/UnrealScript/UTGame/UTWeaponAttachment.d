@@ -16,6 +16,8 @@ extern(C++) interface UTWeaponAttachment : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponAttachment")); }
+	private static __gshared UTWeaponAttachment mDefaultProperties;
+	@property final static UTWeaponAttachment DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponAttachment)("UTWeaponAttachment UTGame.Default__UTWeaponAttachment")); }
 	static struct Functions
 	{
 		private static __gshared

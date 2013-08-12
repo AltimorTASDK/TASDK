@@ -8,6 +8,8 @@ extern(C++) interface TrAnimNodeBlendByGravCycleTilt : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByGravCycleTilt")); }
+	private static __gshared TrAnimNodeBlendByGravCycleTilt mDefaultProperties;
+	@property final static TrAnimNodeBlendByGravCycleTilt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByGravCycleTilt)("TrAnimNodeBlendByGravCycleTilt TribesGame.Default__TrAnimNodeBlendByGravCycleTilt")); }
 	@property final auto ref
 	{
 		float m_fDeadZone() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }

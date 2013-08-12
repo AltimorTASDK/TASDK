@@ -13,6 +13,8 @@ extern(C++) interface KActor : DynamicSMActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KActor")); }
+	private static __gshared KActor mDefaultProperties;
+	@property final static KActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KActor)("KActor Engine.Default__KActor")); }
 	static struct Functions
 	{
 		private static __gshared

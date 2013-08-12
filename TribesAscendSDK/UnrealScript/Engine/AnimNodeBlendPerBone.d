@@ -8,6 +8,8 @@ extern(C++) interface AnimNodeBlendPerBone : AnimNodeBlend
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendPerBone")); }
+	private static __gshared AnimNodeBlendPerBone mDefaultProperties;
+	@property final static AnimNodeBlendPerBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendPerBone)("AnimNodeBlendPerBone Engine.Default__AnimNodeBlendPerBone")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBlendTarget;

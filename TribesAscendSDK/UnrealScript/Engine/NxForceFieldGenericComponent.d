@@ -10,6 +10,8 @@ extern(C++) interface NxForceFieldGenericComponent : NxForceFieldComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldGenericComponent")); }
+	private static __gshared NxForceFieldGenericComponent mDefaultProperties;
+	@property final static NxForceFieldGenericComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldGenericComponent)("NxForceFieldGenericComponent Engine.Default__NxForceFieldGenericComponent")); }
 	@property final auto ref
 	{
 		UObject.Pointer Kernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 732); }

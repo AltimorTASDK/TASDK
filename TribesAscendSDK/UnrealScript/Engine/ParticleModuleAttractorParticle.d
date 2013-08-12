@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleAttractorParticle : ParticleModuleAttractorB
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorParticle")); }
+	private static __gshared ParticleModuleAttractorParticle mDefaultProperties;
+	@property final static ParticleModuleAttractorParticle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleAttractorParticle)("ParticleModuleAttractorParticle Engine.Default__ParticleModuleAttractorParticle")); }
 	enum EAttractorParticleSelectionMethod : ubyte
 	{
 		EAPSM_Random = 0,

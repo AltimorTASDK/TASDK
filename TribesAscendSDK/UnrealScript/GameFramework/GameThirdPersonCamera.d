@@ -15,6 +15,8 @@ extern(C++) interface GameThirdPersonCamera : GameCameraBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameThirdPersonCamera")); }
+	private static __gshared GameThirdPersonCamera mDefaultProperties;
+	@property final static GameThirdPersonCamera DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameThirdPersonCamera)("GameThirdPersonCamera GameFramework.Default__GameThirdPersonCamera")); }
 	static struct Functions
 	{
 		private static __gshared

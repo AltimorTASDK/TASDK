@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ActivateRemoteEvent : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ActivateRemoteEvent")); }
+	private static __gshared SeqAct_ActivateRemoteEvent mDefaultProperties;
+	@property final static SeqAct_ActivateRemoteEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ActivateRemoteEvent)("SeqAct_ActivateRemoteEvent Engine.Default__SeqAct_ActivateRemoteEvent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

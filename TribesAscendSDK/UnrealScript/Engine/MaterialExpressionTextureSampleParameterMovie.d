@@ -8,4 +8,6 @@ extern(C++) interface MaterialExpressionTextureSampleParameterMovie : MaterialEx
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureSampleParameterMovie")); }
+	private static __gshared MaterialExpressionTextureSampleParameterMovie mDefaultProperties;
+	@property final static MaterialExpressionTextureSampleParameterMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureSampleParameterMovie)("MaterialExpressionTextureSampleParameterMovie Engine.Default__MaterialExpressionTextureSampleParameterMovie")); }
 }

@@ -8,4 +8,6 @@ extern(C++) interface TrGeneratorExplosionLight : UDKExplosionLight
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGeneratorExplosionLight")); }
+	private static __gshared TrGeneratorExplosionLight mDefaultProperties;
+	@property final static TrGeneratorExplosionLight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGeneratorExplosionLight)("TrGeneratorExplosionLight TribesGame.Default__TrGeneratorExplosionLight")); }
 }

@@ -8,6 +8,8 @@ extern(C++) interface DynamicTriggerVolume : TriggerVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicTriggerVolume")); }
+	private static __gshared DynamicTriggerVolume mDefaultProperties;
+	@property final static DynamicTriggerVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicTriggerVolume)("DynamicTriggerVolume Engine.Default__DynamicTriggerVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

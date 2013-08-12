@@ -9,6 +9,8 @@ extern(C++) interface TextureCube : Texture
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureCube")); }
+	private static __gshared TextureCube mDefaultProperties;
+	@property final static TextureCube DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureCube)("TextureCube Engine.Default__TextureCube")); }
 	@property final
 	{
 		auto ref

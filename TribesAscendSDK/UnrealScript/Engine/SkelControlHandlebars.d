@@ -9,6 +9,8 @@ extern(C++) interface SkelControlHandlebars : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlHandlebars")); }
+	private static __gshared SkelControlHandlebars mDefaultProperties;
+	@property final static SkelControlHandlebars DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlHandlebars)("SkelControlHandlebars Engine.Default__SkelControlHandlebars")); }
 	@property final
 	{
 		auto ref

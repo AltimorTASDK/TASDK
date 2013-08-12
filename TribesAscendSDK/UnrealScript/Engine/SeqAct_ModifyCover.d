@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ModifyCover : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ModifyCover")); }
+	private static __gshared SeqAct_ModifyCover mDefaultProperties;
+	@property final static SeqAct_ModifyCover DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ModifyCover)("SeqAct_ModifyCover Engine.Default__SeqAct_ModifyCover")); }
 	@property final
 	{
 		auto ref

@@ -9,6 +9,8 @@ extern(C++) interface GFxUDKFrontEnd_Settings : GFxUDKFrontEnd_SettingsBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_Settings")); }
+	private static __gshared GFxUDKFrontEnd_Settings mDefaultProperties;
+	@property final static GFxUDKFrontEnd_Settings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_Settings)("GFxUDKFrontEnd_Settings UTGame.Default__GFxUDKFrontEnd_Settings")); }
 	static struct Functions
 	{
 		private static __gshared

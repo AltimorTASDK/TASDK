@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_RegenBuff : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_RegenBuff")); }
+	private static __gshared TrEffect_RegenBuff mDefaultProperties;
+	@property final static TrEffect_RegenBuff DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_RegenBuff)("TrEffect_RegenBuff TribesGame.Default__TrEffect_RegenBuff")); }
 	static struct Functions
 	{
 		private static __gshared

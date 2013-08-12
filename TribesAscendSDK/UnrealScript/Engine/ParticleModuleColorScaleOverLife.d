@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleColorScaleOverLife : ParticleModuleColorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleColorScaleOverLife")); }
+	private static __gshared ParticleModuleColorScaleOverLife mDefaultProperties;
+	@property final static ParticleModuleColorScaleOverLife DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleColorScaleOverLife)("ParticleModuleColorScaleOverLife Engine.Default__ParticleModuleColorScaleOverLife")); }
 	@property final
 	{
 		auto ref

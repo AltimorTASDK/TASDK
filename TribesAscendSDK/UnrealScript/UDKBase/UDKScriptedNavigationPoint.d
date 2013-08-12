@@ -9,6 +9,8 @@ extern(C++) interface UDKScriptedNavigationPoint : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKScriptedNavigationPoint")); }
+	private static __gshared UDKScriptedNavigationPoint mDefaultProperties;
+	@property final static UDKScriptedNavigationPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKScriptedNavigationPoint)("UDKScriptedNavigationPoint UDKBase.Default__UDKScriptedNavigationPoint")); }
 	static struct Functions
 	{
 		private static __gshared

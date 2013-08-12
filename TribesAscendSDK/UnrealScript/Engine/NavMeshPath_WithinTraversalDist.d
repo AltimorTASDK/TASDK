@@ -9,6 +9,8 @@ extern(C++) interface NavMeshPath_WithinTraversalDist : NavMeshPathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_WithinTraversalDist")); }
+	private static __gshared NavMeshPath_WithinTraversalDist mDefaultProperties;
+	@property final static NavMeshPath_WithinTraversalDist DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_WithinTraversalDist)("NavMeshPath_WithinTraversalDist Engine.Default__NavMeshPath_WithinTraversalDist")); }
 	static struct Functions
 	{
 		private static __gshared

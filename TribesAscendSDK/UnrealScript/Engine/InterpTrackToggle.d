@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackToggle : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackToggle")); }
+	private static __gshared InterpTrackToggle mDefaultProperties;
+	@property final static InterpTrackToggle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackToggle)("InterpTrackToggle Engine.Default__InterpTrackToggle")); }
 	enum ETrackToggleAction : ubyte
 	{
 		ETTA_Off = 0,

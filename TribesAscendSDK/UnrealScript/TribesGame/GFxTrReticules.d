@@ -12,6 +12,8 @@ extern(C++) interface GFxTrReticules : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrReticules")); }
+	private static __gshared GFxTrReticules mDefaultProperties;
+	@property final static GFxTrReticules DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrReticules)("GFxTrReticules TribesGame.Default__GFxTrReticules")); }
 	static struct Functions
 	{
 		private static __gshared

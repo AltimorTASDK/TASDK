@@ -10,6 +10,8 @@ extern(C++) interface NxForceFieldComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldComponent")); }
+	private static __gshared NxForceFieldComponent mDefaultProperties;
+	@property final static NxForceFieldComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldComponent)("NxForceFieldComponent Engine.Default__NxForceFieldComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;

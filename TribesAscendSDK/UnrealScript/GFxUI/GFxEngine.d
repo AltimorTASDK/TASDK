@@ -8,6 +8,8 @@ extern(C++) interface GFxEngine : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxEngine")); }
+	private static __gshared GFxEngine mDefaultProperties;
+	@property final static GFxEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxEngine)("GFxEngine GFxUI.Default__GFxEngine")); }
 	struct GCReference
 	{
 		private ubyte __buffer__[12];

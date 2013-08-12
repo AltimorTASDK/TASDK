@@ -16,6 +16,8 @@ extern(C++) interface GameEngine : Engine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameEngine")); }
+	private static __gshared GameEngine mDefaultProperties;
+	@property final static GameEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameEngine)("GameEngine Engine.Default__GameEngine")); }
 	static struct Functions
 	{
 		private static __gshared

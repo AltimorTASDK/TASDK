@@ -10,6 +10,8 @@ extern(C++) interface ApexComponentBase : MeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexComponentBase")); }
+	private static __gshared ApexComponentBase mDefaultProperties;
+	@property final static ApexComponentBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexComponentBase)("ApexComponentBase Engine.Default__ApexComponentBase")); }
 	@property final
 	{
 		auto ref

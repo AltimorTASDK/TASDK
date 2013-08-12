@@ -9,6 +9,8 @@ extern(C++) interface TrVehicleWeapon_BeowulfGunner : TrVehicleWeapon_FullAuto
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_BeowulfGunner")); }
+	private static __gshared TrVehicleWeapon_BeowulfGunner mDefaultProperties;
+	@property final static TrVehicleWeapon_BeowulfGunner DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleWeapon_BeowulfGunner)("TrVehicleWeapon_BeowulfGunner TribesGame.Default__TrVehicleWeapon_BeowulfGunner")); }
 	static struct Functions
 	{
 		private static __gshared

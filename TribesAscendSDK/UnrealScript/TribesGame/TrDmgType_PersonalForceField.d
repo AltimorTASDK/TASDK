@@ -8,4 +8,6 @@ extern(C++) interface TrDmgType_PersonalForceField : TrDmgType_Base
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_PersonalForceField")); }
+	private static __gshared TrDmgType_PersonalForceField mDefaultProperties;
+	@property final static TrDmgType_PersonalForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDmgType_PersonalForceField)("TrDmgType_PersonalForceField TribesGame.Default__TrDmgType_PersonalForceField")); }
 }

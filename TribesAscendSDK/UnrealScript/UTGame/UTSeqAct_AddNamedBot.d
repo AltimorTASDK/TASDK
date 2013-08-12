@@ -10,6 +10,8 @@ extern(C++) interface UTSeqAct_AddNamedBot : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_AddNamedBot")); }
+	private static __gshared UTSeqAct_AddNamedBot mDefaultProperties;
+	@property final static UTSeqAct_AddNamedBot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_AddNamedBot)("UTSeqAct_AddNamedBot UTGame.Default__UTSeqAct_AddNamedBot")); }
 	static struct Functions
 	{
 		private static __gshared

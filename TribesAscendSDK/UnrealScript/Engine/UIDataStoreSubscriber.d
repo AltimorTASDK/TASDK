@@ -10,6 +10,8 @@ extern(C++) interface UIDataStoreSubscriber : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStoreSubscriber")); }
+	private static __gshared UIDataStoreSubscriber mDefaultProperties;
+	@property final static UIDataStoreSubscriber DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStoreSubscriber)("UIDataStoreSubscriber Engine.Default__UIDataStoreSubscriber")); }
 	static struct Functions
 	{
 		private static __gshared

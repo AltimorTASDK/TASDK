@@ -10,6 +10,8 @@ extern(C++) interface NavMeshPath_SameCoverLink : NavMeshPathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_SameCoverLink")); }
+	private static __gshared NavMeshPath_SameCoverLink mDefaultProperties;
+	@property final static NavMeshPath_SameCoverLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_SameCoverLink)("NavMeshPath_SameCoverLink Engine.Default__NavMeshPath_SameCoverLink")); }
 	static struct Functions
 	{
 		private static __gshared

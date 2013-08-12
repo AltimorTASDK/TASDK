@@ -8,6 +8,8 @@ extern(C++) interface SkelControl_CCD_IK : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControl_CCD_IK")); }
+	private static __gshared SkelControl_CCD_IK mDefaultProperties;
+	@property final static SkelControl_CCD_IK DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControl_CCD_IK)("SkelControl_CCD_IK Engine.Default__SkelControl_CCD_IK")); }
 	@property final
 	{
 		auto ref

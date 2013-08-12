@@ -8,6 +8,8 @@ extern(C++) interface OnlinePlaylistProvider : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlinePlaylistProvider")); }
+	private static __gshared OnlinePlaylistProvider mDefaultProperties;
+	@property final static OnlinePlaylistProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePlaylistProvider)("OnlinePlaylistProvider Engine.Default__OnlinePlaylistProvider")); }
 	@property final
 	{
 		auto ref

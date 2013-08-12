@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ModifyHealth : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ModifyHealth")); }
+	private static __gshared SeqAct_ModifyHealth mDefaultProperties;
+	@property final static SeqAct_ModifyHealth DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ModifyHealth)("SeqAct_ModifyHealth Engine.Default__SeqAct_ModifyHealth")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

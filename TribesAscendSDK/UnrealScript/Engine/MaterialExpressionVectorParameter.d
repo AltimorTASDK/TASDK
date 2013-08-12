@@ -9,5 +9,7 @@ extern(C++) interface MaterialExpressionVectorParameter : MaterialExpressionPara
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionVectorParameter")); }
+	private static __gshared MaterialExpressionVectorParameter mDefaultProperties;
+	@property final static MaterialExpressionVectorParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionVectorParameter)("MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")); }
 	@property final auto ref UObject.LinearColor DefaultValue() { return *cast(UObject.LinearColor*)(cast(size_t)cast(void*)this + 132); }
 }

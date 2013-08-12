@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleLocationEmitter : ParticleModuleLocationBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationEmitter")); }
+	private static __gshared ParticleModuleLocationEmitter mDefaultProperties;
+	@property final static ParticleModuleLocationEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleLocationEmitter)("ParticleModuleLocationEmitter Engine.Default__ParticleModuleLocationEmitter")); }
 	enum ELocationEmitterSelectionMethod : ubyte
 	{
 		ELESM_Random = 0,

@@ -14,6 +14,8 @@ extern(C++) interface TrAccoladeManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccoladeManager")); }
+	private static __gshared TrAccoladeManager mDefaultProperties;
+	@property final static TrAccoladeManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccoladeManager)("TrAccoladeManager TribesGame.Default__TrAccoladeManager")); }
 	static struct Functions
 	{
 		private static __gshared

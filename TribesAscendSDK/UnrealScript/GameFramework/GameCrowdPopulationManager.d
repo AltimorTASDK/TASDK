@@ -17,6 +17,8 @@ extern(C++) interface GameCrowdPopulationManager : CrowdPopulationManagerBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdPopulationManager")); }
+	private static __gshared GameCrowdPopulationManager mDefaultProperties;
+	@property final static GameCrowdPopulationManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdPopulationManager)("GameCrowdPopulationManager GameFramework.Default__GameCrowdPopulationManager")); }
 	static struct Functions
 	{
 		private static __gshared

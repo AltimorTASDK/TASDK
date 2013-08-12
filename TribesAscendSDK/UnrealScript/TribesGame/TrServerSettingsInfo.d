@@ -9,6 +9,8 @@ extern(C++) interface TrServerSettingsInfo : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrServerSettingsInfo")); }
+	private static __gshared TrServerSettingsInfo mDefaultProperties;
+	@property final static TrServerSettingsInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrServerSettingsInfo)("TrServerSettingsInfo TribesGame.Default__TrServerSettingsInfo")); }
 	static struct Functions
 	{
 		private static __gshared

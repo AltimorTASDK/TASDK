@@ -42,6 +42,8 @@ extern(C++) interface TrPawn : UTPawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPawn")); }
+	private static __gshared TrPawn mDefaultProperties;
+	@property final static TrPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPawn)("TrPawn TribesGame.Default__TrPawn")); }
 	static struct Functions
 	{
 		private static __gshared

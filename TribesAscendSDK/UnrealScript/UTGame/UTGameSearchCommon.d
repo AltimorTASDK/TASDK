@@ -8,6 +8,8 @@ extern(C++) interface UTGameSearchCommon : OnlineGameSearch
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameSearchCommon")); }
+	private static __gshared UTGameSearchCommon mDefaultProperties;
+	@property final static UTGameSearchCommon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameSearchCommon)("UTGameSearchCommon UTGame.Default__UTGameSearchCommon")); }
 	static struct Constants
 	{
 		enum

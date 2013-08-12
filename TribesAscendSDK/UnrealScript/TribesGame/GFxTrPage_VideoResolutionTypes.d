@@ -11,6 +11,8 @@ extern(C++) interface GFxTrPage_VideoResolutionTypes : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_VideoResolutionTypes")); }
+	private static __gshared GFxTrPage_VideoResolutionTypes mDefaultProperties;
+	@property final static GFxTrPage_VideoResolutionTypes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_VideoResolutionTypes)("GFxTrPage_VideoResolutionTypes TribesGame.Default__GFxTrPage_VideoResolutionTypes")); }
 	static struct Functions
 	{
 		private static __gshared

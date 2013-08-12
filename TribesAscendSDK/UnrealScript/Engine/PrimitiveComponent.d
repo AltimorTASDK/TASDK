@@ -13,6 +13,8 @@ extern(C++) interface PrimitiveComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrimitiveComponent")); }
+	private static __gshared PrimitiveComponent mDefaultProperties;
+	@property final static PrimitiveComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrimitiveComponent)("PrimitiveComponent Engine.Default__PrimitiveComponent")); }
 	static struct Functions
 	{
 		private static __gshared

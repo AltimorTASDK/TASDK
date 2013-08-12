@@ -10,6 +10,8 @@ extern(C++) interface TrProj_RepairDeployable : TrProj_Mine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_RepairDeployable")); }
+	private static __gshared TrProj_RepairDeployable mDefaultProperties;
+	@property final static TrProj_RepairDeployable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_RepairDeployable)("TrProj_RepairDeployable TribesGame.Default__TrProj_RepairDeployable")); }
 	static struct Functions
 	{
 		private static __gshared

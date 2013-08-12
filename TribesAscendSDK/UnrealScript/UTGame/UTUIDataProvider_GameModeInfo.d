@@ -8,6 +8,8 @@ extern(C++) interface UTUIDataProvider_GameModeInfo : UTUIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_GameModeInfo")); }
+	private static __gshared UTUIDataProvider_GameModeInfo mDefaultProperties;
+	@property final static UTUIDataProvider_GameModeInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTUIDataProvider_GameModeInfo)("UTUIDataProvider_GameModeInfo UTGame.Default__UTUIDataProvider_GameModeInfo")); }
 	@property final auto ref
 	{
 		ScriptString GameMode() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 152); }

@@ -19,6 +19,8 @@ extern(C++) interface SVehicle : Vehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicle")); }
+	private static __gshared SVehicle mDefaultProperties;
+	@property final static SVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SVehicle)("SVehicle Engine.Default__SVehicle")); }
 	static struct Functions
 	{
 		private static __gshared

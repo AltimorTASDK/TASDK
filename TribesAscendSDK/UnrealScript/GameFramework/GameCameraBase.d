@@ -14,6 +14,8 @@ extern(C++) interface GameCameraBase : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCameraBase")); }
+	private static __gshared GameCameraBase mDefaultProperties;
+	@property final static GameCameraBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCameraBase)("GameCameraBase GameFramework.Default__GameCameraBase")); }
 	static struct Functions
 	{
 		private static __gshared

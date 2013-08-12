@@ -8,6 +8,8 @@ extern(C++) interface UDKAnimBlendBase : AnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendBase")); }
+	private static __gshared UDKAnimBlendBase mDefaultProperties;
+	@property final static UDKAnimBlendBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendBase)("UDKAnimBlendBase UDKBase.Default__UDKAnimBlendBase")); }
 	static struct Functions
 	{
 		private static __gshared

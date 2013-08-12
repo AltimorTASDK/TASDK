@@ -8,6 +8,8 @@ extern(C++) interface UTUIDataProvider_Mutator : UTUIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_Mutator")); }
+	private static __gshared UTUIDataProvider_Mutator mDefaultProperties;
+	@property final static UTUIDataProvider_Mutator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTUIDataProvider_Mutator)("UTUIDataProvider_Mutator UTGame.Default__UTUIDataProvider_Mutator")); }
 	static struct Functions
 	{
 		private static __gshared

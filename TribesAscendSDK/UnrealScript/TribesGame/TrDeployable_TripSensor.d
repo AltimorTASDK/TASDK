@@ -12,6 +12,8 @@ extern(C++) interface TrDeployable_TripSensor : TrDeployable_Sensor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_TripSensor")); }
+	private static __gshared TrDeployable_TripSensor mDefaultProperties;
+	@property final static TrDeployable_TripSensor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_TripSensor)("TrDeployable_TripSensor TribesGame.Default__TrDeployable_TripSensor")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_DrawText : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_DrawText")); }
+	private static __gshared SeqAct_DrawText mDefaultProperties;
+	@property final static SeqAct_DrawText DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_DrawText)("SeqAct_DrawText Engine.Default__SeqAct_DrawText")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

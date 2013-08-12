@@ -9,6 +9,8 @@ extern(C++) interface TrDeployable_BackupGenerator : TrDeployable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_BackupGenerator")); }
+	private static __gshared TrDeployable_BackupGenerator mDefaultProperties;
+	@property final static TrDeployable_BackupGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_BackupGenerator)("TrDeployable_BackupGenerator TribesGame.Default__TrDeployable_BackupGenerator")); }
 	static struct Functions
 	{
 		private static __gshared

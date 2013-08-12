@@ -13,6 +13,8 @@ extern(C++) interface Emitter : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Emitter")); }
+	private static __gshared Emitter mDefaultProperties;
+	@property final static Emitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Emitter)("Emitter Engine.Default__Emitter")); }
 	static struct Functions
 	{
 		private static __gshared

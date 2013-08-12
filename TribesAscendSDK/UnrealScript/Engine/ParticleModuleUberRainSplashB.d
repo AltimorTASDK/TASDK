@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleUberRainSplashB : ParticleModuleUberBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberRainSplashB")); }
+	private static __gshared ParticleModuleUberRainSplashB mDefaultProperties;
+	@property final static ParticleModuleUberRainSplashB DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleUberRainSplashB)("ParticleModuleUberRainSplashB Engine.Default__ParticleModuleUberRainSplashB")); }
 	@property final
 	{
 		auto ref

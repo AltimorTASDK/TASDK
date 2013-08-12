@@ -10,6 +10,8 @@ extern(C++) interface TrProj_RemoteArxBuster : TrProj_StickyGrenade
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_RemoteArxBuster")); }
+	private static __gshared TrProj_RemoteArxBuster mDefaultProperties;
+	@property final static TrProj_RemoteArxBuster DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_RemoteArxBuster)("TrProj_RemoteArxBuster TribesGame.Default__TrProj_RemoteArxBuster")); }
 	static struct Functions
 	{
 		private static __gshared

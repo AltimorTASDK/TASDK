@@ -8,6 +8,8 @@ extern(C++) interface TcpLink : InternetLink
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.TcpLink")); }
+	private static __gshared TcpLink mDefaultProperties;
+	@property final static TcpLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TcpLink)("TcpLink IpDrv.Default__TcpLink")); }
 	static struct Functions
 	{
 		private static __gshared

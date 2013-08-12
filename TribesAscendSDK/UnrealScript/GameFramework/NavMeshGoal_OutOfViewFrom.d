@@ -10,6 +10,8 @@ extern(C++) interface NavMeshGoal_OutOfViewFrom : NavMeshPathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.NavMeshGoal_OutOfViewFrom")); }
+	private static __gshared NavMeshGoal_OutOfViewFrom mDefaultProperties;
+	@property final static NavMeshGoal_OutOfViewFrom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_OutOfViewFrom)("NavMeshGoal_OutOfViewFrom GameFramework.Default__NavMeshGoal_OutOfViewFrom")); }
 	static struct Functions
 	{
 		private static __gshared

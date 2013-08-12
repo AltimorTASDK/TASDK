@@ -9,6 +9,8 @@ extern(C++) interface TrAnimNodeBlendByFlying : TrAnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByFlying")); }
+	private static __gshared TrAnimNodeBlendByFlying mDefaultProperties;
+	@property final static TrAnimNodeBlendByFlying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByFlying)("TrAnimNodeBlendByFlying TribesGame.Default__TrAnimNodeBlendByFlying")); }
 	enum EFlyDirTypes : ubyte
 	{
 		FLY_Forward = 0,

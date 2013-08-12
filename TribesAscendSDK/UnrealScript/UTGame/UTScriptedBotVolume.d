@@ -9,6 +9,8 @@ extern(C++) interface UTScriptedBotVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTScriptedBotVolume")); }
+	private static __gshared UTScriptedBotVolume mDefaultProperties;
+	@property final static UTScriptedBotVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTScriptedBotVolume)("UTScriptedBotVolume UTGame.Default__UTScriptedBotVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPawnLeavingVolume;

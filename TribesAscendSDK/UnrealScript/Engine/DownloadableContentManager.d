@@ -10,6 +10,8 @@ extern(C++) interface DownloadableContentManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DownloadableContentManager")); }
+	private static __gshared DownloadableContentManager mDefaultProperties;
+	@property final static DownloadableContentManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DownloadableContentManager)("DownloadableContentManager Engine.Default__DownloadableContentManager")); }
 	static struct Functions
 	{
 		private static __gshared

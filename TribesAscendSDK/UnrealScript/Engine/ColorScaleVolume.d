@@ -9,6 +9,8 @@ extern(C++) interface ColorScaleVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ColorScaleVolume")); }
+	private static __gshared ColorScaleVolume mDefaultProperties;
+	@property final static ColorScaleVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ColorScaleVolume)("ColorScaleVolume Engine.Default__ColorScaleVolume")); }
 	static struct Functions
 	{
 		private static __gshared

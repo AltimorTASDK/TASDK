@@ -8,6 +8,8 @@ extern(C++) interface TrLoadingData : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLoadingData")); }
+	private static __gshared TrLoadingData mDefaultProperties;
+	@property final static TrLoadingData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLoadingData)("TrLoadingData TribesGame.Default__TrLoadingData")); }
 	static struct Functions
 	{
 		private static __gshared

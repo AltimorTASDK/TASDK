@@ -10,6 +10,8 @@ extern(C++) interface RB_CylindricalForceActor : RigidBodyBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_CylindricalForceActor")); }
+	private static __gshared RB_CylindricalForceActor mDefaultProperties;
+	@property final static RB_CylindricalForceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_CylindricalForceActor)("RB_CylindricalForceActor Engine.Default__RB_CylindricalForceActor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

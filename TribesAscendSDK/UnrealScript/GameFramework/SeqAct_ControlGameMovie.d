@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_ControlGameMovie : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_ControlGameMovie")); }
+	private static __gshared SeqAct_ControlGameMovie mDefaultProperties;
+	@property final static SeqAct_ControlGameMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ControlGameMovie)("SeqAct_ControlGameMovie GameFramework.Default__SeqAct_ControlGameMovie")); }
 	@property final auto ref
 	{
 		int EndOfRenderingMovieFrame() { return *cast(int*)(cast(size_t)cast(void*)this + 264); }

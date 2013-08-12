@@ -12,6 +12,8 @@ extern(C++) interface AnimNodeSequence : AnimNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequence")); }
+	private static __gshared AnimNodeSequence mDefaultProperties;
+	@property final static AnimNodeSequence DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSequence)("AnimNodeSequence Engine.Default__AnimNodeSequence")); }
 	static struct Functions
 	{
 		private static __gshared

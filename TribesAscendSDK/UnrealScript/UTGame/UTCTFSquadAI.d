@@ -16,6 +16,8 @@ extern(C++) interface UTCTFSquadAI : UTSquadAI
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFSquadAI")); }
+	private static __gshared UTCTFSquadAI mDefaultProperties;
+	@property final static UTCTFSquadAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFSquadAI)("UTCTFSquadAI UTGame.Default__UTCTFSquadAI")); }
 	static struct Functions
 	{
 		private static __gshared

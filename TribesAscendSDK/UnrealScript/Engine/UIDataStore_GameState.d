@@ -8,6 +8,8 @@ extern(C++) interface UIDataStore_GameState : UIDataStore
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_GameState")); }
+	private static __gshared UIDataStore_GameState mDefaultProperties;
+	@property final static UIDataStore_GameState DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_GameState)("UIDataStore_GameState Engine.Default__UIDataStore_GameState")); }
 	static struct Functions
 	{
 		private static __gshared

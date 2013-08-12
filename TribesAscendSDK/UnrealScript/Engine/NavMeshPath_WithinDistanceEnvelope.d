@@ -9,6 +9,8 @@ extern(C++) interface NavMeshPath_WithinDistanceEnvelope : NavMeshPathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_WithinDistanceEnvelope")); }
+	private static __gshared NavMeshPath_WithinDistanceEnvelope mDefaultProperties;
+	@property final static NavMeshPath_WithinDistanceEnvelope DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_WithinDistanceEnvelope)("NavMeshPath_WithinDistanceEnvelope Engine.Default__NavMeshPath_WithinDistanceEnvelope")); }
 	static struct Functions
 	{
 		private static __gshared

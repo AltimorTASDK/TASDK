@@ -9,6 +9,8 @@ extern(C++) interface UTSeqCond_IsUsingWeapon : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqCond_IsUsingWeapon")); }
+	private static __gshared UTSeqCond_IsUsingWeapon mDefaultProperties;
+	@property final static UTSeqCond_IsUsingWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqCond_IsUsingWeapon)("UTSeqCond_IsUsingWeapon UTGame.Default__UTSeqCond_IsUsingWeapon")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

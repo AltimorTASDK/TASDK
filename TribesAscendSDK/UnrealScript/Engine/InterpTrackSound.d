@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackSound : InterpTrackVectorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackSound")); }
+	private static __gshared InterpTrackSound mDefaultProperties;
+	@property final static InterpTrackSound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackSound)("InterpTrackSound Engine.Default__InterpTrackSound")); }
 	struct SoundTrackKey
 	{
 		private ubyte __buffer__[16];

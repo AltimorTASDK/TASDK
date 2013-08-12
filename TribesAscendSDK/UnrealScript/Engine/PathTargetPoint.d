@@ -8,6 +8,8 @@ extern(C++) interface PathTargetPoint : Keypoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PathTargetPoint")); }
+	private static __gshared PathTargetPoint mDefaultProperties;
+	@property final static PathTargetPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PathTargetPoint)("PathTargetPoint Engine.Default__PathTargetPoint")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mShouldBeHiddenBySHOW_NavigationNodes;

@@ -10,6 +10,8 @@ extern(C++) interface AnimationCompressionAlgorithm_PerTrackCompression : Animat
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_PerTrackCompression")); }
+	private static __gshared AnimationCompressionAlgorithm_PerTrackCompression mDefaultProperties;
+	@property final static AnimationCompressionAlgorithm_PerTrackCompression DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimationCompressionAlgorithm_PerTrackCompression)("AnimationCompressionAlgorithm_PerTrackCompression Engine.Default__AnimationCompressionAlgorithm_PerTrackCompression")); }
 	@property final
 	{
 		auto ref

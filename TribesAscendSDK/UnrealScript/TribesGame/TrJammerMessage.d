@@ -10,6 +10,8 @@ extern(C++) interface TrJammerMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrJammerMessage")); }
+	private static __gshared TrJammerMessage mDefaultProperties;
+	@property final static TrJammerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrJammerMessage)("TrJammerMessage TribesGame.Default__TrJammerMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

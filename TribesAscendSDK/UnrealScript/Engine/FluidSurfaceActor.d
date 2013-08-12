@@ -10,6 +10,8 @@ extern(C++) interface FluidSurfaceActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidSurfaceActor")); }
+	private static __gshared FluidSurfaceActor mDefaultProperties;
+	@property final static FluidSurfaceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidSurfaceActor)("FluidSurfaceActor Engine.Default__FluidSurfaceActor")); }
 	static struct Functions
 	{
 		private static __gshared

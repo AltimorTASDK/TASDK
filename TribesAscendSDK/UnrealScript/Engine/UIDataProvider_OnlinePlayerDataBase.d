@@ -9,6 +9,8 @@ extern(C++) interface UIDataProvider_OnlinePlayerDataBase : UIDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePlayerDataBase")); }
+	private static __gshared UIDataProvider_OnlinePlayerDataBase mDefaultProperties;
+	@property final static UIDataProvider_OnlinePlayerDataBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlinePlayerDataBase)("UIDataProvider_OnlinePlayerDataBase Engine.Default__UIDataProvider_OnlinePlayerDataBase")); }
 	static struct Functions
 	{
 		private static __gshared

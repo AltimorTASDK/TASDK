@@ -9,6 +9,8 @@ extern(C++) interface MaterialExpressionDepthBiasBlend : MaterialExpressionTextu
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionDepthBiasBlend")); }
+	private static __gshared MaterialExpressionDepthBiasBlend mDefaultProperties;
+	@property final static MaterialExpressionDepthBiasBlend DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionDepthBiasBlend)("MaterialExpressionDepthBiasBlend Engine.Default__MaterialExpressionDepthBiasBlend")); }
 	@property final
 	{
 		auto ref

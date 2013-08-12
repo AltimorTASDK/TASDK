@@ -10,6 +10,8 @@ extern(C++) interface DecalManager : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DecalManager")); }
+	private static __gshared DecalManager mDefaultProperties;
+	@property final static DecalManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DecalManager)("DecalManager Engine.Default__DecalManager")); }
 	static struct Functions
 	{
 		private static __gshared

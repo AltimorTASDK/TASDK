@@ -8,6 +8,8 @@ extern(C++) interface DMC_Prototype : K2GraphBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DMC_Prototype")); }
+	private static __gshared DMC_Prototype mDefaultProperties;
+	@property final static DMC_Prototype DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DMC_Prototype)("DMC_Prototype Engine.Default__DMC_Prototype")); }
 	struct DMCNewVar
 	{
 		private ubyte __buffer__[16];

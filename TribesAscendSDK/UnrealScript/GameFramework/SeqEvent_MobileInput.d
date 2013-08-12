@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_MobileInput : SeqEvent_MobileZoneBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileInput")); }
+	private static __gshared SeqEvent_MobileInput mDefaultProperties;
+	@property final static SeqEvent_MobileInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileInput)("SeqEvent_MobileInput GameFramework.Default__SeqEvent_MobileInput")); }
 	@property final auto ref
 	{
 		float CurrentY() { return *cast(float*)(cast(size_t)cast(void*)this + 288); }

@@ -12,6 +12,8 @@ extern(C++) interface PortalTeleporter : SceneCapturePortalActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PortalTeleporter")); }
+	private static __gshared PortalTeleporter mDefaultProperties;
+	@property final static PortalTeleporter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PortalTeleporter)("PortalTeleporter Engine.Default__PortalTeleporter")); }
 	static struct Functions
 	{
 		private static __gshared

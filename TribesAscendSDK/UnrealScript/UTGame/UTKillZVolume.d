@@ -10,6 +10,8 @@ extern(C++) interface UTKillZVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillZVolume")); }
+	private static __gshared UTKillZVolume mDefaultProperties;
+	@property final static UTKillZVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillZVolume)("UTKillZVolume UTGame.Default__UTKillZVolume")); }
 	static struct Functions
 	{
 		private static __gshared

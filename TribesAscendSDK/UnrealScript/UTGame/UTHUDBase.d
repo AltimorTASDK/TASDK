@@ -16,6 +16,8 @@ extern(C++) interface UTHUDBase : UDKHUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTHUDBase")); }
+	private static __gshared UTHUDBase mDefaultProperties;
+	@property final static UTHUDBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTHUDBase)("UTHUDBase UTGame.Default__UTHUDBase")); }
 	static struct Functions
 	{
 		private static __gshared

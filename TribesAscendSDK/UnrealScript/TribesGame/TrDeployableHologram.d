@@ -9,6 +9,8 @@ extern(C++) interface TrDeployableHologram : SkeletalMeshActorSpawnable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployableHologram")); }
+	private static __gshared TrDeployableHologram mDefaultProperties;
+	@property final static TrDeployableHologram DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployableHologram)("TrDeployableHologram TribesGame.Default__TrDeployableHologram")); }
 	static struct Functions
 	{
 		private static __gshared

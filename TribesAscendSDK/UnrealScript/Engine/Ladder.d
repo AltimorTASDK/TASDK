@@ -10,6 +10,8 @@ extern(C++) interface Ladder : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Ladder")); }
+	private static __gshared Ladder mDefaultProperties;
+	@property final static Ladder DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Ladder)("Ladder Engine.Default__Ladder")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSuggestMovePreparation;

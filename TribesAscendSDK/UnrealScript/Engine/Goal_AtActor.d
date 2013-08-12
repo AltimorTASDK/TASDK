@@ -10,6 +10,8 @@ extern(C++) interface Goal_AtActor : PathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Goal_AtActor")); }
+	private static __gshared Goal_AtActor mDefaultProperties;
+	@property final static Goal_AtActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Goal_AtActor)("Goal_AtActor Engine.Default__Goal_AtActor")); }
 	static struct Functions
 	{
 		private static __gshared

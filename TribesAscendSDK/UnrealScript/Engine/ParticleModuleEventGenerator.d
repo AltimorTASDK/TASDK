@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleEventGenerator : ParticleModuleEventBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleEventGenerator")); }
+	private static __gshared ParticleModuleEventGenerator mDefaultProperties;
+	@property final static ParticleModuleEventGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleEventGenerator)("ParticleModuleEventGenerator Engine.Default__ParticleModuleEventGenerator")); }
 	struct ParticleEvent_GenerateInfo
 	{
 		private ubyte __buffer__[40];

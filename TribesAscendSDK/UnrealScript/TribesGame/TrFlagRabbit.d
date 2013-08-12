@@ -9,6 +9,8 @@ extern(C++) interface TrFlagRabbit : TrFlagBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagRabbit")); }
+	private static __gshared TrFlagRabbit mDefaultProperties;
+	@property final static TrFlagRabbit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagRabbit)("TrFlagRabbit TribesGame.Default__TrFlagRabbit")); }
 	static struct Functions
 	{
 		private static __gshared

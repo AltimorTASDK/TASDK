@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleUberLTISIVCLIL : ParticleModuleUberBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleUberLTISIVCLIL")); }
+	private static __gshared ParticleModuleUberLTISIVCLIL mDefaultProperties;
+	@property final static ParticleModuleUberLTISIVCLIL DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleUberLTISIVCLIL)("ParticleModuleUberLTISIVCLIL Engine.Default__ParticleModuleUberLTISIVCLIL")); }
 	@property final auto ref
 	{
 		DistributionVector.RawDistributionVector StartLocation() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 252); }

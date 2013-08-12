@@ -11,6 +11,8 @@ extern(C++) interface NavMeshGoal_At : NavMeshPathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_At")); }
+	private static __gshared NavMeshGoal_At mDefaultProperties;
+	@property final static NavMeshGoal_At DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_At)("NavMeshGoal_At Engine.Default__NavMeshGoal_At")); }
 	static struct Functions
 	{
 		private static __gshared

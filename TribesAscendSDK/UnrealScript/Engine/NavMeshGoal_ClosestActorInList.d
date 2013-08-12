@@ -10,6 +10,8 @@ extern(C++) interface NavMeshGoal_ClosestActorInList : NavMeshPathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_ClosestActorInList")); }
+	private static __gshared NavMeshGoal_ClosestActorInList mDefaultProperties;
+	@property final static NavMeshGoal_ClosestActorInList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_ClosestActorInList)("NavMeshGoal_ClosestActorInList Engine.Default__NavMeshGoal_ClosestActorInList")); }
 	static struct Functions
 	{
 		private static __gshared

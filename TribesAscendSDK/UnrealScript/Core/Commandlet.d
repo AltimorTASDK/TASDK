@@ -8,6 +8,8 @@ extern(C++) interface Commandlet : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.Commandlet")); }
+	private static __gshared Commandlet mDefaultProperties;
+	@property final static Commandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Commandlet)("Commandlet Core.Default__Commandlet")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMain;

@@ -12,6 +12,8 @@ extern(C++) interface UTBeamWeapon : UTWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTBeamWeapon")); }
+	private static __gshared UTBeamWeapon mDefaultProperties;
+	@property final static UTBeamWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTBeamWeapon)("UTBeamWeapon UTGame.Default__UTBeamWeapon")); }
 	static struct Functions
 	{
 		private static __gshared

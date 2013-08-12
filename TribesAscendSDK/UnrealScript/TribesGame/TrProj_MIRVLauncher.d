@@ -9,6 +9,8 @@ extern(C++) interface TrProj_MIRVLauncher : TrProj_Grenade
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_MIRVLauncher")); }
+	private static __gshared TrProj_MIRVLauncher mDefaultProperties;
+	@property final static TrProj_MIRVLauncher DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_MIRVLauncher)("TrProj_MIRVLauncher TribesGame.Default__TrProj_MIRVLauncher")); }
 	static struct Functions
 	{
 		private static __gshared

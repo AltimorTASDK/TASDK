@@ -10,6 +10,8 @@ extern(C++) interface TrControlSettings : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrControlSettings")); }
+	private static __gshared TrControlSettings mDefaultProperties;
+	@property final static TrControlSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrControlSettings)("TrControlSettings TribesGame.Default__TrControlSettings")); }
 	static struct Functions
 	{
 		private static __gshared

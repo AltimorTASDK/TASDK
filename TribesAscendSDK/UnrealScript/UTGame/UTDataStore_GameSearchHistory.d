@@ -10,6 +10,8 @@ extern(C++) interface UTDataStore_GameSearchHistory : UTDataStore_GameSearchPers
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDataStore_GameSearchHistory")); }
+	private static __gshared UTDataStore_GameSearchHistory mDefaultProperties;
+	@property final static UTDataStore_GameSearchHistory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDataStore_GameSearchHistory)("UTDataStore_GameSearchHistory UTGame.Default__UTDataStore_GameSearchHistory")); }
 	static struct Functions
 	{
 		private static __gshared

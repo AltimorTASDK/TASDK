@@ -11,6 +11,8 @@ extern(C++) interface AITree : K2GraphBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AITree")); }
+	private static __gshared AITree mDefaultProperties;
+	@property final static AITree DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AITree)("AITree Engine.Default__AITree")); }
 	static struct Functions
 	{
 		private static __gshared

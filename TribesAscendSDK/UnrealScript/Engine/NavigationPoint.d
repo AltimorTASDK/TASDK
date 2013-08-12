@@ -13,6 +13,8 @@ extern(C++) interface NavigationPoint : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavigationPoint")); }
+	private static __gshared NavigationPoint mDefaultProperties;
+	@property final static NavigationPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavigationPoint)("NavigationPoint Engine.Default__NavigationPoint")); }
 	static struct Functions
 	{
 		private static __gshared

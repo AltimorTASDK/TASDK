@@ -16,6 +16,8 @@ extern(C++) interface UTTeamAI : UDKTeamOwnedInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamAI")); }
+	private static __gshared UTTeamAI mDefaultProperties;
+	@property final static UTTeamAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamAI)("UTTeamAI UTGame.Default__UTTeamAI")); }
 	static struct Functions
 	{
 		private static __gshared

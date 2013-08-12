@@ -16,6 +16,8 @@ extern(C++) interface PhysicsVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicsVolume")); }
+	private static __gshared PhysicsVolume mDefaultProperties;
+	@property final static PhysicsVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysicsVolume)("PhysicsVolume Engine.Default__PhysicsVolume")); }
 	static struct Functions
 	{
 		private static __gshared

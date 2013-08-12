@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_CantileverBeam : SkelControlLookAt
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_CantileverBeam")); }
+	private static __gshared UDKSkelControl_CantileverBeam mDefaultProperties;
+	@property final static UDKSkelControl_CantileverBeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_CantileverBeam)("UDKSkelControl_CantileverBeam UDKBase.Default__UDKSkelControl_CantileverBeam")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mEntireBeamVelocity;

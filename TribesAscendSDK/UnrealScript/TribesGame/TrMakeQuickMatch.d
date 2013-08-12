@@ -14,6 +14,8 @@ extern(C++) interface TrMakeQuickMatch : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMakeQuickMatch")); }
+	private static __gshared TrMakeQuickMatch mDefaultProperties;
+	@property final static TrMakeQuickMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMakeQuickMatch)("TrMakeQuickMatch TribesGame.Default__TrMakeQuickMatch")); }
 	static struct Functions
 	{
 		private static __gshared

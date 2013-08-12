@@ -9,6 +9,8 @@ extern(C++) interface GameCrowdReplicationActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdReplicationActor")); }
+	private static __gshared GameCrowdReplicationActor mDefaultProperties;
+	@property final static GameCrowdReplicationActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdReplicationActor)("GameCrowdReplicationActor GameFramework.Default__GameCrowdReplicationActor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mReplicatedEvent;

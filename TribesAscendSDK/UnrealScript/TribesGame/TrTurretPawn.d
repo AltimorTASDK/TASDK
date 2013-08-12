@@ -14,6 +14,8 @@ extern(C++) interface TrTurretPawn : TrPawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTurretPawn")); }
+	private static __gshared TrTurretPawn mDefaultProperties;
+	@property final static TrTurretPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTurretPawn)("TrTurretPawn TribesGame.Default__TrTurretPawn")); }
 	static struct Functions
 	{
 		private static __gshared

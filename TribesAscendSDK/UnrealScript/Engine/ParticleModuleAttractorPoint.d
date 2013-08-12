@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleAttractorPoint : ParticleModuleAttractorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAttractorPoint")); }
+	private static __gshared ParticleModuleAttractorPoint mDefaultProperties;
+	@property final static ParticleModuleAttractorPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleAttractorPoint)("ParticleModuleAttractorPoint Engine.Default__ParticleModuleAttractorPoint")); }
 	@property final
 	{
 		auto ref

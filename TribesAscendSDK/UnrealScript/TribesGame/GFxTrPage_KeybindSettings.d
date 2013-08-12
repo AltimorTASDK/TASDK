@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_KeybindSettings : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_KeybindSettings")); }
+	private static __gshared GFxTrPage_KeybindSettings mDefaultProperties;
+	@property final static GFxTrPage_KeybindSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_KeybindSettings)("GFxTrPage_KeybindSettings TribesGame.Default__GFxTrPage_KeybindSettings")); }
 	static struct Functions
 	{
 		private static __gshared

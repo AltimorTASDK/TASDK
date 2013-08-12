@@ -10,6 +10,8 @@ extern(C++) interface TrDevice_Twinfusor : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Twinfusor")); }
+	private static __gshared TrDevice_Twinfusor mDefaultProperties;
+	@property final static TrDevice_Twinfusor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Twinfusor)("TrDevice_Twinfusor TribesGame.Default__TrDevice_Twinfusor")); }
 	static struct Functions
 	{
 		private static __gshared

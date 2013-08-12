@@ -30,6 +30,8 @@ extern(C++) interface UTWeapon : UDKWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeapon")); }
+	private static __gshared UTWeapon mDefaultProperties;
+	@property final static UTWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeapon)("UTWeapon UTGame.Default__UTWeapon")); }
 	static struct Functions
 	{
 		private static __gshared

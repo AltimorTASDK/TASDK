@@ -9,6 +9,8 @@ extern(C++) interface SoundNodeModulator : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeModulator")); }
+	private static __gshared SoundNodeModulator mDefaultProperties;
+	@property final static SoundNodeModulator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeModulator)("SoundNodeModulator Engine.Default__SoundNodeModulator")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat VolumeModulation() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 120); }

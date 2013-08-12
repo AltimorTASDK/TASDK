@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_SetVector : SeqAct_SetSequenceVariable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetVector")); }
+	private static __gshared SeqAct_SetVector mDefaultProperties;
+	@property final static SeqAct_SetVector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetVector)("SeqAct_SetVector Engine.Default__SeqAct_SetVector")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

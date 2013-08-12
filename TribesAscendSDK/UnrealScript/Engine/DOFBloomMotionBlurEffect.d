@@ -8,6 +8,8 @@ extern(C++) interface DOFBloomMotionBlurEffect : DOFAndBloomEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DOFBloomMotionBlurEffect")); }
+	private static __gshared DOFBloomMotionBlurEffect mDefaultProperties;
+	@property final static DOFBloomMotionBlurEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DOFBloomMotionBlurEffect)("DOFBloomMotionBlurEffect Engine.Default__DOFBloomMotionBlurEffect")); }
 	@property final
 	{
 		auto ref

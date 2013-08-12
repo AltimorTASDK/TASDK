@@ -9,6 +9,8 @@ extern(C++) interface DistributionFloat : Component
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.DistributionFloat")); }
+	private static __gshared DistributionFloat mDefaultProperties;
+	@property final static DistributionFloat DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionFloat)("DistributionFloat Core.Default__DistributionFloat")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetFloatValue;

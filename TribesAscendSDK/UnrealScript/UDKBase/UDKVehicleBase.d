@@ -11,6 +11,8 @@ extern(C++) interface UDKVehicleBase : SVehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleBase")); }
+	private static __gshared UDKVehicleBase mDefaultProperties;
+	@property final static UDKVehicleBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleBase)("UDKVehicleBase UDKBase.Default__UDKVehicleBase")); }
 	static struct Functions
 	{
 		private static __gshared

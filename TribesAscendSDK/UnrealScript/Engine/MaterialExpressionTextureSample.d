@@ -9,6 +9,8 @@ extern(C++) interface MaterialExpressionTextureSample : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureSample")); }
+	private static __gshared MaterialExpressionTextureSample mDefaultProperties;
+	@property final static MaterialExpressionTextureSample DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureSample)("MaterialExpressionTextureSample Engine.Default__MaterialExpressionTextureSample")); }
 	@property final auto ref
 	{
 		MaterialExpression.ExpressionInput Coordinates() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 112); }

@@ -9,6 +9,8 @@ extern(C++) interface PostProcessChain : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PostProcessChain")); }
+	private static __gshared PostProcessChain mDefaultProperties;
+	@property final static PostProcessChain DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PostProcessChain)("PostProcessChain Engine.Default__PostProcessChain")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFindPostProcessEffect;

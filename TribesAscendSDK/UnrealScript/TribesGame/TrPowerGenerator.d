@@ -16,6 +16,8 @@ extern(C++) interface TrPowerGenerator : TrGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPowerGenerator")); }
+	private static __gshared TrPowerGenerator mDefaultProperties;
+	@property final static TrPowerGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPowerGenerator)("TrPowerGenerator TribesGame.Default__TrPowerGenerator")); }
 	static struct Functions
 	{
 		private static __gshared

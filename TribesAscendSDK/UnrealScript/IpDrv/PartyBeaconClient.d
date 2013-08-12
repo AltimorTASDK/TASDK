@@ -11,6 +11,8 @@ extern(C++) interface PartyBeaconClient : PartyBeacon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.PartyBeaconClient")); }
+	private static __gshared PartyBeaconClient mDefaultProperties;
+	@property final static PartyBeaconClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PartyBeaconClient)("PartyBeaconClient IpDrv.Default__PartyBeaconClient")); }
 	static struct Functions
 	{
 		private static __gshared

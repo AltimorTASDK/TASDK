@@ -9,6 +9,8 @@ extern(C++) interface BlockingVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BlockingVolume")); }
+	private static __gshared BlockingVolume mDefaultProperties;
+	@property final static BlockingVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(BlockingVolume)("BlockingVolume Engine.Default__BlockingVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

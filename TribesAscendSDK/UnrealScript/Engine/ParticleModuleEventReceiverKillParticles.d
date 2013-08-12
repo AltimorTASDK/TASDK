@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleEventReceiverKillParticles : ParticleModuleE
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleEventReceiverKillParticles")); }
+	private static __gshared ParticleModuleEventReceiverKillParticles mDefaultProperties;
+	@property final static ParticleModuleEventReceiverKillParticles DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleEventReceiverKillParticles)("ParticleModuleEventReceiverKillParticles Engine.Default__ParticleModuleEventReceiverKillParticles")); }
 	@property final
 	{
 		bool bStopSpawning() { return (*cast(uint*)(cast(size_t)cast(void*)this + 84) & 0x1) != 0; }

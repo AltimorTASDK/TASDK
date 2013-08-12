@@ -8,6 +8,8 @@ extern(C++) interface PointLightToggleable : PointLight
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PointLightToggleable")); }
+	private static __gshared PointLightToggleable mDefaultProperties;
+	@property final static PointLightToggleable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PointLightToggleable)("PointLightToggleable Engine.Default__PointLightToggleable")); }
 	static struct Functions
 	{
 		private static __gshared

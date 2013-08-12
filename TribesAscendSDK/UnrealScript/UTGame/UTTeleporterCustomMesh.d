@@ -11,6 +11,8 @@ extern(C++) interface UTTeleporterCustomMesh : Teleporter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeleporterCustomMesh")); }
+	private static __gshared UTTeleporterCustomMesh mDefaultProperties;
+	@property final static UTTeleporterCustomMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeleporterCustomMesh)("UTTeleporterCustomMesh UTGame.Default__UTTeleporterCustomMesh")); }
 	static struct Functions
 	{
 		private static __gshared

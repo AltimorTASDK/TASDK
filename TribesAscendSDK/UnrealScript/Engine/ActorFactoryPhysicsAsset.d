@@ -10,6 +10,8 @@ extern(C++) interface ActorFactoryPhysicsAsset : ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryPhysicsAsset")); }
+	private static __gshared ActorFactoryPhysicsAsset mDefaultProperties;
+	@property final static ActorFactoryPhysicsAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryPhysicsAsset)("ActorFactoryPhysicsAsset Engine.Default__ActorFactoryPhysicsAsset")); }
 	@property final
 	{
 		auto ref

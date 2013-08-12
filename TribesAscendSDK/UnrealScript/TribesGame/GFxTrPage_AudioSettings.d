@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_AudioSettings : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_AudioSettings")); }
+	private static __gshared GFxTrPage_AudioSettings mDefaultProperties;
+	@property final static GFxTrPage_AudioSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_AudioSettings)("GFxTrPage_AudioSettings TribesGame.Default__GFxTrPage_AudioSettings")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface GameCrowdBehavior_PlayAnimation : GameCrowdAgentBehavior
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_PlayAnimation")); }
+	private static __gshared GameCrowdBehavior_PlayAnimation mDefaultProperties;
+	@property final static GameCrowdBehavior_PlayAnimation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdBehavior_PlayAnimation)("GameCrowdBehavior_PlayAnimation GameFramework.Default__GameCrowdBehavior_PlayAnimation")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface AICommandNodeBase : K2NodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AICommandNodeBase")); }
+	private static __gshared AICommandNodeBase mDefaultProperties;
+	@property final static AICommandNodeBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AICommandNodeBase)("AICommandNodeBase Engine.Default__AICommandNodeBase")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSelectBestChild;

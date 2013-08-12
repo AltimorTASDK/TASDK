@@ -14,6 +14,8 @@ extern(C++) interface UTCarriedObjectMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCarriedObjectMessage")); }
+	private static __gshared UTCarriedObjectMessage mDefaultProperties;
+	@property final static UTCarriedObjectMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCarriedObjectMessage)("UTCarriedObjectMessage UTGame.Default__UTCarriedObjectMessage")); }
 	static struct Functions
 	{
 		private static __gshared

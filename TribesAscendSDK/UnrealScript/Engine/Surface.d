@@ -8,6 +8,8 @@ extern(C++) interface Surface : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Surface")); }
+	private static __gshared Surface mDefaultProperties;
+	@property final static Surface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Surface)("Surface Engine.Default__Surface")); }
 	static struct Functions
 	{
 		private static __gshared

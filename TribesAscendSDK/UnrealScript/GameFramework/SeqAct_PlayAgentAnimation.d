@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_PlayAgentAnimation : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_PlayAgentAnimation")); }
+	private static __gshared SeqAct_PlayAgentAnimation mDefaultProperties;
+	@property final static SeqAct_PlayAgentAnimation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlayAgentAnimation)("SeqAct_PlayAgentAnimation GameFramework.Default__SeqAct_PlayAgentAnimation")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface MeshComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MeshComponent")); }
+	private static __gshared MeshComponent mDefaultProperties;
+	@property final static MeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MeshComponent)("MeshComponent Engine.Default__MeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface TgStructures : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgStructures")); }
+	private static __gshared TgStructures mDefaultProperties;
+	@property final static TgStructures DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgStructures)("TgStructures PlatformCommon.Default__TgStructures")); }
 	enum CMTargetType : ubyte
 	{
 		CMTT_Pawn = 0,

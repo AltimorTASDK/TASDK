@@ -13,6 +13,8 @@ extern(C++) interface InterpActor : DynamicSMActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpActor")); }
+	private static __gshared InterpActor mDefaultProperties;
+	@property final static InterpActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpActor)("InterpActor Engine.Default__InterpActor")); }
 	static struct Functions
 	{
 		private static __gshared

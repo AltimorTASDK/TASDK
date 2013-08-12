@@ -12,6 +12,8 @@ extern(C++) interface UTVehicleMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleMessage")); }
+	private static __gshared UTVehicleMessage mDefaultProperties;
+	@property final static UTVehicleMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleMessage)("UTVehicleMessage UTGame.Default__UTVehicleMessage")); }
 	static struct Functions
 	{
 		private static __gshared

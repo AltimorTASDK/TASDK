@@ -9,6 +9,8 @@ extern(C++) interface UDKVehicleFactory : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleFactory")); }
+	private static __gshared UDKVehicleFactory mDefaultProperties;
+	@property final static UDKVehicleFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleFactory)("UDKVehicleFactory UDKBase.Default__UDKVehicleFactory")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface RB_BodyInstance : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_BodyInstance")); }
+	private static __gshared RB_BodyInstance mDefaultProperties;
+	@property final static RB_BodyInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_BodyInstance)("RB_BodyInstance Engine.Default__RB_BodyInstance")); }
 	static struct Functions
 	{
 		private static __gshared

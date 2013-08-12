@@ -9,6 +9,8 @@ extern(C++) interface AnimNodePlayCustomAnim : AnimNodeBlend
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodePlayCustomAnim")); }
+	private static __gshared AnimNodePlayCustomAnim mDefaultProperties;
+	@property final static AnimNodePlayCustomAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodePlayCustomAnim)("AnimNodePlayCustomAnim Engine.Default__AnimNodePlayCustomAnim")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_SetMotionBlurParams : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetMotionBlurParams")); }
+	private static __gshared SeqAct_SetMotionBlurParams mDefaultProperties;
+	@property final static SeqAct_SetMotionBlurParams DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetMotionBlurParams)("SeqAct_SetMotionBlurParams Engine.Default__SeqAct_SetMotionBlurParams")); }
 	@property final auto ref
 	{
 		float OldMotionBlurAmount() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }

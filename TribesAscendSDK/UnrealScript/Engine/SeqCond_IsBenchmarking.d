@@ -8,6 +8,8 @@ extern(C++) interface SeqCond_IsBenchmarking : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_IsBenchmarking")); }
+	private static __gshared SeqCond_IsBenchmarking mDefaultProperties;
+	@property final static SeqCond_IsBenchmarking DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_IsBenchmarking)("SeqCond_IsBenchmarking Engine.Default__SeqCond_IsBenchmarking")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

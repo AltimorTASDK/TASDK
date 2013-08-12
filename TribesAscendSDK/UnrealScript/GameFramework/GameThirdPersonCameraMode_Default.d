@@ -8,6 +8,8 @@ extern(C++) interface GameThirdPersonCameraMode_Default : GameThirdPersonCameraM
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameThirdPersonCameraMode_Default")); }
+	private static __gshared GameThirdPersonCameraMode_Default mDefaultProperties;
+	@property final static GameThirdPersonCameraMode_Default DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameThirdPersonCameraMode_Default)("GameThirdPersonCameraMode_Default GameFramework.Default__GameThirdPersonCameraMode_Default")); }
 	@property final
 	{
 		auto ref

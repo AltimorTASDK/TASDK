@@ -9,6 +9,8 @@ extern(C++) interface UIDataStore_InputAlias : UIDataStore_StringBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_InputAlias")); }
+	private static __gshared UIDataStore_InputAlias mDefaultProperties;
+	@property final static UIDataStore_InputAlias DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_InputAlias)("UIDataStore_InputAlias Engine.Default__UIDataStore_InputAlias")); }
 	static struct Functions
 	{
 		private static __gshared

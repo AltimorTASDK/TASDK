@@ -10,6 +10,8 @@ extern(C++) interface TrLockWarningMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrLockWarningMessage")); }
+	private static __gshared TrLockWarningMessage mDefaultProperties;
+	@property final static TrLockWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrLockWarningMessage)("TrLockWarningMessage TribesGame.Default__TrLockWarningMessage")); }
 	static struct Functions
 	{
 		private static __gshared

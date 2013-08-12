@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_SetDOFParams : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetDOFParams")); }
+	private static __gshared SeqAct_SetDOFParams mDefaultProperties;
+	@property final static SeqAct_SetDOFParams DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetDOFParams)("SeqAct_SetDOFParams Engine.Default__SeqAct_SetDOFParams")); }
 	@property final auto ref
 	{
 		Vector OldFocusPosition() { return *cast(Vector*)(cast(size_t)cast(void*)this + 332); }

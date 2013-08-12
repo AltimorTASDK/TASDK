@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_NotificationSettings : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_NotificationSettings")); }
+	private static __gshared GFxTrPage_NotificationSettings mDefaultProperties;
+	@property final static GFxTrPage_NotificationSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_NotificationSettings)("GFxTrPage_NotificationSettings TribesGame.Default__GFxTrPage_NotificationSettings")); }
 	static struct Functions
 	{
 		private static __gshared

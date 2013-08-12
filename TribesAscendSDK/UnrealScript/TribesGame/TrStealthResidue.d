@@ -9,6 +9,8 @@ extern(C++) interface TrStealthResidue : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStealthResidue")); }
+	private static __gshared TrStealthResidue mDefaultProperties;
+	@property final static TrStealthResidue DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStealthResidue)("TrStealthResidue TribesGame.Default__TrStealthResidue")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreBeginPlay;

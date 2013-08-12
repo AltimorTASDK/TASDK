@@ -9,6 +9,8 @@ extern(C++) interface TextureFlipBook : Texture2D
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureFlipBook")); }
+	private static __gshared TextureFlipBook mDefaultProperties;
+	@property final static TextureFlipBook DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureFlipBook)("TextureFlipBook Engine.Default__TextureFlipBook")); }
 	static struct Functions
 	{
 		private static __gshared

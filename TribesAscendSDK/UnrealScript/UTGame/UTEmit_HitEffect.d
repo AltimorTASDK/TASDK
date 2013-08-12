@@ -9,6 +9,8 @@ extern(C++) interface UTEmit_HitEffect : UTEmitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEmit_HitEffect")); }
+	private static __gshared UTEmit_HitEffect mDefaultProperties;
+	@property final static UTEmit_HitEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTEmit_HitEffect)("UTEmit_HitEffect UTGame.Default__UTEmit_HitEffect")); }
 	static struct Functions
 	{
 		private static __gshared

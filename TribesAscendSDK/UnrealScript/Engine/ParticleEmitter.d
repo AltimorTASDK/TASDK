@@ -9,6 +9,8 @@ extern(C++) interface ParticleEmitter : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleEmitter")); }
+	private static __gshared ParticleEmitter mDefaultProperties;
+	@property final static ParticleEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleEmitter)("ParticleEmitter Engine.Default__ParticleEmitter")); }
 	enum EEmitterRenderMode : ubyte
 	{
 		ERM_Normal = 0,

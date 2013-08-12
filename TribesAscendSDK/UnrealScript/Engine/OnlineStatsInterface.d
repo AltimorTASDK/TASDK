@@ -11,6 +11,8 @@ extern(C++) interface OnlineStatsInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStatsInterface")); }
+	private static __gshared OnlineStatsInterface mDefaultProperties;
+	@property final static OnlineStatsInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStatsInterface)("OnlineStatsInterface Engine.Default__OnlineStatsInterface")); }
 	static struct Functions
 	{
 		private static __gshared

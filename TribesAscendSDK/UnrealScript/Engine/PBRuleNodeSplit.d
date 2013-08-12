@@ -9,6 +9,8 @@ extern(C++) interface PBRuleNodeSplit : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeSplit")); }
+	private static __gshared PBRuleNodeSplit mDefaultProperties;
+	@property final static PBRuleNodeSplit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeSplit)("PBRuleNodeSplit Engine.Default__PBRuleNodeSplit")); }
 	struct RBSplitInfo
 	{
 		private ubyte __buffer__[20];

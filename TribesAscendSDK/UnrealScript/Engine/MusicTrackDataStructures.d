@@ -9,6 +9,8 @@ extern(C++) interface MusicTrackDataStructures : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MusicTrackDataStructures")); }
+	private static __gshared MusicTrackDataStructures mDefaultProperties;
+	@property final static MusicTrackDataStructures DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MusicTrackDataStructures)("MusicTrackDataStructures Engine.Default__MusicTrackDataStructures")); }
 	struct MusicTrackStruct
 	{
 		private ubyte __buffer__[36];

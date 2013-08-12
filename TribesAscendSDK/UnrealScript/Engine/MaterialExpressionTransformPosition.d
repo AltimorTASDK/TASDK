@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionTransformPosition : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTransformPosition")); }
+	private static __gshared MaterialExpressionTransformPosition mDefaultProperties;
+	@property final static MaterialExpressionTransformPosition DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTransformPosition)("MaterialExpressionTransformPosition Engine.Default__MaterialExpressionTransformPosition")); }
 	enum EMaterialPositionTransform : ubyte
 	{
 		TRANSFORMPOS_World = 0,

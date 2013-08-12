@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_Teleport : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Teleport")); }
+	private static __gshared SeqAct_Teleport mDefaultProperties;
+	@property final static SeqAct_Teleport DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Teleport)("SeqAct_Teleport Engine.Default__SeqAct_Teleport")); }
 	static struct Functions
 	{
 		private static __gshared

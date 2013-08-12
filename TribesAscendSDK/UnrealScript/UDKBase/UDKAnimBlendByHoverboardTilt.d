@@ -8,6 +8,8 @@ extern(C++) interface UDKAnimBlendByHoverboardTilt : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByHoverboardTilt")); }
+	private static __gshared UDKAnimBlendByHoverboardTilt mDefaultProperties;
+	@property final static UDKAnimBlendByHoverboardTilt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByHoverboardTilt)("UDKAnimBlendByHoverboardTilt UDKBase.Default__UDKAnimBlendByHoverboardTilt")); }
 	@property final auto ref
 	{
 		ScriptName UpperBodyName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 268); }

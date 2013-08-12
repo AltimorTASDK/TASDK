@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_ParticleEvent : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_ParticleEvent")); }
+	private static __gshared SeqEvent_ParticleEvent mDefaultProperties;
+	@property final static SeqEvent_ParticleEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_ParticleEvent)("SeqEvent_ParticleEvent Engine.Default__SeqEvent_ParticleEvent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

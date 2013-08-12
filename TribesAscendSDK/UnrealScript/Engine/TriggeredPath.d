@@ -11,6 +11,8 @@ extern(C++) interface TriggeredPath : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggeredPath")); }
+	private static __gshared TriggeredPath mDefaultProperties;
+	@property final static TriggeredPath DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TriggeredPath)("TriggeredPath Engine.Default__TriggeredPath")); }
 	static struct Functions
 	{
 		private static __gshared

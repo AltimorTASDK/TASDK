@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_RemoteEvent : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_RemoteEvent")); }
+	private static __gshared SeqEvent_RemoteEvent mDefaultProperties;
+	@property final static SeqEvent_RemoteEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_RemoteEvent)("SeqEvent_RemoteEvent Engine.Default__SeqEvent_RemoteEvent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

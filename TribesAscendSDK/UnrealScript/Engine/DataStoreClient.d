@@ -10,6 +10,8 @@ extern(C++) interface DataStoreClient : UIRoot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DataStoreClient")); }
+	private static __gshared DataStoreClient mDefaultProperties;
+	@property final static DataStoreClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DataStoreClient)("DataStoreClient Engine.Default__DataStoreClient")); }
 	static struct Functions
 	{
 		private static __gshared

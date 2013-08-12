@@ -8,6 +8,8 @@ extern(C++) interface MultiFont : Font
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MultiFont")); }
+	private static __gshared MultiFont mDefaultProperties;
+	@property final static MultiFont DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MultiFont)("MultiFont Engine.Default__MultiFont")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetResolutionTestTableIndex;

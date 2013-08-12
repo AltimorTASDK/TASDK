@@ -10,6 +10,8 @@ extern(C++) interface NavMeshObstacle : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshObstacle")); }
+	private static __gshared NavMeshObstacle mDefaultProperties;
+	@property final static NavMeshObstacle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshObstacle)("NavMeshObstacle Engine.Default__NavMeshObstacle")); }
 	static struct Functions
 	{
 		private static __gshared

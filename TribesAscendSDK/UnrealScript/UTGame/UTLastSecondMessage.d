@@ -11,6 +11,8 @@ extern(C++) interface UTLastSecondMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLastSecondMessage")); }
+	private static __gshared UTLastSecondMessage mDefaultProperties;
+	@property final static UTLastSecondMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLastSecondMessage)("UTLastSecondMessage UTGame.Default__UTLastSecondMessage")); }
 	static struct Functions
 	{
 		private static __gshared

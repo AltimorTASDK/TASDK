@@ -9,6 +9,8 @@ extern(C++) interface NxForceFieldSpawnable : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldSpawnable")); }
+	private static __gshared NxForceFieldSpawnable mDefaultProperties;
+	@property final static NxForceFieldSpawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldSpawnable)("NxForceFieldSpawnable Engine.Default__NxForceFieldSpawnable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

@@ -10,6 +10,8 @@ extern(C++) interface TrProj_Claymore : TrProj_Mine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Claymore")); }
+	private static __gshared TrProj_Claymore mDefaultProperties;
+	@property final static TrProj_Claymore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Claymore)("TrProj_Claymore TribesGame.Default__TrProj_Claymore")); }
 	static struct Functions
 	{
 		private static __gshared

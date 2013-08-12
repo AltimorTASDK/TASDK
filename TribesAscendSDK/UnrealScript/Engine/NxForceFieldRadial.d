@@ -11,6 +11,8 @@ extern(C++) interface NxForceFieldRadial : NxForceField
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldRadial")); }
+	private static __gshared NxForceFieldRadial mDefaultProperties;
+	@property final static NxForceFieldRadial DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldRadial)("NxForceFieldRadial Engine.Default__NxForceFieldRadial")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;

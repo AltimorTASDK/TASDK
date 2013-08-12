@@ -8,6 +8,8 @@ extern(C++) interface TrChatConsoleCommands : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatConsoleCommands")); }
+	private static __gshared TrChatConsoleCommands mDefaultProperties;
+	@property final static TrChatConsoleCommands DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrChatConsoleCommands)("TrChatConsoleCommands TribesGame.Default__TrChatConsoleCommands")); }
 	static struct Functions
 	{
 		private static __gshared

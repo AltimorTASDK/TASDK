@@ -11,6 +11,8 @@ extern(C++) interface GameSpecialMove : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameSpecialMove")); }
+	private static __gshared GameSpecialMove mDefaultProperties;
+	@property final static GameSpecialMove DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameSpecialMove)("GameSpecialMove GameFramework.Default__GameSpecialMove")); }
 	static struct Functions
 	{
 		private static __gshared

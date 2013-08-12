@@ -11,6 +11,8 @@ extern(C++) interface UDKForcedDirectionVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKForcedDirectionVolume")); }
+	private static __gshared UDKForcedDirectionVolume mDefaultProperties;
+	@property final static UDKForcedDirectionVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKForcedDirectionVolume)("UDKForcedDirectionVolume UDKBase.Default__UDKForcedDirectionVolume")); }
 	static struct Functions
 	{
 		private static __gshared

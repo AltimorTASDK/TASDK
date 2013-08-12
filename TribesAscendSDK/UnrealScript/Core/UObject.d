@@ -7,6 +7,8 @@ extern(C++) interface UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.Object")); }
+	private static __gshared UObject mDefaultProperties;
+	@property final static UObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UObject)("Object Core.Default__Object")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_Queued : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_Queued")); }
+	private static __gshared GFxTrPage_Queued mDefaultProperties;
+	@property final static GFxTrPage_Queued DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_Queued)("GFxTrPage_Queued TribesGame.Default__GFxTrPage_Queued")); }
 	static struct Functions
 	{
 		private static __gshared

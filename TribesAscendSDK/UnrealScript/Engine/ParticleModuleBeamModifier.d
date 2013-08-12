@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleBeamModifier : ParticleModuleBeamBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamModifier")); }
+	private static __gshared ParticleModuleBeamModifier mDefaultProperties;
+	@property final static ParticleModuleBeamModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleBeamModifier)("ParticleModuleBeamModifier Engine.Default__ParticleModuleBeamModifier")); }
 	enum BeamModifierType : ubyte
 	{
 		PEB2MT_Source = 0,

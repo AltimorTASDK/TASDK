@@ -8,6 +8,8 @@ extern(C++) interface SwfMovie : GFxRawData
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.SwfMovie")); }
+	private static __gshared SwfMovie mDefaultProperties;
+	@property final static SwfMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SwfMovie)("SwfMovie GFxUI.Default__SwfMovie")); }
 	enum FlashTextureRescale : ubyte
 	{
 		FlashTextureScale_High = 0,

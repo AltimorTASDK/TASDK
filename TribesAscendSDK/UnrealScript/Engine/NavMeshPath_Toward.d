@@ -10,6 +10,8 @@ extern(C++) interface NavMeshPath_Toward : NavMeshPathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_Toward")); }
+	private static __gshared NavMeshPath_Toward mDefaultProperties;
+	@property final static NavMeshPath_Toward DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_Toward)("NavMeshPath_Toward Engine.Default__NavMeshPath_Toward")); }
 	static struct Functions
 	{
 		private static __gshared

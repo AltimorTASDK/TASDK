@@ -9,6 +9,8 @@ extern(C++) interface GameStateObject : GameplayEventsHandler
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameStateObject")); }
+	private static __gshared GameStateObject mDefaultProperties;
+	@property final static GameStateObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameStateObject)("GameStateObject GameFramework.Default__GameStateObject")); }
 	static struct Functions
 	{
 		private static __gshared

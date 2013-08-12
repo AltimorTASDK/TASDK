@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleTypeDataPhysX : ParticleModuleTypeDataBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataPhysX")); }
+	private static __gshared ParticleModuleTypeDataPhysX mDefaultProperties;
+	@property final static ParticleModuleTypeDataPhysX DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataPhysX)("ParticleModuleTypeDataPhysX Engine.Default__ParticleModuleTypeDataPhysX")); }
 	struct PhysXEmitterVerticalLodProperties
 	{
 		private ubyte __buffer__[16];

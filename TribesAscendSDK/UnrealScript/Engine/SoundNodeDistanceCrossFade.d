@@ -9,6 +9,8 @@ extern(C++) interface SoundNodeDistanceCrossFade : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeDistanceCrossFade")); }
+	private static __gshared SoundNodeDistanceCrossFade mDefaultProperties;
+	@property final static SoundNodeDistanceCrossFade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeDistanceCrossFade)("SoundNodeDistanceCrossFade Engine.Default__SoundNodeDistanceCrossFade")); }
 	struct DistanceDatum
 	{
 		private ubyte __buffer__[76];

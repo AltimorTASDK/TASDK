@@ -9,6 +9,8 @@ extern(C++) interface TrInventoryStationCollision : TrStationCollision
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryStationCollision")); }
+	private static __gshared TrInventoryStationCollision mDefaultProperties;
+	@property final static TrInventoryStationCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryStationCollision)("TrInventoryStationCollision TribesGame.Default__TrInventoryStationCollision")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckCanPawnUseStationNow;

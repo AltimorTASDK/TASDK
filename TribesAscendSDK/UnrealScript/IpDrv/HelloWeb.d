@@ -10,6 +10,8 @@ extern(C++) interface HelloWeb : WebApplication
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.HelloWeb")); }
+	private static __gshared HelloWeb mDefaultProperties;
+	@property final static HelloWeb DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HelloWeb)("HelloWeb IpDrv.Default__HelloWeb")); }
 	static struct Functions
 	{
 		private static __gshared

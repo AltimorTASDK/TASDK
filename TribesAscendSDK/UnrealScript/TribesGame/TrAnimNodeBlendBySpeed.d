@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeBlendBySpeed : AnimNodeBlendBySpeed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendBySpeed")); }
+	private static __gshared TrAnimNodeBlendBySpeed mDefaultProperties;
+	@property final static TrAnimNodeBlendBySpeed DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendBySpeed)("TrAnimNodeBlendBySpeed TribesGame.Default__TrAnimNodeBlendBySpeed")); }
 	@property final
 	{
 		auto ref

@@ -8,6 +8,8 @@ extern(C++) interface GFxTrScene_Social : GFxTrScene
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene_Social")); }
+	private static __gshared GFxTrScene_Social mDefaultProperties;
+	@property final static GFxTrScene_Social DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrScene_Social)("GFxTrScene_Social TribesGame.Default__GFxTrScene_Social")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;

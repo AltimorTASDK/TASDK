@@ -10,6 +10,8 @@ extern(C++) interface CoverReplicator : ReplicationInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverReplicator")); }
+	private static __gshared CoverReplicator mDefaultProperties;
+	@property final static CoverReplicator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverReplicator)("CoverReplicator Engine.Default__CoverReplicator")); }
 	static struct Functions
 	{
 		private static __gshared

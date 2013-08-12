@@ -10,6 +10,8 @@ extern(C++) interface UIDataProvider_OnlinePlayerStorageArray : UIDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlinePlayerStorageArray")); }
+	private static __gshared UIDataProvider_OnlinePlayerStorageArray mDefaultProperties;
+	@property final static UIDataProvider_OnlinePlayerStorageArray DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlinePlayerStorageArray)("UIDataProvider_OnlinePlayerStorageArray Engine.Default__UIDataProvider_OnlinePlayerStorageArray")); }
 	@property final auto ref
 	{
 		ScriptArray!(ScriptName) Values() { return *cast(ScriptArray!(ScriptName)*)(cast(size_t)cast(void*)this + 124); }

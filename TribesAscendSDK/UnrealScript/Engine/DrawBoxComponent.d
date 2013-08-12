@@ -10,6 +10,8 @@ extern(C++) interface DrawBoxComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawBoxComponent")); }
+	private static __gshared DrawBoxComponent mDefaultProperties;
+	@property final static DrawBoxComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawBoxComponent)("DrawBoxComponent Engine.Default__DrawBoxComponent")); }
 	@property final
 	{
 		auto ref

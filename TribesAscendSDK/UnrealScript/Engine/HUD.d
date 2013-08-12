@@ -14,6 +14,8 @@ extern(C++) interface HUD : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.HUD")); }
+	private static __gshared HUD mDefaultProperties;
+	@property final static HUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HUD)("HUD Engine.Default__HUD")); }
 	static struct Functions
 	{
 		private static __gshared

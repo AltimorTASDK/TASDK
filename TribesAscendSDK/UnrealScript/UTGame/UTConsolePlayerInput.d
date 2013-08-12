@@ -11,6 +11,8 @@ extern(C++) interface UTConsolePlayerInput : UTPlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTConsolePlayerInput")); }
+	private static __gshared UTConsolePlayerInput mDefaultProperties;
+	@property final static UTConsolePlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTConsolePlayerInput)("UTConsolePlayerInput UTGame.Default__UTConsolePlayerInput")); }
 	static struct Functions
 	{
 		private static __gshared

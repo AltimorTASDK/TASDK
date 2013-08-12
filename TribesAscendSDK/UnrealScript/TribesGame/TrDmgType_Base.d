@@ -16,6 +16,8 @@ extern(C++) interface TrDmgType_Base : UTDamageType
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_Base")); }
+	private static __gshared TrDmgType_Base mDefaultProperties;
+	@property final static TrDmgType_Base DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDmgType_Base)("TrDmgType_Base TribesGame.Default__TrDmgType_Base")); }
 	static struct Functions
 	{
 		private static __gshared

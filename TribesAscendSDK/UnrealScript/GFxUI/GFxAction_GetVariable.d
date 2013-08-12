@@ -9,6 +9,8 @@ extern(C++) interface GFxAction_GetVariable : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxAction_GetVariable")); }
+	private static __gshared GFxAction_GetVariable mDefaultProperties;
+	@property final static GFxAction_GetVariable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxAction_GetVariable)("GFxAction_GetVariable GFxUI.Default__GFxAction_GetVariable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsValidLevelSequenceObject;

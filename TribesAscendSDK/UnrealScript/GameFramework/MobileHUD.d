@@ -14,6 +14,8 @@ extern(C++) interface MobileHUD : HUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileHUD")); }
+	private static __gshared MobileHUD mDefaultProperties;
+	@property final static MobileHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileHUD)("MobileHUD GameFramework.Default__MobileHUD")); }
 	static struct Functions
 	{
 		private static __gshared

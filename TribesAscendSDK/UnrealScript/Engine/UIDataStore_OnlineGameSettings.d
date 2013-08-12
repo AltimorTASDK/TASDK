@@ -12,6 +12,8 @@ extern(C++) interface UIDataStore_OnlineGameSettings : UIDataStore_Settings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineGameSettings")); }
+	private static __gshared UIDataStore_OnlineGameSettings mDefaultProperties;
+	@property final static UIDataStore_OnlineGameSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlineGameSettings)("UIDataStore_OnlineGameSettings Engine.Default__UIDataStore_OnlineGameSettings")); }
 	static struct Functions
 	{
 		private static __gshared

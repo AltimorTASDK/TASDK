@@ -10,6 +10,8 @@ extern(C++) interface UDKProjectile : Projectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKProjectile")); }
+	private static __gshared UDKProjectile mDefaultProperties;
+	@property final static UDKProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKProjectile)("UDKProjectile UDKBase.Default__UDKProjectile")); }
 	static struct Functions
 	{
 		private static __gshared

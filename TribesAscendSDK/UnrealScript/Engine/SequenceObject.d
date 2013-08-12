@@ -10,6 +10,8 @@ extern(C++) interface SequenceObject : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SequenceObject")); }
+	private static __gshared SequenceObject mDefaultProperties;
+	@property final static SequenceObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SequenceObject)("SequenceObject Engine.Default__SequenceObject")); }
 	static struct Functions
 	{
 		private static __gshared

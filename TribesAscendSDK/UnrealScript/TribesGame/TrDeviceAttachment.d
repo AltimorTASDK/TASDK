@@ -19,6 +19,8 @@ extern(C++) interface TrDeviceAttachment : UTWeaponAttachment
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeviceAttachment")); }
+	private static __gshared TrDeviceAttachment mDefaultProperties;
+	@property final static TrDeviceAttachment DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeviceAttachment)("TrDeviceAttachment TribesGame.Default__TrDeviceAttachment")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface MorphTargetSet : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphTargetSet")); }
+	private static __gshared MorphTargetSet mDefaultProperties;
+	@property final static MorphTargetSet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphTargetSet)("MorphTargetSet Engine.Default__MorphTargetSet")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFindMorphTarget;

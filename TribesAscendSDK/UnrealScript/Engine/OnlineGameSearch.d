@@ -11,6 +11,8 @@ extern(C++) interface OnlineGameSearch : Settings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameSearch")); }
+	private static __gshared OnlineGameSearch mDefaultProperties;
+	@property final static OnlineGameSearch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameSearch)("OnlineGameSearch Engine.Default__OnlineGameSearch")); }
 	static struct Functions
 	{
 		private static __gshared

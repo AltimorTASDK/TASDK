@@ -11,6 +11,8 @@ extern(C++) interface GameCrowdBehavior_RunFromPanic : GameCrowdAgentBehavior
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_RunFromPanic")); }
+	private static __gshared GameCrowdBehavior_RunFromPanic mDefaultProperties;
+	@property final static GameCrowdBehavior_RunFromPanic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdBehavior_RunFromPanic)("GameCrowdBehavior_RunFromPanic GameFramework.Default__GameCrowdBehavior_RunFromPanic")); }
 	static struct Functions
 	{
 		private static __gshared

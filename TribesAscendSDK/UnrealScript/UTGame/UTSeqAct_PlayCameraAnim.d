@@ -9,6 +9,8 @@ extern(C++) interface UTSeqAct_PlayCameraAnim : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_PlayCameraAnim")); }
+	private static __gshared UTSeqAct_PlayCameraAnim mDefaultProperties;
+	@property final static UTSeqAct_PlayCameraAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_PlayCameraAnim)("UTSeqAct_PlayCameraAnim UTGame.Default__UTSeqAct_PlayCameraAnim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

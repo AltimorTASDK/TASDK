@@ -10,6 +10,8 @@ extern(C++) interface UTPowerupPickupFactory : UTPickupFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPowerupPickupFactory")); }
+	private static __gshared UTPowerupPickupFactory mDefaultProperties;
+	@property final static UTPowerupPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPowerupPickupFactory)("UTPowerupPickupFactory UTGame.Default__UTPowerupPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared

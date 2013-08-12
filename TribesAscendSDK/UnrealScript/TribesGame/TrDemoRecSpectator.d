@@ -11,6 +11,8 @@ extern(C++) interface TrDemoRecSpectator : TrPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDemoRecSpectator")); }
+	private static __gshared TrDemoRecSpectator mDefaultProperties;
+	@property final static TrDemoRecSpectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDemoRecSpectator)("TrDemoRecSpectator TribesGame.Default__TrDemoRecSpectator")); }
 	static struct Functions
 	{
 		private static __gshared

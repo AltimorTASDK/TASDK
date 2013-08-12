@@ -15,6 +15,8 @@ extern(C++) interface SeqAct_GameCrowdSpawner : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdSpawner")); }
+	private static __gshared SeqAct_GameCrowdSpawner mDefaultProperties;
+	@property final static SeqAct_GameCrowdSpawner DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GameCrowdSpawner)("SeqAct_GameCrowdSpawner GameFramework.Default__SeqAct_GameCrowdSpawner")); }
 	static struct Functions
 	{
 		private static __gshared

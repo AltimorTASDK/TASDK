@@ -13,6 +13,8 @@ extern(C++) interface UDKTeleporterBase : Teleporter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKTeleporterBase")); }
+	private static __gshared UDKTeleporterBase mDefaultProperties;
+	@property final static UDKTeleporterBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKTeleporterBase)("UDKTeleporterBase UDKBase.Default__UDKTeleporterBase")); }
 	static struct Functions
 	{
 		private static __gshared

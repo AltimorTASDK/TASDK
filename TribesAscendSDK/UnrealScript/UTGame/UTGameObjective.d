@@ -32,6 +32,8 @@ extern(C++) interface UTGameObjective : UDKGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameObjective")); }
+	private static __gshared UTGameObjective mDefaultProperties;
+	@property final static UTGameObjective DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameObjective)("UTGameObjective UTGame.Default__UTGameObjective")); }
 	static struct Functions
 	{
 		private static __gshared

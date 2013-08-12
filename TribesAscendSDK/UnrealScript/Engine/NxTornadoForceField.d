@@ -9,6 +9,8 @@ extern(C++) interface NxTornadoForceField : NxForceField
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxTornadoForceField")); }
+	private static __gshared NxTornadoForceField mDefaultProperties;
+	@property final static NxTornadoForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxTornadoForceField)("NxTornadoForceField Engine.Default__NxTornadoForceField")); }
 	@property final
 	{
 		auto ref

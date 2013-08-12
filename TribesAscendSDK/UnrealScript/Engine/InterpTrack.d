@@ -8,6 +8,8 @@ extern(C++) interface InterpTrack : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrack")); }
+	private static __gshared InterpTrack mDefaultProperties;
+	@property final static InterpTrack DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrack)("InterpTrack Engine.Default__InterpTrack")); }
 	enum ETrackActiveCondition : ubyte
 	{
 		ETAC_Always = 0,

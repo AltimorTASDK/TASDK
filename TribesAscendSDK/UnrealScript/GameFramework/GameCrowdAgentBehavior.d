@@ -12,6 +12,8 @@ extern(C++) interface GameCrowdAgentBehavior : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgentBehavior")); }
+	private static __gshared GameCrowdAgentBehavior mDefaultProperties;
+	@property final static GameCrowdAgentBehavior DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdAgentBehavior)("GameCrowdAgentBehavior GameFramework.Default__GameCrowdAgentBehavior")); }
 	static struct Functions
 	{
 		private static __gshared

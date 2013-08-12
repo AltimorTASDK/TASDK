@@ -9,5 +9,7 @@ extern(C++) interface MaterialInstanceActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstanceActor")); }
+	private static __gshared MaterialInstanceActor mDefaultProperties;
+	@property final static MaterialInstanceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstanceActor)("MaterialInstanceActor Engine.Default__MaterialInstanceActor")); }
 	@property final auto ref MaterialInstanceConstant MatInst() { return *cast(MaterialInstanceConstant*)(cast(size_t)cast(void*)this + 476); }
 }

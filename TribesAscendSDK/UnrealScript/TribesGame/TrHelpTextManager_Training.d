@@ -8,6 +8,8 @@ extern(C++) interface TrHelpTextManager_Training : TrHelpTextManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHelpTextManager_Training")); }
+	private static __gshared TrHelpTextManager_Training mDefaultProperties;
+	@property final static TrHelpTextManager_Training DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHelpTextManager_Training)("TrHelpTextManager_Training TribesGame.Default__TrHelpTextManager_Training")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -13,6 +13,8 @@ extern(C++) interface SeqAct_Interp : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Interp")); }
+	private static __gshared SeqAct_Interp mDefaultProperties;
+	@property final static SeqAct_Interp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Interp)("SeqAct_Interp Engine.Default__SeqAct_Interp")); }
 	static struct Functions
 	{
 		private static __gshared

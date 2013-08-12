@@ -8,6 +8,8 @@ extern(C++) interface PathNode_Dynamic : PathNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PathNode_Dynamic")); }
+	private static __gshared PathNode_Dynamic mDefaultProperties;
+	@property final static PathNode_Dynamic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PathNode_Dynamic)("PathNode_Dynamic Engine.Default__PathNode_Dynamic")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetDebugAbbrev;

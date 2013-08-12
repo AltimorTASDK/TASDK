@@ -8,6 +8,8 @@ extern(C++) interface TrInventoryHelper : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryHelper")); }
+	private static __gshared TrInventoryHelper mDefaultProperties;
+	@property final static TrInventoryHelper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryHelper)("TrInventoryHelper TribesGame.Default__TrInventoryHelper")); }
 	static struct Functions
 	{
 		private static __gshared

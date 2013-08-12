@@ -10,6 +10,8 @@ extern(C++) interface AmbientSoundSimple : AmbientSound
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientSoundSimple")); }
+	private static __gshared AmbientSoundSimple mDefaultProperties;
+	@property final static AmbientSoundSimple DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AmbientSoundSimple)("AmbientSoundSimple Engine.Default__AmbientSoundSimple")); }
 	@property final auto ref
 	{
 		SoundNodeAmbient SoundNodeInstance() { return *cast(SoundNodeAmbient*)(cast(size_t)cast(void*)this + 496); }

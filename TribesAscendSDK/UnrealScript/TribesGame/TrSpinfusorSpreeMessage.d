@@ -12,6 +12,8 @@ extern(C++) interface TrSpinfusorSpreeMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpinfusorSpreeMessage")); }
+	private static __gshared TrSpinfusorSpreeMessage mDefaultProperties;
+	@property final static TrSpinfusorSpreeMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpinfusorSpreeMessage)("TrSpinfusorSpreeMessage TribesGame.Default__TrSpinfusorSpreeMessage")); }
 	static struct Functions
 	{
 		private static __gshared

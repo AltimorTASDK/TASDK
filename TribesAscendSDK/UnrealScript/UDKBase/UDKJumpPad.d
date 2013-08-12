@@ -12,6 +12,8 @@ extern(C++) interface UDKJumpPad : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKJumpPad")); }
+	private static __gshared UDKJumpPad mDefaultProperties;
+	@property final static UDKJumpPad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKJumpPad)("UDKJumpPad UDKBase.Default__UDKJumpPad")); }
 	static struct Functions
 	{
 		private static __gshared

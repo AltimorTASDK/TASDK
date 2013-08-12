@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeBlendBy3pDevice : TrAnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendBy3pDevice")); }
+	private static __gshared TrAnimNodeBlendBy3pDevice mDefaultProperties;
+	@property final static TrAnimNodeBlendBy3pDevice DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendBy3pDevice)("TrAnimNodeBlendBy3pDevice TribesGame.Default__TrAnimNodeBlendBy3pDevice")); }
 	static struct Functions
 	{
 		private static __gshared

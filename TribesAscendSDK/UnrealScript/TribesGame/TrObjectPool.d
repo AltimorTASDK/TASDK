@@ -10,6 +10,8 @@ extern(C++) interface TrObjectPool : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrObjectPool")); }
+	private static __gshared TrObjectPool mDefaultProperties;
+	@property final static TrObjectPool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrObjectPool)("TrObjectPool TribesGame.Default__TrObjectPool")); }
 	static struct Functions
 	{
 		private static __gshared

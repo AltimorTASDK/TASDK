@@ -11,6 +11,8 @@ extern(C++) interface TrPlayerInput : PlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerInput")); }
+	private static __gshared TrPlayerInput mDefaultProperties;
+	@property final static TrPlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPlayerInput)("TrPlayerInput TribesGame.Default__TrPlayerInput")); }
 	static struct Functions
 	{
 		private static __gshared

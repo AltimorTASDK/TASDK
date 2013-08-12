@@ -10,6 +10,8 @@ extern(C++) interface OnlineVoiceInterfaceMcts : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class OnlineSubsystemMcts.OnlineVoiceInterfaceMcts")); }
+	private static __gshared OnlineVoiceInterfaceMcts mDefaultProperties;
+	@property final static OnlineVoiceInterfaceMcts DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineVoiceInterfaceMcts)("OnlineVoiceInterfaceMcts OnlineSubsystemMcts.Default__OnlineVoiceInterfaceMcts")); }
 	static struct Functions
 	{
 		private static __gshared

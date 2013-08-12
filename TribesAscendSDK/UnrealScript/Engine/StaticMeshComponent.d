@@ -13,6 +13,8 @@ extern(C++) interface StaticMeshComponent : MeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshComponent")); }
+	private static __gshared StaticMeshComponent mDefaultProperties;
+	@property final static StaticMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshComponent)("StaticMeshComponent Engine.Default__StaticMeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared

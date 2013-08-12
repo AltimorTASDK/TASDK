@@ -8,6 +8,8 @@ extern(C++) interface UDKAnimBlendByWeapon : AnimNodeBlendPerBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByWeapon")); }
+	private static __gshared UDKAnimBlendByWeapon mDefaultProperties;
+	@property final static UDKAnimBlendByWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByWeapon)("UDKAnimBlendByWeapon UDKBase.Default__UDKAnimBlendByWeapon")); }
 	static struct Functions
 	{
 		private static __gshared

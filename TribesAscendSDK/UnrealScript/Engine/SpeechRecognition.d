@@ -8,6 +8,8 @@ extern(C++) interface SpeechRecognition : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeechRecognition")); }
+	private static __gshared SpeechRecognition mDefaultProperties;
+	@property final static SpeechRecognition DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpeechRecognition)("SpeechRecognition Engine.Default__SpeechRecognition")); }
 	struct RecogVocabulary
 	{
 		private ubyte __buffer__[72];

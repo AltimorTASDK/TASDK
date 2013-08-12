@@ -8,6 +8,8 @@ extern(C++) interface UIGameInfoSummary : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIGameInfoSummary")); }
+	private static __gshared UIGameInfoSummary mDefaultProperties;
+	@property final static UIGameInfoSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIGameInfoSummary)("UIGameInfoSummary Engine.Default__UIGameInfoSummary")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsProviderDisabled;

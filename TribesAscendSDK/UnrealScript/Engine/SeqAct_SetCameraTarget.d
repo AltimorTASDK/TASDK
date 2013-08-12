@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_SetCameraTarget : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetCameraTarget")); }
+	private static __gshared SeqAct_SetCameraTarget mDefaultProperties;
+	@property final static SeqAct_SetCameraTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetCameraTarget)("SeqAct_SetCameraTarget Engine.Default__SeqAct_SetCameraTarget")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

@@ -10,6 +10,8 @@ extern(C++) interface AnimNodeBlendByProperty : AnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlendByProperty")); }
+	private static __gshared AnimNodeBlendByProperty mDefaultProperties;
+	@property final static AnimNodeBlendByProperty DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlendByProperty)("AnimNodeBlendByProperty Engine.Default__AnimNodeBlendByProperty")); }
 	@property final
 	{
 		auto ref

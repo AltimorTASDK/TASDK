@@ -10,6 +10,8 @@ extern(C++) interface CoverGroup : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverGroup")); }
+	private static __gshared CoverGroup mDefaultProperties;
+	@property final static CoverGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverGroup)("CoverGroup Engine.Default__CoverGroup")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleSizeMultiplyLife : ParticleModuleSizeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSizeMultiplyLife")); }
+	private static __gshared ParticleModuleSizeMultiplyLife mDefaultProperties;
+	@property final static ParticleModuleSizeMultiplyLife DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleSizeMultiplyLife)("ParticleModuleSizeMultiplyLife Engine.Default__ParticleModuleSizeMultiplyLife")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector LifeMultiplier() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }

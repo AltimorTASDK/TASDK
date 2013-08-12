@@ -9,6 +9,8 @@ extern(C++) interface UTSeqEvent_FlagEvent : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqEvent_FlagEvent")); }
+	private static __gshared UTSeqEvent_FlagEvent mDefaultProperties;
+	@property final static UTSeqEvent_FlagEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqEvent_FlagEvent)("UTSeqEvent_FlagEvent UTGame.Default__UTSeqEvent_FlagEvent")); }
 	static struct Functions
 	{
 		private static __gshared

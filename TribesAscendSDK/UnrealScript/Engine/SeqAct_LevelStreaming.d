@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_LevelStreaming : SeqAct_LevelStreamingBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_LevelStreaming")); }
+	private static __gshared SeqAct_LevelStreaming mDefaultProperties;
+	@property final static SeqAct_LevelStreaming DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_LevelStreaming)("SeqAct_LevelStreaming Engine.Default__SeqAct_LevelStreaming")); }
 	@property final
 	{
 		auto ref

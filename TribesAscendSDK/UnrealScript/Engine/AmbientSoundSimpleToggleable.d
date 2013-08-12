@@ -9,6 +9,8 @@ extern(C++) interface AmbientSoundSimpleToggleable : AmbientSoundSimple
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientSoundSimpleToggleable")); }
+	private static __gshared AmbientSoundSimpleToggleable mDefaultProperties;
+	@property final static AmbientSoundSimpleToggleable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AmbientSoundSimpleToggleable)("AmbientSoundSimpleToggleable Engine.Default__AmbientSoundSimpleToggleable")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface TrAnimNodeTurnInPlace : AnimNodeBlend
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeTurnInPlace")); }
+	private static __gshared TrAnimNodeTurnInPlace mDefaultProperties;
+	@property final static TrAnimNodeTurnInPlace DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeTurnInPlace)("TrAnimNodeTurnInPlace TribesGame.Default__TrAnimNodeTurnInPlace")); }
 	enum ForcedTransitionAngle : ubyte
 	{
 		FTA_NONE = 0,

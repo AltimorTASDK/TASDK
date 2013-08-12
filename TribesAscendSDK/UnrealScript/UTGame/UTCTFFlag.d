@@ -13,6 +13,8 @@ extern(C++) interface UTCTFFlag : UTCarriedObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFFlag")); }
+	private static __gshared UTCTFFlag mDefaultProperties;
+	@property final static UTCTFFlag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFFlag)("UTCTFFlag UTGame.Default__UTCTFFlag")); }
 	static struct Functions
 	{
 		private static __gshared

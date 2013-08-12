@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleOrientationAxisLock : ParticleModuleOrientat
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleOrientationAxisLock")); }
+	private static __gshared ParticleModuleOrientationAxisLock mDefaultProperties;
+	@property final static ParticleModuleOrientationAxisLock DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleOrientationAxisLock)("ParticleModuleOrientationAxisLock Engine.Default__ParticleModuleOrientationAxisLock")); }
 	enum EParticleAxisLock : ubyte
 	{
 		EPAL_NONE = 0,

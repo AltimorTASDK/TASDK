@@ -8,6 +8,8 @@ extern(C++) interface InGameAdManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InGameAdManager")); }
+	private static __gshared InGameAdManager mDefaultProperties;
+	@property final static InGameAdManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InGameAdManager)("InGameAdManager Engine.Default__InGameAdManager")); }
 	static struct Functions
 	{
 		private static __gshared

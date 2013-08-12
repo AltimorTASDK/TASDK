@@ -8,6 +8,8 @@ extern(C++) interface DynamicBlockingVolume : BlockingVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicBlockingVolume")); }
+	private static __gshared DynamicBlockingVolume mDefaultProperties;
+	@property final static DynamicBlockingVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicBlockingVolume)("DynamicBlockingVolume Engine.Default__DynamicBlockingVolume")); }
 	static struct Functions
 	{
 		private static __gshared

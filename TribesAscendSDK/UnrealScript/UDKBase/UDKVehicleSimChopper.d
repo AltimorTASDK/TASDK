@@ -8,6 +8,8 @@ extern(C++) interface UDKVehicleSimChopper : SVehicleSimBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimChopper")); }
+	private static __gshared UDKVehicleSimChopper mDefaultProperties;
+	@property final static UDKVehicleSimChopper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimChopper)("UDKVehicleSimChopper UDKBase.Default__UDKVehicleSimChopper")); }
 	struct AnglePID
 	{
 		private ubyte __buffer__[20];

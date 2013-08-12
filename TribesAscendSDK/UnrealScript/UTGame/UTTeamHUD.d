@@ -10,6 +10,8 @@ extern(C++) interface UTTeamHUD : UTHUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamHUD")); }
+	private static __gshared UTTeamHUD mDefaultProperties;
+	@property final static UTTeamHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamHUD)("UTTeamHUD UTGame.Default__UTTeamHUD")); }
 	static struct Functions
 	{
 		private static __gshared

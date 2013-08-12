@@ -18,6 +18,8 @@ extern(C++) interface GFxMoviePlayer : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxMoviePlayer")); }
+	private static __gshared GFxMoviePlayer mDefaultProperties;
+	@property final static GFxMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxMoviePlayer)("GFxMoviePlayer GFxUI.Default__GFxMoviePlayer")); }
 	static struct Functions
 	{
 		private static __gshared

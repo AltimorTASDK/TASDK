@@ -15,6 +15,8 @@ extern(C++) interface UTProjectile : UDKProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTProjectile")); }
+	private static __gshared UTProjectile mDefaultProperties;
+	@property final static UTProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTProjectile)("UTProjectile UTGame.Default__UTProjectile")); }
 	static struct Functions
 	{
 		private static __gshared

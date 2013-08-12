@@ -16,6 +16,8 @@ extern(C++) interface CameraAnimInst : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraAnimInst")); }
+	private static __gshared CameraAnimInst mDefaultProperties;
+	@property final static CameraAnimInst DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraAnimInst)("CameraAnimInst Engine.Default__CameraAnimInst")); }
 	static struct Functions
 	{
 		private static __gshared

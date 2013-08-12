@@ -12,6 +12,8 @@ extern(C++) interface TrDeviceContentData : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeviceContentData")); }
+	private static __gshared TrDeviceContentData mDefaultProperties;
+	@property final static TrDeviceContentData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeviceContentData)("TrDeviceContentData TribesGame.Default__TrDeviceContentData")); }
 	@property final auto ref
 	{
 		ScriptClass m_TrDeviceClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 88); }

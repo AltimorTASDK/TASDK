@@ -10,6 +10,8 @@ extern(C++) interface DrawCapsuleComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DrawCapsuleComponent")); }
+	private static __gshared DrawCapsuleComponent mDefaultProperties;
+	@property final static DrawCapsuleComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DrawCapsuleComponent)("DrawCapsuleComponent Engine.Default__DrawCapsuleComponent")); }
 	@property final
 	{
 		auto ref

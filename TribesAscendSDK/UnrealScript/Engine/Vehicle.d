@@ -12,6 +12,8 @@ extern(C++) interface Vehicle : Pawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Vehicle")); }
+	private static __gshared Vehicle mDefaultProperties;
+	@property final static Vehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Vehicle)("Vehicle Engine.Default__Vehicle")); }
 	static struct Functions
 	{
 		private static __gshared

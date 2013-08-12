@@ -15,6 +15,8 @@ extern(C++) interface UTVehicleFactory : UDKVehicleFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleFactory")); }
+	private static __gshared UTVehicleFactory mDefaultProperties;
+	@property final static UTVehicleFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleFactory)("UTVehicleFactory UTGame.Default__UTVehicleFactory")); }
 	static struct Functions
 	{
 		private static __gshared

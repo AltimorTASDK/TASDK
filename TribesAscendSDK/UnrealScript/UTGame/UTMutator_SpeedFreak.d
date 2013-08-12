@@ -8,6 +8,8 @@ extern(C++) interface UTMutator_SpeedFreak : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_SpeedFreak")); }
+	private static __gshared UTMutator_SpeedFreak mDefaultProperties;
+	@property final static UTMutator_SpeedFreak DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_SpeedFreak)("UTMutator_SpeedFreak UTGame.Default__UTMutator_SpeedFreak")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitMutator;

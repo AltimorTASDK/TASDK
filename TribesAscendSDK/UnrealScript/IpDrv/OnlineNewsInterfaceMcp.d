@@ -10,6 +10,8 @@ extern(C++) interface OnlineNewsInterfaceMcp : MCPBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineNewsInterfaceMcp")); }
+	private static __gshared OnlineNewsInterfaceMcp mDefaultProperties;
+	@property final static OnlineNewsInterfaceMcp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineNewsInterfaceMcp)("OnlineNewsInterfaceMcp IpDrv.Default__OnlineNewsInterfaceMcp")); }
 	static struct Functions
 	{
 		private static __gshared

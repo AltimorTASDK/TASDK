@@ -9,6 +9,8 @@ extern(C++) interface UDKEmitCameraEffect : Emitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKEmitCameraEffect")); }
+	private static __gshared UDKEmitCameraEffect mDefaultProperties;
+	@property final static UDKEmitCameraEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKEmitCameraEffect)("UDKEmitCameraEffect UDKBase.Default__UDKEmitCameraEffect")); }
 	static struct Functions
 	{
 		private static __gshared

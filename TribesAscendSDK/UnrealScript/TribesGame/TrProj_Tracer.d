@@ -9,6 +9,8 @@ extern(C++) interface TrProj_Tracer : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Tracer")); }
+	private static __gshared TrProj_Tracer mDefaultProperties;
+	@property final static TrProj_Tracer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Tracer)("TrProj_Tracer TribesGame.Default__TrProj_Tracer")); }
 	static struct Functions
 	{
 		private static __gshared

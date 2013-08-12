@@ -30,6 +30,8 @@ extern(C++) interface UTBot : UDKBot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTBot")); }
+	private static __gshared UTBot mDefaultProperties;
+	@property final static UTBot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTBot)("UTBot UTGame.Default__UTBot")); }
 	static struct Functions
 	{
 		private static __gshared

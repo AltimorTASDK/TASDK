@@ -11,6 +11,8 @@ extern(C++) interface ParticleModuleTypeDataMeshPhysX : ParticleModuleTypeDataMe
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMeshPhysX")); }
+	private static __gshared ParticleModuleTypeDataMeshPhysX mDefaultProperties;
+	@property final static ParticleModuleTypeDataMeshPhysX DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataMeshPhysX)("ParticleModuleTypeDataMeshPhysX Engine.Default__ParticleModuleTypeDataMeshPhysX")); }
 	enum EPhysXMeshRotationMethod : ubyte
 	{
 		PMRM_Disabled = 0,

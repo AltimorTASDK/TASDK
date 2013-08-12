@@ -12,6 +12,8 @@ extern(C++) interface UIDataStore_OnlinePlaylists : UIDataStore
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlinePlaylists")); }
+	private static __gshared UIDataStore_OnlinePlaylists mDefaultProperties;
+	@property final static UIDataStore_OnlinePlaylists DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlinePlaylists)("UIDataStore_OnlinePlaylists Engine.Default__UIDataStore_OnlinePlaylists")); }
 	static struct Functions
 	{
 		private static __gshared

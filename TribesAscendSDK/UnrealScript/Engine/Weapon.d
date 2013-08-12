@@ -14,6 +14,8 @@ extern(C++) interface Weapon : Inventory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Weapon")); }
+	private static __gshared Weapon mDefaultProperties;
+	@property final static Weapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Weapon)("Weapon Engine.Default__Weapon")); }
 	static struct Functions
 	{
 		private static __gshared

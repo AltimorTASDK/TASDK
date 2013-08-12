@@ -8,6 +8,8 @@ extern(C++) interface HelpCommandlet : Commandlet
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.HelpCommandlet")); }
+	private static __gshared HelpCommandlet mDefaultProperties;
+	@property final static HelpCommandlet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HelpCommandlet)("HelpCommandlet Core.Default__HelpCommandlet")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMain;

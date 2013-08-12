@@ -11,6 +11,8 @@ extern(C++) interface InterpData : SequenceVariable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpData")); }
+	private static __gshared InterpData mDefaultProperties;
+	@property final static InterpData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpData)("InterpData Engine.Default__InterpData")); }
 	struct AnimSetBakeAndPruneStatus
 	{
 		private ubyte __buffer__[16];

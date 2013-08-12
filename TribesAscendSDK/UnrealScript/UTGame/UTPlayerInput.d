@@ -9,6 +9,8 @@ extern(C++) interface UTPlayerInput : UDKPlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPlayerInput")); }
+	private static __gshared UTPlayerInput mDefaultProperties;
+	@property final static UTPlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPlayerInput)("UTPlayerInput UTGame.Default__UTPlayerInput")); }
 	@property final
 	{
 		auto ref

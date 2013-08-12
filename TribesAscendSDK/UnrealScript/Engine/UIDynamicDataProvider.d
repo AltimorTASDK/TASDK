@@ -9,6 +9,8 @@ extern(C++) interface UIDynamicDataProvider : UIPropertyDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDynamicDataProvider")); }
+	private static __gshared UIDynamicDataProvider mDefaultProperties;
+	@property final static UIDynamicDataProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDynamicDataProvider)("UIDynamicDataProvider Engine.Default__UIDynamicDataProvider")); }
 	static struct Functions
 	{
 		private static __gshared

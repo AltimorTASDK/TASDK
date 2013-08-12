@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_TurretConstrained : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_TurretConstrained")); }
+	private static __gshared UDKSkelControl_TurretConstrained mDefaultProperties;
+	@property final static UDKSkelControl_TurretConstrained DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_TurretConstrained)("UDKSkelControl_TurretConstrained UDKBase.Default__UDKSkelControl_TurretConstrained")); }
 	static struct Functions
 	{
 		private static __gshared

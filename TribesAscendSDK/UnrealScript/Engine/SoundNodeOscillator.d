@@ -9,6 +9,8 @@ extern(C++) interface SoundNodeOscillator : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeOscillator")); }
+	private static __gshared SoundNodeOscillator mDefaultProperties;
+	@property final static SoundNodeOscillator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeOscillator)("SoundNodeOscillator Engine.Default__SoundNodeOscillator")); }
 	@property final
 	{
 		auto ref

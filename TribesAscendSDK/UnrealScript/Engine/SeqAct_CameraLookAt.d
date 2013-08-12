@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_CameraLookAt : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_CameraLookAt")); }
+	private static __gshared SeqAct_CameraLookAt mDefaultProperties;
+	@property final static SeqAct_CameraLookAt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_CameraLookAt)("SeqAct_CameraLookAt Engine.Default__SeqAct_CameraLookAt")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

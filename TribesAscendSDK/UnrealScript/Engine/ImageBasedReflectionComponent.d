@@ -10,6 +10,8 @@ extern(C++) interface ImageBasedReflectionComponent : StaticMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ImageBasedReflectionComponent")); }
+	private static __gshared ImageBasedReflectionComponent mDefaultProperties;
+	@property final static ImageBasedReflectionComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ImageBasedReflectionComponent)("ImageBasedReflectionComponent Engine.Default__ImageBasedReflectionComponent")); }
 	@property final
 	{
 		auto ref

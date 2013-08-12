@@ -11,6 +11,8 @@ extern(C++) interface UTFirstBloodMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTFirstBloodMessage")); }
+	private static __gshared UTFirstBloodMessage mDefaultProperties;
+	@property final static UTFirstBloodMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTFirstBloodMessage)("UTFirstBloodMessage UTGame.Default__UTFirstBloodMessage")); }
 	static struct Functions
 	{
 		private static __gshared

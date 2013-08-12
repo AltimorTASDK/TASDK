@@ -9,6 +9,8 @@ extern(C++) interface UDKUIDataProvider_MenuOption : UDKUIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_MenuOption")); }
+	private static __gshared UDKUIDataProvider_MenuOption mDefaultProperties;
+	@property final static UDKUIDataProvider_MenuOption DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_MenuOption)("UDKUIDataProvider_MenuOption UDKBase.Default__UDKUIDataProvider_MenuOption")); }
 	enum EUTOptionType : ubyte
 	{
 		UTOT_ComboReadOnly = 0,

@@ -9,6 +9,8 @@ extern(C++) interface Path_TowardPoint : PathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_TowardPoint")); }
+	private static __gshared Path_TowardPoint mDefaultProperties;
+	@property final static Path_TowardPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_TowardPoint)("Path_TowardPoint Engine.Default__Path_TowardPoint")); }
 	static struct Functions
 	{
 		private static __gshared

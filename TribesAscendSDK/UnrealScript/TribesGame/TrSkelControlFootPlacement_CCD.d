@@ -9,6 +9,8 @@ extern(C++) interface TrSkelControlFootPlacement_CCD : SkelControl_CCD_IK
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControlFootPlacement_CCD")); }
+	private static __gshared TrSkelControlFootPlacement_CCD mDefaultProperties;
+	@property final static TrSkelControlFootPlacement_CCD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkelControlFootPlacement_CCD)("TrSkelControlFootPlacement_CCD TribesGame.Default__TrSkelControlFootPlacement_CCD")); }
 	@property final
 	{
 		auto ref

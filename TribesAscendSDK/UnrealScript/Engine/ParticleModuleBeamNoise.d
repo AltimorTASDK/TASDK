@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleBeamNoise : ParticleModuleBeamBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleBeamNoise")); }
+	private static __gshared ParticleModuleBeamNoise mDefaultProperties;
+	@property final static ParticleModuleBeamNoise DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleBeamNoise)("ParticleModuleBeamNoise Engine.Default__ParticleModuleBeamNoise")); }
 	@property final
 	{
 		auto ref

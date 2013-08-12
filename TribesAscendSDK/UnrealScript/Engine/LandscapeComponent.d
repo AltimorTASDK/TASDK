@@ -13,6 +13,8 @@ extern(C++) interface LandscapeComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LandscapeComponent")); }
+	private static __gshared LandscapeComponent mDefaultProperties;
+	@property final static LandscapeComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LandscapeComponent)("LandscapeComponent Engine.Default__LandscapeComponent")); }
 	enum ETerrainComponentNeighbors : ubyte
 	{
 		TCN_NW = 0,

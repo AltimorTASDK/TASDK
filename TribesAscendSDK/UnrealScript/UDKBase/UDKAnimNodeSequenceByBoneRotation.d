@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimNodeSequenceByBoneRotation : AnimNodeSequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeSequenceByBoneRotation")); }
+	private static __gshared UDKAnimNodeSequenceByBoneRotation mDefaultProperties;
+	@property final static UDKAnimNodeSequenceByBoneRotation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeSequenceByBoneRotation)("UDKAnimNodeSequenceByBoneRotation UDKBase.Default__UDKAnimNodeSequenceByBoneRotation")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnBecomeRelevant;

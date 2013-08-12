@@ -14,6 +14,8 @@ extern(C++) interface TrEntryPlayerController : TrPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEntryPlayerController")); }
+	private static __gshared TrEntryPlayerController mDefaultProperties;
+	@property final static TrEntryPlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEntryPlayerController)("TrEntryPlayerController TribesGame.Default__TrEntryPlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

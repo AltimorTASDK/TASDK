@@ -9,5 +9,7 @@ extern(C++) interface ParticleModuleRotation_Seeded : ParticleModuleRotation
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRotation_Seeded")); }
+	private static __gshared ParticleModuleRotation_Seeded mDefaultProperties;
+	@property final static ParticleModuleRotation_Seeded DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRotation_Seeded)("ParticleModuleRotation_Seeded Engine.Default__ParticleModuleRotation_Seeded")); }
 	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { return *cast(ParticleModule.ParticleRandomSeedInfo*)(cast(size_t)cast(void*)this + 100); }
 }

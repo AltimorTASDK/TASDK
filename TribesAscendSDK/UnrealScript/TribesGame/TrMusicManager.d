@@ -10,6 +10,8 @@ extern(C++) interface TrMusicManager : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMusicManager")); }
+	private static __gshared TrMusicManager mDefaultProperties;
+	@property final static TrMusicManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMusicManager)("TrMusicManager TribesGame.Default__TrMusicManager")); }
 	static struct Functions
 	{
 		private static __gshared

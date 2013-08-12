@@ -8,5 +8,7 @@ extern(C++) interface SeqEvent_AISeeEnemy : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_AISeeEnemy")); }
+	private static __gshared SeqEvent_AISeeEnemy mDefaultProperties;
+	@property final static SeqEvent_AISeeEnemy DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_AISeeEnemy)("SeqEvent_AISeeEnemy Engine.Default__SeqEvent_AISeeEnemy")); }
 	@property final auto ref float MaxSightDistance() { return *cast(float*)(cast(size_t)cast(void*)this + 256); }
 }

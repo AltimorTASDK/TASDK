@@ -8,4 +8,6 @@ extern(C++) interface TrGameSearchTrTDM : TrGameSearchCommon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameSearchTrTDM")); }
+	private static __gshared TrGameSearchTrTDM mDefaultProperties;
+	@property final static TrGameSearchTrTDM DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameSearchTrTDM)("TrGameSearchTrTDM TribesGame.Default__TrGameSearchTrTDM")); }
 }

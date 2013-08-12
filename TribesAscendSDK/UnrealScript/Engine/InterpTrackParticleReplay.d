@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackParticleReplay : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackParticleReplay")); }
+	private static __gshared InterpTrackParticleReplay mDefaultProperties;
+	@property final static InterpTrackParticleReplay DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackParticleReplay)("InterpTrackParticleReplay Engine.Default__InterpTrackParticleReplay")); }
 	struct ParticleReplayTrackKey
 	{
 		private ubyte __buffer__[12];

@@ -15,6 +15,8 @@ extern(C++) interface UTTeamInfo : TeamInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamInfo")); }
+	private static __gshared UTTeamInfo mDefaultProperties;
+	@property final static UTTeamInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamInfo)("UTTeamInfo UTGame.Default__UTTeamInfo")); }
 	static struct Functions
 	{
 		private static __gshared

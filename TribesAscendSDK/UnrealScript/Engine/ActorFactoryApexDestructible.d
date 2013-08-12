@@ -10,6 +10,8 @@ extern(C++) interface ActorFactoryApexDestructible : ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryApexDestructible")); }
+	private static __gshared ActorFactoryApexDestructible mDefaultProperties;
+	@property final static ActorFactoryApexDestructible DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryApexDestructible)("ActorFactoryApexDestructible Engine.Default__ActorFactoryApexDestructible")); }
 	@property final
 	{
 		auto ref

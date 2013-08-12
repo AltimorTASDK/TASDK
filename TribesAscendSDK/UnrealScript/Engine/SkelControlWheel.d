@@ -9,6 +9,8 @@ extern(C++) interface SkelControlWheel : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlWheel")); }
+	private static __gshared SkelControlWheel mDefaultProperties;
+	@property final static SkelControlWheel DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlWheel)("SkelControlWheel Engine.Default__SkelControlWheel")); }
 	@property final
 	{
 		auto ref

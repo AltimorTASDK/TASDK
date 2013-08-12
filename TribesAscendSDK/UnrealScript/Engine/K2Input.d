@@ -9,5 +9,7 @@ extern(C++) interface K2Input : K2Connector
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.K2Input")); }
+	private static __gshared K2Input mDefaultProperties;
+	@property final static K2Input DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(K2Input)("K2Input Engine.Default__K2Input")); }
 	@property final auto ref K2Output FromOutput() { return *cast(K2Output*)(cast(size_t)cast(void*)this + 80); }
 }

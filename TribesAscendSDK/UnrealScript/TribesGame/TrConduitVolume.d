@@ -9,6 +9,8 @@ extern(C++) interface TrConduitVolume : TrPhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrConduitVolume")); }
+	private static __gshared TrConduitVolume mDefaultProperties;
+	@property final static TrConduitVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrConduitVolume)("TrConduitVolume TribesGame.Default__TrConduitVolume")); }
 	static struct Functions
 	{
 		private static __gshared

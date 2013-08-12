@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleTypeDataRibbon : ParticleModuleTypeDataBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataRibbon")); }
+	private static __gshared ParticleModuleTypeDataRibbon mDefaultProperties;
+	@property final static ParticleModuleTypeDataRibbon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataRibbon)("ParticleModuleTypeDataRibbon Engine.Default__ParticleModuleTypeDataRibbon")); }
 	enum ETrailsRenderAxisOption : ubyte
 	{
 		Trails_CameraUp = 0,

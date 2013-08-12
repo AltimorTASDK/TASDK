@@ -9,6 +9,8 @@ extern(C++) interface TrProj_ThrowDeployable : TrProj_Mine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_ThrowDeployable")); }
+	private static __gshared TrProj_ThrowDeployable mDefaultProperties;
+	@property final static TrProj_ThrowDeployable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_ThrowDeployable)("TrProj_ThrowDeployable TribesGame.Default__TrProj_ThrowDeployable")); }
 	static struct Functions
 	{
 		private static __gshared

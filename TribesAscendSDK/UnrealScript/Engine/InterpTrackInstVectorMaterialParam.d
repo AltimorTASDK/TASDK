@@ -10,6 +10,8 @@ extern(C++) interface InterpTrackInstVectorMaterialParam : InterpTrackInst
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackInstVectorMaterialParam")); }
+	private static __gshared InterpTrackInstVectorMaterialParam mDefaultProperties;
+	@property final static InterpTrackInstVectorMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackInstVectorMaterialParam)("InterpTrackInstVectorMaterialParam Engine.Default__InterpTrackInstVectorMaterialParam")); }
 	struct VectorMaterialParamMICData
 	{
 		private ubyte __buffer__[24];

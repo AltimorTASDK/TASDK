@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_SetVisibilityModifier : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_SetVisibilityModifier")); }
+	private static __gshared UTSeqAct_SetVisibilityModifier mDefaultProperties;
+	@property final static UTSeqAct_SetVisibilityModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_SetVisibilityModifier)("UTSeqAct_SetVisibilityModifier UTGame.Default__UTSeqAct_SetVisibilityModifier")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

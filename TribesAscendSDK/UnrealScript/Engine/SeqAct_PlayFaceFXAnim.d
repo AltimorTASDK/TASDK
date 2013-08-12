@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_PlayFaceFXAnim : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_PlayFaceFXAnim")); }
+	private static __gshared SeqAct_PlayFaceFXAnim mDefaultProperties;
+	@property final static SeqAct_PlayFaceFXAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlayFaceFXAnim)("SeqAct_PlayFaceFXAnim Engine.Default__SeqAct_PlayFaceFXAnim")); }
 	@property final auto ref
 	{
 		FaceFXAnimSet FaceFXAnimSetRef() { return *cast(FaceFXAnimSet*)(cast(size_t)cast(void*)this + 232); }

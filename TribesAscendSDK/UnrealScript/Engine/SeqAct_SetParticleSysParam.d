@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_SetParticleSysParam : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetParticleSysParam")); }
+	private static __gshared SeqAct_SetParticleSysParam mDefaultProperties;
+	@property final static SeqAct_SetParticleSysParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetParticleSysParam)("SeqAct_SetParticleSysParam Engine.Default__SeqAct_SetParticleSysParam")); }
 	@property final
 	{
 		auto ref

@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_Blink : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_Blink")); }
+	private static __gshared TrEffect_Blink mDefaultProperties;
+	@property final static TrEffect_Blink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_Blink)("TrEffect_Blink TribesGame.Default__TrEffect_Blink")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mApply;

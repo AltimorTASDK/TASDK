@@ -9,6 +9,8 @@ extern(C++) interface UTSeqAct_UseHoverboard : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_UseHoverboard")); }
+	private static __gshared UTSeqAct_UseHoverboard mDefaultProperties;
+	@property final static UTSeqAct_UseHoverboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_UseHoverboard)("UTSeqAct_UseHoverboard UTGame.Default__UTSeqAct_UseHoverboard")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

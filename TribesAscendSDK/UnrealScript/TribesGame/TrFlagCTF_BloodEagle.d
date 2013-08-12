@@ -8,6 +8,8 @@ extern(C++) interface TrFlagCTF_BloodEagle : TrFlagCTF
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagCTF_BloodEagle")); }
+	private static __gshared TrFlagCTF_BloodEagle mDefaultProperties;
+	@property final static TrFlagCTF_BloodEagle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagCTF_BloodEagle)("TrFlagCTF_BloodEagle TribesGame.Default__TrFlagCTF_BloodEagle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetSpectatorName;

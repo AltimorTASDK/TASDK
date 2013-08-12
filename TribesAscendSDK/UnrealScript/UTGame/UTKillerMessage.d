@@ -10,6 +10,8 @@ extern(C++) interface UTKillerMessage : UTWeaponKillMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKillerMessage")); }
+	private static __gshared UTKillerMessage mDefaultProperties;
+	@property final static UTKillerMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKillerMessage)("UTKillerMessage UTGame.Default__UTKillerMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleTypeDataBeam : ParticleModuleTypeDataBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataBeam")); }
+	private static __gshared ParticleModuleTypeDataBeam mDefaultProperties;
+	@property final static ParticleModuleTypeDataBeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataBeam)("ParticleModuleTypeDataBeam Engine.Default__ParticleModuleTypeDataBeam")); }
 	enum EBeamMethod : ubyte
 	{
 		PEBM_Distance = 0,

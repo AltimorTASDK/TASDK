@@ -8,6 +8,8 @@ extern(C++) interface UDKUIDataStore_StringAliasMap : UIDataStore_StringAliasMap
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_StringAliasMap")); }
+	private static __gshared UDKUIDataStore_StringAliasMap mDefaultProperties;
+	@property final static UDKUIDataStore_StringAliasMap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_StringAliasMap)("UDKUIDataStore_StringAliasMap UDKBase.Default__UDKUIDataStore_StringAliasMap")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetStringWithFieldName;

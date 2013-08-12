@@ -8,6 +8,8 @@ extern(C++) interface TrEntryGame : UTEntryGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEntryGame")); }
+	private static __gshared TrEntryGame mDefaultProperties;
+	@property final static TrEntryGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEntryGame)("TrEntryGame TribesGame.Default__TrEntryGame")); }
 	static struct Functions
 	{
 		private static __gshared

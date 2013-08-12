@@ -8,6 +8,8 @@ extern(C++) interface UIWeaponSummary : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIWeaponSummary")); }
+	private static __gshared UIWeaponSummary mDefaultProperties;
+	@property final static UIWeaponSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIWeaponSummary)("UIWeaponSummary Engine.Default__UIWeaponSummary")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsProviderDisabled;

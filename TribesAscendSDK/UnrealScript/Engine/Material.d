@@ -16,6 +16,8 @@ extern(C++) interface Material : MaterialInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Material")); }
+	private static __gshared Material mDefaultProperties;
+	@property final static Material DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Material)("Material Engine.Default__Material")); }
 	struct MaterialInput
 	{
 		private ubyte __buffer__[28];

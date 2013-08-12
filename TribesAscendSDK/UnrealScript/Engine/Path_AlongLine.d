@@ -9,6 +9,8 @@ extern(C++) interface Path_AlongLine : PathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_AlongLine")); }
+	private static __gshared Path_AlongLine mDefaultProperties;
+	@property final static Path_AlongLine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_AlongLine)("Path_AlongLine Engine.Default__Path_AlongLine")); }
 	static struct Functions
 	{
 		private static __gshared

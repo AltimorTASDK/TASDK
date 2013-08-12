@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_BuyGoldSteam : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_BuyGoldSteam")); }
+	private static __gshared GFxTrPage_BuyGoldSteam mDefaultProperties;
+	@property final static GFxTrPage_BuyGoldSteam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_BuyGoldSteam)("GFxTrPage_BuyGoldSteam TribesGame.Default__GFxTrPage_BuyGoldSteam")); }
 	static struct Functions
 	{
 		private static __gshared

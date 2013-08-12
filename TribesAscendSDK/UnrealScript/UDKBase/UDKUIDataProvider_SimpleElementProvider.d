@@ -9,6 +9,8 @@ extern(C++) interface UDKUIDataProvider_SimpleElementProvider : UIDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_SimpleElementProvider")); }
+	private static __gshared UDKUIDataProvider_SimpleElementProvider mDefaultProperties;
+	@property final static UDKUIDataProvider_SimpleElementProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_SimpleElementProvider)("UDKUIDataProvider_SimpleElementProvider UDKBase.Default__UDKUIDataProvider_SimpleElementProvider")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetElementCount;

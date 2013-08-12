@@ -14,6 +14,8 @@ extern(C++) interface GameViewportClient : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameViewportClient")); }
+	private static __gshared GameViewportClient mDefaultProperties;
+	@property final static GameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameViewportClient)("GameViewportClient Engine.Default__GameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared

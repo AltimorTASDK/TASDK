@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleTypeDataMesh : ParticleModuleTypeDataBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataMesh")); }
+	private static __gshared ParticleModuleTypeDataMesh mDefaultProperties;
+	@property final static ParticleModuleTypeDataMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataMesh)("ParticleModuleTypeDataMesh Engine.Default__ParticleModuleTypeDataMesh")); }
 	enum EMeshCameraFacingOptions : ubyte
 	{
 		XAxisFacing_NoUp = 0,

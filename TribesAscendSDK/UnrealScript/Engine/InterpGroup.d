@@ -10,6 +10,8 @@ extern(C++) interface InterpGroup : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroup")); }
+	private static __gshared InterpGroup mDefaultProperties;
+	@property final static InterpGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpGroup)("InterpGroup Engine.Default__InterpGroup")); }
 	struct InterpEdSelKey
 	{
 		private ubyte __buffer__[16];

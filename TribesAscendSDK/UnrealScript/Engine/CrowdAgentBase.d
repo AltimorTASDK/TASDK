@@ -9,6 +9,8 @@ extern(C++) interface CrowdAgentBase : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CrowdAgentBase")); }
+	private static __gshared CrowdAgentBase mDefaultProperties;
+	@property final static CrowdAgentBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CrowdAgentBase)("CrowdAgentBase Engine.Default__CrowdAgentBase")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotifyPathChanged;

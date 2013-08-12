@@ -11,6 +11,8 @@ extern(C++) interface UTDroppedItemPickup : UTDroppedPickup
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDroppedItemPickup")); }
+	private static __gshared UTDroppedItemPickup mDefaultProperties;
+	@property final static UTDroppedItemPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDroppedItemPickup)("UTDroppedItemPickup UTGame.Default__UTDroppedItemPickup")); }
 	static struct Functions
 	{
 		private static __gshared

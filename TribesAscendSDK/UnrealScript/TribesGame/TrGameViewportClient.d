@@ -10,6 +10,8 @@ extern(C++) interface TrGameViewportClient : UTGameViewportClient
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameViewportClient")); }
+	private static __gshared TrGameViewportClient mDefaultProperties;
+	@property final static TrGameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameViewportClient)("TrGameViewportClient TribesGame.Default__TrGameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared

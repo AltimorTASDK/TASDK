@@ -8,6 +8,8 @@ extern(C++) interface PBRuleNodeExtractTopBottom : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeExtractTopBottom")); }
+	private static __gshared PBRuleNodeExtractTopBottom mDefaultProperties;
+	@property final static PBRuleNodeExtractTopBottom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeExtractTopBottom)("PBRuleNodeExtractTopBottom Engine.Default__PBRuleNodeExtractTopBottom")); }
 	@property final auto ref
 	{
 		float ExtractNotBottomZ() { return *cast(float*)(cast(size_t)cast(void*)this + 116); }

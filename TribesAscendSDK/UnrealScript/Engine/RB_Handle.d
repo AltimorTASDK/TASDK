@@ -9,6 +9,8 @@ extern(C++) interface RB_Handle : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Handle")); }
+	private static __gshared RB_Handle mDefaultProperties;
+	@property final static RB_Handle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_Handle)("RB_Handle Engine.Default__RB_Handle")); }
 	static struct Functions
 	{
 		private static __gshared

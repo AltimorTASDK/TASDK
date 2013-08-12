@@ -10,6 +10,8 @@ extern(C++) interface GFxDeviceAmmoCount : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxDeviceAmmoCount")); }
+	private static __gshared GFxDeviceAmmoCount mDefaultProperties;
+	@property final static GFxDeviceAmmoCount DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxDeviceAmmoCount)("GFxDeviceAmmoCount TribesGame.Default__GFxDeviceAmmoCount")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInit;

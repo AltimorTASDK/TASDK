@@ -9,6 +9,8 @@ extern(C++) interface GFxTrAction : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrAction")); }
+	private static __gshared GFxTrAction mDefaultProperties;
+	@property final static GFxTrAction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrAction)("GFxTrAction TribesGame.Default__GFxTrAction")); }
 	@property final auto ref
 	{
 		GFxTrPage ActionPage() { return *cast(GFxTrPage*)(cast(size_t)cast(void*)this + 80); }

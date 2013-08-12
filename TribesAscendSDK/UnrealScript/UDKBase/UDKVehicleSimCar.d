@@ -9,6 +9,8 @@ extern(C++) interface UDKVehicleSimCar : SVehicleSimCar
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimCar")); }
+	private static __gshared UDKVehicleSimCar mDefaultProperties;
+	@property final static UDKVehicleSimCar DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimCar)("UDKVehicleSimCar UDKBase.Default__UDKVehicleSimCar")); }
 	@property final
 	{
 		auto ref

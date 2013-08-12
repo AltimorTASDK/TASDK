@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_ChangeMap : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ChangeMap")); }
+	private static __gshared GFxTrPage_ChangeMap mDefaultProperties;
+	@property final static GFxTrPage_ChangeMap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ChangeMap)("GFxTrPage_ChangeMap TribesGame.Default__GFxTrPage_ChangeMap")); }
 	static struct Functions
 	{
 		private static __gshared

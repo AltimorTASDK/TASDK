@@ -8,6 +8,8 @@ extern(C++) interface TrHUDSettings : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUDSettings")); }
+	private static __gshared TrHUDSettings mDefaultProperties;
+	@property final static TrHUDSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHUDSettings)("TrHUDSettings TribesGame.Default__TrHUDSettings")); }
 	static struct Functions
 	{
 		private static __gshared

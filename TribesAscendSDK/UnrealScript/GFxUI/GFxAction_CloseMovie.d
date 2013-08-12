@@ -9,6 +9,8 @@ extern(C++) interface GFxAction_CloseMovie : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxAction_CloseMovie")); }
+	private static __gshared GFxAction_CloseMovie mDefaultProperties;
+	@property final static GFxAction_CloseMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxAction_CloseMovie)("GFxAction_CloseMovie GFxUI.Default__GFxAction_CloseMovie")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mIsValidLevelSequenceObject;

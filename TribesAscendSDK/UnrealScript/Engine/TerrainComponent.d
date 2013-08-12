@@ -11,6 +11,8 @@ extern(C++) interface TerrainComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainComponent")); }
+	private static __gshared TerrainComponent mDefaultProperties;
+	@property final static TerrainComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainComponent)("TerrainComponent Engine.Default__TerrainComponent")); }
 	struct TerrainPatchBounds
 	{
 		private ubyte __buffer__[12];

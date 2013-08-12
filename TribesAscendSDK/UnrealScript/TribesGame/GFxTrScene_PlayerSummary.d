@@ -11,6 +11,8 @@ extern(C++) interface GFxTrScene_PlayerSummary : GFxTrScene
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrScene_PlayerSummary")); }
+	private static __gshared GFxTrScene_PlayerSummary mDefaultProperties;
+	@property final static GFxTrScene_PlayerSummary DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrScene_PlayerSummary)("GFxTrScene_PlayerSummary TribesGame.Default__GFxTrScene_PlayerSummary")); }
 	static struct Functions
 	{
 		private static __gshared

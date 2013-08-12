@@ -10,6 +10,8 @@ extern(C++) interface LandscapeHeightfieldCollisionComponent : PrimitiveComponen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LandscapeHeightfieldCollisionComponent")); }
+	private static __gshared LandscapeHeightfieldCollisionComponent mDefaultProperties;
+	@property final static LandscapeHeightfieldCollisionComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LandscapeHeightfieldCollisionComponent)("LandscapeHeightfieldCollisionComponent Engine.Default__LandscapeHeightfieldCollisionComponent")); }
 	@property final auto ref
 	{
 		ScriptArray!(ubyte) CollisionQuadFlags() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 556); }

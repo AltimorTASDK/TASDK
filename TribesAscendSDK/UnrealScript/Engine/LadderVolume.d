@@ -11,6 +11,8 @@ extern(C++) interface LadderVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LadderVolume")); }
+	private static __gshared LadderVolume mDefaultProperties;
+	@property final static LadderVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LadderVolume)("LadderVolume Engine.Default__LadderVolume")); }
 	static struct Functions
 	{
 		private static __gshared

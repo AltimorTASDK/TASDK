@@ -10,6 +10,8 @@ extern(C++) interface TgSupportCommands : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgSupportCommands")); }
+	private static __gshared TgSupportCommands mDefaultProperties;
+	@property final static TgSupportCommands DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgSupportCommands)("TgSupportCommands PlatformCommon.Default__TgSupportCommands")); }
 	static struct Functions
 	{
 		private static __gshared

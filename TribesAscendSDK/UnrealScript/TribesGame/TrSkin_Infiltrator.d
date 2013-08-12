@@ -8,4 +8,6 @@ extern(C++) interface TrSkin_Infiltrator : TrSkin
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkin_Infiltrator")); }
+	private static __gshared TrSkin_Infiltrator mDefaultProperties;
+	@property final static TrSkin_Infiltrator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkin_Infiltrator)("TrSkin_Infiltrator TribesGame.Default__TrSkin_Infiltrator")); }
 }

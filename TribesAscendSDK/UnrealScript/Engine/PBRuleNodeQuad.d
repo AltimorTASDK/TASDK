@@ -9,6 +9,8 @@ extern(C++) interface PBRuleNodeQuad : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeQuad")); }
+	private static __gshared PBRuleNodeQuad mDefaultProperties;
+	@property final static PBRuleNodeQuad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeQuad)("PBRuleNodeQuad Engine.Default__PBRuleNodeQuad")); }
 	@property final
 	{
 		auto ref

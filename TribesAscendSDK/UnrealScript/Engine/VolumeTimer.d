@@ -9,6 +9,8 @@ extern(C++) interface VolumeTimer : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.VolumeTimer")); }
+	private static __gshared VolumeTimer mDefaultProperties;
+	@property final static VolumeTimer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(VolumeTimer)("VolumeTimer Engine.Default__VolumeTimer")); }
 	static struct Functions
 	{
 		private static __gshared

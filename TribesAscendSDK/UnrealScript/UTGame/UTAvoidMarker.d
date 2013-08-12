@@ -8,6 +8,8 @@ extern(C++) interface UTAvoidMarker : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAvoidMarker")); }
+	private static __gshared UTAvoidMarker mDefaultProperties;
+	@property final static UTAvoidMarker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAvoidMarker)("UTAvoidMarker UTGame.Default__UTAvoidMarker")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;

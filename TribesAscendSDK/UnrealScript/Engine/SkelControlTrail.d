@@ -9,6 +9,8 @@ extern(C++) interface SkelControlTrail : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlTrail")); }
+	private static __gshared SkelControlTrail mDefaultProperties;
+	@property final static SkelControlTrail DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlTrail)("SkelControlTrail Engine.Default__SkelControlTrail")); }
 	@property final
 	{
 		auto ref

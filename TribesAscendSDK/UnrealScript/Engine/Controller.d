@@ -34,6 +34,8 @@ extern(C++) interface Controller : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Controller")); }
+	private static __gshared Controller mDefaultProperties;
+	@property final static Controller DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Controller)("Controller Engine.Default__Controller")); }
 	static struct Functions
 	{
 		private static __gshared

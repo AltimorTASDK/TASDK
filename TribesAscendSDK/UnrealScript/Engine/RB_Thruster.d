@@ -9,6 +9,8 @@ extern(C++) interface RB_Thruster : RigidBodyBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Thruster")); }
+	private static __gshared RB_Thruster mDefaultProperties;
+	@property final static RB_Thruster DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_Thruster)("RB_Thruster Engine.Default__RB_Thruster")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

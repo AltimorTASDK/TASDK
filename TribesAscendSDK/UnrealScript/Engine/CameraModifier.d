@@ -10,6 +10,8 @@ extern(C++) interface CameraModifier : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraModifier")); }
+	private static __gshared CameraModifier mDefaultProperties;
+	@property final static CameraModifier DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraModifier)("CameraModifier Engine.Default__CameraModifier")); }
 	static struct Functions
 	{
 		private static __gshared

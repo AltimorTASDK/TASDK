@@ -8,6 +8,8 @@ extern(C++) interface CurveEdPresetCurve : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CurveEdPresetCurve")); }
+	private static __gshared CurveEdPresetCurve mDefaultProperties;
+	@property final static CurveEdPresetCurve DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CurveEdPresetCurve)("CurveEdPresetCurve Engine.Default__CurveEdPresetCurve")); }
 	struct PresetGeneratedPoint
 	{
 		private ubyte __buffer__[21];

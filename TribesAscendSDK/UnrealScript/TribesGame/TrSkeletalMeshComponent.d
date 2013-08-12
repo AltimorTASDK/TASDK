@@ -8,6 +8,8 @@ extern(C++) interface TrSkeletalMeshComponent : SkeletalMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkeletalMeshComponent")); }
+	private static __gshared TrSkeletalMeshComponent mDefaultProperties;
+	@property final static TrSkeletalMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkeletalMeshComponent)("TrSkeletalMeshComponent TribesGame.Default__TrSkeletalMeshComponent")); }
 	static struct Functions
 	{
 		private static __gshared

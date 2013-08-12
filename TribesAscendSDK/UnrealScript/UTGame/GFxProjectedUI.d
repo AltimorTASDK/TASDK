@@ -11,6 +11,8 @@ extern(C++) interface GFxProjectedUI : UTGFxTweenableMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxProjectedUI")); }
+	private static __gshared GFxProjectedUI mDefaultProperties;
+	@property final static GFxProjectedUI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxProjectedUI)("GFxProjectedUI UTGame.Default__GFxProjectedUI")); }
 	static struct Functions
 	{
 		private static __gshared

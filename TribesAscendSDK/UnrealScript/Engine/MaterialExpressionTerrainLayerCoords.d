@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionTerrainLayerCoords : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTerrainLayerCoords")); }
+	private static __gshared MaterialExpressionTerrainLayerCoords mDefaultProperties;
+	@property final static MaterialExpressionTerrainLayerCoords DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTerrainLayerCoords)("MaterialExpressionTerrainLayerCoords Engine.Default__MaterialExpressionTerrainLayerCoords")); }
 	enum ETerrainCoordMappingType : ubyte
 	{
 		TCMT_Auto = 0,

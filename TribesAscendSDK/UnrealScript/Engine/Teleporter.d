@@ -10,6 +10,8 @@ extern(C++) interface Teleporter : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Teleporter")); }
+	private static __gshared Teleporter mDefaultProperties;
+	@property final static Teleporter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Teleporter)("Teleporter Engine.Default__Teleporter")); }
 	static struct Functions
 	{
 		private static __gshared

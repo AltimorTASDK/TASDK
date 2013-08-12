@@ -10,6 +10,8 @@ extern(C++) interface UTMusicManager : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMusicManager")); }
+	private static __gshared UTMusicManager mDefaultProperties;
+	@property final static UTMusicManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMusicManager)("UTMusicManager UTGame.Default__UTMusicManager")); }
 	static struct Functions
 	{
 		private static __gshared

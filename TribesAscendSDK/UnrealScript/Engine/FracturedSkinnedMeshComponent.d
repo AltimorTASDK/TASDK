@@ -9,6 +9,8 @@ extern(C++) interface FracturedSkinnedMeshComponent : FracturedBaseComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedSkinnedMeshComponent")); }
+	private static __gshared FracturedSkinnedMeshComponent mDefaultProperties;
+	@property final static FracturedSkinnedMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedSkinnedMeshComponent)("FracturedSkinnedMeshComponent Engine.Default__FracturedSkinnedMeshComponent")); }
 	@property final
 	{
 		auto ref

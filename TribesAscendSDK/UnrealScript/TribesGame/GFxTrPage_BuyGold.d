@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_BuyGold : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_BuyGold")); }
+	private static __gshared GFxTrPage_BuyGold mDefaultProperties;
+	@property final static GFxTrPage_BuyGold DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_BuyGold)("GFxTrPage_BuyGold TribesGame.Default__GFxTrPage_BuyGold")); }
 	static struct Functions
 	{
 		private static __gshared

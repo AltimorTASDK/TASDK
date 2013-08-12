@@ -13,6 +13,8 @@ extern(C++) interface ProcBuildingRuleset : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ProcBuildingRuleset")); }
+	private static __gshared ProcBuildingRuleset mDefaultProperties;
+	@property final static ProcBuildingRuleset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ProcBuildingRuleset)("ProcBuildingRuleset Engine.Default__ProcBuildingRuleset")); }
 	enum EProcBuildingAxis : ubyte
 	{
 		EPBAxis_X = 0,

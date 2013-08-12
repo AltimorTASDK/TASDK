@@ -10,6 +10,8 @@ extern(C++) interface PointLightComponent : LightComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PointLightComponent")); }
+	private static __gshared PointLightComponent mDefaultProperties;
+	@property final static PointLightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PointLightComponent)("PointLightComponent Engine.Default__PointLightComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,5 +8,7 @@ extern(C++) interface TrFamilyInfoList : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFamilyInfoList")); }
+	private static __gshared TrFamilyInfoList mDefaultProperties;
+	@property final static TrFamilyInfoList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFamilyInfoList)("TrFamilyInfoList TribesGame.Default__TrFamilyInfoList")); }
 	@property final auto ref ScriptArray!(ScriptString) ClassList() { return *cast(ScriptArray!(ScriptString)*)(cast(size_t)cast(void*)this + 60); }
 }

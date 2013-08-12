@@ -8,6 +8,8 @@ extern(C++) interface LightmassLevelSettings : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LightmassLevelSettings")); }
+	private static __gshared LightmassLevelSettings mDefaultProperties;
+	@property final static LightmassLevelSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LightmassLevelSettings)("LightmassLevelSettings Engine.Default__LightmassLevelSettings")); }
 	@property final
 	{
 		auto ref

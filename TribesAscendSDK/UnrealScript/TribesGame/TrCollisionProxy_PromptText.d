@@ -9,6 +9,8 @@ extern(C++) interface TrCollisionProxy_PromptText : TrCollisionProxy
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy_PromptText")); }
+	private static __gshared TrCollisionProxy_PromptText mDefaultProperties;
+	@property final static TrCollisionProxy_PromptText DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy_PromptText)("TrCollisionProxy_PromptText TribesGame.Default__TrCollisionProxy_PromptText")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface GameKActorSpawnableEffect : KActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameKActorSpawnableEffect")); }
+	private static __gshared GameKActorSpawnableEffect mDefaultProperties;
+	@property final static GameKActorSpawnableEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameKActorSpawnableEffect)("GameKActorSpawnableEffect GameFramework.Default__GameKActorSpawnableEffect")); }
 	static struct Functions
 	{
 		private static __gshared

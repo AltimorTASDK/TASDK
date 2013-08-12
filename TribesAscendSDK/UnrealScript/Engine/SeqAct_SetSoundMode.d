@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_SetSoundMode : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetSoundMode")); }
+	private static __gshared SeqAct_SetSoundMode mDefaultProperties;
+	@property final static SeqAct_SetSoundMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetSoundMode)("SeqAct_SetSoundMode Engine.Default__SeqAct_SetSoundMode")); }
 	static struct Functions
 	{
 		private static __gshared

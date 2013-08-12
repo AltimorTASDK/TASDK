@@ -14,6 +14,8 @@ extern(C++) interface GameplayEventsWriter : GameplayEvents
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameplayEventsWriter")); }
+	private static __gshared GameplayEventsWriter mDefaultProperties;
+	@property final static GameplayEventsWriter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameplayEventsWriter)("GameplayEventsWriter Engine.Default__GameplayEventsWriter")); }
 	static struct Functions
 	{
 		private static __gshared

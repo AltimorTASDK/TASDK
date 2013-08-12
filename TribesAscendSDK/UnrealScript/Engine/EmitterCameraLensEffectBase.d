@@ -10,6 +10,8 @@ extern(C++) interface EmitterCameraLensEffectBase : Emitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterCameraLensEffectBase")); }
+	private static __gshared EmitterCameraLensEffectBase mDefaultProperties;
+	@property final static EmitterCameraLensEffectBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EmitterCameraLensEffectBase)("EmitterCameraLensEffectBase Engine.Default__EmitterCameraLensEffectBase")); }
 	static struct Functions
 	{
 		private static __gshared

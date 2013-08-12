@@ -11,6 +11,8 @@ extern(C++) interface TrDevice_Deployable : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Deployable")); }
+	private static __gshared TrDevice_Deployable mDefaultProperties;
+	@property final static TrDevice_Deployable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Deployable)("TrDevice_Deployable TribesGame.Default__TrDevice_Deployable")); }
 	static struct Functions
 	{
 		private static __gshared

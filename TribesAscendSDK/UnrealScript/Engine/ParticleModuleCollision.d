@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleCollision : ParticleModuleCollisionBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCollision")); }
+	private static __gshared ParticleModuleCollision mDefaultProperties;
+	@property final static ParticleModuleCollision DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleCollision)("ParticleModuleCollision Engine.Default__ParticleModuleCollision")); }
 	@property final
 	{
 		auto ref

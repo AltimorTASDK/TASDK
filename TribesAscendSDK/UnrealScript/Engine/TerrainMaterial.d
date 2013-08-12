@@ -10,6 +10,8 @@ extern(C++) interface TerrainMaterial : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainMaterial")); }
+	private static __gshared TerrainMaterial mDefaultProperties;
+	@property final static TerrainMaterial DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainMaterial)("TerrainMaterial Engine.Default__TerrainMaterial")); }
 	enum ETerrainMappingType : ubyte
 	{
 		TMT_Auto = 0,

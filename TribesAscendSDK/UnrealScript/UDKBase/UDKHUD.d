@@ -10,6 +10,8 @@ extern(C++) interface UDKHUD : MobileHUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKHUD")); }
+	private static __gshared UDKHUD mDefaultProperties;
+	@property final static UDKHUD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKHUD)("UDKHUD UDKBase.Default__UDKHUD")); }
 	static struct Functions
 	{
 		private static __gshared

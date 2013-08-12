@@ -10,6 +10,8 @@ extern(C++) interface GameMessage : LocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameMessage")); }
+	private static __gshared GameMessage mDefaultProperties;
+	@property final static GameMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameMessage)("GameMessage Engine.Default__GameMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

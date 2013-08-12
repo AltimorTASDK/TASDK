@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleTypeDataAnimTrail : ParticleModuleTypeDataBa
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataAnimTrail")); }
+	private static __gshared ParticleModuleTypeDataAnimTrail mDefaultProperties;
+	@property final static ParticleModuleTypeDataAnimTrail DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataAnimTrail)("ParticleModuleTypeDataAnimTrail Engine.Default__ParticleModuleTypeDataAnimTrail")); }
 	@property final
 	{
 		auto ref

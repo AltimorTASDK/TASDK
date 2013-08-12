@@ -11,6 +11,8 @@ extern(C++) interface UTGameViewportClient : UDKGameViewportClient
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGameViewportClient")); }
+	private static __gshared UTGameViewportClient mDefaultProperties;
+	@property final static UTGameViewportClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGameViewportClient)("UTGameViewportClient UTGame.Default__UTGameViewportClient")); }
 	static struct Functions
 	{
 		private static __gshared

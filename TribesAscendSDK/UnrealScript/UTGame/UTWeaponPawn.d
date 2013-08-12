@@ -17,6 +17,8 @@ extern(C++) interface UTWeaponPawn : UDKWeaponPawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponPawn")); }
+	private static __gshared UTWeaponPawn mDefaultProperties;
+	@property final static UTWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponPawn)("UTWeaponPawn UTGame.Default__UTWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared

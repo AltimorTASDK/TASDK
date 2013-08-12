@@ -16,6 +16,8 @@ extern(C++) interface AudioComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AudioComponent")); }
+	private static __gshared AudioComponent mDefaultProperties;
+	@property final static AudioComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AudioComponent)("AudioComponent Engine.Default__AudioComponent")); }
 	static struct Functions
 	{
 		private static __gshared

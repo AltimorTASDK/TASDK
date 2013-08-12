@@ -10,6 +10,8 @@ extern(C++) interface AITree_DMC_Base : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AITree_DMC_Base")); }
+	private static __gshared AITree_DMC_Base mDefaultProperties;
+	@property final static AITree_DMC_Base DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AITree_DMC_Base)("AITree_DMC_Base Engine.Default__AITree_DMC_Base")); }
 	static struct Functions
 	{
 		private static __gshared

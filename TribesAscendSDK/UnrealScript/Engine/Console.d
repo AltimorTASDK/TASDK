@@ -12,6 +12,8 @@ extern(C++) interface Console : Interaction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Console")); }
+	private static __gshared Console mDefaultProperties;
+	@property final static Console DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Console)("Console Engine.Default__Console")); }
 	static struct Functions
 	{
 		private static __gshared

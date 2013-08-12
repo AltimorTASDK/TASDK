@@ -11,6 +11,8 @@ extern(C++) interface TrDeployable_TargetingBeacon : TrDeployable_RadarSensor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_TargetingBeacon")); }
+	private static __gshared TrDeployable_TargetingBeacon mDefaultProperties;
+	@property final static TrDeployable_TargetingBeacon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_TargetingBeacon)("TrDeployable_TargetingBeacon TribesGame.Default__TrDeployable_TargetingBeacon")); }
 	static struct Functions
 	{
 		private static __gshared

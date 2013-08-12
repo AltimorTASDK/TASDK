@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleVelocity : ParticleModuleVelocityBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleVelocity")); }
+	private static __gshared ParticleModuleVelocity mDefaultProperties;
+	@property final static ParticleModuleVelocity DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleVelocity)("ParticleModuleVelocity Engine.Default__ParticleModuleVelocity")); }
 	@property final auto ref
 	{
 		DistributionFloat.RawDistributionFloat StartVelocityRadial() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 104); }

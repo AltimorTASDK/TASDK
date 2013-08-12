@@ -8,6 +8,8 @@ extern(C++) interface UTSkelControl_JetThruster : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_JetThruster")); }
+	private static __gshared UTSkelControl_JetThruster mDefaultProperties;
+	@property final static UTSkelControl_JetThruster DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_JetThruster)("UTSkelControl_JetThruster UTGame.Default__UTSkelControl_JetThruster")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;

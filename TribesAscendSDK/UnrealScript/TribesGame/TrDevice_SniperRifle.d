@@ -9,6 +9,8 @@ extern(C++) interface TrDevice_SniperRifle : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_SniperRifle")); }
+	private static __gshared TrDevice_SniperRifle mDefaultProperties;
+	@property final static TrDevice_SniperRifle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_SniperRifle)("TrDevice_SniperRifle TribesGame.Default__TrDevice_SniperRifle")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -16,6 +16,8 @@ extern(C++) interface UDKBot : AIController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKBot")); }
+	private static __gshared UDKBot mDefaultProperties;
+	@property final static UDKBot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKBot)("UDKBot UDKBase.Default__UDKBot")); }
 	static struct Functions
 	{
 		private static __gshared

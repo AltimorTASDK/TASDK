@@ -9,6 +9,8 @@ extern(C++) interface UIDataProvider_OnlineProfileSettings : UIDataProvider_Onli
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider_OnlineProfileSettings")); }
+	private static __gshared UIDataProvider_OnlineProfileSettings mDefaultProperties;
+	@property final static UIDataProvider_OnlineProfileSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider_OnlineProfileSettings)("UIDataProvider_OnlineProfileSettings Engine.Default__UIDataProvider_OnlineProfileSettings")); }
 	static struct Functions
 	{
 		private static __gshared

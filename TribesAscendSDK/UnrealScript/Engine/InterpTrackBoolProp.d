@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackBoolProp : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackBoolProp")); }
+	private static __gshared InterpTrackBoolProp mDefaultProperties;
+	@property final static InterpTrackBoolProp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackBoolProp)("InterpTrackBoolProp Engine.Default__InterpTrackBoolProp")); }
 	struct BoolTrackKey
 	{
 		private ubyte __buffer__[8];

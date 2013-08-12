@@ -8,6 +8,8 @@ extern(C++) interface TrSubDevice_Turret : TrSubDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSubDevice_Turret")); }
+	private static __gshared TrSubDevice_Turret mDefaultProperties;
+	@property final static TrSubDevice_Turret DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSubDevice_Turret)("TrSubDevice_Turret TribesGame.Default__TrSubDevice_Turret")); }
 	static struct Functions
 	{
 		private static __gshared

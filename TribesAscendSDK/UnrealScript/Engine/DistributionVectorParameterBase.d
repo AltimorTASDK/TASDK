@@ -9,6 +9,8 @@ extern(C++) interface DistributionVectorParameterBase : DistributionVectorConsta
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorParameterBase")); }
+	private static __gshared DistributionVectorParameterBase mDefaultProperties;
+	@property final static DistributionVectorParameterBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionVectorParameterBase)("DistributionVectorParameterBase Engine.Default__DistributionVectorParameterBase")); }
 	@property final auto ref
 	{
 		DistributionFloatParameterBase.DistributionParamMode ParamModes() { return *cast(DistributionFloatParameterBase.DistributionParamMode*)(cast(size_t)cast(void*)this + 156); }

@@ -9,6 +9,8 @@ extern(C++) interface DOFAndBloomEffect : DOFEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DOFAndBloomEffect")); }
+	private static __gshared DOFAndBloomEffect mDefaultProperties;
+	@property final static DOFAndBloomEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DOFAndBloomEffect)("DOFAndBloomEffect Engine.Default__DOFAndBloomEffect")); }
 	@property final
 	{
 		auto ref

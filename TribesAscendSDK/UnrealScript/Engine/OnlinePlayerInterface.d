@@ -12,6 +12,8 @@ extern(C++) interface OnlinePlayerInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlinePlayerInterface")); }
+	private static __gshared OnlinePlayerInterface mDefaultProperties;
+	@property final static OnlinePlayerInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePlayerInterface)("OnlinePlayerInterface Engine.Default__OnlinePlayerInterface")); }
 	static struct Functions
 	{
 		private static __gshared

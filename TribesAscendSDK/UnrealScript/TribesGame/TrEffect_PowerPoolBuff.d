@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_PowerPoolBuff : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_PowerPoolBuff")); }
+	private static __gshared TrEffect_PowerPoolBuff mDefaultProperties;
+	@property final static TrEffect_PowerPoolBuff DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_PowerPoolBuff)("TrEffect_PowerPoolBuff TribesGame.Default__TrEffect_PowerPoolBuff")); }
 	static struct Functions
 	{
 		private static __gshared

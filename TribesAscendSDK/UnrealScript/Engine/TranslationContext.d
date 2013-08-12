@@ -9,6 +9,8 @@ extern(C++) interface TranslationContext : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TranslationContext")); }
+	private static __gshared TranslationContext mDefaultProperties;
+	@property final static TranslationContext DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TranslationContext)("TranslationContext Engine.Default__TranslationContext")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRegisterTranslatorTag;

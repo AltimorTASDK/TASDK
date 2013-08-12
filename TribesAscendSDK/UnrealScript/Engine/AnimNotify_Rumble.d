@@ -9,6 +9,8 @@ extern(C++) interface AnimNotify_Rumble : AnimNotify
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_Rumble")); }
+	private static __gshared AnimNotify_Rumble mDefaultProperties;
+	@property final static AnimNotify_Rumble DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_Rumble)("AnimNotify_Rumble Engine.Default__AnimNotify_Rumble")); }
 	@property final
 	{
 		auto ref

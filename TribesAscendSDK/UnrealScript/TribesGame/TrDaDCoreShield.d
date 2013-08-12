@@ -13,6 +13,8 @@ extern(C++) interface TrDaDCoreShield : DynamicSMActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCoreShield")); }
+	private static __gshared TrDaDCoreShield mDefaultProperties;
+	@property final static TrDaDCoreShield DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDCoreShield)("TrDaDCoreShield TribesGame.Default__TrDaDCoreShield")); }
 	static struct Functions
 	{
 		private static __gshared

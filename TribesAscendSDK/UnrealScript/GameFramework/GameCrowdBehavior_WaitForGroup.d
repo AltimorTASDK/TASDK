@@ -9,6 +9,8 @@ extern(C++) interface GameCrowdBehavior_WaitForGroup : GameCrowdAgentBehavior
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdBehavior_WaitForGroup")); }
+	private static __gshared GameCrowdBehavior_WaitForGroup mDefaultProperties;
+	@property final static GameCrowdBehavior_WaitForGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdBehavior_WaitForGroup)("GameCrowdBehavior_WaitForGroup GameFramework.Default__GameCrowdBehavior_WaitForGroup")); }
 	static struct Functions
 	{
 		private static __gshared

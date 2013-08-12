@@ -9,6 +9,8 @@ extern(C++) interface TrAnimNodeBlendByDirection : AnimNodeSequenceBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByDirection")); }
+	private static __gshared TrAnimNodeBlendByDirection mDefaultProperties;
+	@property final static TrAnimNodeBlendByDirection DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByDirection)("TrAnimNodeBlendByDirection TribesGame.Default__TrAnimNodeBlendByDirection")); }
 	@property final
 	{
 		auto ref

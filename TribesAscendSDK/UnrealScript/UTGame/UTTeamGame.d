@@ -22,6 +22,8 @@ extern(C++) interface UTTeamGame : UTDeathmatch
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamGame")); }
+	private static __gshared UTTeamGame mDefaultProperties;
+	@property final static UTTeamGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamGame)("UTTeamGame UTGame.Default__UTTeamGame")); }
 	static struct Functions
 	{
 		private static __gshared

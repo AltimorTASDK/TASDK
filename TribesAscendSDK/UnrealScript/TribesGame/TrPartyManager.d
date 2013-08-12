@@ -9,6 +9,8 @@ extern(C++) interface TrPartyManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPartyManager")); }
+	private static __gshared TrPartyManager mDefaultProperties;
+	@property final static TrPartyManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPartyManager)("TrPartyManager TribesGame.Default__TrPartyManager")); }
 	static struct Functions
 	{
 		private static __gshared

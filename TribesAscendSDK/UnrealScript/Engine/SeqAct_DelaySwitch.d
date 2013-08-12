@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_DelaySwitch : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_DelaySwitch")); }
+	private static __gshared SeqAct_DelaySwitch mDefaultProperties;
+	@property final static SeqAct_DelaySwitch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_DelaySwitch)("SeqAct_DelaySwitch Engine.Default__SeqAct_DelaySwitch")); }
 	@property final auto ref
 	{
 		float NextLinkTime() { return *cast(float*)(cast(size_t)cast(void*)this + 260); }

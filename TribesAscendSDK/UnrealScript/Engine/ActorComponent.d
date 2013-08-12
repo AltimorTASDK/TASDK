@@ -10,6 +10,8 @@ extern(C++) interface ActorComponent : Component
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorComponent")); }
+	private static __gshared ActorComponent mDefaultProperties;
+	@property final static ActorComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorComponent)("ActorComponent Engine.Default__ActorComponent")); }
 	static struct Functions
 	{
 		private static __gshared

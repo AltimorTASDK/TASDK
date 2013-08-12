@@ -9,6 +9,8 @@ extern(C++) interface AICommandBase : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AICommandBase")); }
+	private static __gshared AICommandBase mDefaultProperties;
+	@property final static AICommandBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AICommandBase)("AICommandBase Engine.Default__AICommandBase")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetUtility;

@@ -10,6 +10,8 @@ extern(C++) interface UDKAnimBlendByFlying : UDKAnimBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFlying")); }
+	private static __gshared UDKAnimBlendByFlying mDefaultProperties;
+	@property final static UDKAnimBlendByFlying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByFlying)("UDKAnimBlendByFlying UDKBase.Default__UDKAnimBlendByFlying")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mUpdateFlyingState;

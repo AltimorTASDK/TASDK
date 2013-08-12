@@ -9,6 +9,8 @@ extern(C++) interface AmbientOcclusionEffect : PostProcessEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AmbientOcclusionEffect")); }
+	private static __gshared AmbientOcclusionEffect mDefaultProperties;
+	@property final static AmbientOcclusionEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AmbientOcclusionEffect)("AmbientOcclusionEffect Engine.Default__AmbientOcclusionEffect")); }
 	enum EAmbientOcclusionQuality : ubyte
 	{
 		AO_High = 0,

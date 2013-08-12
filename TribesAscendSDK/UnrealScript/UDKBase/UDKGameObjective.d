@@ -16,6 +16,8 @@ extern(C++) interface UDKGameObjective : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameObjective")); }
+	private static __gshared UDKGameObjective mDefaultProperties;
+	@property final static UDKGameObjective DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameObjective)("UDKGameObjective UDKBase.Default__UDKGameObjective")); }
 	static struct Functions
 	{
 		private static __gshared

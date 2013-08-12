@@ -10,6 +10,8 @@ extern(C++) interface StaticMesh : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMesh")); }
+	private static __gshared StaticMesh mDefaultProperties;
+	@property final static StaticMesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMesh)("StaticMesh Engine.Default__StaticMesh")); }
 	struct StaticMeshLODElement
 	{
 		private ubyte __buffer__[16];

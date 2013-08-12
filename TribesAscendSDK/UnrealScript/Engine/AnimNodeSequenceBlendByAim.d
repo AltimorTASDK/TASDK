@@ -9,6 +9,8 @@ extern(C++) interface AnimNodeSequenceBlendByAim : AnimNodeSequenceBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeSequenceBlendByAim")); }
+	private static __gshared AnimNodeSequenceBlendByAim mDefaultProperties;
+	@property final static AnimNodeSequenceBlendByAim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeSequenceBlendByAim)("AnimNodeSequenceBlendByAim Engine.Default__AnimNodeSequenceBlendByAim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckAnimsUpToDate;

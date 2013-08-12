@@ -10,6 +10,8 @@ extern(C++) interface PortalMarker : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PortalMarker")); }
+	private static __gshared PortalMarker mDefaultProperties;
+	@property final static PortalMarker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PortalMarker)("PortalMarker Engine.Default__PortalMarker")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCanTeleport;

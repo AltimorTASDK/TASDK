@@ -11,6 +11,8 @@ extern(C++) interface UDKUIDataStore_StringList : UIDataStore_StringBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_StringList")); }
+	private static __gshared UDKUIDataStore_StringList mDefaultProperties;
+	@property final static UDKUIDataStore_StringList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_StringList)("UDKUIDataStore_StringList UDKBase.Default__UDKUIDataStore_StringList")); }
 	static struct Functions
 	{
 		private static __gshared

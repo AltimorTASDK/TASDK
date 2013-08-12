@@ -11,6 +11,8 @@ extern(C++) interface GFxUIFrontEnd_TitleScreen : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUIFrontEnd_TitleScreen")); }
+	private static __gshared GFxUIFrontEnd_TitleScreen mDefaultProperties;
+	@property final static GFxUIFrontEnd_TitleScreen DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUIFrontEnd_TitleScreen)("GFxUIFrontEnd_TitleScreen UTGame.Default__GFxUIFrontEnd_TitleScreen")); }
 	static struct Functions
 	{
 		private static __gshared

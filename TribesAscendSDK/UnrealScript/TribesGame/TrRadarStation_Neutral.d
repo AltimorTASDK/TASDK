@@ -10,6 +10,8 @@ extern(C++) interface TrRadarStation_Neutral : TrDeployable_RadarSensor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRadarStation_Neutral")); }
+	private static __gshared TrRadarStation_Neutral mDefaultProperties;
+	@property final static TrRadarStation_Neutral DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRadarStation_Neutral)("TrRadarStation_Neutral TribesGame.Default__TrRadarStation_Neutral")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface TrCTFBase_DiamondSword : TrCTFBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFBase_DiamondSword")); }
+	private static __gshared TrCTFBase_DiamondSword mDefaultProperties;
+	@property final static TrCTFBase_DiamondSword DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFBase_DiamondSword)("TrCTFBase_DiamondSword TribesGame.Default__TrCTFBase_DiamondSword")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetSpectatorName;

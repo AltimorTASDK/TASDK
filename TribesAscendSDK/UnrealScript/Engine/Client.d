@@ -8,6 +8,8 @@ extern(C++) interface Client : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Client")); }
+	private static __gshared Client mDefaultProperties;
+	@property final static Client DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Client)("Client Engine.Default__Client")); }
 	@property final auto ref
 	{
 		float DisplayGamma() { return *cast(float*)(cast(size_t)cast(void*)this + 68); }

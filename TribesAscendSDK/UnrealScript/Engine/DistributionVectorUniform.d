@@ -8,6 +8,8 @@ extern(C++) interface DistributionVectorUniform : DistributionVector
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionVectorUniform")); }
+	private static __gshared DistributionVectorUniform mDefaultProperties;
+	@property final static DistributionVectorUniform DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionVectorUniform)("DistributionVectorUniform Engine.Default__DistributionVectorUniform")); }
 	@property final
 	{
 		auto ref

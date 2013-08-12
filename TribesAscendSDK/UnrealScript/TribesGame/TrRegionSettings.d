@@ -9,6 +9,8 @@ extern(C++) interface TrRegionSettings : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRegionSettings")); }
+	private static __gshared TrRegionSettings mDefaultProperties;
+	@property final static TrRegionSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRegionSettings)("TrRegionSettings TribesGame.Default__TrRegionSettings")); }
 	static struct Functions
 	{
 		private static __gshared

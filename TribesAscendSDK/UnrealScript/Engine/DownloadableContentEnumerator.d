@@ -9,6 +9,8 @@ extern(C++) interface DownloadableContentEnumerator : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DownloadableContentEnumerator")); }
+	private static __gshared DownloadableContentEnumerator mDefaultProperties;
+	@property final static DownloadableContentEnumerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DownloadableContentEnumerator)("DownloadableContentEnumerator Engine.Default__DownloadableContentEnumerator")); }
 	static struct Functions
 	{
 		private static __gshared

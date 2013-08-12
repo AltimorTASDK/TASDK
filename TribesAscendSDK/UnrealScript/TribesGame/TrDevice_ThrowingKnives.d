@@ -10,6 +10,8 @@ extern(C++) interface TrDevice_ThrowingKnives : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_ThrowingKnives")); }
+	private static __gshared TrDevice_ThrowingKnives mDefaultProperties;
+	@property final static TrDevice_ThrowingKnives DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_ThrowingKnives)("TrDevice_ThrowingKnives TribesGame.Default__TrDevice_ThrowingKnives")); }
 	static struct Functions
 	{
 		private static __gshared

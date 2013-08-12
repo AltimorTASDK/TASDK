@@ -8,6 +8,8 @@ extern(C++) interface UTSkelControl_CicadaEngine : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_CicadaEngine")); }
+	private static __gshared UTSkelControl_CicadaEngine mDefaultProperties;
+	@property final static UTSkelControl_CicadaEngine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_CicadaEngine)("UTSkelControl_CicadaEngine UTGame.Default__UTSkelControl_CicadaEngine")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;

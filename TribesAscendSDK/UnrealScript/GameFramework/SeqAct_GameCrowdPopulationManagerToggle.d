@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_GameCrowdPopulationManagerToggle : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqAct_GameCrowdPopulationManagerToggle")); }
+	private static __gshared SeqAct_GameCrowdPopulationManagerToggle mDefaultProperties;
+	@property final static SeqAct_GameCrowdPopulationManagerToggle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GameCrowdPopulationManagerToggle)("SeqAct_GameCrowdPopulationManagerToggle GameFramework.Default__SeqAct_GameCrowdPopulationManagerToggle")); }
 	static struct Functions
 	{
 		private static __gshared

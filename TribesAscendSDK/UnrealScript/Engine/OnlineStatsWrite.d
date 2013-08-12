@@ -9,6 +9,8 @@ extern(C++) interface OnlineStatsWrite : OnlineStats
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineStatsWrite")); }
+	private static __gshared OnlineStatsWrite mDefaultProperties;
+	@property final static OnlineStatsWrite DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineStatsWrite)("OnlineStatsWrite Engine.Default__OnlineStatsWrite")); }
 	static struct Functions
 	{
 		private static __gshared

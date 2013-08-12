@@ -13,6 +13,8 @@ extern(C++) interface TrDeployable_PrismMine : TrDeployable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_PrismMine")); }
+	private static __gshared TrDeployable_PrismMine mDefaultProperties;
+	@property final static TrDeployable_PrismMine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_PrismMine)("TrDeployable_PrismMine TribesGame.Default__TrDeployable_PrismMine")); }
 	static struct Functions
 	{
 		private static __gshared

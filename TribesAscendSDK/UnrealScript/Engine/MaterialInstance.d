@@ -13,6 +13,8 @@ extern(C++) interface MaterialInstance : MaterialInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstance")); }
+	private static __gshared MaterialInstance mDefaultProperties;
+	@property final static MaterialInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstance)("MaterialInstance Engine.Default__MaterialInstance")); }
 	static struct Functions
 	{
 		private static __gshared

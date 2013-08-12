@@ -9,6 +9,8 @@ extern(C++) interface ApexStaticDestructibleComponent : ApexStaticComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexStaticDestructibleComponent")); }
+	private static __gshared ApexStaticDestructibleComponent mDefaultProperties;
+	@property final static ApexStaticDestructibleComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexStaticDestructibleComponent)("ApexStaticDestructibleComponent Engine.Default__ApexStaticDestructibleComponent")); }
 	@property final
 	{
 		auto ref

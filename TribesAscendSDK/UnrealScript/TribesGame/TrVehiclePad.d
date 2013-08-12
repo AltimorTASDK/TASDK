@@ -10,6 +10,8 @@ extern(C++) interface TrVehiclePad : SkeletalMeshActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehiclePad")); }
+	private static __gshared TrVehiclePad mDefaultProperties;
+	@property final static TrVehiclePad DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehiclePad)("TrVehiclePad TribesGame.Default__TrVehiclePad")); }
 	static struct Functions
 	{
 		private static __gshared

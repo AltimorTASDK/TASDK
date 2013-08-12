@@ -11,6 +11,8 @@ extern(C++) interface UTPickupInventory : UTInventory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPickupInventory")); }
+	private static __gshared UTPickupInventory mDefaultProperties;
+	@property final static UTPickupInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPickupInventory)("UTPickupInventory UTGame.Default__UTPickupInventory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mBotDesireability;

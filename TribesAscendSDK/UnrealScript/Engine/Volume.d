@@ -11,6 +11,8 @@ extern(C++) interface Volume : Brush
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Volume")); }
+	private static __gshared Volume mDefaultProperties;
+	@property final static Volume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Volume)("Volume Engine.Default__Volume")); }
 	static struct Functions
 	{
 		private static __gshared

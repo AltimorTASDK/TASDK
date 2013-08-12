@@ -10,6 +10,8 @@ extern(C++) interface TrWeatherVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrWeatherVolume")); }
+	private static __gshared TrWeatherVolume mDefaultProperties;
+	@property final static TrWeatherVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrWeatherVolume)("TrWeatherVolume TribesGame.Default__TrWeatherVolume")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface ParticleModuleRequired : ParticleModule
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRequired")); }
+	private static __gshared ParticleModuleRequired mDefaultProperties;
+	@property final static ParticleModuleRequired DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRequired)("ParticleModuleRequired Engine.Default__ParticleModuleRequired")); }
 	enum EEmitterNormalsMode : ubyte
 	{
 		ENM_CameraFacing = 0,

@@ -9,6 +9,8 @@ extern(C++) interface TrSubDevice : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSubDevice")); }
+	private static __gshared TrSubDevice mDefaultProperties;
+	@property final static TrSubDevice DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSubDevice)("TrSubDevice TribesGame.Default__TrSubDevice")); }
 	static struct Functions
 	{
 		private static __gshared

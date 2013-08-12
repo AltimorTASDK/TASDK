@@ -8,6 +8,8 @@ extern(C++) interface TgPlayerProfile : OnlinePlayerStorage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class PlatformCommon.TgPlayerProfile")); }
+	private static __gshared TgPlayerProfile mDefaultProperties;
+	@property final static TgPlayerProfile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TgPlayerProfile)("TgPlayerProfile PlatformCommon.Default__TgPlayerProfile")); }
 	struct BadgeStruct
 	{
 		private ubyte __buffer__[52];

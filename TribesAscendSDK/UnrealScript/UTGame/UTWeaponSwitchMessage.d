@@ -10,6 +10,8 @@ extern(C++) interface UTWeaponSwitchMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponSwitchMessage")); }
+	private static __gshared UTWeaponSwitchMessage mDefaultProperties;
+	@property final static UTWeaponSwitchMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponSwitchMessage)("UTWeaponSwitchMessage UTGame.Default__UTWeaponSwitchMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

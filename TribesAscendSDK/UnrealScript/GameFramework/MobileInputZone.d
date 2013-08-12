@@ -12,6 +12,8 @@ extern(C++) interface MobileInputZone : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.MobileInputZone")); }
+	private static __gshared MobileInputZone mDefaultProperties;
+	@property final static MobileInputZone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MobileInputZone)("MobileInputZone GameFramework.Default__MobileInputZone")); }
 	static struct Functions
 	{
 		private static __gshared

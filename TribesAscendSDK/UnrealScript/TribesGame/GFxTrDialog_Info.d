@@ -8,4 +8,6 @@ extern(C++) interface GFxTrDialog_Info : GFxTrFront_Dialog
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrDialog_Info")); }
+	private static __gshared GFxTrDialog_Info mDefaultProperties;
+	@property final static GFxTrDialog_Info DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrDialog_Info)("GFxTrDialog_Info TribesGame.Default__GFxTrDialog_Info")); }
 }

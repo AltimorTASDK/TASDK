@@ -8,6 +8,8 @@ extern(C++) interface CullDistanceVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CullDistanceVolume")); }
+	private static __gshared CullDistanceVolume mDefaultProperties;
+	@property final static CullDistanceVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CullDistanceVolume)("CullDistanceVolume Engine.Default__CullDistanceVolume")); }
 	struct CullDistanceSizePair
 	{
 		private ubyte __buffer__[8];

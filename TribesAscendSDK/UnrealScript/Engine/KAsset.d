@@ -14,6 +14,8 @@ extern(C++) interface KAsset : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KAsset")); }
+	private static __gshared KAsset mDefaultProperties;
+	@property final static KAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KAsset)("KAsset Engine.Default__KAsset")); }
 	static struct Functions
 	{
 		private static __gshared

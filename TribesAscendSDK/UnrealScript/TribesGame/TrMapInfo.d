@@ -10,6 +10,8 @@ extern(C++) interface TrMapInfo : UDKMapInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrMapInfo")); }
+	private static __gshared TrMapInfo mDefaultProperties;
+	@property final static TrMapInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrMapInfo)("TrMapInfo TribesGame.Default__TrMapInfo")); }
 	@property final auto ref
 	{
 		ScriptName m_DefaultPhysicalMaterialName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 104); }

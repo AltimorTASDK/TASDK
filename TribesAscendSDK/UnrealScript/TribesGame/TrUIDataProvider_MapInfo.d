@@ -8,6 +8,8 @@ extern(C++) interface TrUIDataProvider_MapInfo : UDKUIDataProvider_MapInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrUIDataProvider_MapInfo")); }
+	private static __gshared TrUIDataProvider_MapInfo mDefaultProperties;
+	@property final static TrUIDataProvider_MapInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrUIDataProvider_MapInfo)("TrUIDataProvider_MapInfo TribesGame.Default__TrUIDataProvider_MapInfo")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mShouldBeFiltered;

@@ -8,6 +8,8 @@ extern(C++) interface SpotLightToggleable : SpotLight
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpotLightToggleable")); }
+	private static __gshared SpotLightToggleable mDefaultProperties;
+	@property final static SpotLightToggleable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpotLightToggleable)("SpotLightToggleable Engine.Default__SpotLightToggleable")); }
 	static struct Functions
 	{
 		private static __gshared

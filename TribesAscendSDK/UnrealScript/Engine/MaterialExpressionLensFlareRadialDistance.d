@@ -8,4 +8,6 @@ extern(C++) interface MaterialExpressionLensFlareRadialDistance : MaterialExpres
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionLensFlareRadialDistance")); }
+	private static __gshared MaterialExpressionLensFlareRadialDistance mDefaultProperties;
+	@property final static MaterialExpressionLensFlareRadialDistance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionLensFlareRadialDistance)("MaterialExpressionLensFlareRadialDistance Engine.Default__MaterialExpressionLensFlareRadialDistance")); }
 }

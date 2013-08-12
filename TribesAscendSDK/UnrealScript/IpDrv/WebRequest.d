@@ -8,6 +8,8 @@ extern(C++) interface WebRequest : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebRequest")); }
+	private static __gshared WebRequest mDefaultProperties;
+	@property final static WebRequest DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebRequest)("WebRequest IpDrv.Default__WebRequest")); }
 	static struct Functions
 	{
 		private static __gshared

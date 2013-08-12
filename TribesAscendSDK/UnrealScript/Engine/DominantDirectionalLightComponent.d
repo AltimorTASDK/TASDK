@@ -10,6 +10,8 @@ extern(C++) interface DominantDirectionalLightComponent : DirectionalLightCompon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DominantDirectionalLightComponent")); }
+	private static __gshared DominantDirectionalLightComponent mDefaultProperties;
+	@property final static DominantDirectionalLightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DominantDirectionalLightComponent)("DominantDirectionalLightComponent Engine.Default__DominantDirectionalLightComponent")); }
 	@property final auto ref
 	{
 		UObject.Array_Mirror DominantLightShadowMap() { return *cast(UObject.Array_Mirror*)(cast(size_t)cast(void*)this + 640); }

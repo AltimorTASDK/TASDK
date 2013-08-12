@@ -12,6 +12,8 @@ extern(C++) interface TrCallIn_DeliveryPod : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_DeliveryPod")); }
+	private static __gshared TrCallIn_DeliveryPod mDefaultProperties;
+	@property final static TrCallIn_DeliveryPod DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_DeliveryPod)("TrCallIn_DeliveryPod TribesGame.Default__TrCallIn_DeliveryPod")); }
 	static struct Functions
 	{
 		private static __gshared

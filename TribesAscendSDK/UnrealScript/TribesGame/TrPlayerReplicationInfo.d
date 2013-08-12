@@ -18,6 +18,8 @@ extern(C++) interface TrPlayerReplicationInfo : UTPlayerReplicationInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerReplicationInfo")); }
+	private static __gshared TrPlayerReplicationInfo mDefaultProperties;
+	@property final static TrPlayerReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPlayerReplicationInfo)("TrPlayerReplicationInfo TribesGame.Default__TrPlayerReplicationInfo")); }
 	static struct Functions
 	{
 		private static __gshared

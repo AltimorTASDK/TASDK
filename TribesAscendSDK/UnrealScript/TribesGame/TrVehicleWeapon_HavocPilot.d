@@ -10,6 +10,8 @@ extern(C++) interface TrVehicleWeapon_HavocPilot : TrVehicleWeapon_BurstShot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleWeapon_HavocPilot")); }
+	private static __gshared TrVehicleWeapon_HavocPilot mDefaultProperties;
+	@property final static TrVehicleWeapon_HavocPilot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleWeapon_HavocPilot)("TrVehicleWeapon_HavocPilot TribesGame.Default__TrVehicleWeapon_HavocPilot")); }
 	static struct Functions
 	{
 		private static __gshared

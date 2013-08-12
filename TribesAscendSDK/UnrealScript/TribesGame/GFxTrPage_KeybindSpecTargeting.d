@@ -8,6 +8,8 @@ extern(C++) interface GFxTrPage_KeybindSpecTargeting : GFxTrPage_KeybindAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_KeybindSpecTargeting")); }
+	private static __gshared GFxTrPage_KeybindSpecTargeting mDefaultProperties;
+	@property final static GFxTrPage_KeybindSpecTargeting DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_KeybindSpecTargeting)("GFxTrPage_KeybindSpecTargeting TribesGame.Default__GFxTrPage_KeybindSpecTargeting")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;

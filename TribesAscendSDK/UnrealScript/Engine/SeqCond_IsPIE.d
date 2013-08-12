@@ -8,6 +8,8 @@ extern(C++) interface SeqCond_IsPIE : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_IsPIE")); }
+	private static __gshared SeqCond_IsPIE mDefaultProperties;
+	@property final static SeqCond_IsPIE DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_IsPIE)("SeqCond_IsPIE Engine.Default__SeqCond_IsPIE")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

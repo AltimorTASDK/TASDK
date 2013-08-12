@@ -8,6 +8,8 @@ extern(C++) interface TrBrowserManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBrowserManager")); }
+	private static __gshared TrBrowserManager mDefaultProperties;
+	@property final static TrBrowserManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBrowserManager)("TrBrowserManager TribesGame.Default__TrBrowserManager")); }
 	static struct Functions
 	{
 		private static __gshared

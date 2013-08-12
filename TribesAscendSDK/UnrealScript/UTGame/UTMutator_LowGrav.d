@@ -8,6 +8,8 @@ extern(C++) interface UTMutator_LowGrav : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_LowGrav")); }
+	private static __gshared UTMutator_LowGrav mDefaultProperties;
+	@property final static UTMutator_LowGrav DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_LowGrav)("UTMutator_LowGrav UTGame.Default__UTMutator_LowGrav")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitMutator;

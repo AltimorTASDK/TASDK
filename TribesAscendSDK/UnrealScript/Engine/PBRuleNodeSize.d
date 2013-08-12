@@ -9,6 +9,8 @@ extern(C++) interface PBRuleNodeSize : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeSize")); }
+	private static __gshared PBRuleNodeSize mDefaultProperties;
+	@property final static PBRuleNodeSize DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeSize)("PBRuleNodeSize Engine.Default__PBRuleNodeSize")); }
 	@property final
 	{
 		auto ref

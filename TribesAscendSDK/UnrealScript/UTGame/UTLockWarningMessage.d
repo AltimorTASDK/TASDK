@@ -10,6 +10,8 @@ extern(C++) interface UTLockWarningMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLockWarningMessage")); }
+	private static __gshared UTLockWarningMessage mDefaultProperties;
+	@property final static UTLockWarningMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLockWarningMessage)("UTLockWarningMessage UTGame.Default__UTLockWarningMessage")); }
 	static struct Functions
 	{
 		private static __gshared

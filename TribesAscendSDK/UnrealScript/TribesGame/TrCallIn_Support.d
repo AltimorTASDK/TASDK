@@ -8,6 +8,8 @@ extern(C++) interface TrCallIn_Support : TrCallIn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_Support")); }
+	private static __gshared TrCallIn_Support mDefaultProperties;
+	@property final static TrCallIn_Support DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_Support)("TrCallIn_Support TribesGame.Default__TrCallIn_Support")); }
 	static struct Functions
 	{
 		private static __gshared

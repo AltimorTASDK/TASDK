@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ParticleEventGenerator : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ParticleEventGenerator")); }
+	private static __gshared SeqAct_ParticleEventGenerator mDefaultProperties;
+	@property final static SeqAct_ParticleEventGenerator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ParticleEventGenerator)("SeqAct_ParticleEventGenerator Engine.Default__SeqAct_ParticleEventGenerator")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

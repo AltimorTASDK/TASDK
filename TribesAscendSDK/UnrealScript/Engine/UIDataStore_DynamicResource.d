@@ -14,6 +14,8 @@ extern(C++) interface UIDataStore_DynamicResource : UIDataStore
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_DynamicResource")); }
+	private static __gshared UIDataStore_DynamicResource mDefaultProperties;
+	@property final static UIDataStore_DynamicResource DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_DynamicResource)("UIDataStore_DynamicResource Engine.Default__UIDataStore_DynamicResource")); }
 	static struct Functions
 	{
 		private static __gshared

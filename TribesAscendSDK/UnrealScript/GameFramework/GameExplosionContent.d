@@ -12,6 +12,8 @@ extern(C++) interface GameExplosionContent : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameExplosionContent")); }
+	private static __gshared GameExplosionContent mDefaultProperties;
+	@property final static GameExplosionContent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameExplosionContent)("GameExplosionContent GameFramework.Default__GameExplosionContent")); }
 	@property final
 	{
 		auto ref

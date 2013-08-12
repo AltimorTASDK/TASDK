@@ -8,6 +8,8 @@ extern(C++) interface TrSkelControl_SpinControl : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControl_SpinControl")); }
+	private static __gshared TrSkelControl_SpinControl mDefaultProperties;
+	@property final static TrSkelControl_SpinControl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkelControl_SpinControl)("TrSkelControl_SpinControl TribesGame.Default__TrSkelControl_SpinControl")); }
 	static struct Functions
 	{
 		private static __gshared

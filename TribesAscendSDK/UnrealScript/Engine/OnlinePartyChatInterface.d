@@ -9,6 +9,8 @@ extern(C++) interface OnlinePartyChatInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlinePartyChatInterface")); }
+	private static __gshared OnlinePartyChatInterface mDefaultProperties;
+	@property final static OnlinePartyChatInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlinePartyChatInterface)("OnlinePartyChatInterface Engine.Default__OnlinePartyChatInterface")); }
 	static struct Functions
 	{
 		private static __gshared

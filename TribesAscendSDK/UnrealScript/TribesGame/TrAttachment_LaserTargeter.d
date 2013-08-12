@@ -8,6 +8,8 @@ extern(C++) interface TrAttachment_LaserTargeter : TrDeviceAttachment
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_LaserTargeter")); }
+	private static __gshared TrAttachment_LaserTargeter mDefaultProperties;
+	@property final static TrAttachment_LaserTargeter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAttachment_LaserTargeter)("TrAttachment_LaserTargeter TribesGame.Default__TrAttachment_LaserTargeter")); }
 	static struct Functions
 	{
 		private static __gshared

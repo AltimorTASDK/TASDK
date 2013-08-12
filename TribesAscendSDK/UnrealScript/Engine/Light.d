@@ -9,6 +9,8 @@ extern(C++) interface Light : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Light")); }
+	private static __gshared Light mDefaultProperties;
+	@property final static Light DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Light)("Light Engine.Default__Light")); }
 	static struct Functions
 	{
 		private static __gshared

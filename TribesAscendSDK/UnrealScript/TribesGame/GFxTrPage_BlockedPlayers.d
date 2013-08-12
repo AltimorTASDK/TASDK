@@ -11,6 +11,8 @@ extern(C++) interface GFxTrPage_BlockedPlayers : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_BlockedPlayers")); }
+	private static __gshared GFxTrPage_BlockedPlayers mDefaultProperties;
+	@property final static GFxTrPage_BlockedPlayers DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_BlockedPlayers)("GFxTrPage_BlockedPlayers TribesGame.Default__GFxTrPage_BlockedPlayers")); }
 	static struct Functions
 	{
 		private static __gshared

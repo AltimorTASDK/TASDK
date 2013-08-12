@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleKillHeight : ParticleModuleKillBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleKillHeight")); }
+	private static __gshared ParticleModuleKillHeight mDefaultProperties;
+	@property final static ParticleModuleKillHeight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleKillHeight)("ParticleModuleKillHeight Engine.Default__ParticleModuleKillHeight")); }
 	@property final
 	{
 		@property final auto ref DistributionFloat.RawDistributionFloat Height() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 72); }

@@ -8,6 +8,8 @@ extern(C++) interface TrEmitCameraEffect_Ashes : TrEmitCameraEffect_Speed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEmitCameraEffect_Ashes")); }
+	private static __gshared TrEmitCameraEffect_Ashes mDefaultProperties;
+	@property final static TrEmitCameraEffect_Ashes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEmitCameraEffect_Ashes)("TrEmitCameraEffect_Ashes TribesGame.Default__TrEmitCameraEffect_Ashes")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

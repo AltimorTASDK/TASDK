@@ -12,6 +12,8 @@ extern(C++) interface ApexDestructibleActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleActor")); }
+	private static __gshared ApexDestructibleActor mDefaultProperties;
+	@property final static ApexDestructibleActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexDestructibleActor)("ApexDestructibleActor Engine.Default__ApexDestructibleActor")); }
 	static struct Functions
 	{
 		private static __gshared

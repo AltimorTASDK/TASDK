@@ -15,6 +15,8 @@ extern(C++) interface UTCTFBase : UTGameObjective
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFBase")); }
+	private static __gshared UTCTFBase mDefaultProperties;
+	@property final static UTCTFBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFBase)("UTCTFBase UTGame.Default__UTCTFBase")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface SkelControlLookAt : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlLookAt")); }
+	private static __gshared SkelControlLookAt mDefaultProperties;
+	@property final static SkelControlLookAt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlLookAt)("SkelControlLookAt Engine.Default__SkelControlLookAt")); }
 	static struct Functions
 	{
 		private static __gshared

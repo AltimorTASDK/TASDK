@@ -9,6 +9,8 @@ extern(C++) interface SoundNodeAttenuation : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeAttenuation")); }
+	private static __gshared SoundNodeAttenuation mDefaultProperties;
+	@property final static SoundNodeAttenuation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeAttenuation)("SoundNodeAttenuation Engine.Default__SoundNodeAttenuation")); }
 	enum ESoundDistanceCalc : ubyte
 	{
 		SOUNDDISTANCE_Normal = 0,

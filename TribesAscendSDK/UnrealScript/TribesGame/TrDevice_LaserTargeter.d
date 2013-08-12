@@ -11,6 +11,8 @@ extern(C++) interface TrDevice_LaserTargeter : TrDevice_ConstantFire
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_LaserTargeter")); }
+	private static __gshared TrDevice_LaserTargeter mDefaultProperties;
+	@property final static TrDevice_LaserTargeter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_LaserTargeter)("TrDevice_LaserTargeter TribesGame.Default__TrDevice_LaserTargeter")); }
 	static struct Functions
 	{
 		private static __gshared

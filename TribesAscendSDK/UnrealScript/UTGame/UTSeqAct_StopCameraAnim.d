@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_StopCameraAnim : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_StopCameraAnim")); }
+	private static __gshared UTSeqAct_StopCameraAnim mDefaultProperties;
+	@property final static UTSeqAct_StopCameraAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_StopCameraAnim)("UTSeqAct_StopCameraAnim UTGame.Default__UTSeqAct_StopCameraAnim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

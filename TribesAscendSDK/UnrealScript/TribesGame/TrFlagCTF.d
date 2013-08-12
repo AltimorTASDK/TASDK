@@ -9,6 +9,8 @@ extern(C++) interface TrFlagCTF : TrFlagBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagCTF")); }
+	private static __gshared TrFlagCTF mDefaultProperties;
+	@property final static TrFlagCTF DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagCTF)("TrFlagCTF TribesGame.Default__TrFlagCTF")); }
 	static struct Functions
 	{
 		private static __gshared

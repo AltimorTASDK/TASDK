@@ -13,6 +13,8 @@ extern(C++) interface BroadcastHandler : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.BroadcastHandler")); }
+	private static __gshared BroadcastHandler mDefaultProperties;
+	@property final static BroadcastHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(BroadcastHandler)("BroadcastHandler Engine.Default__BroadcastHandler")); }
 	static struct Functions
 	{
 		private static __gshared

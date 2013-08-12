@@ -10,6 +10,8 @@ extern(C++) interface InterpTrackFloatMaterialParam : InterpTrackFloatBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackFloatMaterialParam")); }
+	private static __gshared InterpTrackFloatMaterialParam mDefaultProperties;
+	@property final static InterpTrackFloatMaterialParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackFloatMaterialParam)("InterpTrackFloatMaterialParam Engine.Default__InterpTrackFloatMaterialParam")); }
 	@property final
 	{
 		auto ref

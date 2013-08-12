@@ -9,6 +9,8 @@ extern(C++) interface SeqEvent_TakeDamage : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_TakeDamage")); }
+	private static __gshared SeqEvent_TakeDamage mDefaultProperties;
+	@property final static SeqEvent_TakeDamage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_TakeDamage)("SeqEvent_TakeDamage Engine.Default__SeqEvent_TakeDamage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -11,6 +11,8 @@ extern(C++) interface UTPickupMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPickupMessage")); }
+	private static __gshared UTPickupMessage mDefaultProperties;
+	@property final static UTPickupMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPickupMessage)("UTPickupMessage UTGame.Default__UTPickupMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mClientReceive;

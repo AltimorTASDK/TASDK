@@ -12,6 +12,8 @@ extern(C++) interface GFxUDKFrontEnd_Mutators : GFxUDKFrontEnd_Screen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_Mutators")); }
+	private static __gshared GFxUDKFrontEnd_Mutators mDefaultProperties;
+	@property final static GFxUDKFrontEnd_Mutators DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_Mutators)("GFxUDKFrontEnd_Mutators UTGame.Default__GFxUDKFrontEnd_Mutators")); }
 	static struct Functions
 	{
 		private static __gshared

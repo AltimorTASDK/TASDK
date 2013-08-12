@@ -8,6 +8,8 @@ extern(C++) interface Info : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Info")); }
+	private static __gshared Info mDefaultProperties;
+	@property final static Info DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Info)("Info Engine.Default__Info")); }
 	struct KeyValuePair
 	{
 		private ubyte __buffer__[24];

@@ -8,6 +8,8 @@ extern(C++) interface DynamicPylon : Pylon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicPylon")); }
+	private static __gshared DynamicPylon mDefaultProperties;
+	@property final static DynamicPylon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicPylon)("DynamicPylon Engine.Default__DynamicPylon")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface AnimMetaData_SkelControl : AnimMetaData
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimMetaData_SkelControl")); }
+	private static __gshared AnimMetaData_SkelControl mDefaultProperties;
+	@property final static AnimMetaData_SkelControl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimMetaData_SkelControl)("AnimMetaData_SkelControl Engine.Default__AnimMetaData_SkelControl")); }
 	@property final
 	{
 		auto ref

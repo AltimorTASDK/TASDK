@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionLinearInterpolate : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionLinearInterpolate")); }
+	private static __gshared MaterialExpressionLinearInterpolate mDefaultProperties;
+	@property final static MaterialExpressionLinearInterpolate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionLinearInterpolate)("MaterialExpressionLinearInterpolate Engine.Default__MaterialExpressionLinearInterpolate")); }
 	@property final auto ref
 	{
 		MaterialExpression.ExpressionInput Alpha() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 164); }

@@ -11,6 +11,8 @@ extern(C++) interface UDKKActorBreakable : KActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKKActorBreakable")); }
+	private static __gshared UDKKActorBreakable mDefaultProperties;
+	@property final static UDKKActorBreakable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKKActorBreakable)("UDKKActorBreakable UDKBase.Default__UDKKActorBreakable")); }
 	static struct Functions
 	{
 		private static __gshared

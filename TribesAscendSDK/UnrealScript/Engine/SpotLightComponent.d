@@ -8,6 +8,8 @@ extern(C++) interface SpotLightComponent : PointLightComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpotLightComponent")); }
+	private static __gshared SpotLightComponent mDefaultProperties;
+	@property final static SpotLightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpotLightComponent)("SpotLightComponent Engine.Default__SpotLightComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetRotation;

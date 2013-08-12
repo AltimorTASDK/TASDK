@@ -8,6 +8,8 @@ extern(C++) interface UDKGameInteraction : UIInteraction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameInteraction")); }
+	private static __gshared UDKGameInteraction mDefaultProperties;
+	@property final static UDKGameInteraction DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameInteraction)("UDKGameInteraction UDKBase.Default__UDKGameInteraction")); }
 	static struct Functions
 	{
 		private static __gshared

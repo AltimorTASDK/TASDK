@@ -8,6 +8,8 @@ extern(C++) interface UDKParticleSystemComponent : ParticleSystemComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKParticleSystemComponent")); }
+	private static __gshared UDKParticleSystemComponent mDefaultProperties;
+	@property final static UDKParticleSystemComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKParticleSystemComponent)("UDKParticleSystemComponent UDKBase.Default__UDKParticleSystemComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetFOV;

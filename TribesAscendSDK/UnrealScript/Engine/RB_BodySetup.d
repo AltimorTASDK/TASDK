@@ -10,6 +10,8 @@ extern(C++) interface RB_BodySetup : KMeshProps
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_BodySetup")); }
+	private static __gshared RB_BodySetup mDefaultProperties;
+	@property final static RB_BodySetup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_BodySetup)("RB_BodySetup Engine.Default__RB_BodySetup")); }
 	enum ESleepFamily : ubyte
 	{
 		SF_Normal = 0,

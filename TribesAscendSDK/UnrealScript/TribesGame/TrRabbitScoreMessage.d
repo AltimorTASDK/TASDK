@@ -12,6 +12,8 @@ extern(C++) interface TrRabbitScoreMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrRabbitScoreMessage")); }
+	private static __gshared TrRabbitScoreMessage mDefaultProperties;
+	@property final static TrRabbitScoreMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrRabbitScoreMessage)("TrRabbitScoreMessage TribesGame.Default__TrRabbitScoreMessage")); }
 	static struct Functions
 	{
 		private static __gshared

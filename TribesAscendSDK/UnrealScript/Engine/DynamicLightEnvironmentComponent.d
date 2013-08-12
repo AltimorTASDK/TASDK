@@ -10,6 +10,8 @@ extern(C++) interface DynamicLightEnvironmentComponent : LightEnvironmentCompone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicLightEnvironmentComponent")); }
+	private static __gshared DynamicLightEnvironmentComponent mDefaultProperties;
+	@property final static DynamicLightEnvironmentComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicLightEnvironmentComponent)("DynamicLightEnvironmentComponent Engine.Default__DynamicLightEnvironmentComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mResetEnvironment;

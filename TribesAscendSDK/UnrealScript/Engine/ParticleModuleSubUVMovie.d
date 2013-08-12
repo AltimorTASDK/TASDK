@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleSubUVMovie : ParticleModuleSubUV
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSubUVMovie")); }
+	private static __gshared ParticleModuleSubUVMovie mDefaultProperties;
+	@property final static ParticleModuleSubUVMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleSubUVMovie)("ParticleModuleSubUVMovie Engine.Default__ParticleModuleSubUVMovie")); }
 	@property final
 	{
 		auto ref

@@ -9,6 +9,8 @@ extern(C++) interface TrSummaryHelper : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSummaryHelper")); }
+	private static __gshared TrSummaryHelper mDefaultProperties;
+	@property final static TrSummaryHelper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSummaryHelper)("TrSummaryHelper TribesGame.Default__TrSummaryHelper")); }
 	static struct Functions
 	{
 		private static __gshared

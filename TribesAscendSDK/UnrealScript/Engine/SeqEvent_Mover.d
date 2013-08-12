@@ -9,6 +9,8 @@ extern(C++) interface SeqEvent_Mover : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Mover")); }
+	private static __gshared SeqEvent_Mover mDefaultProperties;
+	@property final static SeqEvent_Mover DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_Mover)("SeqEvent_Mover Engine.Default__SeqEvent_Mover")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleCollisionBase : ParticleModule
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCollisionBase")); }
+	private static __gshared ParticleModuleCollisionBase mDefaultProperties;
+	@property final static ParticleModuleCollisionBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleCollisionBase)("ParticleModuleCollisionBase Engine.Default__ParticleModuleCollisionBase")); }
 	enum EParticleCollisionComplete : ubyte
 	{
 		EPCC_Kill = 0,

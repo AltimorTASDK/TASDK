@@ -10,6 +10,8 @@ extern(C++) interface TerrainWeightMapTexture : Texture2D
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainWeightMapTexture")); }
+	private static __gshared TerrainWeightMapTexture mDefaultProperties;
+	@property final static TerrainWeightMapTexture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainWeightMapTexture)("TerrainWeightMapTexture Engine.Default__TerrainWeightMapTexture")); }
 	struct TerrainWeightedMaterial
 	{
 		private ubyte __buffer__[0];

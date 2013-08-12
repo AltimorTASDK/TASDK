@@ -9,6 +9,8 @@ extern(C++) interface TrSubDevice_ForceField : TrSubDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSubDevice_ForceField")); }
+	private static __gshared TrSubDevice_ForceField mDefaultProperties;
+	@property final static TrSubDevice_ForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSubDevice_ForceField)("TrSubDevice_ForceField TribesGame.Default__TrSubDevice_ForceField")); }
 	static struct Functions
 	{
 		private static __gshared

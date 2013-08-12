@@ -8,6 +8,8 @@ extern(C++) interface GamePawn : Pawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GamePawn")); }
+	private static __gshared GamePawn mDefaultProperties;
+	@property final static GamePawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GamePawn)("GamePawn GameFramework.Default__GamePawn")); }
 	static struct Functions
 	{
 		private static __gshared

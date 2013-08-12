@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_GameRules : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_GameRules")); }
+	private static __gshared GFxTrPage_GameRules mDefaultProperties;
+	@property final static GFxTrPage_GameRules DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_GameRules)("GFxTrPage_GameRules TribesGame.Default__GFxTrPage_GameRules")); }
 	static struct Functions
 	{
 		private static __gshared

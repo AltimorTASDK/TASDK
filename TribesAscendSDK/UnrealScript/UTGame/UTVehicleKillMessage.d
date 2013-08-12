@@ -12,6 +12,8 @@ extern(C++) interface UTVehicleKillMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleKillMessage")); }
+	private static __gshared UTVehicleKillMessage mDefaultProperties;
+	@property final static UTVehicleKillMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleKillMessage)("UTVehicleKillMessage UTGame.Default__UTVehicleKillMessage")); }
 	static struct Functions
 	{
 		private static __gshared

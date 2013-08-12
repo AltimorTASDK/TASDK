@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_GiveInventory : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_GiveInventory")); }
+	private static __gshared SeqAct_GiveInventory mDefaultProperties;
+	@property final static SeqAct_GiveInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GiveInventory)("SeqAct_GiveInventory Engine.Default__SeqAct_GiveInventory")); }
 	@property final
 	{
 		@property final auto ref ScriptArray!(ScriptClass) InventoryList() { return *cast(ScriptArray!(ScriptClass)*)(cast(size_t)cast(void*)this + 232); }

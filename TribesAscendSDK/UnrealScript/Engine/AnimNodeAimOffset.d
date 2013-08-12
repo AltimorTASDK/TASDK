@@ -9,6 +9,8 @@ extern(C++) interface AnimNodeAimOffset : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeAimOffset")); }
+	private static __gshared AnimNodeAimOffset mDefaultProperties;
+	@property final static AnimNodeAimOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeAimOffset)("AnimNodeAimOffset Engine.Default__AnimNodeAimOffset")); }
 	static struct Functions
 	{
 		private static __gshared

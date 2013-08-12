@@ -10,6 +10,8 @@ extern(C++) interface LevelStreamingVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelStreamingVolume")); }
+	private static __gshared LevelStreamingVolume mDefaultProperties;
+	@property final static LevelStreamingVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelStreamingVolume)("LevelStreamingVolume Engine.Default__LevelStreamingVolume")); }
 	static struct Functions
 	{
 		private static __gshared

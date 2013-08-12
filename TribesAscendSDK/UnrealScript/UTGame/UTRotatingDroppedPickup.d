@@ -8,6 +8,8 @@ extern(C++) interface UTRotatingDroppedPickup : UTDroppedPickup
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTRotatingDroppedPickup")); }
+	private static __gshared UTRotatingDroppedPickup mDefaultProperties;
+	@property final static UTRotatingDroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTRotatingDroppedPickup)("UTRotatingDroppedPickup UTGame.Default__UTRotatingDroppedPickup")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTick;

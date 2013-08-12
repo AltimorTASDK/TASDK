@@ -11,6 +11,8 @@ extern(C++) interface UDKWeaponPawn : UDKVehicleBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKWeaponPawn")); }
+	private static __gshared UDKWeaponPawn mDefaultProperties;
+	@property final static UDKWeaponPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKWeaponPawn)("UDKWeaponPawn UDKBase.Default__UDKWeaponPawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetTargetLocation;

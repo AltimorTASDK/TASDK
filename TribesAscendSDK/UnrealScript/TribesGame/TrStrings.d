@@ -8,6 +8,8 @@ extern(C++) interface TrStrings : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrStrings")); }
+	private static __gshared TrStrings mDefaultProperties;
+	@property final static TrStrings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrStrings)("TrStrings TribesGame.Default__TrStrings")); }
 	@property final auto ref
 	{
 		ScriptString KilledBy() { return *cast(ScriptString*)(cast(size_t)cast(void*)this + 4284); }

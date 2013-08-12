@@ -10,6 +10,8 @@ extern(C++) interface TrDevice_SpikeLauncher : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_SpikeLauncher")); }
+	private static __gshared TrDevice_SpikeLauncher mDefaultProperties;
+	@property final static TrDevice_SpikeLauncher DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_SpikeLauncher)("TrDevice_SpikeLauncher TribesGame.Default__TrDevice_SpikeLauncher")); }
 	static struct Functions
 	{
 		private static __gshared

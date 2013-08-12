@@ -15,6 +15,8 @@ extern(C++) interface TrDroppedPickup : UTDroppedPickup
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDroppedPickup")); }
+	private static __gshared TrDroppedPickup mDefaultProperties;
+	@property final static TrDroppedPickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDroppedPickup)("TrDroppedPickup TribesGame.Default__TrDroppedPickup")); }
 	static struct Functions
 	{
 		private static __gshared

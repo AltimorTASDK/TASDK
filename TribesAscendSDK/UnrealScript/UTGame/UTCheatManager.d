@@ -9,6 +9,8 @@ extern(C++) interface UTCheatManager : CheatManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCheatManager")); }
+	private static __gshared UTCheatManager mDefaultProperties;
+	@property final static UTCheatManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCheatManager)("UTCheatManager UTGame.Default__UTCheatManager")); }
 	static struct Functions
 	{
 		private static __gshared

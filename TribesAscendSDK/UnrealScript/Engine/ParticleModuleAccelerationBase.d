@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleAccelerationBase : ParticleModule
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAccelerationBase")); }
+	private static __gshared ParticleModuleAccelerationBase mDefaultProperties;
+	@property final static ParticleModuleAccelerationBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleAccelerationBase)("ParticleModuleAccelerationBase Engine.Default__ParticleModuleAccelerationBase")); }
 	@property final
 	{
 		bool bAlwaysInWorldSpace() { return (*cast(uint*)(cast(size_t)cast(void*)this + 72) & 0x1) != 0; }

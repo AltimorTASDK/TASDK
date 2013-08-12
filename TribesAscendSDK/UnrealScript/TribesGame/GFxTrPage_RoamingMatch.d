@@ -8,6 +8,8 @@ extern(C++) interface GFxTrPage_RoamingMatch : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_RoamingMatch")); }
+	private static __gshared GFxTrPage_RoamingMatch mDefaultProperties;
+	@property final static GFxTrPage_RoamingMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_RoamingMatch)("GFxTrPage_RoamingMatch TribesGame.Default__GFxTrPage_RoamingMatch")); }
 	static struct Functions
 	{
 		private static __gshared

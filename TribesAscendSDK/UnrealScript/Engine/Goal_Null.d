@@ -9,6 +9,8 @@ extern(C++) interface Goal_Null : PathGoalEvaluator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Goal_Null")); }
+	private static __gshared Goal_Null mDefaultProperties;
+	@property final static Goal_Null DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Goal_Null)("Goal_Null Engine.Default__Goal_Null")); }
 	static struct Functions
 	{
 		private static __gshared

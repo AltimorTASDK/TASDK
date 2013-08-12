@@ -11,6 +11,8 @@ extern(C++) interface SeqEvent_HudRender : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_HudRender")); }
+	private static __gshared SeqEvent_HudRender mDefaultProperties;
+	@property final static SeqEvent_HudRender DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_HudRender)("SeqEvent_HudRender GameFramework.Default__SeqEvent_HudRender")); }
 	static struct Functions
 	{
 		private static __gshared

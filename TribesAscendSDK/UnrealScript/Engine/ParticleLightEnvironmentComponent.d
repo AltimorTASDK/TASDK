@@ -8,6 +8,8 @@ extern(C++) interface ParticleLightEnvironmentComponent : DynamicLightEnvironmen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleLightEnvironmentComponent")); }
+	private static __gshared ParticleLightEnvironmentComponent mDefaultProperties;
+	@property final static ParticleLightEnvironmentComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleLightEnvironmentComponent)("ParticleLightEnvironmentComponent Engine.Default__ParticleLightEnvironmentComponent")); }
 	@property final
 	{
 		@property final auto ref int ReferenceCount() { return *cast(int*)(cast(size_t)cast(void*)this + 296); }

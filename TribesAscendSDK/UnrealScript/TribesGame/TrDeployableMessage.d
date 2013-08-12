@@ -10,6 +10,8 @@ extern(C++) interface TrDeployableMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployableMessage")); }
+	private static __gshared TrDeployableMessage mDefaultProperties;
+	@property final static TrDeployableMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployableMessage)("TrDeployableMessage TribesGame.Default__TrDeployableMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

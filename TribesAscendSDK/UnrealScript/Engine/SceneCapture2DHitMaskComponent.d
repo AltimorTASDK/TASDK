@@ -9,6 +9,8 @@ extern(C++) interface SceneCapture2DHitMaskComponent : SceneCaptureComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapture2DHitMaskComponent")); }
+	private static __gshared SceneCapture2DHitMaskComponent mDefaultProperties;
+	@property final static SceneCapture2DHitMaskComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCapture2DHitMaskComponent)("SceneCapture2DHitMaskComponent Engine.Default__SceneCapture2DHitMaskComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -18,6 +18,8 @@ extern(C++) interface GFxMinimapHud : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxMinimapHud")); }
+	private static __gshared GFxMinimapHud mDefaultProperties;
+	@property final static GFxMinimapHud DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxMinimapHud)("GFxMinimapHud UTGame.Default__GFxMinimapHud")); }
 	static struct Functions
 	{
 		private static __gshared

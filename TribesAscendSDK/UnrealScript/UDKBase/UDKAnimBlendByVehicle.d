@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimBlendByVehicle : UDKAnimBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByVehicle")); }
+	private static __gshared UDKAnimBlendByVehicle mDefaultProperties;
+	@property final static UDKAnimBlendByVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByVehicle)("UDKAnimBlendByVehicle UDKBase.Default__UDKAnimBlendByVehicle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mUpdateVehicleState;

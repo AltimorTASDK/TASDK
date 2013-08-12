@@ -13,6 +13,8 @@ extern(C++) interface TrDeployable_BaseTurret : TrDeployable_Turret
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDeployable_BaseTurret")); }
+	private static __gshared TrDeployable_BaseTurret mDefaultProperties;
+	@property final static TrDeployable_BaseTurret DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDeployable_BaseTurret)("TrDeployable_BaseTurret TribesGame.Default__TrDeployable_BaseTurret")); }
 	static struct Functions
 	{
 		private static __gshared

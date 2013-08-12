@@ -9,6 +9,8 @@ extern(C++) interface NavMeshGoalFilter_MinPathDistance : NavMeshGoal_Filter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_MinPathDistance")); }
+	private static __gshared NavMeshGoalFilter_MinPathDistance mDefaultProperties;
+	@property final static NavMeshGoalFilter_MinPathDistance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoalFilter_MinPathDistance)("NavMeshGoalFilter_MinPathDistance Engine.Default__NavMeshGoalFilter_MinPathDistance")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mMustBeLongerPathThan;

@@ -11,6 +11,8 @@ extern(C++) interface SeqAct_StreamInTextures : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_StreamInTextures")); }
+	private static __gshared SeqAct_StreamInTextures mDefaultProperties;
+	@property final static SeqAct_StreamInTextures DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_StreamInTextures)("SeqAct_StreamInTextures Engine.Default__SeqAct_StreamInTextures")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

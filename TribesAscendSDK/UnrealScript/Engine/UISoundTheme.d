@@ -10,6 +10,8 @@ extern(C++) interface UISoundTheme : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UISoundTheme")); }
+	private static __gshared UISoundTheme mDefaultProperties;
+	@property final static UISoundTheme DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UISoundTheme)("UISoundTheme Engine.Default__UISoundTheme")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mProcessSoundEvent;

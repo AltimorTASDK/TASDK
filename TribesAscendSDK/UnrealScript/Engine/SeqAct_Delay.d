@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_Delay : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Delay")); }
+	private static __gshared SeqAct_Delay mDefaultProperties;
+	@property final static SeqAct_Delay DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Delay)("SeqAct_Delay Engine.Default__SeqAct_Delay")); }
 	static struct Functions
 	{
 		private static __gshared

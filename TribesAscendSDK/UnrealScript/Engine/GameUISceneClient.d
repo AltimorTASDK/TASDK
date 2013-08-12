@@ -14,6 +14,8 @@ extern(C++) interface GameUISceneClient : UISceneClient
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameUISceneClient")); }
+	private static __gshared GameUISceneClient mDefaultProperties;
+	@property final static GameUISceneClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameUISceneClient)("GameUISceneClient Engine.Default__GameUISceneClient")); }
 	static struct Functions
 	{
 		private static __gshared

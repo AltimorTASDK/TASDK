@@ -8,6 +8,8 @@ extern(C++) interface StaticMeshCollectionActor : StaticMeshActorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshCollectionActor")); }
+	private static __gshared StaticMeshCollectionActor mDefaultProperties;
+	@property final static StaticMeshCollectionActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshCollectionActor)("StaticMeshCollectionActor Engine.Default__StaticMeshCollectionActor")); }
 	@property final auto ref
 	{
 		ScriptArray!(

@@ -10,6 +10,8 @@ extern(C++) interface UTSeqAct_DummyWeaponFire : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_DummyWeaponFire")); }
+	private static __gshared UTSeqAct_DummyWeaponFire mDefaultProperties;
+	@property final static UTSeqAct_DummyWeaponFire DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_DummyWeaponFire)("UTSeqAct_DummyWeaponFire UTGame.Default__UTSeqAct_DummyWeaponFire")); }
 	static struct Functions
 	{
 		private static __gshared

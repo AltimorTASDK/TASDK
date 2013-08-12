@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackEvent : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackEvent")); }
+	private static __gshared InterpTrackEvent mDefaultProperties;
+	@property final static InterpTrackEvent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackEvent)("InterpTrackEvent Engine.Default__InterpTrackEvent")); }
 	struct EventTrackKey
 	{
 		private ubyte __buffer__[12];

@@ -8,6 +8,8 @@ extern(C++) interface FileLog : FileWriter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FileLog")); }
+	private static __gshared FileLog mDefaultProperties;
+	@property final static FileLog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FileLog)("FileLog Engine.Default__FileLog")); }
 	static struct Functions
 	{
 		private static __gshared

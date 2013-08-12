@@ -13,6 +13,8 @@ extern(C++) interface TrScoreboard : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrScoreboard")); }
+	private static __gshared TrScoreboard mDefaultProperties;
+	@property final static TrScoreboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrScoreboard)("TrScoreboard TribesGame.Default__TrScoreboard")); }
 	static struct Functions
 	{
 		private static __gshared

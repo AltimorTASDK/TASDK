@@ -9,6 +9,8 @@ extern(C++) interface Settings : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Settings")); }
+	private static __gshared Settings mDefaultProperties;
+	@property final static Settings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Settings)("Settings Engine.Default__Settings")); }
 	static struct Functions
 	{
 		private static __gshared

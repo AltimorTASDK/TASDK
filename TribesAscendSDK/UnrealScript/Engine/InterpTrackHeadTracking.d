@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackHeadTracking : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackHeadTracking")); }
+	private static __gshared InterpTrackHeadTracking mDefaultProperties;
+	@property final static InterpTrackHeadTracking DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackHeadTracking)("InterpTrackHeadTracking Engine.Default__InterpTrackHeadTracking")); }
 	enum EHeadTrackingAction : ubyte
 	{
 		EHTA_DisableHeadTracking = 0,

@@ -8,6 +8,8 @@ extern(C++) interface TrHUDTeam : TrHUD
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrHUDTeam")); }
+	private static __gshared TrHUDTeam mDefaultProperties;
+	@property final static TrHUDTeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrHUDTeam)("TrHUDTeam TribesGame.Default__TrHUDTeam")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTimer;

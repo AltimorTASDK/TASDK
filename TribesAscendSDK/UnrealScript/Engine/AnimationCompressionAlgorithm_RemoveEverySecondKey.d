@@ -8,6 +8,8 @@ extern(C++) interface AnimationCompressionAlgorithm_RemoveEverySecondKey : Anima
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_RemoveEverySecondKey")); }
+	private static __gshared AnimationCompressionAlgorithm_RemoveEverySecondKey mDefaultProperties;
+	@property final static AnimationCompressionAlgorithm_RemoveEverySecondKey DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimationCompressionAlgorithm_RemoveEverySecondKey)("AnimationCompressionAlgorithm_RemoveEverySecondKey Engine.Default__AnimationCompressionAlgorithm_RemoveEverySecondKey")); }
 	@property final
 	{
 		@property final auto ref int MinKeys() { return *cast(int*)(cast(size_t)cast(void*)this + 80); }

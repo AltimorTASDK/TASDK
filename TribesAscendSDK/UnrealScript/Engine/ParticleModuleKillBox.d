@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleKillBox : ParticleModuleKillBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleKillBox")); }
+	private static __gshared ParticleModuleKillBox mDefaultProperties;
+	@property final static ParticleModuleKillBox DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleKillBox)("ParticleModuleKillBox Engine.Default__ParticleModuleKillBox")); }
 	@property final
 	{
 		auto ref

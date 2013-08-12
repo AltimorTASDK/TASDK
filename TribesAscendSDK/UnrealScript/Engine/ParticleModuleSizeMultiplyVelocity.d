@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleSizeMultiplyVelocity : ParticleModuleSizeBas
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSizeMultiplyVelocity")); }
+	private static __gshared ParticleModuleSizeMultiplyVelocity mDefaultProperties;
+	@property final static ParticleModuleSizeMultiplyVelocity DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleSizeMultiplyVelocity)("ParticleModuleSizeMultiplyVelocity Engine.Default__ParticleModuleSizeMultiplyVelocity")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector VelocityMultiplier() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }

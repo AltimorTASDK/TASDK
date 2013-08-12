@@ -8,6 +8,8 @@ extern(C++) interface TrDevice_LightAssaultRifle : TrDevice_AssaultRifle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_LightAssaultRifle")); }
+	private static __gshared TrDevice_LightAssaultRifle mDefaultProperties;
+	@property final static TrDevice_LightAssaultRifle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_LightAssaultRifle)("TrDevice_LightAssaultRifle TribesGame.Default__TrDevice_LightAssaultRifle")); }
 	static struct Functions
 	{
 		private static __gshared

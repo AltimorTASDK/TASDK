@@ -8,4 +8,6 @@ extern(C++) interface TrAccolade_MultiKill_Double : TrAccolade
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccolade_MultiKill_Double")); }
+	private static __gshared TrAccolade_MultiKill_Double mDefaultProperties;
+	@property final static TrAccolade_MultiKill_Double DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccolade_MultiKill_Double)("TrAccolade_MultiKill_Double TribesGame.Default__TrAccolade_MultiKill_Double")); }
 }

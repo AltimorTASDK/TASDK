@@ -8,6 +8,8 @@ extern(C++) interface GFxTrPage_KeybindSpectator : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_KeybindSpectator")); }
+	private static __gshared GFxTrPage_KeybindSpectator mDefaultProperties;
+	@property final static GFxTrPage_KeybindSpectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_KeybindSpectator)("GFxTrPage_KeybindSpectator TribesGame.Default__GFxTrPage_KeybindSpectator")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;

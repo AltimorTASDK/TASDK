@@ -8,6 +8,8 @@ extern(C++) interface GFxTrUI_VehicleMenu : UTGFxTweenableMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_VehicleMenu")); }
+	private static __gshared GFxTrUI_VehicleMenu mDefaultProperties;
+	@property final static GFxTrUI_VehicleMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrUI_VehicleMenu)("GFxTrUI_VehicleMenu TribesGame.Default__GFxTrUI_VehicleMenu")); }
 	static struct Functions
 	{
 		private static __gshared

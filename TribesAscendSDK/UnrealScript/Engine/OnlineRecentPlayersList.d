@@ -9,6 +9,8 @@ extern(C++) interface OnlineRecentPlayersList : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineRecentPlayersList")); }
+	private static __gshared OnlineRecentPlayersList mDefaultProperties;
+	@property final static OnlineRecentPlayersList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineRecentPlayersList)("OnlineRecentPlayersList Engine.Default__OnlineRecentPlayersList")); }
 	static struct Functions
 	{
 		private static __gshared

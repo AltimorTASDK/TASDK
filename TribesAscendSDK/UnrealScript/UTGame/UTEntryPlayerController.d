@@ -11,6 +11,8 @@ extern(C++) interface UTEntryPlayerController : UTPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTEntryPlayerController")); }
+	private static __gshared UTEntryPlayerController mDefaultProperties;
+	@property final static UTEntryPlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTEntryPlayerController)("UTEntryPlayerController UTGame.Default__UTEntryPlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

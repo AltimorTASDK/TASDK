@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimBlendByFall : UDKAnimBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByFall")); }
+	private static __gshared UDKAnimBlendByFall mDefaultProperties;
+	@property final static UDKAnimBlendByFall DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByFall)("UDKAnimBlendByFall UDKBase.Default__UDKAnimBlendByFall")); }
 	enum EBlendFallTypes : ubyte
 	{
 		FBT_Up = 0,

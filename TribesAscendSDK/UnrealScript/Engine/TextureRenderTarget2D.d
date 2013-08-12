@@ -10,6 +10,8 @@ extern(C++) interface TextureRenderTarget2D : TextureRenderTarget
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureRenderTarget2D")); }
+	private static __gshared TextureRenderTarget2D mDefaultProperties;
+	@property final static TextureRenderTarget2D DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureRenderTarget2D)("TextureRenderTarget2D Engine.Default__TextureRenderTarget2D")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCreate;

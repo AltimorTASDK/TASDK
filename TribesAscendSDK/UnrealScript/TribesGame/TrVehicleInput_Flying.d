@@ -8,6 +8,8 @@ extern(C++) interface TrVehicleInput_Flying : PlayerInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVehicleInput_Flying")); }
+	private static __gshared TrVehicleInput_Flying mDefaultProperties;
+	@property final static TrVehicleInput_Flying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVehicleInput_Flying)("TrVehicleInput_Flying TribesGame.Default__TrVehicleInput_Flying")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAdjustMouseSensitivity;

@@ -9,6 +9,8 @@ extern(C++) interface TrDataStore_OnlineGameSearch : UIDataStore_OnlineGameSearc
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDataStore_OnlineGameSearch")); }
+	private static __gshared TrDataStore_OnlineGameSearch mDefaultProperties;
+	@property final static TrDataStore_OnlineGameSearch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDataStore_OnlineGameSearch)("TrDataStore_OnlineGameSearch TribesGame.Default__TrDataStore_OnlineGameSearch")); }
 	static struct Functions
 	{
 		private static __gshared

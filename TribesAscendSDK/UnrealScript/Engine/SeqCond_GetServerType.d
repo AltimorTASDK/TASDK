@@ -8,6 +8,8 @@ extern(C++) interface SeqCond_GetServerType : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_GetServerType")); }
+	private static __gshared SeqCond_GetServerType mDefaultProperties;
+	@property final static SeqCond_GetServerType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_GetServerType)("SeqCond_GetServerType Engine.Default__SeqCond_GetServerType")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

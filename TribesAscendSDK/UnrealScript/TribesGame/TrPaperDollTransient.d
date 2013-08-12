@@ -9,6 +9,8 @@ extern(C++) interface TrPaperDollTransient : TrPaperDoll
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDollTransient")); }
+	private static __gshared TrPaperDollTransient mDefaultProperties;
+	@property final static TrPaperDollTransient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPaperDollTransient)("TrPaperDollTransient TribesGame.Default__TrPaperDollTransient")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleCameraOffset : ParticleModuleCameraBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleCameraOffset")); }
+	private static __gshared ParticleModuleCameraOffset mDefaultProperties;
+	@property final static ParticleModuleCameraOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleCameraOffset)("ParticleModuleCameraOffset Engine.Default__ParticleModuleCameraOffset")); }
 	enum EParticleCameraOffsetUpdateMethod : ubyte
 	{
 		EPCOUM_DirectSet = 0,

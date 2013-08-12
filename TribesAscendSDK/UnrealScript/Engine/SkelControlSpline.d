@@ -9,6 +9,8 @@ extern(C++) interface SkelControlSpline : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkelControlSpline")); }
+	private static __gshared SkelControlSpline mDefaultProperties;
+	@property final static SkelControlSpline DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkelControlSpline)("SkelControlSpline Engine.Default__SkelControlSpline")); }
 	enum ESplineControlRotMode : ubyte
 	{
 		SCR_NoChange = 0,

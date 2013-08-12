@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_PropellerBlade : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_PropellerBlade")); }
+	private static __gshared UDKSkelControl_PropellerBlade mDefaultProperties;
+	@property final static UDKSkelControl_PropellerBlade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_PropellerBlade)("UDKSkelControl_PropellerBlade UDKBase.Default__UDKSkelControl_PropellerBlade")); }
 	@property final
 	{
 		auto ref

@@ -10,6 +10,8 @@ extern(C++) interface GFxUDKFrontEnd_PasswordDialog : GFxUDKFrontEnd_Dialog
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_PasswordDialog")); }
+	private static __gshared GFxUDKFrontEnd_PasswordDialog mDefaultProperties;
+	@property final static GFxUDKFrontEnd_PasswordDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_PasswordDialog)("GFxUDKFrontEnd_PasswordDialog UTGame.Default__GFxUDKFrontEnd_PasswordDialog")); }
 	static struct Functions
 	{
 		private static __gshared

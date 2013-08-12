@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_EnterVehicle : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_EnterVehicle")); }
+	private static __gshared UTSeqAct_EnterVehicle mDefaultProperties;
+	@property final static UTSeqAct_EnterVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_EnterVehicle)("UTSeqAct_EnterVehicle UTGame.Default__UTSeqAct_EnterVehicle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

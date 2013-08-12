@@ -8,4 +8,6 @@ extern(C++) interface MaterialExpressionTextureSampleParameterCube : MaterialExp
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureSampleParameterCube")); }
+	private static __gshared MaterialExpressionTextureSampleParameterCube mDefaultProperties;
+	@property final static MaterialExpressionTextureSampleParameterCube DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureSampleParameterCube)("MaterialExpressionTextureSampleParameterCube Engine.Default__MaterialExpressionTextureSampleParameterCube")); }
 }

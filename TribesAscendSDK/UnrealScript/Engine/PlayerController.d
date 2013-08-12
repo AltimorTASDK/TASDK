@@ -55,6 +55,8 @@ extern(C++) interface PlayerController : Controller
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerController")); }
+	private static __gshared PlayerController mDefaultProperties;
+	@property final static PlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerController)("PlayerController Engine.Default__PlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

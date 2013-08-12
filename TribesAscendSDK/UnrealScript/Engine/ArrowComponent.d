@@ -9,6 +9,8 @@ extern(C++) interface ArrowComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ArrowComponent")); }
+	private static __gshared ArrowComponent mDefaultProperties;
+	@property final static ArrowComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ArrowComponent)("ArrowComponent Engine.Default__ArrowComponent")); }
 	@property final
 	{
 		auto ref

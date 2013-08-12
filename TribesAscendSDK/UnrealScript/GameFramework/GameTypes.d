@@ -14,6 +14,8 @@ extern(C++) interface GameTypes : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameTypes")); }
+	private static __gshared GameTypes mDefaultProperties;
+	@property final static GameTypes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameTypes)("GameTypes GameFramework.Default__GameTypes")); }
 	static struct Constants
 	{
 		enum LOADING_MOVIE = "LoadingMovie";

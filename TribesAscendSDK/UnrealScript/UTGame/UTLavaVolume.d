@@ -8,4 +8,6 @@ extern(C++) interface UTLavaVolume : WaterVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLavaVolume")); }
+	private static __gshared UTLavaVolume mDefaultProperties;
+	@property final static UTLavaVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLavaVolume)("UTLavaVolume UTGame.Default__UTLavaVolume")); }
 }

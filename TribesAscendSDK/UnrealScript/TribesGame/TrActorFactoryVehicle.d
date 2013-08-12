@@ -9,6 +9,8 @@ extern(C++) interface TrActorFactoryVehicle : ActorFactoryVehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrActorFactoryVehicle")); }
+	private static __gshared TrActorFactoryVehicle mDefaultProperties;
+	@property final static TrActorFactoryVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrActorFactoryVehicle)("TrActorFactoryVehicle TribesGame.Default__TrActorFactoryVehicle")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;

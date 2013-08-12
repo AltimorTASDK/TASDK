@@ -10,6 +10,8 @@ extern(C++) interface ForceFeedbackManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFeedbackManager")); }
+	private static __gshared ForceFeedbackManager mDefaultProperties;
+	@property final static ForceFeedbackManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFeedbackManager)("ForceFeedbackManager Engine.Default__ForceFeedbackManager")); }
 	static struct Functions
 	{
 		private static __gshared

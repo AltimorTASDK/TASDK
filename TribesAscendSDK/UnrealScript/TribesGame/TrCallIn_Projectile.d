@@ -10,6 +10,8 @@ extern(C++) interface TrCallIn_Projectile : TrCallIn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_Projectile")); }
+	private static __gshared TrCallIn_Projectile mDefaultProperties;
+	@property final static TrCallIn_Projectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_Projectile)("TrCallIn_Projectile TribesGame.Default__TrCallIn_Projectile")); }
 	static struct Functions
 	{
 		private static __gshared

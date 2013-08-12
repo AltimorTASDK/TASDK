@@ -9,6 +9,8 @@ extern(C++) interface NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations : Na
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")); }
+	private static __gshared NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations mDefaultProperties;
+	@property final static NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations)("NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations GameFramework.Default__NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")); }
 	static struct Functions
 	{
 		private static __gshared

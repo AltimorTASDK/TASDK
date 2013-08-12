@@ -11,6 +11,8 @@ extern(C++) interface UDKSkelControl_Damage : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_Damage")); }
+	private static __gshared UDKSkelControl_Damage mDefaultProperties;
+	@property final static UDKSkelControl_Damage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_Damage)("UDKSkelControl_Damage UDKBase.Default__UDKSkelControl_Damage")); }
 	static struct Functions
 	{
 		private static __gshared

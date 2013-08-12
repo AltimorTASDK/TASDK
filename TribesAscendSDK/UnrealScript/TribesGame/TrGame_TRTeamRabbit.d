@@ -13,6 +13,8 @@ extern(C++) interface TrGame_TRTeamRabbit : TrGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGame_TRTeamRabbit")); }
+	private static __gshared TrGame_TRTeamRabbit mDefaultProperties;
+	@property final static TrGame_TRTeamRabbit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGame_TRTeamRabbit)("TrGame_TRTeamRabbit TribesGame.Default__TrGame_TRTeamRabbit")); }
 	static struct Functions
 	{
 		private static __gshared

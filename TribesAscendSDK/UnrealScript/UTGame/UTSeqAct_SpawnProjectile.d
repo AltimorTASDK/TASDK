@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_SpawnProjectile : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_SpawnProjectile")); }
+	private static __gshared UTSeqAct_SpawnProjectile mDefaultProperties;
+	@property final static UTSeqAct_SpawnProjectile DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_SpawnProjectile)("UTSeqAct_SpawnProjectile UTGame.Default__UTSeqAct_SpawnProjectile")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

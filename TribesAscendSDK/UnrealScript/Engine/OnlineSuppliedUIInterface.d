@@ -12,6 +12,8 @@ extern(C++) interface OnlineSuppliedUIInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineSuppliedUIInterface")); }
+	private static __gshared OnlineSuppliedUIInterface mDefaultProperties;
+	@property final static OnlineSuppliedUIInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSuppliedUIInterface)("OnlineSuppliedUIInterface Engine.Default__OnlineSuppliedUIInterface")); }
 	static struct Functions
 	{
 		private static __gshared

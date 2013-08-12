@@ -8,6 +8,8 @@ extern(C++) interface HTTPDownload : Download
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.HTTPDownload")); }
+	private static __gshared HTTPDownload mDefaultProperties;
+	@property final static HTTPDownload DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HTTPDownload)("HTTPDownload IpDrv.Default__HTTPDownload")); }
 	@property final
 	{
 		auto ref

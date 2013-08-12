@@ -19,6 +19,8 @@ extern(C++) interface UIDataStore_OnlinePlayerData : UIDataStore_Remote
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlinePlayerData")); }
+	private static __gshared UIDataStore_OnlinePlayerData mDefaultProperties;
+	@property final static UIDataStore_OnlinePlayerData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlinePlayerData)("UIDataStore_OnlinePlayerData Engine.Default__UIDataStore_OnlinePlayerData")); }
 	static struct Functions
 	{
 		private static __gshared

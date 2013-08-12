@@ -9,6 +9,8 @@ extern(C++) interface SoundMode : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundMode")); }
+	private static __gshared SoundMode mDefaultProperties;
+	@property final static SoundMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundMode)("SoundMode Engine.Default__SoundMode")); }
 	struct SoundClassAdjuster
 	{
 		private ubyte __buffer__[28];

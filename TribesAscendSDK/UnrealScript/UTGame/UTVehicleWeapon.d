@@ -17,6 +17,8 @@ extern(C++) interface UTVehicleWeapon : UTWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleWeapon")); }
+	private static __gshared UTVehicleWeapon mDefaultProperties;
+	@property final static UTVehicleWeapon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleWeapon)("UTVehicleWeapon UTGame.Default__UTVehicleWeapon")); }
 	static struct Functions
 	{
 		private static __gshared

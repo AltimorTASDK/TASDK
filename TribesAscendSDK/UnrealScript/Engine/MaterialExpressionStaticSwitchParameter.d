@@ -10,6 +10,8 @@ extern(C++) interface MaterialExpressionStaticSwitchParameter : MaterialExpressi
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionStaticSwitchParameter")); }
+	private static __gshared MaterialExpressionStaticSwitchParameter mDefaultProperties;
+	@property final static MaterialExpressionStaticSwitchParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionStaticSwitchParameter)("MaterialExpressionStaticSwitchParameter Engine.Default__MaterialExpressionStaticSwitchParameter")); }
 	@property final
 	{
 		auto ref

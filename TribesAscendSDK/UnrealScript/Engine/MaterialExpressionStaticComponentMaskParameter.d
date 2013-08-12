@@ -10,6 +10,8 @@ extern(C++) interface MaterialExpressionStaticComponentMaskParameter : MaterialE
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionStaticComponentMaskParameter")); }
+	private static __gshared MaterialExpressionStaticComponentMaskParameter mDefaultProperties;
+	@property final static MaterialExpressionStaticComponentMaskParameter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionStaticComponentMaskParameter)("MaterialExpressionStaticComponentMaskParameter Engine.Default__MaterialExpressionStaticComponentMaskParameter")); }
 	@property final
 	{
 		auto ref

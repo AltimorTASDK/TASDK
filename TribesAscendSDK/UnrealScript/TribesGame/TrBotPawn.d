@@ -8,6 +8,8 @@ extern(C++) interface TrBotPawn : TrPlayerPawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrBotPawn")); }
+	private static __gshared TrBotPawn mDefaultProperties;
+	@property final static TrBotPawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrBotPawn)("TrBotPawn TribesGame.Default__TrBotPawn")); }
 	static struct Functions
 	{
 		private static __gshared

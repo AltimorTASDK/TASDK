@@ -8,6 +8,8 @@ extern(C++) interface ParticleModule : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModule")); }
+	private static __gshared ParticleModule mDefaultProperties;
+	@property final static ParticleModule DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModule)("ParticleModule Engine.Default__ParticleModule")); }
 	enum EModuleType : ubyte
 	{
 		EPMT_General = 0,

@@ -17,6 +17,8 @@ extern(C++) interface UTPickupFactory : UDKPickupFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPickupFactory")); }
+	private static __gshared UTPickupFactory mDefaultProperties;
+	@property final static UTPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPickupFactory)("UTPickupFactory UTGame.Default__UTPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared

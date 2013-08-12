@@ -9,6 +9,8 @@ extern(C++) interface TrTripActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrTripActor")); }
+	private static __gshared TrTripActor mDefaultProperties;
+	@property final static TrTripActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrTripActor)("TrTripActor TribesGame.Default__TrTripActor")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface UDKScout : Scout
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKScout")); }
+	private static __gshared UDKScout mDefaultProperties;
+	@property final static UDKScout DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKScout)("UDKScout UDKBase.Default__UDKScout")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSuggestJumpVelocity;

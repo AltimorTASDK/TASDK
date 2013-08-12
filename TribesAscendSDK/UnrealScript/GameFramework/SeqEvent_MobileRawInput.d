@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_MobileRawInput : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileRawInput")); }
+	private static __gshared SeqEvent_MobileRawInput mDefaultProperties;
+	@property final static SeqEvent_MobileRawInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileRawInput)("SeqEvent_MobileRawInput GameFramework.Default__SeqEvent_MobileRawInput")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRegisterEvent;

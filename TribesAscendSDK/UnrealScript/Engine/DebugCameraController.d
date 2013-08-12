@@ -11,6 +11,8 @@ extern(C++) interface DebugCameraController : PlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DebugCameraController")); }
+	private static __gshared DebugCameraController mDefaultProperties;
+	@property final static DebugCameraController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DebugCameraController)("DebugCameraController Engine.Default__DebugCameraController")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_DamageBuff : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_DamageBuff")); }
+	private static __gshared TrEffect_DamageBuff mDefaultProperties;
+	@property final static TrEffect_DamageBuff DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_DamageBuff)("TrEffect_DamageBuff TribesGame.Default__TrEffect_DamageBuff")); }
 	static struct Functions
 	{
 		private static __gshared

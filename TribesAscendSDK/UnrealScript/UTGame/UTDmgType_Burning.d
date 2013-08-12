@@ -9,6 +9,8 @@ extern(C++) interface UTDmgType_Burning : UTDamageType
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDmgType_Burning")); }
+	private static __gshared UTDmgType_Burning mDefaultProperties;
+	@property final static UTDmgType_Burning DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDmgType_Burning)("UTDmgType_Burning UTGame.Default__UTDmgType_Burning")); }
 	static struct Functions
 	{
 		private static __gshared

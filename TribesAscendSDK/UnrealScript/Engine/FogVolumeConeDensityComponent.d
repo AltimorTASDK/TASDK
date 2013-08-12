@@ -8,6 +8,8 @@ extern(C++) interface FogVolumeConeDensityComponent : FogVolumeDensityComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FogVolumeConeDensityComponent")); }
+	private static __gshared FogVolumeConeDensityComponent mDefaultProperties;
+	@property final static FogVolumeConeDensityComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FogVolumeConeDensityComponent)("FogVolumeConeDensityComponent Engine.Default__FogVolumeConeDensityComponent")); }
 	@property final auto ref
 	{
 		float ConeMaxAngle() { return *cast(float*)(cast(size_t)cast(void*)this + 180); }

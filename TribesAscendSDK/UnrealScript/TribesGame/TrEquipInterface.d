@@ -9,6 +9,8 @@ extern(C++) interface TrEquipInterface : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEquipInterface")); }
+	private static __gshared TrEquipInterface mDefaultProperties;
+	@property final static TrEquipInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEquipInterface)("TrEquipInterface TribesGame.Default__TrEquipInterface")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface DistributionFloatParameterBase : DistributionFloatConstant
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DistributionFloatParameterBase")); }
+	private static __gshared DistributionFloatParameterBase mDefaultProperties;
+	@property final static DistributionFloatParameterBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionFloatParameterBase)("DistributionFloatParameterBase Engine.Default__DistributionFloatParameterBase")); }
 	enum DistributionParamMode : ubyte
 	{
 		DPM_Normal = 0,

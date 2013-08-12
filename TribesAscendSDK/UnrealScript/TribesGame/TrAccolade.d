@@ -8,6 +8,8 @@ extern(C++) interface TrAccolade : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAccolade")); }
+	private static __gshared TrAccolade mDefaultProperties;
+	@property final static TrAccolade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAccolade)("TrAccolade TribesGame.Default__TrAccolade")); }
 	static struct Constants
 	{
 		enum

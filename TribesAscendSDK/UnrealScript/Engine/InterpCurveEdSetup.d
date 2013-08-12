@@ -8,6 +8,8 @@ extern(C++) interface InterpCurveEdSetup : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpCurveEdSetup")); }
+	private static __gshared InterpCurveEdSetup mDefaultProperties;
+	@property final static InterpCurveEdSetup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpCurveEdSetup)("InterpCurveEdSetup Engine.Default__InterpCurveEdSetup")); }
 	struct CurveEdTab
 	{
 		private ubyte __buffer__[40];

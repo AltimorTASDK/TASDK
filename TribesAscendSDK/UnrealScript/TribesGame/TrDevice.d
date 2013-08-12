@@ -28,6 +28,8 @@ extern(C++) interface TrDevice : UTWeapon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice")); }
+	private static __gshared TrDevice mDefaultProperties;
+	@property final static TrDevice DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice)("TrDevice TribesGame.Default__TrDevice")); }
 	static struct Functions
 	{
 		private static __gshared

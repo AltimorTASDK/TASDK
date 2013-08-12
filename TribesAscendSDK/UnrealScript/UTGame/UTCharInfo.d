@@ -8,6 +8,8 @@ extern(C++) interface UTCharInfo : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCharInfo")); }
+	private static __gshared UTCharInfo mDefaultProperties;
+	@property final static UTCharInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCharInfo)("UTCharInfo UTGame.Default__UTCharInfo")); }
 	static struct Functions
 	{
 		private static __gshared

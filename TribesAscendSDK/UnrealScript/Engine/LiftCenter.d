@@ -12,6 +12,8 @@ extern(C++) interface LiftCenter : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LiftCenter")); }
+	private static __gshared LiftCenter mDefaultProperties;
+	@property final static LiftCenter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LiftCenter)("LiftCenter Engine.Default__LiftCenter")); }
 	static struct Functions
 	{
 		private static __gshared

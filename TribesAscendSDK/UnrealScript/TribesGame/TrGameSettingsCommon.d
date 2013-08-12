@@ -8,6 +8,8 @@ extern(C++) interface TrGameSettingsCommon : UTGameSettingsCommon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameSettingsCommon")); }
+	private static __gshared TrGameSettingsCommon mDefaultProperties;
+	@property final static TrGameSettingsCommon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameSettingsCommon)("TrGameSettingsCommon TribesGame.Default__TrGameSettingsCommon")); }
 	static struct Constants
 	{
 		enum

@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_WatchNow : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_WatchNow")); }
+	private static __gshared GFxTrPage_WatchNow mDefaultProperties;
+	@property final static GFxTrPage_WatchNow DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_WatchNow)("GFxTrPage_WatchNow TribesGame.Default__GFxTrPage_WatchNow")); }
 	static struct Functions
 	{
 		private static __gshared

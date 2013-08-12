@@ -8,6 +8,8 @@ extern(C++) interface AISwitchablePylon : Pylon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AISwitchablePylon")); }
+	private static __gshared AISwitchablePylon mDefaultProperties;
+	@property final static AISwitchablePylon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AISwitchablePylon)("AISwitchablePylon Engine.Default__AISwitchablePylon")); }
 	static struct Functions
 	{
 		private static __gshared

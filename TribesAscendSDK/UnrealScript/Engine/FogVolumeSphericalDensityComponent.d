@@ -8,6 +8,8 @@ extern(C++) interface FogVolumeSphericalDensityComponent : FogVolumeDensityCompo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FogVolumeSphericalDensityComponent")); }
+	private static __gshared FogVolumeSphericalDensityComponent mDefaultProperties;
+	@property final static FogVolumeSphericalDensityComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FogVolumeSphericalDensityComponent)("FogVolumeSphericalDensityComponent Engine.Default__FogVolumeSphericalDensityComponent")); }
 	@property final auto ref
 	{
 		float SphereRadius() { return *cast(float*)(cast(size_t)cast(void*)this + 164); }

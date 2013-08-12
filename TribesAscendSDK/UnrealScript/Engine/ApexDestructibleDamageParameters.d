@@ -8,6 +8,8 @@ extern(C++) interface ApexDestructibleDamageParameters : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexDestructibleDamageParameters")); }
+	private static __gshared ApexDestructibleDamageParameters mDefaultProperties;
+	@property final static ApexDestructibleDamageParameters DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexDestructibleDamageParameters)("ApexDestructibleDamageParameters Engine.Default__ApexDestructibleDamageParameters")); }
 	enum EDamageParameterOverrideMode : ubyte
 	{
 		DPOM_Absolute = 0,

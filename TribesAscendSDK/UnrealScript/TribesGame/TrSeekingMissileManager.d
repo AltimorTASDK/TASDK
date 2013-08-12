@@ -14,6 +14,8 @@ extern(C++) interface TrSeekingMissileManager : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeekingMissileManager")); }
+	private static __gshared TrSeekingMissileManager mDefaultProperties;
+	@property final static TrSeekingMissileManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeekingMissileManager)("TrSeekingMissileManager TribesGame.Default__TrSeekingMissileManager")); }
 	static struct Functions
 	{
 		private static __gshared

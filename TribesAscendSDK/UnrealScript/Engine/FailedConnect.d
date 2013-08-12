@@ -10,6 +10,8 @@ extern(C++) interface FailedConnect : LocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FailedConnect")); }
+	private static __gshared FailedConnect mDefaultProperties;
+	@property final static FailedConnect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FailedConnect)("FailedConnect Engine.Default__FailedConnect")); }
 	static struct Functions
 	{
 		private static __gshared

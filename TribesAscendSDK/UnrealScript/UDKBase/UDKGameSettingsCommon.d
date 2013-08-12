@@ -8,6 +8,8 @@ extern(C++) interface UDKGameSettingsCommon : OnlineGameSettings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKGameSettingsCommon")); }
+	private static __gshared UDKGameSettingsCommon mDefaultProperties;
+	@property final static UDKGameSettingsCommon DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKGameSettingsCommon)("UDKGameSettingsCommon UDKBase.Default__UDKGameSettingsCommon")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface WebApplication : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebApplication")); }
+	private static __gshared WebApplication mDefaultProperties;
+	@property final static WebApplication DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebApplication)("WebApplication IpDrv.Default__WebApplication")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface UTMutator_NoHoverboard : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_NoHoverboard")); }
+	private static __gshared UTMutator_NoHoverboard mDefaultProperties;
+	@property final static UTMutator_NoHoverboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_NoHoverboard)("UTMutator_NoHoverboard UTGame.Default__UTMutator_NoHoverboard")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitMutator;

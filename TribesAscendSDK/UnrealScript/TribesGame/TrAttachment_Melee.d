@@ -10,6 +10,8 @@ extern(C++) interface TrAttachment_Melee : TrDeviceAttachment
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_Melee")); }
+	private static __gshared TrAttachment_Melee mDefaultProperties;
+	@property final static TrAttachment_Melee DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAttachment_Melee)("TrAttachment_Melee TribesGame.Default__TrAttachment_Melee")); }
 	static struct Functions
 	{
 		private static __gshared

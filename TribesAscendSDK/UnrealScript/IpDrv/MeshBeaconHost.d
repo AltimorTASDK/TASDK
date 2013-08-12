@@ -10,6 +10,8 @@ extern(C++) interface MeshBeaconHost : MeshBeacon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.MeshBeaconHost")); }
+	private static __gshared MeshBeaconHost mDefaultProperties;
+	@property final static MeshBeaconHost DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MeshBeaconHost)("MeshBeaconHost IpDrv.Default__MeshBeaconHost")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface UIDataStore_Registry : UIDataStore
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_Registry")); }
+	private static __gshared UIDataStore_Registry mDefaultProperties;
+	@property final static UIDataStore_Registry DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_Registry)("UIDataStore_Registry Engine.Default__UIDataStore_Registry")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetDataProvider;

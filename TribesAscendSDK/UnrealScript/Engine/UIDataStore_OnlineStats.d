@@ -10,6 +10,8 @@ extern(C++) interface UIDataStore_OnlineStats : UIDataStore_Remote
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStore_OnlineStats")); }
+	private static __gshared UIDataStore_OnlineStats mDefaultProperties;
+	@property final static UIDataStore_OnlineStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStore_OnlineStats)("UIDataStore_OnlineStats Engine.Default__UIDataStore_OnlineStats")); }
 	static struct Functions
 	{
 		private static __gshared

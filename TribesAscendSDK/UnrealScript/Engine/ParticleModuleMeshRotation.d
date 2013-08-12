@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleMeshRotation : ParticleModuleRotationBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleMeshRotation")); }
+	private static __gshared ParticleModuleMeshRotation mDefaultProperties;
+	@property final static ParticleModuleMeshRotation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleMeshRotation)("ParticleModuleMeshRotation Engine.Default__ParticleModuleMeshRotation")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector StartRotation() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 72); }

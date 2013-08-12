@@ -10,6 +10,8 @@ extern(C++) interface MorphNodeWeightByBoneAngle : MorphNodeWeightBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodeWeightByBoneAngle")); }
+	private static __gshared MorphNodeWeightByBoneAngle mDefaultProperties;
+	@property final static MorphNodeWeightByBoneAngle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphNodeWeightByBoneAngle)("MorphNodeWeightByBoneAngle Engine.Default__MorphNodeWeightByBoneAngle")); }
 	struct BoneAngleMorph
 	{
 		private ubyte __buffer__[8];

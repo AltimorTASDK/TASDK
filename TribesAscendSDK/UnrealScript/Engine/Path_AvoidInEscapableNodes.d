@@ -9,6 +9,8 @@ extern(C++) interface Path_AvoidInEscapableNodes : PathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_AvoidInEscapableNodes")); }
+	private static __gshared Path_AvoidInEscapableNodes mDefaultProperties;
+	@property final static Path_AvoidInEscapableNodes DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_AvoidInEscapableNodes)("Path_AvoidInEscapableNodes Engine.Default__Path_AvoidInEscapableNodes")); }
 	static struct Functions
 	{
 		private static __gshared

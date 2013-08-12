@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_SetApexClothingParam : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_SetApexClothingParam")); }
+	private static __gshared SeqAct_SetApexClothingParam mDefaultProperties;
+	@property final static SeqAct_SetApexClothingParam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_SetApexClothingParam)("SeqAct_SetApexClothingParam Engine.Default__SeqAct_SetApexClothingParam")); }
 	@property final
 	{
 		bool bEnableApexClothingSimulation() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x1) != 0; }

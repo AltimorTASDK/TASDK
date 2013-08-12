@@ -10,6 +10,8 @@ extern(C++) interface UTPawnSoundGroup : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTPawnSoundGroup")); }
+	private static __gshared UTPawnSoundGroup mDefaultProperties;
+	@property final static UTPawnSoundGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTPawnSoundGroup)("UTPawnSoundGroup UTGame.Default__UTPawnSoundGroup")); }
 	static struct Functions
 	{
 		private static __gshared

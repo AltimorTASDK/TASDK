@@ -9,6 +9,8 @@ extern(C++) interface NavMeshPath_EnforceTwoWayEdges : NavMeshPathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPath_EnforceTwoWayEdges")); }
+	private static __gshared NavMeshPath_EnforceTwoWayEdges mDefaultProperties;
+	@property final static NavMeshPath_EnforceTwoWayEdges DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPath_EnforceTwoWayEdges)("NavMeshPath_EnforceTwoWayEdges Engine.Default__NavMeshPath_EnforceTwoWayEdges")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mEnforceTwoWayEdges;

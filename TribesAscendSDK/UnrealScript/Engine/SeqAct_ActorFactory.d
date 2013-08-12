@@ -10,6 +10,8 @@ extern(C++) interface SeqAct_ActorFactory : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ActorFactory")); }
+	private static __gshared SeqAct_ActorFactory mDefaultProperties;
+	@property final static SeqAct_ActorFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ActorFactory)("SeqAct_ActorFactory Engine.Default__SeqAct_ActorFactory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

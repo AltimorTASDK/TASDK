@@ -9,6 +9,8 @@ extern(C++) interface TriggerVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggerVolume")); }
+	private static __gshared TriggerVolume mDefaultProperties;
+	@property final static TriggerVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TriggerVolume)("TriggerVolume Engine.Default__TriggerVolume")); }
 	static struct Functions
 	{
 		private static __gshared

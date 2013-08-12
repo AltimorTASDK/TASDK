@@ -8,4 +8,6 @@ extern(C++) interface CrowdPopulationManagerBase : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CrowdPopulationManagerBase")); }
+	private static __gshared CrowdPopulationManagerBase mDefaultProperties;
+	@property final static CrowdPopulationManagerBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CrowdPopulationManagerBase)("CrowdPopulationManagerBase Engine.Default__CrowdPopulationManagerBase")); }
 }

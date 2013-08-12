@@ -10,6 +10,8 @@ extern(C++) interface dsWebAdmin : WebApplication
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.dsWebAdmin")); }
+	private static __gshared dsWebAdmin mDefaultProperties;
+	@property final static dsWebAdmin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(dsWebAdmin)("dsWebAdmin TribesGame.Default__dsWebAdmin")); }
 	static struct Functions
 	{
 		private static __gshared

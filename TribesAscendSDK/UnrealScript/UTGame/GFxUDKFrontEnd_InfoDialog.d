@@ -8,6 +8,8 @@ extern(C++) interface GFxUDKFrontEnd_InfoDialog : GFxUDKFrontEnd_Dialog
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_InfoDialog")); }
+	private static __gshared GFxUDKFrontEnd_InfoDialog mDefaultProperties;
+	@property final static GFxUDKFrontEnd_InfoDialog DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_InfoDialog)("GFxUDKFrontEnd_InfoDialog UTGame.Default__GFxUDKFrontEnd_InfoDialog")); }
 	static struct Functions
 	{
 		private static __gshared

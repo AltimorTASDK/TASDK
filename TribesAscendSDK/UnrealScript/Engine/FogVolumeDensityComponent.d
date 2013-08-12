@@ -11,6 +11,8 @@ extern(C++) interface FogVolumeDensityComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FogVolumeDensityComponent")); }
+	private static __gshared FogVolumeDensityComponent mDefaultProperties;
+	@property final static FogVolumeDensityComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FogVolumeDensityComponent)("FogVolumeDensityComponent Engine.Default__FogVolumeDensityComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetEnabled;

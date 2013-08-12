@@ -8,6 +8,8 @@ extern(C++) interface NavMeshGoal_Filter : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoal_Filter")); }
+	private static __gshared NavMeshGoal_Filter mDefaultProperties;
+	@property final static NavMeshGoal_Filter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoal_Filter)("NavMeshGoal_Filter Engine.Default__NavMeshGoal_Filter")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetDumpString;

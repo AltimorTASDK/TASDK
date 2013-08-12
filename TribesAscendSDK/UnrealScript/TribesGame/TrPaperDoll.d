@@ -14,6 +14,8 @@ extern(C++) interface TrPaperDoll : SkeletalMeshActorMAT
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPaperDoll")); }
+	private static __gshared TrPaperDoll mDefaultProperties;
+	@property final static TrPaperDoll DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPaperDoll)("TrPaperDoll TribesGame.Default__TrPaperDoll")); }
 	static struct Functions
 	{
 		private static __gshared

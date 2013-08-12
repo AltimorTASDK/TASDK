@@ -9,6 +9,8 @@ extern(C++) interface TrCheatManager : UTCheatManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCheatManager")); }
+	private static __gshared TrCheatManager mDefaultProperties;
+	@property final static TrCheatManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCheatManager)("TrCheatManager TribesGame.Default__TrCheatManager")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGiveWeapon;

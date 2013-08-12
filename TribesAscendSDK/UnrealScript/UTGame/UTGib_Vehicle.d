@@ -11,6 +11,8 @@ extern(C++) interface UTGib_Vehicle : UTGib
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGib_Vehicle")); }
+	private static __gshared UTGib_Vehicle mDefaultProperties;
+	@property final static UTGib_Vehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGib_Vehicle)("UTGib_Vehicle UTGame.Default__UTGib_Vehicle")); }
 	static struct Functions
 	{
 		private static __gshared

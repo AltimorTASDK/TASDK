@@ -13,6 +13,8 @@ extern(C++) interface UTDefensePoint : UDKScriptedNavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDefensePoint")); }
+	private static __gshared UTDefensePoint mDefaultProperties;
+	@property final static UTDefensePoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDefensePoint)("UTDefensePoint UTGame.Default__UTDefensePoint")); }
 	static struct Functions
 	{
 		private static __gshared

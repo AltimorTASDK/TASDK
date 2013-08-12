@@ -12,6 +12,8 @@ extern(C++) interface TrChatInput : Interaction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrChatInput")); }
+	private static __gshared TrChatInput mDefaultProperties;
+	@property final static TrChatInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrChatInput)("TrChatInput TribesGame.Default__TrChatInput")); }
 	static struct Functions
 	{
 		private static __gshared

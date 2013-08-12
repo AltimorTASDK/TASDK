@@ -13,6 +13,8 @@ extern(C++) interface GFxUDKFrontEnd_GameMode : GFxUDKFrontEnd_Screen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_GameMode")); }
+	private static __gshared GFxUDKFrontEnd_GameMode mDefaultProperties;
+	@property final static GFxUDKFrontEnd_GameMode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_GameMode)("GFxUDKFrontEnd_GameMode UTGame.Default__GFxUDKFrontEnd_GameMode")); }
 	static struct Functions
 	{
 		private static __gshared

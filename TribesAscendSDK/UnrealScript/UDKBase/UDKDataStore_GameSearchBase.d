@@ -9,6 +9,8 @@ extern(C++) interface UDKDataStore_GameSearchBase : UIDataStore_OnlineGameSearch
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKDataStore_GameSearchBase")); }
+	private static __gshared UDKDataStore_GameSearchBase mDefaultProperties;
+	@property final static UDKDataStore_GameSearchBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKDataStore_GameSearchBase)("UDKDataStore_GameSearchBase UDKBase.Default__UDKDataStore_GameSearchBase")); }
 	static struct Functions
 	{
 		private static __gshared

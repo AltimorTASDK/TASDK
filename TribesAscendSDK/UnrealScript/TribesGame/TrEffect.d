@@ -10,6 +10,8 @@ extern(C++) interface TrEffect : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect")); }
+	private static __gshared TrEffect mDefaultProperties;
+	@property final static TrEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect)("TrEffect TribesGame.Default__TrEffect")); }
 	static struct Functions
 	{
 		private static __gshared

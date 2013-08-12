@@ -12,6 +12,8 @@ extern(C++) interface UTScriptedVoiceMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTScriptedVoiceMessage")); }
+	private static __gshared UTScriptedVoiceMessage mDefaultProperties;
+	@property final static UTScriptedVoiceMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTScriptedVoiceMessage)("UTScriptedVoiceMessage UTGame.Default__UTScriptedVoiceMessage")); }
 	static struct Functions
 	{
 		private static __gshared

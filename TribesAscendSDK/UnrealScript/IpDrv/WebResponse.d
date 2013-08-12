@@ -9,6 +9,8 @@ extern(C++) interface WebResponse : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebResponse")); }
+	private static __gshared WebResponse mDefaultProperties;
+	@property final static WebResponse DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebResponse)("WebResponse IpDrv.Default__WebResponse")); }
 	static struct Functions
 	{
 		private static __gshared

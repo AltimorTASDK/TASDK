@@ -9,6 +9,8 @@ extern(C++) interface AnimNotify_Sound : AnimNotify
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_Sound")); }
+	private static __gshared AnimNotify_Sound mDefaultProperties;
+	@property final static AnimNotify_Sound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_Sound)("AnimNotify_Sound Engine.Default__AnimNotify_Sound")); }
 	@property final
 	{
 		auto ref

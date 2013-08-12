@@ -11,6 +11,8 @@ extern(C++) interface AccessControl : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AccessControl")); }
+	private static __gshared AccessControl mDefaultProperties;
+	@property final static AccessControl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AccessControl)("AccessControl Engine.Default__AccessControl")); }
 	static struct Functions
 	{
 		private static __gshared

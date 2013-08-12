@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleRotationOverLifetime : ParticleModuleRotatio
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleRotationOverLifetime")); }
+	private static __gshared ParticleModuleRotationOverLifetime mDefaultProperties;
+	@property final static ParticleModuleRotationOverLifetime DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleRotationOverLifetime)("ParticleModuleRotationOverLifetime Engine.Default__ParticleModuleRotationOverLifetime")); }
 	@property final
 	{
 		@property final auto ref DistributionFloat.RawDistributionFloat RotationOverLife() { return *cast(DistributionFloat.RawDistributionFloat*)(cast(size_t)cast(void*)this + 72); }

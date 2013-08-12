@@ -13,6 +13,8 @@ extern(C++) interface TrInventoryManager : UTInventoryManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrInventoryManager")); }
+	private static __gshared TrInventoryManager mDefaultProperties;
+	@property final static TrInventoryManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrInventoryManager)("TrInventoryManager TribesGame.Default__TrInventoryManager")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface TrSeqEvent_StormCore : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqEvent_StormCore")); }
+	private static __gshared TrSeqEvent_StormCore mDefaultProperties;
+	@property final static TrSeqEvent_StormCore DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqEvent_StormCore)("TrSeqEvent_StormCore TribesGame.Default__TrSeqEvent_StormCore")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

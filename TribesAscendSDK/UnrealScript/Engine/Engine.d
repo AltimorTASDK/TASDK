@@ -24,6 +24,8 @@ extern(C++) interface Engine : Subsystem
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Engine")); }
+	private static __gshared Engine mDefaultProperties;
+	@property final static Engine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Engine)("Engine Engine.Default__Engine")); }
 	static struct Functions
 	{
 		private static __gshared

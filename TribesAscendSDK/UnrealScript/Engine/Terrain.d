@@ -15,6 +15,8 @@ extern(C++) interface Terrain : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Terrain")); }
+	private static __gshared Terrain mDefaultProperties;
+	@property final static Terrain DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Terrain)("Terrain Engine.Default__Terrain")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface GameplayEventsHandler : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameplayEventsHandler")); }
+	private static __gshared GameplayEventsHandler mDefaultProperties;
+	@property final static GameplayEventsHandler DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameplayEventsHandler)("GameplayEventsHandler Engine.Default__GameplayEventsHandler")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface GameAIController : AIController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAIController")); }
+	private static __gshared GameAIController mDefaultProperties;
+	@property final static GameAIController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameAIController)("GameAIController GameFramework.Default__GameAIController")); }
 	static struct Functions
 	{
 		private static __gshared

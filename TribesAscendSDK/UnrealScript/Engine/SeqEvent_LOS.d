@@ -8,6 +8,8 @@ extern(C++) interface SeqEvent_LOS : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_LOS")); }
+	private static __gshared SeqEvent_LOS mDefaultProperties;
+	@property final static SeqEvent_LOS DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_LOS)("SeqEvent_LOS Engine.Default__SeqEvent_LOS")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

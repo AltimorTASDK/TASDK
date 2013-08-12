@@ -12,6 +12,8 @@ extern(C++) interface UTInventoryManager : InventoryManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTInventoryManager")); }
+	private static __gshared UTInventoryManager mDefaultProperties;
+	@property final static UTInventoryManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTInventoryManager)("UTInventoryManager UTGame.Default__UTInventoryManager")); }
 	static struct Functions
 	{
 		private static __gshared

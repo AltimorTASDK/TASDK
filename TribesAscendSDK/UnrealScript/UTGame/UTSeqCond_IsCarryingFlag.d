@@ -10,6 +10,8 @@ extern(C++) interface UTSeqCond_IsCarryingFlag : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqCond_IsCarryingFlag")); }
+	private static __gshared UTSeqCond_IsCarryingFlag mDefaultProperties;
+	@property final static UTSeqCond_IsCarryingFlag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqCond_IsCarryingFlag)("UTSeqCond_IsCarryingFlag UTGame.Default__UTSeqCond_IsCarryingFlag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

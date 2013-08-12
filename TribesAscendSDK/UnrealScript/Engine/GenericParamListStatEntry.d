@@ -9,6 +9,8 @@ extern(C++) interface GenericParamListStatEntry : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GenericParamListStatEntry")); }
+	private static __gshared GenericParamListStatEntry mDefaultProperties;
+	@property final static GenericParamListStatEntry DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GenericParamListStatEntry)("GenericParamListStatEntry Engine.Default__GenericParamListStatEntry")); }
 	static struct Functions
 	{
 		private static __gshared

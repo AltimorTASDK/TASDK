@@ -10,6 +10,8 @@ extern(C++) interface TrCallIn_CrashLandInfo : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCallIn_CrashLandInfo")); }
+	private static __gshared TrCallIn_CrashLandInfo mDefaultProperties;
+	@property final static TrCallIn_CrashLandInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCallIn_CrashLandInfo)("TrCallIn_CrashLandInfo TribesGame.Default__TrCallIn_CrashLandInfo")); }
 	static struct Functions
 	{
 		private static __gshared

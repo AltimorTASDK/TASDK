@@ -8,6 +8,8 @@ extern(C++) interface ZoneInfo : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ZoneInfo")); }
+	private static __gshared ZoneInfo mDefaultProperties;
+	@property final static ZoneInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ZoneInfo)("ZoneInfo Engine.Default__ZoneInfo")); }
 	@property final
 	{
 		auto ref

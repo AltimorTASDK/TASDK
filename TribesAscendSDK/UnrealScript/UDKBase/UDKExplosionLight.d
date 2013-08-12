@@ -9,6 +9,8 @@ extern(C++) interface UDKExplosionLight : PointLightComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKExplosionLight")); }
+	private static __gshared UDKExplosionLight mDefaultProperties;
+	@property final static UDKExplosionLight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKExplosionLight)("UDKExplosionLight UDKBase.Default__UDKExplosionLight")); }
 	static struct Functions
 	{
 		private static __gshared

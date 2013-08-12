@@ -11,6 +11,8 @@ extern(C++) interface LocalMessage : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LocalMessage")); }
+	private static __gshared LocalMessage mDefaultProperties;
+	@property final static LocalMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LocalMessage)("LocalMessage Engine.Default__LocalMessage")); }
 	static struct Functions
 	{
 		private static __gshared

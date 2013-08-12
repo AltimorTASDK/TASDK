@@ -11,6 +11,8 @@ extern(C++) interface SeqAct_PlayCameraAnim : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_PlayCameraAnim")); }
+	private static __gshared SeqAct_PlayCameraAnim mDefaultProperties;
+	@property final static SeqAct_PlayCameraAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlayCameraAnim)("SeqAct_PlayCameraAnim Engine.Default__SeqAct_PlayCameraAnim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

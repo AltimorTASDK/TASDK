@@ -8,6 +8,8 @@ extern(C++) interface AlienFXManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.AlienFXManager")); }
+	private static __gshared AlienFXManager mDefaultProperties;
+	@property final static AlienFXManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AlienFXManager)("AlienFXManager TribesGame.Default__AlienFXManager")); }
 	static struct Functions
 	{
 		private static __gshared

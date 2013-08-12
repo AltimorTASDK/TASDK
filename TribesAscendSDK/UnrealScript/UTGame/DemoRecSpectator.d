@@ -11,6 +11,8 @@ extern(C++) interface DemoRecSpectator : UTPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.DemoRecSpectator")); }
+	private static __gshared DemoRecSpectator mDefaultProperties;
+	@property final static DemoRecSpectator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DemoRecSpectator)("DemoRecSpectator UTGame.Default__DemoRecSpectator")); }
 	static struct Functions
 	{
 		private static __gshared

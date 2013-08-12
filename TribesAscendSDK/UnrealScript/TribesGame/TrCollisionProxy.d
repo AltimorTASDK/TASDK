@@ -9,6 +9,8 @@ extern(C++) interface TrCollisionProxy : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy")); }
+	private static __gshared TrCollisionProxy mDefaultProperties;
+	@property final static TrCollisionProxy DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy)("TrCollisionProxy TribesGame.Default__TrCollisionProxy")); }
 	static struct Functions
 	{
 		private static __gshared

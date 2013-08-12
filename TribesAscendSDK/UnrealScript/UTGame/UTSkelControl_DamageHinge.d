@@ -8,6 +8,8 @@ extern(C++) interface UTSkelControl_DamageHinge : UDKSkelControl_DamageHinge
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_DamageHinge")); }
+	private static __gshared UTSkelControl_DamageHinge mDefaultProperties;
+	@property final static UTSkelControl_DamageHinge DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_DamageHinge)("UTSkelControl_DamageHinge UTGame.Default__UTSkelControl_DamageHinge")); }
 	static struct Functions
 	{
 		private static __gshared

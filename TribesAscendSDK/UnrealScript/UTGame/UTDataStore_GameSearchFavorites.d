@@ -9,6 +9,8 @@ extern(C++) interface UTDataStore_GameSearchFavorites : UTDataStore_GameSearchPe
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDataStore_GameSearchFavorites")); }
+	private static __gshared UTDataStore_GameSearchFavorites mDefaultProperties;
+	@property final static UTDataStore_GameSearchFavorites DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDataStore_GameSearchFavorites)("UTDataStore_GameSearchFavorites UTGame.Default__UTDataStore_GameSearchFavorites")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mHasOutstandingQueries;

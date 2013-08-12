@@ -15,6 +15,8 @@ extern(C++) interface UIRoot : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIRoot")); }
+	private static __gshared UIRoot mDefaultProperties;
+	@property final static UIRoot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIRoot)("UIRoot Engine.Default__UIRoot")); }
 	static struct Functions
 	{
 		private static __gshared

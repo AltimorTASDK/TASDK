@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_JoinMatch : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_JoinMatch")); }
+	private static __gshared GFxTrPage_JoinMatch mDefaultProperties;
+	@property final static GFxTrPage_JoinMatch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_JoinMatch)("GFxTrPage_JoinMatch TribesGame.Default__GFxTrPage_JoinMatch")); }
 	static struct Functions
 	{
 		private static __gshared

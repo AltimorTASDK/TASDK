@@ -8,4 +8,6 @@ extern(C++) interface ApexDestructibleAssetLabelRenderer : ThumbnailLabelRendere
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.ApexDestructibleAssetLabelRenderer")); }
+	private static __gshared ApexDestructibleAssetLabelRenderer mDefaultProperties;
+	@property final static ApexDestructibleAssetLabelRenderer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexDestructibleAssetLabelRenderer)("ApexDestructibleAssetLabelRenderer UnrealEd.Default__ApexDestructibleAssetLabelRenderer")); }
 }

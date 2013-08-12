@@ -8,6 +8,8 @@ extern(C++) interface UDKUIDataProvider_StringArray : UDKUIDataProvider_SimpleEl
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataProvider_StringArray")); }
+	private static __gshared UDKUIDataProvider_StringArray mDefaultProperties;
+	@property final static UDKUIDataProvider_StringArray DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataProvider_StringArray)("UDKUIDataProvider_StringArray UDKBase.Default__UDKUIDataProvider_StringArray")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetElementCount;

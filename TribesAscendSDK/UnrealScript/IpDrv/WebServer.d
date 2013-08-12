@@ -10,6 +10,8 @@ extern(C++) interface WebServer : TcpLink
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.WebServer")); }
+	private static __gshared WebServer mDefaultProperties;
+	@property final static WebServer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(WebServer)("WebServer IpDrv.Default__WebServer")); }
 	static struct Functions
 	{
 		private static __gshared

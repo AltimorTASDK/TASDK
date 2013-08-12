@@ -9,6 +9,8 @@ extern(C++) interface SplineMeshComponent : StaticMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SplineMeshComponent")); }
+	private static __gshared SplineMeshComponent mDefaultProperties;
+	@property final static SplineMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SplineMeshComponent)("SplineMeshComponent Engine.Default__SplineMeshComponent")); }
 	struct SplineMeshParams
 	{
 		private ubyte __buffer__[88];

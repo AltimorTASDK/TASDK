@@ -9,6 +9,8 @@ extern(C++) interface DistributionVector : Component
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Core.DistributionVector")); }
+	private static __gshared DistributionVector mDefaultProperties;
+	@property final static DistributionVector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DistributionVector)("DistributionVector Core.Default__DistributionVector")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetVectorValue;

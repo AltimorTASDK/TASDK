@@ -8,6 +8,8 @@ extern(C++) interface SoundNodeRandom : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeRandom")); }
+	private static __gshared SoundNodeRandom mDefaultProperties;
+	@property final static SoundNodeRandom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeRandom)("SoundNodeRandom Engine.Default__SoundNodeRandom")); }
 	@property final
 	{
 		auto ref

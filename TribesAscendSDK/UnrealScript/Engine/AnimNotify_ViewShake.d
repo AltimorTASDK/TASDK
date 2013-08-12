@@ -11,6 +11,8 @@ extern(C++) interface AnimNotify_ViewShake : AnimNotify_Scripted
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_ViewShake")); }
+	private static __gshared AnimNotify_ViewShake mDefaultProperties;
+	@property final static AnimNotify_ViewShake DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_ViewShake)("AnimNotify_ViewShake Engine.Default__AnimNotify_ViewShake")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotify;

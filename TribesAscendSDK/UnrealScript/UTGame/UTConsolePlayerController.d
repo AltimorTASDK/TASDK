@@ -9,6 +9,8 @@ extern(C++) interface UTConsolePlayerController : UTPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTConsolePlayerController")); }
+	private static __gshared UTConsolePlayerController mDefaultProperties;
+	@property final static UTConsolePlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTConsolePlayerController)("UTConsolePlayerController UTGame.Default__UTConsolePlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

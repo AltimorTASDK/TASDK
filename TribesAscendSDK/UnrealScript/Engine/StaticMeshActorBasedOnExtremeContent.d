@@ -9,6 +9,8 @@ extern(C++) interface StaticMeshActorBasedOnExtremeContent : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshActorBasedOnExtremeContent")); }
+	private static __gshared StaticMeshActorBasedOnExtremeContent mDefaultProperties;
+	@property final static StaticMeshActorBasedOnExtremeContent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshActorBasedOnExtremeContent)("StaticMeshActorBasedOnExtremeContent Engine.Default__StaticMeshActorBasedOnExtremeContent")); }
 	static struct Functions
 	{
 		private static __gshared

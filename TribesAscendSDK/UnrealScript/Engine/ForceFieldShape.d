@@ -8,6 +8,8 @@ extern(C++) interface ForceFieldShape : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFieldShape")); }
+	private static __gshared ForceFieldShape mDefaultProperties;
+	@property final static ForceFieldShape DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFieldShape)("ForceFieldShape Engine.Default__ForceFieldShape")); }
 	static struct Functions
 	{
 		private static __gshared

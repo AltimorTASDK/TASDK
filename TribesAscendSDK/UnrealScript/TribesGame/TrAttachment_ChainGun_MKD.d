@@ -9,6 +9,8 @@ extern(C++) interface TrAttachment_ChainGun_MKD : TrDeviceAttachment
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAttachment_ChainGun_MKD")); }
+	private static __gshared TrAttachment_ChainGun_MKD mDefaultProperties;
+	@property final static TrAttachment_ChainGun_MKD DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAttachment_ChainGun_MKD)("TrAttachment_ChainGun_MKD TribesGame.Default__TrAttachment_ChainGun_MKD")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface PhysicalMaterial : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysicalMaterial")); }
+	private static __gshared PhysicalMaterial mDefaultProperties;
+	@property final static PhysicalMaterial DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysicalMaterial)("PhysicalMaterial Engine.Default__PhysicalMaterial")); }
 	static struct Functions
 	{
 		private static __gshared

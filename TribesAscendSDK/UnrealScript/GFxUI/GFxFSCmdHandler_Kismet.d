@@ -10,6 +10,8 @@ extern(C++) interface GFxFSCmdHandler_Kismet : GFxFSCmdHandler
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxFSCmdHandler_Kismet")); }
+	private static __gshared GFxFSCmdHandler_Kismet mDefaultProperties;
+	@property final static GFxFSCmdHandler_Kismet DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxFSCmdHandler_Kismet)("GFxFSCmdHandler_Kismet GFxUI.Default__GFxFSCmdHandler_Kismet")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFSCommand;

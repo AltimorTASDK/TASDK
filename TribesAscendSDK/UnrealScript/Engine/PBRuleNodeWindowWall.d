@@ -9,6 +9,8 @@ extern(C++) interface PBRuleNodeWindowWall : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeWindowWall")); }
+	private static __gshared PBRuleNodeWindowWall mDefaultProperties;
+	@property final static PBRuleNodeWindowWall DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeWindowWall)("PBRuleNodeWindowWall Engine.Default__PBRuleNodeWindowWall")); }
 	@property final
 	{
 		auto ref

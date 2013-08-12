@@ -9,6 +9,8 @@ extern(C++) interface UIDataStorePublisher : UIDataStoreSubscriber
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataStorePublisher")); }
+	private static __gshared UIDataStorePublisher mDefaultProperties;
+	@property final static UIDataStorePublisher DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataStorePublisher)("UIDataStorePublisher Engine.Default__UIDataStorePublisher")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSaveSubscriberValue;

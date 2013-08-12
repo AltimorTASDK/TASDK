@@ -11,6 +11,8 @@ extern(C++) interface PrefabInstance : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PrefabInstance")); }
+	private static __gshared PrefabInstance mDefaultProperties;
+	@property final static PrefabInstance DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PrefabInstance)("PrefabInstance Engine.Default__PrefabInstance")); }
 	@property final auto ref
 	{
 		ScriptArray!(ubyte) PI_Bytes() { return *cast(ScriptArray!(ubyte)*)(cast(size_t)cast(void*)this + 556); }

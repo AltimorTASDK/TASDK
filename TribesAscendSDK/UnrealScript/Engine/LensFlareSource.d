@@ -11,6 +11,8 @@ extern(C++) interface LensFlareSource : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlareSource")); }
+	private static __gshared LensFlareSource mDefaultProperties;
+	@property final static LensFlareSource DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LensFlareSource)("LensFlareSource Engine.Default__LensFlareSource")); }
 	static struct Functions
 	{
 		private static __gshared

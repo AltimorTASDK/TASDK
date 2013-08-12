@@ -9,6 +9,8 @@ extern(C++) interface NxForceFieldCylindricalComponent : NxForceFieldComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceFieldCylindricalComponent")); }
+	private static __gshared NxForceFieldCylindricalComponent mDefaultProperties;
+	@property final static NxForceFieldCylindricalComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceFieldCylindricalComponent)("NxForceFieldCylindricalComponent Engine.Default__NxForceFieldCylindricalComponent")); }
 	@property final
 	{
 		auto ref

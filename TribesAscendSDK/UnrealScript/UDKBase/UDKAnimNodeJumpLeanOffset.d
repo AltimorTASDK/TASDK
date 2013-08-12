@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimNodeJumpLeanOffset : AnimNodeAimOffset
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimNodeJumpLeanOffset")); }
+	private static __gshared UDKAnimNodeJumpLeanOffset mDefaultProperties;
+	@property final static UDKAnimNodeJumpLeanOffset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimNodeJumpLeanOffset)("UDKAnimNodeJumpLeanOffset UDKBase.Default__UDKAnimNodeJumpLeanOffset")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetLeanWeight;

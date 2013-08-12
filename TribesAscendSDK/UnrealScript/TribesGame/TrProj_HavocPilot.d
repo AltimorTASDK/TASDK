@@ -9,6 +9,8 @@ extern(C++) interface TrProj_HavocPilot : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_HavocPilot")); }
+	private static __gshared TrProj_HavocPilot mDefaultProperties;
+	@property final static TrProj_HavocPilot DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_HavocPilot)("TrProj_HavocPilot TribesGame.Default__TrProj_HavocPilot")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface CoverMeshComponent : StaticMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverMeshComponent")); }
+	private static __gshared CoverMeshComponent mDefaultProperties;
+	@property final static CoverMeshComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverMeshComponent)("CoverMeshComponent Engine.Default__CoverMeshComponent")); }
 	struct CoverMeshes
 	{
 		private ubyte __buffer__[44];

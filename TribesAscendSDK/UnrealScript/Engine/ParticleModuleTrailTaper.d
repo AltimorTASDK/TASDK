@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleTrailTaper : ParticleModuleTrailBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTrailTaper")); }
+	private static __gshared ParticleModuleTrailTaper mDefaultProperties;
+	@property final static ParticleModuleTrailTaper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTrailTaper)("ParticleModuleTrailTaper Engine.Default__ParticleModuleTrailTaper")); }
 	enum ETrailTaperMethod : ubyte
 	{
 		PETTM_None = 0,

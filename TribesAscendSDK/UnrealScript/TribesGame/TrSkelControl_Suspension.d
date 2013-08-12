@@ -8,6 +8,8 @@ extern(C++) interface TrSkelControl_Suspension : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkelControl_Suspension")); }
+	private static __gshared TrSkelControl_Suspension mDefaultProperties;
+	@property final static TrSkelControl_Suspension DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkelControl_Suspension)("TrSkelControl_Suspension TribesGame.Default__TrSkelControl_Suspension")); }
 	@property final
 	{
 		auto ref

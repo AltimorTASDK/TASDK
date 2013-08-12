@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_ChangeTeam : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_ChangeTeam")); }
+	private static __gshared UTSeqAct_ChangeTeam mDefaultProperties;
+	@property final static UTSeqAct_ChangeTeam DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_ChangeTeam)("UTSeqAct_ChangeTeam UTGame.Default__UTSeqAct_ChangeTeam")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

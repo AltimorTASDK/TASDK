@@ -10,6 +10,8 @@ extern(C++) interface AnimNotify : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify")); }
+	private static __gshared AnimNotify mDefaultProperties;
+	@property final static AnimNotify DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify)("AnimNotify Engine.Default__AnimNotify")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFindNextNotifyOfClass;

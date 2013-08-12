@@ -11,6 +11,8 @@ extern(C++) interface GFxTrUI_TeamSelectionMenu : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrUI_TeamSelectionMenu")); }
+	private static __gshared GFxTrUI_TeamSelectionMenu mDefaultProperties;
+	@property final static GFxTrUI_TeamSelectionMenu DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrUI_TeamSelectionMenu)("GFxTrUI_TeamSelectionMenu TribesGame.Default__GFxTrUI_TeamSelectionMenu")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface AutoTestManager : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AutoTestManager")); }
+	private static __gshared AutoTestManager mDefaultProperties;
+	@property final static AutoTestManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AutoTestManager)("AutoTestManager Engine.Default__AutoTestManager")); }
 	static struct Functions
 	{
 		private static __gshared

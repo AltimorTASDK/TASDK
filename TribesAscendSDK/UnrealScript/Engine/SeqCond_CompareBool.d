@@ -8,6 +8,8 @@ extern(C++) interface SeqCond_CompareBool : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_CompareBool")); }
+	private static __gshared SeqCond_CompareBool mDefaultProperties;
+	@property final static SeqCond_CompareBool DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_CompareBool)("SeqCond_CompareBool Engine.Default__SeqCond_CompareBool")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

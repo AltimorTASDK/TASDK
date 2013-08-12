@@ -13,6 +13,8 @@ extern(C++) interface FluidSurfaceComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidSurfaceComponent")); }
+	private static __gshared FluidSurfaceComponent mDefaultProperties;
+	@property final static FluidSurfaceComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidSurfaceComponent)("FluidSurfaceComponent Engine.Default__FluidSurfaceComponent")); }
 	static struct Functions
 	{
 		private static __gshared

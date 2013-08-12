@@ -9,6 +9,8 @@ extern(C++) interface UIConfigFileProvider : UIConfigProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIConfigFileProvider")); }
+	private static __gshared UIConfigFileProvider mDefaultProperties;
+	@property final static UIConfigFileProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIConfigFileProvider)("UIConfigFileProvider Engine.Default__UIConfigFileProvider")); }
 	@property final auto ref
 	{
 		ScriptArray!(UIConfigSectionProvider) Sections() { return *cast(ScriptArray!(UIConfigSectionProvider)*)(cast(size_t)cast(void*)this + 88); }

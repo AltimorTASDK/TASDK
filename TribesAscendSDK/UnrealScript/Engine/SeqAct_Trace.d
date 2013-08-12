@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_Trace : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Trace")); }
+	private static __gshared SeqAct_Trace mDefaultProperties;
+	@property final static SeqAct_Trace DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Trace)("SeqAct_Trace Engine.Default__SeqAct_Trace")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

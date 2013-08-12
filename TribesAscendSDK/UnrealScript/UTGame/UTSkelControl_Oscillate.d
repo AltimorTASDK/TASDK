@@ -8,6 +8,8 @@ extern(C++) interface UTSkelControl_Oscillate : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSkelControl_Oscillate")); }
+	private static __gshared UTSkelControl_Oscillate mDefaultProperties;
+	@property final static UTSkelControl_Oscillate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSkelControl_Oscillate)("UTSkelControl_Oscillate UTGame.Default__UTSkelControl_Oscillate")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTickSkelControl;

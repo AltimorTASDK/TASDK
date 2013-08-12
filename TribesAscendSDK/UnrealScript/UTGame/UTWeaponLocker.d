@@ -13,6 +13,8 @@ extern(C++) interface UTWeaponLocker : UTPickupFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWeaponLocker")); }
+	private static __gshared UTWeaponLocker mDefaultProperties;
+	@property final static UTWeaponLocker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWeaponLocker)("UTWeaponLocker UTGame.Default__UTWeaponLocker")); }
 	static struct Functions
 	{
 		private static __gshared

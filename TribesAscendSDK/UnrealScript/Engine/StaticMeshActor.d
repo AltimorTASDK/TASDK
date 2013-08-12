@@ -8,6 +8,8 @@ extern(C++) interface StaticMeshActor : StaticMeshActorBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.StaticMeshActor")); }
+	private static __gshared StaticMeshActor mDefaultProperties;
+	@property final static StaticMeshActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(StaticMeshActor)("StaticMeshActor Engine.Default__StaticMeshActor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreBeginPlay;

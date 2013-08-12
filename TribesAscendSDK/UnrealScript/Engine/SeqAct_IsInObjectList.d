@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_IsInObjectList : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_IsInObjectList")); }
+	private static __gshared SeqAct_IsInObjectList mDefaultProperties;
+	@property final static SeqAct_IsInObjectList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_IsInObjectList)("SeqAct_IsInObjectList Engine.Default__SeqAct_IsInObjectList")); }
 	@property final
 	{
 		bool bObjectFound() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x2) != 0; }

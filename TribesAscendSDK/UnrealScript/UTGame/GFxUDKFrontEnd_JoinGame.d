@@ -19,6 +19,8 @@ extern(C++) interface GFxUDKFrontEnd_JoinGame : GFxUDKFrontEnd_Screen
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_JoinGame")); }
+	private static __gshared GFxUDKFrontEnd_JoinGame mDefaultProperties;
+	@property final static GFxUDKFrontEnd_JoinGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_JoinGame)("GFxUDKFrontEnd_JoinGame UTGame.Default__GFxUDKFrontEnd_JoinGame")); }
 	static struct Functions
 	{
 		private static __gshared

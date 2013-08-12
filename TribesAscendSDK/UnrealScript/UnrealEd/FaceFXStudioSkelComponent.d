@@ -8,4 +8,6 @@ extern(C++) interface FaceFXStudioSkelComponent : SkeletalMeshComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UnrealEd.FaceFXStudioSkelComponent")); }
+	private static __gshared FaceFXStudioSkelComponent mDefaultProperties;
+	@property final static FaceFXStudioSkelComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FaceFXStudioSkelComponent)("FaceFXStudioSkelComponent UnrealEd.Default__FaceFXStudioSkelComponent")); }
 }

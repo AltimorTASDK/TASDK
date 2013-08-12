@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ControlMovieTexture : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ControlMovieTexture")); }
+	private static __gshared SeqAct_ControlMovieTexture mDefaultProperties;
+	@property final static SeqAct_ControlMovieTexture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ControlMovieTexture)("SeqAct_ControlMovieTexture Engine.Default__SeqAct_ControlMovieTexture")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

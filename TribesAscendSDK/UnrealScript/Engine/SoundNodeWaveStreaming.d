@@ -8,6 +8,8 @@ extern(C++) interface SoundNodeWaveStreaming : SoundNodeWave
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeWaveStreaming")); }
+	private static __gshared SoundNodeWaveStreaming mDefaultProperties;
+	@property final static SoundNodeWaveStreaming DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeWaveStreaming)("SoundNodeWaveStreaming Engine.Default__SoundNodeWaveStreaming")); }
 	static struct Functions
 	{
 		private static __gshared

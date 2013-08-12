@@ -9,6 +9,8 @@ extern(C++) interface UIManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIManager")); }
+	private static __gshared UIManager mDefaultProperties;
+	@property final static UIManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIManager)("UIManager Engine.Default__UIManager")); }
 	static struct Functions
 	{
 		private static __gshared

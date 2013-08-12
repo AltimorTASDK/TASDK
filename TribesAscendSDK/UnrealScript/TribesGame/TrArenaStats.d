@@ -11,6 +11,8 @@ extern(C++) interface TrArenaStats : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrArenaStats")); }
+	private static __gshared TrArenaStats mDefaultProperties;
+	@property final static TrArenaStats DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrArenaStats)("TrArenaStats TribesGame.Default__TrArenaStats")); }
 	static struct Functions
 	{
 		private static __gshared

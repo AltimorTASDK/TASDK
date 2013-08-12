@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_PlaySound : SeqAct_Latent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_PlaySound")); }
+	private static __gshared SeqAct_PlaySound mDefaultProperties;
+	@property final static SeqAct_PlaySound DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_PlaySound)("SeqAct_PlaySound Engine.Default__SeqAct_PlaySound")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

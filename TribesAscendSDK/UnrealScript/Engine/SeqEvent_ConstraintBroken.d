@@ -8,4 +8,6 @@ extern(C++) interface SeqEvent_ConstraintBroken : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_ConstraintBroken")); }
+	private static __gshared SeqEvent_ConstraintBroken mDefaultProperties;
+	@property final static SeqEvent_ConstraintBroken DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_ConstraintBroken)("SeqEvent_ConstraintBroken Engine.Default__SeqEvent_ConstraintBroken")); }
 }

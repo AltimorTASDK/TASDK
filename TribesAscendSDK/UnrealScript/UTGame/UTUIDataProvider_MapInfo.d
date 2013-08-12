@@ -8,6 +8,8 @@ extern(C++) interface UTUIDataProvider_MapInfo : UDKUIDataProvider_MapInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_MapInfo")); }
+	private static __gshared UTUIDataProvider_MapInfo mDefaultProperties;
+	@property final static UTUIDataProvider_MapInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTUIDataProvider_MapInfo)("UTUIDataProvider_MapInfo UTGame.Default__UTUIDataProvider_MapInfo")); }
 	static struct Functions
 	{
 		private static __gshared

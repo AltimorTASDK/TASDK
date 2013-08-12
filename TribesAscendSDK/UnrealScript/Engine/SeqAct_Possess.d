@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_Possess : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_Possess")); }
+	private static __gshared SeqAct_Possess mDefaultProperties;
+	@property final static SeqAct_Possess DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_Possess)("SeqAct_Possess Engine.Default__SeqAct_Possess")); }
 	@property final
 	{
 		@property final auto ref Pawn PawnToPossess() { return *cast(Pawn*)(cast(size_t)cast(void*)this + 232); }

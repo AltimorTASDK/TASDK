@@ -9,6 +9,8 @@ extern(C++) interface GameCrowdSpawnerInterface : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdSpawnerInterface")); }
+	private static __gshared GameCrowdSpawnerInterface mDefaultProperties;
+	@property final static GameCrowdSpawnerInterface DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdSpawnerInterface)("GameCrowdSpawnerInterface GameFramework.Default__GameCrowdSpawnerInterface")); }
 	static struct Functions
 	{
 		private static __gshared

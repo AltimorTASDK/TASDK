@@ -11,6 +11,8 @@ extern(C++) interface UTKismetAnnouncement : UTObjectiveSpecificMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTKismetAnnouncement")); }
+	private static __gshared UTKismetAnnouncement mDefaultProperties;
+	@property final static UTKismetAnnouncement DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTKismetAnnouncement)("UTKismetAnnouncement UTGame.Default__UTKismetAnnouncement")); }
 	static struct Functions
 	{
 		private static __gshared

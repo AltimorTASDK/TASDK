@@ -9,6 +9,8 @@ extern(C++) interface SeqEvent_Used : SequenceEvent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqEvent_Used")); }
+	private static __gshared SeqEvent_Used mDefaultProperties;
+	@property final static SeqEvent_Used DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_Used)("SeqEvent_Used Engine.Default__SeqEvent_Used")); }
 	@property final
 	{
 		auto ref

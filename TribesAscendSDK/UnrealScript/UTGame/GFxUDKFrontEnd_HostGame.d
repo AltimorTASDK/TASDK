@@ -8,6 +8,8 @@ extern(C++) interface GFxUDKFrontEnd_HostGame : GFxUDKFrontEnd_LaunchGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_HostGame")); }
+	private static __gshared GFxUDKFrontEnd_HostGame mDefaultProperties;
+	@property final static GFxUDKFrontEnd_HostGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_HostGame)("GFxUDKFrontEnd_HostGame UTGame.Default__GFxUDKFrontEnd_HostGame")); }
 	static struct Functions
 	{
 		private static __gshared

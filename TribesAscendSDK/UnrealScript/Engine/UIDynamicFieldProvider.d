@@ -10,6 +10,8 @@ extern(C++) interface UIDynamicFieldProvider : UIDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDynamicFieldProvider")); }
+	private static __gshared UIDynamicFieldProvider mDefaultProperties;
+	@property final static UIDynamicFieldProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDynamicFieldProvider)("UIDynamicFieldProvider Engine.Default__UIDynamicFieldProvider")); }
 	static struct Functions
 	{
 		private static __gshared

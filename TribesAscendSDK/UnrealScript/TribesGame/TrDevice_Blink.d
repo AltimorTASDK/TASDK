@@ -8,6 +8,8 @@ extern(C++) interface TrDevice_Blink : TrDevice_Pack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Blink")); }
+	private static __gshared TrDevice_Blink mDefaultProperties;
+	@property final static TrDevice_Blink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Blink)("TrDevice_Blink TribesGame.Default__TrDevice_Blink")); }
 	static struct Functions
 	{
 		private static __gshared

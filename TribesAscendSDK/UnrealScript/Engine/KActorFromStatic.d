@@ -11,6 +11,8 @@ extern(C++) interface KActorFromStatic : KActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KActorFromStatic")); }
+	private static __gshared KActorFromStatic mDefaultProperties;
+	@property final static KActorFromStatic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KActorFromStatic)("KActorFromStatic Engine.Default__KActorFromStatic")); }
 	static struct Functions
 	{
 		private static __gshared

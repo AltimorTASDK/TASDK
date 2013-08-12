@@ -9,6 +9,8 @@ extern(C++) interface FluidInfluenceActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FluidInfluenceActor")); }
+	private static __gshared FluidInfluenceActor mDefaultProperties;
+	@property final static FluidInfluenceActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FluidInfluenceActor)("FluidInfluenceActor Engine.Default__FluidInfluenceActor")); }
 	static struct Functions
 	{
 		private static __gshared

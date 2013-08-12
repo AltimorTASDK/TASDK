@@ -11,6 +11,8 @@ extern(C++) interface PlayerCollectorGame : GameInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.PlayerCollectorGame")); }
+	private static __gshared PlayerCollectorGame mDefaultProperties;
+	@property final static PlayerCollectorGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerCollectorGame)("PlayerCollectorGame GameFramework.Default__PlayerCollectorGame")); }
 	static struct Functions
 	{
 		private static __gshared

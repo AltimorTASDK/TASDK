@@ -9,6 +9,8 @@ extern(C++) interface MorphNodePose : MorphNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MorphNodePose")); }
+	private static __gshared MorphNodePose mDefaultProperties;
+	@property final static MorphNodePose DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MorphNodePose)("MorphNodePose Engine.Default__MorphNodePose")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetMorphTarget;

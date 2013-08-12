@@ -8,6 +8,8 @@ extern(C++) interface RB_ConstraintSetup : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_ConstraintSetup")); }
+	private static __gshared RB_ConstraintSetup mDefaultProperties;
+	@property final static RB_ConstraintSetup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_ConstraintSetup)("RB_ConstraintSetup Engine.Default__RB_ConstraintSetup")); }
 	struct LinearDOFSetup
 	{
 		private ubyte __buffer__[8];

@@ -9,6 +9,8 @@ extern(C++) interface ScriptedTexture : TextureRenderTarget2D
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ScriptedTexture")); }
+	private static __gshared ScriptedTexture mDefaultProperties;
+	@property final static ScriptedTexture DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ScriptedTexture)("ScriptedTexture Engine.Default__ScriptedTexture")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mRender;

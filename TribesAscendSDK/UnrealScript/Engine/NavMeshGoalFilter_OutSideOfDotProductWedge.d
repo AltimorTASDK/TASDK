@@ -9,6 +9,8 @@ extern(C++) interface NavMeshGoalFilter_OutSideOfDotProductWedge : NavMeshGoal_F
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshGoalFilter_OutSideOfDotProductWedge")); }
+	private static __gshared NavMeshGoalFilter_OutSideOfDotProductWedge mDefaultProperties;
+	@property final static NavMeshGoalFilter_OutSideOfDotProductWedge DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshGoalFilter_OutSideOfDotProductWedge)("NavMeshGoalFilter_OutSideOfDotProductWedge Engine.Default__NavMeshGoalFilter_OutSideOfDotProductWedge")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOutsideOfDotProductWedge;

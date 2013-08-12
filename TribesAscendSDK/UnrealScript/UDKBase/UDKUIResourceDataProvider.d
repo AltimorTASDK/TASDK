@@ -8,6 +8,8 @@ extern(C++) interface UDKUIResourceDataProvider : UIResourceDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIResourceDataProvider")); }
+	private static __gshared UDKUIResourceDataProvider mDefaultProperties;
+	@property final static UDKUIResourceDataProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIResourceDataProvider)("UDKUIResourceDataProvider UDKBase.Default__UDKUIResourceDataProvider")); }
 	static struct Functions
 	{
 		private static __gshared

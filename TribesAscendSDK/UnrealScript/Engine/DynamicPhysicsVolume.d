@@ -8,6 +8,8 @@ extern(C++) interface DynamicPhysicsVolume : PhysicsVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DynamicPhysicsVolume")); }
+	private static __gshared DynamicPhysicsVolume mDefaultProperties;
+	@property final static DynamicPhysicsVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DynamicPhysicsVolume)("DynamicPhysicsVolume Engine.Default__DynamicPhysicsVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

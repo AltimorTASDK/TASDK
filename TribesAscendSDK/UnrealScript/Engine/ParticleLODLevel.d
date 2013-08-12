@@ -15,6 +15,8 @@ extern(C++) interface ParticleLODLevel : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleLODLevel")); }
+	private static __gshared ParticleLODLevel mDefaultProperties;
+	@property final static ParticleLODLevel DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleLODLevel)("ParticleLODLevel Engine.Default__ParticleLODLevel")); }
 	@property final
 	{
 		auto ref

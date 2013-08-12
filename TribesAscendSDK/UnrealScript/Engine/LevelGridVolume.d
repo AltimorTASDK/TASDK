@@ -9,6 +9,8 @@ extern(C++) interface LevelGridVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelGridVolume")); }
+	private static __gshared LevelGridVolume mDefaultProperties;
+	@property final static LevelGridVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelGridVolume)("LevelGridVolume Engine.Default__LevelGridVolume")); }
 	enum LevelGridCellShape : ubyte
 	{
 		LGCS_Box = 0,

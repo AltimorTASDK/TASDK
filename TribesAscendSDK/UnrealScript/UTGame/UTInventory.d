@@ -9,6 +9,8 @@ extern(C++) interface UTInventory : Inventory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTInventory")); }
+	private static __gshared UTInventory mDefaultProperties;
+	@property final static UTInventory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTInventory)("UTInventory UTGame.Default__UTInventory")); }
 	static struct Functions
 	{
 		private static __gshared

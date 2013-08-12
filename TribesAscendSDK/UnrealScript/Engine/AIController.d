@@ -13,6 +13,8 @@ extern(C++) interface AIController : Controller
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AIController")); }
+	private static __gshared AIController mDefaultProperties;
+	@property final static AIController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AIController)("AIController Engine.Default__AIController")); }
 	static struct Functions
 	{
 		private static __gshared

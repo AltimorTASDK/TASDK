@@ -10,6 +10,8 @@ extern(C++) interface Font : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Font")); }
+	private static __gshared Font mDefaultProperties;
+	@property final static Font DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Font)("Font Engine.Default__Font")); }
 	static struct Functions
 	{
 		private static __gshared

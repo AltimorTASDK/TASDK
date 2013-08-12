@@ -9,6 +9,8 @@ extern(C++) interface UTMutator_SlowTimeKills : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_SlowTimeKills")); }
+	private static __gshared UTMutator_SlowTimeKills mDefaultProperties;
+	@property final static UTMutator_SlowTimeKills DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_SlowTimeKills)("UTMutator_SlowTimeKills UTGame.Default__UTMutator_SlowTimeKills")); }
 	static struct Functions
 	{
 		private static __gshared

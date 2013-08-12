@@ -9,6 +9,8 @@ extern(C++) interface Scout : Pawn
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Scout")); }
+	private static __gshared Scout mDefaultProperties;
+	@property final static Scout DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Scout)("Scout Engine.Default__Scout")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreBeginPlay;

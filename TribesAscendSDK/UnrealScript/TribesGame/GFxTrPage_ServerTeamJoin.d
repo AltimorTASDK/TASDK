@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_ServerTeamJoin : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerTeamJoin")); }
+	private static __gshared GFxTrPage_ServerTeamJoin mDefaultProperties;
+	@property final static GFxTrPage_ServerTeamJoin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ServerTeamJoin)("GFxTrPage_ServerTeamJoin TribesGame.Default__GFxTrPage_ServerTeamJoin")); }
 	static struct Functions
 	{
 		private static __gshared

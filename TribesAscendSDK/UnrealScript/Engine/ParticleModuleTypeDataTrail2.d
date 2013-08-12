@@ -8,6 +8,8 @@ extern(C++) interface ParticleModuleTypeDataTrail2 : ParticleModuleTypeDataBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTypeDataTrail2")); }
+	private static __gshared ParticleModuleTypeDataTrail2 mDefaultProperties;
+	@property final static ParticleModuleTypeDataTrail2 DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTypeDataTrail2)("ParticleModuleTypeDataTrail2 Engine.Default__ParticleModuleTypeDataTrail2")); }
 	@property final
 	{
 		auto ref

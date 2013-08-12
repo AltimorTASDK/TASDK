@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleTrailSource : ParticleModuleTrailBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleTrailSource")); }
+	private static __gshared ParticleModuleTrailSource mDefaultProperties;
+	@property final static ParticleModuleTrailSource DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleTrailSource)("ParticleModuleTrailSource Engine.Default__ParticleModuleTrailSource")); }
 	enum ETrail2SourceMethod : ubyte
 	{
 		PET2SRCM_Default = 0,

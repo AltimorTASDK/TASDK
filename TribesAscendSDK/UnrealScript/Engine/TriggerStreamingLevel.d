@@ -10,6 +10,8 @@ extern(C++) interface TriggerStreamingLevel : Trigger
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TriggerStreamingLevel")); }
+	private static __gshared TriggerStreamingLevel mDefaultProperties;
+	@property final static TriggerStreamingLevel DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TriggerStreamingLevel)("TriggerStreamingLevel Engine.Default__TriggerStreamingLevel")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;

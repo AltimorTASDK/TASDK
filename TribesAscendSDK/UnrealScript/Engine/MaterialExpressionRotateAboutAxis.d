@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionRotateAboutAxis : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionRotateAboutAxis")); }
+	private static __gshared MaterialExpressionRotateAboutAxis mDefaultProperties;
+	@property final static MaterialExpressionRotateAboutAxis DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionRotateAboutAxis)("MaterialExpressionRotateAboutAxis Engine.Default__MaterialExpressionRotateAboutAxis")); }
 	@property final auto ref
 	{
 		MaterialExpression.ExpressionInput Position() { return *cast(MaterialExpression.ExpressionInput*)(cast(size_t)cast(void*)this + 164); }

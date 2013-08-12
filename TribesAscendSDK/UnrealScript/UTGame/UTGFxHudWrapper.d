@@ -12,6 +12,8 @@ extern(C++) interface UTGFxHudWrapper : UTHUDBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGFxHudWrapper")); }
+	private static __gshared UTGFxHudWrapper mDefaultProperties;
+	@property final static UTGFxHudWrapper DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGFxHudWrapper)("UTGFxHudWrapper UTGame.Default__UTGFxHudWrapper")); }
 	static struct Functions
 	{
 		private static __gshared

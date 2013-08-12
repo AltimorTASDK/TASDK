@@ -9,6 +9,8 @@ extern(C++) interface TrProj_LightStickyGrenade : TrProj_Grenade
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_LightStickyGrenade")); }
+	private static __gshared TrProj_LightStickyGrenade mDefaultProperties;
+	@property final static TrProj_LightStickyGrenade DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_LightStickyGrenade)("TrProj_LightStickyGrenade TribesGame.Default__TrProj_LightStickyGrenade")); }
 	static struct Functions
 	{
 		private static __gshared

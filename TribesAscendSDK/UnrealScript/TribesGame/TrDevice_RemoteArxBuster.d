@@ -15,6 +15,8 @@ extern(C++) interface TrDevice_RemoteArxBuster : TrDevice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_RemoteArxBuster")); }
+	private static __gshared TrDevice_RemoteArxBuster mDefaultProperties;
+	@property final static TrDevice_RemoteArxBuster DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_RemoteArxBuster)("TrDevice_RemoteArxBuster TribesGame.Default__TrDevice_RemoteArxBuster")); }
 	static struct Functions
 	{
 		private static __gshared

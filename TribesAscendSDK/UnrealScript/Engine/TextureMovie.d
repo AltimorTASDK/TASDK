@@ -10,6 +10,8 @@ extern(C++) interface TextureMovie : Texture
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TextureMovie")); }
+	private static __gshared TextureMovie mDefaultProperties;
+	@property final static TextureMovie DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TextureMovie)("TextureMovie Engine.Default__TextureMovie")); }
 	static struct Functions
 	{
 		private static __gshared

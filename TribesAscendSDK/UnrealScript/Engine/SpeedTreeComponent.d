@@ -14,6 +14,8 @@ extern(C++) interface SpeedTreeComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpeedTreeComponent")); }
+	private static __gshared SpeedTreeComponent mDefaultProperties;
+	@property final static SpeedTreeComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpeedTreeComponent)("SpeedTreeComponent Engine.Default__SpeedTreeComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -15,6 +15,8 @@ extern(C++) interface NavigationHandle : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavigationHandle")); }
+	private static __gshared NavigationHandle mDefaultProperties;
+	@property final static NavigationHandle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavigationHandle)("NavigationHandle Engine.Default__NavigationHandle")); }
 	static struct Functions
 	{
 		private static __gshared

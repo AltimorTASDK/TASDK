@@ -10,6 +10,8 @@ extern(C++) interface UTAirVehicle : UTVehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAirVehicle")); }
+	private static __gshared UTAirVehicle mDefaultProperties;
+	@property final static UTAirVehicle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAirVehicle)("UTAirVehicle UTGame.Default__UTAirVehicle")); }
 	static struct Functions
 	{
 		private static __gshared

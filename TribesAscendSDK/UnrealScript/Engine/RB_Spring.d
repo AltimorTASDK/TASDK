@@ -9,6 +9,8 @@ extern(C++) interface RB_Spring : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.RB_Spring")); }
+	private static __gshared RB_Spring mDefaultProperties;
+	@property final static RB_Spring DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(RB_Spring)("RB_Spring Engine.Default__RB_Spring")); }
 	static struct Functions
 	{
 		private static __gshared

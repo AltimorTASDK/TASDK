@@ -12,6 +12,8 @@ extern(C++) interface TrEffectForm : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffectForm")); }
+	private static __gshared TrEffectForm mDefaultProperties;
+	@property final static TrEffectForm DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffectForm)("TrEffectForm TribesGame.Default__TrEffectForm")); }
 	static struct Functions
 	{
 		private static __gshared

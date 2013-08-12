@@ -10,6 +10,8 @@ extern(C++) interface TrSkin : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSkin")); }
+	private static __gshared TrSkin mDefaultProperties;
+	@property final static TrSkin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSkin)("TrSkin TribesGame.Default__TrSkin")); }
 	struct SkinStruct
 	{
 		private ubyte __buffer__[52];

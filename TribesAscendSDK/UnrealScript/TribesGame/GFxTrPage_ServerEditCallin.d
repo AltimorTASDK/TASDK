@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_ServerEditCallin : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ServerEditCallin")); }
+	private static __gshared GFxTrPage_ServerEditCallin mDefaultProperties;
+	@property final static GFxTrPage_ServerEditCallin DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ServerEditCallin)("GFxTrPage_ServerEditCallin TribesGame.Default__GFxTrPage_ServerEditCallin")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleLocationBoneSocket : ParticleModuleLocationB
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleLocationBoneSocket")); }
+	private static __gshared ParticleModuleLocationBoneSocket mDefaultProperties;
+	@property final static ParticleModuleLocationBoneSocket DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleLocationBoneSocket)("ParticleModuleLocationBoneSocket Engine.Default__ParticleModuleLocationBoneSocket")); }
 	enum ELocationBoneSocketSource : ubyte
 	{
 		BONESOCKETSOURCE_Bones = 0,

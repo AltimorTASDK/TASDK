@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleParameterDynamic : ParticleModuleParameterBa
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleParameterDynamic")); }
+	private static __gshared ParticleModuleParameterDynamic mDefaultProperties;
+	@property final static ParticleModuleParameterDynamic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleParameterDynamic)("ParticleModuleParameterDynamic Engine.Default__ParticleModuleParameterDynamic")); }
 	enum EEmitterDynamicParameterValue : ubyte
 	{
 		EDPV_UserSet = 0,

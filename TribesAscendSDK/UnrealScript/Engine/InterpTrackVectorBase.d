@@ -9,6 +9,8 @@ extern(C++) interface InterpTrackVectorBase : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVectorBase")); }
+	private static __gshared InterpTrackVectorBase mDefaultProperties;
+	@property final static InterpTrackVectorBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackVectorBase)("InterpTrackVectorBase Engine.Default__InterpTrackVectorBase")); }
 	@property final auto ref
 	{
 		float CurveTension() { return *cast(float*)(cast(size_t)cast(void*)this + 144); }

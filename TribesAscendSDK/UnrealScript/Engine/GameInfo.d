@@ -26,6 +26,8 @@ extern(C++) interface GameInfo : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.GameInfo")); }
+	private static __gshared GameInfo mDefaultProperties;
+	@property final static GameInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameInfo)("GameInfo Engine.Default__GameInfo")); }
 	static struct Functions
 	{
 		private static __gshared

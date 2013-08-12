@@ -9,6 +9,8 @@ extern(C++) interface UTMutator_NoPowerups : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_NoPowerups")); }
+	private static __gshared UTMutator_NoPowerups mDefaultProperties;
+	@property final static UTMutator_NoPowerups DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_NoPowerups)("UTMutator_NoPowerups UTGame.Default__UTMutator_NoPowerups")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCheckReplacement;

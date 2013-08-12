@@ -11,6 +11,8 @@ extern(C++) interface ParticleSystem : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleSystem")); }
+	private static __gshared ParticleSystem mDefaultProperties;
+	@property final static ParticleSystem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleSystem)("ParticleSystem Engine.Default__ParticleSystem")); }
 	static struct Functions
 	{
 		private static __gshared

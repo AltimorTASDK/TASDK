@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_LookAt : SkelControlLookAt
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_LookAt")); }
+	private static __gshared UDKSkelControl_LookAt mDefaultProperties;
+	@property final static UDKSkelControl_LookAt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_LookAt)("UDKSkelControl_LookAt UDKBase.Default__UDKSkelControl_LookAt")); }
 	@property final
 	{
 		auto ref

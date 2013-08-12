@@ -9,6 +9,8 @@ extern(C++) interface OnlineGameSettings : Settings
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineGameSettings")); }
+	private static __gshared OnlineGameSettings mDefaultProperties;
+	@property final static OnlineGameSettings DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineGameSettings)("OnlineGameSettings Engine.Default__OnlineGameSettings")); }
 	@property final
 	{
 		auto ref

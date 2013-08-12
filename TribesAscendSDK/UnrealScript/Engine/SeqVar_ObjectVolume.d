@@ -9,6 +9,8 @@ extern(C++) interface SeqVar_ObjectVolume : SeqVar_Object
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqVar_ObjectVolume")); }
+	private static __gshared SeqVar_ObjectVolume mDefaultProperties;
+	@property final static SeqVar_ObjectVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqVar_ObjectVolume)("SeqVar_ObjectVolume Engine.Default__SeqVar_ObjectVolume")); }
 	@property final
 	{
 		auto ref

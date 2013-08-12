@@ -12,6 +12,8 @@ extern(C++) interface TrDevice_Melee : TrDevice_AutoFire
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_Melee")); }
+	private static __gshared TrDevice_Melee mDefaultProperties;
+	@property final static TrDevice_Melee DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_Melee)("TrDevice_Melee TribesGame.Default__TrDevice_Melee")); }
 	static struct Functions
 	{
 		private static __gshared

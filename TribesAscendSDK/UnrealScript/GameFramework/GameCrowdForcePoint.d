@@ -10,6 +10,8 @@ extern(C++) interface GameCrowdForcePoint : GameCrowdInteractionPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdForcePoint")); }
+	private static __gshared GameCrowdForcePoint mDefaultProperties;
+	@property final static GameCrowdForcePoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdForcePoint)("GameCrowdForcePoint GameFramework.Default__GameCrowdForcePoint")); }
 	static struct Functions
 	{
 		private static __gshared

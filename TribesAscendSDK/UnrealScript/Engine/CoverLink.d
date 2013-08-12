@@ -15,6 +15,8 @@ extern(C++) interface CoverLink : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CoverLink")); }
+	private static __gshared CoverLink mDefaultProperties;
+	@property final static CoverLink DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CoverLink)("CoverLink Engine.Default__CoverLink")); }
 	static struct Functions
 	{
 		private static __gshared

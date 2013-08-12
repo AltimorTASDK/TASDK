@@ -9,6 +9,8 @@ extern(C++) interface TrPlayerSkin3PData : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerSkin3PData")); }
+	private static __gshared TrPlayerSkin3PData mDefaultProperties;
+	@property final static TrPlayerSkin3PData DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPlayerSkin3PData)("TrPlayerSkin3PData TribesGame.Default__TrPlayerSkin3PData")); }
 	@property final auto ref
 	{
 		int m_nSkinId() { return *cast(int*)(cast(size_t)cast(void*)this + 60); }

@@ -8,4 +8,6 @@ extern(C++) interface TrDevice_MotionSensorDeployable : TrDevice_Mine
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDevice_MotionSensorDeployable")); }
+	private static __gshared TrDevice_MotionSensorDeployable mDefaultProperties;
+	@property final static TrDevice_MotionSensorDeployable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDevice_MotionSensorDeployable)("TrDevice_MotionSensorDeployable TribesGame.Default__TrDevice_MotionSensorDeployable")); }
 }

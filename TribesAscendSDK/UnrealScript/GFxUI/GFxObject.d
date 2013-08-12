@@ -10,6 +10,8 @@ extern(C++) interface GFxObject : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxObject")); }
+	private static __gshared GFxObject mDefaultProperties;
+	@property final static GFxObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxObject)("GFxObject GFxUI.Default__GFxObject")); }
 	static struct Functions
 	{
 		private static __gshared

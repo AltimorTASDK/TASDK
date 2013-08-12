@@ -9,6 +9,8 @@ extern(C++) interface TrConsolePlayerController : TrPlayerController
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrConsolePlayerController")); }
+	private static __gshared TrConsolePlayerController mDefaultProperties;
+	@property final static TrConsolePlayerController DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrConsolePlayerController)("TrConsolePlayerController TribesGame.Default__TrConsolePlayerController")); }
 	static struct Functions
 	{
 		private static __gshared

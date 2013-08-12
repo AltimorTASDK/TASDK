@@ -11,6 +11,8 @@ extern(C++) interface UDKSquadAI : UDKTeamOwnedInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSquadAI")); }
+	private static __gshared UDKSquadAI mDefaultProperties;
+	@property final static UDKSquadAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSquadAI)("UDKSquadAI UDKBase.Default__UDKSquadAI")); }
 	struct AlternateRoute
 	{
 		private ubyte __buffer__[12];

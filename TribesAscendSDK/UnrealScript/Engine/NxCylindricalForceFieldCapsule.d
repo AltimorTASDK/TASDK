@@ -8,6 +8,8 @@ extern(C++) interface NxCylindricalForceFieldCapsule : NxCylindricalForceField
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxCylindricalForceFieldCapsule")); }
+	private static __gshared NxCylindricalForceFieldCapsule mDefaultProperties;
+	@property final static NxCylindricalForceFieldCapsule DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxCylindricalForceFieldCapsule)("NxCylindricalForceFieldCapsule Engine.Default__NxCylindricalForceFieldCapsule")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mDoInitRBPhys;

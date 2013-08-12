@@ -8,4 +8,6 @@ extern(C++) interface SeqCond_IsConsole : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqCond_IsConsole")); }
+	private static __gshared SeqCond_IsConsole mDefaultProperties;
+	@property final static SeqCond_IsConsole DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqCond_IsConsole)("SeqCond_IsConsole Engine.Default__SeqCond_IsConsole")); }
 }

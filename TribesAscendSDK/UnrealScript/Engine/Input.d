@@ -9,6 +9,8 @@ extern(C++) interface Input : Interaction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Input")); }
+	private static __gshared Input mDefaultProperties;
+	@property final static Input DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Input)("Input Engine.Default__Input")); }
 	static struct Functions
 	{
 		private static __gshared

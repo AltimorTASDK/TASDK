@@ -11,6 +11,8 @@ extern(C++) interface GameStatsAggregator : GameplayEventsHandler
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameStatsAggregator")); }
+	private static __gshared GameStatsAggregator mDefaultProperties;
+	@property final static GameStatsAggregator DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameStatsAggregator)("GameStatsAggregator GameFramework.Default__GameStatsAggregator")); }
 	static struct Functions
 	{
 		private static __gshared

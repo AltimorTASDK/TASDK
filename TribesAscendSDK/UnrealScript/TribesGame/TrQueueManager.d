@@ -11,6 +11,8 @@ extern(C++) interface TrQueueManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrQueueManager")); }
+	private static __gshared TrQueueManager mDefaultProperties;
+	@property final static TrQueueManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrQueueManager)("TrQueueManager TribesGame.Default__TrQueueManager")); }
 	static struct Functions
 	{
 		private static __gshared

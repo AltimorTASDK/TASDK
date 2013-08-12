@@ -12,6 +12,8 @@ extern(C++) interface GameAICmd_Hover_MoveToGoal_Mesh : GameAICommand
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameAICmd_Hover_MoveToGoal_Mesh")); }
+	private static __gshared GameAICmd_Hover_MoveToGoal_Mesh mDefaultProperties;
+	@property final static GameAICmd_Hover_MoveToGoal_Mesh DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameAICmd_Hover_MoveToGoal_Mesh)("GameAICmd_Hover_MoveToGoal_Mesh GameFramework.Default__GameAICmd_Hover_MoveToGoal_Mesh")); }
 	static struct Functions
 	{
 		private static __gshared

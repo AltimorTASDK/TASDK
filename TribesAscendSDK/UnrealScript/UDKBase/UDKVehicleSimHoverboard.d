@@ -12,6 +12,8 @@ extern(C++) interface UDKVehicleSimHoverboard : SVehicleSimBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimHoverboard")); }
+	private static __gshared UDKVehicleSimHoverboard mDefaultProperties;
+	@property final static UDKVehicleSimHoverboard DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimHoverboard)("UDKVehicleSimHoverboard UDKBase.Default__UDKVehicleSimHoverboard")); }
 	static struct Functions
 	{
 		private static __gshared

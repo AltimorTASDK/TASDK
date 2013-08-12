@@ -15,6 +15,8 @@ extern(C++) interface UTTimedPowerup : UTInventory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTimedPowerup")); }
+	private static __gshared UTTimedPowerup mDefaultProperties;
+	@property final static UTTimedPowerup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTimedPowerup)("UTTimedPowerup UTGame.Default__UTTimedPowerup")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -12,6 +12,8 @@ extern(C++) interface CameraModifier_CameraShake : CameraModifier
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.CameraModifier_CameraShake")); }
+	private static __gshared CameraModifier_CameraShake mDefaultProperties;
+	@property final static CameraModifier_CameraShake DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(CameraModifier_CameraShake)("CameraModifier_CameraShake Engine.Default__CameraModifier_CameraShake")); }
 	static struct Functions
 	{
 		private static __gshared

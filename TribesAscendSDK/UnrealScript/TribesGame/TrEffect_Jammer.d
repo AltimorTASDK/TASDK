@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_Jammer : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_Jammer")); }
+	private static __gshared TrEffect_Jammer mDefaultProperties;
+	@property final static TrEffect_Jammer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_Jammer)("TrEffect_Jammer TribesGame.Default__TrEffect_Jammer")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface UTMutator_WeaponsRespawn : UTMutator
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTMutator_WeaponsRespawn")); }
+	private static __gshared UTMutator_WeaponsRespawn mDefaultProperties;
+	@property final static UTMutator_WeaponsRespawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTMutator_WeaponsRespawn)("UTMutator_WeaponsRespawn UTGame.Default__UTMutator_WeaponsRespawn")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitMutator;

@@ -10,6 +10,8 @@ extern(C++) interface TrVGSNode : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrVGSNode")); }
+	private static __gshared TrVGSNode mDefaultProperties;
+	@property final static TrVGSNode DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrVGSNode)("TrVGSNode TribesGame.Default__TrVGSNode")); }
 	static struct Functions
 	{
 		private static __gshared

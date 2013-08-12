@@ -9,6 +9,8 @@ extern(C++) interface SVehicleSimCar : SVehicleSimBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SVehicleSimCar")); }
+	private static __gshared SVehicleSimCar mDefaultProperties;
+	@property final static SVehicleSimCar DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SVehicleSimCar)("SVehicleSimCar Engine.Default__SVehicleSimCar")); }
 	@property final
 	{
 		auto ref

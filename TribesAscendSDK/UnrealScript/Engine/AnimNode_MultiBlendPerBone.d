@@ -10,6 +10,8 @@ extern(C++) interface AnimNode_MultiBlendPerBone : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNode_MultiBlendPerBone")); }
+	private static __gshared AnimNode_MultiBlendPerBone mDefaultProperties;
+	@property final static AnimNode_MultiBlendPerBone DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNode_MultiBlendPerBone)("AnimNode_MultiBlendPerBone Engine.Default__AnimNode_MultiBlendPerBone")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetMaskWeight;

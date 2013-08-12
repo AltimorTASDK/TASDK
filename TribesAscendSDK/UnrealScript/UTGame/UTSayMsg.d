@@ -10,6 +10,8 @@ extern(C++) interface UTSayMsg : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSayMsg")); }
+	private static __gshared UTSayMsg mDefaultProperties;
+	@property final static UTSayMsg DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSayMsg)("UTSayMsg UTGame.Default__UTSayMsg")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetConsoleColor;

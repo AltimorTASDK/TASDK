@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_RangeSwitch : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_RangeSwitch")); }
+	private static __gshared SeqAct_RangeSwitch mDefaultProperties;
+	@property final static SeqAct_RangeSwitch DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_RangeSwitch)("SeqAct_RangeSwitch Engine.Default__SeqAct_RangeSwitch")); }
 	struct SwitchRange
 	{
 		private ubyte __buffer__[8];

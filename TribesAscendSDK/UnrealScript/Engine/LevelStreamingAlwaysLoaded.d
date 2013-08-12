@@ -8,6 +8,8 @@ extern(C++) interface LevelStreamingAlwaysLoaded : LevelStreaming
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LevelStreamingAlwaysLoaded")); }
+	private static __gshared LevelStreamingAlwaysLoaded mDefaultProperties;
+	@property final static LevelStreamingAlwaysLoaded DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LevelStreamingAlwaysLoaded)("LevelStreamingAlwaysLoaded Engine.Default__LevelStreamingAlwaysLoaded")); }
 	@property final
 	{
 		bool bIsProceduralBuildingLODLevel() { return (*cast(uint*)(cast(size_t)cast(void*)this + 152) & 0x1) != 0; }

@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_ToggleInput : SeqAct_Toggle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ToggleInput")); }
+	private static __gshared SeqAct_ToggleInput mDefaultProperties;
+	@property final static SeqAct_ToggleInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ToggleInput)("SeqAct_ToggleInput Engine.Default__SeqAct_ToggleInput")); }
 	@property final
 	{
 		bool bToggleMovement() { return (*cast(uint*)(cast(size_t)cast(void*)this + 232) & 0x1) != 0; }

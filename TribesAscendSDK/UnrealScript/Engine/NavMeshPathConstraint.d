@@ -8,6 +8,8 @@ extern(C++) interface NavMeshPathConstraint : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NavMeshPathConstraint")); }
+	private static __gshared NavMeshPathConstraint mDefaultProperties;
+	@property final static NavMeshPathConstraint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NavMeshPathConstraint)("NavMeshPathConstraint Engine.Default__NavMeshPathConstraint")); }
 	static struct Functions
 	{
 		private static __gshared

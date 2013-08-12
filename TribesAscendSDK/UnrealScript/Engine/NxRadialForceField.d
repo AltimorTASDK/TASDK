@@ -10,6 +10,8 @@ extern(C++) interface NxRadialForceField : NxForceField
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxRadialForceField")); }
+	private static __gshared NxRadialForceField mDefaultProperties;
+	@property final static NxRadialForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxRadialForceField)("NxRadialForceField Engine.Default__NxRadialForceField")); }
 	@property final auto ref
 	{
 		UObject.Pointer LinearKernel() { return *cast(UObject.Pointer*)(cast(size_t)cast(void*)this + 556); }

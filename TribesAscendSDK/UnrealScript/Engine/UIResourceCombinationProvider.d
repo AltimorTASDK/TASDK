@@ -12,6 +12,8 @@ extern(C++) interface UIResourceCombinationProvider : UIDataProvider
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIResourceCombinationProvider")); }
+	private static __gshared UIResourceCombinationProvider mDefaultProperties;
+	@property final static UIResourceCombinationProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIResourceCombinationProvider)("UIResourceCombinationProvider Engine.Default__UIResourceCombinationProvider")); }
 	static struct Functions
 	{
 		private static __gshared

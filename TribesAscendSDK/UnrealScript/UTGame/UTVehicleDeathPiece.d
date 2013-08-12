@@ -8,6 +8,8 @@ extern(C++) interface UTVehicleDeathPiece : UTGib_Vehicle
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleDeathPiece")); }
+	private static __gshared UTVehicleDeathPiece mDefaultProperties;
+	@property final static UTVehicleDeathPiece DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleDeathPiece)("UTVehicleDeathPiece UTGame.Default__UTVehicleDeathPiece")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPreBeginPlay;

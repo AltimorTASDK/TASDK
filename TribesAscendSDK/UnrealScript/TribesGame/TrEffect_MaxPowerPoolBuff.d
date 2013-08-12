@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_MaxPowerPoolBuff : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_MaxPowerPoolBuff")); }
+	private static __gshared TrEffect_MaxPowerPoolBuff mDefaultProperties;
+	@property final static TrEffect_MaxPowerPoolBuff DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_MaxPowerPoolBuff)("TrEffect_MaxPowerPoolBuff TribesGame.Default__TrEffect_MaxPowerPoolBuff")); }
 	static struct Functions
 	{
 		private static __gshared

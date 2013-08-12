@@ -8,4 +8,6 @@ extern(C++) interface TrDmgType_RepairToolAX : TrDmgType_RepairTool
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDmgType_RepairToolAX")); }
+	private static __gshared TrDmgType_RepairToolAX mDefaultProperties;
+	@property final static TrDmgType_RepairToolAX DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDmgType_RepairToolAX)("TrDmgType_RepairToolAX TribesGame.Default__TrDmgType_RepairToolAX")); }
 }

@@ -9,6 +9,8 @@ extern(C++) interface TrSeqAct_TrainingMessage : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqAct_TrainingMessage")); }
+	private static __gshared TrSeqAct_TrainingMessage mDefaultProperties;
+	@property final static TrSeqAct_TrainingMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqAct_TrainingMessage)("TrSeqAct_TrainingMessage TribesGame.Default__TrSeqAct_TrainingMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

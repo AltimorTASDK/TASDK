@@ -9,6 +9,8 @@ extern(C++) interface TrSeqEvent_TakeDamage : SeqEvent_TakeDamage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSeqEvent_TakeDamage")); }
+	private static __gshared TrSeqEvent_TakeDamage mDefaultProperties;
+	@property final static TrSeqEvent_TakeDamage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSeqEvent_TakeDamage)("TrSeqEvent_TakeDamage TribesGame.Default__TrSeqEvent_TakeDamage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface PhysXParticleSystem : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PhysXParticleSystem")); }
+	private static __gshared PhysXParticleSystem mDefaultProperties;
+	@property final static PhysXParticleSystem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PhysXParticleSystem)("PhysXParticleSystem Engine.Default__PhysXParticleSystem")); }
 	enum ESimulationMethod : ubyte
 	{
 		ESM_SPH = 0,

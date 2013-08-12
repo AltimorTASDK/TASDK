@@ -9,6 +9,8 @@ extern(C++) interface UTReplicatedEmitter : UTEmitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTReplicatedEmitter")); }
+	private static __gshared UTReplicatedEmitter mDefaultProperties;
+	@property final static UTReplicatedEmitter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTReplicatedEmitter)("UTReplicatedEmitter UTGame.Default__UTReplicatedEmitter")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

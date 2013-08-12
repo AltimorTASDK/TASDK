@@ -8,6 +8,8 @@ extern(C++) interface FrameworkGame : GameInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.FrameworkGame")); }
+	private static __gshared FrameworkGame mDefaultProperties;
+	@property final static FrameworkGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FrameworkGame)("FrameworkGame GameFramework.Default__FrameworkGame")); }
 	static struct Functions
 	{
 		private static __gshared

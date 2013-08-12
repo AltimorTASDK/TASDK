@@ -17,6 +17,8 @@ extern(C++) interface TrFlagBase : UTCarriedObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrFlagBase")); }
+	private static __gshared TrFlagBase mDefaultProperties;
+	@property final static TrFlagBase DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrFlagBase)("TrFlagBase TribesGame.Default__TrFlagBase")); }
 	static struct Functions
 	{
 		private static __gshared

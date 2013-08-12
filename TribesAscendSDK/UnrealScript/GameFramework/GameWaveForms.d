@@ -9,6 +9,8 @@ extern(C++) interface GameWaveForms : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameWaveForms")); }
+	private static __gshared GameWaveForms mDefaultProperties;
+	@property final static GameWaveForms DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameWaveForms)("GameWaveForms GameFramework.Default__GameWaveForms")); }
 	@property final auto ref
 	{
 		ForceFeedbackWaveform CameraShakeBigShort() { return *cast(ForceFeedbackWaveform*)(cast(size_t)cast(void*)this + 68); }

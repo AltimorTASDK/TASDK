@@ -9,6 +9,8 @@ extern(C++) interface ReverbVolumeToggleable : ReverbVolume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ReverbVolumeToggleable")); }
+	private static __gshared ReverbVolumeToggleable mDefaultProperties;
+	@property final static ReverbVolumeToggleable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ReverbVolumeToggleable)("ReverbVolumeToggleable Engine.Default__ReverbVolumeToggleable")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

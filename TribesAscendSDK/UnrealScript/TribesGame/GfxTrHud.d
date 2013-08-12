@@ -22,6 +22,8 @@ extern(C++) interface GfxTrHud : GFxMinimapHud
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GfxTrHud")); }
+	private static __gshared GfxTrHud mDefaultProperties;
+	@property final static GfxTrHud DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GfxTrHud)("GfxTrHud TribesGame.Default__GfxTrHud")); }
 	static struct Functions
 	{
 		private static __gshared

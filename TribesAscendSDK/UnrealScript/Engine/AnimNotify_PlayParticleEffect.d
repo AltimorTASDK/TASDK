@@ -9,6 +9,8 @@ extern(C++) interface AnimNotify_PlayParticleEffect : AnimNotify
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_PlayParticleEffect")); }
+	private static __gshared AnimNotify_PlayParticleEffect mDefaultProperties;
+	@property final static AnimNotify_PlayParticleEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_PlayParticleEffect)("AnimNotify_PlayParticleEffect Engine.Default__AnimNotify_PlayParticleEffect")); }
 	@property final
 	{
 		auto ref

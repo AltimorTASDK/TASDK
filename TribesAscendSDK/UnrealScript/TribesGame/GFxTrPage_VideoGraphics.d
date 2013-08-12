@@ -10,6 +10,8 @@ extern(C++) interface GFxTrPage_VideoGraphics : GFxTrPage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_VideoGraphics")); }
+	private static __gshared GFxTrPage_VideoGraphics mDefaultProperties;
+	@property final static GFxTrPage_VideoGraphics DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_VideoGraphics)("GFxTrPage_VideoGraphics TribesGame.Default__GFxTrPage_VideoGraphics")); }
 	static struct Functions
 	{
 		private static __gshared

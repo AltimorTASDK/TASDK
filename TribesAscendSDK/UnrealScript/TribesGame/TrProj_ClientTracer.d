@@ -11,6 +11,8 @@ extern(C++) interface TrProj_ClientTracer : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_ClientTracer")); }
+	private static __gshared TrProj_ClientTracer mDefaultProperties;
+	@property final static TrProj_ClientTracer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_ClientTracer)("TrProj_ClientTracer TribesGame.Default__TrProj_ClientTracer")); }
 	static struct Functions
 	{
 		private static __gshared

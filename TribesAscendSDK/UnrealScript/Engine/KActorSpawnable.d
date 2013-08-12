@@ -8,6 +8,8 @@ extern(C++) interface KActorSpawnable : KActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KActorSpawnable")); }
+	private static __gshared KActorSpawnable mDefaultProperties;
+	@property final static KActorSpawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KActorSpawnable)("KActorSpawnable Engine.Default__KActorSpawnable")); }
 	static struct Functions
 	{
 		private static __gshared

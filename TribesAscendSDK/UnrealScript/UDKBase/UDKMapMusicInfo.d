@@ -9,6 +9,8 @@ extern(C++) interface UDKMapMusicInfo : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKMapMusicInfo")); }
+	private static __gshared UDKMapMusicInfo mDefaultProperties;
+	@property final static UDKMapMusicInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKMapMusicInfo)("UDKMapMusicInfo UDKBase.Default__UDKMapMusicInfo")); }
 	enum ECrossfadeType : ubyte
 	{
 		CFT_BeginningOfMeasure = 0,

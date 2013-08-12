@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleAcceleration : ParticleModuleAccelerationBas
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleAcceleration")); }
+	private static __gshared ParticleModuleAcceleration mDefaultProperties;
+	@property final static ParticleModuleAcceleration DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleAcceleration)("ParticleModuleAcceleration Engine.Default__ParticleModuleAcceleration")); }
 	@property final
 	{
 		@property final auto ref DistributionVector.RawDistributionVector Acceleration() { return *cast(DistributionVector.RawDistributionVector*)(cast(size_t)cast(void*)this + 76); }

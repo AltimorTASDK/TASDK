@@ -12,6 +12,8 @@ extern(C++) interface OnlineSubsystem : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.OnlineSubsystem")); }
+	private static __gshared OnlineSubsystem mDefaultProperties;
+	@property final static OnlineSubsystem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSubsystem)("OnlineSubsystem Engine.Default__OnlineSubsystem")); }
 	static struct Functions
 	{
 		private static __gshared

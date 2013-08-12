@@ -11,6 +11,8 @@ extern(C++) interface UTCTFHUDMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTCTFHUDMessage")); }
+	private static __gshared UTCTFHUDMessage mDefaultProperties;
+	@property final static UTCTFHUDMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTCTFHUDMessage)("UTCTFHUDMessage UTGame.Default__UTCTFHUDMessage")); }
 	static struct Functions
 	{
 		private static __gshared

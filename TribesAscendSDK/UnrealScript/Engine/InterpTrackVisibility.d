@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackVisibility : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackVisibility")); }
+	private static __gshared InterpTrackVisibility mDefaultProperties;
+	@property final static InterpTrackVisibility DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackVisibility)("InterpTrackVisibility Engine.Default__InterpTrackVisibility")); }
 	enum EVisibilityTrackCondition : ubyte
 	{
 		EVTC_Always = 0,

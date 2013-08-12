@@ -11,6 +11,8 @@ extern(C++) interface ApexClothingAsset : ApexAsset
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ApexClothingAsset")); }
+	private static __gshared ApexClothingAsset mDefaultProperties;
+	@property final static ApexClothingAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ApexClothingAsset)("ApexClothingAsset Engine.Default__ApexClothingAsset")); }
 	@property final
 	{
 		auto ref

@@ -13,6 +13,8 @@ extern(C++) interface UTTeamGameMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTTeamGameMessage")); }
+	private static __gshared UTTeamGameMessage mDefaultProperties;
+	@property final static UTTeamGameMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTTeamGameMessage)("UTTeamGameMessage UTGame.Default__UTTeamGameMessage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimBlendByTurnInPlace : UDKAnimBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByTurnInPlace")); }
+	private static __gshared UDKAnimBlendByTurnInPlace mDefaultProperties;
+	@property final static UDKAnimBlendByTurnInPlace DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByTurnInPlace)("UDKAnimBlendByTurnInPlace UDKBase.Default__UDKAnimBlendByTurnInPlace")); }
 	@property final auto ref
 	{
 		UDKPawn OwnerUTP() { return *cast(UDKPawn*)(cast(size_t)cast(void*)this + 304); }

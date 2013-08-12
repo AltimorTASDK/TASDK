@@ -8,6 +8,8 @@ extern(C++) interface AnimNodeBlend : AnimNodeBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNodeBlend")); }
+	private static __gshared AnimNodeBlend mDefaultProperties;
+	@property final static AnimNodeBlend DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNodeBlend)("AnimNodeBlend Engine.Default__AnimNodeBlend")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBlendTarget;

@@ -8,6 +8,8 @@ extern(C++) interface UTLinkGunMuzzleFlashLight : UDKExplosionLight
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTLinkGunMuzzleFlashLight")); }
+	private static __gshared UTLinkGunMuzzleFlashLight mDefaultProperties;
+	@property final static UTLinkGunMuzzleFlashLight DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTLinkGunMuzzleFlashLight)("UTLinkGunMuzzleFlashLight UTGame.Default__UTLinkGunMuzzleFlashLight")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetTeam;

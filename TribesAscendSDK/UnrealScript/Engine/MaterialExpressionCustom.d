@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionCustom : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionCustom")); }
+	private static __gshared MaterialExpressionCustom mDefaultProperties;
+	@property final static MaterialExpressionCustom DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionCustom)("MaterialExpressionCustom Engine.Default__MaterialExpressionCustom")); }
 	enum ECustomMaterialOutputType : ubyte
 	{
 		CMOT_Float1 = 0,

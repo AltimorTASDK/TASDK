@@ -10,6 +10,8 @@ extern(C++) interface DamageType : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DamageType")); }
+	private static __gshared DamageType mDefaultProperties;
+	@property final static DamageType DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DamageType)("DamageType Engine.Default__DamageType")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mVehicleDamageScalingFor;

@@ -12,6 +12,8 @@ extern(C++) interface Landscape : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Landscape")); }
+	private static __gshared Landscape mDefaultProperties;
+	@property final static Landscape DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Landscape)("Landscape Engine.Default__Landscape")); }
 	struct LandscapeLayerInfo
 	{
 		private ubyte __buffer__[20];

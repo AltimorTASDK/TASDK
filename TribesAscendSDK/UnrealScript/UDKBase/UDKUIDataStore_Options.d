@@ -10,6 +10,8 @@ extern(C++) interface UDKUIDataStore_Options : UIDataStore_GameResource
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKUIDataStore_Options")); }
+	private static __gshared UDKUIDataStore_Options mDefaultProperties;
+	@property final static UDKUIDataStore_Options DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKUIDataStore_Options)("UDKUIDataStore_Options UDKBase.Default__UDKUIDataStore_Options")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_GetVelocity : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_GetVelocity")); }
+	private static __gshared SeqAct_GetVelocity mDefaultProperties;
+	@property final static SeqAct_GetVelocity DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_GetVelocity)("SeqAct_GetVelocity Engine.Default__SeqAct_GetVelocity")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

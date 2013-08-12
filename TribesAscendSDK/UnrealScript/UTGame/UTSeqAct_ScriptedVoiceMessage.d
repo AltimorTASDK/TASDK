@@ -9,6 +9,8 @@ extern(C++) interface UTSeqAct_ScriptedVoiceMessage : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_ScriptedVoiceMessage")); }
+	private static __gshared UTSeqAct_ScriptedVoiceMessage mDefaultProperties;
+	@property final static UTSeqAct_ScriptedVoiceMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_ScriptedVoiceMessage)("UTSeqAct_ScriptedVoiceMessage UTGame.Default__UTSeqAct_ScriptedVoiceMessage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface KMeshProps : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.KMeshProps")); }
+	private static __gshared KMeshProps mDefaultProperties;
+	@property final static KMeshProps DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(KMeshProps)("KMeshProps Engine.Default__KMeshProps")); }
 	struct KSphereElem
 	{
 		private ubyte __buffer__[72];

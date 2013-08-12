@@ -8,6 +8,8 @@ extern(C++) interface TrOrientedBoxComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrOrientedBoxComponent")); }
+	private static __gshared TrOrientedBoxComponent mDefaultProperties;
+	@property final static TrOrientedBoxComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrOrientedBoxComponent)("TrOrientedBoxComponent TribesGame.Default__TrOrientedBoxComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetBoxSize;

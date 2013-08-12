@@ -9,6 +9,8 @@ extern(C++) interface FileWriter : Info
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FileWriter")); }
+	private static __gshared FileWriter mDefaultProperties;
+	@property final static FileWriter DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FileWriter)("FileWriter Engine.Default__FileWriter")); }
 	static struct Functions
 	{
 		private static __gshared

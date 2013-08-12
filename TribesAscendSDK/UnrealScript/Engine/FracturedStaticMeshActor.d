@@ -14,6 +14,8 @@ extern(C++) interface FracturedStaticMeshActor : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FracturedStaticMeshActor")); }
+	private static __gshared FracturedStaticMeshActor mDefaultProperties;
+	@property final static FracturedStaticMeshActor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FracturedStaticMeshActor)("FracturedStaticMeshActor Engine.Default__FracturedStaticMeshActor")); }
 	static struct Functions
 	{
 		private static __gshared

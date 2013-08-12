@@ -11,6 +11,8 @@ extern(C++) interface DoorMarker : NavigationPoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.DoorMarker")); }
+	private static __gshared DoorMarker mDefaultProperties;
+	@property final static DoorMarker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(DoorMarker)("DoorMarker Engine.Default__DoorMarker")); }
 	static struct Functions
 	{
 		private static __gshared

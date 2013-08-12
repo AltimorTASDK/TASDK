@@ -8,6 +8,8 @@ extern(C++) interface UTSeqAct_ReturnCTFFlag : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_ReturnCTFFlag")); }
+	private static __gshared UTSeqAct_ReturnCTFFlag mDefaultProperties;
+	@property final static UTSeqAct_ReturnCTFFlag DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_ReturnCTFFlag)("UTSeqAct_ReturnCTFFlag UTGame.Default__UTSeqAct_ReturnCTFFlag")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

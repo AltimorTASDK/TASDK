@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_HoverboardVibration : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_HoverboardVibration")); }
+	private static __gshared UDKSkelControl_HoverboardVibration mDefaultProperties;
+	@property final static UDKSkelControl_HoverboardVibration DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_HoverboardVibration)("UDKSkelControl_HoverboardVibration UDKBase.Default__UDKSkelControl_HoverboardVibration")); }
 	@property final auto ref
 	{
 		float VibInput() { return *cast(float*)(cast(size_t)cast(void*)this + 252); }

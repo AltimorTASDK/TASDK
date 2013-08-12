@@ -8,6 +8,8 @@ extern(C++) interface UTDecalManager : DecalManager
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTDecalManager")); }
+	private static __gshared UTDecalManager mDefaultProperties;
+	@property final static UTDecalManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTDecalManager)("UTDecalManager UTGame.Default__UTDecalManager")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mCanSpawnDecals;

@@ -9,6 +9,8 @@ extern(C++) interface UDKAnimBlendByPhysicsVolume : UDKAnimBlendBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKAnimBlendByPhysicsVolume")); }
+	private static __gshared UDKAnimBlendByPhysicsVolume mDefaultProperties;
+	@property final static UDKAnimBlendByPhysicsVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKAnimBlendByPhysicsVolume)("UDKAnimBlendByPhysicsVolume UDKBase.Default__UDKAnimBlendByPhysicsVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPhysicsVolumeChanged;

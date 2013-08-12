@@ -9,6 +9,8 @@ extern(C++) interface TerrainLayerSetup : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.TerrainLayerSetup")); }
+	private static __gshared TerrainLayerSetup mDefaultProperties;
+	@property final static TerrainLayerSetup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TerrainLayerSetup)("TerrainLayerSetup Engine.Default__TerrainLayerSetup")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

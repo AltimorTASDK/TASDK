@@ -9,6 +9,8 @@ extern(C++) interface HeightFogComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.HeightFogComponent")); }
+	private static __gshared HeightFogComponent mDefaultProperties;
+	@property final static HeightFogComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(HeightFogComponent)("HeightFogComponent Engine.Default__HeightFogComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetEnabled;

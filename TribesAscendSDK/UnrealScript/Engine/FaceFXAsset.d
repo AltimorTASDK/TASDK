@@ -12,6 +12,8 @@ extern(C++) interface FaceFXAsset : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FaceFXAsset")); }
+	private static __gshared FaceFXAsset mDefaultProperties;
+	@property final static FaceFXAsset DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FaceFXAsset)("FaceFXAsset Engine.Default__FaceFXAsset")); }
 	static struct Functions
 	{
 		private static __gshared

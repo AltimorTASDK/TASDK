@@ -8,6 +8,8 @@ extern(C++) interface MotionBlurEffect : PostProcessEffect
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MotionBlurEffect")); }
+	private static __gshared MotionBlurEffect mDefaultProperties;
+	@property final static MotionBlurEffect DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MotionBlurEffect)("MotionBlurEffect Engine.Default__MotionBlurEffect")); }
 	@property final
 	{
 		auto ref

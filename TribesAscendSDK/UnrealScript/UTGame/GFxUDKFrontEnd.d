@@ -27,6 +27,8 @@ extern(C++) interface GFxUDKFrontEnd : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd")); }
+	private static __gshared GFxUDKFrontEnd mDefaultProperties;
+	@property final static GFxUDKFrontEnd DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd)("GFxUDKFrontEnd UTGame.Default__GFxUDKFrontEnd")); }
 	static struct Functions
 	{
 		private static __gshared

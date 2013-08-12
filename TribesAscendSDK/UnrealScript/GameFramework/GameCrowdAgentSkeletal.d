@@ -15,6 +15,8 @@ extern(C++) interface GameCrowdAgentSkeletal : GameCrowdAgent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdAgentSkeletal")); }
+	private static __gshared GameCrowdAgentSkeletal mDefaultProperties;
+	@property final static GameCrowdAgentSkeletal DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdAgentSkeletal)("GameCrowdAgentSkeletal GameFramework.Default__GameCrowdAgentSkeletal")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface MaterialExpressionDepthBiasedAlpha : MaterialExpression
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionDepthBiasedAlpha")); }
+	private static __gshared MaterialExpressionDepthBiasedAlpha mDefaultProperties;
+	@property final static MaterialExpressionDepthBiasedAlpha DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionDepthBiasedAlpha)("MaterialExpressionDepthBiasedAlpha Engine.Default__MaterialExpressionDepthBiasedAlpha")); }
 	@property final
 	{
 		auto ref

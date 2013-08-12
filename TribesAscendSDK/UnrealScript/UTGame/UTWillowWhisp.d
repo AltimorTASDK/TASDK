@@ -9,6 +9,8 @@ extern(C++) interface UTWillowWhisp : UTReplicatedEmitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTWillowWhisp")); }
+	private static __gshared UTWillowWhisp mDefaultProperties;
+	@property final static UTWillowWhisp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTWillowWhisp)("UTWillowWhisp UTGame.Default__UTWillowWhisp")); }
 	static struct Functions
 	{
 		private static __gshared

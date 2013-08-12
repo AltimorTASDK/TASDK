@@ -10,6 +10,8 @@ extern(C++) interface PlayerInput : Input
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerInput")); }
+	private static __gshared PlayerInput mDefaultProperties;
+	@property final static PlayerInput DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerInput)("PlayerInput Engine.Default__PlayerInput")); }
 	static struct Functions
 	{
 		private static __gshared

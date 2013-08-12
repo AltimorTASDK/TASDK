@@ -10,6 +10,8 @@ extern(C++) interface GFxTrDevices : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrDevices")); }
+	private static __gshared GFxTrDevices mDefaultProperties;
+	@property final static GFxTrDevices DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrDevices)("GFxTrDevices TribesGame.Default__GFxTrDevices")); }
 	static struct Functions
 	{
 		private static __gshared

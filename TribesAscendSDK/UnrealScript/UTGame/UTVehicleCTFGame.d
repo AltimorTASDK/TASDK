@@ -8,6 +8,8 @@ extern(C++) interface UTVehicleCTFGame : UTCTFGame
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTVehicleCTFGame")); }
+	private static __gshared UTVehicleCTFGame mDefaultProperties;
+	@property final static UTVehicleCTFGame DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTVehicleCTFGame)("UTVehicleCTFGame UTGame.Default__UTVehicleCTFGame")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAllowMutator;

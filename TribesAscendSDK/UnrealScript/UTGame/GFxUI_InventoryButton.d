@@ -9,6 +9,8 @@ extern(C++) interface GFxUI_InventoryButton : GFxClikWidget
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUI_InventoryButton")); }
+	private static __gshared GFxUI_InventoryButton mDefaultProperties;
+	@property final static GFxUI_InventoryButton DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUI_InventoryButton)("GFxUI_InventoryButton UTGame.Default__GFxUI_InventoryButton")); }
 	static struct Functions
 	{
 		private static __gshared

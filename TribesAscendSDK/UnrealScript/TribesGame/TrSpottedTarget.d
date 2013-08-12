@@ -13,6 +13,8 @@ extern(C++) interface TrSpottedTarget : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSpottedTarget")); }
+	private static __gshared TrSpottedTarget mDefaultProperties;
+	@property final static TrSpottedTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSpottedTarget)("TrSpottedTarget TribesGame.Default__TrSpottedTarget")); }
 	static struct Functions
 	{
 		private static __gshared

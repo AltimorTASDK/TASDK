@@ -8,6 +8,8 @@ extern(C++) interface SeqAct_MITV_Activate : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_MITV_Activate")); }
+	private static __gshared SeqAct_MITV_Activate mDefaultProperties;
+	@property final static SeqAct_MITV_Activate DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_MITV_Activate)("SeqAct_MITV_Activate Engine.Default__SeqAct_MITV_Activate")); }
 	static struct Functions
 	{
 		private static __gshared

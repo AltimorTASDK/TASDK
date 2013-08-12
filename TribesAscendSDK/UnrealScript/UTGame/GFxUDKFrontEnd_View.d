@@ -11,6 +11,8 @@ extern(C++) interface GFxUDKFrontEnd_View : GFxUIView
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxUDKFrontEnd_View")); }
+	private static __gshared GFxUDKFrontEnd_View mDefaultProperties;
+	@property final static GFxUDKFrontEnd_View DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxUDKFrontEnd_View)("GFxUDKFrontEnd_View UTGame.Default__GFxUDKFrontEnd_View")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface InterpTrackDirector : InterpTrack
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpTrackDirector")); }
+	private static __gshared InterpTrackDirector mDefaultProperties;
+	@property final static InterpTrackDirector DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpTrackDirector)("InterpTrackDirector Engine.Default__InterpTrackDirector")); }
 	struct DirectorTrackCut
 	{
 		private ubyte __buffer__[16];

@@ -9,6 +9,8 @@ extern(C++) interface GameCrowdInteractionPoint : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdInteractionPoint")); }
+	private static __gshared GameCrowdInteractionPoint mDefaultProperties;
+	@property final static GameCrowdInteractionPoint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdInteractionPoint)("GameCrowdInteractionPoint GameFramework.Default__GameCrowdInteractionPoint")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOnToggle;

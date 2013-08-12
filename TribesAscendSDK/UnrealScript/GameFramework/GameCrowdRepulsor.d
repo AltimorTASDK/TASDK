@@ -9,6 +9,8 @@ extern(C++) interface GameCrowdRepulsor : GameCrowdForcePoint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameCrowdRepulsor")); }
+	private static __gshared GameCrowdRepulsor mDefaultProperties;
+	@property final static GameCrowdRepulsor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GameCrowdRepulsor)("GameCrowdRepulsor GameFramework.Default__GameCrowdRepulsor")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mAppliedForce;

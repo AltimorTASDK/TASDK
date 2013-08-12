@@ -9,6 +9,8 @@ extern(C++) interface SpriteComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SpriteComponent")); }
+	private static __gshared SpriteComponent mDefaultProperties;
+	@property final static SpriteComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SpriteComponent)("SpriteComponent Engine.Default__SpriteComponent")); }
 	static struct Functions
 	{
 		private static __gshared

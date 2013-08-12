@@ -11,6 +11,8 @@ extern(C++) interface UISceneClient : UIRoot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UISceneClient")); }
+	private static __gshared UISceneClient mDefaultProperties;
+	@property final static UISceneClient DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UISceneClient)("UISceneClient Engine.Default__UISceneClient")); }
 	static struct Functions
 	{
 		private static __gshared

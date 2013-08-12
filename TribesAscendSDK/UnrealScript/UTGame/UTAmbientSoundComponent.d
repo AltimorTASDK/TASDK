@@ -8,6 +8,8 @@ extern(C++) interface UTAmbientSoundComponent : AudioComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTAmbientSoundComponent")); }
+	private static __gshared UTAmbientSoundComponent mDefaultProperties;
+	@property final static UTAmbientSoundComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTAmbientSoundComponent)("UTAmbientSoundComponent UTGame.Default__UTAmbientSoundComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mOcclusionChanged;

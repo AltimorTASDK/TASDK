@@ -8,6 +8,8 @@ extern(C++) interface GFxClikWidget : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GFxUI.GFxClikWidget")); }
+	private static __gshared GFxClikWidget mDefaultProperties;
+	@property final static GFxClikWidget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxClikWidget)("GFxClikWidget GFxUI.Default__GFxClikWidget")); }
 	static struct Functions
 	{
 		private static __gshared

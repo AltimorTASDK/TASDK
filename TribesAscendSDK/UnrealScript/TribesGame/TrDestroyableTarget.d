@@ -11,6 +11,8 @@ extern(C++) interface TrDestroyableTarget : UTSimpleDestroyable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDestroyableTarget")); }
+	private static __gshared TrDestroyableTarget mDefaultProperties;
+	@property final static TrDestroyableTarget DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDestroyableTarget)("TrDestroyableTarget TribesGame.Default__TrDestroyableTarget")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface AnimationCompressionAlgorithm_Automatic : AnimationCompres
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimationCompressionAlgorithm_Automatic")); }
+	private static __gshared AnimationCompressionAlgorithm_Automatic mDefaultProperties;
+	@property final static AnimationCompressionAlgorithm_Automatic DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimationCompressionAlgorithm_Automatic)("AnimationCompressionAlgorithm_Automatic Engine.Default__AnimationCompressionAlgorithm_Automatic")); }
 	@property final
 	{
 		@property final auto ref float MaxEndEffectorError() { return *cast(float*)(cast(size_t)cast(void*)this + 80); }

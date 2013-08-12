@@ -9,6 +9,8 @@ extern(C++) interface UTSeqAct_PlayAnnouncement : SequenceAction
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqAct_PlayAnnouncement")); }
+	private static __gshared UTSeqAct_PlayAnnouncement mDefaultProperties;
+	@property final static UTSeqAct_PlayAnnouncement DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqAct_PlayAnnouncement)("UTSeqAct_PlayAnnouncement UTGame.Default__UTSeqAct_PlayAnnouncement")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

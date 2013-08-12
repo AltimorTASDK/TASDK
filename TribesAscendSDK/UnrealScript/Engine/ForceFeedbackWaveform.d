@@ -8,6 +8,8 @@ extern(C++) interface ForceFeedbackWaveform : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ForceFeedbackWaveform")); }
+	private static __gshared ForceFeedbackWaveform mDefaultProperties;
+	@property final static ForceFeedbackWaveform DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ForceFeedbackWaveform)("ForceFeedbackWaveform Engine.Default__ForceFeedbackWaveform")); }
 	enum EWaveformFunction : ubyte
 	{
 		WF_Constant = 0,

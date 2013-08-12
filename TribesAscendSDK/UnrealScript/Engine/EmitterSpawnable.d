@@ -9,6 +9,8 @@ extern(C++) interface EmitterSpawnable : Emitter
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EmitterSpawnable")); }
+	private static __gshared EmitterSpawnable mDefaultProperties;
+	@property final static EmitterSpawnable DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EmitterSpawnable)("EmitterSpawnable Engine.Default__EmitterSpawnable")); }
 	static struct Functions
 	{
 		private static __gshared

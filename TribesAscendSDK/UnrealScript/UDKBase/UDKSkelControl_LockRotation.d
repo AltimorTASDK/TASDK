@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_LockRotation : SkelControlBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_LockRotation")); }
+	private static __gshared UDKSkelControl_LockRotation mDefaultProperties;
+	@property final static UDKSkelControl_LockRotation DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_LockRotation)("UDKSkelControl_LockRotation UDKBase.Default__UDKSkelControl_LockRotation")); }
 	@property final
 	{
 		auto ref

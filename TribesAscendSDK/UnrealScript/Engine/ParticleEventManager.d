@@ -9,6 +9,8 @@ extern(C++) interface ParticleEventManager : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleEventManager")); }
+	private static __gshared ParticleEventManager mDefaultProperties;
+	@property final static ParticleEventManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleEventManager)("ParticleEventManager Engine.Default__ParticleEventManager")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mHandleParticleModuleEventSendToGame;

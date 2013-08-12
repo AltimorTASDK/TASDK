@@ -8,6 +8,8 @@ extern(C++) interface UTUIDataProvider_MultiplayerMenuItem : UTUIResourceDataPro
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTUIDataProvider_MultiplayerMenuItem")); }
+	private static __gshared UTUIDataProvider_MultiplayerMenuItem mDefaultProperties;
+	@property final static UTUIDataProvider_MultiplayerMenuItem DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTUIDataProvider_MultiplayerMenuItem)("UTUIDataProvider_MultiplayerMenuItem UTGame.Default__UTUIDataProvider_MultiplayerMenuItem")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mShouldBeFiltered;

@@ -10,6 +10,8 @@ extern(C++) interface OnlineTitleFileDownloadMcp : MCPBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineTitleFileDownloadMcp")); }
+	private static __gshared OnlineTitleFileDownloadMcp mDefaultProperties;
+	@property final static OnlineTitleFileDownloadMcp DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineTitleFileDownloadMcp)("OnlineTitleFileDownloadMcp IpDrv.Default__OnlineTitleFileDownloadMcp")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface PBRuleNodeEdgeAngle : PBRuleNodeBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PBRuleNodeEdgeAngle")); }
+	private static __gshared PBRuleNodeEdgeAngle mDefaultProperties;
+	@property final static PBRuleNodeEdgeAngle DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PBRuleNodeEdgeAngle)("PBRuleNodeEdgeAngle Engine.Default__PBRuleNodeEdgeAngle")); }
 	enum EProcBuildingEdge : ubyte
 	{
 		EPBE_Top = 0,

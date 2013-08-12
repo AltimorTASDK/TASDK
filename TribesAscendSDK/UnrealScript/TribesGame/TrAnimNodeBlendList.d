@@ -8,6 +8,8 @@ extern(C++) interface TrAnimNodeBlendList : AnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendList")); }
+	private static __gshared TrAnimNodeBlendList mDefaultProperties;
+	@property final static TrAnimNodeBlendList DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendList)("TrAnimNodeBlendList TribesGame.Default__TrAnimNodeBlendList")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetBlendTime;

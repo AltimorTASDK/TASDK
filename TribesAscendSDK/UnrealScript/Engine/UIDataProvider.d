@@ -8,6 +8,8 @@ extern(C++) interface UIDataProvider : UIRoot
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIDataProvider")); }
+	private static __gshared UIDataProvider mDefaultProperties;
+	@property final static UIDataProvider DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UIDataProvider)("UIDataProvider Engine.Default__UIDataProvider")); }
 	static struct Functions
 	{
 		private static __gshared

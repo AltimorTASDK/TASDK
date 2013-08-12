@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_VehicleFlap : SkelControlSingleBone
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_VehicleFlap")); }
+	private static __gshared UDKSkelControl_VehicleFlap mDefaultProperties;
+	@property final static UDKSkelControl_VehicleFlap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_VehicleFlap)("UDKSkelControl_VehicleFlap UDKBase.Default__UDKSkelControl_VehicleFlap")); }
 	@property final auto ref
 	{
 		ScriptName LeftFlapControl() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 260); }

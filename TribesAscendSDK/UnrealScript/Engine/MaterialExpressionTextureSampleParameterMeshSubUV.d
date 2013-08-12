@@ -8,4 +8,6 @@ extern(C++) interface MaterialExpressionTextureSampleParameterMeshSubUV : Materi
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV")); }
+	private static __gshared MaterialExpressionTextureSampleParameterMeshSubUV mDefaultProperties;
+	@property final static MaterialExpressionTextureSampleParameterMeshSubUV DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialExpressionTextureSampleParameterMeshSubUV)("MaterialExpressionTextureSampleParameterMeshSubUV Engine.Default__MaterialExpressionTextureSampleParameterMeshSubUV")); }
 }

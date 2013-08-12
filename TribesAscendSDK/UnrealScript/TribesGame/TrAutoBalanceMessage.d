@@ -10,6 +10,8 @@ extern(C++) interface TrAutoBalanceMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAutoBalanceMessage")); }
+	private static __gshared TrAutoBalanceMessage mDefaultProperties;
+	@property final static TrAutoBalanceMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAutoBalanceMessage)("TrAutoBalanceMessage TribesGame.Default__TrAutoBalanceMessage")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetString;

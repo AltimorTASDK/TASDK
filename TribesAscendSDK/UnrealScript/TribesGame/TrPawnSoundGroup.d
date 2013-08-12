@@ -10,6 +10,8 @@ extern(C++) interface TrPawnSoundGroup : UTPawnSoundGroup
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPawnSoundGroup")); }
+	private static __gshared TrPawnSoundGroup mDefaultProperties;
+	@property final static TrPawnSoundGroup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPawnSoundGroup)("TrPawnSoundGroup TribesGame.Default__TrPawnSoundGroup")); }
 	static struct Functions
 	{
 		private static __gshared

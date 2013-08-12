@@ -11,6 +11,8 @@ extern(C++) interface NxForceField : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.NxForceField")); }
+	private static __gshared NxForceField mDefaultProperties;
+	@property final static NxForceField DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(NxForceField)("NxForceField Engine.Default__NxForceField")); }
 	static struct Functions
 	{
 		private static __gshared

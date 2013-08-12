@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeSequencePose : AnimNodeSequence
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeSequencePose")); }
+	private static __gshared TrAnimNodeSequencePose mDefaultProperties;
+	@property final static TrAnimNodeSequencePose DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeSequencePose)("TrAnimNodeSequencePose TribesGame.Default__TrAnimNodeSequencePose")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mFillWithPose;

@@ -9,6 +9,8 @@ extern(C++) interface EnvironmentVolume : Volume
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.EnvironmentVolume")); }
+	private static __gshared EnvironmentVolume mDefaultProperties;
+	@property final static EnvironmentVolume DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(EnvironmentVolume)("EnvironmentVolume Engine.Default__EnvironmentVolume")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetSplitNavMesh;

@@ -9,6 +9,8 @@ extern(C++) interface SeqAct_ProjectileFactory : SeqAct_ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SeqAct_ProjectileFactory")); }
+	private static __gshared SeqAct_ProjectileFactory mDefaultProperties;
+	@property final static SeqAct_ProjectileFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqAct_ProjectileFactory)("SeqAct_ProjectileFactory Engine.Default__SeqAct_ProjectileFactory")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGetObjClassVersion;

@@ -11,6 +11,8 @@ extern(C++) interface LensFlareComponent : PrimitiveComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LensFlareComponent")); }
+	private static __gshared LensFlareComponent mDefaultProperties;
+	@property final static LensFlareComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LensFlareComponent)("LensFlareComponent Engine.Default__LensFlareComponent")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface UDKPickupFactory : PickupFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKPickupFactory")); }
+	private static __gshared UDKPickupFactory mDefaultProperties;
+	@property final static UDKPickupFactory DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKPickupFactory)("UDKPickupFactory UDKBase.Default__UDKPickupFactory")); }
 	static struct Functions
 	{
 		private static __gshared

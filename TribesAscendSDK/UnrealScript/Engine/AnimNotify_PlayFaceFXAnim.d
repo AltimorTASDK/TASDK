@@ -12,6 +12,8 @@ extern(C++) interface AnimNotify_PlayFaceFXAnim : AnimNotify_Scripted
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.AnimNotify_PlayFaceFXAnim")); }
+	private static __gshared AnimNotify_PlayFaceFXAnim mDefaultProperties;
+	@property final static AnimNotify_PlayFaceFXAnim DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(AnimNotify_PlayFaceFXAnim)("AnimNotify_PlayFaceFXAnim Engine.Default__AnimNotify_PlayFaceFXAnim")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mNotify;

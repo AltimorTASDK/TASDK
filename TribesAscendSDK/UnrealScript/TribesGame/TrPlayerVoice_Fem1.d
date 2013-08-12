@@ -8,4 +8,6 @@ extern(C++) interface TrPlayerVoice_Fem1 : TrPlayerVoice
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPlayerVoice_Fem1")); }
+	private static __gshared TrPlayerVoice_Fem1 mDefaultProperties;
+	@property final static TrPlayerVoice_Fem1 DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPlayerVoice_Fem1)("TrPlayerVoice_Fem1 TribesGame.Default__TrPlayerVoice_Fem1")); }
 }

@@ -12,6 +12,8 @@ extern(C++) interface TrCTFHUDMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCTFHUDMessage")); }
+	private static __gshared TrCTFHUDMessage mDefaultProperties;
+	@property final static TrCTFHUDMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCTFHUDMessage)("TrCTFHUDMessage TribesGame.Default__TrCTFHUDMessage")); }
 	static struct Functions
 	{
 		private static __gshared

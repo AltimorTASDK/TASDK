@@ -8,4 +8,6 @@ extern(C++) interface TrGameObjectiveUpgrade_IncrementIntClassProperty : TrGameO
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrGameObjectiveUpgrade_IncrementIntClassProperty")); }
+	private static __gshared TrGameObjectiveUpgrade_IncrementIntClassProperty mDefaultProperties;
+	@property final static TrGameObjectiveUpgrade_IncrementIntClassProperty DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrGameObjectiveUpgrade_IncrementIntClassProperty)("TrGameObjectiveUpgrade_IncrementIntClassProperty TribesGame.Default__TrGameObjectiveUpgrade_IncrementIntClassProperty")); }
 }

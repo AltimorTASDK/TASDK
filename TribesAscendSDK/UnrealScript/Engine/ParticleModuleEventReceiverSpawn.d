@@ -10,6 +10,8 @@ extern(C++) interface ParticleModuleEventReceiverSpawn : ParticleModuleEventRece
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleEventReceiverSpawn")); }
+	private static __gshared ParticleModuleEventReceiverSpawn mDefaultProperties;
+	@property final static ParticleModuleEventReceiverSpawn DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleEventReceiverSpawn)("ParticleModuleEventReceiverSpawn Engine.Default__ParticleModuleEventReceiverSpawn")); }
 	@property final
 	{
 		auto ref

@@ -9,6 +9,8 @@ extern(C++) interface TrCollisionProxy_Pickup : TrCollisionProxy
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrCollisionProxy_Pickup")); }
+	private static __gshared TrCollisionProxy_Pickup mDefaultProperties;
+	@property final static TrCollisionProxy_Pickup DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrCollisionProxy_Pickup)("TrCollisionProxy_Pickup TribesGame.Default__TrCollisionProxy_Pickup")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mTouch;

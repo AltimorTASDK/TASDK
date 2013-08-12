@@ -18,6 +18,8 @@ extern(C++) interface TrProj_Mine : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_Mine")); }
+	private static __gshared TrProj_Mine mDefaultProperties;
+	@property final static TrProj_Mine DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_Mine)("TrProj_Mine TribesGame.Default__TrProj_Mine")); }
 	static struct Functions
 	{
 		private static __gshared

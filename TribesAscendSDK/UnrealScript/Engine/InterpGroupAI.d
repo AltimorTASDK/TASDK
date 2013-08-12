@@ -10,6 +10,8 @@ extern(C++) interface InterpGroupAI : InterpGroup
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.InterpGroupAI")); }
+	private static __gshared InterpGroupAI mDefaultProperties;
+	@property final static InterpGroupAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(InterpGroupAI)("InterpGroupAI Engine.Default__InterpGroupAI")); }
 	@property final
 	{
 		auto ref

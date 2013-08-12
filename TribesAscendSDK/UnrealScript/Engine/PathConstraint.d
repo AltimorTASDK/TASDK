@@ -8,6 +8,8 @@ extern(C++) interface PathConstraint : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PathConstraint")); }
+	private static __gshared PathConstraint mDefaultProperties;
+	@property final static PathConstraint DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PathConstraint)("PathConstraint Engine.Default__PathConstraint")); }
 	static struct Functions
 	{
 		private static __gshared

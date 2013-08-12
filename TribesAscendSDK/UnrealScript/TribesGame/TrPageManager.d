@@ -112,6 +112,8 @@ extern(C++) interface TrPageManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrPageManager")); }
+	private static __gshared TrPageManager mDefaultProperties;
+	@property final static TrPageManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrPageManager)("TrPageManager TribesGame.Default__TrPageManager")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -9,6 +9,8 @@ extern(C++) interface SeqEvent_MobileObjectPicker : SeqEvent_MobileRawInput
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.SeqEvent_MobileObjectPicker")); }
+	private static __gshared SeqEvent_MobileObjectPicker mDefaultProperties;
+	@property final static SeqEvent_MobileObjectPicker DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SeqEvent_MobileObjectPicker)("SeqEvent_MobileObjectPicker GameFramework.Default__SeqEvent_MobileObjectPicker")); }
 	@property final auto ref
 	{
 		ScriptArray!(UObject) Targets() { return *cast(ScriptArray!(UObject)*)(cast(size_t)cast(void*)this + 304); }

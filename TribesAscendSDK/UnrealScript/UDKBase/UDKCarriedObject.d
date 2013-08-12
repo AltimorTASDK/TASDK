@@ -12,6 +12,8 @@ extern(C++) interface UDKCarriedObject : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKCarriedObject")); }
+	private static __gshared UDKCarriedObject mDefaultProperties;
+	@property final static UDKCarriedObject DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKCarriedObject)("UDKCarriedObject UDKBase.Default__UDKCarriedObject")); }
 	static struct Functions
 	{
 		private static __gshared

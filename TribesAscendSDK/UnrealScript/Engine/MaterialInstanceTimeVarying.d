@@ -12,6 +12,8 @@ extern(C++) interface MaterialInstanceTimeVarying : MaterialInstance
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.MaterialInstanceTimeVarying")); }
+	private static __gshared MaterialInstanceTimeVarying mDefaultProperties;
+	@property final static MaterialInstanceTimeVarying DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(MaterialInstanceTimeVarying)("MaterialInstanceTimeVarying Engine.Default__MaterialInstanceTimeVarying")); }
 	static struct Functions
 	{
 		private static __gshared

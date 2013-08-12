@@ -12,6 +12,8 @@ extern(C++) interface LightComponent : ActorComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.LightComponent")); }
+	private static __gshared LightComponent mDefaultProperties;
+	@property final static LightComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(LightComponent)("LightComponent Engine.Default__LightComponent")); }
 	static struct Functions
 	{
 		private static __gshared

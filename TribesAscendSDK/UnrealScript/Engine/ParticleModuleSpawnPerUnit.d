@@ -9,6 +9,8 @@ extern(C++) interface ParticleModuleSpawnPerUnit : ParticleModuleSpawnBase
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ParticleModuleSpawnPerUnit")); }
+	private static __gshared ParticleModuleSpawnPerUnit mDefaultProperties;
+	@property final static ParticleModuleSpawnPerUnit DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ParticleModuleSpawnPerUnit)("ParticleModuleSpawnPerUnit Engine.Default__ParticleModuleSpawnPerUnit")); }
 	@property final
 	{
 		auto ref

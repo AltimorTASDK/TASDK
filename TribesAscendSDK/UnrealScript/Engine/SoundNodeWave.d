@@ -11,6 +11,8 @@ extern(C++) interface SoundNodeWave : SoundNode
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SoundNodeWave")); }
+	private static __gshared SoundNodeWave mDefaultProperties;
+	@property final static SoundNodeWave DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SoundNodeWave)("SoundNodeWave Engine.Default__SoundNodeWave")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mGeneratePCMData;

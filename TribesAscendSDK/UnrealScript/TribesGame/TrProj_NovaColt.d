@@ -9,6 +9,8 @@ extern(C++) interface TrProj_NovaColt : TrProjectile
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrProj_NovaColt")); }
+	private static __gshared TrProj_NovaColt mDefaultProperties;
+	@property final static TrProj_NovaColt DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrProj_NovaColt)("TrProj_NovaColt TribesGame.Default__TrProj_NovaColt")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mHitWall;

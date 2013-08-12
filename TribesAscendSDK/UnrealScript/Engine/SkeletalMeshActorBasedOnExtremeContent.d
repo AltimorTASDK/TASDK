@@ -9,6 +9,8 @@ extern(C++) interface SkeletalMeshActorBasedOnExtremeContent : SkeletalMeshActor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SkeletalMeshActorBasedOnExtremeContent")); }
+	private static __gshared SkeletalMeshActorBasedOnExtremeContent mDefaultProperties;
+	@property final static SkeletalMeshActorBasedOnExtremeContent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SkeletalMeshActorBasedOnExtremeContent)("SkeletalMeshActorBasedOnExtremeContent Engine.Default__SkeletalMeshActorBasedOnExtremeContent")); }
 	static struct Functions
 	{
 		private static __gshared

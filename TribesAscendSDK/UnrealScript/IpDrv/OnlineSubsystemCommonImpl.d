@@ -10,6 +10,8 @@ extern(C++) interface OnlineSubsystemCommonImpl : OnlineSubsystem
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class IpDrv.OnlineSubsystemCommonImpl")); }
+	private static __gshared OnlineSubsystemCommonImpl mDefaultProperties;
+	@property final static OnlineSubsystemCommonImpl DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(OnlineSubsystemCommonImpl)("OnlineSubsystemCommonImpl IpDrv.Default__OnlineSubsystemCommonImpl")); }
 	static struct Functions
 	{
 		private static __gshared

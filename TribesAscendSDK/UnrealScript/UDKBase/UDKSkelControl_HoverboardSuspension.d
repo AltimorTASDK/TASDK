@@ -8,6 +8,8 @@ extern(C++) interface UDKSkelControl_HoverboardSuspension : SkelControlSingleBon
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKSkelControl_HoverboardSuspension")); }
+	private static __gshared UDKSkelControl_HoverboardSuspension mDefaultProperties;
+	@property final static UDKSkelControl_HoverboardSuspension DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKSkelControl_HoverboardSuspension)("UDKSkelControl_HoverboardSuspension UDKBase.Default__UDKSkelControl_HoverboardSuspension")); }
 	@property final auto ref
 	{
 		float CurrentRot() { return *cast(float*)(cast(size_t)cast(void*)this + 268); }

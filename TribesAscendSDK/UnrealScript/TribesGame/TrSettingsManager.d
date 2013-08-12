@@ -15,6 +15,8 @@ extern(C++) interface TrSettingsManager : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrSettingsManager")); }
+	private static __gshared TrSettingsManager mDefaultProperties;
+	@property final static TrSettingsManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrSettingsManager)("TrSettingsManager TribesGame.Default__TrSettingsManager")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mInitialize;

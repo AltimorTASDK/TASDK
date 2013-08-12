@@ -9,6 +9,8 @@ extern(C++) interface TrEffect_Sensor : TrEffect_Managed
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrEffect_Sensor")); }
+	private static __gshared TrEffect_Sensor mDefaultProperties;
+	@property final static TrEffect_Sensor DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrEffect_Sensor)("TrEffect_Sensor TribesGame.Default__TrEffect_Sensor")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -14,6 +14,8 @@ extern(C++) interface PlayerReplicationInfo : ReplicationInfo
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.PlayerReplicationInfo")); }
+	private static __gshared PlayerReplicationInfo mDefaultProperties;
+	@property final static PlayerReplicationInfo DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(PlayerReplicationInfo)("PlayerReplicationInfo Engine.Default__PlayerReplicationInfo")); }
 	static struct Functions
 	{
 		private static __gshared

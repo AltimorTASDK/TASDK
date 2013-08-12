@@ -8,6 +8,8 @@ extern(C++) interface UDKVehicleSimHover : UDKVehicleSimChopper
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UDKBase.UDKVehicleSimHover")); }
+	private static __gshared UDKVehicleSimHover mDefaultProperties;
+	@property final static UDKVehicleSimHover DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UDKVehicleSimHover)("UDKVehicleSimHover UDKBase.Default__UDKVehicleSimHover")); }
 	@property final
 	{
 		bool bUnPoweredDriving() { return (*cast(uint*)(cast(size_t)cast(void*)this + 308) & 0x8) != 0; }

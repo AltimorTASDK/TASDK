@@ -9,6 +9,8 @@ extern(C++) interface GFxTrPage_ClanTagChange : GFxTrPage_VendorTable
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.GFxTrPage_ClanTagChange")); }
+	private static __gshared GFxTrPage_ClanTagChange mDefaultProperties;
+	@property final static GFxTrPage_ClanTagChange DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxTrPage_ClanTagChange)("GFxTrPage_ClanTagChange TribesGame.Default__GFxTrPage_ClanTagChange")); }
 	static struct Functions
 	{
 		private static __gshared

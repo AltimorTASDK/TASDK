@@ -14,6 +14,8 @@ extern(C++) interface GFxMinimap : GFxObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.GFxMinimap")); }
+	private static __gshared GFxMinimap mDefaultProperties;
+	@property final static GFxMinimap DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(GFxMinimap)("GFxMinimap UTGame.Default__GFxMinimap")); }
 	static struct Functions
 	{
 		private static __gshared

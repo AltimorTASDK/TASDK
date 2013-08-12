@@ -9,6 +9,8 @@ extern(C++) interface Path_WithinTraversalDist : PathConstraint
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.Path_WithinTraversalDist")); }
+	private static __gshared Path_WithinTraversalDist mDefaultProperties;
+	@property final static Path_WithinTraversalDist DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(Path_WithinTraversalDist)("Path_WithinTraversalDist Engine.Default__Path_WithinTraversalDist")); }
 	static struct Functions
 	{
 		private static __gshared

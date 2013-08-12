@@ -8,6 +8,8 @@ extern(C++) interface TrDaDCore_BE : TrDaDCore
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrDaDCore_BE")); }
+	private static __gshared TrDaDCore_BE mDefaultProperties;
+	@property final static TrDaDCore_BE DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrDaDCore_BE)("TrDaDCore_BE TribesGame.Default__TrDaDCore_BE")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostBeginPlay;

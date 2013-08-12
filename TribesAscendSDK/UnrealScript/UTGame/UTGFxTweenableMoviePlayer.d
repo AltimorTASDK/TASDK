@@ -9,6 +9,8 @@ extern(C++) interface UTGFxTweenableMoviePlayer : GFxMoviePlayer
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTGFxTweenableMoviePlayer")); }
+	private static __gshared UTGFxTweenableMoviePlayer mDefaultProperties;
+	@property final static UTGFxTweenableMoviePlayer DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTGFxTweenableMoviePlayer)("UTGFxTweenableMoviePlayer UTGame.Default__UTGFxTweenableMoviePlayer")); }
 	static struct Functions
 	{
 		private static __gshared

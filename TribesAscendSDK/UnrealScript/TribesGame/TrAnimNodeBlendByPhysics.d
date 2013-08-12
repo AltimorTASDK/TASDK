@@ -10,6 +10,8 @@ extern(C++) interface TrAnimNodeBlendByPhysics : TrAnimNodeBlendList
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrAnimNodeBlendByPhysics")); }
+	private static __gshared TrAnimNodeBlendByPhysics mDefaultProperties;
+	@property final static TrAnimNodeBlendByPhysics DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(TrAnimNodeBlendByPhysics)("TrAnimNodeBlendByPhysics TribesGame.Default__TrAnimNodeBlendByPhysics")); }
 	struct ChildrenBlendInfo
 	{
 		private ubyte __buffer__[16];

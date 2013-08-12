@@ -9,6 +9,8 @@ extern(C++) interface UTActorFactoryAI : ActorFactoryAI
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTActorFactoryAI")); }
+	private static __gshared UTActorFactoryAI mDefaultProperties;
+	@property final static UTActorFactoryAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTActorFactoryAI)("UTActorFactoryAI UTGame.Default__UTActorFactoryAI")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mPostCreateActor;

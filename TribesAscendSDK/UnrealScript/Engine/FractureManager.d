@@ -12,6 +12,8 @@ extern(C++) interface FractureManager : Actor
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.FractureManager")); }
+	private static __gshared FractureManager mDefaultProperties;
+	@property final static FractureManager DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(FractureManager)("FractureManager Engine.Default__FractureManager")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -8,6 +8,8 @@ extern(C++) interface UTSeqCond_IsConsole : SequenceCondition
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTSeqCond_IsConsole")); }
+	private static __gshared UTSeqCond_IsConsole mDefaultProperties;
+	@property final static UTSeqCond_IsConsole DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTSeqCond_IsConsole)("UTSeqCond_IsConsole UTGame.Default__UTSeqCond_IsConsole")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mActivated;

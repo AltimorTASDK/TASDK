@@ -8,6 +8,8 @@ extern(C++) interface ActorFactoryAI : ActorFactory
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.ActorFactoryAI")); }
+	private static __gshared ActorFactoryAI mDefaultProperties;
+	@property final static ActorFactoryAI DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(ActorFactoryAI)("ActorFactoryAI Engine.Default__ActorFactoryAI")); }
 	@property final
 	{
 		auto ref

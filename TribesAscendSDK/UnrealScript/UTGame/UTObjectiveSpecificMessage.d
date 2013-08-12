@@ -13,6 +13,8 @@ extern(C++) interface UTObjectiveSpecificMessage : UTLocalMessage
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class UTGame.UTObjectiveSpecificMessage")); }
+	private static __gshared UTObjectiveSpecificMessage mDefaultProperties;
+	@property final static UTObjectiveSpecificMessage DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(UTObjectiveSpecificMessage)("UTObjectiveSpecificMessage UTGame.Default__UTObjectiveSpecificMessage")); }
 	static struct Functions
 	{
 		private static __gshared

@@ -10,6 +10,8 @@ extern(C++) interface SceneCapturePortalComponent : SceneCaptureComponent
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.SceneCapturePortalComponent")); }
+	private static __gshared SceneCapturePortalComponent mDefaultProperties;
+	@property final static SceneCapturePortalComponent DefaultProperties() { return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(SceneCapturePortalComponent)("SceneCapturePortalComponent Engine.Default__SceneCapturePortalComponent")); }
 	static struct Functions
 	{
 		private static __gshared ScriptFunction mSetCaptureParameters;
