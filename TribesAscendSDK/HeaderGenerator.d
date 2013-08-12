@@ -883,7 +883,7 @@ final class StructDescriptor : NestableContainer
 
 		if (Functions.length == 0)
 			wtr.Write("final ");
-		wtr.WriteLine("static @property ScriptStruct StaticClass() { return ScriptObject.Find!(ScriptStruct)(\"%s\"); }", InnerClass.GetFullName());
+		wtr.WriteLine("static @property ScriptStruct StaticClass() { return ScriptObject.Find!(ScriptStruct)(\"%s\"); }", InnerStruct.GetFullName());
 		
 		wtr.Indent--;
 		wtr.WriteLine("}");
