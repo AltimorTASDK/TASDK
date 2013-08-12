@@ -819,10 +819,9 @@ final class ClassDescriptor : NestableContainer
 			//wtr.WriteLine("// ERROR: Factories are not generatable!");
 			return;
 		}
-		else if (InnerClass.GetName() == "Default__Class")
+		else if (InnerClass.ObjectFlags.HasFlag(ScriptObjectFlags.ClassDefaultObject))
 		{
-			// Don't emit the default class.
-			// TODO: Output something useful here.
+			// Don't emit default objects.
 			return;
 		}
 		char[] headerNameBuf = cast(char[])DependencyManager.GetImportName(InnerClass);
