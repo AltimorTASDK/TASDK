@@ -36,137 +36,49 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ArrayProperty.d">
-      <LastGenOutput>obj\Debug\ArrayProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="BoolProperty.d">
-      <LastGenOutput>obj\Debug\BoolProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ByteProperty.d">
-      <LastGenOutput>obj\Debug\ByteProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Class.d">
-      <LastGenOutput>obj\Debug\Class.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ClassProperty.d">
-      <LastGenOutput>obj\Debug\ClassProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Commandlet.d">
-      <LastGenOutput>obj\Debug\Commandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Component.d">
-      <LastGenOutput>obj\Debug\Component.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ComponentProperty.d">
-      <LastGenOutput>obj\Debug\ComponentProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Const.d">
-      <LastGenOutput>obj\Debug\Const.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DelegateProperty.d">
-      <LastGenOutput>obj\Debug\DelegateProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DistributionFloat.d">
-      <LastGenOutput>obj\Debug\DistributionFloat.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="DistributionVector.d">
-      <LastGenOutput>obj\Debug\DistributionVector.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Enum.d">
-      <LastGenOutput>obj\Debug\Enum.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Exporter.d">
-      <LastGenOutput>obj\Debug\Exporter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Factory.d">
-      <LastGenOutput>obj\Debug\Factory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Field.d">
-      <LastGenOutput>obj\Debug\Field.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="FloatProperty.d">
-      <LastGenOutput>obj\Debug\FloatProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Function.d">
-      <LastGenOutput>obj\Debug\Function.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="HelpCommandlet.d">
-      <LastGenOutput>obj\Debug\HelpCommandlet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InterfaceProperty.d">
-      <LastGenOutput>obj\Debug\InterfaceProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="IntProperty.d">
-      <LastGenOutput>obj\Debug\IntProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Linker.d">
-      <LastGenOutput>obj\Debug\Linker.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LinkerLoad.d">
-      <LastGenOutput>obj\Debug\LinkerLoad.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="LinkerSave.d">
-      <LastGenOutput>obj\Debug\LinkerSave.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MapProperty.d">
-      <LastGenOutput>obj\Debug\MapProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MetaData.d">
-      <LastGenOutput>obj\Debug\MetaData.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="NameProperty.d">
-      <LastGenOutput>obj\Debug\NameProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ObjectProperty.d">
-      <LastGenOutput>obj\Debug\ObjectProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ObjectRedirector.d">
-      <LastGenOutput>obj\Debug\ObjectRedirector.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ObjectSerializer.d">
-      <LastGenOutput>obj\Debug\ObjectSerializer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Package.d">
-      <LastGenOutput>obj\Debug\Package.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PackageMap.d">
-      <LastGenOutput>obj\Debug\PackageMap.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Property.d">
-      <LastGenOutput>obj\Debug\Property.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ScriptStruct.d">
-      <LastGenOutput>obj\Debug\ScriptStruct.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="State.d">
-      <LastGenOutput>obj\Debug\State.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StrProperty.d">
-      <LastGenOutput>obj\Debug\StrProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Struct.d">
-      <LastGenOutput>obj\Debug\Struct.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="StructProperty.d">
-      <LastGenOutput>obj\Debug\StructProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="Subsystem.d">
-      <LastGenOutput>obj\Debug\Subsystem.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="System.d">
-      <LastGenOutput>obj\Debug\System.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextBuffer.d">
-      <LastGenOutput>obj\Debug\TextBuffer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TextBufferFactory.d">
-      <LastGenOutput>obj\Debug\TextBufferFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UObject.d">
-      <LastGenOutput>obj\Debug\UObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UInterface.d">
-      <LastGenOutput>obj\Debug\UInterface.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="ArrayProperty.d" />
+    <Compile Include="BoolProperty.d" />
+    <Compile Include="ByteProperty.d" />
+    <Compile Include="Class.d" />
+    <Compile Include="ClassProperty.d" />
+    <Compile Include="Commandlet.d" />
+    <Compile Include="Component.d" />
+    <Compile Include="ComponentProperty.d" />
+    <Compile Include="Const.d" />
+    <Compile Include="DelegateProperty.d" />
+    <Compile Include="DistributionFloat.d" />
+    <Compile Include="DistributionVector.d" />
+    <Compile Include="Enum.d" />
+    <Compile Include="Exporter.d" />
+    <Compile Include="Factory.d" />
+    <Compile Include="Field.d" />
+    <Compile Include="FloatProperty.d" />
+    <Compile Include="Function.d" />
+    <Compile Include="HelpCommandlet.d" />
+    <Compile Include="InterfaceProperty.d" />
+    <Compile Include="IntProperty.d" />
+    <Compile Include="Linker.d" />
+    <Compile Include="LinkerLoad.d" />
+    <Compile Include="LinkerSave.d" />
+    <Compile Include="MapProperty.d" />
+    <Compile Include="MetaData.d" />
+    <Compile Include="NameProperty.d" />
+    <Compile Include="ObjectProperty.d" />
+    <Compile Include="ObjectRedirector.d" />
+    <Compile Include="ObjectSerializer.d" />
+    <Compile Include="Package.d" />
+    <Compile Include="PackageMap.d" />
+    <Compile Include="Property.d" />
+    <Compile Include="ScriptStruct.d" />
+    <Compile Include="State.d" />
+    <Compile Include="StrProperty.d" />
+    <Compile Include="Struct.d" />
+    <Compile Include="StructProperty.d" />
+    <Compile Include="Subsystem.d" />
+    <Compile Include="System.d" />
+    <Compile Include="TextBuffer.d" />
+    <Compile Include="TextBufferFactory.d" />
+    <Compile Include="UObject.d" />
+    <Compile Include="UInterface.d" />
   </ItemGroup>
 </Project>

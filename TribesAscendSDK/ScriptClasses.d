@@ -82,18 +82,18 @@ extern(C++) public interface ScriptObject // Total size: 0x3C
 public:
 	@property
 	{
-		final auto ref int ObjectInternalInteger() { return *cast(int*)(cast(size_t)cast(void*)this + 0x04); }				// 0x04 (0x04)
-		final auto ref QWord ObjectFlags() { return *cast(QWord*)(cast(size_t)cast(void*)this + 0x08); }					// 0x08 (0x08)
-		final auto ref ScriptObject HashNext() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x10); }			// 0x10 (0x04)
-		final auto ref ScriptObject HashOuterNext() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x14); }	// 0x14 (0x04)
-		final auto ref void* StateFrame() { return *cast(void**)(cast(size_t)cast(void*)this + 0x18); }						// 0x18 (0x04)
-		final auto ref ScriptObject Linker() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x1C); }			// 0x1C (0x04)
-		final auto ref void* LinkerIndex() { return *cast(void**)(cast(size_t)cast(void*)this + 0x20); }					// 0x20 (0x04)
-		final auto ref int NetIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 0x24); }							// 0x24 (0x04)
-		final auto ref ScriptObject Outer() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x28); }			// 0x28 (0x04)
-		final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 0x2C); }					// 0x2C (0x08)
-		final auto ref ScriptClass ObjectClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x34); }		// 0x34 (0x04)
-		final auto ref ScriptObject ObjectArchetype() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x38); }	// 0x38 (0x04)
+		final auto ref int ObjectInternalInteger() { return *cast(int*)(cast(size_t)cast(void*)this + 0x04); }										// 0x04 (0x04)
+		final auto ref Flags!(ScriptObjectFlags) ObjectFlags() { return *cast(Flags!(ScriptObjectFlags)*)(cast(size_t)cast(void*)this + 0x08); }	// 0x08 (0x08)
+		final auto ref ScriptObject HashNext() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x10); }									// 0x10 (0x04)
+		final auto ref ScriptObject HashOuterNext() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x14); }							// 0x14 (0x04)
+		final auto ref void* StateFrame() { return *cast(void**)(cast(size_t)cast(void*)this + 0x18); }												// 0x18 (0x04)
+		final auto ref ScriptObject Linker() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x1C); }									// 0x1C (0x04)
+		final auto ref void* LinkerIndex() { return *cast(void**)(cast(size_t)cast(void*)this + 0x20); }											// 0x20 (0x04)
+		final auto ref int NetIndex() { return *cast(int*)(cast(size_t)cast(void*)this + 0x24); }													// 0x24 (0x04)
+		final auto ref ScriptObject Outer() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x28); }									// 0x28 (0x04)
+		final auto ref ScriptName Name() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 0x2C); }											// 0x2C (0x08)
+		final auto ref ScriptClass ObjectClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x34); }								// 0x34 (0x04)
+		final auto ref ScriptObject ObjectArchetype() { return *cast(ScriptObject*)(cast(size_t)cast(void*)this + 0x38); }							// 0x38 (0x04)
 	}
 
 	private static ScriptArray!(ScriptObject)* mObjectArray;
@@ -232,6 +232,261 @@ private:
 	void Vfunc65();
 public:
 	void ProcessEvent(ScriptFunction func, void* params, void* result);
+}
+
+public enum ScriptObjectFlags : ulong
+{
+	// Unused 					= 1UL <<  0,
+	/**
+	 * In a singular function.
+	 */
+	InSingularFunction			= 1UL <<  1,
+	/**
+	 * Object did a state change.
+	 */
+	StateChanged				= 1UL <<  2,
+	/**
+	 * For debugging PostLoad calls.
+	 */
+	DebugPostLoad				= 1UL <<  3,
+	/**
+	 * For debugging Serialize calls.
+	 */
+	DebugSerialize				= 1UL <<  4,
+	/**
+	 * For debugging FinishDestroy calls.
+	 */
+	DebugFinishDestroyed		= 1UL <<  5,
+	/**
+	 * Object is selected in one of the editors browser windows.
+	 */
+	EditorSelected				= 1UL <<  6,
+	/**
+	 * This component's template was deleted, so should not be used.
+	 */
+	ZombieComponent				= 1UL <<  7,
+	/**
+	 * Property is protected, and may only be accessed from its owner class or subclasses.
+	 */
+	Protected					= 1UL <<  8,
+	/**
+	 * This object is its class's default object.
+	 */
+	ClassDefaultObject			= 1UL <<  9,
+	/**
+	 * This object is a template for another object - treat it like a class default object.
+	 */
+	ArchetypeObject				= 1UL << 10,
+	/**
+	 * Forces this object to be put into the export table when saving a package regardless of outer.
+	 */
+	ForceExport					= 1UL << 11,
+	/**
+	 * Set if reference token stream has already been assembled.
+	 */
+	TokenStreamAssembled		= 1UL << 12,
+	/**
+	 * Object's size no longer matches the size of its C++ class. (only used during make, for native classes whose properties have changed)
+	 */
+	MisalignedObject			= 1UL << 13,
+	/**
+	 * Object will not be garbage collected, even if unreferenced.
+	 */
+	RootSet						= 1UL << 14,
+	/**
+	 * BeginDestroy has been called on the object.
+	 */
+	BeginDestroyed				= 1UL << 15,
+	/**
+	 * FinishDestroy has been called on the object.
+	 */
+	FinishDestroyed				= 1UL << 16,
+	/**
+	 * Whether object is rooted as being part of the root set. (garbage collection)
+	 */
+	DebugBeginDestroyed			= 1UL << 17,
+	/**
+	 * Marked by content cooker.
+	 */
+	MarkedByCooker				= 1UL << 18,
+	/**
+	 * Whether resource object is localized.
+	 */
+	LocalizedResource			= 1UL << 19,
+	/**
+	 * Whether InitProperties has been called on this object.
+	 */
+	InitializedProperties		= 1UL << 20,
+	/**
+	 * Indicates that this struct will receive additional member properties from the script patcher.
+	 */
+	PendingFieldPatches			= 1UL << 21,
+	/**
+	 * This object has been pointed to by a cross-level reference, and therefore requires additional cleanup upon deletion.
+	 */
+	IsCrossLevelReferenced		= 1UL << 22,
+	// Unused 					= 1UL << 23,
+	// Unused 					= 1UL << 24,
+	// Unused 					= 1UL << 25,
+	// Unused 					= 1UL << 26,
+	// Unused 					= 1UL << 27,
+	// Unused 					= 1UL << 28,
+	// Unused 					= 1UL << 29,
+	// Unused 					= 1UL << 30,
+	/**
+	 * Object has been saved via SavePackage. (Temporary)
+	 */
+	Saved						= 1UL << 31,
+	/**
+	 * Object is transactional.
+	 */
+	Transactional				= 1UL << 32,
+	/**
+	 * Object is not reachable on the object graph.
+	 */
+	Unreachable					= 1UL << 33,
+	/**
+	 * Object is visible outside its package.
+	 */
+	Public						= 1UL << 34,
+	/**
+	 * Temporary import tag in load/save.
+	 */
+	TagImport					= 1UL << 35,
+	/**
+	 * Temporary export tag in load/save.
+	 */
+	TagExport					= 1UL << 36,
+	/**
+	 * Object marked as obsolete and should be replaced.
+	 */
+	Obsolete					= 1UL << 37,
+	/**
+	 * Check during garbage collection.
+	 */
+	TagGarbage					= 1UL << 38,
+	/**
+	 * Object is being disregard for GC as its static and itself and all references are always loaded.
+	 */
+	DisregardForGC				= 1UL << 39,
+	/**
+	 * Object is localized by instance name, not by class.
+	 */
+	LocalizedPerObject			= 1UL << 40,
+	/**
+	 * During load, indicates object needs loading.
+	 */
+	NeedLoad					= 1UL << 41,
+	/**
+	 * Object is being asynchronously loaded.
+	 */
+	AsyncLoading				= 1UL << 42,
+	/**
+	 * During load, indicates that the object still needs to instance subobjects and fixup serialized component references.
+	 */
+	NeedPostLoadSubObjects		= 1UL << 43,
+	/**
+	 * Suppress log name.
+	 */
+	Suppress					= 1UL << 44,
+	/**
+	 * Within an EndState call.
+	 */
+	InEndState					= 1UL << 45,
+	/**
+	 * Don't save object.
+	 */
+	Transient					= 1UL << 46,
+	/**
+	 * Whether the object has already been cooked.
+	 */
+	Cooked						= 1UL << 47,
+	/**
+	 * In-file load for the game client.
+	 */
+	LoadForClient				= 1UL << 48,
+	/**
+	 * In-file load for the game server.
+	 */
+	LoadForServer				= 1UL << 49,
+	/**
+	 * In-file load for the editor.
+	 */
+	LoadForEditor				= 1UL << 50,
+	/**
+	 * Keep object around for editing even if unreferenced.
+	 */
+	Standalone					= 1UL << 51,
+	/**
+	 * Don't load this object for the game client.
+	 */
+	NotForClient				= 1UL << 52,
+	/**
+	 * Don't load this object for the game server.
+	 */
+	NotForServer				= 1UL << 53,
+	/**
+	 * Don't load this object for the editor.
+	 */
+	NotForEditor				= 1UL << 54,
+	// Unused 					= 1UL << 55,
+	/**
+	 * Object needs to be PostLoad'ed.
+	 */
+	NeedPostLoad				= 1UL << 56,
+	/**
+	 * Has an execution stack.
+	 */
+	HasStack					= 1UL << 57,
+	/**
+	 * Native. (ScriptClass only)
+	 */
+	Native						= 1UL << 58,
+	/**
+	 * Marked. (for debugging)
+	 */
+	Marked						= 1UL << 59,
+	/**
+	 * ShutdownAfterError called.
+	 */
+	ErrorShutdown				= 1UL << 60,
+	/**
+	 * Object is pending destruction. (invalid for gameplay but still a valid object)
+	 */
+	PendingKill					= 1UL << 61,
+	// Unused 					= 1UL << 62,
+	// Unused					= 1UL << 63,
+
+	/**
+	 * All context flags.
+	 */
+	ContextFlags = NotForClient | NotForServer | NotForEditor,
+	/**
+	 * Flags affecting loading.
+	 */
+	LoadContextFlags = LoadForClient | LoadForServer | LoadForEditor,
+	/**
+	 * Flags to load from Unrealfiles.
+	 */
+	LoadedFlags = ContextFlags | LoadContextFlags | Public | Standalone | Native | Obsolete | Protected | Transactional | HasStack | LocalizedPerObject | ClassDefaultObject | ArchetypeObject | LocalizedResource,
+	/**
+	 * Flags to persist across loads.
+	 */
+	KeptFlags = Native | Marked | LocalizedPerObject | MisalignedObject | DisregardForGC | RootSet | LocalizedResource,
+	/**
+	 * Script-accessibility flags.
+	 */
+	ScriptMask = Transactional | Public | Transient | NotForClient | NotForServer | NotForEditor | Standalone,
+	/**
+	 * Undo/redo will store/restore these.
+	 */
+	UndoRedoMask = PendingKill,
+	/**
+	 * Sub-objects will inherit these flags from their SuperObject.
+	 */
+	FlagsPropagatedToSubObjects = Public | ArchetypeObject | Transactional,
+
+	AllFlags = 0xFFFFFFFFFFFFFFFF,
 }
 
 extern(C++) public interface ScriptField : ScriptObject // Total size: 0x40
