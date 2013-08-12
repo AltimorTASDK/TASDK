@@ -717,16 +717,26 @@ abstract class NestableContainer : Descriptor
 
 
 		// Nested Constants
-		if (NestedConstants.length > 1)
+		if (NestedConstants.length)
 		{
-			wtr.WriteLine("enum");
+			wtr.WriteLine("static struct Constants");
 			wtr.WriteLine("{");
 			wtr.Indent++;
-		}
-		foreach (nc; NestedConstants)
-			nc.Write(wtr, NestedConstants.length <= 1);
-		if (NestedConstants.length > 1)
-		{
+
+			if (NestedConstants.length > 1)
+			{
+				wtr.WriteLine("enum");
+				wtr.WriteLine("{");
+				wtr.Indent++;
+			}
+			foreach (nc; NestedConstants)
+				nc.Write(wtr, NestedConstants.length <= 1);
+			if (NestedConstants.length > 1)
+			{
+				wtr.Indent--;
+				wtr.WriteLine("}");
+			}
+
 			wtr.Indent--;
 			wtr.WriteLine("}");
 		}

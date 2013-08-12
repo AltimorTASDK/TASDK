@@ -1,13 +1,13 @@
 module TestMod;
 
-import UnrealScript.TribesGame.TrPlayerController;
-import UnrealScript.TribesGame.TrEquipInterface;
+//private import UnrealScript.TribesGame.TrPlayerController;
+//private import UnrealScript.TribesGame.TrEquipInterface;
 
 
-void SomeMethod(TrPlayerController pThis)
-{
+//void SomeMethod(TrPlayerController pThis)
+//{
 
-}
+//}
 
 void ModInit()
 {
