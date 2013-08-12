@@ -106,35 +106,35 @@ public:
 	{
 		mObjectArray = arr;
 
-		for (int i = 0; i < ObjectArray.Count; i++)
-		{
-			ScriptObject obj = (*ObjectArray)[i];
-			switch (obj.ObjectClass.GetName())
-			{
-				case "Class":
-					mClassLookup[obj.GetFullName()] = cast(ScriptClass)obj;
-					break;
-				case "Function":
-					mFunctionLookup[obj.GetFullName()] = cast(ScriptFunction)obj;
-					break;
-				case "ScriptStruct":
-					mStructLookup[obj.GetFullName()] = cast(ScriptStruct)obj;
-					break;
-				default:
-					break;
-			}
-		}
+		//for (int i = 0; i < ObjectArray.Count; i++)
+		//{
+		//	ScriptObject obj = (*ObjectArray)[i];
+		//	switch (obj.ObjectClass.GetName())
+		//	{
+		//		case "Class":
+		//			mClassLookup[obj.GetFullName()] = cast(ScriptClass)obj;
+		//			break;
+		//		case "Function":
+		//			mFunctionLookup[obj.GetFullName()] = cast(ScriptFunction)obj;
+		//			break;
+		//		case "ScriptStruct":
+		//			mStructLookup[obj.GetFullName()] = cast(ScriptStruct)obj;
+		//			break;
+		//		default:
+		//			break;
+		//	}
+		//}
 	}
 
 	final static T Find(T)(string name)
 	{
-		static if (is(T == ScriptClass))
-			return mClassLookup.get(name, null);
-		else static if (is(T == ScriptFunction))
-			return mFunctionLookup.get(name, null);
-		else static if (is(T == ScriptStruct))
-			return mStructLookup.get(name, null);
-		else
+		//static if (is(T == ScriptClass))
+		//	return mClassLookup.get(name, null);
+		//else static if (is(T == ScriptFunction))
+		//	return mFunctionLookup.get(name, null);
+		//else static if (is(T == ScriptStruct))
+		//	return mStructLookup.get(name, null);
+		//else
 		{
 			for(int i = 0; i < ObjectArray.Count; i++)
 			{
