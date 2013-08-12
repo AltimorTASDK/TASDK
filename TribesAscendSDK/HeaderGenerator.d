@@ -162,7 +162,6 @@ string EscapeName(string name)
 }
 final class DependencyManager
 {
-	bool NeedsScriptClasses;
 	ScriptObject[string] RequiredImports;
 	ScriptObject ParentType;
 
@@ -197,10 +196,8 @@ final class DependencyManager
 			case "NameProperty":
 			case "StrProperty":
 			case "StringRefProperty":
-				NeedsScriptClasses = true;
 				break;
 			case "ArrayProperty":
-				NeedsScriptClasses = true;
 				ProcessProperty((cast(ScriptArrayProperty)prop).InnerProperty);
 				break;
 			default:
@@ -213,10 +210,8 @@ final class DependencyManager
 		if (type == ParentType)
 			return;
 		if (Descriptor.IsManaullyDefinedType(type.GetName()))
-		{
-			NeedsScriptClasses = true;
 			return;
-		}
+
 		if (type.Outer.Outer)
 		{
 			// Ensure that we only require the class-level
@@ -229,8 +224,7 @@ final class DependencyManager
 
 	void Write(IndentedStreamWriter wtr)
 	{
-		if (NeedsScriptClasses)
-			wtr.WriteLine("import ScriptClasses;");
+		wtr.WriteLine("import ScriptClasses;");
 		// TODO: Sort these before writing them out.
 		foreach (ri; RequiredImports.byValue())
 			wtr.WriteLine("import %s;", GetImportName(ri));
@@ -572,15 +566,13 @@ final class FunctionDescriptor : Descriptor
 
 	override void RequireDependencies(DependencyManager mgr)
 	{
-		mgr.NeedsScriptClasses = true;
 		if (ReturnProperty)
 			mgr.ProcessProperty(ReturnProperty);
 		foreach (arg; Arguments)
 			arg.RequireDependencies(mgr);
 	}
 
-	override void Write(IndentedStreamWriter wtr) { assert(0, "This method is not implemented!"); }
-	void Write(IndentedStreamWriter wtr, bool alone)
+	override void Write(IndentedStreamWriter wtr)
 	{
 		// Check to see if the function name is the same as a valid type.
 		if (TypeIdentifiersTable.get(InnerFunction.GetName(), null))
@@ -589,8 +581,10 @@ final class FunctionDescriptor : Descriptor
 			return;
 		}
 
-		if (alone)
-			wtr.Write("final ");
+		// TODO: Generate this as a nested struct, so that it doesn't pollute the intellisense to horribly. (1 entry rather than 1 per function)
+		wtr.WriteLine("private static __gshared ScriptFunction mFunction_%s;", InnerFunction.GetName());
+		wtr.WriteLine("public @property final static Function_%s() { return mFunction_%s || (mFunction_%s = ScriptObject.Find!(ScriptFunction)(\"%s\")); }", InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetName(), InnerFunction.GetFullName());
+
 		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
 			wtr.Write("static ");
 		if (ReturnProperty)
@@ -623,7 +617,7 @@ final class FunctionDescriptor : Descriptor
 			wtr.Write("StaticClass");
 		else
 			wtr.Write("(cast(ScriptObject)this)");
-		wtr.Write(".ProcessEvent(ScriptObject.Find!(ScriptFunction)(\"%s\"), ", InnerFunction.GetFullName());
+		wtr.Write(".ProcessEvent(Function_%s, ", InnerFunction.GetName());
 		if (InnerFunction.ParamsSize > 0)
 			wtr.Write("params.ptr");
 		else
@@ -659,7 +653,7 @@ final class FunctionDescriptor : Descriptor
 
 abstract class NestableContainer : Descriptor
 {
-	@property final bool HasChildren() { return NestedConstants.length + NestedEnums.length + NestedStructs.length + Properties.length + BoolProperties.length + Functions.length != 0; }
+	//@property final bool HasChildren() { return NestedConstants.length + NestedEnums.length + NestedStructs.length + Properties.length + BoolProperties.length + Functions.length != 0; }
 	ConstantDescriptor[] NestedConstants;
 	EnumDescriptor[] NestedEnums;
 	StructDescriptor[] NestedStructs;
@@ -739,7 +733,7 @@ abstract class NestableContainer : Descriptor
 			wtr.Indent++;
 		}
 		foreach (f; Functions)
-			f.Write(wtr, Functions.length <= 1);
+			f.Write(wtr);
 	}
 }
 
@@ -797,8 +791,7 @@ final class ClassDescriptor : NestableContainer
 			wtr.Write(" : %s", EscapeName(InnerClass.Super.GetName()));
 		wtr.WriteLine();
 		wtr.WriteLine("{");
-		if (HasChildren)
-			wtr.WriteLine("public extern(D):");
+		wtr.WriteLine("public extern(D):");
 		wtr.Indent++;
 		
 		WriteChildren(wtr);
