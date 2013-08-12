@@ -591,9 +591,8 @@ final class FunctionDescriptor : Descriptor
 
 		if (alone)
 			wtr.Write("final ");
-		// TODO: Add a member to access the class object, and use that as the this object for static functions.
-//		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
-//			wtr.Write("static ");
+		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
+			wtr.Write("static ");
 		if (ReturnProperty)
 			wtr.Write("%s", GetTypeName(ReturnProperty));
 		else
@@ -620,7 +619,11 @@ final class FunctionDescriptor : Descriptor
 		foreach (arg; Arguments)
 			arg.WriteLoadToBuffer(wtr, "params");
 
-		wtr.Write("(cast(ScriptObject)this).ProcessEvent(ScriptObject.Find!(ScriptFunction)(\"%s\"), ", InnerFunction.GetFullName());
+		if (InnerFunction.FunctionFlags.HasFlag(ScriptFunctionFlags.Static))
+			wtr.Write("StaticClass");
+		else
+			wtr.Write("(cast(ScriptObject)this)");
+		wtr.Write(".ProcessEvent(ScriptObject.Find!(ScriptFunction)(\"%s\"), ", InnerFunction.GetFullName());
 		if (InnerFunction.ParamsSize > 0)
 			wtr.Write("params.ptr");
 		else
@@ -729,7 +732,7 @@ abstract class NestableContainer : Descriptor
 		}
 
 		// Functions
-		if (Functions.length > 1)
+		if (Functions.length > 0) // The StaticClass property comes at the very end of the container.
 		{
 			wtr.Indent--;
 			wtr.WriteLine("final:");
@@ -799,6 +802,10 @@ final class ClassDescriptor : NestableContainer
 		wtr.Indent++;
 		
 		WriteChildren(wtr);
+
+		if (Functions.length == 0)
+			wtr.Write("final ");
+		wtr.WriteLine("static @property ScriptClass StaticClass() { return ScriptObject.Find!(ScriptClass)(\"%s\"); }", InnerClass.GetFullName());
 
 		wtr.Indent--;
 		wtr.WriteLine("}");
@@ -873,6 +880,10 @@ final class StructDescriptor : NestableContainer
 		wtr.Indent++;
 
 		WriteBody(wtr);
+
+		if (Functions.length == 0)
+			wtr.Write("final ");
+		wtr.WriteLine("static @property ScriptStruct StaticClass() { return ScriptObject.Find!(ScriptStruct)(\"%s\"); }", InnerClass.GetFullName());
 		
 		wtr.Indent--;
 		wtr.WriteLine("}");
