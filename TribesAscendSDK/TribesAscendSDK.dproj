@@ -24,6 +24,24 @@
       <Libs>
         <Lib>Kernel32.lib</Lib>
         <Lib>../lib/psapi.lib</Lib>
+        <Lib>lib/Core.lib</Lib>
+        <Lib>lib/EngineA.lib</Lib>
+        <Lib>lib/EngineB.lib</Lib>
+        <Lib>lib/EngineC.lib</Lib>
+        <Lib>lib/GameFramework.lib</Lib>
+        <Lib>lib/GFxUI.lib</Lib>
+        <Lib>lib/GFxUIEditor.lib</Lib>
+        <Lib>lib/IpDrv.lib</Lib>
+        <Lib>lib/OnlineSubsystemMcts.lib</Lib>
+        <Lib>lib/PlatformCommon.lib</Lib>
+        <Lib>lib/TribesGameA.lib</Lib>
+        <Lib>lib/TribesGameB.lib</Lib>
+        <Lib>lib/TribesGameC.lib</Lib>
+        <Lib>lib/UDKBase.lib</Lib>
+        <Lib>lib/UnrealEd.lib</Lib>
+        <Lib>lib/UTGame.lib</Lib>
+        <Lib>lib/WinDrv.lib</Lib>
+        <Lib>lib/XAudio2.lib</Lib>
       </Libs>
     </Libs>
     <ExtraCompilerArguments>-gs -property</ExtraCompilerArguments>
@@ -60,6 +78,7 @@
     </Compile>
     <Compile Include="UnrealScript\Helpers.d" />
     <Compile Include="HeaderGenerator.d" />
+    <Compile Include="TestMod.d" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UnrealScript\" />

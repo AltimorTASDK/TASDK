@@ -36,6 +36,7 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AccessControl.d" />
     <Compile Include="Actor.d" />
     <Compile Include="ActorChannel.d" />
     <Compile Include="ActorComponent.d" />
