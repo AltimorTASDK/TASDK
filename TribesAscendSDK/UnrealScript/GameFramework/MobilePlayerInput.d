@@ -73,7 +73,10 @@ public extern(D):
 			ScriptFunction PreClientTravel() { return mPreClientTravel ? mPreClientTravel : (mPreClientTravel = ScriptObject.Find!(ScriptFunction)("Function GameFramework.MobilePlayerInput.PreClientTravel")); }
 		}
 	}
-	enum NumTouchDataEntries = 5;
+	static struct Constants
+	{
+		enum NumTouchDataEntries = 5;
+	}
 	enum EUIOrientation : ubyte
 	{
 		UI_Unknown = 0,

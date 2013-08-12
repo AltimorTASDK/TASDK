@@ -28,7 +28,10 @@ public extern(D):
 			ScriptFunction StartNextPath() { return mStartNextPath ? mStartNextPath : (mStartNextPath = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTWillowWhisp.StartNextPath")); }
 		}
 	}
-	enum MAX_WAYPOINTS = 15;
+	static struct Constants
+	{
+		enum MAX_WAYPOINTS = 15;
+	}
 	@property final auto ref
 	{
 		int Position() { return *cast(int*)(cast(size_t)cast(void*)this + 680); }

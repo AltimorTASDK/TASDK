@@ -435,7 +435,10 @@ public extern(D):
 			ScriptFunction ShouldLeaveForCombat() { return mShouldLeaveForCombat ? mShouldLeaveForCombat : (mShouldLeaveForCombat = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTVehicle.ShouldLeaveForCombat")); }
 		}
 	}
-	enum UTVEHICLE_UNSET_TEAM = 255;
+	static struct Constants
+	{
+		enum UTVEHICLE_UNSET_TEAM = 255;
+	}
 	enum EAIVehiclePurpose : ubyte
 	{
 		AIP_Offensive = 0,

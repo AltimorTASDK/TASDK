@@ -39,14 +39,17 @@ public extern(D):
 			ScriptFunction TakeFocus() { return mTakeFocus ? mTakeFocus : (mTakeFocus = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PlayNow.TakeFocus")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		QUI_CTF = 10350,
-		QUI_TeamRabbit = 10351,
-		QUI_Arena = 10352,
-		QUI_Rabbit = 10353,
-		QUI_Special = 10354,
-		QUI_CaptureAndHold = 10377,
+		enum
+		{
+			QUI_CTF = 10350,
+			QUI_TeamRabbit = 10351,
+			QUI_Arena = 10352,
+			QUI_Rabbit = 10353,
+			QUI_Special = 10354,
+			QUI_CaptureAndHold = 10377,
+		}
 	}
 	@property final auto ref
 	{

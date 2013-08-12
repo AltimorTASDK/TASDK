@@ -29,7 +29,10 @@ public extern(D):
 			ScriptFunction GetStringHeightAndWidth() { return mGetStringHeightAndWidth ? mGetStringHeightAndWidth : (mGetStringHeightAndWidth = ScriptObject.Find!(ScriptFunction)("Function Engine.Font.GetStringHeightAndWidth")); }
 		}
 	}
-	enum NULLCHARACTER = 127;
+	static struct Constants
+	{
+		enum NULLCHARACTER = 127;
+	}
 	struct FontCharacter
 	{
 		private ubyte __buffer__[24];

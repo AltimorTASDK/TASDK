@@ -28,7 +28,10 @@ public extern(D):
 			ScriptFunction IsBlockedFor() { return mIsBlockedFor ? mIsBlockedFor : (mIsBlockedFor = ScriptObject.Find!(ScriptFunction)("Function Engine.ReachSpec.IsBlockedFor")); }
 		}
 	}
-	enum BLOCKEDPATHCOST = 10000000;
+	static struct Constants
+	{
+		enum BLOCKEDPATHCOST = 10000000;
+	}
 	@property final
 	{
 		auto ref

@@ -42,7 +42,10 @@ public extern(D):
 			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_View.WidgetInitialized")); }
 		}
 	}
-	enum FakePlayerIndex = 0;
+	static struct Constants
+	{
+		enum FakePlayerIndex = 0;
+	}
 	@property final auto ref
 	{
 		ScriptName ViewName() { return *cast(ScriptName*)(cast(size_t)cast(void*)this + 128); }

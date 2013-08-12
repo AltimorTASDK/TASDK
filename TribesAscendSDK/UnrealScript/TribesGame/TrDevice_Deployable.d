@@ -96,10 +96,13 @@ public extern(D):
 			ScriptFunction HasAmmo() { return mHasAmmo ? mHasAmmo : (mHasAmmo = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDevice_Deployable.HasAmmo")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		DEPLOYMODE_GROUND_DELTA_CHECK_DIST = 60.0f,
-		DEPLOYMODE_MINIMUM_RADIUS_CHECK_DIST = 30.0f,
+		enum
+		{
+			DEPLOYMODE_GROUND_DELTA_CHECK_DIST = 60.0f,
+			DEPLOYMODE_MINIMUM_RADIUS_CHECK_DIST = 30.0f,
+		}
 	}
 	@property final
 	{

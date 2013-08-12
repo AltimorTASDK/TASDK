@@ -55,7 +55,10 @@ public extern(D):
 			ScriptFunction UpdateCompleteIndices() { return mUpdateCompleteIndices ? mUpdateCompleteIndices : (mUpdateCompleteIndices = ScriptObject.Find!(ScriptFunction)("Function Engine.Console.UpdateCompleteIndices")); }
 		}
 	}
-	enum MaxHistory = 16;
+	static struct Constants
+	{
+		enum MaxHistory = 16;
+	}
 	struct scrollbackData
 	{
 		private ubyte __buffer__[16];

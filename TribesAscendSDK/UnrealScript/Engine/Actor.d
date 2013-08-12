@@ -550,20 +550,23 @@ public extern(D):
 			ScriptFunction GetSpectatorHealthInfo() { return mGetSpectatorHealthInfo ? mGetSpectatorHealthInfo : (mGetSpectatorHealthInfo = ScriptObject.Find!(ScriptFunction)("Function Engine.Actor.GetSpectatorHealthInfo")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		MINFLOORZ = 0.7,
-		ACTORMAXSTEPHEIGHT = 35.0,
-		RBSTATE_LINVELSCALE = 10.0,
-		RBSTATE_ANGVELSCALE = 1000.0,
-		RB_None = 0x00,
-		RB_NeedsUpdate = 0x01,
-		RB_Sleeping = 0x02,
-		REP_RBLOCATION_ERROR_TOLERANCE_SQ = 16.0f,
-		TRACEFLAG_Blocking = 8,
-		TRACEFLAG_SkipMovers = 4,
-		TRACEFLAG_PhysicsVolumes = 2,
-		TRACEFLAG_Bullet = 1,
+		enum
+		{
+			MINFLOORZ = 0.7,
+			ACTORMAXSTEPHEIGHT = 35.0,
+			RBSTATE_LINVELSCALE = 10.0,
+			RBSTATE_ANGVELSCALE = 1000.0,
+			RB_None = 0x00,
+			RB_NeedsUpdate = 0x01,
+			RB_Sleeping = 0x02,
+			REP_RBLOCATION_ERROR_TOLERANCE_SQ = 16.0f,
+			TRACEFLAG_Blocking = 8,
+			TRACEFLAG_SkipMovers = 4,
+			TRACEFLAG_PhysicsVolumes = 2,
+			TRACEFLAG_Bullet = 1,
+		}
 	}
 	enum EPhysics : ubyte
 	{

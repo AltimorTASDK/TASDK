@@ -8,5 +8,8 @@ extern(C++) interface UIListElementCellProvider : UInterface
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class Engine.UIListElementCellProvider")); }
-	enum UnknownCellDataFieldName = "NAME_None";
+	static struct Constants
+	{
+		enum UnknownCellDataFieldName = "NAME_None";
+	}
 }

@@ -598,23 +598,26 @@ public extern(D):
 			ScriptFunction Not_PreBool() { return mNot_PreBool ? mNot_PreBool : (mNot_PreBool = ScriptObject.Find!(ScriptFunction)("Function Core.Object.Not_PreBool")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		InvAspectRatio16x9 = 0.56249,
-		InvAspectRatio5x4 = 0.8,
-		InvAspectRatio4x3 = 0.75,
-		AspectRatio16x9 = 1.77778,
-		AspectRatio5x4 = 1.25,
-		AspectRatio4x3 = 1.33333,
-		INDEX_NONE = -1,
-		UnrRotToDeg = 0.00549316540360483,
-		DegToUnrRot = 182.0444,
-		RadToUnrRot = 10430.3783504704527,
-		UnrRotToRad = 0.00009587379924285,
-		DegToRad = 0.017453292519943296,
-		RadToDeg = 57.295779513082321600,
-		Pi = 3.1415926535897932,
-		MaxInt = 0x7fffffff,
+		enum
+		{
+			InvAspectRatio16x9 = 0.56249,
+			InvAspectRatio5x4 = 0.8,
+			InvAspectRatio4x3 = 0.75,
+			AspectRatio16x9 = 1.77778,
+			AspectRatio5x4 = 1.25,
+			AspectRatio4x3 = 1.33333,
+			INDEX_NONE = -1,
+			UnrRotToDeg = 0.00549316540360483,
+			DegToUnrRot = 182.0444,
+			RadToUnrRot = 10430.3783504704527,
+			UnrRotToRad = 0.00009587379924285,
+			DegToRad = 0.017453292519943296,
+			RadToDeg = 57.295779513082321600,
+			Pi = 3.1415926535897932,
+			MaxInt = 0x7fffffff,
+		}
 	}
 	enum EDebugBreakType : ubyte
 	{

@@ -772,13 +772,16 @@ public extern(D):
 			ScriptFunction ReceivedGameClass() { return mReceivedGameClass ? mReceivedGameClass : (mReceivedGameClass = ScriptObject.Find!(ScriptFunction)("Function Engine.PlayerController.ReceivedGameClass")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		MAXCLIENTUPDATEINTERVAL = 0.25,
-		CLIENTADJUSTUPDATECOST = 180.0,
-		MAXVEHICLEPOSITIONERRORSQUARED = 900.0,
-		MAXNEARZEROVELOCITYSQUARED = 9.0,
-		MAXPOSITIONERRORSQUARED = 3.0,
+		enum
+		{
+			MAXCLIENTUPDATEINTERVAL = 0.25,
+			CLIENTADJUSTUPDATECOST = 180.0,
+			MAXVEHICLEPOSITIONERRORSQUARED = 900.0,
+			MAXNEARZEROVELOCITYSQUARED = 9.0,
+			MAXPOSITIONERRORSQUARED = 3.0,
+		}
 	}
 	enum EProgressMessageType : ubyte
 	{

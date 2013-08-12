@@ -37,12 +37,15 @@ public extern(D):
 			ScriptFunction OnStartGame_Confirm() { return mOnStartGame_Confirm ? mOnStartGame_Confirm : (mOnStartGame_Confirm = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_HostGame.OnStartGame_Confirm")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		SERVERTYPE_LAN = 0,
-		SERVERTYPE_UNRANKED = 1,
-		SERVERTYPE_RANKED = 2,
-		MAXIMUM_PLAYER_COUNT = 24,
+		enum
+		{
+			SERVERTYPE_LAN = 0,
+			SERVERTYPE_UNRANKED = 1,
+			SERVERTYPE_RANKED = 2,
+			MAXIMUM_PLAYER_COUNT = 24,
+		}
 	}
 final:
 	void OnViewActivated()

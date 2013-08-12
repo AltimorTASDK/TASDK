@@ -71,7 +71,10 @@ public extern(D):
 			ScriptFunction SendMatchOver() { return mSendMatchOver ? mSendMatchOver : (mSendMatchOver = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TrArena.SendMatchOver")); }
 		}
 	}
-	enum MAX_NUM_ARENA_PLAYERS_PER_TEAM = 8;
+	static struct Constants
+	{
+		enum MAX_NUM_ARENA_PLAYERS_PER_TEAM = 8;
+	}
 	@property final auto ref
 	{
 		int m_nGoalWonRounds() { return *cast(int*)(cast(size_t)cast(void*)this + 1468); }

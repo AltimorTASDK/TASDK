@@ -60,7 +60,10 @@ public extern(D):
 			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationPoint.GetDebugAbbrev")); }
 		}
 	}
-	enum INFINITE_PATH_COST = 10000000;
+	static struct Constants
+	{
+		enum INFINITE_PATH_COST = 10000000;
+	}
 	struct DebugNavCost
 	{
 		private ubyte __buffer__[16];

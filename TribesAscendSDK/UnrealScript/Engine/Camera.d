@@ -92,7 +92,10 @@ public extern(D):
 			ScriptFunction StopCameraAnim() { return mStopCameraAnim ? mStopCameraAnim : (mStopCameraAnim = ScriptObject.Find!(ScriptFunction)("Function Engine.Camera.StopCameraAnim")); }
 		}
 	}
-	enum MAX_ACTIVE_CAMERA_ANIMS = 8;
+	static struct Constants
+	{
+		enum MAX_ACTIVE_CAMERA_ANIMS = 8;
+	}
 	enum EViewTargetBlendFunction : ubyte
 	{
 		VTBlend_Linear = 0,

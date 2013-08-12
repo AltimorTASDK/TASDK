@@ -396,7 +396,10 @@ public extern(D):
 			ScriptFunction PostBigTeleport() { return mPostBigTeleport ? mPostBigTeleport : (mPostBigTeleport = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTPawn.PostBigTeleport")); }
 		}
 	}
-	enum MINTIMEBETWEENPAINSOUNDS = 0.35;
+	static struct Constants
+	{
+		enum MINTIMEBETWEENPAINSOUNDS = 0.35;
+	}
 	enum EWeapAnimType : ubyte
 	{
 		EWAT_Default = 0,

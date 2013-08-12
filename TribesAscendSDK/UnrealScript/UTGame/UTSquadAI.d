@@ -200,7 +200,10 @@ public extern(D):
 			ScriptFunction ModifyAggression() { return mModifyAggression ? mModifyAggression : (mModifyAggression = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTSquadAI.ModifyAggression")); }
 		}
 	}
-	enum NEAROBJECTIVEDIST = 2000.0;
+	static struct Constants
+	{
+		enum NEAROBJECTIVEDIST = 2000.0;
+	}
 	@property final
 	{
 		auto ref

@@ -26,7 +26,10 @@ public extern(D):
 			ScriptFunction CheckPriorityRefresh() { return mCheckPriorityRefresh ? mCheckPriorityRefresh : (mCheckPriorityRefresh = ScriptObject.Find!(ScriptFunction)("Function Engine.MatineeActor.CheckPriorityRefresh")); }
 		}
 	}
-	enum MAX_AIGROUP_NUMBER = 10;
+	static struct Constants
+	{
+		enum MAX_AIGROUP_NUMBER = 10;
+	}
 	@property final
 	{
 		auto ref

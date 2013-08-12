@@ -167,7 +167,10 @@ public extern(D):
 			ScriptFunction ClearPhysicsPools() { return mClearPhysicsPools ? mClearPhysicsPools : (mClearPhysicsPools = ScriptObject.Find!(ScriptFunction)("Function Engine.WorldInfo.ClearPhysicsPools")); }
 		}
 	}
-	enum MAX_INSTANCES_PER_CLASS = 5;
+	static struct Constants
+	{
+		enum MAX_INSTANCES_PER_CLASS = 5;
+	}
 	enum EHostMigrationProgress : ubyte
 	{
 		HostMigration_None = 0,

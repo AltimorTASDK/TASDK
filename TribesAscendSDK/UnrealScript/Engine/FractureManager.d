@@ -49,7 +49,10 @@ public extern(D):
 			ScriptFunction Tick() { return mTick ? mTick : (mTick = ScriptObject.Find!(ScriptFunction)("Function Engine.FractureManager.Tick")); }
 		}
 	}
-	enum FSM_DEFAULTRECYCLETIME = 0.2;
+	static struct Constants
+	{
+		enum FSM_DEFAULTRECYCLETIME = 0.2;
+	}
 	@property final
 	{
 		auto ref

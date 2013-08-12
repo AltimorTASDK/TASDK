@@ -24,7 +24,10 @@ public extern(D):
 			ScriptFunction GetFilename() { return mGetFilename ? mGetFilename : (mGetFilename = ScriptObject.Find!(ScriptFunction)("Function Engine.GameplayEvents.GetFilename")); }
 		}
 	}
-	enum HeaderFlags_NoEventStrings = 1;
+	static struct Constants
+	{
+		enum HeaderFlags_NoEventStrings = 1;
+	}
 	enum EGameStatGroups : ubyte
 	{
 		GSG_EngineStats = 0,

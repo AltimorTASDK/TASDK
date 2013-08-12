@@ -28,11 +28,14 @@ public extern(D):
 			ScriptFunction PopupComplete() { return mPopupComplete ? mPopupComplete : (mPopupComplete = ScriptObject.Find!(ScriptFunction)("Function TribesGame.GFxTrPage_PartyAction.PopupComplete")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		Action_AddFriend = 1,
-		Action_SendMessage = 2,
-		Action_KickMember = 3,
+		enum
+		{
+			Action_AddFriend = 1,
+			Action_SendMessage = 2,
+			Action_KickMember = 3,
+		}
 	}
 	@property final auto ref
 	{

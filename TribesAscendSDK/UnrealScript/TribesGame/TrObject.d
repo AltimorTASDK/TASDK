@@ -13,21 +13,24 @@ extern(C++) interface TrObject : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class TribesGame.TrObject")); }
-	enum
+	static struct Constants
 	{
-		FEET_TO_UNREAL_UNITS = 16,
-		INDEX_DISPLAY_TARGET_INGAME = 0,
-		INDEX_DISPLAY_TARGET_FOREGROUND = 1,
-		INDEX_SEE_NORMAL_ENEMY = 0,
-		INDEX_SEE_STEALTHED_ENEMY = 1,
-		INDEX_SEE_LOW_HEALTH_ENEMY = 2,
-		TR_TASKFORCE_NONE = 0,
-		TR_TASKFORCE_BLOODEAGLE = 1,
-		TR_TASKFORCE_DIAMONDSWORD = 2,
-		FADE_TIME = 1.0f,
-		MAX_HEARING_DISTANCE = 1300,
-		TR_MAX_SLOTS_TO_EQUIP = 5,
-		UnrealUnitsToKM = 0.072,
+		enum
+		{
+			FEET_TO_UNREAL_UNITS = 16,
+			INDEX_DISPLAY_TARGET_INGAME = 0,
+			INDEX_DISPLAY_TARGET_FOREGROUND = 1,
+			INDEX_SEE_NORMAL_ENEMY = 0,
+			INDEX_SEE_STEALTHED_ENEMY = 1,
+			INDEX_SEE_LOW_HEALTH_ENEMY = 2,
+			TR_TASKFORCE_NONE = 0,
+			TR_TASKFORCE_BLOODEAGLE = 1,
+			TR_TASKFORCE_DIAMONDSWORD = 2,
+			FADE_TIME = 1.0f,
+			MAX_HEARING_DISTANCE = 1300,
+			TR_MAX_SLOTS_TO_EQUIP = 5,
+			UnrealUnitsToKM = 0.072,
+		}
 	}
 	enum EffectFormMatTypes : ubyte
 	{

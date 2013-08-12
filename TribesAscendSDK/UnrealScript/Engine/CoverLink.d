@@ -106,12 +106,15 @@ public extern(D):
 			ScriptFunction GetDebugAbbrev() { return mGetDebugAbbrev ? mGetDebugAbbrev : (mGetDebugAbbrev = ScriptObject.Find!(ScriptFunction)("Function Engine.CoverLink.GetDebugAbbrev")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		COVERLINK_DangerDist = 153.0f,
-		COVERLINK_EdgeExposureDot = 0.85f,
-		COVERLINK_EdgeCheckDot = 0.25f,
-		COVERLINK_ExposureDot = 0.4f,
+		enum
+		{
+			COVERLINK_DangerDist = 153.0f,
+			COVERLINK_EdgeExposureDot = 0.85f,
+			COVERLINK_EdgeCheckDot = 0.25f,
+			COVERLINK_ExposureDot = 0.4f,
+		}
 	}
 	enum ECoverLocationDescription : ubyte
 	{

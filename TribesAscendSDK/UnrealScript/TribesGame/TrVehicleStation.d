@@ -61,7 +61,10 @@ public extern(D):
 			ScriptFunction ShouldPostRenderForCaH() { return mShouldPostRenderForCaH ? mShouldPostRenderForCaH : (mShouldPostRenderForCaH = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrVehicleStation.ShouldPostRenderForCaH")); }
 		}
 	}
-	enum SPAWNED_VEHICLE_LIST_MASK = 0xF;
+	static struct Constants
+	{
+		enum SPAWNED_VEHICLE_LIST_MASK = 0xF;
+	}
 	struct VehicleSpawnInfo
 	{
 		private ubyte __buffer__[32];

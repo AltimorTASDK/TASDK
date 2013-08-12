@@ -35,10 +35,13 @@ public extern(D):
 			ScriptFunction GetOnlinePlaylistProvider() { return mGetOnlinePlaylistProvider ? mGetOnlinePlaylistProvider : (mGetOnlinePlaylistProvider = ScriptObject.Find!(ScriptFunction)("Function Engine.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		RANKEDPROVIDERTAG = "PlaylistsRanked",
-		UNRANKEDPROVIDERTAG = "PlaylistsUnranked",
+		enum
+		{
+			RANKEDPROVIDERTAG = "PlaylistsRanked",
+			UNRANKEDPROVIDERTAG = "PlaylistsUnranked",
+		}
 	}
 	@property final auto ref
 	{

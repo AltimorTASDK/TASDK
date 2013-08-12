@@ -419,12 +419,15 @@ public extern(D):
 			ScriptFunction AlienFXOverlay() { return mAlienFXOverlay ? mAlienFXOverlay : (mAlienFXOverlay = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrPawn.AlienFXOverlay")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		MAX_SCANNER_SEE_FLAG = 2,
-		MAX_SCANNER_DISPLAY_FLAG = 3,
-		MAX_MULTISHOT_LOCATIONS = 8,
-		VELOCITY_HISTORY_SIZE = 3,
+		enum
+		{
+			MAX_SCANNER_SEE_FLAG = 2,
+			MAX_SCANNER_DISPLAY_FLAG = 3,
+			MAX_MULTISHOT_LOCATIONS = 8,
+			VELOCITY_HISTORY_SIZE = 3,
+		}
 	}
 	enum PhysicsType : ubyte
 	{

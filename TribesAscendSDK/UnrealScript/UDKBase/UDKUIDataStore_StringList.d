@@ -48,7 +48,10 @@ public extern(D):
 			ScriptFunction Num() { return mNum ? mNum : (mNum = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringList.Num")); }
 		}
 	}
-	enum INVALIDFIELD = -1;
+	static struct Constants
+	{
+		enum INVALIDFIELD = -1;
+	}
 	struct EStringListData
 	{
 		private ubyte __buffer__[52];

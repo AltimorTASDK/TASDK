@@ -14,7 +14,10 @@ extern(C++) interface GameTypes : UObject
 public extern(D):
 	private static __gshared ScriptClass mStaticClass;
 	@property final static ScriptClass StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptClass)("Class GameFramework.GameTypes")); }
-	enum LOADING_MOVIE = "LoadingMovie";
+	static struct Constants
+	{
+		enum LOADING_MOVIE = "LoadingMovie";
+	}
 	enum EShakeParam : ubyte
 	{
 		ESP_OffsetRandom = 0,

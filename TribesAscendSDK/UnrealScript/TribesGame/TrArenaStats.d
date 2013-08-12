@@ -42,7 +42,10 @@ public extern(D):
 			ScriptFunction ForceUpdate() { return mForceUpdate ? mForceUpdate : (mForceUpdate = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrArenaStats.ForceUpdate")); }
 		}
 	}
-	enum MAX_NUM_ARENA_PLAYERS_PER_TEAM = 8;
+	static struct Constants
+	{
+		enum MAX_NUM_ARENA_PLAYERS_PER_TEAM = 8;
+	}
 	enum ManGraphicState : ubyte
 	{
 		ManGraphic_Hidden = 0,

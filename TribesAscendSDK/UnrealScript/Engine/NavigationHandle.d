@@ -96,10 +96,13 @@ public extern(D):
 			ScriptFunction GetAllCoverSlotsInRadius() { return mGetAllCoverSlotsInRadius ? mGetAllCoverSlotsInRadius : (mGetAllCoverSlotsInRadius = ScriptObject.Find!(ScriptFunction)("Function Engine.NavigationHandle.GetAllCoverSlotsInRadius")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		LINECHECK_GRANULARITY = 76.0f,
-		NUM_PATHFINDING_PARAMS = 9,
+		enum
+		{
+			LINECHECK_GRANULARITY = 76.0f,
+			NUM_PATHFINDING_PARAMS = 9,
+		}
 	}
 	struct PolySegmentSpan
 	{

@@ -99,7 +99,10 @@ public extern(D):
 			ScriptFunction OnUpgradePerformed() { return mOnUpgradePerformed ? mOnUpgradePerformed : (mOnUpgradePerformed = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrDeployable.OnUpgradePerformed")); }
 		}
 	}
-	enum DEPLOYABLE_STARTING_HEALTH_PCT = 0.10f;
+	static struct Constants
+	{
+		enum DEPLOYABLE_STARTING_HEALTH_PCT = 0.10f;
+	}
 	@property final
 	{
 		auto ref

@@ -57,13 +57,16 @@ public extern(D):
 			ScriptFunction scPerfDebugRelevMode() { return mscPerfDebugRelevMode ? mscPerfDebugRelevMode : (mscPerfDebugRelevMode = ScriptObject.Find!(ScriptFunction)("Function PlatformCommon.TgSupportCommands.scPerfDebugRelevMode")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		GC_OS_TYPE_BELOW_XP = 10300,
-		GC_OS_TYPE_XP = 10301,
-		GC_OS_TYPE_VISTA = 10303,
-		GC_OS_TYPE_WIN7 = 10305,
-		GC_OS_TYPE_WIN8 = 10307,
+		enum
+		{
+			GC_OS_TYPE_BELOW_XP = 10300,
+			GC_OS_TYPE_XP = 10301,
+			GC_OS_TYPE_VISTA = 10303,
+			GC_OS_TYPE_WIN7 = 10305,
+			GC_OS_TYPE_WIN8 = 10307,
+		}
 	}
 	enum GC_ALERT_PRIORITY : ubyte
 	{

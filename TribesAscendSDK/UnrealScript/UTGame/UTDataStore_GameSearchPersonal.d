@@ -40,7 +40,10 @@ public extern(D):
 			ScriptFunction GetServerStringList() { return mGetServerStringList ? mGetServerStringList : (mGetServerStringList = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTDataStore_GameSearchPersonal.GetServerStringList")); }
 		}
 	}
-	enum MAX_PERSONALSERVERS = 15;
+	static struct Constants
+	{
+		enum MAX_PERSONALSERVERS = 15;
+	}
 	@property final auto ref
 	{
 		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { return *cast(UTDataStore_GameSearchDM*)(cast(size_t)cast(void*)this + 172); }

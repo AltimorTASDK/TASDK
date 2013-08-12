@@ -30,7 +30,10 @@ public extern(D):
 			ScriptFunction GetContentDeviceClassStringByEquipPoint() { return mGetContentDeviceClassStringByEquipPoint ? mGetContentDeviceClassStringByEquipPoint : (mGetContentDeviceClassStringByEquipPoint = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrFamilyInfo.GetContentDeviceClassStringByEquipPoint")); }
 		}
 	}
-	enum TR_MAX_FACTION_NBR = 3;
+	static struct Constants
+	{
+		enum TR_MAX_FACTION_NBR = 3;
+	}
 	struct DeviceSelectionList
 	{
 		private ubyte __buffer__[20];

@@ -34,10 +34,13 @@ public extern(D):
 			ScriptFunction ClearBuildingMeshes() { return mClearBuildingMeshes ? mClearBuildingMeshes : (mClearBuildingMeshes = ScriptObject.Find!(ScriptFunction)("Function Engine.ProcBuilding.ClearBuildingMeshes")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		PROCBUILDING_VERSION = 1,
-		ROOF_MINZ = 0.7,
+		enum
+		{
+			PROCBUILDING_VERSION = 1,
+			ROOF_MINZ = 0.7,
+		}
 	}
 	enum EScopeEdge : ubyte
 	{

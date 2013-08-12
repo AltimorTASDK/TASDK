@@ -116,11 +116,14 @@ public extern(D):
 			ScriptFunction WidgetInitialized() { return mWidgetInitialized ? mWidgetInitialized : (mWidgetInitialized = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_JoinGame.WidgetInitialized")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		SERVERBROWSER_SERVERTYPE_RANKED = 2,
-		SERVERBROWSER_SERVERTYPE_UNRANKED = 1,
-		SERVERBROWSER_SERVERTYPE_LAN = 0,
+		enum
+		{
+			SERVERBROWSER_SERVERTYPE_RANKED = 2,
+			SERVERBROWSER_SERVERTYPE_UNRANKED = 1,
+			SERVERBROWSER_SERVERTYPE_LAN = 0,
+		}
 	}
 	enum EQueryCompletionAction : ubyte
 	{

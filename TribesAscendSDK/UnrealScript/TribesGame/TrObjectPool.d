@@ -35,7 +35,10 @@ public extern(D):
 			ScriptFunction CreateTracer() { return mCreateTracer ? mCreateTracer : (mCreateTracer = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrObjectPool.CreateTracer")); }
 		}
 	}
-	enum MAX_TRACERS = 20;
+	static struct Constants
+	{
+		enum MAX_TRACERS = 20;
+	}
 	struct TracerCacheInfo
 	{
 		private ubyte __buffer__[92];

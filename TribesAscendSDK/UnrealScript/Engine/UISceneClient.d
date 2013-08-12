@@ -28,16 +28,19 @@ public extern(D):
 			ScriptFunction InitializeSceneClient() { return mInitializeSceneClient ? mInitializeSceneClient : (mInitializeSceneClient = ScriptObject.Find!(ScriptFunction)("Function Engine.UISceneClient.InitializeSceneClient")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		SCENEFILTER_None = 0x00000000,
-		SCENEFILTER_IncludeTransient = 0x00000001,
-		SCENEFILTER_InputProcessorOnly = 0x00000002,
-		SCENEFILTER_PausersOnly = 0x00000004,
-		SCENEFILTER_PrimitiveUsersOnly = 0x00000008,
-		SCENEFILTER_UsesPostProcessing = 0x00000010,
-		SCENEFILTER_ReceivesFocus = 0x00000020,
-		SCENEFILTER_Any = 0xFFFFFFFF,
+		enum
+		{
+			SCENEFILTER_None = 0x00000000,
+			SCENEFILTER_IncludeTransient = 0x00000001,
+			SCENEFILTER_InputProcessorOnly = 0x00000002,
+			SCENEFILTER_PausersOnly = 0x00000004,
+			SCENEFILTER_PrimitiveUsersOnly = 0x00000008,
+			SCENEFILTER_UsesPostProcessing = 0x00000010,
+			SCENEFILTER_ReceivesFocus = 0x00000020,
+			SCENEFILTER_Any = 0xFFFFFFFF,
+		}
 	}
 	@property final
 	{

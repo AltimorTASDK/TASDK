@@ -52,10 +52,13 @@ public extern(D):
 			ScriptFunction GetGameTypeId() { return mGetGameTypeId ? mGetGameTypeId : (mGetGameTypeId = ScriptObject.Find!(ScriptFunction)("Function TribesGame.TrGame_TRTeamRabbit.GetGameTypeId")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		MESSAGE_SCORE_SWITCH_LIMIT = 0xFFF,
-		MESSAGE_SCORE_SWITCH_TEAM = 17,
+		enum
+		{
+			MESSAGE_SCORE_SWITCH_LIMIT = 0xFFF,
+			MESSAGE_SCORE_SWITCH_TEAM = 17,
+		}
 	}
 	@property final
 	{

@@ -297,7 +297,10 @@ public extern(D):
 			ScriptFunction GeneratePathToLocation() { return mGeneratePathToLocation ? mGeneratePathToLocation : (mGeneratePathToLocation = ScriptObject.Find!(ScriptFunction)("Function Engine.Controller.GeneratePathToLocation")); }
 		}
 	}
-	enum LATENT_MOVETOWARD = 503;
+	static struct Constants
+	{
+		enum LATENT_MOVETOWARD = 503;
+	}
 	struct VisiblePortalInfo
 	{
 		private ubyte __buffer__[8];

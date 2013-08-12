@@ -52,7 +52,10 @@ public extern(D):
 			ScriptFunction GetStringFromMarkup() { return mGetStringFromMarkup ? mGetStringFromMarkup : (mGetStringFromMarkup = ScriptObject.Find!(ScriptFunction)("Function UTGame.GFxUDKFrontEnd_LaunchGame.GetStringFromMarkup")); }
 		}
 	}
-	enum MarkupForNoMapImage = "UDKFrontEnd.gm_map_none";
+	static struct Constants
+	{
+		enum MarkupForNoMapImage = "UDKFrontEnd.gm_map_none";
+	}
 	struct Option
 	{
 		private ubyte __buffer__[36];

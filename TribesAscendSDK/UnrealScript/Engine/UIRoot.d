@@ -46,11 +46,14 @@ public extern(D):
 			ScriptFunction GetOnlinePlayerInterfaceEx() { return mGetOnlinePlayerInterfaceEx ? mGetOnlinePlayerInterfaceEx : (mGetOnlinePlayerInterfaceEx = ScriptObject.Find!(ScriptFunction)("Function Engine.UIRoot.GetOnlinePlayerInterfaceEx")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		DEFAULT_SIZE_X = 1024,
-		DEFAULT_SIZE_Y = 768,
-		MAX_SUPPORTED_GAMEPADS = 4,
+		enum
+		{
+			DEFAULT_SIZE_X = 1024,
+			DEFAULT_SIZE_Y = 768,
+			MAX_SUPPORTED_GAMEPADS = 4,
+		}
 	}
 	enum EInputPlatformType : ubyte
 	{

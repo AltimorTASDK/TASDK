@@ -339,14 +339,17 @@ public extern(D):
 			ScriptFunction HandlePathObstruction() { return mHandlePathObstruction ? mHandlePathObstruction : (mHandlePathObstruction = ScriptObject.Find!(ScriptFunction)("Function UTGame.UTBot.HandlePathObstruction")); }
 		}
 	}
-	enum
+	static struct Constants
 	{
-		MAXSTAKEOUTDIST = 2000,
-		ENEMYLOCATIONFUZZ = 1200,
-		TACTICALHEIGHTADVANTAGE = 320,
-		MINSTRAFEDIST = 200,
-		MINVIEWDIST = 200,
-		AngleConvert = 0.0000958738,
+		enum
+		{
+			MAXSTAKEOUTDIST = 2000,
+			ENEMYLOCATIONFUZZ = 1200,
+			TACTICALHEIGHTADVANTAGE = 320,
+			MINSTRAFEDIST = 200,
+			MINVIEWDIST = 200,
+			AngleConvert = 0.0000958738,
+		}
 	}
 	@property final
 	{

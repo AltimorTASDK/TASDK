@@ -28,7 +28,10 @@ public extern(D):
 			ScriptFunction ClearBoundKeyCache() { return mClearBoundKeyCache ? mClearBoundKeyCache : (mClearBoundKeyCache = ScriptObject.Find!(ScriptFunction)("Function UDKBase.UDKUIDataStore_StringAliasBindingMap.ClearBoundKeyCache")); }
 		}
 	}
-	enum SABM_FIND_FIRST_BIND = -2;
+	static struct Constants
+	{
+		enum SABM_FIND_FIRST_BIND = -2;
+	}
 	struct ControllerMap
 	{
 		private ubyte __buffer__[32];
