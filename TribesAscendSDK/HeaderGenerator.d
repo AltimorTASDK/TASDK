@@ -10,6 +10,7 @@ public void Generate()
 	ClassDescriptor[] classDescriptors;
 	StructDescriptor[] structDescriptors;
 	ConstantDescriptor[] constantDescriptors;
+	StateDescriptor[] stateDescriptors;
 	EnumDescriptor[] enumDescriptors;
 	FunctionDescriptor[] functionDescriptors;
 	PropertyDescriptor[] propertyDescriptors;
@@ -65,7 +66,7 @@ public void Generate()
 					propertyDescriptors ~= new PropertyDescriptor(cast(ScriptProperty)classObject);
 					break;
 				case "State":
-					// TODO: Implement.
+					stateDescriptors ~= new StateDescriptor(cast(ScriptState)classObject);
 					break;
 				default:
 					break;
@@ -77,6 +78,8 @@ public void Generate()
 		ProcessNested(sd, sd.InnerStruct);
 	foreach (cd; constantDescriptors)
 		ProcessNested(cd, cd.InnerConstant);
+	foreach (sd; stateDescriptors)
+		ProcessNested(sd, sd.InnerState);
 	foreach (ed; enumDescriptors)
 		ProcessNested(ed, ed.InnerEnum);
 	foreach (fd; functionDescriptors)
@@ -100,11 +103,15 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 		switch (parent.Type)
 		{
 			case DescriptorType.Class:
+			case DescriptorType.State:
 			case DescriptorType.Struct:
 			{
 				NestableContainer cont = cast(NestableContainer)parent;
 				switch (desc.Type)
 				{
+					case DescriptorType.State:
+						cont.States ~= cast(StateDescriptor)desc;
+						break;
 					case DescriptorType.Constant:
 						cont.NestedConstants ~= cast(ConstantDescriptor)desc;
 						break;
@@ -655,6 +662,8 @@ abstract class NestableContainer : Descriptor
 	PropertyDescriptor[] Properties;
 	PropertyDescriptor[] BoolProperties;
 	FunctionDescriptor[] Functions;
+
+	// TODO: Separate events out from Functions.
 
 	final void RequireChildren(DependencyManager mgr)
 	{
