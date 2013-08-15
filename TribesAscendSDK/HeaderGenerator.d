@@ -304,6 +304,7 @@ enum DescriptorType
 	Function,
 	FunctionArgument,
 	Property,
+	State,
 	Struct,
 }
 
@@ -465,7 +466,7 @@ final class FunctionArgumentDescriptor : Descriptor
 			ArgumentName = "p" ~ ArgumentName;
 
 		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
-			wtr.Write("%s* %s", GetTypeName(InnerProperty), ArgumentName);
+			wtr.Write("ref %s %s", GetTypeName(InnerProperty), ArgumentName);
 		else
 			wtr.Write("%s %s", GetTypeName(InnerProperty), ArgumentName);
 	}
@@ -473,39 +474,19 @@ final class FunctionArgumentDescriptor : Descriptor
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
 	{
 		string tpName = GetTypeName(InnerProperty);
-		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
+		if (InnerProperty.Offset != 0)
 		{
-			if (InnerProperty.Offset != 0)
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = *%s;", bufName, InnerProperty.Offset, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = *%s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
-			}
+			if (tpName == "ubyte")
+				wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, ArgumentName);
 			else
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = *%s;", bufName, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = *%s;", tpName, bufName, ArgumentName);
-			}
+				wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
 		}
 		else
 		{
-			if (InnerProperty.Offset != 0)
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[%u] = %s;", bufName, InnerProperty.Offset, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)&%s[%u] = %s;", tpName, bufName, InnerProperty.Offset, ArgumentName);
-			}
+			if (tpName == "ubyte")
+				wtr.WriteLine("%s[0] = %s;", bufName, ArgumentName);
 			else
-			{
-				if (tpName == "ubyte")
-					wtr.WriteLine("%s[0] = %s;", bufName, ArgumentName);
-				else
-					wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, ArgumentName);
-			}
+				wtr.WriteLine("*cast(%s*)%s.ptr = %s;", tpName, bufName, ArgumentName);
 		}
 	}
 
@@ -670,9 +651,28 @@ abstract class NestableContainer : Descriptor
 	ConstantDescriptor[] NestedConstants;
 	EnumDescriptor[] NestedEnums;
 	StructDescriptor[] NestedStructs;
+	StateDescriptor[] States;
 	PropertyDescriptor[] Properties;
 	PropertyDescriptor[] BoolProperties;
 	FunctionDescriptor[] Functions;
+
+	final void RequireChildren(DependencyManager mgr)
+	{
+		foreach (nc; NestedConstants)
+			nc.RequireDependencies(mgr);
+		foreach (ne; NestedEnums)
+			ne.RequireDependencies(mgr);
+		foreach (ns; NestedStructs)
+			ns.RequireDependencies(mgr);
+		foreach (s; States)
+			s.RequireDependencies(mgr);
+		foreach (p; Properties)
+			p.RequireDependencies(mgr);
+		foreach (bp; BoolProperties)
+			bp.RequireDependencies(mgr);
+		foreach (f; Functions)
+			f.RequireDependencies(mgr);
+	}
 
 	final void WriteChildren(IndentedStreamWriter wtr)
 	{
@@ -749,6 +749,10 @@ abstract class NestableContainer : Descriptor
 		foreach (ns; NestedStructs)
 			ns.Write(wtr);
 
+		// States
+		foreach (s; States)
+			s.Write(wtr);
+
 		// Properties & Bool Properties
 		if (Properties.length > 1 && BoolProperties.length == 0)
 		{
@@ -816,19 +820,7 @@ final class ClassDescriptor : NestableContainer
 	{
 		if (InnerClass.Super)
 			mgr.RequireType(InnerClass.Super);
-
-		foreach (nc; NestedConstants)
-			nc.RequireDependencies(mgr);
-		foreach (ne; NestedEnums)
-			ne.RequireDependencies(mgr);
-		foreach (ns; NestedStructs)
-			ns.RequireDependencies(mgr);
-		foreach (p; Properties)
-			p.RequireDependencies(mgr);
-		foreach (bp; BoolProperties)
-			bp.RequireDependencies(mgr);
-		foreach (f; Functions)
-			f.RequireDependencies(mgr);
+		RequireChildren(mgr);
 	}
 
 	static bool IsFactory(ScriptClass sc)
@@ -914,19 +906,7 @@ final class StructDescriptor : NestableContainer
 	{
 		if (InnerStruct.Super)
 			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).RequireDependencies(mgr);
-		
-		foreach (nc; NestedConstants)
-			nc.RequireDependencies(mgr);
-		foreach (ne; NestedEnums)
-			ne.RequireDependencies(mgr);
-		foreach (ns; NestedStructs)
-			ns.RequireDependencies(mgr);
-		foreach (p; Properties)
-			p.RequireDependencies(mgr);
-		foreach (bp; BoolProperties)
-			bp.RequireDependencies(mgr);
-		foreach (f; Functions)
-			f.RequireDependencies(mgr);
+		RequireChildren(mgr);
 	}
 
 	override void Write(IndentedStreamWriter wtr)
@@ -955,5 +935,40 @@ final class StructDescriptor : NestableContainer
 		if (InnerStruct.Super)
 			(cast(StructDescriptor)TypeDescriptorMap[InnerStruct.Super.GetFullName()]).WriteBody(wtr);
 		WriteChildren(wtr);
+	}
+}
+
+final class StateDescriptor : NestableContainer
+{
+	@property final override DescriptorType Type() { return DescriptorType.State; }
+
+	ScriptState InnerState;
+	this(ScriptState state)
+	{
+		this.InnerState = state;
+	}
+
+	override void RequireDependencies(DependencyManager mgr)
+	{
+		// TODO: Add support for the parent state
+
+		RequireChildren(mgr);
+	}
+
+	override void Write(IndentedStreamWriter wtr)
+	{
+		wtr.WriteLine("static struct %s", InnerState.GetName());
+		wtr.WriteLine("{");
+		wtr.Indent++;
+
+		wtr.WriteLine("private static __gshared ScriptState mStaticClass;");
+		wtr.WriteLine("@property final static ScriptState StaticClass() { return mStaticClass ? mStaticClass : (mStaticClass = ScriptObject.Find!(ScriptState)(\"%s\")); }", InnerState.GetFullName());
+
+		// TODO: Add a way to hook the arbitrary code that can be executed in a state (See UTGame.UTPlayerController.Dead for an example)
+
+		WriteChildren(wtr);
+
+		wtr.Indent--;
+		wtr.WriteLine("}");
 	}
 }
