@@ -937,7 +937,69 @@ extern(C++) public interface ScriptByteProperty : ScriptProperty // Total size: 
 public:
 	@property
 	{
-		final auto ref ScriptEnum EnumType() { return *cast(ScriptEnum*)(cast(size_t)cast(void*)this + 0x80); }	// 0x80 (0x04)
+		final auto ref ScriptEnum EnumType() { return *cast(ScriptEnum*)(cast(size_t)cast(void*)this + 0x80); }		// 0x80 (0x04)
+	}
+}
+
+/**
+ * Describes a pointer to a function bound to an Object.
+ */
+extern(C++) public interface ScriptDelegateProperty : ScriptProperty // Total size: 0x88
+{
+public:
+	@property
+	{
+		/**
+		 * The function this delegate is mapped to.
+		 */
+		final auto ref ScriptFunction Function() { return *cast(ScriptFunction*)(cast(size_t)cast(void*)this + 0x80); }				// 0x80 (0x04)
+		/**
+		 * If this DelegateProperty corresponds to an actual delegate
+		 * variable, as opposed to the hidden property the script
+		 * compiler creates when you declare a delegate function,
+	 	 * this points to the source delegate function (the function
+	 	 * declared with the delegate keyword) used in the declaration
+	 	 * of this delegate property.
+		 */
+		final auto ref ScriptFunction SourceDelegate() { return *cast(ScriptFunction*)(cast(size_t)cast(void*)this + 0x84); }		// 0x84 (0x04)
+	}
+}
+
+/**
+ *  Describes a dynamic map.
+ */
+extern(C++) public interface ScriptMapProperty : ScriptProperty // Total size: 0x88
+{
+public:
+	@property
+	{
+		final auto ref ScriptProperty Key() { return *cast(ScriptProperty*)(cast(size_t)cast(void*)this + 0x80); }		// 0x80 (0x04)
+		final auto ref ScriptProperty Value() { return *cast(ScriptProperty*)(cast(size_t)cast(void*)this + 0x84); }	// 0x84 (0x04)
+	}
+}
+
+/**
+ * This variable type provides safe access to a native interface 
+ * pointer.
+ */
+extern(C++) public interface ScriptInterfaceProperty : ScriptProperty // Total size: 0x84
+{
+public:
+	@property
+	{
+		/**
+		 * The native interface class that this interface property refers to.
+		 */
+		final auto ref ScriptClass InterfaceClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x80); }		// 0x80 (0x04)
+	}
+}
+
+extern(C++) public interface ScriptClassProperty : ScriptObjectProperty // Total size: 0x88
+{
+public:
+	@property
+	{
+		final auto ref ScriptClass MetaClass() { return *cast(ScriptClass*)(cast(size_t)cast(void*)this + 0x84); }			// 0x84 (0x04)
 	}
 }
 

@@ -64,8 +64,9 @@ public:
 			mInnerFile.writef(message, args);
 		else
 			mInnerFile.write(message);
-		// TODO: This shouldn't be flushing after every call, only enabled for debugging purposes.
-		Flush();
+
+		version(Debug)
+			Flush();
 	}
 
 	void WriteLine()()
@@ -73,7 +74,9 @@ public:
 		EnsureIndent();
 		mInnerFile.writeln();
 		mCurrentLineIndented = false;
-		Flush();
+
+		version(Debug)
+			Flush();
 	}
 
 	void WriteLine(Char, A...)(in Char[] message, A args)
@@ -84,7 +87,9 @@ public:
 		else
 			mInnerFile.writeln(message);
 		mCurrentLineIndented = false;
-		Flush();
+
+		version(Debug)
+			Flush();
 	}
 	
 }
