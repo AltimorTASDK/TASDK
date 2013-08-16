@@ -704,6 +704,14 @@ public:
 		// __padding1__ 0x50 (0x10)
 		final auto ref uint Offset() { return *cast(uint*)(cast(size_t)cast(void*)this + 0x60); }															// 0x60 (0x04)
 		// __padding2__ 0x64 (0x1C)
+
+
+		// Utility Properties
+
+		final bool IsConstant() { return PropertyFlags.HasFlag(ScriptPropertyFlags.Const); }
+		final bool IsOptionalParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.OptionalParam); }
+		final bool IsOutParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam); }
+		final bool IsParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.Param); }
 	}
 }
 

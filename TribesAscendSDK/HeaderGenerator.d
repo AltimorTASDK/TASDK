@@ -472,10 +472,13 @@ final class FunctionArgumentDescriptor : Descriptor
 		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
 			ArgumentName = "p" ~ ArgumentName;
 
-		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
-			wtr.Write("ref %s %s", GetTypeName(InnerProperty), ArgumentName);
-		else
-			wtr.Write("%s %s", GetTypeName(InnerProperty), ArgumentName);
+		bool optionalOutParam = InnerProperty.IsOptionalParameter && InnerProperty.IsOutParameter;
+		if (InnerProperty.IsOutParameter && !InnerProperty.IsOptionalParameter)
+			wtr.Write("ref ");
+		if (InnerProperty.IsConstant)
+			wtr.Write("const ");
+
+		wtr.Write("%s%s %s", GetTypeName(InnerProperty), optionalOutParam ? "*" : "", ArgumentName);
 	}
 
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
@@ -499,7 +502,7 @@ final class FunctionArgumentDescriptor : Descriptor
 
 	void WriteLoadFromBuffer(IndentedStreamWriter wtr, string bufName)
 	{
-		if (InnerProperty.PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam))
+		if (InnerProperty.IsOutParameter)
 		{
 			string tpName = GetTypeName(InnerProperty);
 			if (InnerProperty.Offset != 0)
