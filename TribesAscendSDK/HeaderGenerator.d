@@ -56,11 +56,14 @@ public void Generate()
 				case "BoolProperty":
 				case "ByteProperty":
 				case "ClassProperty":
+				case "ComponentProperty":
+				case "DelegateProperty":
 				case "FloatProperty":
 				case "IntProperty":
+				case "InterfaceProperty":
+				case "MapProperty":
 				case "NameProperty":
 				case "ObjectProperty":
-				case "StringRefProperty":
 				case "StrProperty":
 				case "StructProperty":
 					propertyDescriptors ~= new PropertyDescriptor(cast(ScriptProperty)classObject);
@@ -155,7 +158,7 @@ void ProcessNested(Descriptor desc, ScriptObject innerVal)
 	}
 }
 
-string EscapeName(string name)
+immutable(string) EscapeName(string name)
 {
 	switch (name)
 	{
@@ -202,6 +205,7 @@ final class DependencyManager
 				ProcessProperty((cast(ScriptArrayProperty)prop).InnerProperty);
 				break;
 
+			case ScriptPropertyType.Class:
 			case ScriptPropertyType.Boolean:
 			case ScriptPropertyType.Byte:
 			case ScriptPropertyType.Float:
@@ -212,7 +216,6 @@ final class DependencyManager
 
 
 			// TODO: Implement
-			case ScriptPropertyType.Class:
 			case ScriptPropertyType.Component:
 			case ScriptPropertyType.Delegate:
 			case ScriptPropertyType.Interface:
@@ -433,9 +436,9 @@ final class PropertyDescriptor : Descriptor
 
 		if (alone)
 			wtr.Write("@property final ");
-		switch (InnerProperty.ObjectClass.GetName())
+		final switch (InnerProperty.Type)
 		{
-			case "BoolProperty":
+			case ScriptPropertyType.Boolean:
 				if (ParentIsStruct)
 				{
 					wtr.WriteLine("bool %s() { return (*cast(uint*)(cast(size_t)&this + %u) & 0x%X) != 0; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
@@ -447,16 +450,17 @@ final class PropertyDescriptor : Descriptor
 					wtr.WriteLine("bool %s(bool val) { if (val) { *cast(uint*)(cast(size_t)cast(void*)this + %u) |= 0x%X; } else { *cast(uint*)(cast(size_t)cast(void*)this + %u) &= ~0x%X; } return val; }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask, InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
 				}
 				break;
-			case "ObjectProperty":
-			case "StringRefProperty":
-			case "ClassProperty":
-			case "StructProperty":
-			case "ByteProperty":
-			case "IntProperty":
-			case "FloatProperty":
-			case "StrProperty":
-			case "NameProperty":
-			case "ArrayProperty":
+
+			case ScriptPropertyType.Array:
+			case ScriptPropertyType.Byte:
+			case ScriptPropertyType.Class:
+			case ScriptPropertyType.Enum:
+			case ScriptPropertyType.Float:
+			case ScriptPropertyType.Integer:
+			case ScriptPropertyType.Name:
+			case ScriptPropertyType.Object:
+			case ScriptPropertyType.String:
+			case ScriptPropertyType.Struct:
 				if (alone)
 					wtr.Write("auto ref ");
 				if (ParentIsStruct)
@@ -464,9 +468,12 @@ final class PropertyDescriptor : Descriptor
 				else
 					wtr.WriteLine("%s %s() { return *cast(%s*)(cast(size_t)cast(void*)this + %u); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				break;
-			default:
-				// TODO: This never actually gets hit, find a way to make it get hit so we can output this useful information.
-				wtr.WriteLine("// ERROR: Unknown object class '%s' for the property named '%s'!", InnerProperty.ObjectClass.GetName(), InnerProperty.GetName());
+				
+			case ScriptPropertyType.Component:
+			case ScriptPropertyType.Delegate:
+			case ScriptPropertyType.Interface:
+			case ScriptPropertyType.Map:
+				wtr.WriteLine("// ERROR: Unsupported object class '%s' for the property named '%s'!", InnerProperty.ObjectClass.GetName(), InnerProperty.GetName());
 				break;
 		}
 	}
@@ -560,13 +567,13 @@ final class FunctionDescriptor : Descriptor
 		{
 			if (functionArgument.PropertyFlags.HasAnyFlags(ScriptPropertyFlags.ParamFlags))
 			{
-				if (functionArgument.PropertyFlags.HasFlag(ScriptPropertyFlags.ReturnParam))
+				if (functionArgument.IsReturnParameter)
 				{
 					if (ReturnProperty)
 						throw new Exception("Found multiple return parameters!");
 					ReturnProperty = functionArgument;
 				}
-				else if (functionArgument.PropertyFlags.HasFlag(ScriptPropertyFlags.Param))
+				else if (functionArgument.IsParameter)
 					Arguments ~= new FunctionArgumentDescriptor(functionArgument);
 				else
 					throw new Exception("Unknown property with param flags!");
