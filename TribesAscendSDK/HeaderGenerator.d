@@ -189,25 +189,34 @@ final class DependencyManager
 
 	void ProcessProperty(ScriptProperty prop)
 	{
-		switch (prop.ObjectClass.GetName())
+		final switch (prop.Type)
 		{
-			case "ObjectProperty":
-			case "StructProperty":
+			case ScriptPropertyType.Object:
+			case ScriptPropertyType.Struct:
 				RequireType((cast(ScriptObjectProperty)prop).PropertyClass);
 				break;
-			case "ByteProperty":
-				if ((cast(ScriptByteProperty)prop).EnumType)
-					RequireType((cast(ScriptByteProperty)prop).EnumType);
+			case ScriptPropertyType.Enum:
+				RequireType((cast(ScriptByteProperty)prop).EnumType);
 				break;
-			case "ClassProperty":
-			case "NameProperty":
-			case "StrProperty":
-			case "StringRefProperty":
-				break;
-			case "ArrayProperty":
+			case ScriptPropertyType.Array:
 				ProcessProperty((cast(ScriptArrayProperty)prop).InnerProperty);
 				break;
-			default:
+
+			case ScriptPropertyType.Boolean:
+			case ScriptPropertyType.Byte:
+			case ScriptPropertyType.Float:
+			case ScriptPropertyType.Integer:
+			case ScriptPropertyType.Name:
+			case ScriptPropertyType.String:
+				break;
+
+
+			// TODO: Implement
+			case ScriptPropertyType.Class:
+			case ScriptPropertyType.Component:
+			case ScriptPropertyType.Delegate:
+			case ScriptPropertyType.Interface:
+			case ScriptPropertyType.Map:
 				break;
 		}
 	}
@@ -262,9 +271,6 @@ abstract class Descriptor
 	{
 		switch (obj.ObjectClass.GetName())
 		{
-			case "ObjectProperty":
-			case "StructProperty":
-				return GetTypeName((cast(ScriptObjectProperty)obj).PropertyClass);
 			case "Class":
 			case "Enum":
 			case "ScriptStruct":
@@ -276,29 +282,46 @@ abstract class Descriptor
 					tp = EscapeName(outer.GetName()) ~ "." ~ tp;
 				return tp;
 			}
-			case "ArrayProperty":
-				return "ScriptArray!(" ~ GetTypeName((cast(ScriptArrayProperty)obj).InnerProperty) ~ ")";
-			case "ByteProperty":
-				if ((cast(ScriptByteProperty)obj).EnumType)
-					return GetTypeName((cast(ScriptByteProperty)obj).EnumType);
-				else
-					return "ubyte";
-			case "IntProperty":
-				return "int";
-			case "FloatProperty":
-				return "float";
-			case "BoolProperty":
-				return "bool";
-			case "StrProperty":
-				return "ScriptString";
-			case "StringRefProperty":
-				return "ScriptString*";
-			case "NameProperty":
-				return "ScriptName";
-			case "ClassProperty":
-				return "ScriptClass";
+
 			default:
 				return "\n// ERROR: Unknown object class '" ~ obj.ObjectClass.GetFullName() ~ "'!\nvoid*";
+		}
+	}
+
+	final immutable(string) GetTypeName(ScriptProperty prop)
+	{
+		final switch (prop.Type)
+		{
+			case ScriptPropertyType.Object:
+			case ScriptPropertyType.Struct:
+				return GetTypeName((cast(ScriptObjectProperty)prop).PropertyClass);
+
+			case ScriptPropertyType.Array:
+				return "ScriptArray!(" ~ GetTypeName((cast(ScriptArrayProperty)prop).InnerProperty) ~ ")";
+			case ScriptPropertyType.Boolean:
+				return "bool";
+			case ScriptPropertyType.Byte:
+				return "ubyte";
+			case ScriptPropertyType.Class:
+				return "ScriptClass";
+			case ScriptPropertyType.Enum:
+				return GetTypeName((cast(ScriptByteProperty)prop).EnumType);
+			case ScriptPropertyType.Float:
+				return "float";
+			case ScriptPropertyType.Integer:
+				return "int";
+			case ScriptPropertyType.Name:
+				return "ScriptName";
+			case ScriptPropertyType.String:
+				return "ScriptString";
+
+
+			// TODO: Implement
+			case ScriptPropertyType.Component:
+			case ScriptPropertyType.Delegate:
+			case ScriptPropertyType.Interface:
+			case ScriptPropertyType.Map:
+				return "\n// ERROR: Unknown object class '" ~ prop.ObjectClass.GetFullName() ~ "'!\nvoid*";
 		}
 	}
 }

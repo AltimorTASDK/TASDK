@@ -712,7 +712,67 @@ public:
 		final bool IsOptionalParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.OptionalParam); }
 		final bool IsOutParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.OutParam); }
 		final bool IsParameter() { return PropertyFlags.HasFlag(ScriptPropertyFlags.Param); }
+
+		final const(ScriptPropertyType) Type()
+		{
+			switch (ObjectClass.GetName())
+			{
+				case "ArrayProperty":
+					return ScriptPropertyType.Array;
+				case "BoolProperty":
+					return ScriptPropertyType.Boolean;
+				case "ByteProperty":
+					if ((cast(ScriptByteProperty)this).EnumType !is null)
+						return ScriptPropertyType.Enum;
+					else
+						return ScriptPropertyType.Byte;
+				case "ClassProperty":
+					return ScriptPropertyType.Class;
+				case "ComponentProperty":
+					return ScriptPropertyType.Component;
+				case "DelegateProperty":
+					return ScriptPropertyType.Delegate;
+				case "FloatProperty":
+					return ScriptPropertyType.Float;
+				case "IntProperty":
+					return ScriptPropertyType.Integer;
+				case "InterfaceProperty":
+					return ScriptPropertyType.Interface;
+				case "MapProperty":
+					return ScriptPropertyType.Map;
+				case "NameProperty":
+					return ScriptPropertyType.Name;
+				case "ObjectProperty":
+					return ScriptPropertyType.Object;
+				case "StrProperty":
+					return ScriptPropertyType.String;
+				case "StructProperty":
+					return ScriptPropertyType.Struct;
+
+				default:
+					throw new Exception("Unknown object class '" ~ ObjectClass.GetName() ~ "' for a property!");
+			}
+		}
 	}
+}
+
+public enum ScriptPropertyType
+{
+	Array,
+	Boolean,
+	Byte,
+	Class,
+	Component,
+	Delegate,
+	Enum,
+	Float,
+	Integer,
+	Interface,
+	Map,
+	Name,
+	Object,
+	String,
+	Struct,
 }
 
 public enum ScriptPropertyFlags : ulong // Total size: 0x08
