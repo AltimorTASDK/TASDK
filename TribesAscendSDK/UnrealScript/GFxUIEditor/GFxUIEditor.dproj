@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>

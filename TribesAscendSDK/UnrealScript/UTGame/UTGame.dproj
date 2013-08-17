@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -40,1022 +40,344 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DemoRecSpectator.d">
-      <LastGenOutput>obj\Debug\DemoRecSpectator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ForcedDirVolume.d">
-      <LastGenOutput>obj\Debug\ForcedDirVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxMinimap.d">
-      <LastGenOutput>obj\Debug\GFxMinimap.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxMinimapHud.d">
-      <LastGenOutput>obj\Debug\GFxMinimapHud.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxProjectedUI.d">
-      <LastGenOutput>obj\Debug\GFxProjectedUI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_Dialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_Dialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_ErrorDialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_ErrorDialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_FilterDialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_FilterDialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_GameMode.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_GameMode.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_HostGame.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_HostGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_InfoDialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_InfoDialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_InstantAction.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_InstantAction.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_JoinDialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_JoinDialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_JoinGame.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_JoinGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_LaunchGame.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_LaunchGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_MainMenu.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_MainMenu.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_MapSelect.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_MapSelect.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_Multiplayer.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_Multiplayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_Mutators.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_Mutators.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_PasswordDialog.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_PasswordDialog.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_Screen.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_Screen.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_ServerSettings.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_ServerSettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_Settings.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_Settings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_SettingsBase.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_SettingsBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUDKFrontEnd_View.d">
-      <LastGenOutput>obj\Debug\GFxUDKFrontEnd_View.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUI_InventoryButton.d">
-      <LastGenOutput>obj\Debug\GFxUI_InventoryButton.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUI_PauseMenu.d">
-      <LastGenOutput>obj\Debug\GFxUI_PauseMenu.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUIFrontEnd_TitleScreen.d">
-      <LastGenOutput>obj\Debug\GFxUIFrontEnd_TitleScreen.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxUIView.d">
-      <LastGenOutput>obj\Debug\GFxUIView.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SeqAct_UTCrowdSpawner.d">
-      <LastGenOutput>obj\Debug\SeqAct_UTCrowdSpawner.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTActorFactoryAI.d">
-      <LastGenOutput>obj\Debug\UTActorFactoryAI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTActorFactoryPickup.d">
-      <LastGenOutput>obj\Debug\UTActorFactoryPickup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTActorFactoryTeamStaticMesh.d">
-      <LastGenOutput>obj\Debug\UTActorFactoryTeamStaticMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTActorFactoryUTKActor.d">
-      <LastGenOutput>obj\Debug\UTActorFactoryUTKActor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTActorFactoryVehicle.d">
-      <LastGenOutput>obj\Debug\UTActorFactoryVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAirVehicle.d">
-      <LastGenOutput>obj\Debug\UTAirVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAmbientSoundComponent.d">
-      <LastGenOutput>obj\Debug\UTAmbientSoundComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAmmoPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTAmmoPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendBase.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByDriving.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByDriving.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByFall.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByFall.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByFlying.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByFlying.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByHoverboarding.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByHoverboarding.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByHoverboardTilt.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByHoverboardTilt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByHoverboardTurn.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByHoverboardTurn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByHoverJump.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByHoverJump.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByIdle.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByIdle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByPhysics.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByPhysics.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByPhysicsVolume.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByPhysicsVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByPosture.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByPosture.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendBySlotActive.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendBySlotActive.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendBySpeed.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendBySpeed.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByTurnInPlace.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByTurnInPlace.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByVehicle.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByWeapon.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimBlendByWeapType.d">
-      <LastGenOutput>obj\Debug\UTAnimBlendByWeapType.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeCopyBoneTranslation.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeCopyBoneTranslation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeFramePlayer.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeFramePlayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeJumpLeanOffset.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeJumpLeanOffset.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeSequence.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeSequence.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeSequenceByBoneRotation.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeSequenceByBoneRotation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnimNodeSeqWeap.d">
-      <LastGenOutput>obj\Debug\UTAnimNodeSeqWeap.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAnnouncer.d">
-      <LastGenOutput>obj\Debug\UTAnnouncer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAreaNamingVolume.d">
-      <LastGenOutput>obj\Debug\UTAreaNamingVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTArmorPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTArmorPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTArmorPickupLight.d">
-      <LastGenOutput>obj\Debug\UTArmorPickupLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAutoCrouchVolume.d">
-      <LastGenOutput>obj\Debug\UTAutoCrouchVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTAvoidMarker.d">
-      <LastGenOutput>obj\Debug\UTAvoidMarker.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTBeamWeapon.d">
-      <LastGenOutput>obj\Debug\UTBeamWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTBeamWeaponAttachment.d">
-      <LastGenOutput>obj\Debug\UTBeamWeaponAttachment.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTBot.d">
-      <LastGenOutput>obj\Debug\UTBot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCarriedObject.d">
-      <LastGenOutput>obj\Debug\UTCarriedObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCarriedObjectMessage.d">
-      <LastGenOutput>obj\Debug\UTCarriedObjectMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCharInfo.d">
-      <LastGenOutput>obj\Debug\UTCharInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCheatManager.d">
-      <LastGenOutput>obj\Debug\UTCheatManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCicadaRocketExplosionLight.d">
-      <LastGenOutput>obj\Debug\UTCicadaRocketExplosionLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTClientSideWeaponPawn.d">
-      <LastGenOutput>obj\Debug\UTClientSideWeaponPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTConsole.d">
-      <LastGenOutput>obj\Debug\UTConsole.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTConsolePlayerController.d">
-      <LastGenOutput>obj\Debug\UTConsolePlayerController.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTConsolePlayerInput.d">
-      <LastGenOutput>obj\Debug\UTConsolePlayerInput.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFBase.d">
-      <LastGenOutput>obj\Debug\UTCTFBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFFlag.d">
-      <LastGenOutput>obj\Debug\UTCTFFlag.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFGame.d">
-      <LastGenOutput>obj\Debug\UTCTFGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFHUD.d">
-      <LastGenOutput>obj\Debug\UTCTFHUD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFHUDMessage.d">
-      <LastGenOutput>obj\Debug\UTCTFHUDMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFSquadAI.d">
-      <LastGenOutput>obj\Debug\UTCTFSquadAI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTCTFTeamAI.d">
-      <LastGenOutput>obj\Debug\UTCTFTeamAI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDamageType.d">
-      <LastGenOutput>obj\Debug\UTDamageType.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDataStore_GameSearchDM.d">
-      <LastGenOutput>obj\Debug\UTDataStore_GameSearchDM.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDataStore_GameSearchFavorites.d">
-      <LastGenOutput>obj\Debug\UTDataStore_GameSearchFavorites.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDataStore_GameSearchHistory.d">
-      <LastGenOutput>obj\Debug\UTDataStore_GameSearchHistory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDataStore_GameSearchPersonal.d">
-      <LastGenOutput>obj\Debug\UTDataStore_GameSearchPersonal.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDataStore_GameSettingsDM.d">
-      <LastGenOutput>obj\Debug\UTDataStore_GameSettingsDM.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDeathmatch.d">
-      <LastGenOutput>obj\Debug\UTDeathmatch.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDeathMessage.d">
-      <LastGenOutput>obj\Debug\UTDeathMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDecalManager.d">
-      <LastGenOutput>obj\Debug\UTDecalManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDefensePoint.d">
-      <LastGenOutput>obj\Debug\UTDefensePoint.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Burning.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Burning.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Drowned.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Drowned.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Encroached.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Encroached.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Lava.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Lava.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Pancake.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Pancake.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_RanOver.d">
-      <LastGenOutput>obj\Debug\UTDmgType_RanOver.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_ScorpionSelfDestruct.d">
-      <LastGenOutput>obj\Debug\UTDmgType_ScorpionSelfDestruct.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_SpaceDeath.d">
-      <LastGenOutput>obj\Debug\UTDmgType_SpaceDeath.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_Telefrag.d">
-      <LastGenOutput>obj\Debug\UTDmgType_Telefrag.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_VehicleCollision.d">
-      <LastGenOutput>obj\Debug\UTDmgType_VehicleCollision.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDmgType_VehicleExplosion.d">
-      <LastGenOutput>obj\Debug\UTDmgType_VehicleExplosion.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDMRoster.d">
-      <LastGenOutput>obj\Debug\UTDMRoster.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDMSquad.d">
-      <LastGenOutput>obj\Debug\UTDMSquad.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDroppedItemPickup.d">
-      <LastGenOutput>obj\Debug\UTDroppedItemPickup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDroppedPickup.d">
-      <LastGenOutput>obj\Debug\UTDroppedPickup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDummyPawn.d">
-      <LastGenOutput>obj\Debug\UTDummyPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTDynamicWaterVolume.d">
-      <LastGenOutput>obj\Debug\UTDynamicWaterVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmit_BloodSpray.d">
-      <LastGenOutput>obj\Debug\UTEmit_BloodSpray.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmit_BodyFlame.d">
-      <LastGenOutput>obj\Debug\UTEmit_BodyFlame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmit_HeadShotHelmet.d">
-      <LastGenOutput>obj\Debug\UTEmit_HeadShotHelmet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmit_HitEffect.d">
-      <LastGenOutput>obj\Debug\UTEmit_HitEffect.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmit_VehicleHit.d">
-      <LastGenOutput>obj\Debug\UTEmit_VehicleHit.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmitCameraEffect.d">
-      <LastGenOutput>obj\Debug\UTEmitCameraEffect.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEmitter.d">
-      <LastGenOutput>obj\Debug\UTEmitter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEntryGame.d">
-      <LastGenOutput>obj\Debug\UTEntryGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEntryHUD.d">
-      <LastGenOutput>obj\Debug\UTEntryHUD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTEntryPlayerController.d">
-      <LastGenOutput>obj\Debug\UTEntryPlayerController.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTFamilyInfo.d">
-      <LastGenOutput>obj\Debug\UTFamilyInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTFirstBloodMessage.d">
-      <LastGenOutput>obj\Debug\UTFirstBloodMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGame.d">
-      <LastGenOutput>obj\Debug\UTGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameInteraction.d">
-      <LastGenOutput>obj\Debug\UTGameInteraction.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameObjective.d">
-      <LastGenOutput>obj\Debug\UTGameObjective.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameReplicationInfo.d">
-      <LastGenOutput>obj\Debug\UTGameReplicationInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSearchCommon.d">
-      <LastGenOutput>obj\Debug\UTGameSearchCommon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSearchPersonal.d">
-      <LastGenOutput>obj\Debug\UTGameSearchPersonal.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsCommon.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsCommon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsCTF.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsCTF.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsDM.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsDM.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsPersonal.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsPersonal.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsTDM.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsTDM.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameSettingsVCTF.d">
-      <LastGenOutput>obj\Debug\UTGameSettingsVCTF.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGameViewportClient.d">
-      <LastGenOutput>obj\Debug\UTGameViewportClient.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGFxHudWrapper.d">
-      <LastGenOutput>obj\Debug\UTGFxHudWrapper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGFxTweenableMoviePlayer.d">
-      <LastGenOutput>obj\Debug\UTGFxTweenableMoviePlayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGib.d">
-      <LastGenOutput>obj\Debug\UTGib.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGib_Vehicle.d">
-      <LastGenOutput>obj\Debug\UTGib_Vehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGib_VehiclePiece.d">
-      <LastGenOutput>obj\Debug\UTGib_VehiclePiece.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGibSkeletalMeshComponent.d">
-      <LastGenOutput>obj\Debug\UTGibSkeletalMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGibStaticMeshComponent.d">
-      <LastGenOutput>obj\Debug\UTGibStaticMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTGreenMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTGreenMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHealthPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTHealthPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHealthPickupLight.d">
-      <LastGenOutput>obj\Debug\UTHealthPickupLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHoldSpot.d">
-      <LastGenOutput>obj\Debug\UTHoldSpot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHoverWheel.d">
-      <LastGenOutput>obj\Debug\UTHoverWheel.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHUD.d">
-      <LastGenOutput>obj\Debug\UTHUD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHUDBase.d">
-      <LastGenOutput>obj\Debug\UTHUDBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTHugeExplosionLight.d">
-      <LastGenOutput>obj\Debug\UTHugeExplosionLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTIdleKickWarningMessage.d">
-      <LastGenOutput>obj\Debug\UTIdleKickWarningMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTInventory.d">
-      <LastGenOutput>obj\Debug\UTInventory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTInventoryManager.d">
-      <LastGenOutput>obj\Debug\UTInventoryManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTItemPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTItemPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTJumpLiftExit.d">
-      <LastGenOutput>obj\Debug\UTJumpLiftExit.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKActor.d">
-      <LastGenOutput>obj\Debug\UTKActor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKillerMessage.d">
-      <LastGenOutput>obj\Debug\UTKillerMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKillingSpreeMessage.d">
-      <LastGenOutput>obj\Debug\UTKillingSpreeMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKillsRemainingMessage.d">
-      <LastGenOutput>obj\Debug\UTKillsRemainingMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKillZVolume.d">
-      <LastGenOutput>obj\Debug\UTKillZVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTKismetAnnouncement.d">
-      <LastGenOutput>obj\Debug\UTKismetAnnouncement.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLastSecondMessage.d">
-      <LastGenOutput>obj\Debug\UTLastSecondMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLavaVolume.d">
-      <LastGenOutput>obj\Debug\UTLavaVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLeviathanMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTLeviathanMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLinkBeamLight.d">
-      <LastGenOutput>obj\Debug\UTLinkBeamLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLinkGunMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTLinkGunMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLocalMessage.d">
-      <LastGenOutput>obj\Debug\UTLocalMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTLockWarningMessage.d">
-      <LastGenOutput>obj\Debug\UTLockWarningMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMapInfo.d">
-      <LastGenOutput>obj\Debug\UTMapInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMapMusicInfo.d">
-      <LastGenOutput>obj\Debug\UTMapMusicInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMultiKillMessage.d">
-      <LastGenOutput>obj\Debug\UTMultiKillMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMusicManager.d">
-      <LastGenOutput>obj\Debug\UTMusicManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator.d">
-      <LastGenOutput>obj\Debug\UTMutator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_Arena.d">
-      <LastGenOutput>obj\Debug\UTMutator_Arena.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_BigHead.d">
-      <LastGenOutput>obj\Debug\UTMutator_BigHead.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_FriendlyFire.d">
-      <LastGenOutput>obj\Debug\UTMutator_FriendlyFire.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_LowGrav.d">
-      <LastGenOutput>obj\Debug\UTMutator_LowGrav.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_NoHoverboard.d">
-      <LastGenOutput>obj\Debug\UTMutator_NoHoverboard.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_NoPowerups.d">
-      <LastGenOutput>obj\Debug\UTMutator_NoPowerups.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_Slomo.d">
-      <LastGenOutput>obj\Debug\UTMutator_Slomo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_SlowTimeKills.d">
-      <LastGenOutput>obj\Debug\UTMutator_SlowTimeKills.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_SpeedFreak.d">
-      <LastGenOutput>obj\Debug\UTMutator_SpeedFreak.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_SuperBerserk.d">
-      <LastGenOutput>obj\Debug\UTMutator_SuperBerserk.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTMutator_WeaponsRespawn.d">
-      <LastGenOutput>obj\Debug\UTMutator_WeaponsRespawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTObjectiveAnnouncement.d">
-      <LastGenOutput>obj\Debug\UTObjectiveAnnouncement.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTObjectiveSpecificMessage.d">
-      <LastGenOutput>obj\Debug\UTObjectiveSpecificMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTParticleSystemComponent.d">
-      <LastGenOutput>obj\Debug\UTParticleSystemComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPawn.d">
-      <LastGenOutput>obj\Debug\UTPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPawnSoundGroup.d">
-      <LastGenOutput>obj\Debug\UTPawnSoundGroup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPhysicalMaterialProperty.d">
-      <LastGenOutput>obj\Debug\UTPhysicalMaterialProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPickupInventory.d">
-      <LastGenOutput>obj\Debug\UTPickupInventory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPickupMessage.d">
-      <LastGenOutput>obj\Debug\UTPickupMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPlayerController.d">
-      <LastGenOutput>obj\Debug\UTPlayerController.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPlayerInput.d">
-      <LastGenOutput>obj\Debug\UTPlayerInput.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPlayerReplicationInfo.d">
-      <LastGenOutput>obj\Debug\UTPlayerReplicationInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPortal.d">
-      <LastGenOutput>obj\Debug\UTPortal.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTPowerupPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTPowerupPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTProjectile.d">
-      <LastGenOutput>obj\Debug\UTProjectile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTQueuedAnnouncement.d">
-      <LastGenOutput>obj\Debug\UTQueuedAnnouncement.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTReplicatedEmitter.d">
-      <LastGenOutput>obj\Debug\UTReplicatedEmitter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTRocketExplosionLight.d">
-      <LastGenOutput>obj\Debug\UTRocketExplosionLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTRocketLight.d">
-      <LastGenOutput>obj\Debug\UTRocketLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTRocketMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTRocketMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTRotatingDroppedPickup.d">
-      <LastGenOutput>obj\Debug\UTRotatingDroppedPickup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSayMsg.d">
-      <LastGenOutput>obj\Debug\UTSayMsg.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTScavengerMessage.d">
-      <LastGenOutput>obj\Debug\UTScavengerMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTScout.d">
-      <LastGenOutput>obj\Debug\UTScout.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTScriptedBotVolume.d">
-      <LastGenOutput>obj\Debug\UTScriptedBotVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTScriptedVoiceMessage.d">
-      <LastGenOutput>obj\Debug\UTScriptedVoiceMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSD_SpawnedKActor.d">
-      <LastGenOutput>obj\Debug\UTSD_SpawnedKActor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ActivateRocketBoosters.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ActivateRocketBoosters.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_AddNamedBot.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_AddNamedBot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_AIFreeze.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_AIFreeze.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_AIStartFireAt.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_AIStartFireAt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_AIStopFire.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_AIStopFire.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ChangeTeam.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ChangeTeam.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_DummyWeaponFire.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_DummyWeaponFire.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_EnterVehicle.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_EnterVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ExitVehicle.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ExitVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_GetTeamNum.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_GetTeamNum.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_HoverboardSpinJump.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_HoverboardSpinJump.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_InfiniteAmmo.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_InfiniteAmmo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_PlayAnim.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_PlayAnim.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_PlayAnnouncement.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_PlayAnnouncement.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_PlayCameraAnim.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_PlayCameraAnim.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ReturnCTFFlag.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ReturnCTFFlag.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ScriptedVoiceMessage.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ScriptedVoiceMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_SelfDestruct.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_SelfDestruct.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_SetBotsMustComplete.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_SetBotsMustComplete.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_SetVisibilityModifier.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_SetVisibilityModifier.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_SpawnProjectile.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_SpawnProjectile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_StopCameraAnim.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_StopCameraAnim.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_ToggleAnnouncements.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_ToggleAnnouncements.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqAct_UseHoverboard.d">
-      <LastGenOutput>obj\Debug\UTSeqAct_UseHoverboard.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_CheckWeapon.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_CheckWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_DoTutorial.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_DoTutorial.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_HasInventory.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_HasInventory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_IsCarryingFlag.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_IsCarryingFlag.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_IsConsole.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_IsConsole.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqCond_IsUsingWeapon.d">
-      <LastGenOutput>obj\Debug\UTSeqCond_IsUsingWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqEvent_FlagEvent.d">
-      <LastGenOutput>obj\Debug\UTSeqEvent_FlagEvent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqEvent_GameEnded.d">
-      <LastGenOutput>obj\Debug\UTSeqEvent_GameEnded.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqEvent_ObjectiveCompleted.d">
-      <LastGenOutput>obj\Debug\UTSeqEvent_ObjectiveCompleted.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqEvent_SkipCinematic.d">
-      <LastGenOutput>obj\Debug\UTSeqEvent_SkipCinematic.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSeqEvent_VehicleFactory.d">
-      <LastGenOutput>obj\Debug\UTSeqEvent_VehicleFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTShockBallLight.d">
-      <LastGenOutput>obj\Debug\UTShockBallLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTShockComboExplosionLight.d">
-      <LastGenOutput>obj\Debug\UTShockComboExplosionLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTShockImpactLight.d">
-      <LastGenOutput>obj\Debug\UTShockImpactLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTShockMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTShockMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSimpleDestroyable.d">
-      <LastGenOutput>obj\Debug\UTSimpleDestroyable.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_CantileverBeam.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_CantileverBeam.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_CicadaEngine.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_CicadaEngine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_Damage.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_Damage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_DamageHinge.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_DamageHinge.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_DamageSpring.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_DamageSpring.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_HoverboardSuspension.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_HoverboardSuspension.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_HoverboardSwing.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_HoverboardSwing.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_HoverboardVibration.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_HoverboardVibration.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_HugGround.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_HugGround.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_JetThruster.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_JetThruster.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_LockRotation.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_LockRotation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_LookAt.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_LookAt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_MantaBlade.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_MantaBlade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_MantaFlaps.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_MantaFlaps.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_MassBoneScaling.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_MassBoneScaling.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_Oscillate.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_Oscillate.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_Rotate.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_Rotate.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_SpinControl.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_SpinControl.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSkelControl_TurretConstrained.d">
-      <LastGenOutput>obj\Debug\UTSkelControl_TurretConstrained.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSlimeVolume.d">
-      <LastGenOutput>obj\Debug\UTSlimeVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTSquadAI.d">
-      <LastGenOutput>obj\Debug\UTSquadAI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTStartupMessage.d">
-      <LastGenOutput>obj\Debug\UTStartupMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTStingerMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTStingerMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamAI.d">
-      <LastGenOutput>obj\Debug\UTTeamAI.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamDeathMessage.d">
-      <LastGenOutput>obj\Debug\UTTeamDeathMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamGame.d">
-      <LastGenOutput>obj\Debug\UTTeamGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamGameMessage.d">
-      <LastGenOutput>obj\Debug\UTTeamGameMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamHUD.d">
-      <LastGenOutput>obj\Debug\UTTeamHUD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamInfo.d">
-      <LastGenOutput>obj\Debug\UTTeamInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamPlayerStart.d">
-      <LastGenOutput>obj\Debug\UTTeamPlayerStart.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamSayMsg.d">
-      <LastGenOutput>obj\Debug\UTTeamSayMsg.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeamStaticMesh.d">
-      <LastGenOutput>obj\Debug\UTTeamStaticMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTeleporterCustomMesh.d">
-      <LastGenOutput>obj\Debug\UTTeleporterCustomMesh.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTimedPowerup.d">
-      <LastGenOutput>obj\Debug\UTTimedPowerup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTimerMessage.d">
-      <LastGenOutput>obj\Debug\UTTimerMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTrajectoryReachSpec.d">
-      <LastGenOutput>obj\Debug\UTTrajectoryReachSpec.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTTurretMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\UTTurretMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_GameModeInfo.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_GameModeInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_KeyBinding.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_KeyBinding.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_MapInfo.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_MapInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_MenuOption.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_MenuOption.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_MultiplayerMenuItem.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_MultiplayerMenuItem.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_Mutator.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_Mutator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_SearchResult.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_SearchResult.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_ServerDetails.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_ServerDetails.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_SettingsMenuItem.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_SettingsMenuItem.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_SimpleElementProvider.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_SimpleElementProvider.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_StringArray.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_StringArray.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataProvider_Weapon.d">
-      <LastGenOutput>obj\Debug\UTUIDataProvider_Weapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataStore_MenuItems.d">
-      <LastGenOutput>obj\Debug\UTUIDataStore_MenuItems.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataStore_Options.d">
-      <LastGenOutput>obj\Debug\UTUIDataStore_Options.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataStore_StringAliasBindingsMap.d">
-      <LastGenOutput>obj\Debug\UTUIDataStore_StringAliasBindingsMap.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataStore_StringAliasMap.d">
-      <LastGenOutput>obj\Debug\UTUIDataStore_StringAliasMap.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIDataStore_StringList.d">
-      <LastGenOutput>obj\Debug\UTUIDataStore_StringList.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTUIResourceDataProvider.d">
-      <LastGenOutput>obj\Debug\UTUIResourceDataProvider.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicle.d">
-      <LastGenOutput>obj\Debug\UTVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleCantCarryFlagMessage.d">
-      <LastGenOutput>obj\Debug\UTVehicleCantCarryFlagMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleCTFGame.d">
-      <LastGenOutput>obj\Debug\UTVehicleCTFGame.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleCTFHUD.d">
-      <LastGenOutput>obj\Debug\UTVehicleCTFHUD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleDeathPiece.d">
-      <LastGenOutput>obj\Debug\UTVehicleDeathPiece.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleFactory.d">
-      <LastGenOutput>obj\Debug\UTVehicleFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleKillMessage.d">
-      <LastGenOutput>obj\Debug\UTVehicleKillMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleMessage.d">
-      <LastGenOutput>obj\Debug\UTVehicleMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleScorpionWheel.d">
-      <LastGenOutput>obj\Debug\UTVehicleScorpionWheel.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleShield.d">
-      <LastGenOutput>obj\Debug\UTVehicleShield.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVehicleWeapon.d">
-      <LastGenOutput>obj\Debug\UTVehicleWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVictimMessage.d">
-      <LastGenOutput>obj\Debug\UTVictimMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVictoryMessage.d">
-      <LastGenOutput>obj\Debug\UTVictoryMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTVoice.d">
-      <LastGenOutput>obj\Debug\UTVoice.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWaterVolume.d">
-      <LastGenOutput>obj\Debug\UTWaterVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeapon.d">
-      <LastGenOutput>obj\Debug\UTWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponAttachment.d">
-      <LastGenOutput>obj\Debug\UTWeaponAttachment.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponKillMessage.d">
-      <LastGenOutput>obj\Debug\UTWeaponKillMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponKillRewardMessage.d">
-      <LastGenOutput>obj\Debug\UTWeaponKillRewardMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponLocker.d">
-      <LastGenOutput>obj\Debug\UTWeaponLocker.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponLockerPickupLight.d">
-      <LastGenOutput>obj\Debug\UTWeaponLockerPickupLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponPawn.d">
-      <LastGenOutput>obj\Debug\UTWeaponPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponPickupFactory.d">
-      <LastGenOutput>obj\Debug\UTWeaponPickupFactory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponPickupLight.d">
-      <LastGenOutput>obj\Debug\UTWeaponPickupLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponRewardMessage.d">
-      <LastGenOutput>obj\Debug\UTWeaponRewardMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWeaponSwitchMessage.d">
-      <LastGenOutput>obj\Debug\UTWeaponSwitchMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="UTWillowWhisp.d">
-      <LastGenOutput>obj\Debug\UTWillowWhisp.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="VehicleMovementEffect.d">
-      <LastGenOutput>obj\Debug\VehicleMovementEffect.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="DemoRecSpectator.d" />
+    <Compile Include="ForcedDirVolume.d" />
+    <Compile Include="GFxMinimap.d" />
+    <Compile Include="GFxMinimapHud.d" />
+    <Compile Include="GFxProjectedUI.d" />
+    <Compile Include="GFxUDKFrontEnd.d" />
+    <Compile Include="GFxUDKFrontEnd_Dialog.d" />
+    <Compile Include="GFxUDKFrontEnd_ErrorDialog.d" />
+    <Compile Include="GFxUDKFrontEnd_FilterDialog.d" />
+    <Compile Include="GFxUDKFrontEnd_GameMode.d" />
+    <Compile Include="GFxUDKFrontEnd_HostGame.d" />
+    <Compile Include="GFxUDKFrontEnd_InfoDialog.d" />
+    <Compile Include="GFxUDKFrontEnd_InstantAction.d" />
+    <Compile Include="GFxUDKFrontEnd_JoinDialog.d" />
+    <Compile Include="GFxUDKFrontEnd_JoinGame.d" />
+    <Compile Include="GFxUDKFrontEnd_LaunchGame.d" />
+    <Compile Include="GFxUDKFrontEnd_MainMenu.d" />
+    <Compile Include="GFxUDKFrontEnd_MapSelect.d" />
+    <Compile Include="GFxUDKFrontEnd_Multiplayer.d" />
+    <Compile Include="GFxUDKFrontEnd_Mutators.d" />
+    <Compile Include="GFxUDKFrontEnd_PasswordDialog.d" />
+    <Compile Include="GFxUDKFrontEnd_Screen.d" />
+    <Compile Include="GFxUDKFrontEnd_ServerSettings.d" />
+    <Compile Include="GFxUDKFrontEnd_Settings.d" />
+    <Compile Include="GFxUDKFrontEnd_SettingsBase.d" />
+    <Compile Include="GFxUDKFrontEnd_View.d" />
+    <Compile Include="GFxUI_InventoryButton.d" />
+    <Compile Include="GFxUI_PauseMenu.d" />
+    <Compile Include="GFxUIFrontEnd_TitleScreen.d" />
+    <Compile Include="GFxUIView.d" />
+    <Compile Include="SeqAct_UTCrowdSpawner.d" />
+    <Compile Include="UTActorFactoryAI.d" />
+    <Compile Include="UTActorFactoryPickup.d" />
+    <Compile Include="UTActorFactoryTeamStaticMesh.d" />
+    <Compile Include="UTActorFactoryUTKActor.d" />
+    <Compile Include="UTActorFactoryVehicle.d" />
+    <Compile Include="UTAirVehicle.d" />
+    <Compile Include="UTAmbientSoundComponent.d" />
+    <Compile Include="UTAmmoPickupFactory.d" />
+    <Compile Include="UTAnimBlendBase.d" />
+    <Compile Include="UTAnimBlendByDriving.d" />
+    <Compile Include="UTAnimBlendByFall.d" />
+    <Compile Include="UTAnimBlendByFlying.d" />
+    <Compile Include="UTAnimBlendByHoverboarding.d" />
+    <Compile Include="UTAnimBlendByHoverboardTilt.d" />
+    <Compile Include="UTAnimBlendByHoverboardTurn.d" />
+    <Compile Include="UTAnimBlendByHoverJump.d" />
+    <Compile Include="UTAnimBlendByIdle.d" />
+    <Compile Include="UTAnimBlendByPhysics.d" />
+    <Compile Include="UTAnimBlendByPhysicsVolume.d" />
+    <Compile Include="UTAnimBlendByPosture.d" />
+    <Compile Include="UTAnimBlendBySlotActive.d" />
+    <Compile Include="UTAnimBlendBySpeed.d" />
+    <Compile Include="UTAnimBlendByTurnInPlace.d" />
+    <Compile Include="UTAnimBlendByVehicle.d" />
+    <Compile Include="UTAnimBlendByWeapon.d" />
+    <Compile Include="UTAnimBlendByWeapType.d" />
+    <Compile Include="UTAnimNodeCopyBoneTranslation.d" />
+    <Compile Include="UTAnimNodeFramePlayer.d" />
+    <Compile Include="UTAnimNodeJumpLeanOffset.d" />
+    <Compile Include="UTAnimNodeSequence.d" />
+    <Compile Include="UTAnimNodeSequenceByBoneRotation.d" />
+    <Compile Include="UTAnimNodeSeqWeap.d" />
+    <Compile Include="UTAnnouncer.d" />
+    <Compile Include="UTAreaNamingVolume.d" />
+    <Compile Include="UTArmorPickupFactory.d" />
+    <Compile Include="UTArmorPickupLight.d" />
+    <Compile Include="UTAutoCrouchVolume.d" />
+    <Compile Include="UTAvoidMarker.d" />
+    <Compile Include="UTBeamWeapon.d" />
+    <Compile Include="UTBeamWeaponAttachment.d" />
+    <Compile Include="UTBot.d" />
+    <Compile Include="UTCarriedObject.d" />
+    <Compile Include="UTCarriedObjectMessage.d" />
+    <Compile Include="UTCharInfo.d" />
+    <Compile Include="UTCheatManager.d" />
+    <Compile Include="UTCicadaRocketExplosionLight.d" />
+    <Compile Include="UTClientSideWeaponPawn.d" />
+    <Compile Include="UTConsole.d" />
+    <Compile Include="UTConsolePlayerController.d" />
+    <Compile Include="UTConsolePlayerInput.d" />
+    <Compile Include="UTCTFBase.d" />
+    <Compile Include="UTCTFFlag.d" />
+    <Compile Include="UTCTFGame.d" />
+    <Compile Include="UTCTFHUD.d" />
+    <Compile Include="UTCTFHUDMessage.d" />
+    <Compile Include="UTCTFSquadAI.d" />
+    <Compile Include="UTCTFTeamAI.d" />
+    <Compile Include="UTDamageType.d" />
+    <Compile Include="UTDataStore_GameSearchDM.d" />
+    <Compile Include="UTDataStore_GameSearchFavorites.d" />
+    <Compile Include="UTDataStore_GameSearchHistory.d" />
+    <Compile Include="UTDataStore_GameSearchPersonal.d" />
+    <Compile Include="UTDataStore_GameSettingsDM.d" />
+    <Compile Include="UTDeathmatch.d" />
+    <Compile Include="UTDeathMessage.d" />
+    <Compile Include="UTDecalManager.d" />
+    <Compile Include="UTDefensePoint.d" />
+    <Compile Include="UTDmgType_Burning.d" />
+    <Compile Include="UTDmgType_Drowned.d" />
+    <Compile Include="UTDmgType_Encroached.d" />
+    <Compile Include="UTDmgType_Lava.d" />
+    <Compile Include="UTDmgType_Pancake.d" />
+    <Compile Include="UTDmgType_RanOver.d" />
+    <Compile Include="UTDmgType_ScorpionSelfDestruct.d" />
+    <Compile Include="UTDmgType_SpaceDeath.d" />
+    <Compile Include="UTDmgType_Telefrag.d" />
+    <Compile Include="UTDmgType_VehicleCollision.d" />
+    <Compile Include="UTDmgType_VehicleExplosion.d" />
+    <Compile Include="UTDMRoster.d" />
+    <Compile Include="UTDMSquad.d" />
+    <Compile Include="UTDroppedItemPickup.d" />
+    <Compile Include="UTDroppedPickup.d" />
+    <Compile Include="UTDummyPawn.d" />
+    <Compile Include="UTDynamicWaterVolume.d" />
+    <Compile Include="UTEmit_BloodSpray.d" />
+    <Compile Include="UTEmit_BodyFlame.d" />
+    <Compile Include="UTEmit_HeadShotHelmet.d" />
+    <Compile Include="UTEmit_HitEffect.d" />
+    <Compile Include="UTEmit_VehicleHit.d" />
+    <Compile Include="UTEmitCameraEffect.d" />
+    <Compile Include="UTEmitter.d" />
+    <Compile Include="UTEntryGame.d" />
+    <Compile Include="UTEntryHUD.d" />
+    <Compile Include="UTEntryPlayerController.d" />
+    <Compile Include="UTFamilyInfo.d" />
+    <Compile Include="UTFirstBloodMessage.d" />
+    <Compile Include="UTGame.d" />
+    <Compile Include="UTGameInteraction.d" />
+    <Compile Include="UTGameObjective.d" />
+    <Compile Include="UTGameReplicationInfo.d" />
+    <Compile Include="UTGameSearchCommon.d" />
+    <Compile Include="UTGameSearchPersonal.d" />
+    <Compile Include="UTGameSettingsCommon.d" />
+    <Compile Include="UTGameSettingsCTF.d" />
+    <Compile Include="UTGameSettingsDM.d" />
+    <Compile Include="UTGameSettingsPersonal.d" />
+    <Compile Include="UTGameSettingsTDM.d" />
+    <Compile Include="UTGameSettingsVCTF.d" />
+    <Compile Include="UTGameViewportClient.d" />
+    <Compile Include="UTGFxHudWrapper.d" />
+    <Compile Include="UTGFxTweenableMoviePlayer.d" />
+    <Compile Include="UTGib.d" />
+    <Compile Include="UTGib_Vehicle.d" />
+    <Compile Include="UTGib_VehiclePiece.d" />
+    <Compile Include="UTGibSkeletalMeshComponent.d" />
+    <Compile Include="UTGibStaticMeshComponent.d" />
+    <Compile Include="UTGreenMuzzleFlashLight.d" />
+    <Compile Include="UTHealthPickupFactory.d" />
+    <Compile Include="UTHealthPickupLight.d" />
+    <Compile Include="UTHoldSpot.d" />
+    <Compile Include="UTHoverWheel.d" />
+    <Compile Include="UTHUD.d" />
+    <Compile Include="UTHUDBase.d" />
+    <Compile Include="UTHugeExplosionLight.d" />
+    <Compile Include="UTIdleKickWarningMessage.d" />
+    <Compile Include="UTInventory.d" />
+    <Compile Include="UTInventoryManager.d" />
+    <Compile Include="UTItemPickupFactory.d" />
+    <Compile Include="UTJumpLiftExit.d" />
+    <Compile Include="UTKActor.d" />
+    <Compile Include="UTKillerMessage.d" />
+    <Compile Include="UTKillingSpreeMessage.d" />
+    <Compile Include="UTKillsRemainingMessage.d" />
+    <Compile Include="UTKillZVolume.d" />
+    <Compile Include="UTKismetAnnouncement.d" />
+    <Compile Include="UTLastSecondMessage.d" />
+    <Compile Include="UTLavaVolume.d" />
+    <Compile Include="UTLeviathanMuzzleFlashLight.d" />
+    <Compile Include="UTLinkBeamLight.d" />
+    <Compile Include="UTLinkGunMuzzleFlashLight.d" />
+    <Compile Include="UTLocalMessage.d" />
+    <Compile Include="UTLockWarningMessage.d" />
+    <Compile Include="UTMapInfo.d" />
+    <Compile Include="UTMapMusicInfo.d" />
+    <Compile Include="UTMultiKillMessage.d" />
+    <Compile Include="UTMusicManager.d" />
+    <Compile Include="UTMutator.d" />
+    <Compile Include="UTMutator_Arena.d" />
+    <Compile Include="UTMutator_BigHead.d" />
+    <Compile Include="UTMutator_FriendlyFire.d" />
+    <Compile Include="UTMutator_LowGrav.d" />
+    <Compile Include="UTMutator_NoHoverboard.d" />
+    <Compile Include="UTMutator_NoPowerups.d" />
+    <Compile Include="UTMutator_Slomo.d" />
+    <Compile Include="UTMutator_SlowTimeKills.d" />
+    <Compile Include="UTMutator_SpeedFreak.d" />
+    <Compile Include="UTMutator_SuperBerserk.d" />
+    <Compile Include="UTMutator_WeaponsRespawn.d" />
+    <Compile Include="UTObjectiveAnnouncement.d" />
+    <Compile Include="UTObjectiveSpecificMessage.d" />
+    <Compile Include="UTParticleSystemComponent.d" />
+    <Compile Include="UTPawn.d" />
+    <Compile Include="UTPawnSoundGroup.d" />
+    <Compile Include="UTPhysicalMaterialProperty.d" />
+    <Compile Include="UTPickupFactory.d" />
+    <Compile Include="UTPickupInventory.d" />
+    <Compile Include="UTPickupMessage.d" />
+    <Compile Include="UTPlayerController.d" />
+    <Compile Include="UTPlayerInput.d" />
+    <Compile Include="UTPlayerReplicationInfo.d" />
+    <Compile Include="UTPortal.d" />
+    <Compile Include="UTPowerupPickupFactory.d" />
+    <Compile Include="UTProjectile.d" />
+    <Compile Include="UTQueuedAnnouncement.d" />
+    <Compile Include="UTReplicatedEmitter.d" />
+    <Compile Include="UTRocketExplosionLight.d" />
+    <Compile Include="UTRocketLight.d" />
+    <Compile Include="UTRocketMuzzleFlashLight.d" />
+    <Compile Include="UTRotatingDroppedPickup.d" />
+    <Compile Include="UTSayMsg.d" />
+    <Compile Include="UTScavengerMessage.d" />
+    <Compile Include="UTScout.d" />
+    <Compile Include="UTScriptedBotVolume.d" />
+    <Compile Include="UTScriptedVoiceMessage.d" />
+    <Compile Include="UTSD_SpawnedKActor.d" />
+    <Compile Include="UTSeqAct_ActivateRocketBoosters.d" />
+    <Compile Include="UTSeqAct_AddNamedBot.d" />
+    <Compile Include="UTSeqAct_AIFreeze.d" />
+    <Compile Include="UTSeqAct_AIStartFireAt.d" />
+    <Compile Include="UTSeqAct_AIStopFire.d" />
+    <Compile Include="UTSeqAct_ChangeTeam.d" />
+    <Compile Include="UTSeqAct_DummyWeaponFire.d" />
+    <Compile Include="UTSeqAct_EnterVehicle.d" />
+    <Compile Include="UTSeqAct_ExitVehicle.d" />
+    <Compile Include="UTSeqAct_GetTeamNum.d" />
+    <Compile Include="UTSeqAct_HoverboardSpinJump.d" />
+    <Compile Include="UTSeqAct_InfiniteAmmo.d" />
+    <Compile Include="UTSeqAct_PlayAnim.d" />
+    <Compile Include="UTSeqAct_PlayAnnouncement.d" />
+    <Compile Include="UTSeqAct_PlayCameraAnim.d" />
+    <Compile Include="UTSeqAct_ReturnCTFFlag.d" />
+    <Compile Include="UTSeqAct_ScriptedVoiceMessage.d" />
+    <Compile Include="UTSeqAct_SelfDestruct.d" />
+    <Compile Include="UTSeqAct_SetBotsMustComplete.d" />
+    <Compile Include="UTSeqAct_SetVisibilityModifier.d" />
+    <Compile Include="UTSeqAct_SpawnProjectile.d" />
+    <Compile Include="UTSeqAct_StopCameraAnim.d" />
+    <Compile Include="UTSeqAct_ToggleAnnouncements.d" />
+    <Compile Include="UTSeqAct_UseHoverboard.d" />
+    <Compile Include="UTSeqCond_CheckWeapon.d" />
+    <Compile Include="UTSeqCond_DoTutorial.d" />
+    <Compile Include="UTSeqCond_HasInventory.d" />
+    <Compile Include="UTSeqCond_IsCarryingFlag.d" />
+    <Compile Include="UTSeqCond_IsConsole.d" />
+    <Compile Include="UTSeqCond_IsUsingWeapon.d" />
+    <Compile Include="UTSeqEvent_FlagEvent.d" />
+    <Compile Include="UTSeqEvent_GameEnded.d" />
+    <Compile Include="UTSeqEvent_ObjectiveCompleted.d" />
+    <Compile Include="UTSeqEvent_SkipCinematic.d" />
+    <Compile Include="UTSeqEvent_VehicleFactory.d" />
+    <Compile Include="UTShockBallLight.d" />
+    <Compile Include="UTShockComboExplosionLight.d" />
+    <Compile Include="UTShockImpactLight.d" />
+    <Compile Include="UTShockMuzzleFlashLight.d" />
+    <Compile Include="UTSimpleDestroyable.d" />
+    <Compile Include="UTSkelControl_CantileverBeam.d" />
+    <Compile Include="UTSkelControl_CicadaEngine.d" />
+    <Compile Include="UTSkelControl_Damage.d" />
+    <Compile Include="UTSkelControl_DamageHinge.d" />
+    <Compile Include="UTSkelControl_DamageSpring.d" />
+    <Compile Include="UTSkelControl_HoverboardSuspension.d" />
+    <Compile Include="UTSkelControl_HoverboardSwing.d" />
+    <Compile Include="UTSkelControl_HoverboardVibration.d" />
+    <Compile Include="UTSkelControl_HugGround.d" />
+    <Compile Include="UTSkelControl_JetThruster.d" />
+    <Compile Include="UTSkelControl_LockRotation.d" />
+    <Compile Include="UTSkelControl_LookAt.d" />
+    <Compile Include="UTSkelControl_MantaBlade.d" />
+    <Compile Include="UTSkelControl_MantaFlaps.d" />
+    <Compile Include="UTSkelControl_MassBoneScaling.d" />
+    <Compile Include="UTSkelControl_Oscillate.d" />
+    <Compile Include="UTSkelControl_Rotate.d" />
+    <Compile Include="UTSkelControl_SpinControl.d" />
+    <Compile Include="UTSkelControl_TurretConstrained.d" />
+    <Compile Include="UTSlimeVolume.d" />
+    <Compile Include="UTSquadAI.d" />
+    <Compile Include="UTStartupMessage.d" />
+    <Compile Include="UTStingerMuzzleFlashLight.d" />
+    <Compile Include="UTTeamAI.d" />
+    <Compile Include="UTTeamDeathMessage.d" />
+    <Compile Include="UTTeamGame.d" />
+    <Compile Include="UTTeamGameMessage.d" />
+    <Compile Include="UTTeamHUD.d" />
+    <Compile Include="UTTeamInfo.d" />
+    <Compile Include="UTTeamPlayerStart.d" />
+    <Compile Include="UTTeamSayMsg.d" />
+    <Compile Include="UTTeamStaticMesh.d" />
+    <Compile Include="UTTeleporterCustomMesh.d" />
+    <Compile Include="UTTimedPowerup.d" />
+    <Compile Include="UTTimerMessage.d" />
+    <Compile Include="UTTrajectoryReachSpec.d" />
+    <Compile Include="UTTurretMuzzleFlashLight.d" />
+    <Compile Include="UTUIDataProvider_GameModeInfo.d" />
+    <Compile Include="UTUIDataProvider_KeyBinding.d" />
+    <Compile Include="UTUIDataProvider_MapInfo.d" />
+    <Compile Include="UTUIDataProvider_MenuOption.d" />
+    <Compile Include="UTUIDataProvider_MultiplayerMenuItem.d" />
+    <Compile Include="UTUIDataProvider_Mutator.d" />
+    <Compile Include="UTUIDataProvider_SearchResult.d" />
+    <Compile Include="UTUIDataProvider_ServerDetails.d" />
+    <Compile Include="UTUIDataProvider_SettingsMenuItem.d" />
+    <Compile Include="UTUIDataProvider_SimpleElementProvider.d" />
+    <Compile Include="UTUIDataProvider_StringArray.d" />
+    <Compile Include="UTUIDataProvider_Weapon.d" />
+    <Compile Include="UTUIDataStore_MenuItems.d" />
+    <Compile Include="UTUIDataStore_Options.d" />
+    <Compile Include="UTUIDataStore_StringAliasBindingsMap.d" />
+    <Compile Include="UTUIDataStore_StringAliasMap.d" />
+    <Compile Include="UTUIDataStore_StringList.d" />
+    <Compile Include="UTUIResourceDataProvider.d" />
+    <Compile Include="UTVehicle.d" />
+    <Compile Include="UTVehicleCantCarryFlagMessage.d" />
+    <Compile Include="UTVehicleCTFGame.d" />
+    <Compile Include="UTVehicleCTFHUD.d" />
+    <Compile Include="UTVehicleDeathPiece.d" />
+    <Compile Include="UTVehicleFactory.d" />
+    <Compile Include="UTVehicleKillMessage.d" />
+    <Compile Include="UTVehicleMessage.d" />
+    <Compile Include="UTVehicleScorpionWheel.d" />
+    <Compile Include="UTVehicleShield.d" />
+    <Compile Include="UTVehicleWeapon.d" />
+    <Compile Include="UTVictimMessage.d" />
+    <Compile Include="UTVictoryMessage.d" />
+    <Compile Include="UTVoice.d" />
+    <Compile Include="UTWaterVolume.d" />
+    <Compile Include="UTWeapon.d" />
+    <Compile Include="UTWeaponAttachment.d" />
+    <Compile Include="UTWeaponKillMessage.d" />
+    <Compile Include="UTWeaponKillRewardMessage.d" />
+    <Compile Include="UTWeaponLocker.d" />
+    <Compile Include="UTWeaponLockerPickupLight.d" />
+    <Compile Include="UTWeaponPawn.d" />
+    <Compile Include="UTWeaponPickupFactory.d" />
+    <Compile Include="UTWeaponPickupLight.d" />
+    <Compile Include="UTWeaponRewardMessage.d" />
+    <Compile Include="UTWeaponSwitchMessage.d" />
+    <Compile Include="UTWillowWhisp.d" />
+    <Compile Include="VehicleMovementEffect.d" />
   </ItemGroup>
 </Project>

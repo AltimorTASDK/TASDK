@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -38,59 +38,23 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlashMovie.d">
-      <LastGenOutput>obj\Debug\FlashMovie.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_CloseMovie.d">
-      <LastGenOutput>obj\Debug\GFxAction_CloseMovie.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_GetVariable.d">
-      <LastGenOutput>obj\Debug\GFxAction_GetVariable.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_Invoke.d">
-      <LastGenOutput>obj\Debug\GFxAction_Invoke.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_OpenMovie.d">
-      <LastGenOutput>obj\Debug\GFxAction_OpenMovie.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_SetCaptureKeys.d">
-      <LastGenOutput>obj\Debug\GFxAction_SetCaptureKeys.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxAction_SetVariable.d">
-      <LastGenOutput>obj\Debug\GFxAction_SetVariable.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxClikWidget.d">
-      <LastGenOutput>obj\Debug\GFxClikWidget.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxDataStoreSubscriber.d">
-      <LastGenOutput>obj\Debug\GFxDataStoreSubscriber.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxEngine.d">
-      <LastGenOutput>obj\Debug\GFxEngine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxEvent_FSCommand.d">
-      <LastGenOutput>obj\Debug\GFxEvent_FSCommand.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxFSCmdHandler.d">
-      <LastGenOutput>obj\Debug\GFxFSCmdHandler.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxFSCmdHandler_Kismet.d">
-      <LastGenOutput>obj\Debug\GFxFSCmdHandler_Kismet.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxInteraction.d">
-      <LastGenOutput>obj\Debug\GFxInteraction.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxMoviePlayer.d">
-      <LastGenOutput>obj\Debug\GFxMoviePlayer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxObject.d">
-      <LastGenOutput>obj\Debug\GFxObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="GFxRawData.d">
-      <LastGenOutput>obj\Debug\GFxRawData.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="SwfMovie.d">
-      <LastGenOutput>obj\Debug\SwfMovie.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="FlashMovie.d" />
+    <Compile Include="GFxAction_CloseMovie.d" />
+    <Compile Include="GFxAction_GetVariable.d" />
+    <Compile Include="GFxAction_Invoke.d" />
+    <Compile Include="GFxAction_OpenMovie.d" />
+    <Compile Include="GFxAction_SetCaptureKeys.d" />
+    <Compile Include="GFxAction_SetVariable.d" />
+    <Compile Include="GFxClikWidget.d" />
+    <Compile Include="GFxDataStoreSubscriber.d" />
+    <Compile Include="GFxEngine.d" />
+    <Compile Include="GFxEvent_FSCommand.d" />
+    <Compile Include="GFxFSCmdHandler.d" />
+    <Compile Include="GFxFSCmdHandler_Kismet.d" />
+    <Compile Include="GFxInteraction.d" />
+    <Compile Include="GFxMoviePlayer.d" />
+    <Compile Include="GFxObject.d" />
+    <Compile Include="GFxRawData.d" />
+    <Compile Include="SwfMovie.d" />
   </ItemGroup>
 </Project>

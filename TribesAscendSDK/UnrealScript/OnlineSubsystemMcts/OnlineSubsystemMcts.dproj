@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -40,17 +40,9 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MctsOnlineSettings.d">
-      <LastGenOutput>obj\Debug\MctsOnlineSettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineGameInterfaceMcts.d">
-      <LastGenOutput>obj\Debug\OnlineGameInterfaceMcts.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineSubsystemMcts.d">
-      <LastGenOutput>obj\Debug\OnlineSubsystemMcts.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineVoiceInterfaceMcts.d">
-      <LastGenOutput>obj\Debug\OnlineVoiceInterfaceMcts.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="MctsOnlineSettings.d" />
+    <Compile Include="OnlineGameInterfaceMcts.d" />
+    <Compile Include="OnlineSubsystemMcts.d" />
+    <Compile Include="OnlineVoiceInterfaceMcts.d" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -38,83 +38,31 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientBeaconAddressResolver.d">
-      <LastGenOutput>obj\Debug\ClientBeaconAddressResolver.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="HelloWeb.d">
-      <LastGenOutput>obj\Debug\HelloWeb.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="HTTPDownload.d">
-      <LastGenOutput>obj\Debug\HTTPDownload.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="ImageServer.d">
-      <LastGenOutput>obj\Debug\ImageServer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="InternetLink.d">
-      <LastGenOutput>obj\Debug\InternetLink.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MCPBase.d">
-      <LastGenOutput>obj\Debug\MCPBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MeshBeacon.d">
-      <LastGenOutput>obj\Debug\MeshBeacon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MeshBeaconClient.d">
-      <LastGenOutput>obj\Debug\MeshBeaconClient.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="MeshBeaconHost.d">
-      <LastGenOutput>obj\Debug\MeshBeaconHost.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineEventsInterfaceMcp.d">
-      <LastGenOutput>obj\Debug\OnlineEventsInterfaceMcp.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineGameInterfaceImpl.d">
-      <LastGenOutput>obj\Debug\OnlineGameInterfaceImpl.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineNewsInterfaceMcp.d">
-      <LastGenOutput>obj\Debug\OnlineNewsInterfaceMcp.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlinePlaylistManager.d">
-      <LastGenOutput>obj\Debug\OnlinePlaylistManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineSubsystemCommonImpl.d">
-      <LastGenOutput>obj\Debug\OnlineSubsystemCommonImpl.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="OnlineTitleFileDownloadMcp.d">
-      <LastGenOutput>obj\Debug\OnlineTitleFileDownloadMcp.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PartyBeacon.d">
-      <LastGenOutput>obj\Debug\PartyBeacon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PartyBeaconClient.d">
-      <LastGenOutput>obj\Debug\PartyBeaconClient.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="PartyBeaconHost.d">
-      <LastGenOutput>obj\Debug\PartyBeaconHost.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TcpipConnection.d">
-      <LastGenOutput>obj\Debug\TcpipConnection.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TcpLink.d">
-      <LastGenOutput>obj\Debug\TcpLink.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TcpNetDriver.d">
-      <LastGenOutput>obj\Debug\TcpNetDriver.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WebApplication.d">
-      <LastGenOutput>obj\Debug\WebApplication.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WebConnection.d">
-      <LastGenOutput>obj\Debug\WebConnection.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WebRequest.d">
-      <LastGenOutput>obj\Debug\WebRequest.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WebResponse.d">
-      <LastGenOutput>obj\Debug\WebResponse.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="WebServer.d">
-      <LastGenOutput>obj\Debug\WebServer.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="ClientBeaconAddressResolver.d" />
+    <Compile Include="HelloWeb.d" />
+    <Compile Include="HTTPDownload.d" />
+    <Compile Include="ImageServer.d" />
+    <Compile Include="InternetLink.d" />
+    <Compile Include="MCPBase.d" />
+    <Compile Include="MeshBeacon.d" />
+    <Compile Include="MeshBeaconClient.d" />
+    <Compile Include="MeshBeaconHost.d" />
+    <Compile Include="OnlineEventsInterfaceMcp.d" />
+    <Compile Include="OnlineGameInterfaceImpl.d" />
+    <Compile Include="OnlineNewsInterfaceMcp.d" />
+    <Compile Include="OnlinePlaylistManager.d" />
+    <Compile Include="OnlineSubsystemCommonImpl.d" />
+    <Compile Include="OnlineTitleFileDownloadMcp.d" />
+    <Compile Include="PartyBeacon.d" />
+    <Compile Include="PartyBeaconClient.d" />
+    <Compile Include="PartyBeaconHost.d" />
+    <Compile Include="TcpipConnection.d" />
+    <Compile Include="TcpLink.d" />
+    <Compile Include="TcpNetDriver.d" />
+    <Compile Include="WebApplication.d" />
+    <Compile Include="WebConnection.d" />
+    <Compile Include="WebRequest.d" />
+    <Compile Include="WebResponse.d" />
+    <Compile Include="WebServer.d" />
   </ItemGroup>
 </Project>

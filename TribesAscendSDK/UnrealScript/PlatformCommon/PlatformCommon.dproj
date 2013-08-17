@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -40,32 +40,14 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SearFiles.d">
-      <LastGenOutput>obj\Debug\SearFiles.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgBrowserInteraction.d">
-      <LastGenOutput>obj\Debug\TgBrowserInteraction.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgCheatManager.d">
-      <LastGenOutput>obj\Debug\TgCheatManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgGameEngine.d">
-      <LastGenOutput>obj\Debug\TgGameEngine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgNetConn.d">
-      <LastGenOutput>obj\Debug\TgNetConn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgNetDriver.d">
-      <LastGenOutput>obj\Debug\TgNetDriver.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgPlayerProfile.d">
-      <LastGenOutput>obj\Debug\TgPlayerProfile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgStructures.d">
-      <LastGenOutput>obj\Debug\TgStructures.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TgSupportCommands.d">
-      <LastGenOutput>obj\Debug\TgSupportCommands.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="SearFiles.d" />
+    <Compile Include="TgBrowserInteraction.d" />
+    <Compile Include="TgCheatManager.d" />
+    <Compile Include="TgGameEngine.d" />
+    <Compile Include="TgNetConn.d" />
+    <Compile Include="TgNetDriver.d" />
+    <Compile Include="TgPlayerProfile.d" />
+    <Compile Include="TgStructures.d" />
+    <Compile Include="TgSupportCommands.d" />
   </ItemGroup>
 </Project>

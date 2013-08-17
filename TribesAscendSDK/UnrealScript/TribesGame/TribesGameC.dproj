@@ -12,7 +12,7 @@
     <IncrementalLinking>true</IncrementalLinking>
     <Includes>
       <Includes>
-        <Path>..\..</Path>
+        <Path>C:\Tribes\TribesAscendSDK\TribesAscendSDK</Path>
       </Includes>
     </Includes>
   </PropertyGroup>
@@ -36,1271 +36,427 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TrMapInfo.d">
-      <LastGenOutput>obj\Debug\TrMapInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMapMusicInfo.d">
-      <LastGenOutput>obj\Debug\TrMapMusicInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMineCollisionProxy.d">
-      <LastGenOutput>obj\Debug\TrMineCollisionProxy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMiscellaneousMessage.d">
-      <LastGenOutput>obj\Debug\TrMiscellaneousMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMortarMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\TrMortarMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMultiKillMessage.d">
-      <LastGenOutput>obj\Debug\TrMultiKillMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMusicManager.d">
-      <LastGenOutput>obj\Debug\TrMusicManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_AssaultRifle.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_AssaultRifle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_BaseTurretProjectile.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_BaseTurretProjectile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_Gold.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_Gold.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_LightTurretProjectile.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_LightTurretProjectile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_NovaColt.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_NovaColt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_RepairTool.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_RepairTool.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_RepairToolSD.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_RepairToolSD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_StealthSpinfusor.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_StealthSpinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrMuzzleFlashLight_TCN4SMG.d">
-      <LastGenOutput>obj\Debug\TrMuzzleFlashLight_TCN4SMG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrNeutralMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\TrNeutralMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrObject.d">
-      <LastGenOutput>obj\Debug\TrObject.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrObjectPool.d">
-      <LastGenOutput>obj\Debug\TrObjectPool.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrOrientedBoxComponent.d">
-      <LastGenOutput>obj\Debug\TrOrientedBoxComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPageManager.d">
-      <LastGenOutput>obj\Debug\TrPageManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPaperDoll.d">
-      <LastGenOutput>obj\Debug\TrPaperDoll.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPaperDollMainMenu.d">
-      <LastGenOutput>obj\Debug\TrPaperDollMainMenu.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPaperDollTransient.d">
-      <LastGenOutput>obj\Debug\TrPaperDollTransient.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPartyManager.d">
-      <LastGenOutput>obj\Debug\TrPartyManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPartySettings.d">
-      <LastGenOutput>obj\Debug\TrPartySettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPawn.d">
-      <LastGenOutput>obj\Debug\TrPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPawnCollisionProxy.d">
-      <LastGenOutput>obj\Debug\TrPawnCollisionProxy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPawnSoundGroup.d">
-      <LastGenOutput>obj\Debug\TrPawnSoundGroup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk.d">
-      <LastGenOutput>obj\Debug\TrPerk.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Blank.d">
-      <LastGenOutput>obj\Debug\TrPerk_Blank.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_BountyHunter.d">
-      <LastGenOutput>obj\Debug\TrPerk_BountyHunter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_CloseCombat.d">
-      <LastGenOutput>obj\Debug\TrPerk_CloseCombat.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Determination.d">
-      <LastGenOutput>obj\Debug\TrPerk_Determination.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Egocentric.d">
-      <LastGenOutput>obj\Debug\TrPerk_Egocentric.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Lightweight.d">
-      <LastGenOutput>obj\Debug\TrPerk_Lightweight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Looter.d">
-      <LastGenOutput>obj\Debug\TrPerk_Looter.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Mechanic.d">
-      <LastGenOutput>obj\Debug\TrPerk_Mechanic.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Pilot.d">
-      <LastGenOutput>obj\Debug\TrPerk_Pilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_PotentialEnergy.d">
-      <LastGenOutput>obj\Debug\TrPerk_PotentialEnergy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_QuickDraw.d">
-      <LastGenOutput>obj\Debug\TrPerk_QuickDraw.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Rage.d">
-      <LastGenOutput>obj\Debug\TrPerk_Rage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Reach.d">
-      <LastGenOutput>obj\Debug\TrPerk_Reach.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_SafeFall.d">
-      <LastGenOutput>obj\Debug\TrPerk_SafeFall.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_SafetyThird.d">
-      <LastGenOutput>obj\Debug\TrPerk_SafetyThird.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_SonicPunch.d">
-      <LastGenOutput>obj\Debug\TrPerk_SonicPunch.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Stealthy.d">
-      <LastGenOutput>obj\Debug\TrPerk_Stealthy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_SuperCapacitor.d">
-      <LastGenOutput>obj\Debug\TrPerk_SuperCapacitor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_SuperHeavy.d">
-      <LastGenOutput>obj\Debug\TrPerk_SuperHeavy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_Survivalist.d">
-      <LastGenOutput>obj\Debug\TrPerk_Survivalist.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_UltraCapacitor.d">
-      <LastGenOutput>obj\Debug\TrPerk_UltraCapacitor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerk_WheelDeal.d">
-      <LastGenOutput>obj\Debug\TrPerk_WheelDeal.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPerkList.d">
-      <LastGenOutput>obj\Debug\TrPerkList.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPhysicalMaterialProperty.d">
-      <LastGenOutput>obj\Debug\TrPhysicalMaterialProperty.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPhysicsVolume.d">
-      <LastGenOutput>obj\Debug\TrPhysicsVolume.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerController.d">
-      <LastGenOutput>obj\Debug\TrPlayerController.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerController_Training.d">
-      <LastGenOutput>obj\Debug\TrPlayerController_Training.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerInput.d">
-      <LastGenOutput>obj\Debug\TrPlayerInput.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerInput_Spectator.d">
-      <LastGenOutput>obj\Debug\TrPlayerInput_Spectator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerPawn.d">
-      <LastGenOutput>obj\Debug\TrPlayerPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerReplicationInfo.d">
-      <LastGenOutput>obj\Debug\TrPlayerReplicationInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerSkin1PData.d">
-      <LastGenOutput>obj\Debug\TrPlayerSkin1PData.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerSkin3PData.d">
-      <LastGenOutput>obj\Debug\TrPlayerSkin3PData.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerStart.d">
-      <LastGenOutput>obj\Debug\TrPlayerStart.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Aus.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Aus.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Dark.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Dark.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Fem1.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Fem1.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Fem2.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Fem2.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Heavy.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Heavy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Light.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Light.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_Medium.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_Medium.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_BioDerm01.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_BioDerm01.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_BioDerm02.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_BioDerm02.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_BioDerm03.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_BioDerm03.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Fem01.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Fem01.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Fem02.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Fem02.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Fem03.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Fem03.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Fem04.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Fem04.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Fem05.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Fem05.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Male01.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Male01.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Male02.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Male02.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Male03.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Male03.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Male04.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Male04.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPlayerVoice_T2_Male05.d">
-      <LastGenOutput>obj\Debug\TrPlayerVoice_T2_Male05.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPowerGenerator.d">
-      <LastGenOutput>obj\Debug\TrPowerGenerator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPowerGenerator_BloodEagle.d">
-      <LastGenOutput>obj\Debug\TrPowerGenerator_BloodEagle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPowerGenerator_DiamondSword.d">
-      <LastGenOutput>obj\Debug\TrPowerGenerator_DiamondSword.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPowerGenerator_Siege.d">
-      <LastGenOutput>obj\Debug\TrPowerGenerator_Siege.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_AntiAirTurret.d">
-      <LastGenOutput>obj\Debug\TrProj_AntiAirTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_APGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_APGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ARC8.d">
-      <LastGenOutput>obj\Debug\TrProj_ARC8.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ArmoredClaymore.d">
-      <LastGenOutput>obj\Debug\TrProj_ArmoredClaymore.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ArxBuster.d">
-      <LastGenOutput>obj\Debug\TrProj_ArxBuster.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ArxBuster_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_ArxBuster_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ArxShotgun.d">
-      <LastGenOutput>obj\Debug\TrProj_ArxShotgun.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_AssaultRifle.d">
-      <LastGenOutput>obj\Debug\TrProj_AssaultRifle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_AssaultRifle_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_AssaultRifle_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_AVMine.d">
-      <LastGenOutput>obj\Debug\TrProj_AVMine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_BaseTurret.d">
-      <LastGenOutput>obj\Debug\TrProj_BaseTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_BeowulfGunner.d">
-      <LastGenOutput>obj\Debug\TrProj_BeowulfGunner.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_BeowulfPilot.d">
-      <LastGenOutput>obj\Debug\TrProj_BeowulfPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_BoltLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_BoltLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Buckler.d">
-      <LastGenOutput>obj\Debug\TrProj_Buckler.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_CallInBase.d">
-      <LastGenOutput>obj\Debug\TrProj_CallInBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Chaingun.d">
-      <LastGenOutput>obj\Debug\TrProj_Chaingun.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Chaingun_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_Chaingun_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ChaingunBulletTracer.d">
-      <LastGenOutput>obj\Debug\TrProj_ChaingunBulletTracer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Claymore.d">
-      <LastGenOutput>obj\Debug\TrProj_Claymore.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Claymore_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_Claymore_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ClientTracer.d">
-      <LastGenOutput>obj\Debug\TrProj_ClientTracer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ConcussionGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_ConcussionGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ConcussionGrenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_ConcussionGrenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_DiskToss.d">
-      <LastGenOutput>obj\Debug\TrProj_DiskToss.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_EMPGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_EMPGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_EMPGrenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_EMPGrenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Falcon.d">
-      <LastGenOutput>obj\Debug\TrProj_Falcon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_FlareGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_FlareGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_GravCyclePilot.d">
-      <LastGenOutput>obj\Debug\TrProj_GravCyclePilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Grenade.d">
-      <LastGenOutput>obj\Debug\TrProj_Grenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Grenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_Grenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_GrenadeLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_GrenadeLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_GrenadeT5.d">
-      <LastGenOutput>obj\Debug\TrProj_GrenadeT5.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_GrenadeXL.d">
-      <LastGenOutput>obj\Debug\TrProj_GrenadeXL.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_GrenadeXL_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_GrenadeXL_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HavocPilot.d">
-      <LastGenOutput>obj\Debug\TrProj_HavocPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavyAPGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavyAPGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavyAPGrenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavyAPGrenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavyBoltLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavyBoltLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavyImpactNitron.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavyImpactNitron.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavySpinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavySpinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavySpinfusor_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavySpinfusor_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HeavyTwinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_HeavyTwinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HERCGunner.d">
-      <LastGenOutput>obj\Debug\TrProj_HERCGunner.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_HERCPilot.d">
-      <LastGenOutput>obj\Debug\TrProj_HERCPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ImpactBomblets.d">
-      <LastGenOutput>obj\Debug\TrProj_ImpactBomblets.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Lacerator.d">
-      <LastGenOutput>obj\Debug\TrProj_Lacerator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightAssaultRifle.d">
-      <LastGenOutput>obj\Debug\TrProj_LightAssaultRifle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightSpinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_LightSpinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightSpinfusor_100X.d">
-      <LastGenOutput>obj\Debug\TrProj_LightSpinfusor_100X.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightSpinfusor_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_LightSpinfusor_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightStickyGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_LightStickyGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightTurret.d">
-      <LastGenOutput>obj\Debug\TrProj_LightTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LightTwinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_LightTwinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_LR1Mortar.d">
-      <LastGenOutput>obj\Debug\TrProj_LR1Mortar.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Mine.d">
-      <LastGenOutput>obj\Debug\TrProj_Mine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MIRVGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_MIRVGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MIRVGrenadeSecondary.d">
-      <LastGenOutput>obj\Debug\TrProj_MIRVGrenadeSecondary.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MIRVLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_MIRVLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MIRVLauncherSecondary.d">
-      <LastGenOutput>obj\Debug\TrProj_MIRVLauncherSecondary.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MortarLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_MortarLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MortarLauncher_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_MortarLauncher_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_MotionSensor.d">
-      <LastGenOutput>obj\Debug\TrProj_MotionSensor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NinjaSmoke.d">
-      <LastGenOutput>obj\Debug\TrProj_NinjaSmoke.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NJ4SMG.d">
-      <LastGenOutput>obj\Debug\TrProj_NJ4SMG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NJ4SMG_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_NJ4SMG_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NJ5SMG.d">
-      <LastGenOutput>obj\Debug\TrProj_NJ5SMG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NovaColt.d">
-      <LastGenOutput>obj\Debug\TrProj_NovaColt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_NovaColt_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_NovaColt_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_OrbitalStrike.d">
-      <LastGenOutput>obj\Debug\TrProj_OrbitalStrike.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_PistolBulletTracer.d">
-      <LastGenOutput>obj\Debug\TrProj_PistolBulletTracer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_PlasmaCannon.d">
-      <LastGenOutput>obj\Debug\TrProj_PlasmaCannon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_PlasmaGun.d">
-      <LastGenOutput>obj\Debug\TrProj_PlasmaGun.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_PrismMine.d">
-      <LastGenOutput>obj\Debug\TrProj_PrismMine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ProximityGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_ProximityGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_RemoteArxBuster.d">
-      <LastGenOutput>obj\Debug\TrProj_RemoteArxBuster.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_RepairDeployable.d">
-      <LastGenOutput>obj\Debug\TrProj_RepairDeployable.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_RhinoSMG.d">
-      <LastGenOutput>obj\Debug\TrProj_RhinoSMG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_RhinoSMG_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_RhinoSMG_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_RocketLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_RocketLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SAP20.d">
-      <LastGenOutput>obj\Debug\TrProj_SAP20.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ShrikePilot.d">
-      <LastGenOutput>obj\Debug\TrProj_ShrikePilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SN7.d">
-      <LastGenOutput>obj\Debug\TrProj_SN7.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SN7_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_SN7_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpikeGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_SpikeGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpikeGrenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_SpikeGrenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpikeLauncher.d">
-      <LastGenOutput>obj\Debug\TrProj_SpikeLauncher.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpikeLauncherSecondary.d">
-      <LastGenOutput>obj\Debug\TrProj_SpikeLauncherSecondary.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpikeLauncherThird.d">
-      <LastGenOutput>obj\Debug\TrProj_SpikeLauncherThird.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Spinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_Spinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Spinfusor_100X.d">
-      <LastGenOutput>obj\Debug\TrProj_Spinfusor_100X.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpinfusorD.d">
-      <LastGenOutput>obj\Debug\TrProj_SpinfusorD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_SpinfusorD_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_SpinfusorD_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_StealthSpinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_StealthSpinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_STGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_STGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_StickyGrenade.d">
-      <LastGenOutput>obj\Debug\TrProj_StickyGrenade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_StickyGrenade_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_StickyGrenade_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TacticalStrike.d">
-      <LastGenOutput>obj\Debug\TrProj_TacticalStrike.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TargetingBeacon.d">
-      <LastGenOutput>obj\Debug\TrProj_TargetingBeacon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TC24.d">
-      <LastGenOutput>obj\Debug\TrProj_TC24.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TCN4SMG.d">
-      <LastGenOutput>obj\Debug\TrProj_TCN4SMG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TCN4SMG_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_TCN4SMG_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TCNG.d">
-      <LastGenOutput>obj\Debug\TrProj_TCNG.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TCNG_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_TCNG_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ThrowDeployable.d">
-      <LastGenOutput>obj\Debug\TrProj_ThrowDeployable.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ThrowingKnives.d">
-      <LastGenOutput>obj\Debug\TrProj_ThrowingKnives.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Thumper.d">
-      <LastGenOutput>obj\Debug\TrProj_Thumper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ThumperD.d">
-      <LastGenOutput>obj\Debug\TrProj_ThumperD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_ThumperD_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_ThumperD_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Tracer.d">
-      <LastGenOutput>obj\Debug\TrProj_Tracer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TrackingMissile.d">
-      <LastGenOutput>obj\Debug\TrProj_TrackingMissile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_TrackingMissile_MKD.d">
-      <LastGenOutput>obj\Debug\TrProj_TrackingMissile_MKD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_Twinfusor.d">
-      <LastGenOutput>obj\Debug\TrProj_Twinfusor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_WallTurret.d">
-      <LastGenOutput>obj\Debug\TrProj_WallTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_WhiteOut.d">
-      <LastGenOutput>obj\Debug\TrProj_WhiteOut.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProj_X1Rifle.d">
-      <LastGenOutput>obj\Debug\TrProj_X1Rifle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProjectile.d">
-      <LastGenOutput>obj\Debug\TrProjectile.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrPromptMessage.d">
-      <LastGenOutput>obj\Debug\TrPromptMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrProximityGrenadeCollisionProxy.d">
-      <LastGenOutput>obj\Debug\TrProximityGrenadeCollisionProxy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrQueueManager.d">
-      <LastGenOutput>obj\Debug\TrQueueManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRabbitBase.d">
-      <LastGenOutput>obj\Debug\TrRabbitBase.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRabbitLeaderboard.d">
-      <LastGenOutput>obj\Debug\TrRabbitLeaderboard.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRabbitScoreMessage.d">
-      <LastGenOutput>obj\Debug\TrRabbitScoreMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRadarStation_BloodEagle.d">
-      <LastGenOutput>obj\Debug\TrRadarStation_BloodEagle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRadarStation_DiamondSword.d">
-      <LastGenOutput>obj\Debug\TrRadarStation_DiamondSword.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRadarStation_Neutral.d">
-      <LastGenOutput>obj\Debug\TrRadarStation_Neutral.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank.d">
-      <LastGenOutput>obj\Debug\TrRank.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_1.d">
-      <LastGenOutput>obj\Debug\TrRank_1.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_2.d">
-      <LastGenOutput>obj\Debug\TrRank_2.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_3.d">
-      <LastGenOutput>obj\Debug\TrRank_3.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_4.d">
-      <LastGenOutput>obj\Debug\TrRank_4.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_5.d">
-      <LastGenOutput>obj\Debug\TrRank_5.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_6.d">
-      <LastGenOutput>obj\Debug\TrRank_6.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_7.d">
-      <LastGenOutput>obj\Debug\TrRank_7.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_8.d">
-      <LastGenOutput>obj\Debug\TrRank_8.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_9.d">
-      <LastGenOutput>obj\Debug\TrRank_9.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_10.d">
-      <LastGenOutput>obj\Debug\TrRank_10.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_11.d">
-      <LastGenOutput>obj\Debug\TrRank_11.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_12.d">
-      <LastGenOutput>obj\Debug\TrRank_12.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_13.d">
-      <LastGenOutput>obj\Debug\TrRank_13.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_14.d">
-      <LastGenOutput>obj\Debug\TrRank_14.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_15.d">
-      <LastGenOutput>obj\Debug\TrRank_15.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_16.d">
-      <LastGenOutput>obj\Debug\TrRank_16.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_17.d">
-      <LastGenOutput>obj\Debug\TrRank_17.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_18.d">
-      <LastGenOutput>obj\Debug\TrRank_18.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_19.d">
-      <LastGenOutput>obj\Debug\TrRank_19.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_20.d">
-      <LastGenOutput>obj\Debug\TrRank_20.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_21.d">
-      <LastGenOutput>obj\Debug\TrRank_21.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_22.d">
-      <LastGenOutput>obj\Debug\TrRank_22.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_23.d">
-      <LastGenOutput>obj\Debug\TrRank_23.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_24.d">
-      <LastGenOutput>obj\Debug\TrRank_24.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_25.d">
-      <LastGenOutput>obj\Debug\TrRank_25.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_26.d">
-      <LastGenOutput>obj\Debug\TrRank_26.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_27.d">
-      <LastGenOutput>obj\Debug\TrRank_27.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_28.d">
-      <LastGenOutput>obj\Debug\TrRank_28.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_29.d">
-      <LastGenOutput>obj\Debug\TrRank_29.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_30.d">
-      <LastGenOutput>obj\Debug\TrRank_30.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_31.d">
-      <LastGenOutput>obj\Debug\TrRank_31.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_32.d">
-      <LastGenOutput>obj\Debug\TrRank_32.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_33.d">
-      <LastGenOutput>obj\Debug\TrRank_33.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_34.d">
-      <LastGenOutput>obj\Debug\TrRank_34.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_35.d">
-      <LastGenOutput>obj\Debug\TrRank_35.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_36.d">
-      <LastGenOutput>obj\Debug\TrRank_36.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_37.d">
-      <LastGenOutput>obj\Debug\TrRank_37.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_38.d">
-      <LastGenOutput>obj\Debug\TrRank_38.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_39.d">
-      <LastGenOutput>obj\Debug\TrRank_39.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_40.d">
-      <LastGenOutput>obj\Debug\TrRank_40.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_41.d">
-      <LastGenOutput>obj\Debug\TrRank_41.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_42.d">
-      <LastGenOutput>obj\Debug\TrRank_42.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_43.d">
-      <LastGenOutput>obj\Debug\TrRank_43.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_44.d">
-      <LastGenOutput>obj\Debug\TrRank_44.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_45.d">
-      <LastGenOutput>obj\Debug\TrRank_45.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_46.d">
-      <LastGenOutput>obj\Debug\TrRank_46.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_47.d">
-      <LastGenOutput>obj\Debug\TrRank_47.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_48.d">
-      <LastGenOutput>obj\Debug\TrRank_48.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_49.d">
-      <LastGenOutput>obj\Debug\TrRank_49.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRank_50.d">
-      <LastGenOutput>obj\Debug\TrRank_50.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRegionSettings.d">
-      <LastGenOutput>obj\Debug\TrRegionSettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRepairStation.d">
-      <LastGenOutput>obj\Debug\TrRepairStation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRepairStation_BloodEagle.d">
-      <LastGenOutput>obj\Debug\TrRepairStation_BloodEagle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRepairStation_DiamondSword.d">
-      <LastGenOutput>obj\Debug\TrRepairStation_DiamondSword.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRepairStation_Neutral.d">
-      <LastGenOutput>obj\Debug\TrRepairStation_Neutral.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRepairStationCollision.d">
-      <LastGenOutput>obj\Debug\TrRepairStationCollision.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrRibbonManager.d">
-      <LastGenOutput>obj\Debug\TrRibbonManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSavedMove.d">
-      <LastGenOutput>obj\Debug\TrSavedMove.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrScoreboard.d">
-      <LastGenOutput>obj\Debug\TrScoreboard.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeekingMissileManager.d">
-      <LastGenOutput>obj\Debug\TrSeekingMissileManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSensorMessage.d">
-      <LastGenOutput>obj\Debug\TrSensorMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_AIStartJetting.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_AIStartJetting.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_AIStartSkiing.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_AIStartSkiing.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_AIStopJetting.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_AIStopJetting.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_AIStopSkiing.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_AIStopSkiing.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_EndMatch.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_EndMatch.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_GiveAccolade.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_GiveAccolade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_GiveCredits.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_GiveCredits.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_PlayVGSCommand.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_PlayVGSCommand.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_RefreshInventory.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_RefreshInventory.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqAct_TrainingMessage.d">
-      <LastGenOutput>obj\Debug\TrSeqAct_TrainingMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqEvent_Generator.d">
-      <LastGenOutput>obj\Debug\TrSeqEvent_Generator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqEvent_StormControlPoint.d">
-      <LastGenOutput>obj\Debug\TrSeqEvent_StormControlPoint.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqEvent_StormCore.d">
-      <LastGenOutput>obj\Debug\TrSeqEvent_StormCore.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqEvent_StormShield.d">
-      <LastGenOutput>obj\Debug\TrSeqEvent_StormShield.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSeqEvent_TakeDamage.d">
-      <LastGenOutput>obj\Debug\TrSeqEvent_TakeDamage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrServerSettingsInfo.d">
-      <LastGenOutput>obj\Debug\TrServerSettingsInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSettingsManager.d">
-      <LastGenOutput>obj\Debug\TrSettingsManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSiegeCore.d">
-      <LastGenOutput>obj\Debug\TrSiegeCore.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkelControl_SpinControl.d">
-      <LastGenOutput>obj\Debug\TrSkelControl_SpinControl.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkelControl_Suspension.d">
-      <LastGenOutput>obj\Debug\TrSkelControl_Suspension.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkelControlFootPlacement_CCD.d">
-      <LastGenOutput>obj\Debug\TrSkelControlFootPlacement_CCD.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkeletalMeshComponent.d">
-      <LastGenOutput>obj\Debug\TrSkeletalMeshComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin.d">
-      <LastGenOutput>obj\Debug\TrSkin.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Brute.d">
-      <LastGenOutput>obj\Debug\TrSkin_Brute.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Brute_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Brute_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Doombringer.d">
-      <LastGenOutput>obj\Debug\TrSkin_Doombringer.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Infiltrator.d">
-      <LastGenOutput>obj\Debug\TrSkin_Infiltrator.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Infiltrator_Assassin.d">
-      <LastGenOutput>obj\Debug\TrSkin_Infiltrator_Assassin.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Infiltrator_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Infiltrator_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Juggernaut.d">
-      <LastGenOutput>obj\Debug\TrSkin_Juggernaut.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Pathfinder.d">
-      <LastGenOutput>obj\Debug\TrSkin_Pathfinder.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Pathfinder_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Pathfinder_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Raider.d">
-      <LastGenOutput>obj\Debug\TrSkin_Raider.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Raider_Griever.d">
-      <LastGenOutput>obj\Debug\TrSkin_Raider_Griever.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Raider_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Raider_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Sentinel.d">
-      <LastGenOutput>obj\Debug\TrSkin_Sentinel.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Sentinel_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Sentinel_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Soldier.d">
-      <LastGenOutput>obj\Debug\TrSkin_Soldier.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Technician.d">
-      <LastGenOutput>obj\Debug\TrSkin_Technician.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSkin_Technician_Merc.d">
-      <LastGenOutput>obj\Debug\TrSkin_Technician_Merc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSnipingSpreeMessage.d">
-      <LastGenOutput>obj\Debug\TrSnipingSpreeMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSpectatorHUDCache.d">
-      <LastGenOutput>obj\Debug\TrSpectatorHUDCache.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSpinfusorMuzzleFlashLight.d">
-      <LastGenOutput>obj\Debug\TrSpinfusorMuzzleFlashLight.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSpinfusorSpreeMessage.d">
-      <LastGenOutput>obj\Debug\TrSpinfusorSpreeMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSpottedTarget.d">
-      <LastGenOutput>obj\Debug\TrSpottedTarget.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSpottedTarget_MotionMine.d">
-      <LastGenOutput>obj\Debug\TrSpottedTarget_MotionMine.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStation.d">
-      <LastGenOutput>obj\Debug\TrStation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStationCollision.d">
-      <LastGenOutput>obj\Debug\TrStationCollision.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStationMessage.d">
-      <LastGenOutput>obj\Debug\TrStationMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStatsInterface.d">
-      <LastGenOutput>obj\Debug\TrStatsInterface.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStealthResidue.d">
-      <LastGenOutput>obj\Debug\TrStealthResidue.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormCarrierShield.d">
-      <LastGenOutput>obj\Debug\TrStormCarrierShield.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormControlPoint.d">
-      <LastGenOutput>obj\Debug\TrStormControlPoint.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormControlPointGate.d">
-      <LastGenOutput>obj\Debug\TrStormControlPointGate.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormCore.d">
-      <LastGenOutput>obj\Debug\TrStormCore.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormCore_BloodEagle.d">
-      <LastGenOutput>obj\Debug\TrStormCore_BloodEagle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormCore_DiamondSword.d">
-      <LastGenOutput>obj\Debug\TrStormCore_DiamondSword.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStormMessage.d">
-      <LastGenOutput>obj\Debug\TrStormMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStreamManager.d">
-      <LastGenOutput>obj\Debug\TrStreamManager.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrStrings.d">
-      <LastGenOutput>obj\Debug\TrStrings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice.d">
-      <LastGenOutput>obj\Debug\TrSubDevice.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_AntiAirTurret.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_AntiAirTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_BaseTurret.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_BaseTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_ForceField.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_ForceField.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_LightTurret.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_LightTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_PersonalForceField.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_PersonalForceField.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_Turret.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_Turret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSubDevice_WallTurret.d">
-      <LastGenOutput>obj\Debug\TrSubDevice_WallTurret.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSummaryHelper.d">
-      <LastGenOutput>obj\Debug\TrSummaryHelper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSVehicleSimHover.d">
-      <LastGenOutput>obj\Debug\TrSVehicleSimHover.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrSVehicleSimTank.d">
-      <LastGenOutput>obj\Debug\TrSVehicleSimTank.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTDMScoreMessage.d">
-      <LastGenOutput>obj\Debug\TrTDMScoreMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTeamBlockerStaticMeshActor.d">
-      <LastGenOutput>obj\Debug\TrTeamBlockerStaticMeshActor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTeamRabbitMessage.d">
-      <LastGenOutput>obj\Debug\TrTeamRabbitMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTeamRabbitStats.d">
-      <LastGenOutput>obj\Debug\TrTeamRabbitStats.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTimedPowerup.d">
-      <LastGenOutput>obj\Debug\TrTimedPowerup.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTimerMessage.d">
-      <LastGenOutput>obj\Debug\TrTimerMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTripActor.d">
-      <LastGenOutput>obj\Debug\TrTripActor.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTripComponent.d">
-      <LastGenOutput>obj\Debug\TrTripComponent.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrTurretPawn.d">
-      <LastGenOutput>obj\Debug\TrTurretPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrUIDataProvider_MapInfo.d">
-      <LastGenOutput>obj\Debug\TrUIDataProvider_MapInfo.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrUpgradeMessage.d">
-      <LastGenOutput>obj\Debug\TrUpgradeMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrUser.d">
-      <LastGenOutput>obj\Debug\TrUser.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrValueModifier.d">
-      <LastGenOutput>obj\Debug\TrValueModifier.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle.d">
-      <LastGenOutput>obj\Debug\TrVehicle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_BaseFlying.d">
-      <LastGenOutput>obj\Debug\TrVehicle_BaseFlying.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_Beowulf.d">
-      <LastGenOutput>obj\Debug\TrVehicle_Beowulf.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_GravCycle.d">
-      <LastGenOutput>obj\Debug\TrVehicle_GravCycle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_Havoc.d">
-      <LastGenOutput>obj\Debug\TrVehicle_Havoc.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_HERC.d">
-      <LastGenOutput>obj\Debug\TrVehicle_HERC.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_Shrike.d">
-      <LastGenOutput>obj\Debug\TrVehicle_Shrike.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicle_Tank.d">
-      <LastGenOutput>obj\Debug\TrVehicle_Tank.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleFactory_Beowulf.d">
-      <LastGenOutput>obj\Debug\TrVehicleFactory_Beowulf.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleFactory_GravCycle.d">
-      <LastGenOutput>obj\Debug\TrVehicleFactory_GravCycle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleInput_Flying.d">
-      <LastGenOutput>obj\Debug\TrVehicleInput_Flying.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleMessage.d">
-      <LastGenOutput>obj\Debug\TrVehicleMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehiclePad.d">
-      <LastGenOutput>obj\Debug\TrVehiclePad.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleSimChopper.d">
-      <LastGenOutput>obj\Debug\TrVehicleSimChopper.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleSimChopperFlat.d">
-      <LastGenOutput>obj\Debug\TrVehicleSimChopperFlat.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleStation.d">
-      <LastGenOutput>obj\Debug\TrVehicleStation.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleStation_BloodEagle.d">
-      <LastGenOutput>obj\Debug\TrVehicleStation_BloodEagle.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleStation_DiamondSword.d">
-      <LastGenOutput>obj\Debug\TrVehicleStation_DiamondSword.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleStation_Neutral.d">
-      <LastGenOutput>obj\Debug\TrVehicleStation_Neutral.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_BeowulfGunner.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_BeowulfGunner.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_BeowulfPilot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_BeowulfPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_BurstShot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_BurstShot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_FullAuto.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_FullAuto.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_GravCyclePilot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_GravCyclePilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_HavocPilot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_HavocPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_HERCGunner.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_HERCGunner.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_HERCPilot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_HERCPilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVehicleWeapon_ShrikePilot.d">
-      <LastGenOutput>obj\Debug\TrVehicleWeapon_ShrikePilot.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSCommandList.d">
-      <LastGenOutput>obj\Debug\TrVGSCommandList.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode.d">
-      <LastGenOutput>obj\Debug\TrVGSNode.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Attack.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Attack.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Base.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Base.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Command.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Command.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Compliment.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Compliment.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Defend.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Defend.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Enemy.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Enemy.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Flag.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Flag.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Global.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Global.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Need.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Need.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Repair.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Repair.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Respond.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Respond.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Root.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Root.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Self.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Self.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_SelfAttack.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_SelfAttack.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_SelfDefend.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_SelfDefend.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_SelfRepair.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_SelfRepair.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_SelfTask.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_SelfTask.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_SelfUpgrade.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_SelfUpgrade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Target.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Target.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Taunt.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Taunt.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Upgrade.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Upgrade.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_VeryQuick.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_VeryQuick.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVGSNode_Warning.d">
-      <LastGenOutput>obj\Debug\TrVGSNode_Warning.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVictimMessage.d">
-      <LastGenOutput>obj\Debug\TrVictimMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVictoryMessage.d">
-      <LastGenOutput>obj\Debug\TrVictoryMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrVideoSettings.d">
-      <LastGenOutput>obj\Debug\TrVideoSettings.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrWarningMessage.d">
-      <LastGenOutput>obj\Debug\TrWarningMessage.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrWeaponPawn.d">
-      <LastGenOutput>obj\Debug\TrWeaponPawn.obj</LastGenOutput>
-    </Compile>
-    <Compile Include="TrWeatherVolume.d">
-      <LastGenOutput>obj\Debug\TrWeatherVolume.obj</LastGenOutput>
-    </Compile>
+    <Compile Include="TrMapInfo.d" />
+    <Compile Include="TrMapMusicInfo.d" />
+    <Compile Include="TrMineCollisionProxy.d" />
+    <Compile Include="TrMiscellaneousMessage.d" />
+    <Compile Include="TrMortarMuzzleFlashLight.d" />
+    <Compile Include="TrMultiKillMessage.d" />
+    <Compile Include="TrMusicManager.d" />
+    <Compile Include="TrMuzzleFlashLight_AssaultRifle.d" />
+    <Compile Include="TrMuzzleFlashLight_BaseTurretProjectile.d" />
+    <Compile Include="TrMuzzleFlashLight_Gold.d" />
+    <Compile Include="TrMuzzleFlashLight_LightTurretProjectile.d" />
+    <Compile Include="TrMuzzleFlashLight_NovaColt.d" />
+    <Compile Include="TrMuzzleFlashLight_RepairTool.d" />
+    <Compile Include="TrMuzzleFlashLight_RepairToolSD.d" />
+    <Compile Include="TrMuzzleFlashLight_StealthSpinfusor.d" />
+    <Compile Include="TrMuzzleFlashLight_TCN4SMG.d" />
+    <Compile Include="TrNeutralMuzzleFlashLight.d" />
+    <Compile Include="TrObject.d" />
+    <Compile Include="TrObjectPool.d" />
+    <Compile Include="TrOrientedBoxComponent.d" />
+    <Compile Include="TrPageManager.d" />
+    <Compile Include="TrPaperDoll.d" />
+    <Compile Include="TrPaperDollMainMenu.d" />
+    <Compile Include="TrPaperDollTransient.d" />
+    <Compile Include="TrPartyManager.d" />
+    <Compile Include="TrPartySettings.d" />
+    <Compile Include="TrPawn.d" />
+    <Compile Include="TrPawnCollisionProxy.d" />
+    <Compile Include="TrPawnSoundGroup.d" />
+    <Compile Include="TrPerk.d" />
+    <Compile Include="TrPerk_Blank.d" />
+    <Compile Include="TrPerk_BountyHunter.d" />
+    <Compile Include="TrPerk_CloseCombat.d" />
+    <Compile Include="TrPerk_Determination.d" />
+    <Compile Include="TrPerk_Egocentric.d" />
+    <Compile Include="TrPerk_Lightweight.d" />
+    <Compile Include="TrPerk_Looter.d" />
+    <Compile Include="TrPerk_Mechanic.d" />
+    <Compile Include="TrPerk_Pilot.d" />
+    <Compile Include="TrPerk_PotentialEnergy.d" />
+    <Compile Include="TrPerk_QuickDraw.d" />
+    <Compile Include="TrPerk_Rage.d" />
+    <Compile Include="TrPerk_Reach.d" />
+    <Compile Include="TrPerk_SafeFall.d" />
+    <Compile Include="TrPerk_SafetyThird.d" />
+    <Compile Include="TrPerk_SonicPunch.d" />
+    <Compile Include="TrPerk_Stealthy.d" />
+    <Compile Include="TrPerk_SuperCapacitor.d" />
+    <Compile Include="TrPerk_SuperHeavy.d" />
+    <Compile Include="TrPerk_Survivalist.d" />
+    <Compile Include="TrPerk_UltraCapacitor.d" />
+    <Compile Include="TrPerk_WheelDeal.d" />
+    <Compile Include="TrPerkList.d" />
+    <Compile Include="TrPhysicalMaterialProperty.d" />
+    <Compile Include="TrPhysicsVolume.d" />
+    <Compile Include="TrPlayerController.d" />
+    <Compile Include="TrPlayerController_Training.d" />
+    <Compile Include="TrPlayerInput.d" />
+    <Compile Include="TrPlayerInput_Spectator.d" />
+    <Compile Include="TrPlayerPawn.d" />
+    <Compile Include="TrPlayerReplicationInfo.d" />
+    <Compile Include="TrPlayerSkin1PData.d" />
+    <Compile Include="TrPlayerSkin3PData.d" />
+    <Compile Include="TrPlayerStart.d" />
+    <Compile Include="TrPlayerVoice.d" />
+    <Compile Include="TrPlayerVoice_Aus.d" />
+    <Compile Include="TrPlayerVoice_Dark.d" />
+    <Compile Include="TrPlayerVoice_Fem1.d" />
+    <Compile Include="TrPlayerVoice_Fem2.d" />
+    <Compile Include="TrPlayerVoice_Heavy.d" />
+    <Compile Include="TrPlayerVoice_Light.d" />
+    <Compile Include="TrPlayerVoice_Medium.d" />
+    <Compile Include="TrPlayerVoice_T2_BioDerm01.d" />
+    <Compile Include="TrPlayerVoice_T2_BioDerm02.d" />
+    <Compile Include="TrPlayerVoice_T2_BioDerm03.d" />
+    <Compile Include="TrPlayerVoice_T2_Fem01.d" />
+    <Compile Include="TrPlayerVoice_T2_Fem02.d" />
+    <Compile Include="TrPlayerVoice_T2_Fem03.d" />
+    <Compile Include="TrPlayerVoice_T2_Fem04.d" />
+    <Compile Include="TrPlayerVoice_T2_Fem05.d" />
+    <Compile Include="TrPlayerVoice_T2_Male01.d" />
+    <Compile Include="TrPlayerVoice_T2_Male02.d" />
+    <Compile Include="TrPlayerVoice_T2_Male03.d" />
+    <Compile Include="TrPlayerVoice_T2_Male04.d" />
+    <Compile Include="TrPlayerVoice_T2_Male05.d" />
+    <Compile Include="TrPowerGenerator.d" />
+    <Compile Include="TrPowerGenerator_BloodEagle.d" />
+    <Compile Include="TrPowerGenerator_DiamondSword.d" />
+    <Compile Include="TrPowerGenerator_Siege.d" />
+    <Compile Include="TrProj_AntiAirTurret.d" />
+    <Compile Include="TrProj_APGrenade.d" />
+    <Compile Include="TrProj_ARC8.d" />
+    <Compile Include="TrProj_ArmoredClaymore.d" />
+    <Compile Include="TrProj_ArxBuster.d" />
+    <Compile Include="TrProj_ArxBuster_MKD.d" />
+    <Compile Include="TrProj_ArxShotgun.d" />
+    <Compile Include="TrProj_AssaultRifle.d" />
+    <Compile Include="TrProj_AssaultRifle_MKD.d" />
+    <Compile Include="TrProj_AVMine.d" />
+    <Compile Include="TrProj_BaseTurret.d" />
+    <Compile Include="TrProj_BeowulfGunner.d" />
+    <Compile Include="TrProj_BeowulfPilot.d" />
+    <Compile Include="TrProj_BoltLauncher.d" />
+    <Compile Include="TrProj_Buckler.d" />
+    <Compile Include="TrProj_CallInBase.d" />
+    <Compile Include="TrProj_Chaingun.d" />
+    <Compile Include="TrProj_Chaingun_MKD.d" />
+    <Compile Include="TrProj_ChaingunBulletTracer.d" />
+    <Compile Include="TrProj_Claymore.d" />
+    <Compile Include="TrProj_Claymore_MKD.d" />
+    <Compile Include="TrProj_ClientTracer.d" />
+    <Compile Include="TrProj_ConcussionGrenade.d" />
+    <Compile Include="TrProj_ConcussionGrenade_MKD.d" />
+    <Compile Include="TrProj_DiskToss.d" />
+    <Compile Include="TrProj_EMPGrenade.d" />
+    <Compile Include="TrProj_EMPGrenade_MKD.d" />
+    <Compile Include="TrProj_Falcon.d" />
+    <Compile Include="TrProj_FlareGrenade.d" />
+    <Compile Include="TrProj_GravCyclePilot.d" />
+    <Compile Include="TrProj_Grenade.d" />
+    <Compile Include="TrProj_Grenade_MKD.d" />
+    <Compile Include="TrProj_GrenadeLauncher.d" />
+    <Compile Include="TrProj_GrenadeT5.d" />
+    <Compile Include="TrProj_GrenadeXL.d" />
+    <Compile Include="TrProj_GrenadeXL_MKD.d" />
+    <Compile Include="TrProj_HavocPilot.d" />
+    <Compile Include="TrProj_HeavyAPGrenade.d" />
+    <Compile Include="TrProj_HeavyAPGrenade_MKD.d" />
+    <Compile Include="TrProj_HeavyBoltLauncher.d" />
+    <Compile Include="TrProj_HeavyImpactNitron.d" />
+    <Compile Include="TrProj_HeavySpinfusor.d" />
+    <Compile Include="TrProj_HeavySpinfusor_MKD.d" />
+    <Compile Include="TrProj_HeavyTwinfusor.d" />
+    <Compile Include="TrProj_HERCGunner.d" />
+    <Compile Include="TrProj_HERCPilot.d" />
+    <Compile Include="TrProj_ImpactBomblets.d" />
+    <Compile Include="TrProj_Lacerator.d" />
+    <Compile Include="TrProj_LightAssaultRifle.d" />
+    <Compile Include="TrProj_LightSpinfusor.d" />
+    <Compile Include="TrProj_LightSpinfusor_100X.d" />
+    <Compile Include="TrProj_LightSpinfusor_MKD.d" />
+    <Compile Include="TrProj_LightStickyGrenade.d" />
+    <Compile Include="TrProj_LightTurret.d" />
+    <Compile Include="TrProj_LightTwinfusor.d" />
+    <Compile Include="TrProj_LR1Mortar.d" />
+    <Compile Include="TrProj_Mine.d" />
+    <Compile Include="TrProj_MIRVGrenade.d" />
+    <Compile Include="TrProj_MIRVGrenadeSecondary.d" />
+    <Compile Include="TrProj_MIRVLauncher.d" />
+    <Compile Include="TrProj_MIRVLauncherSecondary.d" />
+    <Compile Include="TrProj_MortarLauncher.d" />
+    <Compile Include="TrProj_MortarLauncher_MKD.d" />
+    <Compile Include="TrProj_MotionSensor.d" />
+    <Compile Include="TrProj_NinjaSmoke.d" />
+    <Compile Include="TrProj_NJ4SMG.d" />
+    <Compile Include="TrProj_NJ4SMG_MKD.d" />
+    <Compile Include="TrProj_NJ5SMG.d" />
+    <Compile Include="TrProj_NovaColt.d" />
+    <Compile Include="TrProj_NovaColt_MKD.d" />
+    <Compile Include="TrProj_OrbitalStrike.d" />
+    <Compile Include="TrProj_PistolBulletTracer.d" />
+    <Compile Include="TrProj_PlasmaCannon.d" />
+    <Compile Include="TrProj_PlasmaGun.d" />
+    <Compile Include="TrProj_PrismMine.d" />
+    <Compile Include="TrProj_ProximityGrenade.d" />
+    <Compile Include="TrProj_RemoteArxBuster.d" />
+    <Compile Include="TrProj_RepairDeployable.d" />
+    <Compile Include="TrProj_RhinoSMG.d" />
+    <Compile Include="TrProj_RhinoSMG_MKD.d" />
+    <Compile Include="TrProj_RocketLauncher.d" />
+    <Compile Include="TrProj_SAP20.d" />
+    <Compile Include="TrProj_ShrikePilot.d" />
+    <Compile Include="TrProj_SN7.d" />
+    <Compile Include="TrProj_SN7_MKD.d" />
+    <Compile Include="TrProj_SpikeGrenade.d" />
+    <Compile Include="TrProj_SpikeGrenade_MKD.d" />
+    <Compile Include="TrProj_SpikeLauncher.d" />
+    <Compile Include="TrProj_SpikeLauncherSecondary.d" />
+    <Compile Include="TrProj_SpikeLauncherThird.d" />
+    <Compile Include="TrProj_Spinfusor.d" />
+    <Compile Include="TrProj_Spinfusor_100X.d" />
+    <Compile Include="TrProj_SpinfusorD.d" />
+    <Compile Include="TrProj_SpinfusorD_MKD.d" />
+    <Compile Include="TrProj_StealthSpinfusor.d" />
+    <Compile Include="TrProj_STGrenade.d" />
+    <Compile Include="TrProj_StickyGrenade.d" />
+    <Compile Include="TrProj_StickyGrenade_MKD.d" />
+    <Compile Include="TrProj_TacticalStrike.d" />
+    <Compile Include="TrProj_TargetingBeacon.d" />
+    <Compile Include="TrProj_TC24.d" />
+    <Compile Include="TrProj_TCN4SMG.d" />
+    <Compile Include="TrProj_TCN4SMG_MKD.d" />
+    <Compile Include="TrProj_TCNG.d" />
+    <Compile Include="TrProj_TCNG_MKD.d" />
+    <Compile Include="TrProj_ThrowDeployable.d" />
+    <Compile Include="TrProj_ThrowingKnives.d" />
+    <Compile Include="TrProj_Thumper.d" />
+    <Compile Include="TrProj_ThumperD.d" />
+    <Compile Include="TrProj_ThumperD_MKD.d" />
+    <Compile Include="TrProj_Tracer.d" />
+    <Compile Include="TrProj_TrackingMissile.d" />
+    <Compile Include="TrProj_TrackingMissile_MKD.d" />
+    <Compile Include="TrProj_Twinfusor.d" />
+    <Compile Include="TrProj_WallTurret.d" />
+    <Compile Include="TrProj_WhiteOut.d" />
+    <Compile Include="TrProj_X1Rifle.d" />
+    <Compile Include="TrProjectile.d" />
+    <Compile Include="TrPromptMessage.d" />
+    <Compile Include="TrProximityGrenadeCollisionProxy.d" />
+    <Compile Include="TrQueueManager.d" />
+    <Compile Include="TrRabbitBase.d" />
+    <Compile Include="TrRabbitLeaderboard.d" />
+    <Compile Include="TrRabbitScoreMessage.d" />
+    <Compile Include="TrRadarStation_BloodEagle.d" />
+    <Compile Include="TrRadarStation_DiamondSword.d" />
+    <Compile Include="TrRadarStation_Neutral.d" />
+    <Compile Include="TrRank.d" />
+    <Compile Include="TrRank_1.d" />
+    <Compile Include="TrRank_2.d" />
+    <Compile Include="TrRank_3.d" />
+    <Compile Include="TrRank_4.d" />
+    <Compile Include="TrRank_5.d" />
+    <Compile Include="TrRank_6.d" />
+    <Compile Include="TrRank_7.d" />
+    <Compile Include="TrRank_8.d" />
+    <Compile Include="TrRank_9.d" />
+    <Compile Include="TrRank_10.d" />
+    <Compile Include="TrRank_11.d" />
+    <Compile Include="TrRank_12.d" />
+    <Compile Include="TrRank_13.d" />
+    <Compile Include="TrRank_14.d" />
+    <Compile Include="TrRank_15.d" />
+    <Compile Include="TrRank_16.d" />
+    <Compile Include="TrRank_17.d" />
+    <Compile Include="TrRank_18.d" />
+    <Compile Include="TrRank_19.d" />
+    <Compile Include="TrRank_20.d" />
+    <Compile Include="TrRank_21.d" />
+    <Compile Include="TrRank_22.d" />
+    <Compile Include="TrRank_23.d" />
+    <Compile Include="TrRank_24.d" />
+    <Compile Include="TrRank_25.d" />
+    <Compile Include="TrRank_26.d" />
+    <Compile Include="TrRank_27.d" />
+    <Compile Include="TrRank_28.d" />
+    <Compile Include="TrRank_29.d" />
+    <Compile Include="TrRank_30.d" />
+    <Compile Include="TrRank_31.d" />
+    <Compile Include="TrRank_32.d" />
+    <Compile Include="TrRank_33.d" />
+    <Compile Include="TrRank_34.d" />
+    <Compile Include="TrRank_35.d" />
+    <Compile Include="TrRank_36.d" />
+    <Compile Include="TrRank_37.d" />
+    <Compile Include="TrRank_38.d" />
+    <Compile Include="TrRank_39.d" />
+    <Compile Include="TrRank_40.d" />
+    <Compile Include="TrRank_41.d" />
+    <Compile Include="TrRank_42.d" />
+    <Compile Include="TrRank_43.d" />
+    <Compile Include="TrRank_44.d" />
+    <Compile Include="TrRank_45.d" />
+    <Compile Include="TrRank_46.d" />
+    <Compile Include="TrRank_47.d" />
+    <Compile Include="TrRank_48.d" />
+    <Compile Include="TrRank_49.d" />
+    <Compile Include="TrRank_50.d" />
+    <Compile Include="TrRegionSettings.d" />
+    <Compile Include="TrRepairStation.d" />
+    <Compile Include="TrRepairStation_BloodEagle.d" />
+    <Compile Include="TrRepairStation_DiamondSword.d" />
+    <Compile Include="TrRepairStation_Neutral.d" />
+    <Compile Include="TrRepairStationCollision.d" />
+    <Compile Include="TrRibbonManager.d" />
+    <Compile Include="TrSavedMove.d" />
+    <Compile Include="TrScoreboard.d" />
+    <Compile Include="TrSeekingMissileManager.d" />
+    <Compile Include="TrSensorMessage.d" />
+    <Compile Include="TrSeqAct_AIStartJetting.d" />
+    <Compile Include="TrSeqAct_AIStartSkiing.d" />
+    <Compile Include="TrSeqAct_AIStopJetting.d" />
+    <Compile Include="TrSeqAct_AIStopSkiing.d" />
+    <Compile Include="TrSeqAct_EndMatch.d" />
+    <Compile Include="TrSeqAct_GiveAccolade.d" />
+    <Compile Include="TrSeqAct_GiveCredits.d" />
+    <Compile Include="TrSeqAct_PlayVGSCommand.d" />
+    <Compile Include="TrSeqAct_RefreshInventory.d" />
+    <Compile Include="TrSeqAct_TrainingMessage.d" />
+    <Compile Include="TrSeqEvent_Generator.d" />
+    <Compile Include="TrSeqEvent_StormControlPoint.d" />
+    <Compile Include="TrSeqEvent_StormCore.d" />
+    <Compile Include="TrSeqEvent_StormShield.d" />
+    <Compile Include="TrSeqEvent_TakeDamage.d" />
+    <Compile Include="TrServerSettingsInfo.d" />
+    <Compile Include="TrSettingsManager.d" />
+    <Compile Include="TrSiegeCore.d" />
+    <Compile Include="TrSkelControl_SpinControl.d" />
+    <Compile Include="TrSkelControl_Suspension.d" />
+    <Compile Include="TrSkelControlFootPlacement_CCD.d" />
+    <Compile Include="TrSkeletalMeshComponent.d" />
+    <Compile Include="TrSkin.d" />
+    <Compile Include="TrSkin_Brute.d" />
+    <Compile Include="TrSkin_Brute_Merc.d" />
+    <Compile Include="TrSkin_Doombringer.d" />
+    <Compile Include="TrSkin_Infiltrator.d" />
+    <Compile Include="TrSkin_Infiltrator_Assassin.d" />
+    <Compile Include="TrSkin_Infiltrator_Merc.d" />
+    <Compile Include="TrSkin_Juggernaut.d" />
+    <Compile Include="TrSkin_Pathfinder.d" />
+    <Compile Include="TrSkin_Pathfinder_Merc.d" />
+    <Compile Include="TrSkin_Raider.d" />
+    <Compile Include="TrSkin_Raider_Griever.d" />
+    <Compile Include="TrSkin_Raider_Merc.d" />
+    <Compile Include="TrSkin_Sentinel.d" />
+    <Compile Include="TrSkin_Sentinel_Merc.d" />
+    <Compile Include="TrSkin_Soldier.d" />
+    <Compile Include="TrSkin_Technician.d" />
+    <Compile Include="TrSkin_Technician_Merc.d" />
+    <Compile Include="TrSnipingSpreeMessage.d" />
+    <Compile Include="TrSpectatorHUDCache.d" />
+    <Compile Include="TrSpinfusorMuzzleFlashLight.d" />
+    <Compile Include="TrSpinfusorSpreeMessage.d" />
+    <Compile Include="TrSpottedTarget.d" />
+    <Compile Include="TrSpottedTarget_MotionMine.d" />
+    <Compile Include="TrStation.d" />
+    <Compile Include="TrStationCollision.d" />
+    <Compile Include="TrStationMessage.d" />
+    <Compile Include="TrStatsInterface.d" />
+    <Compile Include="TrStealthResidue.d" />
+    <Compile Include="TrStormCarrierShield.d" />
+    <Compile Include="TrStormControlPoint.d" />
+    <Compile Include="TrStormControlPointGate.d" />
+    <Compile Include="TrStormCore.d" />
+    <Compile Include="TrStormCore_BloodEagle.d" />
+    <Compile Include="TrStormCore_DiamondSword.d" />
+    <Compile Include="TrStormMessage.d" />
+    <Compile Include="TrStreamManager.d" />
+    <Compile Include="TrStrings.d" />
+    <Compile Include="TrSubDevice.d" />
+    <Compile Include="TrSubDevice_AntiAirTurret.d" />
+    <Compile Include="TrSubDevice_BaseTurret.d" />
+    <Compile Include="TrSubDevice_ForceField.d" />
+    <Compile Include="TrSubDevice_LightTurret.d" />
+    <Compile Include="TrSubDevice_PersonalForceField.d" />
+    <Compile Include="TrSubDevice_Turret.d" />
+    <Compile Include="TrSubDevice_WallTurret.d" />
+    <Compile Include="TrSummaryHelper.d" />
+    <Compile Include="TrSVehicleSimHover.d" />
+    <Compile Include="TrSVehicleSimTank.d" />
+    <Compile Include="TrTDMScoreMessage.d" />
+    <Compile Include="TrTeamBlockerStaticMeshActor.d" />
+    <Compile Include="TrTeamRabbitMessage.d" />
+    <Compile Include="TrTeamRabbitStats.d" />
+    <Compile Include="TrTimedPowerup.d" />
+    <Compile Include="TrTimerMessage.d" />
+    <Compile Include="TrTripActor.d" />
+    <Compile Include="TrTripComponent.d" />
+    <Compile Include="TrTurretPawn.d" />
+    <Compile Include="TrUIDataProvider_MapInfo.d" />
+    <Compile Include="TrUpgradeMessage.d" />
+    <Compile Include="TrUser.d" />
+    <Compile Include="TrValueModifier.d" />
+    <Compile Include="TrVehicle.d" />
+    <Compile Include="TrVehicle_BaseFlying.d" />
+    <Compile Include="TrVehicle_Beowulf.d" />
+    <Compile Include="TrVehicle_GravCycle.d" />
+    <Compile Include="TrVehicle_Havoc.d" />
+    <Compile Include="TrVehicle_HERC.d" />
+    <Compile Include="TrVehicle_Shrike.d" />
+    <Compile Include="TrVehicle_Tank.d" />
+    <Compile Include="TrVehicleFactory_Beowulf.d" />
+    <Compile Include="TrVehicleFactory_GravCycle.d" />
+    <Compile Include="TrVehicleInput_Flying.d" />
+    <Compile Include="TrVehicleMessage.d" />
+    <Compile Include="TrVehiclePad.d" />
+    <Compile Include="TrVehicleSimChopper.d" />
+    <Compile Include="TrVehicleSimChopperFlat.d" />
+    <Compile Include="TrVehicleStation.d" />
+    <Compile Include="TrVehicleStation_BloodEagle.d" />
+    <Compile Include="TrVehicleStation_DiamondSword.d" />
+    <Compile Include="TrVehicleStation_Neutral.d" />
+    <Compile Include="TrVehicleWeapon.d" />
+    <Compile Include="TrVehicleWeapon_BeowulfGunner.d" />
+    <Compile Include="TrVehicleWeapon_BeowulfPilot.d" />
+    <Compile Include="TrVehicleWeapon_BurstShot.d" />
+    <Compile Include="TrVehicleWeapon_FullAuto.d" />
+    <Compile Include="TrVehicleWeapon_GravCyclePilot.d" />
+    <Compile Include="TrVehicleWeapon_HavocPilot.d" />
+    <Compile Include="TrVehicleWeapon_HERCGunner.d" />
+    <Compile Include="TrVehicleWeapon_HERCPilot.d" />
+    <Compile Include="TrVehicleWeapon_ShrikePilot.d" />
+    <Compile Include="TrVGSCommandList.d" />
+    <Compile Include="TrVGSNode.d" />
+    <Compile Include="TrVGSNode_Attack.d" />
+    <Compile Include="TrVGSNode_Base.d" />
+    <Compile Include="TrVGSNode_Command.d" />
+    <Compile Include="TrVGSNode_Compliment.d" />
+    <Compile Include="TrVGSNode_Defend.d" />
+    <Compile Include="TrVGSNode_Enemy.d" />
+    <Compile Include="TrVGSNode_Flag.d" />
+    <Compile Include="TrVGSNode_Global.d" />
+    <Compile Include="TrVGSNode_Need.d" />
+    <Compile Include="TrVGSNode_Repair.d" />
+    <Compile Include="TrVGSNode_Respond.d" />
+    <Compile Include="TrVGSNode_Root.d" />
+    <Compile Include="TrVGSNode_Self.d" />
+    <Compile Include="TrVGSNode_SelfAttack.d" />
+    <Compile Include="TrVGSNode_SelfDefend.d" />
+    <Compile Include="TrVGSNode_SelfRepair.d" />
+    <Compile Include="TrVGSNode_SelfTask.d" />
+    <Compile Include="TrVGSNode_SelfUpgrade.d" />
+    <Compile Include="TrVGSNode_Target.d" />
+    <Compile Include="TrVGSNode_Taunt.d" />
+    <Compile Include="TrVGSNode_Upgrade.d" />
+    <Compile Include="TrVGSNode_VeryQuick.d" />
+    <Compile Include="TrVGSNode_Warning.d" />
+    <Compile Include="TrVictimMessage.d" />
+    <Compile Include="TrVictoryMessage.d" />
+    <Compile Include="TrVideoSettings.d" />
+    <Compile Include="TrWarningMessage.d" />
+    <Compile Include="TrWeaponPawn.d" />
+    <Compile Include="TrWeatherVolume.d" />
   </ItemGroup>
 </Project>
