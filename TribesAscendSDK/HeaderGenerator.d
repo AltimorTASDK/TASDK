@@ -558,21 +558,20 @@ final class FunctionArgumentDescriptor : Descriptor
 		if (TypeIdentifiersTable.get(InnerProperty.GetName(), null))
 			ArgumentName = "p" ~ ArgumentName;
 
-		bool optionalOutParam = InnerProperty.IsOptionalParameter && InnerProperty.IsOutParameter;
 		if (InnerProperty.IsOutParameter && !InnerProperty.IsOptionalParameter)
 			wtr.Write("ref ");
 		if (InnerProperty.IsConstant)
 			wtr.Write("const ");
 
-		wtr.Write("%s%s %s", GetTypeName(InnerProperty), optionalOutParam ? "*" : "", ArgumentName);
-		if (optionalOutParam)
+		wtr.Write("%s%s %s", GetTypeName(InnerProperty), InnerProperty.IsOptionalParameter ? "*" : "", ArgumentName);
+		if (InnerProperty.IsOptionalParameter)
 			wtr.Write(" = null");
 	}
 
 	void WriteLoadToBuffer(IndentedStreamWriter wtr, string bufName)
 	{
 		string tpName = GetTypeName(InnerProperty);
-		if (InnerProperty.IsOptionalParameter && InnerProperty.IsOutParameter)
+		if (InnerProperty.IsOptionalParameter)
 		{
 			wtr.WriteLine("if (%s !is null)", ArgumentName);
 			wtr.Indent++;
