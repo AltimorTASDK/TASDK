@@ -86,7 +86,7 @@ string MGSCSA(string fullName)()
 /**
  * A mixin for getting the default instance of a class.
  */
-string MGDPC(T, string fullName)
+string MGDPC(T, string fullName)()
 {
 	return `return mDefaultProperties ? mDefaultProperties : (mDefaultProperties = ScriptObject.Find!(` ~ T.stringof ~ `)("` ~ fullName ~ `"));`;
 }
