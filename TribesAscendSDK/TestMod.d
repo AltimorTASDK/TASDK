@@ -1,5 +1,6 @@
 module TestMod;
 
+//private import UnrealScript.Core.UObject;
 //private import UnrealScript.TribesGame.TrPlayerController;
 //private import UnrealScript.TribesGame.TrEquipInterface;
 //
@@ -11,5 +12,5 @@ module TestMod;
 
 void ModInit()
 {
-
+	//UObject.RInterpTo(
 }

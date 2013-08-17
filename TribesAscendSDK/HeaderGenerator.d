@@ -420,7 +420,7 @@ final class PropertyDescriptor : Descriptor
 		IsBoolProperty = InnerProperty.ObjectClass.GetName() == "BoolProperty";
 	}
 
-	// TODO: Add support for DelegateProperty, MapProperty, FixedArrayProperty, PointerProperty, InterfaceProperty, and ComponentProperty
+	// TODO: Add support for DelegateProperty, MapProperty, InterfaceProperty, and ComponentProperty
 
 	override void RequireDependencies(DependencyManager mgr) { mgr.ProcessProperty(InnerProperty); }
 	override void Write(IndentedStreamWriter wtr) { assert(0, "This method is not implemented!"); }

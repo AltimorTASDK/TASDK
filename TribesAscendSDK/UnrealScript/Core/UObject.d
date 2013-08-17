@@ -2644,6 +2644,18 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.RDiff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[24];
 	}
+	/**
+	 * Tries to reach Target based on distance from Current position,
+	 * giving a nice smooth feeling when tracking a position.
+	 * (Doesn't work well when target teleports)
+	 *
+	 * Params:
+	 * 		Current =		Actual position
+	 * 		Target	=		Target position
+	 * 		DeltaTime =		Time since last tick
+	 * 		InterpSpeed =	Interpolation speed, if !bConstantInterpSpeed will perform a continuous lerp, otherwise will interp at constant speed
+	 * Returns: new interpolated position
+	 */
 	static Rotator RInterpTo(Rotator Current, Rotator Target, float DeltaTime, float InterpSpeed, bool bConstantInterpSpeed)
 	{
 		ubyte params[48];
