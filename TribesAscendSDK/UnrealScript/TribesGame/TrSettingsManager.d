@@ -25,13 +25,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrRegionSettings RegionSettings() { mixin(MGPC!(TrRegionSettings, 76)()); }
-		TrAudioSettings AudioSettings() { mixin(MGPC!(TrAudioSettings, 68)()); }
-		TrControlSettings ControlSettings() { mixin(MGPC!(TrControlSettings, 80)()); }
-		TrKeyBindings KeyBindings() { mixin(MGPC!(TrKeyBindings, 64)()); }
-		TrHUDSettings HUDSettings() { mixin(MGPC!(TrHUDSettings, 60)()); }
-		TrVideoSettings VideoSettings() { mixin(MGPC!(TrVideoSettings, 72)()); }
-		GFxTrMenuMoviePlayer MP() { mixin(MGPC!(GFxTrMenuMoviePlayer, 84)()); }
+		TrRegionSettings RegionSettings() { mixin(MGPC!("TrRegionSettings", 76)()); }
+		TrAudioSettings AudioSettings() { mixin(MGPC!("TrAudioSettings", 68)()); }
+		TrControlSettings ControlSettings() { mixin(MGPC!("TrControlSettings", 80)()); }
+		TrKeyBindings KeyBindings() { mixin(MGPC!("TrKeyBindings", 64)()); }
+		TrHUDSettings HUDSettings() { mixin(MGPC!("TrHUDSettings", 60)()); }
+		TrVideoSettings VideoSettings() { mixin(MGPC!("TrVideoSettings", 72)()); }
+		GFxTrMenuMoviePlayer MP() { mixin(MGPC!("GFxTrMenuMoviePlayer", 84)()); }
 	}
 	final void Initialize()
 	{

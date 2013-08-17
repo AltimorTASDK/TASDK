@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionCosine DefaultProperties() { mixin(MGDPC!(MaterialExpressionCosine, "MaterialExpressionCosine Engine.Default__MaterialExpressionCosine")()); }
 	@property final auto ref
 	{
-		float Period() { mixin(MGPC!(float, 136)()); }
+		float Period() { mixin(MGPC!("float", 136)()); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

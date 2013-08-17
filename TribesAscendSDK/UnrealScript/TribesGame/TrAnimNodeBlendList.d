@@ -18,15 +18,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(float) m_ChildBlendInTime() { mixin(MGPC!(ScriptArray!(float), 276)()); }
-		float m_fBlendTime() { mixin(MGPC!(float, 288)()); }
+		ScriptArray!(float) m_ChildBlendInTime() { mixin(MGPC!("ScriptArray!(float)", 276)()); }
+		float m_fBlendTime() { mixin(MGPC!("float", 288)()); }
 	}
-	final float GetBlendTime(int ChildIndex, bool bGetDefault)
+	final float GetBlendTime(int ChildIndex, bool* bGetDefault = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ChildIndex;
-		*cast(bool*)&params[4] = bGetDefault;
+		if (bGetDefault !is null)
+			*cast(bool*)&params[4] = *bGetDefault;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBlendTime, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}

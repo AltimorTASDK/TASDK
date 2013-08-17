@@ -18,8 +18,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKExplosionLight.LightValues) RedTeamTimeShift() { mixin(MGPC!(ScriptArray!(UDKExplosionLight.LightValues), 624)()); }
-		ScriptArray!(UDKExplosionLight.LightValues) BlueTeamTimeShift() { mixin(MGPC!(ScriptArray!(UDKExplosionLight.LightValues), 636)()); }
+		ScriptArray!(UDKExplosionLight.LightValues) RedTeamTimeShift() { mixin(MGPC!("ScriptArray!(UDKExplosionLight.LightValues)", 624)()); }
+		ScriptArray!(UDKExplosionLight.LightValues) BlueTeamTimeShift() { mixin(MGPC!("ScriptArray!(UDKExplosionLight.LightValues)", 636)()); }
 	}
 	final void SetTeam(ubyte NewTeam)
 	{

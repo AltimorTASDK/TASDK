@@ -49,19 +49,19 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrRabbitLeaderboard.LeaderboardSlot")()); }
 		@property final auto ref
 		{
-			int Score() { mixin(MGPS!(int, 8)()); }
-			ScriptName PRIName() { mixin(MGPS!(ScriptName, 0)()); }
+			int Score() { mixin(MGPS!("int", 8)()); }
+			ScriptName PRIName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 72)()); }
-			TrRabbitLeaderboard.LeaderboardSlot LeaderboardSlots() { mixin(MGPC!(TrRabbitLeaderboard.LeaderboardSlot, 80)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 76)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
-			int PrevSlots() { mixin(MGPC!(int, 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 72)()); }
+			TrRabbitLeaderboard.LeaderboardSlot LeaderboardSlots() { mixin(MGPC!("TrRabbitLeaderboard.LeaderboardSlot", 80)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 76)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int PrevSlots() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(68, 0x4)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x4)()); }

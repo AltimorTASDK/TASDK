@@ -56,17 +56,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrTripActor) m_aTripActors() { mixin(MGPC!(ScriptArray!(TrTripActor), 1528)()); }
-		SoundCue m_HitSound() { mixin(MGPC!(SoundCue, 1576)()); }
-		SoundCue m_DeactivateSound() { mixin(MGPC!(SoundCue, 1572)()); }
-		SoundCue m_ActivateSound() { mixin(MGPC!(SoundCue, 1568)()); }
-		ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 1564)()); }
-		int m_DamageAmount() { mixin(MGPC!(int, 1560)()); }
-		float m_fSleepTimeAfterHit() { mixin(MGPC!(float, 1556)()); }
-		ScriptClass m_DamageType() { mixin(MGPC!(ScriptClass, 1552)()); }
-		ScriptName m_nSocketTraceName() { mixin(MGPC!(ScriptName, 1544)()); }
-		float m_fPrismRadius() { mixin(MGPC!(float, 1540)()); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 1524)()); }
+		ScriptArray!(TrTripActor) m_aTripActors() { mixin(MGPC!("ScriptArray!(TrTripActor)", 1528)()); }
+		SoundCue m_HitSound() { mixin(MGPC!("SoundCue", 1576)()); }
+		SoundCue m_DeactivateSound() { mixin(MGPC!("SoundCue", 1572)()); }
+		SoundCue m_ActivateSound() { mixin(MGPC!("SoundCue", 1568)()); }
+		ParticleSystem m_LaserTemplate() { mixin(MGPC!("ParticleSystem", 1564)()); }
+		int m_DamageAmount() { mixin(MGPC!("int", 1560)()); }
+		float m_fSleepTimeAfterHit() { mixin(MGPC!("float", 1556)()); }
+		ScriptClass m_DamageType() { mixin(MGPC!("ScriptClass", 1552)()); }
+		ScriptName m_nSocketTraceName() { mixin(MGPC!("ScriptName", 1544)()); }
+		float m_fPrismRadius() { mixin(MGPC!("float", 1540)()); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!("UObject.Pointer", 1524)()); }
 	}
 final:
 	void CreateTripActor(TrDeployable_PrismMine Right, Vector LeftLocation, Vector RightLocation)
@@ -122,7 +122,7 @@ final:
 		*cast(bool*)params.ptr = bIsLeft;
 		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
-		*SocketPosition = *cast(Vector*)&params[4];
+		SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void OnTripAwake()

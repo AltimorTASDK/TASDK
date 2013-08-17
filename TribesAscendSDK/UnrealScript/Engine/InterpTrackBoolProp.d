@@ -19,14 +19,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackBoolProp.BoolTrackKey")()); }
 		@property final
 		{
-			@property final auto ref float Time() { mixin(MGPS!(float, 0)()); }
+			@property final auto ref float Time() { mixin(MGPS!("float", 0)()); }
 			bool Value() { mixin(MGBPS!(4, 0x1)()); }
 			bool Value(bool val) { mixin(MSBPS!(4, 0x1)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(InterpTrackBoolProp.BoolTrackKey) BoolTrack() { mixin(MGPC!(ScriptArray!(InterpTrackBoolProp.BoolTrackKey), 128)()); }
-		ScriptName PropertyName() { mixin(MGPC!(ScriptName, 140)()); }
+		ScriptArray!(InterpTrackBoolProp.BoolTrackKey) BoolTrack() { mixin(MGPC!("ScriptArray!(InterpTrackBoolProp.BoolTrackKey)", 128)()); }
+		ScriptName PropertyName() { mixin(MGPC!("ScriptName", 140)()); }
 	}
 }

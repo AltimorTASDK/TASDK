@@ -13,8 +13,8 @@ public extern(D):
 	@property final static MaterialExpressionLinearInterpolate DefaultProperties() { mixin(MGDPC!(MaterialExpressionLinearInterpolate, "MaterialExpressionLinearInterpolate Engine.Default__MaterialExpressionLinearInterpolate")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput Alpha() { mixin(MGPC!(MaterialExpression.ExpressionInput, 164)()); }
-		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput Alpha() { mixin(MGPC!("MaterialExpression.ExpressionInput", 164)()); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

@@ -42,12 +42,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName Tag() { mixin(MGPC!(ScriptName, 88)()); }
+		ScriptName Tag() { mixin(MGPC!("ScriptName", 88)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RefreshSubscriberNotifies() { mixin(MGPC!(ScriptArray!(
+void*) RefreshSubscriberNotifies() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 96)()); }
+void*)", 96)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataStoreValueUpdated__Delegate'!
 	}
 final:
@@ -105,14 +105,18 @@ void* Subscriber)
 void**)params.ptr = Subscriber;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SubscriberDetached, params.ptr, cast(void*)0);
 	}
-	void RefreshSubscribers(ScriptName PropertyTag, bool bInvalidateValues, UIDataProvider SourceProvider, int ArrayIndex)
+	void RefreshSubscribers(ScriptName* PropertyTag = null, bool* bInvalidateValues = null, UIDataProvider* SourceProvider = null, int* ArrayIndex = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = PropertyTag;
-		*cast(bool*)&params[8] = bInvalidateValues;
-		*cast(UIDataProvider*)&params[12] = SourceProvider;
-		*cast(int*)&params[16] = ArrayIndex;
+		if (PropertyTag !is null)
+			*cast(ScriptName*)params.ptr = *PropertyTag;
+		if (bInvalidateValues !is null)
+			*cast(bool*)&params[8] = *bInvalidateValues;
+		if (SourceProvider !is null)
+			*cast(UIDataProvider*)&params[12] = *SourceProvider;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[16] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshSubscribers, params.ptr, cast(void*)0);
 	}
 	void OnCommit()

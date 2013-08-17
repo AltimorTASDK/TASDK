@@ -23,12 +23,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) LocationActors() { mixin(MGPC!(ScriptArray!(UObject), 260)()); }
-			ScriptArray!(MaterialInterface) ForceMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 272)()); }
-			int SelectedCinematicTextureGroups() { mixin(MGPC!(int, 288)()); }
-			Texture.TextureGroupContainer CinematicTextureGroups() { mixin(MGPC!(Texture.TextureGroupContainer, 284)()); }
-			float StopTimestamp() { mixin(MGPC!(float, 256)()); }
-			float Seconds() { mixin(MGPC!(float, 252)()); }
+			ScriptArray!(UObject) LocationActors() { mixin(MGPC!("ScriptArray!(UObject)", 260)()); }
+			ScriptArray!(MaterialInterface) ForceMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 272)()); }
+			int SelectedCinematicTextureGroups() { mixin(MGPC!("int", 288)()); }
+			Texture.TextureGroupContainer CinematicTextureGroups() { mixin(MGPC!("Texture.TextureGroupContainer", 284)()); }
+			float StopTimestamp() { mixin(MGPC!("float", 256)()); }
+			float Seconds() { mixin(MGPC!("float", 252)()); }
 		}
 		bool bStreamingActive() { mixin(MGBPC!(248, 0x2)()); }
 		bool bStreamingActive(bool val) { mixin(MSBPC!(248, 0x2)()); }

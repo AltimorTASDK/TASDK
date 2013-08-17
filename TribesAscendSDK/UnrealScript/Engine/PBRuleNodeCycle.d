@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CycleSize() { mixin(MGPC!(int, 112)()); }
-			float RepeatSize() { mixin(MGPC!(float, 108)()); }
-			ProcBuildingRuleset.EProcBuildingAxis RepeatAxis() { mixin(MGPC!(ProcBuildingRuleset.EProcBuildingAxis, 104)()); }
+			int CycleSize() { mixin(MGPC!("int", 112)()); }
+			float RepeatSize() { mixin(MGPC!("float", 108)()); }
+			ProcBuildingRuleset.EProcBuildingAxis RepeatAxis() { mixin(MGPC!("ProcBuildingRuleset.EProcBuildingAxis", 104)()); }
 		}
 		bool bFixRepeatSize() { mixin(MGBPC!(116, 0x1)()); }
 		bool bFixRepeatSize(bool val) { mixin(MSBPC!(116, 0x1)()); }

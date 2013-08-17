@@ -67,19 +67,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MaxMoveFails() { mixin(MGPC!(int, 172)()); }
-			int MoveFailCounter() { mixin(MGPC!(int, 168)()); }
-			Vector InitialFinalDestination() { mixin(MGPC!(Vector, 156)()); }
-			Vector LastMoveVectDest() { mixin(MGPC!(Vector, 144)()); }
-			Vector MoveVectDest() { mixin(MGPC!(Vector, 132)()); }
-			float GoalDistance() { mixin(MGPC!(float, 128)()); }
-			float SubGoalReachDist() { mixin(MGPC!(float, 124)()); }
-			float CurrentHoverHeight() { mixin(MGPC!(float, 120)()); }
-			float DesiredHoverHeight() { mixin(MGPC!(float, 116)()); }
-			float Radius() { mixin(MGPC!(float, 108)()); }
-			Actor Goal() { mixin(MGPC!(Actor, 104)()); }
-			Actor Find() { mixin(MGPC!(Actor, 100)()); }
-			Vector Transient_FinalDest() { mixin(MGPC!(Vector, 88)()); }
+			int MaxMoveFails() { mixin(MGPC!("int", 172)()); }
+			int MoveFailCounter() { mixin(MGPC!("int", 168)()); }
+			Vector InitialFinalDestination() { mixin(MGPC!("Vector", 156)()); }
+			Vector LastMoveVectDest() { mixin(MGPC!("Vector", 144)()); }
+			Vector MoveVectDest() { mixin(MGPC!("Vector", 132)()); }
+			float GoalDistance() { mixin(MGPC!("float", 128)()); }
+			float SubGoalReachDist() { mixin(MGPC!("float", 124)()); }
+			float CurrentHoverHeight() { mixin(MGPC!("float", 120)()); }
+			float DesiredHoverHeight() { mixin(MGPC!("float", 116)()); }
+			float Radius() { mixin(MGPC!("float", 108)()); }
+			Actor Goal() { mixin(MGPC!("Actor", 104)()); }
+			Actor Find() { mixin(MGPC!("Actor", 100)()); }
+			Vector Transient_FinalDest() { mixin(MGPC!("Vector", 88)()); }
 		}
 		bool bWasFiring() { mixin(MGBPC!(112, 0x1)()); }
 		bool bWasFiring(bool val) { mixin(MSBPC!(112, 0x1)()); }

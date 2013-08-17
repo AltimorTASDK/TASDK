@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionCrossProduct DefaultProperties() { mixin(MGDPC!(MaterialExpressionCrossProduct, "MaterialExpressionCrossProduct Engine.Default__MaterialExpressionCrossProduct")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

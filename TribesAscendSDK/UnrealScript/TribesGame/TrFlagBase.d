@@ -94,34 +94,34 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) MICArray() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 776)()); }
-			float m_fRageRadius() { mixin(MGPC!(float, 928)()); }
-			float m_fDamageMomentumDampingWhileFalling() { mixin(MGPC!(float, 924)()); }
-			int m_nDropFlagPingThreshold() { mixin(MGPC!(int, 920)()); }
-			float m_fTeammatePassMaxDistanceSq() { mixin(MGPC!(float, 916)()); }
-			int m_nNumBounces() { mixin(MGPC!(int, 912)()); }
-			int m_nNumBouncesBeforeSlide() { mixin(MGPC!(int, 908)()); }
-			float m_fIgnoreSameTeamTouch() { mixin(MGPC!(float, 904)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 900)()); }
-			TrCollisionProxy m_CollisionProxyLevel3() { mixin(MGPC!(TrCollisionProxy, 896)()); }
-			TrCollisionProxy m_CollisionProxyLevel2() { mixin(MGPC!(TrCollisionProxy, 892)()); }
-			TrCollisionProxy m_CollisionProxyLevel1() { mixin(MGPC!(TrCollisionProxy, 888)()); }
-			float m_fBounceDampingPercent() { mixin(MGPC!(float, 884)()); }
-			float m_fForwardThrowVelocity() { mixin(MGPC!(float, 880)()); }
-			float m_fInheritVelocityPct() { mixin(MGPC!(float, 876)()); }
-			int m_TimeAwaySeconds() { mixin(MGPC!(int, 872)()); }
-			Vector LastCameraPos() { mixin(MGPC!(Vector, 860)()); }
-			Vector LastCameraDir() { mixin(MGPC!(Vector, 848)()); }
-			Vector LastScreenLoc() { mixin(MGPC!(Vector, 836)()); }
-			float m_FlagIconAlpha() { mixin(MGPC!(float, 832)()); }
-			float m_fFriction() { mixin(MGPC!(float, 828)()); }
-			float m_fMass() { mixin(MGPC!(float, 824)()); }
-			float LastLocationPingTime() { mixin(MGPC!(float, 820)()); }
+			ScriptArray!(MaterialInstanceConstant) MICArray() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 776)()); }
+			float m_fRageRadius() { mixin(MGPC!("float", 928)()); }
+			float m_fDamageMomentumDampingWhileFalling() { mixin(MGPC!("float", 924)()); }
+			int m_nDropFlagPingThreshold() { mixin(MGPC!("int", 920)()); }
+			float m_fTeammatePassMaxDistanceSq() { mixin(MGPC!("float", 916)()); }
+			int m_nNumBounces() { mixin(MGPC!("int", 912)()); }
+			int m_nNumBouncesBeforeSlide() { mixin(MGPC!("int", 908)()); }
+			float m_fIgnoreSameTeamTouch() { mixin(MGPC!("float", 904)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 900)()); }
+			TrCollisionProxy m_CollisionProxyLevel3() { mixin(MGPC!("TrCollisionProxy", 896)()); }
+			TrCollisionProxy m_CollisionProxyLevel2() { mixin(MGPC!("TrCollisionProxy", 892)()); }
+			TrCollisionProxy m_CollisionProxyLevel1() { mixin(MGPC!("TrCollisionProxy", 888)()); }
+			float m_fBounceDampingPercent() { mixin(MGPC!("float", 884)()); }
+			float m_fForwardThrowVelocity() { mixin(MGPC!("float", 880)()); }
+			float m_fInheritVelocityPct() { mixin(MGPC!("float", 876)()); }
+			int m_TimeAwaySeconds() { mixin(MGPC!("int", 872)()); }
+			Vector LastCameraPos() { mixin(MGPC!("Vector", 860)()); }
+			Vector LastCameraDir() { mixin(MGPC!("Vector", 848)()); }
+			Vector LastScreenLoc() { mixin(MGPC!("Vector", 836)()); }
+			float m_FlagIconAlpha() { mixin(MGPC!("float", 832)()); }
+			float m_fFriction() { mixin(MGPC!("float", 828)()); }
+			float m_fMass() { mixin(MGPC!("float", 824)()); }
+			float LastLocationPingTime() { mixin(MGPC!("float", 820)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SuccessfulCaptureSystem'!
-			Vector HoverboardingClothVelClamp() { mixin(MGPC!(Vector, 800)()); }
-			Vector RunningClothVelClamp() { mixin(MGPC!(Vector, 788)()); }
-			ParticleSystem RespawnEffect() { mixin(MGPC!(ParticleSystem, 768)()); }
+			Vector HoverboardingClothVelClamp() { mixin(MGPC!("Vector", 800)()); }
+			Vector RunningClothVelClamp() { mixin(MGPC!("Vector", 788)()); }
+			ParticleSystem RespawnEffect() { mixin(MGPC!("ParticleSystem", 768)()); }
 		}
 		bool m_bPassToTeammatesEnabled() { mixin(MGBPC!(772, 0x80)()); }
 		bool m_bPassToTeammatesEnabled(bool val) { mixin(MSBPC!(772, 0x80)()); }
@@ -224,12 +224,14 @@ final:
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EncroachedBy, params.ptr, cast(void*)0);
 	}
-	void Drop(Controller Killer, bool bNoThrow)
+	void Drop(Controller* Killer = null, bool* bNoThrow = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Controller*)params.ptr = Killer;
-		*cast(bool*)&params[4] = bNoThrow;
+		if (Killer !is null)
+			*cast(Controller*)params.ptr = *Killer;
+		if (bNoThrow !is null)
+			*cast(bool*)&params[4] = *bNoThrow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SetFlagPropertiesToStationaryFlagState()
@@ -262,8 +264,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	ScriptString GetSpectatorName()
 	{

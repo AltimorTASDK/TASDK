@@ -322,114 +322,114 @@ public extern(D):
 	{
 		auto ref
 		{
-			UTWeapon.AmmoWidgetDisplayStyle AmmoDisplayType() { mixin(MGPC!(UTWeapon.AmmoWidgetDisplayStyle, 970)()); }
-			ubyte InventoryGroup() { mixin(MGPC!(ubyte, 969)()); }
-			ScriptString UseHintString() { mixin(MGPC!(ScriptString, 1460)()); }
-			UIRoot.TextureCoordinates SimpleCrossHairCoordinates() { mixin(MGPC!(UIRoot.TextureCoordinates, 868)()); }
-			UIRoot.TextureCoordinates CustomCrosshairCoordinates() { mixin(MGPC!(UIRoot.TextureCoordinates, 936)()); }
-			float LastHitEnemyTime() { mixin(MGPC!(float, 924)()); }
-			float InventoryWeight() { mixin(MGPC!(float, 1012)()); }
-			float GroupWeight() { mixin(MGPC!(float, 1008)()); }
-			UIRoot.TextureCoordinates CrossHairCoordinates() { mixin(MGPC!(UIRoot.TextureCoordinates, 852)()); }
-			float CrosshairScaling() { mixin(MGPC!(float, 932)()); }
-			Texture2D CrosshairImage() { mixin(MGPC!(Texture2D, 884)()); }
-			UObject.Color CrosshairColor() { mixin(MGPC!(UObject.Color, 928)()); }
-			float LockedStartTime() { mixin(MGPC!(float, 920)()); }
-			float CurrentLockedScale() { mixin(MGPC!(float, 904)()); }
-			float StartLockedScale() { mixin(MGPC!(float, 908)()); }
-			float LockedScaleTime() { mixin(MGPC!(float, 916)()); }
-			float FinalLockedScale() { mixin(MGPC!(float, 912)()); }
-			UIRoot.TextureCoordinates LockedCrossHairCoordinates() { mixin(MGPC!(UIRoot.TextureCoordinates, 888)()); }
-			float ZoomedRate() { mixin(MGPC!(float, 976)()); }
-			float ZoomedTargetFOV() { mixin(MGPC!(float, 972)()); }
-			AnimSet ArmsAnimSet() { mixin(MGPC!(AnimSet, 1040)()); }
-			ScriptArray!(ScriptName) WeaponFireAnim() { mixin(MGPC!(ScriptArray!(ScriptName), 1016)()); }
-			ScriptArray!(ScriptName) ArmFireAnim() { mixin(MGPC!(ScriptArray!(ScriptName), 1028)()); }
-			ScriptArray!(CameraAnim) FireCameraAnim() { mixin(MGPC!(ScriptArray!(CameraAnim), 788)()); }
-			ForceFeedbackWaveform WeaponFireWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 800)()); }
-			ScriptArray!(SoundCue) WeaponFireSnd() { mixin(MGPC!(ScriptArray!(SoundCue), 1100)()); }
+			UTWeapon.AmmoWidgetDisplayStyle AmmoDisplayType() { mixin(MGPC!("UTWeapon.AmmoWidgetDisplayStyle", 970)()); }
+			ubyte InventoryGroup() { mixin(MGPC!("ubyte", 969)()); }
+			ScriptString UseHintString() { mixin(MGPC!("ScriptString", 1460)()); }
+			UIRoot.TextureCoordinates SimpleCrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 868)()); }
+			UIRoot.TextureCoordinates CustomCrosshairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 936)()); }
+			float LastHitEnemyTime() { mixin(MGPC!("float", 924)()); }
+			float InventoryWeight() { mixin(MGPC!("float", 1012)()); }
+			float GroupWeight() { mixin(MGPC!("float", 1008)()); }
+			UIRoot.TextureCoordinates CrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 852)()); }
+			float CrosshairScaling() { mixin(MGPC!("float", 932)()); }
+			Texture2D CrosshairImage() { mixin(MGPC!("Texture2D", 884)()); }
+			UObject.Color CrosshairColor() { mixin(MGPC!("UObject.Color", 928)()); }
+			float LockedStartTime() { mixin(MGPC!("float", 920)()); }
+			float CurrentLockedScale() { mixin(MGPC!("float", 904)()); }
+			float StartLockedScale() { mixin(MGPC!("float", 908)()); }
+			float LockedScaleTime() { mixin(MGPC!("float", 916)()); }
+			float FinalLockedScale() { mixin(MGPC!("float", 912)()); }
+			UIRoot.TextureCoordinates LockedCrossHairCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 888)()); }
+			float ZoomedRate() { mixin(MGPC!("float", 976)()); }
+			float ZoomedTargetFOV() { mixin(MGPC!("float", 972)()); }
+			AnimSet ArmsAnimSet() { mixin(MGPC!("AnimSet", 1040)()); }
+			ScriptArray!(ScriptName) WeaponFireAnim() { mixin(MGPC!("ScriptArray!(ScriptName)", 1016)()); }
+			ScriptArray!(ScriptName) ArmFireAnim() { mixin(MGPC!("ScriptArray!(ScriptName)", 1028)()); }
+			ScriptArray!(CameraAnim) FireCameraAnim() { mixin(MGPC!("ScriptArray!(CameraAnim)", 788)()); }
+			ForceFeedbackWaveform WeaponFireWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 800)()); }
+			ScriptArray!(SoundCue) WeaponFireSnd() { mixin(MGPC!("ScriptArray!(SoundCue)", 1100)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashPSC'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashLight'!
-			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!(ScriptClass, 1224)()); }
-			ScriptName MuzzleFlashSocket() { mixin(MGPC!(ScriptName, 1196)()); }
-			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!(ParticleSystem, 1212)()); }
-			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!(ParticleSystem, 1208)()); }
-			float MuzzleFlashDuration() { mixin(MGPC!(float, 1228)()); }
-			ScriptName WeaponPutDownAnim() { mixin(MGPC!(ScriptName, 1044)()); }
-			ScriptName ArmsPutDownAnim() { mixin(MGPC!(ScriptName, 1052)()); }
-			SoundCue WeaponPutDownSnd() { mixin(MGPC!(SoundCue, 1112)()); }
-			ScriptName WeaponEquipAnim() { mixin(MGPC!(ScriptName, 1060)()); }
-			ScriptName ArmsEquipAnim() { mixin(MGPC!(ScriptName, 1068)()); }
-			SoundCue WeaponEquipSnd() { mixin(MGPC!(SoundCue, 1116)()); }
-			ScriptClass AttachmentClass() { mixin(MGPC!(ScriptClass, 992)()); }
-			UObject.Color MuzzleFlashColor() { mixin(MGPC!(UObject.Color, 1216)()); }
-			Vector HiddenWeaponsOffset() { mixin(MGPC!(Vector, 1272)()); }
-			Vector PlayerViewOffset() { mixin(MGPC!(Vector, 1232)()); }
-			Vector SmallWeaponsOffset() { mixin(MGPC!(Vector, 1244)()); }
-			float WideScreenOffsetScaling() { mixin(MGPC!(float, 1256)()); }
-			float BobDamping() { mixin(MGPC!(float, 1120)()); }
-			float JumpDamping() { mixin(MGPC!(float, 1124)()); }
-			Rotator LastRotation() { mixin(MGPC!(Rotator, 1140)()); }
-			float MaxYawLag() { mixin(MGPC!(float, 1132)()); }
-			float MaxPitchLag() { mixin(MGPC!(float, 1128)()); }
-			float LastRotUpdate() { mixin(MGPC!(float, 1136)()); }
-			Rotator WidescreenRotationOffset() { mixin(MGPC!(Rotator, 1260)()); }
-			int OldRotDiff() { mixin(MGPC!(int, 1160)()); }
-			float OldLeadMag() { mixin(MGPC!(float, 1152)()); }
-			float OldMaxDiff() { mixin(MGPC!(float, 1168)()); }
-			float RotChgSpeed() { mixin(MGPC!(float, 1176)()); }
-			float ReturnChgSpeed() { mixin(MGPC!(float, 1180)()); }
-			float CurrentRating() { mixin(MGPC!(float, 1312)()); }
-			ScriptClass AmmoPickupClass() { mixin(MGPC!(ScriptClass, 752)()); }
-			int MaxAmmoCount() { mixin(MGPC!(int, 760)()); }
-			ScriptArray!(ubyte) bZoomedFireMode() { mixin(MGPC!(ScriptArray!(ubyte), 956)()); }
-			ScriptArray!(int) ShotCost() { mixin(MGPC!(ScriptArray!(int), 764)()); }
-			float AimingHelpRadius() { mixin(MGPC!(float, 1336)()); }
-			ubyte ZoomedFireModeNum() { mixin(MGPC!(ubyte, 968)()); }
-			SoundCue ZoomInSound() { mixin(MGPC!(SoundCue, 984)()); }
-			SoundCue ZoomOutSound() { mixin(MGPC!(SoundCue, 988)()); }
-			float SwitchAbortTime() { mixin(MGPC!(float, 832)()); }
-			ScriptArray!(float) MinReloadPct() { mixin(MGPC!(ScriptArray!(float), 776)()); }
-			float ProjectileSpawnOffset() { mixin(MGPC!(float, 1284)()); }
-			ScriptArray!(ScriptName) EffectSockets() { mixin(MGPC!(ScriptArray!(ScriptName), 804)()); }
-			float WeaponCanvasXPct() { mixin(MGPC!(float, 1188)()); }
-			float WeaponCanvasYPct() { mixin(MGPC!(float, 1192)()); }
-			UIRoot.TextureCoordinates IconCoordinates() { mixin(MGPC!(UIRoot.TextureCoordinates, 836)()); }
-			int LockerAmmoCount() { mixin(MGPC!(int, 756)()); }
-			int IconX() { mixin(MGPC!(int, 816)()); }
-			int IconY() { mixin(MGPC!(int, 820)()); }
-			int IconWidth() { mixin(MGPC!(int, 824)()); }
-			int IconHeight() { mixin(MGPC!(int, 828)()); }
-			float DroppedPickupOffsetZ() { mixin(MGPC!(float, 952)()); }
-			float ZoomFadeTime() { mixin(MGPC!(float, 980)()); }
-			Vector PivotTranslation() { mixin(MGPC!(Vector, 996)()); }
-			ScriptArray!(ScriptName) WeaponIdleAnims() { mixin(MGPC!(ScriptArray!(ScriptName), 1076)()); }
-			ScriptArray!(ScriptName) ArmIdleAnims() { mixin(MGPC!(ScriptArray!(ScriptName), 1088)()); }
-			UObject.Color WeaponColor() { mixin(MGPC!(UObject.Color, 1184)()); }
-			Rotator LockerRotation() { mixin(MGPC!(Rotator, 1288)()); }
-			Vector LockerOffset() { mixin(MGPC!(Vector, 1300)()); }
-			float aimerror() { mixin(MGPC!(float, 1316)()); }
-			UDKPlayerController.ObjectiveAnnouncementInfo NeedToPickUpAnnouncement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 1320)()); }
-			float ZoomedTurnSpeedScalePct() { mixin(MGPC!(float, 1344)()); }
-			float TargetFrictionDistanceMin() { mixin(MGPC!(float, 1348)()); }
-			float TargetFrictionDistancePeak() { mixin(MGPC!(float, 1352)()); }
-			float TargetFrictionDistanceMax() { mixin(MGPC!(float, 1356)()); }
-			UObject.InterpCurveFloat TargetFrictionDistanceCurve() { mixin(MGPC!(UObject.InterpCurveFloat, 1360)()); }
-			UObject.Vector2D TargetFrictionMultiplierRange() { mixin(MGPC!(UObject.Vector2D, 1376)()); }
-			float TargetFrictionPeakRadiusScale() { mixin(MGPC!(float, 1384)()); }
-			float TargetFrictionPeakHeightScale() { mixin(MGPC!(float, 1388)()); }
-			Vector TargetFrictionOffset() { mixin(MGPC!(Vector, 1392)()); }
-			float TargetFrictionZoomedBoostValue() { mixin(MGPC!(float, 1404)()); }
-			float TargetAdhesionTimeMax() { mixin(MGPC!(float, 1408)()); }
-			float TargetAdhesionDistanceMax() { mixin(MGPC!(float, 1412)()); }
-			float TargetAdhesionAimDistY() { mixin(MGPC!(float, 1416)()); }
-			float TargetAdhesionAimDistZ() { mixin(MGPC!(float, 1420)()); }
-			UObject.Vector2D TargetAdhesionScaleRange() { mixin(MGPC!(UObject.Vector2D, 1424)()); }
-			float TargetAdhesionScaleAmountMin() { mixin(MGPC!(float, 1432)()); }
-			float TargetAdhesionTargetVelocityMin() { mixin(MGPC!(float, 1436)()); }
-			float TargetAdhesionPlayerVelocityMin() { mixin(MGPC!(float, 1440)()); }
-			float TargetAdhesionZoomedBoostValue() { mixin(MGPC!(float, 1444)()); }
-			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1448)()); }
+			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!("ScriptClass", 1224)()); }
+			ScriptName MuzzleFlashSocket() { mixin(MGPC!("ScriptName", 1196)()); }
+			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!("ParticleSystem", 1212)()); }
+			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!("ParticleSystem", 1208)()); }
+			float MuzzleFlashDuration() { mixin(MGPC!("float", 1228)()); }
+			ScriptName WeaponPutDownAnim() { mixin(MGPC!("ScriptName", 1044)()); }
+			ScriptName ArmsPutDownAnim() { mixin(MGPC!("ScriptName", 1052)()); }
+			SoundCue WeaponPutDownSnd() { mixin(MGPC!("SoundCue", 1112)()); }
+			ScriptName WeaponEquipAnim() { mixin(MGPC!("ScriptName", 1060)()); }
+			ScriptName ArmsEquipAnim() { mixin(MGPC!("ScriptName", 1068)()); }
+			SoundCue WeaponEquipSnd() { mixin(MGPC!("SoundCue", 1116)()); }
+			ScriptClass AttachmentClass() { mixin(MGPC!("ScriptClass", 992)()); }
+			UObject.Color MuzzleFlashColor() { mixin(MGPC!("UObject.Color", 1216)()); }
+			Vector HiddenWeaponsOffset() { mixin(MGPC!("Vector", 1272)()); }
+			Vector PlayerViewOffset() { mixin(MGPC!("Vector", 1232)()); }
+			Vector SmallWeaponsOffset() { mixin(MGPC!("Vector", 1244)()); }
+			float WideScreenOffsetScaling() { mixin(MGPC!("float", 1256)()); }
+			float BobDamping() { mixin(MGPC!("float", 1120)()); }
+			float JumpDamping() { mixin(MGPC!("float", 1124)()); }
+			Rotator LastRotation() { mixin(MGPC!("Rotator", 1140)()); }
+			float MaxYawLag() { mixin(MGPC!("float", 1132)()); }
+			float MaxPitchLag() { mixin(MGPC!("float", 1128)()); }
+			float LastRotUpdate() { mixin(MGPC!("float", 1136)()); }
+			Rotator WidescreenRotationOffset() { mixin(MGPC!("Rotator", 1260)()); }
+			int OldRotDiff() { mixin(MGPC!("int", 1160)()); }
+			float OldLeadMag() { mixin(MGPC!("float", 1152)()); }
+			float OldMaxDiff() { mixin(MGPC!("float", 1168)()); }
+			float RotChgSpeed() { mixin(MGPC!("float", 1176)()); }
+			float ReturnChgSpeed() { mixin(MGPC!("float", 1180)()); }
+			float CurrentRating() { mixin(MGPC!("float", 1312)()); }
+			ScriptClass AmmoPickupClass() { mixin(MGPC!("ScriptClass", 752)()); }
+			int MaxAmmoCount() { mixin(MGPC!("int", 760)()); }
+			ScriptArray!(ubyte) bZoomedFireMode() { mixin(MGPC!("ScriptArray!(ubyte)", 956)()); }
+			ScriptArray!(int) ShotCost() { mixin(MGPC!("ScriptArray!(int)", 764)()); }
+			float AimingHelpRadius() { mixin(MGPC!("float", 1336)()); }
+			ubyte ZoomedFireModeNum() { mixin(MGPC!("ubyte", 968)()); }
+			SoundCue ZoomInSound() { mixin(MGPC!("SoundCue", 984)()); }
+			SoundCue ZoomOutSound() { mixin(MGPC!("SoundCue", 988)()); }
+			float SwitchAbortTime() { mixin(MGPC!("float", 832)()); }
+			ScriptArray!(float) MinReloadPct() { mixin(MGPC!("ScriptArray!(float)", 776)()); }
+			float ProjectileSpawnOffset() { mixin(MGPC!("float", 1284)()); }
+			ScriptArray!(ScriptName) EffectSockets() { mixin(MGPC!("ScriptArray!(ScriptName)", 804)()); }
+			float WeaponCanvasXPct() { mixin(MGPC!("float", 1188)()); }
+			float WeaponCanvasYPct() { mixin(MGPC!("float", 1192)()); }
+			UIRoot.TextureCoordinates IconCoordinates() { mixin(MGPC!("UIRoot.TextureCoordinates", 836)()); }
+			int LockerAmmoCount() { mixin(MGPC!("int", 756)()); }
+			int IconX() { mixin(MGPC!("int", 816)()); }
+			int IconY() { mixin(MGPC!("int", 820)()); }
+			int IconWidth() { mixin(MGPC!("int", 824)()); }
+			int IconHeight() { mixin(MGPC!("int", 828)()); }
+			float DroppedPickupOffsetZ() { mixin(MGPC!("float", 952)()); }
+			float ZoomFadeTime() { mixin(MGPC!("float", 980)()); }
+			Vector PivotTranslation() { mixin(MGPC!("Vector", 996)()); }
+			ScriptArray!(ScriptName) WeaponIdleAnims() { mixin(MGPC!("ScriptArray!(ScriptName)", 1076)()); }
+			ScriptArray!(ScriptName) ArmIdleAnims() { mixin(MGPC!("ScriptArray!(ScriptName)", 1088)()); }
+			UObject.Color WeaponColor() { mixin(MGPC!("UObject.Color", 1184)()); }
+			Rotator LockerRotation() { mixin(MGPC!("Rotator", 1288)()); }
+			Vector LockerOffset() { mixin(MGPC!("Vector", 1300)()); }
+			float aimerror() { mixin(MGPC!("float", 1316)()); }
+			UDKPlayerController.ObjectiveAnnouncementInfo NeedToPickUpAnnouncement() { mixin(MGPC!("UDKPlayerController.ObjectiveAnnouncementInfo", 1320)()); }
+			float ZoomedTurnSpeedScalePct() { mixin(MGPC!("float", 1344)()); }
+			float TargetFrictionDistanceMin() { mixin(MGPC!("float", 1348)()); }
+			float TargetFrictionDistancePeak() { mixin(MGPC!("float", 1352)()); }
+			float TargetFrictionDistanceMax() { mixin(MGPC!("float", 1356)()); }
+			UObject.InterpCurveFloat TargetFrictionDistanceCurve() { mixin(MGPC!("UObject.InterpCurveFloat", 1360)()); }
+			UObject.Vector2D TargetFrictionMultiplierRange() { mixin(MGPC!("UObject.Vector2D", 1376)()); }
+			float TargetFrictionPeakRadiusScale() { mixin(MGPC!("float", 1384)()); }
+			float TargetFrictionPeakHeightScale() { mixin(MGPC!("float", 1388)()); }
+			Vector TargetFrictionOffset() { mixin(MGPC!("Vector", 1392)()); }
+			float TargetFrictionZoomedBoostValue() { mixin(MGPC!("float", 1404)()); }
+			float TargetAdhesionTimeMax() { mixin(MGPC!("float", 1408)()); }
+			float TargetAdhesionDistanceMax() { mixin(MGPC!("float", 1412)()); }
+			float TargetAdhesionAimDistY() { mixin(MGPC!("float", 1416)()); }
+			float TargetAdhesionAimDistZ() { mixin(MGPC!("float", 1420)()); }
+			UObject.Vector2D TargetAdhesionScaleRange() { mixin(MGPC!("UObject.Vector2D", 1424)()); }
+			float TargetAdhesionScaleAmountMin() { mixin(MGPC!("float", 1432)()); }
+			float TargetAdhesionTargetVelocityMin() { mixin(MGPC!("float", 1436)()); }
+			float TargetAdhesionPlayerVelocityMin() { mixin(MGPC!("float", 1440)()); }
+			float TargetAdhesionZoomedBoostValue() { mixin(MGPC!("float", 1444)()); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1448)()); }
 		}
 		bool bExportMenuData() { mixin(MGBPC!(748, 0x1)()); }
 		bool bExportMenuData(bool val) { mixin(MSBPC!(748, 0x1)()); }
@@ -584,8 +584,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	float GetFireInterval(ubyte FireModeNum)
 	{
@@ -595,41 +595,47 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireInterval, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	void PlayArmAnimation(ScriptName pSequence, float fDesiredDuration, bool OffHand, bool bLoop, 
+	void PlayArmAnimation(ScriptName pSequence, float fDesiredDuration, bool* OffHand = null, bool* bLoop = null, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh)
+void** SkelMesh = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = pSequence;
 		*cast(float*)&params[8] = fDesiredDuration;
-		*cast(bool*)&params[12] = OffHand;
-		*cast(bool*)&params[16] = bLoop;
-		*cast(
+		if (OffHand !is null)
+			*cast(bool*)&params[12] = *OffHand;
+		if (bLoop !is null)
+			*cast(bool*)&params[16] = *bLoop;
+		if (SkelMesh !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[20] = SkelMesh;
+void**)&params[20] = *SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayArmAnimation, params.ptr, cast(void*)0);
 	}
-	void PlayWeaponAnimation(ScriptName pSequence, float fDesiredDuration, bool bLoop, 
+	void PlayWeaponAnimation(ScriptName pSequence, float fDesiredDuration, bool* bLoop = null, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh)
+void** SkelMesh = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = pSequence;
 		*cast(float*)&params[8] = fDesiredDuration;
-		*cast(bool*)&params[12] = bLoop;
-		*cast(
+		if (bLoop !is null)
+			*cast(bool*)&params[12] = *bLoop;
+		if (SkelMesh !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[16] = SkelMesh;
+void**)&params[16] = *SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWeaponAnimation, params.ptr, cast(void*)0);
 	}
-	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector* HitLocation = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(Vector*)&params[4] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[4] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void StopFireEffects(ubyte FireModeNum)
@@ -651,16 +657,18 @@ void**)&params[16] = SkelMesh;
 		*cast(Vector*)&params[4] = out_CamLoc;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponCalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
 	}
-	void WeaponPlaySound(SoundCue Sound, float NoiseLoudness, bool bStopWhenOwnerDestroyed)
+	void WeaponPlaySound(SoundCue Sound, float* NoiseLoudness = null, bool* bStopWhenOwnerDestroyed = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Sound;
-		*cast(float*)&params[4] = NoiseLoudness;
-		*cast(bool*)&params[8] = bStopWhenOwnerDestroyed;
+		if (NoiseLoudness !is null)
+			*cast(float*)&params[4] = *NoiseLoudness;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[8] = *bStopWhenOwnerDestroyed;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponPlaySound, params.ptr, cast(void*)0);
 	}
 	void PlayFiringSound()
@@ -708,14 +716,15 @@ void**)&params[16] = SkelMesh;
 	}
 	void AttachWeaponTo(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* MeshCpnt, ScriptName SocketName)
+void* MeshCpnt, ScriptName* SocketName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		*cast(ScriptName*)&params[4] = SocketName;
+		if (SocketName !is null)
+			*cast(ScriptName*)&params[4] = *SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
 	void SetMuzzleFlashParams(
@@ -760,9 +769,9 @@ void**)params.ptr = PSC;
 		*cast(Vector*)&params[12] = YAxis;
 		*cast(Vector*)&params[24] = ZAxis;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewAxes, params.ptr, cast(void*)0);
-		*XAxis = *cast(Vector*)params.ptr;
-		*YAxis = *cast(Vector*)&params[12];
-		*ZAxis = *cast(Vector*)&params[24];
+		XAxis = *cast(Vector*)params.ptr;
+		YAxis = *cast(Vector*)&params[12];
+		ZAxis = *cast(Vector*)&params[24];
 	}
 	void ServerReselectWeapon()
 	{
@@ -819,8 +828,8 @@ void**)params.ptr = PSC;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustPlayerDamage, params.ptr, cast(void*)0);
-		*Damage = *cast(int*)params.ptr;
-		*Momentum = *cast(Vector*)&params[20];
+		Damage = *cast(int*)params.ptr;
+		Momentum = *cast(Vector*)&params[20];
 	}
 	float RelativeStrengthVersus(Pawn P, float Dist)
 	{
@@ -989,12 +998,13 @@ void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddAmmo, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -1012,11 +1022,12 @@ void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NeedAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void Loaded(bool bUseWeaponMax)
+	void Loaded(bool* bUseWeaponMax = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bUseWeaponMax;
+		if (bUseWeaponMax !is null)
+			*cast(bool*)params.ptr = *bUseWeaponMax;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Loaded, params.ptr, cast(void*)0);
 	}
 	bool DenyPickupQuery(ScriptClass ItemClass, Actor Pickup)
@@ -1075,13 +1086,14 @@ void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileFire, params.ptr, cast(void*)0);
 		return *cast(Projectile*)params.ptr;
 	}
-	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
+	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int* NumHits = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(int*)&params[84] = NumHits;
+		if (NumHits !is null)
+			*cast(int*)&params[84] = *NumHits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit, params.ptr, cast(void*)0);
 	}
 	UTWeapon.EZoomState GetZoomedState()
@@ -1106,12 +1118,13 @@ void**)params.ptr = PSC;
 		*cast(UTPlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartZoom, params.ptr, cast(void*)0);
 	}
-	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
+	void EndZoom(UTPlayerController PC, bool* bReturningTo3P = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		*cast(bool*)&params[4] = bReturningTo3P;
+		if (bReturningTo3P !is null)
+			*cast(bool*)&params[4] = *bReturningTo3P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 	void ClientEndFire(ubyte FireModeNum)
@@ -1135,12 +1148,13 @@ void**)params.ptr = PSC;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendToFiringState, params.ptr, cast(void*)0);
 	}
-	void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(bool bOptionalSet, bool* bDoNotActivate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOptionalSet;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
 	void FireAmmunition()
@@ -1173,11 +1187,12 @@ void**)params.ptr = PSC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.FiringPutDownWeapon, cast(void*)0, cast(void*)0);
 	}
-	Vector GetPhysicalFireStartLoc(Vector AimDir)
+	Vector GetPhysicalFireStartLoc(Vector* AimDir = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = AimDir;
+		if (AimDir !is null)
+			*cast(Vector*)params.ptr = *AimDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
@@ -1237,8 +1252,8 @@ void**)params.ptr = PSC;
 		*cast(float*)params.ptr = aTurn;
 		*cast(float*)&params[4] = aLookUp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ThrottleLook, params.ptr, cast(void*)0);
-		*aTurn = *cast(float*)params.ptr;
-		*aLookUp = *cast(float*)&params[4];
+		aTurn = *cast(float*)params.ptr;
+		aLookUp = *cast(float*)&params[4];
 	}
 	void Activate()
 	{

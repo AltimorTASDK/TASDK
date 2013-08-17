@@ -15,16 +15,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(float) AngleConstraint() { mixin(MGPC!(ScriptArray!(float), 244)()); }
-			float MaxAngleSteps() { mixin(MGPC!(float, 256)()); }
-			float Precision() { mixin(MGPC!(float, 236)()); }
-			int IterationsCount() { mixin(MGPC!(int, 232)()); }
-			int MaxPerBoneIterations() { mixin(MGPC!(int, 228)()); }
-			int NumBones() { mixin(MGPC!(int, 224)()); }
-			Vector EffectorTranslationFromBone() { mixin(MGPC!(Vector, 212)()); }
-			ScriptName EffectorSpaceBoneName() { mixin(MGPC!(ScriptName, 204)()); }
-			SkelControlBase.EBoneControlSpace EffectorLocationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 200)()); }
-			Vector EffectorLocation() { mixin(MGPC!(Vector, 188)()); }
+			ScriptArray!(float) AngleConstraint() { mixin(MGPC!("ScriptArray!(float)", 244)()); }
+			float MaxAngleSteps() { mixin(MGPC!("float", 256)()); }
+			float Precision() { mixin(MGPC!("float", 236)()); }
+			int IterationsCount() { mixin(MGPC!("int", 232)()); }
+			int MaxPerBoneIterations() { mixin(MGPC!("int", 228)()); }
+			int NumBones() { mixin(MGPC!("int", 224)()); }
+			Vector EffectorTranslationFromBone() { mixin(MGPC!("Vector", 212)()); }
+			ScriptName EffectorSpaceBoneName() { mixin(MGPC!("ScriptName", 204)()); }
+			SkelControlBase.EBoneControlSpace EffectorLocationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 200)()); }
+			Vector EffectorLocation() { mixin(MGPC!("Vector", 188)()); }
 		}
 		bool bNoTurnOptimization() { mixin(MGBPC!(240, 0x2)()); }
 		bool bNoTurnOptimization(bool val) { mixin(MSBPC!(240, 0x2)()); }

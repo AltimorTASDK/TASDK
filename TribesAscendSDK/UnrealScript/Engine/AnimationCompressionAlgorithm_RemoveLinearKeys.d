@@ -15,12 +15,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ParentKeyScale() { mixin(MGPC!(float, 100)()); }
-			float EffectorDiffSocket() { mixin(MGPC!(float, 96)()); }
-			float MinEffectorDiff() { mixin(MGPC!(float, 92)()); }
-			float MaxEffectorDiff() { mixin(MGPC!(float, 88)()); }
-			float MaxAngleDiff() { mixin(MGPC!(float, 84)()); }
-			float MaxPosDiff() { mixin(MGPC!(float, 80)()); }
+			float ParentKeyScale() { mixin(MGPC!("float", 100)()); }
+			float EffectorDiffSocket() { mixin(MGPC!("float", 96)()); }
+			float MinEffectorDiff() { mixin(MGPC!("float", 92)()); }
+			float MaxEffectorDiff() { mixin(MGPC!("float", 88)()); }
+			float MaxAngleDiff() { mixin(MGPC!("float", 84)()); }
+			float MaxPosDiff() { mixin(MGPC!("float", 80)()); }
 		}
 		bool bActuallyFilterLinearKeys() { mixin(MGBPC!(104, 0x2)()); }
 		bool bActuallyFilterLinearKeys(bool val) { mixin(MSBPC!(104, 0x2)()); }

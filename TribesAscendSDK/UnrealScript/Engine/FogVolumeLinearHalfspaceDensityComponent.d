@@ -14,7 +14,7 @@ public extern(D):
 	@property final static FogVolumeLinearHalfspaceDensityComponent DefaultProperties() { mixin(MGDPC!(FogVolumeLinearHalfspaceDensityComponent, "FogVolumeLinearHalfspaceDensityComponent Engine.Default__FogVolumeLinearHalfspaceDensityComponent")()); }
 	@property final auto ref
 	{
-		UObject.Plane HalfspacePlane() { mixin(MGPC!(UObject.Plane, 160)()); }
-		float PlaneDistanceFactor() { mixin(MGPC!(float, 148)()); }
+		UObject.Plane HalfspacePlane() { mixin(MGPC!("UObject.Plane", 160)()); }
+		float PlaneDistanceFactor() { mixin(MGPC!("float", 148)()); }
 	}
 }

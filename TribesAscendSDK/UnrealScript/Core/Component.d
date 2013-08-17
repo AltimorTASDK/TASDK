@@ -13,7 +13,7 @@ public extern(D):
 	@property final static Component DefaultProperties() { mixin(MGDPC!(Component, "Component Core.Default__Component")()); }
 	@property final auto ref
 	{
-		ScriptClass TemplateOwnerClass() { mixin(MGPC!(ScriptClass, 60)()); }
-		ScriptName TemplateName() { mixin(MGPC!(ScriptName, 64)()); }
+		ScriptClass TemplateOwnerClass() { mixin(MGPC!("ScriptClass", 60)()); }
+		ScriptName TemplateName() { mixin(MGPC!("ScriptName", 64)()); }
 	}
 }

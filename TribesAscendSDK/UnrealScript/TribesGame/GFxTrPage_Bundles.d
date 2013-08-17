@@ -52,10 +52,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			int classIdRequired() { mixin(MGPC!(int, 380)()); }
-			ScriptString DescriptionLabel() { mixin(MGPC!(ScriptString, 368)()); }
-			int selectedVendorItemId() { mixin(MGPC!(int, 360)()); }
-			int selectedActionIdx() { mixin(MGPC!(int, 356)()); }
+			int classIdRequired() { mixin(MGPC!("int", 380)()); }
+			ScriptString DescriptionLabel() { mixin(MGPC!("ScriptString", 368)()); }
+			int selectedVendorItemId() { mixin(MGPC!("int", 360)()); }
+			int selectedActionIdx() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForClassRequiredPopup() { mixin(MGBPC!(364, 0x2)()); }
 		bool bWaitingForClassRequiredPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }

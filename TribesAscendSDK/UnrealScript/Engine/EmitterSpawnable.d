@@ -25,14 +25,15 @@ public extern(D):
 			ScriptFunction ReplicatedEvent() { mixin(MGF!("mReplicatedEvent", "Function Engine.EmitterSpawnable.ReplicatedEvent")()); }
 		}
 	}
-	@property final auto ref ParticleSystem ParticleTemplate() { mixin(MGPC!(ParticleSystem, 488)()); }
+	@property final auto ref ParticleSystem ParticleTemplate() { mixin(MGPC!("ParticleSystem", 488)()); }
 final:
-	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
+	void SetTemplate(ParticleSystem NewTemplate, bool* bDestroyOnFinish = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
-		*cast(bool*)&params[4] = bDestroyOnFinish;
+		if (bDestroyOnFinish !is null)
+			*cast(bool*)&params[4] = *bDestroyOnFinish;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)

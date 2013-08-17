@@ -21,9 +21,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Color CylinderColor() { mixin(MGPC!(UObject.Color, 496)()); }
-			float CollisionRadius() { mixin(MGPC!(float, 492)()); }
-			float CollisionHeight() { mixin(MGPC!(float, 488)()); }
+			UObject.Color CylinderColor() { mixin(MGPC!("UObject.Color", 496)()); }
+			float CollisionRadius() { mixin(MGPC!("float", 492)()); }
+			float CollisionHeight() { mixin(MGPC!("float", 488)()); }
 		}
 		bool bAlwaysRenderIfSelected() { mixin(MGBPC!(500, 0x4)()); }
 		bool bAlwaysRenderIfSelected(bool val) { mixin(MSBPC!(500, 0x4)()); }

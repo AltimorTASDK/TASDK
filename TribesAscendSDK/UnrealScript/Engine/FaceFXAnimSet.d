@@ -15,11 +15,11 @@ public extern(D):
 	@property final static FaceFXAnimSet DefaultProperties() { mixin(MGDPC!(FaceFXAnimSet, "FaceFXAnimSet Engine.Default__FaceFXAnimSet")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) RawFaceFXAnimSetBytes() { mixin(MGPC!(ScriptArray!(ubyte), 68)()); }
-		ScriptArray!(ubyte) RawFaceFXMiniSessionBytes() { mixin(MGPC!(ScriptArray!(ubyte), 80)()); }
-		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC!(ScriptArray!(SoundCue), 92)()); }
-		int NumLoadErrors() { mixin(MGPC!(int, 104)()); }
-		UObject.Pointer InternalFaceFXAnimSet() { mixin(MGPC!(UObject.Pointer, 64)()); }
-		FaceFXAsset DefaultFaceFXAsset() { mixin(MGPC!(FaceFXAsset, 60)()); }
+		ScriptArray!(ubyte) RawFaceFXAnimSetBytes() { mixin(MGPC!("ScriptArray!(ubyte)", 68)()); }
+		ScriptArray!(ubyte) RawFaceFXMiniSessionBytes() { mixin(MGPC!("ScriptArray!(ubyte)", 80)()); }
+		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC!("ScriptArray!(SoundCue)", 92)()); }
+		int NumLoadErrors() { mixin(MGPC!("int", 104)()); }
+		UObject.Pointer InternalFaceFXAnimSet() { mixin(MGPC!("UObject.Pointer", 64)()); }
+		FaceFXAsset DefaultFaceFXAsset() { mixin(MGPC!("FaceFXAsset", 60)()); }
 	}
 }

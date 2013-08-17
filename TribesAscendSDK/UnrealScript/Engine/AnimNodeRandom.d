@@ -23,13 +23,13 @@ public extern(D):
 		{
 			auto ref
 			{
-				float LastPosition() { mixin(MGPS!(float, 28)()); }
-				ubyte LoopCount() { mixin(MGPS!(ubyte, 24)()); }
-				UObject.Vector2D PlayRateRange() { mixin(MGPS!(UObject.Vector2D, 12)()); }
-				float BlendInTime() { mixin(MGPS!(float, 8)()); }
-				ubyte LoopCountMax() { mixin(MGPS!(ubyte, 5)()); }
-				ubyte LoopCountMin() { mixin(MGPS!(ubyte, 4)()); }
-				float Chance() { mixin(MGPS!(float, 0)()); }
+				float LastPosition() { mixin(MGPS!("float", 28)()); }
+				ubyte LoopCount() { mixin(MGPS!("ubyte", 24)()); }
+				UObject.Vector2D PlayRateRange() { mixin(MGPS!("UObject.Vector2D", 12)()); }
+				float BlendInTime() { mixin(MGPS!("float", 8)()); }
+				ubyte LoopCountMax() { mixin(MGPS!("ubyte", 5)()); }
+				ubyte LoopCountMin() { mixin(MGPS!("ubyte", 4)()); }
+				float Chance() { mixin(MGPS!("float", 0)()); }
 			}
 			bool bStillFrame() { mixin(MGBPS!(20, 0x1)()); }
 			bool bStillFrame(bool val) { mixin(MSBPS!(20, 0x1)()); }
@@ -39,9 +39,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(AnimNodeRandom.RandomAnimInfo) RandomInfo() { mixin(MGPC!(ScriptArray!(AnimNodeRandom.RandomAnimInfo), 276)()); }
-			int PendingChildIndex() { mixin(MGPC!(int, 292)()); }
-			AnimNodeSequence PlayingSeqNode() { mixin(MGPC!(AnimNodeSequence, 288)()); }
+			ScriptArray!(AnimNodeRandom.RandomAnimInfo) RandomInfo() { mixin(MGPC!("ScriptArray!(AnimNodeRandom.RandomAnimInfo)", 276)()); }
+			int PendingChildIndex() { mixin(MGPC!("int", 292)()); }
+			AnimNodeSequence PlayingSeqNode() { mixin(MGPC!("AnimNodeSequence", 288)()); }
 		}
 		bool bPickedPendingChildIndex() { mixin(MGBPC!(296, 0x1)()); }
 		bool bPickedPendingChildIndex(bool val) { mixin(MSBPC!(296, 0x1)()); }

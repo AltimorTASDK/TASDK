@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionDynamicParameter")()); }
 	private static __gshared MaterialExpressionDynamicParameter mDefaultProperties;
 	@property final static MaterialExpressionDynamicParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionDynamicParameter, "MaterialExpressionDynamicParameter Engine.Default__MaterialExpressionDynamicParameter")()); }
-	@property final auto ref ScriptArray!(ScriptString) ParamNames() { mixin(MGPC!(ScriptArray!(ScriptString), 108)()); }
+	@property final auto ref ScriptArray!(ScriptString) ParamNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 108)()); }
 }

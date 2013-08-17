@@ -519,8 +519,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.EffectFormOverwrite")()); }
 		@property final auto ref
 		{
-			Material Mat() { mixin(MGPS!(Material, 4)()); }
-			TrObject.EffectFormMatTypes eType() { mixin(MGPS!(TrObject.EffectFormMatTypes, 0)()); }
+			Material Mat() { mixin(MGPS!("Material", 4)()); }
+			TrObject.EffectFormMatTypes eType() { mixin(MGPS!("TrObject.EffectFormMatTypes", 0)()); }
 		}
 	}
 	struct PaperDollInfo
@@ -533,14 +533,14 @@ public extern(D):
 		{
 			auto ref
 			{
-				float CharacterLightingContrastFactor() { mixin(MGPS!(float, 48)()); }
+				float CharacterLightingContrastFactor() { mixin(MGPS!("float", 48)()); }
 				// WARNING: Property 'AnimSet' has the same name as a defined type!
-				AnimTree AnimTreeTemplate() { mixin(MGPS!(AnimTree, 36)()); }
-				PhysicsAsset PhysAsset() { mixin(MGPS!(PhysicsAsset, 32)()); }
-				SkeletalMesh SkelMesh() { mixin(MGPS!(SkeletalMesh, 28)()); }
-				float Scale() { mixin(MGPS!(float, 24)()); }
-				Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
-				Vector Translation() { mixin(MGPS!(Vector, 0)()); }
+				AnimTree AnimTreeTemplate() { mixin(MGPS!("AnimTree", 36)()); }
+				PhysicsAsset PhysAsset() { mixin(MGPS!("PhysicsAsset", 32)()); }
+				SkeletalMesh SkelMesh() { mixin(MGPS!("SkeletalMesh", 28)()); }
+				float Scale() { mixin(MGPS!("float", 24)()); }
+				Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
+				Vector Translation() { mixin(MGPS!("Vector", 0)()); }
 			}
 			bool bIsLoading() { mixin(MGBPS!(52, 0x2)()); }
 			bool bIsLoading(bool val) { mixin(MSBPS!(52, 0x2)()); }
@@ -558,8 +558,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TrTakeEffectInfo")()); }
 		@property final auto ref
 		{
-			Vector HitLocation() { mixin(MGPS!(Vector, 0)()); }
-			ScriptClass EffectForm() { mixin(MGPS!(ScriptClass, 12)()); }
+			Vector HitLocation() { mixin(MGPS!("Vector", 0)()); }
+			ScriptClass EffectForm() { mixin(MGPS!("ScriptClass", 12)()); }
 		}
 	}
 	struct TrTakeHitInfo
@@ -570,11 +570,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.TrTakeHitInfo")()); }
 		@property final auto ref
 		{
-			int Damage() { mixin(MGPS!(int, 0)()); }
-			Vector HitLocation() { mixin(MGPS!(Vector, 4)()); }
-			Vector Momentum() { mixin(MGPS!(Vector, 16)()); }
+			int Damage() { mixin(MGPS!("int", 0)()); }
+			Vector HitLocation() { mixin(MGPS!("Vector", 4)()); }
+			Vector Momentum() { mixin(MGPS!("Vector", 16)()); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			ScriptName HitBone() { mixin(MGPS!(ScriptName, 32)()); }
+			ScriptName HitBone() { mixin(MGPS!("ScriptName", 32)()); }
 		}
 	}
 	struct OffhandAnimation
@@ -587,8 +587,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptName m_OffhandUseType() { mixin(MGPS!(ScriptName, 0)()); }
-				ScriptName m_AnimName() { mixin(MGPS!(ScriptName, 8)()); }
+				ScriptName m_OffhandUseType() { mixin(MGPS!("ScriptName", 0)()); }
+				ScriptName m_AnimName() { mixin(MGPS!("ScriptName", 8)()); }
 			}
 			bool m_bFullBody() { mixin(MGBPS!(16, 0x1)()); }
 			bool m_bFullBody(bool val) { mixin(MSBPS!(16, 0x1)()); }
@@ -604,10 +604,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				TrObject.TrCreditEventType EventType() { mixin(MGPS!(TrObject.TrCreditEventType, 0)()); }
-				int eventCredits() { mixin(MGPS!(int, 4)()); }
-				int proxyEventCredits() { mixin(MGPS!(int, 8)()); }
-				int MsgIdx() { mixin(MGPS!(int, 12)()); }
+				TrObject.TrCreditEventType EventType() { mixin(MGPS!("TrObject.TrCreditEventType", 0)()); }
+				int eventCredits() { mixin(MGPS!("int", 4)()); }
+				int proxyEventCredits() { mixin(MGPS!("int", 8)()); }
+				int MsgIdx() { mixin(MGPS!("int", 12)()); }
 			}
 			bool bIsBroadcast() { mixin(MGBPS!(16, 0x1)()); }
 			bool bIsBroadcast(bool val) { mixin(MSBPS!(16, 0x1)()); }
@@ -623,17 +623,17 @@ public extern(D):
 		{
 			auto ref
 			{
-				Vector vScreenLoc() { mixin(MGPS!(Vector, 0)()); }
-				float fScale() { mixin(MGPS!(float, 12)()); }
-				float fAlphaLevel() { mixin(MGPS!(float, 16)()); }
-				float fLastSeenTime() { mixin(MGPS!(float, 20)()); }
-				float fLastUnseenTime() { mixin(MGPS!(float, 24)()); }
-				ScriptString sName() { mixin(MGPS!(ScriptString, 32)()); }
-				int nHealth() { mixin(MGPS!(int, 44)()); }
-				int nMaxHealth() { mixin(MGPS!(int, 48)()); }
-				float fDistance() { mixin(MGPS!(float, 56)()); }
-				TrObject.OverlayType eOverlayType() { mixin(MGPS!(TrObject.OverlayType, 60)()); }
-				int nActorId() { mixin(MGPS!(int, 64)()); }
+				Vector vScreenLoc() { mixin(MGPS!("Vector", 0)()); }
+				float fScale() { mixin(MGPS!("float", 12)()); }
+				float fAlphaLevel() { mixin(MGPS!("float", 16)()); }
+				float fLastSeenTime() { mixin(MGPS!("float", 20)()); }
+				float fLastUnseenTime() { mixin(MGPS!("float", 24)()); }
+				ScriptString sName() { mixin(MGPS!("ScriptString", 32)()); }
+				int nHealth() { mixin(MGPS!("int", 44)()); }
+				int nMaxHealth() { mixin(MGPS!("int", 48)()); }
+				float fDistance() { mixin(MGPS!("float", 56)()); }
+				TrObject.OverlayType eOverlayType() { mixin(MGPS!("TrObject.OverlayType", 60)()); }
+				int nActorId() { mixin(MGPS!("int", 64)()); }
 			}
 			bool bIsTarget() { mixin(MGBPS!(28, 0x1)()); }
 			bool bIsTarget(bool val) { mixin(MSBPS!(28, 0x1)()); }
@@ -653,11 +653,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObject.ObjectiveMICInfo")()); }
 		@property final auto ref
 		{
-			int MyTeam() { mixin(MGPS!(int, 0)()); }
-			float AmountFilled() { mixin(MGPS!(float, 4)()); }
-			int ObjStatus() { mixin(MGPS!(int, 8)()); }
-			int IsContested() { mixin(MGPS!(int, 12)()); }
-			int Flip() { mixin(MGPS!(int, 16)()); }
+			int MyTeam() { mixin(MGPS!("int", 0)()); }
+			float AmountFilled() { mixin(MGPS!("float", 4)()); }
+			int ObjStatus() { mixin(MGPS!("int", 8)()); }
+			int IsContested() { mixin(MGPS!("int", 12)()); }
+			int Flip() { mixin(MGPS!("int", 16)()); }
 		}
 	}
 }

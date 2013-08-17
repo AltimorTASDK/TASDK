@@ -51,15 +51,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			CameraAnim ShortRangeKillAnim() { mixin(MGPC!(CameraAnim, 860)()); }
-			SoundCue HitPawnSound() { mixin(MGPC!(SoundCue, 852)()); }
-			UDKPawn.MaterialSoundEffect DefaultHitSound() { mixin(MGPC!(UDKPawn.MaterialSoundEffect, 840)()); }
+			CameraAnim ShortRangeKillAnim() { mixin(MGPC!("CameraAnim", 860)()); }
+			SoundCue HitPawnSound() { mixin(MGPC!("SoundCue", 852)()); }
+			UDKPawn.MaterialSoundEffect DefaultHitSound() { mixin(MGPC!("UDKPawn.MaterialSoundEffect", 840)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LastImpactEffect'!
-			ParticleSystem RockSmokeTemplate() { mixin(MGPC!(ParticleSystem, 832)()); }
-			ParticleSystem BounceTemplate() { mixin(MGPC!(ParticleSystem, 828)()); }
-			float ShrinkTimer() { mixin(MGPC!(float, 824)()); }
-			float DamageAttenuation() { mixin(MGPC!(float, 820)()); }
-			int Bounces() { mixin(MGPC!(int, 816)()); }
+			ParticleSystem RockSmokeTemplate() { mixin(MGPC!("ParticleSystem", 832)()); }
+			ParticleSystem BounceTemplate() { mixin(MGPC!("ParticleSystem", 828)()); }
+			float ShrinkTimer() { mixin(MGPC!("float", 824)()); }
+			float DamageAttenuation() { mixin(MGPC!("float", 820)()); }
+			int Bounces() { mixin(MGPC!("int", 816)()); }
 		}
 		bool bShrinking() { mixin(MGBPC!(856, 0x2)()); }
 		bool bShrinking(bool val) { mixin(MSBPC!(856, 0x2)()); }
@@ -67,12 +67,13 @@ public extern(D):
 		bool bCheckShortRangeKill(bool val) { mixin(MSBPC!(856, 0x1)()); }
 	}
 final:
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void SpawnFlightEffects()

@@ -28,29 +28,33 @@ public extern(D):
 	{
 		auto ref
 		{
-			float BlendTime() { mixin(MGPC!(float, 312)()); }
-			ScriptName LoopingAnim() { mixin(MGPC!(ScriptName, 304)()); }
+			float BlendTime() { mixin(MGPC!("float", 312)()); }
+			ScriptName LoopingAnim() { mixin(MGPC!("ScriptName", 304)()); }
 		}
 		bool bLooping() { mixin(MGBPC!(300, 0x1)()); }
 		bool bLooping(bool val) { mixin(MSBPC!(300, 0x1)()); }
 	}
 final:
-	void AnimFire(ScriptName FireSequence, bool bAutoFire, float AnimRate, float SpecialBlendTime, ScriptName LoopSequence)
+	void AnimFire(ScriptName FireSequence, bool bAutoFire, float* AnimRate = null, float* SpecialBlendTime = null, ScriptName* LoopSequence = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FireSequence;
 		*cast(bool*)&params[8] = bAutoFire;
-		*cast(float*)&params[12] = AnimRate;
-		*cast(float*)&params[16] = SpecialBlendTime;
-		*cast(ScriptName*)&params[20] = LoopSequence;
+		if (AnimRate !is null)
+			*cast(float*)&params[12] = *AnimRate;
+		if (SpecialBlendTime !is null)
+			*cast(float*)&params[16] = *SpecialBlendTime;
+		if (LoopSequence !is null)
+			*cast(ScriptName*)&params[20] = *LoopSequence;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AnimFire, params.ptr, cast(void*)0);
 	}
-	void AnimStopFire(float SpecialBlendTime)
+	void AnimStopFire(float* SpecialBlendTime = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = SpecialBlendTime;
+		if (SpecialBlendTime !is null)
+			*cast(float*)params.ptr = *SpecialBlendTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AnimStopFire, params.ptr, cast(void*)0);
 	}
 }

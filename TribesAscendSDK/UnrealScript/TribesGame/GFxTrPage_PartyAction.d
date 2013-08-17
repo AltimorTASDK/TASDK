@@ -42,8 +42,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString MemberName() { mixin(MGPC!(ScriptString, 360)()); }
-		int PopupNum() { mixin(MGPC!(int, 356)()); }
+		ScriptString MemberName() { mixin(MGPC!("ScriptString", 360)()); }
+		int PopupNum() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void FillData(GFxObject DataList)

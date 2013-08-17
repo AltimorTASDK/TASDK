@@ -28,14 +28,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fMinZImpulse() { mixin(MGPC!(float, 2180)()); }
-		float m_fPowerPoolCost() { mixin(MGPC!(float, 2184)()); }
-		float m_fSpeedCapThresholdStart() { mixin(MGPC!(float, 2200)()); }
-		float m_fSpeedCapPct() { mixin(MGPC!(float, 2204)()); }
-		float m_fSpeedCapThreshold() { mixin(MGPC!(float, 2196)()); }
-		float m_fLastActivationTimestamp() { mixin(MGPC!(float, 2192)()); }
-		float m_fCooldownTime() { mixin(MGPC!(float, 2188)()); }
-		Vector m_vBlinkImpulse() { mixin(MGPC!(Vector, 2168)()); }
+		float m_fMinZImpulse() { mixin(MGPC!("float", 2180)()); }
+		float m_fPowerPoolCost() { mixin(MGPC!("float", 2184)()); }
+		float m_fSpeedCapThresholdStart() { mixin(MGPC!("float", 2200)()); }
+		float m_fSpeedCapPct() { mixin(MGPC!("float", 2204)()); }
+		float m_fSpeedCapThreshold() { mixin(MGPC!("float", 2196)()); }
+		float m_fLastActivationTimestamp() { mixin(MGPC!("float", 2192)()); }
+		float m_fCooldownTime() { mixin(MGPC!("float", 2188)()); }
+		Vector m_vBlinkImpulse() { mixin(MGPC!("Vector", 2168)()); }
 	}
 final:
 	Vector GetBlinkImpulse()

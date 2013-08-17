@@ -118,15 +118,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName FlagKillMessageName() { mixin(MGPC!(ScriptName, 1320)()); }
-			float SwapRequestTime() { mixin(MGPC!(float, 1316)()); }
-			PlayerController PendingTeamSwap() { mixin(MGPC!(PlayerController, 1312)()); }
-			ScriptClass TeamScoreMessageClass() { mixin(MGPC!(ScriptClass, 1308)()); }
-			ScriptString TeamFactions() { mixin(MGPC!(ScriptString, 1284)()); }
-			ScriptClass TeamAIType() { mixin(MGPC!(ScriptClass, 1276)()); }
-			UTTeamInfo Teams() { mixin(MGPC!(UTTeamInfo, 1268)()); }
-			float TeammateBoost() { mixin(MGPC!(float, 1264)()); }
-			float FriendlyFireScale() { mixin(MGPC!(float, 1260)()); }
+			ScriptName FlagKillMessageName() { mixin(MGPC!("ScriptName", 1320)()); }
+			float SwapRequestTime() { mixin(MGPC!("float", 1316)()); }
+			PlayerController PendingTeamSwap() { mixin(MGPC!("PlayerController", 1312)()); }
+			ScriptClass TeamScoreMessageClass() { mixin(MGPC!("ScriptClass", 1308)()); }
+			ScriptString TeamFactions() { mixin(MGPC!("ScriptString", 1284)()); }
+			ScriptClass TeamAIType() { mixin(MGPC!("ScriptClass", 1276)()); }
+			UTTeamInfo Teams() { mixin(MGPC!("UTTeamInfo", 1268)()); }
+			float TeammateBoost() { mixin(MGPC!("float", 1264)()); }
+			float FriendlyFireScale() { mixin(MGPC!("float", 1260)()); }
 		}
 		bool bForceAllRed() { mixin(MGBPC!(1256, 0x20)()); }
 		bool bForceAllRed(bool val) { mixin(MSBPC!(1256, 0x20)()); }
@@ -175,13 +175,16 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHandicapNeed, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	UTTeamInfo GetBotTeam(int TeamBots, bool bUseTeamIndex, int TeamIndex)
+	UTTeamInfo GetBotTeam(int* TeamBots = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = TeamBots;
-		*cast(bool*)&params[4] = bUseTeamIndex;
-		*cast(int*)&params[8] = TeamIndex;
+		if (TeamBots !is null)
+			*cast(int*)params.ptr = *TeamBots;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[4] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[8] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBotTeam, params.ptr, cast(void*)0);
 		return *cast(UTTeamInfo*)&params[12];
 	}
@@ -207,7 +210,7 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitGame, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 	bool TooManyBots(Controller botToRemove)
 	{
@@ -416,7 +419,7 @@ final:
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
-		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
+		ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 	void Logout(Controller Exiting)
 	{
@@ -431,37 +434,33 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleSeamlessTravelPlayer, params.ptr, cast(void*)0);
-		*C = *cast(Controller*)params.ptr;
+		C = *cast(Controller*)params.ptr;
 	}
-	void ParseSpeechRecipients(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words, ref ScriptArray!(UTBot) Recipients)
+	void ParseSpeechRecipients(UTPlayerController Speaker, ref in ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words, ref ScriptArray!(UTBot) Recipients)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord))Words;
 		*cast(ScriptArray!(UTBot)*)&params[16] = Recipients;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseSpeechRecipients, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
-		*Recipients = *cast(ScriptArray!(UTBot)*)&params[16];
+		Recipients = *cast(ScriptArray!(UTBot)*)&params[16];
 	}
-	void ProcessSpeechOrders(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words, ref const ScriptArray!(UTBot) Recipients)
+	void ProcessSpeechOrders(UTPlayerController Speaker, ref in ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words, ref in ScriptArray!(UTBot) Recipients)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
-		*cast(ScriptArray!(UTBot)*)&params[16] = Recipients;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord))Words;
+		*cast(ScriptArray!(UTBot)*)&params[16] = cast(ScriptArray!(UTBot))Recipients;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechOrders, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
-		*Recipients = *cast(ScriptArray!(UTBot)*)&params[16];
 	}
-	void ProcessSpeechRecognition(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
+	void ProcessSpeechRecognition(UTPlayerController Speaker, ref in ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord))Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechRecognition, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 	}
 }

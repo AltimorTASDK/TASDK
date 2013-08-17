@@ -23,9 +23,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			SeqAct_SetMesh.EMeshType MeshType() { mixin(MGPC!(SeqAct_SetMesh.EMeshType, 240)()); }
-			StaticMesh NewStaticMesh() { mixin(MGPC!(StaticMesh, 236)()); }
-			SkeletalMesh NewSkeletalMesh() { mixin(MGPC!(SkeletalMesh, 232)()); }
+			SeqAct_SetMesh.EMeshType MeshType() { mixin(MGPC!("SeqAct_SetMesh.EMeshType", 240)()); }
+			StaticMesh NewStaticMesh() { mixin(MGPC!("StaticMesh", 236)()); }
+			SkeletalMesh NewSkeletalMesh() { mixin(MGPC!("SkeletalMesh", 232)()); }
 		}
 		bool bIsAllowedToMove() { mixin(MGBPC!(244, 0x1)()); }
 		bool bIsAllowedToMove(bool val) { mixin(MSBPC!(244, 0x1)()); }

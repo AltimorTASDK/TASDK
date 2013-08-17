@@ -19,9 +19,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrAnimNodeTurnInPlace_Player.TIP_Transition")()); }
 		@property final auto ref
 		{
-			ScriptName AnimName() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName TransName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName AnimName() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName TransName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(TrAnimNodeTurnInPlace_Player.TIP_Transition) TIP_Transitions() { mixin(MGPC!(ScriptArray!(TrAnimNodeTurnInPlace_Player.TIP_Transition), 320)()); }
+	@property final auto ref ScriptArray!(TrAnimNodeTurnInPlace_Player.TIP_Transition) TIP_Transitions() { mixin(MGPC!("ScriptArray!(TrAnimNodeTurnInPlace_Player.TIP_Transition)", 320)()); }
 }

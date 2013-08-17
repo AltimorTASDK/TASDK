@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName RotationSpaceBoneName() { mixin(MGPC!(ScriptName, 220)()); }
-			SkelControlBase.EBoneControlSpace LockRotationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 216)()); }
-			Rotator MaxDelta() { mixin(MGPC!(Rotator, 204)()); }
-			Rotator LockRotation() { mixin(MGPC!(Rotator, 192)()); }
+			ScriptName RotationSpaceBoneName() { mixin(MGPC!("ScriptName", 220)()); }
+			SkelControlBase.EBoneControlSpace LockRotationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 216)()); }
+			Rotator MaxDelta() { mixin(MGPC!("Rotator", 204)()); }
+			Rotator LockRotation() { mixin(MGPC!("Rotator", 192)()); }
 		}
 		bool bLockRoll() { mixin(MGBPC!(188, 0x4)()); }
 		bool bLockRoll(bool val) { mixin(MSBPC!(188, 0x4)()); }

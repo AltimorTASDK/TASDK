@@ -129,12 +129,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.DriverEnter, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void ApplyWeaponEffects(int OverlayFlags, int SeatIndex)
+	void ApplyWeaponEffects(int OverlayFlags, int* SeatIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = OverlayFlags;
-		*cast(int*)&params[4] = SeatIndex;
+		if (SeatIndex !is null)
+			*cast(int*)&params[4] = *SeatIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyWeaponEffects, params.ptr, cast(void*)0);
 	}
 	ScriptName GetVehicleDrivingStatName()

@@ -39,14 +39,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Actor m_SpottedActor() { mixin(MGPC!(Actor, 476)()); }
-		float m_fLastSpottedTimestamp() { mixin(MGPC!(float, 484)()); }
-		float m_fSpottedActorDuration() { mixin(MGPC!(float, 496)()); }
-		UObject.Vector2D m_MarkerSize() { mixin(MGPC!(UObject.Vector2D, 504)()); }
-		MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 500)()); }
-		float m_fMarkerOpacity() { mixin(MGPC!(float, 492)()); }
-		float m_fMarkerZOffset() { mixin(MGPC!(float, 488)()); }
-		ubyte m_CachedTeamIndex() { mixin(MGPC!(ubyte, 480)()); }
+		Actor m_SpottedActor() { mixin(MGPC!("Actor", 476)()); }
+		float m_fLastSpottedTimestamp() { mixin(MGPC!("float", 484)()); }
+		float m_fSpottedActorDuration() { mixin(MGPC!("float", 496)()); }
+		UObject.Vector2D m_MarkerSize() { mixin(MGPC!("UObject.Vector2D", 504)()); }
+		MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 500)()); }
+		float m_fMarkerOpacity() { mixin(MGPC!("float", 492)()); }
+		float m_fMarkerZOffset() { mixin(MGPC!("float", 488)()); }
+		ubyte m_CachedTeamIndex() { mixin(MGPC!("ubyte", 480)()); }
 	}
 final:
 	void PostBeginPlay()

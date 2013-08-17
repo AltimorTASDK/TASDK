@@ -13,9 +13,9 @@ public extern(D):
 	@property final static MaterialExpressionBumpOffset DefaultProperties() { mixin(MGDPC!(MaterialExpressionBumpOffset, "MaterialExpressionBumpOffset Engine.Default__MaterialExpressionBumpOffset")()); }
 	@property final auto ref
 	{
-		float ReferencePlane() { mixin(MGPC!(float, 168)()); }
-		float HeightRatio() { mixin(MGPC!(float, 164)()); }
-		MaterialExpression.ExpressionInput Height() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		float ReferencePlane() { mixin(MGPC!("float", 168)()); }
+		float HeightRatio() { mixin(MGPC!("float", 164)()); }
+		MaterialExpression.ExpressionInput Height() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

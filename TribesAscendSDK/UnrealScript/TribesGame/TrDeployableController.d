@@ -26,7 +26,7 @@ public extern(D):
 			ScriptFunction ScriptGetTeamNum() { mixin(MGF!("mScriptGetTeamNum", "Function TribesGame.TrDeployableController.ScriptGetTeamNum")()); }
 		}
 	}
-	@property final auto ref TrPlayerController m_SpawnedFromController() { mixin(MGPC!(TrPlayerController, 924)()); }
+	@property final auto ref TrPlayerController m_SpawnedFromController() { mixin(MGPC!("TrPlayerController", 924)()); }
 final:
 	bool CanFireWeapon(Weapon Wpn, ubyte FireModeNum)
 	{

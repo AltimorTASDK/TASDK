@@ -19,13 +19,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackEvent.EventTrackKey")()); }
 		@property final auto ref
 		{
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			float Time() { mixin(MGPS!(float, 0)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(InterpTrackEvent.EventTrackKey) EventTrack() { mixin(MGPC!(ScriptArray!(InterpTrackEvent.EventTrackKey), 128)()); }
+		@property final auto ref ScriptArray!(InterpTrackEvent.EventTrackKey) EventTrack() { mixin(MGPC!("ScriptArray!(InterpTrackEvent.EventTrackKey)", 128)()); }
 		bool bFireEventsWhenJumpingForwards() { mixin(MGBPC!(140, 0x4)()); }
 		bool bFireEventsWhenJumpingForwards(bool val) { mixin(MSBPC!(140, 0x4)()); }
 		bool bFireEventsWhenBackwards() { mixin(MGBPC!(140, 0x2)()); }

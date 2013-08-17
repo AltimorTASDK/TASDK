@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SeqAct_ForceFeedback DefaultProperties() { mixin(MGDPC!(SeqAct_ForceFeedback, "SeqAct_ForceFeedback Engine.Default__SeqAct_ForceFeedback")()); }
 	@property final auto ref
 	{
-		ForceFeedbackWaveform FFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 232)()); }
-		ScriptClass PredefinedWaveForm() { mixin(MGPC!(ScriptClass, 236)()); }
+		ForceFeedbackWaveform FFWaveform() { mixin(MGPC!("ForceFeedbackWaveform", 232)()); }
+		ScriptClass PredefinedWaveForm() { mixin(MGPC!("ScriptClass", 236)()); }
 	}
 }

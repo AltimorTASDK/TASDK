@@ -33,18 +33,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavMeshPathGoalEvaluator.BiasedGoalActor")()); }
 		@property final auto ref
 		{
-			int ExtraCost() { mixin(MGPS!(int, 4)()); }
-			Actor Goal() { mixin(MGPS!(Actor, 0)()); }
+			int ExtraCost() { mixin(MGPS!("int", 4)()); }
+			Actor Goal() { mixin(MGPS!("Actor", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int NumNodesProcessed() { mixin(MGPC!(int, 76)()); }
-			int NumNodesThrownOut() { mixin(MGPC!(int, 72)()); }
-			int MaxPathVisits() { mixin(MGPC!(int, 64)()); }
-			NavMeshPathGoalEvaluator NextEvaluator() { mixin(MGPC!(NavMeshPathGoalEvaluator, 60)()); }
+			int NumNodesProcessed() { mixin(MGPC!("int", 76)()); }
+			int NumNodesThrownOut() { mixin(MGPC!("int", 72)()); }
+			int MaxPathVisits() { mixin(MGPC!("int", 64)()); }
+			NavMeshPathGoalEvaluator NextEvaluator() { mixin(MGPC!("NavMeshPathGoalEvaluator", 60)()); }
 		}
 		bool bAlwaysCallEvaluateGoal() { mixin(MGBPC!(68, 0x1)()); }
 		bool bAlwaysCallEvaluateGoal(bool val) { mixin(MSBPC!(68, 0x1)()); }

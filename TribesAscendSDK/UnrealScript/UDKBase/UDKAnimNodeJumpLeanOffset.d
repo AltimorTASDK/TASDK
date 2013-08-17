@@ -21,14 +21,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			float BlendTimeToGo() { mixin(MGPC!(float, 356)()); }
-			float LeanWeightTarget() { mixin(MGPC!(float, 352)()); }
-			float LeanWeight() { mixin(MGPC!(float, 348)()); }
-			UObject.Vector2D PreBlendAim() { mixin(MGPC!(UObject.Vector2D, 340)()); }
-			ScriptName OldAimProfileName() { mixin(MGPC!(ScriptName, 332)()); }
-			AnimNodeAimOffset CachedAimNode() { mixin(MGPC!(AnimNodeAimOffset, 328)()); }
-			float MaxLeanChangeSpeed() { mixin(MGPC!(float, 320)()); }
-			float JumpLeanStrength() { mixin(MGPC!(float, 316)()); }
+			float BlendTimeToGo() { mixin(MGPC!("float", 356)()); }
+			float LeanWeightTarget() { mixin(MGPC!("float", 352)()); }
+			float LeanWeight() { mixin(MGPC!("float", 348)()); }
+			UObject.Vector2D PreBlendAim() { mixin(MGPC!("UObject.Vector2D", 340)()); }
+			ScriptName OldAimProfileName() { mixin(MGPC!("ScriptName", 332)()); }
+			AnimNodeAimOffset CachedAimNode() { mixin(MGPC!("AnimNodeAimOffset", 328)()); }
+			float MaxLeanChangeSpeed() { mixin(MGPC!("float", 320)()); }
+			float JumpLeanStrength() { mixin(MGPC!("float", 316)()); }
 		}
 		bool bOldDoubleJumping() { mixin(MGBPC!(324, 0x10)()); }
 		bool bOldDoubleJumping(bool val) { mixin(MSBPC!(324, 0x10)()); }

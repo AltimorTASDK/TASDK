@@ -28,15 +28,15 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(MaterialInterface) MaterialOverrides() { mixin(MGPS!(ScriptArray!(MaterialInterface), 32)()); }
-				ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides) SectionOverrides() { mixin(MGPS!(ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides), 44)()); }
-				int OverriddenMeshLightMapRes() { mixin(MGPS!(int, 28)()); }
+				ScriptArray!(MaterialInterface) MaterialOverrides() { mixin(MGPS!("ScriptArray!(MaterialInterface)", 32)()); }
+				ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides) SectionOverrides() { mixin(MGPS!("ScriptArray!(PBRuleNodeMesh.BuildingMatOverrides)", 44)()); }
+				int OverriddenMeshLightMapRes() { mixin(MGPS!("int", 28)()); }
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Rotation'!
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Translation'!
-				float Chance() { mixin(MGPS!(float, 12)()); }
-				float DimZ() { mixin(MGPS!(float, 8)()); }
-				float DimX() { mixin(MGPS!(float, 4)()); }
-				StaticMesh Mesh() { mixin(MGPS!(StaticMesh, 0)()); }
+				float Chance() { mixin(MGPS!("float", 12)()); }
+				float DimZ() { mixin(MGPS!("float", 8)()); }
+				float DimX() { mixin(MGPS!("float", 4)()); }
+				StaticMesh Mesh() { mixin(MGPS!("StaticMesh", 0)()); }
 			}
 			bool bOverrideMeshLightMapRes() { mixin(MGBPS!(24, 0x2)()); }
 			bool bOverrideMeshLightMapRes(bool val) { mixin(MSBPS!(24, 0x2)()); }
@@ -50,14 +50,14 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PBRuleNodeMesh.BuildingMatOverrides")()); }
-		@property final auto ref ScriptArray!(MaterialInterface) MaterialOptions() { mixin(MGPS!(ScriptArray!(MaterialInterface), 0)()); }
+		@property final auto ref ScriptArray!(MaterialInterface) MaterialOptions() { mixin(MGPS!("ScriptArray!(MaterialInterface)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo) BuildingMeshes() { mixin(MGPC!(ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo), 104)()); }
-			PBRuleNodeMesh.BuildingMeshInfo PartialOccludedBuildingMesh() { mixin(MGPC!(PBRuleNodeMesh.BuildingMeshInfo, 116)()); }
+			ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo) BuildingMeshes() { mixin(MGPC!("ScriptArray!(PBRuleNodeMesh.BuildingMeshInfo)", 104)()); }
+			PBRuleNodeMesh.BuildingMeshInfo PartialOccludedBuildingMesh() { mixin(MGPC!("PBRuleNodeMesh.BuildingMeshInfo", 116)()); }
 		}
 		bool bBlockAll() { mixin(MGBPC!(172, 0x2)()); }
 		bool bBlockAll(bool val) { mixin(MSBPC!(172, 0x2)()); }

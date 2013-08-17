@@ -38,8 +38,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerVoice.VGSCommandToVoiceMap")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!(SoundCue, 4)()); }
-			TrVGSCommandList.VGSCommandType Command() { mixin(MGPS!(TrVGSCommandList.VGSCommandType, 0)()); }
+			SoundCue Sound() { mixin(MGPS!("SoundCue", 4)()); }
+			TrVGSCommandList.VGSCommandType Command() { mixin(MGPS!("TrVGSCommandList.VGSCommandType", 0)()); }
 		}
 	}
 	struct VGSContextCommandToVoiceMap
@@ -52,9 +52,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				SoundCue Sound() { mixin(MGPS!(SoundCue, 8)()); }
-				TrVGSCommandList.EVGSContextLocation ContextLocation() { mixin(MGPS!(TrVGSCommandList.EVGSContextLocation, 1)()); }
-				TrVGSCommandList.EVGSContextActor ContextActor() { mixin(MGPS!(TrVGSCommandList.EVGSContextActor, 0)()); }
+				SoundCue Sound() { mixin(MGPS!("SoundCue", 8)()); }
+				TrVGSCommandList.EVGSContextLocation ContextLocation() { mixin(MGPS!("TrVGSCommandList.EVGSContextLocation", 1)()); }
+				TrVGSCommandList.EVGSContextActor ContextActor() { mixin(MGPS!("TrVGSCommandList.EVGSContextActor", 0)()); }
 			}
 			bool bIsEnemyLocation() { mixin(MGBPS!(4, 0x1)()); }
 			bool bIsEnemyLocation(bool val) { mixin(MSBPS!(4, 0x1)()); }
@@ -62,9 +62,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrPlayerVoice.VGSCommandToVoiceMap) m_VGSCommandToVoiceMap() { mixin(MGPC!(ScriptArray!(TrPlayerVoice.VGSCommandToVoiceMap), 2148)()); }
-		ScriptArray!(SoundCue) m_VGSSampleMap() { mixin(MGPC!(ScriptArray!(SoundCue), 2160)()); }
-		ScriptArray!(TrPlayerVoice.VGSContextCommandToVoiceMap) m_VGSContextCommandToVoiceMap() { mixin(MGPC!(ScriptArray!(TrPlayerVoice.VGSContextCommandToVoiceMap), 2172)()); }
+		ScriptArray!(TrPlayerVoice.VGSCommandToVoiceMap) m_VGSCommandToVoiceMap() { mixin(MGPC!("ScriptArray!(TrPlayerVoice.VGSCommandToVoiceMap)", 2148)()); }
+		ScriptArray!(SoundCue) m_VGSSampleMap() { mixin(MGPC!("ScriptArray!(SoundCue)", 2160)()); }
+		ScriptArray!(TrPlayerVoice.VGSContextCommandToVoiceMap) m_VGSContextCommandToVoiceMap() { mixin(MGPC!("ScriptArray!(TrPlayerVoice.VGSContextCommandToVoiceMap)", 2172)()); }
 	}
 final:
 	static void PlaySoundEx(TrVGSCommandList.VGSCommandType Command, TrPlayerController TrPC, PlayerReplicationInfo InstigatorPRI)

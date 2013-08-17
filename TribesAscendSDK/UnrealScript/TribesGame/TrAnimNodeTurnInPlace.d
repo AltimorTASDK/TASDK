@@ -29,35 +29,35 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrAnimNodeTurnInPlace.RotTransitionInfo")()); }
 		@property final auto ref
 		{
-			ScriptName TransName() { mixin(MGPS!(ScriptName, 4)()); }
-			float RotationOffset() { mixin(MGPS!(float, 0)()); }
+			ScriptName TransName() { mixin(MGPS!("ScriptName", 4)()); }
+			float RotationOffset() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrAnimNodeAimOffset) m_OffsetNodes() { mixin(MGPC!(ScriptArray!(TrAnimNodeAimOffset), 296)()); }
-			ScriptArray!(TrAnimNodeTurnInPlace.RotTransitionInfo) m_RotTransitions() { mixin(MGPC!(ScriptArray!(TrAnimNodeTurnInPlace.RotTransitionInfo), 308)()); }
-			ScriptArray!(TrAnimNodeTurnInPlace_Player) m_PlayerNodes() { mixin(MGPC!(ScriptArray!(TrAnimNodeTurnInPlace_Player), 348)()); }
-			Rotator m_InterpRotation() { mixin(MGPC!(Rotator, 368)()); }
-			float m_fTurnInterpTime() { mixin(MGPC!(float, 364)()); }
-			float m_fIgnoredTransitionTime() { mixin(MGPC!(float, 360)()); }
-			float m_RemainingInterpolationTime() { mixin(MGPC!(float, 344)()); }
-			float m_fInterpolationTime() { mixin(MGPC!(float, 340)()); }
-			float m_fChooseNewTransitionPercent() { mixin(MGPC!(float, 336)()); }
-			TrAnimNodeTurnInPlace.ForcedTransitionAngle m_ForcedTransitionAngle() { mixin(MGPC!(TrAnimNodeTurnInPlace.ForcedTransitionAngle, 332)()); }
-			float m_fTransitionThresholdAngle() { mixin(MGPC!(float, 328)()); }
-			int m_nCurrentTransitionIndex() { mixin(MGPC!(int, 324)()); }
-			float m_fTransitionBlendTime() { mixin(MGPC!(float, 320)()); }
-			float m_fRelativeOffset() { mixin(MGPC!(float, 292)()); }
-			int m_nPitchOffset() { mixin(MGPC!(int, 288)()); }
-			int m_nYawOffset() { mixin(MGPC!(int, 284)()); }
-			int m_nLastRootBoneYaw() { mixin(MGPC!(int, 280)()); }
-			float m_fPawnRotationRate() { mixin(MGPC!(float, 276)()); }
-			int m_nLastPawnPitch() { mixin(MGPC!(int, 272)()); }
-			int m_nLastPawnYaw() { mixin(MGPC!(int, 268)()); }
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 260)()); }
+			ScriptArray!(TrAnimNodeAimOffset) m_OffsetNodes() { mixin(MGPC!("ScriptArray!(TrAnimNodeAimOffset)", 296)()); }
+			ScriptArray!(TrAnimNodeTurnInPlace.RotTransitionInfo) m_RotTransitions() { mixin(MGPC!("ScriptArray!(TrAnimNodeTurnInPlace.RotTransitionInfo)", 308)()); }
+			ScriptArray!(TrAnimNodeTurnInPlace_Player) m_PlayerNodes() { mixin(MGPC!("ScriptArray!(TrAnimNodeTurnInPlace_Player)", 348)()); }
+			Rotator m_InterpRotation() { mixin(MGPC!("Rotator", 368)()); }
+			float m_fTurnInterpTime() { mixin(MGPC!("float", 364)()); }
+			float m_fIgnoredTransitionTime() { mixin(MGPC!("float", 360)()); }
+			float m_RemainingInterpolationTime() { mixin(MGPC!("float", 344)()); }
+			float m_fInterpolationTime() { mixin(MGPC!("float", 340)()); }
+			float m_fChooseNewTransitionPercent() { mixin(MGPC!("float", 336)()); }
+			TrAnimNodeTurnInPlace.ForcedTransitionAngle m_ForcedTransitionAngle() { mixin(MGPC!("TrAnimNodeTurnInPlace.ForcedTransitionAngle", 332)()); }
+			float m_fTransitionThresholdAngle() { mixin(MGPC!("float", 328)()); }
+			int m_nCurrentTransitionIndex() { mixin(MGPC!("int", 324)()); }
+			float m_fTransitionBlendTime() { mixin(MGPC!("float", 320)()); }
+			float m_fRelativeOffset() { mixin(MGPC!("float", 292)()); }
+			int m_nPitchOffset() { mixin(MGPC!("int", 288)()); }
+			int m_nYawOffset() { mixin(MGPC!("int", 284)()); }
+			int m_nLastRootBoneYaw() { mixin(MGPC!("int", 280)()); }
+			float m_fPawnRotationRate() { mixin(MGPC!("float", 276)()); }
+			int m_nLastPawnPitch() { mixin(MGPC!("int", 272)()); }
+			int m_nLastPawnYaw() { mixin(MGPC!("int", 268)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 260)()); }
 		}
 		bool m_bDisableAllTurning() { mixin(MGBPC!(264, 0x8000)()); }
 		bool m_bDisableAllTurning(bool val) { mixin(MSBPC!(264, 0x8000)()); }

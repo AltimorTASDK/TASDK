@@ -69,14 +69,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			Rotator PreciseRotation() { mixin(MGPC!(Rotator, 112)()); }
-			float PreciseRotationInterpolationTime() { mixin(MGPC!(float, 108)()); }
-			Vector PreciseDestRelOffset() { mixin(MGPC!(Vector, 96)()); }
-			Actor PreciseDestBase() { mixin(MGPC!(Actor, 92)()); }
-			Vector PreciseDestination() { mixin(MGPC!(Vector, 80)()); }
-			float LastCanDoSpecialMoveTime() { mixin(MGPC!(float, 72)()); }
-			ScriptName Handle() { mixin(MGPC!(ScriptName, 64)()); }
-			GamePawn PawnOwner() { mixin(MGPC!(GamePawn, 60)()); }
+			Rotator PreciseRotation() { mixin(MGPC!("Rotator", 112)()); }
+			float PreciseRotationInterpolationTime() { mixin(MGPC!("float", 108)()); }
+			Vector PreciseDestRelOffset() { mixin(MGPC!("Vector", 96)()); }
+			Actor PreciseDestBase() { mixin(MGPC!("Actor", 92)()); }
+			Vector PreciseDestination() { mixin(MGPC!("Vector", 80)()); }
+			float LastCanDoSpecialMoveTime() { mixin(MGPC!("float", 72)()); }
+			ScriptName Handle() { mixin(MGPC!("ScriptName", 64)()); }
+			GamePawn PawnOwner() { mixin(MGPC!("GamePawn", 60)()); }
 		}
 		bool bForcePrecisePosition() { mixin(MGBPC!(76, 0x20)()); }
 		bool bForcePrecisePosition(bool val) { mixin(MSBPC!(76, 0x20)()); }
@@ -106,7 +106,7 @@ final:
 		params[] = 0;
 		*cast(int*)params.ptr = out_Flags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitSpecialMoveFlags, params.ptr, cast(void*)0);
-		*out_Flags = *cast(int*)params.ptr;
+		out_Flags = *cast(int*)params.ptr;
 	}
 	void ExtractSpecialMoveFlags(int Flags)
 	{
@@ -139,11 +139,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanOverrideSpecialMove, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool CanDoSpecialMove(bool bForceCheck)
+	bool CanDoSpecialMove(bool* bForceCheck = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceCheck;
+		if (bForceCheck !is null)
+			*cast(bool*)params.ptr = *bForceCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanDoSpecialMove, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -188,12 +189,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldReplicate, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void SetReachPreciseDestination(Vector DestinationToReach, bool bCancel)
+	void SetReachPreciseDestination(Vector DestinationToReach, bool* bCancel = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = DestinationToReach;
-		*cast(bool*)&params[12] = bCancel;
+		if (bCancel !is null)
+			*cast(bool*)&params[12] = *bCancel;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetReachPreciseDestination, params.ptr, cast(void*)0);
 	}
 	void SetFacePreciseRotation(Rotator RotationToFace, float InterpolationTime)

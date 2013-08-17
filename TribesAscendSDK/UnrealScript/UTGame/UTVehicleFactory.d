@@ -58,9 +58,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Rotator) InitialGunRotations() { mixin(MGPC!(ScriptArray!(Rotator), 748)()); }
-			UTGameObjective ReverseObjective() { mixin(MGPC!(UTGameObjective, 744)()); }
-			float SpawnZOffset() { mixin(MGPC!(float, 736)()); }
+			ScriptArray!(Rotator) InitialGunRotations() { mixin(MGPC!("ScriptArray!(Rotator)", 748)()); }
+			UTGameObjective ReverseObjective() { mixin(MGPC!("UTGameObjective", 744)()); }
+			float SpawnZOffset() { mixin(MGPC!("float", 736)()); }
 		}
 		bool bStartNeutral() { mixin(MGBPC!(740, 0x2)()); }
 		bool bStartNeutral(bool val) { mixin(MSBPC!(740, 0x2)()); }

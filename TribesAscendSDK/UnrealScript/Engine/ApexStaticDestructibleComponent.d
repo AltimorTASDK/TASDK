@@ -16,10 +16,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ApexDestructiblePreview() { mixin(MGPC!(UObject.Pointer, 532)()); }
+			UObject.Pointer ApexDestructiblePreview() { mixin(MGPC!("UObject.Pointer", 532)()); }
 			// WARNING: Property 'ApexDestructibleActor' has the same name as a defined type!
-			float SleepDamping() { mixin(MGPC!(float, 524)()); }
-			float SleepEnergyThreshold() { mixin(MGPC!(float, 520)()); }
+			float SleepDamping() { mixin(MGPC!("float", 524)()); }
+			float SleepEnergyThreshold() { mixin(MGPC!("float", 520)()); }
 		}
 		bool bIsThumbnailComponent() { mixin(MGBPC!(536, 0x1)()); }
 		bool bIsThumbnailComponent(bool val) { mixin(MSBPC!(536, 0x1)()); }

@@ -84,12 +84,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				TrStreamManager.STREAMTYPE Type() { mixin(MGPS!(TrStreamManager.STREAMTYPE, 4)()); }
-				ScriptString Title() { mixin(MGPS!(ScriptString, 8)()); }
-				ScriptString Viewers() { mixin(MGPS!(ScriptString, 32)()); }
-				ScriptString Description() { mixin(MGPS!(ScriptString, 56)()); }
-				ScriptString ChannelName() { mixin(MGPS!(ScriptString, 44)()); }
-				ScriptString Stream() { mixin(MGPS!(ScriptString, 20)()); }
+				TrStreamManager.STREAMTYPE Type() { mixin(MGPS!("TrStreamManager.STREAMTYPE", 4)()); }
+				ScriptString Title() { mixin(MGPS!("ScriptString", 8)()); }
+				ScriptString Viewers() { mixin(MGPS!("ScriptString", 32)()); }
+				ScriptString Description() { mixin(MGPS!("ScriptString", 56)()); }
+				ScriptString ChannelName() { mixin(MGPS!("ScriptString", 44)()); }
+				ScriptString Stream() { mixin(MGPS!("ScriptString", 20)()); }
 			}
 			bool bFeatured() { mixin(MGBPS!(0, 0x2)()); }
 			bool bFeatured(bool val) { mixin(MSBPS!(0, 0x2)()); }
@@ -101,17 +101,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrStreamManager.GameStream) Streams() { mixin(MGPC!(ScriptArray!(TrStreamManager.GameStream), 164)()); }
+			ScriptArray!(TrStreamManager.GameStream) Streams() { mixin(MGPC!("ScriptArray!(TrStreamManager.GameStream)", 164)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ViewerSort__Delegate'!
-			ScriptString StreamServer() { mixin(MGPC!(ScriptString, 152)()); }
-			ScriptString StreamPath() { mixin(MGPC!(ScriptString, 140)()); }
-			ScriptString StreamURL() { mixin(MGPC!(ScriptString, 128)()); }
-			ScriptString WatchEnd() { mixin(MGPC!(ScriptString, 116)()); }
-			ScriptString WatchStart() { mixin(MGPC!(ScriptString, 104)()); }
-			ScriptString TokViewers() { mixin(MGPC!(ScriptString, 92)()); }
-			ScriptString TokTitle() { mixin(MGPC!(ScriptString, 80)()); }
-			ScriptString TokName() { mixin(MGPC!(ScriptString, 68)()); }
-			int NewsIndex() { mixin(MGPC!(int, 64)()); }
+			ScriptString StreamServer() { mixin(MGPC!("ScriptString", 152)()); }
+			ScriptString StreamPath() { mixin(MGPC!("ScriptString", 140)()); }
+			ScriptString StreamURL() { mixin(MGPC!("ScriptString", 128)()); }
+			ScriptString WatchEnd() { mixin(MGPC!("ScriptString", 116)()); }
+			ScriptString WatchStart() { mixin(MGPC!("ScriptString", 104)()); }
+			ScriptString TokViewers() { mixin(MGPC!("ScriptString", 92)()); }
+			ScriptString TokTitle() { mixin(MGPC!("ScriptString", 80)()); }
+			ScriptString TokName() { mixin(MGPC!("ScriptString", 68)()); }
+			int NewsIndex() { mixin(MGPC!("int", 64)()); }
 		}
 		bool bUpdateReady() { mixin(MGBPC!(60, 0x1)()); }
 		bool bUpdateReady(bool val) { mixin(MSBPC!(60, 0x1)()); }
@@ -156,11 +156,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HaveFeature, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	ScriptString GetFeatureName(int Count)
+	ScriptString GetFeatureName(int* Count = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = Count;
+		if (Count !is null)
+			*cast(int*)params.ptr = *Count;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFeatureName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
@@ -188,11 +189,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTypeCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	ScriptString GetFeatureDescription(int Count)
+	ScriptString GetFeatureDescription(int* Count = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = Count;
+		if (Count !is null)
+			*cast(int*)params.ptr = *Count;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFeatureDescription, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
@@ -242,18 +244,20 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartTVTimer, cast(void*)0, cast(void*)0);
 	}
-	void UpdateStreams(bool bForce)
+	void UpdateStreams(bool* bForce = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForce;
+		if (bForce !is null)
+			*cast(bool*)params.ptr = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateStreams, params.ptr, cast(void*)0);
 	}
-	void CheckForUpdate(bool bRunIfReady)
+	void CheckForUpdate(bool* bRunIfReady = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRunIfReady;
+		if (bRunIfReady !is null)
+			*cast(bool*)params.ptr = *bRunIfReady;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckForUpdate, params.ptr, cast(void*)0);
 	}
 	void GetLatestNews()

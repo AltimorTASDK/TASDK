@@ -15,9 +15,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float VTiling() { mixin(MGPC!(float, 116)()); }
-			float UTiling() { mixin(MGPC!(float, 112)()); }
-			int CoordinateIndex() { mixin(MGPC!(int, 108)()); }
+			float VTiling() { mixin(MGPC!("float", 116)()); }
+			float UTiling() { mixin(MGPC!("float", 112)()); }
+			int CoordinateIndex() { mixin(MGPC!("int", 108)()); }
 		}
 		bool UnMirrorV() { mixin(MGBPC!(120, 0x2)()); }
 		bool UnMirrorV(bool val) { mixin(MSBPC!(120, 0x2)()); }

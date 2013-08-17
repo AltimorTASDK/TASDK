@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SphericalHarmonicLightComponent DefaultProperties() { mixin(MGDPC!(SphericalHarmonicLightComponent, "SphericalHarmonicLightComponent Engine.Default__SphericalHarmonicLightComponent")()); }
 	@property final
 	{
-		@property final auto ref UObject.SHVectorRGB WorldSpaceIncidentLighting() { mixin(MGPC!(UObject.SHVectorRGB, 432)()); }
+		@property final auto ref UObject.SHVectorRGB WorldSpaceIncidentLighting() { mixin(MGPC!("UObject.SHVectorRGB", 432)()); }
 		bool bRenderBeforeModShadows() { mixin(MGBPC!(576, 0x1)()); }
 		bool bRenderBeforeModShadows(bool val) { mixin(MSBPC!(576, 0x1)()); }
 	}

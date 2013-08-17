@@ -62,12 +62,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_MenuOption) SettingsList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_MenuOption), 244)()); }
-		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!(UIDataStore_OnlineGameSettings, 256)()); }
-		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 240)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 236)()); }
-		ScriptString SelectedOptionSet() { mixin(MGPC!(ScriptString, 224)()); }
-		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 220)()); }
+		ScriptArray!(UTUIDataProvider_MenuOption) SettingsList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_MenuOption)", 244)()); }
+		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!("UIDataStore_OnlineGameSettings", 256)()); }
+		GFxObject MenuMC() { mixin(MGPC!("GFxObject", 240)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 236)()); }
+		ScriptString SelectedOptionSet() { mixin(MGPC!("ScriptString", 224)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 220)()); }
 	}
 final:
 	void OnViewLoaded()
@@ -78,11 +78,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewActivated, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)

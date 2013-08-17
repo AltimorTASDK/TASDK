@@ -17,8 +17,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector DrawScale3D() { mixin(MGPC!(Vector, 116)()); }
-			Vector InitialVelocity() { mixin(MGPC!(Vector, 104)()); }
+			Vector DrawScale3D() { mixin(MGPC!("Vector", 116)()); }
+			Vector InitialVelocity() { mixin(MGPC!("Vector", 104)()); }
 			// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
 			// WARNING: Property 'PhysicsAsset' has the same name as a defined type!
 		}

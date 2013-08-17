@@ -150,42 +150,42 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage.ResolutionSet")()); }
 		@property final auto ref
 		{
-			TgPlayerProfile.PropertyPair Res() { mixin(MGPS!(TgPlayerProfile.PropertyPair, 4)()); }
-			int Index() { mixin(MGPS!(int, 0)()); }
+			TgPlayerProfile.PropertyPair Res() { mixin(MGPS!("TgPlayerProfile.PropertyPair", 4)()); }
+			int Index() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) OptionTitlesOverride() { mixin(MGPC!(ScriptArray!(ScriptString), 188)()); }
-			ScriptArray!(ScriptString) OptionSubtextOverride() { mixin(MGPC!(ScriptArray!(ScriptString), 200)()); }
-			ScriptArray!(ScriptString) OptionTitles() { mixin(MGPC!(ScriptArray!(ScriptString), 320)()); }
-			ScriptArray!(ScriptString) OptionSubtext() { mixin(MGPC!(ScriptArray!(ScriptString), 332)()); }
-			ScriptArray!(GFxTrAction) PageActions() { mixin(MGPC!(ScriptArray!(GFxTrAction), 344)()); }
-			ScriptString HelpButtonYLabel() { mixin(MGPC!(ScriptString, 308)()); }
-			ScriptString HelpButtonXLabel() { mixin(MGPC!(ScriptString, 296)()); }
-			ScriptString HelpButtonBLabel() { mixin(MGPC!(ScriptString, 284)()); }
-			ScriptString HelpButtonALabel() { mixin(MGPC!(ScriptString, 272)()); }
-			ScriptString HelpButtonYKey() { mixin(MGPC!(ScriptString, 260)()); }
-			ScriptString HelpButtonXKey() { mixin(MGPC!(ScriptString, 248)()); }
-			ScriptString HelpButtonBKey() { mixin(MGPC!(ScriptString, 236)()); }
-			ScriptString HelpButtonAKey() { mixin(MGPC!(ScriptString, 224)()); }
-			ScriptString PageLabel() { mixin(MGPC!(ScriptString, 212)()); }
-			ScriptString PageLabelOverride() { mixin(MGPC!(ScriptString, 176)()); }
-			int LoadoutEquipType() { mixin(MGPC!(int, 168)()); }
-			int LoadoutClassId() { mixin(MGPC!(int, 164)()); }
-			int NewAction() { mixin(MGPC!(int, 160)()); }
-			int OptionCount() { mixin(MGPC!(int, 156)()); }
-			int DataCount() { mixin(MGPC!(int, 152)()); }
-			int ActiveIndex() { mixin(MGPC!(int, 148)()); }
-			int ScrollIndex() { mixin(MGPC!(int, 144)()); }
-			int HelpButtonYNum() { mixin(MGPC!(int, 140)()); }
-			int HelpButtonXNum() { mixin(MGPC!(int, 136)()); }
-			int HelpButtonBNum() { mixin(MGPC!(int, 132)()); }
-			int HelpButtonANum() { mixin(MGPC!(int, 128)()); }
-			int GoBack() { mixin(MGPC!(int, 124)()); }
-			int ActiveLoadout() { mixin(MGPC!(int, 120)()); }
+			ScriptArray!(ScriptString) OptionTitlesOverride() { mixin(MGPC!("ScriptArray!(ScriptString)", 188)()); }
+			ScriptArray!(ScriptString) OptionSubtextOverride() { mixin(MGPC!("ScriptArray!(ScriptString)", 200)()); }
+			ScriptArray!(ScriptString) OptionTitles() { mixin(MGPC!("ScriptArray!(ScriptString)", 320)()); }
+			ScriptArray!(ScriptString) OptionSubtext() { mixin(MGPC!("ScriptArray!(ScriptString)", 332)()); }
+			ScriptArray!(GFxTrAction) PageActions() { mixin(MGPC!("ScriptArray!(GFxTrAction)", 344)()); }
+			ScriptString HelpButtonYLabel() { mixin(MGPC!("ScriptString", 308)()); }
+			ScriptString HelpButtonXLabel() { mixin(MGPC!("ScriptString", 296)()); }
+			ScriptString HelpButtonBLabel() { mixin(MGPC!("ScriptString", 284)()); }
+			ScriptString HelpButtonALabel() { mixin(MGPC!("ScriptString", 272)()); }
+			ScriptString HelpButtonYKey() { mixin(MGPC!("ScriptString", 260)()); }
+			ScriptString HelpButtonXKey() { mixin(MGPC!("ScriptString", 248)()); }
+			ScriptString HelpButtonBKey() { mixin(MGPC!("ScriptString", 236)()); }
+			ScriptString HelpButtonAKey() { mixin(MGPC!("ScriptString", 224)()); }
+			ScriptString PageLabel() { mixin(MGPC!("ScriptString", 212)()); }
+			ScriptString PageLabelOverride() { mixin(MGPC!("ScriptString", 176)()); }
+			int LoadoutEquipType() { mixin(MGPC!("int", 168)()); }
+			int LoadoutClassId() { mixin(MGPC!("int", 164)()); }
+			int NewAction() { mixin(MGPC!("int", 160)()); }
+			int OptionCount() { mixin(MGPC!("int", 156)()); }
+			int DataCount() { mixin(MGPC!("int", 152)()); }
+			int ActiveIndex() { mixin(MGPC!("int", 148)()); }
+			int ScrollIndex() { mixin(MGPC!("int", 144)()); }
+			int HelpButtonYNum() { mixin(MGPC!("int", 140)()); }
+			int HelpButtonXNum() { mixin(MGPC!("int", 136)()); }
+			int HelpButtonBNum() { mixin(MGPC!("int", 132)()); }
+			int HelpButtonANum() { mixin(MGPC!("int", 128)()); }
+			int GoBack() { mixin(MGPC!("int", 124)()); }
+			int ActiveLoadout() { mixin(MGPC!("int", 120)()); }
 		}
 		bool bShowTribesLogo() { mixin(MGBPC!(172, 0x200)()); }
 		bool bShowTribesLogo(bool val) { mixin(MSBPC!(172, 0x200)()); }
@@ -244,13 +244,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionPage, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[4];
 	}
-	GFxTrAction AddActionSet(GFxTrPage ActionPage, int ActionNumber, ScriptString ActionString)
+	GFxTrAction AddActionSet(GFxTrPage ActionPage, int* ActionNumber = null, ScriptString* ActionString = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(GFxTrPage*)params.ptr = ActionPage;
-		*cast(int*)&params[4] = ActionNumber;
-		*cast(ScriptString*)&params[8] = ActionString;
+		if (ActionNumber !is null)
+			*cast(int*)&params[4] = *ActionNumber;
+		if (ActionString !is null)
+			*cast(ScriptString*)&params[8] = *ActionString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddActionSet, params.ptr, cast(void*)0);
 		return *cast(GFxTrAction*)&params[20];
 	}
@@ -432,13 +434,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowModel, cast(void*)0, cast(void*)0);
 	}
-	GFxObject FillClass(int ClassId, int ActionIndex, bool bShowActive)
+	GFxObject FillClass(int ClassId, int ActionIndex, bool* bShowActive = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
 		*cast(int*)&params[4] = ActionIndex;
-		*cast(bool*)&params[8] = bShowActive;
+		if (bShowActive !is null)
+			*cast(bool*)&params[8] = *bShowActive;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FillClass, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[12];
 	}

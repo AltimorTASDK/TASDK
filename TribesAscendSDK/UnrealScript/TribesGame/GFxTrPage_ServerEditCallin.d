@@ -46,17 +46,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CallinType() { mixin(MGPC!(int, 376)()); }
-			int popupIndex() { mixin(MGPC!(int, 396)()); }
-			int BuildupIndex() { mixin(MGPC!(int, 392)()); }
-			int CooldownIndex() { mixin(MGPC!(int, 388)()); }
-			int PriceIndex() { mixin(MGPC!(int, 384)()); }
-			int EnabledIndex() { mixin(MGPC!(int, 380)()); }
-			int ORBNumber() { mixin(MGPC!(int, 372)()); }
-			int SUPNumber() { mixin(MGPC!(int, 368)()); }
-			int TACNumber() { mixin(MGPC!(int, 364)()); }
-			int MaxBOunds() { mixin(MGPC!(int, 360)()); }
-			int MinBounds() { mixin(MGPC!(int, 356)()); }
+			int CallinType() { mixin(MGPC!("int", 376)()); }
+			int popupIndex() { mixin(MGPC!("int", 396)()); }
+			int BuildupIndex() { mixin(MGPC!("int", 392)()); }
+			int CooldownIndex() { mixin(MGPC!("int", 388)()); }
+			int PriceIndex() { mixin(MGPC!("int", 384)()); }
+			int EnabledIndex() { mixin(MGPC!("int", 380)()); }
+			int ORBNumber() { mixin(MGPC!("int", 372)()); }
+			int SUPNumber() { mixin(MGPC!("int", 368)()); }
+			int TACNumber() { mixin(MGPC!("int", 364)()); }
+			int MaxBOunds() { mixin(MGPC!("int", 360)()); }
+			int MinBounds() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bBoundsPopup() { mixin(MGBPC!(400, 0x2)()); }
 		bool bBoundsPopup(bool val) { mixin(MSBPC!(400, 0x2)()); }

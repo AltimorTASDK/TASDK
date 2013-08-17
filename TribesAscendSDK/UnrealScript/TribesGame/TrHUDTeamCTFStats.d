@@ -53,17 +53,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 116)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 120)()); }
-			PlayerReplicationInfo FlagHolderPRI() { mixin(MGPC!(PlayerReplicationInfo, 108)()); }
-			ubyte bEmptyFlagStatus() { mixin(MGPC!(ubyte, 106)()); }
-			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!(UTGameReplicationInfo.EFlagState, 104)()); }
-			int GeneratorDowntime() { mixin(MGPC!(int, 96)()); }
-			int GeneratorPower() { mixin(MGPC!(int, 88)()); }
-			int TeamScore() { mixin(MGPC!(int, 80)()); }
-			int FlagReturnTime() { mixin(MGPC!(int, 72)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
-			int MyTeam() { mixin(MGPC!(int, 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 116)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 120)()); }
+			PlayerReplicationInfo FlagHolderPRI() { mixin(MGPC!("PlayerReplicationInfo", 108)()); }
+			ubyte bEmptyFlagStatus() { mixin(MGPC!("ubyte", 106)()); }
+			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!("UTGameReplicationInfo.EFlagState", 104)()); }
+			int GeneratorDowntime() { mixin(MGPC!("int", 96)()); }
+			int GeneratorPower() { mixin(MGPC!("int", 88)()); }
+			int TeamScore() { mixin(MGPC!("int", 80)()); }
+			int FlagReturnTime() { mixin(MGPC!("int", 72)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int MyTeam() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }

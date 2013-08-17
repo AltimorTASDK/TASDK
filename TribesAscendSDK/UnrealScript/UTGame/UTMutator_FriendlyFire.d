@@ -24,7 +24,7 @@ public extern(D):
 			ScriptFunction InitMutator() { mixin(MGF!("mInitMutator", "Function UTGame.UTMutator_FriendlyFire.InitMutator")()); }
 		}
 	}
-	@property final auto ref float FriendlyFireScale() { mixin(MGPC!(float, 496)()); }
+	@property final auto ref float FriendlyFireScale() { mixin(MGPC!("float", 496)()); }
 final:
 	bool MutatorIsAllowed()
 	{
@@ -40,6 +40,6 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitMutator, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 }

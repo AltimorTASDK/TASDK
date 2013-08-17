@@ -55,19 +55,21 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewActivated, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
-	static ScriptString StripInvalidPasswordCharacters(ScriptString PasswordString, ScriptString InvalidChars)
+	static ScriptString StripInvalidPasswordCharacters(ScriptString PasswordString, ScriptString* InvalidChars = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PasswordString;
-		*cast(ScriptString*)&params[12] = InvalidChars;
+		if (InvalidChars !is null)
+			*cast(ScriptString*)&params[12] = *InvalidChars;
 		StaticClass.ProcessEvent(Functions.StripInvalidPasswordCharacters, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[24];
 	}

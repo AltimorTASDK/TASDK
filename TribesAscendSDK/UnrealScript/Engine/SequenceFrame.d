@@ -18,13 +18,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			Material FillMaterial() { mixin(MGPC!(Material, 168)()); }
-			Texture2D FillTexture() { mixin(MGPC!(Texture2D, 164)()); }
-			UObject.Color FillColor() { mixin(MGPC!(UObject.Color, 160)()); }
-			UObject.Color BorderColor() { mixin(MGPC!(UObject.Color, 156)()); }
-			int BorderWidth() { mixin(MGPC!(int, 148)()); }
-			int SizeY() { mixin(MGPC!(int, 144)()); }
-			int SizeX() { mixin(MGPC!(int, 140)()); }
+			Material FillMaterial() { mixin(MGPC!("Material", 168)()); }
+			Texture2D FillTexture() { mixin(MGPC!("Texture2D", 164)()); }
+			UObject.Color FillColor() { mixin(MGPC!("UObject.Color", 160)()); }
+			UObject.Color BorderColor() { mixin(MGPC!("UObject.Color", 156)()); }
+			int BorderWidth() { mixin(MGPC!("int", 148)()); }
+			int SizeY() { mixin(MGPC!("int", 144)()); }
+			int SizeX() { mixin(MGPC!("int", 140)()); }
 		}
 		bool bTileFill() { mixin(MGBPC!(152, 0x4)()); }
 		bool bTileFill(bool val) { mixin(MSBPC!(152, 0x4)()); }

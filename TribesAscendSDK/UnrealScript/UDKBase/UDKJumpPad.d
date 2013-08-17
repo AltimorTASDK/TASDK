@@ -33,11 +33,11 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'JumpAmbientSound'!
-		float JumpAirControl() { mixin(MGPC!(float, 716)()); }
-		float JumpTime() { mixin(MGPC!(float, 712)()); }
-		SoundCue JumpSound() { mixin(MGPC!(SoundCue, 708)()); }
-		PathNode JumpTarget() { mixin(MGPC!(PathNode, 704)()); }
-		Vector JumpVelocity() { mixin(MGPC!(Vector, 692)()); }
+		float JumpAirControl() { mixin(MGPC!("float", 716)()); }
+		float JumpTime() { mixin(MGPC!("float", 712)()); }
+		SoundCue JumpSound() { mixin(MGPC!("SoundCue", 708)()); }
+		PathNode JumpTarget() { mixin(MGPC!("PathNode", 704)()); }
+		Vector JumpVelocity() { mixin(MGPC!("Vector", 692)()); }
 	}
 final:
 	void Touch(Actor Other, 

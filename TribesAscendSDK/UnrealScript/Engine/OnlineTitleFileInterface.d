@@ -54,7 +54,7 @@ final:
 		*cast(ScriptString*)params.ptr = Filename;
 		*cast(ScriptArray!(ubyte)*)&params[12] = FileContents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileContents, params.ptr, cast(void*)0);
-		*FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
+		FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
 		return *cast(bool*)&params[24];
 	}
 	bool ClearDownloadedFiles()

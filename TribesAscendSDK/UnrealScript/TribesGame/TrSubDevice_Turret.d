@@ -25,11 +25,12 @@ public extern(D):
 		}
 	}
 final:
-	Vector GetPhysicalFireStartLoc(Vector AimDir)
+	Vector GetPhysicalFireStartLoc(Vector* AimDir = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = AimDir;
+		if (AimDir !is null)
+			*cast(Vector*)params.ptr = *AimDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}

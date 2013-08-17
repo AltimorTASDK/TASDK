@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByFlyingVehicleThrottle")()); }
 	private static __gshared TrAnimNodeBlendByFlyingVehicleThrottle mDefaultProperties;
 	@property final static TrAnimNodeBlendByFlyingVehicleThrottle DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByFlyingVehicleThrottle, "TrAnimNodeBlendByFlyingVehicleThrottle TribesGame.Default__TrAnimNodeBlendByFlyingVehicleThrottle")()); }
-	@property final auto ref TrVehicle m_TrVehicle() { mixin(MGPC!(TrVehicle, 292)()); }
+	@property final auto ref TrVehicle m_TrVehicle() { mixin(MGPC!("TrVehicle", 292)()); }
 }

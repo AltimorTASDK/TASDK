@@ -30,8 +30,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuildingRuleset.PBParamSwatch")()); }
 		@property final auto ref
 		{
-			ScriptName SwatchName() { mixin(MGPS!(ScriptName, 0)()); }
-			ScriptArray!(ProcBuilding.PBMaterialParam) Params() { mixin(MGPS!(ScriptArray!(ProcBuilding.PBMaterialParam), 8)()); }
+			ScriptName SwatchName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(ProcBuilding.PBMaterialParam) Params() { mixin(MGPS!("ScriptArray!(ProcBuilding.PBMaterialParam)", 8)()); }
 		}
 	}
 	struct PBVariationInfo
@@ -42,7 +42,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuildingRuleset.PBVariationInfo")()); }
 		@property final
 		{
-			@property final auto ref ScriptName VariationName() { mixin(MGPS!(ScriptName, 0)()); }
+			@property final auto ref ScriptName VariationName() { mixin(MGPS!("ScriptName", 0)()); }
 			bool bMeshOnTopOfFacePoly() { mixin(MGBPS!(8, 0x1)()); }
 			bool bMeshOnTopOfFacePoly(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
@@ -51,23 +51,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			PBRuleNodeBase RootRule() { mixin(MGPC!(PBRuleNodeBase, 60)()); }
-			MaterialInterface DefaultRoofMaterial() { mixin(MGPC!(MaterialInterface, 68)()); }
-			MaterialInterface DefaultFloorMaterial() { mixin(MGPC!(MaterialInterface, 72)()); }
-			MaterialInterface DefaultNonRectWallMaterial() { mixin(MGPC!(MaterialInterface, 76)()); }
-			float RoofZOffset() { mixin(MGPC!(float, 80)()); }
-			float NotRoofZOffset() { mixin(MGPC!(float, 84)()); }
-			float FloorZOffset() { mixin(MGPC!(float, 88)()); }
-			float NotFloorZOffset() { mixin(MGPC!(float, 92)()); }
-			float RoofPolyInset() { mixin(MGPC!(float, 96)()); }
-			float FloorPolyInset() { mixin(MGPC!(float, 100)()); }
-			float BuildingLODSpecular() { mixin(MGPC!(float, 104)()); }
-			float RoofEdgeScopeRaise() { mixin(MGPC!(float, 108)()); }
-			Texture LODCubemap() { mixin(MGPC!(Texture, 112)()); }
-			Texture InteriorTexture() { mixin(MGPC!(Texture, 116)()); }
-			ScriptArray!(ProcBuildingRuleset.PBVariationInfo) Variations() { mixin(MGPC!(ScriptArray!(ProcBuildingRuleset.PBVariationInfo), 120)()); }
-			ScriptArray!(ProcBuildingRuleset.PBParamSwatch) ParamSwatches() { mixin(MGPC!(ScriptArray!(ProcBuildingRuleset.PBParamSwatch), 132)()); }
-			ScriptArray!(PBRuleNodeComment) Comments() { mixin(MGPC!(ScriptArray!(PBRuleNodeComment), 144)()); }
+			PBRuleNodeBase RootRule() { mixin(MGPC!("PBRuleNodeBase", 60)()); }
+			MaterialInterface DefaultRoofMaterial() { mixin(MGPC!("MaterialInterface", 68)()); }
+			MaterialInterface DefaultFloorMaterial() { mixin(MGPC!("MaterialInterface", 72)()); }
+			MaterialInterface DefaultNonRectWallMaterial() { mixin(MGPC!("MaterialInterface", 76)()); }
+			float RoofZOffset() { mixin(MGPC!("float", 80)()); }
+			float NotRoofZOffset() { mixin(MGPC!("float", 84)()); }
+			float FloorZOffset() { mixin(MGPC!("float", 88)()); }
+			float NotFloorZOffset() { mixin(MGPC!("float", 92)()); }
+			float RoofPolyInset() { mixin(MGPC!("float", 96)()); }
+			float FloorPolyInset() { mixin(MGPC!("float", 100)()); }
+			float BuildingLODSpecular() { mixin(MGPC!("float", 104)()); }
+			float RoofEdgeScopeRaise() { mixin(MGPC!("float", 108)()); }
+			Texture LODCubemap() { mixin(MGPC!("Texture", 112)()); }
+			Texture InteriorTexture() { mixin(MGPC!("Texture", 116)()); }
+			ScriptArray!(ProcBuildingRuleset.PBVariationInfo) Variations() { mixin(MGPC!("ScriptArray!(ProcBuildingRuleset.PBVariationInfo)", 120)()); }
+			ScriptArray!(ProcBuildingRuleset.PBParamSwatch) ParamSwatches() { mixin(MGPC!("ScriptArray!(ProcBuildingRuleset.PBParamSwatch)", 132)()); }
+			ScriptArray!(PBRuleNodeComment) Comments() { mixin(MGPC!("ScriptArray!(PBRuleNodeComment)", 144)()); }
 		}
 		bool bBeingEdited() { mixin(MGBPC!(64, 0x1)()); }
 		bool bBeingEdited(bool val) { mixin(MSBPC!(64, 0x1)()); }

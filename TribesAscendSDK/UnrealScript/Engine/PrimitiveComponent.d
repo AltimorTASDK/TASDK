@@ -220,55 +220,55 @@ public extern(D):
 	{
 		auto ref
 		{
-			int Tag() { mixin(MGPC!(int, 88)()); }
-			UObject.Matrix LocalToWorld() { mixin(MGPC!(UObject.Matrix, 160)()); }
-			int ThreadTag() { mixin(MGPC!(int, 92)()); }
-			UObject.BoxSphereBounds Bounds() { mixin(MGPC!(UObject.BoxSphereBounds, 120)()); }
-			UObject.Pointer SceneInfo() { mixin(MGPC!(UObject.Pointer, 148)()); }
-			int DetachFence() { mixin(MGPC!(int, 152)()); }
-			float LocalToWorldDeterminant() { mixin(MGPC!(float, 156)()); }
-			int MotionBlurInfoIndex() { mixin(MGPC!(int, 224)()); }
-			ScriptArray!(UObject.Pointer) DecalList() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 228)()); }
+			int Tag() { mixin(MGPC!("int", 88)()); }
+			UObject.Matrix LocalToWorld() { mixin(MGPC!("UObject.Matrix", 160)()); }
+			int ThreadTag() { mixin(MGPC!("int", 92)()); }
+			UObject.BoxSphereBounds Bounds() { mixin(MGPC!("UObject.BoxSphereBounds", 120)()); }
+			UObject.Pointer SceneInfo() { mixin(MGPC!("UObject.Pointer", 148)()); }
+			int DetachFence() { mixin(MGPC!("int", 152)()); }
+			float LocalToWorldDeterminant() { mixin(MGPC!("float", 156)()); }
+			int MotionBlurInfoIndex() { mixin(MGPC!("int", 224)()); }
+			ScriptArray!(UObject.Pointer) DecalList() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 228)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) DecalsToReattach() { mixin(MGPC!(ScriptArray!(
+void*) DecalsToReattach() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 240)()); }
+void*)", 240)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ShadowParent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ReplacementPrimitive'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FogVolumeComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverrideLightComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviousLightEnvironment'!
-			float MinDrawDistance() { mixin(MGPC!(float, 276)()); }
-			float MassiveLODDistance() { mixin(MGPC!(float, 280)()); }
-			float MaxDrawDistance() { mixin(MGPC!(float, 284)()); }
-			float CachedMaxDrawDistance() { mixin(MGPC!(float, 288)()); }
-			float CullDistance() { mixin(MGPC!(float, 292)()); }
-			float CachedCullDistance() { mixin(MGPC!(float, 296)()); }
-			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 300)()); }
-			Scene.ESceneDepthPriorityGroup ViewOwnerDepthPriorityGroup() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 301)()); }
-			Scene.EDetailMode DetailMode() { mixin(MGPC!(Scene.EDetailMode, 302)()); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 303)()); }
-			ubyte RBDominanceGroup() { mixin(MGPC!(ubyte, 304)()); }
-			ubyte PreviewEnvironmentShadowing() { mixin(MGPC!(ubyte, 305)()); }
-			float MotionBlurScale() { mixin(MGPC!(float, 308)()); }
-			ScriptArray!(int) OctreeNodes() { mixin(MGPC!(ScriptArray!(int), 320)()); }
-			int TranslucencySortPriority() { mixin(MGPC!(int, 332)()); }
-			int VisibilityId() { mixin(MGPC!(int, 336)()); }
-			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 340)()); }
-			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 344)()); }
-			PhysicalMaterial PhysMaterialOverride() { mixin(MGPC!(PhysicalMaterial, 348)()); }
-			RB_BodyInstance BodyInstance() { mixin(MGPC!(RB_BodyInstance, 352)()); }
-			UObject.Matrix CachedParentToWorld() { mixin(MGPC!(UObject.Matrix, 368)()); }
-			Vector Translation() { mixin(MGPC!(Vector, 432)()); }
-			Rotator Rotation() { mixin(MGPC!(Rotator, 444)()); }
-			float Scale() { mixin(MGPC!(float, 456)()); }
-			Vector Scale3D() { mixin(MGPC!(Vector, 460)()); }
-			float BoundsScale() { mixin(MGPC!(float, 472)()); }
-			float LastSubmitTime() { mixin(MGPC!(float, 476)()); }
-			float LastRenderTime() { mixin(MGPC!(float, 480)()); }
-			float ScriptRigidBodyCollisionThreshold() { mixin(MGPC!(float, 484)()); }
+			float MinDrawDistance() { mixin(MGPC!("float", 276)()); }
+			float MassiveLODDistance() { mixin(MGPC!("float", 280)()); }
+			float MaxDrawDistance() { mixin(MGPC!("float", 284)()); }
+			float CachedMaxDrawDistance() { mixin(MGPC!("float", 288)()); }
+			float CullDistance() { mixin(MGPC!("float", 292)()); }
+			float CachedCullDistance() { mixin(MGPC!("float", 296)()); }
+			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC!("Scene.ESceneDepthPriorityGroup", 300)()); }
+			Scene.ESceneDepthPriorityGroup ViewOwnerDepthPriorityGroup() { mixin(MGPC!("Scene.ESceneDepthPriorityGroup", 301)()); }
+			Scene.EDetailMode DetailMode() { mixin(MGPC!("Scene.EDetailMode", 302)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 303)()); }
+			ubyte RBDominanceGroup() { mixin(MGPC!("ubyte", 304)()); }
+			ubyte PreviewEnvironmentShadowing() { mixin(MGPC!("ubyte", 305)()); }
+			float MotionBlurScale() { mixin(MGPC!("float", 308)()); }
+			ScriptArray!(int) OctreeNodes() { mixin(MGPC!("ScriptArray!(int)", 320)()); }
+			int TranslucencySortPriority() { mixin(MGPC!("int", 332)()); }
+			int VisibilityId() { mixin(MGPC!("int", 336)()); }
+			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!("LightComponent.LightingChannelContainer", 340)()); }
+			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 344)()); }
+			PhysicalMaterial PhysMaterialOverride() { mixin(MGPC!("PhysicalMaterial", 348)()); }
+			RB_BodyInstance BodyInstance() { mixin(MGPC!("RB_BodyInstance", 352)()); }
+			UObject.Matrix CachedParentToWorld() { mixin(MGPC!("UObject.Matrix", 368)()); }
+			Vector Translation() { mixin(MGPC!("Vector", 432)()); }
+			Rotator Rotation() { mixin(MGPC!("Rotator", 444)()); }
+			float Scale() { mixin(MGPC!("float", 456)()); }
+			Vector Scale3D() { mixin(MGPC!("Vector", 460)()); }
+			float BoundsScale() { mixin(MGPC!("float", 472)()); }
+			float LastSubmitTime() { mixin(MGPC!("float", 476)()); }
+			float LastRenderTime() { mixin(MGPC!("float", 480)()); }
+			float ScriptRigidBodyCollisionThreshold() { mixin(MGPC!("float", 484)()); }
 		}
 		bool bUseViewOwnerDepthPriorityGroup() { mixin(MGBPC!(312, 0x1)()); }
 		bool bUseViewOwnerDepthPriorityGroup(bool val) { mixin(MSBPC!(312, 0x1)()); }
@@ -397,25 +397,29 @@ final:
 		*cast(bool*)params.ptr = bNewBlockRigidBody;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBlockRigidBody, params.ptr, cast(void*)0);
 	}
-	void SetRBLinearVelocity(Vector NewVel, bool bAddToCurrent)
+	void SetRBLinearVelocity(Vector NewVel, bool* bAddToCurrent = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVel;
-		*cast(bool*)&params[12] = bAddToCurrent;
+		if (bAddToCurrent !is null)
+			*cast(bool*)&params[12] = *bAddToCurrent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBLinearVelocity, params.ptr, cast(void*)0);
 	}
-	void AddImpulse(Vector Impulse, Vector Position, ScriptName BoneName, bool bVelChange)
+	void AddImpulse(Vector Impulse, Vector* Position = null, ScriptName* BoneName = null, bool* bVelChange = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Impulse;
-		*cast(Vector*)&params[12] = Position;
-		*cast(ScriptName*)&params[24] = BoneName;
-		*cast(bool*)&params[32] = bVelChange;
+		if (Position !is null)
+			*cast(Vector*)&params[12] = *Position;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[24] = *BoneName;
+		if (bVelChange !is null)
+			*cast(bool*)&params[32] = *bVelChange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddImpulse, params.ptr, cast(void*)0);
 	}
-	void AddRadialImpulse(Vector Origin, float Radius, float Strength, PrimitiveComponent.ERadialImpulseFalloff Falloff, bool bVelChange)
+	void AddRadialImpulse(Vector Origin, float Radius, float Strength, PrimitiveComponent.ERadialImpulseFalloff Falloff, bool* bVelChange = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -423,16 +427,19 @@ final:
 		*cast(float*)&params[12] = Radius;
 		*cast(float*)&params[16] = Strength;
 		*cast(PrimitiveComponent.ERadialImpulseFalloff*)&params[20] = Falloff;
-		*cast(bool*)&params[24] = bVelChange;
+		if (bVelChange !is null)
+			*cast(bool*)&params[24] = *bVelChange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddRadialImpulse, params.ptr, cast(void*)0);
 	}
-	void AddForce(Vector Force, Vector Position, ScriptName BoneName)
+	void AddForce(Vector Force, Vector* Position = null, ScriptName* BoneName = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Force;
-		*cast(Vector*)&params[12] = Position;
-		*cast(ScriptName*)&params[24] = BoneName;
+		if (Position !is null)
+			*cast(Vector*)&params[12] = *Position;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[24] = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddForce, params.ptr, cast(void*)0);
 	}
 	void AddRadialForce(Vector Origin, float Radius, float Strength, PrimitiveComponent.ERadialImpulseFalloff Falloff)
@@ -445,20 +452,22 @@ final:
 		*cast(PrimitiveComponent.ERadialImpulseFalloff*)&params[20] = Falloff;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddRadialForce, params.ptr, cast(void*)0);
 	}
-	void AddTorque(Vector Torque, ScriptName BoneName)
+	void AddTorque(Vector Torque, ScriptName* BoneName = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Torque;
-		*cast(ScriptName*)&params[12] = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[12] = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddTorque, params.ptr, cast(void*)0);
 	}
-	void SetRBAngularVelocity(Vector NewAngVel, bool bAddToCurrent)
+	void SetRBAngularVelocity(Vector NewAngVel, bool* bAddToCurrent = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewAngVel;
-		*cast(bool*)&params[12] = bAddToCurrent;
+		if (bAddToCurrent !is null)
+			*cast(bool*)&params[12] = *bAddToCurrent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBAngularVelocity, params.ptr, cast(void*)0);
 	}
 	void RetardRBLinearVelocity(Vector RetardDir, float VelScale)
@@ -469,41 +478,46 @@ final:
 		*cast(float*)&params[12] = VelScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RetardRBLinearVelocity, params.ptr, cast(void*)0);
 	}
-	void SetRBPosition(Vector NewPos, ScriptName BoneName)
+	void SetRBPosition(Vector NewPos, ScriptName* BoneName = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewPos;
-		*cast(ScriptName*)&params[12] = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[12] = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBPosition, params.ptr, cast(void*)0);
 	}
-	void SetRBRotation(Rotator NewRot, ScriptName BoneName)
+	void SetRBRotation(Rotator NewRot, ScriptName* BoneName = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRot;
-		*cast(ScriptName*)&params[12] = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[12] = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRBRotation, params.ptr, cast(void*)0);
 	}
-	void WakeRigidBody(ScriptName BoneName)
+	void WakeRigidBody(ScriptName* BoneName = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)params.ptr = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WakeRigidBody, params.ptr, cast(void*)0);
 	}
-	void PutRigidBodyToSleep(ScriptName BoneName)
+	void PutRigidBodyToSleep(ScriptName* BoneName = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)params.ptr = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PutRigidBodyToSleep, params.ptr, cast(void*)0);
 	}
-	bool RigidBodyIsAwake(ScriptName BoneName)
+	bool RigidBodyIsAwake(ScriptName* BoneName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)params.ptr = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyIsAwake, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -655,13 +669,14 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(bool*)&params[4] = NewBlockNonZeroExtent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTraceBlocking, params.ptr, cast(void*)0);
 	}
-	void SetActorCollision(bool NewCollideActors, bool NewBlockActors, bool NewAlwaysCheckCollision)
+	void SetActorCollision(bool NewCollideActors, bool NewBlockActors, bool* NewAlwaysCheckCollision = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(bool*)params.ptr = NewCollideActors;
 		*cast(bool*)&params[4] = NewBlockActors;
-		*cast(bool*)&params[8] = NewAlwaysCheckCollision;
+		if (NewAlwaysCheckCollision !is null)
+			*cast(bool*)&params[8] = *NewAlwaysCheckCollision;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetActorCollision, params.ptr, cast(void*)0);
 	}
 	void SetTranslation(Vector NewTranslation)
@@ -692,13 +707,16 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(Vector*)params.ptr = NewScale3D;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScale3D, params.ptr, cast(void*)0);
 	}
-	void SetAbsolute(bool NewAbsoluteTranslation, bool NewAbsoluteRotation, bool NewAbsoluteScale)
+	void SetAbsolute(bool* NewAbsoluteTranslation = null, bool* NewAbsoluteRotation = null, bool* NewAbsoluteScale = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = NewAbsoluteTranslation;
-		*cast(bool*)&params[4] = NewAbsoluteRotation;
-		*cast(bool*)&params[8] = NewAbsoluteScale;
+		if (NewAbsoluteTranslation !is null)
+			*cast(bool*)params.ptr = *NewAbsoluteTranslation;
+		if (NewAbsoluteRotation !is null)
+			*cast(bool*)&params[4] = *NewAbsoluteRotation;
+		if (NewAbsoluteScale !is null)
+			*cast(bool*)&params[8] = *NewAbsoluteScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAbsolute, params.ptr, cast(void*)0);
 	}
 	Vector GetPosition()
@@ -724,10 +742,10 @@ void**)params.ptr = NewLightEnvironment;
 		*cast(Vector*)&params[24] = OutPointA;
 		*cast(Vector*)&params[36] = OutPointB;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToPoint, params.ptr, cast(void*)0);
-		*POI = *cast(Vector*)params.ptr;
-		*Extent = *cast(Vector*)&params[12];
-		*OutPointA = *cast(Vector*)&params[24];
-		*OutPointB = *cast(Vector*)&params[36];
+		POI = *cast(Vector*)params.ptr;
+		Extent = *cast(Vector*)&params[12];
+		OutPointA = *cast(Vector*)&params[24];
+		OutPointB = *cast(Vector*)&params[36];
 		return *cast(PrimitiveComponent.GJKResult*)&params[48];
 	}
 	PrimitiveComponent.GJKResult ClosestPointOnComponentToComponent(ref 
@@ -742,11 +760,11 @@ void**)params.ptr = OtherComponent;
 		*cast(Vector*)&params[4] = PointOnComponentA;
 		*cast(Vector*)&params[16] = PointOnComponentB;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClosestPointOnComponentToComponent, params.ptr, cast(void*)0);
-		*OtherComponent = *cast(
+		OtherComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr;
-		*PointOnComponentA = *cast(Vector*)&params[4];
-		*PointOnComponentB = *cast(Vector*)&params[16];
+		PointOnComponentA = *cast(Vector*)&params[4];
+		PointOnComponentB = *cast(Vector*)&params[16];
 		return *cast(PrimitiveComponent.GJKResult*)&params[28];
 	}
 }

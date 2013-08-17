@@ -67,42 +67,42 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd_LaunchGame.Option")()); }
 		@property final auto ref
 		{
-			ScriptString OptionDesc() { mixin(MGPS!(ScriptString, 24)()); }
-			ScriptString OptionLabel() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString OptionName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString OptionDesc() { mixin(MGPS!("ScriptString", 24)()); }
+			ScriptString OptionLabel() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString OptionName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GFxUDKFrontEnd_LaunchGame.Option) ListOptions() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd_LaunchGame.Option), 292)()); }
-		GFxObject MutatorsLabelTxt() { mixin(MGPC!(GFxObject, 380)()); }
-		GFxObject RespawnLabelTxt() { mixin(MGPC!(GFxObject, 376)()); }
-		GFxObject TimeLabelTxt() { mixin(MGPC!(GFxObject, 372)()); }
-		GFxObject ScoreLabelTxt() { mixin(MGPC!(GFxObject, 368)()); }
-		GFxObject OpponentsLabelTxt() { mixin(MGPC!(GFxObject, 364)()); }
-		GFxObject BotLvlLabelTxt() { mixin(MGPC!(GFxObject, 360)()); }
-		GFxObject MapLabelTxt() { mixin(MGPC!(GFxObject, 356)()); }
-		GFxObject MutatorsTxt() { mixin(MGPC!(GFxObject, 352)()); }
-		GFxObject RespawnTxt() { mixin(MGPC!(GFxObject, 348)()); }
-		GFxObject MapTxt() { mixin(MGPC!(GFxObject, 344)()); }
-		GFxObject TimeTxt() { mixin(MGPC!(GFxObject, 340)()); }
-		GFxObject ScoreTxt() { mixin(MGPC!(GFxObject, 336)()); }
-		GFxObject OpponentsTxt() { mixin(MGPC!(GFxObject, 332)()); }
-		GFxObject BotLvlTxt() { mixin(MGPC!(GFxObject, 328)()); }
-		GFxObject GameTitleTxt() { mixin(MGPC!(GFxObject, 324)()); }
-		GFxObject MapNameTxt() { mixin(MGPC!(GFxObject, 320)()); }
-		GFxObject MapImageMC() { mixin(MGPC!(GFxObject, 316)()); }
-		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 312)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 308)()); }
-		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 304)()); }
-		ScriptString DefaultGameModePrefixes() { mixin(MGPC!(ScriptString, 280)()); }
-		ScriptString DefaultMapImage() { mixin(MGPC!(ScriptString, 268)()); }
-		ScriptString DefaultGameModeSettings() { mixin(MGPC!(ScriptString, 256)()); }
-		ScriptString DefaultGameMode() { mixin(MGPC!(ScriptString, 244)()); }
-		ScriptString DefaultMapName() { mixin(MGPC!(ScriptString, 232)()); }
-		UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 228)()); }
-		UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 224)()); }
-		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!(UIDataStore_OnlineGameSettings, 220)()); }
+		ScriptArray!(GFxUDKFrontEnd_LaunchGame.Option) ListOptions() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd_LaunchGame.Option)", 292)()); }
+		GFxObject MutatorsLabelTxt() { mixin(MGPC!("GFxObject", 380)()); }
+		GFxObject RespawnLabelTxt() { mixin(MGPC!("GFxObject", 376)()); }
+		GFxObject TimeLabelTxt() { mixin(MGPC!("GFxObject", 372)()); }
+		GFxObject ScoreLabelTxt() { mixin(MGPC!("GFxObject", 368)()); }
+		GFxObject OpponentsLabelTxt() { mixin(MGPC!("GFxObject", 364)()); }
+		GFxObject BotLvlLabelTxt() { mixin(MGPC!("GFxObject", 360)()); }
+		GFxObject MapLabelTxt() { mixin(MGPC!("GFxObject", 356)()); }
+		GFxObject MutatorsTxt() { mixin(MGPC!("GFxObject", 352)()); }
+		GFxObject RespawnTxt() { mixin(MGPC!("GFxObject", 348)()); }
+		GFxObject MapTxt() { mixin(MGPC!("GFxObject", 344)()); }
+		GFxObject TimeTxt() { mixin(MGPC!("GFxObject", 340)()); }
+		GFxObject ScoreTxt() { mixin(MGPC!("GFxObject", 336)()); }
+		GFxObject OpponentsTxt() { mixin(MGPC!("GFxObject", 332)()); }
+		GFxObject BotLvlTxt() { mixin(MGPC!("GFxObject", 328)()); }
+		GFxObject GameTitleTxt() { mixin(MGPC!("GFxObject", 324)()); }
+		GFxObject MapNameTxt() { mixin(MGPC!("GFxObject", 320)()); }
+		GFxObject MapImageMC() { mixin(MGPC!("GFxObject", 316)()); }
+		GFxObject MenuMC() { mixin(MGPC!("GFxObject", 312)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 308)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 304)()); }
+		ScriptString DefaultGameModePrefixes() { mixin(MGPC!("ScriptString", 280)()); }
+		ScriptString DefaultMapImage() { mixin(MGPC!("ScriptString", 268)()); }
+		ScriptString DefaultGameModeSettings() { mixin(MGPC!("ScriptString", 256)()); }
+		ScriptString DefaultGameMode() { mixin(MGPC!("ScriptString", 244)()); }
+		ScriptString DefaultMapName() { mixin(MGPC!("ScriptString", 232)()); }
+		UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!("UTUIDataStore_MenuItems", 228)()); }
+		UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!("UTUIDataStore_StringList", 224)()); }
+		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!("UIDataStore_OnlineGameSettings", 220)()); }
 	}
 final:
 	static ScriptString GetGameModeFriendlyString(ScriptString InGameMode)
@@ -128,11 +128,12 @@ final:
 		*cast(bool*)params.ptr = bDisableComponents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void UpdateGameSettingsPanel()

@@ -77,21 +77,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString m_EscapeKeybind() { mixin(MGPC!(ScriptString, 136)()); }
-			ScriptString m_FriendsHotkey() { mixin(MGPC!(ScriptString, 232)()); }
-			ScriptString m_SettingsHotkey() { mixin(MGPC!(ScriptString, 244)()); }
-			ScriptString m_MainMenuHotkey() { mixin(MGPC!(ScriptString, 256)()); }
-			ScriptString m_ClassSelectKeybind() { mixin(MGPC!(ScriptString, 172)()); }
-			ScriptString m_TeamSelectKeybind() { mixin(MGPC!(ScriptString, 160)()); }
-			ScriptString m_TalkReplyKeybind() { mixin(MGPC!(ScriptString, 220)()); }
-			ScriptString m_ChatHotkey() { mixin(MGPC!(ScriptString, 268)()); }
-			ScriptString m_TalkKeybind() { mixin(MGPC!(ScriptString, 196)()); }
-			ScriptString m_TeamTalkKeybind() { mixin(MGPC!(ScriptString, 208)()); }
-			ScriptString m_ScoreboardKeybind() { mixin(MGPC!(ScriptString, 184)()); }
-			ScriptString m_EnterKeybind() { mixin(MGPC!(ScriptString, 148)()); }
-			PlayerInput m_EngineInput() { mixin(MGPC!(PlayerInput, 132)()); }
-			GFxObject m_KeyBindingsList() { mixin(MGPC!(GFxObject, 128)()); }
-			int m_KeyBindingsCount() { mixin(MGPC!(int, 124)()); }
+			ScriptString m_EscapeKeybind() { mixin(MGPC!("ScriptString", 136)()); }
+			ScriptString m_FriendsHotkey() { mixin(MGPC!("ScriptString", 232)()); }
+			ScriptString m_SettingsHotkey() { mixin(MGPC!("ScriptString", 244)()); }
+			ScriptString m_MainMenuHotkey() { mixin(MGPC!("ScriptString", 256)()); }
+			ScriptString m_ClassSelectKeybind() { mixin(MGPC!("ScriptString", 172)()); }
+			ScriptString m_TeamSelectKeybind() { mixin(MGPC!("ScriptString", 160)()); }
+			ScriptString m_TalkReplyKeybind() { mixin(MGPC!("ScriptString", 220)()); }
+			ScriptString m_ChatHotkey() { mixin(MGPC!("ScriptString", 268)()); }
+			ScriptString m_TalkKeybind() { mixin(MGPC!("ScriptString", 196)()); }
+			ScriptString m_TeamTalkKeybind() { mixin(MGPC!("ScriptString", 208)()); }
+			ScriptString m_ScoreboardKeybind() { mixin(MGPC!("ScriptString", 184)()); }
+			ScriptString m_EnterKeybind() { mixin(MGPC!("ScriptString", 148)()); }
+			PlayerInput m_EngineInput() { mixin(MGPC!("PlayerInput", 132)()); }
+			GFxObject m_KeyBindingsList() { mixin(MGPC!("GFxObject", 128)()); }
+			int m_KeyBindingsCount() { mixin(MGPC!("int", 124)()); }
 		}
 		bool m_bGotInputKey() { mixin(MGBPC!(120, 0x1)()); }
 		bool m_bGotInputKey(bool val) { mixin(MSBPC!(120, 0x1)()); }
@@ -105,13 +105,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentBind, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	ScriptString SaveKeyBind(int Index, ScriptString KeyName, bool bStore)
+	ScriptString SaveKeyBind(int Index, ScriptString KeyName, bool* bStore = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(ScriptString*)&params[4] = KeyName;
-		*cast(bool*)&params[16] = bStore;
+		if (bStore !is null)
+			*cast(bool*)&params[16] = *bStore;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SaveKeyBind, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}

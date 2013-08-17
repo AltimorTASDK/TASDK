@@ -44,24 +44,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(GFxObject) EnemyIcons() { mixin(MGPC!(ScriptArray!(GFxObject), 152)()); }
-			ScriptArray!(GFxObject) MyTeamIcons() { mixin(MGPC!(ScriptArray!(GFxObject), 164)()); }
-			ScriptArray!(GFxObject) FlagIcons() { mixin(MGPC!(ScriptArray!(GFxObject), 176)()); }
-			ScriptArray!(GFxObject) ObjectiveIcons() { mixin(MGPC!(ScriptArray!(GFxObject), 188)()); }
-			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC!(ScriptArray!(UTGameObjective), 296)()); }
-			int IconsFlagCount() { mixin(MGPC!(int, 292)()); }
-			int IconsBlueCount() { mixin(MGPC!(int, 288)()); }
-			int IconsRedCount() { mixin(MGPC!(int, 284)()); }
-			GFxObject IconsFlagMC() { mixin(MGPC!(GFxObject, 280)()); }
-			GFxObject IconsBlueMC() { mixin(MGPC!(GFxObject, 276)()); }
-			GFxObject IconsRedMC() { mixin(MGPC!(GFxObject, 272)()); }
-			UObject.Matrix IconMatrix() { mixin(MGPC!(UObject.Matrix, 208)()); }
-			GFxObject MapMC() { mixin(MGPC!(GFxObject, 148)()); }
-			GFxObject CompassIcon() { mixin(MGPC!(GFxObject, 144)()); }
-			GFxObject PlayerIcon() { mixin(MGPC!(GFxObject, 140)()); }
-			int MapTexSize() { mixin(MGPC!(int, 132)()); }
+			ScriptArray!(GFxObject) EnemyIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 152)()); }
+			ScriptArray!(GFxObject) MyTeamIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 164)()); }
+			ScriptArray!(GFxObject) FlagIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 176)()); }
+			ScriptArray!(GFxObject) ObjectiveIcons() { mixin(MGPC!("ScriptArray!(GFxObject)", 188)()); }
+			ScriptArray!(UTGameObjective) Objectives() { mixin(MGPC!("ScriptArray!(UTGameObjective)", 296)()); }
+			int IconsFlagCount() { mixin(MGPC!("int", 292)()); }
+			int IconsBlueCount() { mixin(MGPC!("int", 288)()); }
+			int IconsRedCount() { mixin(MGPC!("int", 284)()); }
+			GFxObject IconsFlagMC() { mixin(MGPC!("GFxObject", 280)()); }
+			GFxObject IconsBlueMC() { mixin(MGPC!("GFxObject", 276)()); }
+			GFxObject IconsRedMC() { mixin(MGPC!("GFxObject", 272)()); }
+			UObject.Matrix IconMatrix() { mixin(MGPC!("UObject.Matrix", 208)()); }
+			GFxObject MapMC() { mixin(MGPC!("GFxObject", 148)()); }
+			GFxObject CompassIcon() { mixin(MGPC!("GFxObject", 144)()); }
+			GFxObject PlayerIcon() { mixin(MGPC!("GFxObject", 140)()); }
+			int MapTexSize() { mixin(MGPC!("int", 132)()); }
 			// WARNING: Property 'MapInfo' has the same name as a defined type!
-			WorldInfo ThisWorld() { mixin(MGPC!(WorldInfo, 124)()); }
+			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
 		bool bNeedsUpdateData() { mixin(MGBPC!(136, 0x1)()); }
@@ -111,8 +111,8 @@ final:
 		*cast(ScriptArray!(GFxObject)*)&params[12] = ActorIcons;
 		*cast(bool*)&params[24] = bIsRedIconType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateIcons, params.ptr, cast(void*)0);
-		*Actors = *cast(ScriptArray!(Actor)*)params.ptr;
-		*ActorIcons = *cast(ScriptArray!(GFxObject)*)&params[12];
+		Actors = *cast(ScriptArray!(Actor)*)params.ptr;
+		ActorIcons = *cast(ScriptArray!(GFxObject)*)&params[12];
 	}
 	void Update(float Scale)
 	{

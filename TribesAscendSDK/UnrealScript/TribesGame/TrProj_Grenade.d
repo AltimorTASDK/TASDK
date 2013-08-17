@@ -64,18 +64,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!(ScriptArray!(Pawn), 872)()); }
-			float m_fProxyDetonationHeight() { mixin(MGPC!(float, 868)()); }
-			float m_fProxyDetonationRadius() { mixin(MGPC!(float, 864)()); }
-			ScriptClass m_CollisionProxyClass() { mixin(MGPC!(ScriptClass, 860)()); }
-			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrCollisionProxy, 856)()); }
-			float m_fStuckMomentumMultiplier() { mixin(MGPC!(float, 852)()); }
-			float m_fStuckDamageMultiplier() { mixin(MGPC!(float, 848)()); }
-			Vector m_OverloadHitNormal() { mixin(MGPC!(Vector, 836)()); }
-			SoundCue m_StuckOnPawnLoopingSound() { mixin(MGPC!(SoundCue, 832)()); }
-			ParticleSystem m_StuckOnTargetTemplate() { mixin(MGPC!(ParticleSystem, 828)()); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!("ScriptArray!(Pawn)", 872)()); }
+			float m_fProxyDetonationHeight() { mixin(MGPC!("float", 868)()); }
+			float m_fProxyDetonationRadius() { mixin(MGPC!("float", 864)()); }
+			ScriptClass m_CollisionProxyClass() { mixin(MGPC!("ScriptClass", 860)()); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrCollisionProxy", 856)()); }
+			float m_fStuckMomentumMultiplier() { mixin(MGPC!("float", 852)()); }
+			float m_fStuckDamageMultiplier() { mixin(MGPC!("float", 848)()); }
+			Vector m_OverloadHitNormal() { mixin(MGPC!("Vector", 836)()); }
+			SoundCue m_StuckOnPawnLoopingSound() { mixin(MGPC!("SoundCue", 832)()); }
+			ParticleSystem m_StuckOnTargetTemplate() { mixin(MGPC!("ParticleSystem", 828)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StuckOnTargetEffects'!
-			float m_fExplosionTime() { mixin(MGPC!(float, 820)()); }
+			float m_fExplosionTime() { mixin(MGPC!("float", 820)()); }
 		}
 		bool m_bStuckOnPlayer() { mixin(MGBPC!(816, 0x1)()); }
 		bool m_bStuckOnPlayer(bool val) { mixin(MSBPC!(816, 0x1)()); }
@@ -99,12 +99,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void SpawnCollisionProxy()

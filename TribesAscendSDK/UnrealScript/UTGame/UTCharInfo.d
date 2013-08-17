@@ -32,14 +32,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTCharInfo.CustomAIData")()); }
 		@property final auto ref
 		{
-			ScriptString FavoriteWeapon() { mixin(MGPS!(ScriptString, 28)()); }
-			float ReactionTime() { mixin(MGPS!(float, 24)()); }
-			float Jumpiness() { mixin(MGPS!(float, 20)()); }
-			float CombatStyle() { mixin(MGPS!(float, 16)()); }
-			float Aggressiveness() { mixin(MGPS!(float, 12)()); }
-			float Accuracy() { mixin(MGPS!(float, 8)()); }
-			float StrafingAbility() { mixin(MGPS!(float, 4)()); }
-			float Tactics() { mixin(MGPS!(float, 0)()); }
+			ScriptString FavoriteWeapon() { mixin(MGPS!("ScriptString", 28)()); }
+			float ReactionTime() { mixin(MGPS!("float", 24)()); }
+			float Jumpiness() { mixin(MGPS!("float", 20)()); }
+			float CombatStyle() { mixin(MGPS!("float", 16)()); }
+			float Aggressiveness() { mixin(MGPS!("float", 12)()); }
+			float Accuracy() { mixin(MGPS!("float", 8)()); }
+			float StrafingAbility() { mixin(MGPS!("float", 4)()); }
+			float Tactics() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct CharacterInfo
@@ -50,22 +50,22 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTCharInfo.CharacterInfo")()); }
 		@property final auto ref
 		{
-			UTCharInfo.CustomAIData AIData() { mixin(MGPS!(UTCharInfo.CustomAIData, 72)()); }
-			ScriptString Faction() { mixin(MGPS!(ScriptString, 60)()); }
-			ScriptString PreviewImageMarkup() { mixin(MGPS!(ScriptString, 48)()); }
-			ScriptString Description() { mixin(MGPS!(ScriptString, 36)()); }
-			ScriptString CharName() { mixin(MGPS!(ScriptString, 24)()); }
-			ScriptString FamilyID() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString CharID() { mixin(MGPS!(ScriptString, 0)()); }
+			UTCharInfo.CustomAIData AIData() { mixin(MGPS!("UTCharInfo.CustomAIData", 72)()); }
+			ScriptString Faction() { mixin(MGPS!("ScriptString", 60)()); }
+			ScriptString PreviewImageMarkup() { mixin(MGPS!("ScriptString", 48)()); }
+			ScriptString Description() { mixin(MGPS!("ScriptString", 36)()); }
+			ScriptString CharName() { mixin(MGPS!("ScriptString", 24)()); }
+			ScriptString FamilyID() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString CharID() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTCharInfo.CharacterInfo) Characters() { mixin(MGPC!(ScriptArray!(UTCharInfo.CharacterInfo), 60)()); }
-		ScriptArray!(ScriptClass) Families() { mixin(MGPC!(ScriptArray!(ScriptClass), 72)()); }
-		float LOD3DisplayFactor() { mixin(MGPC!(float, 92)()); }
-		float LOD2DisplayFactor() { mixin(MGPC!(float, 88)()); }
-		float LOD1DisplayFactor() { mixin(MGPC!(float, 84)()); }
+		ScriptArray!(UTCharInfo.CharacterInfo) Characters() { mixin(MGPC!("ScriptArray!(UTCharInfo.CharacterInfo)", 60)()); }
+		ScriptArray!(ScriptClass) Families() { mixin(MGPC!("ScriptArray!(ScriptClass)", 72)()); }
+		float LOD3DisplayFactor() { mixin(MGPC!("float", 92)()); }
+		float LOD2DisplayFactor() { mixin(MGPC!("float", 88)()); }
+		float LOD1DisplayFactor() { mixin(MGPC!("float", 84)()); }
 	}
 final:
 	static ScriptClass FindFamilyInfo(ScriptString InFamilyID)

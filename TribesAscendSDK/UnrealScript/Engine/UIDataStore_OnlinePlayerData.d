@@ -51,35 +51,36 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!(UIDataProvider_OnlineProfileSettings, 160)()); }
-		UIDataProvider_OnlinePartyChatList PartyChatProvider() { mixin(MGPC!(UIDataProvider_OnlinePartyChatList, 256)()); }
-		ScriptClass PartyChatProviderClass() { mixin(MGPC!(ScriptClass, 252)()); }
-		ScriptString PartyChatProviderClassName() { mixin(MGPC!(ScriptString, 240)()); }
-		ScriptClass AchievementsProviderClass() { mixin(MGPC!(ScriptClass, 236)()); }
-		ScriptString AchievementsProviderClassName() { mixin(MGPC!(ScriptString, 224)()); }
-		ScriptClass FriendMessagesProviderClass() { mixin(MGPC!(ScriptClass, 220)()); }
-		ScriptString FriendMessagesProviderClassName() { mixin(MGPC!(ScriptString, 208)()); }
-		ScriptClass FriendsProviderClass() { mixin(MGPC!(ScriptClass, 204)()); }
-		ScriptString FriendsProviderClassName() { mixin(MGPC!(ScriptString, 192)()); }
-		UIDataProvider_PlayerAchievements AchievementsProvider() { mixin(MGPC!(UIDataProvider_PlayerAchievements, 188)()); }
-		UIDataProvider_OnlineFriendMessages FriendMessagesProvider() { mixin(MGPC!(UIDataProvider_OnlineFriendMessages, 184)()); }
-		UIDataProvider_OnlinePlayerStorage StorageProvider() { mixin(MGPC!(UIDataProvider_OnlinePlayerStorage, 180)()); }
-		ScriptClass PlayerStorageClass() { mixin(MGPC!(ScriptClass, 176)()); }
-		ScriptString PlayerStorageClassName() { mixin(MGPC!(ScriptString, 164)()); }
-		ScriptClass ProfileSettingsClass() { mixin(MGPC!(ScriptClass, 156)()); }
-		ScriptString ProfileSettingsClassName() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString PlayerNick() { mixin(MGPC!(ScriptString, 132)()); }
-		int PlayerControllerId() { mixin(MGPC!(int, 128)()); }
-		UIDataProvider_OnlineFriends FriendsProvider() { mixin(MGPC!(UIDataProvider_OnlineFriends, 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
+		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!("UIDataProvider_OnlineProfileSettings", 160)()); }
+		UIDataProvider_OnlinePartyChatList PartyChatProvider() { mixin(MGPC!("UIDataProvider_OnlinePartyChatList", 256)()); }
+		ScriptClass PartyChatProviderClass() { mixin(MGPC!("ScriptClass", 252)()); }
+		ScriptString PartyChatProviderClassName() { mixin(MGPC!("ScriptString", 240)()); }
+		ScriptClass AchievementsProviderClass() { mixin(MGPC!("ScriptClass", 236)()); }
+		ScriptString AchievementsProviderClassName() { mixin(MGPC!("ScriptString", 224)()); }
+		ScriptClass FriendMessagesProviderClass() { mixin(MGPC!("ScriptClass", 220)()); }
+		ScriptString FriendMessagesProviderClassName() { mixin(MGPC!("ScriptString", 208)()); }
+		ScriptClass FriendsProviderClass() { mixin(MGPC!("ScriptClass", 204)()); }
+		ScriptString FriendsProviderClassName() { mixin(MGPC!("ScriptString", 192)()); }
+		UIDataProvider_PlayerAchievements AchievementsProvider() { mixin(MGPC!("UIDataProvider_PlayerAchievements", 188)()); }
+		UIDataProvider_OnlineFriendMessages FriendMessagesProvider() { mixin(MGPC!("UIDataProvider_OnlineFriendMessages", 184)()); }
+		UIDataProvider_OnlinePlayerStorage StorageProvider() { mixin(MGPC!("UIDataProvider_OnlinePlayerStorage", 180)()); }
+		ScriptClass PlayerStorageClass() { mixin(MGPC!("ScriptClass", 176)()); }
+		ScriptString PlayerStorageClassName() { mixin(MGPC!("ScriptString", 164)()); }
+		ScriptClass ProfileSettingsClass() { mixin(MGPC!("ScriptClass", 156)()); }
+		ScriptString ProfileSettingsClassName() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString PlayerNick() { mixin(MGPC!("ScriptString", 132)()); }
+		int PlayerControllerId() { mixin(MGPC!("int", 128)()); }
+		UIDataProvider_OnlineFriends FriendsProvider() { mixin(MGPC!("UIDataProvider_OnlineFriends", 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
 	}
 final:
-	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName SettingsName)
+	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName* SettingsName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = SettingsName;
+		if (SettingsName !is null)
+			*cast(ScriptName*)&params[4] = *SettingsName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSettingProviderChanged, params.ptr, cast(void*)0);
 	}
 	void OnRegister(LocalPlayer InPlayer)

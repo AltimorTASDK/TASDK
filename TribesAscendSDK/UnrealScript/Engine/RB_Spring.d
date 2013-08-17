@@ -29,19 +29,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			float DampMaxForce() { mixin(MGPC!(float, 164)()); }
-			float DampSaturateVel() { mixin(MGPC!(float, 160)()); }
-			UObject.InterpCurveFloat SpringMaxForceTimeScale() { mixin(MGPC!(UObject.InterpCurveFloat, 144)()); }
-			float MaxForceMassRatio() { mixin(MGPC!(float, 140)()); }
-			float SpringMaxForce() { mixin(MGPC!(float, 136)()); }
-			float SpringSaturateDist() { mixin(MGPC!(float, 132)()); }
-			float MinBodyMass() { mixin(MGPC!(float, 128)()); }
-			float TimeSinceActivation() { mixin(MGPC!(float, 124)()); }
-			UObject.Pointer SpringData() { mixin(MGPC!(UObject.Pointer, 120)()); }
-			int SceneIndex() { mixin(MGPC!(int, 112)()); }
-			ScriptName BoneName2() { mixin(MGPC!(ScriptName, 104)()); }
+			float DampMaxForce() { mixin(MGPC!("float", 164)()); }
+			float DampSaturateVel() { mixin(MGPC!("float", 160)()); }
+			UObject.InterpCurveFloat SpringMaxForceTimeScale() { mixin(MGPC!("UObject.InterpCurveFloat", 144)()); }
+			float MaxForceMassRatio() { mixin(MGPC!("float", 140)()); }
+			float SpringMaxForce() { mixin(MGPC!("float", 136)()); }
+			float SpringSaturateDist() { mixin(MGPC!("float", 132)()); }
+			float MinBodyMass() { mixin(MGPC!("float", 128)()); }
+			float TimeSinceActivation() { mixin(MGPC!("float", 124)()); }
+			UObject.Pointer SpringData() { mixin(MGPC!("UObject.Pointer", 120)()); }
+			int SceneIndex() { mixin(MGPC!("int", 112)()); }
+			ScriptName BoneName2() { mixin(MGPC!("ScriptName", 104)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component2'!
-			ScriptName BoneName1() { mixin(MGPC!(ScriptName, 92)()); }
+			ScriptName BoneName1() { mixin(MGPC!("ScriptName", 92)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Component1'!
 		}
 		bool bEnableForceMassRatio() { mixin(MGBPC!(116, 0x2)()); }

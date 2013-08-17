@@ -39,14 +39,15 @@ public extern(D):
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnCreateOnlineAccountCompleted__Delegate'!
 final:
-	bool CreateOnlineAccount(ScriptString UserName, ScriptString Password, ScriptString EmailAddress, ScriptString ProductKey)
+	bool CreateOnlineAccount(ScriptString UserName, ScriptString Password, ScriptString EmailAddress, ScriptString* ProductKey = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = UserName;
 		*cast(ScriptString*)&params[12] = Password;
 		*cast(ScriptString*)&params[24] = EmailAddress;
-		*cast(ScriptString*)&params[36] = ProductKey;
+		if (ProductKey !is null)
+			*cast(ScriptString*)&params[36] = *ProductKey;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateOnlineAccount, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[48];
 	}
@@ -79,31 +80,34 @@ void* AccountCreateDelegate)
 void**)params.ptr = AccountCreateDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCreateOnlineAccountCompletedDelegate, params.ptr, cast(void*)0);
 	}
-	bool CreateLocalAccount(ScriptString UserName, ScriptString Password)
+	bool CreateLocalAccount(ScriptString UserName, ScriptString* Password = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = UserName;
-		*cast(ScriptString*)&params[12] = Password;
+		if (Password !is null)
+			*cast(ScriptString*)&params[12] = *Password;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateLocalAccount, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool RenameLocalAccount(ScriptString NewUserName, ScriptString OldUserName, ScriptString Password)
+	bool RenameLocalAccount(ScriptString NewUserName, ScriptString OldUserName, ScriptString* Password = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = NewUserName;
 		*cast(ScriptString*)&params[12] = OldUserName;
-		*cast(ScriptString*)&params[24] = Password;
+		if (Password !is null)
+			*cast(ScriptString*)&params[24] = *Password;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RenameLocalAccount, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
-	bool DeleteLocalAccount(ScriptString UserName, ScriptString Password)
+	bool DeleteLocalAccount(ScriptString UserName, ScriptString* Password = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = UserName;
-		*cast(ScriptString*)&params[12] = Password;
+		if (Password !is null)
+			*cast(ScriptString*)&params[12] = *Password;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DeleteLocalAccount, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -113,7 +117,7 @@ void**)params.ptr = AccountCreateDelegate;
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = Accounts;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalAccountNames, params.ptr, cast(void*)0);
-		*Accounts = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		Accounts = *cast(ScriptArray!(ScriptString)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 }

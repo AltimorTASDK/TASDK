@@ -27,9 +27,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) SupportedClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 164)()); }
-		Vector ActorLocation() { mixin(MGPC!(Vector, 152)()); }
-		UObject ObjValue() { mixin(MGPC!(UObject, 148)()); }
+		ScriptArray!(ScriptClass) SupportedClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 164)()); }
+		Vector ActorLocation() { mixin(MGPC!("Vector", 152)()); }
+		UObject ObjValue() { mixin(MGPC!("UObject", 148)()); }
 	}
 final:
 	UObject GetObjectValue()

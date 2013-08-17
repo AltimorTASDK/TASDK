@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetResolutionTestTableIndex;
 		public @property static final ScriptFunction GetResolutionTestTableIndex() { mixin(MGF!("mGetResolutionTestTableIndex", "Function Engine.MultiFont.GetResolutionTestTableIndex")()); }
 	}
-	@property final auto ref ScriptArray!(float) ResolutionTestTable() { mixin(MGPC!(ScriptArray!(float), 332)()); }
+	@property final auto ref ScriptArray!(float) ResolutionTestTable() { mixin(MGPC!("ScriptArray!(float)", 332)()); }
 	final int GetResolutionTestTableIndex(float HeightTest)
 	{
 		ubyte params[8];

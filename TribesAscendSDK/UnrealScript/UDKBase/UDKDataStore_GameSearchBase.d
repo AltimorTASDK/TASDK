@@ -33,7 +33,7 @@ public extern(D):
 			ScriptFunction HasExistingSearchResults() { mixin(MGF!("mHasExistingSearchResults", "Function UDKBase.UDKDataStore_GameSearchBase.HasExistingSearchResults")()); }
 		}
 	}
-	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC!(UDKUIDataProvider_ServerDetails, 168)()); }
+	@property final auto ref UDKUIDataProvider_ServerDetails ServerDetailsProvider() { mixin(MGPC!("UDKUIDataProvider_ServerDetails", 168)()); }
 final:
 	bool GetEnabledMutators(ref ScriptArray!(int) MutatorIndices)
 	{
@@ -41,19 +41,20 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(int)*)params.ptr = MutatorIndices;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetEnabledMutators, params.ptr, cast(void*)0);
-		*MutatorIndices = *cast(ScriptArray!(int)*)params.ptr;
+		MutatorIndices = *cast(ScriptArray!(int)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	void Init()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, cast(void*)0, cast(void*)0);
 	}
-	bool SubmitGameSearch(ubyte ControllerIndex, bool bInvalidateExistingSearchResults)
+	bool SubmitGameSearch(ubyte ControllerIndex, bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = ControllerIndex;
-		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)&params[4] = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SubmitGameSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -64,11 +65,12 @@ final:
 		*cast(bool*)params.ptr = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSearchComplete, params.ptr, cast(void*)0);
 	}
-	bool HasOutstandingQueries(bool bRestrictCheckToSelf)
+	bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRestrictCheckToSelf;
+		if (bRestrictCheckToSelf !is null)
+			*cast(bool*)params.ptr = *bRestrictCheckToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

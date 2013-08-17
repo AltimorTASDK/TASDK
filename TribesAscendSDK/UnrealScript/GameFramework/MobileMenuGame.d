@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction RestartPlayer() { mixin(MGF!("mRestartPlayer", "Function GameFramework.MobileMenuGame.RestartPlayer")()); }
 		}
 	}
-	@property final auto ref ScriptClass InitialSceneToDisplayClass() { mixin(MGPC!(ScriptClass, 884)()); }
+	@property final auto ref ScriptClass InitialSceneToDisplayClass() { mixin(MGPC!("ScriptClass", 884)()); }
 final:
 	void PostLogin(PlayerController NewPlayer)
 	{

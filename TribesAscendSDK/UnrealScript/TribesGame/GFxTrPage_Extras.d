@@ -36,12 +36,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString PromoPopupTitle() { mixin(MGPC!(ScriptString, 404)()); }
-			ScriptString C1P3() { mixin(MGPC!(ScriptString, 392)()); }
-			ScriptString C1P2() { mixin(MGPC!(ScriptString, 380)()); }
-			ScriptString C1P1() { mixin(MGPC!(ScriptString, 368)()); }
-			int CheatCodeAction() { mixin(MGPC!(int, 360)()); }
-			int ClaimPromotionAction() { mixin(MGPC!(int, 356)()); }
+			ScriptString PromoPopupTitle() { mixin(MGPC!("ScriptString", 404)()); }
+			ScriptString C1P3() { mixin(MGPC!("ScriptString", 392)()); }
+			ScriptString C1P2() { mixin(MGPC!("ScriptString", 380)()); }
+			ScriptString C1P1() { mixin(MGPC!("ScriptString", 368)()); }
+			int CheatCodeAction() { mixin(MGPC!("int", 360)()); }
+			int ClaimPromotionAction() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForClaimPromoPopup() { mixin(MGBPC!(364, 0x2)()); }
 		bool bWaitingForClaimPromoPopup(bool val) { mixin(MSBPC!(364, 0x2)()); }

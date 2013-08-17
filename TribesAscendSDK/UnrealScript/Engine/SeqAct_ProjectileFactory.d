@@ -19,9 +19,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName BoneName() { mixin(MGPC!(ScriptName, 328)()); }
-		ScriptName SocketName() { mixin(MGPC!(ScriptName, 320)()); }
-		ParticleSystem PSTemplate() { mixin(MGPC!(ParticleSystem, 316)()); }
+		ScriptName BoneName() { mixin(MGPC!("ScriptName", 328)()); }
+		ScriptName SocketName() { mixin(MGPC!("ScriptName", 320)()); }
+		ParticleSystem PSTemplate() { mixin(MGPC!("ParticleSystem", 316)()); }
 	}
 	final static int GetObjClassVersion()
 	{

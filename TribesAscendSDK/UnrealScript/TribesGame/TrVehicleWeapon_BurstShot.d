@@ -18,8 +18,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName m_PostFireState() { mixin(MGPC!(ScriptName, 1788)()); }
-		int m_nBurstShotCount() { mixin(MGPC!(int, 1784)()); }
-		int m_nCurrBurstShotCount() { mixin(MGPC!(int, 1780)()); }
+		ScriptName m_PostFireState() { mixin(MGPC!("ScriptName", 1788)()); }
+		int m_nBurstShotCount() { mixin(MGPC!("int", 1784)()); }
+		int m_nCurrBurstShotCount() { mixin(MGPC!("int", 1780)()); }
 	}
 }

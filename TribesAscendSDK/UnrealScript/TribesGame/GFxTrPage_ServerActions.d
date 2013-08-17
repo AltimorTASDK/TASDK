@@ -44,13 +44,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			int PopupNum() { mixin(MGPC!(int, 380)()); }
-			int BanPlayerNum() { mixin(MGPC!(int, 376)()); }
-			int KickPlayerNum() { mixin(MGPC!(int, 372)()); }
-			int GotoMapServerNum() { mixin(MGPC!(int, 368)()); }
-			int KillServerNum() { mixin(MGPC!(int, 364)()); }
-			int DisableServerNum() { mixin(MGPC!(int, 360)()); }
-			int EnableServerNum() { mixin(MGPC!(int, 356)()); }
+			int PopupNum() { mixin(MGPC!("int", 380)()); }
+			int BanPlayerNum() { mixin(MGPC!("int", 376)()); }
+			int KickPlayerNum() { mixin(MGPC!("int", 372)()); }
+			int GotoMapServerNum() { mixin(MGPC!("int", 368)()); }
+			int KillServerNum() { mixin(MGPC!("int", 364)()); }
+			int DisableServerNum() { mixin(MGPC!("int", 360)()); }
+			int EnableServerNum() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bPopup() { mixin(MGBPC!(384, 0x1)()); }
 		bool bPopup(bool val) { mixin(MSBPC!(384, 0x1)()); }

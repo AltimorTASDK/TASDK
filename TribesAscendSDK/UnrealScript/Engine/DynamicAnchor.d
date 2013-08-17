@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DynamicAnchor")()); }
 	private static __gshared DynamicAnchor mDefaultProperties;
 	@property final static DynamicAnchor DefaultProperties() { mixin(MGDPC!(DynamicAnchor, "DynamicAnchor Engine.Default__DynamicAnchor")()); }
-	@property final auto ref Controller CurrentUser() { mixin(MGPC!(Controller, 692)()); }
+	@property final auto ref Controller CurrentUser() { mixin(MGPC!("Controller", 692)()); }
 }

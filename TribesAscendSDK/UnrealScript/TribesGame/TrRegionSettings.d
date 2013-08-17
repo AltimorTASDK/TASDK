@@ -45,9 +45,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) AvailableRegions() { mixin(MGPC!(ScriptArray!(SeqAct_ModifyProperty.PropertyInfo), 128)()); }
-		GFxObject m_RegionSettingsList() { mixin(MGPC!(GFxObject, 124)()); }
-		int m_RegionSettingsCount() { mixin(MGPC!(int, 120)()); }
+		ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) AvailableRegions() { mixin(MGPC!("ScriptArray!(SeqAct_ModifyProperty.PropertyInfo)", 128)()); }
+		GFxObject m_RegionSettingsList() { mixin(MGPC!("GFxObject", 124)()); }
+		int m_RegionSettingsCount() { mixin(MGPC!("int", 120)()); }
 	}
 final:
 	int GetPreferredSiteId()

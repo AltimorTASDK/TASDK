@@ -24,7 +24,7 @@ public extern(D):
 			ScriptFunction EffectIsRelevant() { mixin(MGF!("mEffectIsRelevant", "Function TribesGame.TrProj_CallInBase.EffectIsRelevant")()); }
 		}
 	}
-	@property final auto ref Vector r_TargetLocation() { mixin(MGPC!(Vector, 816)()); }
+	@property final auto ref Vector r_TargetLocation() { mixin(MGPC!("Vector", 816)()); }
 final:
 	void ReplicatedEvent(ScriptName VarName)
 	{
@@ -33,14 +33,16 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float VisibleCullDistance, float HiddenCullDistance)
+	bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float* VisibleCullDistance = null, float* HiddenCullDistance = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Vector*)params.ptr = SpawnLocation;
 		*cast(bool*)&params[12] = bForceDedicated;
-		*cast(float*)&params[16] = VisibleCullDistance;
-		*cast(float*)&params[20] = HiddenCullDistance;
+		if (VisibleCullDistance !is null)
+			*cast(float*)&params[16] = *VisibleCullDistance;
+		if (HiddenCullDistance !is null)
+			*cast(float*)&params[20] = *HiddenCullDistance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EffectIsRelevant, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

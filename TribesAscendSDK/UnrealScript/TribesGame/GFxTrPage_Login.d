@@ -43,16 +43,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString CreateAccountLabel() { mixin(MGPC!(ScriptString, 464)()); }
-		ScriptString HelpPasswordLabel() { mixin(MGPC!(ScriptString, 452)()); }
-		ScriptString HelpUsernameLabel() { mixin(MGPC!(ScriptString, 440)()); }
-		ScriptString CheckboxLabel() { mixin(MGPC!(ScriptString, 428)()); }
-		ScriptString PasswordLabel() { mixin(MGPC!(ScriptString, 416)()); }
-		ScriptString UsernameLabel() { mixin(MGPC!(ScriptString, 404)()); }
-		ScriptString BetaKeyLabel() { mixin(MGPC!(ScriptString, 392)()); }
-		ScriptString AccountLabel() { mixin(MGPC!(ScriptString, 380)()); }
-		ScriptString SubmitLabel() { mixin(MGPC!(ScriptString, 368)()); }
-		ScriptString HelpLabel() { mixin(MGPC!(ScriptString, 356)()); }
+		ScriptString CreateAccountLabel() { mixin(MGPC!("ScriptString", 464)()); }
+		ScriptString HelpPasswordLabel() { mixin(MGPC!("ScriptString", 452)()); }
+		ScriptString HelpUsernameLabel() { mixin(MGPC!("ScriptString", 440)()); }
+		ScriptString CheckboxLabel() { mixin(MGPC!("ScriptString", 428)()); }
+		ScriptString PasswordLabel() { mixin(MGPC!("ScriptString", 416)()); }
+		ScriptString UsernameLabel() { mixin(MGPC!("ScriptString", 404)()); }
+		ScriptString BetaKeyLabel() { mixin(MGPC!("ScriptString", 392)()); }
+		ScriptString AccountLabel() { mixin(MGPC!("ScriptString", 380)()); }
+		ScriptString SubmitLabel() { mixin(MGPC!("ScriptString", 368)()); }
+		ScriptString HelpLabel() { mixin(MGPC!("ScriptString", 356)()); }
 	}
 final:
 	int TakeAction(int ActionIndex, GFxObject DataList)

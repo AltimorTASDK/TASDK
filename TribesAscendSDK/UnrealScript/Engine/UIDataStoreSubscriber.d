@@ -35,27 +35,30 @@ public extern(D):
 		}
 	}
 final:
-	void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
+	void SetDataStoreBinding(ScriptString MarkupText, int* BindingIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MarkupText;
-		*cast(int*)&params[12] = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)&params[12] = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDataStoreBinding, params.ptr, cast(void*)0);
 	}
-	ScriptString GetDataStoreBinding(int BindingIndex)
+	ScriptString GetDataStoreBinding(int* BindingIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)params.ptr = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDataStoreBinding, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	bool RefreshSubscriberValue(int BindingIndex)
+	bool RefreshSubscriberValue(int* BindingIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)params.ptr = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshSubscriberValue, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -76,7 +79,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundDataStores, params.ptr, cast(void*)0);
-		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
+		out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}
 	void ClearBoundDataStores()
 	{

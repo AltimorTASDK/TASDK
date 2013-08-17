@@ -87,7 +87,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct OnlineSubsystemMcts.OnlineVoiceInterfaceMcts.LocalTalkerMcts")()); }
 		@property final
 		{
-			@property final auto ref OnlineVoiceInterfaceMcts.EMuteType MuteType() { mixin(MGPS!(OnlineVoiceInterfaceMcts.EMuteType, 4)()); }
+			@property final auto ref OnlineVoiceInterfaceMcts.EMuteType MuteType() { mixin(MGPS!("OnlineVoiceInterfaceMcts.EMuteType", 4)()); }
 			bool bIsRegistered() { mixin(MGBPS!(0, 0x20)()); }
 			bool bIsRegistered(bool val) { mixin(MSBPS!(0, 0x20)()); }
 			bool bIsTalking() { mixin(MGBPS!(0, 0x10)()); }
@@ -104,23 +104,23 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.RemoteTalker) RemoteTalkers() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.RemoteTalker), 76)()); }
-		ScriptArray!(OnlineSubsystem.UniqueNetId) MuteList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 88)()); }
+		ScriptArray!(OnlineSubsystem.RemoteTalker) RemoteTalkers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.RemoteTalker)", 76)()); }
+		ScriptArray!(OnlineSubsystem.UniqueNetId) MuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 88)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) SpeechRecognitionCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) SpeechRecognitionCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 100)()); }
+void*)", 100)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) TalkingDelegates() { mixin(MGPC!(ScriptArray!(
+void*) TalkingDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 112)()); }
+void*)", 112)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRecognitionComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlayerTalkingStateChange__Delegate'!
-		OnlineVoiceInterfaceMcts.LocalTalkerMcts CurrentLocalTalker() { mixin(MGPC!(OnlineVoiceInterfaceMcts.LocalTalkerMcts, 68)()); }
-		UObject.Pointer VoiceEnginePtr() { mixin(MGPC!(UObject.Pointer, 64)()); }
-		UObject.Pointer MctsSubsystem() { mixin(MGPC!(UObject.Pointer, 60)()); }
+		OnlineVoiceInterfaceMcts.LocalTalkerMcts CurrentLocalTalker() { mixin(MGPC!("OnlineVoiceInterfaceMcts.LocalTalkerMcts", 68)()); }
+		UObject.Pointer VoiceEnginePtr() { mixin(MGPC!("UObject.Pointer", 64)()); }
+		UObject.Pointer MctsSubsystem() { mixin(MGPC!("UObject.Pointer", 60)()); }
 	}
 final:
 	void OnRecognitionComplete()
@@ -201,23 +201,25 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRemoteTalkerPriority, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool MuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool bIsSystemWide)
+	bool MuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool* bIsSystemWide = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = PlayerID;
-		*cast(bool*)&params[12] = bIsSystemWide;
+		if (bIsSystemWide !is null)
+			*cast(bool*)&params[12] = *bIsSystemWide;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MuteRemoteTalker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool UnmuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool bIsSystemWide)
+	bool UnmuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool* bIsSystemWide = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = PlayerID;
-		*cast(bool*)&params[12] = bIsSystemWide;
+		if (bIsSystemWide !is null)
+			*cast(bool*)&params[12] = *bIsSystemWide;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnmuteRemoteTalker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -280,7 +282,7 @@ void**)params.ptr = TalkerDelegate;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRecognitionResults, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
+		Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void AddRecognitionCompleteDelegate(ubyte LocalUserNum, 

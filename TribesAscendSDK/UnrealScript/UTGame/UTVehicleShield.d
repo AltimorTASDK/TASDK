@@ -33,11 +33,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ShieldActivatedTime() { mixin(MGPC!(float, 496)()); }
+			float ShieldActivatedTime() { mixin(MGPC!("float", 496)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ShieldEffectComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
-			SoundCue DeactivatedSound() { mixin(MGPC!(SoundCue, 484)()); }
-			SoundCue ActivatedSound() { mixin(MGPC!(SoundCue, 480)()); }
+			SoundCue DeactivatedSound() { mixin(MGPC!("SoundCue", 484)()); }
+			SoundCue ActivatedSound() { mixin(MGPC!("SoundCue", 480)()); }
 		}
 		bool bFullyActive() { mixin(MGBPC!(500, 0x1)()); }
 		bool bFullyActive(bool val) { mixin(MSBPC!(500, 0x1)()); }
@@ -54,7 +54,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShieldFullyOnline, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -63,8 +63,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 }

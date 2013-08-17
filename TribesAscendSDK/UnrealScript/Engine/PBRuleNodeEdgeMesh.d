@@ -13,7 +13,7 @@ public extern(D):
 	@property final static PBRuleNodeEdgeMesh DefaultProperties() { mixin(MGDPC!(PBRuleNodeEdgeMesh, "PBRuleNodeEdgeMesh Engine.Default__PBRuleNodeEdgeMesh")()); }
 	@property final auto ref
 	{
-		float MainXPullIn() { mixin(MGPC!(float, 108)()); }
-		float FlatThreshold() { mixin(MGPC!(float, 104)()); }
+		float MainXPullIn() { mixin(MGPC!("float", 108)()); }
+		float FlatThreshold() { mixin(MGPC!("float", 104)()); }
 	}
 }

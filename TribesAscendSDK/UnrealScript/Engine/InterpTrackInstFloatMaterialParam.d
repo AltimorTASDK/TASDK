@@ -21,13 +21,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackInstFloatMaterialParam.FloatMaterialParamMICData")()); }
 		@property final auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) MICs() { mixin(MGPS!(ScriptArray!(MaterialInstanceConstant), 0)()); }
-			ScriptArray!(float) MICResetFloats() { mixin(MGPS!(ScriptArray!(float), 12)()); }
+			ScriptArray!(MaterialInstanceConstant) MICs() { mixin(MGPS!("ScriptArray!(MaterialInstanceConstant)", 0)()); }
+			ScriptArray!(float) MICResetFloats() { mixin(MGPS!("ScriptArray!(float)", 12)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(InterpTrackInstFloatMaterialParam.FloatMaterialParamMICData) MICInfos() { mixin(MGPC!(ScriptArray!(InterpTrackInstFloatMaterialParam.FloatMaterialParamMICData), 60)()); }
-		InterpTrackFloatMaterialParam InstancedTrack() { mixin(MGPC!(InterpTrackFloatMaterialParam, 72)()); }
+		ScriptArray!(InterpTrackInstFloatMaterialParam.FloatMaterialParamMICData) MICInfos() { mixin(MGPC!("ScriptArray!(InterpTrackInstFloatMaterialParam.FloatMaterialParamMICData)", 60)()); }
+		InterpTrackFloatMaterialParam InstancedTrack() { mixin(MGPC!("InterpTrackFloatMaterialParam", 72)()); }
 	}
 }

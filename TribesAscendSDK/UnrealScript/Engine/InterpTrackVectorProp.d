@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackVectorProp")()); }
 	private static __gshared InterpTrackVectorProp mDefaultProperties;
 	@property final static InterpTrackVectorProp DefaultProperties() { mixin(MGDPC!(InterpTrackVectorProp, "InterpTrackVectorProp Engine.Default__InterpTrackVectorProp")()); }
-	@property final auto ref ScriptName PropertyName() { mixin(MGPC!(ScriptName, 148)()); }
+	@property final auto ref ScriptName PropertyName() { mixin(MGPC!("ScriptName", 148)()); }
 }

@@ -28,8 +28,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString IniName() { mixin(MGPC!(ScriptString, 140)()); }
-			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 124)()); }
+			ScriptString IniName() { mixin(MGPC!("ScriptString", 140)()); }
+			ScriptString FriendlyName() { mixin(MGPC!("ScriptString", 124)()); }
 		}
 		bool bRemoveOnPS3() { mixin(MGBPC!(136, 0x8)()); }
 		bool bRemoveOnPS3(bool val) { mixin(MSBPC!(136, 0x8)()); }

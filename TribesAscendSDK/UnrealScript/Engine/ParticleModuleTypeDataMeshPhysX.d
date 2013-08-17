@@ -26,10 +26,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { mixin(MGPC!(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties, 112)()); }
-		UObject.Pointer RenderInstance() { mixin(MGPC!(UObject.Pointer, 108)()); }
-		float FluidRotationCoefficient() { mixin(MGPC!(float, 104)()); }
-		ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod PhysXRotationMethod() { mixin(MGPC!(ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod, 100)()); }
-		PhysXParticleSystem PhysXParSys() { mixin(MGPC!(PhysXParticleSystem, 96)()); }
+		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { mixin(MGPC!("ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties", 112)()); }
+		UObject.Pointer RenderInstance() { mixin(MGPC!("UObject.Pointer", 108)()); }
+		float FluidRotationCoefficient() { mixin(MGPC!("float", 104)()); }
+		ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod PhysXRotationMethod() { mixin(MGPC!("ParticleModuleTypeDataMeshPhysX.EPhysXMeshRotationMethod", 100)()); }
+		PhysXParticleSystem PhysXParSys() { mixin(MGPC!("PhysXParticleSystem", 96)()); }
 	}
 }

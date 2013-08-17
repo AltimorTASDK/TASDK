@@ -16,17 +16,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumOpenPrivateConnections() { mixin(MGPC!(int, 120)()); }
-			int NumOpenPublicConnections() { mixin(MGPC!(int, 116)()); }
-			OnlineSubsystem.EOnlineGameState GameState() { mixin(MGPC!(OnlineSubsystem.EOnlineGameState, 164)()); }
-			OnlineSubsystem.UniqueNetId OwningPlayerId() { mixin(MGPC!(OnlineSubsystem.UniqueNetId, 148)()); }
-			int NumPublicConnections() { mixin(MGPC!(int, 108)()); }
-			int BuildUniqueId() { mixin(MGPC!(int, 168)()); }
-			float MatchQuality() { mixin(MGPC!(float, 160)()); }
-			int PingInMs() { mixin(MGPC!(int, 156)()); }
-			ScriptString OwningPlayerName() { mixin(MGPC!(ScriptString, 136)()); }
-			QWord ServerNonce() { mixin(MGPC!(QWord, 124)()); }
-			int NumPrivateConnections() { mixin(MGPC!(int, 112)()); }
+			int NumOpenPrivateConnections() { mixin(MGPC!("int", 120)()); }
+			int NumOpenPublicConnections() { mixin(MGPC!("int", 116)()); }
+			OnlineSubsystem.EOnlineGameState GameState() { mixin(MGPC!("OnlineSubsystem.EOnlineGameState", 164)()); }
+			OnlineSubsystem.UniqueNetId OwningPlayerId() { mixin(MGPC!("OnlineSubsystem.UniqueNetId", 148)()); }
+			int NumPublicConnections() { mixin(MGPC!("int", 108)()); }
+			int BuildUniqueId() { mixin(MGPC!("int", 168)()); }
+			float MatchQuality() { mixin(MGPC!("float", 160)()); }
+			int PingInMs() { mixin(MGPC!("int", 156)()); }
+			ScriptString OwningPlayerName() { mixin(MGPC!("ScriptString", 136)()); }
+			QWord ServerNonce() { mixin(MGPC!("QWord", 124)()); }
+			int NumPrivateConnections() { mixin(MGPC!("int", 112)()); }
 		}
 		bool bUsesArbitration() { mixin(MGBPC!(132, 0x100)()); }
 		bool bUsesArbitration(bool val) { mixin(MSBPC!(132, 0x100)()); }

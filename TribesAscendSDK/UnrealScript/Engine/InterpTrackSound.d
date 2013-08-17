@@ -20,15 +20,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackSound.SoundTrackKey")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!(SoundCue, 12)()); }
-			float Pitch() { mixin(MGPS!(float, 8)()); }
+			SoundCue Sound() { mixin(MGPS!("SoundCue", 12)()); }
+			float Pitch() { mixin(MGPS!("float", 8)()); }
 			// WARNING: Property 'Volume' has the same name as a defined type!
-			float Time() { mixin(MGPS!(float, 0)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(InterpTrackSound.SoundTrackKey) Sounds() { mixin(MGPC!(ScriptArray!(InterpTrackSound.SoundTrackKey), 148)()); }
+		@property final auto ref ScriptArray!(InterpTrackSound.SoundTrackKey) Sounds() { mixin(MGPC!("ScriptArray!(InterpTrackSound.SoundTrackKey)", 148)()); }
 		bool bTreatAsDialogue() { mixin(MGBPC!(160, 0x8)()); }
 		bool bTreatAsDialogue(bool val) { mixin(MSBPC!(160, 0x8)()); }
 		bool bSuppressSubtitles() { mixin(MGBPC!(160, 0x4)()); }

@@ -59,23 +59,23 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd_FilterDialog.Option")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) OptionData() { mixin(MGPS!(ScriptArray!(ScriptString), 24)()); }
-			ScriptString OptionLabel() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString OptionName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptArray!(ScriptString) OptionData() { mixin(MGPS!("ScriptArray!(ScriptString)", 24)()); }
+			ScriptString OptionLabel() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString OptionName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option) ListOptions() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option), 196)()); }
+			ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option) ListOptions() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd_FilterDialog.Option)", 196)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSwitchedGameType__Delegate'!
-			GFxObject GameTypeOptionItem() { mixin(MGPC!(GFxObject, 192)()); }
-			GFxObject DataProvider() { mixin(MGPC!(GFxObject, 188)()); }
-			GFxClikWidget FilterListMC() { mixin(MGPC!(GFxClikWidget, 180)()); }
-			UTDataStore_GameSearchDM SearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchDM, 176)()); }
-			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 172)()); }
-			UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 168)()); }
+			GFxObject GameTypeOptionItem() { mixin(MGPC!("GFxObject", 192)()); }
+			GFxObject DataProvider() { mixin(MGPC!("GFxObject", 188)()); }
+			GFxClikWidget FilterListMC() { mixin(MGPC!("GFxClikWidget", 180)()); }
+			UTDataStore_GameSearchDM SearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchDM", 176)()); }
+			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!("UTUIDataStore_MenuItems", 172)()); }
+			UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!("UTUIDataStore_StringList", 168)()); }
 		}
 		bool bFiltersHaveChanged() { mixin(MGBPC!(184, 0x1)()); }
 		bool bFiltersHaveChanged(bool val) { mixin(MSBPC!(184, 0x1)()); }
@@ -89,11 +89,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void OnViewClosed()

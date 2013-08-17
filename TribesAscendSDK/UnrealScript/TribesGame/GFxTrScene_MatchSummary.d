@@ -63,40 +63,40 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrScene_MatchSummary.ScoreSlot")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 20)()); }
-			int PlayerID() { mixin(MGPS!(int, 16)()); }
-			int Credits() { mixin(MGPS!(int, 12)()); }
-			int Assists() { mixin(MGPS!(int, 8)()); }
-			int Rank() { mixin(MGPS!(int, 4)()); }
-			int Kills() { mixin(MGPS!(int, 0)()); }
+			ScriptString PlayerName() { mixin(MGPS!("ScriptString", 20)()); }
+			int PlayerID() { mixin(MGPS!("int", 16)()); }
+			int Credits() { mixin(MGPS!("int", 12)()); }
+			int Assists() { mixin(MGPS!("int", 8)()); }
+			int Rank() { mixin(MGPS!("int", 4)()); }
+			int Kills() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrSummaryHelper.MVPAward) MVPAwards() { mixin(MGPC!(ScriptArray!(TrSummaryHelper.MVPAward), 1228)()); }
-			ScriptArray!(TrSummaryHelper.MVPAward) MVPAccolades() { mixin(MGPC!(ScriptArray!(TrSummaryHelper.MVPAward), 1240)()); }
+			ScriptArray!(TrSummaryHelper.MVPAward) MVPAwards() { mixin(MGPC!("ScriptArray!(TrSummaryHelper.MVPAward)", 1228)()); }
+			ScriptArray!(TrSummaryHelper.MVPAward) MVPAccolades() { mixin(MGPC!("ScriptArray!(TrSummaryHelper.MVPAward)", 1240)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSort__Delegate'!
-			TrSummaryHelper SummaryHelper() { mixin(MGPC!(TrSummaryHelper, 1252)()); }
-			GFxTrScene_MatchSummary.ScoreSlot Scoreboard() { mixin(MGPC!(GFxTrScene_MatchSummary.ScoreSlot, 204)()); }
-			int Team2Score() { mixin(MGPC!(int, 196)()); }
-			int Team1Score() { mixin(MGPC!(int, 192)()); }
-			int MatchDate() { mixin(MGPC!(int, 188)()); }
-			int MatchDuration() { mixin(MGPC!(int, 184)()); }
-			int MatchGameType() { mixin(MGPC!(int, 180)()); }
-			int MatchMapId() { mixin(MGPC!(int, 176)()); }
-			int MatchId() { mixin(MGPC!(int, 172)()); }
-			int WinningTeam() { mixin(MGPC!(int, 168)()); }
-			GFxObject ScoreboardDataList() { mixin(MGPC!(GFxObject, 164)()); }
-			GFxObject AccoladeDataList() { mixin(MGPC!(GFxObject, 160)()); }
-			GFxObject AwardDataList() { mixin(MGPC!(GFxObject, 156)()); }
-			GFxObject MiscDataList() { mixin(MGPC!(GFxObject, 152)()); }
-			int ScoreboardDataCount() { mixin(MGPC!(int, 148)()); }
-			int AccoladeDataCount() { mixin(MGPC!(int, 144)()); }
-			int AwardDataCount() { mixin(MGPC!(int, 140)()); }
-			int MiscDataCount() { mixin(MGPC!(int, 136)()); }
-			int SCOREBOARD_SIZE() { mixin(MGPC!(int, 132)()); }
+			TrSummaryHelper SummaryHelper() { mixin(MGPC!("TrSummaryHelper", 1252)()); }
+			GFxTrScene_MatchSummary.ScoreSlot Scoreboard() { mixin(MGPC!("GFxTrScene_MatchSummary.ScoreSlot", 204)()); }
+			int Team2Score() { mixin(MGPC!("int", 196)()); }
+			int Team1Score() { mixin(MGPC!("int", 192)()); }
+			int MatchDate() { mixin(MGPC!("int", 188)()); }
+			int MatchDuration() { mixin(MGPC!("int", 184)()); }
+			int MatchGameType() { mixin(MGPC!("int", 180)()); }
+			int MatchMapId() { mixin(MGPC!("int", 176)()); }
+			int MatchId() { mixin(MGPC!("int", 172)()); }
+			int WinningTeam() { mixin(MGPC!("int", 168)()); }
+			GFxObject ScoreboardDataList() { mixin(MGPC!("GFxObject", 164)()); }
+			GFxObject AccoladeDataList() { mixin(MGPC!("GFxObject", 160)()); }
+			GFxObject AwardDataList() { mixin(MGPC!("GFxObject", 156)()); }
+			GFxObject MiscDataList() { mixin(MGPC!("GFxObject", 152)()); }
+			int ScoreboardDataCount() { mixin(MGPC!("int", 148)()); }
+			int AccoladeDataCount() { mixin(MGPC!("int", 144)()); }
+			int AwardDataCount() { mixin(MGPC!("int", 140)()); }
+			int MiscDataCount() { mixin(MGPC!("int", 136)()); }
+			int SCOREBOARD_SIZE() { mixin(MGPC!("int", 132)()); }
 		}
 		bool bUseSNS() { mixin(MGBPC!(200, 0x1)()); }
 		bool bUseSNS(bool val) { mixin(MSBPC!(200, 0x1)()); }

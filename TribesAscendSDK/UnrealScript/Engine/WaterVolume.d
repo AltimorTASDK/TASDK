@@ -32,10 +32,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass ExitActor() { mixin(MGPC!(ScriptClass, 596)()); }
-		SoundCue ExitSound() { mixin(MGPC!(SoundCue, 592)()); }
-		ScriptClass EntryActor() { mixin(MGPC!(ScriptClass, 588)()); }
-		SoundCue EntrySound() { mixin(MGPC!(SoundCue, 584)()); }
+		ScriptClass ExitActor() { mixin(MGPC!("ScriptClass", 596)()); }
+		SoundCue ExitSound() { mixin(MGPC!("SoundCue", 592)()); }
+		ScriptClass EntryActor() { mixin(MGPC!("ScriptClass", 588)()); }
+		SoundCue EntrySound() { mixin(MGPC!("SoundCue", 584)()); }
 	}
 final:
 	void Touch(Actor Other, 

@@ -34,21 +34,21 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.StaticMesh.StaticMeshLODInfo")()); }
-		@property final auto ref ScriptArray!(StaticMesh.StaticMeshLODElement) Elements() { mixin(MGPS!(ScriptArray!(StaticMesh.StaticMeshLODElement), 0)()); }
+		@property final auto ref ScriptArray!(StaticMesh.StaticMeshLODElement) Elements() { mixin(MGPS!("ScriptArray!(StaticMesh.StaticMeshLODElement)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int LightMapResolution() { mixin(MGPC!(int, 108)()); }
-			int LightMapCoordinateIndex() { mixin(MGPC!(int, 112)()); }
-			float LODDistanceRatio() { mixin(MGPC!(float, 84)()); }
-			float LODMaxRange() { mixin(MGPC!(float, 88)()); }
-			float StreamingDistanceMultiplier() { mixin(MGPC!(float, 288)()); }
-			ScriptArray!(StaticMesh.StaticMeshLODInfo) LODInfo() { mixin(MGPC!(ScriptArray!(StaticMesh.StaticMeshLODInfo), 72)()); }
-			RB_BodySetup BodySetup() { mixin(MGPC!(RB_BodySetup, 196)()); }
-			ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 324)()); }
-			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 336)()); }
+			int LightMapResolution() { mixin(MGPC!("int", 108)()); }
+			int LightMapCoordinateIndex() { mixin(MGPC!("int", 112)()); }
+			float LODDistanceRatio() { mixin(MGPC!("float", 84)()); }
+			float LODMaxRange() { mixin(MGPC!("float", 88)()); }
+			float StreamingDistanceMultiplier() { mixin(MGPC!("float", 288)()); }
+			ScriptArray!(StaticMesh.StaticMeshLODInfo) LODInfo() { mixin(MGPC!("ScriptArray!(StaticMesh.StaticMeshLODInfo)", 72)()); }
+			RB_BodySetup BodySetup() { mixin(MGPC!("RB_BodySetup", 196)()); }
+			ScriptString SourceFilePath() { mixin(MGPC!("ScriptString", 324)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!("ScriptString", 336)()); }
 		}
 		bool UseSimpleLineCollision() { mixin(MGBPC!(252, 0x1)()); }
 		bool UseSimpleLineCollision(bool val) { mixin(MSBPC!(252, 0x1)()); }

@@ -19,8 +19,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float ServerLifeSpan() { mixin(MGPC!(float, 492)()); }
-		ParticleSystem EmitterTemplate() { mixin(MGPC!(ParticleSystem, 488)()); }
+		float ServerLifeSpan() { mixin(MGPC!("float", 492)()); }
+		ParticleSystem EmitterTemplate() { mixin(MGPC!("ParticleSystem", 488)()); }
 	}
 	final void PostBeginPlay()
 	{

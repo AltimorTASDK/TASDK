@@ -51,8 +51,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				int CoreHealthPct() { mixin(MGPS!(int, 12)()); }
-				int GeneratorRemainingTime() { mixin(MGPS!(int, 4)()); }
+				int CoreHealthPct() { mixin(MGPS!("int", 12)()); }
+				int GeneratorRemainingTime() { mixin(MGPS!("int", 4)()); }
 			}
 			bool bCapacitorCOnline() { mixin(MGBPS!(8, 0x4)()); }
 			bool bCapacitorCOnline(bool val) { mixin(MSBPS!(8, 0x4)()); }
@@ -68,15 +68,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrDaDStats.DaDScoreInfo EnemyDaDScore() { mixin(MGPC!(TrDaDStats.DaDScoreInfo, 116)()); }
-			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { mixin(MGPC!(TrDaDStats.DaDScoreInfo, 100)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 96)()); }
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 92)()); }
-			int RoundNum() { mixin(MGPC!(int, 88)()); }
-			int RoundScore() { mixin(MGPC!(int, 80)()); }
-			int TeamScore() { mixin(MGPC!(int, 72)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
-			int MyTeam() { mixin(MGPC!(int, 60)()); }
+			TrDaDStats.DaDScoreInfo EnemyDaDScore() { mixin(MGPC!("TrDaDStats.DaDScoreInfo", 116)()); }
+			TrDaDStats.DaDScoreInfo FriendlyDaDScore() { mixin(MGPC!("TrDaDStats.DaDScoreInfo", 100)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 96)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 92)()); }
+			int RoundNum() { mixin(MGPC!("int", 88)()); }
+			int RoundScore() { mixin(MGPC!("int", 80)()); }
+			int TeamScore() { mixin(MGPC!("int", 72)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int MyTeam() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bForcingUpdate() { mixin(MGBPC!(68, 0x2)()); }
 		bool bForcingUpdate(bool val) { mixin(MSBPC!(68, 0x2)()); }

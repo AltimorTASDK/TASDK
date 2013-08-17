@@ -33,18 +33,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) OptionSet() { mixin(MGPC!(ScriptArray!(ScriptName), 128)()); }
-			ScriptArray!(ScriptName) SchemaCellFields() { mixin(MGPC!(ScriptArray!(ScriptName), 236)()); }
-			ScriptString IniName() { mixin(MGPC!(ScriptString, 248)()); }
-			UIRoot.UIRangeData RangeData() { mixin(MGPC!(UIRoot.UIRangeData, 216)()); }
-			int EditBoxMaxLength() { mixin(MGPC!(int, 212)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 196)()); }
-			ScriptString CustomFriendlyName() { mixin(MGPC!(ScriptString, 184)()); }
-			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 172)()); }
-			ScriptName RequiredGameMode() { mixin(MGPC!(ScriptName, 164)()); }
-			ScriptString DescriptionMarkup() { mixin(MGPC!(ScriptString, 152)()); }
-			ScriptString DataStoreMarkup() { mixin(MGPC!(ScriptString, 140)()); }
-			UIDataProvider_MenuItem.EMenuOptionType OptionType() { mixin(MGPC!(UIDataProvider_MenuItem.EMenuOptionType, 124)()); }
+			ScriptArray!(ScriptName) OptionSet() { mixin(MGPC!("ScriptArray!(ScriptName)", 128)()); }
+			ScriptArray!(ScriptName) SchemaCellFields() { mixin(MGPC!("ScriptArray!(ScriptName)", 236)()); }
+			ScriptString IniName() { mixin(MGPC!("ScriptString", 248)()); }
+			UIRoot.UIRangeData RangeData() { mixin(MGPC!("UIRoot.UIRangeData", 216)()); }
+			int EditBoxMaxLength() { mixin(MGPC!("int", 212)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 196)()); }
+			ScriptString CustomFriendlyName() { mixin(MGPC!("ScriptString", 184)()); }
+			ScriptString FriendlyName() { mixin(MGPC!("ScriptString", 172)()); }
+			ScriptName RequiredGameMode() { mixin(MGPC!("ScriptName", 164)()); }
+			ScriptString DescriptionMarkup() { mixin(MGPC!("ScriptString", 152)()); }
+			ScriptString DataStoreMarkup() { mixin(MGPC!("ScriptString", 140)()); }
+			UIDataProvider_MenuItem.EMenuOptionType OptionType() { mixin(MGPC!("UIDataProvider_MenuItem.EMenuOptionType", 124)()); }
 		}
 		bool bRemoveOnPS3() { mixin(MGBPC!(208, 0x100)()); }
 		bool bRemoveOnPS3(bool val) { mixin(MSBPC!(208, 0x100)()); }

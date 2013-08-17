@@ -36,11 +36,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			Trigger LiftTrigger() { mixin(MGPC!(Trigger, 720)()); }
-			float CollisionHeight() { mixin(MGPC!(float, 716)()); }
-			Vector LiftOffset() { mixin(MGPC!(Vector, 700)()); }
-			float MaxDist2D() { mixin(MGPC!(float, 696)()); }
-			InterpActor MyLift() { mixin(MGPC!(InterpActor, 692)()); }
+			Trigger LiftTrigger() { mixin(MGPC!("Trigger", 720)()); }
+			float CollisionHeight() { mixin(MGPC!("float", 716)()); }
+			Vector LiftOffset() { mixin(MGPC!("Vector", 700)()); }
+			float MaxDist2D() { mixin(MGPC!("float", 696)()); }
+			InterpActor MyLift() { mixin(MGPC!("InterpActor", 692)()); }
 		}
 		bool bJumpLift() { mixin(MGBPC!(712, 0x1)()); }
 		bool bJumpLift(bool val) { mixin(MSBPC!(712, 0x1)()); }

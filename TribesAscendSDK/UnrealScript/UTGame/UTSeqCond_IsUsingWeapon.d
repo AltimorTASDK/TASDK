@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass RequiredWeapon() { mixin(MGPC!(ScriptClass, 212)()); }
-			Actor Target() { mixin(MGPC!(Actor, 208)()); }
+			ScriptClass RequiredWeapon() { mixin(MGPC!("ScriptClass", 212)()); }
+			Actor Target() { mixin(MGPC!("Actor", 208)()); }
 		}
 		bool bMustBeImpactHammer() { mixin(MGBPC!(216, 0x2)()); }
 		bool bMustBeImpactHammer(bool val) { mixin(MSBPC!(216, 0x2)()); }

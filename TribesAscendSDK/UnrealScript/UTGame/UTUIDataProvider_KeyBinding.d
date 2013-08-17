@@ -13,7 +13,7 @@ public extern(D):
 	@property final static UTUIDataProvider_KeyBinding DefaultProperties() { mixin(MGDPC!(UTUIDataProvider_KeyBinding, "UTUIDataProvider_KeyBinding UTGame.Default__UTUIDataProvider_KeyBinding")()); }
 	@property final
 	{
-		@property final auto ref ScriptString Command() { mixin(MGPC!(ScriptString, 152)()); }
+		@property final auto ref ScriptString Command() { mixin(MGPC!("ScriptString", 152)()); }
 		bool bIsCrucialBind() { mixin(MGBPC!(164, 0x1)()); }
 		bool bIsCrucialBind(bool val) { mixin(MSBPC!(164, 0x1)()); }
 	}

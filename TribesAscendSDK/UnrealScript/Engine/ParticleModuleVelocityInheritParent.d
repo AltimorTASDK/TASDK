@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleVelocityInheritParent")()); }
 	private static __gshared ParticleModuleVelocityInheritParent mDefaultProperties;
 	@property final static ParticleModuleVelocityInheritParent DefaultProperties() { mixin(MGDPC!(ParticleModuleVelocityInheritParent, "ParticleModuleVelocityInheritParent Engine.Default__ParticleModuleVelocityInheritParent")()); }
-	@property final auto ref DistributionVector.RawDistributionVector Scale() { mixin(MGPC!(DistributionVector.RawDistributionVector, 76)()); }
+	@property final auto ref DistributionVector.RawDistributionVector Scale() { mixin(MGPC!("DistributionVector.RawDistributionVector", 76)()); }
 }

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_AISeeEnemy")()); }
 	private static __gshared SeqEvent_AISeeEnemy mDefaultProperties;
 	@property final static SeqEvent_AISeeEnemy DefaultProperties() { mixin(MGDPC!(SeqEvent_AISeeEnemy, "SeqEvent_AISeeEnemy Engine.Default__SeqEvent_AISeeEnemy")()); }
-	@property final auto ref float MaxSightDistance() { mixin(MGPC!(float, 256)()); }
+	@property final auto ref float MaxSightDistance() { mixin(MGPC!("float", 256)()); }
 }

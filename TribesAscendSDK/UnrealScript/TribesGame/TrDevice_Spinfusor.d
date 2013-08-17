@@ -48,9 +48,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SoundCue m_SpinfusorIdleSound() { mixin(MGPC!(SoundCue, 2156)()); }
-		SkelControlSingleBone m_DiscVisibilityControl() { mixin(MGPC!(SkelControlSingleBone, 2152)()); }
-		TrSkelControl_SpinControl m_DiscSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 2148)()); }
+		SoundCue m_SpinfusorIdleSound() { mixin(MGPC!("SoundCue", 2156)()); }
+		SkelControlSingleBone m_DiscVisibilityControl() { mixin(MGPC!("SkelControlSingleBone", 2152)()); }
+		TrSkelControl_SpinControl m_DiscSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 2148)()); }
 	}
 final:
 	void UpdateReplicatedCarriedAmmo()
@@ -84,12 +84,13 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[8] = ExcessTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnAnimEnd, params.ptr, cast(void*)0);
 	}
-	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector* HitLocation = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(Vector*)&params[4] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[4] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void PlayWeaponEquip()

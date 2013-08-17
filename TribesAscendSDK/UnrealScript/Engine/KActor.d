@@ -57,20 +57,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			Rotator InitialRotation() { mixin(MGPC!(Rotator, 700)()); }
-			Vector InitialLocation() { mixin(MGPC!(Vector, 688)()); }
-			Vector ReplicatedDrawScale3D() { mixin(MGPC!(Vector, 676)()); }
-			float AngErrorAccumulator() { mixin(MGPC!(float, 672)()); }
-			Actor.RigidBodyState RBState() { mixin(MGPC!(Actor.RigidBodyState, 608)()); }
-			float MaxPhysicsVelocity() { mixin(MGPC!(float, 604)()); }
-			float StayUprightMaxTorque() { mixin(MGPC!(float, 600)()); }
-			float StayUprightTorqueFactor() { mixin(MGPC!(float, 596)()); }
-			Actor.PhysEffectInfo SlideEffectInfo() { mixin(MGPC!(Actor.PhysEffectInfo, 580)()); }
-			float LastSlideTime() { mixin(MGPC!(float, 576)()); }
+			Rotator InitialRotation() { mixin(MGPC!("Rotator", 700)()); }
+			Vector InitialLocation() { mixin(MGPC!("Vector", 688)()); }
+			Vector ReplicatedDrawScale3D() { mixin(MGPC!("Vector", 676)()); }
+			float AngErrorAccumulator() { mixin(MGPC!("float", 672)()); }
+			Actor.RigidBodyState RBState() { mixin(MGPC!("Actor.RigidBodyState", 608)()); }
+			float MaxPhysicsVelocity() { mixin(MGPC!("float", 604)()); }
+			float StayUprightMaxTorque() { mixin(MGPC!("float", 600)()); }
+			float StayUprightTorqueFactor() { mixin(MGPC!("float", 596)()); }
+			Actor.PhysEffectInfo SlideEffectInfo() { mixin(MGPC!("Actor.PhysEffectInfo", 580)()); }
+			float LastSlideTime() { mixin(MGPC!("float", 576)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SlideSoundComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SlideEffectComponent'!
-			Actor.PhysEffectInfo ImpactEffectInfo() { mixin(MGPC!(Actor.PhysEffectInfo, 552)()); }
-			float LastImpactTime() { mixin(MGPC!(float, 548)()); }
+			Actor.PhysEffectInfo ImpactEffectInfo() { mixin(MGPC!("Actor.PhysEffectInfo", 552)()); }
+			float LastImpactTime() { mixin(MGPC!("float", 548)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactSoundComponent2'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactSoundComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpactEffectComponent'!
@@ -134,18 +134,20 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	void ApplyImpulse(Vector ImpulseDir, float ImpulseMag, Vector HitLocation, Actor.TraceHitInfo HitInfo, ScriptClass pDamageType)
+	void ApplyImpulse(Vector ImpulseDir, float ImpulseMag, Vector HitLocation, Actor.TraceHitInfo* HitInfo = null, ScriptClass* pDamageType = null)
 	{
 		ubyte params[60];
 		params[] = 0;
 		*cast(Vector*)params.ptr = ImpulseDir;
 		*cast(float*)&params[12] = ImpulseMag;
 		*cast(Vector*)&params[16] = HitLocation;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
-		*cast(ScriptClass*)&params[56] = pDamageType;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
+		if (pDamageType !is null)
+			*cast(ScriptClass*)&params[56] = *pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyImpulse, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -154,11 +156,13 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -170,7 +174,8 @@ final:
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle Action)

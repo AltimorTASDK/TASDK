@@ -40,7 +40,7 @@ public extern(D):
 		VANIM_ChangeSeat = 4,
 		VANIM_MAX = 5,
 	}
-	@property final auto ref TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
+	@property final auto ref TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
 final:
 	void PlayNoVehicleAnim()
 	{

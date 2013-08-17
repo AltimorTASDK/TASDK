@@ -29,17 +29,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!(ScriptArray!(MorphTarget), 108)()); }
-		ScriptArray!(ScriptName) MorphNames() { mixin(MGPC!(ScriptArray!(ScriptName), 120)()); }
-		ScriptArray!(float) Weights() { mixin(MGPC!(ScriptArray!(float), 132)()); }
+		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!("ScriptArray!(MorphTarget)", 108)()); }
+		ScriptArray!(ScriptName) MorphNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 120)()); }
+		ScriptArray!(float) Weights() { mixin(MGPC!("ScriptArray!(float)", 132)()); }
 	}
 final:
-	bool AddMorphTarget(ScriptName MorphTargetName, float InWeight)
+	bool AddMorphTarget(ScriptName MorphTargetName, float* InWeight = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = MorphTargetName;
-		*cast(float*)&params[8] = InWeight;
+		if (InWeight !is null)
+			*cast(float*)&params[8] = *InWeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddMorphTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}

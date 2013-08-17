@@ -29,10 +29,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) Destination() { mixin(MGPC!(ScriptArray!(Actor), 252)()); }
-			int LastDestinationChoice() { mixin(MGPC!(int, 272)()); }
-			Actor LookAt() { mixin(MGPC!(Actor, 268)()); }
-			float MovementSpeedModifier() { mixin(MGPC!(float, 264)()); }
+			ScriptArray!(Actor) Destination() { mixin(MGPC!("ScriptArray!(Actor)", 252)()); }
+			int LastDestinationChoice() { mixin(MGPC!("int", 272)()); }
+			Actor LookAt() { mixin(MGPC!("Actor", 268)()); }
+			float MovementSpeedModifier() { mixin(MGPC!("float", 264)()); }
 		}
 		bool bPickClosest() { mixin(MGBPC!(248, 0x2)()); }
 		bool bPickClosest(bool val) { mixin(MSBPC!(248, 0x2)()); }

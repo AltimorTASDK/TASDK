@@ -43,10 +43,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float AnnouncementVolume() { mixin(MGPC!(float, 92)()); }
-			float AnnouncementDelay() { mixin(MGPC!(float, 96)()); }
-			int AnnouncementPriority() { mixin(MGPC!(int, 84)()); }
-			int MessageArea() { mixin(MGPC!(int, 80)()); }
+			float AnnouncementVolume() { mixin(MGPC!("float", 92)()); }
+			float AnnouncementDelay() { mixin(MGPC!("float", 96)()); }
+			int AnnouncementPriority() { mixin(MGPC!("int", 84)()); }
+			int MessageArea() { mixin(MGPC!("int", 80)()); }
 		}
 		bool bShowPortrait() { mixin(MGBPC!(88, 0x1)()); }
 		bool bShowPortrait(bool val) { mixin(MSBPC!(88, 0x1)()); }
@@ -70,14 +70,16 @@ final:
 		StaticClass.ProcessEvent(Functions.AnnouncementLevel, params.ptr, cast(void*)0);
 		return params[1];
 	}
-	static bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	static bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo* PRI = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(UTAnnouncer*)params.ptr = Announcer;
 		*cast(int*)&params[4] = MessageIndex;
-		*cast(PlayerReplicationInfo*)&params[8] = PRI;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (PRI !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *PRI;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.AddAnnouncement, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

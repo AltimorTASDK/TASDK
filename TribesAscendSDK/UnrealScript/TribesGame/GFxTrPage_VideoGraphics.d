@@ -39,7 +39,7 @@ public extern(D):
 		MAVG_VERYHIGH = 4,
 		MAVG_MAX = 5,
 	}
-	@property final auto ref int CurrGraphics() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int CurrGraphics() { mixin(MGPC!("int", 356)()); }
 final:
 	void Initialize()
 	{

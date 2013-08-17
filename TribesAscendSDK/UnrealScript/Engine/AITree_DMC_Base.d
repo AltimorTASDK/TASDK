@@ -131,9 +131,9 @@ final:
 		*cast(float*)&params[16] = Y;
 		*cast(float*)&params[20] = Z;
 		StaticClass.ProcessEvent(Functions.BreakVector, params.ptr, cast(void*)0);
-		*X = *cast(float*)&params[12];
-		*Y = *cast(float*)&params[16];
-		*Z = *cast(float*)&params[20];
+		X = *cast(float*)&params[12];
+		Y = *cast(float*)&params[16];
+		Z = *cast(float*)&params[20];
 	}
 	static Rotator MakeRot(float Pitch, float Yaw, float Roll)
 	{
@@ -154,9 +154,9 @@ final:
 		*cast(float*)&params[16] = Yaw;
 		*cast(float*)&params[20] = Roll;
 		StaticClass.ProcessEvent(Functions.BreakRot, params.ptr, cast(void*)0);
-		*Pitch = *cast(float*)&params[12];
-		*Yaw = *cast(float*)&params[16];
-		*Roll = *cast(float*)&params[20];
+		Pitch = *cast(float*)&params[12];
+		Yaw = *cast(float*)&params[16];
+		Roll = *cast(float*)&params[20];
 	}
 	void CalculateUtilityRating(AICommandNodeBase CommandNode)
 	{

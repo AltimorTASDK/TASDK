@@ -21,8 +21,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrAnimNodeBlendByPhysics.ChildrenBlendInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo) m_ChildBlendInfo() { mixin(MGPS!(ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo), 4)()); }
-			Actor.EPhysics m_PhysicsState() { mixin(MGPS!(Actor.EPhysics, 0)()); }
+			ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo) m_ChildBlendInfo() { mixin(MGPS!("ScriptArray!(TrAnimNodeBlendByPhysics.ChildBlendInfo)", 4)()); }
+			Actor.EPhysics m_PhysicsState() { mixin(MGPS!("Actor.EPhysics", 0)()); }
 		}
 	}
 	struct ChildBlendInfo
@@ -33,20 +33,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrAnimNodeBlendByPhysics.ChildBlendInfo")()); }
 		@property final auto ref
 		{
-			float m_fBlendTime() { mixin(MGPS!(float, 4)()); }
-			Actor.EPhysics m_PhysicsState() { mixin(MGPS!(Actor.EPhysics, 0)()); }
+			float m_fBlendTime() { mixin(MGPS!("float", 4)()); }
+			Actor.EPhysics m_PhysicsState() { mixin(MGPS!("Actor.EPhysics", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor.EPhysics) m_PhysicsChildren() { mixin(MGPC!(ScriptArray!(Actor.EPhysics), 304)()); }
-			ScriptArray!(TrAnimNodeBlendByPhysics.ChildrenBlendInfo) m_ChildrenBlendInfo() { mixin(MGPC!(ScriptArray!(TrAnimNodeBlendByPhysics.ChildrenBlendInfo), 320)()); }
-			int m_CurrentPhysicsChildIndex() { mixin(MGPC!(int, 300)()); }
-			Actor.EPhysics m_CurrentPhysics() { mixin(MGPC!(Actor.EPhysics, 297)()); }
-			Actor.EPhysics m_LastPhysics() { mixin(MGPC!(Actor.EPhysics, 296)()); }
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
+			ScriptArray!(Actor.EPhysics) m_PhysicsChildren() { mixin(MGPC!("ScriptArray!(Actor.EPhysics)", 304)()); }
+			ScriptArray!(TrAnimNodeBlendByPhysics.ChildrenBlendInfo) m_ChildrenBlendInfo() { mixin(MGPC!("ScriptArray!(TrAnimNodeBlendByPhysics.ChildrenBlendInfo)", 320)()); }
+			int m_CurrentPhysicsChildIndex() { mixin(MGPC!("int", 300)()); }
+			Actor.EPhysics m_CurrentPhysics() { mixin(MGPC!("Actor.EPhysics", 297)()); }
+			Actor.EPhysics m_LastPhysics() { mixin(MGPC!("Actor.EPhysics", 296)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
 		}
 		bool m_bDirectUnspecifiedPhysicsThroughChild0() { mixin(MGBPC!(316, 0x1)()); }
 		bool m_bDirectUnspecifiedPhysicsThroughChild0(bool val) { mixin(MSBPC!(316, 0x1)()); }

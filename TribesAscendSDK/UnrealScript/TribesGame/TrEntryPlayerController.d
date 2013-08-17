@@ -120,24 +120,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!(ScriptArray!(PostProcessChain), 3452)()); }
-			float m_fCameraRotationInterpTime() { mixin(MGPC!(float, 3560)()); }
-			float m_fCameraRotationCurrTime() { mixin(MGPC!(float, 3556)()); }
-			Rotator m_rTargetCameraRotation() { mixin(MGPC!(Rotator, 3544)()); }
-			Rotator m_rInitialCameraRotation() { mixin(MGPC!(Rotator, 3532)()); }
-			Vector m_CameraLocation4x3() { mixin(MGPC!(Vector, 3520)()); }
-			Vector m_CameraLocation16x10() { mixin(MGPC!(Vector, 3508)()); }
-			Vector m_CameraLocation16x9() { mixin(MGPC!(Vector, 3496)()); }
-			float m_PreloadTextureTime() { mixin(MGPC!(float, 3492)()); }
-			TrObject.EContentDataType m_ContentDataType() { mixin(MGPC!(TrObject.EContentDataType, 3488)()); }
-			TrPaperDollMainMenu m_MainMenuPaperDoll() { mixin(MGPC!(TrPaperDollMainMenu, 3484)()); }
-			ScriptString MainMenuContentClassName() { mixin(MGPC!(ScriptString, 3472)()); }
-			TrMainMenuContentData m_MainMenuContentData() { mixin(MGPC!(TrMainMenuContentData, 3468)()); }
-			LocalPlayer OldPlayer() { mixin(MGPC!(LocalPlayer, 3464)()); }
-			PostProcessChain EntryPostProcessChain() { mixin(MGPC!(PostProcessChain, 3448)()); }
-			int MAX_RESEND_WAIT_TIME() { mixin(MGPC!(int, 3440)()); }
-			int MIN_RESEND_WAIT_TIME() { mixin(MGPC!(int, 3436)()); }
-			int m_CountdownTime() { mixin(MGPC!(int, 3432)()); }
+			ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!("ScriptArray!(PostProcessChain)", 3452)()); }
+			float m_fCameraRotationInterpTime() { mixin(MGPC!("float", 3560)()); }
+			float m_fCameraRotationCurrTime() { mixin(MGPC!("float", 3556)()); }
+			Rotator m_rTargetCameraRotation() { mixin(MGPC!("Rotator", 3544)()); }
+			Rotator m_rInitialCameraRotation() { mixin(MGPC!("Rotator", 3532)()); }
+			Vector m_CameraLocation4x3() { mixin(MGPC!("Vector", 3520)()); }
+			Vector m_CameraLocation16x10() { mixin(MGPC!("Vector", 3508)()); }
+			Vector m_CameraLocation16x9() { mixin(MGPC!("Vector", 3496)()); }
+			float m_PreloadTextureTime() { mixin(MGPC!("float", 3492)()); }
+			TrObject.EContentDataType m_ContentDataType() { mixin(MGPC!("TrObject.EContentDataType", 3488)()); }
+			TrPaperDollMainMenu m_MainMenuPaperDoll() { mixin(MGPC!("TrPaperDollMainMenu", 3484)()); }
+			ScriptString MainMenuContentClassName() { mixin(MGPC!("ScriptString", 3472)()); }
+			TrMainMenuContentData m_MainMenuContentData() { mixin(MGPC!("TrMainMenuContentData", 3468)()); }
+			LocalPlayer OldPlayer() { mixin(MGPC!("LocalPlayer", 3464)()); }
+			PostProcessChain EntryPostProcessChain() { mixin(MGPC!("PostProcessChain", 3448)()); }
+			int MAX_RESEND_WAIT_TIME() { mixin(MGPC!("int", 3440)()); }
+			int MIN_RESEND_WAIT_TIME() { mixin(MGPC!("int", 3436)()); }
+			int m_CountdownTime() { mixin(MGPC!("int", 3432)()); }
 		}
 		bool bMenuNotified() { mixin(MGBPC!(3444, 0x1)()); }
 		bool bMenuNotified(bool val) { mixin(MSBPC!(3444, 0x1)()); }
@@ -203,8 +203,8 @@ final:
 		*cast(Vector*)params.ptr = POVLocation;
 		*cast(Rotator*)&params[12] = POVRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*POVLocation = *cast(Vector*)params.ptr;
-		*POVRotation = *cast(Rotator*)&params[12];
+		POVLocation = *cast(Vector*)params.ptr;
+		POVRotation = *cast(Rotator*)&params[12];
 	}
 	void SwingCamera(float TargetPitch, float TargetYaw, float TargetRoll)
 	{
@@ -318,12 +318,14 @@ final:
 		*cast(bool*)params.ptr = bShow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPawnConstructionScene, params.ptr, cast(void*)0);
 	}
-	void ShowMidGameMenu(ScriptName TabTag, bool bEnableInput)
+	void ShowMidGameMenu(ScriptName* TabTag = null, bool* bEnableInput = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TabTag;
-		*cast(bool*)&params[8] = bEnableInput;
+		if (TabTag !is null)
+			*cast(ScriptName*)params.ptr = *TabTag;
+		if (bEnableInput !is null)
+			*cast(bool*)&params[8] = *bEnableInput;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMidGameMenu, params.ptr, cast(void*)0);
 	}
 	void ShowScoreboard()
@@ -369,14 +371,16 @@ final:
 		*cast(TrObject.EContentDataType*)params.ptr = Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateMainMenuPaperDoll_Mesh, params.ptr, cast(void*)0);
 	}
-	void UpdatePaperDoll(ScriptClass FamilyInfoClass, ScriptClass DeviceClass, ScriptClass skinClass, int TeamNum)
+	void UpdatePaperDoll(ScriptClass FamilyInfoClass, ScriptClass DeviceClass, ScriptClass* skinClass = null, int* TeamNum = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfoClass;
 		*cast(ScriptClass*)&params[4] = DeviceClass;
-		*cast(ScriptClass*)&params[8] = skinClass;
-		*cast(int*)&params[12] = TeamNum;
+		if (skinClass !is null)
+			*cast(ScriptClass*)&params[8] = *skinClass;
+		if (TeamNum !is null)
+			*cast(int*)&params[12] = *TeamNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePaperDoll, params.ptr, cast(void*)0);
 	}
 	void OnDeviceContentDataClassLoaded(ScriptClass DeviceContentDataClass)

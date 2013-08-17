@@ -28,8 +28,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ClearStreamingTime() { mixin(MGPC!(float, 1520)()); }
-			float FOV() { mixin(MGPC!(float, 1512)()); }
+			float ClearStreamingTime() { mixin(MGPC!("float", 1520)()); }
+			float FOV() { mixin(MGPC!("float", 1512)()); }
 		}
 		bool bForceLoadTextures() { mixin(MGBPC!(1516, 0x1)()); }
 		bool bForceLoadTextures(bool val) { mixin(MSBPC!(1516, 0x1)()); }

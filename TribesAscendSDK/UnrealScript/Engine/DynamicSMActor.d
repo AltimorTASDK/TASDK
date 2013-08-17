@@ -47,11 +47,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector ReplicatedMeshScale3D() { mixin(MGPC!(Vector, 520)()); }
-			Rotator ReplicatedMeshRotation() { mixin(MGPC!(Rotator, 508)()); }
-			Vector ReplicatedMeshTranslation() { mixin(MGPC!(Vector, 496)()); }
-			MaterialInterface ReplicatedMaterial() { mixin(MGPC!(MaterialInterface, 488)()); }
-			StaticMesh ReplicatedMesh() { mixin(MGPC!(StaticMesh, 484)()); }
+			Vector ReplicatedMeshScale3D() { mixin(MGPC!("Vector", 520)()); }
+			Rotator ReplicatedMeshRotation() { mixin(MGPC!("Rotator", 508)()); }
+			Vector ReplicatedMeshTranslation() { mixin(MGPC!("Vector", 496)()); }
+			MaterialInterface ReplicatedMaterial() { mixin(MGPC!("MaterialInterface", 488)()); }
+			StaticMesh ReplicatedMesh() { mixin(MGPC!("StaticMesh", 484)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
 		}
@@ -88,14 +88,17 @@ final:
 		*cast(SeqAct_SetMaterial*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetMaterial, params.ptr, cast(void*)0);
 	}
-	void SetStaticMesh(StaticMesh NewMesh, Vector NewTranslation, Rotator NewRotation, Vector NewScale3D)
+	void SetStaticMesh(StaticMesh NewMesh, Vector* NewTranslation = null, Rotator* NewRotation = null, Vector* NewScale3D = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewMesh;
-		*cast(Vector*)&params[4] = NewTranslation;
-		*cast(Rotator*)&params[16] = NewRotation;
-		*cast(Vector*)&params[28] = NewScale3D;
+		if (NewTranslation !is null)
+			*cast(Vector*)&params[4] = *NewTranslation;
+		if (NewRotation !is null)
+			*cast(Rotator*)&params[16] = *NewRotation;
+		if (NewScale3D !is null)
+			*cast(Vector*)&params[28] = *NewScale3D;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 	}
 	bool CanBasePawn(Pawn P)

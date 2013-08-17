@@ -22,9 +22,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptName SplitName() { mixin(MGPS!(ScriptName, 12)()); }
-				float ExpandRatio() { mixin(MGPS!(float, 8)()); }
-				float FixedSize() { mixin(MGPS!(float, 4)()); }
+				ScriptName SplitName() { mixin(MGPS!("ScriptName", 12)()); }
+				float ExpandRatio() { mixin(MGPS!("float", 8)()); }
+				float FixedSize() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bFixSize() { mixin(MGBPS!(0, 0x1)()); }
 			bool bFixSize(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -32,7 +32,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(PBRuleNodeSplit.RBSplitInfo) SplitSetup() { mixin(MGPC!(ScriptArray!(PBRuleNodeSplit.RBSplitInfo), 108)()); }
-		ProcBuildingRuleset.EProcBuildingAxis SplitAxis() { mixin(MGPC!(ProcBuildingRuleset.EProcBuildingAxis, 104)()); }
+		ScriptArray!(PBRuleNodeSplit.RBSplitInfo) SplitSetup() { mixin(MGPC!("ScriptArray!(PBRuleNodeSplit.RBSplitInfo)", 108)()); }
+		ProcBuildingRuleset.EProcBuildingAxis SplitAxis() { mixin(MGPC!("ProcBuildingRuleset.EProcBuildingAxis", 104)()); }
 	}
 }

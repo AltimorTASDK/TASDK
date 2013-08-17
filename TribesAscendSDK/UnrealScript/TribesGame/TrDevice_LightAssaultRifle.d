@@ -40,9 +40,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fBurtShotRefireTime() { mixin(MGPC!(float, 2184)()); }
-			int m_nShotsSoFar() { mixin(MGPC!(int, 2176)()); }
-			int m_nShotBurstCount() { mixin(MGPC!(int, 2172)()); }
+			float m_fBurtShotRefireTime() { mixin(MGPC!("float", 2184)()); }
+			int m_nShotsSoFar() { mixin(MGPC!("int", 2176)()); }
+			int m_nShotBurstCount() { mixin(MGPC!("int", 2172)()); }
 		}
 		bool m_bHoldingFire() { mixin(MGBPC!(2180, 0x1)()); }
 		bool m_bHoldingFire(bool val) { mixin(MSBPC!(2180, 0x1)()); }

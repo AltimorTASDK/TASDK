@@ -29,14 +29,15 @@ public extern(D):
 			ScriptFunction ProcessTouch() { mixin(MGF!("mProcessTouch", "Function TribesGame.TrProj_ClientTracer.ProcessTouch")()); }
 		}
 	}
-	@property final auto ref ScriptClass m_InheritedClass() { mixin(MGPC!(ScriptClass, 816)()); }
+	@property final auto ref ScriptClass m_InheritedClass() { mixin(MGPC!("ScriptClass", 816)()); }
 final:
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	SoundCue GetExplosionSound(PhysicalMaterial HitMaterial, Actor HitActor)

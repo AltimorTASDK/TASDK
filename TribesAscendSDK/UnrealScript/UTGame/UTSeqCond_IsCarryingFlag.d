@@ -20,8 +20,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTGameObjective FlagBase() { mixin(MGPC!(UTGameObjective, 212)()); }
-		Actor Target() { mixin(MGPC!(Actor, 208)()); }
+		UTGameObjective FlagBase() { mixin(MGPC!("UTGameObjective", 212)()); }
+		Actor Target() { mixin(MGPC!("Actor", 208)()); }
 	}
 	final void Activated()
 	{

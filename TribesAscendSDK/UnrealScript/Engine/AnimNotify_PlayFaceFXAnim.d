@@ -24,11 +24,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float PlayFrequency() { mixin(MGPC!(float, 100)()); }
-			SoundCue SoundCueToPlay() { mixin(MGPC!(SoundCue, 92)()); }
-			ScriptString AnimName() { mixin(MGPC!(ScriptString, 80)()); }
-			ScriptString GroupName() { mixin(MGPC!(ScriptString, 68)()); }
-			FaceFXAnimSet FaceFXAnimSetRef() { mixin(MGPC!(FaceFXAnimSet, 64)()); }
+			float PlayFrequency() { mixin(MGPC!("float", 100)()); }
+			SoundCue SoundCueToPlay() { mixin(MGPC!("SoundCue", 92)()); }
+			ScriptString AnimName() { mixin(MGPC!("ScriptString", 80)()); }
+			ScriptString GroupName() { mixin(MGPC!("ScriptString", 68)()); }
+			FaceFXAnimSet FaceFXAnimSetRef() { mixin(MGPC!("FaceFXAnimSet", 64)()); }
 		}
 		bool bOverridePlayingAnim() { mixin(MGBPC!(96, 0x1)()); }
 		bool bOverridePlayingAnim(bool val) { mixin(MSBPC!(96, 0x1)()); }

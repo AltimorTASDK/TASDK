@@ -16,12 +16,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float WheelSteering() { mixin(MGPC!(float, 252)()); }
-			UObject.EAxis WheelSteeringAxis() { mixin(MGPC!(UObject.EAxis, 249)()); }
-			UObject.EAxis WheelRollAxis() { mixin(MGPC!(UObject.EAxis, 248)()); }
-			float WheelRoll() { mixin(MGPC!(float, 244)()); }
-			float WheelMaxRenderDisplacement() { mixin(MGPC!(float, 240)()); }
-			float WheelDisplacement() { mixin(MGPC!(float, 236)()); }
+			float WheelSteering() { mixin(MGPC!("float", 252)()); }
+			UObject.EAxis WheelSteeringAxis() { mixin(MGPC!("UObject.EAxis", 249)()); }
+			UObject.EAxis WheelRollAxis() { mixin(MGPC!("UObject.EAxis", 248)()); }
+			float WheelRoll() { mixin(MGPC!("float", 244)()); }
+			float WheelMaxRenderDisplacement() { mixin(MGPC!("float", 240)()); }
+			float WheelDisplacement() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bInvertWheelSteering() { mixin(MGBPC!(256, 0x2)()); }
 		bool bInvertWheelSteering(bool val) { mixin(MSBPC!(256, 0x2)()); }

@@ -87,14 +87,13 @@ final:
 		params[] = 0;
 		*cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr;
+		Record = *cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const FogVolumeDensityInfo.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in FogVolumeDensityInfo.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr = Record;
+		*cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr = cast(FogVolumeDensityInfo.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(FogVolumeDensityInfo.CheckpointRecord*)params.ptr;
 	}
 }

@@ -162,19 +162,21 @@ final:
 		StaticClass.ProcessEvent(Functions.HasLinkConnection, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	LocalPlayer GetPlayerOwner(int PlayerIndex)
+	LocalPlayer GetPlayerOwner(int* PlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)params.ptr = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerOwner, params.ptr, cast(void*)0);
 		return *cast(LocalPlayer*)&params[4];
 	}
-	UDKPlayerController GetUDKPlayerOwner(int PlayerIndex)
+	UDKPlayerController GetUDKPlayerOwner(int* PlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)params.ptr = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetUDKPlayerOwner, params.ptr, cast(void*)0);
 		return *cast(UDKPlayerController*)&params[4];
 	}
@@ -185,12 +187,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool IsLoggedIn(int ControllerId, bool bRequireOnlineLogin)
+	bool IsLoggedIn(int* ControllerId = null, bool* bRequireOnlineLogin = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = ControllerId;
-		*cast(bool*)&params[4] = bRequireOnlineLogin;
+		if (ControllerId !is null)
+			*cast(int*)params.ptr = *ControllerId;
+		if (bRequireOnlineLogin !is null)
+			*cast(bool*)&params[4] = *bRequireOnlineLogin;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLoggedIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -216,12 +220,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerControllerId, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	void ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
+	void ConsoleCommand(ScriptString Cmd, bool* bWriteToLog = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 }

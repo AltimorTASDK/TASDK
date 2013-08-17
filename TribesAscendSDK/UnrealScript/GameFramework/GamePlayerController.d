@@ -59,8 +59,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName CurrentSoundMode() { mixin(MGPC!(ScriptName, 1456)()); }
-			float AgentAwareRadius() { mixin(MGPC!(float, 1452)()); }
+			ScriptName CurrentSoundMode() { mixin(MGPC!("ScriptName", 1456)()); }
+			float AgentAwareRadius() { mixin(MGPC!("float", 1452)()); }
 		}
 		bool bIsWarmupPaused() { mixin(MGBPC!(1448, 0x4)()); }
 		bool bIsWarmupPaused(bool val) { mixin(MSBPC!(1448, 0x4)()); }
@@ -103,28 +103,34 @@ final:
 		*cast(ScriptName*)params.ptr = InSoundModeName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSoundMode, params.ptr, cast(void*)0);
 	}
-	static void ShowLoadingMovie(bool bShowMovie, bool bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, bool bOverridePreviousDelays)
+	static void ShowLoadingMovie(bool bShowMovie, bool* bPauseAfterHide = null, float* PauseDuration = null, float* KeepPlayingDuration = null, bool* bOverridePreviousDelays = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bShowMovie;
-		*cast(bool*)&params[4] = bPauseAfterHide;
-		*cast(float*)&params[8] = PauseDuration;
-		*cast(float*)&params[12] = KeepPlayingDuration;
-		*cast(bool*)&params[16] = bOverridePreviousDelays;
+		if (bPauseAfterHide !is null)
+			*cast(bool*)&params[4] = *bPauseAfterHide;
+		if (PauseDuration !is null)
+			*cast(float*)&params[8] = *PauseDuration;
+		if (KeepPlayingDuration !is null)
+			*cast(float*)&params[12] = *KeepPlayingDuration;
+		if (bOverridePreviousDelays !is null)
+			*cast(bool*)&params[16] = *bOverridePreviousDelays;
 		StaticClass.ProcessEvent(Functions.ShowLoadingMovie, params.ptr, cast(void*)0);
 	}
 	static void KeepPlayingLoadingMovie()
 	{
 		StaticClass.ProcessEvent(Functions.KeepPlayingLoadingMovie, cast(void*)0, cast(void*)0);
 	}
-	void ClientPlayMovie(ScriptString MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame)
+	void ClientPlayMovie(ScriptString MovieName, int* InStartOfRenderingMovieFrame = null, int* InEndOfRenderingMovieFrame = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MovieName;
-		*cast(int*)&params[12] = InStartOfRenderingMovieFrame;
-		*cast(int*)&params[16] = InEndOfRenderingMovieFrame;
+		if (InStartOfRenderingMovieFrame !is null)
+			*cast(int*)&params[12] = *InStartOfRenderingMovieFrame;
+		if (InEndOfRenderingMovieFrame !is null)
+			*cast(int*)&params[16] = *InEndOfRenderingMovieFrame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayMovie, params.ptr, cast(void*)0);
 	}
 	void ClientStopMovie(float DelayInSeconds, bool bAllowMovieToFinish, bool bForceStopNonSkippable, bool bForceStopLoadingMovie)
@@ -143,7 +149,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MovieName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentMovie, params.ptr, cast(void*)0);
-		*MovieName = *cast(ScriptString*)params.ptr;
+		MovieName = *cast(ScriptString*)params.ptr;
 	}
 	bool CanUnpauseWarmup()
 	{

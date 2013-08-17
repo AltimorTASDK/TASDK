@@ -15,8 +15,8 @@ public extern(D):
 	@property final static ActorFactoryApexClothing DefaultProperties() { mixin(MGDPC!(ActorFactoryApexClothing, "ActorFactoryApexClothing Engine.Default__ActorFactoryApexClothing")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ApexClothingAsset) ClothingAssets() { mixin(MGPC!(ScriptArray!(ApexClothingAsset), 108)()); }
-		PrimitiveComponent.RBCollisionChannelContainer ClothingRBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 124)()); }
-		PrimitiveComponent.ERBCollisionChannel ClothingRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 120)()); }
+		ScriptArray!(ApexClothingAsset) ClothingAssets() { mixin(MGPC!("ScriptArray!(ApexClothingAsset)", 108)()); }
+		PrimitiveComponent.RBCollisionChannelContainer ClothingRBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 124)()); }
+		PrimitiveComponent.ERBCollisionChannel ClothingRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 120)()); }
 	}
 }

@@ -48,11 +48,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIResourceDataProvider) RankedDataProviders() { mixin(MGPC!(ScriptArray!(UIResourceDataProvider), 140)()); }
-		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { mixin(MGPC!(ScriptArray!(UIResourceDataProvider), 152)()); }
-		ScriptClass ProviderClass() { mixin(MGPC!(ScriptClass, 136)()); }
-		ScriptString ProviderClassName() { mixin(MGPC!(ScriptString, 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
+		ScriptArray!(UIResourceDataProvider) RankedDataProviders() { mixin(MGPC!("ScriptArray!(UIResourceDataProvider)", 140)()); }
+		ScriptArray!(UIResourceDataProvider) UnRankedDataProviders() { mixin(MGPC!("ScriptArray!(UIResourceDataProvider)", 152)()); }
+		ScriptClass ProviderClass() { mixin(MGPC!("ScriptClass", 136)()); }
+		ScriptString ProviderClassName() { mixin(MGPC!("ScriptString", 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
 	}
 final:
 	int GetProviderCount(ScriptName ProviderTag)
@@ -70,7 +70,7 @@ final:
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptArray!(UIResourceDataProvider)*)&params[8] = out_Providers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetResourceProviders, params.ptr, cast(void*)0);
-		*out_Providers = *cast(ScriptArray!(UIResourceDataProvider)*)&params[8];
+		out_Providers = *cast(ScriptArray!(UIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool GetResourceProviderFields(ScriptName ProviderTag, ref ScriptArray!(ScriptName) ProviderFieldTags)
@@ -80,7 +80,7 @@ final:
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptArray!(ScriptName)*)&params[8] = ProviderFieldTags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetResourceProviderFields, params.ptr, cast(void*)0);
-		*ProviderFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
+		ProviderFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool GetProviderFieldValue(ScriptName ProviderTag, ScriptName SearchField, int ProviderIndex, ref UIRoot.UIProviderScriptFieldValue out_FieldValue)
@@ -92,18 +92,17 @@ final:
 		*cast(int*)&params[16] = ProviderIndex;
 		*cast(UIRoot.UIProviderScriptFieldValue*)&params[20] = out_FieldValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderFieldValue, params.ptr, cast(void*)0);
-		*out_FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[20];
+		out_FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[20];
 		return *cast(bool*)&params[104];
 	}
-	int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, ref const UIRoot.UIProviderScriptFieldValue ValueToSearchFor)
+	int FindProviderIndexByFieldValue(ScriptName ProviderTag, ScriptName SearchField, ref in UIRoot.UIProviderScriptFieldValue ValueToSearchFor)
 	{
 		ubyte params[104];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(ScriptName*)&params[8] = SearchField;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[16] = ValueToSearchFor;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[16] = cast(UIRoot.UIProviderScriptFieldValue)ValueToSearchFor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindProviderIndexByFieldValue, params.ptr, cast(void*)0);
-		*ValueToSearchFor = *cast(UIRoot.UIProviderScriptFieldValue*)&params[16];
 		return *cast(int*)&params[100];
 	}
 	bool GetPlaylistProvider(ScriptName ProviderTag, int ProviderIndex, ref UIResourceDataProvider out_Provider)
@@ -114,18 +113,20 @@ final:
 		*cast(int*)&params[8] = ProviderIndex;
 		*cast(UIResourceDataProvider*)&params[12] = out_Provider;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlaylistProvider, params.ptr, cast(void*)0);
-		*out_Provider = *cast(UIResourceDataProvider*)&params[12];
+		out_Provider = *cast(UIResourceDataProvider*)&params[12];
 		return *cast(bool*)&params[16];
 	}
-	static OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex)
+	static OnlinePlaylistProvider GetOnlinePlaylistProvider(ScriptName ProviderTag, int PlaylistId, int* ProviderIndex = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProviderTag;
 		*cast(int*)&params[8] = PlaylistId;
-		*cast(int*)&params[12] = ProviderIndex;
+		if (ProviderIndex !is null)
+			*cast(int*)&params[12] = *ProviderIndex;
 		StaticClass.ProcessEvent(Functions.GetOnlinePlaylistProvider, params.ptr, cast(void*)0);
-		*ProviderIndex = *cast(int*)&params[12];
+		if (ProviderIndex !is null)
+			*ProviderIndex = *cast(int*)&params[12];
 		return *cast(OnlinePlaylistProvider*)&params[16];
 	}
 }

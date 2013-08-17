@@ -30,11 +30,11 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) AffectedComponents() { mixin(MGPC!(ScriptArray!(
+void*) AffectedComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 100)()); }
+void*)", 100)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AffectingDominantLight'!
-			float DominantShadowFactor() { mixin(MGPC!(float, 92)()); }
+			float DominantShadowFactor() { mixin(MGPC!("float", 92)()); }
 		}
 		bool bTranslucencyShadowed() { mixin(MGBPC!(88, 0x10)()); }
 		bool bTranslucencyShadowed(bool val) { mixin(MSBPC!(88, 0x10)()); }

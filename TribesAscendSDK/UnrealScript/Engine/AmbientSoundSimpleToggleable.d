@@ -51,10 +51,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float FadeOutVolumeLevel() { mixin(MGPC!(float, 516)()); }
-			float FadeOutDuration() { mixin(MGPC!(float, 512)()); }
-			float FadeInVolumeLevel() { mixin(MGPC!(float, 508)()); }
-			float FadeInDuration() { mixin(MGPC!(float, 504)()); }
+			float FadeOutVolumeLevel() { mixin(MGPC!("float", 516)()); }
+			float FadeOutDuration() { mixin(MGPC!("float", 512)()); }
+			float FadeInVolumeLevel() { mixin(MGPC!("float", 508)()); }
+			float FadeInDuration() { mixin(MGPC!("float", 504)()); }
 		}
 		bool bIgnoreAutoPlay() { mixin(MGBPC!(500, 0x4)()); }
 		bool bIgnoreAutoPlay(bool val) { mixin(MSBPC!(500, 0x4)()); }
@@ -96,14 +96,13 @@ final:
 		params[] = 0;
 		*cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr;
+		Record = *cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const AmbientSoundSimpleToggleable.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in AmbientSoundSimpleToggleable.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr = Record;
+		*cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr = cast(AmbientSoundSimpleToggleable.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(AmbientSoundSimpleToggleable.CheckpointRecord*)params.ptr;
 	}
 }

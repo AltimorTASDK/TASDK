@@ -15,13 +15,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LastUpdateTime() { mixin(MGPC!(float, 268)()); }
-			float MaxTranslationPerSec() { mixin(MGPC!(float, 264)()); }
-			float ZDistFromParentBone() { mixin(MGPC!(float, 260)()); }
-			float XYDistFromParentBone() { mixin(MGPC!(float, 256)()); }
-			ScriptName ParentBone() { mixin(MGPC!(ScriptName, 244)()); }
-			float MaxDist() { mixin(MGPC!(float, 240)()); }
-			float DesiredGroundDist() { mixin(MGPC!(float, 236)()); }
+			float LastUpdateTime() { mixin(MGPC!("float", 268)()); }
+			float MaxTranslationPerSec() { mixin(MGPC!("float", 264)()); }
+			float ZDistFromParentBone() { mixin(MGPC!("float", 260)()); }
+			float XYDistFromParentBone() { mixin(MGPC!("float", 256)()); }
+			ScriptName ParentBone() { mixin(MGPC!("ScriptName", 244)()); }
+			float MaxDist() { mixin(MGPC!("float", 240)()); }
+			float DesiredGroundDist() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bOppositeFromParent() { mixin(MGBPC!(252, 0x1)()); }
 		bool bOppositeFromParent(bool val) { mixin(MSBPC!(252, 0x1)()); }

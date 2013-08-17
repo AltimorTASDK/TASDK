@@ -33,29 +33,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleSystem PS_DeathTrail() { mixin(MGPC!(ParticleSystem, 372)()); }
-			ParticleSystem PS_DeathOnBreak() { mixin(MGPC!(ParticleSystem, 368)()); }
-			Vector DeathScale() { mixin(MGPC!(Vector, 356)()); }
-			Vector DeathImpulseDir() { mixin(MGPC!(Vector, 344)()); }
-			StaticMesh DeathStaticMesh() { mixin(MGPC!(StaticMesh, 340)()); }
-			float DeathBoneScale() { mixin(MGPC!(float, 336)()); }
-			float DeathPercentToActuallySpawn() { mixin(MGPC!(float, 332)()); }
-			Vector BreakSpeed() { mixin(MGPC!(Vector, 320)()); }
-			float OwnerVehicleMaxHealth() { mixin(MGPC!(float, 316)()); }
-			float BreakTimer() { mixin(MGPC!(float, 312)()); }
-			ScriptName BrokenBone() { mixin(MGPC!(ScriptName, 304)()); }
-			ParticleSystem PS_DamageTrail() { mixin(MGPC!(ParticleSystem, 300)()); }
-			ParticleSystem PS_DamageOnBreak() { mixin(MGPC!(ParticleSystem, 296)()); }
-			Vector DamageScale() { mixin(MGPC!(Vector, 284)()); }
-			Vector DefaultBreakDir() { mixin(MGPC!(Vector, 272)()); }
-			float BreakTime() { mixin(MGPC!(float, 268)()); }
-			float BreakThreshold() { mixin(MGPC!(float, 264)()); }
-			StaticMesh BreakMesh() { mixin(MGPC!(StaticMesh, 260)()); }
-			float ActivationThreshold() { mixin(MGPC!(float, 256)()); }
-			int DamageMax() { mixin(MGPC!(int, 252)()); }
-			float DamageBoneScale() { mixin(MGPC!(float, 248)()); }
-			float HealthPerc() { mixin(MGPC!(float, 244)()); }
-			UDKVehicle OwnerVehicle() { mixin(MGPC!(UDKVehicle, 240)()); }
+			ParticleSystem PS_DeathTrail() { mixin(MGPC!("ParticleSystem", 372)()); }
+			ParticleSystem PS_DeathOnBreak() { mixin(MGPC!("ParticleSystem", 368)()); }
+			Vector DeathScale() { mixin(MGPC!("Vector", 356)()); }
+			Vector DeathImpulseDir() { mixin(MGPC!("Vector", 344)()); }
+			StaticMesh DeathStaticMesh() { mixin(MGPC!("StaticMesh", 340)()); }
+			float DeathBoneScale() { mixin(MGPC!("float", 336)()); }
+			float DeathPercentToActuallySpawn() { mixin(MGPC!("float", 332)()); }
+			Vector BreakSpeed() { mixin(MGPC!("Vector", 320)()); }
+			float OwnerVehicleMaxHealth() { mixin(MGPC!("float", 316)()); }
+			float BreakTimer() { mixin(MGPC!("float", 312)()); }
+			ScriptName BrokenBone() { mixin(MGPC!("ScriptName", 304)()); }
+			ParticleSystem PS_DamageTrail() { mixin(MGPC!("ParticleSystem", 300)()); }
+			ParticleSystem PS_DamageOnBreak() { mixin(MGPC!("ParticleSystem", 296)()); }
+			Vector DamageScale() { mixin(MGPC!("Vector", 284)()); }
+			Vector DefaultBreakDir() { mixin(MGPC!("Vector", 272)()); }
+			float BreakTime() { mixin(MGPC!("float", 268)()); }
+			float BreakThreshold() { mixin(MGPC!("float", 264)()); }
+			StaticMesh BreakMesh() { mixin(MGPC!("StaticMesh", 260)()); }
+			float ActivationThreshold() { mixin(MGPC!("float", 256)()); }
+			int DamageMax() { mixin(MGPC!("int", 252)()); }
+			float DamageBoneScale() { mixin(MGPC!("float", 248)()); }
+			float HealthPerc() { mixin(MGPC!("float", 244)()); }
+			UDKVehicle OwnerVehicle() { mixin(MGPC!("UDKVehicle", 240)()); }
 		}
 		bool bOnDeathUseForSecondaryExplosion() { mixin(MGBPC!(236, 0x80)()); }
 		bool bOnDeathUseForSecondaryExplosion(bool val) { mixin(MSBPC!(236, 0x80)()); }

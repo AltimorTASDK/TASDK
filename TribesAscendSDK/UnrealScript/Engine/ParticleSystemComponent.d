@@ -145,7 +145,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo")()); }
-		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { mixin(MGPS!(UObject.Map_Mirror, 0)()); }
+		@property final auto ref UObject.Map_Mirror EmitterInstanceMBInfoMap() { mixin(MGPS!("UObject.Map_Mirror", 0)()); }
 	}
 	struct ParticleSysParam
 	{
@@ -158,12 +158,12 @@ public extern(D):
 			// WARNING: Property 'Material' has the same name as a defined type!
 			// WARNING: Property 'Actor' has the same name as a defined type!
 			// WARNING: Property 'Color' has the same name as a defined type!
-			Vector Vector_Low() { mixin(MGPS!(Vector, 32)()); }
+			Vector Vector_Low() { mixin(MGPS!("Vector", 32)()); }
 			// WARNING: Property 'Vector' has the same name as a defined type!
-			float Scalar_Low() { mixin(MGPS!(float, 16)()); }
-			float Scalar() { mixin(MGPS!(float, 12)()); }
-			ParticleSystemComponent.EParticleSysParamType ParamType() { mixin(MGPS!(ParticleSystemComponent.EParticleSysParamType, 8)()); }
-			ScriptName Name() { mixin(MGPS!(ScriptName, 0)()); }
+			float Scalar_Low() { mixin(MGPS!("float", 16)()); }
+			float Scalar() { mixin(MGPS!("float", 12)()); }
+			ParticleSystemComponent.EParticleSysParamType ParamType() { mixin(MGPS!("ParticleSystemComponent.EParticleSysParamType", 8)()); }
+			ScriptName Name() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct ParticleEventData
@@ -174,12 +174,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
-			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			float EmitterTime() { mixin(MGPS!(float, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 40)()); }
+			Vector Direction() { mixin(MGPS!("Vector", 28)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			float EmitterTime() { mixin(MGPS!("float", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct ParticleEventSpawnData
@@ -190,12 +190,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventSpawnData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
-			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			float EmitterTime() { mixin(MGPS!(float, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 40)()); }
+			Vector Direction() { mixin(MGPS!("Vector", 28)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			float EmitterTime() { mixin(MGPS!("float", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct ParticleEventDeathData
@@ -206,14 +206,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventDeathData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
-			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			float EmitterTime() { mixin(MGPS!(float, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 40)()); }
+			Vector Direction() { mixin(MGPS!("Vector", 28)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			float EmitterTime() { mixin(MGPS!("float", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
-		@property final auto ref float ParticleTime() { mixin(MGPS!(float, 52)()); }
+		@property final auto ref float ParticleTime() { mixin(MGPS!("float", 52)()); }
 	}
 	struct ParticleEventCollideData
 	{
@@ -223,20 +223,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventCollideData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
-			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			float EmitterTime() { mixin(MGPS!(float, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 40)()); }
+			Vector Direction() { mixin(MGPS!("Vector", 28)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			float EmitterTime() { mixin(MGPS!("float", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
 		@property final auto ref
 		{
-			ScriptName BoneName() { mixin(MGPS!(ScriptName, 76)()); }
-			int Item() { mixin(MGPS!(int, 72)()); }
-			float Time() { mixin(MGPS!(float, 68)()); }
-			Vector Normal() { mixin(MGPS!(Vector, 56)()); }
-			float ParticleTime() { mixin(MGPS!(float, 52)()); }
+			ScriptName BoneName() { mixin(MGPS!("ScriptName", 76)()); }
+			int Item() { mixin(MGPS!("int", 72)()); }
+			float Time() { mixin(MGPS!("float", 68)()); }
+			Vector Normal() { mixin(MGPS!("Vector", 56)()); }
+			float ParticleTime() { mixin(MGPS!("float", 52)()); }
 		}
 	}
 	struct ParticleEventKismetData
@@ -247,16 +247,16 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEventKismetData")()); }
 		@property final auto ref
 		{
-			Vector Velocity() { mixin(MGPS!(Vector, 40)()); }
-			Vector Direction() { mixin(MGPS!(Vector, 28)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			float EmitterTime() { mixin(MGPS!(float, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 40)()); }
+			Vector Direction() { mixin(MGPS!("Vector", 28)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			float EmitterTime() { mixin(MGPS!("float", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
 		@property final
 		{
-			@property final auto ref Vector Normal() { mixin(MGPS!(Vector, 56)()); }
+			@property final auto ref Vector Normal() { mixin(MGPS!("Vector", 56)()); }
 			bool UsePSysCompLocation() { mixin(MGBPS!(52, 0x1)()); }
 			bool UsePSysCompLocation(bool val) { mixin(MSBPS!(52, 0x1)()); }
 		}
@@ -267,7 +267,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemComponent.ParticleEmitterInstanceMotionBlurInfo")()); }
-		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { mixin(MGPS!(UObject.Map_Mirror, 0)()); }
+		@property final auto ref UObject.Map_Mirror ParticleMBInfoMap() { mixin(MGPS!("UObject.Map_Mirror", 0)()); }
 	}
 	struct ParticleEmitterInstance
 	{
@@ -281,45 +281,45 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnSystemFinished__Delegate'!
-			ParticleSystem Template() { mixin(MGPC!(ParticleSystem, 488)()); }
-			ScriptClass LightEnvironmentClass() { mixin(MGPC!(ScriptClass, 492)()); }
-			ScriptArray!(UObject.Pointer) EmitterInstances() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 496)()); }
+			ParticleSystem Template() { mixin(MGPC!("ParticleSystem", 488)()); }
+			ScriptClass LightEnvironmentClass() { mixin(MGPC!("ScriptClass", 492)()); }
+			ScriptArray!(UObject.Pointer) EmitterInstances() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 496)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SMComponents() { mixin(MGPC!(ScriptArray!(
+void*) SMComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 508)()); }
-			ScriptArray!(MaterialInterface) SMMaterialInterfaces() { mixin(MGPC!(ScriptArray!(MaterialInterface), 520)()); }
+void*)", 508)()); }
+			ScriptArray!(MaterialInterface) SMMaterialInterfaces() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 520)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SkelMeshComponents() { mixin(MGPC!(ScriptArray!(
+void*) SkelMeshComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 532)()); }
-			ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo), 544)()); }
-			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleSysParam), 560)()); }
-			Vector OldPosition() { mixin(MGPC!(Vector, 572)()); }
-			Vector PartSysVelocity() { mixin(MGPC!(Vector, 584)()); }
-			float WarmupTime() { mixin(MGPC!(float, 596)()); }
-			int LODLevel() { mixin(MGPC!(int, 600)()); }
-			float SecondsBeforeInactive() { mixin(MGPC!(float, 604)()); }
-			float TimeSinceLastForceUpdateTransform() { mixin(MGPC!(float, 608)()); }
-			float MaxTimeBeforeForceUpdateTransform() { mixin(MGPC!(float, 612)()); }
-			int EditorLODLevel() { mixin(MGPC!(int, 616)()); }
-			float AccumTickTime() { mixin(MGPC!(float, 620)()); }
-			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!(ParticleSystem.ParticleSystemLODMethod, 624)()); }
-			ParticleSystemComponent.ParticleReplayState ReplayState() { mixin(MGPC!(ParticleSystemComponent.ParticleReplayState, 625)()); }
-			ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { mixin(MGPC!(ScriptArray!(PrimitiveComponent.MaterialViewRelevance), 628)()); }
-			ScriptArray!(ParticleSystemReplay) ReplayClips() { mixin(MGPC!(ScriptArray!(ParticleSystemReplay), 640)()); }
-			int ReplayClipIDNumber() { mixin(MGPC!(int, 652)()); }
-			int ReplayFrameIndex() { mixin(MGPC!(int, 656)()); }
-			float AccumLODDistanceCheckTime() { mixin(MGPC!(float, 660)()); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData), 664)()); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventDeathData), 676)()); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventCollideData), 688)()); }
-			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleEventKismetData), 700)()); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 712)()); }
-			float CustomTimeDilation() { mixin(MGPC!(float, 716)()); }
-			float EmitterDelay() { mixin(MGPC!(float, 720)()); }
+void*)", 532)()); }
+			ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo) ViewMBInfoArray() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ViewParticleEmitterInstanceMotionBlurInfo)", 544)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleSysParam)", 560)()); }
+			Vector OldPosition() { mixin(MGPC!("Vector", 572)()); }
+			Vector PartSysVelocity() { mixin(MGPC!("Vector", 584)()); }
+			float WarmupTime() { mixin(MGPC!("float", 596)()); }
+			int LODLevel() { mixin(MGPC!("int", 600)()); }
+			float SecondsBeforeInactive() { mixin(MGPC!("float", 604)()); }
+			float TimeSinceLastForceUpdateTransform() { mixin(MGPC!("float", 608)()); }
+			float MaxTimeBeforeForceUpdateTransform() { mixin(MGPC!("float", 612)()); }
+			int EditorLODLevel() { mixin(MGPC!("int", 616)()); }
+			float AccumTickTime() { mixin(MGPC!("float", 620)()); }
+			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!("ParticleSystem.ParticleSystemLODMethod", 624)()); }
+			ParticleSystemComponent.ParticleReplayState ReplayState() { mixin(MGPC!("ParticleSystemComponent.ParticleReplayState", 625)()); }
+			ScriptArray!(PrimitiveComponent.MaterialViewRelevance) CachedViewRelevanceFlags() { mixin(MGPC!("ScriptArray!(PrimitiveComponent.MaterialViewRelevance)", 628)()); }
+			ScriptArray!(ParticleSystemReplay) ReplayClips() { mixin(MGPC!("ScriptArray!(ParticleSystemReplay)", 640)()); }
+			int ReplayClipIDNumber() { mixin(MGPC!("int", 652)()); }
+			int ReplayFrameIndex() { mixin(MGPC!("int", 656)()); }
+			float AccumLODDistanceCheckTime() { mixin(MGPC!("float", 660)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData) SpawnEvents() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleEventSpawnData)", 664)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventDeathData) DeathEvents() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleEventDeathData)", 676)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventCollideData) CollisionEvents() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleEventCollideData)", 688)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleEventKismetData) KismetEvents() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleEventKismetData)", 700)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!("UObject.Pointer", 712)()); }
+			float CustomTimeDilation() { mixin(MGPC!("float", 716)()); }
+			float EmitterDelay() { mixin(MGPC!("float", 720)()); }
 		}
 		bool bAutoActivate() { mixin(MGBPC!(556, 0x1)()); }
 		bool bAutoActivate(bool val) { mixin(MSBPC!(556, 0x1)()); }
@@ -370,19 +370,21 @@ final:
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
-	void ActivateSystem(bool bFlagAsJustAttached)
+	void ActivateSystem(bool* bFlagAsJustAttached = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bFlagAsJustAttached;
+		if (bFlagAsJustAttached !is null)
+			*cast(bool*)params.ptr = *bFlagAsJustAttached;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateSystem, params.ptr, cast(void*)0);
 	}
-	void SetActive(bool bNowActive, bool bFlagAsJustAttached)
+	void SetActive(bool bNowActive, bool* bFlagAsJustAttached = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bNowActive;
-		*cast(bool*)&params[4] = bFlagAsJustAttached;
+		if (bFlagAsJustAttached !is null)
+			*cast(bool*)&params[4] = *bFlagAsJustAttached;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetActive, params.ptr, cast(void*)0);
 	}
 	void OnSystemFinished(
@@ -538,13 +540,12 @@ void**)params.ptr = PSystem;
 		*cast(int*)&params[8] = TargetIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBeamTargetStrength, params.ptr, cast(void*)0);
 	}
-	int DetermineLODLevelForLocation(ref const Vector EffectLocation)
+	int DetermineLODLevelForLocation(ref in Vector EffectLocation)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Vector*)params.ptr = EffectLocation;
+		*cast(Vector*)params.ptr = cast(Vector)EffectLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetermineLODLevelForLocation, params.ptr, cast(void*)0);
-		*EffectLocation = *cast(Vector*)params.ptr;
 		return *cast(int*)&params[12];
 	}
 	void SetLODLevel(int InLODLevel)
@@ -600,16 +601,14 @@ void**)params.ptr = PSystem;
 		*cast(Vector*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameter, params.ptr, cast(void*)0);
 	}
-	void SetVectorRandParameter(ScriptName ParameterName, ref const Vector Param, ref const Vector ParamLow)
+	void SetVectorRandParameter(ScriptName ParameterName, ref in Vector Param, ref in Vector ParamLow)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(Vector*)&params[8] = Param;
-		*cast(Vector*)&params[20] = ParamLow;
+		*cast(Vector*)&params[8] = cast(Vector)Param;
+		*cast(Vector*)&params[20] = cast(Vector)ParamLow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorRandParameter, params.ptr, cast(void*)0);
-		*Param = *cast(Vector*)&params[8];
-		*ParamLow = *cast(Vector*)&params[20];
 	}
 	void SetColorParameter(ScriptName ParameterName, UObject.Color Param)
 	{
@@ -635,62 +634,63 @@ void**)params.ptr = PSystem;
 		*cast(MaterialInterface*)&params[8] = Param;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMaterialParameter, params.ptr, cast(void*)0);
 	}
-	bool GetFloatParameter(const ScriptName InName, ref float OutFloat)
+	bool GetFloatParameter(in ScriptName InName, ref float OutFloat)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InName;
 		*cast(float*)&params[8] = OutFloat;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatParameter, params.ptr, cast(void*)0);
-		*OutFloat = *cast(float*)&params[8];
+		OutFloat = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetVectorParameter(const ScriptName InName, ref Vector OutVector)
+	bool GetVectorParameter(in ScriptName InName, ref Vector OutVector)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InName;
 		*cast(Vector*)&params[8] = OutVector;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVectorParameter, params.ptr, cast(void*)0);
-		*OutVector = *cast(Vector*)&params[8];
+		OutVector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	bool GetColorParameter(const ScriptName InName, ref UObject.Color OutColor)
+	bool GetColorParameter(in ScriptName InName, ref UObject.Color OutColor)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InName;
 		*cast(UObject.Color*)&params[8] = OutColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetColorParameter, params.ptr, cast(void*)0);
-		*OutColor = *cast(UObject.Color*)&params[8];
+		OutColor = *cast(UObject.Color*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetActorParameter(const ScriptName InName, ref Actor OutActor)
+	bool GetActorParameter(in ScriptName InName, ref Actor OutActor)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InName;
 		*cast(Actor*)&params[8] = OutActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorParameter, params.ptr, cast(void*)0);
-		*OutActor = *cast(Actor*)&params[8];
+		OutActor = *cast(Actor*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool GetMaterialParameter(const ScriptName InName, ref MaterialInterface OutMaterial)
+	bool GetMaterialParameter(in ScriptName InName, ref MaterialInterface OutMaterial)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InName;
 		*cast(MaterialInterface*)&params[8] = OutMaterial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaterialParameter, params.ptr, cast(void*)0);
-		*OutMaterial = *cast(MaterialInterface*)&params[8];
+		OutMaterial = *cast(MaterialInterface*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	void ClearParameter(ScriptName ParameterName, ParticleSystemComponent.EParticleSysParamType ParameterType)
+	void ClearParameter(ScriptName ParameterName, ParticleSystemComponent.EParticleSysParamType* ParameterType = null)
 	{
 		ubyte params[9];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(ParticleSystemComponent.EParticleSysParamType*)&params[8] = ParameterType;
+		if (ParameterType !is null)
+			*cast(ParticleSystemComponent.EParticleSysParamType*)&params[8] = *ParameterType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearParameter, params.ptr, cast(void*)0);
 	}
 	void ResetToDefaults()

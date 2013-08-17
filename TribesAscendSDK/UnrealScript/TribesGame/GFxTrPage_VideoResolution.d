@@ -34,7 +34,7 @@ public extern(D):
 			ScriptFunction RevertSetting() { mixin(MGF!("mRevertSetting", "Function TribesGame.GFxTrPage_VideoResolution.RevertSetting")()); }
 		}
 	}
-	@property final auto ref int CurrResolution() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int CurrResolution() { mixin(MGPC!("int", 356)()); }
 final:
 	void SpecialAction(GFxTrAction Action)
 	{

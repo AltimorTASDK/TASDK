@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackVectorBase DefaultProperties() { mixin(MGDPC!(InterpTrackVectorBase, "InterpTrackVectorBase Engine.Default__InterpTrackVectorBase")()); }
 	@property final auto ref
 	{
-		float CurveTension() { mixin(MGPC!(float, 144)()); }
-		UObject.InterpCurveVector VectorTrack() { mixin(MGPC!(UObject.InterpCurveVector, 128)()); }
+		float CurveTension() { mixin(MGPC!("float", 144)()); }
+		UObject.InterpCurveVector VectorTrack() { mixin(MGPC!("UObject.InterpCurveVector", 128)()); }
 	}
 }

@@ -30,7 +30,7 @@ public extern(D):
 		private static __gshared ScriptState mStaticClass;
 		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State TribesGame.TrVehicleWeapon_BeowulfGunner.WeaponFullAutoFiring")()); }
 	}
-	@property final auto ref TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 1804)()); }
+	@property final auto ref TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 1804)()); }
 final:
 	void InitVehicleGun()
 	{

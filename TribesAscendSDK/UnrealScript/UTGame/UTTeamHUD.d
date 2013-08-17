@@ -38,14 +38,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TeamScaleModifier() { mixin(MGPC!(float, 2736)()); }
-			float OldRightScore() { mixin(MGPC!(float, 2732)()); }
-			float OldLeftScore() { mixin(MGPC!(float, 2728)()); }
-			float RightTeamPulseTime() { mixin(MGPC!(float, 2724)()); }
-			float LeftTeamPulseTime() { mixin(MGPC!(float, 2720)()); }
-			UObject.Vector2D TeamIconCenterPoints() { mixin(MGPC!(UObject.Vector2D, 2704)()); }
-			int ScoreTransitionTime() { mixin(MGPC!(int, 2696)()); }
-			int LastScores() { mixin(MGPC!(int, 2688)()); }
+			float TeamScaleModifier() { mixin(MGPC!("float", 2736)()); }
+			float OldRightScore() { mixin(MGPC!("float", 2732)()); }
+			float OldLeftScore() { mixin(MGPC!("float", 2728)()); }
+			float RightTeamPulseTime() { mixin(MGPC!("float", 2724)()); }
+			float LeftTeamPulseTime() { mixin(MGPC!("float", 2720)()); }
+			UObject.Vector2D TeamIconCenterPoints() { mixin(MGPC!("UObject.Vector2D", 2704)()); }
+			int ScoreTransitionTime() { mixin(MGPC!("int", 2696)()); }
+			int LastScores() { mixin(MGPC!("int", 2688)()); }
 		}
 		bool bShowDirectional() { mixin(MGBPC!(2684, 0x1)()); }
 		bool bShowDirectional(bool val) { mixin(MSBPC!(2684, 0x1)()); }
@@ -75,13 +75,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDirectionalDest, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
-	void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float DestScale)
+	void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float* DestScale = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = TeamIndex;
 		*cast(UObject.Vector2D*)&params[4] = pos;
-		*cast(float*)&params[12] = DestScale;
+		if (DestScale !is null)
+			*cast(float*)&params[12] = *DestScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayTeamLogos, params.ptr, cast(void*)0);
 	}
 	void DisplayDirectionIndicator(ubyte TeamIndex, UObject.Vector2D pos, Actor destActor, float DestScale)

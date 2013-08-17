@@ -81,74 +81,74 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.MobileInputZone.TextureUVs")()); }
 		@property final auto ref
 		{
-			float U() { mixin(MGPS!(float, 0)()); }
-			float V() { mixin(MGPS!(float, 4)()); }
-			float UL() { mixin(MGPS!(float, 8)()); }
-			float VL() { mixin(MGPS!(float, 12)()); }
+			float U() { mixin(MGPS!("float", 0)()); }
+			float V() { mixin(MGPS!("float", 4)()); }
+			float UL() { mixin(MGPS!("float", 8)()); }
+			float VL() { mixin(MGPS!("float", 12)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color RenderColor() { mixin(MGPC!(UObject.Color, 180)()); }
-			float AnimatingFadeOpacity() { mixin(MGPC!(float, 376)()); }
+			UObject.Color RenderColor() { mixin(MGPC!("UObject.Color", 180)()); }
+			float AnimatingFadeOpacity() { mixin(MGPC!("float", 376)()); }
 			// WARNING: Property 'State' has the same name as a defined type!
-			float InactiveAlpha() { mixin(MGPC!(float, 184)()); }
-			float TransitionTime() { mixin(MGPC!(float, 384)()); }
-			float ActivateTime() { mixin(MGPC!(float, 172)()); }
-			float DeactivateTime() { mixin(MGPC!(float, 176)()); }
+			float InactiveAlpha() { mixin(MGPC!("float", 184)()); }
+			float TransitionTime() { mixin(MGPC!("float", 384)()); }
+			float ActivateTime() { mixin(MGPC!("float", 172)()); }
+			float DeactivateTime() { mixin(MGPC!("float", 176)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPreDrawZone__Delegate'!
-			MobileInputZone.EZoneType Type() { mixin(MGPC!(MobileInputZone.EZoneType, 60)()); }
+			MobileInputZone.EZoneType Type() { mixin(MGPC!("MobileInputZone.EZoneType", 60)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPostDrawZone__Delegate'!
-			float X() { mixin(MGPC!(float, 132)()); }
-			float Y() { mixin(MGPC!(float, 136)()); }
-			float SizeX() { mixin(MGPC!(float, 140)()); }
-			float SizeY() { mixin(MGPC!(float, 144)()); }
-			Texture2D OverrideTexture1() { mixin(MGPC!(Texture2D, 196)()); }
-			MobileInputZone.TextureUVs OverrideUVs1() { mixin(MGPC!(MobileInputZone.TextureUVs, 212)()); }
-			Texture2D OverrideTexture2() { mixin(MGPC!(Texture2D, 228)()); }
-			MobileInputZone.TextureUVs OverrideUVs2() { mixin(MGPC!(MobileInputZone.TextureUVs, 244)()); }
-			float ActiveSizeX() { mixin(MGPC!(float, 148)()); }
-			float ActiveSizeY() { mixin(MGPC!(float, 152)()); }
-			ScriptString Caption() { mixin(MGPC!(ScriptString, 64)()); }
-			float CaptionXAdjustment() { mixin(MGPC!(float, 188)()); }
-			float CaptionYAdjustment() { mixin(MGPC!(float, 192)()); }
-			UObject.Vector2D CurrentCenter() { mixin(MGPC!(UObject.Vector2D, 276)()); }
-			UObject.Vector2D CurrentLocation() { mixin(MGPC!(UObject.Vector2D, 268)()); }
-			MobileInputZone.EZoneSlideType SlideType() { mixin(MGPC!(MobileInputZone.EZoneSlideType, 62)()); }
-			ScriptArray!(SeqEvent_MobileZoneBase) MobileSeqEventHandlers() { mixin(MGPC!(ScriptArray!(SeqEvent_MobileZoneBase), 396)()); }
+			float X() { mixin(MGPC!("float", 132)()); }
+			float Y() { mixin(MGPC!("float", 136)()); }
+			float SizeX() { mixin(MGPC!("float", 140)()); }
+			float SizeY() { mixin(MGPC!("float", 144)()); }
+			Texture2D OverrideTexture1() { mixin(MGPC!("Texture2D", 196)()); }
+			MobileInputZone.TextureUVs OverrideUVs1() { mixin(MGPC!("MobileInputZone.TextureUVs", 212)()); }
+			Texture2D OverrideTexture2() { mixin(MGPC!("Texture2D", 228)()); }
+			MobileInputZone.TextureUVs OverrideUVs2() { mixin(MGPC!("MobileInputZone.TextureUVs", 244)()); }
+			float ActiveSizeX() { mixin(MGPC!("float", 148)()); }
+			float ActiveSizeY() { mixin(MGPC!("float", 152)()); }
+			ScriptString Caption() { mixin(MGPC!("ScriptString", 64)()); }
+			float CaptionXAdjustment() { mixin(MGPC!("float", 188)()); }
+			float CaptionYAdjustment() { mixin(MGPC!("float", 192)()); }
+			UObject.Vector2D CurrentCenter() { mixin(MGPC!("UObject.Vector2D", 276)()); }
+			UObject.Vector2D CurrentLocation() { mixin(MGPC!("UObject.Vector2D", 268)()); }
+			MobileInputZone.EZoneSlideType SlideType() { mixin(MGPC!("MobileInputZone.EZoneSlideType", 62)()); }
+			ScriptArray!(SeqEvent_MobileZoneBase) MobileSeqEventHandlers() { mixin(MGPC!("ScriptArray!(SeqEvent_MobileZoneBase)", 396)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnProcessSlide__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDoubleTapDelegate__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTapDelegate__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnProcessInputDelegate__Delegate'!
-			float LastWentActiveTime() { mixin(MGPC!(float, 420)()); }
-			float TotalActiveTime() { mixin(MGPC!(float, 416)()); }
-			UObject.Vector2D LastAxisValues() { mixin(MGPC!(UObject.Vector2D, 408)()); }
-			UObject.Vector2D EscapeVelocity() { mixin(MGPC!(UObject.Vector2D, 388)()); }
-			MobilePlayerInput InputOwner() { mixin(MGPC!(MobilePlayerInput, 380)()); }
-			float TimeSinceLastTapRepeat() { mixin(MGPC!(float, 372)()); }
-			float LastTouchTime() { mixin(MGPC!(float, 368)()); }
-			int PreviousLocationCount() { mixin(MGPC!(int, 364)()); }
-			float PreviousMoveDeltaTimes() { mixin(MGPC!(float, 340)()); }
-			UObject.Vector2D PreviousLocations() { mixin(MGPC!(UObject.Vector2D, 292)()); }
-			UObject.Vector2D InitialCenter() { mixin(MGPC!(UObject.Vector2D, 284)()); }
-			UObject.Vector2D InitialLocation() { mixin(MGPC!(UObject.Vector2D, 260)()); }
-			ScriptString OverrideTexture2Name() { mixin(MGPC!(ScriptString, 232)()); }
-			ScriptString OverrideTexture1Name() { mixin(MGPC!(ScriptString, 200)()); }
-			float TapDistanceConstraint() { mixin(MGPC!(float, 168)()); }
-			float ResetCenterAfterInactivityTime() { mixin(MGPC!(float, 164)()); }
-			float Border() { mixin(MGPC!(float, 160)()); }
-			float AuthoredGlobalScale() { mixin(MGPC!(float, 156)()); }
-			float EscapeVelocityStrength() { mixin(MGPC!(float, 124)()); }
-			float Smoothing() { mixin(MGPC!(float, 120)()); }
-			float Acceleration() { mixin(MGPC!(float, 116)()); }
-			float HorizMultiplier() { mixin(MGPC!(float, 112)()); }
-			float VertMultiplier() { mixin(MGPC!(float, 108)()); }
-			ScriptName DoubleTapInputKey() { mixin(MGPC!(ScriptName, 100)()); }
-			ScriptName TapInputKey() { mixin(MGPC!(ScriptName, 92)()); }
-			ScriptName HorizontalInputKey() { mixin(MGPC!(ScriptName, 84)()); }
-			ScriptName InputKey() { mixin(MGPC!(ScriptName, 76)()); }
+			float LastWentActiveTime() { mixin(MGPC!("float", 420)()); }
+			float TotalActiveTime() { mixin(MGPC!("float", 416)()); }
+			UObject.Vector2D LastAxisValues() { mixin(MGPC!("UObject.Vector2D", 408)()); }
+			UObject.Vector2D EscapeVelocity() { mixin(MGPC!("UObject.Vector2D", 388)()); }
+			MobilePlayerInput InputOwner() { mixin(MGPC!("MobilePlayerInput", 380)()); }
+			float TimeSinceLastTapRepeat() { mixin(MGPC!("float", 372)()); }
+			float LastTouchTime() { mixin(MGPC!("float", 368)()); }
+			int PreviousLocationCount() { mixin(MGPC!("int", 364)()); }
+			float PreviousMoveDeltaTimes() { mixin(MGPC!("float", 340)()); }
+			UObject.Vector2D PreviousLocations() { mixin(MGPC!("UObject.Vector2D", 292)()); }
+			UObject.Vector2D InitialCenter() { mixin(MGPC!("UObject.Vector2D", 284)()); }
+			UObject.Vector2D InitialLocation() { mixin(MGPC!("UObject.Vector2D", 260)()); }
+			ScriptString OverrideTexture2Name() { mixin(MGPC!("ScriptString", 232)()); }
+			ScriptString OverrideTexture1Name() { mixin(MGPC!("ScriptString", 200)()); }
+			float TapDistanceConstraint() { mixin(MGPC!("float", 168)()); }
+			float ResetCenterAfterInactivityTime() { mixin(MGPC!("float", 164)()); }
+			float Border() { mixin(MGPC!("float", 160)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!("float", 156)()); }
+			float EscapeVelocityStrength() { mixin(MGPC!("float", 124)()); }
+			float Smoothing() { mixin(MGPC!("float", 120)()); }
+			float Acceleration() { mixin(MGPC!("float", 116)()); }
+			float HorizMultiplier() { mixin(MGPC!("float", 112)()); }
+			float VertMultiplier() { mixin(MGPC!("float", 108)()); }
+			ScriptName DoubleTapInputKey() { mixin(MGPC!("ScriptName", 100)()); }
+			ScriptName TapInputKey() { mixin(MGPC!("ScriptName", 92)()); }
+			ScriptName HorizontalInputKey() { mixin(MGPC!("ScriptName", 84)()); }
+			ScriptName InputKey() { mixin(MGPC!("ScriptName", 76)()); }
 		}
 		bool bIsInvisible() { mixin(MGBPC!(128, 0x200)()); }
 		bool bIsInvisible(bool val) { mixin(MSBPC!(128, 0x200)()); }

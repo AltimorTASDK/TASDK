@@ -70,11 +70,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverReplicator.CoverReplicationInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ubyte) SlotsEnabled() { mixin(MGPS!(ScriptArray!(ubyte), 4)()); }
-			ScriptArray!(ubyte) SlotsDisabled() { mixin(MGPS!(ScriptArray!(ubyte), 16)()); }
-			ScriptArray!(ubyte) SlotsAdjusted() { mixin(MGPS!(ScriptArray!(ubyte), 28)()); }
-			ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { mixin(MGPS!(ScriptArray!(CoverReplicator.ManualCoverTypeInfo), 40)()); }
-			CoverLink Link() { mixin(MGPS!(CoverLink, 0)()); }
+			ScriptArray!(ubyte) SlotsEnabled() { mixin(MGPS!("ScriptArray!(ubyte)", 4)()); }
+			ScriptArray!(ubyte) SlotsDisabled() { mixin(MGPS!("ScriptArray!(ubyte)", 16)()); }
+			ScriptArray!(ubyte) SlotsAdjusted() { mixin(MGPS!("ScriptArray!(ubyte)", 28)()); }
+			ScriptArray!(CoverReplicator.ManualCoverTypeInfo) SlotsCoverTypeChanged() { mixin(MGPS!("ScriptArray!(CoverReplicator.ManualCoverTypeInfo)", 40)()); }
+			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
 		}
 	}
 	struct ManualCoverTypeInfo
@@ -85,11 +85,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverReplicator.ManualCoverTypeInfo")()); }
 		@property final auto ref
 		{
-			CoverLink.ECoverType ManualCoverType() { mixin(MGPS!(CoverLink.ECoverType, 1)()); }
-			ubyte SlotIndex() { mixin(MGPS!(ubyte, 0)()); }
+			CoverLink.ECoverType ManualCoverType() { mixin(MGPS!("CoverLink.ECoverType", 1)()); }
+			ubyte SlotIndex() { mixin(MGPS!("ubyte", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { mixin(MGPC!(ScriptArray!(CoverReplicator.CoverReplicationInfo), 476)()); }
+	@property final auto ref ScriptArray!(CoverReplicator.CoverReplicationInfo) CoverReplicationData() { mixin(MGPC!("ScriptArray!(CoverReplicator.CoverReplicationInfo)", 476)()); }
 final:
 	void PurgeOldEntries()
 	{
@@ -131,14 +131,13 @@ final:
 		*cast(bool*)&params[72] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceiveInitialCoverReplicationInfo, params.ptr, cast(void*)0);
 	}
-	void NotifyEnabledSlots(CoverLink Link, ref const ScriptArray!(int) SlotIndices)
+	void NotifyEnabledSlots(CoverLink Link, ref in ScriptArray!(int) SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
-		*cast(ScriptArray!(int)*)&params[4] = SlotIndices;
+		*cast(ScriptArray!(int)*)&params[4] = cast(ScriptArray!(int))SlotIndices;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyEnabledSlots, params.ptr, cast(void*)0);
-		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
 	void ServerSendEnabledSlots(int Index)
 	{
@@ -158,14 +157,13 @@ final:
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceiveEnabledSlots, params.ptr, cast(void*)0);
 	}
-	void NotifyDisabledSlots(CoverLink Link, ref const ScriptArray!(int) SlotIndices)
+	void NotifyDisabledSlots(CoverLink Link, ref in ScriptArray!(int) SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
-		*cast(ScriptArray!(int)*)&params[4] = SlotIndices;
+		*cast(ScriptArray!(int)*)&params[4] = cast(ScriptArray!(int))SlotIndices;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyDisabledSlots, params.ptr, cast(void*)0);
-		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
 	void ServerSendDisabledSlots(int Index)
 	{
@@ -185,14 +183,13 @@ final:
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceiveDisabledSlots, params.ptr, cast(void*)0);
 	}
-	void NotifyAutoAdjustSlots(CoverLink Link, ref const ScriptArray!(int) SlotIndices)
+	void NotifyAutoAdjustSlots(CoverLink Link, ref in ScriptArray!(int) SlotIndices)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
-		*cast(ScriptArray!(int)*)&params[4] = SlotIndices;
+		*cast(ScriptArray!(int)*)&params[4] = cast(ScriptArray!(int))SlotIndices;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyAutoAdjustSlots, params.ptr, cast(void*)0);
-		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
 	void ServerSendAdjustedSlots(int Index)
 	{
@@ -212,15 +209,14 @@ final:
 		*cast(bool*)&params[20] = bDone;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReceiveAdjustedSlots, params.ptr, cast(void*)0);
 	}
-	void NotifySetManualCoverTypeForSlots(CoverLink Link, ref const ScriptArray!(int) SlotIndices, CoverLink.ECoverType NewCoverType)
+	void NotifySetManualCoverTypeForSlots(CoverLink Link, ref in ScriptArray!(int) SlotIndices, CoverLink.ECoverType NewCoverType)
 	{
 		ubyte params[17];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
-		*cast(ScriptArray!(int)*)&params[4] = SlotIndices;
+		*cast(ScriptArray!(int)*)&params[4] = cast(ScriptArray!(int))SlotIndices;
 		*cast(CoverLink.ECoverType*)&params[16] = NewCoverType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifySetManualCoverTypeForSlots, params.ptr, cast(void*)0);
-		*SlotIndices = *cast(ScriptArray!(int)*)&params[4];
 	}
 	void ServerSendManualCoverTypeSlots(int Index)
 	{

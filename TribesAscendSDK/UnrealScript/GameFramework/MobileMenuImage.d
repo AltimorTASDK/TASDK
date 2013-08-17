@@ -28,10 +28,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor ImageColor() { mixin(MGPC!(UObject.LinearColor, 160)()); }
-		MobileMenuObject.UVCoords ImageUVs() { mixin(MGPC!(MobileMenuObject.UVCoords, 140)()); }
-		MobileMenuImage.MenuImageDrawStyle ImageDrawStyle() { mixin(MGPC!(MobileMenuImage.MenuImageDrawStyle, 136)()); }
-		Texture2D Image() { mixin(MGPC!(Texture2D, 132)()); }
+		UObject.LinearColor ImageColor() { mixin(MGPC!("UObject.LinearColor", 160)()); }
+		MobileMenuObject.UVCoords ImageUVs() { mixin(MGPC!("MobileMenuObject.UVCoords", 140)()); }
+		MobileMenuImage.MenuImageDrawStyle ImageDrawStyle() { mixin(MGPC!("MobileMenuImage.MenuImageDrawStyle", 136)()); }
+		Texture2D Image() { mixin(MGPC!("Texture2D", 132)()); }
 	}
 	final void RenderObject(Canvas pCanvas)
 	{

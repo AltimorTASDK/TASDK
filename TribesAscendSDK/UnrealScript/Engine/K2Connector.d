@@ -33,8 +33,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		K2Connector.EK2ConnectorType Type() { mixin(MGPC!(K2Connector.EK2ConnectorType, 76)()); }
-		ScriptString ConnName() { mixin(MGPC!(ScriptString, 64)()); }
-		K2NodeBase OwningNode() { mixin(MGPC!(K2NodeBase, 60)()); }
+		K2Connector.EK2ConnectorType Type() { mixin(MGPC!("K2Connector.EK2ConnectorType", 76)()); }
+		ScriptString ConnName() { mixin(MGPC!("ScriptString", 64)()); }
+		K2NodeBase OwningNode() { mixin(MGPC!("K2NodeBase", 60)()); }
 	}
 }

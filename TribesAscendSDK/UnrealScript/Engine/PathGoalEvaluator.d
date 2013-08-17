@@ -27,10 +27,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int CacheIdx() { mixin(MGPC!(int, 72)()); }
-		int MaxPathVisits() { mixin(MGPC!(int, 68)()); }
-		NavigationPoint GeneratedGoal() { mixin(MGPC!(NavigationPoint, 64)()); }
-		PathGoalEvaluator NextEvaluator() { mixin(MGPC!(PathGoalEvaluator, 60)()); }
+		int CacheIdx() { mixin(MGPC!("int", 72)()); }
+		int MaxPathVisits() { mixin(MGPC!("int", 68)()); }
+		NavigationPoint GeneratedGoal() { mixin(MGPC!("NavigationPoint", 64)()); }
+		PathGoalEvaluator NextEvaluator() { mixin(MGPC!("PathGoalEvaluator", 60)()); }
 	}
 final:
 	void Recycle()

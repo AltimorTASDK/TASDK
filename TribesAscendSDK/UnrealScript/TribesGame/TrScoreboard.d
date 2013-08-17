@@ -65,9 +65,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrScoreboard.TrScoreboardState")()); }
 		@property final auto ref
 		{
-			int DiamondSwordScore() { mixin(MGPS!(int, 8)()); }
-			int BloodEagleScore() { mixin(MGPS!(int, 4)()); }
-			int RemainingTime() { mixin(MGPS!(int, 0)()); }
+			int DiamondSwordScore() { mixin(MGPS!("int", 8)()); }
+			int BloodEagleScore() { mixin(MGPS!("int", 4)()); }
+			int RemainingTime() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct TrScoreSlot
@@ -78,36 +78,36 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrScoreboard.TrScoreSlot")()); }
 		@property final auto ref
 		{
-			int RankIcon() { mixin(MGPS!(int, 44)()); }
-			int Rank() { mixin(MGPS!(int, 40)()); }
-			int Ping() { mixin(MGPS!(int, 36)()); }
-			int Score() { mixin(MGPS!(int, 32)()); }
-			int Assists() { mixin(MGPS!(int, 28)()); }
-			int Kills() { mixin(MGPS!(int, 24)()); }
-			ScriptString ClassAbb() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 0)()); }
+			int RankIcon() { mixin(MGPS!("int", 44)()); }
+			int Rank() { mixin(MGPS!("int", 40)()); }
+			int Ping() { mixin(MGPS!("int", 36)()); }
+			int Score() { mixin(MGPS!("int", 32)()); }
+			int Assists() { mixin(MGPS!("int", 28)()); }
+			int Kills() { mixin(MGPS!("int", 24)()); }
+			ScriptString ClassAbb() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString PlayerName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 100)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 100)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSort__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AssistsSort__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__KillsSort__Delegate'!
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 1652)()); }
-			TrScoreboard.TrScoreboardState PreviousState() { mixin(MGPC!(TrScoreboard.TrScoreboardState, 1640)()); }
-			TrScoreboard.TrScoreSlot ScoreboardSlots() { mixin(MGPC!(TrScoreboard.TrScoreSlot, 104)()); }
-			int DSIndex() { mixin(MGPC!(int, 92)()); }
-			int BEIndex() { mixin(MGPC!(int, 88)()); }
-			int DSOffset() { mixin(MGPC!(int, 84)()); }
-			int PrevActiveSlot() { mixin(MGPC!(int, 80)()); }
-			int PrevDSSLots() { mixin(MGPC!(int, 76)()); }
-			int PrevBESlots() { mixin(MGPC!(int, 72)()); }
-			int DSSlots() { mixin(MGPC!(int, 68)()); }
-			int BESlots() { mixin(MGPC!(int, 64)()); }
-			int MAX_PLAYER_INDEX() { mixin(MGPC!(int, 60)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 1652)()); }
+			TrScoreboard.TrScoreboardState PreviousState() { mixin(MGPC!("TrScoreboard.TrScoreboardState", 1640)()); }
+			TrScoreboard.TrScoreSlot ScoreboardSlots() { mixin(MGPC!("TrScoreboard.TrScoreSlot", 104)()); }
+			int DSIndex() { mixin(MGPC!("int", 92)()); }
+			int BEIndex() { mixin(MGPC!("int", 88)()); }
+			int DSOffset() { mixin(MGPC!("int", 84)()); }
+			int PrevActiveSlot() { mixin(MGPC!("int", 80)()); }
+			int PrevDSSLots() { mixin(MGPC!("int", 76)()); }
+			int PrevBESlots() { mixin(MGPC!("int", 72)()); }
+			int DSSlots() { mixin(MGPC!("int", 68)()); }
+			int BESlots() { mixin(MGPC!("int", 64)()); }
+			int MAX_PLAYER_INDEX() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(96, 0x8)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(96, 0x8)()); }

@@ -21,8 +21,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		DMC_Prototype UtilityDMC() { mixin(MGPC!(DMC_Prototype, 96)()); }
-		ScriptClass CommandClass() { mixin(MGPC!(ScriptClass, 92)()); }
+		DMC_Prototype UtilityDMC() { mixin(MGPC!("DMC_Prototype", 96)()); }
+		ScriptClass CommandClass() { mixin(MGPC!("ScriptClass", 92)()); }
 	}
 	final AICommandNodeBase SelectBestChild(AIController InAI, ref AITree.AITreeHandle Handle)
 	{
@@ -31,7 +31,7 @@ public extern(D):
 		*cast(AIController*)params.ptr = InAI;
 		*cast(AITree.AITreeHandle*)&params[4] = Handle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SelectBestChild, params.ptr, cast(void*)0);
-		*Handle = *cast(AITree.AITreeHandle*)&params[4];
+		Handle = *cast(AITree.AITreeHandle*)&params[4];
 		return *cast(AICommandNodeBase*)&params[52];
 	}
 }

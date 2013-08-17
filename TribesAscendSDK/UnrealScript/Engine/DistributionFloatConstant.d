@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.DistributionFloatConstant")()); }
 	private static __gshared DistributionFloatConstant mDefaultProperties;
 	@property final static DistributionFloatConstant DefaultProperties() { mixin(MGDPC!(DistributionFloatConstant, "DistributionFloatConstant Engine.Default__DistributionFloatConstant")()); }
-	@property final auto ref float Constant() { mixin(MGPC!(float, 80)()); }
+	@property final auto ref float Constant() { mixin(MGPC!("float", 80)()); }
 }

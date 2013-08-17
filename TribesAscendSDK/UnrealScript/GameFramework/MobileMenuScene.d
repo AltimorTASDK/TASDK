@@ -56,18 +56,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			float Width() { mixin(MGPC!(float, 104)()); }
-			float Height() { mixin(MGPC!(float, 108)()); }
-			float Left() { mixin(MGPC!(float, 96)()); }
-			float Top() { mixin(MGPC!(float, 100)()); }
-			float Opacity() { mixin(MGPC!(float, 116)()); }
-			Font SceneCaptionFont() { mixin(MGPC!(Font, 84)()); }
-			ScriptArray!(MobileMenuObject) MenuObjects() { mixin(MGPC!(ScriptArray!(MobileMenuObject), 72)()); }
-			SoundCue UIUnTouchSound() { mixin(MGPC!(SoundCue, 124)()); }
-			SoundCue UITouchSound() { mixin(MGPC!(SoundCue, 120)()); }
-			float AuthoredGlobalScale() { mixin(MGPC!(float, 112)()); }
-			MobilePlayerInput InputOwner() { mixin(MGPC!(MobilePlayerInput, 88)()); }
-			ScriptString MenuName() { mixin(MGPC!(ScriptString, 60)()); }
+			float Width() { mixin(MGPC!("float", 104)()); }
+			float Height() { mixin(MGPC!("float", 108)()); }
+			float Left() { mixin(MGPC!("float", 96)()); }
+			float Top() { mixin(MGPC!("float", 100)()); }
+			float Opacity() { mixin(MGPC!("float", 116)()); }
+			Font SceneCaptionFont() { mixin(MGPC!("Font", 84)()); }
+			ScriptArray!(MobileMenuObject) MenuObjects() { mixin(MGPC!("ScriptArray!(MobileMenuObject)", 72)()); }
+			SoundCue UIUnTouchSound() { mixin(MGPC!("SoundCue", 124)()); }
+			SoundCue UITouchSound() { mixin(MGPC!("SoundCue", 120)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!("float", 112)()); }
+			MobilePlayerInput InputOwner() { mixin(MGPC!("MobilePlayerInput", 88)()); }
+			ScriptString MenuName() { mixin(MGPC!("ScriptString", 60)()); }
 		}
 		bool bApplyGlobalScaleHeight() { mixin(MGBPC!(92, 0x100)()); }
 		bool bApplyGlobalScaleHeight(bool val) { mixin(MSBPC!(92, 0x100)()); }

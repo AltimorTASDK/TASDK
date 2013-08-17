@@ -24,7 +24,7 @@ public extern(D):
 		MCT_Pause = 2,
 		MCT_MAX = 3,
 	}
-	@property final auto ref TextureMovie MovieTexture() { mixin(MGPC!(TextureMovie, 232)()); }
+	@property final auto ref TextureMovie MovieTexture() { mixin(MGPC!("TextureMovie", 232)()); }
 	final void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);

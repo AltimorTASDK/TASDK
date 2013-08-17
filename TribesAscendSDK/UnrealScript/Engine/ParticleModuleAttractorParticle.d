@@ -22,11 +22,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			int LastSelIndex() { mixin(MGPC!(int, 144)()); }
-			ParticleModuleAttractorParticle.EAttractorParticleSelectionMethod SelectionMethod() { mixin(MGPC!(ParticleModuleAttractorParticle.EAttractorParticleSelectionMethod, 140)()); }
-			ScriptName EmitterName() { mixin(MGPC!(ScriptName, 72)()); }
-			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 112)()); }
-			DistributionFloat.RawDistributionFloat Range() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 80)()); }
+			int LastSelIndex() { mixin(MGPC!("int", 144)()); }
+			ParticleModuleAttractorParticle.EAttractorParticleSelectionMethod SelectionMethod() { mixin(MGPC!("ParticleModuleAttractorParticle.EAttractorParticleSelectionMethod", 140)()); }
+			ScriptName EmitterName() { mixin(MGPC!("ScriptName", 72)()); }
+			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 112)()); }
+			DistributionFloat.RawDistributionFloat Range() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 80)()); }
 		}
 		bool bInheritSourceVel() { mixin(MGBPC!(108, 0x8)()); }
 		bool bInheritSourceVel(bool val) { mixin(MSBPC!(108, 0x8)()); }

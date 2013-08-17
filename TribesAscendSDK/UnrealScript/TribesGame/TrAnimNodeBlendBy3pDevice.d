@@ -40,14 +40,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) m_nmRecoilControlNames() { mixin(MGPC!(ScriptArray!(ScriptName), 296)()); }
-			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilControls() { mixin(MGPC!(ScriptArray!(GameSkelCtrl_Recoil), 308)()); }
-			ScriptName m_StandardReloadAnimName() { mixin(MGPC!(ScriptName, 352)()); }
-			ScriptName m_SkiingReloadName() { mixin(MGPC!(ScriptName, 344)()); }
-			ScriptName m_StandardFireAnimName() { mixin(MGPC!(ScriptName, 336)()); }
-			ScriptName m_SkiingFireName() { mixin(MGPC!(ScriptName, 328)()); }
-			float m_fRefireTimePreview() { mixin(MGPC!(float, 324)()); }
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
+			ScriptArray!(ScriptName) m_nmRecoilControlNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 296)()); }
+			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilControls() { mixin(MGPC!("ScriptArray!(GameSkelCtrl_Recoil)", 308)()); }
+			ScriptName m_StandardReloadAnimName() { mixin(MGPC!("ScriptName", 352)()); }
+			ScriptName m_SkiingReloadName() { mixin(MGPC!("ScriptName", 344)()); }
+			ScriptName m_StandardFireAnimName() { mixin(MGPC!("ScriptName", 336)()); }
+			ScriptName m_SkiingFireName() { mixin(MGPC!("ScriptName", 328)()); }
+			float m_fRefireTimePreview() { mixin(MGPC!("float", 324)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
 		}
 		bool m_bCurrentDeviceSupportsAltSkiReloadAnims() { mixin(MGBPC!(320, 0x10)()); }
 		bool m_bCurrentDeviceSupportsAltSkiReloadAnims(bool val) { mixin(MSBPC!(320, 0x10)()); }

@@ -64,15 +64,15 @@ public extern(D):
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTravelRequestReceived__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationCountUpdated__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationRequestComplete__Delegate'!
-		ClientBeaconAddressResolver Resolver() { mixin(MGPC!(ClientBeaconAddressResolver, 164)()); }
-		ScriptClass ResolverClass() { mixin(MGPC!(ScriptClass, 160)()); }
-		ScriptString ResolverClassName() { mixin(MGPC!(ScriptString, 148)()); }
-		float ReservationRequestElapsedTime() { mixin(MGPC!(float, 144)()); }
-		float ReservationRequestTimeout() { mixin(MGPC!(float, 140)()); }
-		PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { mixin(MGPC!(PartyBeaconClient.EPartyBeaconClientRequest, 137)()); }
-		PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { mixin(MGPC!(PartyBeaconClient.EPartyBeaconClientState, 136)()); }
-		OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { mixin(MGPC!(OnlineGameSearch.OnlineGameSearchResult, 104)()); }
-		PartyBeacon.PartyReservation PendingRequest() { mixin(MGPC!(PartyBeacon.PartyReservation, 112)()); }
+		ClientBeaconAddressResolver Resolver() { mixin(MGPC!("ClientBeaconAddressResolver", 164)()); }
+		ScriptClass ResolverClass() { mixin(MGPC!("ScriptClass", 160)()); }
+		ScriptString ResolverClassName() { mixin(MGPC!("ScriptString", 148)()); }
+		float ReservationRequestElapsedTime() { mixin(MGPC!("float", 144)()); }
+		float ReservationRequestTimeout() { mixin(MGPC!("float", 140)()); }
+		PartyBeaconClient.EPartyBeaconClientRequest ClientBeaconRequestType() { mixin(MGPC!("PartyBeaconClient.EPartyBeaconClientRequest", 137)()); }
+		PartyBeaconClient.EPartyBeaconClientState ClientBeaconState() { mixin(MGPC!("PartyBeaconClient.EPartyBeaconClientState", 136)()); }
+		OnlineGameSearch.OnlineGameSearchResult HostPendingRequest() { mixin(MGPC!("OnlineGameSearch.OnlineGameSearchResult", 104)()); }
+		PartyBeacon.PartyReservation PendingRequest() { mixin(MGPC!("PartyBeacon.PartyReservation", 112)()); }
 	}
 final:
 	void OnHostHasCancelled()
@@ -106,28 +106,24 @@ final:
 		*cast(PartyBeacon.EPartyReservationResult*)params.ptr = ReservationResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReservationRequestComplete, params.ptr, cast(void*)0);
 	}
-	bool RequestReservation(ref const OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) Players)
+	bool RequestReservation(ref in OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref in ScriptArray!(PartyBeacon.PlayerReservation) Players)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredHost;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredHost;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[8] = RequestingPartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = Players;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = cast(ScriptArray!(PartyBeacon.PlayerReservation))Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequestReservation, params.ptr, cast(void*)0);
-		*DesiredHost = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
-		*Players = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool RequestReservationUpdate(ref const OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayersToAdd)
+	bool RequestReservationUpdate(ref in OnlineGameSearch.OnlineGameSearchResult DesiredHost, OnlineSubsystem.UniqueNetId RequestingPartyLeader, ref in ScriptArray!(PartyBeacon.PlayerReservation) PlayersToAdd)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredHost;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredHost;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[8] = RequestingPartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = PlayersToAdd;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16] = cast(ScriptArray!(PartyBeacon.PlayerReservation))PlayersToAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequestReservationUpdate, params.ptr, cast(void*)0);
-		*DesiredHost = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
-		*PlayersToAdd = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 	bool CancelReservation(OnlineSubsystem.UniqueNetId CancellingPartyLeader)

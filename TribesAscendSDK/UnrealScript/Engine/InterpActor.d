@@ -67,9 +67,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				Actor.ECollisionType CollisionType() { mixin(MGPS!(Actor.ECollisionType, 24)()); }
-				Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
-				Vector Location() { mixin(MGPS!(Vector, 0)()); }
+				Actor.ECollisionType CollisionType() { mixin(MGPS!("Actor.ECollisionType", 24)()); }
+				Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
+				Vector Location() { mixin(MGPS!("Vector", 0)()); }
 			}
 			bool bNeedsPositionReplication() { mixin(MGBPS!(28, 0x4)()); }
 			bool bNeedsPositionReplication(bool val) { mixin(MSBPS!(28, 0x4)()); }
@@ -83,16 +83,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			NavigationPoint MyMarker() { mixin(MGPC!(NavigationPoint, 536)()); }
+			NavigationPoint MyMarker() { mixin(MGPC!("NavigationPoint", 536)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientSoundComponent'!
-			SoundCue ClosedSound() { mixin(MGPC!(SoundCue, 568)()); }
-			SoundCue ClosingAmbientSound() { mixin(MGPC!(SoundCue, 564)()); }
-			SoundCue CloseSound() { mixin(MGPC!(SoundCue, 560)()); }
-			SoundCue OpenedSound() { mixin(MGPC!(SoundCue, 556)()); }
-			SoundCue OpeningAmbientSound() { mixin(MGPC!(SoundCue, 552)()); }
-			SoundCue OpenSound() { mixin(MGPC!(SoundCue, 548)()); }
-			float StayOpenTime() { mixin(MGPC!(float, 544)()); }
-			float MaxZVelocity() { mixin(MGPC!(float, 540)()); }
+			SoundCue ClosedSound() { mixin(MGPC!("SoundCue", 568)()); }
+			SoundCue ClosingAmbientSound() { mixin(MGPC!("SoundCue", 564)()); }
+			SoundCue CloseSound() { mixin(MGPC!("SoundCue", 560)()); }
+			SoundCue OpenedSound() { mixin(MGPC!("SoundCue", 556)()); }
+			SoundCue OpeningAmbientSound() { mixin(MGPC!("SoundCue", 552)()); }
+			SoundCue OpenSound() { mixin(MGPC!("SoundCue", 548)()); }
+			float StayOpenTime() { mixin(MGPC!("float", 544)()); }
+			float MaxZVelocity() { mixin(MGPC!("float", 540)()); }
 		}
 		bool bMonitorMover() { mixin(MGBPC!(532, 0x2)()); }
 		bool bMonitorMover(bool val) { mixin(MSBPC!(532, 0x2)()); }
@@ -203,14 +203,13 @@ final:
 		params[] = 0;
 		*cast(InterpActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
+		Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const InterpActor.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in InterpActor.CheckpointRecord Record)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(InterpActor.CheckpointRecord*)params.ptr = Record;
+		*cast(InterpActor.CheckpointRecord*)params.ptr = cast(InterpActor.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(InterpActor.CheckpointRecord*)params.ptr;
 	}
 }

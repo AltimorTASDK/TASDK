@@ -45,14 +45,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ForceFeedbackWaveform BeamWeaponFireWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 1560)()); }
-		ScriptName BeamPostFireAnim() { mixin(MGPC!(ScriptName, 1544)()); }
-		ScriptName BeamFireAnim() { mixin(MGPC!(ScriptName, 1528)()); }
-		ScriptName BeamPreFireAnim() { mixin(MGPC!(ScriptName, 1512)()); }
-		ScriptName EndPointParamName() { mixin(MGPC!(ScriptName, 1504)()); }
-		ScriptName BeamSockets() { mixin(MGPC!(ScriptName, 1488)()); }
+		ForceFeedbackWaveform BeamWeaponFireWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 1560)()); }
+		ScriptName BeamPostFireAnim() { mixin(MGPC!("ScriptName", 1544)()); }
+		ScriptName BeamFireAnim() { mixin(MGPC!("ScriptName", 1528)()); }
+		ScriptName BeamPreFireAnim() { mixin(MGPC!("ScriptName", 1512)()); }
+		ScriptName EndPointParamName() { mixin(MGPC!("ScriptName", 1504)()); }
+		ScriptName BeamSockets() { mixin(MGPC!("ScriptName", 1488)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BeamEmitter'!
-		ParticleSystem BeamTemplate() { mixin(MGPC!(ParticleSystem, 1472)()); }
+		ParticleSystem BeamTemplate() { mixin(MGPC!("ParticleSystem", 1472)()); }
 	}
 final:
 	void AddBeamEmitter()
@@ -88,7 +88,7 @@ final:
 		*cast(Actor.ImpactInfo*)&params[24] = TestImpact;
 		*cast(float*)&params[104] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessBeamHit, params.ptr, cast(void*)0);
-		*TestImpact = *cast(Actor.ImpactInfo*)&params[24];
+		TestImpact = *cast(Actor.ImpactInfo*)&params[24];
 	}
 	void UpdateBeam(float DeltaTime)
 	{
@@ -105,7 +105,7 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 }

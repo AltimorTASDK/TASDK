@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetObjClassVersion;
 		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function UTGame.UTSeqAct_UseHoverboard.GetObjClassVersion")()); }
 	}
-	@property final auto ref UTVehicle Hoverboard() { mixin(MGPC!(UTVehicle, 232)()); }
+	@property final auto ref UTVehicle Hoverboard() { mixin(MGPC!("UTVehicle", 232)()); }
 	final static int GetObjClassVersion()
 	{
 		ubyte params[4];

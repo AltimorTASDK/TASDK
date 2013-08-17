@@ -39,14 +39,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineContent), 60)()); }
+		ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlineContent)", 60)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) FindDLCDelegates() { mixin(MGPC!(ScriptArray!(
+void*) FindDLCDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 84)()); }
+void*)", 84)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFindDLCComplete__Delegate'!
-		ScriptString DLCRootDir() { mixin(MGPC!(ScriptString, 72)()); }
+		ScriptString DLCRootDir() { mixin(MGPC!("ScriptString", 72)()); }
 	}
 final:
 	void OnFindDLCComplete()

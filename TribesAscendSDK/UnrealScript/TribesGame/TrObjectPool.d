@@ -50,13 +50,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrObjectPool.TracerCacheInfo")()); }
 		@property final auto ref
 		{
-			TrProj_Tracer List() { mixin(MGPS!(TrProj_Tracer, 12)()); }
-			int ListIdx() { mixin(MGPS!(int, 8)()); }
-			ScriptClass TracerClass() { mixin(MGPS!(ScriptClass, 4)()); }
-			int Type() { mixin(MGPS!(int, 0)()); }
+			TrProj_Tracer List() { mixin(MGPS!("TrProj_Tracer", 12)()); }
+			int ListIdx() { mixin(MGPS!("int", 8)()); }
+			ScriptClass TracerClass() { mixin(MGPS!("ScriptClass", 4)()); }
+			int Type() { mixin(MGPS!("int", 0)()); }
 		}
 	}
-	@property final auto ref TrObjectPool.TracerCacheInfo m_TracerCache() { mixin(MGPC!(TrObjectPool.TracerCacheInfo, 476)()); }
+	@property final auto ref TrObjectPool.TracerCacheInfo m_TracerCache() { mixin(MGPC!("TrObjectPool.TracerCacheInfo", 476)()); }
 final:
 	TrProj_Tracer GetTracer(TrObject.EWeaponTracerType TracerType, ubyte ActiveReloadTier, Vector SpawnLocation, Rotator SpawnRotation)
 	{

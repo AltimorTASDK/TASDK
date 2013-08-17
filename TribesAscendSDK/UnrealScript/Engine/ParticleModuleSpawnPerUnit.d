@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MovementTolerance() { mixin(MGPC!(float, 112)()); }
-			DistributionFloat.RawDistributionFloat SpawnPerUnit() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 80)()); }
-			float UnitScalar() { mixin(MGPC!(float, 76)()); }
+			float MovementTolerance() { mixin(MGPC!("float", 112)()); }
+			DistributionFloat.RawDistributionFloat SpawnPerUnit() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 80)()); }
+			float UnitScalar() { mixin(MGPC!("float", 76)()); }
 		}
 		bool bIgnoreMovementAlongZ() { mixin(MGBPC!(108, 0x8)()); }
 		bool bIgnoreMovementAlongZ(bool val) { mixin(MSBPC!(108, 0x8)()); }

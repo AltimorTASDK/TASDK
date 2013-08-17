@@ -27,7 +27,7 @@ public extern(D):
 			ScriptFunction OnBecomeActive() { mixin(MGF!("mOnBecomeActive", "Function GameFramework.GameFixedCamera.OnBecomeActive")()); }
 		}
 	}
-	@property final auto ref float DefaultFOV() { mixin(MGPC!(float, 68)()); }
+	@property final auto ref float DefaultFOV() { mixin(MGPC!("float", 68)()); }
 final:
 	void UpdateCamera(Pawn P, GamePlayerCamera pCameraActor, float DeltaTime, ref Camera.TViewTarget OutVT)
 	{
@@ -38,7 +38,7 @@ final:
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)&params[12];
+		OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
 	void OnBecomeActive(GameCameraBase OldCamera)
 	{

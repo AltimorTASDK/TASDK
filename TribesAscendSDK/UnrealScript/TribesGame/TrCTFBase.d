@@ -45,9 +45,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CTFBlitzIndex() { mixin(MGPC!(int, 1124)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1120)()); }
-			TrAnimNodeBlendList m_OpenCloseBlendList() { mixin(MGPC!(TrAnimNodeBlendList, 1116)()); }
+			int CTFBlitzIndex() { mixin(MGPC!("int", 1124)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 1120)()); }
+			TrAnimNodeBlendList m_OpenCloseBlendList() { mixin(MGPC!("TrAnimNodeBlendList", 1116)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FlagStandMesh'!
 		}
 		bool r_bIsActive() { mixin(MGBPC!(1128, 0x1)()); }

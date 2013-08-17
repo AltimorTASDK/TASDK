@@ -49,32 +49,32 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.SeqAct_GameCrowdSpawner.AgentArchetypeInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject) GroupMembers() { mixin(MGPS!(ScriptArray!(UObject), 16)()); }
-			int CurrSpawned() { mixin(MGPS!(int, 12)()); }
-			int MaxAllowed() { mixin(MGPS!(int, 8)()); }
-			float FrequencyModifier() { mixin(MGPS!(float, 4)()); }
-			UObject AgentArchetype() { mixin(MGPS!(UObject, 0)()); }
+			ScriptArray!(UObject) GroupMembers() { mixin(MGPS!("ScriptArray!(UObject)", 16)()); }
+			int CurrSpawned() { mixin(MGPS!("int", 12)()); }
+			int MaxAllowed() { mixin(MGPS!("int", 8)()); }
+			float FrequencyModifier() { mixin(MGPS!("float", 4)()); }
+			UObject AgentArchetype() { mixin(MGPS!("UObject", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) SpawnLocs() { mixin(MGPC!(ScriptArray!(Actor), 256)()); }
-			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { mixin(MGPC!(ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo), 300)()); }
-			ScriptArray!(GameCrowdAgent) SpawnedList() { mixin(MGPC!(ScriptArray!(GameCrowdAgent), 312)()); }
-			float AgentWarmupTime() { mixin(MGPC!(float, 332)()); }
-			GameCrowdReplicationActor RepActor() { mixin(MGPC!(GameCrowdReplicationActor, 328)()); }
-			LightComponent.LightingChannelContainer AgentLightingChannel() { mixin(MGPC!(LightComponent.LightingChannelContainer, 324)()); }
-			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!(GameCrowd_ListOfAgents, 296)()); }
-			float AgentFrequencySum() { mixin(MGPC!(float, 292)()); }
-			float Remainder() { mixin(MGPC!(float, 288)()); }
-			float SplitScreenNumReduction() { mixin(MGPC!(float, 284)()); }
-			float SpawnRadius() { mixin(MGPC!(float, 280)()); }
-			int SpawnNum() { mixin(MGPC!(int, 276)()); }
-			float SpawnRate() { mixin(MGPC!(float, 272)()); }
-			int LastSpawnLocIndex() { mixin(MGPC!(int, 268)()); }
-			int NextDestinationIndex() { mixin(MGPC!(int, 252)()); }
+			ScriptArray!(Actor) SpawnLocs() { mixin(MGPC!("ScriptArray!(Actor)", 256)()); }
+			ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo) AgentArchetypes() { mixin(MGPC!("ScriptArray!(SeqAct_GameCrowdSpawner.AgentArchetypeInfo)", 300)()); }
+			ScriptArray!(GameCrowdAgent) SpawnedList() { mixin(MGPC!("ScriptArray!(GameCrowdAgent)", 312)()); }
+			float AgentWarmupTime() { mixin(MGPC!("float", 332)()); }
+			GameCrowdReplicationActor RepActor() { mixin(MGPC!("GameCrowdReplicationActor", 328)()); }
+			LightComponent.LightingChannelContainer AgentLightingChannel() { mixin(MGPC!("LightComponent.LightingChannelContainer", 324)()); }
+			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!("GameCrowd_ListOfAgents", 296)()); }
+			float AgentFrequencySum() { mixin(MGPC!("float", 292)()); }
+			float Remainder() { mixin(MGPC!("float", 288)()); }
+			float SplitScreenNumReduction() { mixin(MGPC!("float", 284)()); }
+			float SpawnRadius() { mixin(MGPC!("float", 280)()); }
+			int SpawnNum() { mixin(MGPC!("int", 276)()); }
+			float SpawnRate() { mixin(MGPC!("float", 272)()); }
+			int LastSpawnLocIndex() { mixin(MGPC!("int", 268)()); }
+			int NextDestinationIndex() { mixin(MGPC!("int", 252)()); }
 		}
 		bool bCastShadows() { mixin(MGBPC!(248, 0x200)()); }
 		bool bCastShadows(bool val) { mixin(MSBPC!(248, 0x200)()); }

@@ -16,10 +16,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float YOffset() { mixin(MGPC!(float, 120)()); }
-			int QuadLightmapRes() { mixin(MGPC!(int, 116)()); }
-			float RepeatMaxSizeZ() { mixin(MGPC!(float, 112)()); }
-			float RepeatMaxSizeX() { mixin(MGPC!(float, 108)()); }
+			float YOffset() { mixin(MGPC!("float", 120)()); }
+			int QuadLightmapRes() { mixin(MGPC!("int", 116)()); }
+			float RepeatMaxSizeZ() { mixin(MGPC!("float", 112)()); }
+			float RepeatMaxSizeX() { mixin(MGPC!("float", 108)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
 		bool bDisableMaterialRepeat() { mixin(MGBPC!(124, 0x1)()); }

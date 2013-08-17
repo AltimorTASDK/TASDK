@@ -195,27 +195,27 @@ public extern(D):
 	{
 		auto ref
 		{
-			int InternalFormatLODBias() { mixin(MGPC!(int, 232)()); }
-			float AdjustHue() { mixin(MGPC!(float, 228)()); }
-			float AdjustRGBCurve() { mixin(MGPC!(float, 224)()); }
-			float AdjustSaturation() { mixin(MGPC!(float, 220)()); }
-			float AdjustVibrance() { mixin(MGPC!(float, 216)()); }
-			float AdjustBrightnessCurve() { mixin(MGPC!(float, 212)()); }
-			float AdjustBrightness() { mixin(MGPC!(float, 208)()); }
-			UObject.Guid LightingGuid() { mixin(MGPC!(UObject.Guid, 192)()); }
-			UObject.Pointer Resource() { mixin(MGPC!(UObject.Pointer, 188)()); }
-			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 176)()); }
-			ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 164)()); }
-			int NumCinematicMipLevels() { mixin(MGPC!(int, 160)()); }
-			int CachedCombinedLODBias() { mixin(MGPC!(int, 156)()); }
-			int LODBias() { mixin(MGPC!(int, 152)()); }
-			Texture.TextureMipGenSettings MipGenSettings() { mixin(MGPC!(Texture.TextureMipGenSettings, 151)()); }
+			int InternalFormatLODBias() { mixin(MGPC!("int", 232)()); }
+			float AdjustHue() { mixin(MGPC!("float", 228)()); }
+			float AdjustRGBCurve() { mixin(MGPC!("float", 224)()); }
+			float AdjustSaturation() { mixin(MGPC!("float", 220)()); }
+			float AdjustVibrance() { mixin(MGPC!("float", 216)()); }
+			float AdjustBrightnessCurve() { mixin(MGPC!("float", 212)()); }
+			float AdjustBrightness() { mixin(MGPC!("float", 208)()); }
+			UObject.Guid LightingGuid() { mixin(MGPC!("UObject.Guid", 192)()); }
+			UObject.Pointer Resource() { mixin(MGPC!("UObject.Pointer", 188)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!("ScriptString", 176)()); }
+			ScriptString SourceFilePath() { mixin(MGPC!("ScriptString", 164)()); }
+			int NumCinematicMipLevels() { mixin(MGPC!("int", 160)()); }
+			int CachedCombinedLODBias() { mixin(MGPC!("int", 156)()); }
+			int LODBias() { mixin(MGPC!("int", 152)()); }
+			Texture.TextureMipGenSettings MipGenSettings() { mixin(MGPC!("Texture.TextureMipGenSettings", 151)()); }
 			// WARNING: Property 'LODGroup' has the same name as a defined type!
-			Texture.TextureFilter Filter() { mixin(MGPC!(Texture.TextureFilter, 149)()); }
-			Texture.TextureCompressionSettings CompressionSettings() { mixin(MGPC!(Texture.TextureCompressionSettings, 148)()); }
-			UObject.UntypedBulkData_Mirror SourceArt() { mixin(MGPC!(UObject.UntypedBulkData_Mirror, 96)()); }
-			float UnpackMax() { mixin(MGPC!(float, 80)()); }
-			float UnpackMin() { mixin(MGPC!(float, 64)()); }
+			Texture.TextureFilter Filter() { mixin(MGPC!("Texture.TextureFilter", 149)()); }
+			Texture.TextureCompressionSettings CompressionSettings() { mixin(MGPC!("Texture.TextureCompressionSettings", 148)()); }
+			UObject.UntypedBulkData_Mirror SourceArt() { mixin(MGPC!("UObject.UntypedBulkData_Mirror", 96)()); }
+			float UnpackMax() { mixin(MGPC!("float", 80)()); }
+			float UnpackMin() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bUseCinematicMipLevels() { mixin(MGBPC!(60, 0x20000)()); }
 		bool bUseCinematicMipLevels(bool val) { mixin(MSBPC!(60, 0x20000)()); }

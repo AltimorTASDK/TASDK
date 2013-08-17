@@ -14,7 +14,7 @@ public extern(D):
 	@property final static MaterialExpressionFontSample DefaultProperties() { mixin(MGDPC!(MaterialExpressionFontSample, "MaterialExpressionFontSample Engine.Default__MaterialExpressionFontSample")()); }
 	@property final auto ref
 	{
-		int FontTexturePage() { mixin(MGPC!(int, 112)()); }
+		int FontTexturePage() { mixin(MGPC!("int", 112)()); }
 		// WARNING: Property 'Font' has the same name as a defined type!
 	}
 }

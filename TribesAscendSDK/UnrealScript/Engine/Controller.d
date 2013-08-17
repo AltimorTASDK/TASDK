@@ -312,8 +312,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Controller.VisiblePortalInfo")()); }
 		@property final auto ref
 		{
-			Actor Destination() { mixin(MGPS!(Actor, 4)()); }
-			Actor Source() { mixin(MGPS!(Actor, 0)()); }
+			Actor Destination() { mixin(MGPS!("Actor", 4)()); }
+			Actor Source() { mixin(MGPS!("Actor", 0)()); }
 		}
 	}
 	static struct Dead
@@ -332,51 +332,51 @@ public extern(D):
 		{
 			// WARNING: Property 'Pawn' has the same name as a defined type!
 			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
-			ScriptArray!(NavigationPoint) RouteCache() { mixin(MGPC!(ScriptArray!(NavigationPoint), 716)()); }
-			ScriptArray!(Controller.VisiblePortalInfo) VisiblePortals() { mixin(MGPC!(ScriptArray!(Controller.VisiblePortalInfo), 860)()); }
-			Vector NavMeshPath_SearchExtent_Modifier() { mixin(MGPC!(Vector, 888)()); }
-			Rotator OldBasedRotation() { mixin(MGPC!(Rotator, 876)()); }
-			float LaneOffset() { mixin(MGPC!(float, 872)()); }
-			Pawn Enemy() { mixin(MGPC!(Pawn, 856)()); }
-			float MaxMoveTowardPawnTargetTime() { mixin(MGPC!(float, 852)()); }
-			int HighJumpNodeCostModifier() { mixin(MGPC!(int, 848)()); }
-			float InUseNodeCostMultiplier() { mixin(MGPC!(float, 844)()); }
-			float SightCounterInterval() { mixin(MGPC!(float, 840)()); }
-			float SightCounter() { mixin(MGPC!(float, 836)()); }
-			Vector FailedReachLocation() { mixin(MGPC!(Vector, 824)()); }
-			float FailedReachTime() { mixin(MGPC!(float, 820)()); }
-			Actor LastFailedReach() { mixin(MGPC!(Actor, 816)()); }
-			Pawn ShotTarget() { mixin(MGPC!(Pawn, 812)()); }
-			Vector ViewZ() { mixin(MGPC!(Vector, 800)()); }
-			Vector ViewY() { mixin(MGPC!(Vector, 788)()); }
-			Vector ViewX() { mixin(MGPC!(Vector, 776)()); }
-			float GroundPitchTime() { mixin(MGPC!(float, 772)()); }
-			int MoveFailureCount() { mixin(MGPC!(int, 768)()); }
-			Actor FailedMoveTarget() { mixin(MGPC!(Actor, 764)()); }
-			InterpActor PendingMover() { mixin(MGPC!(InterpActor, 760)()); }
-			float LastRouteFind() { mixin(MGPC!(float, 756)()); }
-			float RouteDist() { mixin(MGPC!(float, 752)()); }
-			Actor RouteGoal() { mixin(MGPC!(Actor, 748)()); }
-			Vector CurrentPathDir() { mixin(MGPC!(Vector, 736)()); }
-			ReachSpec NextRoutePath() { mixin(MGPC!(ReachSpec, 732)()); }
-			ReachSpec CurrentPath() { mixin(MGPC!(ReachSpec, 728)()); }
-			NavigationPoint StartSpot() { mixin(MGPC!(NavigationPoint, 712)()); }
-			Actor.BasedPosition AdjustPosition() { mixin(MGPC!(Actor.BasedPosition, 660)()); }
-			Actor GoalList() { mixin(MGPC!(Actor, 644)()); }
-			Actor Focus() { mixin(MGPC!(Actor, 640)()); }
-			Actor.BasedPosition FocalPosition() { mixin(MGPC!(Actor.BasedPosition, 588)()); }
-			Actor.BasedPosition DestinationPosition() { mixin(MGPC!(Actor.BasedPosition, 536)()); }
-			Actor MoveTarget() { mixin(MGPC!(Actor, 532)()); }
-			float MoveTimer() { mixin(MGPC!(float, 528)()); }
-			Vector OverrideSearchStart() { mixin(MGPC!(Vector, 516)()); }
+			ScriptArray!(NavigationPoint) RouteCache() { mixin(MGPC!("ScriptArray!(NavigationPoint)", 716)()); }
+			ScriptArray!(Controller.VisiblePortalInfo) VisiblePortals() { mixin(MGPC!("ScriptArray!(Controller.VisiblePortalInfo)", 860)()); }
+			Vector NavMeshPath_SearchExtent_Modifier() { mixin(MGPC!("Vector", 888)()); }
+			Rotator OldBasedRotation() { mixin(MGPC!("Rotator", 876)()); }
+			float LaneOffset() { mixin(MGPC!("float", 872)()); }
+			Pawn Enemy() { mixin(MGPC!("Pawn", 856)()); }
+			float MaxMoveTowardPawnTargetTime() { mixin(MGPC!("float", 852)()); }
+			int HighJumpNodeCostModifier() { mixin(MGPC!("int", 848)()); }
+			float InUseNodeCostMultiplier() { mixin(MGPC!("float", 844)()); }
+			float SightCounterInterval() { mixin(MGPC!("float", 840)()); }
+			float SightCounter() { mixin(MGPC!("float", 836)()); }
+			Vector FailedReachLocation() { mixin(MGPC!("Vector", 824)()); }
+			float FailedReachTime() { mixin(MGPC!("float", 820)()); }
+			Actor LastFailedReach() { mixin(MGPC!("Actor", 816)()); }
+			Pawn ShotTarget() { mixin(MGPC!("Pawn", 812)()); }
+			Vector ViewZ() { mixin(MGPC!("Vector", 800)()); }
+			Vector ViewY() { mixin(MGPC!("Vector", 788)()); }
+			Vector ViewX() { mixin(MGPC!("Vector", 776)()); }
+			float GroundPitchTime() { mixin(MGPC!("float", 772)()); }
+			int MoveFailureCount() { mixin(MGPC!("int", 768)()); }
+			Actor FailedMoveTarget() { mixin(MGPC!("Actor", 764)()); }
+			InterpActor PendingMover() { mixin(MGPC!("InterpActor", 760)()); }
+			float LastRouteFind() { mixin(MGPC!("float", 756)()); }
+			float RouteDist() { mixin(MGPC!("float", 752)()); }
+			Actor RouteGoal() { mixin(MGPC!("Actor", 748)()); }
+			Vector CurrentPathDir() { mixin(MGPC!("Vector", 736)()); }
+			ReachSpec NextRoutePath() { mixin(MGPC!("ReachSpec", 732)()); }
+			ReachSpec CurrentPath() { mixin(MGPC!("ReachSpec", 728)()); }
+			NavigationPoint StartSpot() { mixin(MGPC!("NavigationPoint", 712)()); }
+			Actor.BasedPosition AdjustPosition() { mixin(MGPC!("Actor.BasedPosition", 660)()); }
+			Actor GoalList() { mixin(MGPC!("Actor", 644)()); }
+			Actor Focus() { mixin(MGPC!("Actor", 640)()); }
+			Actor.BasedPosition FocalPosition() { mixin(MGPC!("Actor.BasedPosition", 588)()); }
+			Actor.BasedPosition DestinationPosition() { mixin(MGPC!("Actor.BasedPosition", 536)()); }
+			Actor MoveTarget() { mixin(MGPC!("Actor", 532)()); }
+			float MoveTimer() { mixin(MGPC!("float", 528)()); }
+			Vector OverrideSearchStart() { mixin(MGPC!("Vector", 516)()); }
 			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
-			ScriptClass NavigationHandleClass() { mixin(MGPC!(ScriptClass, 508)()); }
-			float MinHitWall() { mixin(MGPC!(float, 504)()); }
-			ubyte bAltFire() { mixin(MGPC!(ubyte, 501)()); }
-			ubyte bFire() { mixin(MGPC!(ubyte, 500)()); }
-			Controller NextController() { mixin(MGPC!(Controller, 492)()); }
-			int PlayerNum() { mixin(MGPC!(int, 488)()); }
-			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC!(UObject.Pointer, 476)()); }
+			ScriptClass NavigationHandleClass() { mixin(MGPC!("ScriptClass", 508)()); }
+			float MinHitWall() { mixin(MGPC!("float", 504)()); }
+			ubyte bAltFire() { mixin(MGPC!("ubyte", 501)()); }
+			ubyte bFire() { mixin(MGPC!("ubyte", 500)()); }
+			Controller NextController() { mixin(MGPC!("Controller", 492)()); }
+			int PlayerNum() { mixin(MGPC!("int", 488)()); }
+			UObject.Pointer VfTable_IInterface_NavigationHandle() { mixin(MGPC!("UObject.Pointer", 476)()); }
 		}
 		bool bGodMode() { mixin(MGBPC!(496, 0x2)()); }
 		bool bGodMode(bool val) { mixin(MSBPC!(496, 0x2)()); }
@@ -434,12 +434,13 @@ final:
 		*cast(NavigationPoint*)params.ptr = Nav;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RouteCache_AddItem, params.ptr, cast(void*)0);
 	}
-	void RouteCache_InsertItem(NavigationPoint Nav, int Idx)
+	void RouteCache_InsertItem(NavigationPoint Nav, int* Idx = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = Nav;
-		*cast(int*)&params[4] = Idx;
+		if (Idx !is null)
+			*cast(int*)&params[4] = *Idx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RouteCache_InsertItem, params.ptr, cast(void*)0);
 	}
 	void RouteCache_RemoveItem(NavigationPoint Nav)
@@ -449,20 +450,22 @@ final:
 		*cast(NavigationPoint*)params.ptr = Nav;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RouteCache_RemoveItem, params.ptr, cast(void*)0);
 	}
-	void RouteCache_RemoveIndex(int InIndex, int Count)
+	void RouteCache_RemoveIndex(int InIndex, int* Count = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = InIndex;
-		*cast(int*)&params[4] = Count;
+		if (Count !is null)
+			*cast(int*)&params[4] = *Count;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RouteCache_RemoveIndex, params.ptr, cast(void*)0);
 	}
-	void SetFocalPoint(Vector FP, bool bOffsetFromBase)
+	void SetFocalPoint(Vector FP, bool* bOffsetFromBase = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = FP;
-		*cast(bool*)&params[12] = bOffsetFromBase;
+		if (bOffsetFromBase !is null)
+			*cast(bool*)&params[12] = *bOffsetFromBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFocalPoint, params.ptr, cast(void*)0);
 	}
 	Vector GetFocalPoint()
@@ -472,12 +475,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFocalPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	void SetDestinationPosition(Vector Dest, bool bOffsetFromBase)
+	void SetDestinationPosition(Vector Dest, bool* bOffsetFromBase = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Dest;
-		*cast(bool*)&params[12] = bOffsetFromBase;
+		if (bOffsetFromBase !is null)
+			*cast(bool*)&params[12] = *bOffsetFromBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDestinationPosition, params.ptr, cast(void*)0);
 	}
 	Vector GetDestinationPosition()
@@ -487,13 +491,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDestinationPosition, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	void SetAdjustLocation(Vector NewLoc, bool bAdjust, bool bOffsetFromBase)
+	void SetAdjustLocation(Vector NewLoc, bool bAdjust, bool* bOffsetFromBase = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewLoc;
 		*cast(bool*)&params[12] = bAdjust;
-		*cast(bool*)&params[16] = bOffsetFromBase;
+		if (bOffsetFromBase !is null)
+			*cast(bool*)&params[16] = *bOffsetFromBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAdjustLocation, params.ptr, cast(void*)0);
 	}
 	Vector GetAdjustLocation()
@@ -581,12 +586,13 @@ final:
 		*cast(Rotator*)&params[12] = NewRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetLocation, params.ptr, cast(void*)0);
 	}
-	void ClientSetRotation(Rotator NewRotation, bool bResetCamera)
+	void ClientSetRotation(Rotator NewRotation, bool* bResetCamera = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = NewRotation;
-		*cast(bool*)&params[12] = bResetCamera;
+		if (bResetCamera !is null)
+			*cast(bool*)&params[12] = *bResetCamera;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetRotation, params.ptr, cast(void*)0);
 	}
 	void ReplicatedEvent(ScriptName VarName)
@@ -698,12 +704,14 @@ final:
 		*cast(ScriptString*)params.ptr = inCharacter;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacter, params.ptr, cast(void*)0);
 	}
-	void GameHasEnded(Actor EndGameFocus, bool bIsWinner)
+	void GameHasEnded(Actor* EndGameFocus = null, bool* bIsWinner = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = EndGameFocus;
-		*cast(bool*)&params[4] = bIsWinner;
+		if (EndGameFocus !is null)
+			*cast(Actor*)params.ptr = *EndGameFocus;
+		if (bIsWinner !is null)
+			*cast(bool*)&params[4] = *bIsWinner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GameHasEnded, params.ptr, cast(void*)0);
 	}
 	void NotifyKilled(Controller Killer, Controller Killed, Pawn KilledPawn, ScriptClass damageTyp)
@@ -751,11 +759,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopFiring, cast(void*)0, cast(void*)0);
 	}
-	void RoundHasEnded(Actor EndRoundFocus)
+	void RoundHasEnded(Actor* EndRoundFocus = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Actor*)params.ptr = EndRoundFocus;
+		if (EndRoundFocus !is null)
+			*cast(Actor*)params.ptr = *EndRoundFocus;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RoundHasEnded, params.ptr, cast(void*)0);
 	}
 	void HandlePickup(Inventory Inv)
@@ -799,18 +808,20 @@ final:
 		*cast(Projectile*)params.ptr = Proj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReceiveProjectileWarning, params.ptr, cast(void*)0);
 	}
-	void SwitchToBestWeapon(bool bForceNewWeapon)
+	void SwitchToBestWeapon(bool* bForceNewWeapon = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceNewWeapon;
+		if (bForceNewWeapon !is null)
+			*cast(bool*)params.ptr = *bForceNewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchToBestWeapon, params.ptr, cast(void*)0);
 	}
-	void ClientSwitchToBestWeapon(bool bForceNewWeapon)
+	void ClientSwitchToBestWeapon(bool* bForceNewWeapon = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceNewWeapon;
+		if (bForceNewWeapon !is null)
+			*cast(bool*)params.ptr = *bForceNewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSwitchToBestWeapon, params.ptr, cast(void*)0);
 	}
 	void NotifyChangedWeapon(Weapon PrevWeapon, Weapon NewWeapon)
@@ -821,13 +832,15 @@ final:
 		*cast(Weapon*)&params[4] = NewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyChangedWeapon, params.ptr, cast(void*)0);
 	}
-	bool LineOfSightTo(Actor Other, Vector chkLocation, bool bTryAlternateTargetLoc)
+	bool LineOfSightTo(Actor Other, Vector* chkLocation = null, bool* bTryAlternateTargetLoc = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Other;
-		*cast(Vector*)&params[4] = chkLocation;
-		*cast(bool*)&params[16] = bTryAlternateTargetLoc;
+		if (chkLocation !is null)
+			*cast(Vector*)&params[4] = *chkLocation;
+		if (bTryAlternateTargetLoc !is null)
+			*cast(bool*)&params[16] = *bTryAlternateTargetLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LineOfSightTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
@@ -860,17 +873,18 @@ final:
 		*cast(Vector*)&params[24] = projStart;
 		*cast(float*)&params[36] = MaxRange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickTarget, params.ptr, cast(void*)0);
-		*bestAim = *cast(float*)&params[4];
-		*bestDist = *cast(float*)&params[8];
+		bestAim = *cast(float*)&params[4];
+		bestDist = *cast(float*)&params[8];
 		return *cast(Pawn*)&params[40];
 	}
-	void HearNoise(float Loudness, Actor NoiseMaker, ScriptName NoiseType)
+	void HearNoise(float Loudness, Actor NoiseMaker, ScriptName* NoiseType = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(float*)params.ptr = Loudness;
 		*cast(Actor*)&params[4] = NoiseMaker;
-		*cast(ScriptName*)&params[8] = NoiseType;
+		if (NoiseType !is null)
+			*cast(ScriptName*)&params[8] = *NoiseType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HearNoise, params.ptr, cast(void*)0);
 	}
 	void SeePlayer(Pawn Seen)
@@ -891,35 +905,45 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.EnemyNotVisible, cast(void*)0, cast(void*)0);
 	}
-	void MoveTo(Vector NewDestination, Actor ViewFocus, float DestinationOffset, bool bShouldWalk)
+	void MoveTo(Vector NewDestination, Actor* ViewFocus = null, float* DestinationOffset = null, bool* bShouldWalk = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewDestination;
-		*cast(Actor*)&params[12] = ViewFocus;
-		*cast(float*)&params[16] = DestinationOffset;
-		*cast(bool*)&params[20] = bShouldWalk;
+		if (ViewFocus !is null)
+			*cast(Actor*)&params[12] = *ViewFocus;
+		if (DestinationOffset !is null)
+			*cast(float*)&params[16] = *DestinationOffset;
+		if (bShouldWalk !is null)
+			*cast(bool*)&params[20] = *bShouldWalk;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveTo, params.ptr, cast(void*)0);
 	}
-	void MoveToDirectNonPathPos(Vector NewDestination, Actor ViewFocus, float DestinationOffset, bool bShouldWalk)
+	void MoveToDirectNonPathPos(Vector NewDestination, Actor* ViewFocus = null, float* DestinationOffset = null, bool* bShouldWalk = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewDestination;
-		*cast(Actor*)&params[12] = ViewFocus;
-		*cast(float*)&params[16] = DestinationOffset;
-		*cast(bool*)&params[20] = bShouldWalk;
+		if (ViewFocus !is null)
+			*cast(Actor*)&params[12] = *ViewFocus;
+		if (DestinationOffset !is null)
+			*cast(float*)&params[16] = *DestinationOffset;
+		if (bShouldWalk !is null)
+			*cast(bool*)&params[20] = *bShouldWalk;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToDirectNonPathPos, params.ptr, cast(void*)0);
 	}
-	void MoveToward(Actor NewTarget, Actor ViewFocus, float DestinationOffset, bool bUseStrafing, bool bShouldWalk)
+	void MoveToward(Actor NewTarget, Actor* ViewFocus = null, float* DestinationOffset = null, bool* bUseStrafing = null, bool* bShouldWalk = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewTarget;
-		*cast(Actor*)&params[4] = ViewFocus;
-		*cast(float*)&params[8] = DestinationOffset;
-		*cast(bool*)&params[12] = bUseStrafing;
-		*cast(bool*)&params[16] = bShouldWalk;
+		if (ViewFocus !is null)
+			*cast(Actor*)&params[4] = *ViewFocus;
+		if (DestinationOffset !is null)
+			*cast(float*)&params[8] = *DestinationOffset;
+		if (bUseStrafing !is null)
+			*cast(bool*)&params[12] = *bUseStrafing;
+		if (bShouldWalk !is null)
+			*cast(bool*)&params[16] = *bShouldWalk;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToward, params.ptr, cast(void*)0);
 	}
 	void SetupSpecialPathAbilities()
@@ -930,35 +954,43 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.FinishRotation, cast(void*)0, cast(void*)0);
 	}
-	Actor FindPathTo(Vector aPoint, int MaxPathLength, bool bReturnPartial)
+	Actor FindPathTo(Vector aPoint, int* MaxPathLength = null, bool* bReturnPartial = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = aPoint;
-		*cast(int*)&params[12] = MaxPathLength;
-		*cast(bool*)&params[16] = bReturnPartial;
+		if (MaxPathLength !is null)
+			*cast(int*)&params[12] = *MaxPathLength;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[16] = *bReturnPartial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathTo, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[20];
 	}
-	Actor FindPathToward(Actor anActor, bool bWeightDetours, int MaxPathLength, bool bReturnPartial)
+	Actor FindPathToward(Actor anActor, bool* bWeightDetours = null, int* MaxPathLength = null, bool* bReturnPartial = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = anActor;
-		*cast(bool*)&params[4] = bWeightDetours;
-		*cast(int*)&params[8] = MaxPathLength;
-		*cast(bool*)&params[12] = bReturnPartial;
+		if (bWeightDetours !is null)
+			*cast(bool*)&params[4] = *bWeightDetours;
+		if (MaxPathLength !is null)
+			*cast(int*)&params[8] = *MaxPathLength;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[12] = *bReturnPartial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathToward, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[16];
 	}
-	Actor FindPathTowardNearest(ScriptClass GoalClass, bool bWeightDetours, int MaxPathLength, bool bReturnPartial)
+	Actor FindPathTowardNearest(ScriptClass GoalClass, bool* bWeightDetours = null, int* MaxPathLength = null, bool* bReturnPartial = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = GoalClass;
-		*cast(bool*)&params[4] = bWeightDetours;
-		*cast(int*)&params[8] = MaxPathLength;
-		*cast(bool*)&params[12] = bReturnPartial;
+		if (bWeightDetours !is null)
+			*cast(bool*)&params[4] = *bWeightDetours;
+		if (MaxPathLength !is null)
+			*cast(int*)&params[8] = *MaxPathLength;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[12] = *bReturnPartial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathTowardNearest, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[16];
 	}
@@ -969,15 +1001,18 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindRandomDest, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)params.ptr;
 	}
-	Actor FindPathToIntercept(Pawn P, Actor InRouteGoal, bool bWeightDetours, int MaxPathLength, bool bReturnPartial)
+	Actor FindPathToIntercept(Pawn P, Actor InRouteGoal, bool* bWeightDetours = null, int* MaxPathLength = null, bool* bReturnPartial = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(Actor*)&params[4] = InRouteGoal;
-		*cast(bool*)&params[8] = bWeightDetours;
-		*cast(int*)&params[12] = MaxPathLength;
-		*cast(bool*)&params[16] = bReturnPartial;
+		if (bWeightDetours !is null)
+			*cast(bool*)&params[8] = *bWeightDetours;
+		if (MaxPathLength !is null)
+			*cast(int*)&params[12] = *MaxPathLength;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[16] = *bReturnPartial;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathToIntercept, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[20];
 	}
@@ -1013,11 +1048,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickWallAdjust, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void WaitForLanding(float waitDuration)
+	void WaitForLanding(float* waitDuration = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = waitDuration;
+		if (waitDuration !is null)
+			*cast(float*)params.ptr = *waitDuration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WaitForLanding, params.ptr, cast(void*)0);
 	}
 	void LongFall()
@@ -1080,8 +1116,8 @@ final:
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	void GetActorEyesViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
@@ -1090,8 +1126,8 @@ final:
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorEyesViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	bool IsAimingAt(Actor ATarget, float Epsilon)
 	{
@@ -1191,8 +1227,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	ScriptString GetHumanReadableName()
 	{
@@ -1236,13 +1272,14 @@ final:
 		*cast(SeqAct_SetVelocity*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetVelocity, params.ptr, cast(void*)0);
 	}
-	void NotifyCoverDisabled(CoverLink Link, int SlotIdx, bool bAdjacentIdx)
+	void NotifyCoverDisabled(CoverLink Link, int SlotIdx, bool* bAdjacentIdx = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(CoverLink*)params.ptr = Link;
 		*cast(int*)&params[4] = SlotIdx;
-		*cast(bool*)&params[8] = bAdjacentIdx;
+		if (bAdjacentIdx !is null)
+			*cast(bool*)&params[8] = *bAdjacentIdx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyCoverDisabled, params.ptr, cast(void*)0);
 	}
 	void NotifyCoverAdjusted()
@@ -1287,11 +1324,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsSpectating, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool IsInCombat(bool bForceCheck)
+	bool IsInCombat(bool* bForceCheck = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceCheck;
+		if (bForceCheck !is null)
+			*cast(bool*)params.ptr = *bForceCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsInCombat, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -1299,14 +1337,15 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CurrentLevelUnloaded, cast(void*)0, cast(void*)0);
 	}
-	void SendMessage(PlayerReplicationInfo Recipient, ScriptName MessageType, float Wait, ScriptClass pDamageType)
+	void SendMessage(PlayerReplicationInfo Recipient, ScriptName MessageType, float Wait, ScriptClass* pDamageType = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Recipient;
 		*cast(ScriptName*)&params[4] = MessageType;
 		*cast(float*)&params[12] = Wait;
-		*cast(ScriptClass*)&params[16] = pDamageType;
+		if (pDamageType !is null)
+			*cast(ScriptClass*)&params[16] = *pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendMessage, params.ptr, cast(void*)0);
 	}
 	void ReadyForLift()
@@ -1332,23 +1371,27 @@ final:
 		*cast(SeqAct_Interp*)params.ptr = InterpAction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InterpolationFinished, params.ptr, cast(void*)0);
 	}
-	bool GeneratePathToActor(Actor Goal, float WithinDistance, bool bAllowPartialPath)
+	bool GeneratePathToActor(Actor Goal, float* WithinDistance = null, bool* bAllowPartialPath = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Goal;
-		*cast(float*)&params[4] = WithinDistance;
-		*cast(bool*)&params[8] = bAllowPartialPath;
+		if (WithinDistance !is null)
+			*cast(float*)&params[4] = *WithinDistance;
+		if (bAllowPartialPath !is null)
+			*cast(bool*)&params[8] = *bAllowPartialPath;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePathToActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool GeneratePathToLocation(Vector Goal, float WithinDistance, bool bAllowPartialPath)
+	bool GeneratePathToLocation(Vector Goal, float* WithinDistance = null, bool* bAllowPartialPath = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Goal;
-		*cast(float*)&params[12] = WithinDistance;
-		*cast(bool*)&params[16] = bAllowPartialPath;
+		if (WithinDistance !is null)
+			*cast(float*)&params[12] = *WithinDistance;
+		if (bAllowPartialPath !is null)
+			*cast(bool*)&params[16] = *bAllowPartialPath;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePathToLocation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}

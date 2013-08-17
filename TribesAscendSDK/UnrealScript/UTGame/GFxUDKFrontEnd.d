@@ -101,36 +101,36 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd.ViewInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptName) DependantViews() { mixin(MGPS!(ScriptArray!(ScriptName), 20)()); }
-			ScriptString SWFName() { mixin(MGPS!(ScriptString, 8)()); }
-			ScriptName ViewName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(ScriptName) DependantViews() { mixin(MGPS!("ScriptArray!(ScriptName)", 20)()); }
+			ScriptString SWFName() { mixin(MGPS!("ScriptString", 8)()); }
+			ScriptName ViewName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUDKFrontEnd.ViewInfo) ViewData() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd.ViewInfo), 452)()); }
-			ScriptArray!(GFxUDKFrontEnd_View) ViewStack() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd_View), 464)()); }
-			ScriptArray!(ScriptName) LoadedViews() { mixin(MGPC!(ScriptArray!(ScriptName), 476)()); }
+			ScriptArray!(GFxUDKFrontEnd.ViewInfo) ViewData() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd.ViewInfo)", 452)()); }
+			ScriptArray!(GFxUDKFrontEnd_View) ViewStack() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd_View)", 464)()); }
+			ScriptArray!(ScriptName) LoadedViews() { mixin(MGPC!("ScriptArray!(ScriptName)", 476)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__EscapeDelegate__Delegate'!
-			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC!(GFxUDKFrontEnd_PasswordDialog, 448)()); }
-			GFxUDKFrontEnd_ErrorDialog ErrorDialog() { mixin(MGPC!(GFxUDKFrontEnd_ErrorDialog, 444)()); }
-			GFxUDKFrontEnd_JoinDialog JoinDialog() { mixin(MGPC!(GFxUDKFrontEnd_JoinDialog, 440)()); }
-			GFxUDKFrontEnd_FilterDialog FilterDialog() { mixin(MGPC!(GFxUDKFrontEnd_FilterDialog, 436)()); }
-			GFxUDKFrontEnd_InfoDialog InfoDialog() { mixin(MGPC!(GFxUDKFrontEnd_InfoDialog, 432)()); }
-			GFxUDKFrontEnd_JoinGame JoinGameView() { mixin(MGPC!(GFxUDKFrontEnd_JoinGame, 428)()); }
-			GFxUDKFrontEnd_ServerSettings ServerSettingsView() { mixin(MGPC!(GFxUDKFrontEnd_ServerSettings, 424)()); }
-			GFxUDKFrontEnd_Settings SettingsView() { mixin(MGPC!(GFxUDKFrontEnd_Settings, 420)()); }
-			GFxUDKFrontEnd_Mutators MutatorsView() { mixin(MGPC!(GFxUDKFrontEnd_Mutators, 416)()); }
-			GFxUDKFrontEnd_GameMode GameModeView() { mixin(MGPC!(GFxUDKFrontEnd_GameMode, 412)()); }
-			GFxUDKFrontEnd_MapSelect MapSelectView() { mixin(MGPC!(GFxUDKFrontEnd_MapSelect, 408)()); }
-			GFxUDKFrontEnd_HostGame HostGameView() { mixin(MGPC!(GFxUDKFrontEnd_HostGame, 404)()); }
-			GFxUDKFrontEnd_Multiplayer MultiplayerView() { mixin(MGPC!(GFxUDKFrontEnd_Multiplayer, 400)()); }
-			GFxUDKFrontEnd_InstantAction InstantActionView() { mixin(MGPC!(GFxUDKFrontEnd_InstantAction, 396)()); }
-			GFxUDKFrontEnd_MainMenu MainMenuView() { mixin(MGPC!(GFxUDKFrontEnd_MainMenu, 392)()); }
-			GFxObject ManagerMC() { mixin(MGPC!(GFxObject, 384)()); }
-			GFxObject RootMC() { mixin(MGPC!(GFxObject, 380)()); }
+			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC!("GFxUDKFrontEnd_PasswordDialog", 448)()); }
+			GFxUDKFrontEnd_ErrorDialog ErrorDialog() { mixin(MGPC!("GFxUDKFrontEnd_ErrorDialog", 444)()); }
+			GFxUDKFrontEnd_JoinDialog JoinDialog() { mixin(MGPC!("GFxUDKFrontEnd_JoinDialog", 440)()); }
+			GFxUDKFrontEnd_FilterDialog FilterDialog() { mixin(MGPC!("GFxUDKFrontEnd_FilterDialog", 436)()); }
+			GFxUDKFrontEnd_InfoDialog InfoDialog() { mixin(MGPC!("GFxUDKFrontEnd_InfoDialog", 432)()); }
+			GFxUDKFrontEnd_JoinGame JoinGameView() { mixin(MGPC!("GFxUDKFrontEnd_JoinGame", 428)()); }
+			GFxUDKFrontEnd_ServerSettings ServerSettingsView() { mixin(MGPC!("GFxUDKFrontEnd_ServerSettings", 424)()); }
+			GFxUDKFrontEnd_Settings SettingsView() { mixin(MGPC!("GFxUDKFrontEnd_Settings", 420)()); }
+			GFxUDKFrontEnd_Mutators MutatorsView() { mixin(MGPC!("GFxUDKFrontEnd_Mutators", 416)()); }
+			GFxUDKFrontEnd_GameMode GameModeView() { mixin(MGPC!("GFxUDKFrontEnd_GameMode", 412)()); }
+			GFxUDKFrontEnd_MapSelect MapSelectView() { mixin(MGPC!("GFxUDKFrontEnd_MapSelect", 408)()); }
+			GFxUDKFrontEnd_HostGame HostGameView() { mixin(MGPC!("GFxUDKFrontEnd_HostGame", 404)()); }
+			GFxUDKFrontEnd_Multiplayer MultiplayerView() { mixin(MGPC!("GFxUDKFrontEnd_Multiplayer", 400)()); }
+			GFxUDKFrontEnd_InstantAction InstantActionView() { mixin(MGPC!("GFxUDKFrontEnd_InstantAction", 396)()); }
+			GFxUDKFrontEnd_MainMenu MainMenuView() { mixin(MGPC!("GFxUDKFrontEnd_MainMenu", 392)()); }
+			GFxObject ManagerMC() { mixin(MGPC!("GFxObject", 384)()); }
+			GFxObject RootMC() { mixin(MGPC!("GFxObject", 380)()); }
 		}
 		bool bInitialized() { mixin(MGBPC!(388, 0x1)()); }
 		bool bInitialized(bool val) { mixin(MSBPC!(388, 0x1)()); }
@@ -140,11 +140,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.EscapeDelegate, cast(void*)0, cast(void*)0);
 	}
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -196,20 +197,22 @@ void* InDelegate)
 void**)params.ptr = InDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetEscapeDelegate, params.ptr, cast(void*)0);
 	}
-	void PushViewByName(ScriptName TargetViewName, GFxUDKFrontEnd_Screen ParentView)
+	void PushViewByName(ScriptName TargetViewName, GFxUDKFrontEnd_Screen* ParentView = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = TargetViewName;
-		*cast(GFxUDKFrontEnd_Screen*)&params[8] = ParentView;
+		if (ParentView !is null)
+			*cast(GFxUDKFrontEnd_Screen*)&params[8] = *ParentView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PushViewByName, params.ptr, cast(void*)0);
 	}
-	GFxUDKFrontEnd_Dialog SpawnDialog(ScriptName TargetDialogName, GFxUDKFrontEnd_Screen ParentView)
+	GFxUDKFrontEnd_Dialog SpawnDialog(ScriptName TargetDialogName, GFxUDKFrontEnd_Screen* ParentView = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = TargetDialogName;
-		*cast(GFxUDKFrontEnd_Screen*)&params[8] = ParentView;
+		if (ParentView !is null)
+			*cast(GFxUDKFrontEnd_Screen*)&params[8] = *ParentView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnDialog, params.ptr, cast(void*)0);
 		return *cast(GFxUDKFrontEnd_Dialog*)&params[12];
 	}
@@ -294,12 +297,14 @@ void**)params.ptr = InDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostWidgetInit, cast(void*)0, cast(void*)0);
 	}
-	bool CheckLinkConnectionAndError(ScriptString AlternateTitle, ScriptString AlternateMessage)
+	bool CheckLinkConnectionAndError(ScriptString* AlternateTitle = null, ScriptString* AlternateMessage = null)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = AlternateTitle;
-		*cast(ScriptString*)&params[12] = AlternateMessage;
+		if (AlternateTitle !is null)
+			*cast(ScriptString*)params.ptr = *AlternateTitle;
+		if (AlternateMessage !is null)
+			*cast(ScriptString*)&params[12] = *AlternateMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckLinkConnectionAndError, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

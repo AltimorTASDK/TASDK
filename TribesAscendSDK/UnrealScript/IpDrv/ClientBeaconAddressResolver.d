@@ -13,7 +13,7 @@ public extern(D):
 	@property final static ClientBeaconAddressResolver DefaultProperties() { mixin(MGDPC!(ClientBeaconAddressResolver, "ClientBeaconAddressResolver IpDrv.Default__ClientBeaconAddressResolver")()); }
 	@property final auto ref
 	{
-		ScriptName BeaconName() { mixin(MGPC!(ScriptName, 64)()); }
-		int BeaconPort() { mixin(MGPC!(int, 60)()); }
+		ScriptName BeaconName() { mixin(MGPC!("ScriptName", 64)()); }
+		int BeaconPort() { mixin(MGPC!("int", 60)()); }
 	}
 }

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static DistributionFloatUniform DefaultProperties() { mixin(MGDPC!(DistributionFloatUniform, "DistributionFloatUniform Engine.Default__DistributionFloatUniform")()); }
 	@property final auto ref
 	{
-		float Max() { mixin(MGPC!(float, 84)()); }
-		float Min() { mixin(MGPC!(float, 80)()); }
+		float Max() { mixin(MGPC!("float", 84)()); }
+		float Min() { mixin(MGPC!("float", 80)()); }
 	}
 }

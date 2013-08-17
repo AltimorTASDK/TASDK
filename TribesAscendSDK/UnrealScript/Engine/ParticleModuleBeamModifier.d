@@ -39,13 +39,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 148)()); }
-			ParticleModuleBeamModifier.BeamModifierOptions StrengthOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 144)()); }
-			DistributionVector.RawDistributionVector Tangent() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
-			ParticleModuleBeamModifier.BeamModifierOptions TangentOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 108)()); }
-			DistributionVector.RawDistributionVector Position() { mixin(MGPC!(DistributionVector.RawDistributionVector, 80)()); }
-			ParticleModuleBeamModifier.BeamModifierOptions PositionOptions() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierOptions, 76)()); }
-			ParticleModuleBeamModifier.BeamModifierType ModifierType() { mixin(MGPC!(ParticleModuleBeamModifier.BeamModifierType, 72)()); }
+			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 148)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions StrengthOptions() { mixin(MGPC!("ParticleModuleBeamModifier.BeamModifierOptions", 144)()); }
+			DistributionVector.RawDistributionVector Tangent() { mixin(MGPC!("DistributionVector.RawDistributionVector", 112)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions TangentOptions() { mixin(MGPC!("ParticleModuleBeamModifier.BeamModifierOptions", 108)()); }
+			DistributionVector.RawDistributionVector Position() { mixin(MGPC!("DistributionVector.RawDistributionVector", 80)()); }
+			ParticleModuleBeamModifier.BeamModifierOptions PositionOptions() { mixin(MGPC!("ParticleModuleBeamModifier.BeamModifierOptions", 76)()); }
+			ParticleModuleBeamModifier.BeamModifierType ModifierType() { mixin(MGPC!("ParticleModuleBeamModifier.BeamModifierType", 72)()); }
 		}
 		bool bAbsoluteTangent() { mixin(MGBPC!(140, 0x1)()); }
 		bool bAbsoluteTangent(bool val) { mixin(MSBPC!(140, 0x1)()); }

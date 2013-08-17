@@ -18,12 +18,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Rotator Rotation() { mixin(MGPC!(Rotator, 604)()); }
+		Rotator Rotation() { mixin(MGPC!("Rotator", 604)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewOuterCone'!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewInnerCone'!
-		float LightShaftConeAngle() { mixin(MGPC!(float, 592)()); }
-		float OuterConeAngle() { mixin(MGPC!(float, 588)()); }
-		float InnerConeAngle() { mixin(MGPC!(float, 584)()); }
+		float LightShaftConeAngle() { mixin(MGPC!("float", 592)()); }
+		float OuterConeAngle() { mixin(MGPC!("float", 588)()); }
+		float InnerConeAngle() { mixin(MGPC!("float", 584)()); }
 	}
 	final void SetRotation(Rotator NewRotation)
 	{

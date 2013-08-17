@@ -141,35 +141,35 @@ public extern(D):
 	{
 		auto ref
 		{
-			int m_nReticuleIndex() { mixin(MGPC!(int, 1656)()); }
-			float m_fReloadTimeRemaining() { mixin(MGPC!(float, 1704)()); }
-			ScriptName m_WeaponSpinControl() { mixin(MGPC!(ScriptName, 1772)()); }
-			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!(TrObject.EWeaponTracerType, 1708)()); }
-			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!(ParticleSystem, 1724)()); }
-			float m_fShowTracerDistance() { mixin(MGPC!(float, 1720)()); }
-			CameraShake m_FireCameraShake() { mixin(MGPC!(CameraShake, 1768)()); }
-			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC!(MaterialInstanceConstant, 1764)()); }
-			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC!(ScriptName, 1756)()); }
-			int r_nCarriedAmmoCount() { mixin(MGPC!(int, 1752)()); }
-			SoundCue m_DryFireSoundCue() { mixin(MGPC!(SoundCue, 1748)()); }
-			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC!(SoundCue, 1744)()); }
-			float m_fPctTimeBeforeReload() { mixin(MGPC!(float, 1740)()); }
-			float m_fReloadTime() { mixin(MGPC!(float, 1736)()); }
-			int m_nCarriedAmmo() { mixin(MGPC!(int, 1732)()); }
-			int m_nLowAmmoWarning() { mixin(MGPC!(int, 1728)()); }
-			int m_nTracerInterval() { mixin(MGPC!(int, 1716)()); }
-			float m_fAccuracyCorrectionRate() { mixin(MGPC!(float, 1700)()); }
-			float m_fAimingModeAccuracyBonus() { mixin(MGPC!(float, 1696)()); }
-			float m_fAccuracyLossMax() { mixin(MGPC!(float, 1692)()); }
-			float m_fAccuracyLossOnShot() { mixin(MGPC!(float, 1688)()); }
-			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC!(float, 1684)()); }
-			float m_fAccuracyLossOnJump() { mixin(MGPC!(float, 1680)()); }
-			float m_fDefaultAccuracy() { mixin(MGPC!(float, 1676)()); }
-			float m_fCachedFiringCone() { mixin(MGPC!(float, 1672)()); }
-			int m_nFiringConeWidthDegrees() { mixin(MGPC!(int, 1668)()); }
-			int m_ShotsFired() { mixin(MGPC!(int, 1664)()); }
-			int m_nAltReticuleIndex() { mixin(MGPC!(int, 1660)()); }
-			int DBWeaponId() { mixin(MGPC!(int, 1652)()); }
+			int m_nReticuleIndex() { mixin(MGPC!("int", 1656)()); }
+			float m_fReloadTimeRemaining() { mixin(MGPC!("float", 1704)()); }
+			ScriptName m_WeaponSpinControl() { mixin(MGPC!("ScriptName", 1772)()); }
+			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!("TrObject.EWeaponTracerType", 1708)()); }
+			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!("ParticleSystem", 1724)()); }
+			float m_fShowTracerDistance() { mixin(MGPC!("float", 1720)()); }
+			CameraShake m_FireCameraShake() { mixin(MGPC!("CameraShake", 1768)()); }
+			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC!("MaterialInstanceConstant", 1764)()); }
+			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC!("ScriptName", 1756)()); }
+			int r_nCarriedAmmoCount() { mixin(MGPC!("int", 1752)()); }
+			SoundCue m_DryFireSoundCue() { mixin(MGPC!("SoundCue", 1748)()); }
+			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC!("SoundCue", 1744)()); }
+			float m_fPctTimeBeforeReload() { mixin(MGPC!("float", 1740)()); }
+			float m_fReloadTime() { mixin(MGPC!("float", 1736)()); }
+			int m_nCarriedAmmo() { mixin(MGPC!("int", 1732)()); }
+			int m_nLowAmmoWarning() { mixin(MGPC!("int", 1728)()); }
+			int m_nTracerInterval() { mixin(MGPC!("int", 1716)()); }
+			float m_fAccuracyCorrectionRate() { mixin(MGPC!("float", 1700)()); }
+			float m_fAimingModeAccuracyBonus() { mixin(MGPC!("float", 1696)()); }
+			float m_fAccuracyLossMax() { mixin(MGPC!("float", 1692)()); }
+			float m_fAccuracyLossOnShot() { mixin(MGPC!("float", 1688)()); }
+			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC!("float", 1684)()); }
+			float m_fAccuracyLossOnJump() { mixin(MGPC!("float", 1680)()); }
+			float m_fDefaultAccuracy() { mixin(MGPC!("float", 1676)()); }
+			float m_fCachedFiringCone() { mixin(MGPC!("float", 1672)()); }
+			int m_nFiringConeWidthDegrees() { mixin(MGPC!("int", 1668)()); }
+			int m_ShotsFired() { mixin(MGPC!("int", 1664)()); }
+			int m_nAltReticuleIndex() { mixin(MGPC!("int", 1660)()); }
+			int DBWeaponId() { mixin(MGPC!("int", 1652)()); }
 		}
 		bool m_bShowAmmoIndicator() { mixin(MGBPC!(1712, 0x20)()); }
 		bool m_bShowAmmoIndicator(bool val) { mixin(MSBPC!(1712, 0x20)()); }
@@ -283,11 +283,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProjectileClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
-	void UpdateShotsFired(bool Reset)
+	void UpdateShotsFired(bool* Reset = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = Reset;
+		if (Reset !is null)
+			*cast(bool*)params.ptr = *Reset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateShotsFired, params.ptr, cast(void*)0);
 	}
 	int GetNumRoundsCurrentlyInClip()
@@ -320,12 +321,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
-	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector* HitLocation = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(Vector*)&params[4] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[4] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void ShakeView()
@@ -363,13 +365,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnTracerEffect, params.ptr, cast(void*)0);
 		return *cast(TrProj_Tracer*)&params[16];
 	}
-	void WeaponPlaySoundLocal(SoundCue Sound, float NoiseLoudness, bool bStopWhenOwnerDestroyed)
+	void WeaponPlaySoundLocal(SoundCue Sound, float* NoiseLoudness = null, bool* bStopWhenOwnerDestroyed = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Sound;
-		*cast(float*)&params[4] = NoiseLoudness;
-		*cast(bool*)&params[8] = bStopWhenOwnerDestroyed;
+		if (NoiseLoudness !is null)
+			*cast(float*)&params[4] = *NoiseLoudness;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[8] = *bStopWhenOwnerDestroyed;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponPlaySoundLocal, params.ptr, cast(void*)0);
 	}
 	TrProj_Tracer GetTracer(Vector SpawnLocation, Rotator SpawnRotation)
@@ -464,12 +468,13 @@ final:
 		*cast(UTPlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartZoom, params.ptr, cast(void*)0);
 	}
-	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
+	void EndZoom(UTPlayerController PC, bool* bReturningTo3P = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		*cast(bool*)&params[4] = bReturningTo3P;
+		if (bReturningTo3P !is null)
+			*cast(bool*)&params[4] = *bReturningTo3P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 	void SetAltReticule()

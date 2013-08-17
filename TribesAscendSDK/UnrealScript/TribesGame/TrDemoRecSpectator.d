@@ -58,8 +58,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float AutoSwitchPlayerInterval() { mixin(MGPC!(float, 3440)()); }
-			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!(PlayerReplicationInfo, 3436)()); }
+			float AutoSwitchPlayerInterval() { mixin(MGPC!("float", 3440)()); }
+			PlayerReplicationInfo MyRealViewTarget() { mixin(MGPC!("PlayerReplicationInfo", 3436)()); }
 		}
 		bool bAutoSwitchPlayers() { mixin(MGBPC!(3432, 0x4)()); }
 		bool bAutoSwitchPlayers(bool val) { mixin(MSBPC!(3432, 0x4)()); }
@@ -88,32 +88,36 @@ final:
 		*cast(float*)params.ptr = NewTimeDilation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Slomo, params.ptr, cast(void*)0);
 	}
-	void ViewClass(ScriptClass aClass, bool bQuiet, bool bCheat)
+	void ViewClass(ScriptClass aClass, bool* bQuiet = null, bool* bCheat = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = aClass;
-		*cast(bool*)&params[4] = bQuiet;
-		*cast(bool*)&params[8] = bCheat;
+		if (bQuiet !is null)
+			*cast(bool*)&params[4] = *bQuiet;
+		if (bCheat !is null)
+			*cast(bool*)&params[8] = *bCheat;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ViewClass, params.ptr, cast(void*)0);
 	}
 	void DemoViewNextPlayer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DemoViewNextPlayer, cast(void*)0, cast(void*)0);
 	}
-	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams TransitionParams)
+	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
-		*cast(Camera.ViewTargetTransitionParams*)&params[4] = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)&params[4] = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTarget, params.ptr, cast(void*)0);
 	}
-	void ServerViewSelf(Camera.ViewTargetTransitionParams TransitionParams)
+	void ServerViewSelf(Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Camera.ViewTargetTransitionParams*)params.ptr = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)params.ptr = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerViewSelf, params.ptr, cast(void*)0);
 	}
 	void ClientSetRealViewTarget(PlayerReplicationInfo NewTarget)
@@ -125,14 +129,15 @@ final:
 	}
 	bool SetPause(bool bPause, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* CanUnpauseDelegate)
+void** CanUnpauseDelegate = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPause;
-		*cast(
+		if (CanUnpauseDelegate !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void**)&params[4] = CanUnpauseDelegate;
+void**)&params[4] = *CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -147,8 +152,8 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Vector*)params.ptr = CameraLocation;
 		*cast(Rotator*)&params[12] = CameraRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*CameraLocation = *cast(Vector*)params.ptr;
-		*CameraRotation = *cast(Rotator*)&params[12];
+		CameraLocation = *cast(Vector*)params.ptr;
+		CameraRotation = *cast(Rotator*)&params[12];
 	}
 	void UpdateRotation(float DeltaTime)
 	{

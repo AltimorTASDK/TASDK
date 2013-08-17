@@ -41,8 +41,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStateObject.TeamState")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) PlayerIndices() { mixin(MGPS!(ScriptArray!(int), 4)()); }
-			int TeamIndex() { mixin(MGPS!(int, 0)()); }
+			ScriptArray!(int) PlayerIndices() { mixin(MGPS!("ScriptArray!(int)", 4)()); }
+			int TeamIndex() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct PlayerState
@@ -53,21 +53,21 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStateObject.PlayerState")()); }
 		@property final auto ref
 		{
-			float TimeAliveSinceLastDeath() { mixin(MGPS!(float, 12)()); }
-			float TimeSpawned() { mixin(MGPS!(float, 8)()); }
-			int CurrentTeamIndex() { mixin(MGPS!(int, 4)()); }
-			int PlayerIndex() { mixin(MGPS!(int, 0)()); }
+			float TimeAliveSinceLastDeath() { mixin(MGPS!("float", 12)()); }
+			float TimeSpawned() { mixin(MGPS!("float", 8)()); }
+			int CurrentTeamIndex() { mixin(MGPS!("int", 4)()); }
+			int PlayerIndex() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxRoundNumber() { mixin(MGPC!(int, 124)()); }
-			int RoundNumber() { mixin(MGPC!(int, 120)()); }
-			GameStateObject.GameSessionType SessionType() { mixin(MGPC!(GameStateObject.GameSessionType, 112)()); }
-			UObject.Array_Mirror PlayerStates() { mixin(MGPC!(UObject.Array_Mirror, 100)()); }
-			UObject.Array_Mirror TeamStates() { mixin(MGPC!(UObject.Array_Mirror, 88)()); }
+			int MaxRoundNumber() { mixin(MGPC!("int", 124)()); }
+			int RoundNumber() { mixin(MGPC!("int", 120)()); }
+			GameStateObject.GameSessionType SessionType() { mixin(MGPC!("GameStateObject.GameSessionType", 112)()); }
+			UObject.Array_Mirror PlayerStates() { mixin(MGPC!("UObject.Array_Mirror", 100)()); }
+			UObject.Array_Mirror TeamStates() { mixin(MGPC!("UObject.Array_Mirror", 88)()); }
 		}
 		bool bIsRoundStarted() { mixin(MGBPC!(116, 0x2)()); }
 		bool bIsRoundStarted(bool val) { mixin(MSBPC!(116, 0x2)()); }

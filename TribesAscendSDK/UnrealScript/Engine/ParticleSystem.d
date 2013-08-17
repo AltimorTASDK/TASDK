@@ -71,43 +71,43 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystem.LODSoloTrack")()); }
-		@property final auto ref ScriptArray!(ubyte) SoloEnableSetting() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
+		@property final auto ref ScriptArray!(ubyte) SoloEnableSetting() { mixin(MGPS!("ScriptArray!(ubyte)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ParticleSystem.EParticleSystemUpdateMode SystemUpdateMode() { mixin(MGPC!(ParticleSystem.EParticleSystemUpdateMode, 60)()); }
-			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!(ParticleSystem.ParticleSystemLODMethod, 61)()); }
-			ParticleSystem.EParticleSystemOcclusionBoundsMethod OcclusionBoundsMethod() { mixin(MGPC!(ParticleSystem.EParticleSystemOcclusionBoundsMethod, 62)()); }
-			float UpdateTime_FPS() { mixin(MGPC!(float, 64)()); }
-			float UpdateTime_Delta() { mixin(MGPC!(float, 68)()); }
-			float WarmupTime() { mixin(MGPC!(float, 72)()); }
-			ScriptArray!(ParticleEmitter) Emitters() { mixin(MGPC!(ScriptArray!(ParticleEmitter), 76)()); }
+			ParticleSystem.EParticleSystemUpdateMode SystemUpdateMode() { mixin(MGPC!("ParticleSystem.EParticleSystemUpdateMode", 60)()); }
+			ParticleSystem.ParticleSystemLODMethod LODMethod() { mixin(MGPC!("ParticleSystem.ParticleSystemLODMethod", 61)()); }
+			ParticleSystem.EParticleSystemOcclusionBoundsMethod OcclusionBoundsMethod() { mixin(MGPC!("ParticleSystem.EParticleSystemOcclusionBoundsMethod", 62)()); }
+			float UpdateTime_FPS() { mixin(MGPC!("float", 64)()); }
+			float UpdateTime_Delta() { mixin(MGPC!("float", 68)()); }
+			float WarmupTime() { mixin(MGPC!("float", 72)()); }
+			ScriptArray!(ParticleEmitter) Emitters() { mixin(MGPC!("ScriptArray!(ParticleEmitter)", 76)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewComponent'!
-			Rotator ThumbnailAngle() { mixin(MGPC!(Rotator, 92)()); }
-			float ThumbnailDistance() { mixin(MGPC!(float, 104)()); }
-			float ThumbnailWarmup() { mixin(MGPC!(float, 108)()); }
-			InterpCurveEdSetup CurveEdSetup() { mixin(MGPC!(InterpCurveEdSetup, 116)()); }
-			float LODDistanceCheckTime() { mixin(MGPC!(float, 120)()); }
-			ScriptArray!(float) LODDistances() { mixin(MGPC!(ScriptArray!(float), 124)()); }
-			int EditorLODSetting() { mixin(MGPC!(int, 136)()); }
-			ScriptArray!(ParticleSystem.ParticleSystemLOD) LODSettings() { mixin(MGPC!(ScriptArray!(ParticleSystem.ParticleSystemLOD), 140)()); }
-			UObject.Box FixedRelativeBoundingBox() { mixin(MGPC!(UObject.Box, 152)()); }
-			float SecondsBeforeInactive() { mixin(MGPC!(float, 180)()); }
-			ScriptString FloorMesh() { mixin(MGPC!(ScriptString, 184)()); }
-			Vector FloorPosition() { mixin(MGPC!(Vector, 196)()); }
-			Rotator FloorRotation() { mixin(MGPC!(Rotator, 208)()); }
-			float FloorScale() { mixin(MGPC!(float, 220)()); }
-			Vector FloorScale3D() { mixin(MGPC!(Vector, 224)()); }
-			UObject.Color BackgroundColor() { mixin(MGPC!(UObject.Color, 236)()); }
-			Texture2D ThumbnailImage() { mixin(MGPC!(Texture2D, 240)()); }
-			float Delay() { mixin(MGPC!(float, 244)()); }
-			float DelayLow() { mixin(MGPC!(float, 248)()); }
-			Vector MacroUVPosition() { mixin(MGPC!(Vector, 252)()); }
-			float MacroUVRadius() { mixin(MGPC!(float, 264)()); }
-			UObject.Box CustomOcclusionBounds() { mixin(MGPC!(UObject.Box, 268)()); }
-			ScriptArray!(ParticleSystem.LODSoloTrack) SoloTracking() { mixin(MGPC!(ScriptArray!(ParticleSystem.LODSoloTrack), 296)()); }
+			Rotator ThumbnailAngle() { mixin(MGPC!("Rotator", 92)()); }
+			float ThumbnailDistance() { mixin(MGPC!("float", 104)()); }
+			float ThumbnailWarmup() { mixin(MGPC!("float", 108)()); }
+			InterpCurveEdSetup CurveEdSetup() { mixin(MGPC!("InterpCurveEdSetup", 116)()); }
+			float LODDistanceCheckTime() { mixin(MGPC!("float", 120)()); }
+			ScriptArray!(float) LODDistances() { mixin(MGPC!("ScriptArray!(float)", 124)()); }
+			int EditorLODSetting() { mixin(MGPC!("int", 136)()); }
+			ScriptArray!(ParticleSystem.ParticleSystemLOD) LODSettings() { mixin(MGPC!("ScriptArray!(ParticleSystem.ParticleSystemLOD)", 140)()); }
+			UObject.Box FixedRelativeBoundingBox() { mixin(MGPC!("UObject.Box", 152)()); }
+			float SecondsBeforeInactive() { mixin(MGPC!("float", 180)()); }
+			ScriptString FloorMesh() { mixin(MGPC!("ScriptString", 184)()); }
+			Vector FloorPosition() { mixin(MGPC!("Vector", 196)()); }
+			Rotator FloorRotation() { mixin(MGPC!("Rotator", 208)()); }
+			float FloorScale() { mixin(MGPC!("float", 220)()); }
+			Vector FloorScale3D() { mixin(MGPC!("Vector", 224)()); }
+			UObject.Color BackgroundColor() { mixin(MGPC!("UObject.Color", 236)()); }
+			Texture2D ThumbnailImage() { mixin(MGPC!("Texture2D", 240)()); }
+			float Delay() { mixin(MGPC!("float", 244)()); }
+			float DelayLow() { mixin(MGPC!("float", 248)()); }
+			Vector MacroUVPosition() { mixin(MGPC!("Vector", 252)()); }
+			float MacroUVRadius() { mixin(MGPC!("float", 264)()); }
+			UObject.Box CustomOcclusionBounds() { mixin(MGPC!("UObject.Box", 268)()); }
+			ScriptArray!(ParticleSystem.LODSoloTrack) SoloTracking() { mixin(MGPC!("ScriptArray!(ParticleSystem.LODSoloTrack)", 296)()); }
 		}
 		bool bLit() { mixin(MGBPC!(112, 0x1)()); }
 		bool bLit(bool val) { mixin(MSBPC!(112, 0x1)()); }

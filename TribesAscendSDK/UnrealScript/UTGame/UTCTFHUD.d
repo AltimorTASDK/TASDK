@@ -34,8 +34,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTGameReplicationInfo.EFlagState FlagStates() { mixin(MGPC!(UTGameReplicationInfo.EFlagState, 2748)()); }
-		UTCTFBase FlagBases() { mixin(MGPC!(UTCTFBase, 2740)()); }
+		UTGameReplicationInfo.EFlagState FlagStates() { mixin(MGPC!("UTGameReplicationInfo.EFlagState", 2748)()); }
+		UTCTFBase FlagBases() { mixin(MGPC!("UTCTFBase", 2740)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -46,13 +46,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
-	void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float DestScale)
+	void DisplayTeamLogos(ubyte TeamIndex, UObject.Vector2D pos, float* DestScale = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = TeamIndex;
 		*cast(UObject.Vector2D*)&params[4] = pos;
-		*cast(float*)&params[12] = DestScale;
+		if (DestScale !is null)
+			*cast(float*)&params[12] = *DestScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayTeamLogos, params.ptr, cast(void*)0);
 	}
 	Actor GetDirectionalDest(ubyte TeamIndex)

@@ -27,25 +27,25 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SoundCue.SoundNodeEditorData")()); }
 		@property final auto ref
 		{
-			int NodePosY() { mixin(MGPS!(int, 4)()); }
-			int NodePosX() { mixin(MGPS!(int, 0)()); }
+			int NodePosY() { mixin(MGPS!("int", 4)()); }
+			int NodePosX() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString FaceFXAnimName() { mixin(MGPC!(ScriptString, 168)()); }
-		FaceFXAnimSet FaceFXAnimSetRef() { mixin(MGPC!(FaceFXAnimSet, 152)()); }
-		ScriptString FaceFXGroupName() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptName SoundGroup() { mixin(MGPC!(ScriptName, 188)()); }
-		int CurrentPlayCount() { mixin(MGPC!(int, 184)()); }
-		int MaxConcurrentPlayCount() { mixin(MGPC!(int, 180)()); }
-		float Duration() { mixin(MGPC!(float, 148)()); }
-		float PitchMultiplier() { mixin(MGPC!(float, 144)()); }
-		float VolumeMultiplier() { mixin(MGPC!(float, 140)()); }
-		float MaxAudibleDistance() { mixin(MGPC!(float, 136)()); }
+		ScriptString FaceFXAnimName() { mixin(MGPC!("ScriptString", 168)()); }
+		FaceFXAnimSet FaceFXAnimSetRef() { mixin(MGPC!("FaceFXAnimSet", 152)()); }
+		ScriptString FaceFXGroupName() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptName SoundGroup() { mixin(MGPC!("ScriptName", 188)()); }
+		int CurrentPlayCount() { mixin(MGPC!("int", 184)()); }
+		int MaxConcurrentPlayCount() { mixin(MGPC!("int", 180)()); }
+		float Duration() { mixin(MGPC!("float", 148)()); }
+		float PitchMultiplier() { mixin(MGPC!("float", 144)()); }
+		float VolumeMultiplier() { mixin(MGPC!("float", 140)()); }
+		float MaxAudibleDistance() { mixin(MGPC!("float", 136)()); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'EditorData'!
-		SoundNode FirstNode() { mixin(MGPC!(SoundNode, 72)()); }
-		AudioDevice.ESoundClassName SoundClassName() { mixin(MGPC!(AudioDevice.ESoundClassName, 68)()); }
+		SoundNode FirstNode() { mixin(MGPC!("SoundNode", 72)()); }
+		AudioDevice.ESoundClassName SoundClassName() { mixin(MGPC!("AudioDevice.ESoundClassName", 68)()); }
 		// WARNING: Property 'SoundClass' has the same name as a defined type!
 	}
 	final float GetCueDuration()

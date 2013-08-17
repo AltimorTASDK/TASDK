@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction OnTripSleep() { mixin(MGF!("mOnTripSleep", "Function TribesGame.TrDeployable_TripSensor.OnTripSleep")()); }
 		}
 	}
-	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 1540)()); }
+	@property final auto ref UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!("UObject.Pointer", 1540)()); }
 final:
 	void AddTripActor(TrTripActor NewTrip)
 	{
@@ -77,7 +77,7 @@ final:
 		*cast(bool*)params.ptr = bIsLeft;
 		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
-		*SocketPosition = *cast(Vector*)&params[4];
+		SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void OnTripAwake()

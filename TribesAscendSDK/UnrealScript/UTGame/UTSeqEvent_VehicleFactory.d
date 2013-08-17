@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mActivated;
 		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqEvent_VehicleFactory.Activated")()); }
 	}
-	@property final auto ref UTVehicle SpawnedVehicle() { mixin(MGPC!(UTVehicle, 256)()); }
+	@property final auto ref UTVehicle SpawnedVehicle() { mixin(MGPC!("UTVehicle", 256)()); }
 	final void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);

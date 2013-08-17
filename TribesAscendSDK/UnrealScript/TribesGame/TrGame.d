@@ -1584,29 +1584,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 1364)()); }
-			float m_fFriendlyFireDamageScale() { mixin(MGPC!(float, 1396)()); }
-			float m_fForcedRespawnTime() { mixin(MGPC!(float, 1404)()); }
-			TrSeekingMissileManager m_SeekingMissileManager() { mixin(MGPC!(TrSeekingMissileManager, 1400)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 1364)()); }
+			float m_fFriendlyFireDamageScale() { mixin(MGPC!("float", 1396)()); }
+			float m_fForcedRespawnTime() { mixin(MGPC!("float", 1404)()); }
+			TrSeekingMissileManager m_SeekingMissileManager() { mixin(MGPC!("TrSeekingMissileManager", 1400)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditsSortViaPC__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CreditSort__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ScoreSort__Delegate'!
-			int m_nMinNetPlayers() { mixin(MGPC!(int, 1416)()); }
-			int m_nRoundCountdownRemainingTime() { mixin(MGPC!(int, 1412)()); }
-			int m_nRoundCountdownTime() { mixin(MGPC!(int, 1408)()); }
-			int m_nAutoBalanceTeamDifference() { mixin(MGPC!(int, 1392)()); }
-			float m_fAutoBalanceTime() { mixin(MGPC!(float, 1388)()); }
-			int m_nPlayerTrackingInterval() { mixin(MGPC!(int, 1384)()); }
-			int m_nPlayerTrackingCount() { mixin(MGPC!(int, 1380)()); }
-			int CountdownWait() { mixin(MGPC!(int, 1376)()); }
-			int SummaryWait() { mixin(MGPC!(int, 1372)()); }
-			int EndGameWait() { mixin(MGPC!(int, 1368)()); }
-			int MINIMUM_CREDITS_FOR_EXPERIENCE() { mixin(MGPC!(int, 1360)()); }
-			float m_OvertimeTimeLimit() { mixin(MGPC!(float, 1356)()); }
-			int m_nNextEffectInstanceId() { mixin(MGPC!(int, 1352)()); }
-			int m_nEndMatchCounter() { mixin(MGPC!(int, 1348)()); }
-			int m_nWinningTeam() { mixin(MGPC!(int, 1344)()); }
-			ScriptString m_sWinnerName() { mixin(MGPC!(ScriptString, 1332)()); }
+			int m_nMinNetPlayers() { mixin(MGPC!("int", 1416)()); }
+			int m_nRoundCountdownRemainingTime() { mixin(MGPC!("int", 1412)()); }
+			int m_nRoundCountdownTime() { mixin(MGPC!("int", 1408)()); }
+			int m_nAutoBalanceTeamDifference() { mixin(MGPC!("int", 1392)()); }
+			float m_fAutoBalanceTime() { mixin(MGPC!("float", 1388)()); }
+			int m_nPlayerTrackingInterval() { mixin(MGPC!("int", 1384)()); }
+			int m_nPlayerTrackingCount() { mixin(MGPC!("int", 1380)()); }
+			int CountdownWait() { mixin(MGPC!("int", 1376)()); }
+			int SummaryWait() { mixin(MGPC!("int", 1372)()); }
+			int EndGameWait() { mixin(MGPC!("int", 1368)()); }
+			int MINIMUM_CREDITS_FOR_EXPERIENCE() { mixin(MGPC!("int", 1360)()); }
+			float m_OvertimeTimeLimit() { mixin(MGPC!("float", 1356)()); }
+			int m_nNextEffectInstanceId() { mixin(MGPC!("int", 1352)()); }
+			int m_nEndMatchCounter() { mixin(MGPC!("int", 1348)()); }
+			int m_nWinningTeam() { mixin(MGPC!("int", 1344)()); }
+			ScriptString m_sWinnerName() { mixin(MGPC!("ScriptString", 1332)()); }
 		}
 		bool bFirstBloodAchieved() { mixin(MGBPC!(1328, 0x8)()); }
 		bool bFirstBloodAchieved(bool val) { mixin(MSBPC!(1328, 0x8)()); }
@@ -1729,8 +1729,8 @@ final:
 		*cast(ScriptClass*)&params[36] = pDamageType;
 		*cast(Actor*)&params[40] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReduceDamage, params.ptr, cast(void*)0);
-		*Damage = *cast(int*)params.ptr;
-		*Momentum = *cast(Vector*)&params[24];
+		Damage = *cast(int*)params.ptr;
+		Momentum = *cast(Vector*)&params[24];
 	}
 	void PreBeginPlay()
 	{
@@ -1740,13 +1740,16 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddInitialBots, cast(void*)0, cast(void*)0);
 	}
-	UTBot AddBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
+	UTBot AddBot(ScriptString* BotName = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = BotName;
-		*cast(bool*)&params[12] = bUseTeamIndex;
-		*cast(int*)&params[16] = TeamIndex;
+		if (BotName !is null)
+			*cast(ScriptString*)params.ptr = *BotName;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[12] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[16] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
@@ -1757,25 +1760,27 @@ final:
 		*cast(int*)params.ptr = Num;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddBots, params.ptr, cast(void*)0);
 	}
-	UTBot SpawnBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
+	UTBot SpawnBot(ScriptString* BotName = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = BotName;
-		*cast(bool*)&params[12] = bUseTeamIndex;
-		*cast(int*)&params[16] = TeamIndex;
+		if (BotName !is null)
+			*cast(ScriptString*)params.ptr = *BotName;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[12] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[16] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
-	void InitializeBot(UTBot NewBot, UTTeamInfo BotTeam, ref const UTCharInfo.CharacterInfo BotInfo)
+	void InitializeBot(UTBot NewBot, UTTeamInfo BotTeam, ref in UTCharInfo.CharacterInfo BotInfo)
 	{
 		ubyte params[120];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = NewBot;
 		*cast(UTTeamInfo*)&params[4] = BotTeam;
-		*cast(UTCharInfo.CharacterInfo*)&params[8] = BotInfo;
+		*cast(UTCharInfo.CharacterInfo*)&params[8] = cast(UTCharInfo.CharacterInfo)BotInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeBot, params.ptr, cast(void*)0);
-		*BotInfo = *cast(UTCharInfo.CharacterInfo*)&params[8];
 	}
 	void StartBots()
 	{
@@ -1788,16 +1793,16 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.KickIdler, params.ptr, cast(void*)0);
 	}
-	PlayerController Login(ScriptString Portal, ScriptString Options, const OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
+	PlayerController Login(ScriptString Portal, ScriptString Options, in OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Portal;
 		*cast(ScriptString*)&params[12] = Options;
-		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = UniqueId;
+		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = cast(OnlineSubsystem.UniqueNetId)UniqueId;
 		*cast(ScriptString*)&params[32] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[32];
+		ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
 	}
 	Pawn SpawnDefaultPawnFor(Controller NewPlayer, NavigationPoint StartSpot)
@@ -1969,7 +1974,7 @@ final:
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleSeamlessTravelPlayer, params.ptr, cast(void*)0);
-		*C = *cast(Controller*)params.ptr;
+		C = *cast(Controller*)params.ptr;
 	}
 	void SetPlayerDefaults(Pawn PlayerPawn)
 	{
@@ -2034,7 +2039,7 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitGame, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 	void SetPRI(PlayerController PC, PlayerReplicationInfo NewPRI)
 	{
@@ -2110,7 +2115,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgStartGame, params.ptr, cast(void*)0);
-		*Reason = *cast(ScriptString*)params.ptr;
+		Reason = *cast(ScriptString*)params.ptr;
 	}
 	void TgEndGame(ref ScriptString Reason)
 	{
@@ -2118,14 +2123,15 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgEndGame, params.ptr, cast(void*)0);
-		*Reason = *cast(ScriptString*)params.ptr;
+		Reason = *cast(ScriptString*)params.ptr;
 	}
-	void TgChangeScore(int nTeam, int nCount)
+	void TgChangeScore(int nTeam, int* nCount = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = nTeam;
-		*cast(int*)&params[4] = nCount;
+		if (nCount !is null)
+			*cast(int*)&params[4] = *nCount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgChangeScore, params.ptr, cast(void*)0);
 	}
 	void TgChangeTime(int nSeconds)
@@ -2141,15 +2147,17 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgGetSpectators, params.ptr, cast(void*)0);
-		*List = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		List = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
-	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte InTeam, ScriptString IncomingName)
+	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte* InTeam = null, ScriptString* IncomingName = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
-		params[4] = InTeam;
-		*cast(ScriptString*)&params[8] = IncomingName;
+		if (InTeam !is null)
+			params[4] = *InTeam;
+		if (IncomingName !is null)
+			*cast(ScriptString*)&params[8] = *IncomingName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPlayerStart, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[20];
 	}

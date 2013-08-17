@@ -20,9 +20,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!(ScriptArray!(MorphTarget), 60)()); }
-		UObject.Array_Mirror RawWedgePointIndices() { mixin(MGPC!(UObject.Array_Mirror, 76)()); }
-		SkeletalMesh BaseSkelMesh() { mixin(MGPC!(SkeletalMesh, 72)()); }
+		ScriptArray!(MorphTarget) Targets() { mixin(MGPC!("ScriptArray!(MorphTarget)", 60)()); }
+		UObject.Array_Mirror RawWedgePointIndices() { mixin(MGPC!("UObject.Array_Mirror", 76)()); }
+		SkeletalMesh BaseSkelMesh() { mixin(MGPC!("SkeletalMesh", 72)()); }
 	}
 	final MorphTarget FindMorphTarget(ScriptName MorphTargetName)
 	{

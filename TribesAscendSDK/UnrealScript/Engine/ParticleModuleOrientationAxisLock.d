@@ -25,5 +25,5 @@ public extern(D):
 		EPAL_ROTATE_Z = 9,
 		EPAL_MAX = 10,
 	}
-	@property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { mixin(MGPC!(ParticleModuleOrientationAxisLock.EParticleAxisLock, 72)()); }
+	@property final auto ref ParticleModuleOrientationAxisLock.EParticleAxisLock LockAxisFlags() { mixin(MGPC!("ParticleModuleOrientationAxisLock.EParticleAxisLock", 72)()); }
 }

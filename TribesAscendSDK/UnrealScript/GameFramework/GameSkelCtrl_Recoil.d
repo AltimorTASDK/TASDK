@@ -26,10 +26,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilParams")()); }
 		@property final auto ref
 		{
-			ubyte Padding() { mixin(MGPS!(ubyte, 3)()); }
-			GameSkelCtrl_Recoil.ERecoilStart Z() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 2)()); }
-			GameSkelCtrl_Recoil.ERecoilStart Y() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 1)()); }
-			GameSkelCtrl_Recoil.ERecoilStart X() { mixin(MGPS!(GameSkelCtrl_Recoil.ERecoilStart, 0)()); }
+			ubyte Padding() { mixin(MGPS!("ubyte", 3)()); }
+			GameSkelCtrl_Recoil.ERecoilStart Z() { mixin(MGPS!("GameSkelCtrl_Recoil.ERecoilStart", 2)()); }
+			GameSkelCtrl_Recoil.ERecoilStart Y() { mixin(MGPS!("GameSkelCtrl_Recoil.ERecoilStart", 1)()); }
+			GameSkelCtrl_Recoil.ERecoilStart X() { mixin(MGPS!("GameSkelCtrl_Recoil.ERecoilStart", 0)()); }
 		}
 	}
 	struct RecoilDef
@@ -40,26 +40,26 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameSkelCtrl_Recoil.RecoilDef")()); }
 		@property final auto ref
 		{
-			Vector LocOffset() { mixin(MGPS!(Vector, 100)()); }
-			GameSkelCtrl_Recoil.RecoilParams LocParams() { mixin(MGPS!(GameSkelCtrl_Recoil.RecoilParams, 96)()); }
-			Vector LocSinOffset() { mixin(MGPS!(Vector, 84)()); }
-			Vector LocFrequency() { mixin(MGPS!(Vector, 72)()); }
-			Vector LocAmplitude() { mixin(MGPS!(Vector, 60)()); }
-			Rotator RotOffset() { mixin(MGPS!(Rotator, 48)()); }
-			GameSkelCtrl_Recoil.RecoilParams RotParams() { mixin(MGPS!(GameSkelCtrl_Recoil.RecoilParams, 44)()); }
-			Vector RotSinOffset() { mixin(MGPS!(Vector, 32)()); }
-			Vector RotFrequency() { mixin(MGPS!(Vector, 20)()); }
-			Vector RotAmplitude() { mixin(MGPS!(Vector, 8)()); }
-			float TimeDuration() { mixin(MGPS!(float, 4)()); }
-			float TimeToGo() { mixin(MGPS!(float, 0)()); }
+			Vector LocOffset() { mixin(MGPS!("Vector", 100)()); }
+			GameSkelCtrl_Recoil.RecoilParams LocParams() { mixin(MGPS!("GameSkelCtrl_Recoil.RecoilParams", 96)()); }
+			Vector LocSinOffset() { mixin(MGPS!("Vector", 84)()); }
+			Vector LocFrequency() { mixin(MGPS!("Vector", 72)()); }
+			Vector LocAmplitude() { mixin(MGPS!("Vector", 60)()); }
+			Rotator RotOffset() { mixin(MGPS!("Rotator", 48)()); }
+			GameSkelCtrl_Recoil.RecoilParams RotParams() { mixin(MGPS!("GameSkelCtrl_Recoil.RecoilParams", 44)()); }
+			Vector RotSinOffset() { mixin(MGPS!("Vector", 32)()); }
+			Vector RotFrequency() { mixin(MGPS!("Vector", 20)()); }
+			Vector RotAmplitude() { mixin(MGPS!("Vector", 8)()); }
+			float TimeDuration() { mixin(MGPS!("float", 4)()); }
+			float TimeToGo() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Vector2D Aim() { mixin(MGPC!(UObject.Vector2D, 304)()); }
-			GameSkelCtrl_Recoil.RecoilDef Recoil() { mixin(MGPC!(GameSkelCtrl_Recoil.RecoilDef, 192)()); }
+			UObject.Vector2D Aim() { mixin(MGPC!("UObject.Vector2D", 304)()); }
+			GameSkelCtrl_Recoil.RecoilDef Recoil() { mixin(MGPC!("GameSkelCtrl_Recoil.RecoilDef", 192)()); }
 		}
 		bool bApplyControl() { mixin(MGBPC!(188, 0x8)()); }
 		bool bApplyControl(bool val) { mixin(MSBPC!(188, 0x8)()); }

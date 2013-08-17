@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		MaterialInstanceConstant m_MeshMaterial() { mixin(MGPC!(MaterialInstanceConstant, 480)()); }
+		MaterialInstanceConstant m_MeshMaterial() { mixin(MGPC!("MaterialInstanceConstant", 480)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 	}
 	final void PreBeginPlay()

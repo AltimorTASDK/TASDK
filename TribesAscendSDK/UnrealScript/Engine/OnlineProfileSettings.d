@@ -173,9 +173,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) ProfileSettingIds() { mixin(MGPC!(ScriptArray!(int), 100)()); }
-		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { mixin(MGPC!(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting), 112)()); }
-		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { mixin(MGPC!(ScriptArray!(Settings.IdToStringMapping), 124)()); }
+		ScriptArray!(int) ProfileSettingIds() { mixin(MGPC!("ScriptArray!(int)", 100)()); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) DefaultSettings() { mixin(MGPC!("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 112)()); }
+		ScriptArray!(Settings.IdToStringMapping) OwnerMappings() { mixin(MGPC!("ScriptArray!(Settings.IdToStringMapping)", 124)()); }
 	}
 final:
 	bool GetProfileSettingDefaultId(int ProfileSettingId, ref int DefaultId, ref int ListIndex)
@@ -186,8 +186,8 @@ final:
 		*cast(int*)&params[4] = DefaultId;
 		*cast(int*)&params[8] = ListIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultId, params.ptr, cast(void*)0);
-		*DefaultId = *cast(int*)&params[4];
-		*ListIndex = *cast(int*)&params[8];
+		DefaultId = *cast(int*)&params[4];
+		ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetProfileSettingDefaultInt(int ProfileSettingId, ref int DefaultInt)
@@ -197,7 +197,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(int*)&params[4] = DefaultInt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultInt, params.ptr, cast(void*)0);
-		*DefaultInt = *cast(int*)&params[4];
+		DefaultInt = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool GetProfileSettingDefaultFloat(int ProfileSettingId, ref float DefaultFloat)
@@ -207,7 +207,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(float*)&params[4] = DefaultFloat;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingDefaultFloat, params.ptr, cast(void*)0);
-		*DefaultFloat = *cast(float*)&params[4];
+		DefaultFloat = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void SetToDefaults()

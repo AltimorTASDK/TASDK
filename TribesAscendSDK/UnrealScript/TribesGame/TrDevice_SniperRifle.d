@@ -42,11 +42,11 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ScopeChargeSound'!
-		float m_fDivCoeff() { mixin(MGPC!(float, 2164)()); }
-		float m_fMultCoeff() { mixin(MGPC!(float, 2160)()); }
-		float r_fAimChargeTime() { mixin(MGPC!(float, 2156)()); }
-		float m_fAimChargeDeltaTime() { mixin(MGPC!(float, 2152)()); }
-		float m_fMaxAimedDamage() { mixin(MGPC!(float, 2148)()); }
+		float m_fDivCoeff() { mixin(MGPC!("float", 2164)()); }
+		float m_fMultCoeff() { mixin(MGPC!("float", 2160)()); }
+		float r_fAimChargeTime() { mixin(MGPC!("float", 2156)()); }
+		float m_fAimChargeDeltaTime() { mixin(MGPC!("float", 2152)()); }
+		float m_fMaxAimedDamage() { mixin(MGPC!("float", 2148)()); }
 	}
 final:
 	void OnSwitchToWeapon()

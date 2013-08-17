@@ -15,9 +15,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(int) Indices() { mixin(MGPC!(ScriptArray!(int), 244)()); }
-			int IncrementAmount() { mixin(MGPC!(int, 236)()); }
-			int LinkCount() { mixin(MGPC!(int, 232)()); }
+			ScriptArray!(int) Indices() { mixin(MGPC!("ScriptArray!(int)", 244)()); }
+			int IncrementAmount() { mixin(MGPC!("int", 236)()); }
+			int LinkCount() { mixin(MGPC!("int", 232)()); }
 		}
 		bool bAutoDisableLinks() { mixin(MGBPC!(240, 0x2)()); }
 		bool bAutoDisableLinks(bool val) { mixin(MSBPC!(240, 0x2)()); }

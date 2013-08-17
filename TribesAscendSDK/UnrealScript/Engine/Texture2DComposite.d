@@ -36,16 +36,16 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Texture2D' has the same name as a defined type!
-			int SizeY() { mixin(MGPS!(int, 12)()); }
-			int SizeX() { mixin(MGPS!(int, 8)()); }
-			int OffsetY() { mixin(MGPS!(int, 4)()); }
-			int OffsetX() { mixin(MGPS!(int, 0)()); }
+			int SizeY() { mixin(MGPS!("int", 12)()); }
+			int SizeX() { mixin(MGPS!("int", 8)()); }
+			int OffsetY() { mixin(MGPS!("int", 4)()); }
+			int OffsetX() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Texture2DComposite.SourceTexture2DRegion) SourceRegions() { mixin(MGPC!(ScriptArray!(Texture2DComposite.SourceTexture2DRegion), 236)()); }
-		int MaxTextureSize() { mixin(MGPC!(int, 248)()); }
+		ScriptArray!(Texture2DComposite.SourceTexture2DRegion) SourceRegions() { mixin(MGPC!("ScriptArray!(Texture2DComposite.SourceTexture2DRegion)", 236)()); }
+		int MaxTextureSize() { mixin(MGPC!("int", 248)()); }
 	}
 final:
 	bool SourceTexturesFullyStreamedIn()

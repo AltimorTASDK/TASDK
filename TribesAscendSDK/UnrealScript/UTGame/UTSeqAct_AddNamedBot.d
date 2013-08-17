@@ -30,10 +30,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			UTBot SpawnedBot() { mixin(MGPC!(UTBot, 256)()); }
-			NavigationPoint StartSpot() { mixin(MGPC!(NavigationPoint, 252)()); }
-			int TeamIndex() { mixin(MGPC!(int, 248)()); }
-			ScriptString BotName() { mixin(MGPC!(ScriptString, 232)()); }
+			UTBot SpawnedBot() { mixin(MGPC!("UTBot", 256)()); }
+			NavigationPoint StartSpot() { mixin(MGPC!("NavigationPoint", 252)()); }
+			int TeamIndex() { mixin(MGPC!("int", 248)()); }
+			ScriptString BotName() { mixin(MGPC!("ScriptString", 232)()); }
 		}
 		bool bForceTeam() { mixin(MGBPC!(244, 0x1)()); }
 		bool bForceTeam(bool val) { mixin(MSBPC!(244, 0x1)()); }

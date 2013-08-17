@@ -44,8 +44,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTDataStore_GameSearchDM.GameSearchSettingsStorage")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UTDataStore_GameSearchDM.PersistentLocalizedSettingValue) StoredValues() { mixin(MGPS!(ScriptArray!(UTDataStore_GameSearchDM.PersistentLocalizedSettingValue), 8)()); }
-			ScriptName GameSearchName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(UTDataStore_GameSearchDM.PersistentLocalizedSettingValue) StoredValues() { mixin(MGPS!("ScriptArray!(UTDataStore_GameSearchDM.PersistentLocalizedSettingValue)", 8)()); }
+			ScriptName GameSearchName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PersistentLocalizedSettingValue
@@ -56,15 +56,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTDataStore_GameSearchDM.PersistentLocalizedSettingValue")()); }
 		@property final auto ref
 		{
-			int ValueId() { mixin(MGPS!(int, 4)()); }
-			int SettingId() { mixin(MGPS!(int, 0)()); }
+			int ValueId() { mixin(MGPS!("int", 4)()); }
+			int SettingId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTDataStore_GameSearchDM.GameSearchSettingsStorage) StoredGameSearchValues() { mixin(MGPC!(ScriptArray!(UTDataStore_GameSearchDM.GameSearchSettingsStorage), 180)()); }
-		UTDataStore_GameSearchHistory HistoryGameSearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchHistory, 176)()); }
-		ScriptClass HistoryGameSearchDataStoreClass() { mixin(MGPC!(ScriptClass, 172)()); }
+		ScriptArray!(UTDataStore_GameSearchDM.GameSearchSettingsStorage) StoredGameSearchValues() { mixin(MGPC!("ScriptArray!(UTDataStore_GameSearchDM.GameSearchSettingsStorage)", 180)()); }
+		UTDataStore_GameSearchHistory HistoryGameSearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchHistory", 176)()); }
+		ScriptClass HistoryGameSearchDataStoreClass() { mixin(MGPC!("ScriptClass", 172)()); }
 	}
 final:
 	void Registered(LocalPlayer PlayerOwner)
@@ -74,20 +74,22 @@ final:
 		*cast(LocalPlayer*)params.ptr = PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Registered, params.ptr, cast(void*)0);
 	}
-	bool SubmitGameSearch(ubyte ControllerIndex, bool bInvalidateExistingSearchResults)
+	bool SubmitGameSearch(ubyte ControllerIndex, bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = ControllerIndex;
-		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)&params[4] = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SubmitGameSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool HasOutstandingQueries(bool bRestrictCheckToSelf)
+	bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRestrictCheckToSelf;
+		if (bRestrictCheckToSelf !is null)
+			*cast(bool*)params.ptr = *bRestrictCheckToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -99,13 +101,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindStoredSearchIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	int FindStoredSettingValueIndex(int StoredGameSearchIndex, int LocalizedSettingId, bool bAddIfNecessary)
+	int FindStoredSettingValueIndex(int StoredGameSearchIndex, int LocalizedSettingId, bool* bAddIfNecessary = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = StoredGameSearchIndex;
 		*cast(int*)&params[4] = LocalizedSettingId;
-		*cast(bool*)&params[8] = bAddIfNecessary;
+		if (bAddIfNecessary !is null)
+			*cast(bool*)&params[8] = *bAddIfNecessary;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindStoredSettingValueIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}

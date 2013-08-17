@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MeshComponentFactory")()); }
 	private static __gshared MeshComponentFactory mDefaultProperties;
 	@property final static MeshComponentFactory DefaultProperties() { mixin(MGDPC!(MeshComponentFactory, "MeshComponentFactory Engine.Default__MeshComponentFactory")()); }
-	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 64)()); }
+	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 64)()); }
 }

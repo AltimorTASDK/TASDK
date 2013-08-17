@@ -43,15 +43,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrCaHCapturePoint m_OwningCaHCapturePoint() { mixin(MGPC!(TrCaHCapturePoint, 1392)()); }
+		TrCaHCapturePoint m_OwningCaHCapturePoint() { mixin(MGPC!("TrCaHCapturePoint", 1392)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationLeftAudioComponent'!
-		SoundCue m_StationLeftSoundCue() { mixin(MGPC!(SoundCue, 1384)()); }
+		SoundCue m_StationLeftSoundCue() { mixin(MGPC!("SoundCue", 1384)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_StationEnteredAudioComponent'!
-		SoundCue m_StationEnteredSoundCue() { mixin(MGPC!(SoundCue, 1376)()); }
-		ScriptClass StationCollisionClass() { mixin(MGPC!(ScriptClass, 1372)()); }
-		TrPawn r_CurrentPawn() { mixin(MGPC!(TrPawn, 1368)()); }
-		TrStationCollision m_Collision() { mixin(MGPC!(TrStationCollision, 1364)()); }
-		float m_fStationZOffset() { mixin(MGPC!(float, 1360)()); }
+		SoundCue m_StationEnteredSoundCue() { mixin(MGPC!("SoundCue", 1376)()); }
+		ScriptClass StationCollisionClass() { mixin(MGPC!("ScriptClass", 1372)()); }
+		TrPawn r_CurrentPawn() { mixin(MGPC!("TrPawn", 1368)()); }
+		TrStationCollision m_Collision() { mixin(MGPC!("TrStationCollision", 1364)()); }
+		float m_fStationZOffset() { mixin(MGPC!("float", 1360)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -124,26 +124,28 @@ final:
 	}
 	void AddContentChangeDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* ContentDelegate, ubyte LocalUserNum)
+void* ContentDelegate, ubyte* LocalUserNum = null)
 	{
 		ubyte params[13];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ContentDelegate;
-		params[12] = LocalUserNum;
+		if (LocalUserNum !is null)
+			params[12] = *LocalUserNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddContentChangeDelegate, params.ptr, cast(void*)0);
 	}
 	void ClearContentChangeDelegate(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* ContentDelegate, ubyte LocalUserNum)
+void* ContentDelegate, ubyte* LocalUserNum = null)
 	{
 		ubyte params[13];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = ContentDelegate;
-		params[12] = LocalUserNum;
+		if (LocalUserNum !is null)
+			params[12] = *LocalUserNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearContentChangeDelegate, params.ptr, cast(void*)0);
 	}
 	void AddReadContentComplete(ubyte LocalUserNum, OnlineSubsystem.EOnlineContentType ContentType, 
@@ -172,13 +174,14 @@ void* ReadContentCompleteDelegate)
 void**)&params[4] = ReadContentCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadContentComplete, params.ptr, cast(void*)0);
 	}
-	bool ReadContentList(ubyte LocalUserNum, OnlineSubsystem.EOnlineContentType ContentType, int DeviceID)
+	bool ReadContentList(ubyte LocalUserNum, OnlineSubsystem.EOnlineContentType ContentType, int* DeviceID = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.EOnlineContentType*)&params[1] = ContentType;
-		*cast(int*)&params[4] = DeviceID;
+		if (DeviceID !is null)
+			*cast(int*)&params[4] = *DeviceID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadContentList, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -198,15 +201,16 @@ void**)&params[4] = ReadContentCompleteDelegate;
 		*cast(OnlineSubsystem.EOnlineContentType*)&params[1] = ContentType;
 		*cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4] = ContentList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetContentList, params.ptr, cast(void*)0);
-		*ContentList = *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4];
+		ContentList = *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)&params[4];
 		return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)&params[16];
 	}
-	bool QueryAvailableDownloads(ubyte LocalUserNum, int CategoryMask)
+	bool QueryAvailableDownloads(ubyte LocalUserNum, int* CategoryMask = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(int*)&params[4] = CategoryMask;
+		if (CategoryMask !is null)
+			*cast(int*)&params[4] = *CategoryMask;
 		(cast(ScriptObject)this).ProcessEvent(Functions.QueryAvailableDownloads, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -242,8 +246,8 @@ void**)&params[4] = QueryDownloadsDelegate;
 		*cast(int*)&params[4] = NewDownloads;
 		*cast(int*)&params[8] = TotalDownloads;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAvailableDownloadCounts, params.ptr, cast(void*)0);
-		*NewDownloads = *cast(int*)&params[4];
-		*TotalDownloads = *cast(int*)&params[8];
+		NewDownloads = *cast(int*)&params[4];
+		TotalDownloads = *cast(int*)&params[8];
 	}
 	bool ReadSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName)
 	{
@@ -268,7 +272,7 @@ void**)&params[4] = QueryDownloadsDelegate;
 		*cast(ScriptString*)&params[32] = SaveFileName;
 		*cast(ScriptArray!(ubyte)*)&params[44] = SaveGameData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSaveGameData, params.ptr, cast(void*)0);
-		*SaveGameData = *cast(ScriptArray!(ubyte)*)&params[44];
+		SaveGameData = *cast(ScriptArray!(ubyte)*)&params[44];
 		return *cast(bool*)&params[56];
 	}
 	void AddReadSaveGameDataComplete(ubyte LocalUserNum, 
@@ -295,7 +299,7 @@ void* ReadSaveGameDataCompleteDelegate)
 void**)&params[4] = ReadSaveGameDataCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadSaveGameDataComplete, params.ptr, cast(void*)0);
 	}
-	bool WriteSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ref const ScriptArray!(ubyte) SaveGameData)
+	bool WriteSaveGameData(ubyte LocalUserNum, int DeviceID, ScriptString FriendlyName, ScriptString Filename, ScriptString SaveFileName, ref in ScriptArray!(ubyte) SaveGameData)
 	{
 		ubyte params[60];
 		params[] = 0;
@@ -304,9 +308,8 @@ void**)&params[4] = ReadSaveGameDataCompleteDelegate;
 		*cast(ScriptString*)&params[8] = FriendlyName;
 		*cast(ScriptString*)&params[20] = Filename;
 		*cast(ScriptString*)&params[32] = SaveFileName;
-		*cast(ScriptArray!(ubyte)*)&params[44] = SaveGameData;
+		*cast(ScriptArray!(ubyte)*)&params[44] = cast(ScriptArray!(ubyte))SaveGameData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WriteSaveGameData, params.ptr, cast(void*)0);
-		*SaveGameData = *cast(ScriptArray!(ubyte)*)&params[44];
 		return *cast(bool*)&params[56];
 	}
 	void AddWriteSaveGameDataComplete(ubyte LocalUserNum, 

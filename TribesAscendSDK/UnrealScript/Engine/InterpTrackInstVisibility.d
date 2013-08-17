@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackInstVisibility DefaultProperties() { mixin(MGDPC!(InterpTrackInstVisibility, "InterpTrackInstVisibility Engine.Default__InterpTrackInstVisibility")()); }
 	@property final auto ref
 	{
-		float LastUpdatePosition() { mixin(MGPC!(float, 64)()); }
-		InterpTrackVisibility.EVisibilityTrackAction Action() { mixin(MGPC!(InterpTrackVisibility.EVisibilityTrackAction, 60)()); }
+		float LastUpdatePosition() { mixin(MGPC!("float", 64)()); }
+		InterpTrackVisibility.EVisibilityTrackAction Action() { mixin(MGPC!("InterpTrackVisibility.EVisibilityTrackAction", 60)()); }
 	}
 }

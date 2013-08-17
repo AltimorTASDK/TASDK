@@ -17,9 +17,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(float) m_BaseSpeed() { mixin(MGPC!(ScriptArray!(float), 328)()); }
-			ScriptArray!(Actor.EPhysics) m_IgnoredPhysics() { mixin(MGPC!(ScriptArray!(Actor.EPhysics), 344)()); }
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 324)()); }
+			ScriptArray!(float) m_BaseSpeed() { mixin(MGPC!("ScriptArray!(float)", 328)()); }
+			ScriptArray!(Actor.EPhysics) m_IgnoredPhysics() { mixin(MGPC!("ScriptArray!(Actor.EPhysics)", 344)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 324)()); }
 		}
 		bool m_bIgnoreZVelocity() { mixin(MGBPC!(340, 0x1)()); }
 		bool m_bIgnoreZVelocity(bool val) { mixin(MSBPC!(340, 0x1)()); }

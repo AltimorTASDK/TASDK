@@ -18,9 +18,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float DesiredStrength() { mixin(MGPC!(float, 244)()); }
-		float BlendRate() { mixin(MGPC!(float, 240)()); }
-		float MaxForwardVelocity() { mixin(MGPC!(float, 236)()); }
+		float DesiredStrength() { mixin(MGPC!("float", 244)()); }
+		float BlendRate() { mixin(MGPC!("float", 240)()); }
+		float MaxForwardVelocity() { mixin(MGPC!("float", 236)()); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

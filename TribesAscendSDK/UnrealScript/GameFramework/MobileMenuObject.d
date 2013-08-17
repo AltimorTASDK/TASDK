@@ -37,10 +37,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				float VL() { mixin(MGPS!(float, 16)()); }
-				float UL() { mixin(MGPS!(float, 12)()); }
-				float V() { mixin(MGPS!(float, 8)()); }
-				float U() { mixin(MGPS!(float, 4)()); }
+				float VL() { mixin(MGPS!("float", 16)()); }
+				float UL() { mixin(MGPS!("float", 12)()); }
+				float V() { mixin(MGPS!("float", 8)()); }
+				float U() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bCustomCoords() { mixin(MGBPS!(0, 0x1)()); }
 			bool bCustomCoords(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -50,21 +50,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			MobileMenuScene OwnerScene() { mixin(MGPC!(MobileMenuScene, 128)()); }
-			float Opacity() { mixin(MGPC!(float, 124)()); }
-			MobilePlayerInput InputOwner() { mixin(MGPC!(MobilePlayerInput, 120)()); }
-			ScriptString Tag() { mixin(MGPC!(ScriptString, 108)()); }
-			float YOffset() { mixin(MGPC!(float, 104)()); }
-			float XOffset() { mixin(MGPC!(float, 100)()); }
-			float RightLeeway() { mixin(MGPC!(float, 96)()); }
-			float LeftLeeway() { mixin(MGPC!(float, 92)()); }
-			float BottomLeeway() { mixin(MGPC!(float, 88)()); }
-			float TopLeeway() { mixin(MGPC!(float, 84)()); }
-			float AuthoredGlobalScale() { mixin(MGPC!(float, 80)()); }
-			float Height() { mixin(MGPC!(float, 76)()); }
-			float Width() { mixin(MGPC!(float, 72)()); }
-			float Top() { mixin(MGPC!(float, 68)()); }
-			float Left() { mixin(MGPC!(float, 64)()); }
+			MobileMenuScene OwnerScene() { mixin(MGPC!("MobileMenuScene", 128)()); }
+			float Opacity() { mixin(MGPC!("float", 124)()); }
+			MobilePlayerInput InputOwner() { mixin(MGPC!("MobilePlayerInput", 120)()); }
+			ScriptString Tag() { mixin(MGPC!("ScriptString", 108)()); }
+			float YOffset() { mixin(MGPC!("float", 104)()); }
+			float XOffset() { mixin(MGPC!("float", 100)()); }
+			float RightLeeway() { mixin(MGPC!("float", 96)()); }
+			float LeftLeeway() { mixin(MGPC!("float", 92)()); }
+			float BottomLeeway() { mixin(MGPC!("float", 88)()); }
+			float TopLeeway() { mixin(MGPC!("float", 84)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!("float", 80)()); }
+			float Height() { mixin(MGPC!("float", 76)()); }
+			float Width() { mixin(MGPC!("float", 72)()); }
+			float Top() { mixin(MGPC!("float", 68)()); }
+			float Left() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bIsHighlighted() { mixin(MGBPC!(60, 0x8000)()); }
 		bool bIsHighlighted(bool val) { mixin(MSBPC!(60, 0x8000)()); }

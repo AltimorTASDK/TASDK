@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction Timer() { mixin(MGF!("mTimer", "Function Engine.VolumeTimer.Timer")()); }
 		}
 	}
-	@property final auto ref PhysicsVolume V() { mixin(MGPC!(PhysicsVolume, 476)()); }
+	@property final auto ref PhysicsVolume V() { mixin(MGPC!("PhysicsVolume", 476)()); }
 final:
 	void PostBeginPlay()
 	{

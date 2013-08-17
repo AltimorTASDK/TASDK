@@ -21,13 +21,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSkin.SkinStruct")()); }
 		@property final auto ref
 		{
-			int skinId() { mixin(MGPS!(int, 0)()); }
-			ScriptString SkinContentPath3p() { mixin(MGPS!(ScriptString, 16)()); }
-			ScriptString SkinContentPath1p() { mixin(MGPS!(ScriptString, 4)()); }
-			ParticleSystem JetpackThrustTemplate() { mixin(MGPS!(ParticleSystem, 36)()); }
-			ParticleSystem JetpackRibbonTemplate() { mixin(MGPS!(ParticleSystem, 32)()); }
-			ParticleSystem SkiThrustTemplate() { mixin(MGPS!(ParticleSystem, 28)()); }
-			ScriptArray!(ScriptName) JetpackThrustEffectSockets() { mixin(MGPS!(ScriptArray!(ScriptName), 40)()); }
+			int skinId() { mixin(MGPS!("int", 0)()); }
+			ScriptString SkinContentPath3p() { mixin(MGPS!("ScriptString", 16)()); }
+			ScriptString SkinContentPath1p() { mixin(MGPS!("ScriptString", 4)()); }
+			ParticleSystem JetpackThrustTemplate() { mixin(MGPS!("ParticleSystem", 36)()); }
+			ParticleSystem JetpackRibbonTemplate() { mixin(MGPS!("ParticleSystem", 32)()); }
+			ParticleSystem SkiThrustTemplate() { mixin(MGPS!("ParticleSystem", 28)()); }
+			ScriptArray!(ScriptName) JetpackThrustEffectSockets() { mixin(MGPS!("ScriptArray!(ScriptName)", 40)()); }
 		}
 	}
 	struct VehicleSkinStruct
@@ -38,18 +38,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSkin.VehicleSkinStruct")()); }
 		@property final auto ref
 		{
-			AnimSet SeatAnimSet() { mixin(MGPS!(AnimSet, 4)()); }
-			ScriptClass VehicleClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			AnimSet SeatAnimSet() { mixin(MGPS!("AnimSet", 4)()); }
+			ScriptClass VehicleClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptString ItemName() { mixin(MGPC!(ScriptString, 64)()); }
-		ScriptString InfoPanelDescription() { mixin(MGPC!(ScriptString, 76)()); }
-		int TranslucencySortPriority() { mixin(MGPC!(int, 88)()); }
-		ScriptArray!(TrSkin.SkinStruct) Skins() { mixin(MGPC!(ScriptArray!(TrSkin.SkinStruct), 96)()); }
-		int ItemId() { mixin(MGPC!(int, 60)()); }
-		ScriptClass SkinMeleeDevice() { mixin(MGPC!(ScriptClass, 92)()); }
-		ScriptArray!(TrSkin.VehicleSkinStruct) VehicleSkins() { mixin(MGPC!(ScriptArray!(TrSkin.VehicleSkinStruct), 108)()); }
+		ScriptString ItemName() { mixin(MGPC!("ScriptString", 64)()); }
+		ScriptString InfoPanelDescription() { mixin(MGPC!("ScriptString", 76)()); }
+		int TranslucencySortPriority() { mixin(MGPC!("int", 88)()); }
+		ScriptArray!(TrSkin.SkinStruct) Skins() { mixin(MGPC!("ScriptArray!(TrSkin.SkinStruct)", 96)()); }
+		int ItemId() { mixin(MGPC!("int", 60)()); }
+		ScriptClass SkinMeleeDevice() { mixin(MGPC!("ScriptClass", 92)()); }
+		ScriptArray!(TrSkin.VehicleSkinStruct) VehicleSkins() { mixin(MGPC!("ScriptArray!(TrSkin.VehicleSkinStruct)", 108)()); }
 	}
 }

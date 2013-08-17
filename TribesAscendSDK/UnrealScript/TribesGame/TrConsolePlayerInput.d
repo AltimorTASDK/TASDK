@@ -45,50 +45,50 @@ public extern(D):
 	{
 		auto ref
 		{
-			float HoverBoardPitchMultiplier() { mixin(MGPC!(float, 648)()); }
-			float AutoPitchStopAdjustingValue() { mixin(MGPC!(float, 644)()); }
-			float AutoPitchCenterSpeed() { mixin(MGPC!(float, 640)()); }
-			float ViewAccel_BackToCenterSpeed() { mixin(MGPC!(float, 636)()); }
-			float ViewAccel_BackToCenterBoundary() { mixin(MGPC!(float, 632)()); }
-			float ViewAccel_LookingUpOrDownBoundary() { mixin(MGPC!(float, 628)()); }
-			float ViewAccel_PitchThreshold() { mixin(MGPC!(float, 624)()); }
-			float ViewAccel_MaxTurnSpeed() { mixin(MGPC!(float, 620)()); }
-			float ViewAccel_RampSpeed() { mixin(MGPC!(float, 616)()); }
-			float MagicScaleForSensitivityEdge() { mixin(MGPC!(float, 612)()); }
-			float MagicScaleForSensitivityMiddle() { mixin(MGPC!(float, 608)()); }
-			float RightThumbStickDeadZoneThreshold() { mixin(MGPC!(float, 604)()); }
-			float LeftThumbStickDeadZoneThreshold() { mixin(MGPC!(float, 600)()); }
-			Rotator LastDeltaRot() { mixin(MGPC!(Rotator, 588)()); }
-			Vector LastCamLoc() { mixin(MGPC!(Vector, 576)()); }
-			float LastAdjustZ() { mixin(MGPC!(float, 572)()); }
-			float LastAdjustY() { mixin(MGPC!(float, 568)()); }
-			float LastDistFromAimZa() { mixin(MGPC!(float, 564)()); }
-			float LastDistFromAimYa() { mixin(MGPC!(float, 560)()); }
-			float LastTargetHeight() { mixin(MGPC!(float, 556)()); }
-			float LastTargetRadius() { mixin(MGPC!(float, 552)()); }
-			float LastAdhesionAmtZ() { mixin(MGPC!(float, 548)()); }
-			float LastAdhesionAmtY() { mixin(MGPC!(float, 544)()); }
-			float LastFrictionMultiplier() { mixin(MGPC!(float, 540)()); }
-			float LastDistFromAimY() { mixin(MGPC!(float, 536)()); }
-			float LastDistFromAimZ() { mixin(MGPC!(float, 532)()); }
-			float LastDistMultiplier() { mixin(MGPC!(float, 528)()); }
-			float LastDistToTarget() { mixin(MGPC!(float, 524)()); }
-			float LastFrictionTargetTime() { mixin(MGPC!(float, 520)()); }
-			Pawn LastFrictionTarget() { mixin(MGPC!(Pawn, 516)()); }
-			float Dodge_Threshold() { mixin(MGPC!(float, 512)()); }
-			float ViewAccel_Twitchy() { mixin(MGPC!(float, 508)()); }
-			float ViewAccel_TimeHeld() { mixin(MGPC!(float, 504)()); }
-			float ViewAccel_TimeToHoldBeforeFastAcceleration() { mixin(MGPC!(float, 500)()); }
-			float ViewAccel_CurrMutliplier() { mixin(MGPC!(float, 496)()); }
-			float ViewAccel_BaseMultiplier() { mixin(MGPC!(float, 492)()); }
-			float ViewAccel_DiagonalThreshold() { mixin(MGPC!(float, 488)()); }
-			float ViewAccel_YawThreshold() { mixin(MGPC!(float, 484)()); }
-			float SlowTurnScaling() { mixin(MGPC!(float, 480)()); }
-			float AutoVehicleCenterSpeed() { mixin(MGPC!(float, 476)()); }
-			float AutoCenterDelay() { mixin(MGPC!(float, 472)()); }
-			float LastTurnTime() { mixin(MGPC!(float, 468)()); }
-			float TurningAccelerationMultiplier() { mixin(MGPC!(float, 460)()); }
-			float SensitivityMultiplier() { mixin(MGPC!(float, 456)()); }
+			float HoverBoardPitchMultiplier() { mixin(MGPC!("float", 648)()); }
+			float AutoPitchStopAdjustingValue() { mixin(MGPC!("float", 644)()); }
+			float AutoPitchCenterSpeed() { mixin(MGPC!("float", 640)()); }
+			float ViewAccel_BackToCenterSpeed() { mixin(MGPC!("float", 636)()); }
+			float ViewAccel_BackToCenterBoundary() { mixin(MGPC!("float", 632)()); }
+			float ViewAccel_LookingUpOrDownBoundary() { mixin(MGPC!("float", 628)()); }
+			float ViewAccel_PitchThreshold() { mixin(MGPC!("float", 624)()); }
+			float ViewAccel_MaxTurnSpeed() { mixin(MGPC!("float", 620)()); }
+			float ViewAccel_RampSpeed() { mixin(MGPC!("float", 616)()); }
+			float MagicScaleForSensitivityEdge() { mixin(MGPC!("float", 612)()); }
+			float MagicScaleForSensitivityMiddle() { mixin(MGPC!("float", 608)()); }
+			float RightThumbStickDeadZoneThreshold() { mixin(MGPC!("float", 604)()); }
+			float LeftThumbStickDeadZoneThreshold() { mixin(MGPC!("float", 600)()); }
+			Rotator LastDeltaRot() { mixin(MGPC!("Rotator", 588)()); }
+			Vector LastCamLoc() { mixin(MGPC!("Vector", 576)()); }
+			float LastAdjustZ() { mixin(MGPC!("float", 572)()); }
+			float LastAdjustY() { mixin(MGPC!("float", 568)()); }
+			float LastDistFromAimZa() { mixin(MGPC!("float", 564)()); }
+			float LastDistFromAimYa() { mixin(MGPC!("float", 560)()); }
+			float LastTargetHeight() { mixin(MGPC!("float", 556)()); }
+			float LastTargetRadius() { mixin(MGPC!("float", 552)()); }
+			float LastAdhesionAmtZ() { mixin(MGPC!("float", 548)()); }
+			float LastAdhesionAmtY() { mixin(MGPC!("float", 544)()); }
+			float LastFrictionMultiplier() { mixin(MGPC!("float", 540)()); }
+			float LastDistFromAimY() { mixin(MGPC!("float", 536)()); }
+			float LastDistFromAimZ() { mixin(MGPC!("float", 532)()); }
+			float LastDistMultiplier() { mixin(MGPC!("float", 528)()); }
+			float LastDistToTarget() { mixin(MGPC!("float", 524)()); }
+			float LastFrictionTargetTime() { mixin(MGPC!("float", 520)()); }
+			Pawn LastFrictionTarget() { mixin(MGPC!("Pawn", 516)()); }
+			float Dodge_Threshold() { mixin(MGPC!("float", 512)()); }
+			float ViewAccel_Twitchy() { mixin(MGPC!("float", 508)()); }
+			float ViewAccel_TimeHeld() { mixin(MGPC!("float", 504)()); }
+			float ViewAccel_TimeToHoldBeforeFastAcceleration() { mixin(MGPC!("float", 500)()); }
+			float ViewAccel_CurrMutliplier() { mixin(MGPC!("float", 496)()); }
+			float ViewAccel_BaseMultiplier() { mixin(MGPC!("float", 492)()); }
+			float ViewAccel_DiagonalThreshold() { mixin(MGPC!("float", 488)()); }
+			float ViewAccel_YawThreshold() { mixin(MGPC!("float", 484)()); }
+			float SlowTurnScaling() { mixin(MGPC!("float", 480)()); }
+			float AutoVehicleCenterSpeed() { mixin(MGPC!("float", 476)()); }
+			float AutoCenterDelay() { mixin(MGPC!("float", 472)()); }
+			float LastTurnTime() { mixin(MGPC!("float", 468)()); }
+			float TurningAccelerationMultiplier() { mixin(MGPC!("float", 460)()); }
+			float SensitivityMultiplier() { mixin(MGPC!("float", 456)()); }
 		}
 		bool bIsLookingDown() { mixin(MGBPC!(464, 0x100)()); }
 		bool bIsLookingDown(bool val) { mixin(MSBPC!(464, 0x100)()); }
@@ -151,8 +151,8 @@ final:
 		*cast(int*)&params[8] = out_YawRot;
 		*cast(int*)&params[12] = out_PitchRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyTargetAdhesion, params.ptr, cast(void*)0);
-		*out_YawRot = *cast(int*)&params[8];
-		*out_PitchRot = *cast(int*)&params[12];
+		out_YawRot = *cast(int*)&params[8];
+		out_PitchRot = *cast(int*)&params[12];
 	}
 	void AdjustMouseSensitivity(float FOVScale)
 	{

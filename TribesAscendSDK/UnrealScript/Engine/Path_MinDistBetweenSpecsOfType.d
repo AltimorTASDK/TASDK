@@ -27,19 +27,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass ReachSpecClass() { mixin(MGPC!(ScriptClass, 84)()); }
-		Vector InitLocation() { mixin(MGPC!(Vector, 72)()); }
-		float MinDistBetweenSpecTypes() { mixin(MGPC!(float, 68)()); }
+		ScriptClass ReachSpecClass() { mixin(MGPC!("ScriptClass", 84)()); }
+		Vector InitLocation() { mixin(MGPC!("Vector", 72)()); }
+		float MinDistBetweenSpecTypes() { mixin(MGPC!("float", 68)()); }
 	}
 final:
-	static bool EnforceMinDist(Pawn P, float InMinDist, ScriptClass InSpecClass, Vector LastLocation)
+	static bool EnforceMinDist(Pawn P, float InMinDist, ScriptClass InSpecClass, Vector* LastLocation = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(float*)&params[4] = InMinDist;
 		*cast(ScriptClass*)&params[8] = InSpecClass;
-		*cast(Vector*)&params[12] = LastLocation;
+		if (LastLocation !is null)
+			*cast(Vector*)&params[12] = *LastLocation;
 		StaticClass.ProcessEvent(Functions.EnforceMinDist, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

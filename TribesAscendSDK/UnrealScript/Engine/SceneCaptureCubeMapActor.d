@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SceneCaptureCubeMapActor DefaultProperties() { mixin(MGDPC!(SceneCaptureCubeMapActor, "SceneCaptureCubeMapActor Engine.Default__SceneCaptureCubeMapActor")()); }
 	@property final auto ref
 	{
-		MaterialInstanceConstant CubeMaterialInst() { mixin(MGPC!(MaterialInstanceConstant, 484)()); }
+		MaterialInstanceConstant CubeMaterialInst() { mixin(MGPC!("MaterialInstanceConstant", 484)()); }
 		// WARNING: Property 'StaticMesh' has the same name as a defined type!
 	}
 }

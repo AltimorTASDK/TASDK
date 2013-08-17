@@ -25,7 +25,7 @@ public extern(D):
 		*cast(Vector*)&params[4] = SpawnPos;
 		*cast(Rotator*)&params[16] = SpawnRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpawnPosition, params.ptr, cast(void*)0);
-		*SpawnPos = *cast(Vector*)&params[4];
-		*SpawnRot = *cast(Rotator*)&params[16];
+		SpawnPos = *cast(Vector*)&params[4];
+		SpawnRot = *cast(Rotator*)&params[16];
 	}
 }

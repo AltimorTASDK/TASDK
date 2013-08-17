@@ -50,8 +50,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.RankMetaData")()); }
 		@property final auto ref
 		{
-			ScriptString RankColumnName() { mixin(MGPS!(ScriptString, 8)()); }
-			ScriptName RankName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptString RankColumnName() { mixin(MGPS!("ScriptString", 8)()); }
+			ScriptName RankName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PlayerNickMetaData
@@ -62,24 +62,24 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineStats.PlayerNickMetaData")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerNickColumnName() { mixin(MGPS!(ScriptString, 8)()); }
-			ScriptName PlayerNickName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptString PlayerNickColumnName() { mixin(MGPS!("ScriptString", 8)()); }
+			ScriptName PlayerNickName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) StatsReadClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 128)()); }
-		ScriptArray!(OnlineStatsRead) StatsReadObjects() { mixin(MGPC!(ScriptArray!(OnlineStatsRead), 196)()); }
+		ScriptArray!(ScriptClass) StatsReadClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 128)()); }
+		ScriptArray!(OnlineStatsRead) StatsReadObjects() { mixin(MGPC!("ScriptArray!(OnlineStatsRead)", 196)()); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'StatsInterface'!
-		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { mixin(MGPC!(UIDataStore_OnlineStats.EStatsFetchType, 212)()); }
-		OnlineStatsRead StatsRead() { mixin(MGPC!(OnlineStatsRead, 208)()); }
-		ScriptName TotalRowsName() { mixin(MGPC!(ScriptName, 188)()); }
-		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC!(UIDataStore_OnlineStats.RankMetaData, 168)()); }
-		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC!(UIDataStore_OnlineStats.PlayerNickMetaData, 148)()); }
-		ScriptName StatsReadName() { mixin(MGPC!(ScriptName, 140)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
+		UIDataStore_OnlineStats.EStatsFetchType CurrentReadType() { mixin(MGPC!("UIDataStore_OnlineStats.EStatsFetchType", 212)()); }
+		OnlineStatsRead StatsRead() { mixin(MGPC!("OnlineStatsRead", 208)()); }
+		ScriptName TotalRowsName() { mixin(MGPC!("ScriptName", 188)()); }
+		UIDataStore_OnlineStats.RankMetaData RankNameMetaData() { mixin(MGPC!("UIDataStore_OnlineStats.RankMetaData", 168)()); }
+		UIDataStore_OnlineStats.PlayerNickMetaData PlayerNickData() { mixin(MGPC!("UIDataStore_OnlineStats.PlayerNickMetaData", 148)()); }
+		ScriptName StatsReadName() { mixin(MGPC!("ScriptName", 140)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
 	}
 final:
 	void Init()

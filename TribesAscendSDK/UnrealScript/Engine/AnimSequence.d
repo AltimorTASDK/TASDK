@@ -45,10 +45,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.CompressedTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ubyte) ByteStream() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
-			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
-			float Ranges() { mixin(MGPS!(float, 36)()); }
-			float Mins() { mixin(MGPS!(float, 24)()); }
+			ScriptArray!(ubyte) ByteStream() { mixin(MGPS!("ScriptArray!(ubyte)", 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!("ScriptArray!(float)", 12)()); }
+			float Ranges() { mixin(MGPS!("float", 36)()); }
+			float Mins() { mixin(MGPS!("float", 24)()); }
 		}
 	}
 	struct AnimTag
@@ -59,8 +59,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.AnimTag")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Contains() { mixin(MGPS!(ScriptArray!(ScriptString), 12)()); }
-			ScriptString Tag() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptArray!(ScriptString) Contains() { mixin(MGPS!("ScriptArray!(ScriptString)", 12)()); }
+			ScriptString Tag() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct CurveTrack
@@ -71,8 +71,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.CurveTrack")()); }
 		@property final auto ref
 		{
-			ScriptName CurveName() { mixin(MGPS!(ScriptName, 0)()); }
-			ScriptArray!(float) CurveWeights() { mixin(MGPS!(ScriptArray!(float), 8)()); }
+			ScriptName CurveName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(float) CurveWeights() { mixin(MGPS!("ScriptArray!(float)", 8)()); }
 		}
 	}
 	struct RotationTrack
@@ -83,8 +83,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.RotationTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!(ScriptArray!(UObject.Quat), 0)()); }
-			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
+			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!("ScriptArray!(UObject.Quat)", 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!("ScriptArray!(float)", 12)()); }
 		}
 	}
 	struct TranslationTrack
@@ -95,8 +95,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.TranslationTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Vector) PosKeys() { mixin(MGPS!(ScriptArray!(Vector), 0)()); }
-			ScriptArray!(float) Times() { mixin(MGPS!(ScriptArray!(float), 12)()); }
+			ScriptArray!(Vector) PosKeys() { mixin(MGPS!("ScriptArray!(Vector)", 0)()); }
+			ScriptArray!(float) Times() { mixin(MGPS!("ScriptArray!(float)", 12)()); }
 		}
 	}
 	struct SkelControlModifier
@@ -107,8 +107,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.SkelControlModifier")()); }
 		@property final auto ref
 		{
-			ScriptName SkelControlName() { mixin(MGPS!(ScriptName, 0)()); }
-			ScriptArray!(AnimSequence.TimeModifier) Modifiers() { mixin(MGPS!(ScriptArray!(AnimSequence.TimeModifier), 8)()); }
+			ScriptName SkelControlName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(AnimSequence.TimeModifier) Modifiers() { mixin(MGPS!("ScriptArray!(AnimSequence.TimeModifier)", 8)()); }
 		}
 	}
 	struct TimeModifier
@@ -119,8 +119,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.TimeModifier")()); }
 		@property final auto ref
 		{
-			float Time() { mixin(MGPS!(float, 0)()); }
-			float TargetStrength() { mixin(MGPS!(float, 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
+			float TargetStrength() { mixin(MGPS!("float", 4)()); }
 		}
 	}
 	struct AnimNotifyEvent
@@ -131,10 +131,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.AnimNotifyEvent")()); }
 		@property final auto ref
 		{
-			float Time() { mixin(MGPS!(float, 0)()); }
-			AnimNotify Notify() { mixin(MGPS!(AnimNotify, 4)()); }
-			ScriptName Comment() { mixin(MGPS!(ScriptName, 8)()); }
-			float Duration() { mixin(MGPS!(float, 16)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
+			AnimNotify Notify() { mixin(MGPS!("AnimNotify", 4)()); }
+			ScriptName Comment() { mixin(MGPS!("ScriptName", 8)()); }
+			float Duration() { mixin(MGPS!("float", 16)()); }
 		}
 	}
 	struct RawAnimSequenceTrack
@@ -145,44 +145,44 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimSequence.RawAnimSequenceTrack")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Vector) PosKeys() { mixin(MGPS!(ScriptArray!(Vector), 0)()); }
-			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!(ScriptArray!(UObject.Quat), 12)()); }
+			ScriptArray!(Vector) PosKeys() { mixin(MGPS!("ScriptArray!(Vector)", 0)()); }
+			ScriptArray!(UObject.Quat) RotKeys() { mixin(MGPS!("ScriptArray!(UObject.Quat)", 12)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float SequenceLength() { mixin(MGPC!(float, 104)()); }
-			float RateScale() { mixin(MGPC!(float, 112)()); }
-			ScriptName SequenceName() { mixin(MGPC!(ScriptName, 60)()); }
-			ScriptArray!(AnimSequence.AnimNotifyEvent) Notifies() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimNotifyEvent), 68)()); }
+			float SequenceLength() { mixin(MGPC!("float", 104)()); }
+			float RateScale() { mixin(MGPC!("float", 112)()); }
+			ScriptName SequenceName() { mixin(MGPC!("ScriptName", 60)()); }
+			ScriptArray!(AnimSequence.AnimNotifyEvent) Notifies() { mixin(MGPC!("ScriptArray!(AnimSequence.AnimNotifyEvent)", 68)()); }
 			// WARNING: Property 'MetaData' has the same name as a defined type!
-			ScriptArray!(AnimSequence.SkelControlModifier) BoneControlModifiers() { mixin(MGPC!(ScriptArray!(AnimSequence.SkelControlModifier), 92)()); }
-			int NumFrames() { mixin(MGPC!(int, 108)()); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimData() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 120)()); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimationData() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 132)()); }
-			ScriptArray!(AnimSequence.TranslationTrack) TranslationData() { mixin(MGPC!(ScriptArray!(AnimSequence.TranslationTrack), 144)()); }
-			ScriptArray!(AnimSequence.RotationTrack) RotationData() { mixin(MGPC!(ScriptArray!(AnimSequence.RotationTrack), 156)()); }
-			ScriptArray!(AnimSequence.CurveTrack) CurveData() { mixin(MGPC!(ScriptArray!(AnimSequence.CurveTrack), 168)()); }
-			AnimationCompressionAlgorithm CompressionScheme() { mixin(MGPC!(AnimationCompressionAlgorithm, 180)()); }
-			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 184)()); }
-			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 185)()); }
-			AnimSequence.AnimationKeyFormat KeyEncodingFormat() { mixin(MGPC!(AnimSequence.AnimationKeyFormat, 186)()); }
-			ScriptArray!(int) CompressedTrackOffsets() { mixin(MGPC!(ScriptArray!(int), 188)()); }
-			ScriptArray!(ubyte) CompressedByteStream() { mixin(MGPC!(ScriptArray!(ubyte), 200)()); }
-			UObject.Pointer TranslationCodec() { mixin(MGPC!(UObject.Pointer, 212)()); }
-			UObject.Pointer RotationCodec() { mixin(MGPC!(UObject.Pointer, 216)()); }
-			ScriptArray!(UObject.BoneAtom) AdditiveRefPose() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 220)()); }
-			ScriptArray!(AnimSequence.RawAnimSequenceTrack) AdditiveBasePose() { mixin(MGPC!(ScriptArray!(AnimSequence.RawAnimSequenceTrack), 232)()); }
-			ScriptName AdditiveRefName() { mixin(MGPC!(ScriptName, 244)()); }
-			ScriptArray!(AnimSequence) AdditiveBasePoseAnimSeq() { mixin(MGPC!(ScriptArray!(AnimSequence), 252)()); }
-			ScriptArray!(AnimSequence) AdditiveTargetPoseAnimSeq() { mixin(MGPC!(ScriptArray!(AnimSequence), 264)()); }
-			ScriptArray!(AnimSequence) RelatedAdditiveAnimSeqs() { mixin(MGPC!(ScriptArray!(AnimSequence), 276)()); }
-			int EncodingPkgVersion() { mixin(MGPC!(int, 288)()); }
-			int CompressCommandletVersion() { mixin(MGPC!(int, 292)()); }
-			float UseScore() { mixin(MGPC!(float, 296)()); }
-			ScriptArray!(AnimSequence.AnimTag) AnimTags() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimTag), 300)()); }
+			ScriptArray!(AnimSequence.SkelControlModifier) BoneControlModifiers() { mixin(MGPC!("ScriptArray!(AnimSequence.SkelControlModifier)", 92)()); }
+			int NumFrames() { mixin(MGPC!("int", 108)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimData() { mixin(MGPC!("ScriptArray!(AnimSequence.RawAnimSequenceTrack)", 120)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) RawAnimationData() { mixin(MGPC!("ScriptArray!(AnimSequence.RawAnimSequenceTrack)", 132)()); }
+			ScriptArray!(AnimSequence.TranslationTrack) TranslationData() { mixin(MGPC!("ScriptArray!(AnimSequence.TranslationTrack)", 144)()); }
+			ScriptArray!(AnimSequence.RotationTrack) RotationData() { mixin(MGPC!("ScriptArray!(AnimSequence.RotationTrack)", 156)()); }
+			ScriptArray!(AnimSequence.CurveTrack) CurveData() { mixin(MGPC!("ScriptArray!(AnimSequence.CurveTrack)", 168)()); }
+			AnimationCompressionAlgorithm CompressionScheme() { mixin(MGPC!("AnimationCompressionAlgorithm", 180)()); }
+			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { mixin(MGPC!("AnimSequence.AnimationCompressionFormat", 184)()); }
+			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { mixin(MGPC!("AnimSequence.AnimationCompressionFormat", 185)()); }
+			AnimSequence.AnimationKeyFormat KeyEncodingFormat() { mixin(MGPC!("AnimSequence.AnimationKeyFormat", 186)()); }
+			ScriptArray!(int) CompressedTrackOffsets() { mixin(MGPC!("ScriptArray!(int)", 188)()); }
+			ScriptArray!(ubyte) CompressedByteStream() { mixin(MGPC!("ScriptArray!(ubyte)", 200)()); }
+			UObject.Pointer TranslationCodec() { mixin(MGPC!("UObject.Pointer", 212)()); }
+			UObject.Pointer RotationCodec() { mixin(MGPC!("UObject.Pointer", 216)()); }
+			ScriptArray!(UObject.BoneAtom) AdditiveRefPose() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 220)()); }
+			ScriptArray!(AnimSequence.RawAnimSequenceTrack) AdditiveBasePose() { mixin(MGPC!("ScriptArray!(AnimSequence.RawAnimSequenceTrack)", 232)()); }
+			ScriptName AdditiveRefName() { mixin(MGPC!("ScriptName", 244)()); }
+			ScriptArray!(AnimSequence) AdditiveBasePoseAnimSeq() { mixin(MGPC!("ScriptArray!(AnimSequence)", 252)()); }
+			ScriptArray!(AnimSequence) AdditiveTargetPoseAnimSeq() { mixin(MGPC!("ScriptArray!(AnimSequence)", 264)()); }
+			ScriptArray!(AnimSequence) RelatedAdditiveAnimSeqs() { mixin(MGPC!("ScriptArray!(AnimSequence)", 276)()); }
+			int EncodingPkgVersion() { mixin(MGPC!("int", 288)()); }
+			int CompressCommandletVersion() { mixin(MGPC!("int", 292)()); }
+			float UseScore() { mixin(MGPC!("float", 296)()); }
+			ScriptArray!(AnimSequence.AnimTag) AnimTags() { mixin(MGPC!("ScriptArray!(AnimSequence.AnimTag)", 300)()); }
 		}
 		bool bNoLoopingInterpolation() { mixin(MGBPC!(116, 0x1)()); }
 		bool bNoLoopingInterpolation(bool val) { mixin(MSBPC!(116, 0x1)()); }
@@ -195,18 +195,24 @@ public extern(D):
 		bool bHasBeenUsed() { mixin(MGBPC!(116, 0x10)()); }
 		bool bHasBeenUsed(bool val) { mixin(MSBPC!(116, 0x10)()); }
 	}
-	final float GetNotifyTimeByClass(ScriptClass NotifyClass, float PlayRate, float StartPosition, AnimNotify* out_Notify, float* out_Duration)
+	final float GetNotifyTimeByClass(ScriptClass NotifyClass, float* PlayRate = null, float* StartPosition = null, AnimNotify* out_Notify = null, float* out_Duration = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = NotifyClass;
-		*cast(float*)&params[4] = PlayRate;
-		*cast(float*)&params[8] = StartPosition;
-		*cast(AnimNotify*)&params[12] = out_Notify;
-		*cast(float*)&params[16] = out_Duration;
+		if (PlayRate !is null)
+			*cast(float*)&params[4] = *PlayRate;
+		if (StartPosition !is null)
+			*cast(float*)&params[8] = *StartPosition;
+		if (out_Notify !is null)
+			*cast(AnimNotify*)&params[12] = *out_Notify;
+		if (out_Duration !is null)
+			*cast(float*)&params[16] = *out_Duration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNotifyTimeByClass, params.ptr, cast(void*)0);
-		*out_Notify = *cast(AnimNotify*)&params[12];
-		*out_Duration = *cast(float*)&params[16];
+		if (out_Notify !is null)
+			*out_Notify = *cast(AnimNotify*)&params[12];
+		if (out_Duration !is null)
+			*out_Duration = *cast(float*)&params[16];
 		return *cast(float*)&params[20];
 	}
 }

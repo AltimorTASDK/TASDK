@@ -22,25 +22,28 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.LinearColor ClearColor() { mixin(MGPC!(UObject.LinearColor, 256)()); }
-			Texture.TextureAddress AddressY() { mixin(MGPC!(Texture.TextureAddress, 254)()); }
-			Texture.TextureAddress AddressX() { mixin(MGPC!(Texture.TextureAddress, 253)()); }
+			UObject.LinearColor ClearColor() { mixin(MGPC!("UObject.LinearColor", 256)()); }
+			Texture.TextureAddress AddressY() { mixin(MGPC!("Texture.TextureAddress", 254)()); }
+			Texture.TextureAddress AddressX() { mixin(MGPC!("Texture.TextureAddress", 253)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { mixin(MGPC!(int, 248)()); }
-			int SizeX() { mixin(MGPC!(int, 244)()); }
+			int SizeY() { mixin(MGPC!("int", 248)()); }
+			int SizeX() { mixin(MGPC!("int", 244)()); }
 		}
 		bool bForceLinearGamma() { mixin(MGBPC!(272, 0x1)()); }
 		bool bForceLinearGamma(bool val) { mixin(MSBPC!(272, 0x1)()); }
 	}
-	final static TextureRenderTarget2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, UObject.LinearColor InClearColor, bool bOnlyRenderOnce)
+	final static TextureRenderTarget2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat* InFormat = null, UObject.LinearColor* InClearColor = null, bool* bOnlyRenderOnce = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(int*)params.ptr = InSizeX;
 		*cast(int*)&params[4] = InSizeY;
-		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
-		*cast(UObject.LinearColor*)&params[12] = InClearColor;
-		*cast(bool*)&params[28] = bOnlyRenderOnce;
+		if (InFormat !is null)
+			*cast(Texture.EPixelFormat*)&params[8] = *InFormat;
+		if (InClearColor !is null)
+			*cast(UObject.LinearColor*)&params[12] = *InClearColor;
+		if (bOnlyRenderOnce !is null)
+			*cast(bool*)&params[28] = *bOnlyRenderOnce;
 		StaticClass.ProcessEvent(Functions.Create, params.ptr, cast(void*)0);
 		return *cast(TextureRenderTarget2D*)&params[32];
 	}

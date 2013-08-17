@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mTranslate;
 		public @property static final ScriptFunction Translate() { mixin(MGF!("mTranslate", "Function Engine.TranslatorTag.Translate")()); }
 	}
-	@property final auto ref ScriptName Tag() { mixin(MGPC!(ScriptName, 60)()); }
+	@property final auto ref ScriptName Tag() { mixin(MGPC!("ScriptName", 60)()); }
 	final ScriptString Translate(ScriptString InArgument)
 	{
 		ubyte params[24];

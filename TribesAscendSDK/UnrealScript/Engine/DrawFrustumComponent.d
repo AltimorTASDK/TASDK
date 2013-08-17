@@ -16,10 +16,10 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Texture' has the same name as a defined type!
-		float FrustumEndDist() { mixin(MGPC!(float, 504)()); }
-		float FrustumStartDist() { mixin(MGPC!(float, 500)()); }
-		float FrustumAspectRatio() { mixin(MGPC!(float, 496)()); }
-		float FrustumAngle() { mixin(MGPC!(float, 492)()); }
-		UObject.Color FrustumColor() { mixin(MGPC!(UObject.Color, 488)()); }
+		float FrustumEndDist() { mixin(MGPC!("float", 504)()); }
+		float FrustumStartDist() { mixin(MGPC!("float", 500)()); }
+		float FrustumAspectRatio() { mixin(MGPC!("float", 496)()); }
+		float FrustumAngle() { mixin(MGPC!("float", 492)()); }
+		UObject.Color FrustumColor() { mixin(MGPC!("UObject.Color", 488)()); }
 	}
 }

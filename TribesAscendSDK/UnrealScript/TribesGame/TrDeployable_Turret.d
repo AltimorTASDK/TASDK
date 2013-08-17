@@ -70,8 +70,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDeployable_Turret.IgnorePawn")()); }
 		@property final auto ref
 		{
-			float UnignoreTime() { mixin(MGPS!(float, 4)()); }
-			TrPawn PawnToIgnore() { mixin(MGPS!(TrPawn, 0)()); }
+			float UnignoreTime() { mixin(MGPS!("float", 4)()); }
+			TrPawn PawnToIgnore() { mixin(MGPS!("TrPawn", 0)()); }
 		}
 	}
 	static struct BlownUp
@@ -83,20 +83,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SkelControlLookAt) m_LookAtSkelControls() { mixin(MGPC!(ScriptArray!(SkelControlLookAt), 1528)()); }
-			ScriptArray!(ScriptName) m_LookAtSkelControlNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1540)()); }
-			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilSkelControls() { mixin(MGPC!(ScriptArray!(GameSkelCtrl_Recoil), 1552)()); }
-			ScriptArray!(ScriptName) m_RecoilSkelControlNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1564)()); }
-			ScriptArray!(TrDeployable_Turret.IgnorePawn) m_IgnorePawnList() { mixin(MGPC!(ScriptArray!(TrDeployable_Turret.IgnorePawn), 1604)()); }
-			float m_fLastStallTime() { mixin(MGPC!(float, 1624)()); }
-			float m_fFireStallRestoreTime() { mixin(MGPC!(float, 1620)()); }
-			float m_fTimeToIgnoreInvulnerable() { mixin(MGPC!(float, 1616)()); }
-			float m_fTimeToAcquireTarget() { mixin(MGPC!(float, 1600)()); }
-			float m_fTargetAcquiredTime() { mixin(MGPC!(float, 1596)()); }
-			SoundCue m_TargetAcquiredSoundCue() { mixin(MGPC!(SoundCue, 1592)()); }
-			float m_fDeltaFireInterval() { mixin(MGPC!(float, 1588)()); }
+			ScriptArray!(SkelControlLookAt) m_LookAtSkelControls() { mixin(MGPC!("ScriptArray!(SkelControlLookAt)", 1528)()); }
+			ScriptArray!(ScriptName) m_LookAtSkelControlNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1540)()); }
+			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilSkelControls() { mixin(MGPC!("ScriptArray!(GameSkelCtrl_Recoil)", 1552)()); }
+			ScriptArray!(ScriptName) m_RecoilSkelControlNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1564)()); }
+			ScriptArray!(TrDeployable_Turret.IgnorePawn) m_IgnorePawnList() { mixin(MGPC!("ScriptArray!(TrDeployable_Turret.IgnorePawn)", 1604)()); }
+			float m_fLastStallTime() { mixin(MGPC!("float", 1624)()); }
+			float m_fFireStallRestoreTime() { mixin(MGPC!("float", 1620)()); }
+			float m_fTimeToIgnoreInvulnerable() { mixin(MGPC!("float", 1616)()); }
+			float m_fTimeToAcquireTarget() { mixin(MGPC!("float", 1600)()); }
+			float m_fTargetAcquiredTime() { mixin(MGPC!("float", 1596)()); }
+			SoundCue m_TargetAcquiredSoundCue() { mixin(MGPC!("SoundCue", 1592)()); }
+			float m_fDeltaFireInterval() { mixin(MGPC!("float", 1588)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_MuzzleFlashPSC'!
-			ScriptClass m_MuzzleFlashLightClass() { mixin(MGPC!(ScriptClass, 1580)()); }
+			ScriptClass m_MuzzleFlashLightClass() { mixin(MGPC!("ScriptClass", 1580)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_MuzzleFlashLight'!
 		}
 		bool m_bCanTargetVehicles() { mixin(MGBPC!(1524, 0x2)()); }
@@ -168,13 +168,14 @@ void**)params.ptr = SkelComp;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateAim, params.ptr, cast(void*)0);
 	}
-	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void CauseMuzzleFlash()
@@ -197,11 +198,12 @@ void**)params.ptr = PSC;
 		*cast(UObject.Color*)&params[4] = MuzzleFlashColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMuzzleFlashParams, params.ptr, cast(void*)0);
 	}
-	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon* CurrentWeapon = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Weapon*)params.ptr = CurrentWeapon;
+		if (CurrentWeapon !is null)
+			*cast(Weapon*)params.ptr = *CurrentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}

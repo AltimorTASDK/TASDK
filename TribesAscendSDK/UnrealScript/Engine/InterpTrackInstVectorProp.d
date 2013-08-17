@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackInstVectorProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstVectorProp, "InterpTrackInstVectorProp Engine.Default__InterpTrackInstVectorProp")()); }
 	@property final auto ref
 	{
-		Vector ResetVector() { mixin(MGPC!(Vector, 72)()); }
-		UObject.Pointer VectorProp() { mixin(MGPC!(UObject.Pointer, 68)()); }
+		Vector ResetVector() { mixin(MGPC!("Vector", 72)()); }
+		UObject.Pointer VectorProp() { mixin(MGPC!("UObject.Pointer", 68)()); }
 	}
 }

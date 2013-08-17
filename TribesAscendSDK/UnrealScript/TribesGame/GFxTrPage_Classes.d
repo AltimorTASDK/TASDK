@@ -65,10 +65,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int XPAmount() { mixin(MGPC!(int, 368)()); }
-		int GPAmount() { mixin(MGPC!(int, 364)()); }
-		int PurchasingClass() { mixin(MGPC!(int, 360)()); }
-		int FocusedClass() { mixin(MGPC!(int, 356)()); }
+		int XPAmount() { mixin(MGPC!("int", 368)()); }
+		int GPAmount() { mixin(MGPC!("int", 364)()); }
+		int PurchasingClass() { mixin(MGPC!("int", 360)()); }
+		int FocusedClass() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

@@ -37,8 +37,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrCTFBase_DiamondSword DiamondSwordFlagStands() { mixin(MGPC!(TrCTFBase_DiamondSword, 1488)()); }
-			TrCTFBase_BloodEagle BloodEagleFlagStands() { mixin(MGPC!(TrCTFBase_BloodEagle, 1468)()); }
+			TrCTFBase_DiamondSword DiamondSwordFlagStands() { mixin(MGPC!("TrCTFBase_DiamondSword", 1488)()); }
+			TrCTFBase_BloodEagle BloodEagleFlagStands() { mixin(MGPC!("TrCTFBase_BloodEagle", 1468)()); }
 		}
 		bool m_bRotateBothFlagsOnCapture() { mixin(MGBPC!(1508, 0x1)()); }
 		bool m_bRotateBothFlagsOnCapture(bool val) { mixin(MSBPC!(1508, 0x1)()); }

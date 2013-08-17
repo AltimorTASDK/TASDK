@@ -37,12 +37,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrPawn m_PawnToRefresh() { mixin(MGPC!(TrPawn, 1420)()); }
-			UObject.Color m_PowerOffColor() { mixin(MGPC!(UObject.Color, 1412)()); }
-			UObject.Color m_PowerOnColor() { mixin(MGPC!(UObject.Color, 1408)()); }
+			TrPawn m_PawnToRefresh() { mixin(MGPC!("TrPawn", 1420)()); }
+			UObject.Color m_PowerOffColor() { mixin(MGPC!("UObject.Color", 1412)()); }
+			UObject.Color m_PowerOnColor() { mixin(MGPC!("UObject.Color", 1408)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_PowerLight'!
-			float m_fStationReleaseTime() { mixin(MGPC!(float, 1400)()); }
-			float m_fStationAnimTime() { mixin(MGPC!(float, 1396)()); }
+			float m_fStationReleaseTime() { mixin(MGPC!("float", 1400)()); }
+			float m_fStationAnimTime() { mixin(MGPC!("float", 1396)()); }
 		}
 		bool m_bForceHealthRegen() { mixin(MGBPC!(1416, 0x1)()); }
 		bool m_bForceHealthRegen(bool val) { mixin(MSBPC!(1416, 0x1)()); }

@@ -44,7 +44,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref GamePlayerCamera PlayerCamera() { mixin(MGPC!(GamePlayerCamera, 60)()); }
+		@property final auto ref GamePlayerCamera PlayerCamera() { mixin(MGPC!("GamePlayerCamera", 60)()); }
 		bool bResetCameraInterpolation() { mixin(MGBPC!(64, 0x1)()); }
 		bool bResetCameraInterpolation(bool val) { mixin(MSBPC!(64, 0x1)()); }
 	}
@@ -76,7 +76,7 @@ final:
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)&params[12];
+		OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
 	void ProcessViewRotation(float DeltaTime, Actor ViewTarget, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
@@ -87,8 +87,8 @@ final:
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 	}
 	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
@@ -98,8 +98,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void Init()
 	{
@@ -111,6 +111,6 @@ final:
 		params[] = 0;
 		*cast(PostProcessVolume.PostProcessSettings*)params.ptr = PP;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyPostProcessSettings, params.ptr, cast(void*)0);
-		*PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
+		PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
 	}
 }

@@ -100,16 +100,16 @@ public extern(D):
 			auto ref
 			{
 				// WARNING: Property 'State' has the same name as a defined type!
-				MobileInputZone Zone() { mixin(MGPS!(MobileInputZone, 44)()); }
-				int Handle() { mixin(MGPS!(int, 0)()); }
-				ScriptArray!(MobilePlayerInput.TouchDataEvent) Events() { mixin(MGPS!(ScriptArray!(MobilePlayerInput.TouchDataEvent), 52)()); }
-				float LastActiveTime() { mixin(MGPS!(float, 64)()); }
-				float MoveDeltaTime() { mixin(MGPS!(float, 36)()); }
-				UObject.Double MoveEventDeviceTime() { mixin(MGPS!(UObject.Double, 28)()); }
-				float TouchDuration() { mixin(MGPS!(float, 24)()); }
-				UObject.Double InitialDeviceTime() { mixin(MGPS!(UObject.Double, 16)()); }
-				float TotalMoveDistance() { mixin(MGPS!(float, 12)()); }
-				UObject.Vector2D Location() { mixin(MGPS!(UObject.Vector2D, 4)()); }
+				MobileInputZone Zone() { mixin(MGPS!("MobileInputZone", 44)()); }
+				int Handle() { mixin(MGPS!("int", 0)()); }
+				ScriptArray!(MobilePlayerInput.TouchDataEvent) Events() { mixin(MGPS!("ScriptArray!(MobilePlayerInput.TouchDataEvent)", 52)()); }
+				float LastActiveTime() { mixin(MGPS!("float", 64)()); }
+				float MoveDeltaTime() { mixin(MGPS!("float", 36)()); }
+				UObject.Double MoveEventDeviceTime() { mixin(MGPS!("UObject.Double", 28)()); }
+				float TouchDuration() { mixin(MGPS!("float", 24)()); }
+				UObject.Double InitialDeviceTime() { mixin(MGPS!("UObject.Double", 16)()); }
+				float TotalMoveDistance() { mixin(MGPS!("float", 12)()); }
+				UObject.Vector2D Location() { mixin(MGPS!("UObject.Vector2D", 4)()); }
 			}
 			bool bInUse() { mixin(MGBPS!(40, 0x1)()); }
 			bool bInUse(bool val) { mixin(MSBPS!(40, 0x1)()); }
@@ -123,8 +123,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.MobilePlayerInput.MobileInputGroup")()); }
 		@property final auto ref
 		{
-			ScriptArray!(MobileInputZone) AssociatedZones() { mixin(MGPS!(ScriptArray!(MobileInputZone), 12)()); }
-			ScriptString GroupName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptArray!(MobileInputZone) AssociatedZones() { mixin(MGPS!("ScriptArray!(MobileInputZone)", 12)()); }
+			ScriptString GroupName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct MobileInputZoneClassMap
@@ -135,8 +135,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.MobilePlayerInput.MobileInputZoneClassMap")()); }
 		@property final auto ref
 		{
-			ScriptClass ClassType() { mixin(MGPS!(ScriptClass, 12)()); }
-			ScriptString Name() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptClass ClassType() { mixin(MGPS!("ScriptClass", 12)()); }
+			ScriptString Name() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct TouchDataEvent
@@ -147,48 +147,48 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.MobilePlayerInput.TouchDataEvent")()); }
 		@property final auto ref
 		{
-			UObject.Double DeviceTime() { mixin(MGPS!(UObject.Double, 12)()); }
-			UObject.Vector2D Location() { mixin(MGPS!(UObject.Vector2D, 4)()); }
-			MobileInputZone.EZoneTouchEvent EventType() { mixin(MGPS!(MobileInputZone.EZoneTouchEvent, 0)()); }
+			UObject.Double DeviceTime() { mixin(MGPS!("UObject.Double", 12)()); }
+			UObject.Vector2D Location() { mixin(MGPS!("UObject.Vector2D", 4)()); }
+			MobileInputZone.EZoneTouchEvent EventType() { mixin(MGPS!("MobileInputZone.EZoneTouchEvent", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector DeviceAccelerometerRawData() { mixin(MGPC!(Vector, 928)()); }
-			Vector DeviceGyroRawData() { mixin(MGPC!(Vector, 916)()); }
-			Vector DeviceMotionAttitude() { mixin(MGPC!(Vector, 844)()); }
-			Vector DeviceMotionRotationRate() { mixin(MGPC!(Vector, 856)()); }
-			Vector DeviceMotionGravity() { mixin(MGPC!(Vector, 868)()); }
-			Vector DeviceMotionAcceleration() { mixin(MGPC!(Vector, 880)()); }
-			MobilePlayerInput.TouchData Touches() { mixin(MGPC!(MobilePlayerInput.TouchData, 380)()); }
-			float MobileYaw() { mixin(MGPC!(float, 780)()); }
-			float MobileYawCenter() { mixin(MGPC!(float, 784)()); }
-			float MobileYawMultiplier() { mixin(MGPC!(float, 788)()); }
-			float MobilePitch() { mixin(MGPC!(float, 768)()); }
-			float MobilePitchCenter() { mixin(MGPC!(float, 772)()); }
-			float MobilePitchMultiplier() { mixin(MGPC!(float, 776)()); }
-			ScriptArray!(MobilePlayerInput.MobileInputGroup) MobileInputGroups() { mixin(MGPC!(ScriptArray!(MobilePlayerInput.MobileInputGroup), 724)()); }
-			ScriptArray!(MobileInputZone) MobileInputZones() { mixin(MGPC!(ScriptArray!(MobileInputZone), 740)()); }
-			ScriptArray!(MobilePlayerInput.MobileInputZoneClassMap) MobileInputZoneClasses() { mixin(MGPC!(ScriptArray!(MobilePlayerInput.MobileInputZoneClassMap), 752)()); }
-			ScriptArray!(MobileMenuScene) MobileMenuStack() { mixin(MGPC!(ScriptArray!(MobileMenuScene), 816)()); }
-			ScriptArray!(SeqEvent_MobileBase) MobileSeqEventHandlers() { mixin(MGPC!(ScriptArray!(SeqEvent_MobileBase), 892)()); }
-			ScriptArray!(SeqEvent_MobileRawInput) MobileRawInputSeqEventHandlers() { mixin(MGPC!(ScriptArray!(SeqEvent_MobileRawInput), 904)()); }
+			Vector DeviceAccelerometerRawData() { mixin(MGPC!("Vector", 928)()); }
+			Vector DeviceGyroRawData() { mixin(MGPC!("Vector", 916)()); }
+			Vector DeviceMotionAttitude() { mixin(MGPC!("Vector", 844)()); }
+			Vector DeviceMotionRotationRate() { mixin(MGPC!("Vector", 856)()); }
+			Vector DeviceMotionGravity() { mixin(MGPC!("Vector", 868)()); }
+			Vector DeviceMotionAcceleration() { mixin(MGPC!("Vector", 880)()); }
+			MobilePlayerInput.TouchData Touches() { mixin(MGPC!("MobilePlayerInput.TouchData", 380)()); }
+			float MobileYaw() { mixin(MGPC!("float", 780)()); }
+			float MobileYawCenter() { mixin(MGPC!("float", 784)()); }
+			float MobileYawMultiplier() { mixin(MGPC!("float", 788)()); }
+			float MobilePitch() { mixin(MGPC!("float", 768)()); }
+			float MobilePitchCenter() { mixin(MGPC!("float", 772)()); }
+			float MobilePitchMultiplier() { mixin(MGPC!("float", 776)()); }
+			ScriptArray!(MobilePlayerInput.MobileInputGroup) MobileInputGroups() { mixin(MGPC!("ScriptArray!(MobilePlayerInput.MobileInputGroup)", 724)()); }
+			ScriptArray!(MobileInputZone) MobileInputZones() { mixin(MGPC!("ScriptArray!(MobileInputZone)", 740)()); }
+			ScriptArray!(MobilePlayerInput.MobileInputZoneClassMap) MobileInputZoneClasses() { mixin(MGPC!("ScriptArray!(MobilePlayerInput.MobileInputZoneClassMap)", 752)()); }
+			ScriptArray!(MobileMenuScene) MobileMenuStack() { mixin(MGPC!("ScriptArray!(MobileMenuScene)", 816)()); }
+			ScriptArray!(SeqEvent_MobileBase) MobileSeqEventHandlers() { mixin(MGPC!("ScriptArray!(SeqEvent_MobileBase)", 892)()); }
+			ScriptArray!(SeqEvent_MobileRawInput) MobileRawInputSeqEventHandlers() { mixin(MGPC!("ScriptArray!(SeqEvent_MobileRawInput)", 904)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnInputTouch__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPreviewTouch__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTouchNotHandledInMenu__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMobileMotion__Delegate'!
-			float MobileInactiveTime() { mixin(MGPC!(float, 840)()); }
-			ScriptString NativeDebugString() { mixin(MGPC!(ScriptString, 828)()); }
-			float ZoneTimeout() { mixin(MGPC!(float, 812)()); }
-			float MobileTapRepeatTime() { mixin(MGPC!(float, 808)()); }
-			float MobileMinHoldForTap() { mixin(MGPC!(float, 804)()); }
-			float MobileDoubleTapTime() { mixin(MGPC!(float, 800)()); }
-			float MobileYawDeadzoneSize() { mixin(MGPC!(float, 796)()); }
-			float MobilePitchDeadzoneSize() { mixin(MGPC!(float, 792)()); }
-			int CurrentMobileGroup() { mixin(MGPC!(int, 736)()); }
-			MobileMenuObject InteractiveObject() { mixin(MGPC!(MobileMenuObject, 720)()); }
+			float MobileInactiveTime() { mixin(MGPC!("float", 840)()); }
+			ScriptString NativeDebugString() { mixin(MGPC!("ScriptString", 828)()); }
+			float ZoneTimeout() { mixin(MGPC!("float", 812)()); }
+			float MobileTapRepeatTime() { mixin(MGPC!("float", 808)()); }
+			float MobileMinHoldForTap() { mixin(MGPC!("float", 804)()); }
+			float MobileDoubleTapTime() { mixin(MGPC!("float", 800)()); }
+			float MobileYawDeadzoneSize() { mixin(MGPC!("float", 796)()); }
+			float MobilePitchDeadzoneSize() { mixin(MGPC!("float", 792)()); }
+			int CurrentMobileGroup() { mixin(MGPC!("int", 736)()); }
+			MobileMenuObject InteractiveObject() { mixin(MGPC!("MobileMenuObject", 720)()); }
 		}
 		bool bDeviceHasGyroscope() { mixin(MGBPC!(764, 0x10)()); }
 		bool bDeviceHasGyroscope(bool val) { mixin(MSBPC!(764, 0x10)()); }
@@ -218,12 +218,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentZones, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(MobileInputZone)*)params.ptr;
 	}
-	MobileMenuScene OpenMenuScene(ScriptClass SceneClass, ScriptString Mode)
+	MobileMenuScene OpenMenuScene(ScriptClass SceneClass, ScriptString* Mode = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SceneClass;
-		*cast(ScriptString*)&params[4] = Mode;
+		if (Mode !is null)
+			*cast(ScriptString*)&params[4] = *Mode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OpenMenuScene, params.ptr, cast(void*)0);
 		return *cast(MobileMenuScene*)&params[16];
 	}

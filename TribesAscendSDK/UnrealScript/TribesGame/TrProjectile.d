@@ -88,34 +88,34 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrObject.TR_EQUIP_POINT m_SpawnedEquipPoint() { mixin(MGPC!(TrObject.TR_EQUIP_POINT, 756)()); }
-			int r_nTetherId() { mixin(MGPC!(int, 736)()); }
-			Vector r_vSpawnLocation() { mixin(MGPC!(Vector, 776)()); }
-			float m_fInstigatorExtraZMomentum() { mixin(MGPC!(float, 732)()); }
+			TrObject.TR_EQUIP_POINT m_SpawnedEquipPoint() { mixin(MGPC!("TrObject.TR_EQUIP_POINT", 756)()); }
+			int r_nTetherId() { mixin(MGPC!("int", 736)()); }
+			Vector r_vSpawnLocation() { mixin(MGPC!("Vector", 776)()); }
+			float m_fInstigatorExtraZMomentum() { mixin(MGPC!("float", 732)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjMesh'!
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 788)()); }
-			TrDevice SpawnedFromDevice() { mixin(MGPC!(TrDevice, 812)()); }
-			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!(float, 808)()); }
-			float m_fMinLifespan() { mixin(MGPC!(float, 804)()); }
-			float m_fMaxLifespan() { mixin(MGPC!(float, 800)()); }
-			Vector m_vAccelDirection() { mixin(MGPC!(Vector, 764)()); }
-			float m_fClientSimulatedSpeed() { mixin(MGPC!(float, 760)()); }
-			float m_fTweenSpeed() { mixin(MGPC!(float, 752)()); }
-			float m_fCurrentTetherTweenAmount() { mixin(MGPC!(float, 748)()); }
-			TrProjectile c_ChildTetheredProjectile() { mixin(MGPC!(TrProjectile, 744)()); }
-			TrProjectile c_ParentTetheredProjectile() { mixin(MGPC!(TrProjectile, 740)()); }
-			float m_fInstigatorMomentumTransferMultiplier() { mixin(MGPC!(float, 728)()); }
-			float m_fAmbientSoundFadeOut() { mixin(MGPC!(float, 724)()); }
-			float m_fAmbientSoundFadeIn() { mixin(MGPC!(float, 720)()); }
-			float m_fDirectHitMultiplier() { mixin(MGPC!(float, 716)()); }
-			float m_fBounceDampingPercent() { mixin(MGPC!(float, 712)()); }
-			int m_nPerPlayerMaxDeployed() { mixin(MGPC!(int, 708)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 788)()); }
+			TrDevice SpawnedFromDevice() { mixin(MGPC!("TrDevice", 812)()); }
+			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!("float", 808)()); }
+			float m_fMinLifespan() { mixin(MGPC!("float", 804)()); }
+			float m_fMaxLifespan() { mixin(MGPC!("float", 800)()); }
+			Vector m_vAccelDirection() { mixin(MGPC!("Vector", 764)()); }
+			float m_fClientSimulatedSpeed() { mixin(MGPC!("float", 760)()); }
+			float m_fTweenSpeed() { mixin(MGPC!("float", 752)()); }
+			float m_fCurrentTetherTweenAmount() { mixin(MGPC!("float", 748)()); }
+			TrProjectile c_ChildTetheredProjectile() { mixin(MGPC!("TrProjectile", 744)()); }
+			TrProjectile c_ParentTetheredProjectile() { mixin(MGPC!("TrProjectile", 740)()); }
+			float m_fInstigatorMomentumTransferMultiplier() { mixin(MGPC!("float", 728)()); }
+			float m_fAmbientSoundFadeOut() { mixin(MGPC!("float", 724)()); }
+			float m_fAmbientSoundFadeIn() { mixin(MGPC!("float", 720)()); }
+			float m_fDirectHitMultiplier() { mixin(MGPC!("float", 716)()); }
+			float m_fBounceDampingPercent() { mixin(MGPC!("float", 712)()); }
+			int m_nPerPlayerMaxDeployed() { mixin(MGPC!("int", 708)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjLightEnvironment'!
-			float m_fMaxProjInheritPct() { mixin(MGPC!(float, 700)()); }
-			float m_fProjInheritVelocityPctZ() { mixin(MGPC!(float, 696)()); }
-			float m_fProjInheritVelocityPct() { mixin(MGPC!(float, 692)()); }
-			float m_fXYDamageRadius() { mixin(MGPC!(float, 688)()); }
-			ScriptClass m_SpawnedDeployableClass() { mixin(MGPC!(ScriptClass, 680)()); }
+			float m_fMaxProjInheritPct() { mixin(MGPC!("float", 700)()); }
+			float m_fProjInheritVelocityPctZ() { mixin(MGPC!("float", 696)()); }
+			float m_fProjInheritVelocityPct() { mixin(MGPC!("float", 692)()); }
+			float m_fXYDamageRadius() { mixin(MGPC!("float", 688)()); }
+			ScriptClass m_SpawnedDeployableClass() { mixin(MGPC!("ScriptClass", 680)()); }
 		}
 		bool m_bTether() { mixin(MGBPC!(684, 0x40)()); }
 		bool m_bTether(bool val) { mixin(MSBPC!(684, 0x40)()); }
@@ -137,15 +137,18 @@ public extern(D):
 		bool m_bLimitXYDamageCheck(bool val) { mixin(MSBPC!(684, 0x1)()); }
 	}
 final:
-	bool IsBlockedByBlocker(Actor DamageInstigator, Actor Target, Actor OriginActor, bool CheckWorldGeometry, Vector AltOriginLocation)
+	bool IsBlockedByBlocker(Actor DamageInstigator, Actor Target, Actor* OriginActor = null, bool* CheckWorldGeometry = null, Vector* AltOriginLocation = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Actor*)params.ptr = DamageInstigator;
 		*cast(Actor*)&params[4] = Target;
-		*cast(Actor*)&params[8] = OriginActor;
-		*cast(bool*)&params[12] = CheckWorldGeometry;
-		*cast(Vector*)&params[16] = AltOriginLocation;
+		if (OriginActor !is null)
+			*cast(Actor*)&params[8] = *OriginActor;
+		if (CheckWorldGeometry !is null)
+			*cast(bool*)&params[12] = *CheckWorldGeometry;
+		if (AltOriginLocation !is null)
+			*cast(Vector*)&params[16] = *AltOriginLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsBlockedByBlocker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -194,11 +197,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateProjectileLight, cast(void*)0, cast(void*)0);
 	}
-	void DetonateObsolete(bool bDetonateFromAOE)
+	void DetonateObsolete(bool* bDetonateFromAOE = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDetonateFromAOE;
+		if (bDetonateFromAOE !is null)
+			*cast(bool*)params.ptr = *bDetonateFromAOE;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetonateObsolete, params.ptr, cast(void*)0);
 	}
 	void DestroyOldestOverLimit()
@@ -219,12 +223,13 @@ final:
 		*cast(Vector*)params.ptr = Direction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void ApplyInheritance(Vector ProjectileDir)
@@ -284,7 +289,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileHurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool HurtRadius_Internal(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Vector AltHurtOrigin, Actor IgnoredActor, Controller InstigatedByController, bool bDoFullDamage)
+	bool HurtRadius_Internal(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Vector AltHurtOrigin, Actor* IgnoredActor = null, Controller* InstigatedByController = null, bool* bDoFullDamage = null)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -294,9 +299,12 @@ final:
 		*cast(float*)&params[12] = Momentum;
 		*cast(Vector*)&params[16] = HurtOrigin;
 		*cast(Vector*)&params[28] = AltHurtOrigin;
-		*cast(Actor*)&params[40] = IgnoredActor;
-		*cast(Controller*)&params[44] = InstigatedByController;
-		*cast(bool*)&params[48] = bDoFullDamage;
+		if (IgnoredActor !is null)
+			*cast(Actor*)&params[40] = *IgnoredActor;
+		if (InstigatedByController !is null)
+			*cast(Controller*)&params[44] = *InstigatedByController;
+		if (bDoFullDamage !is null)
+			*cast(bool*)&params[48] = *bDoFullDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HurtRadius_Internal, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[52];
 	}

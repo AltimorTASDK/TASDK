@@ -35,48 +35,48 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ForceImpact() { mixin(MGPC!(float, 568)()); }
-			ScriptArray!(ubyte) ClampMap() { mixin(MGPC!(ScriptArray!(ubyte), 692)()); }
-			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPC!(ScriptArray!(ShadowMap2D), 704)()); }
-			UObject.Pointer FluidSimulation() { mixin(MGPC!(UObject.Pointer, 720)()); }
-			EngineTypes.LightMapRef LightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 716)()); }
-			Vector EditorViewPosition() { mixin(MGPC!(Vector, 680)()); }
-			Vector DetailPosition() { mixin(MGPC!(Vector, 668)()); }
-			Vector SimulationPosition() { mixin(MGPC!(Vector, 656)()); }
-			float ViewDistance() { mixin(MGPC!(float, 652)()); }
-			float DeactivationTimer() { mixin(MGPC!(float, 648)()); }
-			float TestRippleAngle() { mixin(MGPC!(float, 644)()); }
-			float TestRippleTime() { mixin(MGPC!(float, 640)()); }
-			float FluidHeight() { mixin(MGPC!(float, 636)()); }
-			float FluidWidth() { mixin(MGPC!(float, 632)()); }
-			float TestRippleRadius() { mixin(MGPC!(float, 628)()); }
-			float TestRippleFrequency() { mixin(MGPC!(float, 624)()); }
-			float TestRippleSpeed() { mixin(MGPC!(float, 620)()); }
-			float NormalLength() { mixin(MGPC!(float, 616)()); }
-			float DetailUpdateRate() { mixin(MGPC!(float, 612)()); }
-			float DetailHeightScale() { mixin(MGPC!(float, 608)()); }
-			float DetailTransfer() { mixin(MGPC!(float, 604)()); }
-			float DetailTravelSpeed() { mixin(MGPC!(float, 600)()); }
-			float DetailDamping() { mixin(MGPC!(float, 596)()); }
-			float DetailSize() { mixin(MGPC!(float, 592)()); }
-			int DetailResolution() { mixin(MGPC!(int, 588)()); }
-			float DeactivationDistance() { mixin(MGPC!(float, 584)()); }
-			Actor TargetDetail() { mixin(MGPC!(Actor, 580)()); }
-			float LightingContrast() { mixin(MGPC!(float, 576)()); }
-			float ForceContinuous() { mixin(MGPC!(float, 572)()); }
-			float FluidUpdateRate() { mixin(MGPC!(float, 564)()); }
-			float FluidHeightScale() { mixin(MGPC!(float, 560)()); }
-			float FluidTravelSpeed() { mixin(MGPC!(float, 556)()); }
-			float FluidDamping() { mixin(MGPC!(float, 552)()); }
-			float GPUTessellationFactor() { mixin(MGPC!(float, 548)()); }
-			Actor TargetSimulation() { mixin(MGPC!(Actor, 544)()); }
-			float GridSpacingLowRes() { mixin(MGPC!(float, 540)()); }
-			float GridSpacing() { mixin(MGPC!(float, 536)()); }
-			int SimulationQuadsY() { mixin(MGPC!(int, 532)()); }
-			int SimulationQuadsX() { mixin(MGPC!(int, 528)()); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 496)()); }
-			int LightMapResolution() { mixin(MGPC!(int, 492)()); }
-			MaterialInterface FluidMaterial() { mixin(MGPC!(MaterialInterface, 488)()); }
+			float ForceImpact() { mixin(MGPC!("float", 568)()); }
+			ScriptArray!(ubyte) ClampMap() { mixin(MGPC!("ScriptArray!(ubyte)", 692)()); }
+			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPC!("ScriptArray!(ShadowMap2D)", 704)()); }
+			UObject.Pointer FluidSimulation() { mixin(MGPC!("UObject.Pointer", 720)()); }
+			EngineTypes.LightMapRef LightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 716)()); }
+			Vector EditorViewPosition() { mixin(MGPC!("Vector", 680)()); }
+			Vector DetailPosition() { mixin(MGPC!("Vector", 668)()); }
+			Vector SimulationPosition() { mixin(MGPC!("Vector", 656)()); }
+			float ViewDistance() { mixin(MGPC!("float", 652)()); }
+			float DeactivationTimer() { mixin(MGPC!("float", 648)()); }
+			float TestRippleAngle() { mixin(MGPC!("float", 644)()); }
+			float TestRippleTime() { mixin(MGPC!("float", 640)()); }
+			float FluidHeight() { mixin(MGPC!("float", 636)()); }
+			float FluidWidth() { mixin(MGPC!("float", 632)()); }
+			float TestRippleRadius() { mixin(MGPC!("float", 628)()); }
+			float TestRippleFrequency() { mixin(MGPC!("float", 624)()); }
+			float TestRippleSpeed() { mixin(MGPC!("float", 620)()); }
+			float NormalLength() { mixin(MGPC!("float", 616)()); }
+			float DetailUpdateRate() { mixin(MGPC!("float", 612)()); }
+			float DetailHeightScale() { mixin(MGPC!("float", 608)()); }
+			float DetailTransfer() { mixin(MGPC!("float", 604)()); }
+			float DetailTravelSpeed() { mixin(MGPC!("float", 600)()); }
+			float DetailDamping() { mixin(MGPC!("float", 596)()); }
+			float DetailSize() { mixin(MGPC!("float", 592)()); }
+			int DetailResolution() { mixin(MGPC!("int", 588)()); }
+			float DeactivationDistance() { mixin(MGPC!("float", 584)()); }
+			Actor TargetDetail() { mixin(MGPC!("Actor", 580)()); }
+			float LightingContrast() { mixin(MGPC!("float", 576)()); }
+			float ForceContinuous() { mixin(MGPC!("float", 572)()); }
+			float FluidUpdateRate() { mixin(MGPC!("float", 564)()); }
+			float FluidHeightScale() { mixin(MGPC!("float", 560)()); }
+			float FluidTravelSpeed() { mixin(MGPC!("float", 556)()); }
+			float FluidDamping() { mixin(MGPC!("float", 552)()); }
+			float GPUTessellationFactor() { mixin(MGPC!("float", 548)()); }
+			Actor TargetSimulation() { mixin(MGPC!("Actor", 544)()); }
+			float GridSpacingLowRes() { mixin(MGPC!("float", 540)()); }
+			float GridSpacing() { mixin(MGPC!("float", 536)()); }
+			int SimulationQuadsY() { mixin(MGPC!("int", 532)()); }
+			int SimulationQuadsX() { mixin(MGPC!("int", 528)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassPrimitiveSettings", 496)()); }
+			int LightMapResolution() { mixin(MGPC!("int", 492)()); }
+			MaterialInterface FluidMaterial() { mixin(MGPC!("MaterialInterface", 488)()); }
 		}
 		bool bTestRippleCenterOnDetail() { mixin(MGBPC!(524, 0x400)()); }
 		bool bTestRippleCenterOnDetail(bool val) { mixin(MSBPC!(524, 0x400)()); }
@@ -102,14 +102,15 @@ public extern(D):
 		bool EnableSimulation(bool val) { mixin(MSBPC!(524, 0x1)()); }
 	}
 final:
-	void ApplyForce(Vector WorldPos, float Strength, float Radius, bool bImpulse)
+	void ApplyForce(Vector WorldPos, float Strength, float Radius, bool* bImpulse = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Vector*)params.ptr = WorldPos;
 		*cast(float*)&params[12] = Strength;
 		*cast(float*)&params[16] = Radius;
-		*cast(bool*)&params[20] = bImpulse;
+		if (bImpulse !is null)
+			*cast(bool*)&params[20] = *bImpulse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyForce, params.ptr, cast(void*)0);
 	}
 	void SetDetailPosition(Vector WorldPos)

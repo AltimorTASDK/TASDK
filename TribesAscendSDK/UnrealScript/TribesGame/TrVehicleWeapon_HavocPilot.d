@@ -30,9 +30,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrEffect_MovableDecal m_BombMarkerDecal() { mixin(MGPC!(TrEffect_MovableDecal, 1804)()); }
-		MaterialInstanceConstant m_BombMarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1800)()); }
-		MaterialInstanceConstant m_BombMarkerTemplate() { mixin(MGPC!(MaterialInstanceConstant, 1796)()); }
+		TrEffect_MovableDecal m_BombMarkerDecal() { mixin(MGPC!("TrEffect_MovableDecal", 1804)()); }
+		MaterialInstanceConstant m_BombMarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 1800)()); }
+		MaterialInstanceConstant m_BombMarkerTemplate() { mixin(MGPC!("MaterialInstanceConstant", 1796)()); }
 	}
 final:
 	void PostBeginPlay()

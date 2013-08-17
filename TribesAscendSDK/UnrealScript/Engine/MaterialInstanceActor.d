@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialInstanceActor")()); }
 	private static __gshared MaterialInstanceActor mDefaultProperties;
 	@property final static MaterialInstanceActor DefaultProperties() { mixin(MGDPC!(MaterialInstanceActor, "MaterialInstanceActor Engine.Default__MaterialInstanceActor")()); }
-	@property final auto ref MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 476)()); }
+	@property final auto ref MaterialInstanceConstant MatInst() { mixin(MGPC!("MaterialInstanceConstant", 476)()); }
 }

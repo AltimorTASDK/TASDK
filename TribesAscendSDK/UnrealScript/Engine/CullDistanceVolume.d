@@ -19,13 +19,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CullDistanceVolume.CullDistanceSizePair")()); }
 		@property final auto ref
 		{
-			float CullDistance() { mixin(MGPS!(float, 4)()); }
-			float Size() { mixin(MGPS!(float, 0)()); }
+			float CullDistance() { mixin(MGPS!("float", 4)()); }
+			float Size() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(CullDistanceVolume.CullDistanceSizePair) CullDistances() { mixin(MGPC!(ScriptArray!(CullDistanceVolume.CullDistanceSizePair), 520)()); }
+		@property final auto ref ScriptArray!(CullDistanceVolume.CullDistanceSizePair) CullDistances() { mixin(MGPC!("ScriptArray!(CullDistanceVolume.CullDistanceSizePair)", 520)()); }
 		bool bEnabled() { mixin(MGBPC!(532, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}

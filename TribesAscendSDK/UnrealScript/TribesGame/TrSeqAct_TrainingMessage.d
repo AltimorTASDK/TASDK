@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mActivated;
 		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function TribesGame.TrSeqAct_TrainingMessage.Activated")()); }
 	}
-	@property final auto ref TrHelpTextManager_Training.EHelpTextTrainingType m_MessageType() { mixin(MGPC!(TrHelpTextManager_Training.EHelpTextTrainingType, 232)()); }
+	@property final auto ref TrHelpTextManager_Training.EHelpTextTrainingType m_MessageType() { mixin(MGPC!("TrHelpTextManager_Training.EHelpTextTrainingType", 232)()); }
 	final void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);

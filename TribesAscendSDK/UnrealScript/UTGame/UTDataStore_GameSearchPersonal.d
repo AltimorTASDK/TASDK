@@ -49,15 +49,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchDM, 172)()); }
-		ScriptString ServerUniqueId() { mixin(MGPC!(ScriptString, 176)()); }
+		UTDataStore_GameSearchDM PrimaryGameSearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchDM", 172)()); }
+		ScriptString ServerUniqueId() { mixin(MGPC!("ScriptString", 176)()); }
 	}
 final:
-	bool HasOutstandingQueries(bool bRestrictCheckToSelf)
+	bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRestrictCheckToSelf;
+		if (bRestrictCheckToSelf !is null)
+			*cast(bool*)params.ptr = *bRestrictCheckToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -70,22 +71,24 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverrideQuerySubmission, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	ScriptString GetPlayerName(int ControllerId)
+	ScriptString GetPlayerName(int* ControllerId = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = ControllerId;
+		if (ControllerId !is null)
+			*cast(int*)params.ptr = *ControllerId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	bool GetPlayerNetId(ref OnlineSubsystem.UniqueNetId out_PlayerId, int ControllerId)
+	bool GetPlayerNetId(ref OnlineSubsystem.UniqueNetId out_PlayerId, int* ControllerId = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = out_PlayerId;
-		*cast(int*)&params[8] = ControllerId;
+		if (ControllerId !is null)
+			*cast(int*)&params[8] = *ControllerId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerNetId, params.ptr, cast(void*)0);
-		*out_PlayerId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
+		out_PlayerId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	int FindServerIndexByString(int ControllerId, ScriptString IdToFind)
@@ -97,14 +100,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexByString, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	int FindServerIndexById(int ControllerId, ref const OnlineSubsystem.UniqueNetId IdToFind)
+	int FindServerIndexById(int ControllerId, ref in OnlineSubsystem.UniqueNetId IdToFind)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = IdToFind;
+		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = cast(OnlineSubsystem.UniqueNetId)IdToFind;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindServerIndexById, params.ptr, cast(void*)0);
-		*IdToFind = *cast(OnlineSubsystem.UniqueNetId*)&params[4];
 		return *cast(int*)&params[12];
 	}
 	bool AddServer(int ControllerId, OnlineSubsystem.UniqueNetId IdToAdd)
@@ -131,7 +133,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = out_ServerList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerIdList, params.ptr, cast(void*)0);
-		*out_ServerList = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
+		out_ServerList = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	void GetServerStringList(ref ScriptArray!(ScriptString) out_ServerList)
 	{
@@ -139,6 +141,6 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = out_ServerList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerStringList, params.ptr, cast(void*)0);
-		*out_ServerList = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		out_ServerList = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 }

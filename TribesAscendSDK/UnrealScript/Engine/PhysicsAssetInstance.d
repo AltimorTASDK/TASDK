@@ -63,17 +63,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(RB_ConstraintInstance) Constraints() { mixin(MGPC!(ScriptArray!(RB_ConstraintInstance), 80)()); }
-			ScriptArray!(RB_BodyInstance) Bodies() { mixin(MGPC!(ScriptArray!(RB_BodyInstance), 68)()); }
-			float AngularForceLimitScale() { mixin(MGPC!(float, 172)()); }
-			float AngularDampingScale() { mixin(MGPC!(float, 168)()); }
-			float AngularSpringScale() { mixin(MGPC!(float, 164)()); }
-			float LinearForceLimitScale() { mixin(MGPC!(float, 160)()); }
-			float LinearDampingScale() { mixin(MGPC!(float, 156)()); }
-			float LinearSpringScale() { mixin(MGPC!(float, 152)()); }
-			UObject.Map_Mirror CollisionDisableTable() { mixin(MGPC!(UObject.Map_Mirror, 92)()); }
-			int RootBodyIndex() { mixin(MGPC!(int, 64)()); }
-			Actor Owner() { mixin(MGPC!(Actor, 60)()); }
+			ScriptArray!(RB_ConstraintInstance) Constraints() { mixin(MGPC!("ScriptArray!(RB_ConstraintInstance)", 80)()); }
+			ScriptArray!(RB_BodyInstance) Bodies() { mixin(MGPC!("ScriptArray!(RB_BodyInstance)", 68)()); }
+			float AngularForceLimitScale() { mixin(MGPC!("float", 172)()); }
+			float AngularDampingScale() { mixin(MGPC!("float", 168)()); }
+			float AngularSpringScale() { mixin(MGPC!("float", 164)()); }
+			float LinearForceLimitScale() { mixin(MGPC!("float", 160)()); }
+			float LinearDampingScale() { mixin(MGPC!("float", 156)()); }
+			float LinearSpringScale() { mixin(MGPC!("float", 152)()); }
+			UObject.Map_Mirror CollisionDisableTable() { mixin(MGPC!("UObject.Map_Mirror", 92)()); }
+			int RootBodyIndex() { mixin(MGPC!("int", 64)()); }
+			Actor Owner() { mixin(MGPC!("Actor", 60)()); }
 		}
 		bool bInitBodies() { mixin(MGBPC!(176, 0x1)()); }
 		bool bInitBodies(bool val) { mixin(MSBPC!(176, 0x1)()); }
@@ -116,7 +116,7 @@ final:
 	}
 	void SetNamedBodiesFixed(bool bNewFixed, ScriptArray!(ScriptName) BoneNames, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh, bool bSetOtherBodiesToComplement, bool bSkipFullAnimWeightBodies)
+void* SkelMesh, bool* bSetOtherBodiesToComplement = null, bool* bSkipFullAnimWeightBodies = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -125,42 +125,45 @@ void* SkelMesh, bool bSetOtherBodiesToComplement, bool bSkipFullAnimWeightBodies
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[16] = SkelMesh;
-		*cast(bool*)&params[20] = bSetOtherBodiesToComplement;
-		*cast(bool*)&params[24] = bSkipFullAnimWeightBodies;
+		if (bSetOtherBodiesToComplement !is null)
+			*cast(bool*)&params[20] = *bSetOtherBodiesToComplement;
+		if (bSkipFullAnimWeightBodies !is null)
+			*cast(bool*)&params[24] = *bSkipFullAnimWeightBodies;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetNamedBodiesFixed, params.ptr, cast(void*)0);
 	}
-	void ForceAllBodiesBelowUnfixed(ref const ScriptName InBoneName, PhysicsAsset InAsset, 
+	void ForceAllBodiesBelowUnfixed(ref in ScriptName InBoneName, PhysicsAsset InAsset, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* InSkelMesh, bool InbInstanceAlwaysFullAnimWeight)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = InBoneName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)InBoneName;
 		*cast(PhysicsAsset*)&params[8] = InAsset;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[12] = InSkelMesh;
 		*cast(bool*)&params[16] = InbInstanceAlwaysFullAnimWeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ForceAllBodiesBelowUnfixed, params.ptr, cast(void*)0);
-		*InBoneName = *cast(ScriptName*)params.ptr;
 	}
 	void SetAllMotorsAngularPositionDrive(bool bEnableSwingDrive, bool bEnableTwistDrive, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh, bool bSkipFullAnimWeightBodies)
+void** SkelMesh = null, bool* bSkipFullAnimWeightBodies = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnableSwingDrive;
 		*cast(bool*)&params[4] = bEnableTwistDrive;
-		*cast(
+		if (SkelMesh !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[8] = SkelMesh;
-		*cast(bool*)&params[12] = bSkipFullAnimWeightBodies;
+void**)&params[8] = *SkelMesh;
+		if (bSkipFullAnimWeightBodies !is null)
+			*cast(bool*)&params[12] = *bSkipFullAnimWeightBodies;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAllMotorsAngularPositionDrive, params.ptr, cast(void*)0);
 	}
 	void SetAllMotorsAngularVelocityDrive(bool bEnableSwingDrive, bool bEnableTwistDrive, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMeshComp, bool bSkipFullAnimWeightBodies)
+void* SkelMeshComp, bool* bSkipFullAnimWeightBodies = null)
 	{
 		ubyte params[16];
 		params[] = 0;
@@ -169,27 +172,30 @@ void* SkelMeshComp, bool bSkipFullAnimWeightBodies)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[8] = SkelMeshComp;
-		*cast(bool*)&params[12] = bSkipFullAnimWeightBodies;
+		if (bSkipFullAnimWeightBodies !is null)
+			*cast(bool*)&params[12] = *bSkipFullAnimWeightBodies;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAllMotorsAngularVelocityDrive, params.ptr, cast(void*)0);
 	}
 	void SetAllMotorsAngularDriveParams(float InSpring, float InDamping, float InForceLimit, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh, bool bSkipFullAnimWeightBodies)
+void** SkelMesh = null, bool* bSkipFullAnimWeightBodies = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(float*)params.ptr = InSpring;
 		*cast(float*)&params[4] = InDamping;
 		*cast(float*)&params[8] = InForceLimit;
-		*cast(
+		if (SkelMesh !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[12] = SkelMesh;
-		*cast(bool*)&params[16] = bSkipFullAnimWeightBodies;
+void**)&params[12] = *SkelMesh;
+		if (bSkipFullAnimWeightBodies !is null)
+			*cast(bool*)&params[16] = *bSkipFullAnimWeightBodies;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAllMotorsAngularDriveParams, params.ptr, cast(void*)0);
 	}
 	void SetNamedMotorsAngularPositionDrive(bool bEnableSwingDrive, bool bEnableTwistDrive, ScriptArray!(ScriptName) BoneNames, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMeshComp, bool bSetOtherBodiesToComplement)
+void* SkelMeshComp, bool* bSetOtherBodiesToComplement = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -199,12 +205,13 @@ void* SkelMeshComp, bool bSetOtherBodiesToComplement)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[20] = SkelMeshComp;
-		*cast(bool*)&params[24] = bSetOtherBodiesToComplement;
+		if (bSetOtherBodiesToComplement !is null)
+			*cast(bool*)&params[24] = *bSetOtherBodiesToComplement;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetNamedMotorsAngularPositionDrive, params.ptr, cast(void*)0);
 	}
 	void SetNamedMotorsAngularVelocityDrive(bool bEnableSwingDrive, bool bEnableTwistDrive, ScriptArray!(ScriptName) BoneNames, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMeshComp, bool bSetOtherBodiesToComplement)
+void* SkelMeshComp, bool* bSetOtherBodiesToComplement = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -214,7 +221,8 @@ void* SkelMeshComp, bool bSetOtherBodiesToComplement)
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[20] = SkelMeshComp;
-		*cast(bool*)&params[24] = bSetOtherBodiesToComplement;
+		if (bSetOtherBodiesToComplement !is null)
+			*cast(bool*)&params[24] = *bSetOtherBodiesToComplement;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetNamedMotorsAngularVelocityDrive, params.ptr, cast(void*)0);
 	}
 	void SetNamedRBBoneSprings(bool bEnable, ScriptArray!(ScriptName) BoneNames, float InBoneLinearSpring, float InBoneAngularSpring, 

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqEvent_Console DefaultProperties() { mixin(MGDPC!(SeqEvent_Console, "SeqEvent_Console Engine.Default__SeqEvent_Console")()); }
 	@property final auto ref
 	{
-		ScriptString EventDesc() { mixin(MGPC!(ScriptString, 264)()); }
-		ScriptName ConsoleEventName() { mixin(MGPC!(ScriptName, 256)()); }
+		ScriptString EventDesc() { mixin(MGPC!("ScriptString", 264)()); }
+		ScriptName ConsoleEventName() { mixin(MGPC!("ScriptName", 256)()); }
 	}
 }

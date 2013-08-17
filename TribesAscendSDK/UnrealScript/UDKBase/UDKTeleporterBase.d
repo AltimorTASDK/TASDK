@@ -33,14 +33,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SoundCue TeleportingSound() { mixin(MGPC!(SoundCue, 768)()); }
-		ScriptName PortalTextureParameter() { mixin(MGPC!(ScriptName, 760)()); }
-		MaterialInstanceConstant PortalMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 756)()); }
-		MaterialInterface PortalMaterial() { mixin(MGPC!(MaterialInterface, 752)()); }
-		Actor PortalViewTarget() { mixin(MGPC!(Actor, 748)()); }
-		int TextureResolutionY() { mixin(MGPC!(int, 744)()); }
-		int TextureResolutionX() { mixin(MGPC!(int, 740)()); }
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 736)()); }
+		SoundCue TeleportingSound() { mixin(MGPC!("SoundCue", 768)()); }
+		ScriptName PortalTextureParameter() { mixin(MGPC!("ScriptName", 760)()); }
+		MaterialInstanceConstant PortalMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 756)()); }
+		MaterialInterface PortalMaterial() { mixin(MGPC!("MaterialInterface", 752)()); }
+		Actor PortalViewTarget() { mixin(MGPC!("Actor", 748)()); }
+		int TextureResolutionY() { mixin(MGPC!("int", 744)()); }
+		int TextureResolutionX() { mixin(MGPC!("int", 740)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 736)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PortalCaptureComponent'!
 	}
 final:

@@ -17,11 +17,11 @@ public extern(D):
 	@property final static TrDeviceContentData DefaultProperties() { mixin(MGDPC!(TrDeviceContentData, "TrDeviceContentData TribesGame.Default__TrDeviceContentData")()); }
 	@property final auto ref
 	{
-		ScriptClass m_TrDeviceClass() { mixin(MGPC!(ScriptClass, 88)()); }
-		ScriptArray!(AnimSet) m_AnimSets1p() { mixin(MGPC!(ScriptArray!(AnimSet), 68)()); }
-		AnimSet m_PaperDollAnimSet() { mixin(MGPC!(AnimSet, 84)()); }
-		AnimTree m_AnimTreeTemplate1p() { mixin(MGPC!(AnimTree, 80)()); }
-		PhysicsAsset m_PhysicsAsset1p() { mixin(MGPC!(PhysicsAsset, 64)()); }
-		SkeletalMesh m_SkeletalMesh1p() { mixin(MGPC!(SkeletalMesh, 60)()); }
+		ScriptClass m_TrDeviceClass() { mixin(MGPC!("ScriptClass", 88)()); }
+		ScriptArray!(AnimSet) m_AnimSets1p() { mixin(MGPC!("ScriptArray!(AnimSet)", 68)()); }
+		AnimSet m_PaperDollAnimSet() { mixin(MGPC!("AnimSet", 84)()); }
+		AnimTree m_AnimTreeTemplate1p() { mixin(MGPC!("AnimTree", 80)()); }
+		PhysicsAsset m_PhysicsAsset1p() { mixin(MGPC!("PhysicsAsset", 64)()); }
+		SkeletalMesh m_SkeletalMesh1p() { mixin(MGPC!("SkeletalMesh", 60)()); }
 	}
 }

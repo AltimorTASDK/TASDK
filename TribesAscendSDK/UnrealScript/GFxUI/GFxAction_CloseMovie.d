@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref GFxMoviePlayer Movie() { mixin(MGPC!(GFxMoviePlayer, 232)()); }
+		@property final auto ref GFxMoviePlayer Movie() { mixin(MGPC!("GFxMoviePlayer", 232)()); }
 		bool bUnload() { mixin(MGBPC!(236, 0x1)()); }
 		bool bUnload(bool val) { mixin(MSBPC!(236, 0x1)()); }
 	}

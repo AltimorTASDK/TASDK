@@ -21,12 +21,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptString PropertyValue() { mixin(MGPS!(ScriptString, 12)()); }
-				ScriptName PropertyName() { mixin(MGPS!(ScriptName, 0)()); }
+				ScriptString PropertyValue() { mixin(MGPS!("ScriptString", 12)()); }
+				ScriptName PropertyName() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bModifyProperty() { mixin(MGBPS!(8, 0x1)()); }
 			bool bModifyProperty(bool val) { mixin(MSBPS!(8, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) Properties() { mixin(MGPC!(ScriptArray!(SeqAct_ModifyProperty.PropertyInfo), 232)()); }
+	@property final auto ref ScriptArray!(SeqAct_ModifyProperty.PropertyInfo) Properties() { mixin(MGPC!("ScriptArray!(SeqAct_ModifyProperty.PropertyInfo)", 232)()); }
 }

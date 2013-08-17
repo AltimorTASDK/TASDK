@@ -46,11 +46,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.TitleFileMcp")()); }
 		@property final auto ref
 		{
-			ScriptString Filename() { mixin(MGPS!(ScriptString, 0)()); }
-			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
-			ScriptArray!(ubyte) Data() { mixin(MGPS!(ScriptArray!(ubyte), 16)()); }
+			ScriptString Filename() { mixin(MGPS!("ScriptString", 0)()); }
+			OnlineSubsystem.EOnlineEnumerationReadState AsyncState() { mixin(MGPS!("OnlineSubsystem.EOnlineEnumerationReadState", 12)()); }
+			ScriptArray!(ubyte) Data() { mixin(MGPS!("ScriptArray!(ubyte)", 16)()); }
 		}
-		@property final auto ref UObject.Pointer HttpDownloader() { mixin(MGPS!(UObject.Pointer, 28)()); }
+		@property final auto ref UObject.Pointer HttpDownloader() { mixin(MGPS!("UObject.Pointer", 28)()); }
 	}
 	struct FileNameToURLMapping
 	{
@@ -60,23 +60,23 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.FileNameToURLMapping")()); }
 		@property final auto ref
 		{
-			ScriptName UrlMapping() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName Filename() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName UrlMapping() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName Filename() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ReadTitleFileCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ReadTitleFileCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 64)()); }
-		ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp) TitleFiles() { mixin(MGPC!(ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp), 76)()); }
-		ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping) FilesToUrls() { mixin(MGPC!(ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping), 108)()); }
+void*)", 64)()); }
+		ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp) TitleFiles() { mixin(MGPC!("ScriptArray!(OnlineTitleFileDownloadMcp.TitleFileMcp)", 76)()); }
+		ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping) FilesToUrls() { mixin(MGPC!("ScriptArray!(OnlineTitleFileDownloadMcp.FileNameToURLMapping)", 108)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
-		float TimeOut() { mixin(MGPC!(float, 104)()); }
-		ScriptString BaseUrl() { mixin(MGPC!(ScriptString, 92)()); }
-		int DownloadCount() { mixin(MGPC!(int, 88)()); }
+		float TimeOut() { mixin(MGPC!("float", 104)()); }
+		ScriptString BaseUrl() { mixin(MGPC!("ScriptString", 92)()); }
+		int DownloadCount() { mixin(MGPC!("int", 88)()); }
 	}
 final:
 	void OnReadTitleFileComplete(bool bWasSuccessful, ScriptString Filename)
@@ -124,7 +124,7 @@ void**)params.ptr = ReadTitleFileCompleteDelegate;
 		*cast(ScriptString*)params.ptr = Filename;
 		*cast(ScriptArray!(ubyte)*)&params[12] = FileContents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTitleFileContents, params.ptr, cast(void*)0);
-		*FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
+		FileContents = *cast(ScriptArray!(ubyte)*)&params[12];
 		return *cast(bool*)&params[24];
 	}
 	OnlineSubsystem.EOnlineEnumerationReadState GetTitleFileState(ScriptString Filename)

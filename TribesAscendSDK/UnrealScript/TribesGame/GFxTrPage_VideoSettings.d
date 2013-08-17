@@ -30,9 +30,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MotionBlurNumber() { mixin(MGPC!(int, 364)()); }
-		int FrameSmoothNumber() { mixin(MGPC!(int, 360)()); }
-		int VSyncNumber() { mixin(MGPC!(int, 356)()); }
+		int MotionBlurNumber() { mixin(MGPC!("int", 364)()); }
+		int FrameSmoothNumber() { mixin(MGPC!("int", 360)()); }
+		int VSyncNumber() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

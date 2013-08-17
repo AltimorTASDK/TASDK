@@ -37,17 +37,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxClikWidget SpectateBtn() { mixin(MGPC!(GFxClikWidget, 180)()); }
-		GFxClikWidget JoinBtn() { mixin(MGPC!(GFxClikWidget, 176)()); }
-		GFxClikWidget MutatorListMC() { mixin(MGPC!(GFxClikWidget, 172)()); }
-		GFxClikWidget ServerInfoListMC() { mixin(MGPC!(GFxClikWidget, 168)()); }
+		GFxClikWidget SpectateBtn() { mixin(MGPC!("GFxClikWidget", 180)()); }
+		GFxClikWidget JoinBtn() { mixin(MGPC!("GFxClikWidget", 176)()); }
+		GFxClikWidget MutatorListMC() { mixin(MGPC!("GFxClikWidget", 172)()); }
+		GFxClikWidget ServerInfoListMC() { mixin(MGPC!("GFxClikWidget", 168)()); }
 	}
 final:
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)

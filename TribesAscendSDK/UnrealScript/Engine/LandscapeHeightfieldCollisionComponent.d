@@ -15,14 +15,14 @@ public extern(D):
 	@property final static LandscapeHeightfieldCollisionComponent DefaultProperties() { mixin(MGDPC!(LandscapeHeightfieldCollisionComponent, "LandscapeHeightfieldCollisionComponent Engine.Default__LandscapeHeightfieldCollisionComponent")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) CollisionQuadFlags() { mixin(MGPC!(ScriptArray!(ubyte), 556)()); }
-		ScriptArray!(PhysicalMaterial) PhysicalMaterials() { mixin(MGPC!(ScriptArray!(PhysicalMaterial), 568)()); }
-		UObject.BoxSphereBounds CachedBoxSphereBounds() { mixin(MGPC!(UObject.BoxSphereBounds, 584)()); }
-		UObject.Pointer RBHeightfield() { mixin(MGPC!(UObject.Pointer, 580)()); }
-		float CollisionScale() { mixin(MGPC!(float, 552)()); }
-		int CollisionSizeQuads() { mixin(MGPC!(int, 548)()); }
-		int SectionBaseY() { mixin(MGPC!(int, 544)()); }
-		int SectionBaseX() { mixin(MGPC!(int, 540)()); }
-		UObject.UntypedBulkData_Mirror CollisionHeightData() { mixin(MGPC!(UObject.UntypedBulkData_Mirror, 488)()); }
+		ScriptArray!(ubyte) CollisionQuadFlags() { mixin(MGPC!("ScriptArray!(ubyte)", 556)()); }
+		ScriptArray!(PhysicalMaterial) PhysicalMaterials() { mixin(MGPC!("ScriptArray!(PhysicalMaterial)", 568)()); }
+		UObject.BoxSphereBounds CachedBoxSphereBounds() { mixin(MGPC!("UObject.BoxSphereBounds", 584)()); }
+		UObject.Pointer RBHeightfield() { mixin(MGPC!("UObject.Pointer", 580)()); }
+		float CollisionScale() { mixin(MGPC!("float", 552)()); }
+		int CollisionSizeQuads() { mixin(MGPC!("int", 548)()); }
+		int SectionBaseY() { mixin(MGPC!("int", 544)()); }
+		int SectionBaseX() { mixin(MGPC!("int", 540)()); }
+		UObject.UntypedBulkData_Mirror CollisionHeightData() { mixin(MGPC!("UObject.UntypedBulkData_Mirror", 488)()); }
 	}
 }

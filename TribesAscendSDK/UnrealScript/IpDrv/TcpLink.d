@@ -65,19 +65,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) SendFIFO() { mixin(MGPC!(ScriptArray!(ubyte), 516)()); }
-		ScriptString RecvBuf() { mixin(MGPC!(ScriptString, 528)()); }
-		ScriptClass AcceptClass() { mixin(MGPC!(ScriptClass, 512)()); }
-		InternetLink.IpAddr RemoteAddr() { mixin(MGPC!(InternetLink.IpAddr, 504)()); }
-		TcpLink.ELinkState LinkState() { mixin(MGPC!(TcpLink.ELinkState, 500)()); }
+		ScriptArray!(ubyte) SendFIFO() { mixin(MGPC!("ScriptArray!(ubyte)", 516)()); }
+		ScriptString RecvBuf() { mixin(MGPC!("ScriptString", 528)()); }
+		ScriptClass AcceptClass() { mixin(MGPC!("ScriptClass", 512)()); }
+		InternetLink.IpAddr RemoteAddr() { mixin(MGPC!("InternetLink.IpAddr", 504)()); }
+		TcpLink.ELinkState LinkState() { mixin(MGPC!("TcpLink.ELinkState", 500)()); }
 	}
 final:
-	int BindPort(int PortNum, bool bUseNextAvailable)
+	int BindPort(int* PortNum = null, bool* bUseNextAvailable = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(int*)params.ptr = PortNum;
-		*cast(bool*)&params[4] = bUseNextAvailable;
+		if (PortNum !is null)
+			*cast(int*)params.ptr = *PortNum;
+		if (bUseNextAvailable !is null)
+			*cast(bool*)&params[4] = *bUseNextAvailable;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BindPort, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
@@ -133,7 +135,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Str;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadText, params.ptr, cast(void*)0);
-		*Str = *cast(ScriptString*)params.ptr;
+		Str = *cast(ScriptString*)params.ptr;
 		return *cast(int*)&params[12];
 	}
 	int ReadBinary(int Count, ref ubyte B)
@@ -143,7 +145,7 @@ final:
 		*cast(int*)params.ptr = Count;
 		params[4] = B;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadBinary, params.ptr, cast(void*)0);
-		*B = params[4];
+		B = params[4];
 		return *cast(int*)&params[260];
 	}
 	void Accepted()

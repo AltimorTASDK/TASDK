@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SaveGameSummary DefaultProperties() { mixin(MGDPC!(SaveGameSummary, "SaveGameSummary Engine.Default__SaveGameSummary")()); }
 	@property final auto ref
 	{
-		ScriptString Description() { mixin(MGPC!(ScriptString, 68)()); }
-		ScriptName BaseLevel() { mixin(MGPC!(ScriptName, 60)()); }
+		ScriptString Description() { mixin(MGPC!("ScriptString", 68)()); }
+		ScriptName BaseLevel() { mixin(MGPC!("ScriptName", 60)()); }
 	}
 }

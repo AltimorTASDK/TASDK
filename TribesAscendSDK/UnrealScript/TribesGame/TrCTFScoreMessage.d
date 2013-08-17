@@ -542,21 +542,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString TeamHigherScore() { mixin(MGPC!(ScriptString, 288)()); }
-		ScriptString PlayerHattrick() { mixin(MGPC!(ScriptString, 276)()); }
-		ScriptString Team1JustGotAhead() { mixin(MGPC!(ScriptString, 264)()); }
-		ScriptString Team0JustGotAhead() { mixin(MGPC!(ScriptString, 252)()); }
-		ScriptString Team1LeadingBy2() { mixin(MGPC!(ScriptString, 240)()); }
-		ScriptString Team0LeadingBy2() { mixin(MGPC!(ScriptString, 228)()); }
-		ScriptString Team1Scored() { mixin(MGPC!(ScriptString, 216)()); }
-		ScriptString Team0Scored() { mixin(MGPC!(ScriptString, 204)()); }
-		ScriptString ScoreNone() { mixin(MGPC!(ScriptString, 192)()); }
-		ScriptString PreScoreNone() { mixin(MGPC!(ScriptString, 180)()); }
-		ScriptString ScoreBlue() { mixin(MGPC!(ScriptString, 168)()); }
-		ScriptString PreScoreBlue() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptString ScoreRed() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString PreScoreRed() { mixin(MGPC!(ScriptString, 132)()); }
-		SoundNodeWave TeamScoreSounds() { mixin(MGPC!(SoundNodeWave, 100)()); }
+		ScriptString TeamHigherScore() { mixin(MGPC!("ScriptString", 288)()); }
+		ScriptString PlayerHattrick() { mixin(MGPC!("ScriptString", 276)()); }
+		ScriptString Team1JustGotAhead() { mixin(MGPC!("ScriptString", 264)()); }
+		ScriptString Team0JustGotAhead() { mixin(MGPC!("ScriptString", 252)()); }
+		ScriptString Team1LeadingBy2() { mixin(MGPC!("ScriptString", 240)()); }
+		ScriptString Team0LeadingBy2() { mixin(MGPC!("ScriptString", 228)()); }
+		ScriptString Team1Scored() { mixin(MGPC!("ScriptString", 216)()); }
+		ScriptString Team0Scored() { mixin(MGPC!("ScriptString", 204)()); }
+		ScriptString ScoreNone() { mixin(MGPC!("ScriptString", 192)()); }
+		ScriptString PreScoreNone() { mixin(MGPC!("ScriptString", 180)()); }
+		ScriptString ScoreBlue() { mixin(MGPC!("ScriptString", 168)()); }
+		ScriptString PreScoreBlue() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptString ScoreRed() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString PreScoreRed() { mixin(MGPC!("ScriptString", 132)()); }
+		SoundNodeWave TeamScoreSounds() { mixin(MGPC!("SoundNodeWave", 100)()); }
 	}
 final:
 	static ubyte AnnouncementLevel(ubyte MessageIndex)
@@ -567,15 +567,19 @@ final:
 		StaticClass.ProcessEvent(Functions.AnnouncementLevel, params.ptr, cast(void*)0);
 		return params[1];
 	}
-	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
 	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
@@ -588,26 +592,35 @@ final:
 		StaticClass.ProcessEvent(Functions.AnnouncementSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[12];
 	}
-	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(bool*)&params[4] = bPRI1HUD;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (bPRI1HUD !is null)
+			*cast(bool*)&params[4] = *bPRI1HUD;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static UObject.Color GetColor(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[4] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}

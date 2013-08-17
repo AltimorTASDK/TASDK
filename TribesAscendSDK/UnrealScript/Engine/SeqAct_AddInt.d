@@ -13,9 +13,9 @@ public extern(D):
 	@property final static SeqAct_AddInt DefaultProperties() { mixin(MGDPC!(SeqAct_AddInt, "SeqAct_AddInt Engine.Default__SeqAct_AddInt")()); }
 	@property final auto ref
 	{
-		int IntResult() { mixin(MGPC!(int, 244)()); }
-		float FloatResult() { mixin(MGPC!(float, 240)()); }
-		int ValueB() { mixin(MGPC!(int, 236)()); }
-		int ValueA() { mixin(MGPC!(int, 232)()); }
+		int IntResult() { mixin(MGPC!("int", 244)()); }
+		float FloatResult() { mixin(MGPC!("float", 240)()); }
+		int ValueB() { mixin(MGPC!("int", 236)()); }
+		int ValueA() { mixin(MGPC!("int", 232)()); }
 	}
 }

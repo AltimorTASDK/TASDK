@@ -19,8 +19,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nNumberBounces() { mixin(MGPC!(int, 820)()); }
-		int m_nBouncesAllowed() { mixin(MGPC!(int, 816)()); }
+		int m_nNumberBounces() { mixin(MGPC!("int", 820)()); }
+		int m_nBouncesAllowed() { mixin(MGPC!("int", 816)()); }
 	}
 	final void HitWall(Vector HitNormal, Actor Wall, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

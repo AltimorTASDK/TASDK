@@ -20,13 +20,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrAnimNotify_Sound.DeviceOverride")()); }
 		@property final auto ref
 		{
-			ScriptClass DeviceClass() { mixin(MGPS!(ScriptClass, 4)()); }
+			ScriptClass DeviceClass() { mixin(MGPS!("ScriptClass", 4)()); }
 			// WARNING: Property 'SoundCue' has the same name as a defined type!
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrAnimNotify_Sound.DeviceOverride) m_DeviceOverrides() { mixin(MGPC!(ScriptArray!(TrAnimNotify_Sound.DeviceOverride), 92)()); }
-		ScriptClass m_PreviewDeviceClass() { mixin(MGPC!(ScriptClass, 104)()); }
+		ScriptArray!(TrAnimNotify_Sound.DeviceOverride) m_DeviceOverrides() { mixin(MGPC!("ScriptArray!(TrAnimNotify_Sound.DeviceOverride)", 92)()); }
+		ScriptClass m_PreviewDeviceClass() { mixin(MGPC!("ScriptClass", 104)()); }
 	}
 }

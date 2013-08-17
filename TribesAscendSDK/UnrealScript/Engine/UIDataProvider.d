@@ -65,28 +65,29 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider.UIDataProviderField")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataProvider) FieldProviders() { mixin(MGPS!(ScriptArray!(UIDataProvider), 12)()); }
-			UIRoot.EUIDataProviderFieldType FieldType() { mixin(MGPS!(UIRoot.EUIDataProviderFieldType, 8)()); }
-			ScriptName FieldTag() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(UIDataProvider) FieldProviders() { mixin(MGPS!("ScriptArray!(UIDataProvider)", 12)()); }
+			UIRoot.EUIDataProviderFieldType FieldType() { mixin(MGPS!("UIRoot.EUIDataProviderFieldType", 8)()); }
+			ScriptName FieldTag() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ProviderChangedNotifies() { mixin(MGPC!(ScriptArray!(
+void*) ProviderChangedNotifies() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 64)()); }
+void*)", 64)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDataProviderPropertyChange__Delegate'!
-		UIDataProvider.EProviderAccessType WriteAccessType() { mixin(MGPC!(UIDataProvider.EProviderAccessType, 60)()); }
+		UIDataProvider.EProviderAccessType WriteAccessType() { mixin(MGPC!("UIDataProvider.EProviderAccessType", 60)()); }
 	}
 final:
-	void OnDataProviderPropertyChange(UIDataProvider SourceProvider, ScriptName PropTag)
+	void OnDataProviderPropertyChange(UIDataProvider SourceProvider, ScriptName* PropTag = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = PropTag;
+		if (PropTag !is null)
+			*cast(ScriptName*)&params[4] = *PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnDataProviderPropertyChange, params.ptr, cast(void*)0);
 	}
 	bool GetProviderFieldType(ScriptString DataTag, ref UIRoot.EUIDataProviderFieldType out_ProviderFieldType)
@@ -96,7 +97,7 @@ final:
 		*cast(ScriptString*)params.ptr = DataTag;
 		*cast(UIRoot.EUIDataProviderFieldType*)&params[12] = out_ProviderFieldType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderFieldType, params.ptr, cast(void*)0);
-		*out_ProviderFieldType = *cast(UIRoot.EUIDataProviderFieldType*)&params[12];
+		out_ProviderFieldType = *cast(UIRoot.EUIDataProviderFieldType*)&params[12];
 		return *cast(bool*)&params[16];
 	}
 	int ParseArrayDelimiter(ref ScriptString DataTag)
@@ -105,7 +106,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = DataTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseArrayDelimiter, params.ptr, cast(void*)0);
-		*DataTag = *cast(ScriptString*)params.ptr;
+		DataTag = *cast(ScriptString*)params.ptr;
 		return *cast(int*)&params[12];
 	}
 	void GetSupportedScriptFields(ref ScriptArray!(UIDataProvider.UIDataProviderField) out_Fields)
@@ -114,37 +115,39 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr = out_Fields;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSupportedScriptFields, params.ptr, cast(void*)0);
-		*out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
+		out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
 	}
-	bool AllowPublishingToField(ScriptString FieldName, int ArrayIndex)
+	bool AllowPublishingToField(ScriptString FieldName, int* ArrayIndex = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(int*)&params[12] = ArrayIndex;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[12] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowPublishingToField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool GetFieldValue(ScriptString FieldName, ref UIRoot.UIProviderScriptFieldValue FieldValue, int ArrayIndex)
+	bool GetFieldValue(ScriptString FieldName, ref UIRoot.UIProviderScriptFieldValue FieldValue, int* ArrayIndex = null)
 	{
 		ubyte params[104];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
 		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = FieldValue;
-		*cast(int*)&params[96] = ArrayIndex;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[96] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldValue, params.ptr, cast(void*)0);
-		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[12];
+		FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[12];
 		return *cast(bool*)&params[100];
 	}
-	bool SetFieldValue(ScriptString FieldName, ref const UIRoot.UIProviderScriptFieldValue FieldValue, int ArrayIndex)
+	bool SetFieldValue(ScriptString FieldName, ref in UIRoot.UIProviderScriptFieldValue FieldValue, int* ArrayIndex = null)
 	{
 		ubyte params[104];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FieldName;
-		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = FieldValue;
-		*cast(int*)&params[96] = ArrayIndex;
+		*cast(UIRoot.UIProviderScriptFieldValue*)&params[12] = cast(UIRoot.UIProviderScriptFieldValue)FieldValue;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[96] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFieldValue, params.ptr, cast(void*)0);
-		*FieldValue = *cast(UIRoot.UIProviderScriptFieldValue*)&params[12];
 		return *cast(bool*)&params[100];
 	}
 	ScriptString GenerateScriptMarkupString(ScriptName DataTag)
@@ -178,23 +181,25 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsCollectionDataType, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void NotifyPropertyChanged(ScriptName PropTag)
+	void NotifyPropertyChanged(ScriptName* PropTag = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = PropTag;
+		if (PropTag !is null)
+			*cast(ScriptName*)params.ptr = *PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyPropertyChanged, params.ptr, cast(void*)0);
 	}
 	bool AddPropertyNotificationChangeRequest(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* InDelegate, bool bAllowDuplicates)
+void* InDelegate, bool* bAllowDuplicates = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
 void**)params.ptr = InDelegate;
-		*cast(bool*)&params[12] = bAllowDuplicates;
+		if (bAllowDuplicates !is null)
+			*cast(bool*)&params[12] = *bAllowDuplicates;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddPropertyNotificationChangeRequest, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -216,7 +221,7 @@ void**)params.ptr = InDelegate;
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseTagArrayDelimiter, params.ptr, cast(void*)0);
-		*FieldName = *cast(ScriptName*)params.ptr;
+		FieldName = *cast(ScriptName*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 }

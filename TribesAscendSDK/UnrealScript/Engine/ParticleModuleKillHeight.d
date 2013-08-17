@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleKillHeight DefaultProperties() { mixin(MGDPC!(ParticleModuleKillHeight, "ParticleModuleKillHeight Engine.Default__ParticleModuleKillHeight")()); }
 	@property final
 	{
-		@property final auto ref DistributionFloat.RawDistributionFloat Height() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+		@property final auto ref DistributionFloat.RawDistributionFloat Height() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
 		bool bApplyPSysScale() { mixin(MGBPC!(100, 0x4)()); }
 		bool bApplyPSysScale(bool val) { mixin(MSBPC!(100, 0x4)()); }
 		bool bFloor() { mixin(MGBPC!(100, 0x2)()); }

@@ -52,25 +52,26 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineGameSettings.GameSettingsCfg")()); }
 		@property final auto ref
 		{
-			ScriptName SettingsName() { mixin(MGPS!(ScriptName, 12)()); }
-			OnlineGameSettings GameSettings() { mixin(MGPS!(OnlineGameSettings, 8)()); }
-			UIDataProvider_Settings Provider() { mixin(MGPS!(UIDataProvider_Settings, 4)()); }
-			ScriptClass GameSettingsClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			ScriptName SettingsName() { mixin(MGPS!("ScriptName", 12)()); }
+			OnlineGameSettings GameSettings() { mixin(MGPS!("OnlineGameSettings", 8)()); }
+			UIDataProvider_Settings Provider() { mixin(MGPS!("UIDataProvider_Settings", 4)()); }
+			ScriptClass GameSettingsClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg) GameSettingsCfgList() { mixin(MGPC!(ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg), 120)()); }
-		int SelectedIndex() { mixin(MGPC!(int, 136)()); }
-		ScriptClass SettingsProviderClass() { mixin(MGPC!(ScriptClass, 132)()); }
+		ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg) GameSettingsCfgList() { mixin(MGPC!("ScriptArray!(UIDataStore_OnlineGameSettings.GameSettingsCfg)", 120)()); }
+		int SelectedIndex() { mixin(MGPC!("int", 136)()); }
+		ScriptClass SettingsProviderClass() { mixin(MGPC!("ScriptClass", 132)()); }
 	}
 final:
-	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName SettingsName)
+	void OnSettingProviderChanged(UIDataProvider SourceProvider, ScriptName* SettingsName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = SettingsName;
+		if (SettingsName !is null)
+			*cast(ScriptName*)&params[4] = *SettingsName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSettingProviderChanged, params.ptr, cast(void*)0);
 	}
 	bool CreateGame(ubyte ControllerIndex)

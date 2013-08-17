@@ -42,8 +42,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString LoginName() { mixin(MGPC!(ScriptString, 64)()); }
-			ScriptString LoginPassword() { mixin(MGPC!(ScriptString, 76)()); }
+			ScriptString LoginName() { mixin(MGPC!("ScriptString", 64)()); }
+			ScriptString LoginPassword() { mixin(MGPC!("ScriptString", 76)()); }
 		}
 		bool bRemember() { mixin(MGBPC!(60, 0x1)()); }
 		bool bRemember(bool val) { mixin(MSBPC!(60, 0x1)()); }

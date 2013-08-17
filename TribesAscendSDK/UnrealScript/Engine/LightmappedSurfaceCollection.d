@@ -14,7 +14,7 @@ public extern(D):
 	@property final static LightmappedSurfaceCollection DefaultProperties() { mixin(MGDPC!(LightmappedSurfaceCollection, "LightmappedSurfaceCollection Engine.Default__LightmappedSurfaceCollection")()); }
 	@property final auto ref
 	{
-		ScriptArray!(int) Surfaces() { mixin(MGPC!(ScriptArray!(int), 64)()); }
-		Model SourceModel() { mixin(MGPC!(Model, 60)()); }
+		ScriptArray!(int) Surfaces() { mixin(MGPC!("ScriptArray!(int)", 64)()); }
+		Model SourceModel() { mixin(MGPC!("Model", 60)()); }
 	}
 }

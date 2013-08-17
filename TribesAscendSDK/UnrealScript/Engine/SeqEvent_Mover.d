@@ -31,7 +31,7 @@ public extern(D):
 			ScriptFunction NotifyFinishedOpen() { mixin(MGF!("mNotifyFinishedOpen", "Function Engine.SeqEvent_Mover.NotifyFinishedOpen")()); }
 		}
 	}
-	@property final auto ref float StayOpenTime() { mixin(MGPC!(float, 256)()); }
+	@property final auto ref float StayOpenTime() { mixin(MGPC!("float", 256)()); }
 final:
 	void RegisterEvent()
 	{

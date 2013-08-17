@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionPower DefaultProperties() { mixin(MGDPC!(MaterialExpressionPower, "MaterialExpressionPower Engine.Default__MaterialExpressionPower")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput Exponent() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput Base() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput Exponent() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput Base() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

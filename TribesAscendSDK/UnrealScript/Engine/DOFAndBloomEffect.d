@@ -16,12 +16,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float BlurBloomKernelSize() { mixin(MGPC!(float, 168)()); }
-			float SceneMultiplier() { mixin(MGPC!(float, 164)()); }
-			float BloomScreenBlendThreshold() { mixin(MGPC!(float, 160)()); }
-			UObject.Color BloomTint() { mixin(MGPC!(UObject.Color, 156)()); }
-			float BloomThreshold() { mixin(MGPC!(float, 152)()); }
-			float BloomScale() { mixin(MGPC!(float, 148)()); }
+			float BlurBloomKernelSize() { mixin(MGPC!("float", 168)()); }
+			float SceneMultiplier() { mixin(MGPC!("float", 164)()); }
+			float BloomScreenBlendThreshold() { mixin(MGPC!("float", 160)()); }
+			UObject.Color BloomTint() { mixin(MGPC!("UObject.Color", 156)()); }
+			float BloomThreshold() { mixin(MGPC!("float", 152)()); }
+			float BloomScale() { mixin(MGPC!("float", 148)()); }
 		}
 		bool bEnableDepthOfFieldHQ() { mixin(MGBPC!(172, 0x4)()); }
 		bool bEnableDepthOfFieldHQ(bool val) { mixin(MSBPC!(172, 0x4)()); }

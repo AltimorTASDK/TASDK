@@ -28,7 +28,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(ScriptName) SeqStack() { mixin(MGPC!(ScriptArray!(ScriptName), 324)()); }
+		@property final auto ref ScriptArray!(ScriptName) SeqStack() { mixin(MGPC!("ScriptArray!(ScriptName)", 324)()); }
 		bool bLoopLastSequence() { mixin(MGBPC!(320, 0x2)()); }
 		bool bLoopLastSequence(bool val) { mixin(MSBPC!(320, 0x2)()); }
 		bool bAutoStart() { mixin(MGBPC!(320, 0x1)()); }

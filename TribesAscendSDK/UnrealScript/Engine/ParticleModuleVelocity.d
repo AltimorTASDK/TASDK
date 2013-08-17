@@ -15,7 +15,7 @@ public extern(D):
 	@property final static ParticleModuleVelocity DefaultProperties() { mixin(MGDPC!(ParticleModuleVelocity, "ParticleModuleVelocity Engine.Default__ParticleModuleVelocity")()); }
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 104)()); }
-		DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!(DistributionVector.RawDistributionVector, 76)()); }
+		DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 104)()); }
+		DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!("DistributionVector.RawDistributionVector", 76)()); }
 	}
 }

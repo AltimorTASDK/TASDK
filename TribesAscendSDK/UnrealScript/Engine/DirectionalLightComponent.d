@@ -27,11 +27,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		EngineTypes.LightmassDirectionalLightSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassDirectionalLightSettings, 448)()); }
-		float CascadeDistributionExponent() { mixin(MGPC!(float, 444)()); }
-		int NumWholeSceneDynamicShadowCascades() { mixin(MGPC!(int, 440)()); }
-		float WholeSceneDynamicShadowRadius() { mixin(MGPC!(float, 436)()); }
-		float TraceDistance() { mixin(MGPC!(float, 432)()); }
+		EngineTypes.LightmassDirectionalLightSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassDirectionalLightSettings", 448)()); }
+		float CascadeDistributionExponent() { mixin(MGPC!("float", 444)()); }
+		int NumWholeSceneDynamicShadowCascades() { mixin(MGPC!("int", 440)()); }
+		float WholeSceneDynamicShadowRadius() { mixin(MGPC!("float", 436)()); }
+		float TraceDistance() { mixin(MGPC!("float", 432)()); }
 	}
 final:
 	void OnUpdatePropertyLightColor()

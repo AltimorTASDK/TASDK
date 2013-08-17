@@ -18,10 +18,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName SocketOrBoneName() { mixin(MGPC!(ScriptName, 268)()); }
-		Vector Rotation() { mixin(MGPC!(Vector, 256)()); }
-		Vector RotationVector() { mixin(MGPC!(Vector, 244)()); }
-		Vector Location() { mixin(MGPC!(Vector, 232)()); }
+		ScriptName SocketOrBoneName() { mixin(MGPC!("ScriptName", 268)()); }
+		Vector Rotation() { mixin(MGPC!("Vector", 256)()); }
+		Vector RotationVector() { mixin(MGPC!("Vector", 244)()); }
+		Vector Location() { mixin(MGPC!("Vector", 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

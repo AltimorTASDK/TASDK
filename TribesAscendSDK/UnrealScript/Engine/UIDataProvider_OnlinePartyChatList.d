@@ -33,16 +33,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembersList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlinePartyMember), 96)()); }
-		ScriptArray!(ScriptString) NatTypes() { mixin(MGPC!(ScriptArray!(ScriptString), 108)()); }
-		ScriptString IsPlayingThisGameCol() { mixin(MGPC!(ScriptString, 192)()); }
-		ScriptString IsInGameSessionCol() { mixin(MGPC!(ScriptString, 180)()); }
-		ScriptString IsTalkingCol() { mixin(MGPC!(ScriptString, 168)()); }
-		ScriptString IsInPartyVoiceCol() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptString IsLocalCol() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString NatTypeCol() { mixin(MGPC!(ScriptString, 132)()); }
-		ScriptString NickNameCol() { mixin(MGPC!(ScriptString, 120)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
+		ScriptArray!(OnlineSubsystem.OnlinePartyMember) PartyMembersList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlinePartyMember)", 96)()); }
+		ScriptArray!(ScriptString) NatTypes() { mixin(MGPC!("ScriptArray!(ScriptString)", 108)()); }
+		ScriptString IsPlayingThisGameCol() { mixin(MGPC!("ScriptString", 192)()); }
+		ScriptString IsInGameSessionCol() { mixin(MGPC!("ScriptString", 180)()); }
+		ScriptString IsTalkingCol() { mixin(MGPC!("ScriptString", 168)()); }
+		ScriptString IsInPartyVoiceCol() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptString IsLocalCol() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString NatTypeCol() { mixin(MGPC!("ScriptString", 132)()); }
+		ScriptString NickNameCol() { mixin(MGPC!("ScriptString", 120)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

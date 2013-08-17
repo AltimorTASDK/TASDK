@@ -14,9 +14,9 @@ public extern(D):
 	@property final static GameWaveForms DefaultProperties() { mixin(MGDPC!(GameWaveForms, "GameWaveForms GameFramework.Default__GameWaveForms")()); }
 	@property final auto ref
 	{
-		ForceFeedbackWaveform CameraShakeBigShort() { mixin(MGPC!(ForceFeedbackWaveform, 68)()); }
-		ForceFeedbackWaveform CameraShakeBigLong() { mixin(MGPC!(ForceFeedbackWaveform, 72)()); }
-		ForceFeedbackWaveform CameraShakeMediumShort() { mixin(MGPC!(ForceFeedbackWaveform, 60)()); }
-		ForceFeedbackWaveform CameraShakeMediumLong() { mixin(MGPC!(ForceFeedbackWaveform, 64)()); }
+		ForceFeedbackWaveform CameraShakeBigShort() { mixin(MGPC!("ForceFeedbackWaveform", 68)()); }
+		ForceFeedbackWaveform CameraShakeBigLong() { mixin(MGPC!("ForceFeedbackWaveform", 72)()); }
+		ForceFeedbackWaveform CameraShakeMediumShort() { mixin(MGPC!("ForceFeedbackWaveform", 60)()); }
+		ForceFeedbackWaveform CameraShakeMediumLong() { mixin(MGPC!("ForceFeedbackWaveform", 64)()); }
 	}
 }

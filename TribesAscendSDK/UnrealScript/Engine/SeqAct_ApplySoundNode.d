@@ -15,7 +15,7 @@ public extern(D):
 	@property final static SeqAct_ApplySoundNode DefaultProperties() { mixin(MGDPC!(SeqAct_ApplySoundNode, "SeqAct_ApplySoundNode Engine.Default__SeqAct_ApplySoundNode")()); }
 	@property final auto ref
 	{
-		SoundNode ApplyNode() { mixin(MGPC!(SoundNode, 236)()); }
-		SoundCue PlaySound() { mixin(MGPC!(SoundCue, 232)()); }
+		SoundNode ApplyNode() { mixin(MGPC!("SoundNode", 236)()); }
+		SoundCue PlaySound() { mixin(MGPC!("SoundCue", 232)()); }
 	}
 }

@@ -37,28 +37,28 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 684)()); }
-		ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 696)()); }
-		ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 708)()); }
-		UObject.Pointer LinearKernel() { mixin(MGPC!(UObject.Pointer, 720)()); }
-		UObject.Pointer ForceField() { mixin(MGPC!(UObject.Pointer, 680)()); }
-		float TorusRadius() { mixin(MGPC!(float, 676)()); }
-		Vector FalloffQuadratic() { mixin(MGPC!(Vector, 664)()); }
-		Vector FalloffLinear() { mixin(MGPC!(Vector, 652)()); }
-		Vector Noise() { mixin(MGPC!(Vector, 640)()); }
-		Vector VelocityTarget() { mixin(MGPC!(Vector, 628)()); }
-		Vector VelocityMultiplierZ() { mixin(MGPC!(Vector, 616)()); }
-		Vector VelocityMultiplierY() { mixin(MGPC!(Vector, 604)()); }
-		Vector VelocityMultiplierX() { mixin(MGPC!(Vector, 592)()); }
-		Vector PositionTarget() { mixin(MGPC!(Vector, 580)()); }
-		Vector PositionMultiplierZ() { mixin(MGPC!(Vector, 568)()); }
-		Vector PositionMultiplierY() { mixin(MGPC!(Vector, 556)()); }
-		Vector PositionMultiplierX() { mixin(MGPC!(Vector, 544)()); }
-		Vector Constant() { mixin(MGPC!(Vector, 532)()); }
-		NxGenericForceFieldBrush.FFB_ForceFieldCoordinates Coordinates() { mixin(MGPC!(NxGenericForceFieldBrush.FFB_ForceFieldCoordinates, 529)()); }
-		PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 528)()); }
-		PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 524)()); }
-		int ExcludeChannel() { mixin(MGPC!(int, 520)()); }
+		ScriptArray!(UObject.Pointer) ConvexMeshes() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 684)()); }
+		ScriptArray!(UObject.Pointer) ExclusionShapes() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 696)()); }
+		ScriptArray!(UObject.Pointer) ExclusionShapePoses() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 708)()); }
+		UObject.Pointer LinearKernel() { mixin(MGPC!("UObject.Pointer", 720)()); }
+		UObject.Pointer ForceField() { mixin(MGPC!("UObject.Pointer", 680)()); }
+		float TorusRadius() { mixin(MGPC!("float", 676)()); }
+		Vector FalloffQuadratic() { mixin(MGPC!("Vector", 664)()); }
+		Vector FalloffLinear() { mixin(MGPC!("Vector", 652)()); }
+		Vector Noise() { mixin(MGPC!("Vector", 640)()); }
+		Vector VelocityTarget() { mixin(MGPC!("Vector", 628)()); }
+		Vector VelocityMultiplierZ() { mixin(MGPC!("Vector", 616)()); }
+		Vector VelocityMultiplierY() { mixin(MGPC!("Vector", 604)()); }
+		Vector VelocityMultiplierX() { mixin(MGPC!("Vector", 592)()); }
+		Vector PositionTarget() { mixin(MGPC!("Vector", 580)()); }
+		Vector PositionMultiplierZ() { mixin(MGPC!("Vector", 568)()); }
+		Vector PositionMultiplierY() { mixin(MGPC!("Vector", 556)()); }
+		Vector PositionMultiplierX() { mixin(MGPC!("Vector", 544)()); }
+		Vector Constant() { mixin(MGPC!("Vector", 532)()); }
+		NxGenericForceFieldBrush.FFB_ForceFieldCoordinates Coordinates() { mixin(MGPC!("NxGenericForceFieldBrush.FFB_ForceFieldCoordinates", 529)()); }
+		PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 528)()); }
+		PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 524)()); }
+		int ExcludeChannel() { mixin(MGPC!("int", 520)()); }
 	}
 final:
 	void PostBeginPlay()

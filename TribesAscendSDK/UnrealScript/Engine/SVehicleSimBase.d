@@ -15,19 +15,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			float WheelLatExtremumValue() { mixin(MGPC!(float, 120)()); }
-			float WheelLatExtremumSlip() { mixin(MGPC!(float, 116)()); }
-			float WheelLatAsymptoteSlip() { mixin(MGPC!(float, 124)()); }
-			float WheelLatAsymptoteValue() { mixin(MGPC!(float, 128)()); }
-			float AutoDriveSteer() { mixin(MGPC!(float, 140)()); }
-			float WheelInertia() { mixin(MGPC!(float, 132)()); }
-			float WheelLongAsymptoteValue() { mixin(MGPC!(float, 112)()); }
-			float WheelLongAsymptoteSlip() { mixin(MGPC!(float, 108)()); }
-			float WheelLongExtremumValue() { mixin(MGPC!(float, 104)()); }
-			float WheelLongExtremumSlip() { mixin(MGPC!(float, 100)()); }
-			float WheelSuspensionBias() { mixin(MGPC!(float, 96)()); }
-			float WheelSuspensionDamping() { mixin(MGPC!(float, 92)()); }
-			float WheelSuspensionStiffness() { mixin(MGPC!(float, 88)()); }
+			float WheelLatExtremumValue() { mixin(MGPC!("float", 120)()); }
+			float WheelLatExtremumSlip() { mixin(MGPC!("float", 116)()); }
+			float WheelLatAsymptoteSlip() { mixin(MGPC!("float", 124)()); }
+			float WheelLatAsymptoteValue() { mixin(MGPC!("float", 128)()); }
+			float AutoDriveSteer() { mixin(MGPC!("float", 140)()); }
+			float WheelInertia() { mixin(MGPC!("float", 132)()); }
+			float WheelLongAsymptoteValue() { mixin(MGPC!("float", 112)()); }
+			float WheelLongAsymptoteSlip() { mixin(MGPC!("float", 108)()); }
+			float WheelLongExtremumValue() { mixin(MGPC!("float", 104)()); }
+			float WheelLongExtremumSlip() { mixin(MGPC!("float", 100)()); }
+			float WheelSuspensionBias() { mixin(MGPC!("float", 96)()); }
+			float WheelSuspensionDamping() { mixin(MGPC!("float", 92)()); }
+			float WheelSuspensionStiffness() { mixin(MGPC!("float", 88)()); }
 		}
 		bool bAutoDrive() { mixin(MGBPC!(136, 0x4)()); }
 		bool bAutoDrive(bool val) { mixin(MSBPC!(136, 0x4)()); }

@@ -26,7 +26,7 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_SameCoverLink.Recycle")()); }
 		}
 	}
-	@property final auto ref CoverLink TestLink() { mixin(MGPC!(CoverLink, 80)()); }
+	@property final auto ref CoverLink TestLink() { mixin(MGPC!("CoverLink", 80)()); }
 final:
 	static void SameCoverLink(NavigationHandle NavHandle, CoverLink InLink)
 	{

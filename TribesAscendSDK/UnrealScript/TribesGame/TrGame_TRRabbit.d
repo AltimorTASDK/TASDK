@@ -73,8 +73,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGame_TRRabbit.ScoreStruct")()); }
 		@property final auto ref
 		{
-			float Score() { mixin(MGPS!(float, 4)()); }
-			TrPlayerController C() { mixin(MGPS!(TrPlayerController, 0)()); }
+			float Score() { mixin(MGPS!("float", 4)()); }
+			TrPlayerController C() { mixin(MGPS!("TrPlayerController", 0)()); }
 		}
 	}
 	static struct PendingMatch
@@ -84,10 +84,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		PlayerReplicationInfo m_HolderPRI() { mixin(MGPC!(PlayerReplicationInfo, 1464)()); }
-		PlayerReplicationInfo m_Leader() { mixin(MGPC!(PlayerReplicationInfo, 1468)()); }
-		float m_fScoreInterval() { mixin(MGPC!(float, 1460)()); }
-		TrFlagRabbit m_Flag() { mixin(MGPC!(TrFlagRabbit, 1456)()); }
+		PlayerReplicationInfo m_HolderPRI() { mixin(MGPC!("PlayerReplicationInfo", 1464)()); }
+		PlayerReplicationInfo m_Leader() { mixin(MGPC!("PlayerReplicationInfo", 1468)()); }
+		float m_fScoreInterval() { mixin(MGPC!("float", 1460)()); }
+		TrFlagRabbit m_Flag() { mixin(MGPC!("TrFlagRabbit", 1456)()); }
 	}
 final:
 	void ApplyServerSettings()
@@ -199,12 +199,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayEndOfMatchMessage, cast(void*)0, cast(void*)0);
 	}
-	void DiscardInventory(Pawn Other, Controller Killer)
+	void DiscardInventory(Pawn Other, Controller* Killer = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		*cast(Controller*)&params[4] = Killer;
+		if (Killer !is null)
+			*cast(Controller*)&params[4] = *Killer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DiscardInventory, params.ptr, cast(void*)0);
 	}
 	float RatePlayerStart(PlayerStart P, ubyte Team, Controller pPlayer)

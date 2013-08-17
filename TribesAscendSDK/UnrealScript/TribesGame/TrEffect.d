@@ -32,21 +32,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass m_EffectFormClass() { mixin(MGPC!(ScriptClass, 76)()); }
-			float m_fValue() { mixin(MGPC!(float, 72)()); }
-			TrObject.EffectCalcMethod m_eCalcMethodCode() { mixin(MGPC!(TrObject.EffectCalcMethod, 64)()); }
-			int m_nEffectInstanceId() { mixin(MGPC!(int, 60)()); }
+			ScriptClass m_EffectFormClass() { mixin(MGPC!("ScriptClass", 76)()); }
+			float m_fValue() { mixin(MGPC!("float", 72)()); }
+			TrObject.EffectCalcMethod m_eCalcMethodCode() { mixin(MGPC!("TrObject.EffectCalcMethod", 64)()); }
+			int m_nEffectInstanceId() { mixin(MGPC!("int", 60)()); }
 		}
 		bool m_bRemovable() { mixin(MGBPC!(68, 0x1)()); }
 		bool m_bRemovable(bool val) { mixin(MSBPC!(68, 0x1)()); }
 	}
 final:
-	void Apply(Actor Target, Actor.ImpactInfo Impact)
+	void Apply(Actor Target, Actor.ImpactInfo* Impact = null)
 	{
 		ubyte params[84];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		*cast(Actor.ImpactInfo*)&params[4] = Impact;
+		if (Impact !is null)
+			*cast(Actor.ImpactInfo*)&params[4] = *Impact;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Apply, params.ptr, cast(void*)0);
 	}
 	void Remove(Actor Target)

@@ -21,8 +21,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				float Radius() { mixin(MGPS!(float, 64)()); }
-				UObject.Matrix TM() { mixin(MGPS!(UObject.Matrix, 0)()); }
+				float Radius() { mixin(MGPS!("float", 64)()); }
+				UObject.Matrix TM() { mixin(MGPS!("UObject.Matrix", 0)()); }
 			}
 			bool bPerPolyShape() { mixin(MGBPS!(68, 0x2)()); }
 			bool bPerPolyShape(bool val) { mixin(MSBPS!(68, 0x2)()); }
@@ -40,10 +40,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				float Z() { mixin(MGPS!(float, 72)()); }
-				float Y() { mixin(MGPS!(float, 68)()); }
-				float X() { mixin(MGPS!(float, 64)()); }
-				UObject.Matrix TM() { mixin(MGPS!(UObject.Matrix, 0)()); }
+				float Z() { mixin(MGPS!("float", 72)()); }
+				float Y() { mixin(MGPS!("float", 68)()); }
+				float X() { mixin(MGPS!("float", 64)()); }
+				UObject.Matrix TM() { mixin(MGPS!("UObject.Matrix", 0)()); }
 			}
 			bool bPerPolyShape() { mixin(MGBPS!(76, 0x2)()); }
 			bool bPerPolyShape(bool val) { mixin(MSBPS!(76, 0x2)()); }
@@ -61,9 +61,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				float Length() { mixin(MGPS!(float, 68)()); }
-				float Radius() { mixin(MGPS!(float, 64)()); }
-				UObject.Matrix TM() { mixin(MGPS!(UObject.Matrix, 0)()); }
+				float Length() { mixin(MGPS!("float", 68)()); }
+				float Radius() { mixin(MGPS!("float", 64)()); }
+				UObject.Matrix TM() { mixin(MGPS!("UObject.Matrix", 0)()); }
 			}
 			bool bPerPolyShape() { mixin(MGBPS!(72, 0x2)()); }
 			bool bPerPolyShape(bool val) { mixin(MSBPS!(72, 0x2)()); }
@@ -79,13 +79,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.KMeshProps.KConvexElem")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Vector) VertexData() { mixin(MGPS!(ScriptArray!(Vector), 0)()); }
-			ScriptArray!(UObject.Plane) PermutedVertexData() { mixin(MGPS!(ScriptArray!(UObject.Plane), 12)()); }
-			ScriptArray!(int) FaceTriData() { mixin(MGPS!(ScriptArray!(int), 24)()); }
-			ScriptArray!(Vector) EdgeDirections() { mixin(MGPS!(ScriptArray!(Vector), 36)()); }
-			ScriptArray!(Vector) FaceNormalDirections() { mixin(MGPS!(ScriptArray!(Vector), 48)()); }
-			ScriptArray!(UObject.Plane) FacePlaneData() { mixin(MGPS!(ScriptArray!(UObject.Plane), 60)()); }
-			UObject.Box ElemBox() { mixin(MGPS!(UObject.Box, 72)()); }
+			ScriptArray!(Vector) VertexData() { mixin(MGPS!("ScriptArray!(Vector)", 0)()); }
+			ScriptArray!(UObject.Plane) PermutedVertexData() { mixin(MGPS!("ScriptArray!(UObject.Plane)", 12)()); }
+			ScriptArray!(int) FaceTriData() { mixin(MGPS!("ScriptArray!(int)", 24)()); }
+			ScriptArray!(Vector) EdgeDirections() { mixin(MGPS!("ScriptArray!(Vector)", 36)()); }
+			ScriptArray!(Vector) FaceNormalDirections() { mixin(MGPS!("ScriptArray!(Vector)", 48)()); }
+			ScriptArray!(UObject.Plane) FacePlaneData() { mixin(MGPS!("ScriptArray!(UObject.Plane)", 60)()); }
+			UObject.Box ElemBox() { mixin(MGPS!("UObject.Box", 72)()); }
 		}
 	}
 	struct KAggregateGeom
@@ -98,11 +98,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(KMeshProps.KSphereElem) SphereElems() { mixin(MGPS!(ScriptArray!(KMeshProps.KSphereElem), 0)()); }
-				ScriptArray!(KMeshProps.KBoxElem) BoxElems() { mixin(MGPS!(ScriptArray!(KMeshProps.KBoxElem), 12)()); }
-				ScriptArray!(KMeshProps.KSphylElem) SphylElems() { mixin(MGPS!(ScriptArray!(KMeshProps.KSphylElem), 24)()); }
-				ScriptArray!(KMeshProps.KConvexElem) ConvexElems() { mixin(MGPS!(ScriptArray!(KMeshProps.KConvexElem), 36)()); }
-				UObject.Pointer RenderInfo() { mixin(MGPS!(UObject.Pointer, 48)()); }
+				ScriptArray!(KMeshProps.KSphereElem) SphereElems() { mixin(MGPS!("ScriptArray!(KMeshProps.KSphereElem)", 0)()); }
+				ScriptArray!(KMeshProps.KBoxElem) BoxElems() { mixin(MGPS!("ScriptArray!(KMeshProps.KBoxElem)", 12)()); }
+				ScriptArray!(KMeshProps.KSphylElem) SphylElems() { mixin(MGPS!("ScriptArray!(KMeshProps.KSphylElem)", 24)()); }
+				ScriptArray!(KMeshProps.KConvexElem) ConvexElems() { mixin(MGPS!("ScriptArray!(KMeshProps.KConvexElem)", 36)()); }
+				UObject.Pointer RenderInfo() { mixin(MGPS!("UObject.Pointer", 48)()); }
 			}
 			bool bSkipCloseAndParallelChecks() { mixin(MGBPS!(52, 0x1)()); }
 			bool bSkipCloseAndParallelChecks(bool val) { mixin(MSBPS!(52, 0x1)()); }
@@ -110,7 +110,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		KMeshProps.KAggregateGeom AggGeom() { mixin(MGPC!(KMeshProps.KAggregateGeom, 72)()); }
-		Vector COMNudge() { mixin(MGPC!(Vector, 60)()); }
+		KMeshProps.KAggregateGeom AggGeom() { mixin(MGPC!("KMeshProps.KAggregateGeom", 72)()); }
+		Vector COMNudge() { mixin(MGPC!("Vector", 60)()); }
 	}
 }

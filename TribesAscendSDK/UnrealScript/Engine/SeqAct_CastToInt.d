@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int IntResult() { mixin(MGPC!(int, 240)()); }
-			float Value() { mixin(MGPC!(float, 236)()); }
+			int IntResult() { mixin(MGPC!("int", 240)()); }
+			float Value() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bTruncate() { mixin(MGBPC!(232, 0x1)()); }
 		bool bTruncate(bool val) { mixin(MSBPC!(232, 0x1)()); }

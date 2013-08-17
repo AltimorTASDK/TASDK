@@ -35,8 +35,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UDKPlayerController Cam() { mixin(MGPC!(UDKPlayerController, 492)()); }
-		float DistFromCamera() { mixin(MGPC!(float, 488)()); }
+		UDKPlayerController Cam() { mixin(MGPC!("UDKPlayerController", 492)()); }
+		float DistFromCamera() { mixin(MGPC!("float", 488)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -62,15 +62,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Deactivate, cast(void*)0, cast(void*)0);
 	}
-	void UpdateLocation(ref const Vector CamLoc, ref const Rotator CamRot, float CamFOVDeg)
+	void UpdateLocation(ref in Vector CamLoc, ref in Rotator CamRot, float CamFOVDeg)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = CamLoc;
-		*cast(Rotator*)&params[12] = CamRot;
+		*cast(Vector*)params.ptr = cast(Vector)CamLoc;
+		*cast(Rotator*)&params[12] = cast(Rotator)CamRot;
 		*cast(float*)&params[24] = CamFOVDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocation, params.ptr, cast(void*)0);
-		*CamLoc = *cast(Vector*)params.ptr;
-		*CamRot = *cast(Rotator*)&params[12];
 	}
 }

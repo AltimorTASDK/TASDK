@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString SpeakingCharacterName() { mixin(MGPC!(ScriptString, 236)()); }
-		SoundNodeWave VoiceToPlay() { mixin(MGPC!(SoundNodeWave, 232)()); }
+		ScriptString SpeakingCharacterName() { mixin(MGPC!("ScriptString", 236)()); }
+		SoundNodeWave VoiceToPlay() { mixin(MGPC!("SoundNodeWave", 232)()); }
 	}
 final:
 	void Activated()

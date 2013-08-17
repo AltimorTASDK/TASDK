@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_WaitForLevelsVisible DefaultProperties() { mixin(MGDPC!(SeqAct_WaitForLevelsVisible, "SeqAct_WaitForLevelsVisible Engine.Default__SeqAct_WaitForLevelsVisible")()); }
 	@property final
 	{
-		@property final auto ref ScriptArray!(ScriptName) LevelNames() { mixin(MGPC!(ScriptArray!(ScriptName), 248)()); }
+		@property final auto ref ScriptArray!(ScriptName) LevelNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 248)()); }
 		bool bShouldBlockOnLoad() { mixin(MGBPC!(260, 0x1)()); }
 		bool bShouldBlockOnLoad(bool val) { mixin(MSBPC!(260, 0x1)()); }
 	}

@@ -13,9 +13,9 @@ public extern(D):
 	@property final static SeqAct_SetVectorComponents DefaultProperties() { mixin(MGDPC!(SeqAct_SetVectorComponents, "SeqAct_SetVectorComponents Engine.Default__SeqAct_SetVectorComponents")()); }
 	@property final auto ref
 	{
-		float Z() { mixin(MGPC!(float, 252)()); }
-		float Y() { mixin(MGPC!(float, 248)()); }
-		float X() { mixin(MGPC!(float, 244)()); }
-		Vector OutVector() { mixin(MGPC!(Vector, 232)()); }
+		float Z() { mixin(MGPC!("float", 252)()); }
+		float Y() { mixin(MGPC!("float", 248)()); }
+		float X() { mixin(MGPC!("float", 244)()); }
+		Vector OutVector() { mixin(MGPC!("Vector", 232)()); }
 	}
 }

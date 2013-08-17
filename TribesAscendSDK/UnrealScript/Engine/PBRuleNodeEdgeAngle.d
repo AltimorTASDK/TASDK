@@ -25,11 +25,11 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PBRuleNodeEdgeAngle.RBEdgeAngleInfo")()); }
-		@property final auto ref float Angle() { mixin(MGPS!(float, 0)()); }
+		@property final auto ref float Angle() { mixin(MGPS!("float", 0)()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { mixin(MGPC!(ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo), 108)()); }
-		PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { mixin(MGPC!(PBRuleNodeEdgeAngle.EProcBuildingEdge, 104)()); }
+		ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo) Angles() { mixin(MGPC!("ScriptArray!(PBRuleNodeEdgeAngle.RBEdgeAngleInfo)", 108)()); }
+		PBRuleNodeEdgeAngle.EProcBuildingEdge Edge() { mixin(MGPC!("PBRuleNodeEdgeAngle.EProcBuildingEdge", 104)()); }
 	}
 }

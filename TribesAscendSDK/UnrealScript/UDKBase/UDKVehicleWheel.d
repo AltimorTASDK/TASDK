@@ -30,7 +30,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			float EffectDesiredSpinDir() { mixin(MGPC!(float, 284)()); }
+			float EffectDesiredSpinDir() { mixin(MGPC!("float", 284)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OldWheelParticleComp'!
 		}
 		bool bDisableWheelOnDeath() { mixin(MGBPC!(276, 0x2)()); }

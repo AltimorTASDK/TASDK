@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 344)()); }
-			float m_fDirAngle() { mixin(MGPC!(float, 336)()); }
-			float m_fBlendSpeed() { mixin(MGPC!(float, 332)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 344)()); }
+			float m_fDirAngle() { mixin(MGPC!("float", 336)()); }
+			float m_fBlendSpeed() { mixin(MGPC!("float", 332)()); }
 		}
 		bool m_bForwardLeftCorrection() { mixin(MGBPC!(340, 0x2)()); }
 		bool m_bForwardLeftCorrection(bool val) { mixin(MSBPC!(340, 0x2)()); }

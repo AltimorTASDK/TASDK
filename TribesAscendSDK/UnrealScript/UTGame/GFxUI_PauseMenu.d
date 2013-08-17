@@ -40,23 +40,24 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString ExitString() { mixin(MGPC!(ScriptString, 436)()); }
-		ScriptString ResumeString() { mixin(MGPC!(ScriptString, 424)()); }
-		GFxClikWidget Btn_ExitMC() { mixin(MGPC!(GFxClikWidget, 420)()); }
-		GFxClikWidget Btn_ResumeMC() { mixin(MGPC!(GFxClikWidget, 416)()); }
-		GFxObject Btn_Family_Wrapper() { mixin(MGPC!(GFxObject, 412)()); }
-		GFxObject Btn_Exit_Wrapper() { mixin(MGPC!(GFxObject, 408)()); }
-		GFxObject Btn_Resume_Wrapper() { mixin(MGPC!(GFxObject, 404)()); }
-		GFxObject OverlayMC() { mixin(MGPC!(GFxObject, 400)()); }
-		GFxObject PauseMC() { mixin(MGPC!(GFxObject, 396)()); }
-		GFxObject RootMC() { mixin(MGPC!(GFxObject, 392)()); }
+		ScriptString ExitString() { mixin(MGPC!("ScriptString", 436)()); }
+		ScriptString ResumeString() { mixin(MGPC!("ScriptString", 424)()); }
+		GFxClikWidget Btn_ExitMC() { mixin(MGPC!("GFxClikWidget", 420)()); }
+		GFxClikWidget Btn_ResumeMC() { mixin(MGPC!("GFxClikWidget", 416)()); }
+		GFxObject Btn_Family_Wrapper() { mixin(MGPC!("GFxObject", 412)()); }
+		GFxObject Btn_Exit_Wrapper() { mixin(MGPC!("GFxObject", 408)()); }
+		GFxObject Btn_Resume_Wrapper() { mixin(MGPC!("GFxObject", 404)()); }
+		GFxObject OverlayMC() { mixin(MGPC!("GFxObject", 400)()); }
+		GFxObject PauseMC() { mixin(MGPC!("GFxObject", 396)()); }
+		GFxObject RootMC() { mixin(MGPC!("GFxObject", 392)()); }
 	}
 final:
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -90,12 +91,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnCloseAnimationComplete, cast(void*)0, cast(void*)0);
 	}
-	void UT_ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
+	void UT_ConsoleCommand(ScriptString Cmd, bool* bWriteToLog = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UT_ConsoleCommand, params.ptr, cast(void*)0);
 	}
 }

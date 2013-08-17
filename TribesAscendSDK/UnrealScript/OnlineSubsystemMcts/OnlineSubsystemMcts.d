@@ -329,8 +329,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct OnlineSubsystemMcts.OnlineSubsystemMcts.ControllerConnectionState")()); }
 		@property final auto ref
 		{
-			int bLastIsControllerConnected() { mixin(MGPS!(int, 4)()); }
-			int bIsControllerConnected() { mixin(MGPS!(int, 0)()); }
+			int bLastIsControllerConnected() { mixin(MGPS!("int", 4)()); }
+			int bIsControllerConnected() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
@@ -339,39 +339,39 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ConnectionStatusChangeDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ConnectionStatusChangeDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 316)()); }
+void*)", 316)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LoginChangeDelegates() { mixin(MGPC!(ScriptArray!(
+void*) LoginChangeDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 328)()); }
+void*)", 328)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LoginFailedDelegates() { mixin(MGPC!(ScriptArray!(
+void*) LoginFailedDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 340)()); }
+void*)", 340)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LogoutCompletedDelegates() { mixin(MGPC!(ScriptArray!(
+void*) LogoutCompletedDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 352)()); }
+void*)", 352)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) LinkStatusDelegates() { mixin(MGPC!(ScriptArray!(
+void*) LinkStatusDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 364)()); }
+void*)", 364)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ChatMessageDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ChatMessageDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 376)()); }
+void*)", 376)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) KeyboardInputDelegates() { mixin(MGPC!(ScriptArray!(
+void*) KeyboardInputDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 404)()); }
+void*)", 404)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadAchievementsComplete__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUnlockAchievementComplete__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFriendMessageReceived__Delegate'!
@@ -399,21 +399,21 @@ void*), 404)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLogoutCompleted__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLoginFailed__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLoginChange__Delegate'!
-			float ConnectionPresenceElapsedTime() { mixin(MGPC!(float, 452)()); }
-			float ConnectionPresenceTimeInterval() { mixin(MGPC!(float, 448)()); }
-			OnlineSubsystemMcts.ControllerConnectionState ControllerStates() { mixin(MGPC!(OnlineSubsystemMcts.ControllerConnectionState, 416)()); }
-			ScriptString KeyboardResultsString() { mixin(MGPC!(ScriptString, 388)()); }
-			ScriptString ProfileDataExtension() { mixin(MGPC!(ScriptString, 304)()); }
-			ScriptString ProfileDataDirectory() { mixin(MGPC!(ScriptString, 292)()); }
-			OnlineSubsystem.ENetworkNotificationPosition CurrentNotificationPosition() { mixin(MGPC!(OnlineSubsystem.ENetworkNotificationPosition, 290)()); }
-			ubyte bWasKeyboardInputCanceled() { mixin(MGPC!(ubyte, 289)()); }
-			OnlineSubsystem.ELoginStatus LoggedInStatus() { mixin(MGPC!(OnlineSubsystem.ELoginStatus, 288)()); }
-			int LoggedInPlayerNum() { mixin(MGPC!(int, 284)()); }
-			OnlineSubsystem.UniqueNetId LoggedInPlayerId() { mixin(MGPC!(OnlineSubsystem.UniqueNetId, 276)()); }
-			ScriptString LoggedInPlayerName() { mixin(MGPC!(ScriptString, 264)()); }
-			ScriptString LocalProfileName() { mixin(MGPC!(ScriptString, 252)()); }
-			OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!(OnlineVoiceInterfaceMcts, 248)()); }
-			OnlineGameInterfaceMcts MctsGameInt() { mixin(MGPC!(OnlineGameInterfaceMcts, 244)()); }
+			float ConnectionPresenceElapsedTime() { mixin(MGPC!("float", 452)()); }
+			float ConnectionPresenceTimeInterval() { mixin(MGPC!("float", 448)()); }
+			OnlineSubsystemMcts.ControllerConnectionState ControllerStates() { mixin(MGPC!("OnlineSubsystemMcts.ControllerConnectionState", 416)()); }
+			ScriptString KeyboardResultsString() { mixin(MGPC!("ScriptString", 388)()); }
+			ScriptString ProfileDataExtension() { mixin(MGPC!("ScriptString", 304)()); }
+			ScriptString ProfileDataDirectory() { mixin(MGPC!("ScriptString", 292)()); }
+			OnlineSubsystem.ENetworkNotificationPosition CurrentNotificationPosition() { mixin(MGPC!("OnlineSubsystem.ENetworkNotificationPosition", 290)()); }
+			ubyte bWasKeyboardInputCanceled() { mixin(MGPC!("ubyte", 289)()); }
+			OnlineSubsystem.ELoginStatus LoggedInStatus() { mixin(MGPC!("OnlineSubsystem.ELoginStatus", 288)()); }
+			int LoggedInPlayerNum() { mixin(MGPC!("int", 284)()); }
+			OnlineSubsystem.UniqueNetId LoggedInPlayerId() { mixin(MGPC!("OnlineSubsystem.UniqueNetId", 276)()); }
+			ScriptString LoggedInPlayerName() { mixin(MGPC!("ScriptString", 264)()); }
+			ScriptString LocalProfileName() { mixin(MGPC!("ScriptString", 252)()); }
+			OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!("OnlineVoiceInterfaceMcts", 248)()); }
+			OnlineGameInterfaceMcts MctsGameInt() { mixin(MGPC!("OnlineGameInterfaceMcts", 244)()); }
 		}
 		bool bShouldUseMcp() { mixin(MGBPC!(400, 0x4)()); }
 		bool bShouldUseMcp(bool val) { mixin(MSBPC!(400, 0x4)()); }
@@ -624,14 +624,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool Login(ubyte LocalUserNum, ScriptString LoginName, ScriptString Password, bool bWantsLocalOnly)
+	bool Login(ubyte LocalUserNum, ScriptString LoginName, ScriptString Password, bool* bWantsLocalOnly = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptString*)&params[4] = LoginName;
 		*cast(ScriptString*)&params[16] = Password;
-		*cast(bool*)&params[28] = bWantsLocalOnly;
+		if (bWantsLocalOnly !is null)
+			*cast(bool*)&params[28] = *bWantsLocalOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[32];
 	}
@@ -740,7 +741,7 @@ void**)&params[4] = LogoutDelegate;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = PlayerID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetUniquePlayerId, params.ptr, cast(void*)0);
-		*PlayerID = *cast(OnlineSubsystem.UniqueNetId*)&params[4];
+		PlayerID = *cast(OnlineSubsystem.UniqueNetId*)&params[4];
 		return *cast(bool*)&params[12];
 	}
 	ScriptString GetPlayerNickname(ubyte LocalUserNum)
@@ -807,7 +808,7 @@ void**)&params[4] = LogoutDelegate;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.FriendsQuery)*)&params[4] = Query;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AreAnyFriends, params.ptr, cast(void*)0);
-		*Query = *cast(ScriptArray!(OnlineSubsystem.FriendsQuery)*)&params[4];
+		Query = *cast(ScriptArray!(OnlineSubsystem.FriendsQuery)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	ScriptString GetPlayerMctsName()
@@ -1052,7 +1053,7 @@ void**)params.ptr = ChatDelegate;
 		params[] = 0;
 		*cast(ScriptArray!(int)*)params.ptr = CharList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadCharacterClasses, params.ptr, cast(void*)0);
-		*CharList = *cast(ScriptArray!(int)*)params.ptr;
+		CharList = *cast(ScriptArray!(int)*)params.ptr;
 	}
 	int ReadActiveCharacterClass()
 	{
@@ -1255,13 +1256,14 @@ void* WriteProfileSettingsCompleteDelegate)
 void**)&params[4] = WriteProfileSettingsCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearWriteProfileSettingsCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool ReadPlayerStorage(ubyte LocalUserNum, OnlinePlayerStorage PlayerStorage, int DeviceID)
+	bool ReadPlayerStorage(ubyte LocalUserNum, OnlinePlayerStorage PlayerStorage, int* DeviceID = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlinePlayerStorage*)&params[4] = PlayerStorage;
-		*cast(int*)&params[8] = DeviceID;
+		if (DeviceID !is null)
+			*cast(int*)&params[8] = *DeviceID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlayerStorage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -1331,13 +1333,14 @@ void**)&params[8] = ReadPlayerStorageForNetIdCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerStorage, params.ptr, cast(void*)0);
 		return *cast(OnlinePlayerStorage*)&params[4];
 	}
-	bool WritePlayerStorage(ubyte LocalUserNum, OnlinePlayerStorage PlayerStorage, int DeviceID)
+	bool WritePlayerStorage(ubyte LocalUserNum, OnlinePlayerStorage PlayerStorage, int* DeviceID = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlinePlayerStorage*)&params[4] = PlayerStorage;
-		*cast(int*)&params[8] = DeviceID;
+		if (DeviceID !is null)
+			*cast(int*)&params[8] = *DeviceID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WritePlayerStorage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -1389,13 +1392,15 @@ void* FriendsDelegate)
 void**)&params[4] = FriendsDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearFriendsChangeDelegate, params.ptr, cast(void*)0);
 	}
-	bool ReadFriendsList(ubyte LocalUserNum, int Count, int StartingAt)
+	bool ReadFriendsList(ubyte LocalUserNum, int* Count = null, int* StartingAt = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(int*)&params[4] = Count;
-		*cast(int*)&params[8] = StartingAt;
+		if (Count !is null)
+			*cast(int*)&params[4] = *Count;
+		if (StartingAt !is null)
+			*cast(int*)&params[8] = *StartingAt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadFriendsList, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -1423,41 +1428,45 @@ void* ReadFriendsCompleteDelegate)
 void**)&params[4] = ReadFriendsCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearReadFriendsCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	OnlineSubsystem.EOnlineEnumerationReadState GetFriendsList(ubyte LocalUserNum, ref ScriptArray!(OnlineSubsystem.OnlineFriend) Friends, int Count, int StartingAt)
+	OnlineSubsystem.EOnlineEnumerationReadState GetFriendsList(ubyte LocalUserNum, ref ScriptArray!(OnlineSubsystem.OnlineFriend) Friends, int* Count = null, int* StartingAt = null)
 	{
 		ubyte params[25];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)&params[4] = Friends;
-		*cast(int*)&params[16] = Count;
-		*cast(int*)&params[20] = StartingAt;
+		if (Count !is null)
+			*cast(int*)&params[16] = *Count;
+		if (StartingAt !is null)
+			*cast(int*)&params[20] = *StartingAt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFriendsList, params.ptr, cast(void*)0);
-		*Friends = *cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)&params[4];
+		Friends = *cast(ScriptArray!(OnlineSubsystem.OnlineFriend)*)&params[4];
 		return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)&params[24];
 	}
-	void SetOnlineStatus(ubyte LocalUserNum, int StatusId, ref const ScriptArray!(Settings.LocalizedStringSetting) LocalizedStringSettings, ref const ScriptArray!(Settings.SettingsProperty) Properties)
+	void SetOnlineStatus(ubyte LocalUserNum, int StatusId, ref in ScriptArray!(Settings.LocalizedStringSetting) LocalizedStringSettings, ref in ScriptArray!(Settings.SettingsProperty) Properties)
 	{
 		ubyte params[32];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(int*)&params[4] = StatusId;
-		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)&params[8] = LocalizedStringSettings;
-		*cast(ScriptArray!(Settings.SettingsProperty)*)&params[20] = Properties;
+		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)&params[8] = cast(ScriptArray!(Settings.LocalizedStringSetting))LocalizedStringSettings;
+		*cast(ScriptArray!(Settings.SettingsProperty)*)&params[20] = cast(ScriptArray!(Settings.SettingsProperty))Properties;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetOnlineStatus, params.ptr, cast(void*)0);
-		*LocalizedStringSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)&params[8];
-		*Properties = *cast(ScriptArray!(Settings.SettingsProperty)*)&params[20];
 	}
-	bool ShowKeyboardUI(ubyte LocalUserNum, ScriptString TitleText, ScriptString DescriptionText, bool bIsPassword, bool bShouldValidate, ScriptString DefaultText, int MaxResultLength)
+	bool ShowKeyboardUI(ubyte LocalUserNum, ScriptString TitleText, ScriptString DescriptionText, bool* bIsPassword = null, bool* bShouldValidate = null, ScriptString* DefaultText = null, int* MaxResultLength = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptString*)&params[4] = TitleText;
 		*cast(ScriptString*)&params[16] = DescriptionText;
-		*cast(bool*)&params[28] = bIsPassword;
-		*cast(bool*)&params[32] = bShouldValidate;
-		*cast(ScriptString*)&params[36] = DefaultText;
-		*cast(int*)&params[48] = MaxResultLength;
+		if (bIsPassword !is null)
+			*cast(bool*)&params[28] = *bIsPassword;
+		if (bShouldValidate !is null)
+			*cast(bool*)&params[32] = *bShouldValidate;
+		if (DefaultText !is null)
+			*cast(ScriptString*)&params[36] = *DefaultText;
+		if (MaxResultLength !is null)
+			*cast(int*)&params[48] = *MaxResultLength;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowKeyboardUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[52];
 	}
@@ -1489,26 +1498,28 @@ void**)params.ptr = InputDelegate;
 		params[] = 0;
 		params[0] = bWasCanceled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetKeyboardInputResults, params.ptr, cast(void*)0);
-		*bWasCanceled = params[0];
+		bWasCanceled = params[0];
 		return *cast(ScriptString*)&params[4];
 	}
-	bool AddFriend(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId NewFriend, ScriptString Message)
+	bool AddFriend(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId NewFriend, ScriptString* Message = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = NewFriend;
-		*cast(ScriptString*)&params[12] = Message;
+		if (Message !is null)
+			*cast(ScriptString*)&params[12] = *Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddFriend, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool AddFriendByName(ubyte LocalUserNum, ScriptString FriendName, ScriptString Message)
+	bool AddFriendByName(ubyte LocalUserNum, ScriptString FriendName, ScriptString* Message = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptString*)&params[4] = FriendName;
-		*cast(ScriptString*)&params[16] = Message;
+		if (Message !is null)
+			*cast(ScriptString*)&params[16] = *Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddFriendByName, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -1597,23 +1608,25 @@ void**)&params[4] = InviteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendMessageToFriend, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool SendGameInviteToFriend(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId Friend, ScriptString Text)
+	bool SendGameInviteToFriend(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId Friend, ScriptString* Text = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = Friend;
-		*cast(ScriptString*)&params[12] = Text;
+		if (Text !is null)
+			*cast(ScriptString*)&params[12] = *Text;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendGameInviteToFriend, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool SendGameInviteToFriends(ubyte LocalUserNum, ScriptArray!(OnlineSubsystem.UniqueNetId) Friends, ScriptString Text)
+	bool SendGameInviteToFriends(ubyte LocalUserNum, ScriptArray!(OnlineSubsystem.UniqueNetId) Friends, ScriptString* Text = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = Friends;
-		*cast(ScriptString*)&params[16] = Text;
+		if (Text !is null)
+			*cast(ScriptString*)&params[16] = *Text;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendGameInviteToFriends, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -1679,7 +1692,7 @@ void**)params.ptr = JoinFriendGameCompleteDelegate;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.OnlineFriendMessage)*)&params[4] = FriendMessages;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFriendMessages, params.ptr, cast(void*)0);
-		*FriendMessages = *cast(ScriptArray!(OnlineSubsystem.OnlineFriendMessage)*)&params[4];
+		FriendMessages = *cast(ScriptArray!(OnlineSubsystem.OnlineFriendMessage)*)&params[4];
 	}
 	void AddFriendMessageReceivedDelegate(ubyte LocalUserNum, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
@@ -1714,26 +1727,30 @@ void**)&params[4] = MessageDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnlockAchievement, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool ReadAchievements(ubyte LocalUserNum, int TitleId, bool bShouldReadText, bool bShouldReadImages)
+	bool ReadAchievements(ubyte LocalUserNum, int* TitleId = null, bool* bShouldReadText = null, bool* bShouldReadImages = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(int*)&params[4] = TitleId;
-		*cast(bool*)&params[8] = bShouldReadText;
-		*cast(bool*)&params[12] = bShouldReadImages;
+		if (TitleId !is null)
+			*cast(int*)&params[4] = *TitleId;
+		if (bShouldReadText !is null)
+			*cast(bool*)&params[8] = *bShouldReadText;
+		if (bShouldReadImages !is null)
+			*cast(bool*)&params[12] = *bShouldReadImages;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadAchievements, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	OnlineSubsystem.EOnlineEnumerationReadState GetAchievements(ubyte LocalUserNum, ref ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements, int TitleId)
+	OnlineSubsystem.EOnlineEnumerationReadState GetAchievements(ubyte LocalUserNum, ref ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements, int* TitleId = null)
 	{
 		ubyte params[21];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.AchievementDetails)*)&params[4] = Achievements;
-		*cast(int*)&params[16] = TitleId;
+		if (TitleId !is null)
+			*cast(int*)&params[16] = *TitleId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievements, params.ptr, cast(void*)0);
-		*Achievements = *cast(ScriptArray!(OnlineSubsystem.AchievementDetails)*)&params[4];
+		Achievements = *cast(ScriptArray!(OnlineSubsystem.AchievementDetails)*)&params[4];
 		return *cast(OnlineSubsystem.EOnlineEnumerationReadState*)&params[20];
 	}
 	void AddUnlockAchievementCompleteDelegate(ubyte LocalUserNum, 
@@ -1801,11 +1818,12 @@ void**)&params[4] = ReadAchievementsCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowFriendsUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool ShowLoginUI(bool bShowOnlineOnly)
+	bool ShowLoginUI(bool* bShowOnlineOnly = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bShowOnlineOnly;
+		if (bShowOnlineOnly !is null)
+			*cast(bool*)params.ptr = *bShowOnlineOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowLoginUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

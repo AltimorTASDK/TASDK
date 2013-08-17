@@ -130,7 +130,7 @@ void**)&params[4] = SendPartyGameInvitesCompleteDelegate;
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr = PartyMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyMembersInformation, params.ptr, cast(void*)0);
-		*PartyMembers = *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr;
+		PartyMembers = *cast(ScriptArray!(OnlineSubsystem.OnlinePartyMember)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	bool GetPartyMemberInformation(OnlineSubsystem.UniqueNetId MemberId, ref OnlineSubsystem.OnlinePartyMember PartyMember)
@@ -140,7 +140,7 @@ void**)&params[4] = SendPartyGameInvitesCompleteDelegate;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = MemberId;
 		*cast(OnlineSubsystem.OnlinePartyMember*)&params[8] = PartyMember;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyMemberInformation, params.ptr, cast(void*)0);
-		*PartyMember = *cast(OnlineSubsystem.OnlinePartyMember*)&params[8];
+		PartyMember = *cast(OnlineSubsystem.OnlinePartyMember*)&params[8];
 		return *cast(bool*)&params[64];
 	}
 	void AddPartyMemberListChangedDelegate(ubyte LocalUserNum, 

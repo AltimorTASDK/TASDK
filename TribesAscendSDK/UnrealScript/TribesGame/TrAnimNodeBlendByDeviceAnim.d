@@ -62,13 +62,13 @@ public extern(D):
 		{
 			auto ref
 			{
-				float BlendOutTime() { mixin(MGPS!(float, 24)()); }
-				float BlendInTime() { mixin(MGPS!(float, 20)()); }
-				float Scale() { mixin(MGPS!(float, 16)()); }
-				float Rate() { mixin(MGPS!(float, 12)()); }
-				CameraAnimInst CameraAnimInstance() { mixin(MGPS!(CameraAnimInst, 8)()); }
+				float BlendOutTime() { mixin(MGPS!("float", 24)()); }
+				float BlendInTime() { mixin(MGPS!("float", 20)()); }
+				float Scale() { mixin(MGPS!("float", 16)()); }
+				float Rate() { mixin(MGPS!("float", 12)()); }
+				CameraAnimInst CameraAnimInstance() { mixin(MGPS!("CameraAnimInst", 8)()); }
 				// WARNING: Property 'CameraAnim' has the same name as a defined type!
-				int ChildIndex() { mixin(MGPS!(int, 0)()); }
+				int ChildIndex() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bRandomStartTime() { mixin(MGBPS!(28, 0x2)()); }
 			bool bRandomStartTime(bool val) { mixin(MSBPS!(28, 0x2)()); }
@@ -80,22 +80,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) m_nmRecoilControlNames() { mixin(MGPC!(ScriptArray!(ScriptName), 312)()); }
-			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilControls() { mixin(MGPC!(ScriptArray!(GameSkelCtrl_Recoil), 324)()); }
-			ScriptArray!(GameSkelCtrl_Recoil) m_TinyWeaponsRecoilControls() { mixin(MGPC!(ScriptArray!(GameSkelCtrl_Recoil), 336)()); }
-			ScriptArray!(TrAnimNodeBlendByDeviceAnim.DeviceNodeCameraAnimation) m_CameraAnimations() { mixin(MGPC!(ScriptArray!(TrAnimNodeBlendByDeviceAnim.DeviceNodeCameraAnimation), 408)()); }
-			int m_nSocketIndex() { mixin(MGPC!(int, 404)()); }
-			TrAnimNodeBlendByDeviceAnim m_SecondaryDeviceBlendNode() { mixin(MGPC!(TrAnimNodeBlendByDeviceAnim, 400)()); }
-			ScriptName m_SecondaryDeviceBlendNodeName() { mixin(MGPC!(ScriptName, 392)()); }
-			ScriptName m_StandardReloadAnimName() { mixin(MGPC!(ScriptName, 384)()); }
-			ScriptName m_ReloadPartialClipAnimName() { mixin(MGPC!(ScriptName, 376)()); }
-			ScriptName m_StandardFireAnimName() { mixin(MGPC!(ScriptName, 368)()); }
-			ScriptName m_DryFireAnimName() { mixin(MGPC!(ScriptName, 360)()); }
-			ScriptName m_FireFinalRoundAnimName() { mixin(MGPC!(ScriptName, 352)()); }
-			TrSkelControl_SpinControl m_BuildupFireSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 308)()); }
-			ScriptName m_nmBuildupFireSpinControlName() { mixin(MGPC!(ScriptName, 300)()); }
-			TrDevice m_Device() { mixin(MGPC!(TrDevice, 296)()); }
-			TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
+			ScriptArray!(ScriptName) m_nmRecoilControlNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 312)()); }
+			ScriptArray!(GameSkelCtrl_Recoil) m_RecoilControls() { mixin(MGPC!("ScriptArray!(GameSkelCtrl_Recoil)", 324)()); }
+			ScriptArray!(GameSkelCtrl_Recoil) m_TinyWeaponsRecoilControls() { mixin(MGPC!("ScriptArray!(GameSkelCtrl_Recoil)", 336)()); }
+			ScriptArray!(TrAnimNodeBlendByDeviceAnim.DeviceNodeCameraAnimation) m_CameraAnimations() { mixin(MGPC!("ScriptArray!(TrAnimNodeBlendByDeviceAnim.DeviceNodeCameraAnimation)", 408)()); }
+			int m_nSocketIndex() { mixin(MGPC!("int", 404)()); }
+			TrAnimNodeBlendByDeviceAnim m_SecondaryDeviceBlendNode() { mixin(MGPC!("TrAnimNodeBlendByDeviceAnim", 400)()); }
+			ScriptName m_SecondaryDeviceBlendNodeName() { mixin(MGPC!("ScriptName", 392)()); }
+			ScriptName m_StandardReloadAnimName() { mixin(MGPC!("ScriptName", 384)()); }
+			ScriptName m_ReloadPartialClipAnimName() { mixin(MGPC!("ScriptName", 376)()); }
+			ScriptName m_StandardFireAnimName() { mixin(MGPC!("ScriptName", 368)()); }
+			ScriptName m_DryFireAnimName() { mixin(MGPC!("ScriptName", 360)()); }
+			ScriptName m_FireFinalRoundAnimName() { mixin(MGPC!("ScriptName", 352)()); }
+			TrSkelControl_SpinControl m_BuildupFireSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 308)()); }
+			ScriptName m_nmBuildupFireSpinControlName() { mixin(MGPC!("ScriptName", 300)()); }
+			TrDevice m_Device() { mixin(MGPC!("TrDevice", 296)()); }
+			TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
 		}
 		bool m_bScalePutawayRetrieveAnims() { mixin(MGBPC!(348, 0x8)()); }
 		bool m_bScalePutawayRetrieveAnims(bool val) { mixin(MSBPC!(348, 0x8)()); }

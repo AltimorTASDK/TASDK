@@ -41,19 +41,20 @@ public extern(D):
 			ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTDummyPawn.Tick")()); }
 		}
 	}
-	@property final auto ref UTSeqAct_DummyWeaponFire FireAction() { mixin(MGPC!(UTSeqAct_DummyWeaponFire, 2208)()); }
+	@property final auto ref UTSeqAct_DummyWeaponFire FireAction() { mixin(MGPC!("UTSeqAct_DummyWeaponFire", 2208)()); }
 final:
 	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponFired, params.ptr, cast(void*)0);
 	}
 	void SetPawnAmbientSound(SoundCue NewAmbientSound)
@@ -83,11 +84,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponAttachmentChanged, cast(void*)0, cast(void*)0);
 	}
-	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon* CurrentWeapon = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Weapon*)params.ptr = CurrentWeapon;
+		if (CurrentWeapon !is null)
+			*cast(Weapon*)params.ptr = *CurrentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}

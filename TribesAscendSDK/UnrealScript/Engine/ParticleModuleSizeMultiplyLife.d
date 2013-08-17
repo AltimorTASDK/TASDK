@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleSizeMultiplyLife DefaultProperties() { mixin(MGDPC!(ParticleModuleSizeMultiplyLife, "ParticleModuleSizeMultiplyLife Engine.Default__ParticleModuleSizeMultiplyLife")()); }
 	@property final
 	{
-		@property final auto ref DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		@property final auto ref DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 		bool MultiplyZ() { mixin(MGBPC!(100, 0x4)()); }
 		bool MultiplyZ(bool val) { mixin(MSBPC!(100, 0x4)()); }
 		bool MultiplyY() { mixin(MGBPC!(100, 0x2)()); }

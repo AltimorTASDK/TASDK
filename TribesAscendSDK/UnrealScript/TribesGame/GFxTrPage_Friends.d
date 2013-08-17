@@ -53,16 +53,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString FlyoutTitle() { mixin(MGPC!(ScriptString, 424)()); }
-			ScriptString RemoveFriendTitle() { mixin(MGPC!(ScriptString, 412)()); }
-			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 436)()); }
-			ScriptString AddFriendSubtext() { mixin(MGPC!(ScriptString, 400)()); }
-			ScriptString AddFriendTitle() { mixin(MGPC!(ScriptString, 388)()); }
-			ScriptString SelectPromptLabel() { mixin(MGPC!(ScriptString, 376)()); }
-			int RemovingIndex() { mixin(MGPC!(int, 368)()); }
-			int PrevPlayerId() { mixin(MGPC!(int, 364)()); }
-			int FocusedIndex() { mixin(MGPC!(int, 360)()); }
-			int Criteria() { mixin(MGPC!(int, 356)()); }
+			ScriptString FlyoutTitle() { mixin(MGPC!("ScriptString", 424)()); }
+			ScriptString RemoveFriendTitle() { mixin(MGPC!("ScriptString", 412)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 436)()); }
+			ScriptString AddFriendSubtext() { mixin(MGPC!("ScriptString", 400)()); }
+			ScriptString AddFriendTitle() { mixin(MGPC!("ScriptString", 388)()); }
+			ScriptString SelectPromptLabel() { mixin(MGPC!("ScriptString", 376)()); }
+			int RemovingIndex() { mixin(MGPC!("int", 368)()); }
+			int PrevPlayerId() { mixin(MGPC!("int", 364)()); }
+			int FocusedIndex() { mixin(MGPC!("int", 360)()); }
+			int Criteria() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForFriendRemovePopup() { mixin(MGBPC!(372, 0x2)()); }
 		bool bWaitingForFriendRemovePopup(bool val) { mixin(MSBPC!(372, 0x2)()); }

@@ -70,24 +70,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Color BlackColor() { mixin(MGPC!(UObject.Color, 1492)()); }
-			Texture2D IconHudTexture() { mixin(MGPC!(Texture2D, 1468)()); }
-			float ResolutionScale() { mixin(MGPC!(float, 1508)()); }
-			float LastPickupTime() { mixin(MGPC!(float, 1488)()); }
-			float ConfiguredCrosshairScaling() { mixin(MGPC!(float, 1484)()); }
-			UObject.Color LightGreenColor() { mixin(MGPC!(UObject.Color, 1504)()); }
-			int ViewY() { mixin(MGPC!(int, 1520)()); }
-			int ViewX() { mixin(MGPC!(int, 1516)()); }
-			float ResolutionScaleX() { mixin(MGPC!(float, 1512)()); }
-			UObject.Color LightGoldColor() { mixin(MGPC!(UObject.Color, 1500)()); }
-			UObject.Color GoldColor() { mixin(MGPC!(UObject.Color, 1496)()); }
-			ScriptString ConsoleIconFontClassName() { mixin(MGPC!(ScriptString, 1472)()); }
-			float LastTimeTooltipDrawn() { mixin(MGPC!(float, 1464)()); }
-			UIRoot.TextureCoordinates ToolTipSepCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 1448)()); }
-			UTGameReplicationInfo UTGRI() { mixin(MGPC!(UTGameReplicationInfo, 1440)()); }
-			UTPlayerController UTPlayerOwner() { mixin(MGPC!(UTPlayerController, 1436)()); }
-			ScriptClass MusicManagerClass() { mixin(MGPC!(ScriptClass, 1432)()); }
-			GFxUI_PauseMenu PauseMenuMovie() { mixin(MGPC!(GFxUI_PauseMenu, 1428)()); }
+			UObject.Color BlackColor() { mixin(MGPC!("UObject.Color", 1492)()); }
+			Texture2D IconHudTexture() { mixin(MGPC!("Texture2D", 1468)()); }
+			float ResolutionScale() { mixin(MGPC!("float", 1508)()); }
+			float LastPickupTime() { mixin(MGPC!("float", 1488)()); }
+			float ConfiguredCrosshairScaling() { mixin(MGPC!("float", 1484)()); }
+			UObject.Color LightGreenColor() { mixin(MGPC!("UObject.Color", 1504)()); }
+			int ViewY() { mixin(MGPC!("int", 1520)()); }
+			int ViewX() { mixin(MGPC!("int", 1516)()); }
+			float ResolutionScaleX() { mixin(MGPC!("float", 1512)()); }
+			UObject.Color LightGoldColor() { mixin(MGPC!("UObject.Color", 1500)()); }
+			UObject.Color GoldColor() { mixin(MGPC!("UObject.Color", 1496)()); }
+			ScriptString ConsoleIconFontClassName() { mixin(MGPC!("ScriptString", 1472)()); }
+			float LastTimeTooltipDrawn() { mixin(MGPC!("float", 1464)()); }
+			UIRoot.TextureCoordinates ToolTipSepCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 1448)()); }
+			UTGameReplicationInfo UTGRI() { mixin(MGPC!("UTGameReplicationInfo", 1440)()); }
+			UTPlayerController UTPlayerOwner() { mixin(MGPC!("UTPlayerController", 1436)()); }
+			ScriptClass MusicManagerClass() { mixin(MGPC!("ScriptClass", 1432)()); }
+			GFxUI_PauseMenu PauseMenuMovie() { mixin(MGPC!("GFxUI_PauseMenu", 1428)()); }
 		}
 		bool bCrosshairShow() { mixin(MGBPC!(1444, 0x4)()); }
 		bool bCrosshairShow(bool val) { mixin(MSBPC!(1444, 0x4)()); }
@@ -164,7 +164,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalPlayerOwnerIndex, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	void DrawToolTip(Canvas Cvs, PlayerController PC, ScriptString Command, float X, float Y, float U, float V, float UL, float VL, float ResScale, Texture2D IconTexture, float Alpha)
+	void DrawToolTip(Canvas Cvs, PlayerController PC, ScriptString Command, float X, float Y, float U, float V, float UL, float VL, float ResScale, Texture2D* IconTexture = null, float* Alpha = null)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -178,8 +178,10 @@ final:
 		*cast(float*)&params[36] = UL;
 		*cast(float*)&params[40] = VL;
 		*cast(float*)&params[44] = ResScale;
-		*cast(Texture2D*)&params[48] = IconTexture;
-		*cast(float*)&params[52] = Alpha;
+		if (IconTexture !is null)
+			*cast(Texture2D*)&params[48] = *IconTexture;
+		if (Alpha !is null)
+			*cast(float*)&params[52] = *Alpha;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawToolTip, params.ptr, cast(void*)0);
 	}
 	bool CheckCrosshairOnFriendly()
@@ -193,7 +195,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCrosshairOnFriendly, cast(void*)0, cast(void*)0);
 	}
-	void DrawShadowedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
+	void DrawShadowedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool* bScaleToRes = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -207,10 +209,11 @@ final:
 		*cast(float*)&params[28] = UL;
 		*cast(float*)&params[32] = VL;
 		*cast(UObject.Color*)&params[36] = TileColor;
-		*cast(bool*)&params[40] = bScaleToRes;
+		if (bScaleToRes !is null)
+			*cast(bool*)&params[40] = *bScaleToRes;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedTile, params.ptr, cast(void*)0);
 	}
-	void DrawShadowedStretchedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
+	void DrawShadowedStretchedTile(Texture2D Tex, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool* bScaleToRes = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -224,10 +227,11 @@ final:
 		*cast(float*)&params[28] = UL;
 		*cast(float*)&params[32] = VL;
 		*cast(UObject.Color*)&params[36] = TileColor;
-		*cast(bool*)&params[40] = bScaleToRes;
+		if (bScaleToRes !is null)
+			*cast(bool*)&params[40] = *bScaleToRes;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedStretchedTile, params.ptr, cast(void*)0);
 	}
-	void DrawShadowedRotatedTile(Texture2D Tex, Rotator Rot, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool bScaleToRes)
+	void DrawShadowedRotatedTile(Texture2D Tex, Rotator Rot, float X, float Y, float XL, float YL, float U, float V, float UL, float VL, UObject.Color TileColor, bool* bScaleToRes = null)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -242,7 +246,8 @@ final:
 		*cast(float*)&params[40] = UL;
 		*cast(float*)&params[44] = VL;
 		*cast(UObject.Color*)&params[48] = TileColor;
-		*cast(bool*)&params[52] = bScaleToRes;
+		if (bScaleToRes !is null)
+			*cast(bool*)&params[52] = *bScaleToRes;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawShadowedRotatedTile, params.ptr, cast(void*)0);
 	}
 }

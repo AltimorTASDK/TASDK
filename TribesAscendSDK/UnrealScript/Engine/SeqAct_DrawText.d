@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			HUD.KismetDrawTextInfo DrawTextInfo() { mixin(MGPC!(HUD.KismetDrawTextInfo, 240)()); }
-			float DisplayTimeSeconds() { mixin(MGPC!(float, 232)()); }
+			HUD.KismetDrawTextInfo DrawTextInfo() { mixin(MGPC!("HUD.KismetDrawTextInfo", 240)()); }
+			float DisplayTimeSeconds() { mixin(MGPC!("float", 232)()); }
 		}
 		bool bDisplayOnObject() { mixin(MGBPC!(236, 0x1)()); }
 		bool bDisplayOnObject(bool val) { mixin(MSBPC!(236, 0x1)()); }

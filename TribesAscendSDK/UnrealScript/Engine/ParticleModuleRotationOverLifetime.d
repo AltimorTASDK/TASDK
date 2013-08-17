@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleRotationOverLifetime DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationOverLifetime, "ParticleModuleRotationOverLifetime Engine.Default__ParticleModuleRotationOverLifetime")()); }
 	@property final
 	{
-		@property final auto ref DistributionFloat.RawDistributionFloat RotationOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+		@property final auto ref DistributionFloat.RawDistributionFloat RotationOverLife() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
 		bool Scale() { mixin(MGBPC!(100, 0x1)()); }
 		bool Scale(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}

@@ -22,12 +22,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(PlayerController) CachedPCs() { mixin(MGPC!(ScriptArray!(PlayerController), 260)()); }
-			float FadeTimeRemaining() { mixin(MGPC!(float, 256)()); }
-			float FadeTime() { mixin(MGPC!(float, 248)()); }
-			float FadeOpacity() { mixin(MGPC!(float, 244)()); }
-			UObject.Vector2D FadeAlpha() { mixin(MGPC!(UObject.Vector2D, 236)()); }
-			UObject.Color FadeColor() { mixin(MGPC!(UObject.Color, 232)()); }
+			ScriptArray!(PlayerController) CachedPCs() { mixin(MGPC!("ScriptArray!(PlayerController)", 260)()); }
+			float FadeTimeRemaining() { mixin(MGPC!("float", 256)()); }
+			float FadeTime() { mixin(MGPC!("float", 248)()); }
+			float FadeOpacity() { mixin(MGPC!("float", 244)()); }
+			UObject.Vector2D FadeAlpha() { mixin(MGPC!("UObject.Vector2D", 236)()); }
+			UObject.Color FadeColor() { mixin(MGPC!("UObject.Color", 232)()); }
 		}
 		bool bPersistFade() { mixin(MGBPC!(252, 0x1)()); }
 		bool bPersistFade(bool val) { mixin(MSBPC!(252, 0x1)()); }

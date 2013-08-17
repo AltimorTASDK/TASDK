@@ -45,8 +45,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_InputAlias.UIDataStoreInputAlias")()); }
 		@property final auto ref
 		{
-			UIDataStore_InputAlias.UIInputKeyData PlatformInputKeys() { mixin(MGPS!(UIDataStore_InputAlias.UIInputKeyData, 8)()); }
-			ScriptName AliasName() { mixin(MGPS!(ScriptName, 0)()); }
+			UIDataStore_InputAlias.UIInputKeyData PlatformInputKeys() { mixin(MGPS!("UIDataStore_InputAlias.UIInputKeyData", 8)()); }
+			ScriptName AliasName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct UIInputKeyData
@@ -57,72 +57,78 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_InputAlias.UIInputKeyData")()); }
 		@property final auto ref
 		{
-			ScriptString ButtonFontMarkupString() { mixin(MGPS!(ScriptString, 12)()); }
-			UIRoot.RawInputKeyEventData InputKeyData() { mixin(MGPS!(UIRoot.RawInputKeyEventData, 0)()); }
+			ScriptString ButtonFontMarkupString() { mixin(MGPS!("ScriptString", 12)()); }
+			UIRoot.RawInputKeyEventData InputKeyData() { mixin(MGPS!("UIRoot.RawInputKeyEventData", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias) InputAliases() { mixin(MGPC!(ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias), 120)()); }
+		ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias) InputAliases() { mixin(MGPC!("ScriptArray!(UIDataStore_InputAlias.UIDataStoreInputAlias)", 120)()); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'InputAliasLookupMap'!
 	}
 final:
-	ScriptString GetAliasFontMarkup(ScriptName DesiredAlias, UIRoot.EInputPlatformType OverridePlatform)
+	ScriptString GetAliasFontMarkup(ScriptName DesiredAlias, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = DesiredAlias;
-		*cast(UIRoot.EInputPlatformType*)&params[8] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[8] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasFontMarkup, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	ScriptString GetAliasFontMarkupByIndex(int AliasIndex, UIRoot.EInputPlatformType OverridePlatform)
+	ScriptString GetAliasFontMarkupByIndex(int AliasIndex, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = AliasIndex;
-		*cast(UIRoot.EInputPlatformType*)&params[4] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[4] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasFontMarkupByIndex, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	ScriptName GetAliasInputKeyName(ScriptName DesiredAlias, UIRoot.EInputPlatformType OverridePlatform)
+	ScriptName GetAliasInputKeyName(ScriptName DesiredAlias, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = DesiredAlias;
-		*cast(UIRoot.EInputPlatformType*)&params[8] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[8] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasInputKeyName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[12];
 	}
-	ScriptName GetAliasInputKeyNameByIndex(int AliasIndex, UIRoot.EInputPlatformType OverridePlatform)
+	ScriptName GetAliasInputKeyNameByIndex(int AliasIndex, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = AliasIndex;
-		*cast(UIRoot.EInputPlatformType*)&params[4] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[4] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasInputKeyNameByIndex, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)&params[8];
 	}
-	bool GetAliasInputKeyData(ref UIRoot.RawInputKeyEventData out_InputKeyData, ScriptName DesiredAlias, UIRoot.EInputPlatformType OverridePlatform)
+	bool GetAliasInputKeyData(ref UIRoot.RawInputKeyEventData out_InputKeyData, ScriptName DesiredAlias, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(UIRoot.RawInputKeyEventData*)params.ptr = out_InputKeyData;
 		*cast(ScriptName*)&params[12] = DesiredAlias;
-		*cast(UIRoot.EInputPlatformType*)&params[20] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[20] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasInputKeyData, params.ptr, cast(void*)0);
-		*out_InputKeyData = *cast(UIRoot.RawInputKeyEventData*)params.ptr;
+		out_InputKeyData = *cast(UIRoot.RawInputKeyEventData*)params.ptr;
 		return *cast(bool*)&params[24];
 	}
-	bool GetAliasInputKeyDataByIndex(ref UIRoot.RawInputKeyEventData out_InputKeyData, int AliasIndex, UIRoot.EInputPlatformType OverridePlatform)
+	bool GetAliasInputKeyDataByIndex(ref UIRoot.RawInputKeyEventData out_InputKeyData, int AliasIndex, UIRoot.EInputPlatformType* OverridePlatform = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(UIRoot.RawInputKeyEventData*)params.ptr = out_InputKeyData;
 		*cast(int*)&params[12] = AliasIndex;
-		*cast(UIRoot.EInputPlatformType*)&params[16] = OverridePlatform;
+		if (OverridePlatform !is null)
+			*cast(UIRoot.EInputPlatformType*)&params[16] = *OverridePlatform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAliasInputKeyDataByIndex, params.ptr, cast(void*)0);
-		*out_InputKeyData = *cast(UIRoot.RawInputKeyEventData*)params.ptr;
+		out_InputKeyData = *cast(UIRoot.RawInputKeyEventData*)params.ptr;
 		return *cast(bool*)&params[20];
 	}
 	int FindInputAliasIndex(ScriptName DesiredAlias)

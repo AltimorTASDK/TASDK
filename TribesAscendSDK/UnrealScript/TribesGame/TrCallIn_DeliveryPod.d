@@ -40,21 +40,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float Speed() { mixin(MGPC!(float, 520)()); }
+		float Speed() { mixin(MGPC!("float", 520)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_LightEnvironment'!
-		Vector TargetImpactPoint() { mixin(MGPC!(Vector, 536)()); }
-		Vector TargetHitNormal() { mixin(MGPC!(Vector, 524)()); }
-		float LifeAfterImpact() { mixin(MGPC!(float, 516)()); }
-		SoundCue ImpactSound() { mixin(MGPC!(SoundCue, 512)()); }
-		SoundCue FallingSound() { mixin(MGPC!(SoundCue, 508)()); }
+		Vector TargetImpactPoint() { mixin(MGPC!("Vector", 536)()); }
+		Vector TargetHitNormal() { mixin(MGPC!("Vector", 524)()); }
+		float LifeAfterImpact() { mixin(MGPC!("float", 516)()); }
+		SoundCue ImpactSound() { mixin(MGPC!("SoundCue", 512)()); }
+		SoundCue FallingSound() { mixin(MGPC!("SoundCue", 508)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FallingSoundComponent'!
-		ParticleSystem DeliveryPodImpactTemplate() { mixin(MGPC!(ParticleSystem, 500)()); }
+		ParticleSystem DeliveryPodImpactTemplate() { mixin(MGPC!("ParticleSystem", 500)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DeliveryPodParticleEffects'!
-		ParticleSystem DeliveryPodParticleTemplate() { mixin(MGPC!(ParticleSystem, 492)()); }
-		float DecalDissolveTime() { mixin(MGPC!(float, 488)()); }
-		float HitDecalWidth() { mixin(MGPC!(float, 484)()); }
-		float HitDecalHeight() { mixin(MGPC!(float, 480)()); }
-		MaterialInstanceTimeVarying PodHitDecal() { mixin(MGPC!(MaterialInstanceTimeVarying, 476)()); }
+		ParticleSystem DeliveryPodParticleTemplate() { mixin(MGPC!("ParticleSystem", 492)()); }
+		float DecalDissolveTime() { mixin(MGPC!("float", 488)()); }
+		float HitDecalWidth() { mixin(MGPC!("float", 484)()); }
+		float HitDecalHeight() { mixin(MGPC!("float", 480)()); }
+		MaterialInstanceTimeVarying PodHitDecal() { mixin(MGPC!("MaterialInstanceTimeVarying", 476)()); }
 	}
 final:
 	float GetTerminalVelocity()

@@ -21,13 +21,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float PitchMultiplier() { mixin(MGPC!(float, 272)()); }
-			float VolumeMultiplier() { mixin(MGPC!(float, 268)()); }
-			float FadeOutTime() { mixin(MGPC!(float, 264)()); }
-			float FadeInTime() { mixin(MGPC!(float, 260)()); }
-			float SoundDuration() { mixin(MGPC!(float, 256)()); }
-			float ExtraDelay() { mixin(MGPC!(float, 252)()); }
-			SoundCue PlaySound() { mixin(MGPC!(SoundCue, 248)()); }
+			float PitchMultiplier() { mixin(MGPC!("float", 272)()); }
+			float VolumeMultiplier() { mixin(MGPC!("float", 268)()); }
+			float FadeOutTime() { mixin(MGPC!("float", 264)()); }
+			float FadeInTime() { mixin(MGPC!("float", 260)()); }
+			float SoundDuration() { mixin(MGPC!("float", 256)()); }
+			float ExtraDelay() { mixin(MGPC!("float", 252)()); }
+			SoundCue PlaySound() { mixin(MGPC!("SoundCue", 248)()); }
 		}
 		bool bStopped() { mixin(MGBPC!(276, 0x2)()); }
 		bool bStopped(bool val) { mixin(MSBPC!(276, 0x2)()); }

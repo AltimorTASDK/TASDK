@@ -17,16 +17,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat StartRotationRate() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 340)()); }
-			DistributionVector.RawDistributionVector SizeLifeMultiplier() { mixin(MGPC!(DistributionVector.RawDistributionVector, 308)()); }
-			DistributionFloat.RawDistributionFloat StartRotation() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 280)()); }
-			DistributionVector.RawDistributionVector StartLocation() { mixin(MGPC!(DistributionVector.RawDistributionVector, 252)()); }
-			DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 224)()); }
-			DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!(DistributionVector.RawDistributionVector, 196)()); }
-			DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 168)()); }
-			DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!(DistributionVector.RawDistributionVector, 140)()); }
-			DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
-			DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 84)()); }
+			DistributionFloat.RawDistributionFloat StartRotationRate() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 340)()); }
+			DistributionVector.RawDistributionVector SizeLifeMultiplier() { mixin(MGPC!("DistributionVector.RawDistributionVector", 308)()); }
+			DistributionFloat.RawDistributionFloat StartRotation() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 280)()); }
+			DistributionVector.RawDistributionVector StartLocation() { mixin(MGPC!("DistributionVector.RawDistributionVector", 252)()); }
+			DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 224)()); }
+			DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!("DistributionVector.RawDistributionVector", 196)()); }
+			DistributionFloat.RawDistributionFloat StartVelocityRadial() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 168)()); }
+			DistributionVector.RawDistributionVector StartVelocity() { mixin(MGPC!("DistributionVector.RawDistributionVector", 140)()); }
+			DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!("DistributionVector.RawDistributionVector", 112)()); }
+			DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 84)()); }
 		}
 		bool SizeMultiplyZ() { mixin(MGBPC!(336, 0x4)()); }
 		bool SizeMultiplyZ(bool val) { mixin(MSBPC!(336, 0x4)()); }

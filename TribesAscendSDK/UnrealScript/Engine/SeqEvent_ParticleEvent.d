@@ -28,12 +28,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector EventNormal() { mixin(MGPC!(Vector, 292)()); }
-			float EventParticleTime() { mixin(MGPC!(float, 288)()); }
-			Vector EventVelocity() { mixin(MGPC!(Vector, 276)()); }
-			float EventEmitterTime() { mixin(MGPC!(float, 272)()); }
-			Vector EventPosition() { mixin(MGPC!(Vector, 260)()); }
-			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { mixin(MGPC!(SeqEvent_ParticleEvent.EParticleEventOutputType, 256)()); }
+			Vector EventNormal() { mixin(MGPC!("Vector", 292)()); }
+			float EventParticleTime() { mixin(MGPC!("float", 288)()); }
+			Vector EventVelocity() { mixin(MGPC!("Vector", 276)()); }
+			float EventEmitterTime() { mixin(MGPC!("float", 272)()); }
+			Vector EventPosition() { mixin(MGPC!("Vector", 260)()); }
+			SeqEvent_ParticleEvent.EParticleEventOutputType EventType() { mixin(MGPC!("SeqEvent_ParticleEvent.EParticleEventOutputType", 256)()); }
 		}
 		bool UseRelfectedImpactVector() { mixin(MGBPC!(304, 0x1)()); }
 		bool UseRelfectedImpactVector(bool val) { mixin(MSBPC!(304, 0x1)()); }

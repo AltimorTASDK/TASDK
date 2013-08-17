@@ -35,7 +35,7 @@ public extern(D):
 			ScriptFunction FillDescription() { mixin(MGF!("mFillDescription", "Function TribesGame.GFxTrPage_MapRotation.FillDescription")()); }
 		}
 	}
-	@property final auto ref int AddMapNumber() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int AddMapNumber() { mixin(MGPC!("int", 356)()); }
 final:
 	void Initialize()
 	{

@@ -40,9 +40,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxClikWidget JoinBtn() { mixin(MGPC!(GFxClikWidget, 176)()); }
-		GFxObject PasswordTextField() { mixin(MGPC!(GFxObject, 172)()); }
-		GFxClikWidget PasswordRendererMC() { mixin(MGPC!(GFxClikWidget, 168)()); }
+		GFxClikWidget JoinBtn() { mixin(MGPC!("GFxClikWidget", 176)()); }
+		GFxObject PasswordTextField() { mixin(MGPC!("GFxObject", 172)()); }
+		GFxClikWidget PasswordRendererMC() { mixin(MGPC!("GFxClikWidget", 168)()); }
 	}
 final:
 	ScriptString GetPassword()
@@ -52,11 +52,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPassword, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void ClearPasswordRenderer()

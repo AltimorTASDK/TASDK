@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mTimer;
 		public @property static final ScriptFunction Timer() { mixin(MGF!("mTimer", "Function TribesGame.TrHUDTeam.Timer")()); }
 	}
-	@property final auto ref int m_nLastMessageCode() { mixin(MGPC!(int, 2492)()); }
+	@property final auto ref int m_nLastMessageCode() { mixin(MGPC!("int", 2492)()); }
 	final void Timer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);

@@ -45,9 +45,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString DescriptionLabel() { mixin(MGPC!(ScriptString, 364)()); }
-		int selectedVendorItemId() { mixin(MGPC!(int, 360)()); }
-		int selectedActionIdx() { mixin(MGPC!(int, 356)()); }
+		ScriptString DescriptionLabel() { mixin(MGPC!("ScriptString", 364)()); }
+		int selectedVendorItemId() { mixin(MGPC!("int", 360)()); }
+		int selectedActionIdx() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	int TakeFocus(int ActionIndex, GFxObject DataList)

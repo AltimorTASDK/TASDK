@@ -78,13 +78,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ReticuleIndex() { mixin(MGPC!(int, 380)()); }
-			int PurchasingUpgrade() { mixin(MGPC!(int, 376)()); }
-			int PurchasingEquip() { mixin(MGPC!(int, 372)()); }
-			int FocusedEquip() { mixin(MGPC!(int, 368)()); }
-			int ViewedEquip() { mixin(MGPC!(int, 364)()); }
-			int GoldPrice() { mixin(MGPC!(int, 360)()); }
-			int xpPrice() { mixin(MGPC!(int, 356)()); }
+			int ReticuleIndex() { mixin(MGPC!("int", 380)()); }
+			int PurchasingUpgrade() { mixin(MGPC!("int", 376)()); }
+			int PurchasingEquip() { mixin(MGPC!("int", 372)()); }
+			int FocusedEquip() { mixin(MGPC!("int", 368)()); }
+			int ViewedEquip() { mixin(MGPC!("int", 364)()); }
+			int GoldPrice() { mixin(MGPC!("int", 360)()); }
+			int xpPrice() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bReticulesOpen() { mixin(MGBPC!(384, 0x2)()); }
 		bool bReticulesOpen(bool val) { mixin(MSBPC!(384, 0x2)()); }
@@ -114,12 +114,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnPurchaseSuccess, cast(void*)0, cast(void*)0);
 	}
-	void SetActiveEquip(int EquipId, bool bShowStatus)
+	void SetActiveEquip(int EquipId, bool* bShowStatus = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = EquipId;
-		*cast(bool*)&params[4] = bShowStatus;
+		if (bShowStatus !is null)
+			*cast(bool*)&params[4] = *bShowStatus;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetActiveEquip, params.ptr, cast(void*)0);
 	}
 	int TakeAction(int ActionIndex, GFxObject DataList)

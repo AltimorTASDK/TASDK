@@ -17,10 +17,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			int SphereSides() { mixin(MGPC!(int, 500)()); }
-			float SphereRadius() { mixin(MGPC!(float, 496)()); }
-			Material SphereMaterial() { mixin(MGPC!(Material, 492)()); }
-			UObject.Color SphereColor() { mixin(MGPC!(UObject.Color, 488)()); }
+			int SphereSides() { mixin(MGPC!("int", 500)()); }
+			float SphereRadius() { mixin(MGPC!("float", 496)()); }
+			Material SphereMaterial() { mixin(MGPC!("Material", 492)()); }
+			UObject.Color SphereColor() { mixin(MGPC!("UObject.Color", 488)()); }
 		}
 		bool bDrawOnlyIfSelected() { mixin(MGBPC!(504, 0x4)()); }
 		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(504, 0x4)()); }

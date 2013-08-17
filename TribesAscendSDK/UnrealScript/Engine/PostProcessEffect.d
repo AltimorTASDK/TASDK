@@ -16,14 +16,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			Scene.ESceneDepthPriorityGroup SceneDPG() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 96)()); }
-			int InDrawY() { mixin(MGPC!(int, 92)()); }
-			int OutDrawY() { mixin(MGPC!(int, 88)()); }
-			int DrawHeight() { mixin(MGPC!(int, 84)()); }
-			int DrawWidth() { mixin(MGPC!(int, 80)()); }
-			int NodePosX() { mixin(MGPC!(int, 76)()); }
-			int NodePosY() { mixin(MGPC!(int, 72)()); }
-			ScriptName EffectName() { mixin(MGPC!(ScriptName, 64)()); }
+			Scene.ESceneDepthPriorityGroup SceneDPG() { mixin(MGPC!("Scene.ESceneDepthPriorityGroup", 96)()); }
+			int InDrawY() { mixin(MGPC!("int", 92)()); }
+			int OutDrawY() { mixin(MGPC!("int", 88)()); }
+			int DrawHeight() { mixin(MGPC!("int", 84)()); }
+			int DrawWidth() { mixin(MGPC!("int", 80)()); }
+			int NodePosX() { mixin(MGPC!("int", 76)()); }
+			int NodePosY() { mixin(MGPC!("int", 72)()); }
+			ScriptName EffectName() { mixin(MGPC!("ScriptName", 64)()); }
 		}
 		bool bAffectsLightingOnly() { mixin(MGBPC!(60, 0x8)()); }
 		bool bAffectsLightingOnly(bool val) { mixin(MSBPC!(60, 0x8)()); }

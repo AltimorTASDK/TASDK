@@ -44,26 +44,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector LastCameraLoc() { mixin(MGPC!(Vector, 416)()); }
-			float LastPPSettingsAlpha() { mixin(MGPC!(float, 412)()); }
-			PostProcessVolume.PostProcessSettings LastPPSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 192)()); }
-			UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPC!(UObject.Matrix, 128)()); }
-			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!(Camera.ECameraAnimPlaySpace, 124)()); }
-			AnimNodeSequence SourceAnimNode() { mixin(MGPC!(AnimNodeSequence, 120)()); }
-			InterpTrackInstMove MoveInst() { mixin(MGPC!(InterpTrackInstMove, 116)()); }
-			InterpTrackMove MoveTrack() { mixin(MGPC!(InterpTrackMove, 112)()); }
-			float RemainingTime() { mixin(MGPC!(float, 108)()); }
-			float CurrentBlendWeight() { mixin(MGPC!(float, 104)()); }
-			float TransientScaleModifier() { mixin(MGPC!(float, 100)()); }
-			float BasePlayScale() { mixin(MGPC!(float, 96)()); }
-			float PlayRate() { mixin(MGPC!(float, 92)()); }
-			float CurBlendOutTime() { mixin(MGPC!(float, 88)()); }
-			float CurBlendInTime() { mixin(MGPC!(float, 84)()); }
-			float BlendOutTime() { mixin(MGPC!(float, 80)()); }
-			float BlendInTime() { mixin(MGPC!(float, 76)()); }
-			float CurTime() { mixin(MGPC!(float, 68)()); }
+			Vector LastCameraLoc() { mixin(MGPC!("Vector", 416)()); }
+			float LastPPSettingsAlpha() { mixin(MGPC!("float", 412)()); }
+			PostProcessVolume.PostProcessSettings LastPPSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 192)()); }
+			UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPC!("UObject.Matrix", 128)()); }
+			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!("Camera.ECameraAnimPlaySpace", 124)()); }
+			AnimNodeSequence SourceAnimNode() { mixin(MGPC!("AnimNodeSequence", 120)()); }
+			InterpTrackInstMove MoveInst() { mixin(MGPC!("InterpTrackInstMove", 116)()); }
+			InterpTrackMove MoveTrack() { mixin(MGPC!("InterpTrackMove", 112)()); }
+			float RemainingTime() { mixin(MGPC!("float", 108)()); }
+			float CurrentBlendWeight() { mixin(MGPC!("float", 104)()); }
+			float TransientScaleModifier() { mixin(MGPC!("float", 100)()); }
+			float BasePlayScale() { mixin(MGPC!("float", 96)()); }
+			float PlayRate() { mixin(MGPC!("float", 92)()); }
+			float CurBlendOutTime() { mixin(MGPC!("float", 88)()); }
+			float CurBlendInTime() { mixin(MGPC!("float", 84)()); }
+			float BlendOutTime() { mixin(MGPC!("float", 80)()); }
+			float BlendInTime() { mixin(MGPC!("float", 76)()); }
+			float CurTime() { mixin(MGPC!("float", 68)()); }
 			// WARNING: Property 'InterpGroupInst' has the same name as a defined type!
-			CameraAnim CamAnim() { mixin(MGPC!(CameraAnim, 60)()); }
+			CameraAnim CamAnim() { mixin(MGPC!("CameraAnim", 60)()); }
 		}
 		bool bBlendingOut() { mixin(MGBPC!(72, 0x10)()); }
 		bool bBlendingOut(bool val) { mixin(MSBPC!(72, 0x10)()); }
@@ -77,15 +77,16 @@ public extern(D):
 		bool bLooping(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
-	void SetPlaySpace(Camera.ECameraAnimPlaySpace NewSpace, Rotator UserPlaySpace)
+	void SetPlaySpace(Camera.ECameraAnimPlaySpace NewSpace, Rotator* UserPlaySpace = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Camera.ECameraAnimPlaySpace*)params.ptr = NewSpace;
-		*cast(Rotator*)&params[4] = UserPlaySpace;
+		if (UserPlaySpace !is null)
+			*cast(Rotator*)&params[4] = *UserPlaySpace;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlaySpace, params.ptr, cast(void*)0);
 	}
-	void Play(CameraAnim Anim, Actor CamActor, float InRate, float InScale, float InBlendInTime, float InBlendOutTime, bool bInLoop, bool bRandomStartTime, float Duration)
+	void Play(CameraAnim Anim, Actor CamActor, float InRate, float InScale, float InBlendInTime, float InBlendOutTime, bool bInLoop, bool bRandomStartTime, float* Duration = null)
 	{
 		ubyte params[36];
 		params[] = 0;
@@ -97,10 +98,11 @@ final:
 		*cast(float*)&params[20] = InBlendOutTime;
 		*cast(bool*)&params[24] = bInLoop;
 		*cast(bool*)&params[28] = bRandomStartTime;
-		*cast(float*)&params[32] = Duration;
+		if (Duration !is null)
+			*cast(float*)&params[32] = *Duration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Play, params.ptr, cast(void*)0);
 	}
-	void Update(float NewRate, float NewScale, float NewBlendInTime, float NewBlendOutTime, float NewDuration)
+	void Update(float NewRate, float NewScale, float NewBlendInTime, float NewBlendOutTime, float* NewDuration = null)
 	{
 		ubyte params[20];
 		params[] = 0;
@@ -108,7 +110,8 @@ final:
 		*cast(float*)&params[4] = NewScale;
 		*cast(float*)&params[8] = NewBlendInTime;
 		*cast(float*)&params[12] = NewBlendOutTime;
-		*cast(float*)&params[16] = NewDuration;
+		if (NewDuration !is null)
+			*cast(float*)&params[16] = *NewDuration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Update, params.ptr, cast(void*)0);
 	}
 	void AdvanceAnim(float DeltaTime, bool bJump)
@@ -119,11 +122,12 @@ final:
 		*cast(bool*)&params[4] = bJump;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdvanceAnim, params.ptr, cast(void*)0);
 	}
-	void Stop(bool bImmediate)
+	void Stop(bool* bImmediate = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bImmediate;
+		if (bImmediate !is null)
+			*cast(bool*)params.ptr = *bImmediate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Stop, params.ptr, cast(void*)0);
 	}
 	void ApplyTransientScaling(float Scalar)

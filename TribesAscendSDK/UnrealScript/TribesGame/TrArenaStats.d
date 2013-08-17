@@ -61,15 +61,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MyTeam() { mixin(MGPC!(int, 60)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 96)()); }
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 92)()); }
-			int TeamScore() { mixin(MGPC!(int, 72)()); }
-			TrArenaStats.ManGraphicState FriendlyManGraphics() { mixin(MGPC!(TrArenaStats.ManGraphicState, 100)()); }
-			TrArenaStats.ManGraphicState EnemyManGraphics() { mixin(MGPC!(TrArenaStats.ManGraphicState, 108)()); }
-			int RoundScore() { mixin(MGPC!(int, 80)()); }
-			int RoundNum() { mixin(MGPC!(int, 88)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
+			int MyTeam() { mixin(MGPC!("int", 60)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 96)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 92)()); }
+			int TeamScore() { mixin(MGPC!("int", 72)()); }
+			TrArenaStats.ManGraphicState FriendlyManGraphics() { mixin(MGPC!("TrArenaStats.ManGraphicState", 100)()); }
+			TrArenaStats.ManGraphicState EnemyManGraphics() { mixin(MGPC!("TrArenaStats.ManGraphicState", 108)()); }
+			int RoundScore() { mixin(MGPC!("int", 80)()); }
+			int RoundNum() { mixin(MGPC!("int", 88)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }

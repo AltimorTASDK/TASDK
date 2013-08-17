@@ -16,17 +16,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			float FootAdjustHeightLastTick() { mixin(MGPC!(float, 320)()); }
-			float OffContactFootAdjustInterpSpeed() { mixin(MGPC!(float, 316)()); }
-			float OnContactFootAdjustInterpSpeed() { mixin(MGPC!(float, 312)()); }
-			Vector FootUpDirLastTick() { mixin(MGPC!(Vector, 300)()); }
-			float FootOrientInterpSpeed() { mixin(MGPC!(float, 296)()); }
-			float MaxFootOrientAdjust() { mixin(MGPC!(float, 292)()); }
-			float MaxDownAdjustment() { mixin(MGPC!(float, 288)()); }
-			float MaxUpAdjustment() { mixin(MGPC!(float, 284)()); }
-			Rotator FootRotOffset() { mixin(MGPC!(Rotator, 268)()); }
-			UObject.EAxis FootUpAxis() { mixin(MGPC!(UObject.EAxis, 264)()); }
-			float FootOffset() { mixin(MGPC!(float, 260)()); }
+			float FootAdjustHeightLastTick() { mixin(MGPC!("float", 320)()); }
+			float OffContactFootAdjustInterpSpeed() { mixin(MGPC!("float", 316)()); }
+			float OnContactFootAdjustInterpSpeed() { mixin(MGPC!("float", 312)()); }
+			Vector FootUpDirLastTick() { mixin(MGPC!("Vector", 300)()); }
+			float FootOrientInterpSpeed() { mixin(MGPC!("float", 296)()); }
+			float MaxFootOrientAdjust() { mixin(MGPC!("float", 292)()); }
+			float MaxDownAdjustment() { mixin(MGPC!("float", 288)()); }
+			float MaxUpAdjustment() { mixin(MGPC!("float", 284)()); }
+			Rotator FootRotOffset() { mixin(MGPC!("Rotator", 268)()); }
+			UObject.EAxis FootUpAxis() { mixin(MGPC!("UObject.EAxis", 264)()); }
+			float FootOffset() { mixin(MGPC!("float", 260)()); }
 		}
 		bool bFootOnGroundLastTick() { mixin(MGBPC!(280, 0x8)()); }
 		bool bFootOnGroundLastTick(bool val) { mixin(MSBPC!(280, 0x8)()); }

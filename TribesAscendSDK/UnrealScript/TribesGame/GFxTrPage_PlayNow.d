@@ -56,17 +56,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString SeasonUpcomingSubtext() { mixin(MGPC!(ScriptString, 476)()); }
-		ScriptString NoFriendsOnlineLabel() { mixin(MGPC!(ScriptString, 464)()); }
-		ScriptString RegionsSubtext() { mixin(MGPC!(ScriptString, 452)()); }
-		ScriptString RegionsLabel() { mixin(MGPC!(ScriptString, 440)()); }
-		ScriptString RankedLabel() { mixin(MGPC!(ScriptString, 428)()); }
-		ScriptString CustomServerLabel() { mixin(MGPC!(ScriptString, 416)()); }
-		ScriptString JoinFriendLabel() { mixin(MGPC!(ScriptString, 404)()); }
-		ScriptString JoinFriendInGameSubLabel() { mixin(MGPC!(ScriptString, 392)()); }
-		ScriptString JoinFriendSubLabel() { mixin(MGPC!(ScriptString, 380)()); }
-		ScriptString CustomServerSubtext() { mixin(MGPC!(ScriptString, 368)()); }
-		ScriptString ComingSoonSubtext() { mixin(MGPC!(ScriptString, 356)()); }
+		ScriptString SeasonUpcomingSubtext() { mixin(MGPC!("ScriptString", 476)()); }
+		ScriptString NoFriendsOnlineLabel() { mixin(MGPC!("ScriptString", 464)()); }
+		ScriptString RegionsSubtext() { mixin(MGPC!("ScriptString", 452)()); }
+		ScriptString RegionsLabel() { mixin(MGPC!("ScriptString", 440)()); }
+		ScriptString RankedLabel() { mixin(MGPC!("ScriptString", 428)()); }
+		ScriptString CustomServerLabel() { mixin(MGPC!("ScriptString", 416)()); }
+		ScriptString JoinFriendLabel() { mixin(MGPC!("ScriptString", 404)()); }
+		ScriptString JoinFriendInGameSubLabel() { mixin(MGPC!("ScriptString", 392)()); }
+		ScriptString JoinFriendSubLabel() { mixin(MGPC!("ScriptString", 380)()); }
+		ScriptString CustomServerSubtext() { mixin(MGPC!("ScriptString", 368)()); }
+		ScriptString ComingSoonSubtext() { mixin(MGPC!("ScriptString", 356)()); }
 	}
 final:
 	int GetMeshEnumFromVV(int InVal)

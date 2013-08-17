@@ -35,10 +35,10 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__ShouldShowHelpText_Delegate__Delegate'!
-		TrHelpTextManager.EHelpTextType m_HelpTextType() { mixin(MGPC!(TrHelpTextManager.EHelpTextType, 496)()); }
+		TrHelpTextManager.EHelpTextType m_HelpTextType() { mixin(MGPC!("TrHelpTextManager.EHelpTextType", 496)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CylinderComponent'!
-		Pawn m_LocalPawn() { mixin(MGPC!(Pawn, 504)()); }
-		float m_fHelpTextRemovalTime() { mixin(MGPC!(float, 500)()); }
+		Pawn m_LocalPawn() { mixin(MGPC!("Pawn", 504)()); }
+		float m_fHelpTextRemovalTime() { mixin(MGPC!("float", 500)()); }
 	}
 final:
 	bool ShouldShowHelpText_Delegate(TrHelpTextManager.EHelpTextType HelpTextType)

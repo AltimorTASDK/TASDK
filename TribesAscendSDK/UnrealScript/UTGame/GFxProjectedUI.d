@@ -93,60 +93,60 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxProjectedUI.ItemData")()); }
 		@property final auto ref
 		{
-			ubyte ItemFrame() { mixin(MGPS!(ubyte, 24)()); }
-			ScriptString ItemName() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString ItemInfo() { mixin(MGPS!(ScriptString, 0)()); }
+			ubyte ItemFrame() { mixin(MGPS!("ubyte", 24)()); }
+			ScriptString ItemName() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString ItemInfo() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxUI_InventoryButton) Buttons() { mixin(MGPC!(ScriptArray!(GFxUI_InventoryButton), 412)()); }
-			ScriptArray!(GFxProjectedUI.ItemData) Items() { mixin(MGPC!(ScriptArray!(GFxProjectedUI.ItemData), 424)()); }
-			ScriptString CancelString() { mixin(MGPC!(ScriptString, 644)()); }
-			ScriptString AcceptString() { mixin(MGPC!(ScriptString, 632)()); }
-			Rotator StartRotation() { mixin(MGPC!(Rotator, 620)()); }
-			ScriptClass WeaponClass() { mixin(MGPC!(ScriptClass, 576)()); }
-			float leftThreshold() { mixin(MGPC!(float, 572)()); }
-			float rightThreshold() { mixin(MGPC!(float, 568)()); }
-			float rotval() { mixin(MGPC!(float, 564)()); }
-			float Height() { mixin(MGPC!(float, 560)()); }
-			float Width() { mixin(MGPC!(float, 556)()); }
-			float Scale() { mixin(MGPC!(float, 552)()); }
-			GFxObject InfoTitle() { mixin(MGPC!(GFxObject, 548)()); }
-			GFxObject InfoText() { mixin(MGPC!(GFxObject, 544)()); }
-			GFxObject InfoIconItem() { mixin(MGPC!(GFxObject, 540)()); }
-			GFxObject InfoIconWeap() { mixin(MGPC!(GFxObject, 536)()); }
-			GFxObject InfoMC() { mixin(MGPC!(GFxObject, 532)()); }
-			GFxObject BG_Edge_RightBottom() { mixin(MGPC!(GFxObject, 528)()); }
-			GFxObject BG_Edge_RightMiddle() { mixin(MGPC!(GFxObject, 524)()); }
-			GFxObject BG_Edge_RightTop() { mixin(MGPC!(GFxObject, 520)()); }
-			GFxObject BG_Edge_LeftTop() { mixin(MGPC!(GFxObject, 516)()); }
-			GFxObject BG_Edge_LeftMiddle() { mixin(MGPC!(GFxObject, 512)()); }
-			GFxObject BG_Edge_LeftBottom() { mixin(MGPC!(GFxObject, 508)()); }
-			GFxObject BG_Optic4MC() { mixin(MGPC!(GFxObject, 504)()); }
-			GFxObject BG_Optic3MC() { mixin(MGPC!(GFxObject, 500)()); }
-			GFxObject BG_Optic2MC() { mixin(MGPC!(GFxObject, 496)()); }
-			GFxObject BG_Optic1MC() { mixin(MGPC!(GFxObject, 492)()); }
-			GFxObject BG_ArrowMC() { mixin(MGPC!(GFxObject, 488)()); }
-			GFxObject BG_LineMC() { mixin(MGPC!(GFxObject, 484)()); }
-			GFxObject StartUpTextMC() { mixin(MGPC!(GFxObject, 480)()); }
-			GFxObject CPCLogoMC() { mixin(MGPC!(GFxObject, 476)()); }
-			GFxObject BackgroundMC() { mixin(MGPC!(GFxObject, 472)()); }
-			GFxObject LeftArrow01() { mixin(MGPC!(GFxObject, 468)()); }
-			GFxObject LeftArrow02() { mixin(MGPC!(GFxObject, 464)()); }
-			GFxObject ArsenalTabMC() { mixin(MGPC!(GFxObject, 460)()); }
-			GFxObject BackpackTabMC() { mixin(MGPC!(GFxObject, 456)()); }
-			GFxObject EquippedWeaponText2() { mixin(MGPC!(GFxObject, 448)()); }
-			GFxObject EquippedWeaponText1() { mixin(MGPC!(GFxObject, 444)()); }
-			GFxObject EquippedWeaponOutline() { mixin(MGPC!(GFxObject, 440)()); }
-			GFxObject EquippedWeapon() { mixin(MGPC!(GFxObject, 436)()); }
-			GFxObject ArsenalMC() { mixin(MGPC!(GFxObject, 408)()); }
-			GFxObject BackpackMC() { mixin(MGPC!(GFxObject, 404)()); }
-			GFxObject MainMC() { mixin(MGPC!(GFxObject, 400)()); }
-			GFxObject Window() { mixin(MGPC!(GFxObject, 396)()); }
-			GFxObject Root() { mixin(MGPC!(GFxObject, 392)()); }
+			ScriptArray!(GFxUI_InventoryButton) Buttons() { mixin(MGPC!("ScriptArray!(GFxUI_InventoryButton)", 412)()); }
+			ScriptArray!(GFxProjectedUI.ItemData) Items() { mixin(MGPC!("ScriptArray!(GFxProjectedUI.ItemData)", 424)()); }
+			ScriptString CancelString() { mixin(MGPC!("ScriptString", 644)()); }
+			ScriptString AcceptString() { mixin(MGPC!("ScriptString", 632)()); }
+			Rotator StartRotation() { mixin(MGPC!("Rotator", 620)()); }
+			ScriptClass WeaponClass() { mixin(MGPC!("ScriptClass", 576)()); }
+			float leftThreshold() { mixin(MGPC!("float", 572)()); }
+			float rightThreshold() { mixin(MGPC!("float", 568)()); }
+			float rotval() { mixin(MGPC!("float", 564)()); }
+			float Height() { mixin(MGPC!("float", 560)()); }
+			float Width() { mixin(MGPC!("float", 556)()); }
+			float Scale() { mixin(MGPC!("float", 552)()); }
+			GFxObject InfoTitle() { mixin(MGPC!("GFxObject", 548)()); }
+			GFxObject InfoText() { mixin(MGPC!("GFxObject", 544)()); }
+			GFxObject InfoIconItem() { mixin(MGPC!("GFxObject", 540)()); }
+			GFxObject InfoIconWeap() { mixin(MGPC!("GFxObject", 536)()); }
+			GFxObject InfoMC() { mixin(MGPC!("GFxObject", 532)()); }
+			GFxObject BG_Edge_RightBottom() { mixin(MGPC!("GFxObject", 528)()); }
+			GFxObject BG_Edge_RightMiddle() { mixin(MGPC!("GFxObject", 524)()); }
+			GFxObject BG_Edge_RightTop() { mixin(MGPC!("GFxObject", 520)()); }
+			GFxObject BG_Edge_LeftTop() { mixin(MGPC!("GFxObject", 516)()); }
+			GFxObject BG_Edge_LeftMiddle() { mixin(MGPC!("GFxObject", 512)()); }
+			GFxObject BG_Edge_LeftBottom() { mixin(MGPC!("GFxObject", 508)()); }
+			GFxObject BG_Optic4MC() { mixin(MGPC!("GFxObject", 504)()); }
+			GFxObject BG_Optic3MC() { mixin(MGPC!("GFxObject", 500)()); }
+			GFxObject BG_Optic2MC() { mixin(MGPC!("GFxObject", 496)()); }
+			GFxObject BG_Optic1MC() { mixin(MGPC!("GFxObject", 492)()); }
+			GFxObject BG_ArrowMC() { mixin(MGPC!("GFxObject", 488)()); }
+			GFxObject BG_LineMC() { mixin(MGPC!("GFxObject", 484)()); }
+			GFxObject StartUpTextMC() { mixin(MGPC!("GFxObject", 480)()); }
+			GFxObject CPCLogoMC() { mixin(MGPC!("GFxObject", 476)()); }
+			GFxObject BackgroundMC() { mixin(MGPC!("GFxObject", 472)()); }
+			GFxObject LeftArrow01() { mixin(MGPC!("GFxObject", 468)()); }
+			GFxObject LeftArrow02() { mixin(MGPC!("GFxObject", 464)()); }
+			GFxObject ArsenalTabMC() { mixin(MGPC!("GFxObject", 460)()); }
+			GFxObject BackpackTabMC() { mixin(MGPC!("GFxObject", 456)()); }
+			GFxObject EquippedWeaponText2() { mixin(MGPC!("GFxObject", 448)()); }
+			GFxObject EquippedWeaponText1() { mixin(MGPC!("GFxObject", 444)()); }
+			GFxObject EquippedWeaponOutline() { mixin(MGPC!("GFxObject", 440)()); }
+			GFxObject EquippedWeapon() { mixin(MGPC!("GFxObject", 436)()); }
+			GFxObject ArsenalMC() { mixin(MGPC!("GFxObject", 408)()); }
+			GFxObject BackpackMC() { mixin(MGPC!("GFxObject", 404)()); }
+			GFxObject MainMC() { mixin(MGPC!("GFxObject", 400)()); }
+			GFxObject Window() { mixin(MGPC!("GFxObject", 396)()); }
+			GFxObject Root() { mixin(MGPC!("GFxObject", 392)()); }
 		}
 		bool bInitialized() { mixin(MGBPC!(452, 0x2)()); }
 		bool bInitialized(bool val) { mixin(MSBPC!(452, 0x2)()); }
@@ -154,11 +154,12 @@ public extern(D):
 		bool bArsenalTabFocused(bool val) { mixin(MSBPC!(452, 0x1)()); }
 	}
 final:
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

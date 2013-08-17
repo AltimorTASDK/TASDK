@@ -107,18 +107,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlinePlayerStorage.OnlineProfileSetting")()); }
 		@property final auto ref
 		{
-			Settings.SettingsProperty ProfileSetting() { mixin(MGPS!(Settings.SettingsProperty, 4)()); }
-			OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { mixin(MGPS!(OnlinePlayerStorage.EOnlineProfilePropertyOwner, 0)()); }
+			Settings.SettingsProperty ProfileSetting() { mixin(MGPS!("Settings.SettingsProperty", 4)()); }
+			OnlinePlayerStorage.EOnlineProfilePropertyOwner Owner() { mixin(MGPS!("OnlinePlayerStorage.EOnlineProfilePropertyOwner", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { mixin(MGPC!(ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting), 68)()); }
-		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { mixin(MGPC!(ScriptArray!(Settings.SettingsPropertyPropertyMetaData), 80)()); }
-		int DeviceID() { mixin(MGPC!(int, 96)()); }
-		OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { mixin(MGPC!(OnlinePlayerStorage.EOnlinePlayerStorageAsyncState, 92)()); }
-		int VersionNumber() { mixin(MGPC!(int, 60)()); }
-		int VersionSettingsId() { mixin(MGPC!(int, 64)()); }
+		ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting) ProfileSettings() { mixin(MGPC!("ScriptArray!(OnlinePlayerStorage.OnlineProfileSetting)", 68)()); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) ProfileMappings() { mixin(MGPC!("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 80)()); }
+		int DeviceID() { mixin(MGPC!("int", 96)()); }
+		OnlinePlayerStorage.EOnlinePlayerStorageAsyncState AsyncState() { mixin(MGPC!("OnlinePlayerStorage.EOnlinePlayerStorageAsyncState", 92)()); }
+		int VersionNumber() { mixin(MGPC!("int", 60)()); }
+		int VersionSettingsId() { mixin(MGPC!("int", 64)()); }
 	}
 final:
 	bool GetProfileSettingId(ScriptName ProfileSettingName, ref int ProfileSettingId)
@@ -128,7 +128,7 @@ final:
 		*cast(ScriptName*)params.ptr = ProfileSettingName;
 		*cast(int*)&params[8] = ProfileSettingId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingId, params.ptr, cast(void*)0);
-		*ProfileSettingId = *cast(int*)&params[8];
+		ProfileSettingId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	ScriptName GetProfileSettingName(int ProfileSettingId)
@@ -187,15 +187,16 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsProfileSettingIdMapped, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetProfileSettingValue(int ProfileSettingId, ref ScriptString Value, int ValueMapID)
+	bool GetProfileSettingValue(int ProfileSettingId, ref ScriptString Value, int* ValueMapID = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(ScriptString*)&params[4] = Value;
-		*cast(int*)&params[16] = ValueMapID;
+		if (ValueMapID !is null)
+			*cast(int*)&params[16] = *ValueMapID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValue, params.ptr, cast(void*)0);
-		*Value = *cast(ScriptString*)&params[4];
+		Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[20];
 	}
 	ScriptName GetProfileSettingValueName(int ProfileSettingId)
@@ -213,7 +214,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(ScriptArray!(ScriptName)*)&params[4] = Values;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValues, params.ptr, cast(void*)0);
-		*Values = *cast(ScriptArray!(ScriptName)*)&params[4];
+		Values = *cast(ScriptArray!(ScriptName)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	bool GetProfileSettingValueByName(ScriptName ProfileSettingName, ref ScriptString Value)
@@ -223,39 +224,39 @@ final:
 		*cast(ScriptName*)params.ptr = ProfileSettingName;
 		*cast(ScriptString*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValueByName, params.ptr, cast(void*)0);
-		*Value = *cast(ScriptString*)&params[8];
+		Value = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	bool SetProfileSettingValueByName(ScriptName ProfileSettingName, ref const ScriptString NewValue)
+	bool SetProfileSettingValueByName(ScriptName ProfileSettingName, ref in ScriptString NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ProfileSettingName;
-		*cast(ScriptString*)&params[8] = NewValue;
+		*cast(ScriptString*)&params[8] = cast(ScriptString)NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetProfileSettingValueByName, params.ptr, cast(void*)0);
-		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
-	bool SetProfileSettingValue(int ProfileSettingId, ref const ScriptString NewValue)
+	bool SetProfileSettingValue(int ProfileSettingId, ref in ScriptString NewValue)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
-		*cast(ScriptString*)&params[4] = NewValue;
+		*cast(ScriptString*)&params[4] = cast(ScriptString)NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetProfileSettingValue, params.ptr, cast(void*)0);
-		*NewValue = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
-	bool GetProfileSettingValueId(int ProfileSettingId, ref int ValueId, int* ListIndex)
+	bool GetProfileSettingValueId(int ProfileSettingId, ref int ValueId, int* ListIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(int*)&params[4] = ValueId;
-		*cast(int*)&params[8] = ListIndex;
+		if (ListIndex !is null)
+			*cast(int*)&params[8] = *ListIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValueId, params.ptr, cast(void*)0);
-		*ValueId = *cast(int*)&params[4];
-		*ListIndex = *cast(int*)&params[8];
+		ValueId = *cast(int*)&params[4];
+		if (ListIndex !is null)
+			*ListIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetProfileSettingValueFromListIndex(int ProfileSettingId, int ListIndex, ref int Value)
@@ -266,7 +267,7 @@ final:
 		*cast(int*)&params[4] = ListIndex;
 		*cast(int*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValueFromListIndex, params.ptr, cast(void*)0);
-		*Value = *cast(int*)&params[8];
+		Value = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetProfileSettingValueInt(int ProfileSettingId, ref int Value)
@@ -276,7 +277,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValueInt, params.ptr, cast(void*)0);
-		*Value = *cast(int*)&params[4];
+		Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool GetProfileSettingValueFloat(int ProfileSettingId, ref float Value)
@@ -286,7 +287,7 @@ final:
 		*cast(int*)params.ptr = ProfileSettingId;
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingValueFloat, params.ptr, cast(void*)0);
-		*Value = *cast(float*)&params[4];
+		Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool SetProfileSettingValueId(int ProfileSettingId, int Value)
@@ -323,7 +324,7 @@ final:
 		*cast(int*)params.ptr = ProfileId;
 		*cast(Settings.EPropertyValueMappingType*)&params[4] = OutType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingMappingType, params.ptr, cast(void*)0);
-		*OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
+		OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	static bool GetProfileSettingMappingIds(int ProfileId, ref ScriptArray!(int) Ids)
@@ -333,7 +334,7 @@ final:
 		*cast(int*)params.ptr = ProfileId;
 		*cast(ScriptArray!(int)*)&params[4] = Ids;
 		StaticClass.ProcessEvent(Functions.GetProfileSettingMappingIds, params.ptr, cast(void*)0);
-		*Ids = *cast(ScriptArray!(int)*)&params[4];
+		Ids = *cast(ScriptArray!(int)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	bool GetProfileSettingRange(int ProfileId, ref float OutMinValue, ref float OutMaxValue, ref float RangeIncrement, ref ubyte bFormatAsInt)
@@ -346,10 +347,10 @@ final:
 		*cast(float*)&params[12] = RangeIncrement;
 		params[16] = bFormatAsInt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileSettingRange, params.ptr, cast(void*)0);
-		*OutMinValue = *cast(float*)&params[4];
-		*OutMaxValue = *cast(float*)&params[8];
-		*RangeIncrement = *cast(float*)&params[12];
-		*bFormatAsInt = params[16];
+		OutMinValue = *cast(float*)&params[4];
+		OutMaxValue = *cast(float*)&params[8];
+		RangeIncrement = *cast(float*)&params[12];
+		bFormatAsInt = params[16];
 		return *cast(bool*)&params[20];
 	}
 	bool SetRangedProfileSettingValue(int ProfileId, float NewValue)
@@ -368,7 +369,7 @@ final:
 		*cast(int*)params.ptr = ProfileId;
 		*cast(float*)&params[4] = OutValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRangedProfileSettingValue, params.ptr, cast(void*)0);
-		*OutValue = *cast(float*)&params[4];
+		OutValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void AddSettingInt(int SettingId)

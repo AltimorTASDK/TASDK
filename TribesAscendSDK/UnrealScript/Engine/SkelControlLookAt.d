@@ -33,27 +33,27 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ControlBoneIndex() { mixin(MGPC!(int, 316)()); }
-			float LastCalcTime() { mixin(MGPC!(float, 312)()); }
-			Vector BaseBonePos() { mixin(MGPC!(Vector, 300)()); }
-			Vector BaseLookDir() { mixin(MGPC!(Vector, 288)()); }
-			Vector LimitLookDir() { mixin(MGPC!(Vector, 276)()); }
-			float LookAtAlphaBlendTimeToGo() { mixin(MGPC!(float, 272)()); }
-			float LookAtAlphaTarget() { mixin(MGPC!(float, 268)()); }
-			float LookAtAlpha() { mixin(MGPC!(float, 264)()); }
-			ScriptName AllowRotationOtherBoneName() { mixin(MGPC!(ScriptName, 256)()); }
-			float DeadZoneAngle() { mixin(MGPC!(float, 252)()); }
-			float OuterMaxAngle() { mixin(MGPC!(float, 248)()); }
-			float MaxAngle() { mixin(MGPC!(float, 244)()); }
-			Vector ActorSpaceLookAtTarget() { mixin(MGPC!(Vector, 232)()); }
-			Vector DesiredTargetLocation() { mixin(MGPC!(Vector, 220)()); }
-			float TargetLocationInterpSpeed() { mixin(MGPC!(float, 216)()); }
-			ScriptName TargetSpaceBoneName() { mixin(MGPC!(ScriptName, 204)()); }
-			SkelControlBase.EBoneControlSpace AllowRotationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 203)()); }
-			UObject.EAxis UpAxis() { mixin(MGPC!(UObject.EAxis, 202)()); }
-			UObject.EAxis LookAtAxis() { mixin(MGPC!(UObject.EAxis, 201)()); }
-			SkelControlBase.EBoneControlSpace TargetLocationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 200)()); }
-			Vector TargetLocation() { mixin(MGPC!(Vector, 188)()); }
+			int ControlBoneIndex() { mixin(MGPC!("int", 316)()); }
+			float LastCalcTime() { mixin(MGPC!("float", 312)()); }
+			Vector BaseBonePos() { mixin(MGPC!("Vector", 300)()); }
+			Vector BaseLookDir() { mixin(MGPC!("Vector", 288)()); }
+			Vector LimitLookDir() { mixin(MGPC!("Vector", 276)()); }
+			float LookAtAlphaBlendTimeToGo() { mixin(MGPC!("float", 272)()); }
+			float LookAtAlphaTarget() { mixin(MGPC!("float", 268)()); }
+			float LookAtAlpha() { mixin(MGPC!("float", 264)()); }
+			ScriptName AllowRotationOtherBoneName() { mixin(MGPC!("ScriptName", 256)()); }
+			float DeadZoneAngle() { mixin(MGPC!("float", 252)()); }
+			float OuterMaxAngle() { mixin(MGPC!("float", 248)()); }
+			float MaxAngle() { mixin(MGPC!("float", 244)()); }
+			Vector ActorSpaceLookAtTarget() { mixin(MGPC!("Vector", 232)()); }
+			Vector DesiredTargetLocation() { mixin(MGPC!("Vector", 220)()); }
+			float TargetLocationInterpSpeed() { mixin(MGPC!("float", 216)()); }
+			ScriptName TargetSpaceBoneName() { mixin(MGPC!("ScriptName", 204)()); }
+			SkelControlBase.EBoneControlSpace AllowRotationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 203)()); }
+			UObject.EAxis UpAxis() { mixin(MGPC!("UObject.EAxis", 202)()); }
+			UObject.EAxis LookAtAxis() { mixin(MGPC!("UObject.EAxis", 201)()); }
+			SkelControlBase.EBoneControlSpace TargetLocationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 200)()); }
+			Vector TargetLocation() { mixin(MGPC!("Vector", 188)()); }
 		}
 		bool bAllowRotationZ() { mixin(MGBPC!(212, 0x400)()); }
 		bool bAllowRotationZ(bool val) { mixin(MSBPC!(212, 0x400)()); }
@@ -101,14 +101,17 @@ final:
 		*cast(float*)&params[4] = DesiredBlendTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetLookAtAlpha, params.ptr, cast(void*)0);
 	}
-	bool CanLookAtPoint(Vector PointLoc, bool bDrawDebugInfo, bool bDebugUsePersistentLines, bool bDebugFlushLinesFirst)
+	bool CanLookAtPoint(Vector PointLoc, bool* bDrawDebugInfo = null, bool* bDebugUsePersistentLines = null, bool* bDebugFlushLinesFirst = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Vector*)params.ptr = PointLoc;
-		*cast(bool*)&params[12] = bDrawDebugInfo;
-		*cast(bool*)&params[16] = bDebugUsePersistentLines;
-		*cast(bool*)&params[20] = bDebugFlushLinesFirst;
+		if (bDrawDebugInfo !is null)
+			*cast(bool*)&params[12] = *bDrawDebugInfo;
+		if (bDebugUsePersistentLines !is null)
+			*cast(bool*)&params[16] = *bDebugUsePersistentLines;
+		if (bDebugFlushLinesFirst !is null)
+			*cast(bool*)&params[20] = *bDebugFlushLinesFirst;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanLookAtPoint, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

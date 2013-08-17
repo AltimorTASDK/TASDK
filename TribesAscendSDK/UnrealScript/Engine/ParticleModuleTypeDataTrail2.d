@@ -15,13 +15,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MaxParticleInTrailCount() { mixin(MGPC!(int, 96)()); }
-			int MaxTrailCount() { mixin(MGPC!(int, 92)()); }
-			int Sheets() { mixin(MGPC!(int, 88)()); }
-			int TextureTile() { mixin(MGPC!(int, 84)()); }
-			float TessellationStrength() { mixin(MGPC!(float, 80)()); }
-			float TessellationFactorDistance() { mixin(MGPC!(float, 76)()); }
-			int TessellationFactor() { mixin(MGPC!(int, 72)()); }
+			int MaxParticleInTrailCount() { mixin(MGPC!("int", 96)()); }
+			int MaxTrailCount() { mixin(MGPC!("int", 92)()); }
+			int Sheets() { mixin(MGPC!("int", 88)()); }
+			int TextureTile() { mixin(MGPC!("int", 84)()); }
+			float TessellationStrength() { mixin(MGPC!("float", 80)()); }
+			float TessellationFactorDistance() { mixin(MGPC!("float", 76)()); }
+			int TessellationFactor() { mixin(MGPC!("int", 72)()); }
 		}
 		bool RenderTessellation() { mixin(MGBPC!(100, 0x20)()); }
 		bool RenderTessellation(bool val) { mixin(MSBPC!(100, 0x20)()); }

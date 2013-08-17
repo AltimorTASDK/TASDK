@@ -18,17 +18,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName PackageName() { mixin(MGPC!(ScriptName, 60)()); }
-			ScriptArray!(LevelStreamingVolume) EditorStreamingVolumes() { mixin(MGPC!(ScriptArray!(LevelStreamingVolume), 104)()); }
-			ScriptArray!(ScriptString) Keywords() { mixin(MGPC!(ScriptArray!(ScriptString), 124)()); }
-			int GridPosition() { mixin(MGPC!(int, 140)()); }
-			LevelGridVolume EditorGridVolume() { mixin(MGPC!(LevelGridVolume, 136)()); }
-			float LastVolumeUnloadRequestTime() { mixin(MGPC!(float, 120)()); }
-			float MinTimeBetweenVolumeUnloadRequests() { mixin(MGPC!(float, 116)()); }
-			UObject.Color DrawColor() { mixin(MGPC!(UObject.Color, 100)()); }
-			Vector OldOffset() { mixin(MGPC!(Vector, 84)()); }
-			Vector Offset() { mixin(MGPC!(Vector, 72)()); }
-			Level LoadedLevel() { mixin(MGPC!(Level, 68)()); }
+			ScriptName PackageName() { mixin(MGPC!("ScriptName", 60)()); }
+			ScriptArray!(LevelStreamingVolume) EditorStreamingVolumes() { mixin(MGPC!("ScriptArray!(LevelStreamingVolume)", 104)()); }
+			ScriptArray!(ScriptString) Keywords() { mixin(MGPC!("ScriptArray!(ScriptString)", 124)()); }
+			int GridPosition() { mixin(MGPC!("int", 140)()); }
+			LevelGridVolume EditorGridVolume() { mixin(MGPC!("LevelGridVolume", 136)()); }
+			float LastVolumeUnloadRequestTime() { mixin(MGPC!("float", 120)()); }
+			float MinTimeBetweenVolumeUnloadRequests() { mixin(MGPC!("float", 116)()); }
+			UObject.Color DrawColor() { mixin(MGPC!("UObject.Color", 100)()); }
+			Vector OldOffset() { mixin(MGPC!("Vector", 84)()); }
+			Vector Offset() { mixin(MGPC!("Vector", 72)()); }
+			Level LoadedLevel() { mixin(MGPC!("Level", 68)()); }
 		}
 		bool bHasLoadRequestPending() { mixin(MGBPC!(96, 0x2)()); }
 		bool bHasLoadRequestPending(bool val) { mixin(MSBPC!(96, 0x2)()); }

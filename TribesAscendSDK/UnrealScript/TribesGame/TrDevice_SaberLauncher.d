@@ -80,22 +80,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrPlayerController m_TargetController() { mixin(MGPC!(TrPlayerController, 2212)()); }
-			ubyte r_nFired() { mixin(MGPC!(ubyte, 2208)()); }
-			float m_fLockingTargetTimestamp() { mixin(MGPC!(float, 2204)()); }
-			float m_fTimeBeforeVictimKnowsMissileIsTargeting() { mixin(MGPC!(float, 2200)()); }
-			float m_fGroundCheckDistance() { mixin(MGPC!(float, 2196)()); }
-			float m_fPotentialTargetLockOnDist() { mixin(MGPC!(float, 2192)()); }
-			float m_fReticuleLockOnDist() { mixin(MGPC!(float, 2188)()); }
-			float m_fLockRetainSeconds() { mixin(MGPC!(float, 2184)()); }
-			float m_fRestoreAimHelpRadius() { mixin(MGPC!(float, 2180)()); }
-			float m_fMinCosineAcquireTarget() { mixin(MGPC!(float, 2176)()); }
-			float m_fAcquireTargetMaxAngle() { mixin(MGPC!(float, 2172)()); }
-			float m_fRetainTargetMaxAngle() { mixin(MGPC!(float, 2168)()); }
-			float m_fMinCosineRetainTarget() { mixin(MGPC!(float, 2164)()); }
-			Actor m_Target() { mixin(MGPC!(Actor, 2156)()); }
-			float m_fPreLockTime() { mixin(MGPC!(float, 2152)()); }
-			float m_fTargetSightTime() { mixin(MGPC!(float, 2148)()); }
+			TrPlayerController m_TargetController() { mixin(MGPC!("TrPlayerController", 2212)()); }
+			ubyte r_nFired() { mixin(MGPC!("ubyte", 2208)()); }
+			float m_fLockingTargetTimestamp() { mixin(MGPC!("float", 2204)()); }
+			float m_fTimeBeforeVictimKnowsMissileIsTargeting() { mixin(MGPC!("float", 2200)()); }
+			float m_fGroundCheckDistance() { mixin(MGPC!("float", 2196)()); }
+			float m_fPotentialTargetLockOnDist() { mixin(MGPC!("float", 2192)()); }
+			float m_fReticuleLockOnDist() { mixin(MGPC!("float", 2188)()); }
+			float m_fLockRetainSeconds() { mixin(MGPC!("float", 2184)()); }
+			float m_fRestoreAimHelpRadius() { mixin(MGPC!("float", 2180)()); }
+			float m_fMinCosineAcquireTarget() { mixin(MGPC!("float", 2176)()); }
+			float m_fAcquireTargetMaxAngle() { mixin(MGPC!("float", 2172)()); }
+			float m_fRetainTargetMaxAngle() { mixin(MGPC!("float", 2168)()); }
+			float m_fMinCosineRetainTarget() { mixin(MGPC!("float", 2164)()); }
+			Actor m_Target() { mixin(MGPC!("Actor", 2156)()); }
+			float m_fPreLockTime() { mixin(MGPC!("float", 2152)()); }
+			float m_fTargetSightTime() { mixin(MGPC!("float", 2148)()); }
 		}
 		bool r_bTargetLocked() { mixin(MGBPC!(2160, 0x1)()); }
 		bool r_bTargetLocked(bool val) { mixin(MSBPC!(2160, 0x1)()); }

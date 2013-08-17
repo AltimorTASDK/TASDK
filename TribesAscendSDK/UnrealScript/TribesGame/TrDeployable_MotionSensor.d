@@ -55,9 +55,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDeployable_MotionSensor.MotionSensorEnemyInfo")()); }
 		@property final auto ref
 		{
-			float LastDetectedTimeStamp() { mixin(MGPS!(float, 16)()); }
-			Vector LastLocation() { mixin(MGPS!(Vector, 4)()); }
-			TrPawn SensedPawn() { mixin(MGPS!(TrPawn, 0)()); }
+			float LastDetectedTimeStamp() { mixin(MGPS!("float", 16)()); }
+			Vector LastLocation() { mixin(MGPS!("Vector", 4)()); }
+			TrPawn SensedPawn() { mixin(MGPS!("TrPawn", 0)()); }
 		}
 	}
 	static struct BlownUp
@@ -69,16 +69,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo) m_EnemyPawnsInRange() { mixin(MGPC!(ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo), 1540)()); }
-			Texture2D m_AlarmIcon() { mixin(MGPC!(Texture2D, 1616)()); }
-			Vector LastCameraPos() { mixin(MGPC!(Vector, 1604)()); }
-			Vector LastCameraDir() { mixin(MGPC!(Vector, 1592)()); }
-			Vector LastScreenLoc() { mixin(MGPC!(Vector, 1580)()); }
-			float m_IconAlpha() { mixin(MGPC!(float, 1576)()); }
-			float m_fHUDAlarmTime() { mixin(MGPC!(float, 1572)()); }
-			float m_fLastAlarmTimestamp() { mixin(MGPC!(float, 1564)()); }
-			float m_fTimeBetweenAlarms() { mixin(MGPC!(float, 1560)()); }
-			float m_fMotionSenseExpireTime() { mixin(MGPC!(float, 1556)()); }
+			ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo) m_EnemyPawnsInRange() { mixin(MGPC!("ScriptArray!(TrDeployable_MotionSensor.MotionSensorEnemyInfo)", 1540)()); }
+			Texture2D m_AlarmIcon() { mixin(MGPC!("Texture2D", 1616)()); }
+			Vector LastCameraPos() { mixin(MGPC!("Vector", 1604)()); }
+			Vector LastCameraDir() { mixin(MGPC!("Vector", 1592)()); }
+			Vector LastScreenLoc() { mixin(MGPC!("Vector", 1580)()); }
+			float m_IconAlpha() { mixin(MGPC!("float", 1576)()); }
+			float m_fHUDAlarmTime() { mixin(MGPC!("float", 1572)()); }
+			float m_fLastAlarmTimestamp() { mixin(MGPC!("float", 1564)()); }
+			float m_fTimeBetweenAlarms() { mixin(MGPC!("float", 1560)()); }
+			float m_fMotionSenseExpireTime() { mixin(MGPC!("float", 1556)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AlarmSound'!
 		}
 		bool m_bDrawHUDAlarm() { mixin(MGBPC!(1568, 0x1)()); }

@@ -70,10 +70,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				float RelativeScale() { mixin(MGPS!(float, 28)()); }
-				Vector InitialAngVel() { mixin(MGPS!(Vector, 16)()); }
-				Vector InitialVel() { mixin(MGPS!(Vector, 4)()); }
-				int ChunkIndex() { mixin(MGPS!(int, 0)()); }
+				float RelativeScale() { mixin(MGPS!("float", 28)()); }
+				Vector InitialAngVel() { mixin(MGPS!("Vector", 16)()); }
+				Vector InitialVel() { mixin(MGPS!("Vector", 4)()); }
+				int ChunkIndex() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bExplosion() { mixin(MGBPS!(32, 0x1)()); }
 			bool bExplosion(bool val) { mixin(MSBPS!(32, 0x1)()); }
@@ -83,20 +83,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(int) ChunkHealth() { mixin(MGPC!(ScriptArray!(int), 488)()); }
-			ScriptArray!(ScriptClass) FracturedByDamageType() { mixin(MGPC!(ScriptArray!(ScriptClass), 504)()); }
-			ScriptArray!(ParticleSystem) OverrideFragmentDestroyEffects() { mixin(MGPC!(ScriptArray!(ParticleSystem), 520)()); }
-			ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn) DeferredPartsToSpawn() { mixin(MGPC!(ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn), 540)()); }
-			MaterialInterface MI_LoseChunkPreviousMaterial() { mixin(MGPC!(MaterialInterface, 576)()); }
-			SoundCue SingleChunkFractureSound() { mixin(MGPC!(SoundCue, 572)()); }
-			SoundCue ExplosionFractureSound() { mixin(MGPC!(SoundCue, 568)()); }
-			Actor.PhysEffectInfo PartImpactEffect() { mixin(MGPC!(Actor.PhysEffectInfo, 552)()); }
-			float FractureCullMaxDistance() { mixin(MGPC!(float, 536)()); }
-			float FractureCullMinDistance() { mixin(MGPC!(float, 532)()); }
-			float ChunkHealthScale() { mixin(MGPC!(float, 516)()); }
+			ScriptArray!(int) ChunkHealth() { mixin(MGPC!("ScriptArray!(int)", 488)()); }
+			ScriptArray!(ScriptClass) FracturedByDamageType() { mixin(MGPC!("ScriptArray!(ScriptClass)", 504)()); }
+			ScriptArray!(ParticleSystem) OverrideFragmentDestroyEffects() { mixin(MGPC!("ScriptArray!(ParticleSystem)", 520)()); }
+			ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn) DeferredPartsToSpawn() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshActor.DeferredPartToSpawn)", 540)()); }
+			MaterialInterface MI_LoseChunkPreviousMaterial() { mixin(MGPC!("MaterialInterface", 576)()); }
+			SoundCue SingleChunkFractureSound() { mixin(MGPC!("SoundCue", 572)()); }
+			SoundCue ExplosionFractureSound() { mixin(MGPC!("SoundCue", 568)()); }
+			Actor.PhysEffectInfo PartImpactEffect() { mixin(MGPC!("Actor.PhysEffectInfo", 552)()); }
+			float FractureCullMaxDistance() { mixin(MGPC!("float", 536)()); }
+			float FractureCullMinDistance() { mixin(MGPC!("float", 532)()); }
+			float ChunkHealthScale() { mixin(MGPC!("float", 516)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkinnedComponent'!
 			// WARNING: Property 'FracturedStaticMeshComponent' has the same name as a defined type!
-			int MaxPartsToSpawnAtOnce() { mixin(MGPC!(int, 476)()); }
+			int MaxPartsToSpawnAtOnce() { mixin(MGPC!("int", 476)()); }
 		}
 		bool bBreakChunksOnActorTouch() { mixin(MGBPC!(500, 0x2)()); }
 		bool bBreakChunksOnActorTouch(bool val) { mixin(MSBPC!(500, 0x2)()); }
@@ -120,7 +120,7 @@ final:
 		*cast(Pawn*)&params[4] = EffectInstigator;
 		params[8] = bWantPhysChunksAndParticles;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FractureEffectIsRelevant, params.ptr, cast(void*)0);
-		*bWantPhysChunksAndParticles = params[8];
+		bWantPhysChunksAndParticles = params[8];
 		return *cast(bool*)&params[12];
 	}
 	FracturedStaticMeshPart SpawnPart(int ChunkIndex, Vector InitialVel, Vector InitialAngVel, float RelativeScale, bool bExplosion)
@@ -165,7 +165,7 @@ final:
 		*cast(ScriptArray!(FracturedStaticMeshPart)*)&params[36] = DisableCollWithPart;
 		*cast(bool*)&params[48] = bWantPhysChunks;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BreakOffIsolatedIslands, params.ptr, cast(void*)0);
-		*FragmentVis = *cast(ScriptArray!(ubyte)*)params.ptr;
+		FragmentVis = *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
 	bool SpawnDeferredParts()
 	{
@@ -181,7 +181,7 @@ final:
 		*cast(int*)params.ptr = IndexToRemoveDecalsFrom;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveDecals, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -190,8 +190,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void Explode()

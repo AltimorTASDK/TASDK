@@ -17,21 +17,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedRotationFormats() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimationCompressionFormat), 120)()); }
-			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedTranslationFormats() { mixin(MGPC!(ScriptArray!(AnimSequence.AnimationCompressionFormat), 132)()); }
-			UObject.Pointer PerReductionCachedData() { mixin(MGPC!(UObject.Pointer, 184)()); }
-			float PerturbationProbeSize() { mixin(MGPC!(float, 180)()); }
-			float MaxErrorPerTrackRatio() { mixin(MGPC!(float, 176)()); }
-			float TranslationErrorSourceRatio() { mixin(MGPC!(float, 172)()); }
-			float RotationErrorSourceRatio() { mixin(MGPC!(float, 168)()); }
-			float ParentingDivisorExponent() { mixin(MGPC!(float, 164)()); }
-			float ParentingDivisor() { mixin(MGPC!(float, 160)()); }
-			int TrackHeightBias() { mixin(MGPC!(int, 156)()); }
-			int MinKeysForResampling() { mixin(MGPC!(int, 152)()); }
-			float ResampledFramerate() { mixin(MGPC!(float, 148)()); }
-			float MaxAngleDiffBitwise() { mixin(MGPC!(float, 116)()); }
-			float MaxPosDiffBitwise() { mixin(MGPC!(float, 112)()); }
-			float MaxZeroingThreshold() { mixin(MGPC!(float, 108)()); }
+			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedRotationFormats() { mixin(MGPC!("ScriptArray!(AnimSequence.AnimationCompressionFormat)", 120)()); }
+			ScriptArray!(AnimSequence.AnimationCompressionFormat) AllowedTranslationFormats() { mixin(MGPC!("ScriptArray!(AnimSequence.AnimationCompressionFormat)", 132)()); }
+			UObject.Pointer PerReductionCachedData() { mixin(MGPC!("UObject.Pointer", 184)()); }
+			float PerturbationProbeSize() { mixin(MGPC!("float", 180)()); }
+			float MaxErrorPerTrackRatio() { mixin(MGPC!("float", 176)()); }
+			float TranslationErrorSourceRatio() { mixin(MGPC!("float", 172)()); }
+			float RotationErrorSourceRatio() { mixin(MGPC!("float", 168)()); }
+			float ParentingDivisorExponent() { mixin(MGPC!("float", 164)()); }
+			float ParentingDivisor() { mixin(MGPC!("float", 160)()); }
+			int TrackHeightBias() { mixin(MGPC!("int", 156)()); }
+			int MinKeysForResampling() { mixin(MGPC!("int", 152)()); }
+			float ResampledFramerate() { mixin(MGPC!("float", 148)()); }
+			float MaxAngleDiffBitwise() { mixin(MGPC!("float", 116)()); }
+			float MaxPosDiffBitwise() { mixin(MGPC!("float", 112)()); }
+			float MaxZeroingThreshold() { mixin(MGPC!("float", 108)()); }
 		}
 		bool bUseAdaptiveError2() { mixin(MGBPC!(144, 0x8)()); }
 		bool bUseAdaptiveError2(bool val) { mixin(MSBPC!(144, 0x8)()); }

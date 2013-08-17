@@ -82,7 +82,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuilding.PBMaterialParam")()); }
 		@property final auto ref
 		{
-			ScriptName ParamName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName ParamName() { mixin(MGPS!("ScriptName", 0)()); }
 			// WARNING: Property 'Color' has the same name as a defined type!
 		}
 	}
@@ -95,7 +95,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FracMeshComp'!
-			int TopLevelScopeIndex() { mixin(MGPS!(int, 4)()); }
+			int TopLevelScopeIndex() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	struct PBFaceUVInfo
@@ -106,8 +106,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuilding.PBFaceUVInfo")()); }
 		@property final auto ref
 		{
-			UObject.Vector2D Offset() { mixin(MGPS!(UObject.Vector2D, 0)()); }
-			UObject.Vector2D Size() { mixin(MGPS!(UObject.Vector2D, 8)()); }
+			UObject.Vector2D Offset() { mixin(MGPS!("UObject.Vector2D", 0)()); }
+			UObject.Vector2D Size() { mixin(MGPS!("UObject.Vector2D", 8)()); }
 		}
 	}
 	struct PBMemUsageInfo
@@ -118,15 +118,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuilding.PBMemUsageInfo")()); }
 		@property final auto ref
 		{
-			ProcBuilding Building() { mixin(MGPS!(ProcBuilding, 0)()); }
-			ProcBuildingRuleset Ruleset() { mixin(MGPS!(ProcBuildingRuleset, 4)()); }
-			int NumStaticMeshComponent() { mixin(MGPS!(int, 8)()); }
-			int NumInstancedStaticMeshComponents() { mixin(MGPS!(int, 12)()); }
-			int NumInstancedTris() { mixin(MGPS!(int, 16)()); }
-			int LightmapMemBytes() { mixin(MGPS!(int, 20)()); }
-			int ShadowmapMemBytes() { mixin(MGPS!(int, 24)()); }
-			int LODDiffuseMemBytes() { mixin(MGPS!(int, 28)()); }
-			int LODLightingMemBytes() { mixin(MGPS!(int, 32)()); }
+			ProcBuilding Building() { mixin(MGPS!("ProcBuilding", 0)()); }
+			ProcBuildingRuleset Ruleset() { mixin(MGPS!("ProcBuildingRuleset", 4)()); }
+			int NumStaticMeshComponent() { mixin(MGPS!("int", 8)()); }
+			int NumInstancedStaticMeshComponents() { mixin(MGPS!("int", 12)()); }
+			int NumInstancedTris() { mixin(MGPS!("int", 16)()); }
+			int LightmapMemBytes() { mixin(MGPS!("int", 20)()); }
+			int ShadowmapMemBytes() { mixin(MGPS!("int", 24)()); }
+			int LODDiffuseMemBytes() { mixin(MGPS!("int", 28)()); }
+			int LODLightingMemBytes() { mixin(MGPS!("int", 32)()); }
 		}
 	}
 	struct PBMeshCompInfo
@@ -138,7 +138,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MeshComp'!
-			int TopLevelScopeIndex() { mixin(MGPS!(int, 4)()); }
+			int TopLevelScopeIndex() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	struct PBScopeProcessInfo
@@ -151,9 +151,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				ProcBuilding OwningBuilding() { mixin(MGPS!(ProcBuilding, 0)()); }
-				ProcBuildingRuleset Ruleset() { mixin(MGPS!(ProcBuildingRuleset, 4)()); }
-				ScriptName RulesetVariation() { mixin(MGPS!(ScriptName, 8)()); }
+				ProcBuilding OwningBuilding() { mixin(MGPS!("ProcBuilding", 0)()); }
+				ProcBuildingRuleset Ruleset() { mixin(MGPS!("ProcBuildingRuleset", 4)()); }
+				ScriptName RulesetVariation() { mixin(MGPS!("ScriptName", 8)()); }
 			}
 			bool bGenerateLODPoly() { mixin(MGBPS!(16, 0x1)()); }
 			bool bGenerateLODPoly(bool val) { mixin(MSBPS!(16, 0x1)()); }
@@ -169,9 +169,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuilding.PBScope2D")()); }
 		@property final auto ref
 		{
-			UObject.Matrix ScopeFrame() { mixin(MGPS!(UObject.Matrix, 0)()); }
-			float DimX() { mixin(MGPS!(float, 64)()); }
-			float DimZ() { mixin(MGPS!(float, 68)()); }
+			UObject.Matrix ScopeFrame() { mixin(MGPS!("UObject.Matrix", 0)()); }
+			float DimX() { mixin(MGPS!("float", 64)()); }
+			float DimZ() { mixin(MGPS!("float", 68)()); }
 		}
 	}
 	struct PBEdgeInfo
@@ -182,50 +182,50 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ProcBuilding.PBEdgeInfo")()); }
 		@property final auto ref
 		{
-			Vector EdgeEnd() { mixin(MGPS!(Vector, 0)()); }
-			Vector EdgeStart() { mixin(MGPS!(Vector, 12)()); }
-			int ScopeAIndex() { mixin(MGPS!(int, 24)()); }
-			ProcBuilding.EScopeEdge ScopeAEdge() { mixin(MGPS!(ProcBuilding.EScopeEdge, 28)()); }
-			int ScopeBIndex() { mixin(MGPS!(int, 32)()); }
-			ProcBuilding.EScopeEdge ScopeBEdge() { mixin(MGPS!(ProcBuilding.EScopeEdge, 36)()); }
-			float EdgeAngle() { mixin(MGPS!(float, 40)()); }
+			Vector EdgeEnd() { mixin(MGPS!("Vector", 0)()); }
+			Vector EdgeStart() { mixin(MGPS!("Vector", 12)()); }
+			int ScopeAIndex() { mixin(MGPS!("int", 24)()); }
+			ProcBuilding.EScopeEdge ScopeAEdge() { mixin(MGPS!("ProcBuilding.EScopeEdge", 28)()); }
+			int ScopeBIndex() { mixin(MGPS!("int", 32)()); }
+			ProcBuilding.EScopeEdge ScopeBEdge() { mixin(MGPS!("ProcBuilding.EScopeEdge", 36)()); }
+			float EdgeAngle() { mixin(MGPS!("float", 40)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ProcBuildingRuleset Ruleset() { mixin(MGPC!(ProcBuildingRuleset, 520)()); }
-			ScriptArray!(ProcBuilding.PBMeshCompInfo) BuildingMeshCompInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBMeshCompInfo), 524)()); }
-			ScriptArray!(ProcBuilding.PBFracMeshCompInfo) BuildingFracMeshCompInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBFracMeshCompInfo), 536)()); }
+			ProcBuildingRuleset Ruleset() { mixin(MGPC!("ProcBuildingRuleset", 520)()); }
+			ScriptArray!(ProcBuilding.PBMeshCompInfo) BuildingMeshCompInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBMeshCompInfo)", 524)()); }
+			ScriptArray!(ProcBuilding.PBFracMeshCompInfo) BuildingFracMeshCompInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBFracMeshCompInfo)", 536)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SimpleMeshComp'!
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) LODMeshComps() { mixin(MGPC!(ScriptArray!(
+void*) LODMeshComps() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 556)()); }
-			ScriptArray!(ProcBuilding.PBFaceUVInfo) LODMeshUVInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBFaceUVInfo), 568)()); }
-			ScriptArray!(ProcBuilding.PBScope2D) TopLevelScopes() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBScope2D), 580)()); }
-			int NumMeshedTopLevelScopes() { mixin(MGPC!(int, 592)()); }
-			ScriptArray!(ProcBuilding.PBFaceUVInfo) TopLevelScopeUVInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBFaceUVInfo), 596)()); }
-			ScriptArray!(ProcBuilding.PBScopeProcessInfo) TopLevelScopeInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBScopeProcessInfo), 608)()); }
-			ScriptArray!(ProcBuilding.PBEdgeInfo) EdgeInfos() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBEdgeInfo), 620)()); }
-			float MaxFacadeZ() { mixin(MGPC!(float, 632)()); }
-			float MinFacadeZ() { mixin(MGPC!(float, 636)()); }
-			ScriptArray!(ProcBuilding) OverlappingBuildings() { mixin(MGPC!(ScriptArray!(ProcBuilding), 640)()); }
-			float SimpleMeshMassiveLODDistance() { mixin(MGPC!(float, 652)()); }
-			float RenderToTexturePullBackAmount() { mixin(MGPC!(float, 656)()); }
-			int RoofLightmapRes() { mixin(MGPC!(int, 660)()); }
-			int NonRectWallLightmapRes() { mixin(MGPC!(int, 664)()); }
-			float LODRenderToTextureScale() { mixin(MGPC!(float, 668)()); }
-			ScriptName ParamSwatchName() { mixin(MGPC!(ScriptName, 672)()); }
-			ScriptArray!(ProcBuilding.PBMaterialParam) BuildingMaterialParams() { mixin(MGPC!(ScriptArray!(ProcBuilding.PBMaterialParam), 680)()); }
-			ScriptArray!(MaterialInstanceConstant) BuildingMatParamMICs() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 692)()); }
-			StaticMeshActor LowLODPersistentActor() { mixin(MGPC!(StaticMeshActor, 704)()); }
+void*)", 556)()); }
+			ScriptArray!(ProcBuilding.PBFaceUVInfo) LODMeshUVInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBFaceUVInfo)", 568)()); }
+			ScriptArray!(ProcBuilding.PBScope2D) TopLevelScopes() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBScope2D)", 580)()); }
+			int NumMeshedTopLevelScopes() { mixin(MGPC!("int", 592)()); }
+			ScriptArray!(ProcBuilding.PBFaceUVInfo) TopLevelScopeUVInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBFaceUVInfo)", 596)()); }
+			ScriptArray!(ProcBuilding.PBScopeProcessInfo) TopLevelScopeInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBScopeProcessInfo)", 608)()); }
+			ScriptArray!(ProcBuilding.PBEdgeInfo) EdgeInfos() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBEdgeInfo)", 620)()); }
+			float MaxFacadeZ() { mixin(MGPC!("float", 632)()); }
+			float MinFacadeZ() { mixin(MGPC!("float", 636)()); }
+			ScriptArray!(ProcBuilding) OverlappingBuildings() { mixin(MGPC!("ScriptArray!(ProcBuilding)", 640)()); }
+			float SimpleMeshMassiveLODDistance() { mixin(MGPC!("float", 652)()); }
+			float RenderToTexturePullBackAmount() { mixin(MGPC!("float", 656)()); }
+			int RoofLightmapRes() { mixin(MGPC!("int", 660)()); }
+			int NonRectWallLightmapRes() { mixin(MGPC!("int", 664)()); }
+			float LODRenderToTextureScale() { mixin(MGPC!("float", 668)()); }
+			ScriptName ParamSwatchName() { mixin(MGPC!("ScriptName", 672)()); }
+			ScriptArray!(ProcBuilding.PBMaterialParam) BuildingMaterialParams() { mixin(MGPC!("ScriptArray!(ProcBuilding.PBMaterialParam)", 680)()); }
+			ScriptArray!(MaterialInstanceConstant) BuildingMatParamMICs() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 692)()); }
+			StaticMeshActor LowLODPersistentActor() { mixin(MGPC!("StaticMeshActor", 704)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CurrentSimpleMeshComp'!
-			Actor CurrentSimpleMeshActor() { mixin(MGPC!(Actor, 712)()); }
-			ScriptArray!(ProcBuilding) AttachedBuildings() { mixin(MGPC!(ScriptArray!(ProcBuilding), 716)()); }
-			int BuildingInstanceVersion() { mixin(MGPC!(int, 728)()); }
+			Actor CurrentSimpleMeshActor() { mixin(MGPC!("Actor", 712)()); }
+			ScriptArray!(ProcBuilding) AttachedBuildings() { mixin(MGPC!("ScriptArray!(ProcBuilding)", 716)()); }
+			int BuildingInstanceVersion() { mixin(MGPC!("int", 728)()); }
 		}
 		bool bGenerateRoofMesh() { mixin(MGBPC!(552, 0x1)()); }
 		bool bGenerateRoofMesh(bool val) { mixin(MSBPC!(552, 0x1)()); }
@@ -277,7 +277,7 @@ void**)params.ptr = Comp;
 		params[] = 0;
 		*cast(ScriptArray!(ProcBuilding)*)params.ptr = OutSet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllGroupedProcBuildings, params.ptr, cast(void*)0);
-		*OutSet = *cast(ScriptArray!(ProcBuilding)*)params.ptr;
+		OutSet = *cast(ScriptArray!(ProcBuilding)*)params.ptr;
 	}
 	ProcBuilding GetBaseMostBuilding()
 	{

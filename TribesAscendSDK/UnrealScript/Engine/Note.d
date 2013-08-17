@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.Note")()); }
 	private static __gshared Note mDefaultProperties;
 	@property final static Note DefaultProperties() { mixin(MGDPC!(Note, "Note Engine.Default__Note")()); }
-	@property final auto ref ScriptString Text() { mixin(MGPC!(ScriptString, 476)()); }
+	@property final auto ref ScriptString Text() { mixin(MGPC!("ScriptString", 476)()); }
 }

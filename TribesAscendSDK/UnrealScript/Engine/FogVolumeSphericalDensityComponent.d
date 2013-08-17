@@ -14,8 +14,8 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewSphereRadius'!
-		float SphereRadius() { mixin(MGPC!(float, 164)()); }
-		Vector SphereCenter() { mixin(MGPC!(Vector, 152)()); }
-		float MaxDensity() { mixin(MGPC!(float, 148)()); }
+		float SphereRadius() { mixin(MGPC!("float", 164)()); }
+		Vector SphereCenter() { mixin(MGPC!("Vector", 152)()); }
+		float MaxDensity() { mixin(MGPC!("float", 148)()); }
 	}
 }

@@ -51,9 +51,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!(ScriptArray!(PostProcessChain), 2180)()); }
-		LocalPlayer OldPlayer() { mixin(MGPC!(LocalPlayer, 2192)()); }
-		PostProcessChain EntryPostProcessChain() { mixin(MGPC!(PostProcessChain, 2176)()); }
+		ScriptArray!(PostProcessChain) OldPostProcessChain() { mixin(MGPC!("ScriptArray!(PostProcessChain)", 2180)()); }
+		LocalPlayer OldPlayer() { mixin(MGPC!("LocalPlayer", 2192)()); }
+		PostProcessChain EntryPostProcessChain() { mixin(MGPC!("PostProcessChain", 2176)()); }
 	}
 final:
 	void InitInputSystem()
@@ -129,12 +129,14 @@ final:
 		*cast(bool*)params.ptr = bShow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPawnConstructionScene, params.ptr, cast(void*)0);
 	}
-	void ShowMidGameMenu(ScriptName TabTag, bool bEnableInput)
+	void ShowMidGameMenu(ScriptName* TabTag = null, bool* bEnableInput = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TabTag;
-		*cast(bool*)&params[8] = bEnableInput;
+		if (TabTag !is null)
+			*cast(ScriptName*)params.ptr = *TabTag;
+		if (bEnableInput !is null)
+			*cast(bool*)&params[8] = *bEnableInput;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMidGameMenu, params.ptr, cast(void*)0);
 	}
 	void ShowScoreboard()

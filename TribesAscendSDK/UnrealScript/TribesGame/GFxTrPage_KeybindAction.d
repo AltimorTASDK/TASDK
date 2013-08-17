@@ -35,8 +35,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int SelectedCommand() { mixin(MGPC!(int, 360)()); }
-			int SelectedIndex() { mixin(MGPC!(int, 356)()); }
+			int SelectedCommand() { mixin(MGPC!("int", 360)()); }
+			int SelectedIndex() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForKeybind() { mixin(MGBPC!(364, 0x1)()); }
 		bool bWaitingForKeybind(bool val) { mixin(MSBPC!(364, 0x1)()); }

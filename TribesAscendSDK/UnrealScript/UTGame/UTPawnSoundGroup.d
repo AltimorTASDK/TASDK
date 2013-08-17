@@ -64,31 +64,31 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPawnSoundGroup.FootstepSoundInfo")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!(SoundCue, 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
+			SoundCue Sound() { mixin(MGPS!("SoundCue", 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) FootstepSounds() { mixin(MGPC!(ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo), 108)()); }
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) JumpingSounds() { mixin(MGPC!(ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo), 124)()); }
-		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) LandingSounds() { mixin(MGPC!(ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo), 136)()); }
-		SoundCue InstagibSound() { mixin(MGPC!(SoundCue, 164)()); }
-		SoundCue BodyExplosionSound() { mixin(MGPC!(SoundCue, 160)()); }
-		SoundCue CrushedSound() { mixin(MGPC!(SoundCue, 156)()); }
-		SoundCue BulletImpactSound() { mixin(MGPC!(SoundCue, 152)()); }
-		SoundCue DefaultLandingSound() { mixin(MGPC!(SoundCue, 148)()); }
-		SoundCue DefaultFootstepSound() { mixin(MGPC!(SoundCue, 120)()); }
-		SoundCue GaspSound() { mixin(MGPC!(SoundCue, 104)()); }
-		SoundCue DrownSound() { mixin(MGPC!(SoundCue, 100)()); }
-		SoundCue GibSound() { mixin(MGPC!(SoundCue, 96)()); }
-		SoundCue HitSounds() { mixin(MGPC!(SoundCue, 84)()); }
-		SoundCue DyingSound() { mixin(MGPC!(SoundCue, 80)()); }
-		SoundCue FallingDamageLandSound() { mixin(MGPC!(SoundCue, 76)()); }
-		SoundCue LandSound() { mixin(MGPC!(SoundCue, 72)()); }
-		SoundCue DefaultJumpingSound() { mixin(MGPC!(SoundCue, 68)()); }
-		SoundCue DoubleJumpSound() { mixin(MGPC!(SoundCue, 64)()); }
-		SoundCue DodgeSound() { mixin(MGPC!(SoundCue, 60)()); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) FootstepSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 108)()); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) JumpingSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 124)()); }
+		ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo) LandingSounds() { mixin(MGPC!("ScriptArray!(UTPawnSoundGroup.FootstepSoundInfo)", 136)()); }
+		SoundCue InstagibSound() { mixin(MGPC!("SoundCue", 164)()); }
+		SoundCue BodyExplosionSound() { mixin(MGPC!("SoundCue", 160)()); }
+		SoundCue CrushedSound() { mixin(MGPC!("SoundCue", 156)()); }
+		SoundCue BulletImpactSound() { mixin(MGPC!("SoundCue", 152)()); }
+		SoundCue DefaultLandingSound() { mixin(MGPC!("SoundCue", 148)()); }
+		SoundCue DefaultFootstepSound() { mixin(MGPC!("SoundCue", 120)()); }
+		SoundCue GaspSound() { mixin(MGPC!("SoundCue", 104)()); }
+		SoundCue DrownSound() { mixin(MGPC!("SoundCue", 100)()); }
+		SoundCue GibSound() { mixin(MGPC!("SoundCue", 96)()); }
+		SoundCue HitSounds() { mixin(MGPC!("SoundCue", 84)()); }
+		SoundCue DyingSound() { mixin(MGPC!("SoundCue", 80)()); }
+		SoundCue FallingDamageLandSound() { mixin(MGPC!("SoundCue", 76)()); }
+		SoundCue LandSound() { mixin(MGPC!("SoundCue", 72)()); }
+		SoundCue DefaultJumpingSound() { mixin(MGPC!("SoundCue", 68)()); }
+		SoundCue DoubleJumpSound() { mixin(MGPC!("SoundCue", 64)()); }
+		SoundCue DodgeSound() { mixin(MGPC!("SoundCue", 60)()); }
 	}
 final:
 	static SoundCue GetFootstepSound(int FootDown, ScriptName MaterialType)

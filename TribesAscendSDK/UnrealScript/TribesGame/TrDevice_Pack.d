@@ -53,8 +53,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice_Pack.PowerPoolCostInfo")()); }
 		@property final auto ref
 		{
-			ScriptClass m_TrFamilyInfo() { mixin(MGPS!(ScriptClass, 4)()); }
-			float m_fPowerPoolCostPerSec() { mixin(MGPS!(float, 0)()); }
+			ScriptClass m_TrFamilyInfo() { mixin(MGPS!("ScriptClass", 4)()); }
+			float m_fPowerPoolCostPerSec() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	static struct Activated
@@ -64,9 +64,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrDevice_Pack.PowerPoolCostInfo) m_PowerPoolInfo() { mixin(MGPC!(ScriptArray!(TrDevice_Pack.PowerPoolCostInfo), 2152)()); }
-		float m_CachedPowerPoolCostPerSec() { mixin(MGPC!(float, 2164)()); }
-		float m_fDefaultPowerPoolCostPerSec() { mixin(MGPC!(float, 2148)()); }
+		ScriptArray!(TrDevice_Pack.PowerPoolCostInfo) m_PowerPoolInfo() { mixin(MGPC!("ScriptArray!(TrDevice_Pack.PowerPoolCostInfo)", 2152)()); }
+		float m_CachedPowerPoolCostPerSec() { mixin(MGPC!("float", 2164)()); }
+		float m_fDefaultPowerPoolCostPerSec() { mixin(MGPC!("float", 2148)()); }
 	}
 final:
 	bool UsesPower()

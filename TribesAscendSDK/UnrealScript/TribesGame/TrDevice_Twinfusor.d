@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_Twinfusor.OnSwitchAwayFromWeapon")()); }
 		}
 	}
-	@property final auto ref SoundCue m_SpinfusorIdleSound() { mixin(MGPC!(SoundCue, 2148)()); }
+	@property final auto ref SoundCue m_SpinfusorIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
 final:
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

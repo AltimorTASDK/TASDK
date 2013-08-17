@@ -1394,8 +1394,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString MapName() { mixin(MGPC!(ScriptString, 196)()); }
-			ScriptString GameMode() { mixin(MGPC!(ScriptString, 184)()); }
+			ScriptString MapName() { mixin(MGPC!("ScriptString", 196)()); }
+			ScriptString GameMode() { mixin(MGPC!("ScriptString", 184)()); }
 		}
 		// WARNING: Property 'Console' has the same name as a defined type!
 	}

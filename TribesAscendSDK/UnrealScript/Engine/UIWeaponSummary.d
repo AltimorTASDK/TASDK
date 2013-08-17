@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString WeaponDescription() { mixin(MGPC!(ScriptString, 148)()); }
-			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 136)()); }
-			ScriptString ClassPathName() { mixin(MGPC!(ScriptString, 124)()); }
+			ScriptString WeaponDescription() { mixin(MGPC!("ScriptString", 148)()); }
+			ScriptString FriendlyName() { mixin(MGPC!("ScriptString", 136)()); }
+			ScriptString ClassPathName() { mixin(MGPC!("ScriptString", 124)()); }
 		}
 		bool bIsDisabled() { mixin(MGBPC!(160, 0x1)()); }
 		bool bIsDisabled(bool val) { mixin(MSBPC!(160, 0x1)()); }

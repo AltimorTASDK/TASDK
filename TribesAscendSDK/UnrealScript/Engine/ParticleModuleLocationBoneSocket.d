@@ -33,20 +33,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleLocationBoneSocket.LocationBoneSocketInfo")()); }
 		@property final auto ref
 		{
-			Vector Offset() { mixin(MGPS!(Vector, 8)()); }
-			ScriptName BoneSocketName() { mixin(MGPS!(ScriptName, 0)()); }
+			Vector Offset() { mixin(MGPS!("Vector", 8)()); }
+			ScriptName BoneSocketName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo) SourceLocations() { mixin(MGPC!(ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo), 88)()); }
-			SkeletalMesh EditorSkelMesh() { mixin(MGPC!(SkeletalMesh, 112)()); }
-			ScriptName SkelMeshActorParamName() { mixin(MGPC!(ScriptName, 104)()); }
-			Vector UniversalOffset() { mixin(MGPC!(Vector, 76)()); }
-			ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod SelectionMethod() { mixin(MGPC!(ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod, 73)()); }
-			ParticleModuleLocationBoneSocket.ELocationBoneSocketSource SourceType() { mixin(MGPC!(ParticleModuleLocationBoneSocket.ELocationBoneSocketSource, 72)()); }
+			ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo) SourceLocations() { mixin(MGPC!("ScriptArray!(ParticleModuleLocationBoneSocket.LocationBoneSocketInfo)", 88)()); }
+			SkeletalMesh EditorSkelMesh() { mixin(MGPC!("SkeletalMesh", 112)()); }
+			ScriptName SkelMeshActorParamName() { mixin(MGPC!("ScriptName", 104)()); }
+			Vector UniversalOffset() { mixin(MGPC!("Vector", 76)()); }
+			ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod SelectionMethod() { mixin(MGPC!("ParticleModuleLocationBoneSocket.ELocationBoneSocketSelectionMethod", 73)()); }
+			ParticleModuleLocationBoneSocket.ELocationBoneSocketSource SourceType() { mixin(MGPC!("ParticleModuleLocationBoneSocket.ELocationBoneSocketSource", 72)()); }
 		}
 		bool bOrientMeshEmitters() { mixin(MGBPC!(100, 0x2)()); }
 		bool bOrientMeshEmitters(bool val) { mixin(MSBPC!(100, 0x2)()); }

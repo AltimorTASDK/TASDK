@@ -25,22 +25,22 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackHeadTracking.HeadTrackingKey")()); }
 		@property final auto ref
 		{
-			InterpTrackHeadTracking.EHeadTrackingAction Action() { mixin(MGPS!(InterpTrackHeadTracking.EHeadTrackingAction, 4)()); }
-			float Time() { mixin(MGPS!(float, 0)()); }
+			InterpTrackHeadTracking.EHeadTrackingAction Action() { mixin(MGPS!("InterpTrackHeadTracking.EHeadTrackingAction", 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { mixin(MGPC!(ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey), 128)()); }
-			ScriptArray!(ScriptName) TrackControllerName() { mixin(MGPC!(ScriptArray!(ScriptName), 140)()); }
-			ScriptArray!(ScriptClass) ActorClassesToLookAt() { mixin(MGPC!(ScriptArray!(ScriptClass), 172)()); }
-			ScriptArray!(ScriptName) TargetBoneNames() { mixin(MGPC!(ScriptArray!(ScriptName), 184)()); }
-			float MaxInterestTime() { mixin(MGPC!(float, 168)()); }
-			float MinLookAtTime() { mixin(MGPC!(float, 164)()); }
-			float MaxLookAtTime() { mixin(MGPC!(float, 160)()); }
-			float LookAtActorRadius() { mixin(MGPC!(float, 152)()); }
+			ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey) HeadTrackingTrack() { mixin(MGPC!("ScriptArray!(InterpTrackHeadTracking.HeadTrackingKey)", 128)()); }
+			ScriptArray!(ScriptName) TrackControllerName() { mixin(MGPC!("ScriptArray!(ScriptName)", 140)()); }
+			ScriptArray!(ScriptClass) ActorClassesToLookAt() { mixin(MGPC!("ScriptArray!(ScriptClass)", 172)()); }
+			ScriptArray!(ScriptName) TargetBoneNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 184)()); }
+			float MaxInterestTime() { mixin(MGPC!("float", 168)()); }
+			float MinLookAtTime() { mixin(MGPC!("float", 164)()); }
+			float MaxLookAtTime() { mixin(MGPC!("float", 160)()); }
+			float LookAtActorRadius() { mixin(MGPC!("float", 152)()); }
 		}
 		bool bLookAtPawns() { mixin(MGBPC!(156, 0x2)()); }
 		bool bLookAtPawns(bool val) { mixin(MSBPC!(156, 0x2)()); }

@@ -483,67 +483,67 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor NoVehicleGoal() { mixin(MGPC!(Actor, 1304)()); }
-			Vector DirectionHint() { mixin(MGPC!(Vector, 1308)()); }
-			ScriptClass KilledVehicleClass() { mixin(MGPC!(ScriptClass, 1164)()); }
-			ScriptClass FavoriteWeapon() { mixin(MGPC!(ScriptClass, 1256)()); }
-			UTDefensePoint DefensePoint() { mixin(MGPC!(UTDefensePoint, 1296)()); }
-			ScriptString GoalString() { mixin(MGPC!(ScriptString, 1264)()); }
+			Actor NoVehicleGoal() { mixin(MGPC!("Actor", 1304)()); }
+			Vector DirectionHint() { mixin(MGPC!("Vector", 1308)()); }
+			ScriptClass KilledVehicleClass() { mixin(MGPC!("ScriptClass", 1164)()); }
+			ScriptClass FavoriteWeapon() { mixin(MGPC!("ScriptClass", 1256)()); }
+			UTDefensePoint DefensePoint() { mixin(MGPC!("UTDefensePoint", 1296)()); }
+			ScriptString GoalString() { mixin(MGPC!("ScriptString", 1264)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CustomActionFunc__Delegate'!
-			float LastInjuredVoiceMessageTime() { mixin(MGPC!(float, 1544)()); }
-			float LastCanAttackCheckTime() { mixin(MGPC!(float, 1540)()); }
-			Actor LastFireTarget() { mixin(MGPC!(Actor, 1536)()); }
-			float LastTryHoverboardTime() { mixin(MGPC!(float, 1532)()); }
-			float LastActionMusicUpdate() { mixin(MGPC!(float, 1528)()); }
-			Actor ScriptedTarget() { mixin(MGPC!(Actor, 1524)()); }
-			Vector LastKillerPosition() { mixin(MGPC!(Vector, 1512)()); }
-			Vector LastKnownPosition() { mixin(MGPC!(Vector, 1500)()); }
-			Controller OldOrderGiver() { mixin(MGPC!(Controller, 1496)()); }
-			ScriptName OldOrders() { mixin(MGPC!(ScriptName, 1488)()); }
-			ScriptName OrderNames() { mixin(MGPC!(ScriptName, 1360)()); }
-			float GatherTime() { mixin(MGPC!(float, 1356)()); }
-			float LastFireAttempt() { mixin(MGPC!(float, 1352)()); }
-			int NumRandomJumps() { mixin(MGPC!(int, 1348)()); }
-			float CampTime() { mixin(MGPC!(float, 1344)()); }
-			float LastSearchWeight() { mixin(MGPC!(float, 1340)()); }
-			float LastSearchTime() { mixin(MGPC!(float, 1336)()); }
-			Pawn FailedHuntEnemy() { mixin(MGPC!(Pawn, 1332)()); }
-			float FailedHuntTime() { mixin(MGPC!(float, 1328)()); }
-			float LastRespawnTime() { mixin(MGPC!(float, 1324)()); }
-			float StopStartTime() { mixin(MGPC!(float, 1320)()); }
-			NavigationPoint DefensivePosition() { mixin(MGPC!(NavigationPoint, 1300)()); }
-			float ReTaskTime() { mixin(MGPC!(float, 1292)()); }
-			UTBot NextSquadMember() { mixin(MGPC!(UTBot, 1288)()); }
-			ScriptString SoakString() { mixin(MGPC!(ScriptString, 1276)()); }
-			float OldMessageTime() { mixin(MGPC!(float, 1260)()); }
-			float Jumpiness() { mixin(MGPC!(float, 1252)()); }
-			float ReactionTime() { mixin(MGPC!(float, 1248)()); }
-			float Tactics() { mixin(MGPC!(float, 1244)()); }
-			float CombatStyle() { mixin(MGPC!(float, 1240)()); }
-			float StrafingAbility() { mixin(MGPC!(float, 1236)()); }
-			float BaseAggressiveness() { mixin(MGPC!(float, 1232)()); }
-			float Accuracy() { mixin(MGPC!(float, 1228)()); }
-			float BaseAlertness() { mixin(MGPC!(float, 1224)()); }
-			float ForcedFlagDropTime() { mixin(MGPC!(float, 1220)()); }
-			float RetreatStartTime() { mixin(MGPC!(float, 1216)()); }
-			float LastUnderFire() { mixin(MGPC!(float, 1212)()); }
-			float StartTacticalTime() { mixin(MGPC!(float, 1208)()); }
-			Actor StartleActor() { mixin(MGPC!(Actor, 1204)()); }
-			float LoseEnemyCheckTime() { mixin(MGPC!(float, 1200)()); }
-			float Aggression() { mixin(MGPC!(float, 1196)()); }
-			float AcquireTime() { mixin(MGPC!(float, 1192)()); }
-			NavigationPoint BlockedPath() { mixin(MGPC!(NavigationPoint, 1188)()); }
-			float LastAttractCheck() { mixin(MGPC!(float, 1184)()); }
-			float Aggressiveness() { mixin(MGPC!(float, 1180)()); }
-			Vector HidingSpot() { mixin(MGPC!(Vector, 1168)()); }
-			int LastTauntIndex() { mixin(MGPC!(int, 1160)()); }
-			int OldMessageID() { mixin(MGPC!(int, 1156)()); }
-			ScriptName OldMessageType() { mixin(MGPC!(ScriptName, 1148)()); }
-			float MaxSpecialJumpZ() { mixin(MGPC!(float, 1144)()); }
-			float ImpactJumpZ() { mixin(MGPC!(float, 1140)()); }
-			Actor ImpactTarget() { mixin(MGPC!(Actor, 1136)()); }
-			float LastWarningTime() { mixin(MGPC!(float, 1128)()); }
-			Pawn InstantWarningShooter() { mixin(MGPC!(Pawn, 1124)()); }
+			float LastInjuredVoiceMessageTime() { mixin(MGPC!("float", 1544)()); }
+			float LastCanAttackCheckTime() { mixin(MGPC!("float", 1540)()); }
+			Actor LastFireTarget() { mixin(MGPC!("Actor", 1536)()); }
+			float LastTryHoverboardTime() { mixin(MGPC!("float", 1532)()); }
+			float LastActionMusicUpdate() { mixin(MGPC!("float", 1528)()); }
+			Actor ScriptedTarget() { mixin(MGPC!("Actor", 1524)()); }
+			Vector LastKillerPosition() { mixin(MGPC!("Vector", 1512)()); }
+			Vector LastKnownPosition() { mixin(MGPC!("Vector", 1500)()); }
+			Controller OldOrderGiver() { mixin(MGPC!("Controller", 1496)()); }
+			ScriptName OldOrders() { mixin(MGPC!("ScriptName", 1488)()); }
+			ScriptName OrderNames() { mixin(MGPC!("ScriptName", 1360)()); }
+			float GatherTime() { mixin(MGPC!("float", 1356)()); }
+			float LastFireAttempt() { mixin(MGPC!("float", 1352)()); }
+			int NumRandomJumps() { mixin(MGPC!("int", 1348)()); }
+			float CampTime() { mixin(MGPC!("float", 1344)()); }
+			float LastSearchWeight() { mixin(MGPC!("float", 1340)()); }
+			float LastSearchTime() { mixin(MGPC!("float", 1336)()); }
+			Pawn FailedHuntEnemy() { mixin(MGPC!("Pawn", 1332)()); }
+			float FailedHuntTime() { mixin(MGPC!("float", 1328)()); }
+			float LastRespawnTime() { mixin(MGPC!("float", 1324)()); }
+			float StopStartTime() { mixin(MGPC!("float", 1320)()); }
+			NavigationPoint DefensivePosition() { mixin(MGPC!("NavigationPoint", 1300)()); }
+			float ReTaskTime() { mixin(MGPC!("float", 1292)()); }
+			UTBot NextSquadMember() { mixin(MGPC!("UTBot", 1288)()); }
+			ScriptString SoakString() { mixin(MGPC!("ScriptString", 1276)()); }
+			float OldMessageTime() { mixin(MGPC!("float", 1260)()); }
+			float Jumpiness() { mixin(MGPC!("float", 1252)()); }
+			float ReactionTime() { mixin(MGPC!("float", 1248)()); }
+			float Tactics() { mixin(MGPC!("float", 1244)()); }
+			float CombatStyle() { mixin(MGPC!("float", 1240)()); }
+			float StrafingAbility() { mixin(MGPC!("float", 1236)()); }
+			float BaseAggressiveness() { mixin(MGPC!("float", 1232)()); }
+			float Accuracy() { mixin(MGPC!("float", 1228)()); }
+			float BaseAlertness() { mixin(MGPC!("float", 1224)()); }
+			float ForcedFlagDropTime() { mixin(MGPC!("float", 1220)()); }
+			float RetreatStartTime() { mixin(MGPC!("float", 1216)()); }
+			float LastUnderFire() { mixin(MGPC!("float", 1212)()); }
+			float StartTacticalTime() { mixin(MGPC!("float", 1208)()); }
+			Actor StartleActor() { mixin(MGPC!("Actor", 1204)()); }
+			float LoseEnemyCheckTime() { mixin(MGPC!("float", 1200)()); }
+			float Aggression() { mixin(MGPC!("float", 1196)()); }
+			float AcquireTime() { mixin(MGPC!("float", 1192)()); }
+			NavigationPoint BlockedPath() { mixin(MGPC!("NavigationPoint", 1188)()); }
+			float LastAttractCheck() { mixin(MGPC!("float", 1184)()); }
+			float Aggressiveness() { mixin(MGPC!("float", 1180)()); }
+			Vector HidingSpot() { mixin(MGPC!("Vector", 1168)()); }
+			int LastTauntIndex() { mixin(MGPC!("int", 1160)()); }
+			int OldMessageID() { mixin(MGPC!("int", 1156)()); }
+			ScriptName OldMessageType() { mixin(MGPC!("ScriptName", 1148)()); }
+			float MaxSpecialJumpZ() { mixin(MGPC!("float", 1144)()); }
+			float ImpactJumpZ() { mixin(MGPC!("float", 1140)()); }
+			Actor ImpactTarget() { mixin(MGPC!("Actor", 1136)()); }
+			float LastWarningTime() { mixin(MGPC!("float", 1128)()); }
+			Pawn InstantWarningShooter() { mixin(MGPC!("Pawn", 1124)()); }
 		}
 		bool bHuntPlayer() { mixin(MGBPC!(1132, 0x1)()); }
 		bool bHuntPlayer(bool val) { mixin(MSBPC!(1132, 0x1)()); }
@@ -889,8 +889,8 @@ final:
 		*cast(float*)&params[4] = YL;
 		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*YL = *cast(float*)&params[4];
-		*YPos = *cast(float*)&params[8];
+		YL = *cast(float*)&params[4];
+		YPos = *cast(float*)&params[8];
 	}
 	ScriptName GetOrders()
 	{
@@ -906,14 +906,15 @@ final:
 		*cast(PlayerReplicationInfo*)params.ptr = Moron;
 		(cast(ScriptObject)this).ProcessEvent(Functions.YellAt, params.ptr, cast(void*)0);
 	}
-	void SendMessage(PlayerReplicationInfo Recipient, ScriptName MessageType, float Wait, ScriptClass pDamageType)
+	void SendMessage(PlayerReplicationInfo Recipient, ScriptName MessageType, float Wait, ScriptClass* pDamageType = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = Recipient;
 		*cast(ScriptName*)&params[4] = MessageType;
 		*cast(float*)&params[12] = Wait;
-		*cast(ScriptClass*)&params[16] = pDamageType;
+		if (pDamageType !is null)
+			*cast(ScriptClass*)&params[16] = *pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendMessage, params.ptr, cast(void*)0);
 	}
 	void SetBotOrders(ScriptName NewOrders, Controller OrderGiver, bool bShouldAck)
@@ -937,13 +938,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearTemporaryOrders, cast(void*)0, cast(void*)0);
 	}
-	void HearNoise(float Loudness, Actor NoiseMaker, ScriptName NoiseType)
+	void HearNoise(float Loudness, Actor NoiseMaker, ScriptName* NoiseType = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(float*)params.ptr = Loudness;
 		*cast(Actor*)&params[4] = NoiseMaker;
-		*cast(ScriptName*)&params[8] = NoiseType;
+		if (NoiseType !is null)
+			*cast(ScriptName*)&params[8] = *NoiseType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HearNoise, params.ptr, cast(void*)0);
 	}
 	void SeePlayer(Pawn SeenPlayer)
@@ -1063,14 +1065,13 @@ final:
 		*cast(bool*)&params[4] = bVehicleTransition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Possess, params.ptr, cast(void*)0);
 	}
-	void Initialize(float InSkill, ref const UTCharInfo.CharacterInfo BotInfo)
+	void Initialize(float InSkill, ref in UTCharInfo.CharacterInfo BotInfo)
 	{
 		ubyte params[116];
 		params[] = 0;
 		*cast(float*)params.ptr = InSkill;
-		*cast(UTCharInfo.CharacterInfo*)&params[4] = BotInfo;
+		*cast(UTCharInfo.CharacterInfo*)&params[4] = cast(UTCharInfo.CharacterInfo)BotInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, params.ptr, cast(void*)0);
-		*BotInfo = *cast(UTCharInfo.CharacterInfo*)&params[4];
 	}
 	void ResetSkill()
 	{
@@ -1170,11 +1171,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickRetreatDestination, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void SoakStop(ScriptString problem)
+	void SoakStop(ScriptString* problem = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = problem;
+		if (problem !is null)
+			*cast(ScriptString*)params.ptr = *problem;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SoakStop, params.ptr, cast(void*)0);
 	}
 	bool FindRoamDest()

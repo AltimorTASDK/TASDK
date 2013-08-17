@@ -100,8 +100,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshActor.SkelMeshActorControlTarget")()); }
 		@property final auto ref
 		{
-			Actor TargetActor() { mixin(MGPS!(Actor, 8)()); }
-			ScriptName ControlName() { mixin(MGPS!(ScriptName, 0)()); }
+			Actor TargetActor() { mixin(MGPS!("Actor", 8)()); }
+			ScriptName ControlName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct CheckpointRecord
@@ -114,8 +114,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				Rotator Rotation() { mixin(MGPS!(Rotator, 16)()); }
-				Vector Location() { mixin(MGPS!(Vector, 4)()); }
+				Rotator Rotation() { mixin(MGPS!("Rotator", 16)()); }
+				Vector Location() { mixin(MGPS!("Vector", 4)()); }
 			}
 			bool bSavedPosition() { mixin(MGBPS!(0, 0x4)()); }
 			bool bSavedPosition(bool val) { mixin(MSBPS!(0, 0x4)()); }
@@ -129,12 +129,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget) ControlTargets() { mixin(MGPC!(ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget), 500)()); }
-			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!(ScriptArray!(InterpGroup), 512)()); }
-			float SavedCurrentTime() { mixin(MGPC!(float, 532)()); }
-			ScriptName SavedAnimSeqName() { mixin(MGPC!(ScriptName, 524)()); }
-			MaterialInterface ReplicatedMaterial() { mixin(MGPC!(MaterialInterface, 496)()); }
-			SkeletalMesh ReplicatedMesh() { mixin(MGPC!(SkeletalMesh, 492)()); }
+			ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget) ControlTargets() { mixin(MGPC!("ScriptArray!(SkeletalMeshActor.SkelMeshActorControlTarget)", 500)()); }
+			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!("ScriptArray!(InterpGroup)", 512)()); }
+			float SavedCurrentTime() { mixin(MGPC!("float", 532)()); }
+			ScriptName SavedAnimSeqName() { mixin(MGPC!("ScriptName", 524)()); }
+			MaterialInterface ReplicatedMaterial() { mixin(MGPC!("MaterialInterface", 496)()); }
+			SkeletalMesh ReplicatedMesh() { mixin(MGPC!("SkeletalMesh", 492)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FacialAudioComp'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
@@ -299,7 +299,7 @@ void**)params.ptr;
 		*cast(SeqAct_AttachToActor*)&params[4] = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoKismetAttachment, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -308,8 +308,10 @@ void**)params.ptr;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	bool ShouldSaveForCheckpoint()
@@ -325,21 +327,20 @@ void**)params.ptr;
 		params[] = 0;
 		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(SkeletalMeshActor.CheckpointRecord*)params.ptr;
+		Record = *cast(SkeletalMeshActor.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const SkeletalMeshActor.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in SkeletalMeshActor.CheckpointRecord Record)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = Record;
+		*cast(SkeletalMeshActor.CheckpointRecord*)params.ptr = cast(SkeletalMeshActor.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(SkeletalMeshActor.CheckpointRecord*)params.ptr;
 	}
-	bool PlayParticleEffect(const AnimNotify_PlayParticleEffect AnimNotifyData)
+	bool PlayParticleEffect(in AnimNotify_PlayParticleEffect AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_PlayParticleEffect*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_PlayParticleEffect*)params.ptr = cast(AnimNotify_PlayParticleEffect)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayParticleEffect, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -354,11 +355,11 @@ void* PSC)
 void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SkelMeshActorOnParticleSystemFinished, params.ptr, cast(void*)0);
 	}
-	bool CreateForceField(const AnimNotify_ForceField AnimNotifyData)
+	bool CreateForceField(in AnimNotify_ForceField AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_ForceField*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_ForceField*)params.ptr = cast(AnimNotify_ForceField)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateForceField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

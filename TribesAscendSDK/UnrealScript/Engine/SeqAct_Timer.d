@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_Timer DefaultProperties() { mixin(MGDPC!(SeqAct_Timer, "SeqAct_Timer Engine.Default__SeqAct_Timer")()); }
 	@property final auto ref
 	{
-		float Time() { mixin(MGPC!(float, 236)()); }
-		float ActivationTime() { mixin(MGPC!(float, 232)()); }
+		float Time() { mixin(MGPC!("float", 236)()); }
+		float ActivationTime() { mixin(MGPC!("float", 232)()); }
 	}
 }

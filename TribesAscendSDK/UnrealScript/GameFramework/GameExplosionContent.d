@@ -19,23 +19,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			FogVolumeSphericalDensityInfo FogVolumeArchetype() { mixin(MGPC!(FogVolumeSphericalDensityInfo, 128)()); }
-			ParticleSystem ParticleEmitterTemplate() { mixin(MGPC!(ParticleSystem, 124)()); }
-			float ExploRadialBlurMaxBlur() { mixin(MGPC!(float, 120)()); }
-			float ExploRadialBlurFadeOutTime() { mixin(MGPC!(float, 116)()); }
+			FogVolumeSphericalDensityInfo FogVolumeArchetype() { mixin(MGPC!("FogVolumeSphericalDensityInfo", 128)()); }
+			ParticleSystem ParticleEmitterTemplate() { mixin(MGPC!("ParticleSystem", 124)()); }
+			float ExploRadialBlurMaxBlur() { mixin(MGPC!("float", 120)()); }
+			float ExploRadialBlurFadeOutTime() { mixin(MGPC!("float", 116)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExploRadialBlur'!
-			float ExploLightFadeOutTime() { mixin(MGPC!(float, 108)()); }
+			float ExploLightFadeOutTime() { mixin(MGPC!("float", 108)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExploLight'!
-			float CameraLensEffectRadius() { mixin(MGPC!(float, 100)()); }
-			ScriptClass CameraLensEffect() { mixin(MGPC!(ScriptClass, 96)()); }
-			float CamShakeFalloff() { mixin(MGPC!(float, 92)()); }
-			float CamShakeOuterRadius() { mixin(MGPC!(float, 88)()); }
-			float CamShakeInnerRadius() { mixin(MGPC!(float, 84)()); }
-			CameraShake CamShake_Rear() { mixin(MGPC!(CameraShake, 80)()); }
-			CameraShake CamShake_Right() { mixin(MGPC!(CameraShake, 76)()); }
-			CameraShake CamShake_Left() { mixin(MGPC!(CameraShake, 72)()); }
-			CameraShake CamShake() { mixin(MGPC!(CameraShake, 68)()); }
-			SoundCue ExplosionSound() { mixin(MGPC!(SoundCue, 64)()); }
+			float CameraLensEffectRadius() { mixin(MGPC!("float", 100)()); }
+			ScriptClass CameraLensEffect() { mixin(MGPC!("ScriptClass", 96)()); }
+			float CamShakeFalloff() { mixin(MGPC!("float", 92)()); }
+			float CamShakeOuterRadius() { mixin(MGPC!("float", 88)()); }
+			float CamShakeInnerRadius() { mixin(MGPC!("float", 84)()); }
+			CameraShake CamShake_Rear() { mixin(MGPC!("CameraShake", 80)()); }
+			CameraShake CamShake_Right() { mixin(MGPC!("CameraShake", 76)()); }
+			CameraShake CamShake_Left() { mixin(MGPC!("CameraShake", 72)()); }
+			CameraShake CamShake() { mixin(MGPC!("CameraShake", 68)()); }
+			SoundCue ExplosionSound() { mixin(MGPC!("SoundCue", 64)()); }
 		}
 		bool bOrientCameraShakeTowardsEpicenter() { mixin(MGBPC!(60, 0x2)()); }
 		bool bOrientCameraShakeTowardsEpicenter(bool val) { mixin(MSBPC!(60, 0x2)()); }

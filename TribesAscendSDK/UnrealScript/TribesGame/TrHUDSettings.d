@@ -47,8 +47,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int SettingsCount() { mixin(MGPC!(int, 120)()); }
-		GFxObject SettingsList() { mixin(MGPC!(GFxObject, 124)()); }
+		int SettingsCount() { mixin(MGPC!("int", 120)()); }
+		GFxObject SettingsList() { mixin(MGPC!("GFxObject", 124)()); }
 	}
 final:
 	float GetCurrentValue(TrHUDSettings.EHUDSettingType Index)

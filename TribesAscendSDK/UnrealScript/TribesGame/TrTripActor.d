@@ -53,16 +53,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fSleepTime() { mixin(MGPC!(float, 492)()); }
-			Actor r_Left() { mixin(MGPC!(Actor, 476)()); }
-			Actor r_Right() { mixin(MGPC!(Actor, 480)()); }
+			float m_fSleepTime() { mixin(MGPC!("float", 492)()); }
+			Actor r_Left() { mixin(MGPC!("Actor", 476)()); }
+			Actor r_Right() { mixin(MGPC!("Actor", 480)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TripComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
-			ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 520)()); }
+			ParticleSystem m_LaserTemplate() { mixin(MGPC!("ParticleSystem", 520)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_RightNotifier'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_LeftNotifier'!
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'm_DestroyNotifier'!
-			float r_fSleepEndTime() { mixin(MGPC!(float, 488)()); }
+			float r_fSleepEndTime() { mixin(MGPC!("float", 488)()); }
 		}
 		bool m_bRequiresTwoNotifiers() { mixin(MGBPC!(484, 0x4)()); }
 		bool m_bRequiresTwoNotifiers(bool val) { mixin(MSBPC!(484, 0x4)()); }
@@ -118,11 +118,12 @@ void**)params.ptr = Left;
 void**)&params[8] = Right;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeTripPhysics, params.ptr, cast(void*)0);
 	}
-	void GoToSleep(bool bIsPowered)
+	void GoToSleep(bool* bIsPowered = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bIsPowered;
+		if (bIsPowered !is null)
+			*cast(bool*)params.ptr = *bIsPowered;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GoToSleep, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)

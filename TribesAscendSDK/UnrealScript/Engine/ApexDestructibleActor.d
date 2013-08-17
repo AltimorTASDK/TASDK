@@ -38,10 +38,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(FractureMaterial) FractureMaterials() { mixin(MGPC!(ScriptArray!(FractureMaterial), 484)()); }
-			ScriptArray!(ubyte) VisibilityFactors() { mixin(MGPC!(ScriptArray!(ubyte), 500)()); }
-			ScriptArray!(SoundCue) FractureSounds() { mixin(MGPC!(ScriptArray!(SoundCue), 512)()); }
-			ScriptArray!(ParticleSystem) FractureParticleEffects() { mixin(MGPC!(ScriptArray!(ParticleSystem), 524)()); }
+			ScriptArray!(FractureMaterial) FractureMaterials() { mixin(MGPC!("ScriptArray!(FractureMaterial)", 484)()); }
+			ScriptArray!(ubyte) VisibilityFactors() { mixin(MGPC!("ScriptArray!(ubyte)", 500)()); }
+			ScriptArray!(SoundCue) FractureSounds() { mixin(MGPC!("ScriptArray!(SoundCue)", 512)()); }
+			ScriptArray!(ParticleSystem) FractureParticleEffects() { mixin(MGPC!("ScriptArray!(ParticleSystem)", 524)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'StaticDestructibleComponent'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 		}
@@ -66,7 +66,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -75,11 +75,13 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -91,7 +93,8 @@ final:
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 }

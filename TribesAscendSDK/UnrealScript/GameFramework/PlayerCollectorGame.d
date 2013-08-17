@@ -29,20 +29,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString URLToLoad() { mixin(MGPC!(ScriptString, 888)()); }
-		int NumberOfClientsToWaitFor() { mixin(MGPC!(int, 884)()); }
+		ScriptString URLToLoad() { mixin(MGPC!("ScriptString", 888)()); }
+		int NumberOfClientsToWaitFor() { mixin(MGPC!("int", 884)()); }
 	}
 final:
-	PlayerController Login(ScriptString Portal, ScriptString Options, const OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
+	PlayerController Login(ScriptString Portal, ScriptString Options, in OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Portal;
 		*cast(ScriptString*)&params[12] = Options;
-		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = UniqueId;
+		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = cast(OnlineSubsystem.UniqueNetId)UniqueId;
 		*cast(ScriptString*)&params[32] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[32];
+		ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
 	}
 	void GetSeamlessTravelActorList(bool bToEntry, ref ScriptArray!(Actor) ActorList)
@@ -52,6 +52,6 @@ final:
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
-		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
+		ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 }

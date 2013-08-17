@@ -27,12 +27,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fIdleBlendOutTime() { mixin(MGPC!(float, 320)()); }
-		float m_fIdleBlendInTime() { mixin(MGPC!(float, 316)()); }
-		AnimNodeAdditiveBlending m_AdditiveBlendNode() { mixin(MGPC!(AnimNodeAdditiveBlending, 312)()); }
-		ScriptName m_nmAdditiveAnimNodeName() { mixin(MGPC!(ScriptName, 304)()); }
-		float m_fIdleSpeedSizeSq() { mixin(MGPC!(float, 300)()); }
-		TrFlagBase m_TrFlagOwner() { mixin(MGPC!(TrFlagBase, 296)()); }
-		TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { mixin(MGPC!(TrAnimNodeBlendByFlagDirection.EFlagAnimTypes, 292)()); }
+		float m_fIdleBlendOutTime() { mixin(MGPC!("float", 320)()); }
+		float m_fIdleBlendInTime() { mixin(MGPC!("float", 316)()); }
+		AnimNodeAdditiveBlending m_AdditiveBlendNode() { mixin(MGPC!("AnimNodeAdditiveBlending", 312)()); }
+		ScriptName m_nmAdditiveAnimNodeName() { mixin(MGPC!("ScriptName", 304)()); }
+		float m_fIdleSpeedSizeSq() { mixin(MGPC!("float", 300)()); }
+		TrFlagBase m_TrFlagOwner() { mixin(MGPC!("TrFlagBase", 296)()); }
+		TrAnimNodeBlendByFlagDirection.EFlagAnimTypes LastDirection() { mixin(MGPC!("TrAnimNodeBlendByFlagDirection.EFlagAnimTypes", 292)()); }
 	}
 }

@@ -40,7 +40,7 @@ public extern(D):
 		MAVNT_MAX = 3,
 		MENU_ACTION_WHISPER_NOTIFY_TYPE_MAX = 4,
 	}
-	@property final auto ref int CurrSetting() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int CurrSetting() { mixin(MGPC!("int", 356)()); }
 final:
 	void Initialize()
 	{

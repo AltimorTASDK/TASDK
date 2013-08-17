@@ -45,9 +45,9 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentWeaponLoop'!
-			ScriptName m_PostFireState() { mixin(MGPC!(ScriptName, 2164)()); }
-			SoundCue m_FireTail() { mixin(MGPC!(SoundCue, 2160)()); }
-			float WeaponFireFadeTime() { mixin(MGPC!(float, 2156)()); }
+			ScriptName m_PostFireState() { mixin(MGPC!("ScriptName", 2164)()); }
+			SoundCue m_FireTail() { mixin(MGPC!("SoundCue", 2160)()); }
+			float WeaponFireFadeTime() { mixin(MGPC!("float", 2156)()); }
 		}
 		bool m_bIsCurrentlyFiring() { mixin(MGBPC!(2152, 0x4)()); }
 		bool m_bIsCurrentlyFiring(bool val) { mixin(MSBPC!(2152, 0x4)()); }

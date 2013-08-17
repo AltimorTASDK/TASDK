@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class PlatformCommon.TgBrowserInteraction")()); }
 	private static __gshared TgBrowserInteraction mDefaultProperties;
 	@property final static TgBrowserInteraction DefaultProperties() { mixin(MGDPC!(TgBrowserInteraction, "TgBrowserInteraction PlatformCommon.Default__TgBrowserInteraction")()); }
-	@property final auto ref UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC!(UObject.Pointer, 108)()); }
+	@property final auto ref UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC!("UObject.Pointer", 108)()); }
 }

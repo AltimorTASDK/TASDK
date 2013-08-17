@@ -38,9 +38,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) EventIDFilter() { mixin(MGPC!(ScriptArray!(int), 60)()); }
-		ScriptArray!(GameplayEvents.GameStatGroup) GroupFilter() { mixin(MGPC!(ScriptArray!(GameplayEvents.GameStatGroup), 72)()); }
-		GameplayEventsReader Reader() { mixin(MGPC!(GameplayEventsReader, 84)()); }
+		ScriptArray!(int) EventIDFilter() { mixin(MGPC!("ScriptArray!(int)", 60)()); }
+		ScriptArray!(GameplayEvents.GameStatGroup) GroupFilter() { mixin(MGPC!("ScriptArray!(GameplayEvents.GameStatGroup)", 72)()); }
+		GameplayEventsReader Reader() { mixin(MGPC!("GameplayEventsReader", 84)()); }
 	}
 final:
 	void SetReader(GameplayEventsReader NewReader)

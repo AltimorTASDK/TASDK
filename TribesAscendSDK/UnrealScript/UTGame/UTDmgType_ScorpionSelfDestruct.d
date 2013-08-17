@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mIncrementKills;
 		public @property static final ScriptFunction IncrementKills() { mixin(MGF!("mIncrementKills", "Function UTGame.UTDmgType_ScorpionSelfDestruct.IncrementKills")()); }
 	}
-	@property final auto ref int DamageGivenForSelfDestruct() { mixin(MGPC!(int, 300)()); }
+	@property final auto ref int DamageGivenForSelfDestruct() { mixin(MGPC!("int", 300)()); }
 	final static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{
 		ubyte params[8];

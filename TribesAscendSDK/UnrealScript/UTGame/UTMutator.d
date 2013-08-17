@@ -55,13 +55,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceWith, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void ProcessSpeechRecognition(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
+	void ProcessSpeechRecognition(UTPlayerController Speaker, ref in ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord))Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechRecognition, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 	}
 }

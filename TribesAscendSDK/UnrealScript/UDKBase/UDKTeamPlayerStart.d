@@ -14,7 +14,7 @@ public extern(D):
 	@property final static UDKTeamPlayerStart DefaultProperties() { mixin(MGDPC!(UDKTeamPlayerStart, "UDKTeamPlayerStart UDKBase.Default__UDKTeamPlayerStart")()); }
 	@property final auto ref
 	{
-		ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!(ScriptArray!(Texture2D), 704)()); }
-		ubyte TeamNumber() { mixin(MGPC!(ubyte, 700)()); }
+		ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!("ScriptArray!(Texture2D)", 704)()); }
+		ubyte TeamNumber() { mixin(MGPC!("ubyte", 700)()); }
 	}
 }

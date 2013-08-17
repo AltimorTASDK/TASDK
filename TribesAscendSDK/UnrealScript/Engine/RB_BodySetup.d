@@ -25,7 +25,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.RB_BodySetup.KCachedConvexData")()); }
-		@property final auto ref ScriptArray!(RB_BodySetup.KCachedConvexDataElement) CachedConvexElements() { mixin(MGPS!(ScriptArray!(RB_BodySetup.KCachedConvexDataElement), 0)()); }
+		@property final auto ref ScriptArray!(RB_BodySetup.KCachedConvexDataElement) CachedConvexElements() { mixin(MGPS!("ScriptArray!(RB_BodySetup.KCachedConvexDataElement)", 0)()); }
 	}
 	struct KCachedConvexDataElement
 	{
@@ -33,21 +33,21 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.RB_BodySetup.KCachedConvexDataElement")()); }
-		@property final auto ref ScriptArray!(ubyte) ConvexElementData() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
+		@property final auto ref ScriptArray!(ubyte) ConvexElementData() { mixin(MGPS!("ScriptArray!(ubyte)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) CollisionGeom() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 152)()); }
-			ScriptArray!(Vector) CollisionGeomScale3D() { mixin(MGPC!(ScriptArray!(Vector), 164)()); }
-			ScriptArray!(Vector) PreCachedPhysScale() { mixin(MGPC!(ScriptArray!(Vector), 176)()); }
-			ScriptArray!(RB_BodySetup.KCachedConvexData) PreCachedPhysData() { mixin(MGPC!(ScriptArray!(RB_BodySetup.KCachedConvexData), 188)()); }
-			int PreCachedPhysDataVersion() { mixin(MGPC!(int, 200)()); }
-			float MassScale() { mixin(MGPC!(float, 148)()); }
-			PhysicalMaterial PhysMaterial() { mixin(MGPC!(PhysicalMaterial, 144)()); }
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 132)()); }
-			RB_BodySetup.ESleepFamily SleepFamily() { mixin(MGPC!(RB_BodySetup.ESleepFamily, 128)()); }
+			ScriptArray!(UObject.Pointer) CollisionGeom() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 152)()); }
+			ScriptArray!(Vector) CollisionGeomScale3D() { mixin(MGPC!("ScriptArray!(Vector)", 164)()); }
+			ScriptArray!(Vector) PreCachedPhysScale() { mixin(MGPC!("ScriptArray!(Vector)", 176)()); }
+			ScriptArray!(RB_BodySetup.KCachedConvexData) PreCachedPhysData() { mixin(MGPC!("ScriptArray!(RB_BodySetup.KCachedConvexData)", 188)()); }
+			int PreCachedPhysDataVersion() { mixin(MGPC!("int", 200)()); }
+			float MassScale() { mixin(MGPC!("float", 148)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPC!("PhysicalMaterial", 144)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 132)()); }
+			RB_BodySetup.ESleepFamily SleepFamily() { mixin(MGPC!("RB_BodySetup.ESleepFamily", 128)()); }
 		}
 		bool bConsiderForBounds() { mixin(MGBPC!(140, 0x40)()); }
 		bool bConsiderForBounds(bool val) { mixin(MSBPC!(140, 0x40)()); }

@@ -35,9 +35,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int Action_SendMessage() { mixin(MGPC!(int, 364)()); }
-		int Action_Leave() { mixin(MGPC!(int, 360)()); }
-		int PopupNum() { mixin(MGPC!(int, 356)()); }
+		int Action_SendMessage() { mixin(MGPC!("int", 364)()); }
+		int Action_Leave() { mixin(MGPC!("int", 360)()); }
+		int PopupNum() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

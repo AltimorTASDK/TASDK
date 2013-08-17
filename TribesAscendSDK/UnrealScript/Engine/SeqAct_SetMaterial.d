@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SeqAct_SetMaterial DefaultProperties() { mixin(MGDPC!(SeqAct_SetMaterial, "SeqAct_SetMaterial Engine.Default__SeqAct_SetMaterial")()); }
 	@property final auto ref
 	{
-		int MaterialIndex() { mixin(MGPC!(int, 236)()); }
-		MaterialInterface NewMaterial() { mixin(MGPC!(MaterialInterface, 232)()); }
+		int MaterialIndex() { mixin(MGPC!("int", 236)()); }
+		MaterialInterface NewMaterial() { mixin(MGPC!("MaterialInterface", 232)()); }
 	}
 }

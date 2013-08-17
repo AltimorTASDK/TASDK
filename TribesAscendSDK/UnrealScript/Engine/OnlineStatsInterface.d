@@ -72,24 +72,22 @@ public extern(D):
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadOnlineStatsComplete__Delegate'!
 	}
 final:
-	bool WriteOnlinePlayerScores(ScriptName SessionName, int LeaderboardId, ref const ScriptArray!(OnlineSubsystem.OnlinePlayerScore) PlayerScores)
+	bool WriteOnlinePlayerScores(ScriptName SessionName, int LeaderboardId, ref in ScriptArray!(OnlineSubsystem.OnlinePlayerScore) PlayerScores)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(int*)&params[8] = LeaderboardId;
-		*cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12] = PlayerScores;
+		*cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12] = cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore))PlayerScores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WriteOnlinePlayerScores, params.ptr, cast(void*)0);
-		*PlayerScores = *cast(ScriptArray!(OnlineSubsystem.OnlinePlayerScore)*)&params[12];
 		return *cast(bool*)&params[24];
 	}
-	bool RegisterHostStatGuid(ref const ScriptString HostStatGuid)
+	bool RegisterHostStatGuid(ref in ScriptString HostStatGuid)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = HostStatGuid;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)HostStatGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterHostStatGuid, params.ptr, cast(void*)0);
-		*HostStatGuid = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	ScriptString GetClientStatGuid()
@@ -99,14 +97,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetClientStatGuid, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool RegisterStatGuid(OnlineSubsystem.UniqueNetId PlayerID, ref const ScriptString ClientStatGuid)
+	bool RegisterStatGuid(OnlineSubsystem.UniqueNetId PlayerID, ref in ScriptString ClientStatGuid)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PlayerID;
-		*cast(ScriptString*)&params[8] = ClientStatGuid;
+		*cast(ScriptString*)&params[8] = cast(ScriptString)ClientStatGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterStatGuid, params.ptr, cast(void*)0);
-		*ClientStatGuid = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	ScriptString GetHostStatGuid()
@@ -116,14 +113,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHostStatGuid, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	bool ReadOnlineStats(ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
+	bool ReadOnlineStats(ref in ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))Players;
 		*cast(OnlineStatsRead*)&params[12] = StatsRead;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadOnlineStats, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
 	bool ReadOnlineStatsForFriends(ubyte LocalUserNum, OnlineStatsRead StatsRead)
@@ -135,23 +131,26 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadOnlineStatsForFriends, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool ReadOnlineStatsByRank(OnlineStatsRead StatsRead, int StartIndex, int NumToRead)
+	bool ReadOnlineStatsByRank(OnlineStatsRead StatsRead, int* StartIndex = null, int* NumToRead = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(OnlineStatsRead*)params.ptr = StatsRead;
-		*cast(int*)&params[4] = StartIndex;
-		*cast(int*)&params[8] = NumToRead;
+		if (StartIndex !is null)
+			*cast(int*)&params[4] = *StartIndex;
+		if (NumToRead !is null)
+			*cast(int*)&params[8] = *NumToRead;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadOnlineStatsByRank, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool ReadOnlineStatsByRankAroundPlayer(ubyte LocalUserNum, OnlineStatsRead StatsRead, int NumRows)
+	bool ReadOnlineStatsByRankAroundPlayer(ubyte LocalUserNum, OnlineStatsRead StatsRead, int* NumRows = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineStatsRead*)&params[4] = StatsRead;
-		*cast(int*)&params[8] = NumRows;
+		if (NumRows !is null)
+			*cast(int*)&params[8] = *NumRows;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadOnlineStatsByRankAroundPlayer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}

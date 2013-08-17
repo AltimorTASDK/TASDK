@@ -55,9 +55,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 24)()); }
-				ScriptString PlayerName() { mixin(MGPS!(ScriptString, 12)()); }
-				ScriptString ControllerName() { mixin(MGPS!(ScriptString, 0)()); }
+				OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 24)()); }
+				ScriptString PlayerName() { mixin(MGPS!("ScriptString", 12)()); }
+				ScriptString ControllerName() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bIsBot() { mixin(MGBPS!(32, 0x1)()); }
 			bool bIsBot(bool val) { mixin(MSBPS!(32, 0x1)()); }
@@ -71,10 +71,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.TeamInformation")()); }
 		@property final auto ref
 		{
-			int MaxSize() { mixin(MGPS!(int, 20)()); }
-			UObject.Color TeamColor() { mixin(MGPS!(UObject.Color, 16)()); }
-			ScriptString TeamName() { mixin(MGPS!(ScriptString, 4)()); }
-			int TeamIndex() { mixin(MGPS!(int, 0)()); }
+			int MaxSize() { mixin(MGPS!("int", 20)()); }
+			UObject.Color TeamColor() { mixin(MGPS!("UObject.Color", 16)()); }
+			ScriptString TeamName() { mixin(MGPS!("ScriptString", 4)()); }
+			int TeamIndex() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct GameplayEventMetaData
@@ -85,10 +85,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.GameplayEventMetaData")()); }
 		@property final auto ref
 		{
-			int EventDataType() { mixin(MGPS!(int, 20)()); }
-			GameplayEvents.GameStatGroup StatGroup() { mixin(MGPS!(GameplayEvents.GameStatGroup, 12)()); }
-			ScriptName EventName() { mixin(MGPS!(ScriptName, 4)()); }
-			int EventID() { mixin(MGPS!(int, 0)()); }
+			int EventDataType() { mixin(MGPS!("int", 20)()); }
+			GameplayEvents.GameStatGroup StatGroup() { mixin(MGPS!("GameplayEvents.GameStatGroup", 12)()); }
+			ScriptName EventName() { mixin(MGPS!("ScriptName", 4)()); }
+			int EventID() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct WeaponClassEventData
@@ -97,7 +97,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.WeaponClassEventData")()); }
-		@property final auto ref ScriptString WeaponClassName() { mixin(MGPS!(ScriptString, 0)()); }
+		@property final auto ref ScriptString WeaponClassName() { mixin(MGPS!("ScriptString", 0)()); }
 	}
 	struct DamageClassEventData
 	{
@@ -105,7 +105,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.DamageClassEventData")()); }
-		@property final auto ref ScriptString DamageClassName() { mixin(MGPS!(ScriptString, 0)()); }
+		@property final auto ref ScriptString DamageClassName() { mixin(MGPS!("ScriptString", 0)()); }
 	}
 	struct ProjectileClassEventData
 	{
@@ -113,7 +113,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.ProjectileClassEventData")()); }
-		@property final auto ref ScriptString ProjectileClassName() { mixin(MGPS!(ScriptString, 0)()); }
+		@property final auto ref ScriptString ProjectileClassName() { mixin(MGPS!("ScriptString", 0)()); }
 	}
 	struct PawnClassEventData
 	{
@@ -121,7 +121,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.PawnClassEventData")()); }
-		@property final auto ref ScriptString PawnClassName() { mixin(MGPS!(ScriptString, 0)()); }
+		@property final auto ref ScriptString PawnClassName() { mixin(MGPS!("ScriptString", 0)()); }
 	}
 	struct GameStatGroup
 	{
@@ -132,7 +132,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Level' has the same name as a defined type!
-			GameplayEvents.EGameStatGroups Group() { mixin(MGPS!(GameplayEvents.EGameStatGroups, 0)()); }
+			GameplayEvents.EGameStatGroups Group() { mixin(MGPS!("GameplayEvents.EGameStatGroups", 0)()); }
 		}
 	}
 	struct GameplayEventsHeader
@@ -143,15 +143,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameplayEvents.GameplayEventsHeader")()); }
 		@property final auto ref
 		{
-			int Flags() { mixin(MGPS!(int, 40)()); }
-			ScriptString FilterClass() { mixin(MGPS!(ScriptString, 28)()); }
-			int FileSize() { mixin(MGPS!(int, 24)()); }
-			int TotalStreamSize() { mixin(MGPS!(int, 20)()); }
-			int FooterOffset() { mixin(MGPS!(int, 16)()); }
-			int AggregateOffset() { mixin(MGPS!(int, 12)()); }
-			int StreamOffset() { mixin(MGPS!(int, 8)()); }
-			int StatsWriterVersion() { mixin(MGPS!(int, 4)()); }
-			int EngineVersion() { mixin(MGPS!(int, 0)()); }
+			int Flags() { mixin(MGPS!("int", 40)()); }
+			ScriptString FilterClass() { mixin(MGPS!("ScriptString", 28)()); }
+			int FileSize() { mixin(MGPS!("int", 24)()); }
+			int TotalStreamSize() { mixin(MGPS!("int", 20)()); }
+			int FooterOffset() { mixin(MGPS!("int", 16)()); }
+			int AggregateOffset() { mixin(MGPS!("int", 12)()); }
+			int StreamOffset() { mixin(MGPS!("int", 8)()); }
+			int StatsWriterVersion() { mixin(MGPS!("int", 4)()); }
+			int EngineVersion() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct GameSessionInformation
@@ -164,19 +164,19 @@ public extern(D):
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId OwningNetId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 100)()); }
-				int GameTypeId() { mixin(MGPS!(int, 96)()); }
-				int SessionInstance() { mixin(MGPS!(int, 92)()); }
-				ScriptString MapURL() { mixin(MGPS!(ScriptString, 80)()); }
-				ScriptString MapName() { mixin(MGPS!(ScriptString, 68)()); }
-				ScriptString GameClassName() { mixin(MGPS!(ScriptString, 56)()); }
-				ScriptString GameplaySessionID() { mixin(MGPS!(ScriptString, 44)()); }
-				float GameplaySessionEndTime() { mixin(MGPS!(float, 36)()); }
-				float GameplaySessionStartTime() { mixin(MGPS!(float, 32)()); }
-				ScriptString GameplaySessionTimestamp() { mixin(MGPS!(ScriptString, 20)()); }
-				ScriptString Language() { mixin(MGPS!(ScriptString, 8)()); }
-				int PlatformType() { mixin(MGPS!(int, 4)()); }
-				int AppTitleID() { mixin(MGPS!(int, 0)()); }
+				OnlineSubsystem.UniqueNetId OwningNetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 100)()); }
+				int GameTypeId() { mixin(MGPS!("int", 96)()); }
+				int SessionInstance() { mixin(MGPS!("int", 92)()); }
+				ScriptString MapURL() { mixin(MGPS!("ScriptString", 80)()); }
+				ScriptString MapName() { mixin(MGPS!("ScriptString", 68)()); }
+				ScriptString GameClassName() { mixin(MGPS!("ScriptString", 56)()); }
+				ScriptString GameplaySessionID() { mixin(MGPS!("ScriptString", 44)()); }
+				float GameplaySessionEndTime() { mixin(MGPS!("float", 36)()); }
+				float GameplaySessionStartTime() { mixin(MGPS!("float", 32)()); }
+				ScriptString GameplaySessionTimestamp() { mixin(MGPS!("ScriptString", 20)()); }
+				ScriptString Language() { mixin(MGPS!("ScriptString", 8)()); }
+				int PlatformType() { mixin(MGPS!("int", 4)()); }
+				int AppTitleID() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bGameplaySessionInProgress() { mixin(MGBPS!(40, 0x1)()); }
 			bool bGameplaySessionInProgress(bool val) { mixin(MSBPS!(40, 0x1)()); }
@@ -184,19 +184,19 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GameplayEvents.PlayerInformationNew) PlayerList() { mixin(MGPC!(ScriptArray!(GameplayEvents.PlayerInformationNew), 228)()); }
-		ScriptArray!(GameplayEvents.TeamInformation) TeamList() { mixin(MGPC!(ScriptArray!(GameplayEvents.TeamInformation), 240)()); }
-		ScriptArray!(GameplayEvents.GameplayEventMetaData) SupportedEvents() { mixin(MGPC!(ScriptArray!(GameplayEvents.GameplayEventMetaData), 252)()); }
-		ScriptArray!(GameplayEvents.WeaponClassEventData) WeaponClassArray() { mixin(MGPC!(ScriptArray!(GameplayEvents.WeaponClassEventData), 264)()); }
-		ScriptArray!(GameplayEvents.DamageClassEventData) DamageClassArray() { mixin(MGPC!(ScriptArray!(GameplayEvents.DamageClassEventData), 276)()); }
-		ScriptArray!(GameplayEvents.ProjectileClassEventData) ProjectileClassArray() { mixin(MGPC!(ScriptArray!(GameplayEvents.ProjectileClassEventData), 288)()); }
-		ScriptArray!(GameplayEvents.PawnClassEventData) PawnClassArray() { mixin(MGPC!(ScriptArray!(GameplayEvents.PawnClassEventData), 300)()); }
-		ScriptArray!(ScriptString) ActorArray() { mixin(MGPC!(ScriptArray!(ScriptString), 312)()); }
-		ScriptArray!(ScriptString) SoundCueArray() { mixin(MGPC!(ScriptArray!(ScriptString), 324)()); }
-		GameplayEvents.GameSessionInformation CurrentSessionInfo() { mixin(MGPC!(GameplayEvents.GameSessionInformation, 120)()); }
-		GameplayEvents.GameplayEventsHeader Header() { mixin(MGPC!(GameplayEvents.GameplayEventsHeader, 76)()); }
-		ScriptString StatsFileName() { mixin(MGPC!(ScriptString, 64)()); }
-		UObject.Pointer Archive() { mixin(MGPC!(UObject.Pointer, 60)()); }
+		ScriptArray!(GameplayEvents.PlayerInformationNew) PlayerList() { mixin(MGPC!("ScriptArray!(GameplayEvents.PlayerInformationNew)", 228)()); }
+		ScriptArray!(GameplayEvents.TeamInformation) TeamList() { mixin(MGPC!("ScriptArray!(GameplayEvents.TeamInformation)", 240)()); }
+		ScriptArray!(GameplayEvents.GameplayEventMetaData) SupportedEvents() { mixin(MGPC!("ScriptArray!(GameplayEvents.GameplayEventMetaData)", 252)()); }
+		ScriptArray!(GameplayEvents.WeaponClassEventData) WeaponClassArray() { mixin(MGPC!("ScriptArray!(GameplayEvents.WeaponClassEventData)", 264)()); }
+		ScriptArray!(GameplayEvents.DamageClassEventData) DamageClassArray() { mixin(MGPC!("ScriptArray!(GameplayEvents.DamageClassEventData)", 276)()); }
+		ScriptArray!(GameplayEvents.ProjectileClassEventData) ProjectileClassArray() { mixin(MGPC!("ScriptArray!(GameplayEvents.ProjectileClassEventData)", 288)()); }
+		ScriptArray!(GameplayEvents.PawnClassEventData) PawnClassArray() { mixin(MGPC!("ScriptArray!(GameplayEvents.PawnClassEventData)", 300)()); }
+		ScriptArray!(ScriptString) ActorArray() { mixin(MGPC!("ScriptArray!(ScriptString)", 312)()); }
+		ScriptArray!(ScriptString) SoundCueArray() { mixin(MGPC!("ScriptArray!(ScriptString)", 324)()); }
+		GameplayEvents.GameSessionInformation CurrentSessionInfo() { mixin(MGPC!("GameplayEvents.GameSessionInformation", 120)()); }
+		GameplayEvents.GameplayEventsHeader Header() { mixin(MGPC!("GameplayEvents.GameplayEventsHeader", 76)()); }
+		ScriptString StatsFileName() { mixin(MGPC!("ScriptString", 64)()); }
+		UObject.Pointer Archive() { mixin(MGPC!("UObject.Pointer", 60)()); }
 	}
 final:
 	bool OpenStatsFile(ScriptString Filename)

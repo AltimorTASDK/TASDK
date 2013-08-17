@@ -20,13 +20,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqAct_MultiLevelStreaming.LevelStreamingNameCombo")()); }
 		@property final auto ref
 		{
-			ScriptName LevelName() { mixin(MGPS!(ScriptName, 4)()); }
+			ScriptName LevelName() { mixin(MGPS!("ScriptName", 4)()); }
 			// WARNING: Property 'Level' has the same name as a defined type!
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(SeqAct_MultiLevelStreaming.LevelStreamingNameCombo) Levels() { mixin(MGPC!(ScriptArray!(SeqAct_MultiLevelStreaming.LevelStreamingNameCombo), 252)()); }
+		@property final auto ref ScriptArray!(SeqAct_MultiLevelStreaming.LevelStreamingNameCombo) Levels() { mixin(MGPC!("ScriptArray!(SeqAct_MultiLevelStreaming.LevelStreamingNameCombo)", 252)()); }
 		bool bStatusIsOk() { mixin(MGBPC!(264, 0x2)()); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC!(264, 0x2)()); }
 		bool bUnloadAllOtherLevels() { mixin(MGBPC!(264, 0x1)()); }

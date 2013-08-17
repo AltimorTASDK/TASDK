@@ -152,10 +152,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.TitleSafeZoneArea")()); }
 		@property final auto ref
 		{
-			float MaxPercentX() { mixin(MGPS!(float, 0)()); }
-			float RecommendedPercentX() { mixin(MGPS!(float, 8)()); }
-			float MaxPercentY() { mixin(MGPS!(float, 4)()); }
-			float RecommendedPercentY() { mixin(MGPS!(float, 12)()); }
+			float MaxPercentX() { mixin(MGPS!("float", 0)()); }
+			float RecommendedPercentX() { mixin(MGPS!("float", 8)()); }
+			float MaxPercentY() { mixin(MGPS!("float", 4)()); }
+			float RecommendedPercentY() { mixin(MGPS!("float", 12)()); }
 		}
 	}
 	struct PerPlayerSplitscreenData
@@ -166,10 +166,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.PerPlayerSplitscreenData")()); }
 		@property final auto ref
 		{
-			float OriginY() { mixin(MGPS!(float, 12)()); }
-			float OriginX() { mixin(MGPS!(float, 8)()); }
-			float SizeY() { mixin(MGPS!(float, 4)()); }
-			float SizeX() { mixin(MGPS!(float, 0)()); }
+			float OriginY() { mixin(MGPS!("float", 12)()); }
+			float OriginX() { mixin(MGPS!("float", 8)()); }
+			float SizeY() { mixin(MGPS!("float", 4)()); }
+			float SizeX() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct SplitscreenData
@@ -178,7 +178,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameViewportClient.SplitscreenData")()); }
-		@property final auto ref ScriptArray!(GameViewportClient.PerPlayerSplitscreenData) PlayerData() { mixin(MGPS!(ScriptArray!(GameViewportClient.PerPlayerSplitscreenData), 0)()); }
+		@property final auto ref ScriptArray!(GameViewportClient.PerPlayerSplitscreenData) PlayerData() { mixin(MGPS!("ScriptArray!(GameViewportClient.PerPlayerSplitscreenData)", 0)()); }
 	}
 	struct DebugDisplayProperty
 	{
@@ -190,8 +190,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptName PropertyName() { mixin(MGPS!(ScriptName, 4)()); }
-				UObject Obj() { mixin(MGPS!(UObject, 0)()); }
+				ScriptName PropertyName() { mixin(MGPS!("ScriptName", 4)()); }
+				UObject Obj() { mixin(MGPS!("UObject", 0)()); }
 			}
 			bool bSpecialProperty() { mixin(MGBPS!(12, 0x1)()); }
 			bool bSpecialProperty(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -201,31 +201,31 @@ public extern(D):
 	{
 		auto ref
 		{
-			Console ViewportConsole() { mixin(MGPC!(Console, 96)()); }
-			UIInteraction UIController() { mixin(MGPC!(UIInteraction, 92)()); }
-			GameViewportClient.ESplitScreenType ActiveSplitscreenType() { mixin(MGPC!(GameViewportClient.ESplitScreenType, 201)()); }
-			GameViewportClient.ESplitScreenType DesiredSplitscreenType() { mixin(MGPC!(GameViewportClient.ESplitScreenType, 200)()); }
-			ScriptClass UIControllerClass() { mixin(MGPC!(ScriptClass, 88)()); }
-			ScriptArray!(Interaction) GlobalInteractions() { mixin(MGPC!(ScriptArray!(Interaction), 76)()); }
-			GameViewportClient.ESplitScreenType Default2PSplitType() { mixin(MGPC!(GameViewportClient.ESplitScreenType, 202)()); }
-			GameViewportClient.ESplitScreenType Default3PSplitType() { mixin(MGPC!(GameViewportClient.ESplitScreenType, 203)()); }
-			ScriptArray!(GameViewportClient.SplitscreenData) SplitscreenInfo() { mixin(MGPC!(ScriptArray!(GameViewportClient.SplitscreenData), 188)()); }
-			GameViewportClient.TitleSafeZoneArea TitleSafeZone() { mixin(MGPC!(GameViewportClient.TitleSafeZoneArea, 172)()); }
-			float ProgressTimeOut() { mixin(MGPC!(float, 228)()); }
-			float ProgressFadeTime() { mixin(MGPC!(float, 232)()); }
-			ScriptString ProgressMessage() { mixin(MGPC!(ScriptString, 204)()); }
-			ScriptString LoadingMessage() { mixin(MGPC!(ScriptString, 108)()); }
-			ScriptString SavingMessage() { mixin(MGPC!(ScriptString, 120)()); }
-			ScriptString ConnectingMessage() { mixin(MGPC!(ScriptString, 132)()); }
-			ScriptString PrecachingMessage() { mixin(MGPC!(ScriptString, 156)()); }
-			ScriptString PausedMessage() { mixin(MGPC!(ScriptString, 144)()); }
-			UObject.Pointer VfTable_FViewportClient() { mixin(MGPC!(UObject.Pointer, 60)()); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC!(UObject.Pointer, 64)()); }
-			UObject.Pointer Viewport() { mixin(MGPC!(UObject.Pointer, 68)()); }
-			UObject.Pointer ViewportFrame() { mixin(MGPC!(UObject.Pointer, 72)()); }
-			QWord ShowFlags() { mixin(MGPC!(QWord, 100)()); }
-			ScriptArray!(GameViewportClient.DebugDisplayProperty) DebugProperties() { mixin(MGPC!(ScriptArray!(GameViewportClient.DebugDisplayProperty), 236)()); }
-			UObject.Pointer ScaleformInteraction() { mixin(MGPC!(UObject.Pointer, 248)()); }
+			Console ViewportConsole() { mixin(MGPC!("Console", 96)()); }
+			UIInteraction UIController() { mixin(MGPC!("UIInteraction", 92)()); }
+			GameViewportClient.ESplitScreenType ActiveSplitscreenType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 201)()); }
+			GameViewportClient.ESplitScreenType DesiredSplitscreenType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 200)()); }
+			ScriptClass UIControllerClass() { mixin(MGPC!("ScriptClass", 88)()); }
+			ScriptArray!(Interaction) GlobalInteractions() { mixin(MGPC!("ScriptArray!(Interaction)", 76)()); }
+			GameViewportClient.ESplitScreenType Default2PSplitType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 202)()); }
+			GameViewportClient.ESplitScreenType Default3PSplitType() { mixin(MGPC!("GameViewportClient.ESplitScreenType", 203)()); }
+			ScriptArray!(GameViewportClient.SplitscreenData) SplitscreenInfo() { mixin(MGPC!("ScriptArray!(GameViewportClient.SplitscreenData)", 188)()); }
+			GameViewportClient.TitleSafeZoneArea TitleSafeZone() { mixin(MGPC!("GameViewportClient.TitleSafeZoneArea", 172)()); }
+			float ProgressTimeOut() { mixin(MGPC!("float", 228)()); }
+			float ProgressFadeTime() { mixin(MGPC!("float", 232)()); }
+			ScriptString ProgressMessage() { mixin(MGPC!("ScriptString", 204)()); }
+			ScriptString LoadingMessage() { mixin(MGPC!("ScriptString", 108)()); }
+			ScriptString SavingMessage() { mixin(MGPC!("ScriptString", 120)()); }
+			ScriptString ConnectingMessage() { mixin(MGPC!("ScriptString", 132)()); }
+			ScriptString PrecachingMessage() { mixin(MGPC!("ScriptString", 156)()); }
+			ScriptString PausedMessage() { mixin(MGPC!("ScriptString", 144)()); }
+			UObject.Pointer VfTable_FViewportClient() { mixin(MGPC!("UObject.Pointer", 60)()); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC!("UObject.Pointer", 64)()); }
+			UObject.Pointer Viewport() { mixin(MGPC!("UObject.Pointer", 68)()); }
+			UObject.Pointer ViewportFrame() { mixin(MGPC!("UObject.Pointer", 72)()); }
+			QWord ShowFlags() { mixin(MGPC!("QWord", 100)()); }
+			ScriptArray!(GameViewportClient.DebugDisplayProperty) DebugProperties() { mixin(MGPC!("ScriptArray!(GameViewportClient.DebugDisplayProperty)", 236)()); }
+			UObject.Pointer ScaleformInteraction() { mixin(MGPC!("UObject.Pointer", 248)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputKey__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputAxis__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__HandleInputChar__Delegate'!
@@ -258,7 +258,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	bool HandleInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent EventType, float AmountDepressed, bool bGamepad)
+	bool HandleInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent EventType, float AmountDepressed, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -266,7 +266,8 @@ final:
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = EventType;
 		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleInputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -297,7 +298,7 @@ final:
 		params[] = 0;
 		*cast(UObject.Vector2D*)params.ptr = out_ViewportSize;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewportSize, params.ptr, cast(void*)0);
-		*out_ViewportSize = *cast(UObject.Vector2D*)params.ptr;
+		out_ViewportSize = *cast(UObject.Vector2D*)params.ptr;
 	}
 	bool IsFullScreenViewport()
 	{
@@ -343,7 +344,7 @@ final:
 		*cast(ScriptString*)&params[4] = OutError;
 		*cast(bool*)&params[16] = bSpawnActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreatePlayer, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)&params[4];
+		OutError = *cast(ScriptString*)&params[4];
 		return *cast(LocalPlayer*)&params[20];
 	}
 	int AddLocalPlayer(LocalPlayer NewPlayer)
@@ -401,7 +402,7 @@ final:
 		*cast(ScriptClass*)params.ptr = vpcClass;
 		*cast(ScriptString*)&params[4] = OutError;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateViewportConsole, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)&params[4];
+		OutError = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	bool Init(ref ScriptString OutError)
@@ -410,7 +411,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = OutError;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)params.ptr;
+		OutError = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	bool CreateInitialPlayer(ref ScriptString OutError)
@@ -419,15 +420,16 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = OutError;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateInitialPlayer, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)params.ptr;
+		OutError = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
-	int InsertInteraction(Interaction NewInteraction, int InIndex)
+	int InsertInteraction(Interaction NewInteraction, int* InIndex = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Interaction*)params.ptr = NewInteraction;
-		*cast(int*)&params[4] = InIndex;
+		if (InIndex !is null)
+			*cast(int*)&params[4] = *InIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InsertInteraction, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
@@ -464,8 +466,8 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = MinPos;
 		*cast(UObject.Vector2D*)&params[8] = MaxPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSubtitleRegion, params.ptr, cast(void*)0);
-		*MinPos = *cast(UObject.Vector2D*)params.ptr;
-		*MaxPos = *cast(UObject.Vector2D*)&params[8];
+		MinPos = *cast(UObject.Vector2D*)params.ptr;
+		MaxPos = *cast(UObject.Vector2D*)&params[8];
 	}
 	int ConvertLocalPlayerToGamePlayerIndex(LocalPlayer LPlayer)
 	{
@@ -516,8 +518,8 @@ final:
 		*cast(Canvas*)&params[8] = pCanvas;
 		*cast(int*)&params[12] = LocalPlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPixelSizeOfScreen, params.ptr, cast(void*)0);
-		*out_Width = *cast(float*)params.ptr;
-		*out_Height = *cast(float*)&params[4];
+		out_Width = *cast(float*)params.ptr;
+		out_Height = *cast(float*)&params[4];
 	}
 	void CalculateSafeZoneValues(ref float out_Horizontal, ref float out_Vertical, Canvas pCanvas, int LocalPlayerIndex, bool bUseMaxPercent)
 	{
@@ -529,10 +531,10 @@ final:
 		*cast(int*)&params[12] = LocalPlayerIndex;
 		*cast(bool*)&params[16] = bUseMaxPercent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalculateSafeZoneValues, params.ptr, cast(void*)0);
-		*out_Horizontal = *cast(float*)params.ptr;
-		*out_Vertical = *cast(float*)&params[4];
+		out_Horizontal = *cast(float*)params.ptr;
+		out_Vertical = *cast(float*)&params[4];
 	}
-	bool CalculateDeadZoneForAllSides(LocalPlayer LPlayer, Canvas pCanvas, ref float fTopSafeZone, ref float fBottomSafeZone, ref float fLeftSafeZone, ref float fRightSafeZone, bool bUseMaxPercent)
+	bool CalculateDeadZoneForAllSides(LocalPlayer LPlayer, Canvas pCanvas, ref float fTopSafeZone, ref float fBottomSafeZone, ref float fLeftSafeZone, ref float fRightSafeZone, bool* bUseMaxPercent = null)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -542,12 +544,13 @@ final:
 		*cast(float*)&params[12] = fBottomSafeZone;
 		*cast(float*)&params[16] = fLeftSafeZone;
 		*cast(float*)&params[20] = fRightSafeZone;
-		*cast(bool*)&params[24] = bUseMaxPercent;
+		if (bUseMaxPercent !is null)
+			*cast(bool*)&params[24] = *bUseMaxPercent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalculateDeadZoneForAllSides, params.ptr, cast(void*)0);
-		*fTopSafeZone = *cast(float*)&params[8];
-		*fBottomSafeZone = *cast(float*)&params[12];
-		*fLeftSafeZone = *cast(float*)&params[16];
-		*fRightSafeZone = *cast(float*)&params[20];
+		fTopSafeZone = *cast(float*)&params[8];
+		fBottomSafeZone = *cast(float*)&params[12];
+		fLeftSafeZone = *cast(float*)&params[16];
+		fRightSafeZone = *cast(float*)&params[20];
 		return *cast(bool*)&params[28];
 	}
 	void Tick(float DeltaTime)
@@ -593,22 +596,26 @@ final:
 		*cast(ScriptString*)&params[4] = Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTransitionMessage, params.ptr, cast(void*)0);
 	}
-	void SetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString Title, bool bIgnoreFutureNetworkMessages)
+	void SetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString* Title = null, bool* bIgnoreFutureNetworkMessages = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(PlayerController.EProgressMessageType*)params.ptr = MessageType;
 		*cast(ScriptString*)&params[4] = Message;
-		*cast(ScriptString*)&params[16] = Title;
-		*cast(bool*)&params[28] = bIgnoreFutureNetworkMessages;
+		if (Title !is null)
+			*cast(ScriptString*)&params[16] = *Title;
+		if (bIgnoreFutureNetworkMessages !is null)
+			*cast(bool*)&params[28] = *bIgnoreFutureNetworkMessages;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetProgressMessage, params.ptr, cast(void*)0);
 	}
-	void NotifyConnectionError(ScriptString Message, ScriptString Title)
+	void NotifyConnectionError(ScriptString* Message = null, ScriptString* Title = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = Message;
-		*cast(ScriptString*)&params[12] = Title;
+		if (Message !is null)
+			*cast(ScriptString*)params.ptr = *Message;
+		if (Title !is null)
+			*cast(ScriptString*)&params[12] = *Title;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyConnectionError, params.ptr, cast(void*)0);
 	}
 	void SetProgressTime(float T)

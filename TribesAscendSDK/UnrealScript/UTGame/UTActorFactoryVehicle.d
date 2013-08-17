@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ubyte TeamNum() { mixin(MGPC!(ubyte, 100)()); }
+		@property final auto ref ubyte TeamNum() { mixin(MGPC!("ubyte", 100)()); }
 		bool bKeyVehicle() { mixin(MGBPC!(96, 0x2)()); }
 		bool bKeyVehicle(bool val) { mixin(MSBPC!(96, 0x2)()); }
 		bool bTeamLocked() { mixin(MGBPC!(96, 0x1)()); }

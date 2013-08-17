@@ -36,11 +36,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SeqEvent_HudRenderText.ETextDrawMethod TextDrawMethod() { mixin(MGPC!(SeqEvent_HudRenderText.ETextDrawMethod, 308)()); }
-		ScriptString DisplayText() { mixin(MGPC!(ScriptString, 296)()); }
-		Vector DisplayLocation() { mixin(MGPC!(Vector, 284)()); }
-		UObject.Color DisplayColor() { mixin(MGPC!(UObject.Color, 280)()); }
-		Font DisplayFont() { mixin(MGPC!(Font, 276)()); }
+		SeqEvent_HudRenderText.ETextDrawMethod TextDrawMethod() { mixin(MGPC!("SeqEvent_HudRenderText.ETextDrawMethod", 308)()); }
+		ScriptString DisplayText() { mixin(MGPC!("ScriptString", 296)()); }
+		Vector DisplayLocation() { mixin(MGPC!("Vector", 284)()); }
+		UObject.Color DisplayColor() { mixin(MGPC!("UObject.Color", 280)()); }
+		Font DisplayFont() { mixin(MGPC!("Font", 276)()); }
 	}
 final:
 	void Render(Canvas TargetCanvas, HUD TargetHud)

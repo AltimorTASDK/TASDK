@@ -17,9 +17,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer InstanceOverride() { mixin(MGPC!(UObject.Pointer, 192)()); }
-			MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 164)()); }
-			MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+			UObject.Pointer InstanceOverride() { mixin(MGPC!("UObject.Pointer", 192)()); }
+			MaterialExpression.ExpressionInput B() { mixin(MGPC!("MaterialExpression.ExpressionInput", 164)()); }
+			MaterialExpression.ExpressionInput A() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
 		}
 		bool ExtendedCaptionDisplay() { mixin(MGBPC!(132, 0x2)()); }
 		bool ExtendedCaptionDisplay(bool val) { mixin(MSBPC!(132, 0x2)()); }

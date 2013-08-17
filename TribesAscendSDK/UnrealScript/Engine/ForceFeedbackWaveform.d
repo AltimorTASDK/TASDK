@@ -30,20 +30,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ForceFeedbackWaveform.WaveformSample")()); }
 		@property final auto ref
 		{
-			float Duration() { mixin(MGPS!(float, 4)()); }
-			ForceFeedbackWaveform.EWaveformFunction RightFunction() { mixin(MGPS!(ForceFeedbackWaveform.EWaveformFunction, 3)()); }
-			ForceFeedbackWaveform.EWaveformFunction LeftFunction() { mixin(MGPS!(ForceFeedbackWaveform.EWaveformFunction, 2)()); }
-			ubyte RightAmplitude() { mixin(MGPS!(ubyte, 1)()); }
-			ubyte LeftAmplitude() { mixin(MGPS!(ubyte, 0)()); }
+			float Duration() { mixin(MGPS!("float", 4)()); }
+			ForceFeedbackWaveform.EWaveformFunction RightFunction() { mixin(MGPS!("ForceFeedbackWaveform.EWaveformFunction", 3)()); }
+			ForceFeedbackWaveform.EWaveformFunction LeftFunction() { mixin(MGPS!("ForceFeedbackWaveform.EWaveformFunction", 2)()); }
+			ubyte RightAmplitude() { mixin(MGPS!("ubyte", 1)()); }
+			ubyte LeftAmplitude() { mixin(MGPS!("ubyte", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ForceFeedbackWaveform.WaveformSample) Samples() { mixin(MGPC!(ScriptArray!(ForceFeedbackWaveform.WaveformSample), 64)()); }
-			float MaxWaveformDistance() { mixin(MGPC!(float, 80)()); }
-			float WaveformFalloffStartDistance() { mixin(MGPC!(float, 76)()); }
+			ScriptArray!(ForceFeedbackWaveform.WaveformSample) Samples() { mixin(MGPC!("ScriptArray!(ForceFeedbackWaveform.WaveformSample)", 64)()); }
+			float MaxWaveformDistance() { mixin(MGPC!("float", 80)()); }
+			float WaveformFalloffStartDistance() { mixin(MGPC!("float", 76)()); }
 		}
 		bool bIsLooping() { mixin(MGBPC!(60, 0x1)()); }
 		bool bIsLooping(bool val) { mixin(MSBPC!(60, 0x1)()); }

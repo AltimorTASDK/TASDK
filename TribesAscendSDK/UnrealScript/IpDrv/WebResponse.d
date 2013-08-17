@@ -67,11 +67,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			WebConnection Connection() { mixin(MGPC!(WebConnection, 156)()); }
-			ScriptArray!(ScriptString) headers() { mixin(MGPC!(ScriptArray!(ScriptString), 60)()); }
-			ScriptString CharSet() { mixin(MGPC!(ScriptString, 144)()); }
-			ScriptString IncludePath() { mixin(MGPC!(ScriptString, 132)()); }
-			UObject.Map_Mirror ReplacementMap() { mixin(MGPC!(UObject.Map_Mirror, 72)()); }
+			WebConnection Connection() { mixin(MGPC!("WebConnection", 156)()); }
+			ScriptArray!(ScriptString) headers() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
+			ScriptString CharSet() { mixin(MGPC!("ScriptString", 144)()); }
+			ScriptString IncludePath() { mixin(MGPC!("ScriptString", 132)()); }
+			UObject.Map_Mirror ReplacementMap() { mixin(MGPC!("UObject.Map_Mirror", 72)()); }
 		}
 		bool bSentResponse() { mixin(MGBPC!(160, 0x2)()); }
 		bool bSentResponse(bool val) { mixin(MSBPC!(160, 0x2)()); }
@@ -79,13 +79,14 @@ public extern(D):
 		bool bSentText(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 final:
-	void Subst(ScriptString Variable, ScriptString Value, bool bClear)
+	void Subst(ScriptString Variable, ScriptString Value, bool* bClear = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Variable;
 		*cast(ScriptString*)&params[12] = Value;
-		*cast(bool*)&params[24] = bClear;
+		if (bClear !is null)
+			*cast(bool*)&params[24] = *bClear;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Subst, params.ptr, cast(void*)0);
 	}
 	bool IncludeUHTM(ScriptString Filename)
@@ -124,11 +125,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.LoadParsedUHTM, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	ScriptString GetHTTPExpiration(int OffsetSeconds)
+	ScriptString GetHTTPExpiration(int* OffsetSeconds = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = OffsetSeconds;
+		if (OffsetSeconds !is null)
+			*cast(int*)params.ptr = *OffsetSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHTTPExpiration, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
@@ -136,12 +138,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Dump, cast(void*)0, cast(void*)0);
 	}
-	void SendText(ScriptString Text, bool bNoCRLF)
+	void SendText(ScriptString Text, bool* bNoCRLF = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(bool*)&params[12] = bNoCRLF;
+		if (bNoCRLF !is null)
+			*cast(bool*)&params[12] = *bNoCRLF;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendText, params.ptr, cast(void*)0);
 	}
 	void SendBinary(int Count, ubyte B)
@@ -152,12 +155,13 @@ final:
 		params[4] = B;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendBinary, params.ptr, cast(void*)0);
 	}
-	bool SendCachedFile(ScriptString Filename, ScriptString ContentType)
+	bool SendCachedFile(ScriptString Filename, ScriptString* ContentType = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		*cast(ScriptString*)&params[12] = ContentType;
+		if (ContentType !is null)
+			*cast(ScriptString*)&params[12] = *ContentType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendCachedFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -182,32 +186,36 @@ final:
 		*cast(ScriptString*)params.ptr = Header;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HTTPHeader, params.ptr, cast(void*)0);
 	}
-	void AddHeader(ScriptString Header, bool bReplace)
+	void AddHeader(ScriptString Header, bool* bReplace = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Header;
-		*cast(bool*)&params[12] = bReplace;
+		if (bReplace !is null)
+			*cast(bool*)&params[12] = *bReplace;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddHeader, params.ptr, cast(void*)0);
 	}
 	void SendHeaders()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendHeaders, cast(void*)0, cast(void*)0);
 	}
-	void HTTPError(int ErrorNum, ScriptString Data)
+	void HTTPError(int ErrorNum, ScriptString* Data = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = ErrorNum;
-		*cast(ScriptString*)&params[4] = Data;
+		if (Data !is null)
+			*cast(ScriptString*)&params[4] = *Data;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HTTPError, params.ptr, cast(void*)0);
 	}
-	void SendStandardHeaders(ScriptString ContentType, bool bCache)
+	void SendStandardHeaders(ScriptString* ContentType = null, bool* bCache = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = ContentType;
-		*cast(bool*)&params[12] = bCache;
+		if (ContentType !is null)
+			*cast(ScriptString*)params.ptr = *ContentType;
+		if (bCache !is null)
+			*cast(bool*)&params[12] = *bCache;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendStandardHeaders, params.ptr, cast(void*)0);
 	}
 	void Redirect(ScriptString pURL)

@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction GetElementCount() { mixin(MGF!("mGetElementCount", "Function UDKBase.UDKUIDataProvider_ServerDetails.GetElementCount")()); }
 		}
 	}
-	@property final auto ref int SearchResultsRow() { mixin(MGPC!(int, 92)()); }
+	@property final auto ref int SearchResultsRow() { mixin(MGPC!("int", 92)()); }
 final:
 	UIDataProvider_Settings GetSearchResultsProvider()
 	{

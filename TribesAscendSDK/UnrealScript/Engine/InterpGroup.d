@@ -21,21 +21,21 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpGroup.InterpEdSelKey")()); }
 		@property final auto ref
 		{
-			float UnsnappedPosition() { mixin(MGPS!(float, 12)()); }
-			int KeyIndex() { mixin(MGPS!(int, 8)()); }
-			InterpTrack Track() { mixin(MGPS!(InterpTrack, 4)()); }
-			InterpGroup Group() { mixin(MGPS!(InterpGroup, 0)()); }
+			float UnsnappedPosition() { mixin(MGPS!("float", 12)()); }
+			int KeyIndex() { mixin(MGPS!("int", 8)()); }
+			InterpTrack Track() { mixin(MGPS!("InterpTrack", 4)()); }
+			InterpGroup Group() { mixin(MGPS!("InterpGroup", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrack) InterpTracks() { mixin(MGPC!(ScriptArray!(InterpTrack), 64)()); }
-			ScriptArray!(AnimSet) GroupAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 88)()); }
-			UObject.Color GroupColor() { mixin(MGPC!(UObject.Color, 84)()); }
-			ScriptName GroupName() { mixin(MGPC!(ScriptName, 76)()); }
-			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			ScriptArray!(InterpTrack) InterpTracks() { mixin(MGPC!("ScriptArray!(InterpTrack)", 64)()); }
+			ScriptArray!(AnimSet) GroupAnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 88)()); }
+			UObject.Color GroupColor() { mixin(MGPC!("UObject.Color", 84)()); }
+			ScriptName GroupName() { mixin(MGPC!("ScriptName", 76)()); }
+			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bIsSelected() { mixin(MGBPC!(100, 0x10)()); }
 		bool bIsSelected(bool val) { mixin(MSBPC!(100, 0x10)()); }

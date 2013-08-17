@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName FindVarName() { mixin(MGPC!(ScriptName, 152)()); }
-			ScriptClass ExpectedType() { mixin(MGPC!(ScriptClass, 148)()); }
+			ScriptName FindVarName() { mixin(MGPC!("ScriptName", 152)()); }
+			ScriptClass ExpectedType() { mixin(MGPC!("ScriptClass", 148)()); }
 		}
 		bool bStatusIsOk() { mixin(MGBPC!(160, 0x1)()); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC!(160, 0x1)()); }

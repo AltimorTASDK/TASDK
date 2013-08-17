@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mTouch;
 		public @property static final ScriptFunction Touch() { mixin(MGF!("mTouch", "Function TribesGame.TrCollisionProxy_Flag.Touch")()); }
 	}
-	@property final auto ref int m_nFlagReachLevel() { mixin(MGPC!(int, 492)()); }
+	@property final auto ref int m_nFlagReachLevel() { mixin(MGPC!("int", 492)()); }
 	final void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)

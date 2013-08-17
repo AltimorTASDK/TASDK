@@ -36,9 +36,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) ClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 256)()); }
-			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 268)()); }
-			ScriptArray!(Actor) TouchedList() { mixin(MGPC!(ScriptArray!(Actor), 284)()); }
+			ScriptArray!(ScriptClass) ClassProximityTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 256)()); }
+			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 268)()); }
+			ScriptArray!(Actor) TouchedList() { mixin(MGPC!("ScriptArray!(Actor)", 284)()); }
 		}
 		bool bAllowDeadPawns() { mixin(MGBPC!(280, 0x4)()); }
 		bool bAllowDeadPawns(bool val) { mixin(MSBPC!(280, 0x4)()); }
@@ -48,23 +48,25 @@ public extern(D):
 		bool bForceOverlapping(bool val) { mixin(MSBPC!(280, 0x1)()); }
 	}
 final:
-	bool CheckTouchActivate(Actor InOriginator, Actor InInstigator, bool bTest)
+	bool CheckTouchActivate(Actor InOriginator, Actor InInstigator, bool* bTest = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = InOriginator;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(bool*)&params[8] = bTest;
+		if (bTest !is null)
+			*cast(bool*)&params[8] = *bTest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckTouchActivate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool CheckUnTouchActivate(Actor InOriginator, Actor InInstigator, bool bTest)
+	bool CheckUnTouchActivate(Actor InOriginator, Actor InInstigator, bool* bTest = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = InOriginator;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(bool*)&params[8] = bTest;
+		if (bTest !is null)
+			*cast(bool*)&params[8] = *bTest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckUnTouchActivate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}

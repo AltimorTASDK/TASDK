@@ -16,23 +16,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector StartLocationMax() { mixin(MGPC!(Vector, 208)()); }
-			Vector StartLocationMin() { mixin(MGPC!(Vector, 196)()); }
-			ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis PC_HeightAxis() { mixin(MGPC!(ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis, 192)()); }
-			float PC_StartHeight() { mixin(MGPC!(float, 188)()); }
-			float PC_StartRadius() { mixin(MGPC!(float, 184)()); }
-			Vector PC_StartLocation() { mixin(MGPC!(Vector, 172)()); }
-			float PC_VelocityScale() { mixin(MGPC!(float, 168)()); }
-			float AlphaOverLife() { mixin(MGPC!(float, 160)()); }
-			Vector ColorOverLife() { mixin(MGPC!(Vector, 148)()); }
-			float StartVelocityRadialMax() { mixin(MGPC!(float, 144)()); }
-			float StartVelocityRadialMin() { mixin(MGPC!(float, 140)()); }
-			Vector StartVelocityMax() { mixin(MGPC!(Vector, 128)()); }
-			Vector StartVelocityMin() { mixin(MGPC!(Vector, 116)()); }
-			Vector StartSizeMax() { mixin(MGPC!(Vector, 104)()); }
-			Vector StartSizeMin() { mixin(MGPC!(Vector, 92)()); }
-			float LifetimeMax() { mixin(MGPC!(float, 88)()); }
-			float LifetimeMin() { mixin(MGPC!(float, 84)()); }
+			Vector StartLocationMax() { mixin(MGPC!("Vector", 208)()); }
+			Vector StartLocationMin() { mixin(MGPC!("Vector", 196)()); }
+			ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis PC_HeightAxis() { mixin(MGPC!("ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis", 192)()); }
+			float PC_StartHeight() { mixin(MGPC!("float", 188)()); }
+			float PC_StartRadius() { mixin(MGPC!("float", 184)()); }
+			Vector PC_StartLocation() { mixin(MGPC!("Vector", 172)()); }
+			float PC_VelocityScale() { mixin(MGPC!("float", 168)()); }
+			float AlphaOverLife() { mixin(MGPC!("float", 160)()); }
+			Vector ColorOverLife() { mixin(MGPC!("Vector", 148)()); }
+			float StartVelocityRadialMax() { mixin(MGPC!("float", 144)()); }
+			float StartVelocityRadialMin() { mixin(MGPC!("float", 140)()); }
+			Vector StartVelocityMax() { mixin(MGPC!("Vector", 128)()); }
+			Vector StartVelocityMin() { mixin(MGPC!("Vector", 116)()); }
+			Vector StartSizeMax() { mixin(MGPC!("Vector", 104)()); }
+			Vector StartSizeMin() { mixin(MGPC!("Vector", 92)()); }
+			float LifetimeMax() { mixin(MGPC!("float", 88)()); }
+			float LifetimeMin() { mixin(MGPC!("float", 84)()); }
 		}
 		bool bRadialVelocity() { mixin(MGBPC!(164, 0x200)()); }
 		bool bRadialVelocity(bool val) { mixin(MSBPC!(164, 0x200)()); }

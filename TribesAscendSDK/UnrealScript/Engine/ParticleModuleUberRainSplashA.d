@@ -17,12 +17,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 228)()); }
-			DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!(DistributionVector.RawDistributionVector, 200)()); }
-			DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!(DistributionVector.RawDistributionVector, 172)()); }
-			DistributionVector.RawDistributionVector StartRotation() { mixin(MGPC!(DistributionVector.RawDistributionVector, 140)()); }
-			DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
-			DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 84)()); }
+			DistributionFloat.RawDistributionFloat AlphaOverLife() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 228)()); }
+			DistributionVector.RawDistributionVector ColorOverLife() { mixin(MGPC!("DistributionVector.RawDistributionVector", 200)()); }
+			DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!("DistributionVector.RawDistributionVector", 172)()); }
+			DistributionVector.RawDistributionVector StartRotation() { mixin(MGPC!("DistributionVector.RawDistributionVector", 140)()); }
+			DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!("DistributionVector.RawDistributionVector", 112)()); }
+			DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 84)()); }
 		}
 		bool MultiplyZ() { mixin(MGBPC!(168, 0x8)()); }
 		bool MultiplyZ(bool val) { mixin(MSBPC!(168, 0x8)()); }

@@ -21,9 +21,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject Target() { mixin(MGPC!(UObject, 260)()); }
-			Rotator RotationValue() { mixin(MGPC!(Rotator, 248)()); }
-			Vector LocationValue() { mixin(MGPC!(Vector, 236)()); }
+			UObject Target() { mixin(MGPC!("UObject", 260)()); }
+			Rotator RotationValue() { mixin(MGPC!("Rotator", 248)()); }
+			Vector LocationValue() { mixin(MGPC!("Vector", 236)()); }
 		}
 		bool bSetRotation() { mixin(MGBPC!(232, 0x2)()); }
 		bool bSetRotation(bool val) { mixin(MSBPC!(232, 0x2)()); }

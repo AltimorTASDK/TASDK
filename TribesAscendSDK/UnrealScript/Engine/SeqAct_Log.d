@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString LogMessage() { mixin(MGPC!(ScriptString, 252)()); }
-			Vector TargetOffset() { mixin(MGPC!(Vector, 240)()); }
-			float TargetDuration() { mixin(MGPC!(float, 236)()); }
+			ScriptString LogMessage() { mixin(MGPC!("ScriptString", 252)()); }
+			Vector TargetOffset() { mixin(MGPC!("Vector", 240)()); }
+			float TargetDuration() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bIncludeObjComment() { mixin(MGBPC!(232, 0x2)()); }
 		bool bIncludeObjComment(bool val) { mixin(MSBPC!(232, 0x2)()); }

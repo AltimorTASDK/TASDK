@@ -41,7 +41,7 @@ public extern(D):
 		private static __gshared ScriptState mStaticClass;
 		@property final static ScriptState StaticClass() { mixin(MGSCSA!("State UTGame.UTArmorPickupFactory.Pickup")()); }
 	}
-	@property final auto ref int ShieldAmount() { mixin(MGPC!(int, 976)()); }
+	@property final auto ref int ShieldAmount() { mixin(MGPC!("int", 976)()); }
 final:
 	static void UpdateHUD(UTHUD H)
 	{

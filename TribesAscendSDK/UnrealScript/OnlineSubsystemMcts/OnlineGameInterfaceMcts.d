@@ -86,34 +86,33 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) GameInviteAcceptedDelegates() { mixin(MGPC!(ScriptArray!(
+void*) GameInviteAcceptedDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 444)()); }
+void*)", 444)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RegisterPlayerCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) RegisterPlayerCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 460)()); }
+void*)", 460)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) UnregisterPlayerCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) UnregisterPlayerCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 472)()); }
+void*)", 472)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUnregisterPlayerComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnRegisterPlayerComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnGameInviteAccepted__Delegate'!
-		OnlineGameSearch InviteGameSearch() { mixin(MGPC!(OnlineGameSearch, 456)()); }
-		OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!(OnlineVoiceInterfaceMcts, 440)()); }
-		MctsOnlineSettings MctsSettings() { mixin(MGPC!(MctsOnlineSettings, 436)()); }
+		OnlineGameSearch InviteGameSearch() { mixin(MGPC!("OnlineGameSearch", 456)()); }
+		OnlineVoiceInterfaceMcts MctsVoiceInt() { mixin(MGPC!("OnlineVoiceInterfaceMcts", 440)()); }
+		MctsOnlineSettings MctsSettings() { mixin(MGPC!("MctsOnlineSettings", 436)()); }
 	}
 final:
-	void OnGameInviteAccepted(ref const OnlineGameSearch.OnlineGameSearchResult InviteResult)
+	void OnGameInviteAccepted(ref in OnlineGameSearch.OnlineGameSearchResult InviteResult)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = InviteResult;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)InviteResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameInviteAccepted, params.ptr, cast(void*)0);
-		*InviteResult = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 	}
 	void OnRegisterPlayerComplete(ScriptName SessionName, OnlineSubsystem.UniqueNetId PlayerID, bool bWasSuccessful)
 	{
@@ -133,26 +132,30 @@ final:
 		*cast(bool*)&params[16] = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnUnregisterPlayerComplete, params.ptr, cast(void*)0);
 	}
-	void SealMatch(bool bSeal, bool bLateSeal)
+	void SealMatch(bool* bSeal = null, bool* bLateSeal = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bSeal;
-		*cast(bool*)&params[4] = bLateSeal;
+		if (bSeal !is null)
+			*cast(bool*)params.ptr = *bSeal;
+		if (bLateSeal !is null)
+			*cast(bool*)&params[4] = *bLateSeal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SealMatch, params.ptr, cast(void*)0);
 	}
-	void HoldInvites(bool bHold)
+	void HoldInvites(bool* bHold = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bHold;
+		if (bHold !is null)
+			*cast(bool*)params.ptr = *bHold;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HoldInvites, params.ptr, cast(void*)0);
 	}
-	void EndGame(int nWaitSeconds)
+	void EndGame(int* nWaitSeconds = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = nWaitSeconds;
+		if (nWaitSeconds !is null)
+			*cast(int*)params.ptr = *nWaitSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndGame, params.ptr, cast(void*)0);
 	}
 	bool MatchQueueJoin(int nQueueId)
@@ -163,11 +166,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.MatchQueueJoin, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool MatchQueueLeave(int nQueueId)
+	bool MatchQueueLeave(int* nQueueId = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = nQueueId;
+		if (nQueueId !is null)
+			*cast(int*)params.ptr = *nQueueId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MatchQueueLeave, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -211,13 +215,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.MatchLobbyEquipItems, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool bShouldRefreshOnlineData)
+	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool* bShouldRefreshOnlineData = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(OnlineGameSettings*)&params[8] = UpdatedGameSettings;
-		*cast(bool*)&params[12] = bShouldRefreshOnlineData;
+		if (bShouldRefreshOnlineData !is null)
+			*cast(bool*)&params[12] = *bShouldRefreshOnlineData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOnlineGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

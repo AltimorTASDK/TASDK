@@ -219,9 +219,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				GFxMoviePlayer.ASType Type() { mixin(MGPS!(GFxMoviePlayer.ASType, 0)()); }
-				float N() { mixin(MGPS!(float, 8)()); }
-				ScriptString S() { mixin(MGPS!(ScriptString, 12)()); }
+				GFxMoviePlayer.ASType Type() { mixin(MGPS!("GFxMoviePlayer.ASType", 0)()); }
+				float N() { mixin(MGPS!("float", 8)()); }
+				ScriptString S() { mixin(MGPS!("ScriptString", 12)()); }
 			}
 			bool B() { mixin(MGBPS!(4, 0x1)()); }
 			bool B(bool val) { mixin(MSBPS!(4, 0x1)()); }
@@ -235,8 +235,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.GFxWidgetBinding")()); }
 		@property final auto ref
 		{
-			ScriptName WidgetName() { mixin(MGPS!(ScriptName, 0)()); }
-			ScriptClass WidgetClass() { mixin(MGPS!(ScriptClass, 8)()); }
+			ScriptName WidgetName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptClass WidgetClass() { mixin(MGPS!("ScriptClass", 8)()); }
 		}
 	}
 	struct SoundThemeBinding
@@ -247,8 +247,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.SoundThemeBinding")()); }
 		@property final auto ref
 		{
-			ScriptName ThemeName() { mixin(MGPS!(ScriptName, 0)()); }
-			UISoundTheme Theme() { mixin(MGPS!(UISoundTheme, 8)()); }
+			ScriptName ThemeName() { mixin(MGPS!("ScriptName", 0)()); }
+			UISoundTheme Theme() { mixin(MGPS!("UISoundTheme", 8)()); }
 		}
 	}
 	struct GFxDataStoreBinding
@@ -261,17 +261,17 @@ public extern(D):
 		{
 			auto ref
 			{
-				UIRoot.UIDataStoreBinding DataSource() { mixin(MGPS!(UIRoot.UIDataStoreBinding, 0)()); }
-				ScriptString VarPath() { mixin(MGPS!(ScriptString, 48)()); }
-				ScriptString ModelId() { mixin(MGPS!(ScriptString, 60)()); }
-				ScriptString ControlId() { mixin(MGPS!(ScriptString, 72)()); }
-				ScriptArray!(ScriptName) CellTags() { mixin(MGPS!(ScriptArray!(ScriptName), 88)()); }
-				ScriptArray!(ubyte) ModelIdUtf8() { mixin(MGPS!(ScriptArray!(ubyte), 100)()); }
-				ScriptArray!(ubyte) ControlIdUtf8() { mixin(MGPS!(ScriptArray!(ubyte), 112)()); }
+				UIRoot.UIDataStoreBinding DataSource() { mixin(MGPS!("UIRoot.UIDataStoreBinding", 0)()); }
+				ScriptString VarPath() { mixin(MGPS!("ScriptString", 48)()); }
+				ScriptString ModelId() { mixin(MGPS!("ScriptString", 60)()); }
+				ScriptString ControlId() { mixin(MGPS!("ScriptString", 72)()); }
+				ScriptArray!(ScriptName) CellTags() { mixin(MGPS!("ScriptArray!(ScriptName)", 88)()); }
+				ScriptArray!(ubyte) ModelIdUtf8() { mixin(MGPS!("ScriptArray!(ubyte)", 100)()); }
+				ScriptArray!(ubyte) ControlIdUtf8() { mixin(MGPS!("ScriptArray!(ubyte)", 112)()); }
 				// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ListDataProvider'!
-				ScriptArray!(ScriptName) FullCellTags() { mixin(MGPS!(ScriptArray!(ScriptName), 132)()); }
-				UObject.Pointer ModelRef() { mixin(MGPS!(UObject.Pointer, 144)()); }
-				UObject.Pointer ControlRef() { mixin(MGPS!(UObject.Pointer, 148)()); }
+				ScriptArray!(ScriptName) FullCellTags() { mixin(MGPS!("ScriptArray!(ScriptName)", 132)()); }
+				UObject.Pointer ModelRef() { mixin(MGPS!("UObject.Pointer", 144)()); }
+				UObject.Pointer ControlRef() { mixin(MGPS!("UObject.Pointer", 148)()); }
 			}
 			bool bEditable() { mixin(MGBPS!(84, 0x1)()); }
 			bool bEditable(bool val) { mixin(MSBPS!(84, 0x1)()); }
@@ -285,7 +285,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxMoviePlayer.ExternalTexture")()); }
 		@property final auto ref
 		{
-			ScriptString Resource() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString Resource() { mixin(MGPS!("ScriptString", 0)()); }
 			// WARNING: Property 'Texture' has the same name as a defined type!
 		}
 	}
@@ -293,28 +293,28 @@ public extern(D):
 	{
 		auto ref
 		{
-			int LocalPlayerOwnerIndex() { mixin(MGPC!(int, 208)()); }
-			SwfMovie MovieInfo() { mixin(MGPC!(SwfMovie, 196)()); }
-			UObject ExternalInterface() { mixin(MGPC!(UObject, 212)()); }
-			UObject.Pointer pMovie() { mixin(MGPC!(UObject.Pointer, 60)()); }
-			UObject.Pointer pCaptureKeys() { mixin(MGPC!(UObject.Pointer, 64)()); }
-			UObject.Pointer pFocusIgnoreKeys() { mixin(MGPC!(UObject.Pointer, 68)()); }
+			int LocalPlayerOwnerIndex() { mixin(MGPC!("int", 208)()); }
+			SwfMovie MovieInfo() { mixin(MGPC!("SwfMovie", 196)()); }
+			UObject ExternalInterface() { mixin(MGPC!("UObject", 212)()); }
+			UObject.Pointer pMovie() { mixin(MGPC!("UObject.Pointer", 60)()); }
+			UObject.Pointer pCaptureKeys() { mixin(MGPC!("UObject.Pointer", 64)()); }
+			UObject.Pointer pFocusIgnoreKeys() { mixin(MGPC!("UObject.Pointer", 68)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUClasses'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'ASUObjects'!
-			int NextASUObject() { mixin(MGPC!(int, 192)()); }
-			TextureRenderTarget2D RenderTexture() { mixin(MGPC!(TextureRenderTarget2D, 204)()); }
-			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 216)()); }
-			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 228)()); }
-			ScriptArray!(GFxMoviePlayer.ExternalTexture) ExternalTextures() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.ExternalTexture), 240)()); }
-			ScriptArray!(GFxMoviePlayer.SoundThemeBinding) SoundThemes() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.SoundThemeBinding), 252)()); }
-			GFxMoviePlayer.GFxTimingMode TimingMode() { mixin(MGPC!(GFxMoviePlayer.GFxTimingMode, 264)()); }
-			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!(GFxMoviePlayer.GFxRenderTextureMode, 265)()); }
-			ubyte Priority() { mixin(MGPC!(ubyte, 266)()); }
-			ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding) DataStoreBindings() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding), 268)()); }
-			GFxDataStoreSubscriber DataStoreSubscriber() { mixin(MGPC!(GFxDataStoreSubscriber, 280)()); }
-			ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) WidgetBindings() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.GFxWidgetBinding), 284)()); }
+			int NextASUObject() { mixin(MGPC!("int", 192)()); }
+			TextureRenderTarget2D RenderTexture() { mixin(MGPC!("TextureRenderTarget2D", 204)()); }
+			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 216)()); }
+			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 228)()); }
+			ScriptArray!(GFxMoviePlayer.ExternalTexture) ExternalTextures() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.ExternalTexture)", 240)()); }
+			ScriptArray!(GFxMoviePlayer.SoundThemeBinding) SoundThemes() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.SoundThemeBinding)", 252)()); }
+			GFxMoviePlayer.GFxTimingMode TimingMode() { mixin(MGPC!("GFxMoviePlayer.GFxTimingMode", 264)()); }
+			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!("GFxMoviePlayer.GFxRenderTextureMode", 265)()); }
+			ubyte Priority() { mixin(MGPC!("ubyte", 266)()); }
+			ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding) DataStoreBindings() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.GFxDataStoreBinding)", 268)()); }
+			GFxDataStoreSubscriber DataStoreSubscriber() { mixin(MGPC!("GFxDataStoreSubscriber", 280)()); }
+			ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) WidgetBindings() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.GFxWidgetBinding)", 284)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'WidgetPathBindings'!
-			ScriptArray!(GFxObject) ObjectValues() { mixin(MGPC!(ScriptArray!(GFxObject), 356)()); }
+			ScriptArray!(GFxObject) ObjectValues() { mixin(MGPC!("ScriptArray!(GFxObject)", 356)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPostAdvance__Delegate'!
 		}
 		bool bAutoPlay() { mixin(MGBPC!(200, 0x80)()); }
@@ -384,11 +384,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLP, params.ptr, cast(void*)0);
 		return *cast(LocalPlayer*)params.ptr;
 	}
-	void Init(LocalPlayer LocPlay)
+	void Init(LocalPlayer* LocPlay = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = LocPlay;
+		if (LocPlay !is null)
+			*cast(LocalPlayer*)params.ptr = *LocPlay;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void SetWidgetPathBinding(GFxObject WidgetToBind, ScriptName Path)
@@ -493,12 +494,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateArray, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
-	GFxObject CreateObject(ScriptString ASClass, ScriptClass Type)
+	GFxObject CreateObject(ScriptString ASClass, ScriptClass* Type = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ASClass;
-		*cast(ScriptClass*)&params[12] = Type;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[12] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateObject, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[16];
 	}
@@ -550,7 +552,7 @@ final:
 		*cast(int*)&params[12] = Index;
 		*cast(ScriptArray!(ScriptString)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableStringArray, params.ptr, cast(void*)0);
-		*Arg = *cast(ScriptArray!(ScriptString)*)&params[16];
+		Arg = *cast(ScriptArray!(ScriptString)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 	bool GetVariableFloatArray(ScriptString Path, int Index, ref ScriptArray!(float) Arg)
@@ -561,7 +563,7 @@ final:
 		*cast(int*)&params[12] = Index;
 		*cast(ScriptArray!(float)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableFloatArray, params.ptr, cast(void*)0);
-		*Arg = *cast(ScriptArray!(float)*)&params[16];
+		Arg = *cast(ScriptArray!(float)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 	bool GetVariableIntArray(ScriptString Path, int Index, ref ScriptArray!(int) Arg)
@@ -572,7 +574,7 @@ final:
 		*cast(int*)&params[12] = Index;
 		*cast(ScriptArray!(int)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableIntArray, params.ptr, cast(void*)0);
-		*Arg = *cast(ScriptArray!(int)*)&params[16];
+		Arg = *cast(ScriptArray!(int)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 	bool GetVariableArray(ScriptString Path, int Index, ref ScriptArray!(GFxMoviePlayer.ASValue) Arg)
@@ -583,7 +585,7 @@ final:
 		*cast(int*)&params[12] = Index;
 		*cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableArray, params.ptr, cast(void*)0);
-		*Arg = *cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16];
+		Arg = *cast(ScriptArray!(GFxMoviePlayer.ASValue)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 	void SetVariableObject(ScriptString Path, GFxObject pObject)
@@ -626,12 +628,13 @@ final:
 		*cast(GFxMoviePlayer.ASValue*)&params[12] = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVariable, params.ptr, cast(void*)0);
 	}
-	GFxObject GetVariableObject(ScriptString Path, ScriptClass Type)
+	GFxObject GetVariableObject(ScriptString Path, ScriptClass* Type = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Path;
-		*cast(ScriptClass*)&params[12] = Type;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[12] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableObject, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[16];
 	}
@@ -720,21 +723,19 @@ final:
 		*cast(bool*)params.ptr = bCanReceiveFocus;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMovieCanReceiveFocus, params.ptr, cast(void*)0);
 	}
-	void SetPerspective3D(ref const UObject.Matrix matPersp)
+	void SetPerspective3D(ref in UObject.Matrix matPersp)
 	{
 		ubyte params[64];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = matPersp;
+		*cast(UObject.Matrix*)params.ptr = cast(UObject.Matrix)matPersp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPerspective3D, params.ptr, cast(void*)0);
-		*matPersp = *cast(UObject.Matrix*)params.ptr;
 	}
-	void SetView3D(ref const UObject.Matrix matView)
+	void SetView3D(ref in UObject.Matrix matView)
 	{
 		ubyte params[64];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = matView;
+		*cast(UObject.Matrix*)params.ptr = cast(UObject.Matrix)matView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetView3D, params.ptr, cast(void*)0);
-		*matView = *cast(UObject.Matrix*)params.ptr;
 	}
 	void GetVisibleFrameRect(ref float x0, ref float y0, ref float X1, ref float Y1)
 	{
@@ -745,10 +746,10 @@ final:
 		*cast(float*)&params[8] = X1;
 		*cast(float*)&params[12] = Y1;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVisibleFrameRect, params.ptr, cast(void*)0);
-		*x0 = *cast(float*)params.ptr;
-		*y0 = *cast(float*)&params[4];
-		*X1 = *cast(float*)&params[8];
-		*Y1 = *cast(float*)&params[12];
+		x0 = *cast(float*)params.ptr;
+		y0 = *cast(float*)&params[4];
+		X1 = *cast(float*)&params[8];
+		Y1 = *cast(float*)&params[12];
 	}
 	void SetAlignment(GFxMoviePlayer.GFxAlign A)
 	{
@@ -841,18 +842,20 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnClose, cast(void*)0, cast(void*)0);
 	}
-	void Close(bool Unload)
+	void Close(bool* Unload = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = Unload;
+		if (Unload !is null)
+			*cast(bool*)params.ptr = *Unload;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Close, params.ptr, cast(void*)0);
 	}
-	void SetPause(bool bPausePlayback)
+	void SetPause(bool* bPausePlayback = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPausePlayback;
+		if (bPausePlayback !is null)
+			*cast(bool*)params.ptr = *bPausePlayback;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 	}
 	void OnPostAdvance(float DeltaTime)
@@ -869,11 +872,12 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostAdvance, params.ptr, cast(void*)0);
 	}
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

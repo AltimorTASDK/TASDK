@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeSubRuleset")()); }
 	private static __gshared PBRuleNodeSubRuleset mDefaultProperties;
 	@property final static PBRuleNodeSubRuleset DefaultProperties() { mixin(MGDPC!(PBRuleNodeSubRuleset, "PBRuleNodeSubRuleset Engine.Default__PBRuleNodeSubRuleset")()); }
-	@property final auto ref ProcBuildingRuleset SubRuleset() { mixin(MGPC!(ProcBuildingRuleset, 104)()); }
+	@property final auto ref ProcBuildingRuleset SubRuleset() { mixin(MGPC!("ProcBuildingRuleset", 104)()); }
 }

@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Actor ActualWinner() { mixin(MGPC!(Actor, 260)()); }
-		Actor Winner() { mixin(MGPC!(Actor, 256)()); }
+		Actor ActualWinner() { mixin(MGPC!("Actor", 260)()); }
+		Actor Winner() { mixin(MGPC!("Actor", 256)()); }
 	}
 final:
 	void Activated()

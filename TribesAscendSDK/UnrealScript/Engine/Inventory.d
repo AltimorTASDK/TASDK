@@ -56,14 +56,14 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DroppedPickupMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DroppedPickupParticles'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupFactoryMesh'!
-			ScriptClass DroppedPickupClass() { mixin(MGPC!(ScriptClass, 536)()); }
-			ScriptString PickupForce() { mixin(MGPC!(ScriptString, 524)()); }
-			SoundCue PickupSound() { mixin(MGPC!(SoundCue, 520)()); }
-			ScriptString PickupMessage() { mixin(MGPC!(ScriptString, 508)()); }
-			float MaxDesireability() { mixin(MGPC!(float, 504)()); }
-			float RespawnTime() { mixin(MGPC!(float, 500)()); }
-			ScriptString ItemName() { mixin(MGPC!(ScriptString, 484)()); }
-			InventoryManager InvManager() { mixin(MGPC!(InventoryManager, 480)()); }
+			ScriptClass DroppedPickupClass() { mixin(MGPC!("ScriptClass", 536)()); }
+			ScriptString PickupForce() { mixin(MGPC!("ScriptString", 524)()); }
+			SoundCue PickupSound() { mixin(MGPC!("SoundCue", 520)()); }
+			ScriptString PickupMessage() { mixin(MGPC!("ScriptString", 508)()); }
+			float MaxDesireability() { mixin(MGPC!("float", 504)()); }
+			float RespawnTime() { mixin(MGPC!("float", 500)()); }
+			ScriptString ItemName() { mixin(MGPC!("ScriptString", 484)()); }
+			InventoryManager InvManager() { mixin(MGPC!("InventoryManager", 480)()); }
 			// WARNING: Property 'Inventory' has the same name as a defined type!
 		}
 		bool bPredictRespawns() { mixin(MGBPC!(496, 0x4)()); }
@@ -118,12 +118,13 @@ final:
 		*cast(Pawn*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AnnouncePickup, params.ptr, cast(void*)0);
 	}
-	void GivenTo(Pawn thisPawn, bool bDoNotActivate)
+	void GivenTo(Pawn thisPawn, bool* bDoNotActivate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = thisPawn;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GivenTo, params.ptr, cast(void*)0);
 	}
 	void ClientGivenTo(Pawn NewOwner, bool bDoNotActivate)
@@ -155,13 +156,16 @@ final:
 		*cast(Vector*)&params[12] = StartVelocity;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DropFrom, params.ptr, cast(void*)0);
 	}
-	static ScriptString GetLocalString(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2)
+	static ScriptString GetLocalString(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[4] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_2;
 		StaticClass.ProcessEvent(Functions.GetLocalString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}

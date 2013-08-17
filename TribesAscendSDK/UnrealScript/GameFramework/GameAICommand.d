@@ -87,10 +87,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName Status() { mixin(MGPC!(ScriptName, 76)()); }
-			GameAIController GameAIOwner() { mixin(MGPC!(GameAIController, 72)()); }
-			ScriptName ChildStatus() { mixin(MGPC!(ScriptName, 64)()); }
-			GameAICommand ChildCommand() { mixin(MGPC!(GameAICommand, 60)()); }
+			ScriptName Status() { mixin(MGPC!("ScriptName", 76)()); }
+			GameAIController GameAIOwner() { mixin(MGPC!("GameAIController", 72)()); }
+			ScriptName ChildStatus() { mixin(MGPC!("ScriptName", 64)()); }
+			GameAICommand ChildCommand() { mixin(MGPC!("GameAICommand", 60)()); }
 		}
 		bool bPendingPop() { mixin(MGBPC!(84, 0x20)()); }
 		bool bPendingPop(bool val) { mixin(MSBPC!(84, 0x20)()); }
@@ -244,7 +244,7 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(ScriptArray!(ScriptString)*)&params[4] = OutText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDebugOverheadText, params.ptr, cast(void*)0);
-		*OutText = *cast(ScriptArray!(ScriptString)*)&params[4];
+		OutText = *cast(ScriptArray!(ScriptString)*)&params[4];
 	}
 	ScriptString GetDebugVerboseText()
 	{

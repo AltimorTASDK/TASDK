@@ -13,7 +13,7 @@ public extern(D):
 	@property final static TrSVehicleSimTank DefaultProperties() { mixin(MGDPC!(TrSVehicleSimTank, "TrSVehicleSimTank TribesGame.Default__TrSVehicleSimTank")()); }
 	@property final auto ref
 	{
-		float m_fVelocityChangeDamping() { mixin(MGPC!(float, 248)()); }
-		float m_fLastDirectionNudgeTime() { mixin(MGPC!(float, 244)()); }
+		float m_fVelocityChangeDamping() { mixin(MGPC!("float", 248)()); }
+		float m_fLastDirectionNudgeTime() { mixin(MGPC!("float", 244)()); }
 	}
 }

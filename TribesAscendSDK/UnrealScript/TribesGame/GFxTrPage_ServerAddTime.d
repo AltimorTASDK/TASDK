@@ -50,8 +50,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int PurchaseIndex() { mixin(MGPC!(int, 360)()); }
-		int FocusIndex() { mixin(MGPC!(int, 356)()); }
+		int PurchaseIndex() { mixin(MGPC!("int", 360)()); }
+		int FocusIndex() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

@@ -20,9 +20,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor VectorValue() { mixin(MGPC!(UObject.LinearColor, 244)()); }
-		ScriptName ParamName() { mixin(MGPC!(ScriptName, 236)()); }
-		MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 232)()); }
+		UObject.LinearColor VectorValue() { mixin(MGPC!("UObject.LinearColor", 244)()); }
+		ScriptName ParamName() { mixin(MGPC!("ScriptName", 236)()); }
+		MaterialInstanceConstant MatInst() { mixin(MGPC!("MaterialInstanceConstant", 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

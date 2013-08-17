@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction RenderForTeammate() { mixin(MGF!("mRenderForTeammate", "Function TribesGame.TrLaserTarget.RenderForTeammate")()); }
 		}
 	}
-	@property final auto ref ubyte m_nTeamId() { mixin(MGPC!(ubyte, 476)()); }
+	@property final auto ref ubyte m_nTeamId() { mixin(MGPC!("ubyte", 476)()); }
 final:
 	void SetTeamNum(ubyte TeamID)
 	{

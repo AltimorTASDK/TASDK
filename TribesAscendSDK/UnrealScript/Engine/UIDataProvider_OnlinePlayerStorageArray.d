@@ -15,12 +15,12 @@ public extern(D):
 	@property final static UIDataProvider_OnlinePlayerStorageArray DefaultProperties() { mixin(MGDPC!(UIDataProvider_OnlinePlayerStorageArray, "UIDataProvider_OnlinePlayerStorageArray Engine.Default__UIDataProvider_OnlinePlayerStorageArray")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptName) Values() { mixin(MGPC!(ScriptArray!(ScriptName), 124)()); }
-		ScriptString ColumnHeaderText() { mixin(MGPC!(ScriptString, 112)()); }
-		ScriptName PlayerStorageName() { mixin(MGPC!(ScriptName, 104)()); }
-		int PlayerStorageId() { mixin(MGPC!(int, 100)()); }
-		OnlinePlayerStorage PlayerStorage() { mixin(MGPC!(OnlinePlayerStorage, 96)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 88)()); }
+		ScriptArray!(ScriptName) Values() { mixin(MGPC!("ScriptArray!(ScriptName)", 124)()); }
+		ScriptString ColumnHeaderText() { mixin(MGPC!("ScriptString", 112)()); }
+		ScriptName PlayerStorageName() { mixin(MGPC!("ScriptName", 104)()); }
+		int PlayerStorageId() { mixin(MGPC!("int", 100)()); }
+		OnlinePlayerStorage PlayerStorage() { mixin(MGPC!("OnlinePlayerStorage", 96)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
 	}
 }

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionSceneDepth DefaultProperties() { mixin(MGDPC!(MaterialExpressionSceneDepth, "MaterialExpressionSceneDepth Engine.Default__MaterialExpressionSceneDepth")()); }
 	@property final
 	{
-		@property final auto ref MaterialExpression.ExpressionInput Coordinates() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		@property final auto ref MaterialExpression.ExpressionInput Coordinates() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 		bool bNormalize() { mixin(MGBPC!(136, 0x1)()); }
 		bool bNormalize(bool val) { mixin(MSBPC!(136, 0x1)()); }
 	}

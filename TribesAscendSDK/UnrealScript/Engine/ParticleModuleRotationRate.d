@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleRotationRate")()); }
 	private static __gshared ParticleModuleRotationRate mDefaultProperties;
 	@property final static ParticleModuleRotationRate DefaultProperties() { mixin(MGDPC!(ParticleModuleRotationRate, "ParticleModuleRotationRate Engine.Default__ParticleModuleRotationRate")()); }
-	@property final auto ref DistributionFloat.RawDistributionFloat StartRotationRate() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+	@property final auto ref DistributionFloat.RawDistributionFloat StartRotationRate() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
 }

@@ -46,11 +46,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(NavigationPoint) ShootSpots() { mixin(MGPC!(ScriptArray!(NavigationPoint), 692)()); }
-			ubyte DefenderTeamIndex() { mixin(MGPC!(ubyte, 740)()); }
-			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 724)()); }
-			Texture2D IconHudTexture() { mixin(MGPC!(Texture2D, 720)()); }
-			Vector HUDLocation() { mixin(MGPC!(Vector, 708)()); }
+			ScriptArray!(NavigationPoint) ShootSpots() { mixin(MGPC!("ScriptArray!(NavigationPoint)", 692)()); }
+			ubyte DefenderTeamIndex() { mixin(MGPC!("ubyte", 740)()); }
+			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 724)()); }
+			Texture2D IconHudTexture() { mixin(MGPC!("Texture2D", 720)()); }
+			Vector HUDLocation() { mixin(MGPC!("Vector", 708)()); }
 		}
 		bool bUnderAttack() { mixin(MGBPC!(704, 0x2)()); }
 		bool bUnderAttack(bool val) { mixin(MSBPC!(704, 0x2)()); }

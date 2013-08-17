@@ -19,8 +19,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject Value() { mixin(MGPC!(UObject, 236)()); }
-		UObject DefaultValue() { mixin(MGPC!(UObject, 232)()); }
+		UObject Value() { mixin(MGPC!("UObject", 236)()); }
+		UObject DefaultValue() { mixin(MGPC!("UObject", 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

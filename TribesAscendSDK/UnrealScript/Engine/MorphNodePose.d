@@ -19,9 +19,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float Weight() { mixin(MGPC!(float, 120)()); }
-		ScriptName MorphName() { mixin(MGPC!(ScriptName, 112)()); }
-		MorphTarget Target() { mixin(MGPC!(MorphTarget, 108)()); }
+		float Weight() { mixin(MGPC!("float", 120)()); }
+		ScriptName MorphName() { mixin(MGPC!("ScriptName", 112)()); }
+		MorphTarget Target() { mixin(MGPC!("MorphTarget", 108)()); }
 	}
 	final void SetMorphTarget(ScriptName MorphTargetName)
 	{

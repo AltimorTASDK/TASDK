@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetElementCount;
 		public @property static final ScriptFunction GetElementCount() { mixin(MGF!("mGetElementCount", "Function UDKBase.UDKUIDataProvider_StringArray.GetElementCount")()); }
 	}
-	@property final auto ref ScriptArray!(ScriptString) Strings() { mixin(MGPC!(ScriptArray!(ScriptString), 92)()); }
+	@property final auto ref ScriptArray!(ScriptString) Strings() { mixin(MGPC!("ScriptArray!(ScriptString)", 92)()); }
 	final int GetElementCount()
 	{
 		ubyte params[4];

@@ -33,14 +33,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackVisibility.VisibilityTrackKey")()); }
 		@property final auto ref
 		{
-			InterpTrackVisibility.EVisibilityTrackCondition ActiveCondition() { mixin(MGPS!(InterpTrackVisibility.EVisibilityTrackCondition, 5)()); }
-			InterpTrackVisibility.EVisibilityTrackAction Action() { mixin(MGPS!(InterpTrackVisibility.EVisibilityTrackAction, 4)()); }
-			float Time() { mixin(MGPS!(float, 0)()); }
+			InterpTrackVisibility.EVisibilityTrackCondition ActiveCondition() { mixin(MGPS!("InterpTrackVisibility.EVisibilityTrackCondition", 5)()); }
+			InterpTrackVisibility.EVisibilityTrackAction Action() { mixin(MGPS!("InterpTrackVisibility.EVisibilityTrackAction", 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(InterpTrackVisibility.VisibilityTrackKey) VisibilityTrack() { mixin(MGPC!(ScriptArray!(InterpTrackVisibility.VisibilityTrackKey), 128)()); }
+		@property final auto ref ScriptArray!(InterpTrackVisibility.VisibilityTrackKey) VisibilityTrack() { mixin(MGPC!("ScriptArray!(InterpTrackVisibility.VisibilityTrackKey)", 128)()); }
 		bool bFireEventsWhenJumpingForwards() { mixin(MGBPC!(140, 0x4)()); }
 		bool bFireEventsWhenJumpingForwards(bool val) { mixin(MSBPC!(140, 0x4)()); }
 		bool bFireEventsWhenBackwards() { mixin(MGBPC!(140, 0x2)()); }

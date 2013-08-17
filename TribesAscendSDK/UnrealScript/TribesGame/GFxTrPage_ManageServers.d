@@ -42,9 +42,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int PopupNum() { mixin(MGPC!(int, 364)()); }
-		int AddServerNum() { mixin(MGPC!(int, 360)()); }
-		int Offset() { mixin(MGPC!(int, 356)()); }
+		int PopupNum() { mixin(MGPC!("int", 364)()); }
+		int AddServerNum() { mixin(MGPC!("int", 360)()); }
+		int Offset() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void SpecialAction(GFxTrAction Action)

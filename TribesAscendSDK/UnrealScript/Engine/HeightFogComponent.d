@@ -21,12 +21,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float StartDistance() { mixin(MGPC!(float, 112)()); }
-			float ExtinctionDistance() { mixin(MGPC!(float, 108)()); }
-			UObject.Color LightColor() { mixin(MGPC!(UObject.Color, 104)()); }
-			float LightBrightness() { mixin(MGPC!(float, 100)()); }
-			float Density() { mixin(MGPC!(float, 96)()); }
-			float Height() { mixin(MGPC!(float, 92)()); }
+			float StartDistance() { mixin(MGPC!("float", 112)()); }
+			float ExtinctionDistance() { mixin(MGPC!("float", 108)()); }
+			UObject.Color LightColor() { mixin(MGPC!("UObject.Color", 104)()); }
+			float LightBrightness() { mixin(MGPC!("float", 100)()); }
+			float Density() { mixin(MGPC!("float", 96)()); }
+			float Height() { mixin(MGPC!("float", 92)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }

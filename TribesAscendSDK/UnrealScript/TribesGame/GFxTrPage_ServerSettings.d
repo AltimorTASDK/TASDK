@@ -46,8 +46,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int PopupNumber() { mixin(MGPC!(int, 360)()); }
-			int LocalNameNumber() { mixin(MGPC!(int, 356)()); }
+			int PopupNumber() { mixin(MGPC!("int", 360)()); }
+			int LocalNameNumber() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bPopup() { mixin(MGBPC!(364, 0x1)()); }
 		bool bPopup(bool val) { mixin(MSBPC!(364, 0x1)()); }

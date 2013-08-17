@@ -23,8 +23,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod UpdateMethod() { mixin(MGPC!(ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod, 104)()); }
-			DistributionFloat.RawDistributionFloat CameraOffset() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+			ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod UpdateMethod() { mixin(MGPC!("ParticleModuleCameraOffset.EParticleCameraOffsetUpdateMethod", 104)()); }
+			DistributionFloat.RawDistributionFloat CameraOffset() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
 		}
 		bool bSpawnTimeOnly() { mixin(MGBPC!(100, 0x1)()); }
 		bool bSpawnTimeOnly(bool val) { mixin(MSBPC!(100, 0x1)()); }

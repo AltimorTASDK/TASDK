@@ -50,11 +50,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 484)()); }
-		Route.ERouteType RouteType() { mixin(MGPC!(Route.ERouteType, 480)()); }
-		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!(UObject.Pointer, 476)()); }
-		float FudgeFactor() { mixin(MGPC!(float, 496)()); }
-		int RouteIndexOffset() { mixin(MGPC!(int, 500)()); }
+		ScriptArray!(Actor.ActorReference) RouteList() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 484)()); }
+		Route.ERouteType RouteType() { mixin(MGPC!("Route.ERouteType", 480)()); }
+		UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!("UObject.Pointer", 476)()); }
+		float FudgeFactor() { mixin(MGPC!("float", 496)()); }
+		int RouteIndexOffset() { mixin(MGPC!("int", 500)()); }
 	}
 final:
 	int ResolveRouteIndex(int Idx, Route.ERouteDirection RouteDirection, ref ubyte out_bComplete, ref ubyte out_bReverse)
@@ -66,17 +66,19 @@ final:
 		params[5] = out_bComplete;
 		params[6] = out_bReverse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResolveRouteIndex, params.ptr, cast(void*)0);
-		*out_bComplete = params[5];
-		*out_bReverse = params[6];
+		out_bComplete = params[5];
+		out_bReverse = params[6];
 		return *cast(int*)&params[8];
 	}
-	int MoveOntoRoutePath(Pawn P, Route.ERouteDirection RouteDirection, float DistFudgeFactor)
+	int MoveOntoRoutePath(Pawn P, Route.ERouteDirection* RouteDirection = null, float* DistFudgeFactor = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		*cast(Route.ERouteDirection*)&params[4] = RouteDirection;
-		*cast(float*)&params[8] = DistFudgeFactor;
+		if (RouteDirection !is null)
+			*cast(Route.ERouteDirection*)&params[4] = *RouteDirection;
+		if (DistFudgeFactor !is null)
+			*cast(float*)&params[8] = *DistFudgeFactor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveOntoRoutePath, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}

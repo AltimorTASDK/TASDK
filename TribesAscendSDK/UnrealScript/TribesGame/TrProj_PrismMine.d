@@ -50,13 +50,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Vector r_vRightHit() { mixin(MGPC!(Vector, 936)()); }
-		Vector r_vLeftHit() { mixin(MGPC!(Vector, 924)()); }
-		ScriptName m_nSocketTraceName() { mixin(MGPC!(ScriptName, 916)()); }
-		ParticleSystem m_LaserTemplate() { mixin(MGPC!(ParticleSystem, 912)()); }
-		float m_fTripDistance() { mixin(MGPC!(float, 908)()); }
-		TrTripActor m_TripActor() { mixin(MGPC!(TrTripActor, 904)()); }
-		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!(UObject.Pointer, 900)()); }
+		Vector r_vRightHit() { mixin(MGPC!("Vector", 936)()); }
+		Vector r_vLeftHit() { mixin(MGPC!("Vector", 924)()); }
+		ScriptName m_nSocketTraceName() { mixin(MGPC!("ScriptName", 916)()); }
+		ParticleSystem m_LaserTemplate() { mixin(MGPC!("ParticleSystem", 912)()); }
+		float m_fTripDistance() { mixin(MGPC!("float", 908)()); }
+		TrTripActor m_TripActor() { mixin(MGPC!("TrTripActor", 904)()); }
+		UObject.Pointer VfTable_IInterface_TrTripNotifier() { mixin(MGPC!("UObject.Pointer", 900)()); }
 	}
 final:
 	void PawnEnteredDetonationArea(Pawn Other)
@@ -66,12 +66,13 @@ final:
 		*cast(Pawn*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PawnEnteredDetonationArea, params.ptr, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void ArmedTimer()
@@ -109,7 +110,7 @@ final:
 		*cast(bool*)params.ptr = bIsLeft;
 		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
-		*SocketPosition = *cast(Vector*)&params[4];
+		SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void OnTripAwake()

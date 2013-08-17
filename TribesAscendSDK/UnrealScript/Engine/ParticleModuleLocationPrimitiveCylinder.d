@@ -23,9 +23,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis HeightAxis() { mixin(MGPC!(ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis, 192)()); }
-			DistributionFloat.RawDistributionFloat StartHeight() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 164)()); }
-			DistributionFloat.RawDistributionFloat StartRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 136)()); }
+			ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis HeightAxis() { mixin(MGPC!("ParticleModuleLocationPrimitiveCylinder.CylinderHeightAxis", 192)()); }
+			DistributionFloat.RawDistributionFloat StartHeight() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 164)()); }
+			DistributionFloat.RawDistributionFloat StartRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 136)()); }
 		}
 		bool RadialVelocity() { mixin(MGBPC!(132, 0x1)()); }
 		bool RadialVelocity(bool val) { mixin(MSBPC!(132, 0x1)()); }

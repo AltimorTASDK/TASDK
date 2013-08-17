@@ -37,9 +37,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CurrentSlotId() { mixin(MGPC!(int, 364)()); }
-			int CurrentMapId() { mixin(MGPC!(int, 360)()); }
-			int RemoveMapNumber() { mixin(MGPC!(int, 356)()); }
+			int CurrentSlotId() { mixin(MGPC!("int", 364)()); }
+			int CurrentMapId() { mixin(MGPC!("int", 360)()); }
+			int RemoveMapNumber() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bAllowRemove() { mixin(MGBPC!(368, 0x1)()); }
 		bool bAllowRemove(bool val) { mixin(MSBPC!(368, 0x1)()); }

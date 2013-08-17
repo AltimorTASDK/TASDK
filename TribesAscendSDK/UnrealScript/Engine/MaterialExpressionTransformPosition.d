@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		MaterialExpressionTransformPosition.EMaterialPositionTransform TransformType() { mixin(MGPC!(MaterialExpressionTransformPosition.EMaterialPositionTransform, 136)()); }
+		MaterialExpressionTransformPosition.EMaterialPositionTransform TransformType() { mixin(MGPC!("MaterialExpressionTransformPosition.EMaterialPositionTransform", 136)()); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

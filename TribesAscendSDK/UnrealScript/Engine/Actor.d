@@ -650,8 +650,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotDesc")()); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { mixin(MGPS!(ScriptName, 0)()); }
-			int NumChannels() { mixin(MGPS!(int, 8)()); }
+			ScriptName SlotName() { mixin(MGPS!("ScriptName", 0)()); }
+			int NumChannels() { mixin(MGPS!("int", 8)()); }
 		}
 	}
 	struct RigidBodyState
@@ -662,11 +662,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyState")()); }
 		@property final auto ref
 		{
-			ubyte bNewData() { mixin(MGPS!(ubyte, 56)()); }
-			Vector AngVel() { mixin(MGPS!(Vector, 44)()); }
-			Vector LinVel() { mixin(MGPS!(Vector, 32)()); }
-			UObject.Quat Quaternion() { mixin(MGPS!(UObject.Quat, 16)()); }
-			Vector Position() { mixin(MGPS!(Vector, 0)()); }
+			ubyte bNewData() { mixin(MGPS!("ubyte", 56)()); }
+			Vector AngVel() { mixin(MGPS!("Vector", 44)()); }
+			Vector LinVel() { mixin(MGPS!("Vector", 32)()); }
+			UObject.Quat Quaternion() { mixin(MGPS!("UObject.Quat", 16)()); }
+			Vector Position() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	struct RigidBodyContactInfo
@@ -677,11 +677,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.RigidBodyContactInfo")()); }
 		@property final auto ref
 		{
-			PhysicalMaterial PhysMaterial() { mixin(MGPS!(PhysicalMaterial, 52)()); }
-			Vector ContactVelocity() { mixin(MGPS!(Vector, 28)()); }
-			float ContactPenetration() { mixin(MGPS!(float, 24)()); }
-			Vector ContactNormal() { mixin(MGPS!(Vector, 12)()); }
-			Vector ContactPosition() { mixin(MGPS!(Vector, 0)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS!("PhysicalMaterial", 52)()); }
+			Vector ContactVelocity() { mixin(MGPS!("Vector", 28)()); }
+			float ContactPenetration() { mixin(MGPS!("float", 24)()); }
+			Vector ContactNormal() { mixin(MGPS!("Vector", 12)()); }
+			Vector ContactPosition() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	struct CollisionImpactData
@@ -692,9 +692,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.CollisionImpactData")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { mixin(MGPS!(ScriptArray!(Actor.RigidBodyContactInfo), 0)()); }
-			Vector TotalFrictionForceVector() { mixin(MGPS!(Vector, 24)()); }
-			Vector TotalNormalForceVector() { mixin(MGPS!(Vector, 12)()); }
+			ScriptArray!(Actor.RigidBodyContactInfo) ContactInfos() { mixin(MGPS!("ScriptArray!(Actor.RigidBodyContactInfo)", 0)()); }
+			Vector TotalFrictionForceVector() { mixin(MGPS!("Vector", 24)()); }
+			Vector TotalNormalForceVector() { mixin(MGPS!("Vector", 12)()); }
 		}
 	}
 	struct PhysEffectInfo
@@ -705,10 +705,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.PhysEffectInfo")()); }
 		@property final auto ref
 		{
-			SoundCue Sound() { mixin(MGPS!(SoundCue, 12)()); }
-			ParticleSystem Effect() { mixin(MGPS!(ParticleSystem, 8)()); }
-			float ReFireDelay() { mixin(MGPS!(float, 4)()); }
-			float Threshold() { mixin(MGPS!(float, 0)()); }
+			SoundCue Sound() { mixin(MGPS!("SoundCue", 12)()); }
+			ParticleSystem Effect() { mixin(MGPS!("ParticleSystem", 8)()); }
+			float ReFireDelay() { mixin(MGPS!("float", 4)()); }
+			float Threshold() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct ActorReference
@@ -732,7 +732,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Guid' has the same name as a defined type!
-			NavigationPoint Nav() { mixin(MGPS!(NavigationPoint, 0)()); }
+			NavigationPoint Nav() { mixin(MGPS!("NavigationPoint", 0)()); }
 		}
 	}
 	struct BasedPosition
@@ -743,11 +743,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.BasedPosition")()); }
 		@property final auto ref
 		{
-			Vector CachedTransPosition() { mixin(MGPS!(Vector, 40)()); }
-			Rotator CachedBaseRotation() { mixin(MGPS!(Rotator, 28)()); }
-			Vector CachedBaseLocation() { mixin(MGPS!(Vector, 16)()); }
-			Vector Position() { mixin(MGPS!(Vector, 4)()); }
-			Actor Base() { mixin(MGPS!(Actor, 0)()); }
+			Vector CachedTransPosition() { mixin(MGPS!("Vector", 40)()); }
+			Rotator CachedBaseRotation() { mixin(MGPS!("Rotator", 28)()); }
+			Vector CachedBaseLocation() { mixin(MGPS!("Vector", 16)()); }
+			Vector Position() { mixin(MGPS!("Vector", 4)()); }
+			Actor Base() { mixin(MGPS!("Actor", 0)()); }
 		}
 	}
 	struct TraceHitInfo
@@ -759,10 +759,10 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Material' has the same name as a defined type!
-			PhysicalMaterial PhysMaterial() { mixin(MGPS!(PhysicalMaterial, 4)()); }
-			int Item() { mixin(MGPS!(int, 8)()); }
-			int LevelIndex() { mixin(MGPS!(int, 12)()); }
-			ScriptName BoneName() { mixin(MGPS!(ScriptName, 16)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPS!("PhysicalMaterial", 4)()); }
+			int Item() { mixin(MGPS!("int", 8)()); }
+			int LevelIndex() { mixin(MGPS!("int", 12)()); }
+			ScriptName BoneName() { mixin(MGPS!("ScriptName", 16)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HitComponent'!
 		}
 	}
@@ -774,12 +774,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.ImpactInfo")()); }
 		@property final auto ref
 		{
-			Actor HitActor() { mixin(MGPS!(Actor, 0)()); }
-			Vector HitLocation() { mixin(MGPS!(Vector, 4)()); }
-			Vector HitNormal() { mixin(MGPS!(Vector, 16)()); }
-			Vector RayDir() { mixin(MGPS!(Vector, 28)()); }
-			Vector StartTrace() { mixin(MGPS!(Vector, 40)()); }
-			Actor.TraceHitInfo HitInfo() { mixin(MGPS!(Actor.TraceHitInfo, 52)()); }
+			Actor HitActor() { mixin(MGPS!("Actor", 0)()); }
+			Vector HitLocation() { mixin(MGPS!("Vector", 4)()); }
+			Vector HitNormal() { mixin(MGPS!("Vector", 16)()); }
+			Vector RayDir() { mixin(MGPS!("Vector", 28)()); }
+			Vector StartTrace() { mixin(MGPS!("Vector", 40)()); }
+			Actor.TraceHitInfo HitInfo() { mixin(MGPS!("Actor.TraceHitInfo", 52)()); }
 		}
 	}
 	struct AnimSlotInfo
@@ -790,8 +790,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Actor.AnimSlotInfo")()); }
 		@property final auto ref
 		{
-			ScriptName SlotName() { mixin(MGPS!(ScriptName, 0)()); }
-			ScriptArray!(float) ChannelWeights() { mixin(MGPS!(ScriptArray!(float), 8)()); }
+			ScriptName SlotName() { mixin(MGPS!("ScriptName", 0)()); }
+			ScriptArray!(float) ChannelWeights() { mixin(MGPS!("ScriptArray!(float)", 8)()); }
 		}
 	}
 	struct TimerData
@@ -804,11 +804,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptName FuncName() { mixin(MGPS!(ScriptName, 4)()); }
-				float Rate() { mixin(MGPS!(float, 12)()); }
-				float Count() { mixin(MGPS!(float, 16)()); }
-				float TimerTimeDilation() { mixin(MGPS!(float, 20)()); }
-				UObject TimerObj() { mixin(MGPS!(UObject, 24)()); }
+				ScriptName FuncName() { mixin(MGPS!("ScriptName", 4)()); }
+				float Rate() { mixin(MGPS!("float", 12)()); }
+				float Count() { mixin(MGPS!("float", 16)()); }
+				float TimerTimeDilation() { mixin(MGPS!("float", 20)()); }
+				UObject TimerObj() { mixin(MGPS!("UObject", 24)()); }
 			}
 			bool bLoop() { mixin(MGBPS!(0, 0x1)()); }
 			bool bLoop(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -822,74 +822,74 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) Components() { mixin(MGPC!(ScriptArray!(
+void*) Components() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 60)()); }
+void*)", 60)()); }
 			// WARNING: Property 'WorldInfo' has the same name as a defined type!
-			ScriptName InitialState() { mixin(MGPC!(ScriptName, 268)()); }
-			Pawn Instigator() { mixin(MGPC!(Pawn, 240)()); }
-			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC!(ScriptArray!(SequenceEvent), 452)()); }
-			Vector Location() { mixin(MGPC!(Vector, 188)()); }
-			Rotator Rotation() { mixin(MGPC!(Rotator, 84)()); }
-			Actor.ENetRole Role() { mixin(MGPC!(Actor.ENetRole, 138)()); }
-			Actor.ENetRole RemoteRole() { mixin(MGPC!(Actor.ENetRole, 137)()); }
+			ScriptName InitialState() { mixin(MGPC!("ScriptName", 268)()); }
+			Pawn Instigator() { mixin(MGPC!("Pawn", 240)()); }
+			ScriptArray!(SequenceEvent) GeneratedEvents() { mixin(MGPC!("ScriptArray!(SequenceEvent)", 452)()); }
+			Vector Location() { mixin(MGPC!("Vector", 188)()); }
+			Rotator Rotation() { mixin(MGPC!("Rotator", 84)()); }
+			Actor.ENetRole Role() { mixin(MGPC!("Actor.ENetRole", 138)()); }
+			Actor.ENetRole RemoteRole() { mixin(MGPC!("Actor.ENetRole", 137)()); }
 			// WARNING: Property 'PhysicsVolume' has the same name as a defined type!
-			Actor Base() { mixin(MGPC!(Actor, 148)()); }
-			Vector RelativeLocation() { mixin(MGPC!(Vector, 388)()); }
-			Rotator RelativeRotation() { mixin(MGPC!(Rotator, 400)()); }
+			Actor Base() { mixin(MGPC!("Actor", 148)()); }
+			Vector RelativeLocation() { mixin(MGPC!("Vector", 388)()); }
+			Rotator RelativeRotation() { mixin(MGPC!("Rotator", 400)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BaseSkelComponent'!
-			ScriptName BaseBoneName() { mixin(MGPC!(ScriptName, 368)()); }
-			Vector Velocity() { mixin(MGPC!(Vector, 328)()); }
-			Vector Acceleration() { mixin(MGPC!(Vector, 340)()); }
-			Actor Owner() { mixin(MGPC!(Actor, 144)()); }
-			Actor.EPhysics Physics() { mixin(MGPC!(Actor.EPhysics, 136)()); }
-			float LastRenderTime() { mixin(MGPC!(float, 256)()); }
-			ScriptArray!(SeqAct_Latent) LatentActions() { mixin(MGPC!(ScriptArray!(SeqAct_Latent), 464)()); }
-			ScriptArray!(Actor) Attached() { mixin(MGPC!(ScriptArray!(Actor), 376)()); }
-			float NetUpdateFrequency() { mixin(MGPC!(float, 204)()); }
+			ScriptName BaseBoneName() { mixin(MGPC!("ScriptName", 368)()); }
+			Vector Velocity() { mixin(MGPC!("Vector", 328)()); }
+			Vector Acceleration() { mixin(MGPC!("Vector", 340)()); }
+			Actor Owner() { mixin(MGPC!("Actor", 144)()); }
+			Actor.EPhysics Physics() { mixin(MGPC!("Actor.EPhysics", 136)()); }
+			float LastRenderTime() { mixin(MGPC!("float", 256)()); }
+			ScriptArray!(SeqAct_Latent) LatentActions() { mixin(MGPC!("ScriptArray!(SeqAct_Latent)", 464)()); }
+			ScriptArray!(Actor) Attached() { mixin(MGPC!("ScriptArray!(Actor)", 376)()); }
+			float NetUpdateFrequency() { mixin(MGPC!("float", 204)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CollisionComponent'!
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) AllComponents() { mixin(MGPC!(ScriptArray!(
+void*) AllComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 72)()); }
-			float DrawScale() { mixin(MGPC!(float, 96)()); }
-			Vector DrawScale3D() { mixin(MGPC!(Vector, 100)()); }
-			Vector PrePivot() { mixin(MGPC!(Vector, 112)()); }
-			UObject.Color EditorIconColor() { mixin(MGPC!(UObject.Color, 124)()); }
-			UObject.RenderCommandFence DetachFence() { mixin(MGPC!(UObject.RenderCommandFence, 128)()); }
-			float CustomTimeDilation() { mixin(MGPC!(float, 132)()); }
-			Actor.ECollisionType CollisionType() { mixin(MGPC!(Actor.ECollisionType, 139)()); }
-			Actor.ECollisionType ReplicatedCollisionType() { mixin(MGPC!(Actor.ECollisionType, 140)()); }
-			UObject.ETickingGroup TickGroup() { mixin(MGPC!(UObject.ETickingGroup, 141)()); }
-			ScriptArray!(Actor.TimerData) Timers() { mixin(MGPC!(ScriptArray!(Actor.TimerData), 152)()); }
-			int NetTag() { mixin(MGPC!(int, 176)()); }
-			int IndexInTickList() { mixin(MGPC!(int, 180)()); }
-			float LastSlowRelevancyCheckTime() { mixin(MGPC!(float, 184)()); }
-			float NetUpdateTime() { mixin(MGPC!(float, 200)()); }
-			float NetPriority() { mixin(MGPC!(float, 208)()); }
-			float LastNetUpdateTime() { mixin(MGPC!(float, 212)()); }
-			float TimeSinceLastTick() { mixin(MGPC!(float, 216)()); }
-			float TickFrequency() { mixin(MGPC!(float, 220)()); }
-			float TickFrequencyAtEndDistance() { mixin(MGPC!(float, 224)()); }
-			float TickFrequencyDecreaseDistanceStart() { mixin(MGPC!(float, 228)()); }
-			float TickFrequencyDecreaseDistanceEnd() { mixin(MGPC!(float, 232)()); }
-			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { mixin(MGPC!(float, 236)()); }
-			float LifeSpan() { mixin(MGPC!(float, 248)()); }
-			float CreationTime() { mixin(MGPC!(float, 252)()); }
-			ScriptName Tag() { mixin(MGPC!(ScriptName, 260)()); }
-			ScriptName Group() { mixin(MGPC!(ScriptName, 276)()); }
-			QWord HiddenEditorViews() { mixin(MGPC!(QWord, 284)()); }
-			ScriptArray!(Actor) Touching() { mixin(MGPC!(ScriptArray!(Actor), 292)()); }
-			ScriptArray!(Actor) Children() { mixin(MGPC!(ScriptArray!(Actor), 304)()); }
-			float LatentFloat() { mixin(MGPC!(float, 316)()); }
-			AnimNodeSequence LatentSeqNode() { mixin(MGPC!(AnimNodeSequence, 320)()); }
-			Vector AngularVelocity() { mixin(MGPC!(Vector, 352)()); }
-			int OverlapTag() { mixin(MGPC!(int, 416)()); }
-			Rotator RotationRate() { mixin(MGPC!(Rotator, 420)()); }
-			Actor PendingTouch() { mixin(MGPC!(Actor, 432)()); }
-			ScriptClass MessageClass() { mixin(MGPC!(ScriptClass, 436)()); }
-			ScriptArray!(ScriptClass) SupportedEvents() { mixin(MGPC!(ScriptArray!(ScriptClass), 440)()); }
+void*)", 72)()); }
+			float DrawScale() { mixin(MGPC!("float", 96)()); }
+			Vector DrawScale3D() { mixin(MGPC!("Vector", 100)()); }
+			Vector PrePivot() { mixin(MGPC!("Vector", 112)()); }
+			UObject.Color EditorIconColor() { mixin(MGPC!("UObject.Color", 124)()); }
+			UObject.RenderCommandFence DetachFence() { mixin(MGPC!("UObject.RenderCommandFence", 128)()); }
+			float CustomTimeDilation() { mixin(MGPC!("float", 132)()); }
+			Actor.ECollisionType CollisionType() { mixin(MGPC!("Actor.ECollisionType", 139)()); }
+			Actor.ECollisionType ReplicatedCollisionType() { mixin(MGPC!("Actor.ECollisionType", 140)()); }
+			UObject.ETickingGroup TickGroup() { mixin(MGPC!("UObject.ETickingGroup", 141)()); }
+			ScriptArray!(Actor.TimerData) Timers() { mixin(MGPC!("ScriptArray!(Actor.TimerData)", 152)()); }
+			int NetTag() { mixin(MGPC!("int", 176)()); }
+			int IndexInTickList() { mixin(MGPC!("int", 180)()); }
+			float LastSlowRelevancyCheckTime() { mixin(MGPC!("float", 184)()); }
+			float NetUpdateTime() { mixin(MGPC!("float", 200)()); }
+			float NetPriority() { mixin(MGPC!("float", 208)()); }
+			float LastNetUpdateTime() { mixin(MGPC!("float", 212)()); }
+			float TimeSinceLastTick() { mixin(MGPC!("float", 216)()); }
+			float TickFrequency() { mixin(MGPC!("float", 220)()); }
+			float TickFrequencyAtEndDistance() { mixin(MGPC!("float", 224)()); }
+			float TickFrequencyDecreaseDistanceStart() { mixin(MGPC!("float", 228)()); }
+			float TickFrequencyDecreaseDistanceEnd() { mixin(MGPC!("float", 232)()); }
+			float TickFrequencyLastSeenTimeBeforeForcingMaxTickFrequency() { mixin(MGPC!("float", 236)()); }
+			float LifeSpan() { mixin(MGPC!("float", 248)()); }
+			float CreationTime() { mixin(MGPC!("float", 252)()); }
+			ScriptName Tag() { mixin(MGPC!("ScriptName", 260)()); }
+			ScriptName Group() { mixin(MGPC!("ScriptName", 276)()); }
+			QWord HiddenEditorViews() { mixin(MGPC!("QWord", 284)()); }
+			ScriptArray!(Actor) Touching() { mixin(MGPC!("ScriptArray!(Actor)", 292)()); }
+			ScriptArray!(Actor) Children() { mixin(MGPC!("ScriptArray!(Actor)", 304)()); }
+			float LatentFloat() { mixin(MGPC!("float", 316)()); }
+			AnimNodeSequence LatentSeqNode() { mixin(MGPC!("AnimNodeSequence", 320)()); }
+			Vector AngularVelocity() { mixin(MGPC!("Vector", 352)()); }
+			int OverlapTag() { mixin(MGPC!("int", 416)()); }
+			Rotator RotationRate() { mixin(MGPC!("Rotator", 420)()); }
+			Actor PendingTouch() { mixin(MGPC!("Actor", 432)()); }
+			ScriptClass MessageClass() { mixin(MGPC!("ScriptClass", 436)()); }
+			ScriptArray!(ScriptClass) SupportedEvents() { mixin(MGPC!("ScriptArray!(ScriptClass)", 440)()); }
 		}
 		bool bGameRelevant() { mixin(MGBPC!(168, 0x10000)()); }
 		bool bGameRelevant(bool val) { mixin(MSBPC!(168, 0x10000)()); }
@@ -1077,20 +1077,23 @@ void*), 72)()); }
 		bool m_bPotentialSeekingTarget(bool val) { mixin(MSBPC!(172, 0x4000000)()); }
 	}
 final:
-	void ForceUpdateComponents(bool bCollisionUpdate, bool bTransformOnly)
+	void ForceUpdateComponents(bool* bCollisionUpdate = null, bool* bTransformOnly = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bCollisionUpdate;
-		*cast(bool*)&params[4] = bTransformOnly;
+		if (bCollisionUpdate !is null)
+			*cast(bool*)params.ptr = *bCollisionUpdate;
+		if (bTransformOnly !is null)
+			*cast(bool*)&params[4] = *bTransformOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ForceUpdateComponents, params.ptr, cast(void*)0);
 	}
-	ScriptString ConsoleCommand(ScriptString Command, bool bWriteToLog)
+	ScriptString ConsoleCommand(ScriptString Command, bool* bWriteToLog = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
@@ -1108,13 +1111,16 @@ final:
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FinishAnim, params.ptr, cast(void*)0);
 	}
-	void SetCollision(bool bNewColActors, bool bNewBlockActors, bool bNewIgnoreEncroachers)
+	void SetCollision(bool* bNewColActors = null, bool* bNewBlockActors = null, bool* bNewIgnoreEncroachers = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = bNewColActors;
-		*cast(bool*)&params[4] = bNewBlockActors;
-		*cast(bool*)&params[8] = bNewIgnoreEncroachers;
+		if (bNewColActors !is null)
+			*cast(bool*)params.ptr = *bNewColActors;
+		if (bNewBlockActors !is null)
+			*cast(bool*)&params[4] = *bNewBlockActors;
+		if (bNewIgnoreEncroachers !is null)
+			*cast(bool*)&params[8] = *bNewIgnoreEncroachers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCollision, params.ptr, cast(void*)0);
 	}
 	void SetCollisionSize(float NewRadius, float NewHeight)
@@ -1176,7 +1182,7 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MovingWhichWay, params.ptr, cast(void*)0);
-		*Amount = *cast(float*)params.ptr;
+		Amount = *cast(float*)params.ptr;
 		return *cast(Actor.EMoveDir*)&params[4];
 	}
 	void SetZone(bool bForceRefresh)
@@ -1202,11 +1208,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRelativeLocation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void SetHardAttach(bool bNewHardAttach)
+	void SetHardAttach(bool* bNewHardAttach = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bNewHardAttach;
+		if (bNewHardAttach !is null)
+			*cast(bool*)params.ptr = *bNewHardAttach;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetHardAttach, params.ptr, cast(void*)0);
 	}
 	int fixedTurn(int Current, int Desired, int DeltaRate)
@@ -1241,18 +1248,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTerminalVelocity, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	void SetBase(Actor NewBase, Vector NewFloor, 
+	void SetBase(Actor NewBase, Vector* NewFloor = null, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelComp, ScriptName AttachName)
+void** SkelComp = null, ScriptName* AttachName = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewBase;
-		*cast(Vector*)&params[4] = NewFloor;
-		*cast(
+		if (NewFloor !is null)
+			*cast(Vector*)&params[4] = *NewFloor;
+		if (SkelComp !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[16] = SkelComp;
-		*cast(ScriptName*)&params[20] = AttachName;
+void**)&params[16] = *SkelComp;
+		if (AttachName !is null)
+			*cast(ScriptName*)&params[20] = *AttachName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBase, params.ptr, cast(void*)0);
 	}
 	void SetOwner(Actor NewOwner)
@@ -1289,11 +1299,12 @@ void**)&params[16] = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsOwnedBy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	Vector GetAggregateBaseVelocity(Actor TestBase)
+	Vector GetAggregateBaseVelocity(Actor* TestBase = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Actor*)params.ptr = TestBase;
+		if (TestBase !is null)
+			*cast(Actor*)params.ptr = *TestBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAggregateBaseVelocity, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
@@ -1312,15 +1323,16 @@ void**)&params[16] = SkelComp;
 		*cast(bool*)&params[4] = bAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetForcedInitialReplicatedProperty, params.ptr, cast(void*)0);
 	}
-	static void Vect2BP(ref Actor.BasedPosition BP, Vector pos, Actor ForcedBase)
+	static void Vect2BP(ref Actor.BasedPosition BP, Vector pos, Actor* ForcedBase = null)
 	{
 		ubyte params[68];
 		params[] = 0;
 		*cast(Actor.BasedPosition*)params.ptr = BP;
 		*cast(Vector*)&params[52] = pos;
-		*cast(Actor*)&params[64] = ForcedBase;
+		if (ForcedBase !is null)
+			*cast(Actor*)&params[64] = *ForcedBase;
 		StaticClass.ProcessEvent(Functions.Vect2BP, params.ptr, cast(void*)0);
-		*BP = *cast(Actor.BasedPosition*)params.ptr;
+		BP = *cast(Actor.BasedPosition*)params.ptr;
 	}
 	static Vector BP2Vect(Actor.BasedPosition BP)
 	{
@@ -1330,15 +1342,16 @@ void**)&params[16] = SkelComp;
 		StaticClass.ProcessEvent(Functions.BP2Vect, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[52];
 	}
-	static void SetBasedPosition(ref Actor.BasedPosition BP, Vector pos, Actor ForcedBase)
+	static void SetBasedPosition(ref Actor.BasedPosition BP, Vector pos, Actor* ForcedBase = null)
 	{
 		ubyte params[68];
 		params[] = 0;
 		*cast(Actor.BasedPosition*)params.ptr = BP;
 		*cast(Vector*)&params[52] = pos;
-		*cast(Actor*)&params[64] = ForcedBase;
+		if (ForcedBase !is null)
+			*cast(Actor*)&params[64] = *ForcedBase;
 		StaticClass.ProcessEvent(Functions.SetBasedPosition, params.ptr, cast(void*)0);
-		*BP = *cast(Actor.BasedPosition*)params.ptr;
+		BP = *cast(Actor.BasedPosition*)params.ptr;
 	}
 	static Vector GetBasedPosition(Actor.BasedPosition BP)
 	{
@@ -1352,7 +1365,7 @@ void**)&params[16] = SkelComp;
 	{
 		StaticClass.ProcessEvent(Functions.FlushPersistentDebugLines, cast(void*)0, cast(void*)0);
 	}
-	static void DrawDebugLine(Vector LineStart, Vector LineEnd, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugLine(Vector LineStart, Vector LineEnd, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -1361,20 +1374,22 @@ void**)&params[16] = SkelComp;
 		params[24] = R;
 		params[25] = G;
 		params[26] = B;
-		*cast(bool*)&params[28] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[28] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugLine, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugPoint(Vector Position, float Size, UObject.LinearColor PointColor, bool bPersistentLines)
+	static void DrawDebugPoint(Vector Position, float Size, UObject.LinearColor PointColor, bool* bPersistentLines = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Position;
 		*cast(float*)&params[12] = Size;
 		*cast(UObject.LinearColor*)&params[16] = PointColor;
-		*cast(bool*)&params[32] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[32] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugPoint, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugBox(Vector Center, Vector Extent, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugBox(Vector Center, Vector Extent, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -1383,10 +1398,11 @@ void**)&params[16] = SkelComp;
 		params[24] = R;
 		params[25] = G;
 		params[26] = B;
-		*cast(bool*)&params[28] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[28] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugBox, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugStar(Vector Position, float Size, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugStar(Vector Position, float Size, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -1395,20 +1411,22 @@ void**)&params[16] = SkelComp;
 		params[16] = R;
 		params[17] = G;
 		params[18] = B;
-		*cast(bool*)&params[20] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[20] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugStar, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugCoordinateSystem(Vector AxisLoc, Rotator AxisRot, float Scale, bool bPersistentLines)
+	static void DrawDebugCoordinateSystem(Vector AxisLoc, Rotator AxisRot, float Scale, bool* bPersistentLines = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = AxisLoc;
 		*cast(Rotator*)&params[12] = AxisRot;
 		*cast(float*)&params[24] = Scale;
-		*cast(bool*)&params[28] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[28] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugCoordinateSystem, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugSphere(Vector Center, float Radius, int Segments, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugSphere(Vector Center, float Radius, int Segments, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -1418,10 +1436,11 @@ void**)&params[16] = SkelComp;
 		params[20] = R;
 		params[21] = G;
 		params[22] = B;
-		*cast(bool*)&params[24] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[24] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugSphere, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugCylinder(Vector Start, Vector End, float Radius, int Segments, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugCylinder(Vector Start, Vector End, float Radius, int Segments, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -1432,10 +1451,11 @@ void**)&params[16] = SkelComp;
 		params[32] = R;
 		params[33] = G;
 		params[34] = B;
-		*cast(bool*)&params[36] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[36] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugCylinder, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugCone(Vector Origin, Vector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, UObject.Color DrawColor, bool bPersistentLines)
+	static void DrawDebugCone(Vector Origin, Vector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, UObject.Color DrawColor, bool* bPersistentLines = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -1446,31 +1466,35 @@ void**)&params[16] = SkelComp;
 		*cast(float*)&params[32] = AngleHeight;
 		*cast(int*)&params[36] = NumSides;
 		*cast(UObject.Color*)&params[40] = DrawColor;
-		*cast(bool*)&params[44] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[44] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugCone, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugString(Vector TextLocation, ScriptString Text, Actor TestBaseActor, UObject.Color TextColor, float Duration)
+	static void DrawDebugString(Vector TextLocation, ScriptString Text, Actor* TestBaseActor = null, UObject.Color* TextColor = null, float* Duration = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TextLocation;
 		*cast(ScriptString*)&params[12] = Text;
-		*cast(Actor*)&params[24] = TestBaseActor;
-		*cast(UObject.Color*)&params[28] = TextColor;
-		*cast(float*)&params[32] = Duration;
+		if (TestBaseActor !is null)
+			*cast(Actor*)&params[24] = *TestBaseActor;
+		if (TextColor !is null)
+			*cast(UObject.Color*)&params[28] = *TextColor;
+		if (Duration !is null)
+			*cast(float*)&params[32] = *Duration;
 		StaticClass.ProcessEvent(Functions.DrawDebugString, params.ptr, cast(void*)0);
 	}
-	static void DrawDebugFrustrum(ref const UObject.Matrix FrustumToWorld, ubyte R, ubyte G, ubyte B, bool bPersistentLines)
+	static void DrawDebugFrustrum(ref in UObject.Matrix FrustumToWorld, ubyte R, ubyte G, ubyte B, bool* bPersistentLines = null)
 	{
 		ubyte params[72];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = FrustumToWorld;
+		*cast(UObject.Matrix*)params.ptr = cast(UObject.Matrix)FrustumToWorld;
 		params[64] = R;
 		params[65] = G;
 		params[66] = B;
-		*cast(bool*)&params[68] = bPersistentLines;
+		if (bPersistentLines !is null)
+			*cast(bool*)&params[68] = *bPersistentLines;
 		StaticClass.ProcessEvent(Functions.DrawDebugFrustrum, params.ptr, cast(void*)0);
-		*FrustumToWorld = *cast(UObject.Matrix*)params.ptr;
 	}
 	static void FlushDebugStrings()
 	{
@@ -1511,7 +1535,7 @@ void**)&params[16] = SkelComp;
 		params[] = 0;
 		*cast(float*)params.ptr = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Clock, params.ptr, cast(void*)0);
-		*Time = *cast(float*)params.ptr;
+		Time = *cast(float*)params.ptr;
 	}
 	void UnClock(ref float Time)
 	{
@@ -1519,7 +1543,7 @@ void**)&params[16] = SkelComp;
 		params[] = 0;
 		*cast(float*)params.ptr = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnClock, params.ptr, cast(void*)0);
-		*Time = *cast(float*)params.ptr;
+		Time = *cast(float*)params.ptr;
 	}
 	void AttachComponent(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -1739,7 +1763,7 @@ void**)&params[4] = OtherComp;
 		*cast(Rotator*)&params[24] = rUpperLimits;
 		*cast(Rotator*)&params[36] = rLowerLimits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClampRotation, params.ptr, cast(void*)0);
-		*out_Rot = *cast(Rotator*)params.ptr;
+		out_Rot = *cast(Rotator*)params.ptr;
 		return *cast(bool*)&params[48];
 	}
 	bool OverRotated(ref Rotator out_Desired, ref Rotator out_Actual)
@@ -1749,8 +1773,8 @@ void**)&params[4] = OtherComp;
 		*cast(Rotator*)params.ptr = out_Desired;
 		*cast(Rotator*)&params[12] = out_Actual;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverRotated, params.ptr, cast(void*)0);
-		*out_Desired = *cast(Rotator*)params.ptr;
-		*out_Actual = *cast(Rotator*)&params[12];
+		out_Desired = *cast(Rotator*)params.ptr;
+		out_Actual = *cast(Rotator*)&params[12];
 		return *cast(bool*)&params[24];
 	}
 	bool UsedBy(Pawn User)
@@ -1779,27 +1803,33 @@ void**)&params[4] = OtherComp;
 		*cast(PhysicsVolume*)params.ptr = PV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VolumeBasedDestroy, params.ptr, cast(void*)0);
 	}
-	Actor Trace(ref Vector HitLocation, ref Vector HitNormal, Vector TraceEnd, Vector TraceStart, bool bTraceActors, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
+	Actor Trace(ref Vector HitLocation, ref Vector HitNormal, Vector TraceEnd, Vector* TraceStart = null, bool* bTraceActors = null, Vector* Extent = null, Actor.TraceHitInfo* HitInfo = null, int* ExtraTraceFlags = null)
 	{
 		ubyte params[100];
 		params[] = 0;
 		*cast(Vector*)params.ptr = HitLocation;
 		*cast(Vector*)&params[12] = HitNormal;
 		*cast(Vector*)&params[24] = TraceEnd;
-		*cast(Vector*)&params[36] = TraceStart;
-		*cast(bool*)&params[48] = bTraceActors;
-		*cast(Vector*)&params[52] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[64] = HitInfo;
-		*cast(int*)&params[92] = ExtraTraceFlags;
+		if (TraceStart !is null)
+			*cast(Vector*)&params[36] = *TraceStart;
+		if (bTraceActors !is null)
+			*cast(bool*)&params[48] = *bTraceActors;
+		if (Extent !is null)
+			*cast(Vector*)&params[52] = *Extent;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[64] = *HitInfo;
+		if (ExtraTraceFlags !is null)
+			*cast(int*)&params[92] = *ExtraTraceFlags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Trace, params.ptr, cast(void*)0);
-		*HitLocation = *cast(Vector*)params.ptr;
-		*HitNormal = *cast(Vector*)&params[12];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[64];
+		HitLocation = *cast(Vector*)params.ptr;
+		HitNormal = *cast(Vector*)&params[12];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[64];
 		return *cast(Actor*)&params[96];
 	}
 	bool TraceComponent(ref Vector HitLocation, ref Vector HitNormal, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* InComponent, Vector TraceEnd, Vector TraceStart, Vector Extent, Actor.TraceHitInfo* HitInfo, bool bComplexCollision)
+void* InComponent, Vector TraceEnd, Vector* TraceStart = null, Vector* Extent = null, Actor.TraceHitInfo* HitInfo = null, bool* bComplexCollision = null)
 	{
 		ubyte params[100];
 		params[] = 0;
@@ -1809,14 +1839,19 @@ void* InComponent, Vector TraceEnd, Vector TraceStart, Vector Extent, Actor.Trac
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[24] = InComponent;
 		*cast(Vector*)&params[28] = TraceEnd;
-		*cast(Vector*)&params[40] = TraceStart;
-		*cast(Vector*)&params[52] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[64] = HitInfo;
-		*cast(bool*)&params[92] = bComplexCollision;
+		if (TraceStart !is null)
+			*cast(Vector*)&params[40] = *TraceStart;
+		if (Extent !is null)
+			*cast(Vector*)&params[52] = *Extent;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[64] = *HitInfo;
+		if (bComplexCollision !is null)
+			*cast(bool*)&params[92] = *bComplexCollision;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceComponent, params.ptr, cast(void*)0);
-		*HitLocation = *cast(Vector*)params.ptr;
-		*HitNormal = *cast(Vector*)&params[12];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[64];
+		HitLocation = *cast(Vector*)params.ptr;
+		HitNormal = *cast(Vector*)&params[12];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[64];
 		return *cast(bool*)&params[96];
 	}
 	bool PointCheckComponent(
@@ -1833,20 +1868,23 @@ void**)params.ptr = InComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointCheckComponent, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool FastTrace(Vector TraceEnd, Vector TraceStart, Vector BoxExtent, bool bTraceBullet)
+	bool FastTrace(Vector TraceEnd, Vector* TraceStart = null, Vector* BoxExtent = null, bool* bTraceBullet = null)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TraceEnd;
-		*cast(Vector*)&params[12] = TraceStart;
-		*cast(Vector*)&params[24] = BoxExtent;
-		*cast(bool*)&params[36] = bTraceBullet;
+		if (TraceStart !is null)
+			*cast(Vector*)&params[12] = *TraceStart;
+		if (BoxExtent !is null)
+			*cast(Vector*)&params[24] = *BoxExtent;
+		if (bTraceBullet !is null)
+			*cast(bool*)&params[36] = *bTraceBullet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FastTrace, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}
 	bool TraceAllPhysicsAssetInteractions(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMeshComp, Vector EndTrace, Vector StartTrace, ref ScriptArray!(Actor.ImpactInfo) out_Hits, Vector Extent)
+void* SkelMeshComp, Vector EndTrace, Vector StartTrace, ref ScriptArray!(Actor.ImpactInfo) out_Hits, Vector* Extent = null)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -1856,9 +1894,10 @@ void**)params.ptr = SkelMeshComp;
 		*cast(Vector*)&params[4] = EndTrace;
 		*cast(Vector*)&params[16] = StartTrace;
 		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[28] = out_Hits;
-		*cast(Vector*)&params[40] = Extent;
+		if (Extent !is null)
+			*cast(Vector*)&params[40] = *Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceAllPhysicsAssetInteractions, params.ptr, cast(void*)0);
-		*out_Hits = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[28];
+		out_Hits = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[28];
 		return *cast(bool*)&params[52];
 	}
 	bool FindSpot(Vector BoxExtent, ref Vector SpotLocation)
@@ -1868,7 +1907,7 @@ void**)params.ptr = SkelMeshComp;
 		*cast(Vector*)params.ptr = BoxExtent;
 		*cast(Vector*)&params[12] = SpotLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSpot, params.ptr, cast(void*)0);
-		*SpotLocation = *cast(Vector*)&params[12];
+		SpotLocation = *cast(Vector*)&params[12];
 		return *cast(bool*)&params[24];
 	}
 	bool ContainsPoint(Vector Spot)
@@ -1893,7 +1932,7 @@ void**)params.ptr = SkelMeshComp;
 		params[] = 0;
 		*cast(UObject.Box*)params.ptr = ActorBox;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetComponentsBoundingBox, params.ptr, cast(void*)0);
-		*ActorBox = *cast(UObject.Box*)params.ptr;
+		ActorBox = *cast(UObject.Box*)params.ptr;
 	}
 	void GetBoundingCylinder(ref float CollisionRadius, ref float CollisionHeight)
 	{
@@ -1902,28 +1941,34 @@ void**)params.ptr = SkelMeshComp;
 		*cast(float*)params.ptr = CollisionRadius;
 		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
-		*CollisionRadius = *cast(float*)params.ptr;
-		*CollisionHeight = *cast(float*)&params[4];
+		CollisionRadius = *cast(float*)params.ptr;
+		CollisionHeight = *cast(float*)&params[4];
 	}
-	bool IsBlockedBy(const Actor Other)
+	bool IsBlockedBy(in Actor Other)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = Other;
+		*cast(Actor*)params.ptr = cast(Actor)Other;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsBlockedBy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	Actor Spawn(ScriptClass SpawnClass, Actor SpawnOwner, ScriptName SpawnTag, Vector SpawnLocation, Rotator SpawnRotation, Actor ActorTemplate, bool bNoCollisionFail)
+	Actor Spawn(ScriptClass SpawnClass, Actor* SpawnOwner = null, ScriptName* SpawnTag = null, Vector* SpawnLocation = null, Rotator* SpawnRotation = null, Actor* ActorTemplate = null, bool* bNoCollisionFail = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SpawnClass;
-		*cast(Actor*)&params[4] = SpawnOwner;
-		*cast(ScriptName*)&params[8] = SpawnTag;
-		*cast(Vector*)&params[16] = SpawnLocation;
-		*cast(Rotator*)&params[28] = SpawnRotation;
-		*cast(Actor*)&params[40] = ActorTemplate;
-		*cast(bool*)&params[44] = bNoCollisionFail;
+		if (SpawnOwner !is null)
+			*cast(Actor*)&params[4] = *SpawnOwner;
+		if (SpawnTag !is null)
+			*cast(ScriptName*)&params[8] = *SpawnTag;
+		if (SpawnLocation !is null)
+			*cast(Vector*)&params[16] = *SpawnLocation;
+		if (SpawnRotation !is null)
+			*cast(Rotator*)&params[28] = *SpawnRotation;
+		if (ActorTemplate !is null)
+			*cast(Actor*)&params[40] = *ActorTemplate;
+		if (bNoCollisionFail !is null)
+			*cast(bool*)&params[44] = *bNoCollisionFail;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Spawn, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[48];
 	}
@@ -1938,139 +1983,169 @@ void**)params.ptr = SkelMeshComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.TornOff, cast(void*)0, cast(void*)0);
 	}
-	void SetTimer(float InRate, bool inbLoop, ScriptName inTimerFunc, UObject inObj)
+	void SetTimer(float InRate, bool* inbLoop = null, ScriptName* inTimerFunc = null, UObject* inObj = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(float*)params.ptr = InRate;
-		*cast(bool*)&params[4] = inbLoop;
-		*cast(ScriptName*)&params[8] = inTimerFunc;
-		*cast(UObject*)&params[16] = inObj;
+		if (inbLoop !is null)
+			*cast(bool*)&params[4] = *inbLoop;
+		if (inTimerFunc !is null)
+			*cast(ScriptName*)&params[8] = *inTimerFunc;
+		if (inObj !is null)
+			*cast(UObject*)&params[16] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTimer, params.ptr, cast(void*)0);
 	}
-	void ClearTimer(ScriptName inTimerFunc, UObject inObj)
+	void ClearTimer(ScriptName* inTimerFunc = null, UObject* inObj = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = inTimerFunc;
-		*cast(UObject*)&params[8] = inObj;
+		if (inTimerFunc !is null)
+			*cast(ScriptName*)params.ptr = *inTimerFunc;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearTimer, params.ptr, cast(void*)0);
 	}
-	void ClearAllTimers(UObject inObj)
+	void ClearAllTimers(UObject* inObj = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(UObject*)params.ptr = inObj;
+		if (inObj !is null)
+			*cast(UObject*)params.ptr = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearAllTimers, params.ptr, cast(void*)0);
 	}
-	void PauseTimer(bool bPause, ScriptName inTimerFunc, UObject inObj)
+	void PauseTimer(bool bPause, ScriptName* inTimerFunc = null, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPause;
-		*cast(ScriptName*)&params[4] = inTimerFunc;
-		*cast(UObject*)&params[12] = inObj;
+		if (inTimerFunc !is null)
+			*cast(ScriptName*)&params[4] = *inTimerFunc;
+		if (inObj !is null)
+			*cast(UObject*)&params[12] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseTimer, params.ptr, cast(void*)0);
 	}
-	bool IsTimerActive(ScriptName inTimerFunc, UObject inObj)
+	bool IsTimerActive(ScriptName* inTimerFunc = null, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = inTimerFunc;
-		*cast(UObject*)&params[8] = inObj;
+		if (inTimerFunc !is null)
+			*cast(ScriptName*)params.ptr = *inTimerFunc;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsTimerActive, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	float GetTimerCount(ScriptName inTimerFunc, UObject inObj)
+	float GetTimerCount(ScriptName* inTimerFunc = null, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = inTimerFunc;
-		*cast(UObject*)&params[8] = inObj;
+		if (inTimerFunc !is null)
+			*cast(ScriptName*)params.ptr = *inTimerFunc;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimerCount, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	float GetTimerRate(ScriptName TimerFuncName, UObject inObj)
+	float GetTimerRate(ScriptName* TimerFuncName = null, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TimerFuncName;
-		*cast(UObject*)&params[8] = inObj;
+		if (TimerFuncName !is null)
+			*cast(ScriptName*)params.ptr = *TimerFuncName;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimerRate, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	float GetRemainingTimeForTimer(ScriptName TimerFuncName, UObject inObj)
+	float GetRemainingTimeForTimer(ScriptName* TimerFuncName = null, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TimerFuncName;
-		*cast(UObject*)&params[8] = inObj;
+		if (TimerFuncName !is null)
+			*cast(ScriptName*)params.ptr = *TimerFuncName;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRemainingTimeForTimer, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	void ModifyTimerTimeDilation(const ScriptName TimerName, const float InTimerTimeDilation, UObject inObj)
+	void ModifyTimerTimeDilation(in ScriptName TimerName, in float InTimerTimeDilation, UObject* inObj = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TimerName;
-		*cast(float*)&params[8] = InTimerTimeDilation;
-		*cast(UObject*)&params[12] = inObj;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)TimerName;
+		*cast(float*)&params[8] = cast(float)InTimerTimeDilation;
+		if (inObj !is null)
+			*cast(UObject*)&params[12] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyTimerTimeDilation, params.ptr, cast(void*)0);
 	}
-	void ResetTimerTimeDilation(const ScriptName TimerName, UObject inObj)
+	void ResetTimerTimeDilation(in ScriptName TimerName, UObject* inObj = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = TimerName;
-		*cast(UObject*)&params[8] = inObj;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)TimerName;
+		if (inObj !is null)
+			*cast(UObject*)&params[8] = *inObj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetTimerTimeDilation, params.ptr, cast(void*)0);
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* CreateAudioComponent(SoundCue InSoundCue, bool bPlay, bool bStopWhenOwnerDestroyed, bool bUseLocation, Vector SourceLocation, bool bAttachToSelf)
+void* CreateAudioComponent(SoundCue InSoundCue, bool* bPlay = null, bool* bStopWhenOwnerDestroyed = null, bool* bUseLocation = null, Vector* SourceLocation = null, bool* bAttachToSelf = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = InSoundCue;
-		*cast(bool*)&params[4] = bPlay;
-		*cast(bool*)&params[8] = bStopWhenOwnerDestroyed;
-		*cast(bool*)&params[12] = bUseLocation;
-		*cast(Vector*)&params[16] = SourceLocation;
-		*cast(bool*)&params[28] = bAttachToSelf;
+		if (bPlay !is null)
+			*cast(bool*)&params[4] = *bPlay;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[8] = *bStopWhenOwnerDestroyed;
+		if (bUseLocation !is null)
+			*cast(bool*)&params[12] = *bUseLocation;
+		if (SourceLocation !is null)
+			*cast(Vector*)&params[16] = *SourceLocation;
+		if (bAttachToSelf !is null)
+			*cast(bool*)&params[28] = *bAttachToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateAudioComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[32];
 	}
-	void PlaySound(SoundCue InSoundCue, bool bNotReplicated, bool bNoRepToOwner, bool bStopWhenOwnerDestroyed, Vector SoundLocation, bool bNoRepToRelevant)
+	void PlaySound(SoundCue InSoundCue, bool* bNotReplicated = null, bool* bNoRepToOwner = null, bool* bStopWhenOwnerDestroyed = null, Vector* SoundLocation = null, bool* bNoRepToRelevant = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = InSoundCue;
-		*cast(bool*)&params[4] = bNotReplicated;
-		*cast(bool*)&params[8] = bNoRepToOwner;
-		*cast(bool*)&params[12] = bStopWhenOwnerDestroyed;
-		*cast(Vector*)&params[16] = SoundLocation;
-		*cast(bool*)&params[28] = bNoRepToRelevant;
+		if (bNotReplicated !is null)
+			*cast(bool*)&params[4] = *bNotReplicated;
+		if (bNoRepToOwner !is null)
+			*cast(bool*)&params[8] = *bNoRepToOwner;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[12] = *bStopWhenOwnerDestroyed;
+		if (SoundLocation !is null)
+			*cast(Vector*)&params[16] = *SoundLocation;
+		if (bNoRepToRelevant !is null)
+			*cast(bool*)&params[28] = *bNoRepToRelevant;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlaySound, params.ptr, cast(void*)0);
 	}
-	void MakeNoise(float Loudness, ScriptName NoiseType)
+	void MakeNoise(float Loudness, ScriptName* NoiseType = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = Loudness;
-		*cast(ScriptName*)&params[4] = NoiseType;
+		if (NoiseType !is null)
+			*cast(ScriptName*)&params[4] = *NoiseType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MakeNoise, params.ptr, cast(void*)0);
 	}
-	bool PlayerCanSeeMe(bool bForceLOSCheck)
+	bool PlayerCanSeeMe(bool* bForceLOSCheck = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceLOSCheck;
+		if (bForceLOSCheck !is null)
+			*cast(bool*)params.ptr = *bForceLOSCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayerCanSeeMe, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool SuggestTossVelocity(ref Vector TossVelocity, Vector Destination, Vector Start, float TossSpeed, float BaseTossZ, float DesiredZPct, Vector CollisionSize, float TerminalVelocity, float OverrideGravityZ, bool bOnlyTraceUp)
+	bool SuggestTossVelocity(ref Vector TossVelocity, Vector Destination, Vector Start, float TossSpeed, float* BaseTossZ = null, float* DesiredZPct = null, Vector* CollisionSize = null, float* TerminalVelocity = null, float* OverrideGravityZ = null, bool* bOnlyTraceUp = null)
 	{
 		ubyte params[76];
 		params[] = 0;
@@ -2078,17 +2153,23 @@ void**)&params[32];
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
 		*cast(float*)&params[36] = TossSpeed;
-		*cast(float*)&params[40] = BaseTossZ;
-		*cast(float*)&params[44] = DesiredZPct;
-		*cast(Vector*)&params[48] = CollisionSize;
-		*cast(float*)&params[60] = TerminalVelocity;
-		*cast(float*)&params[64] = OverrideGravityZ;
-		*cast(bool*)&params[68] = bOnlyTraceUp;
+		if (BaseTossZ !is null)
+			*cast(float*)&params[40] = *BaseTossZ;
+		if (DesiredZPct !is null)
+			*cast(float*)&params[44] = *DesiredZPct;
+		if (CollisionSize !is null)
+			*cast(Vector*)&params[48] = *CollisionSize;
+		if (TerminalVelocity !is null)
+			*cast(float*)&params[60] = *TerminalVelocity;
+		if (OverrideGravityZ !is null)
+			*cast(float*)&params[64] = *OverrideGravityZ;
+		if (bOnlyTraceUp !is null)
+			*cast(bool*)&params[68] = *bOnlyTraceUp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestTossVelocity, params.ptr, cast(void*)0);
-		*TossVelocity = *cast(Vector*)params.ptr;
+		TossVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[72];
 	}
-	bool CalculateMinSpeedTrajectory(ref Vector out_Velocity, Vector End, Vector Start, float MaxTossSpeed, float MinTossSpeed, Vector CollisionSize, float TerminalVelocity, float GravityZ, bool bOnlyTraceUp)
+	bool CalculateMinSpeedTrajectory(ref Vector out_Velocity, Vector End, Vector Start, float MaxTossSpeed, float MinTossSpeed, Vector* CollisionSize = null, float* TerminalVelocity = null, float* GravityZ = null, bool* bOnlyTraceUp = null)
 	{
 		ubyte params[72];
 		params[] = 0;
@@ -2097,12 +2178,16 @@ void**)&params[32];
 		*cast(Vector*)&params[24] = Start;
 		*cast(float*)&params[36] = MaxTossSpeed;
 		*cast(float*)&params[40] = MinTossSpeed;
-		*cast(Vector*)&params[44] = CollisionSize;
-		*cast(float*)&params[56] = TerminalVelocity;
-		*cast(float*)&params[60] = GravityZ;
-		*cast(bool*)&params[64] = bOnlyTraceUp;
+		if (CollisionSize !is null)
+			*cast(Vector*)&params[44] = *CollisionSize;
+		if (TerminalVelocity !is null)
+			*cast(float*)&params[56] = *TerminalVelocity;
+		if (GravityZ !is null)
+			*cast(float*)&params[60] = *GravityZ;
+		if (bOnlyTraceUp !is null)
+			*cast(bool*)&params[64] = *bOnlyTraceUp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalculateMinSpeedTrajectory, params.ptr, cast(void*)0);
-		*out_Velocity = *cast(Vector*)params.ptr;
+		out_Velocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[68];
 	}
 	Vector GetDestination(Controller C)
@@ -2135,25 +2220,27 @@ void**)&params[32];
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetURLMap, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void AllActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass InterfaceClass)
+	void AllActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass* InterfaceClass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
-		*cast(ScriptClass*)&params[8] = InterfaceClass;
+		if (InterfaceClass !is null)
+			*cast(ScriptClass*)&params[8] = *InterfaceClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
-	void DynamicActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass InterfaceClass)
+	void DynamicActors(ScriptClass BaseClass, ref Actor pActor, ScriptClass* InterfaceClass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
-		*cast(ScriptClass*)&params[8] = InterfaceClass;
+		if (InterfaceClass !is null)
+			*cast(ScriptClass*)&params[8] = *InterfaceClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DynamicActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
 	void ChildActors(ScriptClass BaseClass, ref Actor pActor)
 	{
@@ -2162,7 +2249,7 @@ void**)&params[32];
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChildActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
 	void BasedActors(ScriptClass BaseClass, ref Actor pActor)
 	{
@@ -2171,7 +2258,7 @@ void**)&params[32];
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BasedActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
 	void TouchingActors(ScriptClass BaseClass, ref Actor pActor)
 	{
@@ -2180,9 +2267,9 @@ void**)&params[32];
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TouchingActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
-	void TraceActors(ScriptClass BaseClass, ref Actor pActor, ref Vector HitLoc, ref Vector HitNorm, Vector End, Vector Start, Vector Extent, Actor.TraceHitInfo* HitInfo, int ExtraTraceFlags)
+	void TraceActors(ScriptClass BaseClass, ref Actor pActor, ref Vector HitLoc, ref Vector HitNorm, Vector End, Vector* Start = null, Vector* Extent = null, Actor.TraceHitInfo* HitInfo = null, int* ExtraTraceFlags = null)
 	{
 		ubyte params[100];
 		params[] = 0;
@@ -2191,89 +2278,119 @@ void**)&params[32];
 		*cast(Vector*)&params[8] = HitLoc;
 		*cast(Vector*)&params[20] = HitNorm;
 		*cast(Vector*)&params[32] = End;
-		*cast(Vector*)&params[44] = Start;
-		*cast(Vector*)&params[56] = Extent;
-		*cast(Actor.TraceHitInfo*)&params[68] = HitInfo;
-		*cast(int*)&params[96] = ExtraTraceFlags;
+		if (Start !is null)
+			*cast(Vector*)&params[44] = *Start;
+		if (Extent !is null)
+			*cast(Vector*)&params[56] = *Extent;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[68] = *HitInfo;
+		if (ExtraTraceFlags !is null)
+			*cast(int*)&params[96] = *ExtraTraceFlags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TraceActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
-		*HitLoc = *cast(Vector*)&params[8];
-		*HitNorm = *cast(Vector*)&params[20];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[68];
+		pActor = *cast(Actor*)&params[4];
+		HitLoc = *cast(Vector*)&params[8];
+		HitNorm = *cast(Vector*)&params[20];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[68];
 	}
-	void VisibleActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc)
+	void VisibleActors(ScriptClass BaseClass, ref Actor pActor, float* Radius = null, Vector* Loc = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
-		*cast(float*)&params[8] = Radius;
-		*cast(Vector*)&params[12] = Loc;
+		if (Radius !is null)
+			*cast(float*)&params[8] = *Radius;
+		if (Loc !is null)
+			*cast(Vector*)&params[12] = *Loc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
+		pActor = *cast(Actor*)&params[4];
 	}
-	void VisibleCollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
+	void VisibleCollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector* Loc = null, bool* bIgnoreHidden = null, Vector* Extent = null, bool* bTraceActors = null, ScriptClass* InterfaceClass = null, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[76];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
-		*cast(Vector*)&params[12] = Loc;
-		*cast(bool*)&params[24] = bIgnoreHidden;
-		*cast(Vector*)&params[28] = Extent;
-		*cast(bool*)&params[40] = bTraceActors;
-		*cast(ScriptClass*)&params[44] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[48] = HitInfo;
+		if (Loc !is null)
+			*cast(Vector*)&params[12] = *Loc;
+		if (bIgnoreHidden !is null)
+			*cast(bool*)&params[24] = *bIgnoreHidden;
+		if (Extent !is null)
+			*cast(Vector*)&params[28] = *Extent;
+		if (bTraceActors !is null)
+			*cast(bool*)&params[40] = *bTraceActors;
+		if (InterfaceClass !is null)
+			*cast(ScriptClass*)&params[44] = *InterfaceClass;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[48] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleCollidingActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[48];
+		pActor = *cast(Actor*)&params[4];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[48];
 	}
-	void CollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, bool bUseOverlapCheck, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo)
+	void CollidingActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector* Loc = null, bool* bUseOverlapCheck = null, ScriptClass* InterfaceClass = null, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[60];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
-		*cast(Vector*)&params[12] = Loc;
-		*cast(bool*)&params[24] = bUseOverlapCheck;
-		*cast(ScriptClass*)&params[28] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[32] = HitInfo;
+		if (Loc !is null)
+			*cast(Vector*)&params[12] = *Loc;
+		if (bUseOverlapCheck !is null)
+			*cast(bool*)&params[24] = *bUseOverlapCheck;
+		if (InterfaceClass !is null)
+			*cast(ScriptClass*)&params[28] = *InterfaceClass;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[32] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CollidingActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[32];
+		pActor = *cast(Actor*)&params[4];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[32];
 	}
-	void VisibleCollidingExtentActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector Loc, Vector AltLoc, bool bIgnoreHidden, Vector Extent, bool bTraceActors, ScriptClass InterfaceClass, Actor.TraceHitInfo* HitInfo, float XYCheckRadius)
+	void VisibleCollidingExtentActors(ScriptClass BaseClass, ref Actor pActor, float Radius, Vector* Loc = null, Vector* AltLoc = null, bool* bIgnoreHidden = null, Vector* Extent = null, bool* bTraceActors = null, ScriptClass* InterfaceClass = null, Actor.TraceHitInfo* HitInfo = null, float* XYCheckRadius = null)
 	{
 		ubyte params[92];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = pActor;
 		*cast(float*)&params[8] = Radius;
-		*cast(Vector*)&params[12] = Loc;
-		*cast(Vector*)&params[24] = AltLoc;
-		*cast(bool*)&params[36] = bIgnoreHidden;
-		*cast(Vector*)&params[40] = Extent;
-		*cast(bool*)&params[52] = bTraceActors;
-		*cast(ScriptClass*)&params[56] = InterfaceClass;
-		*cast(Actor.TraceHitInfo*)&params[60] = HitInfo;
-		*cast(float*)&params[88] = XYCheckRadius;
+		if (Loc !is null)
+			*cast(Vector*)&params[12] = *Loc;
+		if (AltLoc !is null)
+			*cast(Vector*)&params[24] = *AltLoc;
+		if (bIgnoreHidden !is null)
+			*cast(bool*)&params[36] = *bIgnoreHidden;
+		if (Extent !is null)
+			*cast(Vector*)&params[40] = *Extent;
+		if (bTraceActors !is null)
+			*cast(bool*)&params[52] = *bTraceActors;
+		if (InterfaceClass !is null)
+			*cast(ScriptClass*)&params[56] = *InterfaceClass;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[60] = *HitInfo;
+		if (XYCheckRadius !is null)
+			*cast(float*)&params[88] = *XYCheckRadius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.VisibleCollidingExtentActors, params.ptr, cast(void*)0);
-		*pActor = *cast(Actor*)&params[4];
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[60];
+		pActor = *cast(Actor*)&params[4];
+		if (HitInfo !is null)
+			*HitInfo = *cast(Actor.TraceHitInfo*)&params[60];
 	}
-	void OverlappingActors(ScriptClass BaseClass, ref Actor out_Actor, float Radius, Vector Loc, bool bIgnoreHidden)
+	void OverlappingActors(ScriptClass BaseClass, ref Actor out_Actor, float Radius, Vector* Loc = null, bool* bIgnoreHidden = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Actor*)&params[4] = out_Actor;
 		*cast(float*)&params[8] = Radius;
-		*cast(Vector*)&params[12] = Loc;
-		*cast(bool*)&params[24] = bIgnoreHidden;
+		if (Loc !is null)
+			*cast(Vector*)&params[12] = *Loc;
+		if (bIgnoreHidden !is null)
+			*cast(bool*)&params[24] = *bIgnoreHidden;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverlappingActors, params.ptr, cast(void*)0);
-		*out_Actor = *cast(Actor*)&params[4];
+		out_Actor = *cast(Actor*)&params[4];
 	}
 	void ComponentList(ScriptClass BaseClass, ref 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -2286,7 +2403,7 @@ void* out_Component)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = out_Component;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ComponentList, params.ptr, cast(void*)0);
-		*out_Component = *cast(
+		out_Component = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
@@ -2301,7 +2418,7 @@ void* OutComponent)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OutComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllOwnedComponents, params.ptr, cast(void*)0);
-		*OutComponent = *cast(
+		OutComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
@@ -2312,7 +2429,7 @@ void**)&params[4];
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(PlayerController*)&params[4] = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LocalPlayerControllers, params.ptr, cast(void*)0);
-		*PC = *cast(PlayerController*)&params[4];
+		PC = *cast(PlayerController*)&params[4];
 	}
 	PlayerController GetALocalPlayerController()
 	{
@@ -2325,27 +2442,35 @@ void**)&params[4];
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PreBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void BroadcastLocalizedMessage(ScriptClass InMessageClass, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void BroadcastLocalizedMessage(ScriptClass InMessageClass, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InMessageClass;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastLocalizedMessage, params.ptr, cast(void*)0);
 	}
-	void BroadcastLocalizedTeamMessage(int TeamIndex, ScriptClass InMessageClass, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void BroadcastLocalizedTeamMessage(int TeamIndex, ScriptClass InMessageClass, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
 		*cast(ScriptClass*)&params[4] = InMessageClass;
-		*cast(int*)&params[8] = Switch;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_2;
-		*cast(UObject*)&params[20] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[8] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[16] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[20] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastLocalizedTeamMessage, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
@@ -2380,7 +2505,7 @@ void**)&params[4];
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopsProjectile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool HurtRadius(float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Actor IgnoredActor, Controller InstigatedByController, bool bDoFullDamage)
+	bool HurtRadius(float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Actor* IgnoredActor = null, Controller* InstigatedByController = null, bool* bDoFullDamage = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -2389,9 +2514,12 @@ void**)&params[4];
 		*cast(ScriptClass*)&params[8] = pDamageType;
 		*cast(float*)&params[12] = Momentum;
 		*cast(Vector*)&params[16] = HurtOrigin;
-		*cast(Actor*)&params[28] = IgnoredActor;
-		*cast(Controller*)&params[32] = InstigatedByController;
-		*cast(bool*)&params[36] = bDoFullDamage;
+		if (IgnoredActor !is null)
+			*cast(Actor*)&params[28] = *IgnoredActor;
+		if (InstigatedByController !is null)
+			*cast(Controller*)&params[32] = *InstigatedByController;
+		if (bDoFullDamage !is null)
+			*cast(bool*)&params[36] = *bDoFullDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}
@@ -2402,7 +2530,7 @@ void**)&params[4];
 		*cast(Pawn*)params.ptr = EventInstigator;
 		(cast(ScriptObject)this).ProcessEvent(Functions.KilledBy, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -2411,8 +2539,10 @@ void**)&params[4];
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	bool HealDamage(int Amount, Controller Healer, ScriptClass pDamageType)
@@ -2425,7 +2555,7 @@ void**)&params[4];
 		(cast(ScriptObject)this).ProcessEvent(Functions.HealDamage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -2437,7 +2567,8 @@ void**)&params[4];
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void CheckHitInfo(ref Actor.TraceHitInfo HitInfo, 
@@ -2453,8 +2584,8 @@ void**)&params[28] = FallBackComponent;
 		*cast(Vector*)&params[32] = Dir;
 		*cast(Vector*)&params[44] = out_HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHitInfo, params.ptr, cast(void*)0);
-		*HitInfo = *cast(Actor.TraceHitInfo*)params.ptr;
-		*out_HitLocation = *cast(Vector*)&params[44];
+		HitInfo = *cast(Actor.TraceHitInfo*)params.ptr;
+		out_HitLocation = *cast(Vector*)&params[44];
 	}
 	float GetGravityZ()
 	{
@@ -2463,11 +2594,12 @@ void**)&params[28] = FallBackComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetGravityZ, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	void DebugFreezeGame(Actor pActorToLookAt)
+	void DebugFreezeGame(Actor* pActorToLookAt = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Actor*)params.ptr = pActorToLookAt;
+		if (pActorToLookAt !is null)
+			*cast(Actor*)params.ptr = *pActorToLookAt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DebugFreezeGame, params.ptr, cast(void*)0);
 	}
 	bool CheckForErrors()
@@ -2500,9 +2632,9 @@ void**)&params[28] = FallBackComponent;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	ScriptString GetItemName(ScriptString FullName)
@@ -2528,15 +2660,18 @@ void**)&params[28] = FallBackComponent;
 		*cast(ScriptString*)&params[12] = Replace;
 		*cast(ScriptString*)&params[24] = With;
 		StaticClass.ProcessEvent(Functions.ReplaceText, params.ptr, cast(void*)0);
-		*Text = *cast(ScriptString*)params.ptr;
+		Text = *cast(ScriptString*)params.ptr;
 	}
-	static ScriptString GetLocalString(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2)
+	static ScriptString GetLocalString(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[4] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_2;
 		StaticClass.ProcessEvent(Functions.GetLocalString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
@@ -2559,8 +2694,8 @@ void**)&params[28] = FallBackComponent;
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	ScriptString GetPhysicsName()
 	{
@@ -2625,14 +2760,16 @@ void**)params.ptr;
 		*cast(Vector*)&params[4] = HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyFluidSurfaceImpact, params.ptr, cast(void*)0);
 	}
-	bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float VisibleCullDistance, float HiddenCullDistance)
+	bool EffectIsRelevant(Vector SpawnLocation, bool bForceDedicated, float* VisibleCullDistance = null, float* HiddenCullDistance = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Vector*)params.ptr = SpawnLocation;
 		*cast(bool*)&params[12] = bForceDedicated;
-		*cast(float*)&params[16] = VisibleCullDistance;
-		*cast(float*)&params[20] = HiddenCullDistance;
+		if (VisibleCullDistance !is null)
+			*cast(float*)&params[16] = *VisibleCullDistance;
+		if (HiddenCullDistance !is null)
+			*cast(float*)&params[20] = *HiddenCullDistance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EffectIsRelevant, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -2643,33 +2780,39 @@ void**)params.ptr;
 		*cast(ScriptString*)params.ptr = msg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DebugMessagePlayer, params.ptr, cast(void*)0);
 	}
-	bool TriggerEventClass(ScriptClass InEventClass, Actor InInstigator, int ActivateIndex, bool bTest, ScriptArray!(SequenceEvent)* ActivatedEvents)
+	bool TriggerEventClass(ScriptClass InEventClass, Actor InInstigator, int* ActivateIndex = null, bool* bTest = null, ScriptArray!(SequenceEvent)* ActivatedEvents = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InEventClass;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(int*)&params[8] = ActivateIndex;
-		*cast(bool*)&params[12] = bTest;
-		*cast(ScriptArray!(SequenceEvent)*)&params[16] = ActivatedEvents;
+		if (ActivateIndex !is null)
+			*cast(int*)&params[8] = *ActivateIndex;
+		if (bTest !is null)
+			*cast(bool*)&params[12] = *bTest;
+		if (ActivatedEvents !is null)
+			*cast(ScriptArray!(SequenceEvent)*)&params[16] = *ActivatedEvents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TriggerEventClass, params.ptr, cast(void*)0);
-		*ActivatedEvents = *cast(ScriptArray!(SequenceEvent)*)&params[16];
+		if (ActivatedEvents !is null)
+			*ActivatedEvents = *cast(ScriptArray!(SequenceEvent)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
-	bool ActivateEventClass(ScriptClass InClass, Actor InInstigator, ref const ScriptArray!(SequenceEvent) EventList, const ScriptArray!(int)* ActivateIndices, bool bTest, ScriptArray!(SequenceEvent)* ActivatedEvents)
+	bool ActivateEventClass(ScriptClass InClass, Actor InInstigator, ref in ScriptArray!(SequenceEvent) EventList, in ScriptArray!(int)* ActivateIndices = null, bool* bTest = null, ScriptArray!(SequenceEvent)* ActivatedEvents = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InClass;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(ScriptArray!(SequenceEvent)*)&params[8] = EventList;
-		*cast(ScriptArray!(int)*)&params[20] = ActivateIndices;
-		*cast(bool*)&params[32] = bTest;
-		*cast(ScriptArray!(SequenceEvent)*)&params[36] = ActivatedEvents;
+		*cast(ScriptArray!(SequenceEvent)*)&params[8] = cast(ScriptArray!(SequenceEvent))EventList;
+		if (ActivateIndices !is null)
+			*cast(ScriptArray!(int)*)&params[20] = cast(ScriptArray!(int))*ActivateIndices;
+		if (bTest !is null)
+			*cast(bool*)&params[32] = *bTest;
+		if (ActivatedEvents !is null)
+			*cast(ScriptArray!(SequenceEvent)*)&params[36] = *ActivatedEvents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateEventClass, params.ptr, cast(void*)0);
-		*EventList = *cast(ScriptArray!(SequenceEvent)*)&params[8];
-		*ActivateIndices = *cast(ScriptArray!(int)*)&params[20];
-		*ActivatedEvents = *cast(ScriptArray!(SequenceEvent)*)&params[36];
+		if (ActivatedEvents !is null)
+			*ActivatedEvents = *cast(ScriptArray!(SequenceEvent)*)&params[36];
 		return *cast(bool*)&params[48];
 	}
 	void ReceivedNewEvent(SequenceEvent Evt)
@@ -2679,34 +2822,40 @@ void**)params.ptr;
 		*cast(SequenceEvent*)params.ptr = Evt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReceivedNewEvent, params.ptr, cast(void*)0);
 	}
-	bool TriggerGlobalEventClass(ScriptClass InEventClass, Actor InInstigator, int ActivateIndex)
+	bool TriggerGlobalEventClass(ScriptClass InEventClass, Actor InInstigator, int* ActivateIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InEventClass;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(int*)&params[8] = ActivateIndex;
+		if (ActivateIndex !is null)
+			*cast(int*)&params[8] = *ActivateIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TriggerGlobalEventClass, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool FindEventsOfClass(ScriptClass EventClass, ScriptArray!(SequenceEvent)* out_EventList, bool bIncludeDisabled)
+	bool FindEventsOfClass(ScriptClass EventClass, ScriptArray!(SequenceEvent)* out_EventList = null, bool* bIncludeDisabled = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = EventClass;
-		*cast(ScriptArray!(SequenceEvent)*)&params[4] = out_EventList;
-		*cast(bool*)&params[16] = bIncludeDisabled;
+		if (out_EventList !is null)
+			*cast(ScriptArray!(SequenceEvent)*)&params[4] = *out_EventList;
+		if (bIncludeDisabled !is null)
+			*cast(bool*)&params[16] = *bIncludeDisabled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindEventsOfClass, params.ptr, cast(void*)0);
-		*out_EventList = *cast(ScriptArray!(SequenceEvent)*)&params[4];
+		if (out_EventList !is null)
+			*out_EventList = *cast(ScriptArray!(SequenceEvent)*)&params[4];
 		return *cast(bool*)&params[20];
 	}
-	void ClearLatentAction(ScriptClass actionClass, bool bAborted, SeqAct_Latent exceptionAction)
+	void ClearLatentAction(ScriptClass actionClass, bool* bAborted = null, SeqAct_Latent* exceptionAction = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = actionClass;
-		*cast(bool*)&params[4] = bAborted;
-		*cast(SeqAct_Latent*)&params[8] = exceptionAction;
+		if (bAborted !is null)
+			*cast(bool*)&params[4] = *bAborted;
+		if (exceptionAction !is null)
+			*cast(SeqAct_Latent*)&params[8] = *exceptionAction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearLatentAction, params.ptr, cast(void*)0);
 	}
 	void OnDestroy(SeqAct_Destroy Action)
@@ -2731,13 +2880,14 @@ void**)params.ptr;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShutDown, cast(void*)0, cast(void*)0);
 	}
-	void PrestreamTextures(float Seconds, bool bEnableStreaming, int CinematicTextureGroups)
+	void PrestreamTextures(float Seconds, bool bEnableStreaming, int* CinematicTextureGroups = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = Seconds;
 		*cast(bool*)&params[4] = bEnableStreaming;
-		*cast(int*)&params[8] = CinematicTextureGroups;
+		if (CinematicTextureGroups !is null)
+			*cast(int*)&params[8] = *CinematicTextureGroups;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PrestreamTextures, params.ptr, cast(void*)0);
 	}
 	void OnModifyHealth(SeqAct_ModifyHealth Action)
@@ -2913,8 +3063,8 @@ void**)params.ptr;
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorEyesViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	bool IsPlayerOwned()
 	{
@@ -2952,14 +3102,16 @@ void**)params.ptr;
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(Rotator*)&params[4] = GoodRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
-		*GoodRotation = *cast(Rotator*)&params[4];
+		GoodRotation = *cast(Rotator*)&params[4];
 	}
-	Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
+	Vector GetTargetLocation(Actor* RequestedBy = null, bool* bRequestAlternateLoc = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Actor*)params.ptr = RequestedBy;
-		*cast(bool*)&params[4] = bRequestAlternateLoc;
+		if (RequestedBy !is null)
+			*cast(Actor*)params.ptr = *RequestedBy;
+		if (bRequestAlternateLoc !is null)
+			*cast(bool*)&params[4] = *bRequestAlternateLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
@@ -2993,7 +3145,7 @@ void**)params.ptr;
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref in Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -3003,10 +3155,9 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = cast(Actor.CollisionImpactData)RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
-		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void OnRanOver(SVehicle pVehicle, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -3070,7 +3221,7 @@ void* SkelComp, ref UObject.BoneAtom ExtractedRootMotionDelta)
 void**)params.ptr = SkelComp;
 		*cast(UObject.BoneAtom*)&params[16] = ExtractedRootMotionDelta;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RootMotionExtracted, params.ptr, cast(void*)0);
-		*ExtractedRootMotionDelta = *cast(UObject.BoneAtom*)&params[16];
+		ExtractedRootMotionDelta = *cast(UObject.BoneAtom*)&params[16];
 	}
 	void PostInitAnimTree(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -3098,11 +3249,12 @@ void**)params.ptr = SkelComp;
 		*cast(RB_BodyInstance*)params.ptr = BodyInstance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnRigidBodySpringOverextension, params.ptr, cast(void*)0);
 	}
-	bool IsInPersistentLevel(bool bIncludeLevelStreamingPersistent)
+	bool IsInPersistentLevel(bool* bIncludeLevelStreamingPersistent = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bIncludeLevelStreamingPersistent;
+		if (bIncludeLevelStreamingPersistent !is null)
+			*cast(bool*)params.ptr = *bIncludeLevelStreamingPersistent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsInPersistentLevel, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -3114,9 +3266,9 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[4] = Height;
 		*cast(Vector*)&params[8] = Center;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAimFrictionExtent, params.ptr, cast(void*)0);
-		*Width = *cast(float*)params.ptr;
-		*Height = *cast(float*)&params[4];
-		*Center = *cast(Vector*)&params[8];
+		Width = *cast(float*)params.ptr;
+		Height = *cast(float*)&params[4];
+		Center = *cast(Vector*)&params[8];
 	}
 	void GetAimAdhesionExtent(ref float Width, ref float Height, ref Vector Center)
 	{
@@ -3126,45 +3278,45 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[4] = Height;
 		*cast(Vector*)&params[8] = Center;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAimAdhesionExtent, params.ptr, cast(void*)0);
-		*Width = *cast(float*)params.ptr;
-		*Height = *cast(float*)&params[4];
-		*Center = *cast(Vector*)&params[8];
+		Width = *cast(float*)params.ptr;
+		Height = *cast(float*)&params[4];
+		Center = *cast(Vector*)&params[8];
 	}
-	bool PlayParticleEffect(const AnimNotify_PlayParticleEffect AnimNotifyData)
+	bool PlayParticleEffect(in AnimNotify_PlayParticleEffect AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_PlayParticleEffect*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_PlayParticleEffect*)params.ptr = cast(AnimNotify_PlayParticleEffect)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayParticleEffect, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool CreateForceField(const AnimNotify_ForceField AnimNotifyData)
+	bool CreateForceField(in AnimNotify_ForceField AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_ForceField*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_ForceField*)params.ptr = cast(AnimNotify_ForceField)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateForceField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void TrailsNotify(const AnimNotify_Trails AnimNotifyData)
+	void TrailsNotify(in AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_Trails*)params.ptr = cast(AnimNotify_Trails)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotify, params.ptr, cast(void*)0);
 	}
-	void TrailsNotifyTick(const AnimNotify_Trails AnimNotifyData)
+	void TrailsNotifyTick(in AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_Trails*)params.ptr = cast(AnimNotify_Trails)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotifyTick, params.ptr, cast(void*)0);
 	}
-	void TrailsNotifyEnd(const AnimNotify_Trails AnimNotifyData)
+	void TrailsNotifyEnd(in AnimNotify_Trails AnimNotifyData)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(AnimNotify_Trails*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_Trails*)params.ptr = cast(AnimNotify_Trails)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrailsNotifyEnd, params.ptr, cast(void*)0);
 	}
 	bool SupportsKismetModification(SequenceOp AskingOp, ref ScriptString Reason)
@@ -3174,7 +3326,7 @@ void**)params.ptr = SkelComp;
 		*cast(SequenceOp*)params.ptr = AskingOp;
 		*cast(ScriptString*)&params[4] = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SupportsKismetModification, params.ptr, cast(void*)0);
-		*Reason = *cast(ScriptString*)&params[4];
+		Reason = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void AnimTreeUpdated(
@@ -3196,19 +3348,21 @@ void**)params.ptr = SkelMesh;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicationEnded, cast(void*)0, cast(void*)0);
 	}
-	Vector GetAvoidanceVector(ref const ScriptArray!(Actor) Obstacles, Vector GoalLocation, float CollisionRadius, float MaxSpeed, int NumSamples, float VelocityStepRate, float MaxTimeTilOverlap)
+	Vector GetAvoidanceVector(ref in ScriptArray!(Actor) Obstacles, Vector GoalLocation, float CollisionRadius, float MaxSpeed, int* NumSamples = null, float* VelocityStepRate = null, float* MaxTimeTilOverlap = null)
 	{
 		ubyte params[56];
 		params[] = 0;
-		*cast(ScriptArray!(Actor)*)params.ptr = Obstacles;
+		*cast(ScriptArray!(Actor)*)params.ptr = cast(ScriptArray!(Actor))Obstacles;
 		*cast(Vector*)&params[12] = GoalLocation;
 		*cast(float*)&params[24] = CollisionRadius;
 		*cast(float*)&params[28] = MaxSpeed;
-		*cast(int*)&params[32] = NumSamples;
-		*cast(float*)&params[36] = VelocityStepRate;
-		*cast(float*)&params[40] = MaxTimeTilOverlap;
+		if (NumSamples !is null)
+			*cast(int*)&params[32] = *NumSamples;
+		if (VelocityStepRate !is null)
+			*cast(float*)&params[36] = *VelocityStepRate;
+		if (MaxTimeTilOverlap !is null)
+			*cast(float*)&params[40] = *MaxTimeTilOverlap;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAvoidanceVector, params.ptr, cast(void*)0);
-		*Obstacles = *cast(ScriptArray!(Actor)*)params.ptr;
 		return *cast(Vector*)&params[44];
 	}
 	bool WillOverlap(Vector PosA, Vector VelA, Vector PosB, Vector VelB, float StepSize, float Radius, ref float Time)
@@ -3223,7 +3377,7 @@ void**)params.ptr = SkelMesh;
 		*cast(float*)&params[52] = Radius;
 		*cast(float*)&params[56] = Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WillOverlap, params.ptr, cast(void*)0);
-		*Time = *cast(float*)&params[56];
+		Time = *cast(float*)&params[56];
 		return *cast(bool*)&params[60];
 	}
 	bool ShouldBeHiddenBySHOW_NavigationNodes()
@@ -3254,7 +3408,7 @@ void**)params.ptr = SkelMesh;
 		*cast(int*)params.ptr = Health;
 		*cast(int*)&params[4] = MaxHealth;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorHealthInfo, params.ptr, cast(void*)0);
-		*Health = *cast(int*)params.ptr;
-		*MaxHealth = *cast(int*)&params[4];
+		Health = *cast(int*)params.ptr;
+		MaxHealth = *cast(int*)&params[4];
 	}
 }

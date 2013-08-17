@@ -22,7 +22,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) WeightedMaterials() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 372)()); }
-		Terrain ParentTerrain() { mixin(MGPC!(Terrain, 368)()); }
+		ScriptArray!(UObject.Pointer) WeightedMaterials() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 372)()); }
+		Terrain ParentTerrain() { mixin(MGPC!("Terrain", 368)()); }
 	}
 }

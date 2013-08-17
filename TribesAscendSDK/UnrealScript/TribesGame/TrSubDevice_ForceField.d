@@ -27,10 +27,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_MinSpeed() { mixin(MGPC!(float, 2160)()); }
-		float m_MaxSpeed() { mixin(MGPC!(float, 2156)()); }
-		float m_MinDamage() { mixin(MGPC!(float, 2152)()); }
-		float m_MaxDamage() { mixin(MGPC!(float, 2148)()); }
+		float m_MinSpeed() { mixin(MGPC!("float", 2160)()); }
+		float m_MaxSpeed() { mixin(MGPC!("float", 2156)()); }
+		float m_MinDamage() { mixin(MGPC!("float", 2152)()); }
+		float m_MaxDamage() { mixin(MGPC!("float", 2148)()); }
 	}
 final:
 	void InstantFire()

@@ -46,8 +46,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC!(PhysicsAsset, 488)()); }
-			SkeletalMesh ReplicatedMesh() { mixin(MGPC!(SkeletalMesh, 484)()); }
+			PhysicsAsset ReplicatedPhysAsset() { mixin(MGPC!("PhysicsAsset", 488)()); }
+			SkeletalMesh ReplicatedMesh() { mixin(MGPC!("SkeletalMesh", 484)()); }
 			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
 		bool bBlockPawns() { mixin(MGBPC!(480, 0x4)()); }
@@ -77,7 +77,7 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -86,11 +86,13 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -102,7 +104,8 @@ final:
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void OnToggle(SeqAct_Toggle Action)

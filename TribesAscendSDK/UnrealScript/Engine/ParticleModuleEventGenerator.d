@@ -23,12 +23,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ParticleModuleEventSendToGame) ParticleModuleEventsToSendToGame() { mixin(MGPS!(ScriptArray!(ParticleModuleEventSendToGame), 28)()); }
-				ScriptName CustomName() { mixin(MGPS!(ScriptName, 20)()); }
-				int ParticleFrequency() { mixin(MGPS!(int, 12)()); }
-				int LowFreq() { mixin(MGPS!(int, 8)()); }
-				int Frequency() { mixin(MGPS!(int, 4)()); }
-				ParticleSystemComponent.EParticleEventType Type() { mixin(MGPS!(ParticleSystemComponent.EParticleEventType, 0)()); }
+				ScriptArray!(ParticleModuleEventSendToGame) ParticleModuleEventsToSendToGame() { mixin(MGPS!("ScriptArray!(ParticleModuleEventSendToGame)", 28)()); }
+				ScriptName CustomName() { mixin(MGPS!("ScriptName", 20)()); }
+				int ParticleFrequency() { mixin(MGPS!("int", 12)()); }
+				int LowFreq() { mixin(MGPS!("int", 8)()); }
+				int Frequency() { mixin(MGPS!("int", 4)()); }
+				ParticleSystemComponent.EParticleEventType Type() { mixin(MGPS!("ParticleSystemComponent.EParticleEventType", 0)()); }
 			}
 			bool UseReflectedImpactVector() { mixin(MGBPS!(16, 0x4)()); }
 			bool UseReflectedImpactVector(bool val) { mixin(MSBPS!(16, 0x4)()); }
@@ -38,5 +38,5 @@ public extern(D):
 			bool FirstTimeOnly(bool val) { mixin(MSBPS!(16, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ParticleModuleEventGenerator.ParticleEvent_GenerateInfo) Events() { mixin(MGPC!(ScriptArray!(ParticleModuleEventGenerator.ParticleEvent_GenerateInfo), 72)()); }
+	@property final auto ref ScriptArray!(ParticleModuleEventGenerator.ParticleEvent_GenerateInfo) Events() { mixin(MGPC!("ScriptArray!(ParticleModuleEventGenerator.ParticleEvent_GenerateInfo)", 72)()); }
 }

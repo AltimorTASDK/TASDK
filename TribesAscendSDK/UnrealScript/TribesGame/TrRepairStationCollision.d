@@ -31,7 +31,7 @@ public extern(D):
 			ScriptFunction UnTouch() { mixin(MGF!("mUnTouch", "Function TribesGame.TrRepairStationCollision.UnTouch")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!(ScriptArray!(Pawn), 484)()); }
+	@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!("ScriptArray!(Pawn)", 484)()); }
 final:
 	int GetPawnsInStation()
 	{

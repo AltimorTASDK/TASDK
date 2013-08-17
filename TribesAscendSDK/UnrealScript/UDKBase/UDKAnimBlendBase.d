@@ -30,19 +30,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(float) ChildBlendTimes() { mixin(MGPC!(ScriptArray!(float), 280)()); }
-			float BlendTime() { mixin(MGPC!(float, 276)()); }
+			ScriptArray!(float) ChildBlendTimes() { mixin(MGPC!("ScriptArray!(float)", 280)()); }
+			float BlendTime() { mixin(MGPC!("float", 276)()); }
 		}
 		bool bTickAnimInScript() { mixin(MGBPC!(292, 0x1)()); }
 		bool bTickAnimInScript(bool val) { mixin(MSBPC!(292, 0x1)()); }
 	}
 final:
-	float GetBlendTime(int ChildIndex, bool bGetDefault)
+	float GetBlendTime(int ChildIndex, bool* bGetDefault = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ChildIndex;
-		*cast(bool*)&params[4] = bGetDefault;
+		if (bGetDefault !is null)
+			*cast(bool*)&params[4] = *bGetDefault;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBlendTime, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}

@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass PredefinedWaveForm() { mixin(MGPC!(ScriptClass, 64)()); }
-			ForceFeedbackWaveform WaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 68)()); }
-			float EffectRadius() { mixin(MGPC!(float, 76)()); }
+			ScriptClass PredefinedWaveForm() { mixin(MGPC!("ScriptClass", 64)()); }
+			ForceFeedbackWaveform WaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 68)()); }
+			float EffectRadius() { mixin(MGPC!("float", 76)()); }
 		}
 		bool bCheckForBasedPlayer() { mixin(MGBPC!(72, 0x1)()); }
 		bool bCheckForBasedPlayer(bool val) { mixin(MSBPC!(72, 0x1)()); }

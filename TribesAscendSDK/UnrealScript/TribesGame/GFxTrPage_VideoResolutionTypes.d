@@ -35,14 +35,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TgPlayerProfile.PropertyPair) AllResolutions() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 372)()); }
-			ScriptArray!(GFxTrPage.ResolutionSet) FourByThreeGroup() { mixin(MGPC!(ScriptArray!(GFxTrPage.ResolutionSet), 384)()); }
-			ScriptArray!(GFxTrPage.ResolutionSet) SixteenByNineGroup() { mixin(MGPC!(ScriptArray!(GFxTrPage.ResolutionSet), 396)()); }
-			ScriptArray!(GFxTrPage.ResolutionSet) SixteenbyTenGroup() { mixin(MGPC!(ScriptArray!(GFxTrPage.ResolutionSet), 408)()); }
-			ScriptArray!(GFxTrPage.ResolutionSet) OtherGroup() { mixin(MGPC!(ScriptArray!(GFxTrPage.ResolutionSet), 420)()); }
-			int SixteenbyTen() { mixin(MGPC!(int, 364)()); }
-			int SixteenByNine() { mixin(MGPC!(int, 360)()); }
-			int FourByThree() { mixin(MGPC!(int, 356)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) AllResolutions() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.PropertyPair)", 372)()); }
+			ScriptArray!(GFxTrPage.ResolutionSet) FourByThreeGroup() { mixin(MGPC!("ScriptArray!(GFxTrPage.ResolutionSet)", 384)()); }
+			ScriptArray!(GFxTrPage.ResolutionSet) SixteenByNineGroup() { mixin(MGPC!("ScriptArray!(GFxTrPage.ResolutionSet)", 396)()); }
+			ScriptArray!(GFxTrPage.ResolutionSet) SixteenbyTenGroup() { mixin(MGPC!("ScriptArray!(GFxTrPage.ResolutionSet)", 408)()); }
+			ScriptArray!(GFxTrPage.ResolutionSet) OtherGroup() { mixin(MGPC!("ScriptArray!(GFxTrPage.ResolutionSet)", 420)()); }
+			int SixteenbyTen() { mixin(MGPC!("int", 364)()); }
+			int SixteenByNine() { mixin(MGPC!("int", 360)()); }
+			int FourByThree() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bShowingSixteenbyTen() { mixin(MGBPC!(368, 0x4)()); }
 		bool bShowingSixteenbyTen(bool val) { mixin(MSBPC!(368, 0x4)()); }

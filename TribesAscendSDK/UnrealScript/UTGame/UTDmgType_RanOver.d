@@ -29,7 +29,7 @@ public extern(D):
 			ScriptFunction SpawnHitEffect() { mixin(MGF!("mSpawnHitEffect", "Function UTGame.UTDmgType_RanOver.SpawnHitEffect")()); }
 		}
 	}
-	@property final auto ref int NumMessages() { mixin(MGPC!(int, 300)()); }
+	@property final auto ref int NumMessages() { mixin(MGPC!("int", 300)()); }
 final:
 	static int IncrementKills(UTPlayerReplicationInfo KillerPRI)
 	{

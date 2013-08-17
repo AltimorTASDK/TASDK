@@ -15,7 +15,7 @@ public extern(D):
 	@property final static FractureMaterial DefaultProperties() { mixin(MGDPC!(FractureMaterial, "FractureMaterial Engine.Default__FractureMaterial")()); }
 	@property final auto ref
 	{
-		SoundCue FractureSound() { mixin(MGPC!(SoundCue, 64)()); }
-		ParticleSystem FractureEffect() { mixin(MGPC!(ParticleSystem, 60)()); }
+		SoundCue FractureSound() { mixin(MGPC!("SoundCue", 64)()); }
+		ParticleSystem FractureEffect() { mixin(MGPC!("ParticleSystem", 60)()); }
 	}
 }

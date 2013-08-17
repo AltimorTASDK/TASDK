@@ -52,19 +52,19 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString URLCreateSteamAccount() { mixin(MGPC!(ScriptString, 204)()); }
-		ScriptString URLRecoverUsername() { mixin(MGPC!(ScriptString, 192)()); }
-		ScriptString URLRecoverPassword() { mixin(MGPC!(ScriptString, 180)()); }
-		ScriptString URLCreateAccount() { mixin(MGPC!(ScriptString, 168)()); }
-		ScriptString URLActivateKey() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptString URLClassVideo() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString URLRedirect() { mixin(MGPC!(ScriptString, 132)()); }
-		ScriptString URLProfile() { mixin(MGPC!(ScriptString, 120)()); }
-		ScriptString URLSupport() { mixin(MGPC!(ScriptString, 108)()); }
-		ScriptString URLBooster() { mixin(MGPC!(ScriptString, 96)()); }
-		ScriptString URLStore() { mixin(MGPC!(ScriptString, 84)()); }
-		ScriptString URLAlert() { mixin(MGPC!(ScriptString, 72)()); }
-		ScriptString URLGold() { mixin(MGPC!(ScriptString, 60)()); }
+		ScriptString URLCreateSteamAccount() { mixin(MGPC!("ScriptString", 204)()); }
+		ScriptString URLRecoverUsername() { mixin(MGPC!("ScriptString", 192)()); }
+		ScriptString URLRecoverPassword() { mixin(MGPC!("ScriptString", 180)()); }
+		ScriptString URLCreateAccount() { mixin(MGPC!("ScriptString", 168)()); }
+		ScriptString URLActivateKey() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptString URLClassVideo() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString URLRedirect() { mixin(MGPC!("ScriptString", 132)()); }
+		ScriptString URLProfile() { mixin(MGPC!("ScriptString", 120)()); }
+		ScriptString URLSupport() { mixin(MGPC!("ScriptString", 108)()); }
+		ScriptString URLBooster() { mixin(MGPC!("ScriptString", 96)()); }
+		ScriptString URLStore() { mixin(MGPC!("ScriptString", 84)()); }
+		ScriptString URLAlert() { mixin(MGPC!("ScriptString", 72)()); }
+		ScriptString URLGold() { mixin(MGPC!("ScriptString", 60)()); }
 	}
 final:
 	void OpenURL(ScriptString pURL)

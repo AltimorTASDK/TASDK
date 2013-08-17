@@ -32,8 +32,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int DollMesh() { mixin(MGPC!(int, 360)()); }
-		int queueId() { mixin(MGPC!(int, 356)()); }
+		int DollMesh() { mixin(MGPC!("int", 360)()); }
+		int queueId() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

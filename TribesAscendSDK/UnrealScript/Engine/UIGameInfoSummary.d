@@ -20,12 +20,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString Description() { mixin(MGPC!(ScriptString, 188)()); }
-			ScriptString GameName() { mixin(MGPC!(ScriptString, 176)()); }
-			ScriptString GameSettingsClassName() { mixin(MGPC!(ScriptString, 164)()); }
-			ScriptString MapPrefix() { mixin(MGPC!(ScriptString, 148)()); }
-			ScriptString GameAcronym() { mixin(MGPC!(ScriptString, 136)()); }
-			ScriptString ClassName() { mixin(MGPC!(ScriptString, 124)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 188)()); }
+			ScriptString GameName() { mixin(MGPC!("ScriptString", 176)()); }
+			ScriptString GameSettingsClassName() { mixin(MGPC!("ScriptString", 164)()); }
+			ScriptString MapPrefix() { mixin(MGPC!("ScriptString", 148)()); }
+			ScriptString GameAcronym() { mixin(MGPC!("ScriptString", 136)()); }
+			ScriptString ClassName() { mixin(MGPC!("ScriptString", 124)()); }
 		}
 		bool bIsDisabled() { mixin(MGBPC!(160, 0x2)()); }
 		bool bIsDisabled(bool val) { mixin(MSBPC!(160, 0x2)()); }

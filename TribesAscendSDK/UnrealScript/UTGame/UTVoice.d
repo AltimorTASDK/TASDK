@@ -100,22 +100,22 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundNodeWave) AckSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 100)()); }
-		ScriptArray!(SoundNodeWave) FriendlyFireSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 112)()); }
-		ScriptArray!(SoundNodeWave) GotYourBackSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 124)()); }
-		ScriptArray!(SoundNodeWave) NeedOurFlagSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 136)()); }
-		ScriptArray!(SoundNodeWave) SniperSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 148)()); }
-		ScriptArray!(SoundNodeWave) InPositionSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 160)()); }
-		ScriptArray!(SoundNodeWave) HaveFlagSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 172)()); }
-		ScriptArray!(SoundNodeWave) AreaSecureSounds() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 184)()); }
-		int LocationSpeechOffset() { mixin(MGPC!(int, 224)()); }
-		SoundNodeWave GotOurFlagSound() { mixin(MGPC!(SoundNodeWave, 220)()); }
-		SoundNodeWave MidfieldSound() { mixin(MGPC!(SoundNodeWave, 216)()); }
-		SoundNodeWave EnemyFlagCarrierLowSound() { mixin(MGPC!(SoundNodeWave, 212)()); }
-		SoundNodeWave EnemyFlagCarrierHighSound() { mixin(MGPC!(SoundNodeWave, 208)()); }
-		SoundNodeWave EnemyFlagCarrierHereSound() { mixin(MGPC!(SoundNodeWave, 204)()); }
-		SoundNodeWave EnemyFlagCarrierSound() { mixin(MGPC!(SoundNodeWave, 200)()); }
-		SoundNodeWave IncomingSound() { mixin(MGPC!(SoundNodeWave, 196)()); }
+		ScriptArray!(SoundNodeWave) AckSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 100)()); }
+		ScriptArray!(SoundNodeWave) FriendlyFireSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 112)()); }
+		ScriptArray!(SoundNodeWave) GotYourBackSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 124)()); }
+		ScriptArray!(SoundNodeWave) NeedOurFlagSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 136)()); }
+		ScriptArray!(SoundNodeWave) SniperSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 148)()); }
+		ScriptArray!(SoundNodeWave) InPositionSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 160)()); }
+		ScriptArray!(SoundNodeWave) HaveFlagSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 172)()); }
+		ScriptArray!(SoundNodeWave) AreaSecureSounds() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 184)()); }
+		int LocationSpeechOffset() { mixin(MGPC!("int", 224)()); }
+		SoundNodeWave GotOurFlagSound() { mixin(MGPC!("SoundNodeWave", 220)()); }
+		SoundNodeWave MidfieldSound() { mixin(MGPC!("SoundNodeWave", 216)()); }
+		SoundNodeWave EnemyFlagCarrierLowSound() { mixin(MGPC!("SoundNodeWave", 212)()); }
+		SoundNodeWave EnemyFlagCarrierHighSound() { mixin(MGPC!("SoundNodeWave", 208)()); }
+		SoundNodeWave EnemyFlagCarrierHereSound() { mixin(MGPC!("SoundNodeWave", 204)()); }
+		SoundNodeWave EnemyFlagCarrierSound() { mixin(MGPC!("SoundNodeWave", 200)()); }
+		SoundNodeWave IncomingSound() { mixin(MGPC!("SoundNodeWave", 196)()); }
 	}
 final:
 	static int GetAckMessageIndex(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
@@ -158,15 +158,19 @@ final:
 		StaticClass.ProcessEvent(Functions.GetNeedOurFlagMessageIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[16];
 	}
-	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
 	static SoundNodeWave AnnouncementSound(int MessageIndex, UObject OptionalObject, PlayerController PC)
@@ -188,15 +192,20 @@ final:
 		StaticClass.ProcessEvent(Functions.EnemySound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[8];
 	}
-	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(bool*)&params[4] = bPRI1HUD;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (bPRI1HUD !is null)
+			*cast(bool*)&params[4] = *bPRI1HUD;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
@@ -258,7 +267,7 @@ final:
 		*cast(ScriptName*)&params[8] = MessageType;
 		StaticClass.ProcessEvent(Functions.SetHoldingFlagUpdate, params.ptr, cast(void*)0);
 	}
-	static void SendLocalizedMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, int MessageIndex, UObject LocationObject)
+	static void SendLocalizedMessage(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, int MessageIndex, UObject* LocationObject = null)
 	{
 		ubyte params[24];
 		params[] = 0;
@@ -266,7 +275,8 @@ final:
 		*cast(PlayerReplicationInfo*)&params[4] = Recipient;
 		*cast(ScriptName*)&params[8] = MessageType;
 		*cast(int*)&params[16] = MessageIndex;
-		*cast(UObject*)&params[20] = LocationObject;
+		if (LocationObject !is null)
+			*cast(UObject*)&params[20] = *LocationObject;
 		StaticClass.ProcessEvent(Functions.SendLocalizedMessage, params.ptr, cast(void*)0);
 	}
 	static void SendEnemyFlagCarrierHereUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType)
@@ -314,7 +324,7 @@ final:
 		StaticClass.ProcessEvent(Functions.KilledVehicleSound, params.ptr, cast(void*)0);
 		return *cast(SoundNodeWave*)&params[8];
 	}
-	static bool SendLocationUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, UTGame G, Pawn StatusPawn, bool bDontSendMidfield)
+	static bool SendLocationUpdate(Controller Sender, PlayerReplicationInfo Recipient, ScriptName MessageType, UTGame G, Pawn StatusPawn, bool* bDontSendMidfield = null)
 	{
 		ubyte params[32];
 		params[] = 0;
@@ -323,7 +333,8 @@ final:
 		*cast(ScriptName*)&params[8] = MessageType;
 		*cast(UTGame*)&params[16] = G;
 		*cast(Pawn*)&params[20] = StatusPawn;
-		*cast(bool*)&params[24] = bDontSendMidfield;
+		if (bDontSendMidfield !is null)
+			*cast(bool*)&params[24] = *bDontSendMidfield;
 		StaticClass.ProcessEvent(Functions.SendLocationUpdate, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -346,14 +357,16 @@ final:
 		StaticClass.ProcessEvent(Functions.ShouldBeRemoved, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	static bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	static bool AddAnnouncement(UTAnnouncer Announcer, int MessageIndex, PlayerReplicationInfo* PRI = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(UTAnnouncer*)params.ptr = Announcer;
 		*cast(int*)&params[4] = MessageIndex;
-		*cast(PlayerReplicationInfo*)&params[8] = PRI;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (PRI !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *PRI;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.AddAnnouncement, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

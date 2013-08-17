@@ -82,26 +82,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) AutomatedMapTestingList() { mixin(MGPC!(ScriptArray!(ScriptString), 488)()); }
-			ScriptArray!(Vector) SentinelTravelArray() { mixin(MGPC!(ScriptArray!(Vector), 576)()); }
-			ScriptArray!(ScriptString) CommandsToRunAtEachTravelTheWorldNode() { mixin(MGPC!(ScriptArray!(ScriptString), 608)()); }
-			ScriptString CommandStringToExec() { mixin(MGPC!(ScriptString, 620)()); }
-			int NumMinutesPerMap() { mixin(MGPC!(int, 604)()); }
-			int TravelPointsIncrement() { mixin(MGPC!(int, 600)()); }
-			int NumRotationsIncrement() { mixin(MGPC!(int, 596)()); }
-			int SentinelIdx() { mixin(MGPC!(int, 592)()); }
-			int SentinelNavigationIdx() { mixin(MGPC!(int, 588)()); }
-			PlayerController SentinelPC() { mixin(MGPC!(PlayerController, 572)()); }
-			ScriptString SentinelTagDesc() { mixin(MGPC!(ScriptString, 560)()); }
-			ScriptString SentinelTaskParameter() { mixin(MGPC!(ScriptString, 548)()); }
-			ScriptString SentinelTaskDescription() { mixin(MGPC!(ScriptString, 536)()); }
-			ScriptString AutomatedMapTestingTransitionMap() { mixin(MGPC!(ScriptString, 524)()); }
-			ScriptString AutomatedTestingExecCommandToRunAtStartMatch() { mixin(MGPC!(ScriptString, 512)()); }
-			int NumMapListCyclesDone() { mixin(MGPC!(int, 508)()); }
-			int NumberOfMatchesPlayed() { mixin(MGPC!(int, 504)()); }
-			int NumAutomatedMapTestingCycles() { mixin(MGPC!(int, 500)()); }
-			int AutomatedTestingMapIndex() { mixin(MGPC!(int, 484)()); }
-			int AutomatedPerfRemainingTime() { mixin(MGPC!(int, 480)()); }
+			ScriptArray!(ScriptString) AutomatedMapTestingList() { mixin(MGPC!("ScriptArray!(ScriptString)", 488)()); }
+			ScriptArray!(Vector) SentinelTravelArray() { mixin(MGPC!("ScriptArray!(Vector)", 576)()); }
+			ScriptArray!(ScriptString) CommandsToRunAtEachTravelTheWorldNode() { mixin(MGPC!("ScriptArray!(ScriptString)", 608)()); }
+			ScriptString CommandStringToExec() { mixin(MGPC!("ScriptString", 620)()); }
+			int NumMinutesPerMap() { mixin(MGPC!("int", 604)()); }
+			int TravelPointsIncrement() { mixin(MGPC!("int", 600)()); }
+			int NumRotationsIncrement() { mixin(MGPC!("int", 596)()); }
+			int SentinelIdx() { mixin(MGPC!("int", 592)()); }
+			int SentinelNavigationIdx() { mixin(MGPC!("int", 588)()); }
+			PlayerController SentinelPC() { mixin(MGPC!("PlayerController", 572)()); }
+			ScriptString SentinelTagDesc() { mixin(MGPC!("ScriptString", 560)()); }
+			ScriptString SentinelTaskParameter() { mixin(MGPC!("ScriptString", 548)()); }
+			ScriptString SentinelTaskDescription() { mixin(MGPC!("ScriptString", 536)()); }
+			ScriptString AutomatedMapTestingTransitionMap() { mixin(MGPC!("ScriptString", 524)()); }
+			ScriptString AutomatedTestingExecCommandToRunAtStartMatch() { mixin(MGPC!("ScriptString", 512)()); }
+			int NumMapListCyclesDone() { mixin(MGPC!("int", 508)()); }
+			int NumberOfMatchesPlayed() { mixin(MGPC!("int", 504)()); }
+			int NumAutomatedMapTestingCycles() { mixin(MGPC!("int", 500)()); }
+			int AutomatedTestingMapIndex() { mixin(MGPC!("int", 484)()); }
+			int AutomatedPerfRemainingTime() { mixin(MGPC!("int", 480)()); }
 		}
 		bool bSentinelStreamingLevelStillLoading() { mixin(MGBPC!(476, 0x100)()); }
 		bool bSentinelStreamingLevelStillLoading(bool val) { mixin(MSBPC!(476, 0x100)()); }
@@ -138,21 +138,21 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeOptions, params.ptr, cast(void*)0);
 	}
-	void BeginSentinelRun(const ScriptString TaskDescription, const ScriptString TaskParameter, const ScriptString TagDesc)
+	void BeginSentinelRun(in ScriptString TaskDescription, in ScriptString TaskParameter, in ScriptString TagDesc)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = TaskDescription;
-		*cast(ScriptString*)&params[12] = TaskParameter;
-		*cast(ScriptString*)&params[24] = TagDesc;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)TaskDescription;
+		*cast(ScriptString*)&params[12] = cast(ScriptString)TaskParameter;
+		*cast(ScriptString*)&params[24] = cast(ScriptString)TagDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BeginSentinelRun, params.ptr, cast(void*)0);
 	}
-	void AddSentinelPerTimePeriodStats(const Vector InLocation, const Rotator InRotation)
+	void AddSentinelPerTimePeriodStats(in Vector InLocation, in Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InLocation;
-		*cast(Rotator*)&params[12] = InRotation;
+		*cast(Vector*)params.ptr = cast(Vector)InLocation;
+		*cast(Rotator*)&params[12] = cast(Rotator)InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddSentinelPerTimePeriodStats, params.ptr, cast(void*)0);
 	}
 	void EndSentinelRun(UObject.EAutomatedRunResult RunResult)
@@ -182,35 +182,31 @@ final:
 		*cast(PlayerController*)&params[8] = PC;
 		*cast(ScriptArray!(Vector)*)&params[12] = TravelPoints;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTravelLocations, params.ptr, cast(void*)0);
-		*TravelPoints = *cast(ScriptArray!(Vector)*)&params[12];
+		TravelPoints = *cast(ScriptArray!(Vector)*)&params[12];
 	}
-	void DoSentinel_MemoryAtSpecificLocation(const Vector InLocation, const Rotator InRotation)
+	void DoSentinel_MemoryAtSpecificLocation(in Vector InLocation, in Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InLocation;
-		*cast(Rotator*)&params[12] = InRotation;
+		*cast(Vector*)params.ptr = cast(Vector)InLocation;
+		*cast(Rotator*)&params[12] = cast(Rotator)InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_MemoryAtSpecificLocation, params.ptr, cast(void*)0);
 	}
-	void DoSentinel_PerfAtSpecificLocation(ref const Vector InLocation, ref const Rotator InRotation)
+	void DoSentinel_PerfAtSpecificLocation(ref in Vector InLocation, ref in Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InLocation;
-		*cast(Rotator*)&params[12] = InRotation;
+		*cast(Vector*)params.ptr = cast(Vector)InLocation;
+		*cast(Rotator*)&params[12] = cast(Rotator)InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_PerfAtSpecificLocation, params.ptr, cast(void*)0);
-		*InLocation = *cast(Vector*)params.ptr;
-		*InRotation = *cast(Rotator*)&params[12];
 	}
-	void DoSentinel_ViewDependentMemoryAtSpecificLocation(ref const Vector InLocation, ref const Rotator InRotation)
+	void DoSentinel_ViewDependentMemoryAtSpecificLocation(ref in Vector InLocation, ref in Rotator InRotation)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InLocation;
-		*cast(Rotator*)&params[12] = InRotation;
+		*cast(Vector*)params.ptr = cast(Vector)InLocation;
+		*cast(Rotator*)&params[12] = cast(Rotator)InRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoSentinel_ViewDependentMemoryAtSpecificLocation, params.ptr, cast(void*)0);
-		*InLocation = *cast(Vector*)params.ptr;
-		*InRotation = *cast(Rotator*)&params[12];
 	}
 	void DoTimeBasedSentinelStatGathering()
 	{

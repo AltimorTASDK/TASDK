@@ -67,13 +67,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(GameTypes.AICmdHistoryItem) CommandHistory() { mixin(MGPC!(ScriptArray!(GameTypes.AICmdHistoryItem), 992)()); }
-			ScriptArray!(ScriptName) AILogFilter() { mixin(MGPC!(ScriptArray!(ScriptName), 1008)()); }
-			ScriptString DemoActionString() { mixin(MGPC!(ScriptString, 1020)()); }
-			int CommandHistoryNum() { mixin(MGPC!(int, 1004)()); }
-			float DebugTextMaxLen() { mixin(MGPC!(float, 988)()); }
-			FileLog AILogFile() { mixin(MGPC!(FileLog, 984)()); }
-			GameAICommand CommandList() { mixin(MGPC!(GameAICommand, 980)()); }
+			ScriptArray!(GameTypes.AICmdHistoryItem) CommandHistory() { mixin(MGPC!("ScriptArray!(GameTypes.AICmdHistoryItem)", 992)()); }
+			ScriptArray!(ScriptName) AILogFilter() { mixin(MGPC!("ScriptArray!(ScriptName)", 1008)()); }
+			ScriptString DemoActionString() { mixin(MGPC!("ScriptString", 1020)()); }
+			int CommandHistoryNum() { mixin(MGPC!("int", 1004)()); }
+			float DebugTextMaxLen() { mixin(MGPC!("float", 988)()); }
+			FileLog AILogFile() { mixin(MGPC!("FileLog", 984)()); }
+			GameAICommand CommandList() { mixin(MGPC!("GameAICommand", 980)()); }
 			// WARNING: Property 'AITreeHandle' has the same name as a defined type!
 			// WARNING: Property 'AITree' has the same name as a defined type!
 		}
@@ -102,7 +102,7 @@ final:
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(GameAICommand*)&params[4] = Cmd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllCommands, params.ptr, cast(void*)0);
-		*Cmd = *cast(GameAICommand*)&params[4];
+		Cmd = *cast(GameAICommand*)&params[4];
 	}
 	void PushCommand(GameAICommand NewCommand)
 	{
@@ -118,12 +118,13 @@ final:
 		*cast(GameAICommand*)params.ptr = ToBePoppedCommand;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopCommand, params.ptr, cast(void*)0);
 	}
-	bool AbortCommand(GameAICommand AbortCmd, ScriptClass AbortClass)
+	bool AbortCommand(GameAICommand AbortCmd, ScriptClass* AbortClass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(GameAICommand*)params.ptr = AbortCmd;
-		*cast(ScriptClass*)&params[4] = AbortClass;
+		if (AbortClass !is null)
+			*cast(ScriptClass*)&params[4] = *AbortClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AbortCommand, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -150,11 +151,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindCommandOfClass, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)&params[4];
 	}
-	GameAICommand GetAICommandInStack(const ScriptClass InClass)
+	GameAICommand GetAICommandInStack(in ScriptClass InClass)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(ScriptClass*)params.ptr = InClass;
+		*cast(ScriptClass*)params.ptr = cast(ScriptClass)InClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAICommandInStack, params.ptr, cast(void*)0);
 		return *cast(GameAICommand*)&params[4];
 	}
@@ -184,23 +185,28 @@ final:
 		*cast(ScriptString*)params.ptr = LogText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RecordDemoAILog, params.ptr, cast(void*)0);
 	}
-	void AILog_Internal(ScriptString LogText, ScriptName LogCategory, bool bForce)
+	void AILog_Internal(ScriptString LogText, ScriptName* LogCategory = null, bool* bForce = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogText;
-		*cast(ScriptName*)&params[12] = LogCategory;
-		*cast(bool*)&params[20] = bForce;
+		if (LogCategory !is null)
+			*cast(ScriptName*)&params[12] = *LogCategory;
+		if (bForce !is null)
+			*cast(bool*)&params[20] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AILog_Internal, params.ptr, cast(void*)0);
 	}
-	void SetDesiredRotation(Rotator TargetDesiredRotation, bool InLockDesiredRotation, bool InUnlockWhenReached, float InterpolationTime)
+	void SetDesiredRotation(Rotator TargetDesiredRotation, bool* InLockDesiredRotation = null, bool* InUnlockWhenReached = null, float* InterpolationTime = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = TargetDesiredRotation;
-		*cast(bool*)&params[12] = InLockDesiredRotation;
-		*cast(bool*)&params[16] = InUnlockWhenReached;
-		*cast(float*)&params[20] = InterpolationTime;
+		if (InLockDesiredRotation !is null)
+			*cast(bool*)&params[12] = *InLockDesiredRotation;
+		if (InUnlockWhenReached !is null)
+			*cast(bool*)&params[16] = *InUnlockWhenReached;
+		if (InterpolationTime !is null)
+			*cast(float*)&params[20] = *InterpolationTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDesiredRotation, params.ptr, cast(void*)0);
 	}
 	ScriptString GetActionString()

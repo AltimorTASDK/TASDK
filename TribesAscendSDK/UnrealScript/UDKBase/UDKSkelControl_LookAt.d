@@ -15,9 +15,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float RollLimit() { mixin(MGPC!(float, 332)()); }
-			float PitchLimit() { mixin(MGPC!(float, 328)()); }
-			float YawLimit() { mixin(MGPC!(float, 324)()); }
+			float RollLimit() { mixin(MGPC!("float", 332)()); }
+			float PitchLimit() { mixin(MGPC!("float", 328)()); }
+			float YawLimit() { mixin(MGPC!("float", 324)()); }
 		}
 		bool bShowPerAxisLimits() { mixin(MGBPC!(320, 0x8)()); }
 		bool bShowPerAxisLimits(bool val) { mixin(MSBPC!(320, 0x8)()); }

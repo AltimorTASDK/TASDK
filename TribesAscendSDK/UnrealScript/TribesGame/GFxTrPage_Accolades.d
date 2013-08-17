@@ -307,7 +307,7 @@ public extern(D):
 			MIN_CREDITS_FOR_XP = 100,
 		}
 	}
-	@property final auto ref int AccoladeType() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int AccoladeType() { mixin(MGPC!("int", 356)()); }
 final:
 	void Initialize()
 	{

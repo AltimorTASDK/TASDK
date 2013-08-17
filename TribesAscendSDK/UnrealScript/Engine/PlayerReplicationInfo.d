@@ -80,45 +80,45 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerReplicationInfo.AutomatedTestingDatum")()); }
 		@property final auto ref
 		{
-			int NumberOfMatchesPlayed() { mixin(MGPS!(int, 0)()); }
-			int NumMapListCyclesDone() { mixin(MGPS!(int, 4)()); }
+			int NumberOfMatchesPlayed() { mixin(MGPS!("int", 0)()); }
+			int NumMapListCyclesDone() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString PlayerName() { mixin(MGPC!(ScriptString, 492)()); }
-			int PlayerID() { mixin(MGPC!(int, 516)()); }
-			OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPC!(OnlineSubsystem.UniqueNetId, 580)()); }
-			TeamInfo Team() { mixin(MGPC!(TeamInfo, 520)()); }
-			ScriptName SessionName() { mixin(MGPC!(ScriptName, 588)()); }
-			float ExactPing() { mixin(MGPC!(float, 564)()); }
-			ubyte Ping() { mixin(MGPC!(ubyte, 484)()); }
-			float Score() { mixin(MGPC!(float, 476)()); }
-			PlayerReplicationInfo.AutomatedTestingDatum AutomatedTestingData() { mixin(MGPC!(PlayerReplicationInfo.AutomatedTestingDatum, 596)()); }
-			int StartTime() { mixin(MGPC!(int, 528)()); }
-			ScriptString SavedNetworkAddress() { mixin(MGPC!(ScriptString, 568)()); }
-			int Kills() { mixin(MGPC!(int, 556)()); }
-			ScriptString OldName() { mixin(MGPC!(ScriptString, 504)()); }
-			Texture2D Avatar() { mixin(MGPC!(Texture2D, 648)()); }
-			int StatAvgOutBPS() { mixin(MGPC!(int, 644)()); }
-			int StatMaxOutBPS() { mixin(MGPC!(int, 640)()); }
-			int StatAvgInBPS() { mixin(MGPC!(int, 636)()); }
-			int StatMaxInBPS() { mixin(MGPC!(int, 632)()); }
-			int StatPKLMax() { mixin(MGPC!(int, 628)()); }
-			int StatPKLMin() { mixin(MGPC!(int, 624)()); }
-			int StatPKLTotal() { mixin(MGPC!(int, 620)()); }
-			int StatPingMax() { mixin(MGPC!(int, 616)()); }
-			int StatPingMin() { mixin(MGPC!(int, 612)()); }
-			int StatPingTotals() { mixin(MGPC!(int, 608)()); }
-			int StatConnectionCounts() { mixin(MGPC!(int, 604)()); }
-			ScriptClass GameMessageClass() { mixin(MGPC!(ScriptClass, 560)()); }
-			ScriptString StringUnknown() { mixin(MGPC!(ScriptString, 544)()); }
-			ScriptString StringSpectating() { mixin(MGPC!(ScriptString, 532)()); }
-			int NumLives() { mixin(MGPC!(int, 488)()); }
-			AudioDevice.ETTSSpeaker TTSSpeaker() { mixin(MGPC!(AudioDevice.ETTSSpeaker, 485)()); }
-			int Deaths() { mixin(MGPC!(int, 480)()); }
+			ScriptString PlayerName() { mixin(MGPC!("ScriptString", 492)()); }
+			int PlayerID() { mixin(MGPC!("int", 516)()); }
+			OnlineSubsystem.UniqueNetId UniqueId() { mixin(MGPC!("OnlineSubsystem.UniqueNetId", 580)()); }
+			TeamInfo Team() { mixin(MGPC!("TeamInfo", 520)()); }
+			ScriptName SessionName() { mixin(MGPC!("ScriptName", 588)()); }
+			float ExactPing() { mixin(MGPC!("float", 564)()); }
+			ubyte Ping() { mixin(MGPC!("ubyte", 484)()); }
+			float Score() { mixin(MGPC!("float", 476)()); }
+			PlayerReplicationInfo.AutomatedTestingDatum AutomatedTestingData() { mixin(MGPC!("PlayerReplicationInfo.AutomatedTestingDatum", 596)()); }
+			int StartTime() { mixin(MGPC!("int", 528)()); }
+			ScriptString SavedNetworkAddress() { mixin(MGPC!("ScriptString", 568)()); }
+			int Kills() { mixin(MGPC!("int", 556)()); }
+			ScriptString OldName() { mixin(MGPC!("ScriptString", 504)()); }
+			Texture2D Avatar() { mixin(MGPC!("Texture2D", 648)()); }
+			int StatAvgOutBPS() { mixin(MGPC!("int", 644)()); }
+			int StatMaxOutBPS() { mixin(MGPC!("int", 640)()); }
+			int StatAvgInBPS() { mixin(MGPC!("int", 636)()); }
+			int StatMaxInBPS() { mixin(MGPC!("int", 632)()); }
+			int StatPKLMax() { mixin(MGPC!("int", 628)()); }
+			int StatPKLMin() { mixin(MGPC!("int", 624)()); }
+			int StatPKLTotal() { mixin(MGPC!("int", 620)()); }
+			int StatPingMax() { mixin(MGPC!("int", 616)()); }
+			int StatPingMin() { mixin(MGPC!("int", 612)()); }
+			int StatPingTotals() { mixin(MGPC!("int", 608)()); }
+			int StatConnectionCounts() { mixin(MGPC!("int", 604)()); }
+			ScriptClass GameMessageClass() { mixin(MGPC!("ScriptClass", 560)()); }
+			ScriptString StringUnknown() { mixin(MGPC!("ScriptString", 544)()); }
+			ScriptString StringSpectating() { mixin(MGPC!("ScriptString", 532)()); }
+			int NumLives() { mixin(MGPC!("int", 488)()); }
+			AudioDevice.ETTSSpeaker TTSSpeaker() { mixin(MGPC!("AudioDevice.ETTSSpeaker", 485)()); }
+			int Deaths() { mixin(MGPC!("int", 480)()); }
 		}
 		bool bAdmin() { mixin(MGBPC!(524, 0x1)()); }
 		bool bAdmin(bool val) { mixin(MSBPC!(524, 0x1)()); }
@@ -181,11 +181,12 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	bool ShouldBroadCastWelcomeMessage(bool bExiting)
+	bool ShouldBroadCastWelcomeMessage(bool* bExiting = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bExiting;
+		if (bExiting !is null)
+			*cast(bool*)params.ptr = *bExiting;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldBroadCastWelcomeMessage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -212,8 +213,8 @@ final:
 		*cast(float*)&params[4] = YL;
 		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*YL = *cast(float*)&params[4];
-		*YPos = *cast(float*)&params[8];
+		YL = *cast(float*)&params[4];
+		YPos = *cast(float*)&params[8];
 	}
 	void SetPlayerName(ScriptString S)
 	{
@@ -243,11 +244,12 @@ final:
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CopyProperties, params.ptr, cast(void*)0);
 	}
-	void IncrementDeaths(int Amt)
+	void IncrementDeaths(int* Amt = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = Amt;
+		if (Amt !is null)
+			*cast(int*)params.ptr = *Amt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementDeaths, params.ptr, cast(void*)0);
 	}
 	void SeamlessTravelTo(PlayerReplicationInfo NewPRI)

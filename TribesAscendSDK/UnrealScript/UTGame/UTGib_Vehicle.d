@@ -29,14 +29,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass OwningClass() { mixin(MGPC!(ScriptClass, 612)()); }
-		ParticleSystem PS_GibExplosionEffect() { mixin(MGPC!(ParticleSystem, 584)()); }
-		ParticleSystem PS_GibTrailEffect() { mixin(MGPC!(ParticleSystem, 588)()); }
-		float TimeBeforeGibExplosionEffect() { mixin(MGPC!(float, 580)()); }
-		MaterialInstanceTimeVarying MITV() { mixin(MGPC!(MaterialInstanceTimeVarying, 608)()); }
-		float BurnDuration() { mixin(MGPC!(float, 604)()); }
-		ScriptName BurnName() { mixin(MGPC!(ScriptName, 596)()); }
-		SoundCue LoopedSound() { mixin(MGPC!(SoundCue, 592)()); }
+		ScriptClass OwningClass() { mixin(MGPC!("ScriptClass", 612)()); }
+		ParticleSystem PS_GibExplosionEffect() { mixin(MGPC!("ParticleSystem", 584)()); }
+		ParticleSystem PS_GibTrailEffect() { mixin(MGPC!("ParticleSystem", 588)()); }
+		float TimeBeforeGibExplosionEffect() { mixin(MGPC!("float", 580)()); }
+		MaterialInstanceTimeVarying MITV() { mixin(MGPC!("MaterialInstanceTimeVarying", 608)()); }
+		float BurnDuration() { mixin(MGPC!("float", 604)()); }
+		ScriptName BurnName() { mixin(MGPC!("ScriptName", 596)()); }
+		SoundCue LoopedSound() { mixin(MGPC!("SoundCue", 592)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -15,11 +15,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) InventoryList() { mixin(MGPC!(ScriptArray!(ScriptClass), 116)()); }
-			int TeamIndex() { mixin(MGPC!(int, 128)()); }
-			ScriptString PawnName() { mixin(MGPC!(ScriptString, 100)()); }
-			ScriptClass PawnClass() { mixin(MGPC!(ScriptClass, 96)()); }
-			ScriptClass ControllerClass() { mixin(MGPC!(ScriptClass, 92)()); }
+			ScriptArray!(ScriptClass) InventoryList() { mixin(MGPC!("ScriptArray!(ScriptClass)", 116)()); }
+			int TeamIndex() { mixin(MGPC!("int", 128)()); }
+			ScriptString PawnName() { mixin(MGPC!("ScriptString", 100)()); }
+			ScriptClass PawnClass() { mixin(MGPC!("ScriptClass", 96)()); }
+			ScriptClass ControllerClass() { mixin(MGPC!("ScriptClass", 92)()); }
 		}
 		bool bGiveDefaultInventory() { mixin(MGBPC!(112, 0x1)()); }
 		bool bGiveDefaultInventory(bool val) { mixin(MSBPC!(112, 0x1)()); }

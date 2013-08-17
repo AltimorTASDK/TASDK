@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleLifetime")()); }
 	private static __gshared ParticleModuleLifetime mDefaultProperties;
 	@property final static ParticleModuleLifetime DefaultProperties() { mixin(MGDPC!(ParticleModuleLifetime, "ParticleModuleLifetime Engine.Default__ParticleModuleLifetime")()); }
-	@property final auto ref DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 72)()); }
+	@property final auto ref DistributionFloat.RawDistributionFloat Lifetime() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 72)()); }
 }

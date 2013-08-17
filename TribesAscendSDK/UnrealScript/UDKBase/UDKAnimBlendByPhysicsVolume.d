@@ -27,9 +27,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				float MaxGravity() { mixin(MGPS!(float, 12)()); }
-				float MinGravity() { mixin(MGPS!(float, 8)()); }
-				int ChildIndex() { mixin(MGPS!(int, 0)()); }
+				float MaxGravity() { mixin(MGPS!("float", 12)()); }
+				float MinGravity() { mixin(MGPS!("float", 8)()); }
+				int ChildIndex() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bCheckGravity() { mixin(MGBPS!(4, 0x2)()); }
 			bool bCheckGravity(bool val) { mixin(MSBPS!(4, 0x2)()); }
@@ -39,8 +39,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKAnimBlendByPhysicsVolume.PhysicsVolumeParams) PhysicsParamList() { mixin(MGPC!(ScriptArray!(UDKAnimBlendByPhysicsVolume.PhysicsVolumeParams), 296)()); }
-		PhysicsVolume LastPhysicsVolume() { mixin(MGPC!(PhysicsVolume, 308)()); }
+		ScriptArray!(UDKAnimBlendByPhysicsVolume.PhysicsVolumeParams) PhysicsParamList() { mixin(MGPC!("ScriptArray!(UDKAnimBlendByPhysicsVolume.PhysicsVolumeParams)", 296)()); }
+		PhysicsVolume LastPhysicsVolume() { mixin(MGPC!("PhysicsVolume", 308)()); }
 	}
 	final void PhysicsVolumeChanged(PhysicsVolume NewVolume)
 	{

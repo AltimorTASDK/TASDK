@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float VelocityMag() { mixin(MGPC!(float, 244)()); }
-			Vector VelocityDir() { mixin(MGPC!(Vector, 232)()); }
+			float VelocityMag() { mixin(MGPC!("float", 244)()); }
+			Vector VelocityDir() { mixin(MGPC!("Vector", 232)()); }
 		}
 		bool bVelocityRelativeToActorRotation() { mixin(MGBPC!(248, 0x1)()); }
 		bool bVelocityRelativeToActorRotation(bool val) { mixin(MSBPC!(248, 0x1)()); }

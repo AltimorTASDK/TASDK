@@ -42,12 +42,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) EnabledMutators() { mixin(MGPC!(ScriptArray!(int), 204)()); }
-		ScriptArray!(int) MapCycle() { mixin(MGPC!(ScriptArray!(int), 216)()); }
-		ScriptArray!(int) WeaponPriority() { mixin(MGPC!(ScriptArray!(int), 228)()); }
-		int GameModeFilter() { mixin(MGPC!(int, 240)()); }
-		ScriptClass MapInfoDataProviderClass() { mixin(MGPC!(ScriptClass, 200)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 196)()); }
+		ScriptArray!(int) EnabledMutators() { mixin(MGPC!("ScriptArray!(int)", 204)()); }
+		ScriptArray!(int) MapCycle() { mixin(MGPC!("ScriptArray!(int)", 216)()); }
+		ScriptArray!(int) WeaponPriority() { mixin(MGPC!("ScriptArray!(int)", 228)()); }
+		int GameModeFilter() { mixin(MGPC!("int", 240)()); }
+		ScriptClass MapInfoDataProviderClass() { mixin(MGPC!("ScriptClass", 200)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 196)()); }
 	}
 final:
 	int GetProviderCount(ScriptName FieldName)
@@ -74,7 +74,7 @@ final:
 		*cast(ScriptClass*)params.ptr = ProviderClass;
 		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4] = Providers;
 		StaticClass.ProcessEvent(Functions.GetAllResourceDataProviders, params.ptr, cast(void*)0);
-		*Providers = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4];
+		Providers = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[4];
 	}
 	int FindValueInProviderSet(ScriptName ProviderFieldName, ScriptName SearchTag, ScriptString SearchValue)
 	{
@@ -95,7 +95,7 @@ final:
 		*cast(int*)&params[16] = ListIndex;
 		*cast(ScriptString*)&params[20] = OutValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetValueFromProviderSet, params.ptr, cast(void*)0);
-		*OutValue = *cast(ScriptString*)&params[20];
+		OutValue = *cast(ScriptString*)&params[20];
 		return *cast(bool*)&params[32];
 	}
 	bool GetProviderSet(ScriptName ProviderFieldName, ref ScriptArray!(UDKUIResourceDataProvider) OutProviders)
@@ -105,7 +105,7 @@ final:
 		*cast(ScriptName*)params.ptr = ProviderFieldName;
 		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8] = OutProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProviderSet, params.ptr, cast(void*)0);
-		*OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
+		OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	void InitializeListElementProviders()

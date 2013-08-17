@@ -21,13 +21,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float RemainingTime() { mixin(MGPC!(float, 280)()); }
-			float CameraFOV() { mixin(MGPC!(float, 276)()); }
-			float TotalTime() { mixin(MGPC!(float, 272)()); }
-			ScriptString TextDisplay() { mixin(MGPC!(ScriptString, 260)()); }
-			ScriptName FocusBoneName() { mixin(MGPC!(ScriptName, 252)()); }
-			UObject.Vector2D InFocusFOV() { mixin(MGPC!(UObject.Vector2D, 244)()); }
-			UObject.Vector2D InterpSpeedRange() { mixin(MGPC!(UObject.Vector2D, 236)()); }
+			float RemainingTime() { mixin(MGPC!("float", 280)()); }
+			float CameraFOV() { mixin(MGPC!("float", 276)()); }
+			float TotalTime() { mixin(MGPC!("float", 272)()); }
+			ScriptString TextDisplay() { mixin(MGPC!("ScriptString", 260)()); }
+			ScriptName FocusBoneName() { mixin(MGPC!("ScriptName", 252)()); }
+			UObject.Vector2D InFocusFOV() { mixin(MGPC!("UObject.Vector2D", 244)()); }
+			UObject.Vector2D InterpSpeedRange() { mixin(MGPC!("UObject.Vector2D", 236)()); }
 		}
 		bool bCheckLineOfSight() { mixin(MGBPC!(232, 0x800)()); }
 		bool bCheckLineOfSight(bool val) { mixin(MSBPC!(232, 0x800)()); }

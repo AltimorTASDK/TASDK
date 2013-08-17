@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) Actors() { mixin(MGPC!(ScriptArray!(UObject), 188)()); }
-			ScriptName GroupName() { mixin(MGPC!(ScriptName, 176)()); }
+			ScriptArray!(UObject) Actors() { mixin(MGPC!("ScriptArray!(UObject)", 188)()); }
+			ScriptName GroupName() { mixin(MGPC!("ScriptName", 176)()); }
 		}
 		bool bCachedList() { mixin(MGBPC!(184, 0x1)()); }
 		bool bCachedList(bool val) { mixin(MSBPC!(184, 0x1)()); }

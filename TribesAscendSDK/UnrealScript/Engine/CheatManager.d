@@ -122,10 +122,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString OwnCamera() { mixin(MGPC!(ScriptString, 80)()); }
-		ScriptString ViewingFrom() { mixin(MGPC!(ScriptString, 68)()); }
-		ScriptClass DebugCameraControllerClass() { mixin(MGPC!(ScriptClass, 64)()); }
-		DebugCameraController DebugCameraControllerRef() { mixin(MGPC!(DebugCameraController, 60)()); }
+		ScriptString OwnCamera() { mixin(MGPC!("ScriptString", 80)()); }
+		ScriptString ViewingFrom() { mixin(MGPC!("ScriptString", 68)()); }
+		ScriptClass DebugCameraControllerClass() { mixin(MGPC!("ScriptClass", 64)()); }
+		DebugCameraController DebugCameraControllerRef() { mixin(MGPC!("DebugCameraController", 60)()); }
 	}
 final:
 	void FXPlay(ScriptClass aClass, ScriptString FXAnimPath)
@@ -143,11 +143,12 @@ final:
 		*cast(ScriptClass*)params.ptr = aClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FXStop, params.ptr, cast(void*)0);
 	}
-	void DebugAI(ScriptName Category)
+	void DebugAI(ScriptName* Category = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = Category;
+		if (Category !is null)
+			*cast(ScriptName*)params.ptr = *Category;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DebugAI, params.ptr, cast(void*)0);
 	}
 	void EditAIByTrace()
@@ -291,11 +292,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayersOnly, cast(void*)0, cast(void*)0);
 	}
-	void DestroyFractures(float Radius)
+	void DestroyFractures(float* Radius = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = Radius;
+		if (Radius !is null)
+			*cast(float*)params.ptr = *Radius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyFractures, params.ptr, cast(void*)0);
 	}
 	void FractureAllMeshes()
@@ -310,11 +312,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.RememberSpot, cast(void*)0, cast(void*)0);
 	}
-	void ViewSelf(bool bQuiet)
+	void ViewSelf(bool* bQuiet = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bQuiet;
+		if (bQuiet !is null)
+			*cast(bool*)params.ptr = *bQuiet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ViewSelf, params.ptr, cast(void*)0);
 	}
 	void ViewPlayer(ScriptString S)

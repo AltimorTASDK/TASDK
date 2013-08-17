@@ -13,9 +13,9 @@ public extern(D):
 	@property final static TrRank DefaultProperties() { mixin(MGDPC!(TrRank, "TrRank TribesGame.Default__TrRank")()); }
 	@property final auto ref
 	{
-		int IconIndex() { mixin(MGPC!(int, 64)()); }
-		ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 72)()); }
-		int Rank() { mixin(MGPC!(int, 60)()); }
-		int RequiredXP() { mixin(MGPC!(int, 68)()); }
+		int IconIndex() { mixin(MGPC!("int", 64)()); }
+		ScriptString FriendlyName() { mixin(MGPC!("ScriptString", 72)()); }
+		int Rank() { mixin(MGPC!("int", 60)()); }
+		int RequiredXP() { mixin(MGPC!("int", 68)()); }
 	}
 }

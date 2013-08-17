@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Format' has the same name as a defined type!
-		int SizeX() { mixin(MGPC!(int, 244)()); }
+		int SizeX() { mixin(MGPC!("int", 244)()); }
 	}
 }

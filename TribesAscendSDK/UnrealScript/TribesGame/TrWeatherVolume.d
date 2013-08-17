@@ -28,7 +28,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Emitter) m_WeatherEmitters() { mixin(MGPC!(ScriptArray!(Emitter), 520)()); }
+		@property final auto ref ScriptArray!(Emitter) m_WeatherEmitters() { mixin(MGPC!("ScriptArray!(Emitter)", 520)()); }
 		bool m_DeactivatePawnCentricWeatherOnEnter() { mixin(MGBPC!(532, 0x1)()); }
 		bool m_DeactivatePawnCentricWeatherOnEnter(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}

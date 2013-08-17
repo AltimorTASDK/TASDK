@@ -13,7 +13,7 @@ public extern(D):
 	@property final static VolumePathNode DefaultProperties() { mixin(MGDPC!(VolumePathNode, "VolumePathNode Engine.Default__VolumePathNode")()); }
 	@property final auto ref
 	{
-		float StartingHeight() { mixin(MGPC!(float, 696)()); }
-		float StartingRadius() { mixin(MGPC!(float, 692)()); }
+		float StartingHeight() { mixin(MGPC!("float", 696)()); }
+		float StartingRadius() { mixin(MGPC!("float", 692)()); }
 	}
 }

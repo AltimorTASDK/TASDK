@@ -13,8 +13,8 @@ public extern(D):
 	@property final static SeqCond_Increment DefaultProperties() { mixin(MGDPC!(SeqCond_Increment, "SeqCond_Increment Engine.Default__SeqCond_Increment")()); }
 	@property final auto ref
 	{
-		int ValueB() { mixin(MGPC!(int, 216)()); }
-		int ValueA() { mixin(MGPC!(int, 212)()); }
-		int IncrementAmount() { mixin(MGPC!(int, 208)()); }
+		int ValueB() { mixin(MGPC!("int", 216)()); }
+		int ValueA() { mixin(MGPC!("int", 212)()); }
+		int IncrementAmount() { mixin(MGPC!("int", 208)()); }
 	}
 }

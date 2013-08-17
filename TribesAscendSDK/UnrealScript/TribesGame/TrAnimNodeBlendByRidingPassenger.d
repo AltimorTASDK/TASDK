@@ -32,9 +32,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		AnimNodeSequence m_FireAnimSeqNode() { mixin(MGPC!(AnimNodeSequence, 304)()); }
-		ScriptName m_nmFireAnimSeqNodeName() { mixin(MGPC!(ScriptName, 296)()); }
-		TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 292)()); }
+		AnimNodeSequence m_FireAnimSeqNode() { mixin(MGPC!("AnimNodeSequence", 304)()); }
+		ScriptName m_nmFireAnimSeqNodeName() { mixin(MGPC!("ScriptName", 296)()); }
+		TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 292)()); }
 	}
 final:
 	void PlayIdle()

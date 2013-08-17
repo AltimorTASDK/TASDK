@@ -27,13 +27,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackToggle.ToggleTrackKey")()); }
 		@property final auto ref
 		{
-			InterpTrackToggle.ETrackToggleAction ToggleAction() { mixin(MGPS!(InterpTrackToggle.ETrackToggleAction, 4)()); }
-			float Time() { mixin(MGPS!(float, 0)()); }
+			InterpTrackToggle.ETrackToggleAction ToggleAction() { mixin(MGPS!("InterpTrackToggle.ETrackToggleAction", 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(InterpTrackToggle.ToggleTrackKey) ToggleTrack() { mixin(MGPC!(ScriptArray!(InterpTrackToggle.ToggleTrackKey), 128)()); }
+		@property final auto ref ScriptArray!(InterpTrackToggle.ToggleTrackKey) ToggleTrack() { mixin(MGPC!("ScriptArray!(InterpTrackToggle.ToggleTrackKey)", 128)()); }
 		bool bFireEventsWhenJumpingForwards() { mixin(MGBPC!(140, 0x10)()); }
 		bool bFireEventsWhenJumpingForwards(bool val) { mixin(MSBPC!(140, 0x10)()); }
 		bool bFireEventsWhenBackwards() { mixin(MGBPC!(140, 0x8)()); }

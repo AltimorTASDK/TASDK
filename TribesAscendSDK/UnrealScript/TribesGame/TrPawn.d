@@ -457,9 +457,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.AssistInfo")()); }
 		@property final auto ref
 		{
-			float m_fDamagerTime() { mixin(MGPS!(float, 8)()); }
-			int m_AccumulatedDamage() { mixin(MGPS!(int, 4)()); }
-			TrPlayerController m_Damager() { mixin(MGPS!(TrPlayerController, 0)()); }
+			float m_fDamagerTime() { mixin(MGPS!("float", 8)()); }
+			int m_AccumulatedDamage() { mixin(MGPS!("int", 4)()); }
+			TrPlayerController m_Damager() { mixin(MGPS!("TrPlayerController", 0)()); }
 		}
 	}
 	struct FootstepParticleInfo
@@ -470,8 +470,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.FootstepParticleInfo")()); }
 		@property final auto ref
 		{
-			ParticleSystem FootParticle() { mixin(MGPS!(ParticleSystem, 8)()); }
-			ScriptName MaterialType() { mixin(MGPS!(ScriptName, 0)()); }
+			ParticleSystem FootParticle() { mixin(MGPS!("ParticleSystem", 8)()); }
+			ScriptName MaterialType() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct StickyGrenadeSocketInfo
@@ -482,10 +482,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPawn.StickyGrenadeSocketInfo")()); }
 		@property final auto ref
 		{
-			Vector ViewOffset() { mixin(MGPS!(Vector, 16)()); }
+			Vector ViewOffset() { mixin(MGPS!("Vector", 16)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FirstPersonMesh'!
 			// WARNING: Property 'Projectile' has the same name as a defined type!
-			ScriptName SocketName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName SocketName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	static struct Dying
@@ -497,100 +497,100 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrVehicle m_RidingVehicle() { mixin(MGPC!(TrVehicle, 3096)()); }
-			float m_fCurrentPowerPool() { mixin(MGPC!(float, 2320)()); }
-			float m_fHeadShotDamageMultiple() { mixin(MGPC!(float, 2348)()); }
-			float m_fCurrentAccuracy() { mixin(MGPC!(float, 2540)()); }
-			float m_fPawnViewForwardAmount() { mixin(MGPC!(float, 2964)()); }
+			TrVehicle m_RidingVehicle() { mixin(MGPC!("TrVehicle", 3096)()); }
+			float m_fCurrentPowerPool() { mixin(MGPC!("float", 2320)()); }
+			float m_fHeadShotDamageMultiple() { mixin(MGPC!("float", 2348)()); }
+			float m_fCurrentAccuracy() { mixin(MGPC!("float", 2540)()); }
+			float m_fPawnViewForwardAmount() { mixin(MGPC!("float", 2964)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonWeaponShadowMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyMesh'!
-			TrAnimNodeBlendByRidingPassenger m_RidingPassengerBlendNode() { mixin(MGPC!(TrAnimNodeBlendByRidingPassenger, 2600)()); }
-			TrAnimNodeAimOffset m_AimOffsetNode() { mixin(MGPC!(TrAnimNodeAimOffset, 2588)()); }
-			TrAnimNodeAimOffset m_1pBodyAimOffsetNode() { mixin(MGPC!(TrAnimNodeAimOffset, 2592)()); }
-			Vector r_FlashNormal() { mixin(MGPC!(Vector, 2228)()); }
-			float m_fShowObjectThreshold() { mixin(MGPC!(float, 2616)()); }
-			ScriptArray!(TrEffect) m_AppliedEffects() { mixin(MGPC!(ScriptArray!(TrEffect), 2476)()); }
-			ScriptArray!(TrEffectForm) m_AppliedEffectForms() { mixin(MGPC!(ScriptArray!(TrEffectForm), 2488)()); }
-			ScriptArray!(TrPawn.AssistInfo) m_KillAssisters() { mixin(MGPC!(ScriptArray!(TrPawn.AssistInfo), 2572)()); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!(ScriptArray!(TrObject.EffectFormOverwrite), 2752)()); }
-			ScriptArray!(TrPawn) m_JammedFriends() { mixin(MGPC!(ScriptArray!(TrPawn), 2776)()); }
-			ScriptArray!(TrPawn) m_JammedEnemies() { mixin(MGPC!(ScriptArray!(TrPawn), 2788)()); }
-			ScriptArray!(TrPlayerReplicationInfo) m_FriendJammingList() { mixin(MGPC!(ScriptArray!(TrPlayerReplicationInfo), 2808)()); }
-			ScriptArray!(TrDeployable_DropJammer) m_FriendlyDropJammerList() { mixin(MGPC!(ScriptArray!(TrDeployable_DropJammer), 2832)()); }
-			ScriptArray!(TrDeployable_DropJammer) m_EnemyDropJammerList() { mixin(MGPC!(ScriptArray!(TrDeployable_DropJammer), 2844)()); }
-			ScriptArray!(TrPawn.FootstepParticleInfo) m_SkiParticles() { mixin(MGPC!(ScriptArray!(TrPawn.FootstepParticleInfo), 2944)()); }
-			ScriptArray!(TrPawn.StickyGrenadeSocketInfo) m_StickyGrenadeSocketList() { mixin(MGPC!(ScriptArray!(TrPawn.StickyGrenadeSocketInfo), 2968)()); }
-			ScriptArray!(Vector) m_aPreviousVelocities() { mixin(MGPC!(ScriptArray!(Vector), 3048)()); }
-			ScriptArray!(Vector) m_aPreviousLocations() { mixin(MGPC!(ScriptArray!(Vector), 3060)()); }
-			ScriptArray!(float) m_aPreviousTickTimes() { mixin(MGPC!(ScriptArray!(float), 3072)()); }
-			float m_TerrainWalkableFloorZ() { mixin(MGPC!(float, 3188)()); }
-			float m_fSwapSkinDistSq() { mixin(MGPC!(float, 3184)()); }
-			ScriptClass c_Pending1PSkin() { mixin(MGPC!(ScriptClass, 3180)()); }
-			ScriptClass c_Pending3PSkin() { mixin(MGPC!(ScriptClass, 3176)()); }
-			int m_nNetViewPitchCount() { mixin(MGPC!(int, 3172)()); }
-			float m_PitchInterpRate() { mixin(MGPC!(float, 3168)()); }
-			int m_nTargetRemoteViewPitch() { mixin(MGPC!(int, 3164)()); }
-			int m_nPreviousReceivedRemoteViewPitch() { mixin(MGPC!(int, 3160)()); }
-			int m_nSmoothedRemoteViewPitch() { mixin(MGPC!(int, 3156)()); }
-			int m_nNetRotationCount() { mixin(MGPC!(int, 3152)()); }
-			float m_RotationInterpRate() { mixin(MGPC!(float, 3148)()); }
-			Rotator m_TargetNetReceiveRotation() { mixin(MGPC!(Rotator, 3136)()); }
-			Rotator m_PreviousNetReceiveRotation() { mixin(MGPC!(Rotator, 3124)()); }
-			SkeletalMesh m_GibMesh() { mixin(MGPC!(SkeletalMesh, 3120)()); }
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 3116)()); }
-			float m_fInventoryStationLockoutTime() { mixin(MGPC!(float, 3112)()); }
-			float m_fLastInventoryStationVisitTime() { mixin(MGPC!(float, 3108)()); }
-			int m_nDetectedByEnemyScannerCount() { mixin(MGPC!(int, 3104)()); }
-			UDKCarriedObject m_GameObjCheckTimer() { mixin(MGPC!(UDKCarriedObject, 3100)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 3092)()); }
-			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3088)()); }
-			UTWeaponAttachment m_InHandWeaponAttachmentFromAutoFire() { mixin(MGPC!(UTWeaponAttachment, 3084)()); }
-			float m_fLastTakeClotheslineDamageTimestamp() { mixin(MGPC!(float, 3044)()); }
-			float m_fClotheslineSpeedDifferenceMax() { mixin(MGPC!(float, 3040)()); }
-			float m_fClotheslineSpeedDifferenceMin() { mixin(MGPC!(float, 3036)()); }
-			float m_fClotheslineDamageMax() { mixin(MGPC!(float, 3032)()); }
-			float m_fClotheslineDamageMin() { mixin(MGPC!(float, 3028)()); }
-			float m_fSplatSpeedMax() { mixin(MGPC!(float, 3024)()); }
-			float m_fSplatSpeedMin() { mixin(MGPC!(float, 3020)()); }
-			float m_fSplatDamageFromWallMax() { mixin(MGPC!(float, 3016)()); }
-			float m_fSplatDamageFromWallMin() { mixin(MGPC!(float, 3012)()); }
-			float m_fSplatDamageFromLandMax() { mixin(MGPC!(float, 3008)()); }
-			float m_fSplatDamageFromLandMin() { mixin(MGPC!(float, 3004)()); }
-			float m_bJustLandedSpeedSq() { mixin(MGPC!(float, 3000)()); }
-			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2996)()); }
-			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!(Rotator, 2984)()); }
-			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 2980)()); }
+			TrAnimNodeBlendByRidingPassenger m_RidingPassengerBlendNode() { mixin(MGPC!("TrAnimNodeBlendByRidingPassenger", 2600)()); }
+			TrAnimNodeAimOffset m_AimOffsetNode() { mixin(MGPC!("TrAnimNodeAimOffset", 2588)()); }
+			TrAnimNodeAimOffset m_1pBodyAimOffsetNode() { mixin(MGPC!("TrAnimNodeAimOffset", 2592)()); }
+			Vector r_FlashNormal() { mixin(MGPC!("Vector", 2228)()); }
+			float m_fShowObjectThreshold() { mixin(MGPC!("float", 2616)()); }
+			ScriptArray!(TrEffect) m_AppliedEffects() { mixin(MGPC!("ScriptArray!(TrEffect)", 2476)()); }
+			ScriptArray!(TrEffectForm) m_AppliedEffectForms() { mixin(MGPC!("ScriptArray!(TrEffectForm)", 2488)()); }
+			ScriptArray!(TrPawn.AssistInfo) m_KillAssisters() { mixin(MGPC!("ScriptArray!(TrPawn.AssistInfo)", 2572)()); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!("ScriptArray!(TrObject.EffectFormOverwrite)", 2752)()); }
+			ScriptArray!(TrPawn) m_JammedFriends() { mixin(MGPC!("ScriptArray!(TrPawn)", 2776)()); }
+			ScriptArray!(TrPawn) m_JammedEnemies() { mixin(MGPC!("ScriptArray!(TrPawn)", 2788)()); }
+			ScriptArray!(TrPlayerReplicationInfo) m_FriendJammingList() { mixin(MGPC!("ScriptArray!(TrPlayerReplicationInfo)", 2808)()); }
+			ScriptArray!(TrDeployable_DropJammer) m_FriendlyDropJammerList() { mixin(MGPC!("ScriptArray!(TrDeployable_DropJammer)", 2832)()); }
+			ScriptArray!(TrDeployable_DropJammer) m_EnemyDropJammerList() { mixin(MGPC!("ScriptArray!(TrDeployable_DropJammer)", 2844)()); }
+			ScriptArray!(TrPawn.FootstepParticleInfo) m_SkiParticles() { mixin(MGPC!("ScriptArray!(TrPawn.FootstepParticleInfo)", 2944)()); }
+			ScriptArray!(TrPawn.StickyGrenadeSocketInfo) m_StickyGrenadeSocketList() { mixin(MGPC!("ScriptArray!(TrPawn.StickyGrenadeSocketInfo)", 2968)()); }
+			ScriptArray!(Vector) m_aPreviousVelocities() { mixin(MGPC!("ScriptArray!(Vector)", 3048)()); }
+			ScriptArray!(Vector) m_aPreviousLocations() { mixin(MGPC!("ScriptArray!(Vector)", 3060)()); }
+			ScriptArray!(float) m_aPreviousTickTimes() { mixin(MGPC!("ScriptArray!(float)", 3072)()); }
+			float m_TerrainWalkableFloorZ() { mixin(MGPC!("float", 3188)()); }
+			float m_fSwapSkinDistSq() { mixin(MGPC!("float", 3184)()); }
+			ScriptClass c_Pending1PSkin() { mixin(MGPC!("ScriptClass", 3180)()); }
+			ScriptClass c_Pending3PSkin() { mixin(MGPC!("ScriptClass", 3176)()); }
+			int m_nNetViewPitchCount() { mixin(MGPC!("int", 3172)()); }
+			float m_PitchInterpRate() { mixin(MGPC!("float", 3168)()); }
+			int m_nTargetRemoteViewPitch() { mixin(MGPC!("int", 3164)()); }
+			int m_nPreviousReceivedRemoteViewPitch() { mixin(MGPC!("int", 3160)()); }
+			int m_nSmoothedRemoteViewPitch() { mixin(MGPC!("int", 3156)()); }
+			int m_nNetRotationCount() { mixin(MGPC!("int", 3152)()); }
+			float m_RotationInterpRate() { mixin(MGPC!("float", 3148)()); }
+			Rotator m_TargetNetReceiveRotation() { mixin(MGPC!("Rotator", 3136)()); }
+			Rotator m_PreviousNetReceiveRotation() { mixin(MGPC!("Rotator", 3124)()); }
+			SkeletalMesh m_GibMesh() { mixin(MGPC!("SkeletalMesh", 3120)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 3116)()); }
+			float m_fInventoryStationLockoutTime() { mixin(MGPC!("float", 3112)()); }
+			float m_fLastInventoryStationVisitTime() { mixin(MGPC!("float", 3108)()); }
+			int m_nDetectedByEnemyScannerCount() { mixin(MGPC!("int", 3104)()); }
+			UDKCarriedObject m_GameObjCheckTimer() { mixin(MGPC!("UDKCarriedObject", 3100)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 3092)()); }
+			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3088)()); }
+			UTWeaponAttachment m_InHandWeaponAttachmentFromAutoFire() { mixin(MGPC!("UTWeaponAttachment", 3084)()); }
+			float m_fLastTakeClotheslineDamageTimestamp() { mixin(MGPC!("float", 3044)()); }
+			float m_fClotheslineSpeedDifferenceMax() { mixin(MGPC!("float", 3040)()); }
+			float m_fClotheslineSpeedDifferenceMin() { mixin(MGPC!("float", 3036)()); }
+			float m_fClotheslineDamageMax() { mixin(MGPC!("float", 3032)()); }
+			float m_fClotheslineDamageMin() { mixin(MGPC!("float", 3028)()); }
+			float m_fSplatSpeedMax() { mixin(MGPC!("float", 3024)()); }
+			float m_fSplatSpeedMin() { mixin(MGPC!("float", 3020)()); }
+			float m_fSplatDamageFromWallMax() { mixin(MGPC!("float", 3016)()); }
+			float m_fSplatDamageFromWallMin() { mixin(MGPC!("float", 3012)()); }
+			float m_fSplatDamageFromLandMax() { mixin(MGPC!("float", 3008)()); }
+			float m_fSplatDamageFromLandMin() { mixin(MGPC!("float", 3004)()); }
+			float m_bJustLandedSpeedSq() { mixin(MGPC!("float", 3000)()); }
+			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 2996)()); }
+			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!("Rotator", 2984)()); }
+			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 2980)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_GroundSkiPSC'!
-			float m_fGroundSkiEffectDist() { mixin(MGPC!(float, 2956)()); }
+			float m_fGroundSkiEffectDist() { mixin(MGPC!("float", 2956)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonFlagShadowMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyShadowMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonBodyOverlayMesh'!
-			MaterialInstanceConstant m_InvulnerableOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2920)()); }
-			Material m_InvulnerableOverlayMaterial() { mixin(MGPC!(Material, 2916)()); }
-			MaterialInstanceConstant m_RageOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2912)()); }
-			Material m_RageOverlayMaterial() { mixin(MGPC!(Material, 2908)()); }
-			MaterialInstanceConstant m_JammerPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2904)()); }
-			Material m_JammerPackOverlayMaterial() { mixin(MGPC!(Material, 2900)()); }
-			MaterialInstanceConstant m_RegenPackPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2896)()); }
-			Material m_RegenPackOverlayMaterial() { mixin(MGPC!(Material, 2892)()); }
-			MaterialInstanceConstant m_RegenOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2888)()); }
-			Material m_RegenOverlayMaterial() { mixin(MGPC!(Material, 2884)()); }
-			float m_fShieldPackMaterialHitRampDownSpeed() { mixin(MGPC!(float, 2880)()); }
-			float m_fOverlayMaterialDeactivateSpeed() { mixin(MGPC!(float, 2876)()); }
-			float m_fOverlayMaterialActivateSpeed() { mixin(MGPC!(float, 2872)()); }
-			MaterialInstanceConstant m_ShieldPackOverlayMIC() { mixin(MGPC!(MaterialInstanceConstant, 2868)()); }
-			Material m_ShieldPackOverlayMaterial() { mixin(MGPC!(Material, 2864)()); }
-			float m_fForwardJettingPct() { mixin(MGPC!(float, 2860)()); }
-			float m_fMaxJetpackBoostGroundspeed() { mixin(MGPC!(float, 2856)()); }
-			int r_nEnemyDropJammerCount() { mixin(MGPC!(int, 2828)()); }
-			int r_nFriendlyDropJammerCount() { mixin(MGPC!(int, 2824)()); }
-			int r_nEnemyJamCount() { mixin(MGPC!(int, 2820)()); }
-			TrPlayerReplicationInfo r_FriendJammingPRI() { mixin(MGPC!(TrPlayerReplicationInfo, 2804)()); }
-			int m_JammingFriendTeam() { mixin(MGPC!(int, 2800)()); }
-			float m_fJamEffectRadius() { mixin(MGPC!(float, 2772)()); }
-			TrPawnCollisionProxy m_JammingCollisionProxy() { mixin(MGPC!(TrPawnCollisionProxy, 2768)()); }
-			Material r_ReplicatedWeaponAttachmentMat() { mixin(MGPC!(Material, 2764)()); }
-			float m_OldSpeed() { mixin(MGPC!(float, 2748)()); }
+			MaterialInstanceConstant m_InvulnerableOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2920)()); }
+			Material m_InvulnerableOverlayMaterial() { mixin(MGPC!("Material", 2916)()); }
+			MaterialInstanceConstant m_RageOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2912)()); }
+			Material m_RageOverlayMaterial() { mixin(MGPC!("Material", 2908)()); }
+			MaterialInstanceConstant m_JammerPackOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2904)()); }
+			Material m_JammerPackOverlayMaterial() { mixin(MGPC!("Material", 2900)()); }
+			MaterialInstanceConstant m_RegenPackPackOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2896)()); }
+			Material m_RegenPackOverlayMaterial() { mixin(MGPC!("Material", 2892)()); }
+			MaterialInstanceConstant m_RegenOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2888)()); }
+			Material m_RegenOverlayMaterial() { mixin(MGPC!("Material", 2884)()); }
+			float m_fShieldPackMaterialHitRampDownSpeed() { mixin(MGPC!("float", 2880)()); }
+			float m_fOverlayMaterialDeactivateSpeed() { mixin(MGPC!("float", 2876)()); }
+			float m_fOverlayMaterialActivateSpeed() { mixin(MGPC!("float", 2872)()); }
+			MaterialInstanceConstant m_ShieldPackOverlayMIC() { mixin(MGPC!("MaterialInstanceConstant", 2868)()); }
+			Material m_ShieldPackOverlayMaterial() { mixin(MGPC!("Material", 2864)()); }
+			float m_fForwardJettingPct() { mixin(MGPC!("float", 2860)()); }
+			float m_fMaxJetpackBoostGroundspeed() { mixin(MGPC!("float", 2856)()); }
+			int r_nEnemyDropJammerCount() { mixin(MGPC!("int", 2828)()); }
+			int r_nFriendlyDropJammerCount() { mixin(MGPC!("int", 2824)()); }
+			int r_nEnemyJamCount() { mixin(MGPC!("int", 2820)()); }
+			TrPlayerReplicationInfo r_FriendJammingPRI() { mixin(MGPC!("TrPlayerReplicationInfo", 2804)()); }
+			int m_JammingFriendTeam() { mixin(MGPC!("int", 2800)()); }
+			float m_fJamEffectRadius() { mixin(MGPC!("float", 2772)()); }
+			TrPawnCollisionProxy m_JammingCollisionProxy() { mixin(MGPC!("TrPawnCollisionProxy", 2768)()); }
+			Material r_ReplicatedWeaponAttachmentMat() { mixin(MGPC!("Material", 2764)()); }
+			float m_OldSpeed() { mixin(MGPC!("float", 2748)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentRageLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentHealthRechargeLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentJetpackLoop'!
@@ -599,76 +599,76 @@ public extern(D):
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentStealthPackLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentShieldPackLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentSkiLoop'!
-			Vector r_avMultiShotLocation() { mixin(MGPC!(Vector, 2620)()); }
-			float m_fEnemyShowDistanceThreshold() { mixin(MGPC!(float, 2612)()); }
-			float m_fFriendlyShowDistanceThreshold() { mixin(MGPC!(float, 2608)()); }
-			MorphNodeWeight m_OverlayMorphNode() { mixin(MGPC!(MorphNodeWeight, 2604)()); }
-			TrAnimNodeBlendByVehicle m_VehicleBlendNode() { mixin(MGPC!(TrAnimNodeBlendByVehicle, 2596)()); }
-			float m_fFallVelocityTransfer() { mixin(MGPC!(float, 2584)()); }
-			float m_fLastDamagerTimeStamp() { mixin(MGPC!(float, 2568)()); }
-			float m_fLastVehicleDamagerTimeStamp() { mixin(MGPC!(float, 2564)()); }
-			float m_AssistDamagePercentQualifier() { mixin(MGPC!(float, 2560)()); }
-			float m_fSkiAccelPct() { mixin(MGPC!(float, 2556)()); }
-			float m_fSkiAccelCapSpeedThreshold() { mixin(MGPC!(float, 2552)()); }
-			float m_fAirAccelSpeed() { mixin(MGPC!(float, 2548)()); }
-			float m_fAirAccelCapSpeedThreshold() { mixin(MGPC!(float, 2544)()); }
-			float m_fTerminalSkiSpeed() { mixin(MGPC!(float, 2536)()); }
-			float m_fMaxSkiSpeed() { mixin(MGPC!(float, 2532)()); }
-			float m_fSkiSlopeGravityBoost() { mixin(MGPC!(float, 2528)()); }
-			float m_fMaxSkiControlPct() { mixin(MGPC!(float, 2524)()); }
-			float m_fSkiControlSigmaSquare() { mixin(MGPC!(float, 2520)()); }
-			float m_fPeakSkiControlSpeed() { mixin(MGPC!(float, 2516)()); }
-			TrObject.TrTakeEffectInfo r_LastTakeEffectInfo() { mixin(MGPC!(TrObject.TrTakeEffectInfo, 2500)()); }
-			float ShowHeaderUntil() { mixin(MGPC!(float, 2472)()); }
-			TrObject.TR_HUD_INFO m_HudInfo() { mixin(MGPC!(TrObject.TR_HUD_INFO, 2404)()); }
-			int r_nSensorAlertLevel() { mixin(MGPC!(int, 2400)()); }
-			float m_fDecelerationRateWithFlag() { mixin(MGPC!(float, 2396)()); }
-			float m_fMaxSpeedWithFlag() { mixin(MGPC!(float, 2392)()); }
-			float m_fPreserveVelocityZNormalThreshold() { mixin(MGPC!(float, 2388)()); }
-			float m_fPreserveVelocityThresholdMin() { mixin(MGPC!(float, 2384)()); }
-			float m_fPreserveVelocityThresholdMax() { mixin(MGPC!(float, 2380)()); }
-			float m_fMaxSpeedDecelerationRate() { mixin(MGPC!(float, 2376)()); }
-			float m_fTerminalJettingSpeed() { mixin(MGPC!(float, 2372)()); }
-			float m_fMaxJettingSpeed() { mixin(MGPC!(float, 2368)()); }
-			float m_fAccelRateAtMaxThrustSpeed() { mixin(MGPC!(float, 2364)()); }
-			float m_fMaxJetpackThrustSpeed() { mixin(MGPC!(float, 2360)()); }
-			float m_fMaxStoppingDistance() { mixin(MGPC!(float, 2356)()); }
-			float m_fStoppingDistance() { mixin(MGPC!(float, 2352)()); }
-			float m_fHeadShotFudge() { mixin(MGPC!(float, 2344)()); }
-			float m_fTickedRegenDecimal() { mixin(MGPC!(float, 2340)()); }
-			float m_fSecondsBeforeAutoHeal() { mixin(MGPC!(float, 2336)()); }
-			float r_fPowerPoolRechargeRate() { mixin(MGPC!(float, 2332)()); }
-			float r_fMaxPowerPool() { mixin(MGPC!(float, 2328)()); }
-			float r_fCurrentPowerPool() { mixin(MGPC!(float, 2324)()); }
-			float m_fTimeLastUntargetByLocalPlayer() { mixin(MGPC!(float, 2316)()); }
-			float m_fTimeLastTargetByLocalPlayer() { mixin(MGPC!(float, 2312)()); }
-			float m_fTimeLastUnseenByLocalPlayer() { mixin(MGPC!(float, 2308)()); }
-			float m_fTimeLastSeenByLocalPlayer() { mixin(MGPC!(float, 2304)()); }
-			float s_fVE() { mixin(MGPC!(float, 2300)()); }
-			float m_fShieldMultiple() { mixin(MGPC!(float, 2296)()); }
-			float r_fFasterWeaponSwitchMultiplier() { mixin(MGPC!(float, 2292)()); }
-			float m_fPulseStealthIgnoreTime() { mixin(MGPC!(float, 2288)()); }
-			float m_fPulseStealthIgnoreTimeStamp() { mixin(MGPC!(float, 2284)()); }
-			float r_fPulseStealthSpeedThreshold() { mixin(MGPC!(float, 2280)()); }
-			float m_fPulseStealthFadeInInterpSpeed() { mixin(MGPC!(float, 2276)()); }
-			float m_fPulseStealthVisibleTime() { mixin(MGPC!(float, 2272)()); }
-			float m_fPulseStealthVisibleTimestamp() { mixin(MGPC!(float, 2268)()); }
-			MaterialInstanceConstant m_StealthMIC() { mixin(MGPC!(MaterialInstanceConstant, 2264)()); }
-			Material m_StealthMaterial() { mixin(MGPC!(Material, 2260)()); }
-			float m_fMinStealthVisibilityParamValue() { mixin(MGPC!(float, 2256)()); }
-			float m_fDisableStealthVisibilityInterpSpeed() { mixin(MGPC!(float, 2252)()); }
-			float m_fEnableStealthVisibilityInterpSpeed() { mixin(MGPC!(float, 2248)()); }
-			AlienFXManager.FXOverlay LastFXOverlay() { mixin(MGPC!(AlienFXManager.FXOverlay, 2247)()); }
-			ubyte r_nWhiteOut() { mixin(MGPC!(ubyte, 2246)()); }
-			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!(TrObject.EMissileLock, 2245)()); }
-			ubyte r_RemoteViewYaw() { mixin(MGPC!(ubyte, 2244)()); }
-			TrPawn.PhysicsType PhysType() { mixin(MGPC!(TrPawn.PhysicsType, 2243)()); }
-			int r_nFactionId() { mixin(MGPC!(int, 2208)()); }
-			ubyte r_nBlinked() { mixin(MGPC!(ubyte, 2242)()); }
-			ubyte r_nPulseStealth() { mixin(MGPC!(ubyte, 2241)()); }
-			TrObject.EMissileLock r_MissileLock() { mixin(MGPC!(TrObject.EMissileLock, 2240)()); }
-			Actor r_LockedTarget() { mixin(MGPC!(Actor, 2224)()); }
-			ScriptName m_nmMakeVisible() { mixin(MGPC!(ScriptName, 2212)()); }
+			Vector r_avMultiShotLocation() { mixin(MGPC!("Vector", 2620)()); }
+			float m_fEnemyShowDistanceThreshold() { mixin(MGPC!("float", 2612)()); }
+			float m_fFriendlyShowDistanceThreshold() { mixin(MGPC!("float", 2608)()); }
+			MorphNodeWeight m_OverlayMorphNode() { mixin(MGPC!("MorphNodeWeight", 2604)()); }
+			TrAnimNodeBlendByVehicle m_VehicleBlendNode() { mixin(MGPC!("TrAnimNodeBlendByVehicle", 2596)()); }
+			float m_fFallVelocityTransfer() { mixin(MGPC!("float", 2584)()); }
+			float m_fLastDamagerTimeStamp() { mixin(MGPC!("float", 2568)()); }
+			float m_fLastVehicleDamagerTimeStamp() { mixin(MGPC!("float", 2564)()); }
+			float m_AssistDamagePercentQualifier() { mixin(MGPC!("float", 2560)()); }
+			float m_fSkiAccelPct() { mixin(MGPC!("float", 2556)()); }
+			float m_fSkiAccelCapSpeedThreshold() { mixin(MGPC!("float", 2552)()); }
+			float m_fAirAccelSpeed() { mixin(MGPC!("float", 2548)()); }
+			float m_fAirAccelCapSpeedThreshold() { mixin(MGPC!("float", 2544)()); }
+			float m_fTerminalSkiSpeed() { mixin(MGPC!("float", 2536)()); }
+			float m_fMaxSkiSpeed() { mixin(MGPC!("float", 2532)()); }
+			float m_fSkiSlopeGravityBoost() { mixin(MGPC!("float", 2528)()); }
+			float m_fMaxSkiControlPct() { mixin(MGPC!("float", 2524)()); }
+			float m_fSkiControlSigmaSquare() { mixin(MGPC!("float", 2520)()); }
+			float m_fPeakSkiControlSpeed() { mixin(MGPC!("float", 2516)()); }
+			TrObject.TrTakeEffectInfo r_LastTakeEffectInfo() { mixin(MGPC!("TrObject.TrTakeEffectInfo", 2500)()); }
+			float ShowHeaderUntil() { mixin(MGPC!("float", 2472)()); }
+			TrObject.TR_HUD_INFO m_HudInfo() { mixin(MGPC!("TrObject.TR_HUD_INFO", 2404)()); }
+			int r_nSensorAlertLevel() { mixin(MGPC!("int", 2400)()); }
+			float m_fDecelerationRateWithFlag() { mixin(MGPC!("float", 2396)()); }
+			float m_fMaxSpeedWithFlag() { mixin(MGPC!("float", 2392)()); }
+			float m_fPreserveVelocityZNormalThreshold() { mixin(MGPC!("float", 2388)()); }
+			float m_fPreserveVelocityThresholdMin() { mixin(MGPC!("float", 2384)()); }
+			float m_fPreserveVelocityThresholdMax() { mixin(MGPC!("float", 2380)()); }
+			float m_fMaxSpeedDecelerationRate() { mixin(MGPC!("float", 2376)()); }
+			float m_fTerminalJettingSpeed() { mixin(MGPC!("float", 2372)()); }
+			float m_fMaxJettingSpeed() { mixin(MGPC!("float", 2368)()); }
+			float m_fAccelRateAtMaxThrustSpeed() { mixin(MGPC!("float", 2364)()); }
+			float m_fMaxJetpackThrustSpeed() { mixin(MGPC!("float", 2360)()); }
+			float m_fMaxStoppingDistance() { mixin(MGPC!("float", 2356)()); }
+			float m_fStoppingDistance() { mixin(MGPC!("float", 2352)()); }
+			float m_fHeadShotFudge() { mixin(MGPC!("float", 2344)()); }
+			float m_fTickedRegenDecimal() { mixin(MGPC!("float", 2340)()); }
+			float m_fSecondsBeforeAutoHeal() { mixin(MGPC!("float", 2336)()); }
+			float r_fPowerPoolRechargeRate() { mixin(MGPC!("float", 2332)()); }
+			float r_fMaxPowerPool() { mixin(MGPC!("float", 2328)()); }
+			float r_fCurrentPowerPool() { mixin(MGPC!("float", 2324)()); }
+			float m_fTimeLastUntargetByLocalPlayer() { mixin(MGPC!("float", 2316)()); }
+			float m_fTimeLastTargetByLocalPlayer() { mixin(MGPC!("float", 2312)()); }
+			float m_fTimeLastUnseenByLocalPlayer() { mixin(MGPC!("float", 2308)()); }
+			float m_fTimeLastSeenByLocalPlayer() { mixin(MGPC!("float", 2304)()); }
+			float s_fVE() { mixin(MGPC!("float", 2300)()); }
+			float m_fShieldMultiple() { mixin(MGPC!("float", 2296)()); }
+			float r_fFasterWeaponSwitchMultiplier() { mixin(MGPC!("float", 2292)()); }
+			float m_fPulseStealthIgnoreTime() { mixin(MGPC!("float", 2288)()); }
+			float m_fPulseStealthIgnoreTimeStamp() { mixin(MGPC!("float", 2284)()); }
+			float r_fPulseStealthSpeedThreshold() { mixin(MGPC!("float", 2280)()); }
+			float m_fPulseStealthFadeInInterpSpeed() { mixin(MGPC!("float", 2276)()); }
+			float m_fPulseStealthVisibleTime() { mixin(MGPC!("float", 2272)()); }
+			float m_fPulseStealthVisibleTimestamp() { mixin(MGPC!("float", 2268)()); }
+			MaterialInstanceConstant m_StealthMIC() { mixin(MGPC!("MaterialInstanceConstant", 2264)()); }
+			Material m_StealthMaterial() { mixin(MGPC!("Material", 2260)()); }
+			float m_fMinStealthVisibilityParamValue() { mixin(MGPC!("float", 2256)()); }
+			float m_fDisableStealthVisibilityInterpSpeed() { mixin(MGPC!("float", 2252)()); }
+			float m_fEnableStealthVisibilityInterpSpeed() { mixin(MGPC!("float", 2248)()); }
+			AlienFXManager.FXOverlay LastFXOverlay() { mixin(MGPC!("AlienFXManager.FXOverlay", 2247)()); }
+			ubyte r_nWhiteOut() { mixin(MGPC!("ubyte", 2246)()); }
+			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!("TrObject.EMissileLock", 2245)()); }
+			ubyte r_RemoteViewYaw() { mixin(MGPC!("ubyte", 2244)()); }
+			TrPawn.PhysicsType PhysType() { mixin(MGPC!("TrPawn.PhysicsType", 2243)()); }
+			int r_nFactionId() { mixin(MGPC!("int", 2208)()); }
+			ubyte r_nBlinked() { mixin(MGPC!("ubyte", 2242)()); }
+			ubyte r_nPulseStealth() { mixin(MGPC!("ubyte", 2241)()); }
+			TrObject.EMissileLock r_MissileLock() { mixin(MGPC!("TrObject.EMissileLock", 2240)()); }
+			Actor r_LockedTarget() { mixin(MGPC!("Actor", 2224)()); }
+			ScriptName m_nmMakeVisible() { mixin(MGPC!("ScriptName", 2212)()); }
 		}
 		bool r_bIsStealthed() { mixin(MGBPC!(2220, 0x4)()); }
 		bool r_bIsStealthed(bool val) { mixin(MSBPC!(2220, 0x4)()); }
@@ -772,13 +772,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTribesReplicationInfo, params.ptr, cast(void*)0);
 		return *cast(TrPlayerReplicationInfo*)params.ptr;
 	}
-	bool CheckHeadShot(ref const Actor.ImpactInfo Impact)
+	bool CheckHeadShot(ref in Actor.ImpactInfo Impact)
 	{
 		ubyte params[84];
 		params[] = 0;
-		*cast(Actor.ImpactInfo*)params.ptr = Impact;
+		*cast(Actor.ImpactInfo*)params.ptr = cast(Actor.ImpactInfo)Impact;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckHeadShot, params.ptr, cast(void*)0);
-		*Impact = *cast(Actor.ImpactInfo*)params.ptr;
 		return *cast(bool*)&params[80];
 	}
 	Vector GetPawnViewLocation()
@@ -859,8 +858,8 @@ final:
 		*cast(float*)params.ptr = fAccuracy;
 		*cast(float*)&params[4] = fAmountCurrentlyOffOfTargetAccuray;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentDeviceAccuracyInfo, params.ptr, cast(void*)0);
-		*fAccuracy = *cast(float*)params.ptr;
-		*fAmountCurrentlyOffOfTargetAccuray = *cast(float*)&params[4];
+		fAccuracy = *cast(float*)params.ptr;
+		fAmountCurrentlyOffOfTargetAccuray = *cast(float*)&params[4];
 	}
 	void SetOverlayMaterial(MaterialInterface NewOverlay)
 	{
@@ -887,12 +886,14 @@ final:
 		*cast(Vector*)&params[20] = CameraDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NativePostRenderFor, params.ptr, cast(void*)0);
 	}
-	Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
+	Vector GetTargetLocation(Actor* RequestedBy = null, bool* bRequestAlternateLoc = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Actor*)params.ptr = RequestedBy;
-		*cast(bool*)&params[4] = bRequestAlternateLoc;
+		if (RequestedBy !is null)
+			*cast(Actor*)params.ptr = *RequestedBy;
+		if (bRequestAlternateLoc !is null)
+			*cast(bool*)&params[4] = *bRequestAlternateLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
@@ -984,20 +985,23 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)params.ptr = pInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitDefaultAnims, params.ptr, cast(void*)0);
 	}
-	void SetCharacterClassFromInfo(ScriptClass pInfo, bool bForce)
+	void SetCharacterClassFromInfo(ScriptClass pInfo, bool* bForce = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
-		*cast(bool*)&params[4] = bForce;
+		if (bForce !is null)
+			*cast(bool*)&params[4] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacterClassFromInfo, params.ptr, cast(void*)0);
 	}
-	void ActivatePendingClass(bool bIsRespawn, bool bCallin)
+	void ActivatePendingClass(bool* bIsRespawn = null, bool* bCallin = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bIsRespawn;
-		*cast(bool*)&params[4] = bCallin;
+		if (bIsRespawn !is null)
+			*cast(bool*)params.ptr = *bIsRespawn;
+		if (bCallin !is null)
+			*cast(bool*)&params[4] = *bCallin;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivatePendingClass, params.ptr, cast(void*)0);
 	}
 	void RefreshInventoryTimer()
@@ -1008,12 +1012,13 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetValuesFromCurrentFamilyInfo, cast(void*)0, cast(void*)0);
 	}
-	void RefreshInventory(bool bIsRespawn, bool bCallin)
+	void RefreshInventory(bool bIsRespawn, bool* bCallin = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsRespawn;
-		*cast(bool*)&params[4] = bCallin;
+		if (bCallin !is null)
+			*cast(bool*)&params[4] = *bCallin;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshInventory, params.ptr, cast(void*)0);
 	}
 	void ActivateSelectedDeployable()
@@ -1027,12 +1032,13 @@ void**)params.ptr = SkelComp;
 		*cast(ScriptClass*)params.ptr = efClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveEffectByClass, params.ptr, cast(void*)0);
 	}
-	void ProcessEffectForm(ScriptClass efClass, bool bRemove)
+	void ProcessEffectForm(ScriptClass efClass, bool* bRemove = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = efClass;
-		*cast(bool*)&params[4] = bRemove;
+		if (bRemove !is null)
+			*cast(bool*)&params[4] = *bRemove;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessEffectForm, params.ptr, cast(void*)0);
 	}
 	int GetShieldStrength()
@@ -1096,12 +1102,12 @@ void**)params.ptr = SkelComp;
 		*cast(float*)params.ptr = DeltaSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RechargeHealthPool, params.ptr, cast(void*)0);
 	}
-	Vector GetJetpackAirControl(const Vector InAcceleration, const Vector ZAxis)
+	Vector GetJetpackAirControl(in Vector InAcceleration, in Vector ZAxis)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InAcceleration;
-		*cast(Vector*)&params[12] = ZAxis;
+		*cast(Vector*)params.ptr = cast(Vector)InAcceleration;
+		*cast(Vector*)&params[12] = cast(Vector)ZAxis;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetJetpackAirControl, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[24];
 	}
@@ -1185,18 +1191,22 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawnCausingDamage, params.ptr, cast(void*)0);
 		return *cast(TrPawn*)&params[8];
 	}
-	float GetDamageScale(Actor DamageCauser, float Dist, ScriptClass dmgType, Controller EventInstigator, TrValueModifier VM, float* DamageScaleWithoutNewPlayerAssist)
+	float GetDamageScale(Actor DamageCauser, float Dist, ScriptClass dmgType, Controller* EventInstigator = null, TrValueModifier* VM = null, float* DamageScaleWithoutNewPlayerAssist = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = DamageCauser;
 		*cast(float*)&params[4] = Dist;
 		*cast(ScriptClass*)&params[8] = dmgType;
-		*cast(Controller*)&params[12] = EventInstigator;
-		*cast(TrValueModifier*)&params[16] = VM;
-		*cast(float*)&params[20] = DamageScaleWithoutNewPlayerAssist;
+		if (EventInstigator !is null)
+			*cast(Controller*)&params[12] = *EventInstigator;
+		if (VM !is null)
+			*cast(TrValueModifier*)&params[16] = *VM;
+		if (DamageScaleWithoutNewPlayerAssist !is null)
+			*cast(float*)&params[20] = *DamageScaleWithoutNewPlayerAssist;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDamageScale, params.ptr, cast(void*)0);
-		*DamageScaleWithoutNewPlayerAssist = *cast(float*)&params[20];
+		if (DamageScaleWithoutNewPlayerAssist !is null)
+			*DamageScaleWithoutNewPlayerAssist = *cast(float*)&params[20];
 		return *cast(float*)&params[24];
 	}
 	void DoRepairs(int HealAmount, Controller EventInstigator, Actor DamageCauser, ScriptClass pDamageType)
@@ -1218,7 +1228,7 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckTribesTurretInstigator, params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[8];
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -1227,15 +1237,17 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void PlayWhiteoutEffect()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWhiteoutEffect, cast(void*)0, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -1247,7 +1259,8 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	bool RecentlyGrabbedFlag()
@@ -1283,8 +1296,8 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void Landed(Vector HitNormal, Actor FloorActor)
 	{
@@ -1336,13 +1349,14 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[16] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FlashLocationUpdated, params.ptr, cast(void*)0);
 	}
-	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponFired, params.ptr, cast(void*)0);
 	}
 	bool Dodge(Actor.EDoubleClickDir DoubleClickMove)
@@ -1500,11 +1514,12 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayStealthPackEffect, cast(void*)0, cast(void*)0);
 	}
-	void PulseStealth(bool bOverrideIgnore)
+	void PulseStealth(bool* bOverrideIgnore = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bOverrideIgnore;
+		if (bOverrideIgnore !is null)
+			*cast(bool*)params.ptr = *bOverrideIgnore;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PulseStealth, params.ptr, cast(void*)0);
 	}
 	void SetRagePerkActive()
@@ -1715,12 +1730,13 @@ void**)&params[4] = RunOverComponent;
 		*cast(float*)params.ptr = DeltaSeconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateStickyGrenades, params.ptr, cast(void*)0);
 	}
-	void SetSkiing(bool bEnabled, bool bJump)
+	void SetSkiing(bool bEnabled, bool* bJump = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		*cast(bool*)&params[4] = bJump;
+		if (bJump !is null)
+			*cast(bool*)&params[4] = *bJump;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkiing, params.ptr, cast(void*)0);
 	}
 	void PlaySkiEffects()
@@ -1770,14 +1786,15 @@ void**)&params[4] = RunOverComponent;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDamage, params.ptr, cast(void*)0);
-		*InDamage = *cast(int*)params.ptr;
-		*Momentum = *cast(Vector*)&params[4];
+		InDamage = *cast(int*)params.ptr;
+		Momentum = *cast(Vector*)&params[4];
 	}
-	void GoInvulnerable(float InvulnerableTime)
+	void GoInvulnerable(float* InvulnerableTime = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = InvulnerableTime;
+		if (InvulnerableTime !is null)
+			*cast(float*)params.ptr = *InvulnerableTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GoInvulnerable, params.ptr, cast(void*)0);
 	}
 	void ClearInvulnerability()
@@ -1842,11 +1859,12 @@ void**)&params[4] = RunOverComponent;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.LockedOutFromFlagPickupTimer, cast(void*)0, cast(void*)0);
 	}
-	void LockFromFlagPickup(float TimeToLock)
+	void LockFromFlagPickup(float* TimeToLock = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = TimeToLock;
+		if (TimeToLock !is null)
+			*cast(float*)params.ptr = *TimeToLock;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LockFromFlagPickup, params.ptr, cast(void*)0);
 	}
 	void Blink(Vector Impulse, float MinZ, float PctEffectiveness)
@@ -1910,11 +1928,12 @@ void**)&params[4] = RunOverComponent;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckApplyPending3PSkin, cast(void*)0, cast(void*)0);
 	}
-	void ThrowActiveWeapon(bool bDestroyWeap)
+	void ThrowActiveWeapon(bool* bDestroyWeap = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDestroyWeap;
+		if (bDestroyWeap !is null)
+			*cast(bool*)params.ptr = *bDestroyWeap;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ThrowActiveWeapon, params.ptr, cast(void*)0);
 	}
 	void ThrowWeaponOnDeath()

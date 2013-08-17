@@ -33,11 +33,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.LinearColor CaptionColor() { mixin(MGPC!(UObject.LinearColor, 208)()); }
-		ScriptString Caption() { mixin(MGPC!(ScriptString, 196)()); }
-		UObject.LinearColor ImageColor() { mixin(MGPC!(UObject.LinearColor, 180)()); }
-		MobileMenuObject.UVCoords ImagesUVs() { mixin(MGPC!(MobileMenuObject.UVCoords, 140)()); }
-		Texture2D Images() { mixin(MGPC!(Texture2D, 132)()); }
+		UObject.LinearColor CaptionColor() { mixin(MGPC!("UObject.LinearColor", 208)()); }
+		ScriptString Caption() { mixin(MGPC!("ScriptString", 196)()); }
+		UObject.LinearColor ImageColor() { mixin(MGPC!("UObject.LinearColor", 180)()); }
+		MobileMenuObject.UVCoords ImagesUVs() { mixin(MGPC!("MobileMenuObject.UVCoords", 140)()); }
+		Texture2D Images() { mixin(MGPC!("Texture2D", 132)()); }
 	}
 final:
 	void InitMenuObject(MobilePlayerInput pPlayerInput, MobileMenuScene pScene, int ScreenWidth, int ScreenHeight)

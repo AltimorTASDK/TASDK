@@ -20,11 +20,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) HelpParamNames() { mixin(MGPC!(ScriptArray!(ScriptString), 96)()); }
-			ScriptArray!(ScriptString) HelpParamDescriptions() { mixin(MGPC!(ScriptArray!(ScriptString), 108)()); }
-			ScriptString HelpWebLink() { mixin(MGPC!(ScriptString, 84)()); }
-			ScriptString HelpUsage() { mixin(MGPC!(ScriptString, 72)()); }
-			ScriptString HelpDescription() { mixin(MGPC!(ScriptString, 60)()); }
+			ScriptArray!(ScriptString) HelpParamNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 96)()); }
+			ScriptArray!(ScriptString) HelpParamDescriptions() { mixin(MGPC!("ScriptArray!(ScriptString)", 108)()); }
+			ScriptString HelpWebLink() { mixin(MGPC!("ScriptString", 84)()); }
+			ScriptString HelpUsage() { mixin(MGPC!("ScriptString", 72)()); }
+			ScriptString HelpDescription() { mixin(MGPC!("ScriptString", 60)()); }
 		}
 		bool ShowErrorCount() { mixin(MGBPC!(120, 0x10)()); }
 		bool ShowErrorCount(bool val) { mixin(MSBPC!(120, 0x10)()); }

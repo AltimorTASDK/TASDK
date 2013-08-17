@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mAddToMobileInput;
 		public @property static final ScriptFunction AddToMobileInput() { mixin(MGF!("mAddToMobileInput", "Function GameFramework.SeqEvent_MobileZoneBase.AddToMobileInput")()); }
 	}
-	@property final auto ref ScriptString TargetZoneName() { mixin(MGPC!(ScriptString, 256)()); }
+	@property final auto ref ScriptString TargetZoneName() { mixin(MGPC!("ScriptString", 256)()); }
 	final void AddToMobileInput(MobilePlayerInput MPI)
 	{
 		ubyte params[4];

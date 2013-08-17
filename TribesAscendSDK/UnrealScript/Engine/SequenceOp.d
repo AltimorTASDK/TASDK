@@ -74,12 +74,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				int OverrideDelta() { mixin(MGPS!(int, 44)()); }
-				float ActivateDelay() { mixin(MGPS!(float, 36)()); }
-				int DrawY() { mixin(MGPS!(int, 28)()); }
-				SequenceOp LinkedOp() { mixin(MGPS!(SequenceOp, 24)()); }
-				int QueuedActivations() { mixin(MGPS!(int, 16)()); }
-				ScriptString LinkDesc() { mixin(MGPS!(ScriptString, 0)()); }
+				int OverrideDelta() { mixin(MGPS!("int", 44)()); }
+				float ActivateDelay() { mixin(MGPS!("float", 36)()); }
+				int DrawY() { mixin(MGPS!("int", 28)()); }
+				SequenceOp LinkedOp() { mixin(MGPS!("SequenceOp", 24)()); }
+				int QueuedActivations() { mixin(MGPS!("int", 16)()); }
+				ScriptString LinkDesc() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bHasImpulse() { mixin(MGBPS!(12, 0x1)()); }
 			bool bHasImpulse(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -107,12 +107,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(SequenceOp.SeqOpOutputInputLink) Links() { mixin(MGPS!(ScriptArray!(SequenceOp.SeqOpOutputInputLink), 0)()); }
-				int OverrideDelta() { mixin(MGPS!(int, 44)()); }
-				int DrawY() { mixin(MGPS!(int, 36)()); }
-				float ActivateDelay() { mixin(MGPS!(float, 32)()); }
-				SequenceOp LinkedOp() { mixin(MGPS!(SequenceOp, 28)()); }
-				ScriptString LinkDesc() { mixin(MGPS!(ScriptString, 12)()); }
+				ScriptArray!(SequenceOp.SeqOpOutputInputLink) Links() { mixin(MGPS!("ScriptArray!(SequenceOp.SeqOpOutputInputLink)", 0)()); }
+				int OverrideDelta() { mixin(MGPS!("int", 44)()); }
+				int DrawY() { mixin(MGPS!("int", 36)()); }
+				float ActivateDelay() { mixin(MGPS!("float", 32)()); }
+				SequenceOp LinkedOp() { mixin(MGPS!("SequenceOp", 28)()); }
+				ScriptString LinkDesc() { mixin(MGPS!("ScriptString", 12)()); }
 			}
 			bool bClampedMin() { mixin(MGBPS!(40, 0x8)()); }
 			bool bClampedMin(bool val) { mixin(MSBPS!(40, 0x8)()); }
@@ -140,16 +140,16 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(SequenceVariable) LinkedVariables() { mixin(MGPS!(ScriptArray!(SequenceVariable), 4)()); }
-				int OverrideDelta() { mixin(MGPS!(int, 68)()); }
-				Property CachedProperty() { mixin(MGPS!(Property, 60)()); }
-				int DrawX() { mixin(MGPS!(int, 56)()); }
-				int MaxVars() { mixin(MGPS!(int, 52)()); }
-				int MinVars() { mixin(MGPS!(int, 48)()); }
-				ScriptName PropertyName() { mixin(MGPS!(ScriptName, 36)()); }
-				ScriptName LinkVar() { mixin(MGPS!(ScriptName, 28)()); }
-				ScriptString LinkDesc() { mixin(MGPS!(ScriptString, 16)()); }
-				ScriptClass ExpectedType() { mixin(MGPS!(ScriptClass, 0)()); }
+				ScriptArray!(SequenceVariable) LinkedVariables() { mixin(MGPS!("ScriptArray!(SequenceVariable)", 4)()); }
+				int OverrideDelta() { mixin(MGPS!("int", 68)()); }
+				Property CachedProperty() { mixin(MGPS!("Property", 60)()); }
+				int DrawX() { mixin(MGPS!("int", 56)()); }
+				int MaxVars() { mixin(MGPS!("int", 52)()); }
+				int MinVars() { mixin(MGPS!("int", 48)()); }
+				ScriptName PropertyName() { mixin(MGPS!("ScriptName", 36)()); }
+				ScriptName LinkVar() { mixin(MGPS!("ScriptName", 28)()); }
+				ScriptString LinkDesc() { mixin(MGPS!("ScriptString", 16)()); }
+				ScriptClass ExpectedType() { mixin(MGPS!("ScriptClass", 0)()); }
 			}
 			bool bClampedMin() { mixin(MGBPS!(64, 0x8)()); }
 			bool bClampedMin(bool val) { mixin(MSBPS!(64, 0x8)()); }
@@ -179,11 +179,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(SequenceEvent) LinkedEvents() { mixin(MGPS!(ScriptArray!(SequenceEvent), 4)()); }
-				int OverrideDelta() { mixin(MGPS!(int, 36)()); }
-				int DrawX() { mixin(MGPS!(int, 28)()); }
-				ScriptString LinkDesc() { mixin(MGPS!(ScriptString, 16)()); }
-				ScriptClass ExpectedType() { mixin(MGPS!(ScriptClass, 0)()); }
+				ScriptArray!(SequenceEvent) LinkedEvents() { mixin(MGPS!("ScriptArray!(SequenceEvent)", 4)()); }
+				int OverrideDelta() { mixin(MGPS!("int", 36)()); }
+				int DrawX() { mixin(MGPS!("int", 28)()); }
+				ScriptString LinkDesc() { mixin(MGPS!("ScriptString", 16)()); }
+				ScriptClass ExpectedType() { mixin(MGPS!("ScriptClass", 0)()); }
 			}
 			bool bClampedMin() { mixin(MGBPS!(32, 0x8)()); }
 			bool bClampedMin(bool val) { mixin(MSBPS!(32, 0x8)()); }
@@ -203,22 +203,22 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SequenceOp.SeqOpOutputInputLink")()); }
 		@property final auto ref
 		{
-			int InputLinkIdx() { mixin(MGPS!(int, 4)()); }
-			SequenceOp LinkedOp() { mixin(MGPS!(SequenceOp, 0)()); }
+			int InputLinkIdx() { mixin(MGPS!("int", 4)()); }
+			SequenceOp LinkedOp() { mixin(MGPS!("SequenceOp", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(SequenceOp.SeqOpInputLink) InputLinks() { mixin(MGPC!(ScriptArray!(SequenceOp.SeqOpInputLink), 144)()); }
-			ScriptArray!(SequenceOp.SeqOpOutputLink) OutputLinks() { mixin(MGPC!(ScriptArray!(SequenceOp.SeqOpOutputLink), 156)()); }
-			ScriptArray!(SequenceOp.SeqVarLink) VariableLinks() { mixin(MGPC!(ScriptArray!(SequenceOp.SeqVarLink), 168)()); }
-			ScriptArray!(SequenceOp.SeqEventLink) EventLinks() { mixin(MGPC!(ScriptArray!(SequenceOp.SeqEventLink), 180)()); }
-			int SearchTag() { mixin(MGPC!(int, 204)()); }
-			int ActivateCount() { mixin(MGPC!(int, 200)()); }
-			ubyte GamepadID() { mixin(MGPC!(ubyte, 196)()); }
-			int PlayerIndex() { mixin(MGPC!(int, 192)()); }
+			ScriptArray!(SequenceOp.SeqOpInputLink) InputLinks() { mixin(MGPC!("ScriptArray!(SequenceOp.SeqOpInputLink)", 144)()); }
+			ScriptArray!(SequenceOp.SeqOpOutputLink) OutputLinks() { mixin(MGPC!("ScriptArray!(SequenceOp.SeqOpOutputLink)", 156)()); }
+			ScriptArray!(SequenceOp.SeqVarLink) VariableLinks() { mixin(MGPC!("ScriptArray!(SequenceOp.SeqVarLink)", 168)()); }
+			ScriptArray!(SequenceOp.SeqEventLink) EventLinks() { mixin(MGPC!("ScriptArray!(SequenceOp.SeqEventLink)", 180)()); }
+			int SearchTag() { mixin(MGPC!("int", 204)()); }
+			int ActivateCount() { mixin(MGPC!("int", 200)()); }
+			ubyte GamepadID() { mixin(MGPC!("ubyte", 196)()); }
+			int PlayerIndex() { mixin(MGPC!("int", 192)()); }
 		}
 		bool bPendingOutputConnectorRecalc() { mixin(MGBPC!(140, 0x100)()); }
 		bool bPendingOutputConnectorRecalc(bool val) { mixin(MSBPC!(140, 0x100)()); }
@@ -240,60 +240,67 @@ public extern(D):
 		bool bActive(bool val) { mixin(MSBPC!(140, 0x1)()); }
 	}
 final:
-	void GetObjectVars(ref ScriptArray!(UObject) objVars, ScriptString inDesc)
+	void GetObjectVars(ref ScriptArray!(UObject) objVars, ScriptString* inDesc = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptArray!(UObject)*)params.ptr = objVars;
-		*cast(ScriptString*)&params[12] = inDesc;
+		if (inDesc !is null)
+			*cast(ScriptString*)&params[12] = *inDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetObjectVars, params.ptr, cast(void*)0);
-		*objVars = *cast(ScriptArray!(UObject)*)params.ptr;
+		objVars = *cast(ScriptArray!(UObject)*)params.ptr;
 	}
-	bool HasLinkedOps(bool bConsiderInputLinks)
+	bool HasLinkedOps(bool* bConsiderInputLinks = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bConsiderInputLinks;
+		if (bConsiderInputLinks !is null)
+			*cast(bool*)params.ptr = *bConsiderInputLinks;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasLinkedOps, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void GetLinkedObjects(ref ScriptArray!(SequenceObject) out_Objects, ScriptClass ObjectType, bool bRecurse)
+	void GetLinkedObjects(ref ScriptArray!(SequenceObject) out_Objects, ScriptClass* ObjectType = null, bool* bRecurse = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptArray!(SequenceObject)*)params.ptr = out_Objects;
-		*cast(ScriptClass*)&params[12] = ObjectType;
-		*cast(bool*)&params[16] = bRecurse;
+		if (ObjectType !is null)
+			*cast(ScriptClass*)&params[12] = *ObjectType;
+		if (bRecurse !is null)
+			*cast(bool*)&params[16] = *bRecurse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLinkedObjects, params.ptr, cast(void*)0);
-		*out_Objects = *cast(ScriptArray!(SequenceObject)*)params.ptr;
+		out_Objects = *cast(ScriptArray!(SequenceObject)*)params.ptr;
 	}
-	void GetInterpDataVars(ref ScriptArray!(InterpData) outIData, ScriptString inDesc)
+	void GetInterpDataVars(ref ScriptArray!(InterpData) outIData, ScriptString* inDesc = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptArray!(InterpData)*)params.ptr = outIData;
-		*cast(ScriptString*)&params[12] = inDesc;
+		if (inDesc !is null)
+			*cast(ScriptString*)&params[12] = *inDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetInterpDataVars, params.ptr, cast(void*)0);
-		*outIData = *cast(ScriptArray!(InterpData)*)params.ptr;
+		outIData = *cast(ScriptArray!(InterpData)*)params.ptr;
 	}
-	void GetBoolVars(ref ScriptArray!(ubyte) boolVars, ScriptString inDesc)
+	void GetBoolVars(ref ScriptArray!(ubyte) boolVars, ScriptString* inDesc = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptArray!(ubyte)*)params.ptr = boolVars;
-		*cast(ScriptString*)&params[12] = inDesc;
+		if (inDesc !is null)
+			*cast(ScriptString*)&params[12] = *inDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoolVars, params.ptr, cast(void*)0);
-		*boolVars = *cast(ScriptArray!(ubyte)*)params.ptr;
+		boolVars = *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
-	void LinkedVariables(ScriptClass VarClass, ref SequenceVariable OutVariable, ScriptString inDesc)
+	void LinkedVariables(ScriptClass VarClass, ref SequenceVariable OutVariable, ScriptString* inDesc = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = VarClass;
 		*cast(SequenceVariable*)&params[4] = OutVariable;
-		*cast(ScriptString*)&params[8] = inDesc;
+		if (inDesc !is null)
+			*cast(ScriptString*)&params[8] = *inDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LinkedVariables, params.ptr, cast(void*)0);
-		*OutVariable = *cast(SequenceVariable*)&params[4];
+		OutVariable = *cast(SequenceVariable*)&params[4];
 	}
 	bool ActivateOutputLink(int OutputIdx)
 	{

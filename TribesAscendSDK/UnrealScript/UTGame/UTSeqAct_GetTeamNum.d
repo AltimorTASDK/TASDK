@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mActivated;
 		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqAct_GetTeamNum.Activated")()); }
 	}
-	@property final auto ref int TeamNum() { mixin(MGPC!(int, 232)()); }
+	@property final auto ref int TeamNum() { mixin(MGPC!("int", 232)()); }
 	final void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);

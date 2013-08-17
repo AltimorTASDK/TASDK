@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionVector.EDistributionVectorMirrorFlags MirrorFlags() { mixin(MGPC!(DistributionVector.EDistributionVectorMirrorFlags, 102)()); }
-			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!(DistributionVector.EDistributionVectorLockFlags, 100)()); }
-			UObject.InterpCurveTwoVectors ConstantCurve() { mixin(MGPC!(UObject.InterpCurveTwoVectors, 80)()); }
+			DistributionVector.EDistributionVectorMirrorFlags MirrorFlags() { mixin(MGPC!("DistributionVector.EDistributionVectorMirrorFlags", 102)()); }
+			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!("DistributionVector.EDistributionVectorLockFlags", 100)()); }
+			UObject.InterpCurveTwoVectors ConstantCurve() { mixin(MGPC!("UObject.InterpCurveTwoVectors", 80)()); }
 		}
 		bool bUseExtremes() { mixin(MGBPC!(96, 0x4)()); }
 		bool bUseExtremes(bool val) { mixin(MSBPC!(96, 0x4)()); }

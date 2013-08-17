@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackInstDirector")()); }
 	private static __gshared InterpTrackInstDirector mDefaultProperties;
 	@property final static InterpTrackInstDirector DefaultProperties() { mixin(MGDPC!(InterpTrackInstDirector, "InterpTrackInstDirector Engine.Default__InterpTrackInstDirector")()); }
-	@property final auto ref Actor OldViewTarget() { mixin(MGPC!(Actor, 60)()); }
+	@property final auto ref Actor OldViewTarget() { mixin(MGPC!("Actor", 60)()); }
 }

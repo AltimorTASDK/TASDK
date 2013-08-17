@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionNormalize")()); }
 	private static __gshared MaterialExpressionNormalize mDefaultProperties;
 	@property final static MaterialExpressionNormalize DefaultProperties() { mixin(MGDPC!(MaterialExpressionNormalize, "MaterialExpressionNormalize Engine.Default__MaterialExpressionNormalize")()); }
-	@property final auto ref MaterialExpression.ExpressionInput VectorInput() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+	@property final auto ref MaterialExpression.ExpressionInput VectorInput() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 }

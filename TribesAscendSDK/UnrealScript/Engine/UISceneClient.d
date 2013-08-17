@@ -49,23 +49,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			PostProcessChain UIScenePostProcess() { mixin(MGPC!(PostProcessChain, 208)()); }
-			UObject.Matrix InvCanvasToScreen() { mixin(MGPC!(UObject.Matrix, 144)()); }
-			UObject.Matrix CanvasToScreen() { mixin(MGPC!(UObject.Matrix, 80)()); }
-			DataStoreClient DataStoreManager() { mixin(MGPC!(DataStoreClient, 76)()); }
-			UObject.IntPoint MousePosition() { mixin(MGPC!(UObject.IntPoint, 68)()); }
-			UObject.Pointer RenderViewport() { mixin(MGPC!(UObject.Pointer, 64)()); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			PostProcessChain UIScenePostProcess() { mixin(MGPC!("PostProcessChain", 208)()); }
+			UObject.Matrix InvCanvasToScreen() { mixin(MGPC!("UObject.Matrix", 144)()); }
+			UObject.Matrix CanvasToScreen() { mixin(MGPC!("UObject.Matrix", 80)()); }
+			DataStoreClient DataStoreManager() { mixin(MGPC!("DataStoreClient", 76)()); }
+			UObject.IntPoint MousePosition() { mixin(MGPC!("UObject.IntPoint", 68)()); }
+			UObject.Pointer RenderViewport() { mixin(MGPC!("UObject.Pointer", 64)()); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bEnablePostProcess() { mixin(MGBPC!(212, 0x1)()); }
 		bool bEnablePostProcess(bool val) { mixin(MSBPC!(212, 0x1)()); }
 	}
 final:
-	bool IsUIActive(int Flags)
+	bool IsUIActive(int* Flags = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = Flags;
+		if (Flags !is null)
+			*cast(int*)params.ptr = *Flags;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsUIActive, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

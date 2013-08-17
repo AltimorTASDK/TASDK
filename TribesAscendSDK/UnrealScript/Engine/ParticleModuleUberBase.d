@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleUberBase")()); }
 	private static __gshared ParticleModuleUberBase mDefaultProperties;
 	@property final static ParticleModuleUberBase DefaultProperties() { mixin(MGDPC!(ParticleModuleUberBase, "ParticleModuleUberBase Engine.Default__ParticleModuleUberBase")()); }
-	@property final auto ref ScriptArray!(ScriptName) RequiredModules() { mixin(MGPC!(ScriptArray!(ScriptName), 72)()); }
+	@property final auto ref ScriptArray!(ScriptName) RequiredModules() { mixin(MGPC!("ScriptArray!(ScriptName)", 72)()); }
 }

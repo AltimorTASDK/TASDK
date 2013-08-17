@@ -63,24 +63,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			float InstanceDampingScale() { mixin(MGPC!(float, 152)()); }
-			float InstanceMassScale() { mixin(MGPC!(float, 148)()); }
-			float ContactReportForceThreshold() { mixin(MGPC!(float, 144)()); }
-			PhysicalMaterial PhysMaterialOverride() { mixin(MGPC!(PhysicalMaterial, 140)()); }
-			float LastEffectPlayedTime() { mixin(MGPC!(float, 136)()); }
-			float CustomGravityFactor() { mixin(MGPC!(float, 132)()); }
-			float OverextensionThreshold() { mixin(MGPC!(float, 128)()); }
-			float BoneAngularDamping() { mixin(MGPC!(float, 124)()); }
-			float BoneAngularSpring() { mixin(MGPC!(float, 120)()); }
-			float BoneLinearDamping() { mixin(MGPC!(float, 116)()); }
-			float BoneLinearSpring() { mixin(MGPC!(float, 112)()); }
-			UObject.Pointer BoneSpringKinActor() { mixin(MGPC!(UObject.Pointer, 104)()); }
-			UObject.Pointer BoneSpring() { mixin(MGPC!(UObject.Pointer, 100)()); }
-			UObject.Pointer BodyData() { mixin(MGPC!(UObject.Pointer, 96)()); }
-			int SceneIndex() { mixin(MGPC!(int, 92)()); }
-			Vector PreviousVelocity() { mixin(MGPC!(Vector, 80)()); }
-			Vector Velocity() { mixin(MGPC!(Vector, 68)()); }
-			int BodyIndex() { mixin(MGPC!(int, 64)()); }
+			float InstanceDampingScale() { mixin(MGPC!("float", 152)()); }
+			float InstanceMassScale() { mixin(MGPC!("float", 148)()); }
+			float ContactReportForceThreshold() { mixin(MGPC!("float", 144)()); }
+			PhysicalMaterial PhysMaterialOverride() { mixin(MGPC!("PhysicalMaterial", 140)()); }
+			float LastEffectPlayedTime() { mixin(MGPC!("float", 136)()); }
+			float CustomGravityFactor() { mixin(MGPC!("float", 132)()); }
+			float OverextensionThreshold() { mixin(MGPC!("float", 128)()); }
+			float BoneAngularDamping() { mixin(MGPC!("float", 124)()); }
+			float BoneAngularSpring() { mixin(MGPC!("float", 120)()); }
+			float BoneLinearDamping() { mixin(MGPC!("float", 116)()); }
+			float BoneLinearSpring() { mixin(MGPC!("float", 112)()); }
+			UObject.Pointer BoneSpringKinActor() { mixin(MGPC!("UObject.Pointer", 104)()); }
+			UObject.Pointer BoneSpring() { mixin(MGPC!("UObject.Pointer", 100)()); }
+			UObject.Pointer BodyData() { mixin(MGPC!("UObject.Pointer", 96)()); }
+			int SceneIndex() { mixin(MGPC!("int", 92)()); }
+			Vector PreviousVelocity() { mixin(MGPC!("Vector", 80)()); }
+			Vector Velocity() { mixin(MGPC!("Vector", 68)()); }
+			int BodyIndex() { mixin(MGPC!("int", 64)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OwnerComponent'!
 		}
 		bool bInstanceAlwaysFullAnimWeight() { mixin(MGBPC!(108, 0x800)()); }
@@ -173,15 +173,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetUnrealWorldVelocityAtPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
-	void EnableBoneSpring(bool bInEnableLinear, bool bInEnableAngular, ref const UObject.Matrix InBoneTarget)
+	void EnableBoneSpring(bool bInEnableLinear, bool bInEnableAngular, ref in UObject.Matrix InBoneTarget)
 	{
 		ubyte params[80];
 		params[] = 0;
 		*cast(bool*)params.ptr = bInEnableLinear;
 		*cast(bool*)&params[4] = bInEnableAngular;
-		*cast(UObject.Matrix*)&params[16] = InBoneTarget;
+		*cast(UObject.Matrix*)&params[16] = cast(UObject.Matrix)InBoneTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EnableBoneSpring, params.ptr, cast(void*)0);
-		*InBoneTarget = *cast(UObject.Matrix*)&params[16];
 	}
 	void SetBoneSpringParams(float InLinearSpring, float InLinearDamping, float InAngularSpring, float InAngularDamping)
 	{
@@ -193,14 +192,13 @@ final:
 		*cast(float*)&params[12] = InAngularDamping;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBoneSpringParams, params.ptr, cast(void*)0);
 	}
-	void SetBoneSpringTarget(ref const UObject.Matrix InBoneTarget, bool bTeleport)
+	void SetBoneSpringTarget(ref in UObject.Matrix InBoneTarget, bool bTeleport)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(UObject.Matrix*)params.ptr = InBoneTarget;
+		*cast(UObject.Matrix*)params.ptr = cast(UObject.Matrix)InBoneTarget;
 		*cast(bool*)&params[64] = bTeleport;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBoneSpringTarget, params.ptr, cast(void*)0);
-		*InBoneTarget = *cast(UObject.Matrix*)params.ptr;
 	}
 	void SetBlockRigidBody(bool bNewBlockRigidBody)
 	{

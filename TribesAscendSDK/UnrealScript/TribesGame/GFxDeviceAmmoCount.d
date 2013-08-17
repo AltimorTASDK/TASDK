@@ -18,12 +18,13 @@ public extern(D):
 		private static __gshared ScriptFunction mInit;
 		public @property static final ScriptFunction Init() { mixin(MGF!("mInit", "Function TribesGame.GFxDeviceAmmoCount.Init")()); }
 	}
-	@property final auto ref GFxObject AmmoCountTF() { mixin(MGPC!(GFxObject, 380)()); }
-	final void Init(LocalPlayer pPlayer)
+	@property final auto ref GFxObject AmmoCountTF() { mixin(MGPC!("GFxObject", 380)()); }
+	final void Init(LocalPlayer* pPlayer = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = pPlayer;
+		if (pPlayer !is null)
+			*cast(LocalPlayer*)params.ptr = *pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 }

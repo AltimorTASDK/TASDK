@@ -71,8 +71,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SpeechRecognition RecogObject() { mixin(MGPC!(SpeechRecognition, 96)()); }
-		ScriptClass LMC() { mixin(MGPC!(ScriptClass, 92)()); }
+		SpeechRecognition RecogObject() { mixin(MGPC!("SpeechRecognition", 96)()); }
+		ScriptClass LMC() { mixin(MGPC!("ScriptClass", 92)()); }
 	}
 final:
 	void ViewFlag()
@@ -149,12 +149,13 @@ final:
 		*cast(float*)params.ptr = NewGravityScaling;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RBGrav, params.ptr, cast(void*)0);
 	}
-	void SuicideBy(ScriptString Type, int DeathHealth)
+	void SuicideBy(ScriptString Type, int* DeathHealth = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Type;
-		*cast(int*)&params[12] = DeathHealth;
+		if (DeathHealth !is null)
+			*cast(int*)&params[12] = *DeathHealth;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuicideBy, params.ptr, cast(void*)0);
 	}
 	void EditWeapon(ScriptString WhichWeapon)

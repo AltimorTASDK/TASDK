@@ -47,12 +47,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString UserInputString() { mixin(MGPC!(ScriptString, 384)()); }
-		ScriptString DescriptionLabel() { mixin(MGPC!(ScriptString, 372)()); }
-		int DollMeshId() { mixin(MGPC!(int, 368)()); }
-		int VendorId() { mixin(MGPC!(int, 364)()); }
-		int selectedVendorItemId() { mixin(MGPC!(int, 360)()); }
-		int selectedActionIdx() { mixin(MGPC!(int, 356)()); }
+		ScriptString UserInputString() { mixin(MGPC!("ScriptString", 384)()); }
+		ScriptString DescriptionLabel() { mixin(MGPC!("ScriptString", 372)()); }
+		int DollMeshId() { mixin(MGPC!("int", 368)()); }
+		int VendorId() { mixin(MGPC!("int", 364)()); }
+		int selectedVendorItemId() { mixin(MGPC!("int", 360)()); }
+		int selectedActionIdx() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	GFxObject FillDescription(GFxObject DataList)

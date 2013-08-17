@@ -35,9 +35,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fCurrentAccuracy() { mixin(MGPC!(float, 1560)()); }
-			ubyte r_nFlashReload() { mixin(MGPC!(ubyte, 1564)()); }
-			SoundCue r_scFiringLoop() { mixin(MGPC!(SoundCue, 1576)()); }
+			float m_fCurrentAccuracy() { mixin(MGPC!("float", 1560)()); }
+			ubyte r_nFlashReload() { mixin(MGPC!("ubyte", 1564)()); }
+			SoundCue r_scFiringLoop() { mixin(MGPC!("SoundCue", 1576)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FiringLoopAudio'!
 		}
 		bool r_bFiringLoopSound() { mixin(MGBPC!(1572, 0x1)()); }
@@ -63,8 +63,8 @@ final:
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
-		*out_DeltaRot = *cast(Rotator*)&params[16];
+		out_ViewRotation = *cast(Rotator*)&params[4];
+		out_DeltaRot = *cast(Rotator*)&params[16];
 	}
 	void ClientPlayLoopSound()
 	{

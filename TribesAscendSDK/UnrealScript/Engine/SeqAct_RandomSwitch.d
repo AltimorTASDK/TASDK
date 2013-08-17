@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetObjClassVersion;
 		public @property static final ScriptFunction GetObjClassVersion() { mixin(MGF!("mGetObjClassVersion", "Function Engine.SeqAct_RandomSwitch.GetObjClassVersion")()); }
 	}
-	@property final auto ref ScriptArray!(int) AutoDisabledIndices() { mixin(MGPC!(ScriptArray!(int), 256)()); }
+	@property final auto ref ScriptArray!(int) AutoDisabledIndices() { mixin(MGPC!("ScriptArray!(int)", 256)()); }
 	final static int GetObjClassVersion()
 	{
 		ubyte params[4];

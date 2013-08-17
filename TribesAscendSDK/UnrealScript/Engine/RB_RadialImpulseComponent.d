@@ -21,9 +21,9 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewSphere'!
-			float ImpulseRadius() { mixin(MGPC!(float, 496)()); }
-			float ImpulseStrength() { mixin(MGPC!(float, 492)()); }
-			PrimitiveComponent.ERadialImpulseFalloff ImpulseFalloff() { mixin(MGPC!(PrimitiveComponent.ERadialImpulseFalloff, 488)()); }
+			float ImpulseRadius() { mixin(MGPC!("float", 496)()); }
+			float ImpulseStrength() { mixin(MGPC!("float", 492)()); }
+			PrimitiveComponent.ERadialImpulseFalloff ImpulseFalloff() { mixin(MGPC!("PrimitiveComponent.ERadialImpulseFalloff", 488)()); }
 		}
 		bool bCauseFracture() { mixin(MGBPC!(500, 0x2)()); }
 		bool bCauseFracture(bool val) { mixin(MSBPC!(500, 0x2)()); }

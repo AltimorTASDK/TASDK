@@ -24,9 +24,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundCue) WeaponFireFullAutoSnd() { mixin(MGPC!(ScriptArray!(SoundCue), 1780)()); }
-		ScriptName m_PostFireState() { mixin(MGPC!(ScriptName, 1796)()); }
-		SoundCue m_FireTail() { mixin(MGPC!(SoundCue, 1792)()); }
+		ScriptArray!(SoundCue) WeaponFireFullAutoSnd() { mixin(MGPC!("ScriptArray!(SoundCue)", 1780)()); }
+		ScriptName m_PostFireState() { mixin(MGPC!("ScriptName", 1796)()); }
+		SoundCue m_FireTail() { mixin(MGPC!("SoundCue", 1792)()); }
 	}
 	final void RefireCheckTimer()
 	{

@@ -45,18 +45,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC!(ScriptArray!(Texture), 392)()); }
-			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC!(ScriptArray!(UObject.Guid), 404)()); }
-			UObject.Guid ParentLightingGuid() { mixin(MGPC!(UObject.Guid, 416)()); }
-			UObject.Pointer Resources() { mixin(MGPC!(UObject.Pointer, 380)()); }
-			UObject.Pointer StaticPermutationResources() { mixin(MGPC!(UObject.Pointer, 372)()); }
-			UObject.Pointer StaticParameters() { mixin(MGPC!(UObject.Pointer, 364)()); }
-			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC!(PhysicalMaterial, 356)()); }
-			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC!(PhysicalMaterial, 352)()); }
-			int PhysMaterialMaskUVChannel() { mixin(MGPC!(int, 348)()); }
-			Texture2D PhysMaterialMask() { mixin(MGPC!(Texture2D, 344)()); }
-			MaterialInterface Parent() { mixin(MGPC!(MaterialInterface, 340)()); }
-			PhysicalMaterial PhysMaterial() { mixin(MGPC!(PhysicalMaterial, 336)()); }
+			ScriptArray!(Texture) ReferencedTextures() { mixin(MGPC!("ScriptArray!(Texture)", 392)()); }
+			ScriptArray!(UObject.Guid) ReferencedTextureGuids() { mixin(MGPC!("ScriptArray!(UObject.Guid)", 404)()); }
+			UObject.Guid ParentLightingGuid() { mixin(MGPC!("UObject.Guid", 416)()); }
+			UObject.Pointer Resources() { mixin(MGPC!("UObject.Pointer", 380)()); }
+			UObject.Pointer StaticPermutationResources() { mixin(MGPC!("UObject.Pointer", 372)()); }
+			UObject.Pointer StaticParameters() { mixin(MGPC!("UObject.Pointer", 364)()); }
+			PhysicalMaterial WhitePhysicalMaterial() { mixin(MGPC!("PhysicalMaterial", 356)()); }
+			PhysicalMaterial BlackPhysicalMaterial() { mixin(MGPC!("PhysicalMaterial", 352)()); }
+			int PhysMaterialMaskUVChannel() { mixin(MGPC!("int", 348)()); }
+			Texture2D PhysMaterialMask() { mixin(MGPC!("Texture2D", 344)()); }
+			MaterialInterface Parent() { mixin(MGPC!("MaterialInterface", 340)()); }
+			PhysicalMaterial PhysMaterial() { mixin(MGPC!("PhysicalMaterial", 336)()); }
 		}
 		bool bNeedsMaterialFlattening() { mixin(MGBPC!(360, 0x8)()); }
 		bool bNeedsMaterialFlattening(bool val) { mixin(MSBPC!(360, 0x8)()); }
@@ -75,14 +75,13 @@ final:
 		*cast(MaterialInterface*)params.ptr = NewParent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetParent, params.ptr, cast(void*)0);
 	}
-	void SetVectorParameterValue(ScriptName ParameterName, ref const UObject.LinearColor Value)
+	void SetVectorParameterValue(ScriptName ParameterName, ref in UObject.LinearColor Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.LinearColor*)&params[8] = Value;
+		*cast(UObject.LinearColor*)&params[8] = cast(UObject.LinearColor)Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
-		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
 	void SetScalarParameterValue(ScriptName ParameterName, float Value)
 	{
@@ -92,14 +91,13 @@ final:
 		*cast(float*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterValue, params.ptr, cast(void*)0);
 	}
-	void SetScalarCurveParameterValue(ScriptName ParameterName, ref const UObject.InterpCurveFloat Value)
+	void SetScalarCurveParameterValue(ScriptName ParameterName, ref in UObject.InterpCurveFloat Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.InterpCurveFloat*)&params[8] = Value;
+		*cast(UObject.InterpCurveFloat*)&params[8] = cast(UObject.InterpCurveFloat)Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarCurveParameterValue, params.ptr, cast(void*)0);
-		*Value = *cast(UObject.InterpCurveFloat*)&params[8];
 	}
 	void SetTextureParameterValue(ScriptName ParameterName, Texture Value)
 	{

@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SeqAct_AccessObjectList DefaultProperties() { mixin(MGDPC!(SeqAct_AccessObjectList, "SeqAct_AccessObjectList Engine.Default__SeqAct_AccessObjectList")()); }
 	@property final auto ref
 	{
-		int ObjectIndex() { mixin(MGPC!(int, 236)()); }
-		UObject OutputObject() { mixin(MGPC!(UObject, 232)()); }
+		int ObjectIndex() { mixin(MGPC!("int", 236)()); }
+		UObject OutputObject() { mixin(MGPC!("UObject", 232)()); }
 	}
 }

@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MatineePawn")()); }
 	private static __gshared MatineePawn mDefaultProperties;
 	@property final static MatineePawn DefaultProperties() { mixin(MGDPC!(MatineePawn, "MatineePawn Engine.Default__MatineePawn")()); }
-	@property final auto ref SkeletalMesh PreviewMesh() { mixin(MGPC!(SkeletalMesh, 1144)()); }
+	@property final auto ref SkeletalMesh PreviewMesh() { mixin(MGPC!("SkeletalMesh", 1144)()); }
 }

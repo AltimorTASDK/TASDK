@@ -328,13 +328,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) CombatType() { mixin(MGPC!(ScriptArray!(int), 360)()); }
-		ScriptArray!(int) ObjectiveType() { mixin(MGPC!(ScriptArray!(int), 372)()); }
-		ScriptArray!(int) VehicleType() { mixin(MGPC!(ScriptArray!(int), 384)()); }
-		ScriptArray!(int) TacticalType() { mixin(MGPC!(ScriptArray!(int), 396)()); }
-		ScriptArray!(int) SingleType() { mixin(MGPC!(ScriptArray!(int), 408)()); }
-		ScriptArray!(int) ReferralType() { mixin(MGPC!(ScriptArray!(int), 420)()); }
-		int ActiveType() { mixin(MGPC!(int, 356)()); }
+		ScriptArray!(int) CombatType() { mixin(MGPC!("ScriptArray!(int)", 360)()); }
+		ScriptArray!(int) ObjectiveType() { mixin(MGPC!("ScriptArray!(int)", 372)()); }
+		ScriptArray!(int) VehicleType() { mixin(MGPC!("ScriptArray!(int)", 384)()); }
+		ScriptArray!(int) TacticalType() { mixin(MGPC!("ScriptArray!(int)", 396)()); }
+		ScriptArray!(int) SingleType() { mixin(MGPC!("ScriptArray!(int)", 408)()); }
+		ScriptArray!(int) ReferralType() { mixin(MGPC!("ScriptArray!(int)", 420)()); }
+		int ActiveType() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()
@@ -426,16 +426,19 @@ final:
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FillReferralType, params.ptr, cast(void*)0);
 	}
-	void FillBadge(GFxObject Obj, int Count, int badgeIndex, bool bSkiBadge, bool bSingle, bool bReferralBadge)
+	void FillBadge(GFxObject Obj, int Count, int badgeIndex, bool* bSkiBadge = null, bool* bSingle = null, bool* bReferralBadge = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = Obj;
 		*cast(int*)&params[4] = Count;
 		*cast(int*)&params[8] = badgeIndex;
-		*cast(bool*)&params[12] = bSkiBadge;
-		*cast(bool*)&params[16] = bSingle;
-		*cast(bool*)&params[20] = bReferralBadge;
+		if (bSkiBadge !is null)
+			*cast(bool*)&params[12] = *bSkiBadge;
+		if (bSingle !is null)
+			*cast(bool*)&params[16] = *bSingle;
+		if (bReferralBadge !is null)
+			*cast(bool*)&params[20] = *bReferralBadge;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FillBadge, params.ptr, cast(void*)0);
 	}
 	int GetHighestBadgeIndex(int ActivityId)

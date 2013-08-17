@@ -27,9 +27,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nAmmoPackMultBelt() { mixin(MGPC!(int, 2176)()); }
-		int m_nAmmoPackMultSecondary() { mixin(MGPC!(int, 2172)()); }
-		int m_nAmmoPackMultPrimary() { mixin(MGPC!(int, 2168)()); }
+		int m_nAmmoPackMultBelt() { mixin(MGPC!("int", 2176)()); }
+		int m_nAmmoPackMultSecondary() { mixin(MGPC!("int", 2172)()); }
+		int m_nAmmoPackMultPrimary() { mixin(MGPC!("int", 2168)()); }
 	}
 final:
 	void AddAmmoBuff(TrDevice Dev, float Mult)

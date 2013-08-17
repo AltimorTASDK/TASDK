@@ -201,17 +201,17 @@ public extern(D):
 		{
 			auto ref
 			{
-				int PlayerCount() { mixin(MGPS!(int, 20)()); }
-				int PlayerMax() { mixin(MGPS!(int, 16)()); }
-				ScriptString MapName() { mixin(MGPS!(ScriptString, 56)()); }
-				ScriptString ServerName() { mixin(MGPS!(ScriptString, 32)()); }
-				int queueId() { mixin(MGPS!(int, 4)()); }
-				int Ping() { mixin(MGPS!(int, 0)()); }
-				ScriptString Ruleset() { mixin(MGPS!(ScriptString, 68)()); }
-				int MinLevel() { mixin(MGPS!(int, 8)()); }
-				int MaxLevel() { mixin(MGPS!(int, 12)()); }
-				ScriptString ServerDesc() { mixin(MGPS!(ScriptString, 44)()); }
-				int GameType() { mixin(MGPS!(int, 28)()); }
+				int PlayerCount() { mixin(MGPS!("int", 20)()); }
+				int PlayerMax() { mixin(MGPS!("int", 16)()); }
+				ScriptString MapName() { mixin(MGPS!("ScriptString", 56)()); }
+				ScriptString ServerName() { mixin(MGPS!("ScriptString", 32)()); }
+				int queueId() { mixin(MGPS!("int", 4)()); }
+				int Ping() { mixin(MGPS!("int", 0)()); }
+				ScriptString Ruleset() { mixin(MGPS!("ScriptString", 68)()); }
+				int MinLevel() { mixin(MGPS!("int", 8)()); }
+				int MaxLevel() { mixin(MGPS!("int", 12)()); }
+				ScriptString ServerDesc() { mixin(MGPS!("ScriptString", 44)()); }
+				int GameType() { mixin(MGPS!("int", 28)()); }
 			}
 			bool bFavorite() { mixin(MGBPS!(24, 0x2)()); }
 			bool bFavorite(bool val) { mixin(MSBPS!(24, 0x2)()); }
@@ -227,10 +227,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.RentalItem")()); }
 		@property final auto ref
 		{
-			ScriptString RentalName() { mixin(MGPS!(ScriptString, 12)()); }
-			int Price() { mixin(MGPS!(int, 0)()); }
-			int LootId() { mixin(MGPS!(int, 4)()); }
-			int SortOrder() { mixin(MGPS!(int, 8)()); }
+			ScriptString RentalName() { mixin(MGPS!("ScriptString", 12)()); }
+			int Price() { mixin(MGPS!("int", 0)()); }
+			int LootId() { mixin(MGPS!("int", 4)()); }
+			int SortOrder() { mixin(MGPS!("int", 8)()); }
 		}
 	}
 	struct ServerConfig
@@ -243,11 +243,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(TrQueueManager.ProfileConfig) Profiles() { mixin(MGPS!(ScriptArray!(TrQueueManager.ProfileConfig), 28)()); }
-				ScriptString ServerName() { mixin(MGPS!(ScriptString, 16)()); }
-				int MinutesRented() { mixin(MGPS!(int, 8)()); }
-				int MatchQueueId() { mixin(MGPS!(int, 4)()); }
-				int ActiveConfig() { mixin(MGPS!(int, 0)()); }
+				ScriptArray!(TrQueueManager.ProfileConfig) Profiles() { mixin(MGPS!("ScriptArray!(TrQueueManager.ProfileConfig)", 28)()); }
+				ScriptString ServerName() { mixin(MGPS!("ScriptString", 16)()); }
+				int MinutesRented() { mixin(MGPS!("int", 8)()); }
+				int MatchQueueId() { mixin(MGPS!("int", 4)()); }
+				int ActiveConfig() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bCanExpire() { mixin(MGBPS!(12, 0x8)()); }
 			bool bCanExpire(bool val) { mixin(MSBPS!(12, 0x8)()); }
@@ -267,28 +267,28 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrQueueManager.ProfileConfig")()); }
 		@property final auto ref
 		{
-			ScriptString PasswordPublic() { mixin(MGPS!(ScriptString, 48)()); }
-			ScriptString PasswordAdmin() { mixin(MGPS!(ScriptString, 36)()); }
-			ScriptString ProfileDesc() { mixin(MGPS!(ScriptString, 24)()); }
-			ScriptString ProfileName() { mixin(MGPS!(ScriptString, 12)()); }
-			int QueueCaseId() { mixin(MGPS!(int, 8)()); }
-			int GameCaseId() { mixin(MGPS!(int, 4)()); }
-			int Slots() { mixin(MGPS!(int, 0)()); }
+			ScriptString PasswordPublic() { mixin(MGPS!("ScriptString", 48)()); }
+			ScriptString PasswordAdmin() { mixin(MGPS!("ScriptString", 36)()); }
+			ScriptString ProfileDesc() { mixin(MGPS!("ScriptString", 24)()); }
+			ScriptString ProfileName() { mixin(MGPS!("ScriptString", 12)()); }
+			int QueueCaseId() { mixin(MGPS!("int", 8)()); }
+			int GameCaseId() { mixin(MGPS!("int", 4)()); }
+			int Slots() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(int) RegionFilter() { mixin(MGPC!(ScriptArray!(int), 116)()); }
-			ScriptString QueueFriend() { mixin(MGPC!(ScriptString, 132)()); }
-			ScriptArray!(TrQueueManager.ServerInfo) ServerInfoList() { mixin(MGPC!(ScriptArray!(TrQueueManager.ServerInfo), 152)()); }
-			int GameTypeId() { mixin(MGPC!(int, 96)()); }
-			ScriptArray!(TrQueueManager.ServerConfig) RentedServers() { mixin(MGPC!(ScriptArray!(TrQueueManager.ServerConfig), 164)()); }
-			int ServerIndex() { mixin(MGPC!(int, 104)()); }
-			int MapSlots() { mixin(MGPC!(int, 64)()); }
-			ScriptArray!(TrQueueManager.RentalItem) RentalItems() { mixin(MGPC!(ScriptArray!(TrQueueManager.RentalItem), 176)()); }
-			ScriptArray!(TgPlayerProfile.PropertyPair) FilteredGameTypes() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 188)()); }
+			ScriptArray!(int) RegionFilter() { mixin(MGPC!("ScriptArray!(int)", 116)()); }
+			ScriptString QueueFriend() { mixin(MGPC!("ScriptString", 132)()); }
+			ScriptArray!(TrQueueManager.ServerInfo) ServerInfoList() { mixin(MGPC!("ScriptArray!(TrQueueManager.ServerInfo)", 152)()); }
+			int GameTypeId() { mixin(MGPC!("int", 96)()); }
+			ScriptArray!(TrQueueManager.ServerConfig) RentedServers() { mixin(MGPC!("ScriptArray!(TrQueueManager.ServerConfig)", 164)()); }
+			int ServerIndex() { mixin(MGPC!("int", 104)()); }
+			int MapSlots() { mixin(MGPC!("int", 64)()); }
+			ScriptArray!(TrQueueManager.RentalItem) RentalItems() { mixin(MGPC!("ScriptArray!(TrQueueManager.RentalItem)", 176)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) FilteredGameTypes() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.PropertyPair)", 188)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__FavoriteSortB__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PasswordSortB__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__SlotsSortB__Delegate'!
@@ -307,12 +307,12 @@ public extern(D):
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__PingSortA__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__NameSortA__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__MapSortA__Delegate'!
-			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!(GFxTrMenuMoviePlayer, 148)()); }
-			OnlineGameInterfaceMcts OnlineGameMcts() { mixin(MGPC!(OnlineGameInterfaceMcts, 144)()); }
-			int PasswordQueue() { mixin(MGPC!(int, 112)()); }
-			int PasswordIndex() { mixin(MGPC!(int, 108)()); }
-			int ProfileIndex() { mixin(MGPC!(int, 100)()); }
-			int queueId() { mixin(MGPC!(int, 60)()); }
+			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!("GFxTrMenuMoviePlayer", 148)()); }
+			OnlineGameInterfaceMcts OnlineGameMcts() { mixin(MGPC!("OnlineGameInterfaceMcts", 144)()); }
+			int PasswordQueue() { mixin(MGPC!("int", 112)()); }
+			int PasswordIndex() { mixin(MGPC!("int", 108)()); }
+			int ProfileIndex() { mixin(MGPC!("int", 100)()); }
+			int queueId() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bQueued() { mixin(MGBPC!(128, 0x1)()); }
 		bool bQueued(bool val) { mixin(MSBPC!(128, 0x1)()); }
@@ -366,7 +366,7 @@ final:
 		*cast(bool*)params.ptr = bStart;
 		*cast(int*)&params[4] = MapId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMapId, params.ptr, cast(void*)0);
-		*MapId = *cast(int*)&params[4];
+		MapId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	ScriptString GetMapName(int MapId)
@@ -391,11 +391,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProfileDesc, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	ScriptString GetServerGameTypeName(int Index)
+	ScriptString GetServerGameTypeName(int* Index = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = Index;
+		if (Index !is null)
+			*cast(int*)params.ptr = *Index;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerGameTypeName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
@@ -556,7 +557,7 @@ final:
 		*cast(int*)&params[4] = PropType;
 		*cast(int*)&params[8] = val;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMin, params.ptr, cast(void*)0);
-		*val = *cast(int*)&params[8];
+		val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetPropMax(int PropId, int PropType, ref int val)
@@ -567,7 +568,7 @@ final:
 		*cast(int*)&params[4] = PropType;
 		*cast(int*)&params[8] = val;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropMax, params.ptr, cast(void*)0);
-		*val = *cast(int*)&params[8];
+		val = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	ScriptString GetAdminPassword()
@@ -832,11 +833,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
-	void LeaveMatchmaking(bool bForced)
+	void LeaveMatchmaking(bool* bForced = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForced;
+		if (bForced !is null)
+			*cast(bool*)params.ptr = *bForced;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LeaveMatchmaking, params.ptr, cast(void*)0);
 	}
 	void JoinQueue(int nQueueId)
@@ -850,20 +852,23 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerQueued, cast(void*)0, cast(void*)0);
 	}
-	void JoinFriend(ScriptString PlayerName, ScriptString Password)
+	void JoinFriend(ScriptString PlayerName, ScriptString* Password = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
-		*cast(ScriptString*)&params[12] = Password;
+		if (Password !is null)
+			*cast(ScriptString*)&params[12] = *Password;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinFriend, params.ptr, cast(void*)0);
 	}
-	void ExitGameInProgress(bool bForceDrop, bool bKicked)
+	void ExitGameInProgress(bool* bForceDrop = null, bool* bKicked = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceDrop;
-		*cast(bool*)&params[4] = bKicked;
+		if (bForceDrop !is null)
+			*cast(bool*)params.ptr = *bForceDrop;
+		if (bKicked !is null)
+			*cast(bool*)&params[4] = *bKicked;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ExitGameInProgress, params.ptr, cast(void*)0);
 	}
 	void ServerInfoLoaded()

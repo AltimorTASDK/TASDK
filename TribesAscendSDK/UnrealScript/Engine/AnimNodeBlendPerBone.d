@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) BranchStartBoneName() { mixin(MGPC!(ScriptArray!(ScriptName), 264)()); }
-			ScriptArray!(float) Child2PerBoneWeight() { mixin(MGPC!(ScriptArray!(float), 276)()); }
-			ScriptArray!(ubyte) LocalToCompReqBones() { mixin(MGPC!(ScriptArray!(ubyte), 288)()); }
+			ScriptArray!(ScriptName) BranchStartBoneName() { mixin(MGPC!("ScriptArray!(ScriptName)", 264)()); }
+			ScriptArray!(float) Child2PerBoneWeight() { mixin(MGPC!("ScriptArray!(float)", 276)()); }
+			ScriptArray!(ubyte) LocalToCompReqBones() { mixin(MGPC!("ScriptArray!(ubyte)", 288)()); }
 		}
 		bool bForceLocalSpaceBlend() { mixin(MGBPC!(260, 0x1)()); }
 		bool bForceLocalSpaceBlend(bool val) { mixin(MSBPC!(260, 0x1)()); }

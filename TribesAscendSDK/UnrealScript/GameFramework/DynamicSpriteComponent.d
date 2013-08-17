@@ -14,10 +14,10 @@ public extern(D):
 	@property final static DynamicSpriteComponent DefaultProperties() { mixin(MGDPC!(DynamicSpriteComponent, "DynamicSpriteComponent GameFramework.Default__DynamicSpriteComponent")()); }
 	@property final auto ref
 	{
-		int LoopCount() { mixin(MGPC!(int, 576)()); }
-		Vector LocationOffset() { mixin(MGPC!(Vector, 564)()); }
-		UObject.InterpCurveVector2D AnimatedPosition() { mixin(MGPC!(UObject.InterpCurveVector2D, 548)()); }
-		UObject.InterpCurveLinearColor AnimatedColor() { mixin(MGPC!(UObject.InterpCurveLinearColor, 532)()); }
-		UObject.InterpCurveFloat AnimatedScale() { mixin(MGPC!(UObject.InterpCurveFloat, 516)()); }
+		int LoopCount() { mixin(MGPC!("int", 576)()); }
+		Vector LocationOffset() { mixin(MGPC!("Vector", 564)()); }
+		UObject.InterpCurveVector2D AnimatedPosition() { mixin(MGPC!("UObject.InterpCurveVector2D", 548)()); }
+		UObject.InterpCurveLinearColor AnimatedColor() { mixin(MGPC!("UObject.InterpCurveLinearColor", 532)()); }
+		UObject.InterpCurveFloat AnimatedScale() { mixin(MGPC!("UObject.InterpCurveFloat", 516)()); }
 	}
 }

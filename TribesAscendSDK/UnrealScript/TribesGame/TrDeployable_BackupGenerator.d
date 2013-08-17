@@ -43,7 +43,7 @@ public extern(D):
 			ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDeployable_BackupGenerator.PostBeginPlay")()); }
 		}
 	}
-	@property final auto ref TrGameObjective m_PoweredFriend() { mixin(MGPC!(TrGameObjective, 1524)()); }
+	@property final auto ref TrGameObjective m_PoweredFriend() { mixin(MGPC!("TrGameObjective", 1524)()); }
 final:
 	void DeployComplete()
 	{

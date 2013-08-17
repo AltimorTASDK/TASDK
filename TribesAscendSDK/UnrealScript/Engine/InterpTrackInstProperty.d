@@ -15,7 +15,7 @@ public extern(D):
 	@property final static InterpTrackInstProperty DefaultProperties() { mixin(MGDPC!(InterpTrackInstProperty, "InterpTrackInstProperty Engine.Default__InterpTrackInstProperty")()); }
 	@property final auto ref
 	{
-		UObject PropertyOuterObjectInst() { mixin(MGPC!(UObject, 64)()); }
-		Function PropertyUpdateCallback() { mixin(MGPC!(Function, 60)()); }
+		UObject PropertyOuterObjectInst() { mixin(MGPC!("UObject", 64)()); }
+		Function PropertyUpdateCallback() { mixin(MGPC!("Function", 60)()); }
 	}
 }

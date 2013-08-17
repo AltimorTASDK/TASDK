@@ -58,7 +58,7 @@ public extern(D):
 			ScriptFunction IncrementFlashCount() { mixin(MGF!("mIncrementFlashCount", "Function TribesGame.TrTurretPawn.IncrementFlashCount")()); }
 		}
 	}
-	@property final auto ref TrDeployable m_OwnerDeployable() { mixin(MGPC!(TrDeployable, 3192)()); }
+	@property final auto ref TrDeployable m_OwnerDeployable() { mixin(MGPC!("TrDeployable", 3192)()); }
 final:
 	Vector LeadingAimLocation(Actor Enemy)
 	{
@@ -85,13 +85,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
-	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponFired, params.ptr, cast(void*)0);
 	}
 	Vector GetAimVectorFor(Weapon InWeapon, Vector projStart, Actor Enemy)
@@ -113,11 +114,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAdjustedAimFor, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[16];
 	}
-	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon* CurrentWeapon = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Weapon*)params.ptr = CurrentWeapon;
+		if (CurrentWeapon !is null)
+			*cast(Weapon*)params.ptr = *CurrentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
@@ -125,7 +127,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -134,11 +136,13 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -150,27 +154,30 @@ final:
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void RefreshPlayer()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshPlayer, cast(void*)0, cast(void*)0);
 	}
-	void RefreshInventory(bool bIsRespawn, bool bCallin)
+	void RefreshInventory(bool bIsRespawn, bool* bCallin = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bIsRespawn;
-		*cast(bool*)&params[4] = bCallin;
+		if (bCallin !is null)
+			*cast(bool*)&params[4] = *bCallin;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshInventory, params.ptr, cast(void*)0);
 	}
-	void SetCharacterClassFromInfo(ScriptClass pInfo, bool bForce)
+	void SetCharacterClassFromInfo(ScriptClass pInfo, bool* bForce = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
-		*cast(bool*)&params[4] = bForce;
+		if (bForce !is null)
+			*cast(bool*)&params[4] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacterClassFromInfo, params.ptr, cast(void*)0);
 	}
 	void PostRenderFor(PlayerController PC, Canvas pCanvas, Vector CameraPosition, Vector CameraDir)

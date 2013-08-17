@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionConstant2Vector DefaultProperties() { mixin(MGDPC!(MaterialExpressionConstant2Vector, "MaterialExpressionConstant2Vector Engine.Default__MaterialExpressionConstant2Vector")()); }
 	@property final auto ref
 	{
-		float G() { mixin(MGPC!(float, 112)()); }
-		float R() { mixin(MGPC!(float, 108)()); }
+		float G() { mixin(MGPC!("float", 112)()); }
+		float R() { mixin(MGPC!("float", 108)()); }
 	}
 }

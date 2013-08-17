@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_ForceFieldExcludeVolume")()); }
 	private static __gshared RB_ForceFieldExcludeVolume mDefaultProperties;
 	@property final static RB_ForceFieldExcludeVolume DefaultProperties() { mixin(MGDPC!(RB_ForceFieldExcludeVolume, "RB_ForceFieldExcludeVolume Engine.Default__RB_ForceFieldExcludeVolume")()); }
-	@property final auto ref int ForceFieldChannel() { mixin(MGPC!(int, 520)()); }
+	@property final auto ref int ForceFieldChannel() { mixin(MGPC!("int", 520)()); }
 }

@@ -18,18 +18,19 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float BoxLength() { mixin(MGPC!(float, 496)()); }
-		float BoxWidth() { mixin(MGPC!(float, 492)()); }
-		float BoxHeight() { mixin(MGPC!(float, 488)()); }
+		float BoxLength() { mixin(MGPC!("float", 496)()); }
+		float BoxWidth() { mixin(MGPC!("float", 492)()); }
+		float BoxHeight() { mixin(MGPC!("float", 488)()); }
 	}
-	final void SetBoxSize(float NewHeight, float NewLength, float NewWidth, bool IsRadii)
+	final void SetBoxSize(float NewHeight, float NewLength, float NewWidth, bool* IsRadii = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(float*)params.ptr = NewHeight;
 		*cast(float*)&params[4] = NewLength;
 		*cast(float*)&params[8] = NewWidth;
-		*cast(bool*)&params[12] = IsRadii;
+		if (IsRadii !is null)
+			*cast(bool*)&params[12] = *IsRadii;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBoxSize, params.ptr, cast(void*)0);
 	}
 }

@@ -33,12 +33,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fPromptTextRemovalTime() { mixin(MGPC!(float, 496)()); }
-		int m_nPromptMessageIndex() { mixin(MGPC!(int, 500)()); }
+		float m_fPromptTextRemovalTime() { mixin(MGPC!("float", 496)()); }
+		int m_nPromptMessageIndex() { mixin(MGPC!("int", 500)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CylinderComponent'!
-		Pawn m_LocalPawn() { mixin(MGPC!(Pawn, 520)()); }
-		ScriptString m_LastUpgradeMsg() { mixin(MGPC!(ScriptString, 508)()); }
-		int m_nLastUpgradeLevel() { mixin(MGPC!(int, 504)()); }
+		Pawn m_LocalPawn() { mixin(MGPC!("Pawn", 520)()); }
+		ScriptString m_LastUpgradeMsg() { mixin(MGPC!("ScriptString", 508)()); }
+		int m_nLastUpgradeLevel() { mixin(MGPC!("int", 504)()); }
 	}
 final:
 	void OnPawnAdded(Pawn aPawn)

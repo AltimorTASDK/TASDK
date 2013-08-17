@@ -33,11 +33,12 @@ final:
 		*cast(Vector*)&params[12] = HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
-	void DetonateObsolete(bool bDetonateFromDamage)
+	void DetonateObsolete(bool* bDetonateFromDamage = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDetonateFromDamage;
+		if (bDetonateFromDamage !is null)
+			*cast(bool*)params.ptr = *bDetonateFromDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetonateObsolete, params.ptr, cast(void*)0);
 	}
 }

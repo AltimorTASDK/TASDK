@@ -37,14 +37,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqCond_SwitchObject.SwitchObjectCase")()); }
 		@property final
 		{
-			@property final auto ref UObject ObjectValue() { mixin(MGPS!(UObject, 0)()); }
+			@property final auto ref UObject ObjectValue() { mixin(MGPS!("UObject", 0)()); }
 			bool bDefaultValue() { mixin(MGBPS!(4, 0x2)()); }
 			bool bDefaultValue(bool val) { mixin(MSBPS!(4, 0x2)()); }
 			bool bFallThru() { mixin(MGBPS!(4, 0x1)()); }
 			bool bFallThru(bool val) { mixin(MSBPS!(4, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqCond_SwitchObject.SwitchObjectCase) SupportedValues() { mixin(MGPC!(ScriptArray!(SeqCond_SwitchObject.SwitchObjectCase), 208)()); }
+	@property final auto ref ScriptArray!(SeqCond_SwitchObject.SwitchObjectCase) SupportedValues() { mixin(MGPC!("ScriptArray!(SeqCond_SwitchObject.SwitchObjectCase)", 208)()); }
 final:
 	void VerifyDefaultCaseValue()
 	{

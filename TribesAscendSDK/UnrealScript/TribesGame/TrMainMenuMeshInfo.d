@@ -26,16 +26,16 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrMainMenuMeshInfo.ParticleSystemInfo")()); }
 		@property final auto ref
 		{
-			ScriptName SocketName() { mixin(MGPS!(ScriptName, 4)()); }
+			ScriptName SocketName() { mixin(MGPS!("ScriptName", 4)()); }
 			// WARNING: Property 'ParticleSystem' has the same name as a defined type!
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrMainMenuMeshInfo) Children() { mixin(MGPC!(ScriptArray!(TrMainMenuMeshInfo), 116)()); }
-		ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { mixin(MGPC!(ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo), 136)()); }
-		ScriptName ParentSocketName() { mixin(MGPC!(ScriptName, 128)()); }
-		TrObject.PaperDollInfo MeshInfo() { mixin(MGPC!(TrObject.PaperDollInfo, 60)()); }
+		ScriptArray!(TrMainMenuMeshInfo) Children() { mixin(MGPC!("ScriptArray!(TrMainMenuMeshInfo)", 116)()); }
+		ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo) AttachedParticleSystems() { mixin(MGPC!("ScriptArray!(TrMainMenuMeshInfo.ParticleSystemInfo)", 136)()); }
+		ScriptName ParentSocketName() { mixin(MGPC!("ScriptName", 128)()); }
+		TrObject.PaperDollInfo MeshInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 60)()); }
 	}
 	final void PreloadTextures(float ForceDuration)
 	{

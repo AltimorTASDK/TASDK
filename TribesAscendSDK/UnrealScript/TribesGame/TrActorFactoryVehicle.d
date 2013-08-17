@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mPostCreateActor;
 		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function TribesGame.TrActorFactoryVehicle.PostCreateActor")()); }
 	}
-	@property final auto ref ubyte TeamNum() { mixin(MGPC!(ubyte, 96)()); }
+	@property final auto ref ubyte TeamNum() { mixin(MGPC!("ubyte", 96)()); }
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

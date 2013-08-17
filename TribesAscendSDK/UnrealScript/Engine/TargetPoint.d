@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TargetPoint DefaultProperties() { mixin(MGDPC!(TargetPoint, "TargetPoint Engine.Default__TargetPoint")()); }
 	@property final auto ref
 	{
-		int SpawnRefCount() { mixin(MGPC!(int, 484)()); }
-		Texture2D SpawnSpriteTexture() { mixin(MGPC!(Texture2D, 480)()); }
+		int SpawnRefCount() { mixin(MGPC!("int", 484)()); }
+		Texture2D SpawnSpriteTexture() { mixin(MGPC!("Texture2D", 480)()); }
 	}
 }

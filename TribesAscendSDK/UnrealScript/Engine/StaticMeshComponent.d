@@ -47,31 +47,31 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.StaticMeshComponent.StaticMeshComponentLODInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPS!(ScriptArray!(ShadowMap2D), 0)()); }
-			ScriptArray!(UObject) ShadowVertexBuffers() { mixin(MGPS!(ScriptArray!(UObject), 12)()); }
-			ScriptArray!(Vector) VertexColorPositions() { mixin(MGPS!(ScriptArray!(Vector), 32)()); }
-			UObject.Pointer OverrideVertexColors() { mixin(MGPS!(UObject.Pointer, 28)()); }
-			UObject.Pointer LightMap() { mixin(MGPS!(UObject.Pointer, 24)()); }
+			ScriptArray!(ShadowMap2D) ShadowMaps() { mixin(MGPS!("ScriptArray!(ShadowMap2D)", 0)()); }
+			ScriptArray!(UObject) ShadowVertexBuffers() { mixin(MGPS!("ScriptArray!(UObject)", 12)()); }
+			ScriptArray!(Vector) VertexColorPositions() { mixin(MGPS!("ScriptArray!(Vector)", 32)()); }
+			UObject.Pointer OverrideVertexColors() { mixin(MGPS!("UObject.Pointer", 28)()); }
+			UObject.Pointer LightMap() { mixin(MGPS!("UObject.Pointer", 24)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Guid) IrrelevantLights() { mixin(MGPC!(ScriptArray!(UObject.Guid), 552)()); }
-			ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo) LODData() { mixin(MGPC!(ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo), 564)()); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 580)()); }
-			int VertexPositionVersionNumber() { mixin(MGPC!(int, 576)()); }
-			StaticMeshComponent.ELightmapModificationFunction SimpleLightmapModificationFunction() { mixin(MGPC!(StaticMeshComponent.ELightmapModificationFunction, 544)()); }
-			int ForcedLodModel() { mixin(MGPC!(int, 500)()); }
-			Texture SimpleLightmapModificationTexture() { mixin(MGPC!(Texture, 540)()); }
-			int SubDivisionStepSize() { mixin(MGPC!(int, 532)()); }
-			float OverriddenLODMaxRange() { mixin(MGPC!(float, 528)()); }
-			int OverriddenLightMapRes() { mixin(MGPC!(int, 524)()); }
-			int OverriddenLightMapResolution() { mixin(MGPC!(int, 520)()); }
-			UObject.Color WireframeColor() { mixin(MGPC!(UObject.Color, 512)()); }
+			ScriptArray!(UObject.Guid) IrrelevantLights() { mixin(MGPC!("ScriptArray!(UObject.Guid)", 552)()); }
+			ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo) LODData() { mixin(MGPC!("ScriptArray!(StaticMeshComponent.StaticMeshComponentLODInfo)", 564)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassPrimitiveSettings", 580)()); }
+			int VertexPositionVersionNumber() { mixin(MGPC!("int", 576)()); }
+			StaticMeshComponent.ELightmapModificationFunction SimpleLightmapModificationFunction() { mixin(MGPC!("StaticMeshComponent.ELightmapModificationFunction", 544)()); }
+			int ForcedLodModel() { mixin(MGPC!("int", 500)()); }
+			Texture SimpleLightmapModificationTexture() { mixin(MGPC!("Texture", 540)()); }
+			int SubDivisionStepSize() { mixin(MGPC!("int", 532)()); }
+			float OverriddenLODMaxRange() { mixin(MGPC!("float", 528)()); }
+			int OverriddenLightMapRes() { mixin(MGPC!("int", 524)()); }
+			int OverriddenLightMapResolution() { mixin(MGPC!("int", 520)()); }
+			UObject.Color WireframeColor() { mixin(MGPC!("UObject.Color", 512)()); }
 			// WARNING: Property 'StaticMesh' has the same name as a defined type!
-			int PreviousLODLevel() { mixin(MGPC!(int, 504)()); }
+			int PreviousLODLevel() { mixin(MGPC!("int", 504)()); }
 		}
 		bool bNeverBecomeDynamic() { mixin(MGBPC!(548, 0x1)()); }
 		bool bNeverBecomeDynamic(bool val) { mixin(MSBPC!(548, 0x1)()); }
@@ -98,12 +98,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanBecomeDynamic, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool SetStaticMesh(StaticMesh NewMesh, bool bForce)
+	bool SetStaticMesh(StaticMesh NewMesh, bool* bForce = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewMesh;
-		*cast(bool*)&params[4] = bForce;
+		if (bForce !is null)
+			*cast(bool*)&params[4] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

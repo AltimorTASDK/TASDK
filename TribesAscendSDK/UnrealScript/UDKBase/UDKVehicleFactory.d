@@ -31,12 +31,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			int TeamNum() { mixin(MGPC!(int, 732)()); }
-			Vector HUDLocation() { mixin(MGPC!(Vector, 720)()); }
-			float RespawnProgress() { mixin(MGPC!(float, 716)()); }
-			UDKVehicle ChildVehicle() { mixin(MGPC!(UDKVehicle, 712)()); }
-			ScriptClass VehicleClass() { mixin(MGPC!(ScriptClass, 708)()); }
-			ScriptString VehicleClassPath() { mixin(MGPC!(ScriptString, 692)()); }
+			int TeamNum() { mixin(MGPC!("int", 732)()); }
+			Vector HUDLocation() { mixin(MGPC!("Vector", 720)()); }
+			float RespawnProgress() { mixin(MGPC!("float", 716)()); }
+			UDKVehicle ChildVehicle() { mixin(MGPC!("UDKVehicle", 712)()); }
+			ScriptClass VehicleClass() { mixin(MGPC!("ScriptClass", 708)()); }
+			ScriptString VehicleClassPath() { mixin(MGPC!("ScriptString", 692)()); }
 		}
 		bool bReplicateChildVehicle() { mixin(MGBPC!(704, 0x2)()); }
 		bool bReplicateChildVehicle(bool val) { mixin(MSBPC!(704, 0x2)()); }

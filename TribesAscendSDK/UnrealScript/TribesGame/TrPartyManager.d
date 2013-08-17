@@ -61,7 +61,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptString InvitingPlayer() { mixin(MGPC!(ScriptString, 64)()); }
+		@property final auto ref ScriptString InvitingPlayer() { mixin(MGPC!("ScriptString", 64)()); }
 		bool bCreatedParty() { mixin(MGBPC!(60, 0x1)()); }
 		bool bCreatedParty(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}
@@ -191,11 +191,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnUpdate, cast(void*)0, cast(void*)0);
 	}
-	void LeaveParty(bool bHandle)
+	void LeaveParty(bool* bHandle = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bHandle;
+		if (bHandle !is null)
+			*cast(bool*)params.ptr = *bHandle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LeaveParty, params.ptr, cast(void*)0);
 	}
 }

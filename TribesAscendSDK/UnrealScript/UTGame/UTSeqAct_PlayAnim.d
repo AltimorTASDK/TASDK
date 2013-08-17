@@ -13,7 +13,7 @@ public extern(D):
 	@property final static UTSeqAct_PlayAnim DefaultProperties() { mixin(MGDPC!(UTSeqAct_PlayAnim, "UTSeqAct_PlayAnim UTGame.Default__UTSeqAct_PlayAnim")()); }
 	@property final
 	{
-		@property final auto ref ScriptName AnimName() { mixin(MGPC!(ScriptName, 232)()); }
+		@property final auto ref ScriptName AnimName() { mixin(MGPC!("ScriptName", 232)()); }
 		bool bLooping() { mixin(MGBPC!(240, 0x1)()); }
 		bool bLooping(bool val) { mixin(MSBPC!(240, 0x1)()); }
 	}

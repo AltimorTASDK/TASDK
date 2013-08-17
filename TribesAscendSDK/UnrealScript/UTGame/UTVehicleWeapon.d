@@ -93,20 +93,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			int SeatIndex() { mixin(MGPC!(int, 1472)()); }
-			UTVehicle MyVehicle() { mixin(MGPC!(UTVehicle, 1476)()); }
-			SoundCue BulletWhip() { mixin(MGPC!(SoundCue, 1624)()); }
-			ScriptArray!(ScriptName) FireTriggerTags() { mixin(MGPC!(ScriptArray!(ScriptName), 1480)()); }
-			ScriptArray!(ScriptName) AltFireTriggerTags() { mixin(MGPC!(ScriptArray!(ScriptName), 1492)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 1504)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 1516)()); }
-			ScriptClass VehicleClass() { mixin(MGPC!(ScriptClass, 1648)()); }
-			float MaxFinalAimAdjustment() { mixin(MGPC!(float, 1640)()); }
-			float CurrentCrosshairScaling() { mixin(MGPC!(float, 1636)()); }
-			float LastInCorrectAimTime() { mixin(MGPC!(float, 1632)()); }
-			float LastCorrectAimTime() { mixin(MGPC!(float, 1628)()); }
-			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 1576)()); }
-			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 1528)()); }
+			int SeatIndex() { mixin(MGPC!("int", 1472)()); }
+			UTVehicle MyVehicle() { mixin(MGPC!("UTVehicle", 1476)()); }
+			SoundCue BulletWhip() { mixin(MGPC!("SoundCue", 1624)()); }
+			ScriptArray!(ScriptName) FireTriggerTags() { mixin(MGPC!("ScriptArray!(ScriptName)", 1480)()); }
+			ScriptArray!(ScriptName) AltFireTriggerTags() { mixin(MGPC!("ScriptArray!(ScriptName)", 1492)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1504)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 1516)()); }
+			ScriptClass VehicleClass() { mixin(MGPC!("ScriptClass", 1648)()); }
+			float MaxFinalAimAdjustment() { mixin(MGPC!("float", 1640)()); }
+			float CurrentCrosshairScaling() { mixin(MGPC!("float", 1636)()); }
+			float LastInCorrectAimTime() { mixin(MGPC!("float", 1632)()); }
+			float LastCorrectAimTime() { mixin(MGPC!("float", 1628)()); }
+			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 1576)()); }
+			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 1528)()); }
 		}
 		bool bIgnoreSocketPitchRotation() { mixin(MGBPC!(1644, 0x4)()); }
 		bool bIgnoreSocketPitchRotation(bool val) { mixin(MSBPC!(1644, 0x4)()); }
@@ -164,7 +164,7 @@ final:
 		*cast(Actor*)&params[36] = TargetActor;
 		*cast(Vector*)&params[40] = RealAimPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanHitDesiredTarget, params.ptr, cast(void*)0);
-		*RealAimPoint = *cast(Vector*)&params[40];
+		RealAimPoint = *cast(Vector*)&params[40];
 		return *cast(bool*)&params[52];
 	}
 	static void DrawKillIcon(Canvas pCanvas, float ScreenX, float ScreenY, float HUDScaleX, float HUDScaleY)
@@ -192,13 +192,15 @@ final:
 		*cast(HUD*)params.ptr = pHUD;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawWeaponCrosshair, params.ptr, cast(void*)0);
 	}
-	Vector GetDesiredAimPoint(Actor* TargetActor)
+	Vector GetDesiredAimPoint(Actor* TargetActor = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Actor*)params.ptr = TargetActor;
+		if (TargetActor !is null)
+			*cast(Actor*)params.ptr = *TargetActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDesiredAimPoint, params.ptr, cast(void*)0);
-		*TargetActor = *cast(Actor*)params.ptr;
+		if (TargetActor !is null)
+			*TargetActor = *cast(Actor*)params.ptr;
 		return *cast(Vector*)&params[4];
 	}
 	void GetFireStartLocationAndRotation(ref Vector StartLocation, ref Rotator StartRotation)
@@ -208,8 +210,8 @@ final:
 		*cast(Vector*)params.ptr = StartLocation;
 		*cast(Rotator*)&params[12] = StartRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireStartLocationAndRotation, params.ptr, cast(void*)0);
-		*StartLocation = *cast(Vector*)params.ptr;
-		*StartRotation = *cast(Rotator*)&params[12];
+		StartLocation = *cast(Vector*)params.ptr;
+		StartRotation = *cast(Rotator*)&params[12];
 	}
 	bool IsAimCorrect()
 	{
@@ -228,14 +230,15 @@ final:
 	}
 	void AttachWeaponTo(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* MeshCpnt, ScriptName SocketName)
+void* MeshCpnt, ScriptName* SocketName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		*cast(ScriptName*)&params[4] = SocketName;
+		if (SocketName !is null)
+			*cast(ScriptName*)&params[4] = *SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
 	void DetachWeapon()
@@ -250,11 +253,12 @@ void**)params.ptr = MeshCpnt;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PutDownWeapon, cast(void*)0, cast(void*)0);
 	}
-	Vector GetPhysicalFireStartLoc(Vector AimDir)
+	Vector GetPhysicalFireStartLoc(Vector* AimDir = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = AimDir;
+		if (AimDir !is null)
+			*cast(Vector*)params.ptr = *AimDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
@@ -309,13 +313,15 @@ void**)params.ptr = MeshCpnt;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyVehicleUndeployed, cast(void*)0, cast(void*)0);
 	}
-	void WeaponPlaySound(SoundCue Sound, float NoiseLoudness, bool bStopWhenOwnerDestroyed)
+	void WeaponPlaySound(SoundCue Sound, float* NoiseLoudness = null, bool* bStopWhenOwnerDestroyed = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Sound;
-		*cast(float*)&params[4] = NoiseLoudness;
-		*cast(bool*)&params[8] = bStopWhenOwnerDestroyed;
+		if (NoiseLoudness !is null)
+			*cast(float*)&params[4] = *NoiseLoudness;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[8] = *bStopWhenOwnerDestroyed;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponPlaySound, params.ptr, cast(void*)0);
 	}
 	UTWeapon.EZoomState GetZoomedState()
@@ -339,12 +345,13 @@ void**)params.ptr = MeshCpnt;
 		*cast(UTPlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartZoom, params.ptr, cast(void*)0);
 	}
-	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
+	void EndZoom(UTPlayerController PC, bool* bReturningTo3P = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		*cast(bool*)&params[4] = bReturningTo3P;
+		if (bReturningTo3P !is null)
+			*cast(bool*)&params[4] = *bReturningTo3P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 }

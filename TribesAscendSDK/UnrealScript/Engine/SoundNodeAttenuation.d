@@ -33,18 +33,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat LPFMaxRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 188)()); }
-			DistributionFloat.RawDistributionFloat LPFMinRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 160)()); }
-			DistributionFloat.RawDistributionFloat MaxRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 132)()); }
-			DistributionFloat.RawDistributionFloat MinRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 104)()); }
-			float LPFRadiusMax() { mixin(MGPC!(float, 100)()); }
-			float LPFRadiusMin() { mixin(MGPC!(float, 96)()); }
-			float RadiusMax() { mixin(MGPC!(float, 92)()); }
-			float RadiusMin() { mixin(MGPC!(float, 88)()); }
-			SoundNodeAttenuation.SoundDistanceModel DistanceModel() { mixin(MGPC!(SoundNodeAttenuation.SoundDistanceModel, 86)()); }
-			SoundNodeAttenuation.ESoundDistanceCalc DistanceType() { mixin(MGPC!(SoundNodeAttenuation.ESoundDistanceCalc, 85)()); }
-			SoundNodeAttenuation.SoundDistanceModel DistanceAlgorithm() { mixin(MGPC!(SoundNodeAttenuation.SoundDistanceModel, 84)()); }
-			float dBAttenuationAtMax() { mixin(MGPC!(float, 80)()); }
+			DistributionFloat.RawDistributionFloat LPFMaxRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 188)()); }
+			DistributionFloat.RawDistributionFloat LPFMinRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 160)()); }
+			DistributionFloat.RawDistributionFloat MaxRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 132)()); }
+			DistributionFloat.RawDistributionFloat MinRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 104)()); }
+			float LPFRadiusMax() { mixin(MGPC!("float", 100)()); }
+			float LPFRadiusMin() { mixin(MGPC!("float", 96)()); }
+			float RadiusMax() { mixin(MGPC!("float", 92)()); }
+			float RadiusMin() { mixin(MGPC!("float", 88)()); }
+			SoundNodeAttenuation.SoundDistanceModel DistanceModel() { mixin(MGPC!("SoundNodeAttenuation.SoundDistanceModel", 86)()); }
+			SoundNodeAttenuation.ESoundDistanceCalc DistanceType() { mixin(MGPC!("SoundNodeAttenuation.ESoundDistanceCalc", 85)()); }
+			SoundNodeAttenuation.SoundDistanceModel DistanceAlgorithm() { mixin(MGPC!("SoundNodeAttenuation.SoundDistanceModel", 84)()); }
+			float dBAttenuationAtMax() { mixin(MGPC!("float", 80)()); }
 		}
 		bool bAttenuateWithLowPassFilter() { mixin(MGBPC!(76, 0x8)()); }
 		bool bAttenuateWithLowPassFilter(bool val) { mixin(MSBPC!(76, 0x8)()); }

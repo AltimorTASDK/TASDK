@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_SpikeLauncher.OnSwitchAwayFromWeapon")()); }
 		}
 	}
-	@property final auto ref SoundCue m_SpikeIdleSound() { mixin(MGPC!(SoundCue, 2148)()); }
+	@property final auto ref SoundCue m_SpikeIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
 final:
 	void SetSpikeIdle(bool bEnabled)
 	{

@@ -51,19 +51,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			int SERVERS_PER_PAGE() { mixin(MGPC!(int, 432)()); }
-			ScriptString QueueJoinName() { mixin(MGPC!(ScriptString, 420)()); }
-			int PopupNumber() { mixin(MGPC!(int, 416)()); }
-			int ServerIndex() { mixin(MGPC!(int, 412)()); }
-			ScriptString ServerNameFilter() { mixin(MGPC!(ScriptString, 396)()); }
-			ScriptString MapNameFilter() { mixin(MGPC!(ScriptString, 384)()); }
-			int FilterServerNameNum() { mixin(MGPC!(int, 380)()); }
-			int FilterOwnerNum() { mixin(MGPC!(int, 376)()); }
-			int FilterFullNum() { mixin(MGPC!(int, 372)()); }
-			int FilterEmptyNum() { mixin(MGPC!(int, 368)()); }
-			int FilterMapNameNum() { mixin(MGPC!(int, 364)()); }
-			int FilterRegionNum() { mixin(MGPC!(int, 360)()); }
-			int RefreshNum() { mixin(MGPC!(int, 356)()); }
+			int SERVERS_PER_PAGE() { mixin(MGPC!("int", 432)()); }
+			ScriptString QueueJoinName() { mixin(MGPC!("ScriptString", 420)()); }
+			int PopupNumber() { mixin(MGPC!("int", 416)()); }
+			int ServerIndex() { mixin(MGPC!("int", 412)()); }
+			ScriptString ServerNameFilter() { mixin(MGPC!("ScriptString", 396)()); }
+			ScriptString MapNameFilter() { mixin(MGPC!("ScriptString", 384)()); }
+			int FilterServerNameNum() { mixin(MGPC!("int", 380)()); }
+			int FilterOwnerNum() { mixin(MGPC!("int", 376)()); }
+			int FilterFullNum() { mixin(MGPC!("int", 372)()); }
+			int FilterEmptyNum() { mixin(MGPC!("int", 368)()); }
+			int FilterMapNameNum() { mixin(MGPC!("int", 364)()); }
+			int FilterRegionNum() { mixin(MGPC!("int", 360)()); }
+			int RefreshNum() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForJoinPopup() { mixin(MGBPC!(408, 0x10)()); }
 		bool bWaitingForJoinPopup(bool val) { mixin(MSBPC!(408, 0x10)()); }

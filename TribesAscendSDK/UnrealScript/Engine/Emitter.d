@@ -86,12 +86,13 @@ public extern(D):
 		bool bDestroyOnSystemFinish(bool val) { mixin(MSBPC!(484, 0x1)()); }
 	}
 final:
-	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
+	void SetTemplate(ParticleSystem NewTemplate, bool* bDestroyOnFinish = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
-		*cast(bool*)&params[4] = bDestroyOnFinish;
+		if (bDestroyOnFinish !is null)
+			*cast(bool*)&params[4] = *bDestroyOnFinish;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()
@@ -197,15 +198,14 @@ void**)params.ptr = FinishedComponent;
 		params[] = 0;
 		*cast(Emitter.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(Emitter.CheckpointRecord*)params.ptr;
+		Record = *cast(Emitter.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const Emitter.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in Emitter.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Emitter.CheckpointRecord*)params.ptr = Record;
+		*cast(Emitter.CheckpointRecord*)params.ptr = cast(Emitter.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(Emitter.CheckpointRecord*)params.ptr;
 	}
 	void HideSelf()
 	{

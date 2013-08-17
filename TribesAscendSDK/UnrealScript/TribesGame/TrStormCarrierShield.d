@@ -28,7 +28,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref TrStormCore m_AssociatedCarrierCore() { mixin(MGPC!(TrStormCore, 536)()); }
+		@property final auto ref TrStormCore m_AssociatedCarrierCore() { mixin(MGPC!("TrStormCore", 536)()); }
 		bool m_bAreShieldsUp() { mixin(MGBPC!(532, 0x1)()); }
 		bool m_bAreShieldsUp(bool val) { mixin(MSBPC!(532, 0x1)()); }
 	}

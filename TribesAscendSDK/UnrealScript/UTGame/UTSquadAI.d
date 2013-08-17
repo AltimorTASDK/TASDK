@@ -216,21 +216,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			Controller SquadLeader() { mixin(MGPC!(Controller, 536)()); }
-			UTBot SquadMembers() { mixin(MGPC!(UTBot, 552)()); }
-			float FormationSize() { mixin(MGPC!(float, 676)()); }
-			int MaxSquadSize() { mixin(MGPC!(int, 668)()); }
-			Pawn Enemies() { mixin(MGPC!(Pawn, 636)()); }
-			ScriptName CurrentOrders() { mixin(MGPC!(ScriptName, 628)()); }
-			ScriptString SupportStringTrailer() { mixin(MGPC!(ScriptString, 616)()); }
-			ScriptString FreelanceString() { mixin(MGPC!(ScriptString, 604)()); }
-			ScriptString HoldString() { mixin(MGPC!(ScriptString, 592)()); }
-			ScriptString AttackString() { mixin(MGPC!(ScriptString, 580)()); }
-			ScriptString DefendString() { mixin(MGPC!(ScriptString, 568)()); }
-			ScriptString SupportString() { mixin(MGPC!(ScriptString, 556)()); }
-			int Size() { mixin(MGPC!(int, 548)()); }
-			UTSquadAI NextSquad() { mixin(MGPC!(UTSquadAI, 544)()); }
-			UTPlayerReplicationInfo LeaderPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 540)()); }
+			Controller SquadLeader() { mixin(MGPC!("Controller", 536)()); }
+			UTBot SquadMembers() { mixin(MGPC!("UTBot", 552)()); }
+			float FormationSize() { mixin(MGPC!("float", 676)()); }
+			int MaxSquadSize() { mixin(MGPC!("int", 668)()); }
+			Pawn Enemies() { mixin(MGPC!("Pawn", 636)()); }
+			ScriptName CurrentOrders() { mixin(MGPC!("ScriptName", 628)()); }
+			ScriptString SupportStringTrailer() { mixin(MGPC!("ScriptString", 616)()); }
+			ScriptString FreelanceString() { mixin(MGPC!("ScriptString", 604)()); }
+			ScriptString HoldString() { mixin(MGPC!("ScriptString", 592)()); }
+			ScriptString AttackString() { mixin(MGPC!("ScriptString", 580)()); }
+			ScriptString DefendString() { mixin(MGPC!("ScriptString", 568)()); }
+			ScriptString SupportString() { mixin(MGPC!("ScriptString", 556)()); }
+			int Size() { mixin(MGPC!("int", 548)()); }
+			UTSquadAI NextSquad() { mixin(MGPC!("UTSquadAI", 544)()); }
+			UTPlayerReplicationInfo LeaderPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 540)()); }
 		}
 		bool bShouldUseGatherPoints() { mixin(MGBPC!(672, 0x20)()); }
 		bool bShouldUseGatherPoints(bool val) { mixin(MSBPC!(672, 0x20)()); }
@@ -644,12 +644,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.LeaveVehicleToReachObjective, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool MustCompleteOnFoot(Actor O, Pawn P)
+	bool MustCompleteOnFoot(Actor O, Pawn* P = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Actor*)params.ptr = O;
-		*cast(Pawn*)&params[4] = P;
+		if (P !is null)
+			*cast(Pawn*)&params[4] = *P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MustCompleteOnFoot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -892,8 +893,8 @@ final:
 		*cast(float*)&params[4] = YL;
 		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*YL = *cast(float*)&params[4];
-		*YPos = *cast(float*)&params[8];
+		YL = *cast(float*)&params[4];
+		YPos = *cast(float*)&params[8];
 	}
 	bool FriendlyToward(Pawn Other)
 	{
@@ -936,6 +937,6 @@ final:
 		*cast(UTBot*)params.ptr = B;
 		*cast(float*)&params[4] = Aggression;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAggression, params.ptr, cast(void*)0);
-		*Aggression = *cast(float*)&params[4];
+		Aggression = *cast(float*)&params[4];
 	}
 }

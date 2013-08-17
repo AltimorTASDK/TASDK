@@ -56,15 +56,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Console.AutoCompleteCommand) TribesAutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 468)()); }
-		TrPlayerController m_TrPC() { mixin(MGPC!(TrPlayerController, 536)()); }
-		float m_fTypingTime() { mixin(MGPC!(float, 532)()); }
-		ScriptString EscHelp() { mixin(MGPC!(ScriptString, 520)()); }
-		ScriptString TabHelp() { mixin(MGPC!(ScriptString, 508)()); }
-		ScriptString TellHelp() { mixin(MGPC!(ScriptString, 496)()); }
-		ScriptString SlashHelp() { mixin(MGPC!(ScriptString, 484)()); }
-		int LastFriendCount() { mixin(MGPC!(int, 480)()); }
-		ScriptString ChannelStr() { mixin(MGPC!(ScriptString, 456)()); }
+		ScriptArray!(Console.AutoCompleteCommand) TribesAutoCompleteList() { mixin(MGPC!("ScriptArray!(Console.AutoCompleteCommand)", 468)()); }
+		TrPlayerController m_TrPC() { mixin(MGPC!("TrPlayerController", 536)()); }
+		float m_fTypingTime() { mixin(MGPC!("float", 532)()); }
+		ScriptString EscHelp() { mixin(MGPC!("ScriptString", 520)()); }
+		ScriptString TabHelp() { mixin(MGPC!("ScriptString", 508)()); }
+		ScriptString TellHelp() { mixin(MGPC!("ScriptString", 496)()); }
+		ScriptString SlashHelp() { mixin(MGPC!("ScriptString", 484)()); }
+		int LastFriendCount() { mixin(MGPC!("int", 480)()); }
+		ScriptString ChannelStr() { mixin(MGPC!("ScriptString", 456)()); }
 	}
 final:
 	void Initialized()
@@ -82,13 +82,15 @@ final:
 		*cast(ScriptString*)params.ptr = Command;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
-	void StartTypingChat(ScriptString Text, bool bFullConsole, ScriptString startText)
+	void StartTypingChat(ScriptString Text, bool* bFullConsole = null, ScriptString* startText = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(bool*)&params[12] = bFullConsole;
-		*cast(ScriptString*)&params[16] = startText;
+		if (bFullConsole !is null)
+			*cast(bool*)&params[12] = *bFullConsole;
+		if (startText !is null)
+			*cast(ScriptString*)&params[16] = *startText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartTypingChat, params.ptr, cast(void*)0);
 	}
 	void StartTyping(ScriptString Text)
@@ -119,15 +121,17 @@ final:
 		*cast(Canvas*)params.ptr = pCanvas;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
-	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float* AmountDepressed = null, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = Event;
-		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (AmountDepressed !is null)
+			*cast(float*)&params[16] = *AmountDepressed;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

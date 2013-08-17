@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackFloatBase DefaultProperties() { mixin(MGDPC!(InterpTrackFloatBase, "InterpTrackFloatBase Engine.Default__InterpTrackFloatBase")()); }
 	@property final auto ref
 	{
-		float CurveTension() { mixin(MGPC!(float, 144)()); }
-		UObject.InterpCurveFloat FloatTrack() { mixin(MGPC!(UObject.InterpCurveFloat, 128)()); }
+		float CurveTension() { mixin(MGPC!("float", 144)()); }
+		UObject.InterpCurveFloat FloatTrack() { mixin(MGPC!("UObject.InterpCurveFloat", 128)()); }
 	}
 }

@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleSubUVSelect")()); }
 	private static __gshared ParticleModuleSubUVSelect mDefaultProperties;
 	@property final static ParticleModuleSubUVSelect DefaultProperties() { mixin(MGDPC!(ParticleModuleSubUVSelect, "ParticleModuleSubUVSelect Engine.Default__ParticleModuleSubUVSelect")()); }
-	@property final auto ref DistributionVector.RawDistributionVector SubImageSelect() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+	@property final auto ref DistributionVector.RawDistributionVector SubImageSelect() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 }

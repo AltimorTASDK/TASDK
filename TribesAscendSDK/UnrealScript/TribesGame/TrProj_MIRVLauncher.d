@@ -31,8 +31,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nSecondaryExplosions() { mixin(MGPC!(int, 888)()); }
-		ScriptClass m_SecondaryProjectile() { mixin(MGPC!(ScriptClass, 884)()); }
+		int m_nSecondaryExplosions() { mixin(MGPC!("int", 888)()); }
+		ScriptClass m_SecondaryProjectile() { mixin(MGPC!("ScriptClass", 884)()); }
 	}
 final:
 	Rotator GetRandomSpread(Rotator BaseDirection)

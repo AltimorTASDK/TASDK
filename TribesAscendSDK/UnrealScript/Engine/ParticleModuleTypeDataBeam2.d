@@ -34,27 +34,27 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleTypeDataBeam2.BeamTargetData")()); }
 		@property final auto ref
 		{
-			float TargetPercentage() { mixin(MGPS!(float, 8)()); }
-			ScriptName TargetName() { mixin(MGPS!(ScriptName, 0)()); }
+			float TargetPercentage() { mixin(MGPS!("float", 8)()); }
+			ScriptName TargetName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat TaperScale() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 172)()); }
-			DistributionFloat.RawDistributionFloat TaperFactor() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 144)()); }
-			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 116)()); }
-			ScriptName BranchParentName() { mixin(MGPC!(ScriptName, 108)()); }
-			int UpVectorStepSize() { mixin(MGPC!(int, 104)()); }
-			int InterpolationPoints() { mixin(MGPC!(int, 96)()); }
-			float Speed() { mixin(MGPC!(float, 92)()); }
-			int MaxBeamCount() { mixin(MGPC!(int, 88)()); }
-			int Sheets() { mixin(MGPC!(int, 84)()); }
-			float TextureTileDistance() { mixin(MGPC!(float, 80)()); }
-			int TextureTile() { mixin(MGPC!(int, 76)()); }
-			ParticleModuleTypeDataBeam2.EBeamTaperMethod TaperMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam2.EBeamTaperMethod, 73)()); }
-			ParticleModuleTypeDataBeam2.EBeam2Method BeamMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam2.EBeam2Method, 72)()); }
+			DistributionFloat.RawDistributionFloat TaperScale() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 172)()); }
+			DistributionFloat.RawDistributionFloat TaperFactor() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 144)()); }
+			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 116)()); }
+			ScriptName BranchParentName() { mixin(MGPC!("ScriptName", 108)()); }
+			int UpVectorStepSize() { mixin(MGPC!("int", 104)()); }
+			int InterpolationPoints() { mixin(MGPC!("int", 96)()); }
+			float Speed() { mixin(MGPC!("float", 92)()); }
+			int MaxBeamCount() { mixin(MGPC!("int", 88)()); }
+			int Sheets() { mixin(MGPC!("int", 84)()); }
+			float TextureTileDistance() { mixin(MGPC!("float", 80)()); }
+			int TextureTile() { mixin(MGPC!("int", 76)()); }
+			ParticleModuleTypeDataBeam2.EBeamTaperMethod TaperMethod() { mixin(MGPC!("ParticleModuleTypeDataBeam2.EBeamTaperMethod", 73)()); }
+			ParticleModuleTypeDataBeam2.EBeam2Method BeamMethod() { mixin(MGPC!("ParticleModuleTypeDataBeam2.EBeam2Method", 72)()); }
 		}
 		bool RenderTessellation() { mixin(MGBPC!(100, 0x10)()); }
 		bool RenderTessellation(bool val) { mixin(MSBPC!(100, 0x10)()); }

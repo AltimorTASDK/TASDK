@@ -31,9 +31,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fBackdropFadeRemainingTime() { mixin(MGPC!(float, 916)()); }
-		float m_fBackdropFadeTime() { mixin(MGPC!(float, 912)()); }
-		MaterialInstanceConstant m_BackdropMIC() { mixin(MGPC!(MaterialInstanceConstant, 908)()); }
+		float m_fBackdropFadeRemainingTime() { mixin(MGPC!("float", 916)()); }
+		float m_fBackdropFadeTime() { mixin(MGPC!("float", 912)()); }
+		MaterialInstanceConstant m_BackdropMIC() { mixin(MGPC!("MaterialInstanceConstant", 908)()); }
 	}
 final:
 	void PostBeginPlay()

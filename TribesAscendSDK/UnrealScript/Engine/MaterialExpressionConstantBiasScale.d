@@ -13,8 +13,8 @@ public extern(D):
 	@property final static MaterialExpressionConstantBiasScale DefaultProperties() { mixin(MGDPC!(MaterialExpressionConstantBiasScale, "MaterialExpressionConstantBiasScale Engine.Default__MaterialExpressionConstantBiasScale")()); }
 	@property final auto ref
 	{
-		float Scale() { mixin(MGPC!(float, 140)()); }
-		float Bias() { mixin(MGPC!(float, 136)()); }
+		float Scale() { mixin(MGPC!("float", 140)()); }
+		float Bias() { mixin(MGPC!("float", 136)()); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

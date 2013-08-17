@@ -55,16 +55,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Matrix LastTargetBaseTM() { mixin(MGPC!(UObject.Matrix, 1136)()); }
-			Actor LastTargetBase() { mixin(MGPC!(Actor, 1124)()); }
-			float SplitScreenShakeScale() { mixin(MGPC!(float, 1120)()); }
-			Actor LastViewTarget() { mixin(MGPC!(Actor, 1116)()); }
-			float ForcedCamFOV() { mixin(MGPC!(float, 1112)()); }
-			GameCameraBase CurrentCamera() { mixin(MGPC!(GameCameraBase, 1104)()); }
-			ScriptClass FixedCameraClass() { mixin(MGPC!(ScriptClass, 1100)()); }
-			GameCameraBase FixedCam() { mixin(MGPC!(GameCameraBase, 1096)()); }
-			ScriptClass ThirdPersonCameraClass() { mixin(MGPC!(ScriptClass, 1092)()); }
-			GameCameraBase ThirdPersonCam() { mixin(MGPC!(GameCameraBase, 1088)()); }
+			UObject.Matrix LastTargetBaseTM() { mixin(MGPC!("UObject.Matrix", 1136)()); }
+			Actor LastTargetBase() { mixin(MGPC!("Actor", 1124)()); }
+			float SplitScreenShakeScale() { mixin(MGPC!("float", 1120)()); }
+			Actor LastViewTarget() { mixin(MGPC!("Actor", 1116)()); }
+			float ForcedCamFOV() { mixin(MGPC!("float", 1112)()); }
+			GameCameraBase CurrentCamera() { mixin(MGPC!("GameCameraBase", 1104)()); }
+			ScriptClass FixedCameraClass() { mixin(MGPC!("ScriptClass", 1100)()); }
+			GameCameraBase FixedCam() { mixin(MGPC!("GameCameraBase", 1096)()); }
+			ScriptClass ThirdPersonCameraClass() { mixin(MGPC!("ScriptClass", 1092)()); }
+			GameCameraBase ThirdPersonCam() { mixin(MGPC!("GameCameraBase", 1088)()); }
 		}
 		bool bResetInterp() { mixin(MGBPC!(1108, 0x4)()); }
 		bool bResetInterp(bool val) { mixin(MSBPC!(1108, 0x4)()); }
@@ -119,7 +119,7 @@ final:
 		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateViewTarget, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
+		OutVT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	float AdjustFOVForViewport(float inHorizFOV, Pawn CameraTargetPawn)
 	{
@@ -130,13 +130,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustFOVForViewport, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	void UpdateCameraLensEffects(ref const Camera.TViewTarget OutVT)
+	void UpdateCameraLensEffects(ref in Camera.TViewTarget OutVT)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = OutVT;
+		*cast(Camera.TViewTarget*)params.ptr = cast(Camera.TViewTarget)OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCameraLensEffects, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
@@ -146,8 +145,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void SetColorScale(Vector NewColorScale)
 	{
@@ -168,7 +167,7 @@ final:
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
-		*out_DeltaRot = *cast(Rotator*)&params[16];
+		out_ViewRotation = *cast(Rotator*)&params[4];
+		out_DeltaRot = *cast(Rotator*)&params[16];
 	}
 }

@@ -95,10 +95,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.CanvasIcon")()); }
 		@property final auto ref
 		{
-			float VL() { mixin(MGPS!(float, 16)()); }
-			float UL() { mixin(MGPS!(float, 12)()); }
-			float V() { mixin(MGPS!(float, 8)()); }
-			float U() { mixin(MGPS!(float, 4)()); }
+			float VL() { mixin(MGPS!("float", 16)()); }
+			float UL() { mixin(MGPS!("float", 12)()); }
+			float V() { mixin(MGPS!("float", 8)()); }
+			float U() { mixin(MGPS!("float", 4)()); }
 			// WARNING: Property 'Texture' has the same name as a defined type!
 		}
 	}
@@ -112,9 +112,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Vector2D GlowInnerRadius() { mixin(MGPS!(UObject.Vector2D, 28)()); }
-				UObject.Vector2D GlowOuterRadius() { mixin(MGPS!(UObject.Vector2D, 20)()); }
-				UObject.LinearColor GlowColor() { mixin(MGPS!(UObject.LinearColor, 4)()); }
+				UObject.Vector2D GlowInnerRadius() { mixin(MGPS!("UObject.Vector2D", 28)()); }
+				UObject.Vector2D GlowOuterRadius() { mixin(MGPS!("UObject.Vector2D", 20)()); }
+				UObject.LinearColor GlowColor() { mixin(MGPS!("UObject.LinearColor", 4)()); }
 			}
 			bool bEnableGlow() { mixin(MGBPS!(0, 0x1)()); }
 			bool bEnableGlow(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -128,7 +128,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.FontRenderInfo")()); }
 		@property final
 		{
-			@property final auto ref Canvas.DepthFieldGlowInfo GlowInfo() { mixin(MGPS!(Canvas.DepthFieldGlowInfo, 4)()); }
+			@property final auto ref Canvas.DepthFieldGlowInfo GlowInfo() { mixin(MGPS!("Canvas.DepthFieldGlowInfo", 4)()); }
 			bool bEnableShadow() { mixin(MGBPS!(0, 0x2)()); }
 			bool bEnableShadow(bool val) { mixin(MSBPS!(0, 0x2)()); }
 			bool bClipText() { mixin(MGBPS!(0, 0x1)()); }
@@ -143,12 +143,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.CanvasUVTri")()); }
 		@property final auto ref
 		{
-			UObject.Vector2D V2_UV() { mixin(MGPS!(UObject.Vector2D, 40)()); }
-			UObject.Vector2D V2_Pos() { mixin(MGPS!(UObject.Vector2D, 32)()); }
-			UObject.Vector2D V1_UV() { mixin(MGPS!(UObject.Vector2D, 24)()); }
-			UObject.Vector2D V1_Pos() { mixin(MGPS!(UObject.Vector2D, 16)()); }
-			UObject.Vector2D V0_UV() { mixin(MGPS!(UObject.Vector2D, 8)()); }
-			UObject.Vector2D V0_Pos() { mixin(MGPS!(UObject.Vector2D, 0)()); }
+			UObject.Vector2D V2_UV() { mixin(MGPS!("UObject.Vector2D", 40)()); }
+			UObject.Vector2D V2_Pos() { mixin(MGPS!("UObject.Vector2D", 32)()); }
+			UObject.Vector2D V1_UV() { mixin(MGPS!("UObject.Vector2D", 24)()); }
+			UObject.Vector2D V1_Pos() { mixin(MGPS!("UObject.Vector2D", 16)()); }
+			UObject.Vector2D V0_UV() { mixin(MGPS!("UObject.Vector2D", 8)()); }
+			UObject.Vector2D V0_Pos() { mixin(MGPS!("UObject.Vector2D", 0)()); }
 		}
 	}
 	struct TextSizingParameters
@@ -159,14 +159,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.TextSizingParameters")()); }
 		@property final auto ref
 		{
-			float ViewportHeight() { mixin(MGPS!(float, 36)()); }
-			UObject.Vector2D SpacingAdjust() { mixin(MGPS!(UObject.Vector2D, 28)()); }
-			Font DrawFont() { mixin(MGPS!(Font, 24)()); }
-			UObject.Vector2D Scaling() { mixin(MGPS!(UObject.Vector2D, 16)()); }
-			float DrawYL() { mixin(MGPS!(float, 12)()); }
-			float DrawXL() { mixin(MGPS!(float, 8)()); }
-			float DrawY() { mixin(MGPS!(float, 4)()); }
-			float DrawX() { mixin(MGPS!(float, 0)()); }
+			float ViewportHeight() { mixin(MGPS!("float", 36)()); }
+			UObject.Vector2D SpacingAdjust() { mixin(MGPS!("UObject.Vector2D", 28)()); }
+			Font DrawFont() { mixin(MGPS!("Font", 24)()); }
+			UObject.Vector2D Scaling() { mixin(MGPS!("UObject.Vector2D", 16)()); }
+			float DrawYL() { mixin(MGPS!("float", 12)()); }
+			float DrawXL() { mixin(MGPS!("float", 8)()); }
+			float DrawY() { mixin(MGPS!("float", 4)()); }
+			float DrawX() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct WrappedStringElement
@@ -177,30 +177,30 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Canvas.WrappedStringElement")()); }
 		@property final auto ref
 		{
-			UObject.Vector2D LineExtent() { mixin(MGPS!(UObject.Vector2D, 12)()); }
-			ScriptString Value() { mixin(MGPS!(ScriptString, 0)()); }
+			UObject.Vector2D LineExtent() { mixin(MGPS!("UObject.Vector2D", 12)()); }
+			ScriptString Value() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			UObject.Color DrawColor() { mixin(MGPC!(UObject.Color, 96)()); }
+			UObject.Color DrawColor() { mixin(MGPC!("UObject.Color", 96)()); }
 			// WARNING: Property 'Font' has the same name as a defined type!
-			Texture2D DefaultTexture() { mixin(MGPC!(Texture2D, 144)()); }
-			UObject.Plane ColorModulate() { mixin(MGPC!(UObject.Plane, 128)()); }
-			UObject.Pointer SceneView() { mixin(MGPC!(UObject.Pointer, 116)()); }
+			Texture2D DefaultTexture() { mixin(MGPC!("Texture2D", 144)()); }
+			UObject.Plane ColorModulate() { mixin(MGPC!("UObject.Plane", 128)()); }
+			UObject.Pointer SceneView() { mixin(MGPC!("UObject.Pointer", 116)()); }
 			// WARNING: Property 'Canvas' has the same name as a defined type!
-			int SizeY() { mixin(MGPC!(int, 108)()); }
-			int SizeX() { mixin(MGPC!(int, 104)()); }
-			float CurYL() { mixin(MGPC!(float, 92)()); }
-			float CurZ() { mixin(MGPC!(float, 88)()); }
-			float CurY() { mixin(MGPC!(float, 84)()); }
-			float CurX() { mixin(MGPC!(float, 80)()); }
-			float ClipY() { mixin(MGPC!(float, 76)()); }
-			float ClipX() { mixin(MGPC!(float, 72)()); }
-			float OrgY() { mixin(MGPC!(float, 68)()); }
-			float OrgX() { mixin(MGPC!(float, 64)()); }
+			int SizeY() { mixin(MGPC!("int", 108)()); }
+			int SizeX() { mixin(MGPC!("int", 104)()); }
+			float CurYL() { mixin(MGPC!("float", 92)()); }
+			float CurZ() { mixin(MGPC!("float", 88)()); }
+			float CurY() { mixin(MGPC!("float", 84)()); }
+			float CurX() { mixin(MGPC!("float", 80)()); }
+			float ClipY() { mixin(MGPC!("float", 76)()); }
+			float ClipX() { mixin(MGPC!("float", 72)()); }
+			float OrgY() { mixin(MGPC!("float", 68)()); }
+			float OrgX() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bNoSmooth() { mixin(MGBPC!(100, 0x2)()); }
 		bool bNoSmooth(bool val) { mixin(MSBPC!(100, 0x2)()); }
@@ -208,36 +208,41 @@ public extern(D):
 		bool bCenter(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}
 final:
-	void SetPos(float PosX, float PosY, float PosZ)
+	void SetPos(float PosX, float PosY, float* PosZ = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = PosX;
 		*cast(float*)&params[4] = PosY;
-		*cast(float*)&params[8] = PosZ;
+		if (PosZ !is null)
+			*cast(float*)&params[8] = *PosZ;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPos, params.ptr, cast(void*)0);
 	}
-	void SetDrawColor(ubyte R, ubyte G, ubyte B, ubyte A)
+	void SetDrawColor(ubyte R, ubyte G, ubyte B, ubyte* A = null)
 	{
 		ubyte params[4];
 		params[] = 0;
 		params[0] = R;
 		params[1] = G;
 		params[2] = B;
-		params[3] = A;
+		if (A !is null)
+			params[3] = *A;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDrawColor, params.ptr, cast(void*)0);
 	}
-	void DrawText(ScriptString Text, bool CR, float XScale, float YScale, const Canvas.FontRenderInfo* RenderInfo)
+	void DrawText(ScriptString Text, bool* CR = null, float* XScale = null, float* YScale = null, in Canvas.FontRenderInfo* RenderInfo = null)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(bool*)&params[12] = CR;
-		*cast(float*)&params[16] = XScale;
-		*cast(float*)&params[20] = YScale;
-		*cast(Canvas.FontRenderInfo*)&params[24] = RenderInfo;
+		if (CR !is null)
+			*cast(bool*)&params[12] = *CR;
+		if (XScale !is null)
+			*cast(float*)&params[16] = *XScale;
+		if (YScale !is null)
+			*cast(float*)&params[20] = *YScale;
+		if (RenderInfo !is null)
+			*cast(Canvas.FontRenderInfo*)&params[24] = cast(Canvas.FontRenderInfo)*RenderInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawText, params.ptr, cast(void*)0);
-		*RenderInfo = *cast(Canvas.FontRenderInfo*)&params[24];
 	}
 	Vector Project(Vector Location)
 	{
@@ -255,10 +260,10 @@ final:
 		*cast(float*)&params[12] = XL;
 		*cast(float*)&params[16] = YL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StrLen, params.ptr, cast(void*)0);
-		*XL = *cast(float*)&params[12];
-		*YL = *cast(float*)&params[16];
+		XL = *cast(float*)&params[12];
+		YL = *cast(float*)&params[16];
 	}
-	void DrawTile(Texture Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor LColor, bool ClipTile, EngineTypes.EBlendMode Blend)
+	void DrawTile(Texture Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor* LColor = null, bool* ClipTile = null, EngineTypes.EBlendMode* Blend = null)
 	{
 		ubyte params[49];
 		params[] = 0;
@@ -269,35 +274,44 @@ final:
 		*cast(float*)&params[16] = V;
 		*cast(float*)&params[20] = UL;
 		*cast(float*)&params[24] = VL;
-		*cast(UObject.LinearColor*)&params[28] = LColor;
-		*cast(bool*)&params[44] = ClipTile;
-		*cast(EngineTypes.EBlendMode*)&params[48] = Blend;
+		if (LColor !is null)
+			*cast(UObject.LinearColor*)&params[28] = *LColor;
+		if (ClipTile !is null)
+			*cast(bool*)&params[44] = *ClipTile;
+		if (Blend !is null)
+			*cast(EngineTypes.EBlendMode*)&params[48] = *Blend;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTile, params.ptr, cast(void*)0);
 	}
-	void PreOptimizeDrawTiles(int Num, Texture Tex, EngineTypes.EBlendMode Blend)
+	void PreOptimizeDrawTiles(int Num, Texture Tex, EngineTypes.EBlendMode* Blend = null)
 	{
 		ubyte params[9];
 		params[] = 0;
 		*cast(int*)params.ptr = Num;
 		*cast(Texture*)&params[4] = Tex;
-		*cast(EngineTypes.EBlendMode*)&params[8] = Blend;
+		if (Blend !is null)
+			*cast(EngineTypes.EBlendMode*)&params[8] = *Blend;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PreOptimizeDrawTiles, params.ptr, cast(void*)0);
 	}
-	void DrawMaterialTile(MaterialInterface Mat, float XL, float YL, float U, float V, float UL, float VL, bool bClipTile)
+	void DrawMaterialTile(MaterialInterface Mat, float XL, float YL, float* U = null, float* V = null, float* UL = null, float* VL = null, bool* bClipTile = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = Mat;
 		*cast(float*)&params[4] = XL;
 		*cast(float*)&params[8] = YL;
-		*cast(float*)&params[12] = U;
-		*cast(float*)&params[16] = V;
-		*cast(float*)&params[20] = UL;
-		*cast(float*)&params[24] = VL;
-		*cast(bool*)&params[28] = bClipTile;
+		if (U !is null)
+			*cast(float*)&params[12] = *U;
+		if (V !is null)
+			*cast(float*)&params[16] = *V;
+		if (UL !is null)
+			*cast(float*)&params[20] = *UL;
+		if (VL !is null)
+			*cast(float*)&params[24] = *VL;
+		if (bClipTile !is null)
+			*cast(bool*)&params[28] = *bClipTile;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawMaterialTile, params.ptr, cast(void*)0);
 	}
-	void DrawRotatedTile(Texture Tex, Rotator Rotation, float XL, float YL, float U, float V, float UL, float VL, float AnchorX, float AnchorY)
+	void DrawRotatedTile(Texture Tex, Rotator Rotation, float XL, float YL, float U, float V, float UL, float VL, float* AnchorX = null, float* AnchorY = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -309,11 +323,13 @@ final:
 		*cast(float*)&params[28] = V;
 		*cast(float*)&params[32] = UL;
 		*cast(float*)&params[36] = VL;
-		*cast(float*)&params[40] = AnchorX;
-		*cast(float*)&params[44] = AnchorY;
+		if (AnchorX !is null)
+			*cast(float*)&params[40] = *AnchorX;
+		if (AnchorY !is null)
+			*cast(float*)&params[44] = *AnchorY;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedTile, params.ptr, cast(void*)0);
 	}
-	void DrawRotatedMaterialTile(MaterialInterface Mat, Rotator Rotation, float XL, float YL, float U, float V, float UL, float VL, float AnchorX, float AnchorY)
+	void DrawRotatedMaterialTile(MaterialInterface Mat, Rotator Rotation, float XL, float YL, float* U = null, float* V = null, float* UL = null, float* VL = null, float* AnchorX = null, float* AnchorY = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -321,15 +337,21 @@ final:
 		*cast(Rotator*)&params[4] = Rotation;
 		*cast(float*)&params[16] = XL;
 		*cast(float*)&params[20] = YL;
-		*cast(float*)&params[24] = U;
-		*cast(float*)&params[28] = V;
-		*cast(float*)&params[32] = UL;
-		*cast(float*)&params[36] = VL;
-		*cast(float*)&params[40] = AnchorX;
-		*cast(float*)&params[44] = AnchorY;
+		if (U !is null)
+			*cast(float*)&params[24] = *U;
+		if (V !is null)
+			*cast(float*)&params[28] = *V;
+		if (UL !is null)
+			*cast(float*)&params[32] = *UL;
+		if (VL !is null)
+			*cast(float*)&params[36] = *VL;
+		if (AnchorX !is null)
+			*cast(float*)&params[40] = *AnchorX;
+		if (AnchorY !is null)
+			*cast(float*)&params[44] = *AnchorY;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRotatedMaterialTile, params.ptr, cast(void*)0);
 	}
-	void DrawTileStretched(Texture Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor LColor, bool bStretchHorizontally, bool bStretchVertically, float ScalingFactor)
+	void DrawTileStretched(Texture Tex, float XL, float YL, float U, float V, float UL, float VL, UObject.LinearColor* LColor = null, bool* bStretchHorizontally = null, bool* bStretchVertically = null, float* ScalingFactor = null)
 	{
 		ubyte params[56];
 		params[] = 0;
@@ -340,10 +362,14 @@ final:
 		*cast(float*)&params[16] = V;
 		*cast(float*)&params[20] = UL;
 		*cast(float*)&params[24] = VL;
-		*cast(UObject.LinearColor*)&params[28] = LColor;
-		*cast(bool*)&params[44] = bStretchHorizontally;
-		*cast(bool*)&params[48] = bStretchVertically;
-		*cast(float*)&params[52] = ScalingFactor;
+		if (LColor !is null)
+			*cast(UObject.LinearColor*)&params[28] = *LColor;
+		if (bStretchHorizontally !is null)
+			*cast(bool*)&params[44] = *bStretchHorizontally;
+		if (bStretchVertically !is null)
+			*cast(bool*)&params[48] = *bStretchVertically;
+		if (ScalingFactor !is null)
+			*cast(float*)&params[52] = *ScalingFactor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTileStretched, params.ptr, cast(void*)0);
 	}
 	void DrawTris(Texture Tex, ScriptArray!(Canvas.CanvasUVTri) Triangles)
@@ -354,15 +380,20 @@ final:
 		*cast(ScriptArray!(Canvas.CanvasUVTri)*)&params[4] = Triangles;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTris, params.ptr, cast(void*)0);
 	}
-	static Canvas.FontRenderInfo CreateFontRenderInfo(bool bClipText, bool bEnableShadow, UObject.LinearColor GlowColor, UObject.Vector2D GlowOuterRadius, UObject.Vector2D GlowInnerRadius)
+	static Canvas.FontRenderInfo CreateFontRenderInfo(bool* bClipText = null, bool* bEnableShadow = null, UObject.LinearColor* GlowColor = null, UObject.Vector2D* GlowOuterRadius = null, UObject.Vector2D* GlowInnerRadius = null)
 	{
 		ubyte params[80];
 		params[] = 0;
-		*cast(bool*)params.ptr = bClipText;
-		*cast(bool*)&params[4] = bEnableShadow;
-		*cast(UObject.LinearColor*)&params[8] = GlowColor;
-		*cast(UObject.Vector2D*)&params[24] = GlowOuterRadius;
-		*cast(UObject.Vector2D*)&params[32] = GlowInnerRadius;
+		if (bClipText !is null)
+			*cast(bool*)params.ptr = *bClipText;
+		if (bEnableShadow !is null)
+			*cast(bool*)&params[4] = *bEnableShadow;
+		if (GlowColor !is null)
+			*cast(UObject.LinearColor*)&params[8] = *GlowColor;
+		if (GlowOuterRadius !is null)
+			*cast(UObject.Vector2D*)&params[24] = *GlowOuterRadius;
+		if (GlowInnerRadius !is null)
+			*cast(UObject.Vector2D*)&params[32] = *GlowInnerRadius;
 		StaticClass.ProcessEvent(Functions.CreateFontRenderInfo, params.ptr, cast(void*)0);
 		return *cast(Canvas.FontRenderInfo*)&params[40];
 	}
@@ -374,8 +405,8 @@ final:
 		*cast(float*)&params[12] = XL;
 		*cast(float*)&params[16] = YL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TextSize, params.ptr, cast(void*)0);
-		*XL = *cast(float*)&params[12];
-		*YL = *cast(float*)&params[16];
+		XL = *cast(float*)&params[12];
+		YL = *cast(float*)&params[16];
 	}
 	void DeProject(UObject.Vector2D ScreenPos, ref Vector WorldOrigin, ref Vector WorldDirection)
 	{
@@ -385,8 +416,8 @@ final:
 		*cast(Vector*)&params[8] = WorldOrigin;
 		*cast(Vector*)&params[20] = WorldDirection;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DeProject, params.ptr, cast(void*)0);
-		*WorldOrigin = *cast(Vector*)&params[8];
-		*WorldDirection = *cast(Vector*)&params[20];
+		WorldOrigin = *cast(Vector*)&params[8];
+		WorldDirection = *cast(Vector*)&params[20];
 	}
 	void PushTranslationMatrix(Vector TranslationVector)
 	{
@@ -399,11 +430,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopTransform, cast(void*)0, cast(void*)0);
 	}
-	void Reset(bool bKeepOrigin)
+	void Reset(bool* bKeepOrigin = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bKeepOrigin;
+		if (bKeepOrigin !is null)
+			*cast(bool*)params.ptr = *bKeepOrigin;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, params.ptr, cast(void*)0);
 	}
 	void SetOrigin(float X, float Y)
@@ -439,35 +471,41 @@ final:
 		*cast(EngineTypes.EBlendMode*)&params[8] = Blend;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawTextureBlended, params.ptr, cast(void*)0);
 	}
-	Canvas.CanvasIcon MakeIcon(Texture pTexture, float U, float V, float UL, float VL)
+	Canvas.CanvasIcon MakeIcon(Texture pTexture, float* U = null, float* V = null, float* UL = null, float* VL = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(Texture*)params.ptr = pTexture;
-		*cast(float*)&params[4] = U;
-		*cast(float*)&params[8] = V;
-		*cast(float*)&params[12] = UL;
-		*cast(float*)&params[16] = VL;
+		if (U !is null)
+			*cast(float*)&params[4] = *U;
+		if (V !is null)
+			*cast(float*)&params[8] = *V;
+		if (UL !is null)
+			*cast(float*)&params[12] = *UL;
+		if (VL !is null)
+			*cast(float*)&params[16] = *VL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MakeIcon, params.ptr, cast(void*)0);
 		return *cast(Canvas.CanvasIcon*)&params[20];
 	}
-	void DrawIcon(Canvas.CanvasIcon Icon, float X, float Y, float Scale)
+	void DrawIcon(Canvas.CanvasIcon Icon, float X, float Y, float* Scale = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Canvas.CanvasIcon*)params.ptr = Icon;
 		*cast(float*)&params[20] = X;
 		*cast(float*)&params[24] = Y;
-		*cast(float*)&params[28] = Scale;
+		if (Scale !is null)
+			*cast(float*)&params[28] = *Scale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawIcon, params.ptr, cast(void*)0);
 	}
-	void DrawRect(float RectX, float RectY, Texture Tex)
+	void DrawRect(float RectX, float RectY, Texture* Tex = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = RectX;
 		*cast(float*)&params[4] = RectY;
-		*cast(Texture*)&params[8] = Tex;
+		if (Tex !is null)
+			*cast(Texture*)&params[8] = *Tex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawRect, params.ptr, cast(void*)0);
 	}
 	void DrawBox(float Width, float Height)

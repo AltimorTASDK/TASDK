@@ -83,8 +83,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) GroupNames() { mixin(MGPC!(ScriptArray!(ScriptString), 480)()); }
-			Mutator NextMutator() { mixin(MGPC!(Mutator, 476)()); }
+			ScriptArray!(ScriptString) GroupNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 480)()); }
+			Mutator NextMutator() { mixin(MGPC!("Mutator", 476)()); }
 		}
 		bool bUserAdded() { mixin(MGBPC!(492, 0x1)()); }
 		bool bUserAdded(bool val) { mixin(MSBPC!(492, 0x1)()); }
@@ -118,7 +118,7 @@ final:
 		*cast(Actor*)&params[8] = Pickup;
 		params[12] = bAllowPickup;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OverridePickupQuery, params.ptr, cast(void*)0);
-		*bAllowPickup = params[12];
+		bAllowPickup = params[12];
 		return *cast(bool*)&params[16];
 	}
 	bool HandleRestartGame()
@@ -137,13 +137,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckEndGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte InTeam, ScriptString IncomingName)
+	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte* InTeam = null, ScriptString* IncomingName = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
-		params[4] = InTeam;
-		*cast(ScriptString*)&params[8] = IncomingName;
+		if (InTeam !is null)
+			params[4] = *InTeam;
+		if (IncomingName !is null)
+			*cast(ScriptString*)&params[8] = *IncomingName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPlayerStart, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[20];
 	}
@@ -186,8 +188,8 @@ final:
 		*cast(ScriptString*)params.ptr = Portal;
 		*cast(ScriptString*)&params[12] = Options;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyLogin, params.ptr, cast(void*)0);
-		*Portal = *cast(ScriptString*)params.ptr;
-		*Options = *cast(ScriptString*)&params[12];
+		Portal = *cast(ScriptString*)params.ptr;
+		Options = *cast(ScriptString*)&params[12];
 	}
 	void ModifyPlayer(Pawn Other)
 	{
@@ -264,7 +266,7 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitMutator, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 	void GetSeamlessTravelActorList(bool bToEntry, ref ScriptArray!(Actor) ActorList)
 	{
@@ -273,7 +275,7 @@ final:
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
-		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
+		ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 	void ScoreObjective(PlayerReplicationInfo Scorer, int Score)
 	{
@@ -304,7 +306,7 @@ final:
 		*cast(ScriptClass*)&params[40] = pDamageType;
 		*cast(Actor*)&params[44] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NetDamage, params.ptr, cast(void*)0);
-		*Damage = *cast(int*)&params[4];
-		*Momentum = *cast(Vector*)&params[28];
+		Damage = *cast(int*)&params[4];
+		Momentum = *cast(Vector*)&params[28];
 	}
 }

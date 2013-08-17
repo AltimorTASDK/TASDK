@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAnimNodeBlendByDeployableState")()); }
 	private static __gshared TrAnimNodeBlendByDeployableState mDefaultProperties;
 	@property final static TrAnimNodeBlendByDeployableState DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByDeployableState, "TrAnimNodeBlendByDeployableState TribesGame.Default__TrAnimNodeBlendByDeployableState")()); }
-	@property final auto ref TrDeployable m_TrDeployable() { mixin(MGPC!(TrDeployable, 292)()); }
+	@property final auto ref TrDeployable m_TrDeployable() { mixin(MGPC!("TrDeployable", 292)()); }
 }

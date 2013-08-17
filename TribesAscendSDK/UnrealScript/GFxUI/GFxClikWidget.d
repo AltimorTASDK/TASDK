@@ -42,13 +42,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxClikWidget.EventData")()); }
 		@property final auto ref
 		{
-			int lastIndex() { mixin(MGPS!(int, 32)()); }
-			int Index() { mixin(MGPS!(int, 28)()); }
-			int Button() { mixin(MGPS!(int, 24)()); }
-			int mouseIndex() { mixin(MGPS!(int, 20)()); }
-			int Data() { mixin(MGPS!(int, 16)()); }
-			ScriptString Type() { mixin(MGPS!(ScriptString, 4)()); }
-			GFxObject Target() { mixin(MGPS!(GFxObject, 0)()); }
+			int lastIndex() { mixin(MGPS!("int", 32)()); }
+			int Index() { mixin(MGPS!("int", 28)()); }
+			int Button() { mixin(MGPS!("int", 24)()); }
+			int mouseIndex() { mixin(MGPS!("int", 20)()); }
+			int Data() { mixin(MGPS!("int", 16)()); }
+			ScriptString Type() { mixin(MGPS!("ScriptString", 4)()); }
+			GFxObject Target() { mixin(MGPS!("GFxObject", 0)()); }
 		}
 	}
 	// ERROR: Unsupported object class 'DelegateProperty' for the property named '__EventListener__Delegate'!

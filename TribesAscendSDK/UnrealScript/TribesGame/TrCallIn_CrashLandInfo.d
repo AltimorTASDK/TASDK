@@ -38,15 +38,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MomentumTransfer() { mixin(MGPC!(float, 528)()); }
-			float Damage() { mixin(MGPC!(float, 524)()); }
-			float DamageRadius() { mixin(MGPC!(float, 520)()); }
-			ScriptClass DamageTypeClass() { mixin(MGPC!(ScriptClass, 516)()); }
-			Vector r_CrashLandNormal() { mixin(MGPC!(Vector, 504)()); }
-			Vector r_CrashLandPoint() { mixin(MGPC!(Vector, 492)()); }
-			float r_fCrashLandTime() { mixin(MGPC!(float, 488)()); }
-			Controller m_Owner() { mixin(MGPC!(Controller, 480)()); }
-			ScriptClass m_ItemToDeploy() { mixin(MGPC!(ScriptClass, 476)()); }
+			float MomentumTransfer() { mixin(MGPC!("float", 528)()); }
+			float Damage() { mixin(MGPC!("float", 524)()); }
+			float DamageRadius() { mixin(MGPC!("float", 520)()); }
+			ScriptClass DamageTypeClass() { mixin(MGPC!("ScriptClass", 516)()); }
+			Vector r_CrashLandNormal() { mixin(MGPC!("Vector", 504)()); }
+			Vector r_CrashLandPoint() { mixin(MGPC!("Vector", 492)()); }
+			float r_fCrashLandTime() { mixin(MGPC!("float", 488)()); }
+			Controller m_Owner() { mixin(MGPC!("Controller", 480)()); }
+			ScriptClass m_ItemToDeploy() { mixin(MGPC!("ScriptClass", 476)()); }
 		}
 		bool r_bPodLanded() { mixin(MGBPC!(484, 0x1)()); }
 		bool r_bPodLanded(bool val) { mixin(MSBPC!(484, 0x1)()); }

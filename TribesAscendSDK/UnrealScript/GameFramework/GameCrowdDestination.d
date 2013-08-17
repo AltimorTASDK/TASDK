@@ -49,25 +49,25 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(GameCrowdDestination) NextDestinations() { mixin(MGPC!(ScriptArray!(GameCrowdDestination), 492)()); }
-			ScriptArray!(ScriptClass) SupportedAgentClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 520)()); }
-			ScriptArray!(UObject) SupportedArchetypes() { mixin(MGPC!(ScriptArray!(UObject), 532)()); }
-			ScriptArray!(ScriptClass) RestrictedAgentClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 544)()); }
-			ScriptArray!(UObject) RestrictedArchetypes() { mixin(MGPC!(ScriptArray!(UObject), 556)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) ReachedBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 588)()); }
-			GameCrowdPopulationManager MyPopMgr() { mixin(MGPC!(GameCrowdPopulationManager, 612)()); }
-			float LastSpawnTime() { mixin(MGPC!(float, 608)()); }
-			float Priority() { mixin(MGPC!(float, 604)()); }
-			GameCrowdAgent AgentEnRoute() { mixin(MGPC!(GameCrowdAgent, 600)()); }
-			float SpawnRadius() { mixin(MGPC!(float, 584)()); }
-			float InteractionDelay() { mixin(MGPC!(float, 580)()); }
-			ScriptName InteractionTag() { mixin(MGPC!(ScriptName, 572)()); }
-			float ExactReachTolerance() { mixin(MGPC!(float, 568)()); }
-			int CustomerCount() { mixin(MGPC!(int, 516)()); }
-			float Frequency() { mixin(MGPC!(float, 512)()); }
-			int Capacity() { mixin(MGPC!(int, 508)()); }
-			GameCrowdDestinationQueuePoint QueueHead() { mixin(MGPC!(GameCrowdDestinationQueuePoint, 504)()); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!(UObject.Pointer, 484)()); }
+			ScriptArray!(GameCrowdDestination) NextDestinations() { mixin(MGPC!("ScriptArray!(GameCrowdDestination)", 492)()); }
+			ScriptArray!(ScriptClass) SupportedAgentClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 520)()); }
+			ScriptArray!(UObject) SupportedArchetypes() { mixin(MGPC!("ScriptArray!(UObject)", 532)()); }
+			ScriptArray!(ScriptClass) RestrictedAgentClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 544)()); }
+			ScriptArray!(UObject) RestrictedArchetypes() { mixin(MGPC!("ScriptArray!(UObject)", 556)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) ReachedBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 588)()); }
+			GameCrowdPopulationManager MyPopMgr() { mixin(MGPC!("GameCrowdPopulationManager", 612)()); }
+			float LastSpawnTime() { mixin(MGPC!("float", 608)()); }
+			float Priority() { mixin(MGPC!("float", 604)()); }
+			GameCrowdAgent AgentEnRoute() { mixin(MGPC!("GameCrowdAgent", 600)()); }
+			float SpawnRadius() { mixin(MGPC!("float", 584)()); }
+			float InteractionDelay() { mixin(MGPC!("float", 580)()); }
+			ScriptName InteractionTag() { mixin(MGPC!("ScriptName", 572)()); }
+			float ExactReachTolerance() { mixin(MGPC!("float", 568)()); }
+			int CustomerCount() { mixin(MGPC!("int", 516)()); }
+			float Frequency() { mixin(MGPC!("float", 512)()); }
+			int Capacity() { mixin(MGPC!("int", 508)()); }
+			GameCrowdDestinationQueuePoint QueueHead() { mixin(MGPC!("GameCrowdDestinationQueuePoint", 504)()); }
+			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!("UObject.Pointer", 484)()); }
 		}
 		bool bHasNavigationMesh() { mixin(MGBPC!(488, 0x20000)()); }
 		bool bHasNavigationMesh(bool val) { mixin(MSBPC!(488, 0x20000)()); }
@@ -177,7 +177,7 @@ final:
 		*cast(Vector*)&params[4] = SpawnPos;
 		*cast(Rotator*)&params[16] = SpawnRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpawnPosition, params.ptr, cast(void*)0);
-		*SpawnPos = *cast(Vector*)&params[4];
-		*SpawnRot = *cast(Rotator*)&params[16];
+		SpawnPos = *cast(Vector*)&params[4];
+		SpawnRot = *cast(Rotator*)&params[16];
 	}
 }

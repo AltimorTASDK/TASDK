@@ -14,7 +14,7 @@ public extern(D):
 	@property final static GFxAction_SetCaptureKeys DefaultProperties() { mixin(MGDPC!(GFxAction_SetCaptureKeys, "GFxAction_SetCaptureKeys GFxUI.Default__GFxAction_SetCaptureKeys")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 236)()); }
-		GFxMoviePlayer Movie() { mixin(MGPC!(GFxMoviePlayer, 232)()); }
+		ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 236)()); }
+		GFxMoviePlayer Movie() { mixin(MGPC!("GFxMoviePlayer", 232)()); }
 	}
 }

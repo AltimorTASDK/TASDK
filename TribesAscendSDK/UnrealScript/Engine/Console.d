@@ -70,8 +70,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.scrollbackData")()); }
 		@property final auto ref
 		{
-			UObject.Color OverrideColor() { mixin(MGPS!(UObject.Color, 12)()); }
-			ScriptString Text() { mixin(MGPS!(ScriptString, 0)()); }
+			UObject.Color OverrideColor() { mixin(MGPS!("UObject.Color", 12)()); }
+			ScriptString Text() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct AutoCompleteCommand
@@ -82,8 +82,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteCommand")()); }
 		@property final auto ref
 		{
-			ScriptString Desc() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString Command() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString Desc() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString Command() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct AutoCompleteNode
@@ -94,9 +94,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Console.AutoCompleteNode")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS!(ScriptArray!(int), 4)()); }
-			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS!(ScriptArray!(UObject.Pointer), 16)()); }
-			int IndexChar() { mixin(MGPS!(int, 0)()); }
+			ScriptArray!(int) AutoCompleteListIndices() { mixin(MGPS!("ScriptArray!(int)", 4)()); }
+			ScriptArray!(UObject.Pointer) ChildNodes() { mixin(MGPS!("ScriptArray!(UObject.Pointer)", 16)()); }
+			int IndexChar() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	static struct Typing
@@ -113,26 +113,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Console.scrollbackData) Scrollback() { mixin(MGPC!(ScriptArray!(Console.scrollbackData), 140)()); }
-			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 384)()); }
-			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { mixin(MGPC!(ScriptArray!(Console.AutoCompleteCommand), 396)()); }
-			ScriptArray!(int) AutoCompleteIndices() { mixin(MGPC!(ScriptArray!(int), 440)()); }
-			Console.AutoCompleteNode AutoCompleteTree() { mixin(MGPC!(Console.AutoCompleteNode, 412)()); }
-			int AutoCompleteIndex() { mixin(MGPC!(int, 408)()); }
-			int TypedStrPos() { mixin(MGPC!(int, 380)()); }
-			ScriptString TypedStr() { mixin(MGPC!(ScriptString, 368)()); }
-			ScriptString History() { mixin(MGPC!(ScriptString, 172)()); }
-			int HistoryCur() { mixin(MGPC!(int, 168)()); }
-			int HistoryBot() { mixin(MGPC!(int, 164)()); }
-			int HistoryTop() { mixin(MGPC!(int, 160)()); }
-			int SBPos() { mixin(MGPC!(int, 156)()); }
-			int SBHead() { mixin(MGPC!(int, 152)()); }
-			int MaxScrollbackSize() { mixin(MGPC!(int, 136)()); }
-			ScriptName TypeKey() { mixin(MGPC!(ScriptName, 128)()); }
-			ScriptName ConsoleKey() { mixin(MGPC!(ScriptName, 120)()); }
-			Texture2D DefaultTexture_White() { mixin(MGPC!(Texture2D, 116)()); }
-			Texture2D DefaultTexture_Black() { mixin(MGPC!(Texture2D, 112)()); }
-			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!(LocalPlayer, 108)()); }
+			ScriptArray!(Console.scrollbackData) Scrollback() { mixin(MGPC!("ScriptArray!(Console.scrollbackData)", 140)()); }
+			ScriptArray!(Console.AutoCompleteCommand) ManualAutoCompleteList() { mixin(MGPC!("ScriptArray!(Console.AutoCompleteCommand)", 384)()); }
+			ScriptArray!(Console.AutoCompleteCommand) AutoCompleteList() { mixin(MGPC!("ScriptArray!(Console.AutoCompleteCommand)", 396)()); }
+			ScriptArray!(int) AutoCompleteIndices() { mixin(MGPC!("ScriptArray!(int)", 440)()); }
+			Console.AutoCompleteNode AutoCompleteTree() { mixin(MGPC!("Console.AutoCompleteNode", 412)()); }
+			int AutoCompleteIndex() { mixin(MGPC!("int", 408)()); }
+			int TypedStrPos() { mixin(MGPC!("int", 380)()); }
+			ScriptString TypedStr() { mixin(MGPC!("ScriptString", 368)()); }
+			ScriptString History() { mixin(MGPC!("ScriptString", 172)()); }
+			int HistoryCur() { mixin(MGPC!("int", 168)()); }
+			int HistoryBot() { mixin(MGPC!("int", 164)()); }
+			int HistoryTop() { mixin(MGPC!("int", 160)()); }
+			int SBPos() { mixin(MGPC!("int", 156)()); }
+			int SBHead() { mixin(MGPC!("int", 152)()); }
+			int MaxScrollbackSize() { mixin(MGPC!("int", 136)()); }
+			ScriptName TypeKey() { mixin(MGPC!("ScriptName", 128)()); }
+			ScriptName ConsoleKey() { mixin(MGPC!("ScriptName", 120)()); }
+			Texture2D DefaultTexture_White() { mixin(MGPC!("Texture2D", 116)()); }
+			Texture2D DefaultTexture_Black() { mixin(MGPC!("Texture2D", 112)()); }
+			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!("LocalPlayer", 108)()); }
 		}
 		bool bIsRuntimeAutoCompleteUpToDate() { mixin(MGBPC!(364, 0x40)()); }
 		bool bIsRuntimeAutoCompleteUpToDate(bool val) { mixin(MSBPC!(364, 0x40)()); }
@@ -186,20 +186,22 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearOutput, cast(void*)0, cast(void*)0);
 	}
-	void OutputTextLine(ScriptString Text, UObject.Color OverrideColor)
+	void OutputTextLine(ScriptString Text, UObject.Color* OverrideColor = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(UObject.Color*)&params[12] = OverrideColor;
+		if (OverrideColor !is null)
+			*cast(UObject.Color*)&params[12] = *OverrideColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OutputTextLine, params.ptr, cast(void*)0);
 	}
-	void OutputText(ScriptString Text, UObject.Color OverrideColor)
+	void OutputText(ScriptString Text, UObject.Color* OverrideColor = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(UObject.Color*)&params[12] = OverrideColor;
+		if (OverrideColor !is null)
+			*cast(UObject.Color*)&params[12] = *OverrideColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OutputText, params.ptr, cast(void*)0);
 	}
 	void StartTyping(ScriptString Text)
@@ -216,15 +218,17 @@ final:
 		*cast(Canvas*)params.ptr = pCanvas;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
-	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float* AmountDepressed = null, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = Event;
-		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (AmountDepressed !is null)
+			*cast(float*)&params[16] = *AmountDepressed;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -257,11 +261,12 @@ final:
 		*cast(ScriptString*)params.ptr = Text;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendInputText, params.ptr, cast(void*)0);
 	}
-	void BuildRuntimeAutoCompleteList(bool bForce)
+	void BuildRuntimeAutoCompleteList(bool* bForce = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForce;
+		if (bForce !is null)
+			*cast(bool*)params.ptr = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildRuntimeAutoCompleteList, params.ptr, cast(void*)0);
 	}
 	void UpdateCompleteIndices()

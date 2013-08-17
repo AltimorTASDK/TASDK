@@ -66,19 +66,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fLoseTightTrackingDistance() { mixin(MGPC!(float, 884)()); }
-			Rotator m_MissileCaratRotation() { mixin(MGPC!(Rotator, 872)()); }
-			float m_fStage1MinGroundDist() { mixin(MGPC!(float, 868)()); }
-			Vector m_vLastKnownTargetLocation() { mixin(MGPC!(Vector, 856)()); }
-			float m_fInitialLocationZ() { mixin(MGPC!(float, 852)()); }
+			float m_fLoseTightTrackingDistance() { mixin(MGPC!("float", 884)()); }
+			Rotator m_MissileCaratRotation() { mixin(MGPC!("Rotator", 872)()); }
+			float m_fStage1MinGroundDist() { mixin(MGPC!("float", 868)()); }
+			Vector m_vLastKnownTargetLocation() { mixin(MGPC!("Vector", 856)()); }
+			float m_fInitialLocationZ() { mixin(MGPC!("float", 852)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ProjectileMesh'!
-			float m_fMinHeightGainForGoodLOS() { mixin(MGPC!(float, 844)()); }
-			float m_fIdealHeightAboveTargetForGoodLOS() { mixin(MGPC!(float, 840)()); }
-			float m_fAdjustingForGoodLOSAccelRate() { mixin(MGPC!(float, 836)()); }
-			float m_fTrackingTime() { mixin(MGPC!(float, 832)()); }
-			float m_fTrackingDelay() { mixin(MGPC!(float, 828)()); }
-			float m_fLOSDelay() { mixin(MGPC!(float, 824)()); }
-			TrProj_TrackingMissile.ETrackingMissileStage m_MissileStage() { mixin(MGPC!(TrProj_TrackingMissile.ETrackingMissileStage, 816)()); }
+			float m_fMinHeightGainForGoodLOS() { mixin(MGPC!("float", 844)()); }
+			float m_fIdealHeightAboveTargetForGoodLOS() { mixin(MGPC!("float", 840)()); }
+			float m_fAdjustingForGoodLOSAccelRate() { mixin(MGPC!("float", 836)()); }
+			float m_fTrackingTime() { mixin(MGPC!("float", 832)()); }
+			float m_fTrackingDelay() { mixin(MGPC!("float", 828)()); }
+			float m_fLOSDelay() { mixin(MGPC!("float", 824)()); }
+			TrProj_TrackingMissile.ETrackingMissileStage m_MissileStage() { mixin(MGPC!("TrProj_TrackingMissile.ETrackingMissileStage", 816)()); }
 		}
 		bool m_bLostTightHoming() { mixin(MGBPC!(820, 0x2)()); }
 		bool m_bLostTightHoming(bool val) { mixin(MSBPC!(820, 0x2)()); }
@@ -156,7 +156,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnFlightEffectsTimer, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -165,8 +165,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void Tick(float DeltaTime)

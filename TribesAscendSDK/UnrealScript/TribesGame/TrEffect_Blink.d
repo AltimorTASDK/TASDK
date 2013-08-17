@@ -17,12 +17,13 @@ public extern(D):
 		private static __gshared ScriptFunction mApply;
 		public @property static final ScriptFunction Apply() { mixin(MGF!("mApply", "Function TribesGame.TrEffect_Blink.Apply")()); }
 	}
-	final void Apply(Actor Target, Actor.ImpactInfo Impact)
+	final void Apply(Actor Target, Actor.ImpactInfo* Impact = null)
 	{
 		ubyte params[84];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		*cast(Actor.ImpactInfo*)&params[4] = Impact;
+		if (Impact !is null)
+			*cast(Actor.ImpactInfo*)&params[4] = *Impact;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Apply, params.ptr, cast(void*)0);
 	}
 }

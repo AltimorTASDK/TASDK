@@ -14,7 +14,7 @@ public extern(D):
 	@property final static PrecomputedVisibilityOverrideVolume DefaultProperties() { mixin(MGDPC!(PrecomputedVisibilityOverrideVolume, "PrecomputedVisibilityOverrideVolume Engine.Default__PrecomputedVisibilityOverrideVolume")()); }
 	@property final auto ref
 	{
-		ScriptArray!(Actor) OverrideVisibleActors() { mixin(MGPC!(ScriptArray!(Actor), 520)()); }
-		ScriptArray!(Actor) OverrideInvisibleActors() { mixin(MGPC!(ScriptArray!(Actor), 532)()); }
+		ScriptArray!(Actor) OverrideVisibleActors() { mixin(MGPC!("ScriptArray!(Actor)", 520)()); }
+		ScriptArray!(Actor) OverrideInvisibleActors() { mixin(MGPC!("ScriptArray!(Actor)", 532)()); }
 	}
 }

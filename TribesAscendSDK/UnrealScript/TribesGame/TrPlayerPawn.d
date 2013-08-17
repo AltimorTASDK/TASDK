@@ -85,77 +85,78 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ubyte r_nFlashReloadPrimaryWeapon() { mixin(MGPC!(ubyte, 3212)()); }
-		ubyte r_nFlashReloadSecondaryWeapon() { mixin(MGPC!(ubyte, 3213)()); }
-		TrAnimNodeBlendBy3pDevice m_3pDeviceAnimNode() { mixin(MGPC!(TrAnimNodeBlendBy3pDevice, 3204)()); }
-		TrAnimNodeBlendBy3pDevice m_1pBodyMeshDeviceAnimNode() { mixin(MGPC!(TrAnimNodeBlendBy3pDevice, 3208)()); }
+		ubyte r_nFlashReloadPrimaryWeapon() { mixin(MGPC!("ubyte", 3212)()); }
+		ubyte r_nFlashReloadSecondaryWeapon() { mixin(MGPC!("ubyte", 3213)()); }
+		TrAnimNodeBlendBy3pDevice m_3pDeviceAnimNode() { mixin(MGPC!("TrAnimNodeBlendBy3pDevice", 3204)()); }
+		TrAnimNodeBlendBy3pDevice m_1pBodyMeshDeviceAnimNode() { mixin(MGPC!("TrAnimNodeBlendBy3pDevice", 3208)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_JetpackPSCs() { mixin(MGPC!(ScriptArray!(
+void*) m_JetpackPSCs() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 3216)()); }
+void*)", 3216)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_JetpackRibbonPSCs() { mixin(MGPC!(ScriptArray!(
+void*) m_JetpackRibbonPSCs() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 3228)()); }
-		ScriptArray!(TrPawn.FootstepParticleInfo) m_HardLandingParticles() { mixin(MGPC!(ScriptArray!(TrPawn.FootstepParticleInfo), 3240)()); }
-		ScriptArray!(TrPawn.FootstepParticleInfo) m_StepParticles() { mixin(MGPC!(ScriptArray!(TrPawn.FootstepParticleInfo), 3252)()); }
+void*)", 3228)()); }
+		ScriptArray!(TrPawn.FootstepParticleInfo) m_HardLandingParticles() { mixin(MGPC!("ScriptArray!(TrPawn.FootstepParticleInfo)", 3240)()); }
+		ScriptArray!(TrPawn.FootstepParticleInfo) m_StepParticles() { mixin(MGPC!("ScriptArray!(TrPawn.FootstepParticleInfo)", 3252)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_FootThrusterPSCs() { mixin(MGPC!(ScriptArray!(
+void*) m_FootThrusterPSCs() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 3268)()); }
-		ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC!(ScriptArray!(AnimNodeSequence), 3436)()); }
-		float BobGroundSpeedMultiplier2() { mixin(MGPC!(float, 3432)()); }
-		float BobGroundSpeedMultiplier1() { mixin(MGPC!(float, 3428)()); }
-		float BobTimeMultiplier() { mixin(MGPC!(float, 3424)()); }
-		float m_WeaponBobMultiplier2() { mixin(MGPC!(float, 3420)()); }
-		float m_WeaponBobMultiplier1() { mixin(MGPC!(float, 3416)()); }
-		float m_BobFootstepMultiplier() { mixin(MGPC!(float, 3412)()); }
-		float m_JumpBob5() { mixin(MGPC!(float, 3408)()); }
-		float m_JumpBob4() { mixin(MGPC!(float, 3404)()); }
-		float m_JumpBob3() { mixin(MGPC!(float, 3400)()); }
-		float m_JumpBob2() { mixin(MGPC!(float, 3396)()); }
-		float m_JumpBob1() { mixin(MGPC!(float, 3392)()); }
-		float m_EyeHeightLandingSkiingMultiplier2() { mixin(MGPC!(float, 3388)()); }
-		float m_EyeHeightLandingSkiingMultiplier() { mixin(MGPC!(float, 3384)()); }
-		float m_EyeHeightLandingSpeedSqThresholdSkiing() { mixin(MGPC!(float, 3380)()); }
-		float m_EyeHeightLandingSpeedSqThreshold() { mixin(MGPC!(float, 3376)()); }
-		float m_EyeHeightLandingMultiplier5() { mixin(MGPC!(float, 3372)()); }
-		float m_EyeHeightLandingMultiplier4() { mixin(MGPC!(float, 3368)()); }
-		float m_EyeHeightLandingMultiplier3() { mixin(MGPC!(float, 3364)()); }
-		float m_EyeHeightLandingMultiplier2() { mixin(MGPC!(float, 3360)()); }
-		float m_EyeHeightLandingMultiplier1() { mixin(MGPC!(float, 3356)()); }
-		float m_EyeHeightLandingMultiplier() { mixin(MGPC!(float, 3352)()); }
-		float m_EyeHeightLandingMinSmoothing() { mixin(MGPC!(float, 3348)()); }
-		float m_EyeHeightLandRecoveryMultiplier2() { mixin(MGPC!(float, 3344)()); }
-		float m_EyeHeightLandRecoveryMultiplier1() { mixin(MGPC!(float, 3340)()); }
-		float m_EyeHeightLandRecoveryMultiplier() { mixin(MGPC!(float, 3336)()); }
-		float m_EyeHeightLandRecoveryMinSmoothing() { mixin(MGPC!(float, 3332)()); }
-		float m_EyeHeightWalkingMultiplier() { mixin(MGPC!(float, 3328)()); }
-		float m_EyeHeightWalkingMinSmoothing() { mixin(MGPC!(float, 3324)()); }
-		float m_Cam3pZoomInSpeed() { mixin(MGPC!(float, 3320)()); }
-		float m_Cam3pZoomOutSpeed() { mixin(MGPC!(float, 3316)()); }
-		Actor m_DeathCamFocus() { mixin(MGPC!(Actor, 3312)()); }
-		Rotator m_CamRotOffset() { mixin(MGPC!(Rotator, 3300)()); }
-		float m_fRibbonZVelocity() { mixin(MGPC!(float, 3296)()); }
-		ParticleSystem m_SonicPunchEffect3p() { mixin(MGPC!(ParticleSystem, 3292)()); }
-		ParticleSystem m_SonicPunchEffect1p() { mixin(MGPC!(ParticleSystem, 3288)()); }
-		SoundCue m_SonicPunch3p() { mixin(MGPC!(SoundCue, 3284)()); }
-		SoundCue m_SonicPunch1p() { mixin(MGPC!(SoundCue, 3280)()); }
-		ParticleSystem m_DefaultSkiJetParticle() { mixin(MGPC!(ParticleSystem, 3264)()); }
-		float m_fJetpackSoundFadeOutTime() { mixin(MGPC!(float, 3200)()); }
-		float m_fRemainingJetpackSoundFadeOutTime() { mixin(MGPC!(float, 3196)()); }
+void*)", 3268)()); }
+		ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSequence)", 3436)()); }
+		float BobGroundSpeedMultiplier2() { mixin(MGPC!("float", 3432)()); }
+		float BobGroundSpeedMultiplier1() { mixin(MGPC!("float", 3428)()); }
+		float BobTimeMultiplier() { mixin(MGPC!("float", 3424)()); }
+		float m_WeaponBobMultiplier2() { mixin(MGPC!("float", 3420)()); }
+		float m_WeaponBobMultiplier1() { mixin(MGPC!("float", 3416)()); }
+		float m_BobFootstepMultiplier() { mixin(MGPC!("float", 3412)()); }
+		float m_JumpBob5() { mixin(MGPC!("float", 3408)()); }
+		float m_JumpBob4() { mixin(MGPC!("float", 3404)()); }
+		float m_JumpBob3() { mixin(MGPC!("float", 3400)()); }
+		float m_JumpBob2() { mixin(MGPC!("float", 3396)()); }
+		float m_JumpBob1() { mixin(MGPC!("float", 3392)()); }
+		float m_EyeHeightLandingSkiingMultiplier2() { mixin(MGPC!("float", 3388)()); }
+		float m_EyeHeightLandingSkiingMultiplier() { mixin(MGPC!("float", 3384)()); }
+		float m_EyeHeightLandingSpeedSqThresholdSkiing() { mixin(MGPC!("float", 3380)()); }
+		float m_EyeHeightLandingSpeedSqThreshold() { mixin(MGPC!("float", 3376)()); }
+		float m_EyeHeightLandingMultiplier5() { mixin(MGPC!("float", 3372)()); }
+		float m_EyeHeightLandingMultiplier4() { mixin(MGPC!("float", 3368)()); }
+		float m_EyeHeightLandingMultiplier3() { mixin(MGPC!("float", 3364)()); }
+		float m_EyeHeightLandingMultiplier2() { mixin(MGPC!("float", 3360)()); }
+		float m_EyeHeightLandingMultiplier1() { mixin(MGPC!("float", 3356)()); }
+		float m_EyeHeightLandingMultiplier() { mixin(MGPC!("float", 3352)()); }
+		float m_EyeHeightLandingMinSmoothing() { mixin(MGPC!("float", 3348)()); }
+		float m_EyeHeightLandRecoveryMultiplier2() { mixin(MGPC!("float", 3344)()); }
+		float m_EyeHeightLandRecoveryMultiplier1() { mixin(MGPC!("float", 3340)()); }
+		float m_EyeHeightLandRecoveryMultiplier() { mixin(MGPC!("float", 3336)()); }
+		float m_EyeHeightLandRecoveryMinSmoothing() { mixin(MGPC!("float", 3332)()); }
+		float m_EyeHeightWalkingMultiplier() { mixin(MGPC!("float", 3328)()); }
+		float m_EyeHeightWalkingMinSmoothing() { mixin(MGPC!("float", 3324)()); }
+		float m_Cam3pZoomInSpeed() { mixin(MGPC!("float", 3320)()); }
+		float m_Cam3pZoomOutSpeed() { mixin(MGPC!("float", 3316)()); }
+		Actor m_DeathCamFocus() { mixin(MGPC!("Actor", 3312)()); }
+		Rotator m_CamRotOffset() { mixin(MGPC!("Rotator", 3300)()); }
+		float m_fRibbonZVelocity() { mixin(MGPC!("float", 3296)()); }
+		ParticleSystem m_SonicPunchEffect3p() { mixin(MGPC!("ParticleSystem", 3292)()); }
+		ParticleSystem m_SonicPunchEffect1p() { mixin(MGPC!("ParticleSystem", 3288)()); }
+		SoundCue m_SonicPunch3p() { mixin(MGPC!("SoundCue", 3284)()); }
+		SoundCue m_SonicPunch1p() { mixin(MGPC!("SoundCue", 3280)()); }
+		ParticleSystem m_DefaultSkiJetParticle() { mixin(MGPC!("ParticleSystem", 3264)()); }
+		float m_fJetpackSoundFadeOutTime() { mixin(MGPC!("float", 3200)()); }
+		float m_fRemainingJetpackSoundFadeOutTime() { mixin(MGPC!("float", 3196)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComonentJetpackAttack'!
 	}
 final:
-	void SetCharacterClassFromInfo(ScriptClass pInfo, bool bForce)
+	void SetCharacterClassFromInfo(ScriptClass pInfo, bool* bForce = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = pInfo;
-		*cast(bool*)&params[4] = bForce;
+		if (bForce !is null)
+			*cast(bool*)&params[4] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCharacterClassFromInfo, params.ptr, cast(void*)0);
 	}
 	void UpdateEyeHeight(float DeltaTime)
@@ -284,9 +285,9 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	void SetThirdPersonCamera(bool bNewBehindView)
@@ -305,9 +306,9 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcThirdPersonCam, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	bool CalcOtherWatchingCam(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV, TrPlayerController WatcherController)
@@ -320,9 +321,9 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[28] = out_FOV;
 		*cast(TrPlayerController*)&params[32] = WatcherController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcOtherWatchingCam, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[36];
 	}
 	void ClearMeshAnimSeqNodes()

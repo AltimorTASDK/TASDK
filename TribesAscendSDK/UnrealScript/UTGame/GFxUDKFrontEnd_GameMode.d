@@ -51,26 +51,27 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_GameModeInfo) GameModeList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_GameModeInfo), 268)()); }
-		GFxClikWidget ImgScrollerMC() { mixin(MGPC!(GFxClikWidget, 264)()); }
-		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 260)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 256)()); }
-		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 252)()); }
-		ScriptString MapName() { mixin(MGPC!(ScriptString, 240)()); }
-		ScriptString GameMode() { mixin(MGPC!(ScriptString, 228)()); }
-		UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 224)()); }
-		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!(UIDataStore_OnlineGameSettings, 220)()); }
+		ScriptArray!(UTUIDataProvider_GameModeInfo) GameModeList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_GameModeInfo)", 268)()); }
+		GFxClikWidget ImgScrollerMC() { mixin(MGPC!("GFxClikWidget", 264)()); }
+		GFxObject MenuMC() { mixin(MGPC!("GFxObject", 260)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 256)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 252)()); }
+		ScriptString MapName() { mixin(MGPC!("ScriptString", 240)()); }
+		ScriptString GameMode() { mixin(MGPC!("ScriptString", 228)()); }
+		UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!("UTUIDataStore_StringList", 224)()); }
+		UIDataStore_OnlineGameSettings SettingsDataStore() { mixin(MGPC!("UIDataStore_OnlineGameSettings", 220)()); }
 	}
 final:
 	void OnViewLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)
@@ -80,13 +81,14 @@ final:
 		*cast(bool*)params.ptr = bDisableComponents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
-	void OnGameModeSelected(ScriptString InGameMode, ScriptString InDefaultMap, ScriptString InGameSettingsClass)
+	void OnGameModeSelected(ScriptString InGameMode, ScriptString InDefaultMap, ScriptString* InGameSettingsClass = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InGameMode;
 		*cast(ScriptString*)&params[12] = InDefaultMap;
-		*cast(ScriptString*)&params[24] = InGameSettingsClass;
+		if (InGameSettingsClass !is null)
+			*cast(ScriptString*)&params[24] = *InGameSettingsClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameModeSelected, params.ptr, cast(void*)0);
 	}
 	void OnGameModeChange(int SelectedIndex)

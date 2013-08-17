@@ -15,17 +15,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MaxOcclusionDistance() { mixin(MGPC!(float, 104)()); }
-			float FullyOccludedSamplesFraction() { mixin(MGPC!(float, 100)()); }
-			float OcclusionExponent() { mixin(MGPC!(float, 96)()); }
-			float IndirectIlluminationOcclusionFraction() { mixin(MGPC!(float, 92)()); }
-			float DirectIlluminationOcclusionFraction() { mixin(MGPC!(float, 88)()); }
-			float SpecularBoost() { mixin(MGPC!(float, 80)()); }
-			float DiffuseBoost() { mixin(MGPC!(float, 76)()); }
-			float EmissiveBoost() { mixin(MGPC!(float, 72)()); }
-			float EnvironmentIntensity() { mixin(MGPC!(float, 68)()); }
-			UObject.Color EnvironmentColor() { mixin(MGPC!(UObject.Color, 64)()); }
-			int NumIndirectLightingBounces() { mixin(MGPC!(int, 60)()); }
+			float MaxOcclusionDistance() { mixin(MGPC!("float", 104)()); }
+			float FullyOccludedSamplesFraction() { mixin(MGPC!("float", 100)()); }
+			float OcclusionExponent() { mixin(MGPC!("float", 96)()); }
+			float IndirectIlluminationOcclusionFraction() { mixin(MGPC!("float", 92)()); }
+			float DirectIlluminationOcclusionFraction() { mixin(MGPC!("float", 88)()); }
+			float SpecularBoost() { mixin(MGPC!("float", 80)()); }
+			float DiffuseBoost() { mixin(MGPC!("float", 76)()); }
+			float EmissiveBoost() { mixin(MGPC!("float", 72)()); }
+			float EnvironmentIntensity() { mixin(MGPC!("float", 68)()); }
+			UObject.Color EnvironmentColor() { mixin(MGPC!("UObject.Color", 64)()); }
+			int NumIndirectLightingBounces() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bVisualizeAmbientOcclusion() { mixin(MGBPC!(84, 0x2)()); }
 		bool bVisualizeAmbientOcclusion(bool val) { mixin(MSBPC!(84, 0x2)()); }

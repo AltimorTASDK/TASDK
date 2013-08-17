@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.RB_ConstraintDrawComponent")()); }
 	private static __gshared RB_ConstraintDrawComponent mDefaultProperties;
 	@property final static RB_ConstraintDrawComponent DefaultProperties() { mixin(MGDPC!(RB_ConstraintDrawComponent, "RB_ConstraintDrawComponent Engine.Default__RB_ConstraintDrawComponent")()); }
-	@property final auto ref MaterialInterface LimitMaterial() { mixin(MGPC!(MaterialInterface, 488)()); }
+	@property final auto ref MaterialInterface LimitMaterial() { mixin(MGPC!("MaterialInterface", 488)()); }
 }

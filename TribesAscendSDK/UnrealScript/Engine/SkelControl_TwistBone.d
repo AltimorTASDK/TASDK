@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SkelControl_TwistBone DefaultProperties() { mixin(MGDPC!(SkelControl_TwistBone, "SkelControl_TwistBone Engine.Default__SkelControl_TwistBone")()); }
 	@property final auto ref
 	{
-		float TwistAngleScale() { mixin(MGPC!(float, 196)()); }
-		ScriptName SourceBoneName() { mixin(MGPC!(ScriptName, 188)()); }
+		float TwistAngleScale() { mixin(MGPC!("float", 196)()); }
+		ScriptName SourceBoneName() { mixin(MGPC!("ScriptName", 188)()); }
 	}
 }

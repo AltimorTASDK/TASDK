@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UDKBase.UDKAnimBlendBySlotActive")()); }
 	private static __gshared UDKAnimBlendBySlotActive mDefaultProperties;
 	@property final static UDKAnimBlendBySlotActive DefaultProperties() { mixin(MGDPC!(UDKAnimBlendBySlotActive, "UDKAnimBlendBySlotActive UDKBase.Default__UDKAnimBlendBySlotActive")()); }
-	@property final auto ref AnimNodeSlot ChildSlot() { mixin(MGPC!(AnimNodeSlot, 300)()); }
+	@property final auto ref AnimNodeSlot ChildSlot() { mixin(MGPC!("AnimNodeSlot", 300)()); }
 }

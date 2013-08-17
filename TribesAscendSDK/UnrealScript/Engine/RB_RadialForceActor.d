@@ -28,13 +28,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 504)()); }
-			RB_RadialForceActor.ERadialForceType RadialForceMode() { mixin(MGPC!(RB_RadialForceActor.ERadialForceType, 497)()); }
-			PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { mixin(MGPC!(PrimitiveComponent.ERadialImpulseFalloff, 496)()); }
-			float SpinTorque() { mixin(MGPC!(float, 492)()); }
-			float SwirlStrength() { mixin(MGPC!(float, 488)()); }
-			float ForceRadius() { mixin(MGPC!(float, 484)()); }
-			float ForceStrength() { mixin(MGPC!(float, 480)()); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 504)()); }
+			RB_RadialForceActor.ERadialForceType RadialForceMode() { mixin(MGPC!("RB_RadialForceActor.ERadialForceType", 497)()); }
+			PrimitiveComponent.ERadialImpulseFalloff ForceFalloff() { mixin(MGPC!("PrimitiveComponent.ERadialImpulseFalloff", 496)()); }
+			float SpinTorque() { mixin(MGPC!("float", 492)()); }
+			float SwirlStrength() { mixin(MGPC!("float", 488)()); }
+			float ForceRadius() { mixin(MGPC!("float", 484)()); }
+			float ForceStrength() { mixin(MGPC!("float", 480)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 		}
 		bool bForceActive() { mixin(MGBPC!(500, 0x1)()); }

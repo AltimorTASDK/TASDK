@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetStringWithFieldName;
 		public @property static final ScriptFunction GetStringWithFieldName() { mixin(MGF!("mGetStringWithFieldName", "Function UDKBase.UDKUIDataStore_StringAliasMap.GetStringWithFieldName")()); }
 	}
-	@property final auto ref int FakePlatform() { mixin(MGPC!(int, 196)()); }
+	@property final auto ref int FakePlatform() { mixin(MGPC!("int", 196)()); }
 	final int GetStringWithFieldName(ScriptString FieldName, ref ScriptString MappedString)
 	{
 		ubyte params[28];
@@ -24,7 +24,7 @@ public extern(D):
 		*cast(ScriptString*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[12] = MappedString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringWithFieldName, params.ptr, cast(void*)0);
-		*MappedString = *cast(ScriptString*)&params[12];
+		MappedString = *cast(ScriptString*)&params[12];
 		return *cast(int*)&params[24];
 	}
 }

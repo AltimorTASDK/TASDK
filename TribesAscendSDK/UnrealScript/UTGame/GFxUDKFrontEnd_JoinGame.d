@@ -141,36 +141,36 @@ public extern(D):
 	{
 		auto ref
 		{
-			UDKDataStore_GameSearchBase SearchDataStore() { mixin(MGPC!(UDKDataStore_GameSearchBase, 220)()); }
-			ScriptName SearchDSName() { mixin(MGPC!(ScriptName, 264)()); }
-			UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!(UTUIDataStore_StringList, 224)()); }
-			UTUIDataStore_MenuItems MenuItemDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 244)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 248)()); }
+			UDKDataStore_GameSearchBase SearchDataStore() { mixin(MGPC!("UDKDataStore_GameSearchBase", 220)()); }
+			ScriptName SearchDSName() { mixin(MGPC!("ScriptName", 264)()); }
+			UTUIDataStore_StringList StringListDataStore() { mixin(MGPC!("UTUIDataStore_StringList", 224)()); }
+			UTUIDataStore_MenuItems MenuItemDataStore() { mixin(MGPC!("UTUIDataStore_MenuItems", 244)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 248)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
-			GFxClikWidget FlagsHeaderBtn() { mixin(MGPC!(GFxClikWidget, 328)()); }
-			GFxClikWidget ServerHeaderBtn() { mixin(MGPC!(GFxClikWidget, 332)()); }
-			GFxClikWidget MapHeaderBtn() { mixin(MGPC!(GFxClikWidget, 336)()); }
-			GFxClikWidget PlayersHeaderBtn() { mixin(MGPC!(GFxClikWidget, 340)()); }
-			GFxClikWidget PingHeaderBtn() { mixin(MGPC!(GFxClikWidget, 344)()); }
-			GFxClikWidget RefreshBtn() { mixin(MGPC!(GFxClikWidget, 320)()); }
-			GFxClikWidget ServerListMC() { mixin(MGPC!(GFxClikWidget, 316)()); }
-			GFxObject FilterMatchTypeTxt() { mixin(MGPC!(GFxObject, 348)()); }
-			GFxObject FilterGameModeTxt() { mixin(MGPC!(GFxObject, 352)()); }
-			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC!(GFxUDKFrontEnd_PasswordDialog, 272)()); }
-			ScriptString ServerPassword() { mixin(MGPC!(ScriptString, 284)()); }
-			GFxObject StatusTxt() { mixin(MGPC!(GFxObject, 356)()); }
-			GFxObject ServerCountTxt() { mixin(MGPC!(GFxObject, 364)()); }
-			GFxUDKFrontEnd_JoinGame.EQueryCompletionAction QueryCompletionAction() { mixin(MGPC!(GFxUDKFrontEnd_JoinGame.EQueryCompletionAction, 280)()); }
-			ScriptArray!(OnlineGameSearch.OnlineGameSearchResult) ServerInfoList() { mixin(MGPC!(ScriptArray!(OnlineGameSearch.OnlineGameSearchResult), 232)()); }
-			GFxObject HeaderBarMC() { mixin(MGPC!(GFxObject, 324)()); }
-			int SelectedIndex() { mixin(MGPC!(int, 372)()); }
-			GFxUDKFrontEnd_JoinDialog JoinDialogMC() { mixin(MGPC!(GFxUDKFrontEnd_JoinDialog, 276)()); }
-			GFxObject LoadingTickerMC() { mixin(MGPC!(GFxObject, 360)()); }
-			GFxObject MenuMC() { mixin(MGPC!(GFxObject, 312)()); }
-			GFxClikWidget FilterBtn() { mixin(MGPC!(GFxClikWidget, 368)()); }
-			UTDataStore_GameSearchDM SearchDMDataStore() { mixin(MGPC!(UTDataStore_GameSearchDM, 228)()); }
-			int LastServerAdded() { mixin(MGPC!(int, 296)()); }
-			ScriptArray!(UDKUIDataProvider_SearchResult) ServerListData() { mixin(MGPC!(ScriptArray!(UDKUIDataProvider_SearchResult), 300)()); }
+			GFxClikWidget FlagsHeaderBtn() { mixin(MGPC!("GFxClikWidget", 328)()); }
+			GFxClikWidget ServerHeaderBtn() { mixin(MGPC!("GFxClikWidget", 332)()); }
+			GFxClikWidget MapHeaderBtn() { mixin(MGPC!("GFxClikWidget", 336)()); }
+			GFxClikWidget PlayersHeaderBtn() { mixin(MGPC!("GFxClikWidget", 340)()); }
+			GFxClikWidget PingHeaderBtn() { mixin(MGPC!("GFxClikWidget", 344)()); }
+			GFxClikWidget RefreshBtn() { mixin(MGPC!("GFxClikWidget", 320)()); }
+			GFxClikWidget ServerListMC() { mixin(MGPC!("GFxClikWidget", 316)()); }
+			GFxObject FilterMatchTypeTxt() { mixin(MGPC!("GFxObject", 348)()); }
+			GFxObject FilterGameModeTxt() { mixin(MGPC!("GFxObject", 352)()); }
+			GFxUDKFrontEnd_PasswordDialog PasswordDialog() { mixin(MGPC!("GFxUDKFrontEnd_PasswordDialog", 272)()); }
+			ScriptString ServerPassword() { mixin(MGPC!("ScriptString", 284)()); }
+			GFxObject StatusTxt() { mixin(MGPC!("GFxObject", 356)()); }
+			GFxObject ServerCountTxt() { mixin(MGPC!("GFxObject", 364)()); }
+			GFxUDKFrontEnd_JoinGame.EQueryCompletionAction QueryCompletionAction() { mixin(MGPC!("GFxUDKFrontEnd_JoinGame.EQueryCompletionAction", 280)()); }
+			ScriptArray!(OnlineGameSearch.OnlineGameSearchResult) ServerInfoList() { mixin(MGPC!("ScriptArray!(OnlineGameSearch.OnlineGameSearchResult)", 232)()); }
+			GFxObject HeaderBarMC() { mixin(MGPC!("GFxObject", 324)()); }
+			int SelectedIndex() { mixin(MGPC!("int", 372)()); }
+			GFxUDKFrontEnd_JoinDialog JoinDialogMC() { mixin(MGPC!("GFxUDKFrontEnd_JoinDialog", 276)()); }
+			GFxObject LoadingTickerMC() { mixin(MGPC!("GFxObject", 360)()); }
+			GFxObject MenuMC() { mixin(MGPC!("GFxObject", 312)()); }
+			GFxClikWidget FilterBtn() { mixin(MGPC!("GFxClikWidget", 368)()); }
+			UTDataStore_GameSearchDM SearchDMDataStore() { mixin(MGPC!("UTDataStore_GameSearchDM", 228)()); }
+			int LastServerAdded() { mixin(MGPC!("int", 296)()); }
+			ScriptArray!(UDKUIDataProvider_SearchResult) ServerListData() { mixin(MGPC!("ScriptArray!(UDKUIDataProvider_SearchResult)", 300)()); }
 		}
 		bool bGametypeOutdated() { mixin(MGBPC!(260, 0x1)()); }
 		bool bGametypeOutdated(bool val) { mixin(MSBPC!(260, 0x1)()); }
@@ -205,11 +205,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFilterButton, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void OnViewClosed()
@@ -231,19 +232,21 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Cleanup, cast(void*)0, cast(void*)0);
 	}
-	int GetGameTypeSearchProviderIndex(ScriptString GameClassName)
+	int GetGameTypeSearchProviderIndex(ScriptString* GameClassName = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = GameClassName;
+		if (GameClassName !is null)
+			*cast(ScriptString*)params.ptr = *GameClassName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameTypeSearchProviderIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	void OnGameTypeChanged(int PlayerIndex)
+	void OnGameTypeChanged(int* PlayerIndex = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)params.ptr = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameTypeChanged, params.ptr, cast(void*)0);
 	}
 	void ConditionalRefreshServerList(int PlayerIndex)
@@ -265,12 +268,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PromptForServerPassword, cast(void*)0, cast(void*)0);
 	}
-	static ScriptString StripInvalidPasswordCharacters(ScriptString PasswordString, ScriptString InvalidChars)
+	static ScriptString StripInvalidPasswordCharacters(ScriptString PasswordString, ScriptString* InvalidChars = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PasswordString;
-		*cast(ScriptString*)&params[12] = InvalidChars;
+		if (InvalidChars !is null)
+			*cast(ScriptString*)&params[12] = *InvalidChars;
 		StaticClass.ProcessEvent(Functions.StripInvalidPasswordCharacters, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[24];
 	}
@@ -297,12 +301,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildJoinURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	void RefreshServerList(int InPlayerIndex, int MaxResults)
+	void RefreshServerList(int InPlayerIndex, int* MaxResults = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = InPlayerIndex;
-		*cast(int*)&params[4] = MaxResults;
+		if (MaxResults !is null)
+			*cast(int*)&params[4] = *MaxResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshServerList, params.ptr, cast(void*)0);
 	}
 	void SubmitServerListQuery(int PlayerIndex)
@@ -423,11 +428,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowJoinServer, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void CancelQuery(GFxUDKFrontEnd_JoinGame.EQueryCompletionAction DesiredCancelAction)
+	void CancelQuery(GFxUDKFrontEnd_JoinGame.EQueryCompletionAction* DesiredCancelAction = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		*cast(GFxUDKFrontEnd_JoinGame.EQueryCompletionAction*)params.ptr = DesiredCancelAction;
+		if (DesiredCancelAction !is null)
+			*cast(GFxUDKFrontEnd_JoinGame.EQueryCompletionAction*)params.ptr = *DesiredCancelAction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CancelQuery, params.ptr, cast(void*)0);
 	}
 	void SetRefreshing(bool IsRefreshing)

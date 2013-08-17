@@ -21,16 +21,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Color LightInscatteringColor() { mixin(MGPC!(UObject.Color, 128)()); }
-			float LightInscatteringBrightness() { mixin(MGPC!(float, 124)()); }
-			UObject.Color OppositeLightColor() { mixin(MGPC!(UObject.Color, 120)()); }
-			float OppositeLightBrightness() { mixin(MGPC!(float, 116)()); }
-			float LightTerminatorAngle() { mixin(MGPC!(float, 112)()); }
-			float StartDistance() { mixin(MGPC!(float, 108)()); }
-			float FogMaxOpacity() { mixin(MGPC!(float, 104)()); }
-			float FogHeightFalloff() { mixin(MGPC!(float, 100)()); }
-			float FogDensity() { mixin(MGPC!(float, 96)()); }
-			float FogHeight() { mixin(MGPC!(float, 92)()); }
+			UObject.Color LightInscatteringColor() { mixin(MGPC!("UObject.Color", 128)()); }
+			float LightInscatteringBrightness() { mixin(MGPC!("float", 124)()); }
+			UObject.Color OppositeLightColor() { mixin(MGPC!("UObject.Color", 120)()); }
+			float OppositeLightBrightness() { mixin(MGPC!("float", 116)()); }
+			float LightTerminatorAngle() { mixin(MGPC!("float", 112)()); }
+			float StartDistance() { mixin(MGPC!("float", 108)()); }
+			float FogMaxOpacity() { mixin(MGPC!("float", 104)()); }
+			float FogHeightFalloff() { mixin(MGPC!("float", 100)()); }
+			float FogDensity() { mixin(MGPC!("float", 96)()); }
+			float FogHeight() { mixin(MGPC!("float", 92)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }

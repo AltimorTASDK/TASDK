@@ -19,8 +19,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SoundClass.SoundClassEditorData")()); }
 		@property final auto ref
 		{
-			int NodePosY() { mixin(MGPS!(int, 4)()); }
-			int NodePosX() { mixin(MGPS!(int, 0)()); }
+			int NodePosY() { mixin(MGPS!("int", 4)()); }
+			int NodePosX() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct SoundClassProperties
@@ -33,12 +33,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				float RadioFilterVolumeThreshold() { mixin(MGPS!(float, 24)()); }
-				float RadioFilterVolume() { mixin(MGPS!(float, 20)()); }
-				float VoiceCenterChannelVolume() { mixin(MGPS!(float, 16)()); }
-				float LFEBleed() { mixin(MGPS!(float, 12)()); }
-				float StereoBleed() { mixin(MGPS!(float, 8)()); }
-				float Pitch() { mixin(MGPS!(float, 4)()); }
+				float RadioFilterVolumeThreshold() { mixin(MGPS!("float", 24)()); }
+				float RadioFilterVolume() { mixin(MGPS!("float", 20)()); }
+				float VoiceCenterChannelVolume() { mixin(MGPS!("float", 16)()); }
+				float LFEBleed() { mixin(MGPS!("float", 12)()); }
+				float StereoBleed() { mixin(MGPS!("float", 8)()); }
+				float Pitch() { mixin(MGPS!("float", 4)()); }
 				// WARNING: Property 'Volume' has the same name as a defined type!
 			}
 			bool bBassBoost() { mixin(MGBPS!(28, 0x40)()); }
@@ -61,10 +61,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) ChildClassNames() { mixin(MGPC!(ScriptArray!(ScriptName), 92)()); }
+			ScriptArray!(ScriptName) ChildClassNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 92)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'EditorData'!
-			int MenuID() { mixin(MGPC!(int, 108)()); }
-			SoundClass.SoundClassProperties Properties() { mixin(MGPC!(SoundClass.SoundClassProperties, 60)()); }
+			int MenuID() { mixin(MGPC!("int", 108)()); }
+			SoundClass.SoundClassProperties Properties() { mixin(MGPC!("SoundClass.SoundClassProperties", 60)()); }
 		}
 		bool bIsChild() { mixin(MGBPC!(104, 0x1)()); }
 		bool bIsChild(bool val) { mixin(MSBPC!(104, 0x1)()); }

@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleVelocity_Seeded")()); }
 	private static __gshared ParticleModuleVelocity_Seeded mDefaultProperties;
 	@property final static ParticleModuleVelocity_Seeded DefaultProperties() { mixin(MGDPC!(ParticleModuleVelocity_Seeded, "ParticleModuleVelocity_Seeded Engine.Default__ParticleModuleVelocity_Seeded")()); }
-	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { mixin(MGPC!(ParticleModule.ParticleRandomSeedInfo, 132)()); }
+	@property final auto ref ParticleModule.ParticleRandomSeedInfo RandomSeedInfo() { mixin(MGPC!("ParticleModule.ParticleRandomSeedInfo", 132)()); }
 }

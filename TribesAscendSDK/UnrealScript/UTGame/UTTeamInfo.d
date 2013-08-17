@@ -55,13 +55,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString Faction() { mixin(MGPC!(ScriptString, 520)()); }
-		UTCarriedObject TeamFlag() { mixin(MGPC!(UTCarriedObject, 516)()); }
-		UTTeamAI AI() { mixin(MGPC!(UTTeamAI, 508)()); }
-		UTGameObjective HomeBase() { mixin(MGPC!(UTGameObjective, 512)()); }
-		ScriptString TeamColorNames() { mixin(MGPC!(ScriptString, 548)()); }
-		UObject.Color BaseTeamColor() { mixin(MGPC!(UObject.Color, 532)()); }
-		int DesiredTeamSize() { mixin(MGPC!(int, 504)()); }
+		ScriptString Faction() { mixin(MGPC!("ScriptString", 520)()); }
+		UTCarriedObject TeamFlag() { mixin(MGPC!("UTCarriedObject", 516)()); }
+		UTTeamAI AI() { mixin(MGPC!("UTTeamAI", 508)()); }
+		UTGameObjective HomeBase() { mixin(MGPC!("UTGameObjective", 512)()); }
+		ScriptString TeamColorNames() { mixin(MGPC!("ScriptString", 548)()); }
+		UObject.Color BaseTeamColor() { mixin(MGPC!("UObject.Color", 532)()); }
+		int DesiredTeamSize() { mixin(MGPC!("int", 504)()); }
 	}
 final:
 	UTCharInfo.CharacterInfo GetBotInfo(ScriptString BotName)
@@ -141,15 +141,17 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.BotNameTaken, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void GetAvailableBotList(ref ScriptArray!(int) AvailableBots, ScriptString FactionFilter, bool bMalesOnly)
+	void GetAvailableBotList(ref ScriptArray!(int) AvailableBots, ScriptString* FactionFilter = null, bool* bMalesOnly = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptArray!(int)*)params.ptr = AvailableBots;
-		*cast(ScriptString*)&params[12] = FactionFilter;
-		*cast(bool*)&params[24] = bMalesOnly;
+		if (FactionFilter !is null)
+			*cast(ScriptString*)&params[12] = *FactionFilter;
+		if (bMalesOnly !is null)
+			*cast(bool*)&params[24] = *bMalesOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAvailableBotList, params.ptr, cast(void*)0);
-		*AvailableBots = *cast(ScriptArray!(int)*)params.ptr;
+		AvailableBots = *cast(ScriptArray!(int)*)params.ptr;
 	}
 	void Destroyed()
 	{

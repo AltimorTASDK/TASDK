@@ -74,7 +74,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGameReplicationInfo.MeshEffect")()); }
 		@property final auto ref
 		{
-			StaticMesh Mesh() { mixin(MGPS!(StaticMesh, 0)()); }
+			StaticMesh Mesh() { mixin(MGPS!("StaticMesh", 0)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
 	}
@@ -82,15 +82,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString MessageOfTheDay() { mixin(MGPC!(ScriptString, 624)()); }
-			ScriptArray!(UTGameReplicationInfo.MeshEffect) VehicleWeaponEffects() { mixin(MGPC!(ScriptArray!(UTGameReplicationInfo.MeshEffect), 612)()); }
-			ScriptArray!(MaterialInterface) WeaponOverlays() { mixin(MGPC!(ScriptArray!(MaterialInterface), 600)()); }
-			int BotDifficulty() { mixin(MGPC!(int, 564)()); }
-			int MinNetPlayers() { mixin(MGPC!(int, 560)()); }
-			ScriptString MutatorList() { mixin(MGPC!(ScriptString, 576)()); }
-			ScriptString RulesString() { mixin(MGPC!(ScriptString, 588)()); }
-			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!(UTGameReplicationInfo.EFlagState, 572)()); }
-			float WeaponBerserk() { mixin(MGPC!(float, 556)()); }
+			ScriptString MessageOfTheDay() { mixin(MGPC!("ScriptString", 624)()); }
+			ScriptArray!(UTGameReplicationInfo.MeshEffect) VehicleWeaponEffects() { mixin(MGPC!("ScriptArray!(UTGameReplicationInfo.MeshEffect)", 612)()); }
+			ScriptArray!(MaterialInterface) WeaponOverlays() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 600)()); }
+			int BotDifficulty() { mixin(MGPC!("int", 564)()); }
+			int MinNetPlayers() { mixin(MGPC!("int", 560)()); }
+			ScriptString MutatorList() { mixin(MGPC!("ScriptString", 576)()); }
+			ScriptString RulesString() { mixin(MGPC!("ScriptString", 588)()); }
+			UTGameReplicationInfo.EFlagState FlagState() { mixin(MGPC!("UTGameReplicationInfo.EFlagState", 572)()); }
+			float WeaponBerserk() { mixin(MGPC!("float", 556)()); }
 		}
 		bool bStoryMode() { mixin(MGBPC!(568, 0x4)()); }
 		bool bStoryMode(bool val) { mixin(MSBPC!(568, 0x4)()); }
@@ -200,13 +200,15 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Timer, cast(void*)0, cast(void*)0);
 	}
-	void ShowMidGameMenu(UTPlayerController InstigatorPC, ScriptName TabTag, bool bEnableInput)
+	void ShowMidGameMenu(UTPlayerController InstigatorPC, ScriptName* TabTag = null, bool* bEnableInput = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = InstigatorPC;
-		*cast(ScriptName*)&params[4] = TabTag;
-		*cast(bool*)&params[12] = bEnableInput;
+		if (TabTag !is null)
+			*cast(ScriptName*)&params[4] = *TabTag;
+		if (bEnableInput !is null)
+			*cast(bool*)&params[12] = *bEnableInput;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMidGameMenu, params.ptr, cast(void*)0);
 	}
 	void SetHudShowScores(bool bShow)

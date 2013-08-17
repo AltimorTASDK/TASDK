@@ -38,7 +38,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref int HealingAmount() { mixin(MGPC!(int, 976)()); }
+		@property final auto ref int HealingAmount() { mixin(MGPC!("int", 976)()); }
 		bool bSuperHeal() { mixin(MGBPC!(980, 0x1)()); }
 		bool bSuperHeal(bool val) { mixin(MSBPC!(980, 0x1)()); }
 	}

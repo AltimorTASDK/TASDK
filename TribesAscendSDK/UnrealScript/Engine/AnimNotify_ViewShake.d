@@ -24,15 +24,15 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'ShakeParams' has the same name as a defined type!
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 132)()); }
-			float ShakeRadius() { mixin(MGPC!(float, 128)()); }
-			float FOVFrequency() { mixin(MGPC!(float, 120)()); }
-			float FOVAmplitude() { mixin(MGPC!(float, 116)()); }
-			Vector LocFrequency() { mixin(MGPC!(Vector, 104)()); }
-			Vector LocAmplitude() { mixin(MGPC!(Vector, 92)()); }
-			Vector RotFrequency() { mixin(MGPC!(Vector, 80)()); }
-			Vector RotAmplitude() { mixin(MGPC!(Vector, 68)()); }
-			float Duration() { mixin(MGPC!(float, 64)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 132)()); }
+			float ShakeRadius() { mixin(MGPC!("float", 128)()); }
+			float FOVFrequency() { mixin(MGPC!("float", 120)()); }
+			float FOVAmplitude() { mixin(MGPC!("float", 116)()); }
+			Vector LocFrequency() { mixin(MGPC!("Vector", 104)()); }
+			Vector LocAmplitude() { mixin(MGPC!("Vector", 92)()); }
+			Vector RotFrequency() { mixin(MGPC!("Vector", 80)()); }
+			Vector RotAmplitude() { mixin(MGPC!("Vector", 68)()); }
+			float Duration() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bUseBoneLocation() { mixin(MGBPC!(124, 0x2)()); }
 		bool bUseBoneLocation(bool val) { mixin(MSBPC!(124, 0x2)()); }

@@ -41,9 +41,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 476)()); }
-		float AutoSelectHeight() { mixin(MGPC!(float, 492)()); }
-		float AutoSelectRadius() { mixin(MGPC!(float, 488)()); }
+		ScriptArray!(Actor.ActorReference) CoverLinkRefs() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 476)()); }
+		float AutoSelectHeight() { mixin(MGPC!("float", 492)()); }
+		float AutoSelectRadius() { mixin(MGPC!("float", 488)()); }
 	}
 final:
 	void EnableGroup()

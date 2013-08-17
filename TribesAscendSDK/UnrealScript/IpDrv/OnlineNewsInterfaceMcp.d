@@ -42,12 +42,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Pointer HttpDownloader() { mixin(MGPS!(UObject.Pointer, 36)()); }
-				float TimeOut() { mixin(MGPS!(float, 28)()); }
-				ScriptString NewsItem() { mixin(MGPS!(ScriptString, 16)()); }
-				OnlineSubsystem.EOnlineNewsType NewsType() { mixin(MGPS!(OnlineSubsystem.EOnlineNewsType, 13)()); }
-				OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
-				ScriptString NewsUrl() { mixin(MGPS!(ScriptString, 0)()); }
+				UObject.Pointer HttpDownloader() { mixin(MGPS!("UObject.Pointer", 36)()); }
+				float TimeOut() { mixin(MGPS!("float", 28)()); }
+				ScriptString NewsItem() { mixin(MGPS!("ScriptString", 16)()); }
+				OnlineSubsystem.EOnlineNewsType NewsType() { mixin(MGPS!("OnlineSubsystem.EOnlineNewsType", 13)()); }
+				OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!("OnlineSubsystem.EOnlineEnumerationReadState", 12)()); }
+				ScriptString NewsUrl() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bIsUnicode() { mixin(MGBPS!(32, 0x1)()); }
 			bool bIsUnicode(bool val) { mixin(MSBPS!(32, 0x1)()); }
@@ -57,12 +57,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry) NewsItems() { mixin(MGPC!(ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry), 64)()); }
+			ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry) NewsItems() { mixin(MGPC!("ScriptArray!(OnlineNewsInterfaceMcp.NewsCacheEntry)", 64)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ReadNewsDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ReadNewsDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 76)()); }
+void*)", 76)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadNewsCompleted__Delegate'!
 		}
 		bool bNeedsTicking() { mixin(MGBPC!(88, 0x1)()); }

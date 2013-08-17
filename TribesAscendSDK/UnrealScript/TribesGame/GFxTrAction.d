@@ -14,9 +14,9 @@ public extern(D):
 	@property final static GFxTrAction DefaultProperties() { mixin(MGDPC!(GFxTrAction, "GFxTrAction TribesGame.Default__GFxTrAction")()); }
 	@property final auto ref
 	{
-		GFxTrPage ActionPage() { mixin(MGPC!(GFxTrPage, 80)()); }
-		ScriptString ActionString() { mixin(MGPC!(ScriptString, 68)()); }
-		int ActionNumber() { mixin(MGPC!(int, 64)()); }
-		int ActionIndex() { mixin(MGPC!(int, 60)()); }
+		GFxTrPage ActionPage() { mixin(MGPC!("GFxTrPage", 80)()); }
+		ScriptString ActionString() { mixin(MGPC!("ScriptString", 68)()); }
+		int ActionNumber() { mixin(MGPC!("int", 64)()); }
+		int ActionIndex() { mixin(MGPC!("int", 60)()); }
 	}
 }

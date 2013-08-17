@@ -46,12 +46,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanUnpauseInternalUI, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void PauseGame(bool bDesiredPauseState, int PlayerIndex)
+	void PauseGame(bool bDesiredPauseState, int* PlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDesiredPauseState;
-		*cast(int*)&params[4] = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)&params[4] = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseGame, params.ptr, cast(void*)0);
 	}
 	void NotifyPlayerAdded(int PlayerIndex, LocalPlayer AddedPlayer)

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimNotify_CameraEffect")()); }
 	private static __gshared AnimNotify_CameraEffect mDefaultProperties;
 	@property final static AnimNotify_CameraEffect DefaultProperties() { mixin(MGDPC!(AnimNotify_CameraEffect, "AnimNotify_CameraEffect Engine.Default__AnimNotify_CameraEffect")()); }
-	@property final auto ref ScriptClass CameraLensEffect() { mixin(MGPC!(ScriptClass, 64)()); }
+	@property final auto ref ScriptClass CameraLensEffect() { mixin(MGPC!("ScriptClass", 64)()); }
 }

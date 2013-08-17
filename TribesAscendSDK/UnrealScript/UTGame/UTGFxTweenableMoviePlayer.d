@@ -50,24 +50,24 @@ public extern(D):
 		{
 			auto ref
 			{
-				UTGFxTweenableMoviePlayer.TweenType ThisTweenType() { mixin(MGPS!(UTGFxTweenableMoviePlayer.TweenType, 96)()); }
-				GFxObject.ASDisplayInfo displayInfo() { mixin(MGPS!(GFxObject.ASDisplayInfo, 48)()); }
-				ScriptString Callback() { mixin(MGPS!(ScriptString, 36)()); }
-				ScriptString MemberName() { mixin(MGPS!(ScriptString, 24)()); }
-				float DesiredValue() { mixin(MGPS!(float, 20)()); }
-				float Delta() { mixin(MGPS!(float, 16)()); }
-				float StartValue() { mixin(MGPS!(float, 12)()); }
-				float Duration() { mixin(MGPS!(float, 8)()); }
-				float TweenTime() { mixin(MGPS!(float, 4)()); }
-				GFxObject TargetMC() { mixin(MGPS!(GFxObject, 0)()); }
+				UTGFxTweenableMoviePlayer.TweenType ThisTweenType() { mixin(MGPS!("UTGFxTweenableMoviePlayer.TweenType", 96)()); }
+				GFxObject.ASDisplayInfo displayInfo() { mixin(MGPS!("GFxObject.ASDisplayInfo", 48)()); }
+				ScriptString Callback() { mixin(MGPS!("ScriptString", 36)()); }
+				ScriptString MemberName() { mixin(MGPS!("ScriptString", 24)()); }
+				float DesiredValue() { mixin(MGPS!("float", 20)()); }
+				float Delta() { mixin(MGPS!("float", 16)()); }
+				float StartValue() { mixin(MGPS!("float", 12)()); }
+				float Duration() { mixin(MGPS!("float", 8)()); }
+				float TweenTime() { mixin(MGPS!("float", 4)()); }
+				GFxObject TargetMC() { mixin(MGPS!("GFxObject", 0)()); }
 			}
 			bool bFinished() { mixin(MGBPS!(92, 0x1)()); }
 			bool bFinished(bool val) { mixin(MSBPS!(92, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween) TweenList() { mixin(MGPC!(ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween), 380)()); }
+	@property final auto ref ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween) TweenList() { mixin(MGPC!("ScriptArray!(UTGFxTweenableMoviePlayer.GFxTween)", 380)()); }
 final:
-	void TweenTo(GFxObject MC, float Duration, ScriptString Member, float Target, UTGFxTweenableMoviePlayer.TweenType NewTweenType, ScriptString Callback)
+	void TweenTo(GFxObject MC, float Duration, ScriptString Member, float Target, UTGFxTweenableMoviePlayer.TweenType NewTweenType, ScriptString* Callback = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -76,7 +76,8 @@ final:
 		*cast(ScriptString*)&params[8] = Member;
 		*cast(float*)&params[20] = Target;
 		*cast(UTGFxTweenableMoviePlayer.TweenType*)&params[24] = NewTweenType;
-		*cast(ScriptString*)&params[28] = Callback;
+		if (Callback !is null)
+			*cast(ScriptString*)&params[28] = *Callback;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TweenTo, params.ptr, cast(void*)0);
 	}
 	void ProcessTweenCallback(ScriptString Callback, GFxObject TargetMC)
@@ -94,12 +95,13 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
-	void ClearsTweensOnMovieClip(GFxObject MC, bool bReset)
+	void ClearsTweensOnMovieClip(GFxObject MC, bool* bReset = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GFxObject*)params.ptr = MC;
-		*cast(bool*)&params[4] = bReset;
+		if (bReset !is null)
+			*cast(bool*)&params[4] = *bReset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearsTweensOnMovieClip, params.ptr, cast(void*)0);
 	}
 	void PrintTweensToLog()

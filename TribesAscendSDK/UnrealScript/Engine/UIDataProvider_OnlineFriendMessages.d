@@ -39,14 +39,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineFriendMessage) Messages() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineFriendMessage), 96)()); }
-		ScriptString LastInviteFrom() { mixin(MGPC!(ScriptString, 168)()); }
-		ScriptString MessageCol() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptString bWasDeniedCol() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString bWasAcceptedCol() { mixin(MGPC!(ScriptString, 132)()); }
-		ScriptString bIsFriendInviteCol() { mixin(MGPC!(ScriptString, 120)()); }
-		ScriptString SendingPlayerNameCol() { mixin(MGPC!(ScriptString, 108)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
+		ScriptArray!(OnlineSubsystem.OnlineFriendMessage) Messages() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlineFriendMessage)", 96)()); }
+		ScriptString LastInviteFrom() { mixin(MGPC!("ScriptString", 168)()); }
+		ScriptString MessageCol() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptString bWasDeniedCol() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString bWasAcceptedCol() { mixin(MGPC!("ScriptString", 132)()); }
+		ScriptString bIsFriendInviteCol() { mixin(MGPC!("ScriptString", 120)()); }
+		ScriptString SendingPlayerNameCol() { mixin(MGPC!("ScriptString", 108)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

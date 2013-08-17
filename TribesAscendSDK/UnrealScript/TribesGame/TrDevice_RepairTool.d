@@ -65,14 +65,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector m_Location() { mixin(MGPC!(Vector, 2212)()); }
-			Vector m_Tangent() { mixin(MGPC!(Vector, 2200)()); }
-			float m_fTargetHealth() { mixin(MGPC!(float, 2196)()); }
-			float m_fDisplayOn() { mixin(MGPC!(float, 2192)()); }
+			Vector m_Location() { mixin(MGPC!("Vector", 2212)()); }
+			Vector m_Tangent() { mixin(MGPC!("Vector", 2200)()); }
+			float m_fTargetHealth() { mixin(MGPC!("float", 2196)()); }
+			float m_fDisplayOn() { mixin(MGPC!("float", 2192)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscRepairEffect'!
-			float m_fVehicleRepairPercentage() { mixin(MGPC!(float, 2180)()); }
-			float m_fPawnRepairPercentage() { mixin(MGPC!(float, 2176)()); }
-			float m_fRepairPercentage() { mixin(MGPC!(float, 2172)()); }
+			float m_fVehicleRepairPercentage() { mixin(MGPC!("float", 2180)()); }
+			float m_fPawnRepairPercentage() { mixin(MGPC!("float", 2176)()); }
+			float m_fRepairPercentage() { mixin(MGPC!("float", 2172)()); }
 		}
 		bool m_bIsBehindView() { mixin(MGBPC!(2188, 0x1)()); }
 		bool m_bIsBehindView(bool val) { mixin(MSBPC!(2188, 0x1)()); }
@@ -113,26 +113,29 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstantFire, cast(void*)0, cast(void*)0);
 	}
-	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
+	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool* bHeadShot = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(bool*)&params[84] = bHeadShot;
+		if (bHeadShot !is null)
+			*cast(bool*)&params[84] = *bHeadShot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit_Internal, params.ptr, cast(void*)0);
 	}
-	bool GetRepairEndAndTangent(ref Vector EndLocation, ref Vector Tangent, Actor* HitActor)
+	bool GetRepairEndAndTangent(ref Vector EndLocation, ref Vector Tangent, Actor* HitActor = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = EndLocation;
 		*cast(Vector*)&params[12] = Tangent;
-		*cast(Actor*)&params[24] = HitActor;
+		if (HitActor !is null)
+			*cast(Actor*)&params[24] = *HitActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRepairEndAndTangent, params.ptr, cast(void*)0);
-		*EndLocation = *cast(Vector*)params.ptr;
-		*Tangent = *cast(Vector*)&params[12];
-		*HitActor = *cast(Actor*)&params[24];
+		EndLocation = *cast(Vector*)params.ptr;
+		Tangent = *cast(Vector*)&params[12];
+		if (HitActor !is null)
+			*HitActor = *cast(Actor*)&params[24];
 		return *cast(bool*)&params[28];
 	}
 	void KillRepairEffect()

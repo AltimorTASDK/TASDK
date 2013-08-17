@@ -90,9 +90,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nGoalWonRounds() { mixin(MGPC!(int, 1468)()); }
-		ubyte m_bHasTeamBenchedAPlayer() { mixin(MGPC!(ubyte, 1464)()); }
-		int m_nNumEnemiesAliveAtLastManStanding() { mixin(MGPC!(int, 1456)()); }
+		int m_nGoalWonRounds() { mixin(MGPC!("int", 1468)()); }
+		ubyte m_bHasTeamBenchedAPlayer() { mixin(MGPC!("ubyte", 1464)()); }
+		int m_nNumEnemiesAliveAtLastManStanding() { mixin(MGPC!("int", 1456)()); }
 	}
 final:
 	void ApplyServerSettings()

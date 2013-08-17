@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(bool) LinkedOutputFiredStatus() { mixin(MGPC!(ScriptArray!(bool), 236)()); }
-			ScriptArray!(UObject.Pointer) LinkedOutputs() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 248)()); }
+			ScriptArray!(bool) LinkedOutputFiredStatus() { mixin(MGPC!("ScriptArray!(bool)", 236)()); }
+			ScriptArray!(UObject.Pointer) LinkedOutputs() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 248)()); }
 		}
 		bool bOpen() { mixin(MGBPC!(232, 0x1)()); }
 		bool bOpen(bool val) { mixin(MSBPC!(232, 0x1)()); }

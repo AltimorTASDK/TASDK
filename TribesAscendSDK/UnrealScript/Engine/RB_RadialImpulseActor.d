@@ -27,7 +27,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ubyte ImpulseCount() { mixin(MGPC!(ubyte, 484)()); }
+		ubyte ImpulseCount() { mixin(MGPC!("ubyte", 484)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ImpulseComponent'!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 	}

@@ -69,13 +69,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) MICArray() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 776)()); }
-			float LastLocationPingTime() { mixin(MGPC!(float, 820)()); }
+			ScriptArray!(MaterialInstanceConstant) MICArray() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 776)()); }
+			float LastLocationPingTime() { mixin(MGPC!("float", 820)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SuccessfulCaptureSystem'!
-			Vector HoverboardingClothVelClamp() { mixin(MGPC!(Vector, 800)()); }
-			Vector RunningClothVelClamp() { mixin(MGPC!(Vector, 788)()); }
-			ParticleSystem RespawnEffect() { mixin(MGPC!(ParticleSystem, 768)()); }
+			Vector HoverboardingClothVelClamp() { mixin(MGPC!("Vector", 800)()); }
+			Vector RunningClothVelClamp() { mixin(MGPC!("Vector", 788)()); }
+			ParticleSystem RespawnEffect() { mixin(MGPC!("ParticleSystem", 768)()); }
 		}
 		bool bWasClothEnabled() { mixin(MGBPC!(772, 0x10)()); }
 		bool bWasClothEnabled(bool val) { mixin(MSBPC!(772, 0x10)()); }
@@ -157,12 +157,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CustomFadeOutEffects, cast(void*)0, cast(void*)0);
 	}
-	void Drop(Controller Killer, bool bNoThrow)
+	void Drop(Controller* Killer = null, bool* bNoThrow = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Controller*)params.ptr = Killer;
-		*cast(bool*)&params[4] = bNoThrow;
+		if (Killer !is null)
+			*cast(Controller*)params.ptr = *Killer;
+		if (bNoThrow !is null)
+			*cast(bool*)&params[4] = *bNoThrow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SetFlagPropertiesToStationaryFlagState()

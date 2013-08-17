@@ -13,11 +13,11 @@ public extern(D):
 	@property final static UDKSkelControl_VehicleFlap DefaultProperties() { mixin(MGDPC!(UDKSkelControl_VehicleFlap, "UDKSkelControl_VehicleFlap UDKBase.Default__UDKSkelControl_VehicleFlap")()); }
 	@property final auto ref
 	{
-		ScriptName LeftFlapControl() { mixin(MGPC!(ScriptName, 260)()); }
-		ScriptName RightFlapControl() { mixin(MGPC!(ScriptName, 252)()); }
-		float MaxPitchChange() { mixin(MGPC!(float, 248)()); }
-		float MaxPitchTime() { mixin(MGPC!(float, 244)()); }
-		float OldZPitch() { mixin(MGPC!(float, 240)()); }
-		float maxPitch() { mixin(MGPC!(float, 236)()); }
+		ScriptName LeftFlapControl() { mixin(MGPC!("ScriptName", 260)()); }
+		ScriptName RightFlapControl() { mixin(MGPC!("ScriptName", 252)()); }
+		float MaxPitchChange() { mixin(MGPC!("float", 248)()); }
+		float MaxPitchTime() { mixin(MGPC!("float", 244)()); }
+		float OldZPitch() { mixin(MGPC!("float", 240)()); }
+		float maxPitch() { mixin(MGPC!("float", 236)()); }
 	}
 }

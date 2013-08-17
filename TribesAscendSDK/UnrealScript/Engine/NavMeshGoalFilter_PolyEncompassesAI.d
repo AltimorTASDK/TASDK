@@ -17,13 +17,14 @@ public extern(D):
 		private static __gshared ScriptFunction mMakeSureAIFits;
 		public @property static final ScriptFunction MakeSureAIFits() { mixin(MGF!("mMakeSureAIFits", "Function Engine.NavMeshGoalFilter_PolyEncompassesAI.MakeSureAIFits")()); }
 	}
-	@property final auto ref Vector OverrideExtentToCheck() { mixin(MGPC!(Vector, 72)()); }
-	final static bool MakeSureAIFits(NavMeshGoal_GenericFilterContainer FilterContainer, const Vector InOverrideExtentToCheck)
+	@property final auto ref Vector OverrideExtentToCheck() { mixin(MGPC!("Vector", 72)()); }
+	final static bool MakeSureAIFits(NavMeshGoal_GenericFilterContainer FilterContainer, in Vector* InOverrideExtentToCheck = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(NavMeshGoal_GenericFilterContainer*)params.ptr = FilterContainer;
-		*cast(Vector*)&params[4] = InOverrideExtentToCheck;
+		if (InOverrideExtentToCheck !is null)
+			*cast(Vector*)&params[4] = cast(Vector)*InOverrideExtentToCheck;
 		StaticClass.ProcessEvent(Functions.MakeSureAIFits, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float CameraTranslationThreshold() { mixin(MGPC!(float, 116)()); }
-			float CameraRotationThreshold() { mixin(MGPC!(float, 112)()); }
-			float MotionBlurAmount() { mixin(MGPC!(float, 104)()); }
-			float MaxVelocity() { mixin(MGPC!(float, 100)()); }
+			float CameraTranslationThreshold() { mixin(MGPC!("float", 116)()); }
+			float CameraRotationThreshold() { mixin(MGPC!("float", 112)()); }
+			float MotionBlurAmount() { mixin(MGPC!("float", 104)()); }
+			float MaxVelocity() { mixin(MGPC!("float", 100)()); }
 		}
 		bool FullMotionBlur() { mixin(MGBPC!(108, 0x1)()); }
 		bool FullMotionBlur(bool val) { mixin(MSBPC!(108, 0x1)()); }

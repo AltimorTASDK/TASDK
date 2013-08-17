@@ -38,10 +38,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			PortalMarker MyMarker() { mixin(MGPC!(PortalMarker, 500)()); }
-			int TextureResolutionY() { mixin(MGPC!(int, 496)()); }
-			int TextureResolutionX() { mixin(MGPC!(int, 492)()); }
-			PortalTeleporter SisterPortal() { mixin(MGPC!(PortalTeleporter, 488)()); }
+			PortalMarker MyMarker() { mixin(MGPC!("PortalMarker", 500)()); }
+			int TextureResolutionY() { mixin(MGPC!("int", 496)()); }
+			int TextureResolutionX() { mixin(MGPC!("int", 492)()); }
+			PortalTeleporter SisterPortal() { mixin(MGPC!("PortalTeleporter", 488)()); }
 		}
 		bool bCanTeleportVehicles() { mixin(MGBPC!(504, 0x4)()); }
 		bool bCanTeleportVehicles(bool val) { mixin(MSBPC!(504, 0x4)()); }

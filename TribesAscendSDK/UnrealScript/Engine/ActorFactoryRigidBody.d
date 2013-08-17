@@ -16,12 +16,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float StayUprightMaxTorque() { mixin(MGPC!(float, 148)()); }
-			float StayUprightTorqueFactor() { mixin(MGPC!(float, 144)()); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 140)()); }
+			float StayUprightMaxTorque() { mixin(MGPC!("float", 148)()); }
+			float StayUprightTorqueFactor() { mixin(MGPC!("float", 144)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 140)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'InitialAngularVelocity'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AdditionalVelocity'!
-			Vector InitialVelocity() { mixin(MGPC!(Vector, 120)()); }
+			Vector InitialVelocity() { mixin(MGPC!("Vector", 120)()); }
 		}
 		bool bEnableStayUprightSpring() { mixin(MGBPC!(116, 0x8)()); }
 		bool bEnableStayUprightSpring(bool val) { mixin(MSBPC!(116, 0x8)()); }

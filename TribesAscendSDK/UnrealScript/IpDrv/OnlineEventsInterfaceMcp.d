@@ -51,9 +51,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				float TimeOut() { mixin(MGPS!(float, 16)()); }
-				ScriptString UploadUrl() { mixin(MGPS!(ScriptString, 4)()); }
-				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { mixin(MGPS!(OnlineEventsInterfaceMcp.EEventUploadType, 0)()); }
+				float TimeOut() { mixin(MGPS!("float", 16)()); }
+				ScriptString UploadUrl() { mixin(MGPS!("ScriptString", 4)()); }
+				OnlineEventsInterfaceMcp.EEventUploadType UploadType() { mixin(MGPS!("OnlineEventsInterfaceMcp.EEventUploadType", 0)()); }
 			}
 			bool bUseCompression() { mixin(MGBPS!(20, 0x1)()); }
 			bool bUseCompression(bool val) { mixin(MSBPS!(20, 0x1)()); }
@@ -63,9 +63,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC!(ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig), 64)()); }
-			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 76)()); }
-			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC!(ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType), 88)()); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig) EventUploadConfigs() { mixin(MGPC!("ScriptArray!(OnlineEventsInterfaceMcp.EventUploadConfig)", 64)()); }
+			ScriptArray!(UObject.Pointer) HttpPostObjects() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 76)()); }
+			ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType) DisabledUploadTypes() { mixin(MGPC!("ScriptArray!(OnlineEventsInterfaceMcp.EEventUploadType)", 88)()); }
 		}
 		bool bBinaryStats() { mixin(MGBPC!(100, 0x1)()); }
 		bool bBinaryStats(bool val) { mixin(MSBPC!(100, 0x1)()); }
@@ -82,14 +82,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadPlayerData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref const ScriptArray!(ubyte) Payload)
+	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref in ScriptArray!(ubyte) Payload)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
-		*cast(ScriptArray!(ubyte)*)&params[8] = Payload;
+		*cast(ScriptArray!(ubyte)*)&params[8] = cast(ScriptArray!(ubyte))Payload;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadGameplayEventsData, params.ptr, cast(void*)0);
-		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)

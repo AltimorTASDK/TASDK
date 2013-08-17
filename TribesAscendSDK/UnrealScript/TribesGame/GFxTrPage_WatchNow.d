@@ -40,15 +40,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) FeaturedNums() { mixin(MGPC!(ScriptArray!(int), 420)()); }
-		ScriptString strCmntyVideos() { mixin(MGPC!(ScriptString, 408)()); }
-		ScriptString strTrainVideos() { mixin(MGPC!(ScriptString, 396)()); }
-		ScriptString strHiRezVideos() { mixin(MGPC!(ScriptString, 384)()); }
-		ScriptString strLiveStreams() { mixin(MGPC!(ScriptString, 372)()); }
-		int NumCmntyVideos() { mixin(MGPC!(int, 368)()); }
-		int NumTrainVideos() { mixin(MGPC!(int, 364)()); }
-		int NumHiRezVideos() { mixin(MGPC!(int, 360)()); }
-		int NumLiveStreams() { mixin(MGPC!(int, 356)()); }
+		ScriptArray!(int) FeaturedNums() { mixin(MGPC!("ScriptArray!(int)", 420)()); }
+		ScriptString strCmntyVideos() { mixin(MGPC!("ScriptString", 408)()); }
+		ScriptString strTrainVideos() { mixin(MGPC!("ScriptString", 396)()); }
+		ScriptString strHiRezVideos() { mixin(MGPC!("ScriptString", 384)()); }
+		ScriptString strLiveStreams() { mixin(MGPC!("ScriptString", 372)()); }
+		int NumCmntyVideos() { mixin(MGPC!("int", 368)()); }
+		int NumTrainVideos() { mixin(MGPC!("int", 364)()); }
+		int NumHiRezVideos() { mixin(MGPC!("int", 360)()); }
+		int NumLiveStreams() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

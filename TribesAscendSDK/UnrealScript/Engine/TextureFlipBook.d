@@ -46,21 +46,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 428)()); }
-			float RenderOffsetV() { mixin(MGPC!(float, 424)()); }
-			float RenderOffsetU() { mixin(MGPC!(float, 420)()); }
-			int CurrentColumn() { mixin(MGPC!(int, 416)()); }
-			int CurrentRow() { mixin(MGPC!(int, 412)()); }
-			float FrameTime() { mixin(MGPC!(float, 408)()); }
-			float FrameRate() { mixin(MGPC!(float, 404)()); }
-			TextureFlipBook.TextureFlipBookMethod FBMethod() { mixin(MGPC!(TextureFlipBook.TextureFlipBookMethod, 400)()); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 368)()); }
-			int VerticalImages() { mixin(MGPC!(int, 396)()); }
-			int HorizontalImages() { mixin(MGPC!(int, 392)()); }
-			float VerticalScale() { mixin(MGPC!(float, 384)()); }
-			float HorizontalScale() { mixin(MGPC!(float, 380)()); }
-			float TimeSinceLastFrame() { mixin(MGPC!(float, 376)()); }
-			float TimeIntoMovie() { mixin(MGPC!(float, 372)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!("UObject.Pointer", 428)()); }
+			float RenderOffsetV() { mixin(MGPC!("float", 424)()); }
+			float RenderOffsetU() { mixin(MGPC!("float", 420)()); }
+			int CurrentColumn() { mixin(MGPC!("int", 416)()); }
+			int CurrentRow() { mixin(MGPC!("int", 412)()); }
+			float FrameTime() { mixin(MGPC!("float", 408)()); }
+			float FrameRate() { mixin(MGPC!("float", 404)()); }
+			TextureFlipBook.TextureFlipBookMethod FBMethod() { mixin(MGPC!("TextureFlipBook.TextureFlipBookMethod", 400)()); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 368)()); }
+			int VerticalImages() { mixin(MGPC!("int", 396)()); }
+			int HorizontalImages() { mixin(MGPC!("int", 392)()); }
+			float VerticalScale() { mixin(MGPC!("float", 384)()); }
+			float HorizontalScale() { mixin(MGPC!("float", 380)()); }
+			float TimeSinceLastFrame() { mixin(MGPC!("float", 376)()); }
+			float TimeIntoMovie() { mixin(MGPC!("float", 372)()); }
 		}
 		bool bAutoPlay() { mixin(MGBPC!(388, 0x8)()); }
 		bool bAutoPlay(bool val) { mixin(MSBPC!(388, 0x8)()); }

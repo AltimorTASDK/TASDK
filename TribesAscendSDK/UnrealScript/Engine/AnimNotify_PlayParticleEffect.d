@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleSystem PSTemplate() { mixin(MGPC!(ParticleSystem, 64)()); }
-			ScriptName SocketName() { mixin(MGPC!(ScriptName, 72)()); }
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 80)()); }
+			ParticleSystem PSTemplate() { mixin(MGPC!("ParticleSystem", 64)()); }
+			ScriptName SocketName() { mixin(MGPC!("ScriptName", 72)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 80)()); }
 		}
 		bool bIsExtremeContent() { mixin(MGBPC!(68, 0x1)()); }
 		bool bIsExtremeContent(bool val) { mixin(MSBPC!(68, 0x1)()); }

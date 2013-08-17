@@ -44,13 +44,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) ShownFriends() { mixin(MGPC!(ScriptArray!(ScriptString), 388)()); }
-		ScriptString MemberName() { mixin(MGPC!(ScriptString, 376)()); }
-		int Action_InviteFailed() { mixin(MGPC!(int, 372)()); }
-		int Action_SendMessage() { mixin(MGPC!(int, 368)()); }
-		int Action_InviteSent() { mixin(MGPC!(int, 364)()); }
-		int Action_ByName() { mixin(MGPC!(int, 360)()); }
-		int PopupNum() { mixin(MGPC!(int, 356)()); }
+		ScriptArray!(ScriptString) ShownFriends() { mixin(MGPC!("ScriptArray!(ScriptString)", 388)()); }
+		ScriptString MemberName() { mixin(MGPC!("ScriptString", 376)()); }
+		int Action_InviteFailed() { mixin(MGPC!("int", 372)()); }
+		int Action_SendMessage() { mixin(MGPC!("int", 368)()); }
+		int Action_InviteSent() { mixin(MGPC!("int", 364)()); }
+		int Action_ByName() { mixin(MGPC!("int", 360)()); }
+		int PopupNum() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void FillData(GFxObject DataList)

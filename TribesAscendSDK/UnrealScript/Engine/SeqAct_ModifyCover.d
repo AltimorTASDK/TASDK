@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(int) Slots() { mixin(MGPC!(ScriptArray!(int), 232)()); }
-			CoverLink.ECoverType ManualCoverType() { mixin(MGPC!(CoverLink.ECoverType, 244)()); }
+			ScriptArray!(int) Slots() { mixin(MGPC!("ScriptArray!(int)", 232)()); }
+			CoverLink.ECoverType ManualCoverType() { mixin(MGPC!("CoverLink.ECoverType", 244)()); }
 		}
 		bool bManualAdjustPlayersOnly() { mixin(MGBPC!(248, 0x1)()); }
 		bool bManualAdjustPlayersOnly(bool val) { mixin(MSBPC!(248, 0x1)()); }

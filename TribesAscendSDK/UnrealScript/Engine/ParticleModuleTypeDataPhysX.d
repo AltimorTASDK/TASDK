@@ -20,15 +20,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties")()); }
 		@property final auto ref
 		{
-			float RelativeFadeoutTime() { mixin(MGPS!(float, 12)()); }
-			float SpawnLodRateVsLifeBias() { mixin(MGPS!(float, 8)()); }
-			float WeightForSpawnLod() { mixin(MGPS!(float, 4)()); }
-			float WeightForFifo() { mixin(MGPS!(float, 0)()); }
+			float RelativeFadeoutTime() { mixin(MGPS!("float", 12)()); }
+			float SpawnLodRateVsLifeBias() { mixin(MGPS!("float", 8)()); }
+			float WeightForSpawnLod() { mixin(MGPS!("float", 4)()); }
+			float WeightForFifo() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { mixin(MGPC!(ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties, 76)()); }
-		PhysXParticleSystem PhysXParSys() { mixin(MGPC!(PhysXParticleSystem, 72)()); }
+		ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties VerticalLod() { mixin(MGPC!("ParticleModuleTypeDataPhysX.PhysXEmitterVerticalLodProperties", 76)()); }
+		PhysXParticleSystem PhysXParSys() { mixin(MGPC!("PhysXParticleSystem", 72)()); }
 	}
 }

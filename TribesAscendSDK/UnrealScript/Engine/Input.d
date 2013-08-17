@@ -39,8 +39,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptString Command() { mixin(MGPS!(ScriptString, 8)()); }
-				ScriptName Name() { mixin(MGPS!(ScriptName, 0)()); }
+				ScriptString Command() { mixin(MGPS!("ScriptString", 8)()); }
+				ScriptName Name() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bIgnoreAlt() { mixin(MGBPS!(20, 0x20)()); }
 			bool bIgnoreAlt(bool val) { mixin(MSBPS!(20, 0x20)()); }
@@ -58,44 +58,41 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Input.KeyBind) Bindings() { mixin(MGPC!(ScriptArray!(Input.KeyBind), 108)()); }
-		ScriptArray!(ScriptName) PressedKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 120)()); }
-		ScriptArray!(UObject.Pointer) AxisArray() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 204)()); }
+		ScriptArray!(Input.KeyBind) Bindings() { mixin(MGPC!("ScriptArray!(Input.KeyBind)", 108)()); }
+		ScriptArray!(ScriptName) PressedKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 120)()); }
+		ScriptArray!(UObject.Pointer) AxisArray() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 204)()); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'NameToPtr'!
-		float CurrentDeltaTime() { mixin(MGPC!(float, 140)()); }
-		float CurrentDelta() { mixin(MGPC!(float, 136)()); }
-		UObject.EInputEvent CurrentEvent() { mixin(MGPC!(UObject.EInputEvent, 132)()); }
+		float CurrentDeltaTime() { mixin(MGPC!("float", 140)()); }
+		float CurrentDelta() { mixin(MGPC!("float", 136)()); }
+		UObject.EInputEvent CurrentEvent() { mixin(MGPC!("UObject.EInputEvent", 132)()); }
 	}
 final:
 	void ResetInput()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetInput, cast(void*)0, cast(void*)0);
 	}
-	ScriptString GetBind(ref const ScriptName Key)
+	ScriptString GetBind(ref in ScriptName Key)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = Key;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)Key;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBind, params.ptr, cast(void*)0);
-		*Key = *cast(ScriptName*)params.ptr;
 		return *cast(ScriptString*)&params[8];
 	}
-	ScriptString GetBindNameFromCommandScript(ref const ScriptString KeyCommand)
+	ScriptString GetBindNameFromCommandScript(ref in ScriptString KeyCommand)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = KeyCommand;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)KeyCommand;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBindNameFromCommandScript, params.ptr, cast(void*)0);
-		*KeyCommand = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[12];
 	}
-	void SetBind(ref const ScriptName BindName, ScriptString Command)
+	void SetBind(ref in ScriptName BindName, ScriptString Command)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = BindName;
+		*cast(ScriptName*)params.ptr = cast(ScriptName)BindName;
 		*cast(ScriptString*)&params[8] = Command;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetBind, params.ptr, cast(void*)0);
-		*BindName = *cast(ScriptName*)params.ptr;
 	}
 }

@@ -15,8 +15,8 @@ public extern(D):
 	@property final static SeqAct_SetMatInstTexParam DefaultProperties() { mixin(MGDPC!(SeqAct_SetMatInstTexParam, "SeqAct_SetMatInstTexParam Engine.Default__SeqAct_SetMatInstTexParam")()); }
 	@property final auto ref
 	{
-		ScriptName ParamName() { mixin(MGPC!(ScriptName, 240)()); }
-		Texture NewTexture() { mixin(MGPC!(Texture, 236)()); }
-		MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 232)()); }
+		ScriptName ParamName() { mixin(MGPC!("ScriptName", 240)()); }
+		Texture NewTexture() { mixin(MGPC!("Texture", 236)()); }
+		MaterialInstanceConstant MatInst() { mixin(MGPC!("MaterialInstanceConstant", 232)()); }
 	}
 }

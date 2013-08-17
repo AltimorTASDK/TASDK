@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_ToggleHidden DefaultProperties() { mixin(MGDPC!(SeqAct_ToggleHidden, "SeqAct_ToggleHidden Engine.Default__SeqAct_ToggleHidden")()); }
 	@property final
 	{
-		@property final auto ref ScriptArray!(ScriptClass) IgnoreBasedClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 236)()); }
+		@property final auto ref ScriptArray!(ScriptClass) IgnoreBasedClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 236)()); }
 		bool bToggleBasedActors() { mixin(MGBPC!(232, 0x1)()); }
 		bool bToggleBasedActors(bool val) { mixin(MSBPC!(232, 0x1)()); }
 	}

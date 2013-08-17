@@ -49,9 +49,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrPowerGenerator_Siege) m_Phase1OnlineGenerators() { mixin(MGPC!(ScriptArray!(TrPowerGenerator_Siege), 1456)()); }
-			int m_CurrentPhase() { mixin(MGPC!(int, 1476)()); }
-			float m_bRoundOneTimeSecs() { mixin(MGPC!(float, 1468)()); }
+			ScriptArray!(TrPowerGenerator_Siege) m_Phase1OnlineGenerators() { mixin(MGPC!("ScriptArray!(TrPowerGenerator_Siege)", 1456)()); }
+			int m_CurrentPhase() { mixin(MGPC!("int", 1476)()); }
+			float m_bRoundOneTimeSecs() { mixin(MGPC!("float", 1468)()); }
 		}
 		bool m_bWasCoreDestroyedInRoundOne() { mixin(MGBPC!(1472, 0x1)()); }
 		bool m_bWasCoreDestroyedInRoundOne(bool val) { mixin(MSBPC!(1472, 0x1)()); }

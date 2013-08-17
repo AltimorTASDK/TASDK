@@ -28,9 +28,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!(ParticleSystem, 608)()); }
-		ParticleSystem PS_EnterWaterEffect_Vehicle() { mixin(MGPC!(ParticleSystem, 604)()); }
-		ParticleSystem PS_EnterWaterEffect_Pawn() { mixin(MGPC!(ParticleSystem, 600)()); }
+		ParticleSystem ProjectileEntryEffect() { mixin(MGPC!("ParticleSystem", 608)()); }
+		ParticleSystem PS_EnterWaterEffect_Vehicle() { mixin(MGPC!("ParticleSystem", 604)()); }
+		ParticleSystem PS_EnterWaterEffect_Pawn() { mixin(MGPC!("ParticleSystem", 600)()); }
 	}
 final:
 	void Touch(Actor Other, 

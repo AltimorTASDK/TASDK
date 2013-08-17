@@ -30,8 +30,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Vector GoalPoint() { mixin(MGPC!(Vector, 84)()); }
-		Actor GoalActor() { mixin(MGPC!(Actor, 80)()); }
+		Vector GoalPoint() { mixin(MGPC!("Vector", 84)()); }
+		Actor GoalActor() { mixin(MGPC!("Actor", 80)()); }
 	}
 final:
 	static bool TowardGoal(NavigationHandle NavHandle, Actor Goal)

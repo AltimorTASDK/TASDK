@@ -20,8 +20,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Actor CameraTarget() { mixin(MGPC!(Actor, 232)()); }
-		Camera.ViewTargetTransitionParams TransitionParams() { mixin(MGPC!(Camera.ViewTargetTransitionParams, 236)()); }
+		Actor CameraTarget() { mixin(MGPC!("Actor", 232)()); }
+		Camera.ViewTargetTransitionParams TransitionParams() { mixin(MGPC!("Camera.ViewTargetTransitionParams", 236)()); }
 	}
 	final static int GetObjClassVersion()
 	{

@@ -17,9 +17,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 128)()); }
-			DistributionFloat.RawDistributionFloat Range() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 100)()); }
-			DistributionVector.RawDistributionVector Position() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+			DistributionFloat.RawDistributionFloat Strength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 128)()); }
+			DistributionFloat.RawDistributionFloat Range() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 100)()); }
+			DistributionVector.RawDistributionVector Position() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 		}
 		bool bUseWorldSpacePosition() { mixin(MGBPC!(156, 0x8)()); }
 		bool bUseWorldSpacePosition(bool val) { mixin(MSBPC!(156, 0x8)()); }

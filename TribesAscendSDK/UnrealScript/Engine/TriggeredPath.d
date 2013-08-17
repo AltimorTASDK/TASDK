@@ -31,7 +31,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref Actor MyTrigger() { mixin(MGPC!(Actor, 696)()); }
+		@property final auto ref Actor MyTrigger() { mixin(MGPC!("Actor", 696)()); }
 		bool bOpen() { mixin(MGBPC!(692, 0x1)()); }
 		bool bOpen(bool val) { mixin(MSBPC!(692, 0x1)()); }
 	}

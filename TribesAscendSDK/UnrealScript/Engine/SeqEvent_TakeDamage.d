@@ -35,11 +35,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) DamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 264)()); }
-			ScriptArray!(ScriptClass) IgnoreDamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 276)()); }
-			float CurrentDamage() { mixin(MGPC!(float, 288)()); }
-			float DamageThreshold() { mixin(MGPC!(float, 260)()); }
-			float MinDamageAmount() { mixin(MGPC!(float, 256)()); }
+			ScriptArray!(ScriptClass) DamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 264)()); }
+			ScriptArray!(ScriptClass) IgnoreDamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 276)()); }
+			float CurrentDamage() { mixin(MGPC!("float", 288)()); }
+			float DamageThreshold() { mixin(MGPC!("float", 260)()); }
+			float MinDamageAmount() { mixin(MGPC!("float", 256)()); }
 		}
 		bool bResetDamageOnToggle() { mixin(MGBPC!(292, 0x1)()); }
 		bool bResetDamageOnToggle(bool val) { mixin(MSBPC!(292, 0x1)()); }

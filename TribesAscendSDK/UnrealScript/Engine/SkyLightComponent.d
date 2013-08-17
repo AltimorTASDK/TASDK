@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SkyLightComponent DefaultProperties() { mixin(MGDPC!(SkyLightComponent, "SkyLightComponent Engine.Default__SkyLightComponent")()); }
 	@property final auto ref
 	{
-		UObject.Color LowerColor() { mixin(MGPC!(UObject.Color, 436)()); }
-		float LowerBrightness() { mixin(MGPC!(float, 432)()); }
+		UObject.Color LowerColor() { mixin(MGPC!("UObject.Color", 436)()); }
+		float LowerBrightness() { mixin(MGPC!("float", 432)()); }
 	}
 }

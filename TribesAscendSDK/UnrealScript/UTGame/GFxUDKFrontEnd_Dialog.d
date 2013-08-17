@@ -45,11 +45,11 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AcceptDelegate__Delegate'!
-		GFxClikWidget AcceptBtn() { mixin(MGPC!(GFxClikWidget, 152)()); }
-		GFxClikWidget BackBtn() { mixin(MGPC!(GFxClikWidget, 148)()); }
-		GFxObject InfoTxt() { mixin(MGPC!(GFxObject, 144)()); }
-		GFxObject TitleTxt() { mixin(MGPC!(GFxObject, 140)()); }
-		GFxObject DialogMC() { mixin(MGPC!(GFxObject, 136)()); }
+		GFxClikWidget AcceptBtn() { mixin(MGPC!("GFxClikWidget", 152)()); }
+		GFxClikWidget BackBtn() { mixin(MGPC!("GFxClikWidget", 148)()); }
+		GFxObject InfoTxt() { mixin(MGPC!("GFxObject", 144)()); }
+		GFxObject TitleTxt() { mixin(MGPC!("GFxObject", 140)()); }
+		GFxObject DialogMC() { mixin(MGPC!("GFxObject", 136)()); }
 	}
 final:
 	void AcceptDelegate(GFxClikWidget.EventData ev)
@@ -70,11 +70,12 @@ final:
 		*cast(bool*)params.ptr = bDisableComponents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void PlayOpenAnimation()

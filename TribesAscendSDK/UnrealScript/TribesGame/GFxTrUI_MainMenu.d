@@ -16,12 +16,13 @@ public extern(D):
 		private static __gshared ScriptFunction mStart;
 		public @property static final ScriptFunction Start() { mixin(MGF!("mStart", "Function TribesGame.GFxTrUI_MainMenu.Start")()); }
 	}
-	@property final auto ref GFxUI_PauseMenu FamilyMenuMovie() { mixin(MGPC!(GFxUI_PauseMenu, 448)()); }
-	final bool Start(bool StartPaused)
+	@property final auto ref GFxUI_PauseMenu FamilyMenuMovie() { mixin(MGPC!("GFxUI_PauseMenu", 448)()); }
+	final bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

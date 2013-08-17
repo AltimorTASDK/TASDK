@@ -37,8 +37,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SoundCue PickupSound() { mixin(MGPC!(SoundCue, 516)()); }
-		float MaxDesireability() { mixin(MGPC!(float, 512)()); }
+		SoundCue PickupSound() { mixin(MGPC!("SoundCue", 516)()); }
+		float MaxDesireability() { mixin(MGPC!("float", 512)()); }
 	}
 final:
 	float BotDesireability(Pawn Bot, Controller C)

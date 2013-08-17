@@ -25,14 +25,15 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_PolyEncompassesAI.Recycle")()); }
 		}
 	}
-	@property final auto ref Vector OverrideExtentToCheck() { mixin(MGPC!(Vector, 80)()); }
+	@property final auto ref Vector OverrideExtentToCheck() { mixin(MGPC!("Vector", 80)()); }
 final:
-	static bool MakeSureAIFits(NavigationHandle NavHandle, const Vector InOverrideExtentToCheck)
+	static bool MakeSureAIFits(NavigationHandle NavHandle, in Vector* InOverrideExtentToCheck = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
-		*cast(Vector*)&params[4] = InOverrideExtentToCheck;
+		if (InOverrideExtentToCheck !is null)
+			*cast(Vector*)&params[4] = cast(Vector)*InOverrideExtentToCheck;
 		StaticClass.ProcessEvent(Functions.MakeSureAIFits, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

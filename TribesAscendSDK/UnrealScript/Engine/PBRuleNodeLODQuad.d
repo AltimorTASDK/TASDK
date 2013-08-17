@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PBRuleNodeLODQuad")()); }
 	private static __gshared PBRuleNodeLODQuad mDefaultProperties;
 	@property final static PBRuleNodeLODQuad DefaultProperties() { mixin(MGDPC!(PBRuleNodeLODQuad, "PBRuleNodeLODQuad Engine.Default__PBRuleNodeLODQuad")()); }
-	@property final auto ref float MassiveLODDistanceScale() { mixin(MGPC!(float, 104)()); }
+	@property final auto ref float MassiveLODDistanceScale() { mixin(MGPC!("float", 104)()); }
 }

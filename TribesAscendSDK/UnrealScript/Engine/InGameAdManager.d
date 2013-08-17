@@ -48,14 +48,14 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClickedBannerDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ClickedBannerDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 64)()); }
+void*)", 64)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) ClosedAdDelegates() { mixin(MGPC!(ScriptArray!(
+void*) ClosedAdDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 76)()); }
+void*)", 76)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClosedAdvertisement__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUserClickedBanner__Delegate'!
 		}

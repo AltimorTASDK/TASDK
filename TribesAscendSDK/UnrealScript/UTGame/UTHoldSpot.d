@@ -36,8 +36,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		NavigationPoint LastAnchor() { mixin(MGPC!(NavigationPoint, 744)()); }
-		UTVehicle HoldVehicle() { mixin(MGPC!(UTVehicle, 740)()); }
+		NavigationPoint LastAnchor() { mixin(MGPC!("NavigationPoint", 744)()); }
+		UTVehicle HoldVehicle() { mixin(MGPC!("UTVehicle", 740)()); }
 	}
 final:
 	void PreBeginPlay()

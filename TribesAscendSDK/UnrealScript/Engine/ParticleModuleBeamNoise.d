@@ -17,18 +17,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat NoiseScale() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 216)()); }
-			float FrequencyDistance() { mixin(MGPC!(float, 212)()); }
-			int NoiseTessellation() { mixin(MGPC!(int, 208)()); }
-			DistributionFloat.RawDistributionFloat NoiseTangentStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 180)()); }
-			float NoiseTension() { mixin(MGPC!(float, 176)()); }
-			float NoiseLockTime() { mixin(MGPC!(float, 172)()); }
-			float NoiseLockRadius() { mixin(MGPC!(float, 168)()); }
-			DistributionVector.RawDistributionVector NoiseSpeed() { mixin(MGPC!(DistributionVector.RawDistributionVector, 140)()); }
-			DistributionFloat.RawDistributionFloat NoiseRangeScale() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 112)()); }
-			DistributionVector.RawDistributionVector NoiseRange() { mixin(MGPC!(DistributionVector.RawDistributionVector, 84)()); }
-			int Frequency_LowRange() { mixin(MGPC!(int, 80)()); }
-			int Frequency() { mixin(MGPC!(int, 76)()); }
+			DistributionFloat.RawDistributionFloat NoiseScale() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 216)()); }
+			float FrequencyDistance() { mixin(MGPC!("float", 212)()); }
+			int NoiseTessellation() { mixin(MGPC!("int", 208)()); }
+			DistributionFloat.RawDistributionFloat NoiseTangentStrength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 180)()); }
+			float NoiseTension() { mixin(MGPC!("float", 176)()); }
+			float NoiseLockTime() { mixin(MGPC!("float", 172)()); }
+			float NoiseLockRadius() { mixin(MGPC!("float", 168)()); }
+			DistributionVector.RawDistributionVector NoiseSpeed() { mixin(MGPC!("DistributionVector.RawDistributionVector", 140)()); }
+			DistributionFloat.RawDistributionFloat NoiseRangeScale() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 112)()); }
+			DistributionVector.RawDistributionVector NoiseRange() { mixin(MGPC!("DistributionVector.RawDistributionVector", 84)()); }
+			int Frequency_LowRange() { mixin(MGPC!("int", 80)()); }
+			int Frequency() { mixin(MGPC!("int", 76)()); }
 		}
 		bool bApplyNoiseScale() { mixin(MGBPC!(72, 0x80)()); }
 		bool bApplyNoiseScale(bool val) { mixin(MSBPC!(72, 0x80)()); }

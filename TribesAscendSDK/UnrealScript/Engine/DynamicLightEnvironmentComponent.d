@@ -31,36 +31,36 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) OverriddenLightComponents() { mixin(MGPC!(ScriptArray!(
+void*) OverriddenLightComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 284)()); }
-			LightComponent.LightingChannelContainer OverriddenLightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 280)()); }
-			UObject.BoxSphereBounds OverriddenBounds() { mixin(MGPC!(UObject.BoxSphereBounds, 252)()); }
-			float MinShadowAngle() { mixin(MGPC!(float, 248)()); }
-			float BouncedLightingFactor() { mixin(MGPC!(float, 244)()); }
-			DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod BoundsMethod() { mixin(MGPC!(DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod, 242)()); }
+void*)", 284)()); }
+			LightComponent.LightingChannelContainer OverriddenLightingChannels() { mixin(MGPC!("LightComponent.LightingChannelContainer", 280)()); }
+			UObject.BoxSphereBounds OverriddenBounds() { mixin(MGPC!("UObject.BoxSphereBounds", 252)()); }
+			float MinShadowAngle() { mixin(MGPC!("float", 248)()); }
+			float BouncedLightingFactor() { mixin(MGPC!("float", 244)()); }
+			DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod BoundsMethod() { mixin(MGPC!("DynamicLightEnvironmentComponent.EDynamicLightEnvironmentBoundsMethod", 242)()); }
 			// WARNING: Property 'State' has the same name as a defined type!
-			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC!(LightComponent.ELightShadowMode, 241)()); }
-			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC!(LightComponent.EShadowFilterQuality, 240)()); }
-			int ShadowFadeResolution() { mixin(MGPC!(int, 236)()); }
-			int MaxShadowResolution() { mixin(MGPC!(int, 232)()); }
-			int MinShadowResolution() { mixin(MGPC!(int, 228)()); }
-			float DominantShadowTransitionEndDistance() { mixin(MGPC!(float, 224)()); }
-			float DominantShadowTransitionStartDistance() { mixin(MGPC!(float, 220)()); }
-			UObject.LinearColor MaxModulatedShadowColor() { mixin(MGPC!(UObject.LinearColor, 204)()); }
-			float ModShadowFadeoutExponent() { mixin(MGPC!(float, 200)()); }
-			float ModShadowFadeoutTime() { mixin(MGPC!(float, 196)()); }
-			float ShadowDistance() { mixin(MGPC!(float, 188)()); }
-			float LightDistance() { mixin(MGPC!(float, 184)()); }
-			float LightDesaturation() { mixin(MGPC!(float, 180)()); }
-			UObject.LinearColor AmbientGlow() { mixin(MGPC!(UObject.LinearColor, 164)()); }
-			Vector AmbientShadowSourceDirection() { mixin(MGPC!(Vector, 152)()); }
-			UObject.LinearColor AmbientShadowColor() { mixin(MGPC!(UObject.LinearColor, 136)()); }
-			float LightingBoundsScale() { mixin(MGPC!(float, 132)()); }
-			int NumVolumeVisibilitySamples() { mixin(MGPC!(int, 128)()); }
-			float ShadowInterpolationSpeed() { mixin(MGPC!(float, 124)()); }
-			float MinTimeBetweenFullUpdates() { mixin(MGPC!(float, 120)()); }
-			float InvisibleUpdateTime() { mixin(MGPC!(float, 116)()); }
+			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC!("LightComponent.ELightShadowMode", 241)()); }
+			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC!("LightComponent.EShadowFilterQuality", 240)()); }
+			int ShadowFadeResolution() { mixin(MGPC!("int", 236)()); }
+			int MaxShadowResolution() { mixin(MGPC!("int", 232)()); }
+			int MinShadowResolution() { mixin(MGPC!("int", 228)()); }
+			float DominantShadowTransitionEndDistance() { mixin(MGPC!("float", 224)()); }
+			float DominantShadowTransitionStartDistance() { mixin(MGPC!("float", 220)()); }
+			UObject.LinearColor MaxModulatedShadowColor() { mixin(MGPC!("UObject.LinearColor", 204)()); }
+			float ModShadowFadeoutExponent() { mixin(MGPC!("float", 200)()); }
+			float ModShadowFadeoutTime() { mixin(MGPC!("float", 196)()); }
+			float ShadowDistance() { mixin(MGPC!("float", 188)()); }
+			float LightDistance() { mixin(MGPC!("float", 184)()); }
+			float LightDesaturation() { mixin(MGPC!("float", 180)()); }
+			UObject.LinearColor AmbientGlow() { mixin(MGPC!("UObject.LinearColor", 164)()); }
+			Vector AmbientShadowSourceDirection() { mixin(MGPC!("Vector", 152)()); }
+			UObject.LinearColor AmbientShadowColor() { mixin(MGPC!("UObject.LinearColor", 136)()); }
+			float LightingBoundsScale() { mixin(MGPC!("float", 132)()); }
+			int NumVolumeVisibilitySamples() { mixin(MGPC!("int", 128)()); }
+			float ShadowInterpolationSpeed() { mixin(MGPC!("float", 124)()); }
+			float MinTimeBetweenFullUpdates() { mixin(MGPC!("float", 120)()); }
+			float InvisibleUpdateTime() { mixin(MGPC!("float", 116)()); }
 		}
 		bool bOverrideOwnerLightingChannels() { mixin(MGBPC!(192, 0x2000)()); }
 		bool bOverrideOwnerLightingChannels(bool val) { mixin(MSBPC!(192, 0x2000)()); }

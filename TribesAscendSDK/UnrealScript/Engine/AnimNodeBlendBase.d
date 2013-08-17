@@ -37,11 +37,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				AnimNode Anim() { mixin(MGPS!(AnimNode, 8)()); }
-				int DrawY() { mixin(MGPS!(int, 24)()); }
-				float BlendWeight() { mixin(MGPS!(float, 16)()); }
-				float Weight() { mixin(MGPS!(float, 12)()); }
-				ScriptName Name() { mixin(MGPS!(ScriptName, 0)()); }
+				AnimNode Anim() { mixin(MGPS!("AnimNode", 8)()); }
+				int DrawY() { mixin(MGPS!("int", 24)()); }
+				float BlendWeight() { mixin(MGPS!("float", 16)()); }
+				float Weight() { mixin(MGPS!("float", 12)()); }
+				ScriptName Name() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bIsAdditive() { mixin(MGBPS!(20, 0x2)()); }
 			bool bIsAdditive(bool val) { mixin(MSBPS!(20, 0x2)()); }
@@ -53,20 +53,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(AnimNodeBlendBase.AnimBlendChild) Children() { mixin(MGPC!(ScriptArray!(AnimNodeBlendBase.AnimBlendChild), 224)()); }
-			UObject.AlphaBlendType BlendType() { mixin(MGPC!(UObject.AlphaBlendType, 240)()); }
+			ScriptArray!(AnimNodeBlendBase.AnimBlendChild) Children() { mixin(MGPC!("ScriptArray!(AnimNodeBlendBase.AnimBlendChild)", 224)()); }
+			UObject.AlphaBlendType BlendType() { mixin(MGPC!("UObject.AlphaBlendType", 240)()); }
 		}
 		bool bFixNumChildren() { mixin(MGBPC!(236, 0x1)()); }
 		bool bFixNumChildren(bool val) { mixin(MSBPC!(236, 0x1)()); }
 	}
 final:
-	void PlayAnim(bool bLoop, float Rate, float StartTime)
+	void PlayAnim(bool* bLoop = null, float* Rate = null, float* StartTime = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = bLoop;
-		*cast(float*)&params[4] = Rate;
-		*cast(float*)&params[8] = StartTime;
+		if (bLoop !is null)
+			*cast(bool*)params.ptr = *bLoop;
+		if (Rate !is null)
+			*cast(float*)&params[4] = *Rate;
+		if (StartTime !is null)
+			*cast(float*)&params[8] = *StartTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()

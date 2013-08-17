@@ -15,7 +15,7 @@ public extern(D):
 	@property final static TrAnimNodeTurnInPlace_Rotator DefaultProperties() { mixin(MGDPC!(TrAnimNodeTurnInPlace_Rotator, "TrAnimNodeTurnInPlace_Rotator TribesGame.Default__TrAnimNodeTurnInPlace_Rotator")()); }
 	@property final auto ref
 	{
-		ScriptArray!(TrAnimNodeTurnInPlace) c_TurnInPlaceNodes() { mixin(MGPC!(ScriptArray!(TrAnimNodeTurnInPlace), 248)()); }
-		TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 244)()); }
+		ScriptArray!(TrAnimNodeTurnInPlace) c_TurnInPlaceNodes() { mixin(MGPC!("ScriptArray!(TrAnimNodeTurnInPlace)", 248)()); }
+		TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 244)()); }
 	}
 }

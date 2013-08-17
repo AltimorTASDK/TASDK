@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mCheckLogins;
 		public @property static final ScriptFunction CheckLogins() { mixin(MGF!("mCheckLogins", "Function Engine.SeqCond_IsLoggedIn.CheckLogins")()); }
 	}
-	@property final auto ref int NumNeededLoggedIn() { mixin(MGPC!(int, 208)()); }
+	@property final auto ref int NumNeededLoggedIn() { mixin(MGPC!("int", 208)()); }
 	final bool CheckLogins()
 	{
 		ubyte params[4];

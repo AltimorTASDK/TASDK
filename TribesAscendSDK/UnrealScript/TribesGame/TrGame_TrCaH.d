@@ -72,13 +72,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nPostCapturePointTime() { mixin(MGPC!(int, 1476)()); }
-		int m_nTicketCountTime() { mixin(MGPC!(int, 1472)()); }
-		ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { mixin(MGPC!(ScriptArray!(TrCaHCapturePoint), 1456)()); }
-		int m_5PointGoalScore() { mixin(MGPC!(int, 1488)()); }
-		int m_4PointGoalScore() { mixin(MGPC!(int, 1484)()); }
-		int m_3PointGoalScore() { mixin(MGPC!(int, 1480)()); }
-		int m_nRemainingTicketTime() { mixin(MGPC!(int, 1468)()); }
+		int m_nPostCapturePointTime() { mixin(MGPC!("int", 1476)()); }
+		int m_nTicketCountTime() { mixin(MGPC!("int", 1472)()); }
+		ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { mixin(MGPC!("ScriptArray!(TrCaHCapturePoint)", 1456)()); }
+		int m_5PointGoalScore() { mixin(MGPC!("int", 1488)()); }
+		int m_4PointGoalScore() { mixin(MGPC!("int", 1484)()); }
+		int m_3PointGoalScore() { mixin(MGPC!("int", 1480)()); }
+		int m_nRemainingTicketTime() { mixin(MGPC!("int", 1468)()); }
 	}
 final:
 	void PreBeginPlay()
@@ -188,12 +188,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RatePlayerStart, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte InTeam)
+	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte* InTeam = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
-		params[4] = InTeam;
+		if (InTeam !is null)
+			params[4] = *InTeam;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChoosePlayerStart, params.ptr, cast(void*)0);
 		return *cast(PlayerStart*)&params[8];
 	}

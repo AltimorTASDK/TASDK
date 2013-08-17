@@ -72,9 +72,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrFlagTeamRabbit m_TeamRabbitFlag() { mixin(MGPC!(TrFlagTeamRabbit, 1460)()); }
-			int m_nBuffAmount() { mixin(MGPC!(int, 1468)()); }
-			ubyte m_nBuffedTeamIndex() { mixin(MGPC!(ubyte, 1464)()); }
+			TrFlagTeamRabbit m_TeamRabbitFlag() { mixin(MGPC!("TrFlagTeamRabbit", 1460)()); }
+			int m_nBuffAmount() { mixin(MGPC!("int", 1468)()); }
+			ubyte m_nBuffedTeamIndex() { mixin(MGPC!("ubyte", 1464)()); }
 		}
 		bool m_bPlayedAnnouncerRally() { mixin(MGBPC!(1456, 0x2)()); }
 		bool m_bPlayedAnnouncerRally(bool val) { mixin(MSBPC!(1456, 0x2)()); }

@@ -16,10 +16,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float PitchMultiplier() { mixin(MGPC!(float, 88)()); }
-			float VolumeMultiplier() { mixin(MGPC!(float, 84)()); }
-			float PercentToPlay() { mixin(MGPC!(float, 80)()); }
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 72)()); }
+			float PitchMultiplier() { mixin(MGPC!("float", 88)()); }
+			float VolumeMultiplier() { mixin(MGPC!("float", 84)()); }
+			float PercentToPlay() { mixin(MGPC!("float", 80)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 72)()); }
 			// WARNING: Property 'SoundCue' has the same name as a defined type!
 		}
 		bool bIgnoreIfActorHidden() { mixin(MGBPC!(68, 0x2)()); }

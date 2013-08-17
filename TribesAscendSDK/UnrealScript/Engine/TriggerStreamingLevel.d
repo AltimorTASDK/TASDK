@@ -35,7 +35,7 @@ public extern(D):
 			bool bShouldBeLoaded(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(TriggerStreamingLevel.LevelStreamingData) Levels() { mixin(MGPC!(ScriptArray!(TriggerStreamingLevel.LevelStreamingData), 488)()); }
+	@property final auto ref ScriptArray!(TriggerStreamingLevel.LevelStreamingData) Levels() { mixin(MGPC!("ScriptArray!(TriggerStreamingLevel.LevelStreamingData)", 488)()); }
 	final void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* OtherComp, Vector HitLocation, Vector HitNormal)

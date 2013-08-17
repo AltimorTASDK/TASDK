@@ -29,9 +29,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float LastTime() { mixin(MGPC!(float, 744)()); }
-		UTPawn LastPawn() { mixin(MGPC!(UTPawn, 740)()); }
-		SoundCue TeleportingSound() { mixin(MGPC!(SoundCue, 736)()); }
+		float LastTime() { mixin(MGPC!("float", 744)()); }
+		UTPawn LastPawn() { mixin(MGPC!("UTPawn", 740)()); }
+		SoundCue TeleportingSound() { mixin(MGPC!("SoundCue", 736)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
 	}
 final:

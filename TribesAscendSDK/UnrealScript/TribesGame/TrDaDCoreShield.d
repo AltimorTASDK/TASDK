@@ -39,21 +39,23 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 536)()); }
-		TrDaDShell m_Shell() { mixin(MGPC!(TrDaDShell, 560)()); }
-		int m_nShieldIndex() { mixin(MGPC!(int, 556)()); }
-		TrDaDCore m_Core() { mixin(MGPC!(TrDaDCore, 552)()); }
-		Material m_BaseMaterial() { mixin(MGPC!(Material, 548)()); }
-		ubyte m_DefenderTeamIndex() { mixin(MGPC!(ubyte, 532)()); }
+		ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 536)()); }
+		TrDaDShell m_Shell() { mixin(MGPC!("TrDaDShell", 560)()); }
+		int m_nShieldIndex() { mixin(MGPC!("int", 556)()); }
+		TrDaDCore m_Core() { mixin(MGPC!("TrDaDCore", 552)()); }
+		Material m_BaseMaterial() { mixin(MGPC!("Material", 548)()); }
+		ubyte m_DefenderTeamIndex() { mixin(MGPC!("ubyte", 532)()); }
 	}
 final:
-	void Init(int ShieldIndex, TrDaDCore Core, TrDaDShell Shell)
+	void Init(int ShieldIndex, TrDaDCore* Core = null, TrDaDShell* Shell = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ShieldIndex;
-		*cast(TrDaDCore*)&params[4] = Core;
-		*cast(TrDaDShell*)&params[8] = Shell;
+		if (Core !is null)
+			*cast(TrDaDCore*)&params[4] = *Core;
+		if (Shell !is null)
+			*cast(TrDaDShell*)&params[8] = *Shell;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void PostBeginPlay()

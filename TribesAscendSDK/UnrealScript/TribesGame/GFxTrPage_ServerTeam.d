@@ -48,8 +48,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MaxBOunds() { mixin(MGPC!(int, 360)()); }
-			int MinBounds() { mixin(MGPC!(int, 356)()); }
+			int MaxBOunds() { mixin(MGPC!("int", 360)()); }
+			int MinBounds() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bBoundsPopup() { mixin(MGBPC!(364, 0x8)()); }
 		bool bBoundsPopup(bool val) { mixin(MSBPC!(364, 0x8)()); }

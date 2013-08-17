@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			Rotator RelativeRotation() { mixin(MGPC!(Rotator, 256)()); }
-			Vector RelativeOffset() { mixin(MGPC!(Vector, 244)()); }
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 236)()); }
+			Rotator RelativeRotation() { mixin(MGPC!("Rotator", 256)()); }
+			Vector RelativeOffset() { mixin(MGPC!("Vector", 244)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 236)()); }
 		}
 		bool bDetach() { mixin(MGBPC!(232, 0x1)()); }
 		bool bDetach(bool val) { mixin(MSBPC!(232, 0x1)()); }

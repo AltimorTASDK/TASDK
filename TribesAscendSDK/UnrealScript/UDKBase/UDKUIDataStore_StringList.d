@@ -63,19 +63,19 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKUIDataStore_StringList.EStringListData")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Strings() { mixin(MGPS!(ScriptArray!(ScriptString), 36)()); }
-			UDKUIDataProvider_StringArray DataProvider() { mixin(MGPS!(UDKUIDataProvider_StringArray, 48)()); }
-			int DefaultValueIndex() { mixin(MGPS!(int, 32)()); }
-			ScriptString CurrentValue() { mixin(MGPS!(ScriptString, 20)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 8)()); }
-			ScriptName Tag() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(ScriptString) Strings() { mixin(MGPS!("ScriptArray!(ScriptString)", 36)()); }
+			UDKUIDataProvider_StringArray DataProvider() { mixin(MGPS!("UDKUIDataProvider_StringArray", 48)()); }
+			int DefaultValueIndex() { mixin(MGPS!("int", 32)()); }
+			ScriptString CurrentValue() { mixin(MGPS!("ScriptString", 20)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 8)()); }
+			ScriptName Tag() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC!(ScriptArray!(UDKUIDataStore_StringList.EStringListData), 128)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
+		ScriptArray!(UDKUIDataStore_StringList.EStringListData) StringData() { mixin(MGPC!("ScriptArray!(UDKUIDataStore_StringList.EStringListData)", 128)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
 	}
 final:
 	void Registered(LocalPlayer PlayerOwner)
@@ -93,50 +93,56 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	void AddStr(ScriptName FieldName, ScriptString NewString, bool bBatchOp)
+	void AddStr(ScriptName FieldName, ScriptString NewString, bool* bBatchOp = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[8] = NewString;
-		*cast(bool*)&params[20] = bBatchOp;
+		if (bBatchOp !is null)
+			*cast(bool*)&params[20] = *bBatchOp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddStr, params.ptr, cast(void*)0);
 	}
-	void InsertStr(ScriptName FieldName, ScriptString NewString, int InsertIndex, bool bBatchOp)
+	void InsertStr(ScriptName FieldName, ScriptString NewString, int InsertIndex, bool* bBatchOp = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[8] = NewString;
 		*cast(int*)&params[20] = InsertIndex;
-		*cast(bool*)&params[24] = bBatchOp;
+		if (bBatchOp !is null)
+			*cast(bool*)&params[24] = *bBatchOp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InsertStr, params.ptr, cast(void*)0);
 	}
-	void RemoveStr(ScriptName FieldName, ScriptString StringToRemove, bool bBatchOp)
+	void RemoveStr(ScriptName FieldName, ScriptString StringToRemove, bool* bBatchOp = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[8] = StringToRemove;
-		*cast(bool*)&params[20] = bBatchOp;
+		if (bBatchOp !is null)
+			*cast(bool*)&params[20] = *bBatchOp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveStr, params.ptr, cast(void*)0);
 	}
-	void RemoveStrByIndex(ScriptName FieldName, int Index, int Count, bool bBatchOp)
+	void RemoveStrByIndex(ScriptName FieldName, int Index, int* Count = null, bool* bBatchOp = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(int*)&params[8] = Index;
-		*cast(int*)&params[12] = Count;
-		*cast(bool*)&params[16] = bBatchOp;
+		if (Count !is null)
+			*cast(int*)&params[12] = *Count;
+		if (bBatchOp !is null)
+			*cast(bool*)&params[16] = *bBatchOp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveStrByIndex, params.ptr, cast(void*)0);
 	}
-	void Empty(ScriptName FieldName, bool bBatchOp)
+	void Empty(ScriptName FieldName, bool* bBatchOp = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
-		*cast(bool*)&params[8] = bBatchOp;
+		if (bBatchOp !is null)
+			*cast(bool*)&params[8] = *bBatchOp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Empty, params.ptr, cast(void*)0);
 	}
 	int FindStr(ScriptName FieldName, ScriptString SearchString)
@@ -172,7 +178,7 @@ final:
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptString*)&params[8] = out_Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentValue, params.ptr, cast(void*)0);
-		*out_Value = *cast(ScriptString*)&params[8];
+		out_Value = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	int GetCurrentValueIndex(ScriptName FieldName)

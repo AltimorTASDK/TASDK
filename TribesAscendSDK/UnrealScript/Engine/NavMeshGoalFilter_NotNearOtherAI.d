@@ -17,13 +17,13 @@ public extern(D):
 		private static __gshared ScriptFunction mNotNearOtherAI;
 		public @property static final ScriptFunction NotNearOtherAI() { mixin(MGF!("mNotNearOtherAI", "Function Engine.NavMeshGoalFilter_NotNearOtherAI.NotNearOtherAI")()); }
 	}
-	@property final auto ref float DistanceToCheck() { mixin(MGPC!(float, 72)()); }
-	final static bool NotNearOtherAI(NavMeshGoal_GenericFilterContainer FilterContainer, const float InDistanceToCheck)
+	@property final auto ref float DistanceToCheck() { mixin(MGPC!("float", 72)()); }
+	final static bool NotNearOtherAI(NavMeshGoal_GenericFilterContainer FilterContainer, in float InDistanceToCheck)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(NavMeshGoal_GenericFilterContainer*)params.ptr = FilterContainer;
-		*cast(float*)&params[4] = InDistanceToCheck;
+		*cast(float*)&params[4] = cast(float)InDistanceToCheck;
 		StaticClass.ProcessEvent(Functions.NotNearOtherAI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

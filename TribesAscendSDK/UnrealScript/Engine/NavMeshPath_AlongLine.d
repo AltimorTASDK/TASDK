@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshPath_AlongLine.Recycle")()); }
 		}
 	}
-	@property final auto ref Vector Direction() { mixin(MGPC!(Vector, 80)()); }
+	@property final auto ref Vector Direction() { mixin(MGPC!("Vector", 80)()); }
 final:
 	static bool AlongLine(NavigationHandle NavHandle, Vector Dir)
 	{

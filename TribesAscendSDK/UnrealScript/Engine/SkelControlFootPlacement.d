@@ -16,12 +16,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MaxFootOrientAdjust() { mixin(MGPC!(float, 284)()); }
-			float MaxDownAdjustment() { mixin(MGPC!(float, 280)()); }
-			float MaxUpAdjustment() { mixin(MGPC!(float, 276)()); }
-			Rotator FootRotOffset() { mixin(MGPC!(Rotator, 260)()); }
-			UObject.EAxis FootUpAxis() { mixin(MGPC!(UObject.EAxis, 256)()); }
-			float FootOffset() { mixin(MGPC!(float, 252)()); }
+			float MaxFootOrientAdjust() { mixin(MGPC!("float", 284)()); }
+			float MaxDownAdjustment() { mixin(MGPC!("float", 280)()); }
+			float MaxUpAdjustment() { mixin(MGPC!("float", 276)()); }
+			Rotator FootRotOffset() { mixin(MGPC!("Rotator", 260)()); }
+			UObject.EAxis FootUpAxis() { mixin(MGPC!("UObject.EAxis", 256)()); }
+			float FootOffset() { mixin(MGPC!("float", 252)()); }
 		}
 		bool bOnlyEnableForUpAdjustment() { mixin(MGBPC!(272, 0x4)()); }
 		bool bOnlyEnableForUpAdjustment(bool val) { mixin(MSBPC!(272, 0x4)()); }

@@ -79,21 +79,21 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Model' has the same name as a defined type!
-			int LootId() { mixin(MGPS!(int, 0)()); }
+			int LootId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(GFxTrPage_Main.BundleData) ActiveBundles() { mixin(MGPC!(ScriptArray!(GFxTrPage_Main.BundleData), 404)()); }
-			ScriptString TabOffset() { mixin(MGPC!(ScriptString, 392)()); }
-			ScriptString QueueTimer() { mixin(MGPC!(ScriptString, 380)()); }
-			int FeatureSwapTime() { mixin(MGPC!(int, 372)()); }
-			int FeatureShowTime() { mixin(MGPC!(int, 368)()); }
-			int ActiveFeature() { mixin(MGPC!(int, 364)()); }
-			int GoldDealId() { mixin(MGPC!(int, 360)()); }
-			int NumQuit() { mixin(MGPC!(int, 356)()); }
+			ScriptArray!(GFxTrPage_Main.BundleData) ActiveBundles() { mixin(MGPC!("ScriptArray!(GFxTrPage_Main.BundleData)", 404)()); }
+			ScriptString TabOffset() { mixin(MGPC!("ScriptString", 392)()); }
+			ScriptString QueueTimer() { mixin(MGPC!("ScriptString", 380)()); }
+			int FeatureSwapTime() { mixin(MGPC!("int", 372)()); }
+			int FeatureShowTime() { mixin(MGPC!("int", 368)()); }
+			int ActiveFeature() { mixin(MGPC!("int", 364)()); }
+			int GoldDealId() { mixin(MGPC!("int", 360)()); }
+			int NumQuit() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bSwingingCamera() { mixin(MGBPC!(376, 0x1)()); }
 		bool bSwingingCamera(bool val) { mixin(MSBPC!(376, 0x1)()); }

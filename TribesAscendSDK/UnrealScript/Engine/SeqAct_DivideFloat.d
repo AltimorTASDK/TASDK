@@ -13,9 +13,9 @@ public extern(D):
 	@property final static SeqAct_DivideFloat DefaultProperties() { mixin(MGDPC!(SeqAct_DivideFloat, "SeqAct_DivideFloat Engine.Default__SeqAct_DivideFloat")()); }
 	@property final auto ref
 	{
-		int IntResult() { mixin(MGPC!(int, 244)()); }
-		float FloatResult() { mixin(MGPC!(float, 240)()); }
-		float ValueB() { mixin(MGPC!(float, 236)()); }
-		float ValueA() { mixin(MGPC!(float, 232)()); }
+		int IntResult() { mixin(MGPC!("int", 244)()); }
+		float FloatResult() { mixin(MGPC!("float", 240)()); }
+		float ValueB() { mixin(MGPC!("float", 236)()); }
+		float ValueA() { mixin(MGPC!("float", 232)()); }
 	}
 }

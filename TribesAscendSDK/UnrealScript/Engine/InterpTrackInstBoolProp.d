@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackInstBoolProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstBoolProp, "InterpTrackInstBoolProp Engine.Default__InterpTrackInstBoolProp")()); }
 	@property final
 	{
-		@property final auto ref UObject.Pointer BoolProp() { mixin(MGPC!(UObject.Pointer, 68)()); }
+		@property final auto ref UObject.Pointer BoolProp() { mixin(MGPC!("UObject.Pointer", 68)()); }
 		bool ResetBool() { mixin(MGBPC!(72, 0x1)()); }
 		bool ResetBool(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}

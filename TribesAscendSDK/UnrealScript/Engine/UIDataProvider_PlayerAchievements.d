@@ -47,8 +47,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.AchievementDetails), 96)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
+		ScriptArray!(OnlineSubsystem.AchievementDetails) Achievements() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.AchievementDetails)", 96)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
 	}
 final:
 	int GetTotalGamerScore()
@@ -69,23 +69,24 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateAchievementIcons, cast(void*)0, cast(void*)0);
 	}
-	ScriptString GetAchievementIconPathName(int AchievementId, bool bReturnLockedIcon)
+	ScriptString GetAchievementIconPathName(int AchievementId, bool* bReturnLockedIcon = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = AchievementId;
-		*cast(bool*)&params[4] = bReturnLockedIcon;
+		if (bReturnLockedIcon !is null)
+			*cast(bool*)&params[4] = *bReturnLockedIcon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievementIconPathName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[8];
 	}
-	void GetAchievementDetails(const int AchievementId, ref OnlineSubsystem.AchievementDetails OutAchievementDetails)
+	void GetAchievementDetails(in int AchievementId, ref OnlineSubsystem.AchievementDetails OutAchievementDetails)
 	{
 		ubyte params[56];
 		params[] = 0;
-		*cast(int*)params.ptr = AchievementId;
+		*cast(int*)params.ptr = cast(int)AchievementId;
 		*cast(OnlineSubsystem.AchievementDetails*)&params[4] = OutAchievementDetails;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievementDetails, params.ptr, cast(void*)0);
-		*OutAchievementDetails = *cast(OnlineSubsystem.AchievementDetails*)&params[4];
+		OutAchievementDetails = *cast(OnlineSubsystem.AchievementDetails*)&params[4];
 	}
 	void OnPlayerAchievementsChanged(int TitleId)
 	{

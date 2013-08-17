@@ -33,14 +33,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum")()); }
 		@property final auto ref
 		{
-			MaterialInterface TheMaterial() { mixin(MGPS!(MaterialInterface, 4)()); }
-			int MaterialIndex() { mixin(MGPS!(int, 0)()); }
+			MaterialInterface TheMaterial() { mixin(MGPS!("MaterialInterface", 4)()); }
+			int MaterialIndex() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) ExtremeContent() { mixin(MGPC!(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum), 536)()); }
-		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!(ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum), 548)()); }
+		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) ExtremeContent() { mixin(MGPC!("ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum)", 536)()); }
+		ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!("ScriptArray!(SkeletalMeshActorBasedOnExtremeContent.SkelMaterialSetterDatum)", 548)()); }
 	}
 final:
 	void PostBeginPlay()

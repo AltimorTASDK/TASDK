@@ -70,7 +70,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupMesh'!
-			ScriptClass WeaponClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	struct PawnToucher
@@ -81,8 +81,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTWeaponLocker.PawnToucher")()); }
 		@property final auto ref
 		{
-			float NextTouchTime() { mixin(MGPS!(float, 4)()); }
-			Pawn P() { mixin(MGPS!(Pawn, 0)()); }
+			float NextTouchTime() { mixin(MGPS!("float", 4)()); }
+			Pawn P() { mixin(MGPS!("Pawn", 0)()); }
 		}
 	}
 	struct ReplacementWeaponEntry
@@ -93,7 +93,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTWeaponLocker.ReplacementWeaponEntry")()); }
 		@property final
 		{
-			@property final auto ref ScriptClass WeaponClass() { mixin(MGPS!(ScriptClass, 4)()); }
+			@property final auto ref ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 4)()); }
 			bool bReplaced() { mixin(MGBPS!(0, 0x1)()); }
 			bool bReplaced(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
@@ -112,20 +112,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UTWeaponLocker.WeaponEntry) Weapons() { mixin(MGPC!(ScriptArray!(UTWeaponLocker.WeaponEntry), 944)()); }
-			ScriptArray!(Vector) LockerPositions() { mixin(MGPC!(ScriptArray!(Vector), 1004)()); }
-			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!(ScriptArray!(UTWeaponLocker.PawnToucher), 1028)()); }
-			float NextProximityCheckTime() { mixin(MGPC!(float, 1076)()); }
-			float ScaleRate() { mixin(MGPC!(float, 1072)()); }
-			ParticleSystem WeaponSpawnEffectTemplate() { mixin(MGPC!(ParticleSystem, 1068)()); }
-			ParticleSystem ActiveEffectTemplate() { mixin(MGPC!(ParticleSystem, 1064)()); }
-			ParticleSystem InactiveEffectTemplate() { mixin(MGPC!(ParticleSystem, 1060)()); }
+			ScriptArray!(UTWeaponLocker.WeaponEntry) Weapons() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.WeaponEntry)", 944)()); }
+			ScriptArray!(Vector) LockerPositions() { mixin(MGPC!("ScriptArray!(Vector)", 1004)()); }
+			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.PawnToucher)", 1028)()); }
+			float NextProximityCheckTime() { mixin(MGPC!("float", 1076)()); }
+			float ScaleRate() { mixin(MGPC!("float", 1072)()); }
+			ParticleSystem WeaponSpawnEffectTemplate() { mixin(MGPC!("ParticleSystem", 1068)()); }
+			ParticleSystem ActiveEffectTemplate() { mixin(MGPC!("ParticleSystem", 1064)()); }
+			ParticleSystem InactiveEffectTemplate() { mixin(MGPC!("ParticleSystem", 1060)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProximityEffect'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientEffect'!
-			float ProximityDistanceSquared() { mixin(MGPC!(float, 1048)()); }
-			float CurrentWeaponScaleX() { mixin(MGPC!(float, 1044)()); }
-			ScriptString LockerString() { mixin(MGPC!(ScriptString, 1016)()); }
-			UTWeaponLocker.ReplacementWeaponEntry ReplacementWeapons() { mixin(MGPC!(UTWeaponLocker.ReplacementWeaponEntry, 956)()); }
+			float ProximityDistanceSquared() { mixin(MGPC!("float", 1048)()); }
+			float CurrentWeaponScaleX() { mixin(MGPC!("float", 1044)()); }
+			ScriptString LockerString() { mixin(MGPC!("ScriptString", 1016)()); }
+			UTWeaponLocker.ReplacementWeaponEntry ReplacementWeapons() { mixin(MGPC!("UTWeaponLocker.ReplacementWeaponEntry", 956)()); }
 		}
 		bool bScalingUp() { mixin(MGBPC!(1040, 0x4)()); }
 		bool bScalingUp(bool val) { mixin(MSBPC!(1040, 0x4)()); }

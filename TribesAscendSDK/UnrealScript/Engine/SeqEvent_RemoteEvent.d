@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptName EventName() { mixin(MGPC!(ScriptName, 256)()); }
+		@property final auto ref ScriptName EventName() { mixin(MGPC!("ScriptName", 256)()); }
 		bool bStatusIsOk() { mixin(MGBPC!(264, 0x1)()); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC!(264, 0x1)()); }
 	}

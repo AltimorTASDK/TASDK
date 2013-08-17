@@ -44,7 +44,7 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MyLightEnvironment'!
-			float StartScale() { mixin(MGPC!(float, 500)()); }
+			float StartScale() { mixin(MGPC!("float", 500)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupParticles'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupMesh'!
 		}

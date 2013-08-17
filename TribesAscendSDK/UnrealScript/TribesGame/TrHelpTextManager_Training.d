@@ -53,31 +53,31 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString m_TrainingHelpTextExample1() { mixin(MGPC!(ScriptString, 1264)()); }
-		TrHelpTextManager_Training.EHelpTextTrainingType m_CurrentHelpTextTrainingType() { mixin(MGPC!(TrHelpTextManager_Training.EHelpTextTrainingType, 1552)()); }
-		ScriptString m_TrainingHelpTextExample1MenuTitle() { mixin(MGPC!(ScriptString, 1408)()); }
-		ScriptString m_TrainingHelpTextExample2() { mixin(MGPC!(ScriptString, 1276)()); }
-		ScriptString m_TrainingHelpTextExample2MenuTitle() { mixin(MGPC!(ScriptString, 1420)()); }
-		ScriptString m_TrainingHelpTextSkiMessage1() { mixin(MGPC!(ScriptString, 1288)()); }
-		ScriptString m_TrainingHelpTextSki1MenuTitle() { mixin(MGPC!(ScriptString, 1432)()); }
-		ScriptString m_TrainingHelpTextSkiMessage2() { mixin(MGPC!(ScriptString, 1300)()); }
-		ScriptString m_TrainingHelpTextSki2MenuTitle() { mixin(MGPC!(ScriptString, 1444)()); }
-		ScriptString m_TrainingHelpTextSkiMessage3() { mixin(MGPC!(ScriptString, 1312)()); }
-		ScriptString m_TrainingHelpTextSki3MenuTitle() { mixin(MGPC!(ScriptString, 1456)()); }
-		ScriptString m_TrainingHelpTextSkiMessage4() { mixin(MGPC!(ScriptString, 1324)()); }
-		ScriptString m_TrainingHelpTextSki4MenuTitle() { mixin(MGPC!(ScriptString, 1468)()); }
-		ScriptString m_TrainingHelpTextSkiMessage5() { mixin(MGPC!(ScriptString, 1336)()); }
-		ScriptString m_TrainingHelpTextSki5MenuTitle() { mixin(MGPC!(ScriptString, 1480)()); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage1() { mixin(MGPC!(ScriptString, 1348)()); }
-		ScriptString m_TrainingHelpTextSkiAdv1MenuTitle() { mixin(MGPC!(ScriptString, 1492)()); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage2() { mixin(MGPC!(ScriptString, 1360)()); }
-		ScriptString m_TrainingHelpTextSkiAdv2MenuTitle() { mixin(MGPC!(ScriptString, 1504)()); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage3() { mixin(MGPC!(ScriptString, 1372)()); }
-		ScriptString m_TrainingHelpTextSkiAdv3MenuTitle() { mixin(MGPC!(ScriptString, 1516)()); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage4() { mixin(MGPC!(ScriptString, 1384)()); }
-		ScriptString m_TrainingHelpTextSkiAdv4MenuTitle() { mixin(MGPC!(ScriptString, 1528)()); }
-		ScriptString m_TrainingHelpTextSkiAdvMessage5() { mixin(MGPC!(ScriptString, 1396)()); }
-		ScriptString m_TrainingHelpTextSkiAdv5MenuTitle() { mixin(MGPC!(ScriptString, 1540)()); }
+		ScriptString m_TrainingHelpTextExample1() { mixin(MGPC!("ScriptString", 1264)()); }
+		TrHelpTextManager_Training.EHelpTextTrainingType m_CurrentHelpTextTrainingType() { mixin(MGPC!("TrHelpTextManager_Training.EHelpTextTrainingType", 1552)()); }
+		ScriptString m_TrainingHelpTextExample1MenuTitle() { mixin(MGPC!("ScriptString", 1408)()); }
+		ScriptString m_TrainingHelpTextExample2() { mixin(MGPC!("ScriptString", 1276)()); }
+		ScriptString m_TrainingHelpTextExample2MenuTitle() { mixin(MGPC!("ScriptString", 1420)()); }
+		ScriptString m_TrainingHelpTextSkiMessage1() { mixin(MGPC!("ScriptString", 1288)()); }
+		ScriptString m_TrainingHelpTextSki1MenuTitle() { mixin(MGPC!("ScriptString", 1432)()); }
+		ScriptString m_TrainingHelpTextSkiMessage2() { mixin(MGPC!("ScriptString", 1300)()); }
+		ScriptString m_TrainingHelpTextSki2MenuTitle() { mixin(MGPC!("ScriptString", 1444)()); }
+		ScriptString m_TrainingHelpTextSkiMessage3() { mixin(MGPC!("ScriptString", 1312)()); }
+		ScriptString m_TrainingHelpTextSki3MenuTitle() { mixin(MGPC!("ScriptString", 1456)()); }
+		ScriptString m_TrainingHelpTextSkiMessage4() { mixin(MGPC!("ScriptString", 1324)()); }
+		ScriptString m_TrainingHelpTextSki4MenuTitle() { mixin(MGPC!("ScriptString", 1468)()); }
+		ScriptString m_TrainingHelpTextSkiMessage5() { mixin(MGPC!("ScriptString", 1336)()); }
+		ScriptString m_TrainingHelpTextSki5MenuTitle() { mixin(MGPC!("ScriptString", 1480)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage1() { mixin(MGPC!("ScriptString", 1348)()); }
+		ScriptString m_TrainingHelpTextSkiAdv1MenuTitle() { mixin(MGPC!("ScriptString", 1492)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage2() { mixin(MGPC!("ScriptString", 1360)()); }
+		ScriptString m_TrainingHelpTextSkiAdv2MenuTitle() { mixin(MGPC!("ScriptString", 1504)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage3() { mixin(MGPC!("ScriptString", 1372)()); }
+		ScriptString m_TrainingHelpTextSkiAdv3MenuTitle() { mixin(MGPC!("ScriptString", 1516)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage4() { mixin(MGPC!("ScriptString", 1384)()); }
+		ScriptString m_TrainingHelpTextSkiAdv4MenuTitle() { mixin(MGPC!("ScriptString", 1528)()); }
+		ScriptString m_TrainingHelpTextSkiAdvMessage5() { mixin(MGPC!("ScriptString", 1396)()); }
+		ScriptString m_TrainingHelpTextSkiAdv5MenuTitle() { mixin(MGPC!("ScriptString", 1540)()); }
 	}
 final:
 	void InitHelpTextManager()
@@ -106,13 +106,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RequestHelpText, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float Time, bool bDoNotSuppress)
+	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float* Time = null, bool* bDoNotSuppress = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = TypeToRemove;
-		*cast(float*)&params[4] = Time;
-		*cast(bool*)&params[8] = bDoNotSuppress;
+		if (Time !is null)
+			*cast(float*)&params[4] = *Time;
+		if (bDoNotSuppress !is null)
+			*cast(bool*)&params[8] = *bDoNotSuppress;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveHelpText, params.ptr, cast(void*)0);
 	}
 	void RequestHelpText_Training(TrHelpTextManager_Training.EHelpTextTrainingType RequestedType)

@@ -14,8 +14,8 @@ public extern(D):
 	@property final static DrawQuadComponent DefaultProperties() { mixin(MGDPC!(DrawQuadComponent, "DrawQuadComponent Engine.Default__DrawQuadComponent")()); }
 	@property final auto ref
 	{
-		float Height() { mixin(MGPC!(float, 496)()); }
-		float Width() { mixin(MGPC!(float, 492)()); }
+		float Height() { mixin(MGPC!("float", 496)()); }
+		float Width() { mixin(MGPC!("float", 492)()); }
 		// WARNING: Property 'Texture' has the same name as a defined type!
 	}
 }

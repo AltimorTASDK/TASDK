@@ -1461,36 +1461,36 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrServerSettingsInfo r_ServerConfig() { mixin(MGPC!(TrServerSettingsInfo, 684)()); }
-			TrPlayerReplicationInfo r_BEPlayerList() { mixin(MGPC!(TrPlayerReplicationInfo, 816)()); }
-			TrPlayerReplicationInfo r_DSPlayerList() { mixin(MGPC!(TrPlayerReplicationInfo, 848)()); }
-			int r_nRoundScore() { mixin(MGPC!(int, 764)()); }
-			int r_nCurrentRound() { mixin(MGPC!(int, 772)()); }
-			TrObjectPool m_TrObjectPool() { mixin(MGPC!(TrObjectPool, 636)()); }
-			ScriptArray!(TrDeployable) m_Deployables() { mixin(MGPC!(ScriptArray!(TrDeployable), 640)()); }
-			TrPawn.PhysicsType r_PhysType() { mixin(MGPC!(TrPawn.PhysicsType, 711)()); }
-			float m_fCurrentSensorBlipOpacity() { mixin(MGPC!(float, 724)()); }
-			TrFlagBase m_Flags() { mixin(MGPC!(TrFlagBase, 676)()); }
-			int r_nNumCapturePointsHeld() { mixin(MGPC!(int, 808)()); }
-			int GeneratorPower() { mixin(MGPC!(int, 688)()); }
-			PlayerReplicationInfo m_CurrentRabbitPRI() { mixin(MGPC!(PlayerReplicationInfo, 664)()); }
-			TrDaDCore r_DaDCore() { mixin(MGPC!(TrDaDCore, 776)()); }
-			TrDaDCapacitor r_DaDCapacitorBE() { mixin(MGPC!(TrDaDCapacitor, 784)()); }
-			TrDaDCapacitor r_DaDCapacitorDS() { mixin(MGPC!(TrDaDCapacitor, 796)()); }
-			int FlagReturnTime() { mixin(MGPC!(int, 668)()); }
-			PlayerReplicationInfo m_RabbitLeaderBoard() { mixin(MGPC!(PlayerReplicationInfo, 652)()); }
-			int r_CarrierCoreHealth() { mixin(MGPC!(int, 756)()); }
-			int r_CarrierShieldHealth() { mixin(MGPC!(int, 748)()); }
-			ScriptArray!(TrTeamBlockerStaticMeshActor) m_TeamBlockerCache() { mixin(MGPC!(ScriptArray!(TrTeamBlockerStaticMeshActor), 712)()); }
-			float r_fGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGPC!(float, 744)()); }
-			float r_fGlobalAirSpeedMultiplier() { mixin(MGPC!(float, 740)()); }
-			float r_fGlobalAccelerationMultiplier() { mixin(MGPC!(float, 736)()); }
-			float r_fGlobalSpeedCapMultiplier() { mixin(MGPC!(float, 732)()); }
-			float m_fSensorBlipFadeSpeed() { mixin(MGPC!(float, 728)()); }
-			ubyte r_nBlip() { mixin(MGPC!(ubyte, 710)()); }
-			ubyte r_nPhase0SeigeEnded() { mixin(MGPC!(ubyte, 709)()); }
-			ubyte r_ResetGame() { mixin(MGPC!(ubyte, 708)()); }
-			int GeneratorDowntime() { mixin(MGPC!(int, 696)()); }
+			TrServerSettingsInfo r_ServerConfig() { mixin(MGPC!("TrServerSettingsInfo", 684)()); }
+			TrPlayerReplicationInfo r_BEPlayerList() { mixin(MGPC!("TrPlayerReplicationInfo", 816)()); }
+			TrPlayerReplicationInfo r_DSPlayerList() { mixin(MGPC!("TrPlayerReplicationInfo", 848)()); }
+			int r_nRoundScore() { mixin(MGPC!("int", 764)()); }
+			int r_nCurrentRound() { mixin(MGPC!("int", 772)()); }
+			TrObjectPool m_TrObjectPool() { mixin(MGPC!("TrObjectPool", 636)()); }
+			ScriptArray!(TrDeployable) m_Deployables() { mixin(MGPC!("ScriptArray!(TrDeployable)", 640)()); }
+			TrPawn.PhysicsType r_PhysType() { mixin(MGPC!("TrPawn.PhysicsType", 711)()); }
+			float m_fCurrentSensorBlipOpacity() { mixin(MGPC!("float", 724)()); }
+			TrFlagBase m_Flags() { mixin(MGPC!("TrFlagBase", 676)()); }
+			int r_nNumCapturePointsHeld() { mixin(MGPC!("int", 808)()); }
+			int GeneratorPower() { mixin(MGPC!("int", 688)()); }
+			PlayerReplicationInfo m_CurrentRabbitPRI() { mixin(MGPC!("PlayerReplicationInfo", 664)()); }
+			TrDaDCore r_DaDCore() { mixin(MGPC!("TrDaDCore", 776)()); }
+			TrDaDCapacitor r_DaDCapacitorBE() { mixin(MGPC!("TrDaDCapacitor", 784)()); }
+			TrDaDCapacitor r_DaDCapacitorDS() { mixin(MGPC!("TrDaDCapacitor", 796)()); }
+			int FlagReturnTime() { mixin(MGPC!("int", 668)()); }
+			PlayerReplicationInfo m_RabbitLeaderBoard() { mixin(MGPC!("PlayerReplicationInfo", 652)()); }
+			int r_CarrierCoreHealth() { mixin(MGPC!("int", 756)()); }
+			int r_CarrierShieldHealth() { mixin(MGPC!("int", 748)()); }
+			ScriptArray!(TrTeamBlockerStaticMeshActor) m_TeamBlockerCache() { mixin(MGPC!("ScriptArray!(TrTeamBlockerStaticMeshActor)", 712)()); }
+			float r_fGlobalMaxJetpackThrustSpeedMultiplier() { mixin(MGPC!("float", 744)()); }
+			float r_fGlobalAirSpeedMultiplier() { mixin(MGPC!("float", 740)()); }
+			float r_fGlobalAccelerationMultiplier() { mixin(MGPC!("float", 736)()); }
+			float r_fGlobalSpeedCapMultiplier() { mixin(MGPC!("float", 732)()); }
+			float m_fSensorBlipFadeSpeed() { mixin(MGPC!("float", 728)()); }
+			ubyte r_nBlip() { mixin(MGPC!("ubyte", 710)()); }
+			ubyte r_nPhase0SeigeEnded() { mixin(MGPC!("ubyte", 709)()); }
+			ubyte r_ResetGame() { mixin(MGPC!("ubyte", 708)()); }
+			int GeneratorDowntime() { mixin(MGPC!("int", 696)()); }
 		}
 		bool r_bSkiEnabled() { mixin(MGBPC!(704, 0x10)()); }
 		bool r_bSkiEnabled(bool val) { mixin(MSBPC!(704, 0x10)()); }

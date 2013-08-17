@@ -60,13 +60,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(FracturedStaticMeshPart) PartPool() { mixin(MGPC!(ScriptArray!(FracturedStaticMeshPart), 496)()); }
-			ScriptArray!(int) FreeParts() { mixin(MGPC!(ScriptArray!(int), 508)()); }
-			ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { mixin(MGPC!(ScriptArray!(FracturedStaticMeshActor), 520)()); }
-			float ExplosionVelScale() { mixin(MGPC!(float, 492)()); }
-			float DestroyMinAngVel() { mixin(MGPC!(float, 488)()); }
-			float DestroyVibrationLevel() { mixin(MGPC!(float, 484)()); }
-			int FSMPartPoolSize() { mixin(MGPC!(int, 476)()); }
+			ScriptArray!(FracturedStaticMeshPart) PartPool() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshPart)", 496)()); }
+			ScriptArray!(int) FreeParts() { mixin(MGPC!("ScriptArray!(int)", 508)()); }
+			ScriptArray!(FracturedStaticMeshActor) ActorsWithDeferredPartsToSpawn() { mixin(MGPC!("ScriptArray!(FracturedStaticMeshActor)", 520)()); }
+			float ExplosionVelScale() { mixin(MGPC!("float", 492)()); }
+			float DestroyMinAngVel() { mixin(MGPC!("float", 488)()); }
+			float DestroyVibrationLevel() { mixin(MGPC!("float", 484)()); }
+			int FSMPartPoolSize() { mixin(MGPC!("int", 476)()); }
 		}
 		bool bEnableSpawnChunkEffectForRadialDamage() { mixin(MGBPC!(480, 0x2)()); }
 		bool bEnableSpawnChunkEffectForRadialDamage(bool val) { mixin(MSBPC!(480, 0x2)()); }

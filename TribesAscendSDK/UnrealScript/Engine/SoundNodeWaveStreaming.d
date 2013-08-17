@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction GeneratePCMData() { mixin(MGF!("mGeneratePCMData", "Function Engine.SoundNodeWaveStreaming.GeneratePCMData")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { mixin(MGPC!(ScriptArray!(ubyte), 436)()); }
+	@property final auto ref ScriptArray!(ubyte) QueuedAudio() { mixin(MGPC!("ScriptArray!(ubyte)", 436)()); }
 final:
 	void QueueAudio(ScriptArray!(ubyte) Data)
 	{
@@ -55,6 +55,6 @@ final:
 		*cast(ScriptArray!(ubyte)*)params.ptr = Buffer;
 		*cast(int*)&params[12] = SamplesNeeded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePCMData, params.ptr, cast(void*)0);
-		*Buffer = *cast(ScriptArray!(ubyte)*)params.ptr;
+		Buffer = *cast(ScriptArray!(ubyte)*)params.ptr;
 	}
 }

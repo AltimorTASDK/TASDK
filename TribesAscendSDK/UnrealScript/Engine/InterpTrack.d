@@ -28,8 +28,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(int) TrackIndices() { mixin(MGPS!(ScriptArray!(int), 12)()); }
-				ScriptString GroupName() { mixin(MGPS!(ScriptString, 0)()); }
+				ScriptArray!(int) TrackIndices() { mixin(MGPS!("ScriptArray!(int)", 12)()); }
+				ScriptString GroupName() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bIsSelected() { mixin(MGBPS!(24, 0x2)()); }
 			bool bIsSelected(bool val) { mixin(MSBPS!(24, 0x2)()); }
@@ -45,23 +45,23 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrack.SupportedSubTrackInfo")()); }
 		@property final auto ref
 		{
-			int GroupIndex() { mixin(MGPS!(int, 16)()); }
-			ScriptString SubTrackName() { mixin(MGPS!(ScriptString, 4)()); }
-			ScriptClass SupportedClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			int GroupIndex() { mixin(MGPS!("int", 16)()); }
+			ScriptString SubTrackName() { mixin(MGPS!("ScriptString", 4)()); }
+			ScriptClass SupportedClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrack) SubTracks() { mixin(MGPC!(ScriptArray!(InterpTrack), 68)()); }
-			ScriptArray!(InterpTrack.SubTrackGroup) SubTrackGroups() { mixin(MGPC!(ScriptArray!(InterpTrack.SubTrackGroup), 80)()); }
-			ScriptArray!(InterpTrack.SupportedSubTrackInfo) SupportedSubTracks() { mixin(MGPC!(ScriptArray!(InterpTrack.SupportedSubTrackInfo), 92)()); }
-			ScriptString TrackTitle() { mixin(MGPC!(ScriptString, 112)()); }
-			InterpTrack.ETrackActiveCondition ActiveCondition() { mixin(MGPC!(InterpTrack.ETrackActiveCondition, 108)()); }
-			ScriptClass TrackInstClass() { mixin(MGPC!(ScriptClass, 104)()); }
-			UObject.Pointer CurveEdVTable() { mixin(MGPC!(UObject.Pointer, 64)()); }
-			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			ScriptArray!(InterpTrack) SubTracks() { mixin(MGPC!("ScriptArray!(InterpTrack)", 68)()); }
+			ScriptArray!(InterpTrack.SubTrackGroup) SubTrackGroups() { mixin(MGPC!("ScriptArray!(InterpTrack.SubTrackGroup)", 80)()); }
+			ScriptArray!(InterpTrack.SupportedSubTrackInfo) SupportedSubTracks() { mixin(MGPC!("ScriptArray!(InterpTrack.SupportedSubTrackInfo)", 92)()); }
+			ScriptString TrackTitle() { mixin(MGPC!("ScriptString", 112)()); }
+			InterpTrack.ETrackActiveCondition ActiveCondition() { mixin(MGPC!("InterpTrack.ETrackActiveCondition", 108)()); }
+			ScriptClass TrackInstClass() { mixin(MGPC!("ScriptClass", 104)()); }
+			UObject.Pointer CurveEdVTable() { mixin(MGPC!("UObject.Pointer", 64)()); }
+			UObject.Pointer VfTable_FInterpEdInputInterface() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bIsCollapsed() { mixin(MGBPC!(124, 0x100)()); }
 		bool bIsCollapsed(bool val) { mixin(MSBPC!(124, 0x100)()); }

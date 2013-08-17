@@ -36,8 +36,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
-				Vector Location() { mixin(MGPS!(Vector, 0)()); }
+				Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
+				Vector Location() { mixin(MGPS!("Vector", 0)()); }
 			}
 			bool bNeedsReplication() { mixin(MGBPS!(24, 0x4)()); }
 			bool bNeedsReplication(bool val) { mixin(MSBPS!(24, 0x4)()); }
@@ -63,14 +63,13 @@ final:
 		params[] = 0;
 		*cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr;
+		Record = *cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const DynamicBlockingVolume.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in DynamicBlockingVolume.CheckpointRecord Record)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr = Record;
+		*cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr = cast(DynamicBlockingVolume.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(DynamicBlockingVolume.CheckpointRecord*)params.ptr;
 	}
 }

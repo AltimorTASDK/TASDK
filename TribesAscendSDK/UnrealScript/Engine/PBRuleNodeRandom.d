@@ -13,8 +13,8 @@ public extern(D):
 	@property final static PBRuleNodeRandom DefaultProperties() { mixin(MGDPC!(PBRuleNodeRandom, "PBRuleNodeRandom Engine.Default__PBRuleNodeRandom")()); }
 	@property final auto ref
 	{
-		int MaxNumExecuted() { mixin(MGPC!(int, 112)()); }
-		int MinNumExecuted() { mixin(MGPC!(int, 108)()); }
-		int NumOutputs() { mixin(MGPC!(int, 104)()); }
+		int MaxNumExecuted() { mixin(MGPC!("int", 112)()); }
+		int MinNumExecuted() { mixin(MGPC!("int", 108)()); }
+		int NumOutputs() { mixin(MGPC!("int", 104)()); }
 	}
 }

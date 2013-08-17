@@ -42,9 +42,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ArchivePtr() { mixin(MGPC!(UObject.Pointer, 476)()); }
-			ScriptString Filename() { mixin(MGPC!(ScriptString, 480)()); }
-			FileWriter.FWFileType FileType() { mixin(MGPC!(FileWriter.FWFileType, 492)()); }
+			UObject.Pointer ArchivePtr() { mixin(MGPC!("UObject.Pointer", 476)()); }
+			ScriptString Filename() { mixin(MGPC!("ScriptString", 480)()); }
+			FileWriter.FWFileType FileType() { mixin(MGPC!("FileWriter.FWFileType", 492)()); }
 		}
 		bool bFlushEachWrite() { mixin(MGBPC!(496, 0x1)()); }
 		bool bFlushEachWrite(bool val) { mixin(MSBPC!(496, 0x1)()); }
@@ -52,15 +52,19 @@ public extern(D):
 		bool bWantsAsyncWrites(bool val) { mixin(MSBPC!(496, 0x2)()); }
 	}
 final:
-	bool OpenFile(ScriptString InFilename, FileWriter.FWFileType InFileType, ScriptString InExtension, bool bUnique, bool bIncludeTimeStamp)
+	bool OpenFile(ScriptString InFilename, FileWriter.FWFileType* InFileType = null, ScriptString* InExtension = null, bool* bUnique = null, bool* bIncludeTimeStamp = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InFilename;
-		*cast(FileWriter.FWFileType*)&params[12] = InFileType;
-		*cast(ScriptString*)&params[16] = InExtension;
-		*cast(bool*)&params[28] = bUnique;
-		*cast(bool*)&params[32] = bIncludeTimeStamp;
+		if (InFileType !is null)
+			*cast(FileWriter.FWFileType*)&params[12] = *InFileType;
+		if (InExtension !is null)
+			*cast(ScriptString*)&params[16] = *InExtension;
+		if (bUnique !is null)
+			*cast(bool*)&params[28] = *bUnique;
+		if (bIncludeTimeStamp !is null)
+			*cast(bool*)&params[32] = *bIncludeTimeStamp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OpenFile, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}

@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumNodesProcessed() { mixin(MGPC!(int, 68)()); }
-			int NumNodesThrownOut() { mixin(MGPC!(int, 64)()); }
+			int NumNodesProcessed() { mixin(MGPC!("int", 68)()); }
+			int NumNodesThrownOut() { mixin(MGPC!("int", 64)()); }
 		}
 		bool bShowDebug() { mixin(MGBPC!(60, 0x1)()); }
 		bool bShowDebug(bool val) { mixin(MSBPC!(60, 0x1)()); }

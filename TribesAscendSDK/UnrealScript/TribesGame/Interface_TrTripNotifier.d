@@ -75,7 +75,7 @@ final:
 		*cast(bool*)params.ptr = bIsLeft;
 		*cast(Vector*)&params[4] = SocketPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTripSocketPosition, params.ptr, cast(void*)0);
-		*SocketPosition = *cast(Vector*)&params[4];
+		SocketPosition = *cast(Vector*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void OnTripAwake()

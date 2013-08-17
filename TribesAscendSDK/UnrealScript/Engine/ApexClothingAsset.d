@@ -18,17 +18,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 112)()); }
-			float LodWeightsBenefitsBias() { mixin(MGPC!(float, 160)()); }
-			float LodWeightsBias() { mixin(MGPC!(float, 156)()); }
-			float LodWeightsDistanceWeight() { mixin(MGPC!(float, 152)()); }
-			float LodWeightsMaxDistance() { mixin(MGPC!(float, 148)()); }
-			float ContinuousDistanceThreshold() { mixin(MGPC!(float, 144)()); }
-			float ContinuousRotationThreshold() { mixin(MGPC!(float, 140)()); }
-			float MaxDistanceBlendTime() { mixin(MGPC!(float, 136)()); }
-			int UVChannelForTangentUpdate() { mixin(MGPC!(int, 132)()); }
-			ApexGenericAsset ApexClothingLibrary() { mixin(MGPC!(ApexGenericAsset, 124)()); }
-			UObject.Pointer MApexAsset() { mixin(MGPC!(UObject.Pointer, 108)()); }
+			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 112)()); }
+			float LodWeightsBenefitsBias() { mixin(MGPC!("float", 160)()); }
+			float LodWeightsBias() { mixin(MGPC!("float", 156)()); }
+			float LodWeightsDistanceWeight() { mixin(MGPC!("float", 152)()); }
+			float LodWeightsMaxDistance() { mixin(MGPC!("float", 148)()); }
+			float ContinuousDistanceThreshold() { mixin(MGPC!("float", 144)()); }
+			float ContinuousRotationThreshold() { mixin(MGPC!("float", 140)()); }
+			float MaxDistanceBlendTime() { mixin(MGPC!("float", 136)()); }
+			int UVChannelForTangentUpdate() { mixin(MGPC!("int", 132)()); }
+			ApexGenericAsset ApexClothingLibrary() { mixin(MGPC!("ApexGenericAsset", 124)()); }
+			UObject.Pointer MApexAsset() { mixin(MGPC!("UObject.Pointer", 108)()); }
 		}
 		bool bRecomputeNormals() { mixin(MGBPC!(128, 0x8)()); }
 		bool bRecomputeNormals(bool val) { mixin(MSBPC!(128, 0x8)()); }

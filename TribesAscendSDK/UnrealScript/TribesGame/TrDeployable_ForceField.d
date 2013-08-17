@@ -37,17 +37,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_LightFlashBrightness() { mixin(MGPC!(float, 1564)()); }
-		UObject.Color m_LightFlashColor() { mixin(MGPC!(UObject.Color, 1560)()); }
+		float m_LightFlashBrightness() { mixin(MGPC!("float", 1564)()); }
+		UObject.Color m_LightFlashColor() { mixin(MGPC!("UObject.Color", 1560)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Light'!
-		float m_fOutHitOtherFlashRemainingTime() { mixin(MGPC!(float, 1552)()); }
-		float m_fInHitOtherFlashRemainingTime() { mixin(MGPC!(float, 1548)()); }
-		float m_fOutHitOtherFlashTimeLength() { mixin(MGPC!(float, 1544)()); }
-		float m_fInHitOtherFlashTimeLength() { mixin(MGPC!(float, 1540)()); }
-		float m_fOutTakeHitFlashRemainingTime() { mixin(MGPC!(float, 1536)()); }
-		float m_fInTakeHitFlashRemainingTime() { mixin(MGPC!(float, 1532)()); }
-		float m_fOutTakeHitFlashTimeLength() { mixin(MGPC!(float, 1528)()); }
-		float m_fInTakeHitFlashTimeLength() { mixin(MGPC!(float, 1524)()); }
+		float m_fOutHitOtherFlashRemainingTime() { mixin(MGPC!("float", 1552)()); }
+		float m_fInHitOtherFlashRemainingTime() { mixin(MGPC!("float", 1548)()); }
+		float m_fOutHitOtherFlashTimeLength() { mixin(MGPC!("float", 1544)()); }
+		float m_fInHitOtherFlashTimeLength() { mixin(MGPC!("float", 1540)()); }
+		float m_fOutTakeHitFlashRemainingTime() { mixin(MGPC!("float", 1536)()); }
+		float m_fInTakeHitFlashRemainingTime() { mixin(MGPC!("float", 1532)()); }
+		float m_fOutTakeHitFlashTimeLength() { mixin(MGPC!("float", 1528)()); }
+		float m_fInTakeHitFlashTimeLength() { mixin(MGPC!("float", 1524)()); }
 	}
 final:
 	void Touch(Actor Other, 

@@ -44,10 +44,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineStatsRead.OnlineStatsRow")()); }
 		@property final auto ref
 		{
-			ScriptArray!(OnlineStatsRead.OnlineStatsColumn) Columns() { mixin(MGPS!(ScriptArray!(OnlineStatsRead.OnlineStatsColumn), 32)()); }
-			ScriptString NickName() { mixin(MGPS!(ScriptString, 20)()); }
-			Settings.SettingsData Rank() { mixin(MGPS!(Settings.SettingsData, 8)()); }
-			OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
+			ScriptArray!(OnlineStatsRead.OnlineStatsColumn) Columns() { mixin(MGPS!("ScriptArray!(OnlineStatsRead.OnlineStatsColumn)", 32)()); }
+			ScriptString NickName() { mixin(MGPS!("ScriptString", 20)()); }
+			Settings.SettingsData Rank() { mixin(MGPS!("Settings.SettingsData", 8)()); }
+			OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
 		}
 	}
 	struct ColumnMetaData
@@ -58,9 +58,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineStatsRead.ColumnMetaData")()); }
 		@property final auto ref
 		{
-			ScriptString ColumnName() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
-			int Id() { mixin(MGPS!(int, 0)()); }
+			ScriptString ColumnName() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct OnlineStatsColumn
@@ -71,20 +71,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineStatsRead.OnlineStatsColumn")()); }
 		@property final auto ref
 		{
-			Settings.SettingsData StatValue() { mixin(MGPS!(Settings.SettingsData, 4)()); }
-			int ColumnNo() { mixin(MGPS!(int, 0)()); }
+			Settings.SettingsData StatValue() { mixin(MGPS!("Settings.SettingsData", 4)()); }
+			int ColumnNo() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(int) ColumnIds() { mixin(MGPC!(ScriptArray!(int), 80)()); }
-		ScriptArray!(OnlineStatsRead.OnlineStatsRow) Rows() { mixin(MGPC!(ScriptArray!(OnlineStatsRead.OnlineStatsRow), 96)()); }
-		ScriptArray!(OnlineStatsRead.ColumnMetaData) ColumnMappings() { mixin(MGPC!(ScriptArray!(OnlineStatsRead.ColumnMetaData), 108)()); }
-		int TitleId() { mixin(MGPC!(int, 132)()); }
-		ScriptString ViewName() { mixin(MGPC!(ScriptString, 120)()); }
-		int TotalRowsInView() { mixin(MGPC!(int, 92)()); }
-		int SortColumnId() { mixin(MGPC!(int, 76)()); }
-		int ViewId() { mixin(MGPC!(int, 72)()); }
+		ScriptArray!(int) ColumnIds() { mixin(MGPC!("ScriptArray!(int)", 80)()); }
+		ScriptArray!(OnlineStatsRead.OnlineStatsRow) Rows() { mixin(MGPC!("ScriptArray!(OnlineStatsRead.OnlineStatsRow)", 96)()); }
+		ScriptArray!(OnlineStatsRead.ColumnMetaData) ColumnMappings() { mixin(MGPC!("ScriptArray!(OnlineStatsRead.ColumnMetaData)", 108)()); }
+		int TitleId() { mixin(MGPC!("int", 132)()); }
+		ScriptString ViewName() { mixin(MGPC!("ScriptString", 120)()); }
+		int TotalRowsInView() { mixin(MGPC!("int", 92)()); }
+		int SortColumnId() { mixin(MGPC!("int", 76)()); }
+		int ViewId() { mixin(MGPC!("int", 72)()); }
 	}
 final:
 	void OnReadComplete()
@@ -99,7 +99,7 @@ final:
 		*cast(int*)&params[8] = StatColumnNo;
 		*cast(int*)&params[12] = StatValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetIntStatValueForPlayer, params.ptr, cast(void*)0);
-		*StatValue = *cast(int*)&params[12];
+		StatValue = *cast(int*)&params[12];
 		return *cast(bool*)&params[16];
 	}
 	bool SetIntStatValueForPlayer(OnlineSubsystem.UniqueNetId PlayerID, int StatColumnNo, int StatValue)
@@ -120,7 +120,7 @@ final:
 		*cast(int*)&params[8] = StatColumnNo;
 		*cast(float*)&params[12] = StatValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatStatValueForPlayer, params.ptr, cast(void*)0);
-		*StatValue = *cast(float*)&params[12];
+		StatValue = *cast(float*)&params[12];
 		return *cast(bool*)&params[16];
 	}
 	bool SetFloatStatValueForPlayer(OnlineSubsystem.UniqueNetId PlayerID, int StatColumnNo, float StatValue)

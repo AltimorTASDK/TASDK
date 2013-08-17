@@ -50,18 +50,18 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPS!(UObject.Matrix, 80)()); }
-				Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPS!(Camera.ECameraAnimPlaySpace, 68)()); }
-				CameraAnimInst AnimInst() { mixin(MGPS!(CameraAnimInst, 64)()); }
-				float Scale() { mixin(MGPS!(float, 60)()); }
-				float FOVSinOffset() { mixin(MGPS!(float, 56)()); }
-				Vector RotSinOffset() { mixin(MGPS!(Vector, 44)()); }
-				Vector LocSinOffset() { mixin(MGPS!(Vector, 32)()); }
-				float CurrentBlendOutTime() { mixin(MGPS!(float, 28)()); }
-				float CurrentBlendInTime() { mixin(MGPS!(float, 20)()); }
-				float OscillatorTimeRemaining() { mixin(MGPS!(float, 12)()); }
-				ScriptName SourceShakeName() { mixin(MGPS!(ScriptName, 4)()); }
-				CameraShake SourceShake() { mixin(MGPS!(CameraShake, 0)()); }
+				UObject.Matrix UserPlaySpaceMatrix() { mixin(MGPS!("UObject.Matrix", 80)()); }
+				Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPS!("Camera.ECameraAnimPlaySpace", 68)()); }
+				CameraAnimInst AnimInst() { mixin(MGPS!("CameraAnimInst", 64)()); }
+				float Scale() { mixin(MGPS!("float", 60)()); }
+				float FOVSinOffset() { mixin(MGPS!("float", 56)()); }
+				Vector RotSinOffset() { mixin(MGPS!("Vector", 44)()); }
+				Vector LocSinOffset() { mixin(MGPS!("Vector", 32)()); }
+				float CurrentBlendOutTime() { mixin(MGPS!("float", 28)()); }
+				float CurrentBlendInTime() { mixin(MGPS!("float", 20)()); }
+				float OscillatorTimeRemaining() { mixin(MGPS!("float", 12)()); }
+				ScriptName SourceShakeName() { mixin(MGPS!("ScriptName", 4)()); }
+				CameraShake SourceShake() { mixin(MGPS!("CameraShake", 0)()); }
 			}
 			bool bBlendingOut() { mixin(MGBPS!(24, 0x1)()); }
 			bool bBlendingOut(bool val) { mixin(MSBPS!(24, 0x1)()); }
@@ -71,17 +71,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance) ActiveShakes() { mixin(MGPC!(ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance), 88)()); }
-		float SplitScreenShakeScale() { mixin(MGPC!(float, 100)()); }
+		ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance) ActiveShakes() { mixin(MGPC!("ScriptArray!(CameraModifier_CameraShake.CameraShakeInstance)", 88)()); }
+		float SplitScreenShakeScale() { mixin(MGPC!("float", 100)()); }
 	}
 final:
-	static float InitializeOffset(ref const CameraShake.FOscillator Param)
+	static float InitializeOffset(ref in CameraShake.FOscillator Param)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(CameraShake.FOscillator*)params.ptr = Param;
+		*cast(CameraShake.FOscillator*)params.ptr = cast(CameraShake.FOscillator)Param;
 		StaticClass.ProcessEvent(Functions.InitializeOffset, params.ptr, cast(void*)0);
-		*Param = *cast(CameraShake.FOscillator*)params.ptr;
 		return *cast(float*)&params[12];
 	}
 	void ReinitShake(int ActiveShakeIdx, float Scale)
@@ -92,25 +91,28 @@ final:
 		*cast(float*)&params[4] = Scale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReinitShake, params.ptr, cast(void*)0);
 	}
-	CameraModifier_CameraShake.CameraShakeInstance InitializeShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
+	CameraModifier_CameraShake.CameraShakeInstance InitializeShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator* UserPlaySpaceRot = null)
 	{
 		ubyte params[176];
 		params[] = 0;
 		*cast(CameraShake*)params.ptr = NewShake;
 		*cast(float*)&params[4] = Scale;
 		*cast(Camera.ECameraAnimPlaySpace*)&params[8] = PlaySpace;
-		*cast(Rotator*)&params[12] = UserPlaySpaceRot;
+		if (UserPlaySpaceRot !is null)
+			*cast(Rotator*)&params[12] = *UserPlaySpaceRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeShake, params.ptr, cast(void*)0);
 		return *cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[32];
 	}
-	void AddCameraShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
+	void AddCameraShake(CameraShake NewShake, float Scale, Camera.ECameraAnimPlaySpace* PlaySpace = null, Rotator* UserPlaySpaceRot = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(CameraShake*)params.ptr = NewShake;
 		*cast(float*)&params[4] = Scale;
-		*cast(Camera.ECameraAnimPlaySpace*)&params[8] = PlaySpace;
-		*cast(Rotator*)&params[12] = UserPlaySpaceRot;
+		if (PlaySpace !is null)
+			*cast(Camera.ECameraAnimPlaySpace*)&params[8] = *PlaySpace;
+		if (UserPlaySpaceRot !is null)
+			*cast(Rotator*)&params[12] = *UserPlaySpaceRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddCameraShake, params.ptr, cast(void*)0);
 	}
 	void RemoveCameraShake(CameraShake Shake)
@@ -132,8 +134,8 @@ final:
 		*cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[16] = Shake;
 		*cast(UObject.TPOV*)&params[160] = OutPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCameraShake, params.ptr, cast(void*)0);
-		*Shake = *cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[16];
-		*OutPOV = *cast(UObject.TPOV*)&params[160];
+		Shake = *cast(CameraModifier_CameraShake.CameraShakeInstance*)&params[16];
+		OutPOV = *cast(UObject.TPOV*)&params[160];
 	}
 	bool ModifyCamera(Camera pCamera, float DeltaTime, ref UObject.TPOV OutPOV)
 	{
@@ -143,7 +145,7 @@ final:
 		*cast(float*)&params[4] = DeltaTime;
 		*cast(UObject.TPOV*)&params[8] = OutPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyCamera, params.ptr, cast(void*)0);
-		*OutPOV = *cast(UObject.TPOV*)&params[8];
+		OutPOV = *cast(UObject.TPOV*)&params[8];
 		return *cast(bool*)&params[36];
 	}
 }

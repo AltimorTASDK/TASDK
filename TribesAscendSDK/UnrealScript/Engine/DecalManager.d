@@ -42,7 +42,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DecalManager.ActiveDecalInfo")()); }
 		@property final auto ref
 		{
-			float LifetimeRemaining() { mixin(MGPS!(float, 4)()); }
+			float LifetimeRemaining() { mixin(MGPS!("float", 4)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Decal'!
 		}
 	}
@@ -50,14 +50,14 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) PoolDecals() { mixin(MGPC!(ScriptArray!(
+void*) PoolDecals() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 480)()); }
-		ScriptArray!(DecalManager.ActiveDecalInfo) ActiveDecals() { mixin(MGPC!(ScriptArray!(DecalManager.ActiveDecalInfo), 512)()); }
-		UObject.Vector2D DecalBlendRange() { mixin(MGPC!(UObject.Vector2D, 504)()); }
-		float DecalDepthBias() { mixin(MGPC!(float, 500)()); }
-		float DecalLifeSpan() { mixin(MGPC!(float, 496)()); }
-		int MaxActiveDecals() { mixin(MGPC!(int, 492)()); }
+void*)", 480)()); }
+		ScriptArray!(DecalManager.ActiveDecalInfo) ActiveDecals() { mixin(MGPC!("ScriptArray!(DecalManager.ActiveDecalInfo)", 512)()); }
+		UObject.Vector2D DecalBlendRange() { mixin(MGPC!("UObject.Vector2D", 504)()); }
+		float DecalDepthBias() { mixin(MGPC!("float", 500)()); }
+		float DecalLifeSpan() { mixin(MGPC!("float", 496)()); }
+		int MaxActiveDecals() { mixin(MGPC!("int", 492)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DecalTemplate'!
 	}
 final:
@@ -131,9 +131,9 @@ void**)params.ptr;
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SpawnDecal(MaterialInterface pDecalMaterial, Vector DecalLocation, Rotator DecalOrientation, float Width, float Height, float Thickness, bool bNoClip, float DecalRotation, 
+void* SpawnDecal(MaterialInterface pDecalMaterial, Vector DecalLocation, Rotator DecalOrientation, float Width, float Height, float Thickness, bool bNoClip, float* DecalRotation = null, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* HitComponent, bool bProjectOnTerrain, bool bProjectOnSkeletalMeshes, ScriptName HitBone, int HitNodeIndex, int HitLevelIndex, float InDecalLifeSpan, int InFracturedStaticMeshComponentIndex, float InDepthBias, UObject.Vector2D InBlendRange)
+void** HitComponent = null, bool* bProjectOnTerrain = null, bool* bProjectOnSkeletalMeshes = null, ScriptName* HitBone = null, int* HitNodeIndex = null, int* HitLevelIndex = null, float* InDecalLifeSpan = null, int* InFracturedStaticMeshComponentIndex = null, float* InDepthBias = null, UObject.Vector2D* InBlendRange = null)
 	{
 		ubyte params[100];
 		params[] = 0;
@@ -144,19 +144,30 @@ void* HitComponent, bool bProjectOnTerrain, bool bProjectOnSkeletalMeshes, Scrip
 		*cast(float*)&params[32] = Height;
 		*cast(float*)&params[36] = Thickness;
 		*cast(bool*)&params[40] = bNoClip;
-		*cast(float*)&params[44] = DecalRotation;
-		*cast(
+		if (DecalRotation !is null)
+			*cast(float*)&params[44] = *DecalRotation;
+		if (HitComponent !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[48] = HitComponent;
-		*cast(bool*)&params[52] = bProjectOnTerrain;
-		*cast(bool*)&params[56] = bProjectOnSkeletalMeshes;
-		*cast(ScriptName*)&params[60] = HitBone;
-		*cast(int*)&params[68] = HitNodeIndex;
-		*cast(int*)&params[72] = HitLevelIndex;
-		*cast(float*)&params[76] = InDecalLifeSpan;
-		*cast(int*)&params[80] = InFracturedStaticMeshComponentIndex;
-		*cast(float*)&params[84] = InDepthBias;
-		*cast(UObject.Vector2D*)&params[88] = InBlendRange;
+void**)&params[48] = *HitComponent;
+		if (bProjectOnTerrain !is null)
+			*cast(bool*)&params[52] = *bProjectOnTerrain;
+		if (bProjectOnSkeletalMeshes !is null)
+			*cast(bool*)&params[56] = *bProjectOnSkeletalMeshes;
+		if (HitBone !is null)
+			*cast(ScriptName*)&params[60] = *HitBone;
+		if (HitNodeIndex !is null)
+			*cast(int*)&params[68] = *HitNodeIndex;
+		if (HitLevelIndex !is null)
+			*cast(int*)&params[72] = *HitLevelIndex;
+		if (InDecalLifeSpan !is null)
+			*cast(float*)&params[76] = *InDecalLifeSpan;
+		if (InFracturedStaticMeshComponentIndex !is null)
+			*cast(int*)&params[80] = *InFracturedStaticMeshComponentIndex;
+		if (InDepthBias !is null)
+			*cast(float*)&params[84] = *InDepthBias;
+		if (InBlendRange !is null)
+			*cast(UObject.Vector2D*)&params[88] = *InBlendRange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnDecal, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

@@ -42,12 +42,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor PulleyPivotActor2() { mixin(MGPC!(Actor, 500)()); }
-			Actor PulleyPivotActor1() { mixin(MGPC!(Actor, 496)()); }
-			RB_ConstraintInstance ConstraintInstance() { mixin(MGPC!(RB_ConstraintInstance, 488)()); }
-			RB_ConstraintSetup ConstraintSetup() { mixin(MGPC!(RB_ConstraintSetup, 484)()); }
-			Actor ConstraintActor2() { mixin(MGPC!(Actor, 480)()); }
-			Actor ConstraintActor1() { mixin(MGPC!(Actor, 476)()); }
+			Actor PulleyPivotActor2() { mixin(MGPC!("Actor", 500)()); }
+			Actor PulleyPivotActor1() { mixin(MGPC!("Actor", 496)()); }
+			RB_ConstraintInstance ConstraintInstance() { mixin(MGPC!("RB_ConstraintInstance", 488)()); }
+			RB_ConstraintSetup ConstraintSetup() { mixin(MGPC!("RB_ConstraintSetup", 484)()); }
+			Actor ConstraintActor2() { mixin(MGPC!("Actor", 480)()); }
+			Actor ConstraintActor1() { mixin(MGPC!("Actor", 476)()); }
 		}
 		bool bUpdateActor2RefFrame() { mixin(MGBPC!(492, 0x4)()); }
 		bool bUpdateActor2RefFrame(bool val) { mixin(MSBPC!(492, 0x4)()); }
@@ -64,15 +64,18 @@ final:
 		*cast(bool*)params.ptr = NewDisableCollision;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDisableCollision, params.ptr, cast(void*)0);
 	}
-	void InitConstraint(Actor Actor1, Actor Actor2, ScriptName Actor1Bone, ScriptName Actor2Bone, float BreakThreshold)
+	void InitConstraint(Actor Actor1, Actor Actor2, ScriptName* Actor1Bone = null, ScriptName* Actor2Bone = null, float* BreakThreshold = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Actor1;
 		*cast(Actor*)&params[4] = Actor2;
-		*cast(ScriptName*)&params[8] = Actor1Bone;
-		*cast(ScriptName*)&params[16] = Actor2Bone;
-		*cast(float*)&params[24] = BreakThreshold;
+		if (Actor1Bone !is null)
+			*cast(ScriptName*)&params[8] = *Actor1Bone;
+		if (Actor2Bone !is null)
+			*cast(ScriptName*)&params[16] = *Actor2Bone;
+		if (BreakThreshold !is null)
+			*cast(float*)&params[24] = *BreakThreshold;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitConstraint, params.ptr, cast(void*)0);
 	}
 	void TermConstraint()

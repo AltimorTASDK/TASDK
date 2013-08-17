@@ -14,9 +14,9 @@ public extern(D):
 	@property final static SceneCaptureCubeMapComponent DefaultProperties() { mixin(MGDPC!(SceneCaptureCubeMapComponent, "SceneCaptureCubeMapComponent Engine.Default__SceneCaptureCubeMapComponent")()); }
 	@property final auto ref
 	{
-		Vector WorldLocation() { mixin(MGPC!(Vector, 156)()); }
-		float FarPlane() { mixin(MGPC!(float, 152)()); }
-		float NearPlane() { mixin(MGPC!(float, 148)()); }
-		TextureRenderTargetCube TextureTarget() { mixin(MGPC!(TextureRenderTargetCube, 144)()); }
+		Vector WorldLocation() { mixin(MGPC!("Vector", 156)()); }
+		float FarPlane() { mixin(MGPC!("float", 152)()); }
+		float NearPlane() { mixin(MGPC!("float", 148)()); }
+		TextureRenderTargetCube TextureTarget() { mixin(MGPC!("TextureRenderTargetCube", 144)()); }
 	}
 }

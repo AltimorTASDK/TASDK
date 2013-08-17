@@ -30,12 +30,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName EndingAnimName() { mixin(MGPC!(ScriptName, 324)()); }
-			ScriptName StartingAnimName() { mixin(MGPC!(ScriptName, 312)()); }
-			AnimNodeAimOffset FlyingDir() { mixin(MGPC!(AnimNodeAimOffset, 308)()); }
-			UDKAnimBlendBase FlyingMode() { mixin(MGPC!(UDKAnimBlendBase, 304)()); }
+			ScriptName EndingAnimName() { mixin(MGPC!("ScriptName", 324)()); }
+			ScriptName StartingAnimName() { mixin(MGPC!("ScriptName", 312)()); }
+			AnimNodeAimOffset FlyingDir() { mixin(MGPC!("AnimNodeAimOffset", 308)()); }
+			UDKAnimBlendBase FlyingMode() { mixin(MGPC!("UDKAnimBlendBase", 304)()); }
 			// WARNING: Property 'Pawn' has the same name as a defined type!
-			UDKAnimBlendByFlying.EFlyingState FlyingState() { mixin(MGPC!(UDKAnimBlendByFlying.EFlyingState, 296)()); }
+			UDKAnimBlendByFlying.EFlyingState FlyingState() { mixin(MGPC!("UDKAnimBlendByFlying.EFlyingState", 296)()); }
 		}
 		bool bHasEndingAnim() { mixin(MGBPC!(320, 0x2)()); }
 		bool bHasEndingAnim(bool val) { mixin(MSBPC!(320, 0x2)()); }

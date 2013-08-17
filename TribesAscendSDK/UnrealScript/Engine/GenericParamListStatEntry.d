@@ -41,8 +41,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GameplayEventsWriter Writer() { mixin(MGPC!(GameplayEventsWriter, 64)()); }
-		UObject.Pointer StatEvent() { mixin(MGPC!(UObject.Pointer, 60)()); }
+		GameplayEventsWriter Writer() { mixin(MGPC!("GameplayEventsWriter", 64)()); }
+		UObject.Pointer StatEvent() { mixin(MGPC!("UObject.Pointer", 60)()); }
 	}
 final:
 	void AddFloat(ScriptName ParamName, float Value)
@@ -84,7 +84,7 @@ final:
 		*cast(ScriptName*)params.ptr = ParamName;
 		*cast(float*)&params[8] = out_Float;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloat, params.ptr, cast(void*)0);
-		*out_Float = *cast(float*)&params[8];
+		out_Float = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetInt(ScriptName ParamName, ref int out_int)
@@ -94,7 +94,7 @@ final:
 		*cast(ScriptName*)params.ptr = ParamName;
 		*cast(int*)&params[8] = out_int;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetInt, params.ptr, cast(void*)0);
-		*out_int = *cast(int*)&params[8];
+		out_int = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetVector(ScriptName ParamName, ref Vector out_vector)
@@ -104,7 +104,7 @@ final:
 		*cast(ScriptName*)params.ptr = ParamName;
 		*cast(Vector*)&params[8] = out_vector;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVector, params.ptr, cast(void*)0);
-		*out_vector = *cast(Vector*)&params[8];
+		out_vector = *cast(Vector*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool GetString(ScriptName ParamName, ref ScriptString out_string)
@@ -114,7 +114,7 @@ final:
 		*cast(ScriptName*)params.ptr = ParamName;
 		*cast(ScriptString*)&params[8] = out_string;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
-		*out_string = *cast(ScriptString*)&params[8];
+		out_string = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	void CommitToDisk()

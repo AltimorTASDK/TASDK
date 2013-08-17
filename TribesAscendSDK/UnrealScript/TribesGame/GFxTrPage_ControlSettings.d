@@ -36,7 +36,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref int popupIndex() { mixin(MGPC!(int, 356)()); }
+		@property final auto ref int popupIndex() { mixin(MGPC!("int", 356)()); }
 		bool bWaitingForVYSensitivity() { mixin(MGBPC!(360, 0x8)()); }
 		bool bWaitingForVYSensitivity(bool val) { mixin(MSBPC!(360, 0x8)()); }
 		bool bWaitingForVPSensitivity() { mixin(MGBPC!(360, 0x4)()); }

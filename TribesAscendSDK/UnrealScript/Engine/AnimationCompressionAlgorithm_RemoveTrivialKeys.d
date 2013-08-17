@@ -13,7 +13,7 @@ public extern(D):
 	@property final static AnimationCompressionAlgorithm_RemoveTrivialKeys DefaultProperties() { mixin(MGDPC!(AnimationCompressionAlgorithm_RemoveTrivialKeys, "AnimationCompressionAlgorithm_RemoveTrivialKeys Engine.Default__AnimationCompressionAlgorithm_RemoveTrivialKeys")()); }
 	@property final auto ref
 	{
-		float MaxAngleDiff() { mixin(MGPC!(float, 84)()); }
-		float MaxPosDiff() { mixin(MGPC!(float, 80)()); }
+		float MaxAngleDiff() { mixin(MGPC!("float", 84)()); }
+		float MaxPosDiff() { mixin(MGPC!("float", 80)()); }
 	}
 }

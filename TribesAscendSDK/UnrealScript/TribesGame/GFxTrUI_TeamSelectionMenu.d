@@ -55,16 +55,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			GFxObject MovieClip() { mixin(MGPC!(GFxObject, 404)()); }
-			GFxObject DiamondSwordCountTF() { mixin(MGPC!(GFxObject, 420)()); }
-			GFxObject BloodEagleCountTF() { mixin(MGPC!(GFxObject, 416)()); }
-			GFxObject DiamondSwordButton() { mixin(MGPC!(GFxObject, 412)()); }
-			GFxObject BloodEagleButton() { mixin(MGPC!(GFxObject, 408)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 400)()); }
-			int PrevDiamondSwordCount() { mixin(MGPC!(int, 392)()); }
-			int PrevBloodEagleCount() { mixin(MGPC!(int, 388)()); }
-			int AllowedTeamDiscrepancyOnTeam() { mixin(MGPC!(int, 384)()); }
-			int AllowedTeamDiscrepancyNoTeam() { mixin(MGPC!(int, 380)()); }
+			GFxObject MovieClip() { mixin(MGPC!("GFxObject", 404)()); }
+			GFxObject DiamondSwordCountTF() { mixin(MGPC!("GFxObject", 420)()); }
+			GFxObject BloodEagleCountTF() { mixin(MGPC!("GFxObject", 416)()); }
+			GFxObject DiamondSwordButton() { mixin(MGPC!("GFxObject", 412)()); }
+			GFxObject BloodEagleButton() { mixin(MGPC!("GFxObject", 408)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 400)()); }
+			int PrevDiamondSwordCount() { mixin(MGPC!("int", 392)()); }
+			int PrevBloodEagleCount() { mixin(MGPC!("int", 388)()); }
+			int AllowedTeamDiscrepancyOnTeam() { mixin(MGPC!("int", 384)()); }
+			int AllowedTeamDiscrepancyNoTeam() { mixin(MGPC!("int", 380)()); }
 		}
 		bool bCompleted() { mixin(MGBPC!(396, 0x4)()); }
 		bool bCompleted(bool val) { mixin(MSBPC!(396, 0x4)()); }
@@ -82,11 +82,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);
 	}
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -157,11 +158,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.choseTeamSpectate, cast(void*)0, cast(void*)0);
 	}
-	void CompleteMovie(bool bHaveTeam)
+	void CompleteMovie(bool* bHaveTeam = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bHaveTeam;
+		if (bHaveTeam !is null)
+			*cast(bool*)params.ptr = *bHaveTeam;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CompleteMovie, params.ptr, cast(void*)0);
 	}
 }

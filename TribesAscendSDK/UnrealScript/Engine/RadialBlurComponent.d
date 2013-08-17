@@ -43,13 +43,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Matrix LocalToWorld() { mixin(MGPC!(UObject.Matrix, 128)()); }
-			float DistanceFalloffExponent() { mixin(MGPC!(float, 112)()); }
-			float MaxCullDistance() { mixin(MGPC!(float, 108)()); }
-			float BlurOpacity() { mixin(MGPC!(float, 104)()); }
-			float BlurFalloffExponent() { mixin(MGPC!(float, 100)()); }
-			float BlurScale() { mixin(MGPC!(float, 96)()); }
-			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC!(Scene.ESceneDepthPriorityGroup, 92)()); }
+			UObject.Matrix LocalToWorld() { mixin(MGPC!("UObject.Matrix", 128)()); }
+			float DistanceFalloffExponent() { mixin(MGPC!("float", 112)()); }
+			float MaxCullDistance() { mixin(MGPC!("float", 108)()); }
+			float BlurOpacity() { mixin(MGPC!("float", 104)()); }
+			float BlurFalloffExponent() { mixin(MGPC!("float", 100)()); }
+			float BlurScale() { mixin(MGPC!("float", 96)()); }
+			Scene.ESceneDepthPriorityGroup DepthPriorityGroup() { mixin(MGPC!("Scene.ESceneDepthPriorityGroup", 92)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
 		}
 		bool bEnabled() { mixin(MGBPC!(116, 0x2)()); }

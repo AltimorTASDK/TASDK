@@ -56,9 +56,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass MinimapHUDClass() { mixin(MGPC!(ScriptClass, 1532)()); }
-		GFxProjectedUI InventoryMovie() { mixin(MGPC!(GFxProjectedUI, 1528)()); }
-		GFxMinimapHud HudMovie() { mixin(MGPC!(GFxMinimapHud, 1524)()); }
+		ScriptClass MinimapHUDClass() { mixin(MGPC!("ScriptClass", 1532)()); }
+		GFxProjectedUI InventoryMovie() { mixin(MGPC!("GFxProjectedUI", 1528)()); }
+		GFxMinimapHud HudMovie() { mixin(MGPC!("GFxMinimapHud", 1524)()); }
 	}
 final:
 	void Destroyed()
@@ -116,7 +116,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHUD, cast(void*)0, cast(void*)0);
 	}
-	void LocalizedMessage(ScriptClass InMessageClass, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, ScriptString CriticalString, int Switch, float Position, float Lifetime, int FontSize, UObject.Color DrawColor, UObject OptionalObject)
+	void LocalizedMessage(ScriptClass InMessageClass, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, ScriptString CriticalString, int Switch, float Position, float Lifetime, int FontSize, UObject.Color DrawColor, UObject* OptionalObject = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -129,17 +129,19 @@ final:
 		*cast(float*)&params[32] = Lifetime;
 		*cast(int*)&params[36] = FontSize;
 		*cast(UObject.Color*)&params[40] = DrawColor;
-		*cast(UObject*)&params[44] = OptionalObject;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[44] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LocalizedMessage, params.ptr, cast(void*)0);
 	}
-	void AddConsoleMessage(ScriptString M, ScriptClass InMessageClass, PlayerReplicationInfo PRI, float Lifetime)
+	void AddConsoleMessage(ScriptString M, ScriptClass InMessageClass, PlayerReplicationInfo PRI, float* Lifetime = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = M;
 		*cast(ScriptClass*)&params[12] = InMessageClass;
 		*cast(PlayerReplicationInfo*)&params[16] = PRI;
-		*cast(float*)&params[20] = Lifetime;
+		if (Lifetime !is null)
+			*cast(float*)&params[20] = *Lifetime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddConsoleMessage, params.ptr, cast(void*)0);
 	}
 	void CompleteCloseInventory()

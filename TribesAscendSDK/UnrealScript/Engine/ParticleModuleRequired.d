@@ -35,27 +35,27 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ParticleEmitter.ParticleBurst) BurstList() { mixin(MGPC!(ScriptArray!(ParticleEmitter.ParticleBurst), 128)()); }
-			Vector NormalsCylinderDirection() { mixin(MGPC!(Vector, 184)()); }
-			Vector NormalsSphereCenter() { mixin(MGPC!(Vector, 172)()); }
-			float DownsampleThresholdScreenFraction() { mixin(MGPC!(float, 168)()); }
-			int MaxDrawCount() { mixin(MGPC!(int, 164)()); }
-			int RandomImageChanges() { mixin(MGPC!(int, 160)()); }
-			float RandomImageTime() { mixin(MGPC!(float, 156)()); }
-			int SubImages_Vertical() { mixin(MGPC!(int, 152)()); }
-			int SubImages_Horizontal() { mixin(MGPC!(int, 148)()); }
-			float EmitterDelayLow() { mixin(MGPC!(float, 144)()); }
-			float EmitterDelay() { mixin(MGPC!(float, 140)()); }
-			DistributionFloat.RawDistributionFloat SpawnRate() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 100)()); }
-			int EmitterLoops() { mixin(MGPC!(int, 96)()); }
-			float EmitterDurationLow() { mixin(MGPC!(float, 92)()); }
-			float EmitterDuration() { mixin(MGPC!(float, 88)()); }
-			ParticleModuleRequired.EEmitterNormalsMode EmitterNormalsMode() { mixin(MGPC!(ParticleModuleRequired.EEmitterNormalsMode, 80)()); }
-			ParticleEmitter.EParticleSubUVInterpMethod InterpolationMethod() { mixin(MGPC!(ParticleEmitter.EParticleSubUVInterpMethod, 79)()); }
-			ParticleEmitter.EParticleBurstMethod ParticleBurstMethod() { mixin(MGPC!(ParticleEmitter.EParticleBurstMethod, 78)()); }
-			ParticleModuleRequired.EParticleSortMode SortMode() { mixin(MGPC!(ParticleModuleRequired.EParticleSortMode, 77)()); }
+			ScriptArray!(ParticleEmitter.ParticleBurst) BurstList() { mixin(MGPC!("ScriptArray!(ParticleEmitter.ParticleBurst)", 128)()); }
+			Vector NormalsCylinderDirection() { mixin(MGPC!("Vector", 184)()); }
+			Vector NormalsSphereCenter() { mixin(MGPC!("Vector", 172)()); }
+			float DownsampleThresholdScreenFraction() { mixin(MGPC!("float", 168)()); }
+			int MaxDrawCount() { mixin(MGPC!("int", 164)()); }
+			int RandomImageChanges() { mixin(MGPC!("int", 160)()); }
+			float RandomImageTime() { mixin(MGPC!("float", 156)()); }
+			int SubImages_Vertical() { mixin(MGPC!("int", 152)()); }
+			int SubImages_Horizontal() { mixin(MGPC!("int", 148)()); }
+			float EmitterDelayLow() { mixin(MGPC!("float", 144)()); }
+			float EmitterDelay() { mixin(MGPC!("float", 140)()); }
+			DistributionFloat.RawDistributionFloat SpawnRate() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 100)()); }
+			int EmitterLoops() { mixin(MGPC!("int", 96)()); }
+			float EmitterDurationLow() { mixin(MGPC!("float", 92)()); }
+			float EmitterDuration() { mixin(MGPC!("float", 88)()); }
+			ParticleModuleRequired.EEmitterNormalsMode EmitterNormalsMode() { mixin(MGPC!("ParticleModuleRequired.EEmitterNormalsMode", 80)()); }
+			ParticleEmitter.EParticleSubUVInterpMethod InterpolationMethod() { mixin(MGPC!("ParticleEmitter.EParticleSubUVInterpMethod", 79)()); }
+			ParticleEmitter.EParticleBurstMethod ParticleBurstMethod() { mixin(MGPC!("ParticleEmitter.EParticleBurstMethod", 78)()); }
+			ParticleModuleRequired.EParticleSortMode SortMode() { mixin(MGPC!("ParticleModuleRequired.EParticleSortMode", 77)()); }
 			// WARNING: Property 'Material' has the same name as a defined type!
-			ParticleSpriteEmitter.EParticleScreenAlignment ScreenAlignment() { mixin(MGPC!(ParticleSpriteEmitter.EParticleScreenAlignment, 76)()); }
+			ParticleSpriteEmitter.EParticleScreenAlignment ScreenAlignment() { mixin(MGPC!("ParticleSpriteEmitter.EParticleScreenAlignment", 76)()); }
 		}
 		bool bUseMaxDrawCount() { mixin(MGBPC!(84, 0x800)()); }
 		bool bUseMaxDrawCount(bool val) { mixin(MSBPC!(84, 0x800)()); }

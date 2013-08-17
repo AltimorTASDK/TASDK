@@ -40,10 +40,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Sequence.ActivateOp")()); }
 		@property final auto ref
 		{
-			float RemainingDelay() { mixin(MGPS!(float, 12)()); }
-			int InputIdx() { mixin(MGPS!(int, 8)()); }
-			SequenceOp Op() { mixin(MGPS!(SequenceOp, 4)()); }
-			SequenceOp ActivatorOp() { mixin(MGPS!(SequenceOp, 0)()); }
+			float RemainingDelay() { mixin(MGPS!("float", 12)()); }
+			int InputIdx() { mixin(MGPS!("int", 8)()); }
+			SequenceOp Op() { mixin(MGPS!("SequenceOp", 4)()); }
+			SequenceOp ActivatorOp() { mixin(MGPS!("SequenceOp", 0)()); }
 		}
 	}
 	struct QueuedActivationInfo
@@ -56,10 +56,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(int) ActivateIndices() { mixin(MGPS!(ScriptArray!(int), 12)()); }
-				Actor InInstigator() { mixin(MGPS!(Actor, 8)()); }
-				Actor InOriginator() { mixin(MGPS!(Actor, 4)()); }
-				SequenceEvent ActivatedEvent() { mixin(MGPS!(SequenceEvent, 0)()); }
+				ScriptArray!(int) ActivateIndices() { mixin(MGPS!("ScriptArray!(int)", 12)()); }
+				Actor InInstigator() { mixin(MGPS!("Actor", 8)()); }
+				Actor InOriginator() { mixin(MGPS!("Actor", 4)()); }
+				SequenceEvent ActivatedEvent() { mixin(MGPS!("SequenceEvent", 0)()); }
 			}
 			bool bPushTop() { mixin(MGBPS!(24, 0x1)()); }
 			bool bPushTop(bool val) { mixin(MSBPS!(24, 0x1)()); }
@@ -69,16 +69,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SequenceObject) SequenceObjects() { mixin(MGPC!(ScriptArray!(SequenceObject), 212)()); }
-			ScriptArray!(SequenceOp) ActiveSequenceOps() { mixin(MGPC!(ScriptArray!(SequenceOp), 224)()); }
-			ScriptArray!(Sequence) NestedSequences() { mixin(MGPC!(ScriptArray!(Sequence), 236)()); }
-			ScriptArray!(SequenceEvent) UnregisteredEvents() { mixin(MGPC!(ScriptArray!(SequenceEvent), 248)()); }
-			ScriptArray!(Sequence.ActivateOp) DelayedActivatedOps() { mixin(MGPC!(ScriptArray!(Sequence.ActivateOp), 260)()); }
-			ScriptArray!(Sequence.QueuedActivationInfo) QueuedActivations() { mixin(MGPC!(ScriptArray!(Sequence.QueuedActivationInfo), 276)()); }
-			float DefaultViewZoom() { mixin(MGPC!(float, 296)()); }
-			int DefaultViewY() { mixin(MGPC!(int, 292)()); }
-			int DefaultViewX() { mixin(MGPC!(int, 288)()); }
-			UObject.Pointer LogFile() { mixin(MGPC!(UObject.Pointer, 208)()); }
+			ScriptArray!(SequenceObject) SequenceObjects() { mixin(MGPC!("ScriptArray!(SequenceObject)", 212)()); }
+			ScriptArray!(SequenceOp) ActiveSequenceOps() { mixin(MGPC!("ScriptArray!(SequenceOp)", 224)()); }
+			ScriptArray!(Sequence) NestedSequences() { mixin(MGPC!("ScriptArray!(Sequence)", 236)()); }
+			ScriptArray!(SequenceEvent) UnregisteredEvents() { mixin(MGPC!("ScriptArray!(SequenceEvent)", 248)()); }
+			ScriptArray!(Sequence.ActivateOp) DelayedActivatedOps() { mixin(MGPC!("ScriptArray!(Sequence.ActivateOp)", 260)()); }
+			ScriptArray!(Sequence.QueuedActivationInfo) QueuedActivations() { mixin(MGPC!("ScriptArray!(Sequence.QueuedActivationInfo)", 276)()); }
+			float DefaultViewZoom() { mixin(MGPC!("float", 296)()); }
+			int DefaultViewY() { mixin(MGPC!("int", 292)()); }
+			int DefaultViewX() { mixin(MGPC!("int", 288)()); }
+			UObject.Pointer LogFile() { mixin(MGPC!("UObject.Pointer", 208)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(272, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(272, 0x1)()); }
@@ -92,18 +92,19 @@ final:
 		*cast(bool*)&params[4] = bRecursive;
 		*cast(ScriptArray!(SequenceObject)*)&params[8] = OutputObjects;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSeqObjectsByClass, params.ptr, cast(void*)0);
-		*OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[8];
+		OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[8];
 	}
-	void FindSeqObjectsByName(ScriptString SeqObjName, bool bCheckComment, ref ScriptArray!(SequenceObject) OutputObjects, bool bRecursive)
+	void FindSeqObjectsByName(ScriptString SeqObjName, bool bCheckComment, ref ScriptArray!(SequenceObject) OutputObjects, bool* bRecursive = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = SeqObjName;
 		*cast(bool*)&params[12] = bCheckComment;
 		*cast(ScriptArray!(SequenceObject)*)&params[16] = OutputObjects;
-		*cast(bool*)&params[28] = bRecursive;
+		if (bRecursive !is null)
+			*cast(bool*)&params[28] = *bRecursive;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSeqObjectsByName, params.ptr, cast(void*)0);
-		*OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[16];
+		OutputObjects = *cast(ScriptArray!(SequenceObject)*)&params[16];
 	}
 	void Reset()
 	{

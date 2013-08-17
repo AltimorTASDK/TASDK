@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2Input")()); }
 	private static __gshared K2Input mDefaultProperties;
 	@property final static K2Input DefaultProperties() { mixin(MGDPC!(K2Input, "K2Input Engine.Default__K2Input")()); }
-	@property final auto ref K2Output FromOutput() { mixin(MGPC!(K2Output, 80)()); }
+	@property final auto ref K2Output FromOutput() { mixin(MGPC!("K2Output", 80)()); }
 }

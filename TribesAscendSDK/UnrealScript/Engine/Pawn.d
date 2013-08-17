@@ -523,10 +523,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Pawn.ScalarParameterInterpStruct")()); }
 		@property final auto ref
 		{
-			float WarmupTime() { mixin(MGPS!(float, 16)()); }
-			float InterpTime() { mixin(MGPS!(float, 12)()); }
-			float ParameterValue() { mixin(MGPS!(float, 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+			float WarmupTime() { mixin(MGPS!("float", 16)()); }
+			float InterpTime() { mixin(MGPS!("float", 12)()); }
+			float ParameterValue() { mixin(MGPS!("float", 8)()); }
+			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct LastHitInfoStruct
@@ -539,10 +539,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptClass Type() { mixin(MGPS!(ScriptClass, 16)()); }
-				Actor Causer() { mixin(MGPS!(Actor, 12)()); }
-				float Distance() { mixin(MGPS!(float, 8)()); }
-				float Amount() { mixin(MGPS!(float, 4)()); }
+				ScriptClass Type() { mixin(MGPS!("ScriptClass", 16)()); }
+				Actor Causer() { mixin(MGPS!("Actor", 12)()); }
+				float Distance() { mixin(MGPS!("float", 8)()); }
+				float Amount() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bDirectHit() { mixin(MGBPS!(0, 0x1)()); }
 			bool bDirectHit(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -558,129 +558,129 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'Controller' has the same name as a defined type!
-			int MaxPitchLimit() { mixin(MGPC!(int, 664)()); }
+			int MaxPitchLimit() { mixin(MGPC!("int", 664)()); }
 			// WARNING: Property 'Weapon' has the same name as a defined type!
-			InventoryManager InvManager() { mixin(MGPC!(InventoryManager, 980)()); }
+			InventoryManager InvManager() { mixin(MGPC!("InventoryManager", 980)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
-			float EyeHeight() { mixin(MGPC!(float, 728)()); }
-			float BaseEyeHeight() { mixin(MGPC!(float, 724)()); }
-			int Health() { mixin(MGPC!(int, 752)()); }
-			Vector Floor() { mixin(MGPC!(Vector, 732)()); }
+			float EyeHeight() { mixin(MGPC!("float", 728)()); }
+			float BaseEyeHeight() { mixin(MGPC!("float", 724)()); }
+			int Health() { mixin(MGPC!("int", 752)()); }
+			Vector Floor() { mixin(MGPC!("Vector", 732)()); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			float CrouchHeight() { mixin(MGPC!(float, 548)()); }
-			float MaxStepHeight() { mixin(MGPC!(float, 480)()); }
-			float VehicleCheckRadius() { mixin(MGPC!(float, 944)()); }
-			float LastStartTime() { mixin(MGPC!(float, 888)()); }
-			PhysicsVolume HeadVolume() { mixin(MGPC!(PhysicsVolume, 748)()); }
-			float BreathTime() { mixin(MGPC!(float, 760)()); }
-			float UnderWaterTime() { mixin(MGPC!(float, 764)()); }
-			ScriptName WaterMovementState() { mixin(MGPC!(ScriptName, 876)()); }
-			ScriptName LandMovementState() { mixin(MGPC!(ScriptName, 868)()); }
-			float AccelRate() { mixin(MGPC!(float, 684)()); }
-			Actor.EPhysics WalkingPhysics() { mixin(MGPC!(Actor.EPhysics, 536)()); }
-			LadderVolume OnLadder() { mixin(MGPC!(LadderVolume, 864)()); }
-			float OutofWaterZ() { mixin(MGPC!(float, 692)()); }
-			NavigationPoint Anchor() { mixin(MGPC!(NavigationPoint, 612)()); }
-			ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!(ScriptArray!(AnimNodeSlot), 1028)()); }
-			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!(ScriptArray!(InterpGroup), 1040)()); }
-			ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!(ScriptArray!(Pawn.ScalarParameterInterpStruct), 1064)()); }
-			Pawn.LastHitInfoStruct LastHitInfo() { mixin(MGPC!(Pawn.LastHitInfoStruct, 1124)()); }
-			Vector RootMotionInterpCurveLastValue() { mixin(MGPC!(Vector, 1112)()); }
-			float RootMotionInterpCurrentTime() { mixin(MGPC!(float, 1108)()); }
-			float RootMotionInterpRate() { mixin(MGPC!(float, 1104)()); }
-			EngineTypes.RootMotionCurve RootMotionInterpCurve() { mixin(MGPC!(EngineTypes.RootMotionCurve, 1076)()); }
-			MaterialInstanceConstant MIC_PawnHair() { mixin(MGPC!(MaterialInstanceConstant, 1060)()); }
-			MaterialInstanceConstant MIC_PawnMat() { mixin(MGPC!(MaterialInstanceConstant, 1056)()); }
+			float CrouchHeight() { mixin(MGPC!("float", 548)()); }
+			float MaxStepHeight() { mixin(MGPC!("float", 480)()); }
+			float VehicleCheckRadius() { mixin(MGPC!("float", 944)()); }
+			float LastStartTime() { mixin(MGPC!("float", 888)()); }
+			PhysicsVolume HeadVolume() { mixin(MGPC!("PhysicsVolume", 748)()); }
+			float BreathTime() { mixin(MGPC!("float", 760)()); }
+			float UnderWaterTime() { mixin(MGPC!("float", 764)()); }
+			ScriptName WaterMovementState() { mixin(MGPC!("ScriptName", 876)()); }
+			ScriptName LandMovementState() { mixin(MGPC!("ScriptName", 868)()); }
+			float AccelRate() { mixin(MGPC!("float", 684)()); }
+			Actor.EPhysics WalkingPhysics() { mixin(MGPC!("Actor.EPhysics", 536)()); }
+			LadderVolume OnLadder() { mixin(MGPC!("LadderVolume", 864)()); }
+			float OutofWaterZ() { mixin(MGPC!("float", 692)()); }
+			NavigationPoint Anchor() { mixin(MGPC!("NavigationPoint", 612)()); }
+			ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSlot)", 1028)()); }
+			ScriptArray!(InterpGroup) InterpGroupList() { mixin(MGPC!("ScriptArray!(InterpGroup)", 1040)()); }
+			ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!("ScriptArray!(Pawn.ScalarParameterInterpStruct)", 1064)()); }
+			Pawn.LastHitInfoStruct LastHitInfo() { mixin(MGPC!("Pawn.LastHitInfoStruct", 1124)()); }
+			Vector RootMotionInterpCurveLastValue() { mixin(MGPC!("Vector", 1112)()); }
+			float RootMotionInterpCurrentTime() { mixin(MGPC!("float", 1108)()); }
+			float RootMotionInterpRate() { mixin(MGPC!("float", 1104)()); }
+			EngineTypes.RootMotionCurve RootMotionInterpCurve() { mixin(MGPC!("EngineTypes.RootMotionCurve", 1076)()); }
+			MaterialInstanceConstant MIC_PawnHair() { mixin(MGPC!("MaterialInstanceConstant", 1060)()); }
+			MaterialInstanceConstant MIC_PawnMat() { mixin(MGPC!("MaterialInstanceConstant", 1056)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FacialAudioComp'!
-			int FailedLandingCount() { mixin(MGPC!(int, 1024)()); }
-			RB_BodyInstance PhysicsPushBody() { mixin(MGPC!(RB_BodyInstance, 1020)()); }
+			int FailedLandingCount() { mixin(MGPC!("int", 1024)()); }
+			RB_BodyInstance PhysicsPushBody() { mixin(MGPC!("RB_BodyInstance", 1020)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreRagdollCollisionComponent'!
-			int ShotCount() { mixin(MGPC!(int, 1012)()); }
-			Vector LastFiringFlashLocation() { mixin(MGPC!(Vector, 1000)()); }
-			Vector FlashLocation() { mixin(MGPC!(Vector, 988)()); }
-			ScriptClass InventoryManagerClass() { mixin(MGPC!(ScriptClass, 976)()); }
-			Rotator DesiredRotation() { mixin(MGPC!(Rotator, 964)()); }
-			int AllowedYawError() { mixin(MGPC!(int, 960)()); }
-			float ViewPitchMax() { mixin(MGPC!(float, 956)()); }
-			float ViewPitchMin() { mixin(MGPC!(float, 952)()); }
-			Controller LastHitBy() { mixin(MGPC!(Controller, 948)()); }
-			float AlwaysRelevantDistanceSquared() { mixin(MGPC!(float, 940)()); }
-			Vehicle DrivenVehicle() { mixin(MGPC!(Vehicle, 936)()); }
-			float RBPushStrength() { mixin(MGPC!(float, 932)()); }
-			float RBPushRadius() { mixin(MGPC!(float, 928)()); }
-			Vector TearOffMomentum() { mixin(MGPC!(Vector, 908)()); }
-			ScriptClass HitDamageType() { mixin(MGPC!(ScriptClass, 904)()); }
-			Vector TakeHitLocation() { mixin(MGPC!(Vector, 892)()); }
-			PlayerStart LastStartSpot() { mixin(MGPC!(PlayerStart, 884)()); }
+			int ShotCount() { mixin(MGPC!("int", 1012)()); }
+			Vector LastFiringFlashLocation() { mixin(MGPC!("Vector", 1000)()); }
+			Vector FlashLocation() { mixin(MGPC!("Vector", 988)()); }
+			ScriptClass InventoryManagerClass() { mixin(MGPC!("ScriptClass", 976)()); }
+			Rotator DesiredRotation() { mixin(MGPC!("Rotator", 964)()); }
+			int AllowedYawError() { mixin(MGPC!("int", 960)()); }
+			float ViewPitchMax() { mixin(MGPC!("float", 956)()); }
+			float ViewPitchMin() { mixin(MGPC!("float", 952)()); }
+			Controller LastHitBy() { mixin(MGPC!("Controller", 948)()); }
+			float AlwaysRelevantDistanceSquared() { mixin(MGPC!("float", 940)()); }
+			Vehicle DrivenVehicle() { mixin(MGPC!("Vehicle", 936)()); }
+			float RBPushStrength() { mixin(MGPC!("float", 932)()); }
+			float RBPushRadius() { mixin(MGPC!("float", 928)()); }
+			Vector TearOffMomentum() { mixin(MGPC!("Vector", 908)()); }
+			ScriptClass HitDamageType() { mixin(MGPC!("ScriptClass", 904)()); }
+			Vector TakeHitLocation() { mixin(MGPC!("Vector", 892)()); }
+			PlayerStart LastStartSpot() { mixin(MGPC!("PlayerStart", 884)()); }
 			// WARNING: Property 'PlayerReplicationInfo' has the same name as a defined type!
-			ScriptClass ControllerClass() { mixin(MGPC!(ScriptClass, 856)()); }
-			ScriptString MenuName() { mixin(MGPC!(ScriptString, 844)()); }
-			float DamageScaling() { mixin(MGPC!(float, 840)()); }
-			float SoundDampening() { mixin(MGPC!(float, 836)()); }
-			float noise2loudness() { mixin(MGPC!(float, 832)()); }
-			Pawn noise2other() { mixin(MGPC!(Pawn, 828)()); }
-			float noise2time() { mixin(MGPC!(float, 824)()); }
-			Vector noise2spot() { mixin(MGPC!(Vector, 812)()); }
-			float noise1loudness() { mixin(MGPC!(float, 808)()); }
-			Pawn noise1other() { mixin(MGPC!(Pawn, 804)()); }
-			float noise1time() { mixin(MGPC!(float, 800)()); }
-			Vector noise1spot() { mixin(MGPC!(Vector, 788)()); }
-			Vector RMVelocity() { mixin(MGPC!(Vector, 776)()); }
-			float KismetDeathDelayTime() { mixin(MGPC!(float, 772)()); }
-			float LastPainTime() { mixin(MGPC!(float, 768)()); }
-			int HealthMax() { mixin(MGPC!(int, 756)()); }
-			float SplashTime() { mixin(MGPC!(float, 744)()); }
-			float AIMaxFallSpeedFactor() { mixin(MGPC!(float, 720)()); }
-			float MaxFallSpeed() { mixin(MGPC!(float, 716)()); }
-			float CrouchedPct() { mixin(MGPC!(float, 712)()); }
-			float MovementSpeedModifier() { mixin(MGPC!(float, 708)()); }
-			float WalkingPct() { mixin(MGPC!(float, 704)()); }
-			float AirControl() { mixin(MGPC!(float, 700)()); }
-			float MaxOutOfWaterStepHeight() { mixin(MGPC!(float, 696)()); }
-			float JumpZ() { mixin(MGPC!(float, 688)()); }
-			float LadderSpeed() { mixin(MGPC!(float, 680)()); }
-			float AirSpeed() { mixin(MGPC!(float, 676)()); }
-			float WaterSpeed() { mixin(MGPC!(float, 672)()); }
-			float GroundSpeed() { mixin(MGPC!(float, 668)()); }
-			float SpawnTime() { mixin(MGPC!(float, 660)()); }
-			float SerpentineTime() { mixin(MGPC!(float, 656)()); }
-			float SerpentineDist() { mixin(MGPC!(float, 652)()); }
-			Vector SerpentineDir() { mixin(MGPC!(Vector, 640)()); }
-			float NextPathRadius() { mixin(MGPC!(float, 636)()); }
-			float DestinationOffset() { mixin(MGPC!(float, 632)()); }
-			float LastValidAnchorTime() { mixin(MGPC!(float, 628)()); }
-			float FindAnchorFailedTime() { mixin(MGPC!(float, 624)()); }
-			NavigationPoint LastAnchor() { mixin(MGPC!(NavigationPoint, 620)()); }
-			int AnchorItem() { mixin(MGPC!(int, 616)()); }
-			float MeleeRange() { mixin(MGPC!(float, 608)()); }
-			float Buoyancy() { mixin(MGPC!(float, 604)()); }
-			float Mass() { mixin(MGPC!(float, 600)()); }
-			float AvgPhysicsTime() { mixin(MGPC!(float, 596)()); }
-			float PeripheralVision() { mixin(MGPC!(float, 592)()); }
-			float SightRadius() { mixin(MGPC!(float, 588)()); }
-			float Alertness() { mixin(MGPC!(float, 584)()); }
-			float HearingThreshold() { mixin(MGPC!(float, 580)()); }
-			float MaxDesiredSpeed() { mixin(MGPC!(float, 576)()); }
-			float DesiredSpeed() { mixin(MGPC!(float, 572)()); }
-			PathGoalEvaluator PathGoalList() { mixin(MGPC!(PathGoalEvaluator, 568)()); }
-			PathConstraint PathConstraintList() { mixin(MGPC!(PathConstraint, 564)()); }
-			float NonPreferredVehiclePathMultiplier() { mixin(MGPC!(float, 560)()); }
-			int FullHeight() { mixin(MGPC!(int, 556)()); }
-			float CrouchRadius() { mixin(MGPC!(float, 552)()); }
-			float UncrouchTime() { mixin(MGPC!(float, 544)()); }
-			ubyte FiringMode() { mixin(MGPC!(ubyte, 540)()); }
-			ubyte FlashCount() { mixin(MGPC!(ubyte, 539)()); }
-			ubyte RemoteViewPitch() { mixin(MGPC!(ubyte, 538)()); }
-			Pawn.EPathSearchType PathSearchType() { mixin(MGPC!(Pawn.EPathSearchType, 537)()); }
-			UObject.Pointer VfTable_IInterface_Speaker() { mixin(MGPC!(UObject.Pointer, 476)()); }
-			Actor LastViewer() { mixin(MGPC!(Actor, 524)()); }
-			PlayerController LastRealViewer() { mixin(MGPC!(PlayerController, 520)()); }
-			float NetRelevancyTime() { mixin(MGPC!(float, 516)()); }
-			Pawn NextPawn() { mixin(MGPC!(Pawn, 512)()); }
-			Vector PartialLedgeMoveDir() { mixin(MGPC!(Vector, 496)()); }
-			float LedgeCheckThreshold() { mixin(MGPC!(float, 492)()); }
-			float WalkableFloorZ() { mixin(MGPC!(float, 488)()); }
-			float MaxJumpHeight() { mixin(MGPC!(float, 484)()); }
+			ScriptClass ControllerClass() { mixin(MGPC!("ScriptClass", 856)()); }
+			ScriptString MenuName() { mixin(MGPC!("ScriptString", 844)()); }
+			float DamageScaling() { mixin(MGPC!("float", 840)()); }
+			float SoundDampening() { mixin(MGPC!("float", 836)()); }
+			float noise2loudness() { mixin(MGPC!("float", 832)()); }
+			Pawn noise2other() { mixin(MGPC!("Pawn", 828)()); }
+			float noise2time() { mixin(MGPC!("float", 824)()); }
+			Vector noise2spot() { mixin(MGPC!("Vector", 812)()); }
+			float noise1loudness() { mixin(MGPC!("float", 808)()); }
+			Pawn noise1other() { mixin(MGPC!("Pawn", 804)()); }
+			float noise1time() { mixin(MGPC!("float", 800)()); }
+			Vector noise1spot() { mixin(MGPC!("Vector", 788)()); }
+			Vector RMVelocity() { mixin(MGPC!("Vector", 776)()); }
+			float KismetDeathDelayTime() { mixin(MGPC!("float", 772)()); }
+			float LastPainTime() { mixin(MGPC!("float", 768)()); }
+			int HealthMax() { mixin(MGPC!("int", 756)()); }
+			float SplashTime() { mixin(MGPC!("float", 744)()); }
+			float AIMaxFallSpeedFactor() { mixin(MGPC!("float", 720)()); }
+			float MaxFallSpeed() { mixin(MGPC!("float", 716)()); }
+			float CrouchedPct() { mixin(MGPC!("float", 712)()); }
+			float MovementSpeedModifier() { mixin(MGPC!("float", 708)()); }
+			float WalkingPct() { mixin(MGPC!("float", 704)()); }
+			float AirControl() { mixin(MGPC!("float", 700)()); }
+			float MaxOutOfWaterStepHeight() { mixin(MGPC!("float", 696)()); }
+			float JumpZ() { mixin(MGPC!("float", 688)()); }
+			float LadderSpeed() { mixin(MGPC!("float", 680)()); }
+			float AirSpeed() { mixin(MGPC!("float", 676)()); }
+			float WaterSpeed() { mixin(MGPC!("float", 672)()); }
+			float GroundSpeed() { mixin(MGPC!("float", 668)()); }
+			float SpawnTime() { mixin(MGPC!("float", 660)()); }
+			float SerpentineTime() { mixin(MGPC!("float", 656)()); }
+			float SerpentineDist() { mixin(MGPC!("float", 652)()); }
+			Vector SerpentineDir() { mixin(MGPC!("Vector", 640)()); }
+			float NextPathRadius() { mixin(MGPC!("float", 636)()); }
+			float DestinationOffset() { mixin(MGPC!("float", 632)()); }
+			float LastValidAnchorTime() { mixin(MGPC!("float", 628)()); }
+			float FindAnchorFailedTime() { mixin(MGPC!("float", 624)()); }
+			NavigationPoint LastAnchor() { mixin(MGPC!("NavigationPoint", 620)()); }
+			int AnchorItem() { mixin(MGPC!("int", 616)()); }
+			float MeleeRange() { mixin(MGPC!("float", 608)()); }
+			float Buoyancy() { mixin(MGPC!("float", 604)()); }
+			float Mass() { mixin(MGPC!("float", 600)()); }
+			float AvgPhysicsTime() { mixin(MGPC!("float", 596)()); }
+			float PeripheralVision() { mixin(MGPC!("float", 592)()); }
+			float SightRadius() { mixin(MGPC!("float", 588)()); }
+			float Alertness() { mixin(MGPC!("float", 584)()); }
+			float HearingThreshold() { mixin(MGPC!("float", 580)()); }
+			float MaxDesiredSpeed() { mixin(MGPC!("float", 576)()); }
+			float DesiredSpeed() { mixin(MGPC!("float", 572)()); }
+			PathGoalEvaluator PathGoalList() { mixin(MGPC!("PathGoalEvaluator", 568)()); }
+			PathConstraint PathConstraintList() { mixin(MGPC!("PathConstraint", 564)()); }
+			float NonPreferredVehiclePathMultiplier() { mixin(MGPC!("float", 560)()); }
+			int FullHeight() { mixin(MGPC!("int", 556)()); }
+			float CrouchRadius() { mixin(MGPC!("float", 552)()); }
+			float UncrouchTime() { mixin(MGPC!("float", 544)()); }
+			ubyte FiringMode() { mixin(MGPC!("ubyte", 540)()); }
+			ubyte FlashCount() { mixin(MGPC!("ubyte", 539)()); }
+			ubyte RemoteViewPitch() { mixin(MGPC!("ubyte", 538)()); }
+			Pawn.EPathSearchType PathSearchType() { mixin(MGPC!("Pawn.EPathSearchType", 537)()); }
+			UObject.Pointer VfTable_IInterface_Speaker() { mixin(MGPC!("UObject.Pointer", 476)()); }
+			Actor LastViewer() { mixin(MGPC!("Actor", 524)()); }
+			PlayerController LastRealViewer() { mixin(MGPC!("PlayerController", 520)()); }
+			float NetRelevancyTime() { mixin(MGPC!("float", 516)()); }
+			Pawn NextPawn() { mixin(MGPC!("Pawn", 512)()); }
+			Vector PartialLedgeMoveDir() { mixin(MGPC!("Vector", 496)()); }
+			float LedgeCheckThreshold() { mixin(MGPC!("float", 492)()); }
+			float WalkableFloorZ() { mixin(MGPC!("float", 488)()); }
+			float MaxJumpHeight() { mixin(MGPC!("float", 484)()); }
 		}
 		bool bIsWalking() { mixin(MGBPC!(528, 0x4)()); }
 		bool bIsWalking(bool val) { mixin(MSBPC!(528, 0x4)()); }
@@ -806,19 +806,21 @@ public extern(D):
 		bool bScriptTickSpecial(bool val) { mixin(MSBPC!(528, 0x1)()); }
 	}
 final:
-	bool IsHumanControlled(Controller PawnController)
+	bool IsHumanControlled(Controller* PawnController = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Controller*)params.ptr = PawnController;
+		if (PawnController !is null)
+			*cast(Controller*)params.ptr = *PawnController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsHumanControlled, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool IsLocallyControlled(Controller PawnController)
+	bool IsLocallyControlled(Controller* PawnController = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Controller*)params.ptr = PawnController;
+		if (PawnController !is null)
+			*cast(Controller*)params.ptr = *PawnController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocallyControlled, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -879,15 +881,19 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanThrowWeapon, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool SetDesiredRotation(Rotator TargetDesiredRotation, bool InLockDesiredRotation, bool InUnlockWhenReached, float InterpolationTime, bool bResetRotationRate)
+	bool SetDesiredRotation(Rotator TargetDesiredRotation, bool* InLockDesiredRotation = null, bool* InUnlockWhenReached = null, float* InterpolationTime = null, bool* bResetRotationRate = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = TargetDesiredRotation;
-		*cast(bool*)&params[12] = InLockDesiredRotation;
-		*cast(bool*)&params[16] = InUnlockWhenReached;
-		*cast(float*)&params[20] = InterpolationTime;
-		*cast(bool*)&params[24] = bResetRotationRate;
+		if (InLockDesiredRotation !is null)
+			*cast(bool*)&params[12] = *InLockDesiredRotation;
+		if (InUnlockWhenReached !is null)
+			*cast(bool*)&params[16] = *InUnlockWhenReached;
+		if (InterpolationTime !is null)
+			*cast(float*)&params[20] = *InterpolationTime;
+		if (bResetRotationRate !is null)
+			*cast(bool*)&params[24] = *bResetRotationRate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDesiredRotation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -919,7 +925,7 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = WallNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckWaterJump, params.ptr, cast(void*)0);
-		*WallNormal = *cast(Vector*)params.ptr;
+		WallNormal = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	bool TouchingWaterVolume()
@@ -947,13 +953,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialMoveTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void SetScalarParameterInterp(ref const Pawn.ScalarParameterInterpStruct ScalarParameterInterp)
+	void SetScalarParameterInterp(ref in Pawn.ScalarParameterInterpStruct ScalarParameterInterp)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Pawn.ScalarParameterInterpStruct*)params.ptr = ScalarParameterInterp;
+		*cast(Pawn.ScalarParameterInterpStruct*)params.ptr = cast(Pawn.ScalarParameterInterpStruct)ScalarParameterInterp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetScalarParameterInterp, params.ptr, cast(void*)0);
-		*ScalarParameterInterp = *cast(Pawn.ScalarParameterInterpStruct*)params.ptr;
 	}
 	bool CheatFly()
 	{
@@ -983,21 +988,23 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlayerPawn, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	Inventory FindInventoryType(ScriptClass DesiredClass, bool bAllowSubclass)
+	Inventory FindInventoryType(ScriptClass DesiredClass, bool* bAllowSubclass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = DesiredClass;
-		*cast(bool*)&params[4] = bAllowSubclass;
+		if (bAllowSubclass !is null)
+			*cast(bool*)&params[4] = *bAllowSubclass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindInventoryType, params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
-	Inventory CreateInventory(ScriptClass NewInvClass, bool bDoNotActivate)
+	Inventory CreateInventory(ScriptClass NewInvClass, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = NewInvClass;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateInventory, params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
@@ -1025,7 +1032,7 @@ final:
 		*cast(bool*)&params[20] = bOnlyCheckVisible;
 		*cast(float*)&params[24] = out_Dist;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBestAnchor, params.ptr, cast(void*)0);
-		*out_Dist = *cast(float*)&params[24];
+		out_Dist = *cast(float*)&params[24];
 		return *cast(NavigationPoint*)&params[28];
 	}
 	PathGoalEvaluator CreatePathGoalEvaluator(ScriptClass GoalEvalClass)
@@ -1081,12 +1088,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickWallAdjust, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	void LockDesiredRotation(bool Lock, bool InUnlockWhenReached)
+	void LockDesiredRotation(bool Lock, bool* InUnlockWhenReached = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = Lock;
-		*cast(bool*)&params[4] = InUnlockWhenReached;
+		if (InUnlockWhenReached !is null)
+			*cast(bool*)&params[4] = *InUnlockWhenReached;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LockDesiredRotation, params.ptr, cast(void*)0);
 	}
 	void ResetDesiredRotation()
@@ -1138,13 +1146,12 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildScriptAnimSetList, cast(void*)0, cast(void*)0);
 	}
-	void AddAnimSets(ref const ScriptArray!(AnimSet) CustomAnimSets)
+	void AddAnimSets(ref in ScriptArray!(AnimSet) CustomAnimSets)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(AnimSet)*)params.ptr = CustomAnimSets;
+		*cast(ScriptArray!(AnimSet)*)params.ptr = cast(ScriptArray!(AnimSet))CustomAnimSets;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddAnimSets, params.ptr, cast(void*)0);
-		*CustomAnimSets = *cast(ScriptArray!(AnimSet)*)params.ptr;
 	}
 	void AnimSetListUpdated()
 	{
@@ -1345,25 +1352,27 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsAliveAndWell, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	Vector AdjustDestination(Actor GoalActor, Vector Dest)
+	Vector AdjustDestination(Actor GoalActor, Vector* Dest = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = GoalActor;
-		*cast(Vector*)&params[4] = Dest;
+		if (Dest !is null)
+			*cast(Vector*)&params[4] = *Dest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDestination, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[16];
 	}
-	bool SuggestJumpVelocity(ref Vector JumpVelocity, Vector Destination, Vector Start, bool bRequireFallLanding)
+	bool SuggestJumpVelocity(ref Vector JumpVelocity, Vector Destination, Vector Start, bool* bRequireFallLanding = null)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(Vector*)params.ptr = JumpVelocity;
 		*cast(Vector*)&params[12] = Destination;
 		*cast(Vector*)&params[24] = Start;
-		*cast(bool*)&params[36] = bRequireFallLanding;
+		if (bRequireFallLanding !is null)
+			*cast(bool*)&params[36] = *bRequireFallLanding;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestJumpVelocity, params.ptr, cast(void*)0);
-		*JumpVelocity = *cast(Vector*)params.ptr;
+		JumpVelocity = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[40];
 	}
 	float GetFallDuration()
@@ -1373,11 +1382,11 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFallDuration, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	bool IsValidEnemyTargetFor(const PlayerReplicationInfo PRI, bool bNoPRIisEnemy)
+	bool IsValidEnemyTargetFor(in PlayerReplicationInfo PRI, bool bNoPRIisEnemy)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(PlayerReplicationInfo*)params.ptr = PRI;
+		*cast(PlayerReplicationInfo*)params.ptr = cast(PlayerReplicationInfo)PRI;
 		*cast(bool*)&params[4] = bNoPRIisEnemy;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidEnemyTargetFor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
@@ -1430,8 +1439,8 @@ void**)params.ptr = AC;
 		*cast(float*)params.ptr = CollisionRadius;
 		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
-		*CollisionRadius = *cast(float*)params.ptr;
-		*CollisionHeight = *cast(float*)&params[4];
+		CollisionRadius = *cast(float*)params.ptr;
+		CollisionHeight = *cast(float*)&params[4];
 	}
 	bool InitRagdoll()
 	{
@@ -1447,7 +1456,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TermRagdoll, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool SpecialMoveThruEdge(Pylon.ENavMeshEdgeType Type, int Dir, Vector MoveStart, Vector MoveDest, Actor RelActor, int RelItem)
+	bool SpecialMoveThruEdge(Pylon.ENavMeshEdgeType Type, int Dir, Vector MoveStart, Vector MoveDest, Actor* RelActor = null, int* RelItem = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -1455,8 +1464,10 @@ void**)params.ptr = AC;
 		*cast(int*)&params[4] = Dir;
 		*cast(Vector*)&params[8] = MoveStart;
 		*cast(Vector*)&params[20] = MoveDest;
-		*cast(Actor*)&params[32] = RelActor;
-		*cast(int*)&params[36] = RelItem;
+		if (RelActor !is null)
+			*cast(Actor*)&params[32] = *RelActor;
+		if (RelItem !is null)
+			*cast(int*)&params[36] = *RelItem;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialMoveThruEdge, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}
@@ -1560,13 +1571,14 @@ void**)params.ptr = AC;
 		*cast(bool*)&params[16] = bViaReplication;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FlashLocationUpdated, params.ptr, cast(void*)0);
 	}
-	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void WeaponFired(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponFired, params.ptr, cast(void*)0);
 	}
 	void WeaponStoppedFiring(Weapon InWeapon, bool bViaReplication)
@@ -1715,8 +1727,8 @@ void**)params.ptr = AC;
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	bool IsFirstPerson()
 	{
@@ -1733,8 +1745,8 @@ void**)params.ptr = AC;
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
-		*out_DeltaRot = *cast(Rotator*)&params[16];
+		out_ViewRotation = *cast(Rotator*)&params[4];
+		out_DeltaRot = *cast(Rotator*)&params[16];
 	}
 	void GetActorEyesViewPoint(ref Vector out_Location, ref Rotator out_Rotation)
 	{
@@ -1743,8 +1755,8 @@ void**)params.ptr = AC;
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetActorEyesViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	Vector GetPawnViewLocation()
 	{
@@ -1753,11 +1765,12 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPawnViewLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon* CurrentWeapon = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Weapon*)params.ptr = CurrentWeapon;
+		if (CurrentWeapon !is null)
+			*cast(Weapon*)params.ptr = *CurrentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
@@ -1798,12 +1811,13 @@ void**)params.ptr = AC;
 		*cast(Inventory*)params.ptr = Inv;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePickup, params.ptr, cast(void*)0);
 	}
-	void ClientMessage(ScriptString S, ScriptName Type)
+	void ClientMessage(ScriptString S, ScriptName* Type = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
-		*cast(ScriptName*)&params[12] = Type;
+		if (Type !is null)
+			*cast(ScriptName*)&params[12] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientMessage, params.ptr, cast(void*)0);
 	}
 	void FellOutOfWorld(ScriptClass dmgType)
@@ -1842,24 +1856,26 @@ void**)params.ptr = AC;
 		*cast(float*)params.ptr = HeightAdjust;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartCrouch, params.ptr, cast(void*)0);
 	}
-	void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
+	void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Momentum;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleMomentum, params.ptr, cast(void*)0);
 	}
-	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
+	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVelocity;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddVelocity, params.ptr, cast(void*)0);
 	}
 	void KilledBy(Pawn EventInstigator)
@@ -1955,11 +1971,12 @@ void**)params.ptr = AC;
 		*cast(Pawn*)params.ptr = OtherPawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CrushedBy, params.ptr, cast(void*)0);
 	}
-	void DetachFromController(bool bDestroyController)
+	void DetachFromController(bool* bDestroyController = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDestroyController;
+		if (bDestroyController !is null)
+			*cast(bool*)params.ptr = *bDestroyController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetachFromController, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
@@ -2019,8 +2036,8 @@ void**)params.ptr = AC;
 		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
 		*cast(Actor*)&params[64] = DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDamage, params.ptr, cast(void*)0);
-		*InDamage = *cast(int*)params.ptr;
-		*Momentum = *cast(Vector*)&params[4];
+		InDamage = *cast(int*)params.ptr;
+		Momentum = *cast(Vector*)&params[4];
 	}
 	bool HealDamage(int Amount, Controller Healer, ScriptClass pDamageType)
 	{
@@ -2038,7 +2055,7 @@ void**)params.ptr = AC;
 		params[] = 0;
 		*cast(ScriptArray!(ScriptName)*)params.ptr = Bones;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PruneDamagedBoneList, params.ptr, cast(void*)0);
-		*Bones = *cast(ScriptArray!(ScriptName)*)params.ptr;
+		Bones = *cast(ScriptArray!(ScriptName)*)params.ptr;
 	}
 	bool TakeRadiusDamageOnBones(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, ScriptArray!(ScriptName) Bones)
 	{
@@ -2076,7 +2093,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetKillInstigator, params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[8];
 	}
-	void TakeDamage(int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -2085,8 +2102,10 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	ubyte GetTeamNum()
@@ -2239,19 +2258,21 @@ void**)params.ptr = AC;
 		*cast(HUD*)params.ptr = H;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHUD, params.ptr, cast(void*)0);
 	}
-	void ThrowActiveWeapon(bool bDestroyWeap)
+	void ThrowActiveWeapon(bool* bDestroyWeap = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDestroyWeap;
+		if (bDestroyWeap !is null)
+			*cast(bool*)params.ptr = *bDestroyWeap;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ThrowActiveWeapon, params.ptr, cast(void*)0);
 	}
-	void TossInventory(Inventory Inv, Vector ForceVelocity)
+	void TossInventory(Inventory Inv, Vector* ForceVelocity = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Inventory*)params.ptr = Inv;
-		*cast(Vector*)&params[4] = ForceVelocity;
+		if (ForceVelocity !is null)
+			*cast(Vector*)&params[4] = *ForceVelocity;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TossInventory, params.ptr, cast(void*)0);
 	}
 	void SetActiveWeapon(Weapon NewWeapon)
@@ -2398,13 +2419,15 @@ void**)params.ptr = AC;
 		*cast(bool*)params.ptr = bInCinematicMode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCinematicMode, params.ptr, cast(void*)0);
 	}
-	void SetRootMotionInterpCurrentTime(float inTime, float DeltaTime, bool bUpdateSkelPose)
+	void SetRootMotionInterpCurrentTime(float inTime, float* DeltaTime = null, bool* bUpdateSkelPose = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = inTime;
-		*cast(float*)&params[4] = DeltaTime;
-		*cast(bool*)&params[8] = bUpdateSkelPose;
+		if (DeltaTime !is null)
+			*cast(float*)&params[4] = *DeltaTime;
+		if (bUpdateSkelPose !is null)
+			*cast(bool*)&params[8] = *bUpdateSkelPose;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootMotionInterpCurrentTime, params.ptr, cast(void*)0);
 	}
 	void Speak(SoundCue Cue)

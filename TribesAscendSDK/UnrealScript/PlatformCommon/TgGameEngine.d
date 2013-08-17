@@ -65,12 +65,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				UObject.Pointer pMarshal() { mixin(MGPS!(UObject.Pointer, 40)()); }
-				ScriptString fsMessage() { mixin(MGPS!(ScriptString, 28)()); }
-				int nStmMsgId() { mixin(MGPS!(int, 24)()); }
-				QWord qwInfo() { mixin(MGPS!(QWord, 16)()); }
-				QWord qwId() { mixin(MGPS!(QWord, 8)()); }
-				int nFunction() { mixin(MGPS!(int, 4)()); }
+				UObject.Pointer pMarshal() { mixin(MGPS!("UObject.Pointer", 40)()); }
+				ScriptString fsMessage() { mixin(MGPS!("ScriptString", 28)()); }
+				int nStmMsgId() { mixin(MGPS!("int", 24)()); }
+				QWord qwInfo() { mixin(MGPS!("QWord", 16)()); }
+				QWord qwId() { mixin(MGPS!("QWord", 8)()); }
+				int nFunction() { mixin(MGPS!("int", 4)()); }
 			}
 			bool bSuccess() { mixin(MGBPS!(0, 0x1)()); }
 			bool bSuccess(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -80,12 +80,12 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) MarshalEventDelegates() { mixin(MGPC!(ScriptArray!(
+void*) MarshalEventDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 1808)()); }
+void*)", 1808)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMarshalEvent__Delegate'!
-		UObject.Pointer pEventMarshal() { mixin(MGPC!(UObject.Pointer, 1824)()); }
-		UObject.Pointer pOutgoingMarshal() { mixin(MGPC!(UObject.Pointer, 1820)()); }
+		UObject.Pointer pEventMarshal() { mixin(MGPC!("UObject.Pointer", 1824)()); }
+		UObject.Pointer pOutgoingMarshal() { mixin(MGPC!("UObject.Pointer", 1820)()); }
 	}
 final:
 	void OnMarshalEvent(UObject.Pointer pMarEvent)
@@ -156,7 +156,7 @@ final:
 		*cast(int*)params.ptr = nToken;
 		*cast(int*)&params[4] = IntValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldInt, params.ptr, cast(void*)0);
-		*IntValue = *cast(int*)&params[4];
+		IntValue = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool GetFieldFloat(int nToken, ref float FloatValue)
@@ -166,7 +166,7 @@ final:
 		*cast(int*)params.ptr = nToken;
 		*cast(float*)&params[4] = FloatValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldFloat, params.ptr, cast(void*)0);
-		*FloatValue = *cast(float*)&params[4];
+		FloatValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool GetFieldString(int nToken, ref ScriptString StrValue)
@@ -176,7 +176,7 @@ final:
 		*cast(int*)params.ptr = nToken;
 		*cast(ScriptString*)&params[4] = StrValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFieldString, params.ptr, cast(void*)0);
-		*StrValue = *cast(ScriptString*)&params[4];
+		StrValue = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void AddMarshalEventDelegate(
@@ -215,12 +215,13 @@ void**)params.ptr = MarshalEventDelegate;
 		*cast(ScriptString*)params.ptr = fsRequest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendGameRequest, params.ptr, cast(void*)0);
 	}
-	bool HandlePlayerCommandInput(ScriptString FSCommand, PlayerController PC)
+	bool HandlePlayerCommandInput(ScriptString FSCommand, PlayerController* PC = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = FSCommand;
-		*cast(PlayerController*)&params[12] = PC;
+		if (PC !is null)
+			*cast(PlayerController*)&params[12] = *PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePlayerCommandInput, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

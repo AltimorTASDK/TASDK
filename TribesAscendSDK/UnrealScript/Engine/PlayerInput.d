@@ -64,45 +64,45 @@ public extern(D):
 	{
 		auto ref
 		{
-			float aTurn() { mixin(MGPC!(float, 272)()); }
-			float aLookUp() { mixin(MGPC!(float, 284)()); }
-			float aForward() { mixin(MGPC!(float, 268)()); }
-			float aStrafe() { mixin(MGPC!(float, 276)()); }
-			float RawJoyUp() { mixin(MGPC!(float, 312)()); }
-			float RawJoyRight() { mixin(MGPC!(float, 316)()); }
-			float aUp() { mixin(MGPC!(float, 280)()); }
-			float AutoUnlockTurnTime() { mixin(MGPC!(float, 376)()); }
-			float MouseSamplingTotal() { mixin(MGPC!(float, 372)()); }
-			int MouseSamples() { mixin(MGPC!(int, 368)()); }
-			float SmoothedMouse() { mixin(MGPC!(float, 360)()); }
-			float ZeroTime() { mixin(MGPC!(float, 352)()); }
-			int FOVSetting() { mixin(MGPC!(int, 348)()); }
-			ubyte bYAxis() { mixin(MGPC!(ubyte, 346)()); }
-			ubyte bXAxis() { mixin(MGPC!(ubyte, 345)()); }
-			ubyte bStrafe() { mixin(MGPC!(ubyte, 344)()); }
-			float LookUpScale() { mixin(MGPC!(float, 340)()); }
-			float LookRightScale() { mixin(MGPC!(float, 336)()); }
-			float MoveStrafeSpeed() { mixin(MGPC!(float, 332)()); }
-			float MoveForwardSpeed() { mixin(MGPC!(float, 328)()); }
-			float RawJoyLookUp() { mixin(MGPC!(float, 324)()); }
-			float RawJoyLookRight() { mixin(MGPC!(float, 320)()); }
-			float aPS3Gyro() { mixin(MGPC!(float, 308)()); }
-			float aPS3AccelZ() { mixin(MGPC!(float, 304)()); }
-			float aPS3AccelY() { mixin(MGPC!(float, 300)()); }
-			float aPS3AccelX() { mixin(MGPC!(float, 296)()); }
-			float aLeftAnalogTrigger() { mixin(MGPC!(float, 292)()); }
-			float aRightAnalogTrigger() { mixin(MGPC!(float, 288)()); }
-			float aMouseY() { mixin(MGPC!(float, 264)()); }
-			float aMouseX() { mixin(MGPC!(float, 260)()); }
-			float aBaseZ() { mixin(MGPC!(float, 256)()); }
-			float aBaseY() { mixin(MGPC!(float, 252)()); }
-			float aBaseX() { mixin(MGPC!(float, 248)()); }
-			float FlyingYawSensitivity() { mixin(MGPC!(float, 244)()); }
-			float FlyingPitchSensitivity() { mixin(MGPC!(float, 240)()); }
-			float MouseSensitivity() { mixin(MGPC!(float, 236)()); }
-			float DoubleClickTime() { mixin(MGPC!(float, 232)()); }
-			float DoubleClickTimer() { mixin(MGPC!(float, 228)()); }
-			ScriptName LastAxisKeyName() { mixin(MGPC!(ScriptName, 220)()); }
+			float aTurn() { mixin(MGPC!("float", 272)()); }
+			float aLookUp() { mixin(MGPC!("float", 284)()); }
+			float aForward() { mixin(MGPC!("float", 268)()); }
+			float aStrafe() { mixin(MGPC!("float", 276)()); }
+			float RawJoyUp() { mixin(MGPC!("float", 312)()); }
+			float RawJoyRight() { mixin(MGPC!("float", 316)()); }
+			float aUp() { mixin(MGPC!("float", 280)()); }
+			float AutoUnlockTurnTime() { mixin(MGPC!("float", 376)()); }
+			float MouseSamplingTotal() { mixin(MGPC!("float", 372)()); }
+			int MouseSamples() { mixin(MGPC!("int", 368)()); }
+			float SmoothedMouse() { mixin(MGPC!("float", 360)()); }
+			float ZeroTime() { mixin(MGPC!("float", 352)()); }
+			int FOVSetting() { mixin(MGPC!("int", 348)()); }
+			ubyte bYAxis() { mixin(MGPC!("ubyte", 346)()); }
+			ubyte bXAxis() { mixin(MGPC!("ubyte", 345)()); }
+			ubyte bStrafe() { mixin(MGPC!("ubyte", 344)()); }
+			float LookUpScale() { mixin(MGPC!("float", 340)()); }
+			float LookRightScale() { mixin(MGPC!("float", 336)()); }
+			float MoveStrafeSpeed() { mixin(MGPC!("float", 332)()); }
+			float MoveForwardSpeed() { mixin(MGPC!("float", 328)()); }
+			float RawJoyLookUp() { mixin(MGPC!("float", 324)()); }
+			float RawJoyLookRight() { mixin(MGPC!("float", 320)()); }
+			float aPS3Gyro() { mixin(MGPC!("float", 308)()); }
+			float aPS3AccelZ() { mixin(MGPC!("float", 304)()); }
+			float aPS3AccelY() { mixin(MGPC!("float", 300)()); }
+			float aPS3AccelX() { mixin(MGPC!("float", 296)()); }
+			float aLeftAnalogTrigger() { mixin(MGPC!("float", 292)()); }
+			float aRightAnalogTrigger() { mixin(MGPC!("float", 288)()); }
+			float aMouseY() { mixin(MGPC!("float", 264)()); }
+			float aMouseX() { mixin(MGPC!("float", 260)()); }
+			float aBaseZ() { mixin(MGPC!("float", 256)()); }
+			float aBaseY() { mixin(MGPC!("float", 252)()); }
+			float aBaseX() { mixin(MGPC!("float", 248)()); }
+			float FlyingYawSensitivity() { mixin(MGPC!("float", 244)()); }
+			float FlyingPitchSensitivity() { mixin(MGPC!("float", 240)()); }
+			float MouseSensitivity() { mixin(MGPC!("float", 236)()); }
+			float DoubleClickTime() { mixin(MGPC!("float", 232)()); }
+			float DoubleClickTimer() { mixin(MGPC!("float", 228)()); }
+			ScriptName LastAxisKeyName() { mixin(MGPC!("ScriptName", 220)()); }
 		}
 		bool bUsingGamepad() { mixin(MGBPC!(216, 0x1)()); }
 		bool bUsingGamepad(bool val) { mixin(MSBPC!(216, 0x1)()); }
@@ -235,7 +235,7 @@ final:
 		params[8] = SampleCount;
 		*cast(int*)&params[12] = Index;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SmoothMouse, params.ptr, cast(void*)0);
-		*SampleCount = params[8];
+		SampleCount = params[8];
 		return *cast(float*)&params[16];
 	}
 	void InitInputSystem()

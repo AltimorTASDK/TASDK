@@ -80,15 +80,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrGameObjective) m_PoweredObjectives() { mixin(MGPC!(ScriptArray!(TrGameObjective), 1384)()); }
-			ScriptArray!(TrTeamBlockerStaticMeshActor) m_PoweredTeamBlockers() { mixin(MGPC!(ScriptArray!(TrTeamBlockerStaticMeshActor), 1404)()); }
-			float m_fAnimInterpSpeed() { mixin(MGPC!(float, 1400)()); }
-			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!(AnimNodeScalePlayRate, 1396)()); }
-			float m_fAutoRestoreHealthEffectsInterpSpeed() { mixin(MGPC!(float, 1380)()); }
-			float m_fAutoRestoreHealthTimeStamp() { mixin(MGPC!(float, 1376)()); }
-			int r_nDowntimeRemaining() { mixin(MGPC!(int, 1372)()); }
-			float m_fAutoRestoreHealthTime() { mixin(MGPC!(float, 1364)()); }
-			float m_fMaxMorphDamage() { mixin(MGPC!(float, 1360)()); }
+			ScriptArray!(TrGameObjective) m_PoweredObjectives() { mixin(MGPC!("ScriptArray!(TrGameObjective)", 1384)()); }
+			ScriptArray!(TrTeamBlockerStaticMeshActor) m_PoweredTeamBlockers() { mixin(MGPC!("ScriptArray!(TrTeamBlockerStaticMeshActor)", 1404)()); }
+			float m_fAnimInterpSpeed() { mixin(MGPC!("float", 1400)()); }
+			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!("AnimNodeScalePlayRate", 1396)()); }
+			float m_fAutoRestoreHealthEffectsInterpSpeed() { mixin(MGPC!("float", 1380)()); }
+			float m_fAutoRestoreHealthTimeStamp() { mixin(MGPC!("float", 1376)()); }
+			int r_nDowntimeRemaining() { mixin(MGPC!("int", 1372)()); }
+			float m_fAutoRestoreHealthTime() { mixin(MGPC!("float", 1364)()); }
+			float m_fMaxMorphDamage() { mixin(MGPC!("float", 1360)()); }
 		}
 		bool m_bFullyRestoringHealthEffects() { mixin(MGBPC!(1368, 0x2)()); }
 		bool m_bFullyRestoringHealthEffects(bool val) { mixin(MSBPC!(1368, 0x2)()); }
@@ -202,7 +202,7 @@ void**)params.ptr = SkelComp;
 		*cast(TrDeployable*)params.ptr = dep;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddToPoweredObjectives, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -211,8 +211,10 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	Texture2D GetMarker()

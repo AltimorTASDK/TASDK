@@ -105,12 +105,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				int ServerView() { mixin(MGPS!(int, 72)()); }
-				ubyte ServerRise() { mixin(MGPS!(ubyte, 67)()); }
-				ubyte ServerSteering() { mixin(MGPS!(ubyte, 66)()); }
-				ubyte ServerGas() { mixin(MGPS!(ubyte, 65)()); }
-				ubyte ServerBrake() { mixin(MGPS!(ubyte, 64)()); }
-				Actor.RigidBodyState RBState() { mixin(MGPS!(Actor.RigidBodyState, 0)()); }
+				int ServerView() { mixin(MGPS!("int", 72)()); }
+				ubyte ServerRise() { mixin(MGPS!("ubyte", 67)()); }
+				ubyte ServerSteering() { mixin(MGPS!("ubyte", 66)()); }
+				ubyte ServerGas() { mixin(MGPS!("ubyte", 65)()); }
+				ubyte ServerBrake() { mixin(MGPS!("ubyte", 64)()); }
+				Actor.RigidBodyState RBState() { mixin(MGPS!("Actor.RigidBodyState", 0)()); }
 			}
 			bool bServerHandbrake() { mixin(MGBPS!(68, 0x1)()); }
 			bool bServerHandbrake(bool val) { mixin(MSBPS!(68, 0x1)()); }
@@ -122,50 +122,50 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) Wheels() { mixin(MGPC!(ScriptArray!(
+void*) Wheels() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 1264)()); }
-			float RadialImpulseScaling() { mixin(MGPC!(float, 1540)()); }
-			float AngErrorAccumulator() { mixin(MGPC!(float, 1536)()); }
-			SVehicle.VehicleState VState() { mixin(MGPC!(SVehicle.VehicleState, 1456)()); }
-			int DriverViewYaw() { mixin(MGPC!(int, 1452)()); }
-			int DriverViewPitch() { mixin(MGPC!(int, 1448)()); }
-			float CamDist() { mixin(MGPC!(float, 1444)()); }
-			Vector BaseOffset() { mixin(MGPC!(Vector, 1432)()); }
-			int NumPoweredWheels() { mixin(MGPC!(int, 1428)()); }
-			float ForwardVel() { mixin(MGPC!(float, 1424)()); }
-			float OutputRise() { mixin(MGPC!(float, 1420)()); }
-			float OutputSteering() { mixin(MGPC!(float, 1416)()); }
-			float OutputGas() { mixin(MGPC!(float, 1412)()); }
-			float OutputBrake() { mixin(MGPC!(float, 1408)()); }
-			float LastCollisionSoundTime() { mixin(MGPC!(float, 1404)()); }
-			float EngineStopOffsetSecs() { mixin(MGPC!(float, 1400)()); }
-			float EngineStartOffsetSecs() { mixin(MGPC!(float, 1396)()); }
-			float LatAngleVolumeMult() { mixin(MGPC!(float, 1392)()); }
-			float SquealLatThreshold() { mixin(MGPC!(float, 1388)()); }
-			float SquealThreshold() { mixin(MGPC!(float, 1384)()); }
-			float CollisionIntervalSecs() { mixin(MGPC!(float, 1380)()); }
-			SoundCue ExitVehicleSound() { mixin(MGPC!(SoundCue, 1376)()); }
-			SoundCue EnterVehicleSound() { mixin(MGPC!(SoundCue, 1372)()); }
-			SoundCue CollisionSound() { mixin(MGPC!(SoundCue, 1368)()); }
+void*)", 1264)()); }
+			float RadialImpulseScaling() { mixin(MGPC!("float", 1540)()); }
+			float AngErrorAccumulator() { mixin(MGPC!("float", 1536)()); }
+			SVehicle.VehicleState VState() { mixin(MGPC!("SVehicle.VehicleState", 1456)()); }
+			int DriverViewYaw() { mixin(MGPC!("int", 1452)()); }
+			int DriverViewPitch() { mixin(MGPC!("int", 1448)()); }
+			float CamDist() { mixin(MGPC!("float", 1444)()); }
+			Vector BaseOffset() { mixin(MGPC!("Vector", 1432)()); }
+			int NumPoweredWheels() { mixin(MGPC!("int", 1428)()); }
+			float ForwardVel() { mixin(MGPC!("float", 1424)()); }
+			float OutputRise() { mixin(MGPC!("float", 1420)()); }
+			float OutputSteering() { mixin(MGPC!("float", 1416)()); }
+			float OutputGas() { mixin(MGPC!("float", 1412)()); }
+			float OutputBrake() { mixin(MGPC!("float", 1408)()); }
+			float LastCollisionSoundTime() { mixin(MGPC!("float", 1404)()); }
+			float EngineStopOffsetSecs() { mixin(MGPC!("float", 1400)()); }
+			float EngineStartOffsetSecs() { mixin(MGPC!("float", 1396)()); }
+			float LatAngleVolumeMult() { mixin(MGPC!("float", 1392)()); }
+			float SquealLatThreshold() { mixin(MGPC!("float", 1388)()); }
+			float SquealThreshold() { mixin(MGPC!("float", 1384)()); }
+			float CollisionIntervalSecs() { mixin(MGPC!("float", 1380)()); }
+			SoundCue ExitVehicleSound() { mixin(MGPC!("SoundCue", 1376)()); }
+			SoundCue EnterVehicleSound() { mixin(MGPC!("SoundCue", 1372)()); }
+			SoundCue CollisionSound() { mixin(MGPC!("SoundCue", 1368)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SquealSound'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'EngineSound'!
-			float UprightStartTime() { mixin(MGPC!(float, 1356)()); }
-			float UprightTime() { mixin(MGPC!(float, 1352)()); }
-			float UprightTorqueStrength() { mixin(MGPC!(float, 1348)()); }
-			float UprightLiftStrength() { mixin(MGPC!(float, 1344)()); }
-			float TimeOffGround() { mixin(MGPC!(float, 1340)()); }
-			float MaxAngularVelocity() { mixin(MGPC!(float, 1336)()); }
-			float MaxSpeed() { mixin(MGPC!(float, 1332)()); }
-			float HeavySuspensionShiftPercent() { mixin(MGPC!(float, 1328)()); }
-			RB_ConstraintInstance StayUprightConstraintInstance() { mixin(MGPC!(RB_ConstraintInstance, 1324)()); }
-			RB_StayUprightSetup StayUprightConstraintSetup() { mixin(MGPC!(RB_StayUprightSetup, 1320)()); }
-			float StayUprightDamping() { mixin(MGPC!(float, 1316)()); }
-			float StayUprightStiffness() { mixin(MGPC!(float, 1312)()); }
-			float StayUprightPitchResistAngle() { mixin(MGPC!(float, 1308)()); }
-			float StayUprightRollResistAngle() { mixin(MGPC!(float, 1304)()); }
-			Vector InertiaTensorMultiplier() { mixin(MGPC!(Vector, 1288)()); }
-			Vector COMOffset() { mixin(MGPC!(Vector, 1276)()); }
+			float UprightStartTime() { mixin(MGPC!("float", 1356)()); }
+			float UprightTime() { mixin(MGPC!("float", 1352)()); }
+			float UprightTorqueStrength() { mixin(MGPC!("float", 1348)()); }
+			float UprightLiftStrength() { mixin(MGPC!("float", 1344)()); }
+			float TimeOffGround() { mixin(MGPC!("float", 1340)()); }
+			float MaxAngularVelocity() { mixin(MGPC!("float", 1336)()); }
+			float MaxSpeed() { mixin(MGPC!("float", 1332)()); }
+			float HeavySuspensionShiftPercent() { mixin(MGPC!("float", 1328)()); }
+			RB_ConstraintInstance StayUprightConstraintInstance() { mixin(MGPC!("RB_ConstraintInstance", 1324)()); }
+			RB_StayUprightSetup StayUprightConstraintSetup() { mixin(MGPC!("RB_StayUprightSetup", 1320)()); }
+			float StayUprightDamping() { mixin(MGPC!("float", 1316)()); }
+			float StayUprightStiffness() { mixin(MGPC!("float", 1312)()); }
+			float StayUprightPitchResistAngle() { mixin(MGPC!("float", 1308)()); }
+			float StayUprightRollResistAngle() { mixin(MGPC!("float", 1304)()); }
+			Vector InertiaTensorMultiplier() { mixin(MGPC!("Vector", 1288)()); }
+			Vector COMOffset() { mixin(MGPC!("Vector", 1276)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SimObj'!
 		}
 		bool bHoldingDownHandbrake() { mixin(MGBPC!(1300, 0x1000)()); }
@@ -259,7 +259,7 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopVehicleSounds, cast(void*)0, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -271,7 +271,8 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void InitVehicleRagdoll(SkeletalMesh RagdollMesh, PhysicsAsset RagdollPhysAsset, Vector ActorMove, bool bClearAnimTree)
@@ -284,14 +285,15 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[20] = bClearAnimTree;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitVehicleRagdoll, params.ptr, cast(void*)0);
 	}
-	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
+	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVelocity;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddVelocity, params.ptr, cast(void*)0);
 	}
 	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)
@@ -313,9 +315,9 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	ScriptName GetDefaultCameraMode(PlayerController RequestedBy)
@@ -373,7 +375,7 @@ void**)params.ptr = SkelComp;
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref in Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -383,10 +385,9 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = cast(Actor.CollisionImpactData)RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
-		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void SuspensionHeavyShift(float Delta)
 	{
@@ -410,8 +411,8 @@ void**)&params[4] = OtherComponent;
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void DisplayWheelsDebug(HUD pHUD, float YL)
 	{
@@ -435,6 +436,6 @@ void**)&params[4] = OtherComponent;
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = DebugInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSVehicleDebug, params.ptr, cast(void*)0);
-		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 }

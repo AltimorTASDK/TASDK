@@ -26,12 +26,13 @@ public extern(D):
 		}
 	}
 final:
-	static bool GoUntilBust(Pawn P, int InMaxPathVisits)
+	static bool GoUntilBust(Pawn P, int* InMaxPathVisits = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
-		*cast(int*)&params[4] = InMaxPathVisits;
+		if (InMaxPathVisits !is null)
+			*cast(int*)&params[4] = *InMaxPathVisits;
 		StaticClass.ProcessEvent(Functions.GoUntilBust, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

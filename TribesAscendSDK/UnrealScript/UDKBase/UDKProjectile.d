@@ -30,18 +30,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vehicle InstigatorBaseVehicle() { mixin(MGPC!(Vehicle, 592)()); }
-			float CustomGravityScaling() { mixin(MGPC!(float, 588)()); }
-			float Buoyancy() { mixin(MGPC!(float, 584)()); }
-			float TerminalVelocity() { mixin(MGPC!(float, 580)()); }
-			float LockWarningInterval() { mixin(MGPC!(float, 576)()); }
-			float LastLockWarningTime() { mixin(MGPC!(float, 572)()); }
-			Vector InitialDir() { mixin(MGPC!(Vector, 560)()); }
-			float HomingTrackingStrength() { mixin(MGPC!(float, 556)()); }
-			float BaseTrackingStrength() { mixin(MGPC!(float, 552)()); }
-			Actor SeekTarget() { mixin(MGPC!(Actor, 548)()); }
-			float AccelRate() { mixin(MGPC!(float, 544)()); }
-			float CheckRadius() { mixin(MGPC!(float, 540)()); }
+			Vehicle InstigatorBaseVehicle() { mixin(MGPC!("Vehicle", 592)()); }
+			float CustomGravityScaling() { mixin(MGPC!("float", 588)()); }
+			float Buoyancy() { mixin(MGPC!("float", 584)()); }
+			float TerminalVelocity() { mixin(MGPC!("float", 580)()); }
+			float LockWarningInterval() { mixin(MGPC!("float", 576)()); }
+			float LastLockWarningTime() { mixin(MGPC!("float", 572)()); }
+			Vector InitialDir() { mixin(MGPC!("Vector", 560)()); }
+			float HomingTrackingStrength() { mixin(MGPC!("float", 556)()); }
+			float BaseTrackingStrength() { mixin(MGPC!("float", 552)()); }
+			Actor SeekTarget() { mixin(MGPC!("Actor", 548)()); }
+			float AccelRate() { mixin(MGPC!("float", 544)()); }
+			float CheckRadius() { mixin(MGPC!("float", 540)()); }
 		}
 		bool bNotBlockedByShield() { mixin(MGBPC!(536, 0x8)()); }
 		bool bNotBlockedByShield(bool val) { mixin(MSBPC!(536, 0x8)()); }

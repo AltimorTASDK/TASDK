@@ -65,9 +65,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.AggregateEventMapping")()); }
 		@property final auto ref
 		{
-			int TargetAggregateID() { mixin(MGPS!(int, 8)()); }
-			int AggregateID() { mixin(MGPS!(int, 4)()); }
-			int EventID() { mixin(MGPS!(int, 0)()); }
+			int TargetAggregateID() { mixin(MGPS!("int", 8)()); }
+			int AggregateID() { mixin(MGPS!("int", 4)()); }
+			int EventID() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct TeamEvents
@@ -80,10 +80,10 @@ public extern(D):
 		{
 			// WARNING: Property 'PawnEvents' has the same name as a defined type!
 			// WARNING: Property 'ProjectileEvents' has the same name as a defined type!
-			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS!(GameStatsAggregator.DamageEvents, 204)()); }
-			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS!(GameStatsAggregator.DamageEvents, 132)()); }
+			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS!("GameStatsAggregator.DamageEvents", 204)()); }
+			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS!("GameStatsAggregator.DamageEvents", 132)()); }
 			// WARNING: Property 'WeaponEvents' has the same name as a defined type!
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct PlayerEvents
@@ -96,10 +96,10 @@ public extern(D):
 		{
 			// WARNING: Property 'PawnEvents' has the same name as a defined type!
 			// WARNING: Property 'ProjectileEvents' has the same name as a defined type!
-			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS!(GameStatsAggregator.DamageEvents, 204)()); }
-			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS!(GameStatsAggregator.DamageEvents, 132)()); }
+			GameStatsAggregator.DamageEvents DamageAsTargetEvents() { mixin(MGPS!("GameStatsAggregator.DamageEvents", 204)()); }
+			GameStatsAggregator.DamageEvents DamageAsPlayerEvents() { mixin(MGPS!("GameStatsAggregator.DamageEvents", 132)()); }
 			// WARNING: Property 'WeaponEvents' has the same name as a defined type!
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct DamageEvents
@@ -110,8 +110,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.DamageEvents")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameStatsAggregator.GameEvents) EventsByDamageClass() { mixin(MGPS!(ScriptArray!(GameStatsAggregator.GameEvents), 60)()); }
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			ScriptArray!(GameStatsAggregator.GameEvents) EventsByDamageClass() { mixin(MGPS!("ScriptArray!(GameStatsAggregator.GameEvents)", 60)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct PawnEvents
@@ -122,8 +122,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.PawnEvents")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameStatsAggregator.GameEvents) EventsByPawnClass() { mixin(MGPS!(ScriptArray!(GameStatsAggregator.GameEvents), 60)()); }
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			ScriptArray!(GameStatsAggregator.GameEvents) EventsByPawnClass() { mixin(MGPS!("ScriptArray!(GameStatsAggregator.GameEvents)", 60)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct ProjectileEvents
@@ -134,8 +134,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.ProjectileEvents")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameStatsAggregator.GameEvents) EventsByProjectileClass() { mixin(MGPS!(ScriptArray!(GameStatsAggregator.GameEvents), 60)()); }
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			ScriptArray!(GameStatsAggregator.GameEvents) EventsByProjectileClass() { mixin(MGPS!("ScriptArray!(GameStatsAggregator.GameEvents)", 60)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct WeaponEvents
@@ -146,8 +146,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.WeaponEvents")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameStatsAggregator.GameEvents) EventsByWeaponClass() { mixin(MGPS!(ScriptArray!(GameStatsAggregator.GameEvents), 60)()); }
-			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!(GameStatsAggregator.GameEvents, 0)()); }
+			ScriptArray!(GameStatsAggregator.GameEvents) EventsByWeaponClass() { mixin(MGPS!("ScriptArray!(GameStatsAggregator.GameEvents)", 60)()); }
+			GameStatsAggregator.GameEvents TotalEvents() { mixin(MGPS!("GameStatsAggregator.GameEvents", 0)()); }
 		}
 	}
 	struct GameEvents
@@ -156,7 +156,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.GameEvents")()); }
-		@property final auto ref UObject.Map_Mirror Events() { mixin(MGPS!(UObject.Map_Mirror, 0)()); }
+		@property final auto ref UObject.Map_Mirror Events() { mixin(MGPS!("UObject.Map_Mirror", 0)()); }
 	}
 	struct GameEvent
 	{
@@ -164,21 +164,21 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameStatsAggregator.GameEvent")()); }
-		@property final auto ref ScriptArray!(float) EventCountByTimePeriod() { mixin(MGPS!(ScriptArray!(float), 0)()); }
+		@property final auto ref ScriptArray!(float) EventCountByTimePeriod() { mixin(MGPS!("ScriptArray!(float)", 0)()); }
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GameStatsAggregator.AggregateEventMapping) AggregatesList() { mixin(MGPC!(ScriptArray!(GameStatsAggregator.AggregateEventMapping), 92)()); }
-		ScriptArray!(GameplayEvents.GameplayEventMetaData) AggregateEvents() { mixin(MGPC!(ScriptArray!(GameplayEvents.GameplayEventMetaData), 164)()); }
-		ScriptArray!(GameStatsAggregator.TeamEvents) AllTeamEvents() { mixin(MGPC!(ScriptArray!(GameStatsAggregator.TeamEvents), 236)()); }
-		ScriptArray!(GameStatsAggregator.PlayerEvents) AllPlayerEvents() { mixin(MGPC!(ScriptArray!(GameStatsAggregator.PlayerEvents), 248)()); }
-		GameStatsAggregator.DamageEvents AllDamageEvents() { mixin(MGPC!(GameStatsAggregator.DamageEvents, 476)()); }
-		GameStatsAggregator.PawnEvents AllPawnEvents() { mixin(MGPC!(GameStatsAggregator.PawnEvents, 404)()); }
-		GameStatsAggregator.ProjectileEvents AllProjectileEvents() { mixin(MGPC!(GameStatsAggregator.ProjectileEvents, 332)()); }
-		GameStatsAggregator.WeaponEvents AllWeaponEvents() { mixin(MGPC!(GameStatsAggregator.WeaponEvents, 260)()); }
-		GameStatsAggregator.GameEvents AllGameEvents() { mixin(MGPC!(GameStatsAggregator.GameEvents, 176)()); }
-		UObject.Map_Mirror AggregateEventsMapping() { mixin(MGPC!(UObject.Map_Mirror, 104)()); }
-		GameStateObject GameState() { mixin(MGPC!(GameStateObject, 88)()); }
+		ScriptArray!(GameStatsAggregator.AggregateEventMapping) AggregatesList() { mixin(MGPC!("ScriptArray!(GameStatsAggregator.AggregateEventMapping)", 92)()); }
+		ScriptArray!(GameplayEvents.GameplayEventMetaData) AggregateEvents() { mixin(MGPC!("ScriptArray!(GameplayEvents.GameplayEventMetaData)", 164)()); }
+		ScriptArray!(GameStatsAggregator.TeamEvents) AllTeamEvents() { mixin(MGPC!("ScriptArray!(GameStatsAggregator.TeamEvents)", 236)()); }
+		ScriptArray!(GameStatsAggregator.PlayerEvents) AllPlayerEvents() { mixin(MGPC!("ScriptArray!(GameStatsAggregator.PlayerEvents)", 248)()); }
+		GameStatsAggregator.DamageEvents AllDamageEvents() { mixin(MGPC!("GameStatsAggregator.DamageEvents", 476)()); }
+		GameStatsAggregator.PawnEvents AllPawnEvents() { mixin(MGPC!("GameStatsAggregator.PawnEvents", 404)()); }
+		GameStatsAggregator.ProjectileEvents AllProjectileEvents() { mixin(MGPC!("GameStatsAggregator.ProjectileEvents", 332)()); }
+		GameStatsAggregator.WeaponEvents AllWeaponEvents() { mixin(MGPC!("GameStatsAggregator.WeaponEvents", 260)()); }
+		GameStatsAggregator.GameEvents AllGameEvents() { mixin(MGPC!("GameStatsAggregator.GameEvents", 176)()); }
+		UObject.Map_Mirror AggregateEventsMapping() { mixin(MGPC!("UObject.Map_Mirror", 104)()); }
+		GameStateObject GameState() { mixin(MGPC!("GameStateObject", 88)()); }
 	}
 final:
 	void PreProcessStream()
@@ -197,8 +197,8 @@ final:
 		*cast(int*)&params[4] = AggregateID;
 		*cast(int*)&params[8] = TargetAggregateID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAggregateMappingIDs, params.ptr, cast(void*)0);
-		*AggregateID = *cast(int*)&params[4];
-		*TargetAggregateID = *cast(int*)&params[8];
+		AggregateID = *cast(int*)&params[4];
+		TargetAggregateID = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 }

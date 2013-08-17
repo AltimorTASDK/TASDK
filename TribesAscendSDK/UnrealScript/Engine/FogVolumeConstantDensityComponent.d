@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.FogVolumeConstantDensityComponent")()); }
 	private static __gshared FogVolumeConstantDensityComponent mDefaultProperties;
 	@property final static FogVolumeConstantDensityComponent DefaultProperties() { mixin(MGDPC!(FogVolumeConstantDensityComponent, "FogVolumeConstantDensityComponent Engine.Default__FogVolumeConstantDensityComponent")()); }
-	@property final auto ref float Density() { mixin(MGPC!(float, 148)()); }
+	@property final auto ref float Density() { mixin(MGPC!("float", 148)()); }
 }

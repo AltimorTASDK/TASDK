@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.PylonSeed")()); }
 	private static __gshared PylonSeed mDefaultProperties;
 	@property final static PylonSeed DefaultProperties() { mixin(MGDPC!(PylonSeed, "PylonSeed Engine.Default__PylonSeed")()); }
-	@property final auto ref UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC!(UObject.Pointer, 476)()); }
+	@property final auto ref UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC!("UObject.Pointer", 476)()); }
 }

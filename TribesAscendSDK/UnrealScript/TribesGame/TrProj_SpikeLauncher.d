@@ -36,9 +36,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleSystem ProjExplosionTemplateAir() { mixin(MGPC!(ParticleSystem, 904)()); }
-			ScriptClass m_ThirdProjectile() { mixin(MGPC!(ScriptClass, 896)()); }
-			ScriptClass m_SecondProjectile() { mixin(MGPC!(ScriptClass, 892)()); }
+			ParticleSystem ProjExplosionTemplateAir() { mixin(MGPC!("ParticleSystem", 904)()); }
+			ScriptClass m_ThirdProjectile() { mixin(MGPC!("ScriptClass", 896)()); }
+			ScriptClass m_SecondProjectile() { mixin(MGPC!("ScriptClass", 892)()); }
 		}
 		bool m_bInAirHit() { mixin(MGBPC!(900, 0x1)()); }
 		bool m_bInAirHit(bool val) { mixin(MSBPC!(900, 0x1)()); }

@@ -18,11 +18,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString IconFontPathName() { mixin(MGPC!(ScriptString, 176)()); }
-		ScriptName MapNameTag() { mixin(MGPC!(ScriptName, 168)()); }
-		ScriptName ServerFlagsTag() { mixin(MGPC!(ScriptName, 160)()); }
-		ScriptName GameModeFriendlyNameTag() { mixin(MGPC!(ScriptName, 152)()); }
-		ScriptName PlayerRatioTag() { mixin(MGPC!(ScriptName, 144)()); }
+		ScriptString IconFontPathName() { mixin(MGPC!("ScriptString", 176)()); }
+		ScriptName MapNameTag() { mixin(MGPC!("ScriptName", 168)()); }
+		ScriptName ServerFlagsTag() { mixin(MGPC!("ScriptName", 160)()); }
+		ScriptName GameModeFriendlyNameTag() { mixin(MGPC!("ScriptName", 152)()); }
+		ScriptName PlayerRatioTag() { mixin(MGPC!("ScriptName", 144)()); }
 	}
 	final bool IsPrivateServer()
 	{

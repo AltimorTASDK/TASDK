@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_GiveInventory DefaultProperties() { mixin(MGDPC!(SeqAct_GiveInventory, "SeqAct_GiveInventory Engine.Default__SeqAct_GiveInventory")()); }
 	@property final
 	{
-		@property final auto ref ScriptArray!(ScriptClass) InventoryList() { mixin(MGPC!(ScriptArray!(ScriptClass), 232)()); }
+		@property final auto ref ScriptArray!(ScriptClass) InventoryList() { mixin(MGPC!("ScriptArray!(ScriptClass)", 232)()); }
 		bool bClearExisting() { mixin(MGBPC!(244, 0x1)()); }
 		bool bClearExisting(bool val) { mixin(MSBPC!(244, 0x1)()); }
 		bool bForceReplace() { mixin(MGBPC!(244, 0x2)()); }

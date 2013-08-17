@@ -75,8 +75,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationPoint.DebugNavCost")()); }
 		@property final auto ref
 		{
-			int Cost() { mixin(MGPS!(int, 12)()); }
-			ScriptString Desc() { mixin(MGPS!(ScriptString, 0)()); }
+			int Cost() { mixin(MGPS!("int", 12)()); }
+			ScriptString Desc() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct NavigationOctreeObject
@@ -87,11 +87,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationPoint.NavigationOctreeObject")()); }
 		@property final auto ref
 		{
-			ubyte OwnerType() { mixin(MGPS!(ubyte, 48)()); }
-			UObject Owner() { mixin(MGPS!(UObject, 44)()); }
-			UObject.Pointer OctreeNode() { mixin(MGPS!(UObject.Pointer, 40)()); }
-			Vector BoxCenter() { mixin(MGPS!(Vector, 28)()); }
-			UObject.Box BoundingBox() { mixin(MGPS!(UObject.Box, 0)()); }
+			ubyte OwnerType() { mixin(MGPS!("ubyte", 48)()); }
+			UObject Owner() { mixin(MGPS!("UObject", 44)()); }
+			UObject.Pointer OctreeNode() { mixin(MGPS!("UObject.Pointer", 40)()); }
+			Vector BoxCenter() { mixin(MGPS!("Vector", 28)()); }
+			UObject.Box BoundingBox() { mixin(MGPS!("UObject.Box", 0)()); }
 		}
 	}
 	struct CheckpointRecord
@@ -112,33 +112,33 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ReachSpec) PathList() { mixin(MGPC!(ScriptArray!(ReachSpec), 532)()); }
-			ScriptArray!(Actor.ActorReference) EditorProscribedPaths() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 544)()); }
-			ScriptArray!(Actor.ActorReference) EditorForcedPaths() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 556)()); }
-			ScriptArray!(Actor.ActorReference) Volumes() { mixin(MGPC!(ScriptArray!(Actor.ActorReference), 568)()); }
-			ScriptArray!(NavigationPoint.DebugNavCost) CostArray() { mixin(MGPC!(ScriptArray!(NavigationPoint.DebugNavCost), 620)()); }
-			float LastAnchoredPawnTime() { mixin(MGPC!(float, 688)()); }
-			Pawn AnchoredPawn() { mixin(MGPC!(Pawn, 684)()); }
-			int NetworkID() { mixin(MGPC!(int, 680)()); }
+			ScriptArray!(ReachSpec) PathList() { mixin(MGPC!("ScriptArray!(ReachSpec)", 532)()); }
+			ScriptArray!(Actor.ActorReference) EditorProscribedPaths() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 544)()); }
+			ScriptArray!(Actor.ActorReference) EditorForcedPaths() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 556)()); }
+			ScriptArray!(Actor.ActorReference) Volumes() { mixin(MGPC!("ScriptArray!(Actor.ActorReference)", 568)()); }
+			ScriptArray!(NavigationPoint.DebugNavCost) CostArray() { mixin(MGPC!("ScriptArray!(NavigationPoint.DebugNavCost)", 620)()); }
+			float LastAnchoredPawnTime() { mixin(MGPC!("float", 688)()); }
+			Pawn AnchoredPawn() { mixin(MGPC!("Pawn", 684)()); }
+			int NetworkID() { mixin(MGPC!("int", 680)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BadSprite'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GoodSprite'!
-			UObject.Guid NavGuid() { mixin(MGPC!(UObject.Guid, 656)()); }
-			UObject.Cylinder MaxPathSize() { mixin(MGPC!(UObject.Cylinder, 648)()); }
+			UObject.Guid NavGuid() { mixin(MGPC!("UObject.Guid", 656)()); }
+			UObject.Cylinder MaxPathSize() { mixin(MGPC!("UObject.Cylinder", 648)()); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			float LastDetourWeight() { mixin(MGPC!(float, 640)()); }
-			float InventoryDist() { mixin(MGPC!(float, 636)()); }
-			DroppedPickup InventoryCache() { mixin(MGPC!(DroppedPickup, 632)()); }
-			int FearCost() { mixin(MGPC!(int, 616)()); }
-			int TransientCost() { mixin(MGPC!(int, 612)()); }
-			int ExtraCost() { mixin(MGPC!(int, 608)()); }
-			int Cost() { mixin(MGPC!(int, 604)()); }
-			NavigationPoint previousPath() { mixin(MGPC!(NavigationPoint, 600)()); }
-			NavigationPoint prevOrdered() { mixin(MGPC!(NavigationPoint, 596)()); }
-			NavigationPoint nextOrdered() { mixin(MGPC!(NavigationPoint, 592)()); }
-			NavigationPoint nextNavigationPoint() { mixin(MGPC!(NavigationPoint, 588)()); }
-			int bestPathWeight() { mixin(MGPC!(int, 584)()); }
-			int visitedWeight() { mixin(MGPC!(int, 580)()); }
-			NavigationPoint.NavigationOctreeObject NavOctreeObject() { mixin(MGPC!(NavigationPoint.NavigationOctreeObject, 480)()); }
+			float LastDetourWeight() { mixin(MGPC!("float", 640)()); }
+			float InventoryDist() { mixin(MGPC!("float", 636)()); }
+			DroppedPickup InventoryCache() { mixin(MGPC!("DroppedPickup", 632)()); }
+			int FearCost() { mixin(MGPC!("int", 616)()); }
+			int TransientCost() { mixin(MGPC!("int", 612)()); }
+			int ExtraCost() { mixin(MGPC!("int", 608)()); }
+			int Cost() { mixin(MGPC!("int", 604)()); }
+			NavigationPoint previousPath() { mixin(MGPC!("NavigationPoint", 600)()); }
+			NavigationPoint prevOrdered() { mixin(MGPC!("NavigationPoint", 596)()); }
+			NavigationPoint nextOrdered() { mixin(MGPC!("NavigationPoint", 592)()); }
+			NavigationPoint nextNavigationPoint() { mixin(MGPC!("NavigationPoint", 588)()); }
+			int bestPathWeight() { mixin(MGPC!("int", 584)()); }
+			int visitedWeight() { mixin(MGPC!("int", 580)()); }
+			NavigationPoint.NavigationOctreeObject NavOctreeObject() { mixin(MGPC!("NavigationPoint.NavigationOctreeObject", 480)()); }
 		}
 		bool bShouldSaveForCheckpoint() { mixin(MGBPC!(476, 0x40000000)()); }
 		bool bShouldSaveForCheckpoint(bool val) { mixin(MSBPC!(476, 0x40000000)()); }
@@ -219,15 +219,16 @@ final:
 		*cast(float*)params.ptr = CollisionRadius;
 		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
-		*CollisionRadius = *cast(float*)params.ptr;
-		*CollisionHeight = *cast(float*)&params[4];
+		CollisionRadius = *cast(float*)params.ptr;
+		CollisionHeight = *cast(float*)&params[4];
 	}
-	ReachSpec GetReachSpecTo(NavigationPoint Nav, ScriptClass SpecClass)
+	ReachSpec GetReachSpecTo(NavigationPoint Nav, ScriptClass* SpecClass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(NavigationPoint*)params.ptr = Nav;
-		*cast(ScriptClass*)&params[4] = SpecClass;
+		if (SpecClass !is null)
+			*cast(ScriptClass*)&params[4] = *SpecClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetReachSpecTo, params.ptr, cast(void*)0);
 		return *cast(ReachSpec*)&params[8];
 	}
@@ -282,29 +283,34 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	static NavigationPoint GetNearestNavToActor(Actor ChkActor, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList, float MinDist)
+	static NavigationPoint GetNearestNavToActor(Actor ChkActor, ScriptClass* RequiredClass = null, ScriptArray!(NavigationPoint)* ExcludeList = null, float* MinDist = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ChkActor;
-		*cast(ScriptClass*)&params[4] = RequiredClass;
-		*cast(ScriptArray!(NavigationPoint)*)&params[8] = ExcludeList;
-		*cast(float*)&params[20] = MinDist;
+		if (RequiredClass !is null)
+			*cast(ScriptClass*)&params[4] = *RequiredClass;
+		if (ExcludeList !is null)
+			*cast(ScriptArray!(NavigationPoint)*)&params[8] = *ExcludeList;
+		if (MinDist !is null)
+			*cast(float*)&params[20] = *MinDist;
 		StaticClass.ProcessEvent(Functions.GetNearestNavToActor, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[24];
 	}
-	static NavigationPoint GetNearestNavToPoint(Actor ChkActor, Vector ChkPoint, ScriptClass RequiredClass, ScriptArray!(NavigationPoint) ExcludeList)
+	static NavigationPoint GetNearestNavToPoint(Actor ChkActor, Vector ChkPoint, ScriptClass* RequiredClass = null, ScriptArray!(NavigationPoint)* ExcludeList = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ChkActor;
 		*cast(Vector*)&params[4] = ChkPoint;
-		*cast(ScriptClass*)&params[16] = RequiredClass;
-		*cast(ScriptArray!(NavigationPoint)*)&params[20] = ExcludeList;
+		if (RequiredClass !is null)
+			*cast(ScriptClass*)&params[16] = *RequiredClass;
+		if (ExcludeList !is null)
+			*cast(ScriptArray!(NavigationPoint)*)&params[20] = *ExcludeList;
 		StaticClass.ProcessEvent(Functions.GetNearestNavToPoint, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[32];
 	}
-	static bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ref ScriptArray!(NavigationPoint) out_NavList, bool bSkipBlocked, int inNetworkID, UObject.Cylinder MinSize)
+	static bool GetAllNavInRadius(Actor ChkActor, Vector ChkPoint, float Radius, ref ScriptArray!(NavigationPoint) out_NavList, bool* bSkipBlocked = null, int* inNetworkID = null, UObject.Cylinder* MinSize = null)
 	{
 		ubyte params[52];
 		params[] = 0;
@@ -312,11 +318,14 @@ final:
 		*cast(Vector*)&params[4] = ChkPoint;
 		*cast(float*)&params[16] = Radius;
 		*cast(ScriptArray!(NavigationPoint)*)&params[20] = out_NavList;
-		*cast(bool*)&params[32] = bSkipBlocked;
-		*cast(int*)&params[36] = inNetworkID;
-		*cast(UObject.Cylinder*)&params[40] = MinSize;
+		if (bSkipBlocked !is null)
+			*cast(bool*)&params[32] = *bSkipBlocked;
+		if (inNetworkID !is null)
+			*cast(int*)&params[36] = *inNetworkID;
+		if (MinSize !is null)
+			*cast(UObject.Cylinder*)&params[40] = *MinSize;
 		StaticClass.ProcessEvent(Functions.GetAllNavInRadius, params.ptr, cast(void*)0);
-		*out_NavList = *cast(ScriptArray!(NavigationPoint)*)&params[20];
+		out_NavList = *cast(ScriptArray!(NavigationPoint)*)&params[20];
 		return *cast(bool*)&params[48];
 	}
 	bool IsOnDifferentNetwork(NavigationPoint Nav)
@@ -351,15 +360,14 @@ final:
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
+		Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const NavigationPoint.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = cast(NavigationPoint.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	ScriptString GetDebugAbbrev()
 	{

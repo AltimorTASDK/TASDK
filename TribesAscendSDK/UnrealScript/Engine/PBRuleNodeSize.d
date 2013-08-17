@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float DecisionSize() { mixin(MGPC!(float, 108)()); }
-			ProcBuildingRuleset.EProcBuildingAxis SizeAxis() { mixin(MGPC!(ProcBuildingRuleset.EProcBuildingAxis, 104)()); }
+			float DecisionSize() { mixin(MGPC!("float", 108)()); }
+			ProcBuildingRuleset.EProcBuildingAxis SizeAxis() { mixin(MGPC!("ProcBuildingRuleset.EProcBuildingAxis", 104)()); }
 		}
 		bool bUseTopLevelScopeSize() { mixin(MGBPC!(112, 0x1)()); }
 		bool bUseTopLevelScopeSize(bool val) { mixin(MSBPC!(112, 0x1)()); }

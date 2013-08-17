@@ -52,14 +52,13 @@ final:
 		params[] = 0;
 		*cast(SpotLightToggleable.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(SpotLightToggleable.CheckpointRecord*)params.ptr;
+		Record = *cast(SpotLightToggleable.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const SpotLightToggleable.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in SpotLightToggleable.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(SpotLightToggleable.CheckpointRecord*)params.ptr = Record;
+		*cast(SpotLightToggleable.CheckpointRecord*)params.ptr = cast(SpotLightToggleable.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(SpotLightToggleable.CheckpointRecord*)params.ptr;
 	}
 }

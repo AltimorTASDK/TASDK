@@ -17,7 +17,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemReplay.ParticleSystemReplayFrame")()); }
-		@property final auto ref ScriptArray!(ParticleSystemReplay.ParticleEmitterReplayFrame) Emitters() { mixin(MGPS!(ScriptArray!(ParticleSystemReplay.ParticleEmitterReplayFrame), 0)()); }
+		@property final auto ref ScriptArray!(ParticleSystemReplay.ParticleEmitterReplayFrame) Emitters() { mixin(MGPS!("ScriptArray!(ParticleSystemReplay.ParticleEmitterReplayFrame)", 0)()); }
 	}
 	struct ParticleEmitterReplayFrame
 	{
@@ -27,14 +27,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleSystemReplay.ParticleEmitterReplayFrame")()); }
 		@property final auto ref
 		{
-			UObject.Pointer FrameState() { mixin(MGPS!(UObject.Pointer, 8)()); }
-			int OriginalEmitterIndex() { mixin(MGPS!(int, 4)()); }
-			int EmitterType() { mixin(MGPS!(int, 0)()); }
+			UObject.Pointer FrameState() { mixin(MGPS!("UObject.Pointer", 8)()); }
+			int OriginalEmitterIndex() { mixin(MGPS!("int", 4)()); }
+			int EmitterType() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ParticleSystemReplay.ParticleSystemReplayFrame) Frames() { mixin(MGPC!(ScriptArray!(ParticleSystemReplay.ParticleSystemReplayFrame), 64)()); }
-		int ClipIDNumber() { mixin(MGPC!(int, 60)()); }
+		ScriptArray!(ParticleSystemReplay.ParticleSystemReplayFrame) Frames() { mixin(MGPC!("ScriptArray!(ParticleSystemReplay.ParticleSystemReplayFrame)", 64)()); }
+		int ClipIDNumber() { mixin(MGPC!("int", 60)()); }
 	}
 }

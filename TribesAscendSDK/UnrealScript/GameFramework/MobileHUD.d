@@ -58,24 +58,24 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SeqEvent_HudRender) KismetRenderEvents() { mixin(MGPC!(ScriptArray!(SeqEvent_HudRender), 1348)()); }
-			float MobileTiltSize() { mixin(MGPC!(float, 1344)()); }
-			float MobileTiltY() { mixin(MGPC!(float, 1340)()); }
-			float MobileTiltX() { mixin(MGPC!(float, 1336)()); }
-			MobileInputZone.TextureUVs SliderUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1272)()); }
-			Texture2D SliderImages() { mixin(MGPC!(Texture2D, 1256)()); }
-			MobileInputZone.TextureUVs TrackballTouchIndicatorUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1240)()); }
-			Texture2D TrackballTouchIndicator() { mixin(MGPC!(Texture2D, 1236)()); }
-			MobileInputZone.TextureUVs TrackballBackgroundUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1220)()); }
-			Texture2D TrackballBackground() { mixin(MGPC!(Texture2D, 1216)()); }
-			UObject.Color ButtonCaptionColor() { mixin(MGPC!(UObject.Color, 1212)()); }
-			Font ButtonFont() { mixin(MGPC!(Font, 1208)()); }
-			MobileInputZone.TextureUVs ButtonUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1176)()); }
-			Texture2D ButtonImages() { mixin(MGPC!(Texture2D, 1168)()); }
-			MobileInputZone.TextureUVs JoystickHatUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1152)()); }
-			Texture2D JoystickHat() { mixin(MGPC!(Texture2D, 1148)()); }
-			MobileInputZone.TextureUVs JoystickBackgroundUVs() { mixin(MGPC!(MobileInputZone.TextureUVs, 1132)()); }
-			Texture2D JoystickBackground() { mixin(MGPC!(Texture2D, 1128)()); }
+			ScriptArray!(SeqEvent_HudRender) KismetRenderEvents() { mixin(MGPC!("ScriptArray!(SeqEvent_HudRender)", 1348)()); }
+			float MobileTiltSize() { mixin(MGPC!("float", 1344)()); }
+			float MobileTiltY() { mixin(MGPC!("float", 1340)()); }
+			float MobileTiltX() { mixin(MGPC!("float", 1336)()); }
+			MobileInputZone.TextureUVs SliderUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1272)()); }
+			Texture2D SliderImages() { mixin(MGPC!("Texture2D", 1256)()); }
+			MobileInputZone.TextureUVs TrackballTouchIndicatorUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1240)()); }
+			Texture2D TrackballTouchIndicator() { mixin(MGPC!("Texture2D", 1236)()); }
+			MobileInputZone.TextureUVs TrackballBackgroundUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1220)()); }
+			Texture2D TrackballBackground() { mixin(MGPC!("Texture2D", 1216)()); }
+			UObject.Color ButtonCaptionColor() { mixin(MGPC!("UObject.Color", 1212)()); }
+			Font ButtonFont() { mixin(MGPC!("Font", 1208)()); }
+			MobileInputZone.TextureUVs ButtonUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1176)()); }
+			Texture2D ButtonImages() { mixin(MGPC!("Texture2D", 1168)()); }
+			MobileInputZone.TextureUVs JoystickHatUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1152)()); }
+			Texture2D JoystickHat() { mixin(MGPC!("Texture2D", 1148)()); }
+			MobileInputZone.TextureUVs JoystickBackgroundUVs() { mixin(MGPC!("MobileInputZone.TextureUVs", 1132)()); }
+			Texture2D JoystickBackground() { mixin(MGPC!("Texture2D", 1128)()); }
 		}
 		bool bShowMotionDebug() { mixin(MGBPC!(1124, 0x80)()); }
 		bool bShowMotionDebug(bool val) { mixin(MSBPC!(1124, 0x80)()); }

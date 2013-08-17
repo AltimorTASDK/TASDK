@@ -19,17 +19,17 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpTrackParticleReplay.ParticleReplayTrackKey")()); }
 		@property final auto ref
 		{
-			int ClipIDNumber() { mixin(MGPS!(int, 8)()); }
-			float Duration() { mixin(MGPS!(float, 4)()); }
-			float Time() { mixin(MGPS!(float, 0)()); }
+			int ClipIDNumber() { mixin(MGPS!("int", 8)()); }
+			float Duration() { mixin(MGPS!("float", 4)()); }
+			float Time() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey) TrackKeys() { mixin(MGPC!(ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey), 128)()); }
-			float FixedTimeStep() { mixin(MGPC!(float, 144)()); }
+			ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey) TrackKeys() { mixin(MGPC!("ScriptArray!(InterpTrackParticleReplay.ParticleReplayTrackKey)", 128)()); }
+			float FixedTimeStep() { mixin(MGPC!("float", 144)()); }
 		}
 		bool bIsCapturingReplay() { mixin(MGBPC!(140, 0x1)()); }
 		bool bIsCapturingReplay(bool val) { mixin(MSBPC!(140, 0x1)()); }

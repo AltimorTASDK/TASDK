@@ -29,8 +29,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) Players() { mixin(MGPC!(ScriptArray!(UObject), 176)()); }
-			int PlayerIdx() { mixin(MGPC!(int, 192)()); }
+			ScriptArray!(UObject) Players() { mixin(MGPC!("ScriptArray!(UObject)", 176)()); }
+			int PlayerIdx() { mixin(MGPC!("int", 192)()); }
 		}
 		bool bAllPlayers() { mixin(MGBPC!(188, 0x1)()); }
 		bool bAllPlayers(bool val) { mixin(MSBPC!(188, 0x1)()); }

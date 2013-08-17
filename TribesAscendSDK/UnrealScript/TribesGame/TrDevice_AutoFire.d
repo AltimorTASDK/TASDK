@@ -105,9 +105,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fPullPinTime() { mixin(MGPC!(float, 2156)()); }
-			TrDevice m_PostFireDevice() { mixin(MGPC!(TrDevice, 2152)()); }
-			float m_fBuildupTime() { mixin(MGPC!(float, 2148)()); }
+			float m_fPullPinTime() { mixin(MGPC!("float", 2156)()); }
+			TrDevice m_PostFireDevice() { mixin(MGPC!("TrDevice", 2152)()); }
+			float m_fBuildupTime() { mixin(MGPC!("float", 2148)()); }
 		}
 		bool m_bPullPinFire() { mixin(MGBPC!(2160, 0x1)()); }
 		bool m_bPullPinFire(bool val) { mixin(MSBPC!(2160, 0x1)()); }
@@ -157,12 +157,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PerformInactiveReload, cast(void*)0, cast(void*)0);
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackLinearColorBase DefaultProperties() { mixin(MGDPC!(InterpTrackLinearColorBase, "InterpTrackLinearColorBase Engine.Default__InterpTrackLinearColorBase")()); }
 	@property final auto ref
 	{
-		float CurveTension() { mixin(MGPC!(float, 144)()); }
-		UObject.InterpCurveLinearColor LinearColorTrack() { mixin(MGPC!(UObject.InterpCurveLinearColor, 128)()); }
+		float CurveTension() { mixin(MGPC!("float", 144)()); }
+		UObject.InterpCurveLinearColor LinearColorTrack() { mixin(MGPC!("UObject.InterpCurveLinearColor", 128)()); }
 	}
 }

@@ -19,14 +19,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxEngine.GCReference")()); }
 		@property final auto ref
 		{
-			int m_statid() { mixin(MGPS!(int, 8)()); }
-			int m_count() { mixin(MGPS!(int, 4)()); }
-			UObject m_object() { mixin(MGPS!(UObject, 0)()); }
+			int m_statid() { mixin(MGPS!("int", 8)()); }
+			int m_count() { mixin(MGPS!("int", 4)()); }
+			UObject m_object() { mixin(MGPS!("UObject", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GFxEngine.GCReference) GCReferences() { mixin(MGPC!(ScriptArray!(GFxEngine.GCReference), 60)()); }
-		int RefCount() { mixin(MGPC!(int, 72)()); }
+		ScriptArray!(GFxEngine.GCReference) GCReferences() { mixin(MGPC!("ScriptArray!(GFxEngine.GCReference)", 60)()); }
+		int RefCount() { mixin(MGPC!("int", 72)()); }
 	}
 }

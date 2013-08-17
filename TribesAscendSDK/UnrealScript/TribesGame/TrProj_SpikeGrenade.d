@@ -49,22 +49,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			SoundCue m_FractalExplosionSound() { mixin(MGPC!(SoundCue, 972)()); }
-			ParticleSystem m_FractalBeamTemplate() { mixin(MGPC!(ParticleSystem, 968)()); }
-			ParticleSystem m_FractalExplosionTemplate() { mixin(MGPC!(ParticleSystem, 964)()); }
-			float m_fFractalDamageRadius() { mixin(MGPC!(float, 960)()); }
-			int m_nFractalDamage() { mixin(MGPC!(int, 956)()); }
-			Vector r_vFlashExplosionLocation() { mixin(MGPC!(Vector, 944)()); }
-			Vector m_vAscentLocation() { mixin(MGPC!(Vector, 932)()); }
-			float m_fZFractalShotDistance() { mixin(MGPC!(float, 928)()); }
-			float m_fFractalShotDistance() { mixin(MGPC!(float, 924)()); }
-			SkelControlSingleBone m_AscendControl() { mixin(MGPC!(SkelControlSingleBone, 920)()); }
-			Vector m_CachedHitNormal() { mixin(MGPC!(Vector, 908)()); }
-			float m_fAscentHeight() { mixin(MGPC!(float, 904)()); }
-			float m_fAscentTime() { mixin(MGPC!(float, 900)()); }
-			float m_fFractalInterval() { mixin(MGPC!(float, 896)()); }
-			float m_fFractalTime() { mixin(MGPC!(float, 892)()); }
-			float m_fRemainingFractalTime() { mixin(MGPC!(float, 888)()); }
+			SoundCue m_FractalExplosionSound() { mixin(MGPC!("SoundCue", 972)()); }
+			ParticleSystem m_FractalBeamTemplate() { mixin(MGPC!("ParticleSystem", 968)()); }
+			ParticleSystem m_FractalExplosionTemplate() { mixin(MGPC!("ParticleSystem", 964)()); }
+			float m_fFractalDamageRadius() { mixin(MGPC!("float", 960)()); }
+			int m_nFractalDamage() { mixin(MGPC!("int", 956)()); }
+			Vector r_vFlashExplosionLocation() { mixin(MGPC!("Vector", 944)()); }
+			Vector m_vAscentLocation() { mixin(MGPC!("Vector", 932)()); }
+			float m_fZFractalShotDistance() { mixin(MGPC!("float", 928)()); }
+			float m_fFractalShotDistance() { mixin(MGPC!("float", 924)()); }
+			SkelControlSingleBone m_AscendControl() { mixin(MGPC!("SkelControlSingleBone", 920)()); }
+			Vector m_CachedHitNormal() { mixin(MGPC!("Vector", 908)()); }
+			float m_fAscentHeight() { mixin(MGPC!("float", 904)()); }
+			float m_fAscentTime() { mixin(MGPC!("float", 900)()); }
+			float m_fFractalInterval() { mixin(MGPC!("float", 896)()); }
+			float m_fFractalTime() { mixin(MGPC!("float", 892)()); }
+			float m_fRemainingFractalTime() { mixin(MGPC!("float", 888)()); }
 		}
 		bool m_bStartedFractal() { mixin(MGBPC!(884, 0x1)()); }
 		bool m_bStartedFractal(bool val) { mixin(MSBPC!(884, 0x1)()); }
@@ -88,12 +88,13 @@ void* SkelComp)
 void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostInitAnimTree, params.ptr, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void Explode(Vector HitLocation, Vector HitNormal)

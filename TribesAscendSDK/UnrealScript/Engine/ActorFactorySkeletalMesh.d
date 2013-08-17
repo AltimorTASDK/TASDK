@@ -15,7 +15,7 @@ public extern(D):
 	@property final static ActorFactorySkeletalMesh DefaultProperties() { mixin(MGDPC!(ActorFactorySkeletalMesh, "ActorFactorySkeletalMesh Engine.Default__ActorFactorySkeletalMesh")()); }
 	@property final auto ref
 	{
-		ScriptName AnimSequenceName() { mixin(MGPC!(ScriptName, 100)()); }
+		ScriptName AnimSequenceName() { mixin(MGPC!("ScriptName", 100)()); }
 		// WARNING: Property 'AnimSet' has the same name as a defined type!
 		// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
 	}

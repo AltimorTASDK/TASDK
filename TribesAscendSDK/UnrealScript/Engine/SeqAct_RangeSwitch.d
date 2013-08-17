@@ -19,9 +19,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqAct_RangeSwitch.SwitchRange")()); }
 		@property final auto ref
 		{
-			int Max() { mixin(MGPS!(int, 4)()); }
-			int Min() { mixin(MGPS!(int, 0)()); }
+			int Max() { mixin(MGPS!("int", 4)()); }
+			int Min() { mixin(MGPS!("int", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqAct_RangeSwitch.SwitchRange) Ranges() { mixin(MGPC!(ScriptArray!(SeqAct_RangeSwitch.SwitchRange), 232)()); }
+	@property final auto ref ScriptArray!(SeqAct_RangeSwitch.SwitchRange) Ranges() { mixin(MGPC!("ScriptArray!(SeqAct_RangeSwitch.SwitchRange)", 232)()); }
 }

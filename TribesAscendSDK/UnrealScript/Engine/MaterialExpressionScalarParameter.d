@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionScalarParameter")()); }
 	private static __gshared MaterialExpressionScalarParameter mDefaultProperties;
 	@property final static MaterialExpressionScalarParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionScalarParameter, "MaterialExpressionScalarParameter Engine.Default__MaterialExpressionScalarParameter")()); }
-	@property final auto ref float DefaultValue() { mixin(MGPC!(float, 132)()); }
+	@property final auto ref float DefaultValue() { mixin(MGPC!("float", 132)()); }
 }

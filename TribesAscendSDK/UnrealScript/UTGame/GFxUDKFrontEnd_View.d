@@ -51,19 +51,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName ViewName() { mixin(MGPC!(ScriptName, 128)()); }
-		GFxUDKFrontEnd MenuManager() { mixin(MGPC!(GFxUDKFrontEnd, 124)()); }
+		ScriptName ViewName() { mixin(MGPC!("ScriptName", 128)()); }
+		GFxUDKFrontEnd MenuManager() { mixin(MGPC!("GFxUDKFrontEnd", 124)()); }
 	}
 final:
 	void OnViewLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void OnViewActivated()

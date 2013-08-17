@@ -28,25 +28,28 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Font BindTextFont() { mixin(MGPC!(Font, 1424)()); }
-		Font ConsoleIconFont() { mixin(MGPC!(Font, 1420)()); }
-		Canvas.FontRenderInfo TextRenderInfo() { mixin(MGPC!(Canvas.FontRenderInfo, 1380)()); }
-		float PulseMultiplier() { mixin(MGPC!(float, 1376)()); }
-		float PulseSplit() { mixin(MGPC!(float, 1372)()); }
-		float PulseDuration() { mixin(MGPC!(float, 1368)()); }
-		Font GlowFonts() { mixin(MGPC!(Font, 1360)()); }
+		Font BindTextFont() { mixin(MGPC!("Font", 1424)()); }
+		Font ConsoleIconFont() { mixin(MGPC!("Font", 1420)()); }
+		Canvas.FontRenderInfo TextRenderInfo() { mixin(MGPC!("Canvas.FontRenderInfo", 1380)()); }
+		float PulseMultiplier() { mixin(MGPC!("float", 1376)()); }
+		float PulseSplit() { mixin(MGPC!("float", 1372)()); }
+		float PulseDuration() { mixin(MGPC!("float", 1368)()); }
+		Font GlowFonts() { mixin(MGPC!("Font", 1360)()); }
 	}
 final:
-	void DrawGlowText(ScriptString Text, float X, float Y, float MaxHeightInPixels, float PulseTime, bool bRightJustified)
+	void DrawGlowText(ScriptString Text, float X, float Y, float* MaxHeightInPixels = null, float* PulseTime = null, bool* bRightJustified = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		*cast(float*)&params[12] = X;
 		*cast(float*)&params[16] = Y;
-		*cast(float*)&params[20] = MaxHeightInPixels;
-		*cast(float*)&params[24] = PulseTime;
-		*cast(bool*)&params[28] = bRightJustified;
+		if (MaxHeightInPixels !is null)
+			*cast(float*)&params[20] = *MaxHeightInPixels;
+		if (PulseTime !is null)
+			*cast(float*)&params[24] = *PulseTime;
+		if (bRightJustified !is null)
+			*cast(bool*)&params[28] = *bRightJustified;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawGlowText, params.ptr, cast(void*)0);
 	}
 	static void TranslateBindToFont(ScriptString InBindStr, ref Font DrawFont, ref ScriptString OutBindStr)
@@ -57,7 +60,7 @@ final:
 		*cast(Font*)&params[12] = DrawFont;
 		*cast(ScriptString*)&params[16] = OutBindStr;
 		StaticClass.ProcessEvent(Functions.TranslateBindToFont, params.ptr, cast(void*)0);
-		*DrawFont = *cast(Font*)&params[12];
-		*OutBindStr = *cast(ScriptString*)&params[16];
+		DrawFont = *cast(Font*)&params[12];
+		OutBindStr = *cast(ScriptString*)&params[16];
 	}
 }

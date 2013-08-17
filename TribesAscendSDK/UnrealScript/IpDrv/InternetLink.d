@@ -68,21 +68,21 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.InternetLink.IpAddr")()); }
 		@property final auto ref
 		{
-			int Port() { mixin(MGPS!(int, 4)()); }
-			int Addr() { mixin(MGPS!(int, 0)()); }
+			int Port() { mixin(MGPS!("int", 4)()); }
+			int Addr() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		int DataPending() { mixin(MGPC!(int, 496)()); }
-		UObject.Pointer PrivateResolveInfo() { mixin(MGPC!(UObject.Pointer, 492)()); }
-		UObject.Pointer RemoteSocket() { mixin(MGPC!(UObject.Pointer, 488)()); }
-		int Port() { mixin(MGPC!(int, 484)()); }
-		UObject.Pointer Socket() { mixin(MGPC!(UObject.Pointer, 480)()); }
-		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC!(InternetLink.EReceiveMode, 479)()); }
-		InternetLink.ELineMode OutLineMode() { mixin(MGPC!(InternetLink.ELineMode, 478)()); }
-		InternetLink.ELinkMode LinkMode() { mixin(MGPC!(InternetLink.ELinkMode, 476)()); }
-		InternetLink.ELineMode InLineMode() { mixin(MGPC!(InternetLink.ELineMode, 477)()); }
+		int DataPending() { mixin(MGPC!("int", 496)()); }
+		UObject.Pointer PrivateResolveInfo() { mixin(MGPC!("UObject.Pointer", 492)()); }
+		UObject.Pointer RemoteSocket() { mixin(MGPC!("UObject.Pointer", 488)()); }
+		int Port() { mixin(MGPC!("int", 484)()); }
+		UObject.Pointer Socket() { mixin(MGPC!("UObject.Pointer", 480)()); }
+		InternetLink.EReceiveMode ReceiveMode() { mixin(MGPC!("InternetLink.EReceiveMode", 479)()); }
+		InternetLink.ELineMode OutLineMode() { mixin(MGPC!("InternetLink.ELineMode", 478)()); }
+		InternetLink.ELinkMode LinkMode() { mixin(MGPC!("InternetLink.ELinkMode", 476)()); }
+		InternetLink.ELineMode InLineMode() { mixin(MGPC!("InternetLink.ELineMode", 477)()); }
 	}
 final:
 	bool IsDataPending()
@@ -102,10 +102,10 @@ final:
 		*cast(ScriptString*)&params[28] = LevelName;
 		*cast(ScriptString*)&params[40] = EntryName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ParseURL, params.ptr, cast(void*)0);
-		*Addr = *cast(ScriptString*)&params[12];
-		*PortNum = *cast(int*)&params[24];
-		*LevelName = *cast(ScriptString*)&params[28];
-		*EntryName = *cast(ScriptString*)&params[40];
+		Addr = *cast(ScriptString*)&params[12];
+		PortNum = *cast(int*)&params[24];
+		LevelName = *cast(ScriptString*)&params[28];
+		EntryName = *cast(ScriptString*)&params[40];
 		return *cast(bool*)&params[52];
 	}
 	void Resolve(ScriptString Domain)
@@ -137,7 +137,7 @@ final:
 		*cast(ScriptString*)params.ptr = Str;
 		*cast(InternetLink.IpAddr*)&params[12] = Addr;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StringToIpAddr, params.ptr, cast(void*)0);
-		*Addr = *cast(InternetLink.IpAddr*)&params[12];
+		Addr = *cast(InternetLink.IpAddr*)&params[12];
 		return *cast(bool*)&params[20];
 	}
 	void GetLocalIP(ref InternetLink.IpAddr Arg)
@@ -146,7 +146,7 @@ final:
 		params[] = 0;
 		*cast(InternetLink.IpAddr*)params.ptr = Arg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocalIP, params.ptr, cast(void*)0);
-		*Arg = *cast(InternetLink.IpAddr*)params.ptr;
+		Arg = *cast(InternetLink.IpAddr*)params.ptr;
 	}
 	void Resolved(InternetLink.IpAddr Addr)
 	{

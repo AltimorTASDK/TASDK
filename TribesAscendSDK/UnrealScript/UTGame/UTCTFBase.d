@@ -47,20 +47,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundNodeWave) NearLocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1076)()); }
-		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1088)()); }
-		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1100)()); }
-		ScriptClass CTFAnnouncerMessagesClass() { mixin(MGPC!(ScriptClass, 1072)()); }
+		ScriptArray!(SoundNodeWave) NearLocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1076)()); }
+		ScriptArray!(SoundNodeWave) MidfieldHighSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1088)()); }
+		ScriptArray!(SoundNodeWave) MidfieldLowSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1100)()); }
+		ScriptClass CTFAnnouncerMessagesClass() { mixin(MGPC!("ScriptClass", 1072)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagBaseMesh'!
-		MaterialInstanceConstant MIC_FlagBaseColor() { mixin(MGPC!(MaterialInstanceConstant, 1064)()); }
-		MaterialInstanceConstant FlagBaseMaterial() { mixin(MGPC!(MaterialInstanceConstant, 1060)()); }
+		MaterialInstanceConstant MIC_FlagBaseColor() { mixin(MGPC!("MaterialInstanceConstant", 1064)()); }
+		MaterialInstanceConstant FlagBaseMaterial() { mixin(MGPC!("MaterialInstanceConstant", 1060)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagEmptyParticles'!
-		float BaseExitTime() { mixin(MGPC!(float, 1052)()); }
-		float NearBaseRadius() { mixin(MGPC!(float, 1048)()); }
-		float MidFieldLowZOffset() { mixin(MGPC!(float, 1044)()); }
-		float MidFieldHighZOffset() { mixin(MGPC!(float, 1040)()); }
-		ScriptClass FlagType() { mixin(MGPC!(ScriptClass, 1036)()); }
-		UTCarriedObject myFlag() { mixin(MGPC!(UTCarriedObject, 1032)()); }
+		float BaseExitTime() { mixin(MGPC!("float", 1052)()); }
+		float NearBaseRadius() { mixin(MGPC!("float", 1048)()); }
+		float MidFieldLowZOffset() { mixin(MGPC!("float", 1044)()); }
+		float MidFieldHighZOffset() { mixin(MGPC!("float", 1040)()); }
+		ScriptClass FlagType() { mixin(MGPC!("ScriptClass", 1036)()); }
+		UTCarriedObject myFlag() { mixin(MGPC!("UTCarriedObject", 1032)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'TakenSound'!
 	}
 final:

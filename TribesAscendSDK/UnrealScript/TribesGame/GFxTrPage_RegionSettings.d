@@ -33,9 +33,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CurrFilterIndex() { mixin(MGPC!(int, 364)()); }
-			int CurrFilterSite() { mixin(MGPC!(int, 360)()); }
-			int CurrRegion() { mixin(MGPC!(int, 356)()); }
+			int CurrFilterIndex() { mixin(MGPC!("int", 364)()); }
+			int CurrFilterSite() { mixin(MGPC!("int", 360)()); }
+			int CurrRegion() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bFilter() { mixin(MGBPC!(368, 0x1)()); }
 		bool bFilter(bool val) { mixin(MSBPC!(368, 0x1)()); }

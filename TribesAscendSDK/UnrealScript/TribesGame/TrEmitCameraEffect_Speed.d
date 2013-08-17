@@ -31,9 +31,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fFadeOutWeatherSoundTime() { mixin(MGPC!(float, 512)()); }
-			float m_fFadeInWeatherSoundTime() { mixin(MGPC!(float, 508)()); }
-			SoundCue m_WeatherSound() { mixin(MGPC!(SoundCue, 504)()); }
+			float m_fFadeOutWeatherSoundTime() { mixin(MGPC!("float", 512)()); }
+			float m_fFadeInWeatherSoundTime() { mixin(MGPC!("float", 508)()); }
+			SoundCue m_WeatherSound() { mixin(MGPC!("SoundCue", 504)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_WeatherAC'!
 		}
 		bool m_bUpdateLocationBasedOnVelocity() { mixin(MGBPC!(496, 0x2)()); }
@@ -42,16 +42,14 @@ public extern(D):
 		bool m_bUpdateRotation(bool val) { mixin(MSBPC!(496, 0x1)()); }
 	}
 final:
-	void UpdateLocation(ref const Vector CamLoc, ref const Rotator CamRot, float CamFOVDeg)
+	void UpdateLocation(ref in Vector CamLoc, ref in Rotator CamRot, float CamFOVDeg)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = CamLoc;
-		*cast(Rotator*)&params[12] = CamRot;
+		*cast(Vector*)params.ptr = cast(Vector)CamLoc;
+		*cast(Rotator*)&params[12] = cast(Rotator)CamRot;
 		*cast(float*)&params[24] = CamFOVDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocation, params.ptr, cast(void*)0);
-		*CamLoc = *cast(Vector*)params.ptr;
-		*CamRot = *cast(Rotator*)&params[12];
 	}
 	void Activate()
 	{

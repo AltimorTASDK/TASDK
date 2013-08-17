@@ -30,9 +30,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTCTFFlag FriendlyFlag() { mixin(MGPC!(UTCTFFlag, 668)()); }
-		UTCTFFlag EnemyFlag() { mixin(MGPC!(UTCTFFlag, 672)()); }
-		float LastGotFlag() { mixin(MGPC!(float, 676)()); }
+		UTCTFFlag FriendlyFlag() { mixin(MGPC!("UTCTFFlag", 668)()); }
+		UTCTFFlag EnemyFlag() { mixin(MGPC!("UTCTFFlag", 672)()); }
+		float LastGotFlag() { mixin(MGPC!("float", 676)()); }
 	}
 final:
 	UTSquadAI AddSquadWithLeader(Controller C, UTGameObjective O)

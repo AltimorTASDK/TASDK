@@ -29,20 +29,21 @@ public extern(D):
 	{
 		auto ref
 		{
-			float SoftStartPenalty() { mixin(MGPC!(float, 76)()); }
-			float MaxTraversalDist() { mixin(MGPC!(float, 68)()); }
+			float SoftStartPenalty() { mixin(MGPC!("float", 76)()); }
+			float MaxTraversalDist() { mixin(MGPC!("float", 68)()); }
 		}
 		bool bSoft() { mixin(MGBPC!(72, 0x1)()); }
 		bool bSoft(bool val) { mixin(MSBPC!(72, 0x1)()); }
 	}
 final:
-	static bool DontExceedMaxDist(Pawn P, float InMaxTraversalDist, bool bInSoft)
+	static bool DontExceedMaxDist(Pawn P, float InMaxTraversalDist, bool* bInSoft = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(float*)&params[4] = InMaxTraversalDist;
-		*cast(bool*)&params[8] = bInSoft;
+		if (bInSoft !is null)
+			*cast(bool*)&params[8] = *bInSoft;
 		StaticClass.ProcessEvent(Functions.DontExceedMaxDist, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}

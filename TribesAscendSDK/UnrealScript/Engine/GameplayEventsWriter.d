@@ -138,7 +138,7 @@ public extern(D):
 			GAMEEVENT_MAX_EVENTID = 0x0000FFFF,
 		}
 	}
-	@property final auto ref GameInfo Game() { mixin(MGPC!(GameInfo, 336)()); }
+	@property final auto ref GameInfo Game() { mixin(MGPC!("GameInfo", 336)()); }
 final:
 	int ResolvePlayerIndex(Controller pPlayer)
 	{
@@ -148,18 +148,20 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResolvePlayerIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	void StartLogging(float HeartbeatDelta)
+	void StartLogging(float* HeartbeatDelta = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = HeartbeatDelta;
+		if (HeartbeatDelta !is null)
+			*cast(float*)params.ptr = *HeartbeatDelta;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartLogging, params.ptr, cast(void*)0);
 	}
-	void ResetLogging(float HeartbeatDelta)
+	void ResetLogging(float* HeartbeatDelta = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = HeartbeatDelta;
+		if (HeartbeatDelta !is null)
+			*cast(float*)params.ptr = *HeartbeatDelta;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetLogging, params.ptr, cast(void*)0);
 	}
 	void EndLogging()
@@ -234,15 +236,14 @@ final:
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogGameFloatEvent, params.ptr, cast(void*)0);
 	}
-	void LogGamePositionEvent(int EventID, ref const Vector Position, float Value)
+	void LogGamePositionEvent(int EventID, ref in Vector Position, float Value)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = EventID;
-		*cast(Vector*)&params[4] = Position;
+		*cast(Vector*)&params[4] = cast(Vector)Position;
 		*cast(float*)&params[16] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogGamePositionEvent, params.ptr, cast(void*)0);
-		*Position = *cast(Vector*)&params[4];
 	}
 	void LogTeamIntEvent(int EventID, TeamInfo Team, int Value)
 	{

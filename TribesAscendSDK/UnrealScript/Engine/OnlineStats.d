@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction GetViewName() { mixin(MGF!("mGetViewName", "Function Engine.OnlineStats.GetViewName")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { mixin(MGPC!(ScriptArray!(Settings.StringIdToStringMapping), 60)()); }
+	@property final auto ref ScriptArray!(Settings.StringIdToStringMapping) ViewIdMappings() { mixin(MGPC!("ScriptArray!(Settings.StringIdToStringMapping)", 60)()); }
 final:
 	bool GetViewId(ScriptName ViewName, ref int ViewId)
 	{
@@ -34,7 +34,7 @@ final:
 		*cast(ScriptName*)params.ptr = ViewName;
 		*cast(int*)&params[8] = ViewId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewId, params.ptr, cast(void*)0);
-		*ViewId = *cast(int*)&params[8];
+		ViewId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	ScriptName GetViewName(int ViewId)

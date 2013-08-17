@@ -71,16 +71,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass m_CurrentVGSNode() { mixin(MGPC!(ScriptClass, 436)()); }
-			TrVGSCommandList m_VGSCommandList() { mixin(MGPC!(TrVGSCommandList, 440)()); }
-			ScriptArray!(ScriptName) m_VGSPassThroughKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 400)()); }
-			ScriptArray!(ScriptName) m_VGSNumKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 412)()); }
-			ScriptArray!(ScriptName) m_VGSPadKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 424)()); }
-			ScriptString m_CurrentVGSKeySequence() { mixin(MGPC!(ScriptString, 444)()); }
-			TrHUD m_HUD() { mixin(MGPC!(TrHUD, 392)()); }
-			float m_RightJoystickLastValue() { mixin(MGPC!(float, 388)()); }
-			float m_LeftJoystickLastValue() { mixin(MGPC!(float, 384)()); }
-			int m_VGSClassId() { mixin(MGPC!(int, 380)()); }
+			ScriptClass m_CurrentVGSNode() { mixin(MGPC!("ScriptClass", 436)()); }
+			TrVGSCommandList m_VGSCommandList() { mixin(MGPC!("TrVGSCommandList", 440)()); }
+			ScriptArray!(ScriptName) m_VGSPassThroughKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 400)()); }
+			ScriptArray!(ScriptName) m_VGSNumKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 412)()); }
+			ScriptArray!(ScriptName) m_VGSPadKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 424)()); }
+			ScriptString m_CurrentVGSKeySequence() { mixin(MGPC!("ScriptString", 444)()); }
+			TrHUD m_HUD() { mixin(MGPC!("TrHUD", 392)()); }
+			float m_RightJoystickLastValue() { mixin(MGPC!("float", 388)()); }
+			float m_LeftJoystickLastValue() { mixin(MGPC!("float", 384)()); }
+			int m_VGSClassId() { mixin(MGPC!("int", 380)()); }
 		}
 		bool m_bInVGSLoadoutMode() { mixin(MGBPC!(396, 0x4)()); }
 		bool m_bInVGSLoadoutMode(bool val) { mixin(MSBPC!(396, 0x4)()); }

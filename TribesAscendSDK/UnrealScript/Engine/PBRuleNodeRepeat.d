@@ -14,7 +14,7 @@ public extern(D):
 	@property final static PBRuleNodeRepeat DefaultProperties() { mixin(MGDPC!(PBRuleNodeRepeat, "PBRuleNodeRepeat Engine.Default__PBRuleNodeRepeat")()); }
 	@property final auto ref
 	{
-		float RepeatMaxSize() { mixin(MGPC!(float, 108)()); }
-		ProcBuildingRuleset.EProcBuildingAxis RepeatAxis() { mixin(MGPC!(ProcBuildingRuleset.EProcBuildingAxis, 104)()); }
+		float RepeatMaxSize() { mixin(MGPC!("float", 108)()); }
+		ProcBuildingRuleset.EProcBuildingAxis RepeatAxis() { mixin(MGPC!("ProcBuildingRuleset.EProcBuildingAxis", 104)()); }
 	}
 }

@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float InterpTime() { mixin(MGPC!(float, 532)()); }
-		Vector ColorScale() { mixin(MGPC!(Vector, 520)()); }
+		float InterpTime() { mixin(MGPC!("float", 532)()); }
+		Vector ColorScale() { mixin(MGPC!("Vector", 520)()); }
 	}
 final:
 	void Touch(Actor Other, 

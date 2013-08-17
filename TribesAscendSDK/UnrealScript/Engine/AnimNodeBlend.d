@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float BlendTimeToGo() { mixin(MGPC!(float, 252)()); }
-			float Child2WeightTarget() { mixin(MGPC!(float, 248)()); }
-			float Child2Weight() { mixin(MGPC!(float, 244)()); }
+			float BlendTimeToGo() { mixin(MGPC!("float", 252)()); }
+			float Child2WeightTarget() { mixin(MGPC!("float", 248)()); }
+			float Child2Weight() { mixin(MGPC!("float", 244)()); }
 		}
 		bool bSkipBlendWhenNotRendered() { mixin(MGBPC!(256, 0x1)()); }
 		bool bSkipBlendWhenNotRendered(bool val) { mixin(MSBPC!(256, 0x1)()); }

@@ -67,16 +67,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(AnimSet) m_LightMed3pPawnAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 736)()); }
-			ScriptArray!(AnimSet) m_Heavy3pPawnAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 748)()); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!(ScriptArray!(TrObject.EffectFormOverwrite), 760)()); }
+			ScriptArray!(AnimSet) m_LightMed3pPawnAnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 736)()); }
+			ScriptArray!(AnimSet) m_Heavy3pPawnAnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 748)()); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!("ScriptArray!(TrObject.EffectFormOverwrite)", 760)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentWeaponLoop'!
-			ScriptName m_nmRidingAsPassengerFireAnimName() { mixin(MGPC!(ScriptName, 772)()); }
-			float m_fShowTracerDistance() { mixin(MGPC!(float, 732)()); }
-			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!(TrObject.EWeaponTracerType, 728)()); }
-			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!(ParticleSystem, 724)()); }
-			ScriptName m_nmHeavyAimProfileName() { mixin(MGPC!(ScriptName, 712)()); }
-			ScriptName m_nmLightMedAimProfileName() { mixin(MGPC!(ScriptName, 704)()); }
+			ScriptName m_nmRidingAsPassengerFireAnimName() { mixin(MGPC!("ScriptName", 772)()); }
+			float m_fShowTracerDistance() { mixin(MGPC!("float", 732)()); }
+			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!("TrObject.EWeaponTracerType", 728)()); }
+			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!("ParticleSystem", 724)()); }
+			ScriptName m_nmHeavyAimProfileName() { mixin(MGPC!("ScriptName", 712)()); }
+			ScriptName m_nmLightMedAimProfileName() { mixin(MGPC!("ScriptName", 704)()); }
 		}
 		bool m_bScaleFireAnimRate() { mixin(MGBPC!(720, 0x4)()); }
 		bool m_bScaleFireAnimRate(bool val) { mixin(MSBPC!(720, 0x4)()); }

@@ -37,10 +37,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UDKVehicle) TouchingVehicles() { mixin(MGPC!(ScriptArray!(UDKVehicle), 608)()); }
-			Vector ArrowDirection() { mixin(MGPC!(Vector, 596)()); }
+			ScriptArray!(UDKVehicle) TouchingVehicles() { mixin(MGPC!("ScriptArray!(UDKVehicle)", 608)()); }
+			Vector ArrowDirection() { mixin(MGPC!("Vector", 596)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Arrow'!
-			ScriptClass TypeToForce() { mixin(MGPC!(ScriptClass, 584)()); }
+			ScriptClass TypeToForce() { mixin(MGPC!("ScriptClass", 584)()); }
 		}
 		bool bBlockSpectators() { mixin(MGBPC!(588, 0x8)()); }
 		bool bBlockSpectators(bool val) { mixin(MSBPC!(588, 0x8)()); }

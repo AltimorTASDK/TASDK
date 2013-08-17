@@ -22,15 +22,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TangentTessellationScalar() { mixin(MGPC!(float, 108)()); }
-			float DistanceTessellationStepSize() { mixin(MGPC!(float, 104)()); }
-			float TilingDistance() { mixin(MGPC!(float, 100)()); }
-			float TangentSpawningScalar() { mixin(MGPC!(float, 96)()); }
-			ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption RenderAxis() { mixin(MGPC!(ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption, 92)()); }
-			int MaxTessellationBetweenParticles() { mixin(MGPC!(int, 72)()); }
-			int MaxParticleInTrailCount() { mixin(MGPC!(int, 84)()); }
-			int MaxTrailCount() { mixin(MGPC!(int, 80)()); }
-			int SheetsPerTrail() { mixin(MGPC!(int, 76)()); }
+			float TangentTessellationScalar() { mixin(MGPC!("float", 108)()); }
+			float DistanceTessellationStepSize() { mixin(MGPC!("float", 104)()); }
+			float TilingDistance() { mixin(MGPC!("float", 100)()); }
+			float TangentSpawningScalar() { mixin(MGPC!("float", 96)()); }
+			ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption RenderAxis() { mixin(MGPC!("ParticleModuleTypeDataRibbon.ETrailsRenderAxisOption", 92)()); }
+			int MaxTessellationBetweenParticles() { mixin(MGPC!("int", 72)()); }
+			int MaxParticleInTrailCount() { mixin(MGPC!("int", 84)()); }
+			int MaxTrailCount() { mixin(MGPC!("int", 80)()); }
+			int SheetsPerTrail() { mixin(MGPC!("int", 76)()); }
 		}
 		bool bRenderTessellation() { mixin(MGBPC!(88, 0x100)()); }
 		bool bRenderTessellation(bool val) { mixin(MSBPC!(88, 0x100)()); }

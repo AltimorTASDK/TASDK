@@ -34,7 +34,7 @@ public extern(D):
 			ScriptFunction ShowModel() { mixin(MGF!("mShowModel", "Function TribesGame.GFxTrPage_NotificationSettings.ShowModel")()); }
 		}
 	}
-	@property final auto ref ScriptString ChatNotifySubtext() { mixin(MGPC!(ScriptString, 356)()); }
+	@property final auto ref ScriptString ChatNotifySubtext() { mixin(MGPC!("ScriptString", 356)()); }
 final:
 	void Initialize()
 	{

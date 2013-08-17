@@ -45,13 +45,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 396)()); }
-		ScriptString MutalFriendLabel() { mixin(MGPC!(ScriptString, 384)()); }
-		ScriptString SelectPromptLabel() { mixin(MGPC!(ScriptString, 372)()); }
-		int RemovingIndex() { mixin(MGPC!(int, 368)()); }
-		int PrevPlayerId() { mixin(MGPC!(int, 364)()); }
-		int FocusedIndex() { mixin(MGPC!(int, 360)()); }
-		int Criteria() { mixin(MGPC!(int, 356)()); }
+		ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 396)()); }
+		ScriptString MutalFriendLabel() { mixin(MGPC!("ScriptString", 384)()); }
+		ScriptString SelectPromptLabel() { mixin(MGPC!("ScriptString", 372)()); }
+		int RemovingIndex() { mixin(MGPC!("int", 368)()); }
+		int PrevPlayerId() { mixin(MGPC!("int", 364)()); }
+		int FocusedIndex() { mixin(MGPC!("int", 360)()); }
+		int Criteria() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

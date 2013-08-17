@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mFindPostProcessEffect;
 		public @property static final ScriptFunction FindPostProcessEffect() { mixin(MGF!("mFindPostProcessEffect", "Function Engine.PostProcessChain.FindPostProcessEffect")()); }
 	}
-	@property final auto ref ScriptArray!(PostProcessEffect) Effects() { mixin(MGPC!(ScriptArray!(PostProcessEffect), 60)()); }
+	@property final auto ref ScriptArray!(PostProcessEffect) Effects() { mixin(MGPC!("ScriptArray!(PostProcessEffect)", 60)()); }
 	final PostProcessEffect FindPostProcessEffect(ScriptName EffectName)
 	{
 		ubyte params[12];

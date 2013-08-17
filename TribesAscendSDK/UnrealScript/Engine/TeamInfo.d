@@ -36,11 +36,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int TeamIndex() { mixin(MGPC!(int, 496)()); }
-		float Score() { mixin(MGPC!(float, 492)()); }
-		UObject.Color TeamColor() { mixin(MGPC!(UObject.Color, 500)()); }
-		int Size() { mixin(MGPC!(int, 488)()); }
-		ScriptString TeamName() { mixin(MGPC!(ScriptString, 476)()); }
+		int TeamIndex() { mixin(MGPC!("int", 496)()); }
+		float Score() { mixin(MGPC!("float", 492)()); }
+		UObject.Color TeamColor() { mixin(MGPC!("UObject.Color", 500)()); }
+		int Size() { mixin(MGPC!("int", 488)()); }
+		ScriptString TeamName() { mixin(MGPC!("ScriptString", 476)()); }
 	}
 final:
 	ScriptString GetHumanReadableName()

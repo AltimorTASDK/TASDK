@@ -53,10 +53,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(LevelStreaming) StreamingLevels() { mixin(MGPC!(ScriptArray!(LevelStreaming), 520)()); }
-			float TestVolumeDistance() { mixin(MGPC!(float, 540)()); }
-			LevelStreamingVolume.EStreamingVolumeUsage Usage() { mixin(MGPC!(LevelStreamingVolume.EStreamingVolumeUsage, 537)()); }
-			LevelStreamingVolume.EStreamingVolumeUsage StreamingUsage() { mixin(MGPC!(LevelStreamingVolume.EStreamingVolumeUsage, 536)()); }
+			ScriptArray!(LevelStreaming) StreamingLevels() { mixin(MGPC!("ScriptArray!(LevelStreaming)", 520)()); }
+			float TestVolumeDistance() { mixin(MGPC!("float", 540)()); }
+			LevelStreamingVolume.EStreamingVolumeUsage Usage() { mixin(MGPC!("LevelStreamingVolume.EStreamingVolumeUsage", 537)()); }
+			LevelStreamingVolume.EStreamingVolumeUsage StreamingUsage() { mixin(MGPC!("LevelStreamingVolume.EStreamingVolumeUsage", 536)()); }
 		}
 		bool bTestDistanceToVolume() { mixin(MGBPC!(532, 0x4)()); }
 		bool bTestDistanceToVolume(bool val) { mixin(MSBPC!(532, 0x4)()); }
@@ -79,14 +79,13 @@ final:
 		params[] = 0;
 		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(LevelStreamingVolume.CheckpointRecord*)params.ptr;
+		Record = *cast(LevelStreamingVolume.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const LevelStreamingVolume.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in LevelStreamingVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = Record;
+		*cast(LevelStreamingVolume.CheckpointRecord*)params.ptr = cast(LevelStreamingVolume.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(LevelStreamingVolume.CheckpointRecord*)params.ptr;
 	}
 }

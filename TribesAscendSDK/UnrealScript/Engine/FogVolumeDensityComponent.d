@@ -23,12 +23,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) FogVolumeActors() { mixin(MGPC!(ScriptArray!(Actor), 136)()); }
-			float StartDistance() { mixin(MGPC!(float, 132)()); }
-			UObject.LinearColor ApproxFogLightColor() { mixin(MGPC!(UObject.LinearColor, 116)()); }
-			UObject.LinearColor SimpleLightColor() { mixin(MGPC!(UObject.LinearColor, 100)()); }
-			MaterialInterface DefaultFogVolumeMaterial() { mixin(MGPC!(MaterialInterface, 92)()); }
-			MaterialInterface FogMaterial() { mixin(MGPC!(MaterialInterface, 88)()); }
+			ScriptArray!(Actor) FogVolumeActors() { mixin(MGPC!("ScriptArray!(Actor)", 136)()); }
+			float StartDistance() { mixin(MGPC!("float", 132)()); }
+			UObject.LinearColor ApproxFogLightColor() { mixin(MGPC!("UObject.LinearColor", 116)()); }
+			UObject.LinearColor SimpleLightColor() { mixin(MGPC!("UObject.LinearColor", 100)()); }
+			MaterialInterface DefaultFogVolumeMaterial() { mixin(MGPC!("MaterialInterface", 92)()); }
+			MaterialInterface FogMaterial() { mixin(MGPC!("MaterialInterface", 88)()); }
 		}
 		bool bOnlyAffectsTranslucency() { mixin(MGBPC!(96, 0x4)()); }
 		bool bOnlyAffectsTranslucency(bool val) { mixin(MSBPC!(96, 0x4)()); }

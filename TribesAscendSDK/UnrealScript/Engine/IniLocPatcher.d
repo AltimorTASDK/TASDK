@@ -49,13 +49,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.IniLocPatcher.IniLocFileEntry")()); }
 		@property final auto ref
 		{
-			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!(OnlineSubsystem.EOnlineEnumerationReadState, 12)()); }
-			ScriptString Filename() { mixin(MGPS!(ScriptString, 0)()); }
+			OnlineSubsystem.EOnlineEnumerationReadState ReadState() { mixin(MGPS!("OnlineSubsystem.EOnlineEnumerationReadState", 12)()); }
+			ScriptString Filename() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { mixin(MGPC!(ScriptArray!(IniLocPatcher.IniLocFileEntry), 60)()); }
+		ScriptArray!(IniLocPatcher.IniLocFileEntry) Files() { mixin(MGPC!("ScriptArray!(IniLocPatcher.IniLocFileEntry)", 60)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReadTitleFileComplete__Delegate'!
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'TitleFileInterface'!
 	}
@@ -84,14 +84,13 @@ final:
 		*cast(ScriptString*)&params[4] = Filename;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReadFileComplete, params.ptr, cast(void*)0);
 	}
-	void ProcessIniLocFile(ScriptString Filename, ref const ScriptArray!(ubyte) FileData)
+	void ProcessIniLocFile(ScriptString Filename, ref in ScriptArray!(ubyte) FileData)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Filename;
-		*cast(ScriptArray!(ubyte)*)&params[12] = FileData;
+		*cast(ScriptArray!(ubyte)*)&params[12] = cast(ScriptArray!(ubyte))FileData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessIniLocFile, params.ptr, cast(void*)0);
-		*FileData = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
 	void AddFileToDownload(ScriptString Filename)
 	{

@@ -16,18 +16,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat Center() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 196)()); }
-			DistributionFloat.RawDistributionFloat Offset() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 168)()); }
-			DistributionFloat.RawDistributionFloat Frequency() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 140)()); }
-			DistributionFloat.RawDistributionFloat Amplitude() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 112)()); }
-			float CenterMax() { mixin(MGPC!(float, 108)()); }
-			float CenterMin() { mixin(MGPC!(float, 104)()); }
-			float OffsetMax() { mixin(MGPC!(float, 100)()); }
-			float OffsetMin() { mixin(MGPC!(float, 96)()); }
-			float FrequencyMax() { mixin(MGPC!(float, 92)()); }
-			float FrequencyMin() { mixin(MGPC!(float, 88)()); }
-			float AmplitudeMax() { mixin(MGPC!(float, 84)()); }
-			float AmplitudeMin() { mixin(MGPC!(float, 80)()); }
+			DistributionFloat.RawDistributionFloat Center() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 196)()); }
+			DistributionFloat.RawDistributionFloat Offset() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 168)()); }
+			DistributionFloat.RawDistributionFloat Frequency() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 140)()); }
+			DistributionFloat.RawDistributionFloat Amplitude() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 112)()); }
+			float CenterMax() { mixin(MGPC!("float", 108)()); }
+			float CenterMin() { mixin(MGPC!("float", 104)()); }
+			float OffsetMax() { mixin(MGPC!("float", 100)()); }
+			float OffsetMin() { mixin(MGPC!("float", 96)()); }
+			float FrequencyMax() { mixin(MGPC!("float", 92)()); }
+			float FrequencyMin() { mixin(MGPC!("float", 88)()); }
+			float AmplitudeMax() { mixin(MGPC!("float", 84)()); }
+			float AmplitudeMin() { mixin(MGPC!("float", 80)()); }
 		}
 		bool bModulatePitch() { mixin(MGBPC!(76, 0x2)()); }
 		bool bModulatePitch(bool val) { mixin(MSBPC!(76, 0x2)()); }

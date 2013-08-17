@@ -29,39 +29,39 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float FadingIntervalTime() { mixin(MGPC!(float, 176)()); }
-		float FadingDurationTime() { mixin(MGPC!(float, 172)()); }
-		float FadingPercentage() { mixin(MGPC!(float, 168)()); }
-		float FadingStartTimeSinceHit() { mixin(MGPC!(float, 164)()); }
-		int HitMaskCullDistance() { mixin(MGPC!(int, 160)()); }
-		int ForceLOD() { mixin(MGPC!(int, 156)()); }
-		int MaterialIndex() { mixin(MGPC!(int, 152)()); }
+		float FadingIntervalTime() { mixin(MGPC!("float", 176)()); }
+		float FadingDurationTime() { mixin(MGPC!("float", 172)()); }
+		float FadingPercentage() { mixin(MGPC!("float", 168)()); }
+		float FadingStartTimeSinceHit() { mixin(MGPC!("float", 164)()); }
+		int HitMaskCullDistance() { mixin(MGPC!("int", 160)()); }
+		int ForceLOD() { mixin(MGPC!("int", 156)()); }
+		int MaterialIndex() { mixin(MGPC!("int", 152)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkeletalMeshComp'!
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 144)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
 	}
 final:
-	void SetCaptureTargetTexture(const TextureRenderTarget2D InTextureTarget)
+	void SetCaptureTargetTexture(in TextureRenderTarget2D InTextureTarget)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(TextureRenderTarget2D*)params.ptr = InTextureTarget;
+		*cast(TextureRenderTarget2D*)params.ptr = cast(TextureRenderTarget2D)InTextureTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureTargetTexture, params.ptr, cast(void*)0);
 	}
-	void SetCaptureParameters(const Vector InMaskPosition, const float InMaskRadius, const Vector InStartupPosition, const bool bOnlyWhenFacing)
+	void SetCaptureParameters(in Vector InMaskPosition, in float InMaskRadius, in Vector InStartupPosition, in bool bOnlyWhenFacing)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InMaskPosition;
-		*cast(float*)&params[12] = InMaskRadius;
-		*cast(Vector*)&params[16] = InStartupPosition;
-		*cast(bool*)&params[28] = bOnlyWhenFacing;
+		*cast(Vector*)params.ptr = cast(Vector)InMaskPosition;
+		*cast(float*)&params[12] = cast(float)InMaskRadius;
+		*cast(Vector*)&params[16] = cast(Vector)InStartupPosition;
+		*cast(bool*)&params[28] = cast(bool)bOnlyWhenFacing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
-	void SetFadingStartTimeSinceHit(const float InFadingStartTimeSinceHit)
+	void SetFadingStartTimeSinceHit(in float InFadingStartTimeSinceHit)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = InFadingStartTimeSinceHit;
+		*cast(float*)params.ptr = cast(float)InFadingStartTimeSinceHit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFadingStartTimeSinceHit, params.ptr, cast(void*)0);
 	}
 }

@@ -103,22 +103,25 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowAchievementsUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool ShowInviteUI(ubyte LocalUserNum, ScriptString InviteText)
+	bool ShowInviteUI(ubyte LocalUserNum, ScriptString* InviteText = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(ScriptString*)&params[4] = InviteText;
+		if (InviteText !is null)
+			*cast(ScriptString*)&params[4] = *InviteText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowInviteUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool ShowContentMarketplaceUI(ubyte LocalUserNum, int CategoryMask, int OfferId)
+	bool ShowContentMarketplaceUI(ubyte LocalUserNum, int* CategoryMask = null, int* OfferId = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(int*)&params[4] = CategoryMask;
-		*cast(int*)&params[8] = OfferId;
+		if (CategoryMask !is null)
+			*cast(int*)&params[4] = *CategoryMask;
+		if (OfferId !is null)
+			*cast(int*)&params[8] = *OfferId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowContentMarketplaceUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -130,13 +133,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMembershipMarketplaceUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool ShowDeviceSelectionUI(ubyte LocalUserNum, int SizeNeeded, bool bManageStorage)
+	bool ShowDeviceSelectionUI(ubyte LocalUserNum, int SizeNeeded, bool* bManageStorage = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(int*)&params[4] = SizeNeeded;
-		*cast(bool*)&params[8] = bManageStorage;
+		if (bManageStorage !is null)
+			*cast(bool*)&params[8] = *bManageStorage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowDeviceSelectionUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -182,15 +186,16 @@ void**)&params[4] = DeviceDelegate;
 		params[0] = LocalUserNum;
 		*cast(ScriptString*)&params[4] = DeviceName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDeviceSelectionResults, params.ptr, cast(void*)0);
-		*DeviceName = *cast(ScriptString*)&params[4];
+		DeviceName = *cast(ScriptString*)&params[4];
 		return *cast(int*)&params[16];
 	}
-	bool IsDeviceValid(int DeviceID, int SizeNeeded)
+	bool IsDeviceValid(int DeviceID, int* SizeNeeded = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = DeviceID;
-		*cast(int*)&params[4] = SizeNeeded;
+		if (SizeNeeded !is null)
+			*cast(int*)&params[4] = *SizeNeeded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsDeviceValid, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -244,16 +249,15 @@ void**)&params[4] = ProfileDataChangedDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowPlayersUI, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool ShowCustomPlayersUI(ubyte LocalUserNum, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, ScriptString Title, ScriptString Description)
+	bool ShowCustomPlayersUI(ubyte LocalUserNum, ref in ScriptArray!(OnlineSubsystem.UniqueNetId) Players, ScriptString Title, ScriptString Description)
 	{
 		ubyte params[44];
 		params[] = 0;
 		params[0] = LocalUserNum;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))Players;
 		*cast(ScriptString*)&params[16] = Title;
 		*cast(ScriptString*)&params[28] = Description;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowCustomPlayersUI, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[4];
 		return *cast(bool*)&params[40];
 	}
 	bool UnlockAvatarAward(ubyte LocalUserNum, int AvatarItemId)

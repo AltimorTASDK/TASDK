@@ -55,12 +55,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString ChannelStr() { mixin(MGPC!(ScriptString, 136)()); }
-			int TypedStrPos() { mixin(MGPC!(int, 132)()); }
-			ScriptString TypedStr() { mixin(MGPC!(ScriptString, 120)()); }
-			Texture2D DefaultTexture_White() { mixin(MGPC!(Texture2D, 116)()); }
-			Texture2D DefaultTexture_Black() { mixin(MGPC!(Texture2D, 112)()); }
-			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!(LocalPlayer, 108)()); }
+			ScriptString ChannelStr() { mixin(MGPC!("ScriptString", 136)()); }
+			int TypedStrPos() { mixin(MGPC!("int", 132)()); }
+			ScriptString TypedStr() { mixin(MGPC!("ScriptString", 120)()); }
+			Texture2D DefaultTexture_White() { mixin(MGPC!("Texture2D", 116)()); }
+			Texture2D DefaultTexture_Black() { mixin(MGPC!("Texture2D", 112)()); }
+			LocalPlayer ConsoleTargetPlayer() { mixin(MGPC!("LocalPlayer", 108)()); }
 		}
 		bool bEnableUI() { mixin(MGBPC!(148, 0x4)()); }
 		bool bEnableUI(bool val) { mixin(MSBPC!(148, 0x4)()); }
@@ -109,15 +109,17 @@ final:
 		*cast(Canvas*)params.ptr = pCanvas;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostRender_Console, params.ptr, cast(void*)0);
 	}
-	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool InputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float* AmountDepressed = null, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = Event;
-		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (AmountDepressed !is null)
+			*cast(float*)&params[16] = *AmountDepressed;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

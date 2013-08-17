@@ -64,25 +64,25 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataStore_OnlineGameSearch.GameSearchCfg")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataProvider_Settings) SearchResults() { mixin(MGPS!(ScriptArray!(UIDataProvider_Settings), 16)()); }
-			ScriptName SearchName() { mixin(MGPS!(ScriptName, 32)()); }
-			OnlineGameSearch Search() { mixin(MGPS!(OnlineGameSearch, 28)()); }
-			UIDataProvider_Settings DesiredSettingsProvider() { mixin(MGPS!(UIDataProvider_Settings, 12)()); }
-			ScriptClass SearchResultsProviderClass() { mixin(MGPS!(ScriptClass, 8)()); }
-			ScriptClass DefaultGameSettingsClass() { mixin(MGPS!(ScriptClass, 4)()); }
-			ScriptClass GameSearchClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			ScriptArray!(UIDataProvider_Settings) SearchResults() { mixin(MGPS!("ScriptArray!(UIDataProvider_Settings)", 16)()); }
+			ScriptName SearchName() { mixin(MGPS!("ScriptName", 32)()); }
+			OnlineGameSearch Search() { mixin(MGPS!("OnlineGameSearch", 28)()); }
+			UIDataProvider_Settings DesiredSettingsProvider() { mixin(MGPS!("UIDataProvider_Settings", 12)()); }
+			ScriptClass SearchResultsProviderClass() { mixin(MGPS!("ScriptClass", 8)()); }
+			ScriptClass DefaultGameSettingsClass() { mixin(MGPS!("ScriptClass", 4)()); }
+			ScriptClass GameSearchClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg) GameSearchCfgList() { mixin(MGPC!(ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg), 148)()); }
-		int ActiveSearchIndex() { mixin(MGPC!(int, 164)()); }
-		int SelectedIndex() { mixin(MGPC!(int, 160)()); }
+		ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg) GameSearchCfgList() { mixin(MGPC!("ScriptArray!(UIDataStore_OnlineGameSearch.GameSearchCfg)", 148)()); }
+		int ActiveSearchIndex() { mixin(MGPC!("int", 164)()); }
+		int SelectedIndex() { mixin(MGPC!("int", 160)()); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
-		OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 136)()); }
-		ScriptName SearchResultsName() { mixin(MGPC!(ScriptName, 128)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 124)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 120)()); }
+		OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 136)()); }
+		ScriptName SearchResultsName() { mixin(MGPC!("ScriptName", 128)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 124)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 120)()); }
 	}
 final:
 	void Init()
@@ -96,12 +96,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.InvalidateCurrentSearchResults, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool SubmitGameSearch(ubyte ControllerIndex, bool bInvalidateExistingSearchResults)
+	bool SubmitGameSearch(ubyte ControllerIndex, bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = ControllerIndex;
-		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)&params[4] = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SubmitGameSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -128,7 +129,7 @@ final:
 		*cast(int*)params.ptr = ListIndex;
 		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4] = Result;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSearchResultFromIndex, params.ptr, cast(void*)0);
-		*Result = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4];
+		Result = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[4];
 		return *cast(bool*)&params[12];
 	}
 	bool ShowHostGamercard(ubyte ControllerIndex, int ListIndex)
@@ -166,34 +167,38 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSearchConfigurationIndex, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	void SetCurrentByIndex(int NewIndex, bool bInvalidateExistingSearchResults)
+	void SetCurrentByIndex(int NewIndex, bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = NewIndex;
-		*cast(bool*)&params[4] = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)&params[4] = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentByIndex, params.ptr, cast(void*)0);
 	}
-	void SetCurrentByName(ScriptName SearchName, bool bInvalidateExistingSearchResults)
+	void SetCurrentByName(ScriptName SearchName, bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SearchName;
-		*cast(bool*)&params[8] = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)&params[8] = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentByName, params.ptr, cast(void*)0);
 	}
-	void MoveToNext(bool bInvalidateExistingSearchResults)
+	void MoveToNext(bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)params.ptr = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToNext, params.ptr, cast(void*)0);
 	}
-	void MoveToPrevious(bool bInvalidateExistingSearchResults)
+	void MoveToPrevious(bool* bInvalidateExistingSearchResults = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bInvalidateExistingSearchResults;
+		if (bInvalidateExistingSearchResults !is null)
+			*cast(bool*)params.ptr = *bInvalidateExistingSearchResults;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveToPrevious, params.ptr, cast(void*)0);
 	}
 	void ClearAllSearchResults()

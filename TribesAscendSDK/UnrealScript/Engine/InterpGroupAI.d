@@ -17,10 +17,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor StageMarkActor() { mixin(MGPC!(Actor, 120)()); }
-			Pawn PreviewPawn() { mixin(MGPC!(Pawn, 116)()); }
-			ScriptName StageMarkGroup() { mixin(MGPC!(ScriptName, 108)()); }
-			ScriptClass PreviewPawnClass() { mixin(MGPC!(ScriptClass, 104)()); }
+			Actor StageMarkActor() { mixin(MGPC!("Actor", 120)()); }
+			Pawn PreviewPawn() { mixin(MGPC!("Pawn", 116)()); }
+			ScriptName StageMarkGroup() { mixin(MGPC!("ScriptName", 108)()); }
+			ScriptClass PreviewPawnClass() { mixin(MGPC!("ScriptClass", 104)()); }
 		}
 		bool bNoEncroachmentCheck() { mixin(MGBPC!(124, 0x2)()); }
 		bool bNoEncroachmentCheck(bool val) { mixin(MSBPC!(124, 0x2)()); }

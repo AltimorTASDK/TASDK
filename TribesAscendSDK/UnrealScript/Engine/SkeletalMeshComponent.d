@@ -327,7 +327,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshComponent.BonePair")()); }
-		@property final auto ref ScriptName Bones() { mixin(MGPS!(ScriptName, 0)()); }
+		@property final auto ref ScriptName Bones() { mixin(MGPS!("ScriptName", 0)()); }
 	}
 	struct SkelMeshComponentLODInfo
 	{
@@ -339,9 +339,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				SkeletalMeshComponent.EInstanceWeightUsage InstanceWeightUsage() { mixin(MGPS!(SkeletalMeshComponent.EInstanceWeightUsage, 16)()); }
-				ScriptArray!(bool) HiddenMaterials() { mixin(MGPS!(ScriptArray!(bool), 0)()); }
-				int InstanceWeightIdx() { mixin(MGPS!(int, 20)()); }
+				SkeletalMeshComponent.EInstanceWeightUsage InstanceWeightUsage() { mixin(MGPS!("SkeletalMeshComponent.EInstanceWeightUsage", 16)()); }
+				ScriptArray!(bool) HiddenMaterials() { mixin(MGPS!("ScriptArray!(bool)", 0)()); }
+				int InstanceWeightIdx() { mixin(MGPS!("int", 20)()); }
 			}
 			bool bNeedsInstanceWeightUpdate() { mixin(MGBPS!(12, 0x1)()); }
 			bool bNeedsInstanceWeightUpdate(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -358,10 +358,10 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Component' has the same name as a defined type!
-			ScriptName BoneName() { mixin(MGPS!(ScriptName, 4)()); }
-			Vector RelativeLocation() { mixin(MGPS!(Vector, 12)()); }
-			Rotator RelativeRotation() { mixin(MGPS!(Rotator, 24)()); }
-			Vector RelativeScale() { mixin(MGPS!(Vector, 36)()); }
+			ScriptName BoneName() { mixin(MGPS!("ScriptName", 4)()); }
+			Vector RelativeLocation() { mixin(MGPS!("Vector", 12)()); }
+			Rotator RelativeRotation() { mixin(MGPS!("Rotator", 24)()); }
+			Vector RelativeScale() { mixin(MGPS!("Vector", 36)()); }
 		}
 	}
 	struct ActiveMorph
@@ -372,137 +372,137 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SkeletalMeshComponent.ActiveMorph")()); }
 		@property final auto ref
 		{
-			MorphTarget Target() { mixin(MGPS!(MorphTarget, 0)()); }
-			float Weight() { mixin(MGPS!(float, 4)()); }
+			MorphTarget Target() { mixin(MGPS!("MorphTarget", 0)()); }
+			float Weight() { mixin(MGPS!("float", 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			AnimNode Animations() { mixin(MGPC!(AnimNode, 512)()); }
+			AnimNode Animations() { mixin(MGPC!("AnimNode", 512)()); }
 			// WARNING: Property 'PhysicsAssetInstance' has the same name as a defined type!
-			ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo) LODInfo() { mixin(MGPC!(ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo), 976)()); }
+			ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo) LODInfo() { mixin(MGPC!("ScriptArray!(SkeletalMeshComponent.SkelMeshComponentLODInfo)", 976)()); }
 			// WARNING: Property 'PhysicsAsset' has the same name as a defined type!
 			// WARNING: Property 'SkeletalMesh' has the same name as a defined type!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AttachedToSkelComponent'!
-			AnimTree AnimTreeTemplate() { mixin(MGPC!(AnimTree, 508)()); }
-			ScriptArray!(AnimNode) AnimTickArray() { mixin(MGPC!(ScriptArray!(AnimNode), 516)()); }
-			ScriptArray!(AnimNode) AnimAlwaysTickArray() { mixin(MGPC!(ScriptArray!(AnimNode), 528)()); }
-			ScriptArray!(int) AnimTickRelevancyArray() { mixin(MGPC!(ScriptArray!(int), 540)()); }
-			ScriptArray!(float) AnimTickWeightsArray() { mixin(MGPC!(ScriptArray!(float), 552)()); }
-			ScriptArray!(SkelControlBase) SkelControlTickArray() { mixin(MGPC!(ScriptArray!(SkelControlBase), 564)()); }
-			UObject.Pointer ApexClothing() { mixin(MGPC!(UObject.Pointer, 584)()); }
-			float PhysicsWeight() { mixin(MGPC!(float, 588)()); }
-			float GlobalAnimRateScale() { mixin(MGPC!(float, 592)()); }
-			UObject.Pointer MeshObject() { mixin(MGPC!(UObject.Pointer, 596)()); }
-			UObject.Color WireframeColor() { mixin(MGPC!(UObject.Color, 600)()); }
-			ScriptArray!(UObject.BoneAtom) SpaceBases() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 604)()); }
-			ScriptArray!(UObject.BoneAtom) LocalAtoms() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 616)()); }
-			ScriptArray!(UObject.BoneAtom) CachedLocalAtoms() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 628)()); }
-			ScriptArray!(UObject.BoneAtom) CachedSpaceBases() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 640)()); }
-			int LowUpdateFrameRate() { mixin(MGPC!(int, 652)()); }
-			ScriptArray!(ubyte) RequiredBones() { mixin(MGPC!(ScriptArray!(ubyte), 656)()); }
-			ScriptArray!(ubyte) ComposeOrderedRequiredBones() { mixin(MGPC!(ScriptArray!(ubyte), 668)()); }
+			AnimTree AnimTreeTemplate() { mixin(MGPC!("AnimTree", 508)()); }
+			ScriptArray!(AnimNode) AnimTickArray() { mixin(MGPC!("ScriptArray!(AnimNode)", 516)()); }
+			ScriptArray!(AnimNode) AnimAlwaysTickArray() { mixin(MGPC!("ScriptArray!(AnimNode)", 528)()); }
+			ScriptArray!(int) AnimTickRelevancyArray() { mixin(MGPC!("ScriptArray!(int)", 540)()); }
+			ScriptArray!(float) AnimTickWeightsArray() { mixin(MGPC!("ScriptArray!(float)", 552)()); }
+			ScriptArray!(SkelControlBase) SkelControlTickArray() { mixin(MGPC!("ScriptArray!(SkelControlBase)", 564)()); }
+			UObject.Pointer ApexClothing() { mixin(MGPC!("UObject.Pointer", 584)()); }
+			float PhysicsWeight() { mixin(MGPC!("float", 588)()); }
+			float GlobalAnimRateScale() { mixin(MGPC!("float", 592)()); }
+			UObject.Pointer MeshObject() { mixin(MGPC!("UObject.Pointer", 596)()); }
+			UObject.Color WireframeColor() { mixin(MGPC!("UObject.Color", 600)()); }
+			ScriptArray!(UObject.BoneAtom) SpaceBases() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 604)()); }
+			ScriptArray!(UObject.BoneAtom) LocalAtoms() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 616)()); }
+			ScriptArray!(UObject.BoneAtom) CachedLocalAtoms() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 628)()); }
+			ScriptArray!(UObject.BoneAtom) CachedSpaceBases() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 640)()); }
+			int LowUpdateFrameRate() { mixin(MGPC!("int", 652)()); }
+			ScriptArray!(ubyte) RequiredBones() { mixin(MGPC!("ScriptArray!(ubyte)", 656)()); }
+			ScriptArray!(ubyte) ComposeOrderedRequiredBones() { mixin(MGPC!("ScriptArray!(ubyte)", 668)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ParentAnimComponent'!
-			ScriptArray!(int) ParentBoneMap() { mixin(MGPC!(ScriptArray!(int), 688)()); }
-			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 700)()); }
-			ScriptArray!(AnimSet) TemporarySavedAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 712)()); }
-			ScriptArray!(MorphTargetSet) MorphSets() { mixin(MGPC!(ScriptArray!(MorphTargetSet), 724)()); }
-			ScriptArray!(SkeletalMeshComponent.ActiveMorph) ActiveMorphs() { mixin(MGPC!(ScriptArray!(SkeletalMeshComponent.ActiveMorph), 736)()); }
-			ScriptArray!(SkeletalMeshComponent.ActiveMorph) ActiveCurveMorphs() { mixin(MGPC!(ScriptArray!(SkeletalMeshComponent.ActiveMorph), 748)()); }
+			ScriptArray!(int) ParentBoneMap() { mixin(MGPC!("ScriptArray!(int)", 688)()); }
+			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 700)()); }
+			ScriptArray!(AnimSet) TemporarySavedAnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 712)()); }
+			ScriptArray!(MorphTargetSet) MorphSets() { mixin(MGPC!("ScriptArray!(MorphTargetSet)", 724)()); }
+			ScriptArray!(SkeletalMeshComponent.ActiveMorph) ActiveMorphs() { mixin(MGPC!("ScriptArray!(SkeletalMeshComponent.ActiveMorph)", 736)()); }
+			ScriptArray!(SkeletalMeshComponent.ActiveMorph) ActiveCurveMorphs() { mixin(MGPC!("ScriptArray!(SkeletalMeshComponent.ActiveMorph)", 748)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'MorphTargetIndexMap'!
-			ScriptArray!(SkeletalMeshComponent.Attachment) Attachments() { mixin(MGPC!(ScriptArray!(SkeletalMeshComponent.Attachment), 820)()); }
-			ScriptArray!(ubyte) SkelControlIndex() { mixin(MGPC!(ScriptArray!(ubyte), 832)()); }
-			ScriptArray!(ubyte) PostPhysSkelControlIndex() { mixin(MGPC!(ScriptArray!(ubyte), 844)()); }
-			int ForcedLodModel() { mixin(MGPC!(int, 856)()); }
-			int MinLodModel() { mixin(MGPC!(int, 860)()); }
-			int PredictedLODLevel() { mixin(MGPC!(int, 864)()); }
-			int OldPredictedLODLevel() { mixin(MGPC!(int, 868)()); }
-			float MaxDistanceFactor() { mixin(MGPC!(float, 872)()); }
-			int bForceWireframe() { mixin(MGPC!(int, 876)()); }
-			int bForceRefpose() { mixin(MGPC!(int, 880)()); }
-			int bOldForceRefPose() { mixin(MGPC!(int, 884)()); }
-			int bDisplayBones() { mixin(MGPC!(int, 892)()); }
-			int bShowPrePhysBones() { mixin(MGPC!(int, 896)()); }
-			int bHideSkin() { mixin(MGPC!(int, 900)()); }
-			int bForceRawOffset() { mixin(MGPC!(int, 904)()); }
-			int bIgnoreControllers() { mixin(MGPC!(int, 908)()); }
-			int bTransformFromAnimParent() { mixin(MGPC!(int, 912)()); }
-			int TickTag() { mixin(MGPC!(int, 916)()); }
-			int InitTag() { mixin(MGPC!(int, 920)()); }
-			int CachedAtomsTag() { mixin(MGPC!(int, 924)()); }
-			int bUseSingleBodyPhysics() { mixin(MGPC!(int, 928)()); }
-			int bRequiredBonesUpToDate() { mixin(MGPC!(int, 932)()); }
-			float MinDistFactorForKinematicUpdate() { mixin(MGPC!(float, 936)()); }
-			int FramesPhysicsAsleep() { mixin(MGPC!(int, 940)()); }
-			Vector LineCheckBoundsScale() { mixin(MGPC!(Vector, 948)()); }
-			ScriptArray!(SkeletalMeshComponent.BonePair) InstanceVertexWeightBones() { mixin(MGPC!(ScriptArray!(SkeletalMeshComponent.BonePair), 964)()); }
-			Vector FrozenLocalToWorldPos() { mixin(MGPC!(Vector, 988)()); }
-			Rotator FrozenLocalToWorldRot() { mixin(MGPC!(Rotator, 1000)()); }
-			Vector ClothExternalForce() { mixin(MGPC!(Vector, 1012)()); }
-			Vector ClothWind() { mixin(MGPC!(Vector, 1024)()); }
-			Vector ClothBaseVelClampRange() { mixin(MGPC!(Vector, 1036)()); }
-			float ClothBlendWeight() { mixin(MGPC!(float, 1048)()); }
-			float ClothDynamicBlendWeight() { mixin(MGPC!(float, 1052)()); }
-			float ClothBlendMinDistanceFactor() { mixin(MGPC!(float, 1056)()); }
-			float ClothBlendMaxDistanceFactor() { mixin(MGPC!(float, 1060)()); }
-			Vector MinPosDampRange() { mixin(MGPC!(Vector, 1064)()); }
-			Vector MaxPosDampRange() { mixin(MGPC!(Vector, 1076)()); }
-			Vector MinPosDampScale() { mixin(MGPC!(Vector, 1088)()); }
-			Vector MaxPosDampScale() { mixin(MGPC!(Vector, 1100)()); }
-			UObject.Pointer ClothSim() { mixin(MGPC!(UObject.Pointer, 1112)()); }
-			int SceneIndex() { mixin(MGPC!(int, 1116)()); }
-			ScriptArray!(Vector) ClothMeshPosData() { mixin(MGPC!(ScriptArray!(Vector), 1120)()); }
-			ScriptArray!(Vector) ClothMeshNormalData() { mixin(MGPC!(ScriptArray!(Vector), 1132)()); }
-			ScriptArray!(int) ClothMeshIndexData() { mixin(MGPC!(ScriptArray!(int), 1144)()); }
-			int NumClothMeshVerts() { mixin(MGPC!(int, 1156)()); }
-			int NumClothMeshIndices() { mixin(MGPC!(int, 1160)()); }
-			ScriptArray!(int) ClothMeshParentData() { mixin(MGPC!(ScriptArray!(int), 1164)()); }
-			int NumClothMeshParentIndices() { mixin(MGPC!(int, 1176)()); }
-			ScriptArray!(Vector) ClothMeshWeldedPosData() { mixin(MGPC!(ScriptArray!(Vector), 1180)()); }
-			ScriptArray!(Vector) ClothMeshWeldedNormalData() { mixin(MGPC!(ScriptArray!(Vector), 1192)()); }
-			ScriptArray!(int) ClothMeshWeldedIndexData() { mixin(MGPC!(ScriptArray!(int), 1204)()); }
-			int ClothDirtyBufferFlag() { mixin(MGPC!(int, 1216)()); }
-			PrimitiveComponent.ERBCollisionChannel ClothRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 1220)()); }
-			PrimitiveComponent.RBCollisionChannelContainer ClothRBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 1224)()); }
-			float ClothForceScale() { mixin(MGPC!(float, 1228)()); }
-			float ClothImpulseScale() { mixin(MGPC!(float, 1232)()); }
-			float ClothAttachmentTearFactor() { mixin(MGPC!(float, 1236)()); }
-			float MinDistanceForClothReset() { mixin(MGPC!(float, 1244)()); }
-			Vector LastClothLocation() { mixin(MGPC!(Vector, 1248)()); }
-			PrimitiveComponent.ERBCollisionChannel ApexClothingRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 1260)()); }
-			PrimitiveComponent.RBCollisionChannelContainer ApexClothingRBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 1264)()); }
-			Vector WindVelocity() { mixin(MGPC!(Vector, 1272)()); }
-			float WindVelocityBlendTime() { mixin(MGPC!(float, 1284)()); }
-			UObject.Pointer SoftBodySim() { mixin(MGPC!(UObject.Pointer, 1292)()); }
-			int SoftBodySceneIndex() { mixin(MGPC!(int, 1296)()); }
-			ScriptArray!(Vector) SoftBodyTetraPosData() { mixin(MGPC!(ScriptArray!(Vector), 1304)()); }
-			ScriptArray!(int) SoftBodyTetraIndexData() { mixin(MGPC!(ScriptArray!(int), 1316)()); }
-			int NumSoftBodyTetraVerts() { mixin(MGPC!(int, 1328)()); }
-			int NumSoftBodyTetraIndices() { mixin(MGPC!(int, 1332)()); }
-			float SoftBodyImpulseScale() { mixin(MGPC!(float, 1336)()); }
-			PrimitiveComponent.ERBCollisionChannel SoftBodyRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 1344)()); }
-			PrimitiveComponent.RBCollisionChannelContainer SoftBodyRBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 1348)()); }
-			UObject.Pointer SoftBodyASVPlane() { mixin(MGPC!(UObject.Pointer, 1352)()); }
-			Material LimitMaterial() { mixin(MGPC!(Material, 1356)()); }
-			UObject.BoneAtom RootMotionDelta() { mixin(MGPC!(UObject.BoneAtom, 1360)()); }
-			Vector RootMotionVelocity() { mixin(MGPC!(Vector, 1392)()); }
-			Vector RootBoneTranslation() { mixin(MGPC!(Vector, 1404)()); }
-			Vector RootMotionAccelScale() { mixin(MGPC!(Vector, 1416)()); }
-			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionMode, 1428)()); }
-			SkeletalMeshComponent.ERootMotionMode PreviousRMM() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionMode, 1429)()); }
-			SkeletalMeshComponent.ERootMotionMode PendingRMM() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionMode, 1430)()); }
-			SkeletalMeshComponent.ERootMotionMode OldPendingRMM() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionMode, 1431)()); }
-			int bRMMOneFrameDelay() { mixin(MGPC!(int, 1432)()); }
-			SkeletalMeshComponent.ERootMotionRotationMode RootMotionRotationMode() { mixin(MGPC!(SkeletalMeshComponent.ERootMotionRotationMode, 1436)()); }
-			SkeletalMeshComponent.EFaceFXBlendMode FaceFXBlendMode() { mixin(MGPC!(SkeletalMeshComponent.EFaceFXBlendMode, 1437)()); }
-			UObject.Pointer FaceFXActorInstance() { mixin(MGPC!(UObject.Pointer, 1440)()); }
+			ScriptArray!(SkeletalMeshComponent.Attachment) Attachments() { mixin(MGPC!("ScriptArray!(SkeletalMeshComponent.Attachment)", 820)()); }
+			ScriptArray!(ubyte) SkelControlIndex() { mixin(MGPC!("ScriptArray!(ubyte)", 832)()); }
+			ScriptArray!(ubyte) PostPhysSkelControlIndex() { mixin(MGPC!("ScriptArray!(ubyte)", 844)()); }
+			int ForcedLodModel() { mixin(MGPC!("int", 856)()); }
+			int MinLodModel() { mixin(MGPC!("int", 860)()); }
+			int PredictedLODLevel() { mixin(MGPC!("int", 864)()); }
+			int OldPredictedLODLevel() { mixin(MGPC!("int", 868)()); }
+			float MaxDistanceFactor() { mixin(MGPC!("float", 872)()); }
+			int bForceWireframe() { mixin(MGPC!("int", 876)()); }
+			int bForceRefpose() { mixin(MGPC!("int", 880)()); }
+			int bOldForceRefPose() { mixin(MGPC!("int", 884)()); }
+			int bDisplayBones() { mixin(MGPC!("int", 892)()); }
+			int bShowPrePhysBones() { mixin(MGPC!("int", 896)()); }
+			int bHideSkin() { mixin(MGPC!("int", 900)()); }
+			int bForceRawOffset() { mixin(MGPC!("int", 904)()); }
+			int bIgnoreControllers() { mixin(MGPC!("int", 908)()); }
+			int bTransformFromAnimParent() { mixin(MGPC!("int", 912)()); }
+			int TickTag() { mixin(MGPC!("int", 916)()); }
+			int InitTag() { mixin(MGPC!("int", 920)()); }
+			int CachedAtomsTag() { mixin(MGPC!("int", 924)()); }
+			int bUseSingleBodyPhysics() { mixin(MGPC!("int", 928)()); }
+			int bRequiredBonesUpToDate() { mixin(MGPC!("int", 932)()); }
+			float MinDistFactorForKinematicUpdate() { mixin(MGPC!("float", 936)()); }
+			int FramesPhysicsAsleep() { mixin(MGPC!("int", 940)()); }
+			Vector LineCheckBoundsScale() { mixin(MGPC!("Vector", 948)()); }
+			ScriptArray!(SkeletalMeshComponent.BonePair) InstanceVertexWeightBones() { mixin(MGPC!("ScriptArray!(SkeletalMeshComponent.BonePair)", 964)()); }
+			Vector FrozenLocalToWorldPos() { mixin(MGPC!("Vector", 988)()); }
+			Rotator FrozenLocalToWorldRot() { mixin(MGPC!("Rotator", 1000)()); }
+			Vector ClothExternalForce() { mixin(MGPC!("Vector", 1012)()); }
+			Vector ClothWind() { mixin(MGPC!("Vector", 1024)()); }
+			Vector ClothBaseVelClampRange() { mixin(MGPC!("Vector", 1036)()); }
+			float ClothBlendWeight() { mixin(MGPC!("float", 1048)()); }
+			float ClothDynamicBlendWeight() { mixin(MGPC!("float", 1052)()); }
+			float ClothBlendMinDistanceFactor() { mixin(MGPC!("float", 1056)()); }
+			float ClothBlendMaxDistanceFactor() { mixin(MGPC!("float", 1060)()); }
+			Vector MinPosDampRange() { mixin(MGPC!("Vector", 1064)()); }
+			Vector MaxPosDampRange() { mixin(MGPC!("Vector", 1076)()); }
+			Vector MinPosDampScale() { mixin(MGPC!("Vector", 1088)()); }
+			Vector MaxPosDampScale() { mixin(MGPC!("Vector", 1100)()); }
+			UObject.Pointer ClothSim() { mixin(MGPC!("UObject.Pointer", 1112)()); }
+			int SceneIndex() { mixin(MGPC!("int", 1116)()); }
+			ScriptArray!(Vector) ClothMeshPosData() { mixin(MGPC!("ScriptArray!(Vector)", 1120)()); }
+			ScriptArray!(Vector) ClothMeshNormalData() { mixin(MGPC!("ScriptArray!(Vector)", 1132)()); }
+			ScriptArray!(int) ClothMeshIndexData() { mixin(MGPC!("ScriptArray!(int)", 1144)()); }
+			int NumClothMeshVerts() { mixin(MGPC!("int", 1156)()); }
+			int NumClothMeshIndices() { mixin(MGPC!("int", 1160)()); }
+			ScriptArray!(int) ClothMeshParentData() { mixin(MGPC!("ScriptArray!(int)", 1164)()); }
+			int NumClothMeshParentIndices() { mixin(MGPC!("int", 1176)()); }
+			ScriptArray!(Vector) ClothMeshWeldedPosData() { mixin(MGPC!("ScriptArray!(Vector)", 1180)()); }
+			ScriptArray!(Vector) ClothMeshWeldedNormalData() { mixin(MGPC!("ScriptArray!(Vector)", 1192)()); }
+			ScriptArray!(int) ClothMeshWeldedIndexData() { mixin(MGPC!("ScriptArray!(int)", 1204)()); }
+			int ClothDirtyBufferFlag() { mixin(MGPC!("int", 1216)()); }
+			PrimitiveComponent.ERBCollisionChannel ClothRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 1220)()); }
+			PrimitiveComponent.RBCollisionChannelContainer ClothRBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 1224)()); }
+			float ClothForceScale() { mixin(MGPC!("float", 1228)()); }
+			float ClothImpulseScale() { mixin(MGPC!("float", 1232)()); }
+			float ClothAttachmentTearFactor() { mixin(MGPC!("float", 1236)()); }
+			float MinDistanceForClothReset() { mixin(MGPC!("float", 1244)()); }
+			Vector LastClothLocation() { mixin(MGPC!("Vector", 1248)()); }
+			PrimitiveComponent.ERBCollisionChannel ApexClothingRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 1260)()); }
+			PrimitiveComponent.RBCollisionChannelContainer ApexClothingRBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 1264)()); }
+			Vector WindVelocity() { mixin(MGPC!("Vector", 1272)()); }
+			float WindVelocityBlendTime() { mixin(MGPC!("float", 1284)()); }
+			UObject.Pointer SoftBodySim() { mixin(MGPC!("UObject.Pointer", 1292)()); }
+			int SoftBodySceneIndex() { mixin(MGPC!("int", 1296)()); }
+			ScriptArray!(Vector) SoftBodyTetraPosData() { mixin(MGPC!("ScriptArray!(Vector)", 1304)()); }
+			ScriptArray!(int) SoftBodyTetraIndexData() { mixin(MGPC!("ScriptArray!(int)", 1316)()); }
+			int NumSoftBodyTetraVerts() { mixin(MGPC!("int", 1328)()); }
+			int NumSoftBodyTetraIndices() { mixin(MGPC!("int", 1332)()); }
+			float SoftBodyImpulseScale() { mixin(MGPC!("float", 1336)()); }
+			PrimitiveComponent.ERBCollisionChannel SoftBodyRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 1344)()); }
+			PrimitiveComponent.RBCollisionChannelContainer SoftBodyRBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 1348)()); }
+			UObject.Pointer SoftBodyASVPlane() { mixin(MGPC!("UObject.Pointer", 1352)()); }
+			Material LimitMaterial() { mixin(MGPC!("Material", 1356)()); }
+			UObject.BoneAtom RootMotionDelta() { mixin(MGPC!("UObject.BoneAtom", 1360)()); }
+			Vector RootMotionVelocity() { mixin(MGPC!("Vector", 1392)()); }
+			Vector RootBoneTranslation() { mixin(MGPC!("Vector", 1404)()); }
+			Vector RootMotionAccelScale() { mixin(MGPC!("Vector", 1416)()); }
+			SkeletalMeshComponent.ERootMotionMode RootMotionMode() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionMode", 1428)()); }
+			SkeletalMeshComponent.ERootMotionMode PreviousRMM() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionMode", 1429)()); }
+			SkeletalMeshComponent.ERootMotionMode PendingRMM() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionMode", 1430)()); }
+			SkeletalMeshComponent.ERootMotionMode OldPendingRMM() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionMode", 1431)()); }
+			int bRMMOneFrameDelay() { mixin(MGPC!("int", 1432)()); }
+			SkeletalMeshComponent.ERootMotionRotationMode RootMotionRotationMode() { mixin(MGPC!("SkeletalMeshComponent.ERootMotionRotationMode", 1436)()); }
+			SkeletalMeshComponent.EFaceFXBlendMode FaceFXBlendMode() { mixin(MGPC!("SkeletalMeshComponent.EFaceFXBlendMode", 1437)()); }
+			UObject.Pointer FaceFXActorInstance() { mixin(MGPC!("UObject.Pointer", 1440)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CachedFaceFXAudioComp'!
-			ScriptArray!(ubyte) BoneVisibility() { mixin(MGPC!(ScriptArray!(ubyte), 1448)()); }
-			UObject.BoneAtom LocalToWorldBoneAtom() { mixin(MGPC!(UObject.BoneAtom, 1472)()); }
-			float ProgressiveDrawingFraction() { mixin(MGPC!(float, 1504)()); }
-			ubyte CustomSortAlternateIndexMode() { mixin(MGPC!(ubyte, 1508)()); }
+			ScriptArray!(ubyte) BoneVisibility() { mixin(MGPC!("ScriptArray!(ubyte)", 1448)()); }
+			UObject.BoneAtom LocalToWorldBoneAtom() { mixin(MGPC!("UObject.BoneAtom", 1472)()); }
+			float ProgressiveDrawingFraction() { mixin(MGPC!("float", 1504)()); }
+			ubyte CustomSortAlternateIndexMode() { mixin(MGPC!("ubyte", 1508)()); }
 		}
 		bool bShouldIgnoreParentAnimComponent() { mixin(MGBPC!(684, 0x1)()); }
 		bool bShouldIgnoreParentAnimComponent(bool val) { mixin(MSBPC!(684, 0x1)()); }
@@ -624,7 +624,7 @@ public extern(D):
 final:
 	void AttachComponent(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* pComponent, ScriptName BoneName, Vector RelativeLocation, Rotator RelativeRotation, Vector RelativeScale)
+void* pComponent, ScriptName BoneName, Vector* RelativeLocation = null, Rotator* RelativeRotation = null, Vector* RelativeScale = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -632,9 +632,12 @@ void* pComponent, ScriptName BoneName, Vector RelativeLocation, Rotator Relative
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = pComponent;
 		*cast(ScriptName*)&params[4] = BoneName;
-		*cast(Vector*)&params[12] = RelativeLocation;
-		*cast(Rotator*)&params[24] = RelativeRotation;
-		*cast(Vector*)&params[36] = RelativeScale;
+		if (RelativeLocation !is null)
+			*cast(Vector*)&params[12] = *RelativeLocation;
+		if (RelativeRotation !is null)
+			*cast(Rotator*)&params[24] = *RelativeRotation;
+		if (RelativeScale !is null)
+			*cast(Vector*)&params[36] = *RelativeScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachComponent, params.ptr, cast(void*)0);
 	}
 	void DetachComponent(
@@ -660,17 +663,20 @@ void**)params.ptr = pComponent;
 		*cast(ScriptName*)&params[4] = SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachComponentToSocket, params.ptr, cast(void*)0);
 	}
-	bool GetSocketWorldLocationAndRotation(ScriptName InSocketName, ref Vector OutLocation, Rotator* OutRotation, int Space)
+	bool GetSocketWorldLocationAndRotation(ScriptName InSocketName, ref Vector OutLocation, Rotator* OutRotation = null, int* Space = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = InSocketName;
 		*cast(Vector*)&params[8] = OutLocation;
-		*cast(Rotator*)&params[20] = OutRotation;
-		*cast(int*)&params[32] = Space;
+		if (OutRotation !is null)
+			*cast(Rotator*)&params[20] = *OutRotation;
+		if (Space !is null)
+			*cast(int*)&params[32] = *Space;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSocketWorldLocationAndRotation, params.ptr, cast(void*)0);
-		*OutLocation = *cast(Vector*)&params[8];
-		*OutRotation = *cast(Rotator*)&params[20];
+		OutLocation = *cast(Vector*)&params[8];
+		if (OutRotation !is null)
+			*OutRotation = *cast(Rotator*)&params[20];
 		return *cast(bool*)&params[36];
 	}
 	SkeletalMeshSocket GetSocketByName(ScriptName InSocketName)
@@ -703,14 +709,15 @@ void**)&params[8];
 	}
 	bool IsComponentAttached(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* pComponent, ScriptName BoneName)
+void* pComponent, ScriptName* BoneName = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = pComponent;
-		*cast(ScriptName*)&params[4] = BoneName;
+		if (BoneName !is null)
+			*cast(ScriptName*)&params[4] = *BoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsComponentAttached, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -725,7 +732,7 @@ void* OutComponent)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OutComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachedComponents, params.ptr, cast(void*)0);
-		*OutComponent = *cast(
+		OutComponent = *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4];
 	}
@@ -736,20 +743,22 @@ void**)&params[4];
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTransformMatrix, params.ptr, cast(void*)0);
 		return *cast(UObject.Matrix*)params.ptr;
 	}
-	void SetSkeletalMesh(SkeletalMesh NewMesh, bool bKeepSpaceBases)
+	void SetSkeletalMesh(SkeletalMesh NewMesh, bool* bKeepSpaceBases = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(SkeletalMesh*)params.ptr = NewMesh;
-		*cast(bool*)&params[4] = bKeepSpaceBases;
+		if (bKeepSpaceBases !is null)
+			*cast(bool*)&params[4] = *bKeepSpaceBases;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSkeletalMesh, params.ptr, cast(void*)0);
 	}
-	void SetPhysicsAsset(PhysicsAsset NewPhysicsAsset, bool bForceReInit)
+	void SetPhysicsAsset(PhysicsAsset NewPhysicsAsset, bool* bForceReInit = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(PhysicsAsset*)params.ptr = NewPhysicsAsset;
-		*cast(bool*)&params[4] = bForceReInit;
+		if (bForceReInit !is null)
+			*cast(bool*)&params[4] = *bForceReInit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPhysicsAsset, params.ptr, cast(void*)0);
 	}
 	void SetForceRefPose(bool bNewForceRefPose)
@@ -1099,7 +1108,7 @@ void**)&params[4];
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(AnimNode*)&params[4] = Node;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllAnimNodes, params.ptr, cast(void*)0);
-		*Node = *cast(AnimNode*)&params[4];
+		Node = *cast(AnimNode*)&params[4];
 	}
 	SkelControlBase FindSkelControl(ScriptName InControlName)
 	{
@@ -1117,21 +1126,23 @@ void**)&params[4];
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindMorphNode, params.ptr, cast(void*)0);
 		return *cast(MorphNodeBase*)&params[8];
 	}
-	UObject.Quat GetBoneQuaternion(ScriptName BoneName, int Space)
+	UObject.Quat GetBoneQuaternion(ScriptName BoneName, int* Space = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		*cast(int*)&params[8] = Space;
+		if (Space !is null)
+			*cast(int*)&params[8] = *Space;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoneQuaternion, params.ptr, cast(void*)0);
 		return *cast(UObject.Quat*)&params[16];
 	}
-	Vector GetBoneLocation(ScriptName BoneName, int Space)
+	Vector GetBoneLocation(ScriptName BoneName, int* Space = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		*cast(int*)&params[8] = Space;
+		if (Space !is null)
+			*cast(int*)&params[8] = *Space;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoneLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
@@ -1173,7 +1184,7 @@ void**)&params[4];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptName)*)params.ptr = BoneNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoneNames, params.ptr, cast(void*)0);
-		*BoneNames = *cast(ScriptArray!(ScriptName)*)params.ptr;
+		BoneNames = *cast(ScriptArray!(ScriptName)*)params.ptr;
 	}
 	bool BoneIsChildOf(ScriptName BoneName, ScriptName ParentBoneName)
 	{
@@ -1211,8 +1222,8 @@ void**)&params[4];
 		*cast(Vector*)&params[32] = OutPosition;
 		*cast(Rotator*)&params[44] = OutRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TransformToBoneSpace, params.ptr, cast(void*)0);
-		*OutPosition = *cast(Vector*)&params[32];
-		*OutRotation = *cast(Rotator*)&params[44];
+		OutPosition = *cast(Vector*)&params[32];
+		OutRotation = *cast(Rotator*)&params[44];
 	}
 	void TransformFromBoneSpace(ScriptName BoneName, Vector InPosition, Rotator InRotation, ref Vector OutPosition, ref Rotator OutRotation)
 	{
@@ -1224,18 +1235,21 @@ void**)&params[4];
 		*cast(Vector*)&params[32] = OutPosition;
 		*cast(Rotator*)&params[44] = OutRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TransformFromBoneSpace, params.ptr, cast(void*)0);
-		*OutPosition = *cast(Vector*)&params[32];
-		*OutRotation = *cast(Rotator*)&params[44];
+		OutPosition = *cast(Vector*)&params[32];
+		OutRotation = *cast(Rotator*)&params[44];
 	}
-	ScriptName FindClosestBone(Vector TestLocation, Vector* BoneLocation, float IgnoreScale)
+	ScriptName FindClosestBone(Vector TestLocation, Vector* BoneLocation = null, float* IgnoreScale = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = TestLocation;
-		*cast(Vector*)&params[12] = BoneLocation;
-		*cast(float*)&params[24] = IgnoreScale;
+		if (BoneLocation !is null)
+			*cast(Vector*)&params[12] = *BoneLocation;
+		if (IgnoreScale !is null)
+			*cast(float*)&params[24] = *IgnoreScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindClosestBone, params.ptr, cast(void*)0);
-		*BoneLocation = *cast(Vector*)&params[12];
+		if (BoneLocation !is null)
+			*BoneLocation = *cast(Vector*)&params[12];
 		return *cast(ScriptName*)&params[28];
 	}
 	Vector GetClosestCollidingBoneLocation(Vector TestLocation, bool bCheckZeroExtent, bool bCheckNonZeroExtent)
@@ -1334,15 +1348,16 @@ void**)params.ptr = NewParentAnimComp;
 		*cast(int*)&params[16] = TraceFlags;
 		*cast(ScriptArray!(ScriptName)*)&params[20] = out_Bones;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBonesWithinRadius, params.ptr, cast(void*)0);
-		*out_Bones = *cast(ScriptArray!(ScriptName)*)&params[20];
+		out_Bones = *cast(ScriptArray!(ScriptName)*)&params[20];
 		return *cast(bool*)&params[32];
 	}
-	void AddInstanceVertexWeightBoneParented(ScriptName BoneName, bool bPairWithParent)
+	void AddInstanceVertexWeightBoneParented(ScriptName BoneName, bool* bPairWithParent = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = BoneName;
-		*cast(bool*)&params[8] = bPairWithParent;
+		if (bPairWithParent !is null)
+			*cast(bool*)&params[8] = *bPairWithParent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddInstanceVertexWeightBoneParented, params.ptr, cast(void*)0);
 	}
 	void RemoveInstanceVertexWeightBoneParented(ScriptName BoneName)
@@ -1412,14 +1427,15 @@ void**)params.ptr = NewParentAnimComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFaceFXRegister, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
-	void SetFaceFXRegister(ScriptString RegName, float RegVal, SkeletalMeshComponent.EFaceFXRegOp RegOp, float InterpDuration)
+	void SetFaceFXRegister(ScriptString RegName, float RegVal, SkeletalMeshComponent.EFaceFXRegOp RegOp, float* InterpDuration = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = RegName;
 		*cast(float*)&params[12] = RegVal;
 		*cast(SkeletalMeshComponent.EFaceFXRegOp*)&params[16] = RegOp;
-		*cast(float*)&params[20] = InterpDuration;
+		if (InterpDuration !is null)
+			*cast(float*)&params[20] = *InterpDuration;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFaceFXRegister, params.ptr, cast(void*)0);
 	}
 	void SetFaceFXRegisterEx(ScriptString RegName, SkeletalMeshComponent.EFaceFXRegOp RegOp, float FirstValue, float FirstInterpDuration, float NextValue, float NextInterpDuration)
@@ -1485,35 +1501,40 @@ void**)params.ptr = NewParentAnimComp;
 		*cast(int*)&params[8] = LODIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMaterialSection, params.ptr, cast(void*)0);
 	}
-	void PlayAnim(ScriptName AnimName, float Duration, bool bLoop, bool bRestartIfAlreadyPlaying, float StartTime, bool bPlayBackwards)
+	void PlayAnim(ScriptName AnimName, float* Duration = null, bool* bLoop = null, bool* bRestartIfAlreadyPlaying = null, float* StartTime = null, bool* bPlayBackwards = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = AnimName;
-		*cast(float*)&params[8] = Duration;
-		*cast(bool*)&params[12] = bLoop;
-		*cast(bool*)&params[16] = bRestartIfAlreadyPlaying;
-		*cast(float*)&params[20] = StartTime;
-		*cast(bool*)&params[24] = bPlayBackwards;
+		if (Duration !is null)
+			*cast(float*)&params[8] = *Duration;
+		if (bLoop !is null)
+			*cast(bool*)&params[12] = *bLoop;
+		if (bRestartIfAlreadyPlaying !is null)
+			*cast(bool*)&params[16] = *bRestartIfAlreadyPlaying;
+		if (StartTime !is null)
+			*cast(float*)&params[20] = *StartTime;
+		if (bPlayBackwards !is null)
+			*cast(bool*)&params[24] = *bPlayBackwards;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopAnim, cast(void*)0, cast(void*)0);
 	}
-	bool CreateForceField(const AnimNotify_ForceField AnimNotifyData)
+	bool CreateForceField(in AnimNotify_ForceField AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_ForceField*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_ForceField*)params.ptr = cast(AnimNotify_ForceField)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateForceField, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool PlayParticleEffect(const AnimNotify_PlayParticleEffect AnimNotifyData)
+	bool PlayParticleEffect(in AnimNotify_PlayParticleEffect AnimNotifyData)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(AnimNotify_PlayParticleEffect*)params.ptr = AnimNotifyData;
+		*cast(AnimNotify_PlayParticleEffect*)params.ptr = cast(AnimNotify_PlayParticleEffect)AnimNotifyData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayParticleEffect, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -1528,14 +1549,15 @@ void* PSC)
 void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SkelMeshCompOnParticleSystemFinished, params.ptr, cast(void*)0);
 	}
-	void BreakConstraint(Vector Impulse, Vector HitLocation, ScriptName InBoneName, bool bVelChange)
+	void BreakConstraint(Vector Impulse, Vector HitLocation, ScriptName InBoneName, bool* bVelChange = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Impulse;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptName*)&params[24] = InBoneName;
-		*cast(bool*)&params[32] = bVelChange;
+		if (bVelChange !is null)
+			*cast(bool*)&params[32] = *bVelChange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BreakConstraint, params.ptr, cast(void*)0);
 	}
 }

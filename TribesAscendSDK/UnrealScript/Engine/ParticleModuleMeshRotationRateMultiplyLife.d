@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleMeshRotationRateMultiplyLife")()); }
 	private static __gshared ParticleModuleMeshRotationRateMultiplyLife mDefaultProperties;
 	@property final static ParticleModuleMeshRotationRateMultiplyLife DefaultProperties() { mixin(MGDPC!(ParticleModuleMeshRotationRateMultiplyLife, "ParticleModuleMeshRotationRateMultiplyLife Engine.Default__ParticleModuleMeshRotationRateMultiplyLife")()); }
-	@property final auto ref DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+	@property final auto ref DistributionVector.RawDistributionVector LifeMultiplier() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 }

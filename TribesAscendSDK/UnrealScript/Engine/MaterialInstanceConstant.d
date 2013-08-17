@@ -44,10 +44,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceConstant.FontParameterValue")()); }
 		@property final auto ref
 		{
-			UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 16)()); }
-			int FontPage() { mixin(MGPS!(int, 12)()); }
-			Font FontValue() { mixin(MGPS!(Font, 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Guid ExpressionGUID() { mixin(MGPS!("UObject.Guid", 16)()); }
+			int FontPage() { mixin(MGPS!("int", 12)()); }
+			Font FontValue() { mixin(MGPS!("Font", 8)()); }
+			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct ScalarParameterValue
@@ -58,9 +58,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceConstant.ScalarParameterValue")()); }
 		@property final auto ref
 		{
-			UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 12)()); }
-			float ParameterValue() { mixin(MGPS!(float, 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Guid ExpressionGUID() { mixin(MGPS!("UObject.Guid", 12)()); }
+			float ParameterValue() { mixin(MGPS!("float", 8)()); }
+			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct TextureParameterValue
@@ -71,9 +71,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceConstant.TextureParameterValue")()); }
 		@property final auto ref
 		{
-			UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 12)()); }
-			Texture ParameterValue() { mixin(MGPS!(Texture, 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Guid ExpressionGUID() { mixin(MGPS!("UObject.Guid", 12)()); }
+			Texture ParameterValue() { mixin(MGPS!("Texture", 8)()); }
+			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct VectorParameterValue
@@ -84,17 +84,17 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MaterialInstanceConstant.VectorParameterValue")()); }
 		@property final auto ref
 		{
-			UObject.Guid ExpressionGUID() { mixin(MGPS!(UObject.Guid, 24)()); }
-			UObject.LinearColor ParameterValue() { mixin(MGPS!(UObject.LinearColor, 8)()); }
-			ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Guid ExpressionGUID() { mixin(MGPS!("UObject.Guid", 24)()); }
+			UObject.LinearColor ParameterValue() { mixin(MGPS!("UObject.LinearColor", 8)()); }
+			ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInstanceConstant.FontParameterValue) FontParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant.FontParameterValue), 432)()); }
-		ScriptArray!(MaterialInstanceConstant.ScalarParameterValue) ScalarParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant.ScalarParameterValue), 444)()); }
-		ScriptArray!(MaterialInstanceConstant.TextureParameterValue) TextureParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant.TextureParameterValue), 456)()); }
-		ScriptArray!(MaterialInstanceConstant.VectorParameterValue) VectorParameterValues() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant.VectorParameterValue), 468)()); }
+		ScriptArray!(MaterialInstanceConstant.FontParameterValue) FontParameterValues() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant.FontParameterValue)", 432)()); }
+		ScriptArray!(MaterialInstanceConstant.ScalarParameterValue) ScalarParameterValues() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant.ScalarParameterValue)", 444)()); }
+		ScriptArray!(MaterialInstanceConstant.TextureParameterValue) TextureParameterValues() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant.TextureParameterValue)", 456)()); }
+		ScriptArray!(MaterialInstanceConstant.VectorParameterValue) VectorParameterValues() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant.VectorParameterValue)", 468)()); }
 	}
 final:
 	void SetParent(MaterialInterface NewParent)
@@ -120,14 +120,13 @@ final:
 		*cast(Texture*)&params[8] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTextureParameterValue, params.ptr, cast(void*)0);
 	}
-	void SetVectorParameterValue(ScriptName ParameterName, ref const UObject.LinearColor Value)
+	void SetVectorParameterValue(ScriptName ParameterName, ref in UObject.LinearColor Value)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = ParameterName;
-		*cast(UObject.LinearColor*)&params[8] = Value;
+		*cast(UObject.LinearColor*)&params[8] = cast(UObject.LinearColor)Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetVectorParameterValue, params.ptr, cast(void*)0);
-		*Value = *cast(UObject.LinearColor*)&params[8];
 	}
 	void SetFontParameterValue(ScriptName ParameterName, Font FontValue, int FontPage)
 	{

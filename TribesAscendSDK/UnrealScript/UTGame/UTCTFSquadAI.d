@@ -80,12 +80,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTCTFFlag EnemyFlag() { mixin(MGPC!(UTCTFFlag, 688)()); }
-		UTCTFFlag FriendlyFlag() { mixin(MGPC!(UTCTFFlag, 684)()); }
-		ScriptArray!(UDKSquadAI.AlternateRoute) EnemyFlagRoutes() { mixin(MGPC!(ScriptArray!(UDKSquadAI.AlternateRoute), 696)()); }
-		ScriptArray!(UDKSquadAI.AlternateRoute) FriendlyFlagRoutes() { mixin(MGPC!(ScriptArray!(UDKSquadAI.AlternateRoute), 708)()); }
-		NavigationPoint HidePath() { mixin(MGPC!(NavigationPoint, 692)()); }
-		float LastSeeFlagCarrier() { mixin(MGPC!(float, 680)()); }
+		UTCTFFlag EnemyFlag() { mixin(MGPC!("UTCTFFlag", 688)()); }
+		UTCTFFlag FriendlyFlag() { mixin(MGPC!("UTCTFFlag", 684)()); }
+		ScriptArray!(UDKSquadAI.AlternateRoute) EnemyFlagRoutes() { mixin(MGPC!("ScriptArray!(UDKSquadAI.AlternateRoute)", 696)()); }
+		ScriptArray!(UDKSquadAI.AlternateRoute) FriendlyFlagRoutes() { mixin(MGPC!("ScriptArray!(UDKSquadAI.AlternateRoute)", 708)()); }
+		NavigationPoint HidePath() { mixin(MGPC!("NavigationPoint", 692)()); }
+		float LastSeeFlagCarrier() { mixin(MGPC!("float", 680)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -287,6 +287,6 @@ final:
 		*cast(UTBot*)params.ptr = B;
 		*cast(float*)&params[4] = Aggression;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyAggression, params.ptr, cast(void*)0);
-		*Aggression = *cast(float*)&params[4];
+		Aggression = *cast(float*)&params[4];
 	}
 }

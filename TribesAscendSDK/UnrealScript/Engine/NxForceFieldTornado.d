@@ -22,19 +22,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer Kernel() { mixin(MGPC!(UObject.Pointer, 592)()); }
-			float SelfRotationStrength() { mixin(MGPC!(float, 588)()); }
-			float HeightOffset() { mixin(MGPC!(float, 580)()); }
-			float ForceHeight() { mixin(MGPC!(float, 576)()); }
-			float EscapeVelocity() { mixin(MGPC!(float, 572)()); }
-			float LiftFalloffHeight() { mixin(MGPC!(float, 568)()); }
-			float ForceTopRadius() { mixin(MGPC!(float, 564)()); }
-			float ForceRadius() { mixin(MGPC!(float, 560)()); }
-			float LiftStrength() { mixin(MGPC!(float, 556)()); }
-			float RotationalStrength() { mixin(MGPC!(float, 552)()); }
-			float RadialStrength() { mixin(MGPC!(float, 548)()); }
+			UObject.Pointer Kernel() { mixin(MGPC!("UObject.Pointer", 592)()); }
+			float SelfRotationStrength() { mixin(MGPC!("float", 588)()); }
+			float HeightOffset() { mixin(MGPC!("float", 580)()); }
+			float ForceHeight() { mixin(MGPC!("float", 576)()); }
+			float EscapeVelocity() { mixin(MGPC!("float", 572)()); }
+			float LiftFalloffHeight() { mixin(MGPC!("float", 568)()); }
+			float ForceTopRadius() { mixin(MGPC!("float", 564)()); }
+			float ForceRadius() { mixin(MGPC!("float", 560)()); }
+			float LiftStrength() { mixin(MGPC!("float", 556)()); }
+			float RotationalStrength() { mixin(MGPC!("float", 552)()); }
+			float RadialStrength() { mixin(MGPC!("float", 548)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawComponent'!
-			ForceFieldShape Shape() { mixin(MGPC!(ForceFieldShape, 540)()); }
+			ForceFieldShape Shape() { mixin(MGPC!("ForceFieldShape", 540)()); }
 		}
 		bool BSpecialRadialForceMode() { mixin(MGBPC!(584, 0x1)()); }
 		bool BSpecialRadialForceMode(bool val) { mixin(MSBPC!(584, 0x1)()); }

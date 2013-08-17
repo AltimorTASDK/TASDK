@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) SkelControlNameList() { mixin(MGPC!(ScriptArray!(ScriptName), 60)()); }
-			ScriptName SkelControlName() { mixin(MGPC!(ScriptName, 76)()); }
+			ScriptArray!(ScriptName) SkelControlNameList() { mixin(MGPC!("ScriptArray!(ScriptName)", 60)()); }
+			ScriptName SkelControlName() { mixin(MGPC!("ScriptName", 76)()); }
 		}
 		bool bFullControlOverController() { mixin(MGBPC!(72, 0x1)()); }
 		bool bFullControlOverController(bool val) { mixin(MSBPC!(72, 0x1)()); }

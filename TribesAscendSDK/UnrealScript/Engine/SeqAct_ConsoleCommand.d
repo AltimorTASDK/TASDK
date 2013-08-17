@@ -26,8 +26,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) Commands() { mixin(MGPC!(ScriptArray!(ScriptString), 244)()); }
-		ScriptString Command() { mixin(MGPC!(ScriptString, 232)()); }
+		ScriptArray!(ScriptString) Commands() { mixin(MGPC!("ScriptArray!(ScriptString)", 244)()); }
+		ScriptString Command() { mixin(MGPC!("ScriptString", 232)()); }
 	}
 final:
 	void VersionUpdated(int OldVersion, int NewVersion)

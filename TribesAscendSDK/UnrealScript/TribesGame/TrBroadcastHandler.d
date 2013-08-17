@@ -36,8 +36,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrSpottedTarget) m_SpottedTargets() { mixin(MGPC!(ScriptArray!(TrSpottedTarget), 484)()); }
-		float m_fSpottedActorsUpdateFrequency() { mixin(MGPC!(float, 496)()); }
+		ScriptArray!(TrSpottedTarget) m_SpottedTargets() { mixin(MGPC!("ScriptArray!(TrSpottedTarget)", 484)()); }
+		float m_fSpottedActorsUpdateFrequency() { mixin(MGPC!("float", 496)()); }
 	}
 final:
 	void TeamBroadcastVGSCommand(PlayerReplicationInfo SenderPRI, TrVGSCommandList.VGSCommandType VGSCommandIndex)
@@ -66,12 +66,13 @@ final:
 		*cast(bool*)&params[8] = bEnemyLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TeamBroadcastVGSContextCommand, params.ptr, cast(void*)0);
 	}
-	void OnActorSpotted(Actor SpottedActor, ScriptClass SpottedTargetClass)
+	void OnActorSpotted(Actor SpottedActor, ScriptClass* SpottedTargetClass = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Actor*)params.ptr = SpottedActor;
-		*cast(ScriptClass*)&params[4] = SpottedTargetClass;
+		if (SpottedTargetClass !is null)
+			*cast(ScriptClass*)&params[4] = *SpottedTargetClass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnActorSpotted, params.ptr, cast(void*)0);
 	}
 	void UpdateSpottedActorsTimer()

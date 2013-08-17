@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float DesiredRotationsPerSecond() { mixin(MGPC!(float, 252)()); }
-			float RotationsPerSecond() { mixin(MGPC!(float, 248)()); }
-			float SpinUpTime() { mixin(MGPC!(float, 240)()); }
-			float MaxRotationsPerSecond() { mixin(MGPC!(float, 236)()); }
+			float DesiredRotationsPerSecond() { mixin(MGPC!("float", 252)()); }
+			float RotationsPerSecond() { mixin(MGPC!("float", 248)()); }
+			float SpinUpTime() { mixin(MGPC!("float", 240)()); }
+			float MaxRotationsPerSecond() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bCounterClockwise() { mixin(MGBPC!(244, 0x1)()); }
 		bool bCounterClockwise(bool val) { mixin(MSBPC!(244, 0x1)()); }

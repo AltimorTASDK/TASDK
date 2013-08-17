@@ -66,15 +66,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			int m_nCurrentReticuleIndex() { mixin(MGPC!(int, 160)()); }
-			float LastReticuleDepth() { mixin(MGPC!(float, 152)()); }
-			float LastHitEnemyTime() { mixin(MGPC!(float, 148)()); }
-			float LastAccuracy() { mixin(MGPC!(float, 144)()); }
-			int LastCrossMode() { mixin(MGPC!(int, 140)()); }
-			Weapon LastWeapon() { mixin(MGPC!(Weapon, 136)()); }
-			GFxObject ActiveReticule() { mixin(MGPC!(GFxObject, 132)()); }
-			GFxObject ReticulesMC() { mixin(MGPC!(GFxObject, 128)()); }
-			WorldInfo ThisWorld() { mixin(MGPC!(WorldInfo, 124)()); }
+			int m_nCurrentReticuleIndex() { mixin(MGPC!("int", 160)()); }
+			float LastReticuleDepth() { mixin(MGPC!("float", 152)()); }
+			float LastHitEnemyTime() { mixin(MGPC!("float", 148)()); }
+			float LastAccuracy() { mixin(MGPC!("float", 144)()); }
+			int LastCrossMode() { mixin(MGPC!("int", 140)()); }
+			Weapon LastWeapon() { mixin(MGPC!("Weapon", 136)()); }
+			GFxObject ActiveReticule() { mixin(MGPC!("GFxObject", 132)()); }
+			GFxObject ReticulesMC() { mixin(MGPC!("GFxObject", 128)()); }
+			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
 		bool m_bVisible() { mixin(MGBPC!(156, 0x1)()); }
@@ -198,12 +198,13 @@ final:
 		*cast(bool*)params.ptr = bNewVisible;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetReticuleVisible, params.ptr, cast(void*)0);
 	}
-	void UpdateReticule(Pawn pPawn, bool bForceUpdate)
+	void UpdateReticule(Pawn pPawn, bool* bForceUpdate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = pPawn;
-		*cast(bool*)&params[4] = bForceUpdate;
+		if (bForceUpdate !is null)
+			*cast(bool*)&params[4] = *bForceUpdate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateReticule, params.ptr, cast(void*)0);
 	}
 }

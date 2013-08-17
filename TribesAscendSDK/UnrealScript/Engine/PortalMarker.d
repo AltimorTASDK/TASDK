@@ -18,7 +18,7 @@ public extern(D):
 		private static __gshared ScriptFunction mCanTeleport;
 		public @property static final ScriptFunction CanTeleport() { mixin(MGF!("mCanTeleport", "Function Engine.PortalMarker.CanTeleport")()); }
 	}
-	@property final auto ref PortalTeleporter MyPortal() { mixin(MGPC!(PortalTeleporter, 692)()); }
+	@property final auto ref PortalTeleporter MyPortal() { mixin(MGPC!("PortalTeleporter", 692)()); }
 	final bool CanTeleport(Actor A)
 	{
 		ubyte params[8];

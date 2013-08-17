@@ -20,12 +20,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			UDKVehicleSimChopper.AnglePID RollGain() { mixin(MGPC!(UDKVehicleSimChopper.AnglePID, 348)()); }
-			UDKVehicleSimChopper.AnglePID PitchGain() { mixin(MGPC!(UDKVehicleSimChopper.AnglePID, 328)()); }
-			int m_nLastYawInput() { mixin(MGPC!(int, 320)()); }
-			int m_nLastPitchInput() { mixin(MGPC!(int, 316)()); }
-			float ReverseSpeed() { mixin(MGPC!(float, 312)()); }
-			float HoverHeight() { mixin(MGPC!(float, 308)()); }
+			UDKVehicleSimChopper.AnglePID RollGain() { mixin(MGPC!("UDKVehicleSimChopper.AnglePID", 348)()); }
+			UDKVehicleSimChopper.AnglePID PitchGain() { mixin(MGPC!("UDKVehicleSimChopper.AnglePID", 328)()); }
+			int m_nLastYawInput() { mixin(MGPC!("int", 320)()); }
+			int m_nLastPitchInput() { mixin(MGPC!("int", 316)()); }
+			float ReverseSpeed() { mixin(MGPC!("float", 312)()); }
+			float HoverHeight() { mixin(MGPC!("float", 308)()); }
 		}
 		bool bShouldStabilizeRotation() { mixin(MGBPC!(324, 0x2)()); }
 		bool bShouldStabilizeRotation(bool val) { mixin(MSBPC!(324, 0x2)()); }

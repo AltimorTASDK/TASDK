@@ -172,59 +172,59 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) CreateOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) CreateOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 84)()); }
+void*)", 84)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) UpdateOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) UpdateOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 96)()); }
+void*)", 96)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) DestroyOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) DestroyOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 108)()); }
+void*)", 108)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) JoinOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) JoinOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 120)()); }
+void*)", 120)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) MigrateOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) MigrateOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 132)()); }
+void*)", 132)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) JoinMigratedOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) JoinMigratedOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 144)()); }
+void*)", 144)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) RecalculateSkillRatingCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) RecalculateSkillRatingCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 156)()); }
+void*)", 156)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) StartOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) StartOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 168)()); }
+void*)", 168)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) EndOnlineGameCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) EndOnlineGameCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 180)()); }
+void*)", 180)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) FindOnlineGamesCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) FindOnlineGamesCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 192)()); }
+void*)", 192)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*) CancelFindOnlineGamesCompleteDelegates() { mixin(MGPC!(ScriptArray!(
+void*) CancelFindOnlineGamesCompleteDelegates() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void*), 204)()); }
+void*)", 204)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnQosStatusChanged__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnJoinMigratedOnlineGameComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnMigrateOnlineGameComplete__Delegate'!
@@ -241,19 +241,19 @@ void*), 204)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnUpdateOnlineGameComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnCreateOnlineGameComplete__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnFindOnlineGamesComplete__Delegate'!
-		UObject.Pointer SessionInfo() { mixin(MGPC!(UObject.Pointer, 240)()); }
-		UObject.Pointer LanBeacon() { mixin(MGPC!(UObject.Pointer, 236)()); }
-		float LanQueryTimeout() { mixin(MGPC!(float, 232)()); }
-		float LanQueryTimeLeft() { mixin(MGPC!(float, 228)()); }
-		int LanPacketPlatformMask() { mixin(MGPC!(int, 224)()); }
-		int LanGameUniqueId() { mixin(MGPC!(int, 220)()); }
-		int LanAnnouncePort() { mixin(MGPC!(int, 216)()); }
-		ubyte LanNonce() { mixin(MGPC!(ubyte, 74)()); }
-		OnlineSubsystem.ELanBeaconState LanBeaconState() { mixin(MGPC!(OnlineSubsystem.ELanBeaconState, 73)()); }
-		OnlineSubsystem.EOnlineGameState CurrentGameState() { mixin(MGPC!(OnlineSubsystem.EOnlineGameState, 72)()); }
-		OnlineGameSearch GameSearch() { mixin(MGPC!(OnlineGameSearch, 68)()); }
-		OnlineGameSettings GameSettings() { mixin(MGPC!(OnlineGameSettings, 64)()); }
-		OnlineSubsystemCommonImpl OwningSubsystem() { mixin(MGPC!(OnlineSubsystemCommonImpl, 60)()); }
+		UObject.Pointer SessionInfo() { mixin(MGPC!("UObject.Pointer", 240)()); }
+		UObject.Pointer LanBeacon() { mixin(MGPC!("UObject.Pointer", 236)()); }
+		float LanQueryTimeout() { mixin(MGPC!("float", 232)()); }
+		float LanQueryTimeLeft() { mixin(MGPC!("float", 228)()); }
+		int LanPacketPlatformMask() { mixin(MGPC!("int", 224)()); }
+		int LanGameUniqueId() { mixin(MGPC!("int", 220)()); }
+		int LanAnnouncePort() { mixin(MGPC!("int", 216)()); }
+		ubyte LanNonce() { mixin(MGPC!("ubyte", 74)()); }
+		OnlineSubsystem.ELanBeaconState LanBeaconState() { mixin(MGPC!("OnlineSubsystem.ELanBeaconState", 73)()); }
+		OnlineSubsystem.EOnlineGameState CurrentGameState() { mixin(MGPC!("OnlineSubsystem.EOnlineGameState", 72)()); }
+		OnlineGameSearch GameSearch() { mixin(MGPC!("OnlineGameSearch", 68)()); }
+		OnlineGameSettings GameSettings() { mixin(MGPC!("OnlineGameSettings", 64)()); }
+		OnlineSubsystemCommonImpl OwningSubsystem() { mixin(MGPC!("OnlineSubsystemCommonImpl", 60)()); }
 	}
 final:
 	void OnCreateOnlineGameComplete(ScriptName SessionName, bool bWasSuccessful)
@@ -350,13 +350,12 @@ final:
 		*cast(int*)&params[4] = NumTotal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnQosStatusChanged, params.ptr, cast(void*)0);
 	}
-	void OnGameInviteAccepted(ref const OnlineGameSearch.OnlineGameSearchResult InviteResult)
+	void OnGameInviteAccepted(ref in OnlineGameSearch.OnlineGameSearchResult InviteResult)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = InviteResult;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)InviteResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameInviteAccepted, params.ptr, cast(void*)0);
-		*InviteResult = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 	}
 	void OnArbitrationRegistrationComplete(ScriptName SessionName, bool bWasSuccessful)
 	{
@@ -431,13 +430,14 @@ void* CreateOnlineGameCompleteDelegate)
 void**)params.ptr = CreateOnlineGameCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCreateOnlineGameCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool bShouldRefreshOnlineData)
+	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool* bShouldRefreshOnlineData = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(OnlineGameSettings*)&params[8] = UpdatedGameSettings;
-		*cast(bool*)&params[12] = bShouldRefreshOnlineData;
+		if (bShouldRefreshOnlineData !is null)
+			*cast(bool*)&params[12] = *bShouldRefreshOnlineData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOnlineGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -561,15 +561,14 @@ void**)params.ptr = CancelFindOnlineGamesCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FreeSearchResults, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool JoinOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame)
+	bool JoinOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame)
 	{
 		ubyte params[24];
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(ScriptName*)&params[4] = SessionName;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinOnlineGame, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12];
 		return *cast(bool*)&params[20];
 	}
 	void AddJoinOnlineGameCompleteDelegate(
@@ -601,7 +600,7 @@ void**)params.ptr = JoinOnlineGameCompleteDelegate;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptString*)&params[8] = ConnectInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetResolvedConnectString, params.ptr, cast(void*)0);
-		*ConnectInfo = *cast(ScriptString*)&params[8];
+		ConnectInfo = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool RegisterPlayer(ScriptName SessionName, OnlineSubsystem.UniqueNetId PlayerID, bool bWasInvited)
@@ -798,14 +797,13 @@ void**)&params[4] = GameInviteAcceptedDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AcceptGameInvite, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool RecalculateSkillRating(ScriptName SessionName, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
+	bool RecalculateSkillRating(ScriptName SessionName, ref in ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RecalculateSkillRating, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	void AddRecalculateSkillRatingCompleteDelegate(
@@ -861,15 +859,14 @@ void* MigrateOnlineGameCompleteDelegate)
 void**)params.ptr = MigrateOnlineGameCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearMigrateOnlineGameCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool JoinMigratedOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame)
+	bool JoinMigratedOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame)
 	{
 		ubyte params[24];
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(ScriptName*)&params[4] = SessionName;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinMigratedOnlineGame, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12];
 		return *cast(bool*)&params[20];
 	}
 	void AddJoinMigratedOnlineGameCompleteDelegate(
@@ -903,15 +900,14 @@ void**)params.ptr = JoinMigratedOnlineGameCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.QueryNonAdvertisedData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool ReadPlatformSpecificSessionInfo(ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame, ref ubyte PlatformSpecificInfo)
+	bool ReadPlatformSpecificSessionInfo(ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame, ref ubyte PlatformSpecificInfo)
 	{
 		ubyte params[92];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		params[8] = PlatformSpecificInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlatformSpecificSessionInfo, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
-		*PlatformSpecificInfo = params[8];
+		PlatformSpecificInfo = params[8];
 		return *cast(bool*)&params[88];
 	}
 	bool ReadPlatformSpecificSessionInfoBySessionName(ScriptName SessionName, ref ubyte PlatformSpecificInfo)
@@ -921,7 +917,7 @@ void**)params.ptr = JoinMigratedOnlineGameCompleteDelegate;
 		*cast(ScriptName*)params.ptr = SessionName;
 		params[8] = PlatformSpecificInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlatformSpecificSessionInfoBySessionName, params.ptr, cast(void*)0);
-		*PlatformSpecificInfo = params[8];
+		PlatformSpecificInfo = params[8];
 		return *cast(bool*)&params[88];
 	}
 	bool BindPlatformSpecificSessionToSearch(ubyte SearchingPlayerNum, OnlineGameSearch SearchSettings, ubyte PlatformSpecificInfo)

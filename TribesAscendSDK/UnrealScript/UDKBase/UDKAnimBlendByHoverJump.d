@@ -15,7 +15,7 @@ public extern(D):
 	@property final static UDKAnimBlendByHoverJump DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByHoverJump, "UDKAnimBlendByHoverJump UDKBase.Default__UDKAnimBlendByHoverJump")()); }
 	@property final auto ref
 	{
-		UDKVehicle OwnerHV() { mixin(MGPC!(UDKVehicle, 328)()); }
-		Pawn OwnerP() { mixin(MGPC!(Pawn, 324)()); }
+		UDKVehicle OwnerHV() { mixin(MGPC!("UDKVehicle", 328)()); }
+		Pawn OwnerP() { mixin(MGPC!("Pawn", 324)()); }
 	}
 }

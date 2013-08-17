@@ -33,17 +33,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nOldInvalidDeployReason() { mixin(MGPC!(int, 544)()); }
-		MaterialInstanceConstant m_RuntimeMIC() { mixin(MGPC!(MaterialInstanceConstant, 540)()); }
-		MaterialInstanceConstant m_HologramMaterial() { mixin(MGPC!(MaterialInstanceConstant, 536)()); }
+		int m_nOldInvalidDeployReason() { mixin(MGPC!("int", 544)()); }
+		MaterialInstanceConstant m_RuntimeMIC() { mixin(MGPC!("MaterialInstanceConstant", 540)()); }
+		MaterialInstanceConstant m_HologramMaterial() { mixin(MGPC!("MaterialInstanceConstant", 536)()); }
 	}
 final:
-	void SetValidDeployableLocation(bool bValidLocation, int InvalidDeployReason)
+	void SetValidDeployableLocation(bool bValidLocation, int* InvalidDeployReason = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bValidLocation;
-		*cast(int*)&params[4] = InvalidDeployReason;
+		if (InvalidDeployReason !is null)
+			*cast(int*)&params[4] = *InvalidDeployReason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetValidDeployableLocation, params.ptr, cast(void*)0);
 	}
 	void ClearAllMessages()

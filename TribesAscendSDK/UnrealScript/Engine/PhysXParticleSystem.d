@@ -33,30 +33,30 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer PSys() { mixin(MGPC!(UObject.Pointer, 156)()); }
-			UObject.Pointer CascadeScene() { mixin(MGPC!(UObject.Pointer, 152)()); }
-			float CollisionResponseCoefficient() { mixin(MGPC!(float, 148)()); }
-			float Viscosity() { mixin(MGPC!(float, 144)()); }
-			float Stiffness() { mixin(MGPC!(float, 140)()); }
-			float KernelRadiusMultiplier() { mixin(MGPC!(float, 136)()); }
-			float RestDensity() { mixin(MGPC!(float, 132)()); }
-			float RestParticleDistance() { mixin(MGPC!(float, 128)()); }
-			Vector ExternalAcceleration() { mixin(MGPC!(Vector, 116)()); }
-			float Damping() { mixin(MGPC!(float, 112)()); }
-			float MaxMotionDistance() { mixin(MGPC!(float, 108)()); }
-			float StaticFrictionWithDynamicShapes() { mixin(MGPC!(float, 100)()); }
-			float StaticFrictionWithStaticShapes() { mixin(MGPC!(float, 96)()); }
-			float FrictionWithDynamicShapes() { mixin(MGPC!(float, 92)()); }
-			float FrictionWithStaticShapes() { mixin(MGPC!(float, 88)()); }
-			float RestitutionWithDynamicShapes() { mixin(MGPC!(float, 84)()); }
-			float RestitutionWithStaticShapes() { mixin(MGPC!(float, 80)()); }
-			float CollisionDistance() { mixin(MGPC!(float, 76)()); }
-			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 72)()); }
-			PhysXParticleSystem.EPacketSizeMultiplier PacketSizeMultiplier() { mixin(MGPC!(PhysXParticleSystem.EPacketSizeMultiplier, 70)()); }
-			PhysXParticleSystem.ESimulationMethod SimulationMethod() { mixin(MGPC!(PhysXParticleSystem.ESimulationMethod, 69)()); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 68)()); }
-			int ParticleSpawnReserve() { mixin(MGPC!(int, 64)()); }
-			int MaxParticles() { mixin(MGPC!(int, 60)()); }
+			UObject.Pointer PSys() { mixin(MGPC!("UObject.Pointer", 156)()); }
+			UObject.Pointer CascadeScene() { mixin(MGPC!("UObject.Pointer", 152)()); }
+			float CollisionResponseCoefficient() { mixin(MGPC!("float", 148)()); }
+			float Viscosity() { mixin(MGPC!("float", 144)()); }
+			float Stiffness() { mixin(MGPC!("float", 140)()); }
+			float KernelRadiusMultiplier() { mixin(MGPC!("float", 136)()); }
+			float RestDensity() { mixin(MGPC!("float", 132)()); }
+			float RestParticleDistance() { mixin(MGPC!("float", 128)()); }
+			Vector ExternalAcceleration() { mixin(MGPC!("Vector", 116)()); }
+			float Damping() { mixin(MGPC!("float", 112)()); }
+			float MaxMotionDistance() { mixin(MGPC!("float", 108)()); }
+			float StaticFrictionWithDynamicShapes() { mixin(MGPC!("float", 100)()); }
+			float StaticFrictionWithStaticShapes() { mixin(MGPC!("float", 96)()); }
+			float FrictionWithDynamicShapes() { mixin(MGPC!("float", 92)()); }
+			float FrictionWithStaticShapes() { mixin(MGPC!("float", 88)()); }
+			float RestitutionWithDynamicShapes() { mixin(MGPC!("float", 84)()); }
+			float RestitutionWithStaticShapes() { mixin(MGPC!("float", 80)()); }
+			float CollisionDistance() { mixin(MGPC!("float", 76)()); }
+			PrimitiveComponent.RBCollisionChannelContainer RBCollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 72)()); }
+			PhysXParticleSystem.EPacketSizeMultiplier PacketSizeMultiplier() { mixin(MGPC!("PhysXParticleSystem.EPacketSizeMultiplier", 70)()); }
+			PhysXParticleSystem.ESimulationMethod SimulationMethod() { mixin(MGPC!("PhysXParticleSystem.ESimulationMethod", 69)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 68)()); }
+			int ParticleSpawnReserve() { mixin(MGPC!("int", 64)()); }
+			int MaxParticles() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bIsInGame() { mixin(MGBPC!(104, 0x40)()); }
 		bool bIsInGame(bool val) { mixin(MSBPC!(104, 0x40)()); }

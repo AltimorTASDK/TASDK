@@ -37,12 +37,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString LevelActionMessages() { mixin(MGPC!(ScriptString, 300)()); }
-		ScriptString ProgressMessageSceneClassName() { mixin(MGPC!(ScriptString, 396)()); }
-		Font LoadingScreenHintMessageFont() { mixin(MGPC!(Font, 392)()); }
-		Font LoadingScreenGameTypeNameFont() { mixin(MGPC!(Font, 388)()); }
-		Font LoadingScreenMapNameFont() { mixin(MGPC!(Font, 384)()); }
-		ScriptString UTFrontEndString() { mixin(MGPC!(ScriptString, 372)()); }
+		ScriptString LevelActionMessages() { mixin(MGPC!("ScriptString", 300)()); }
+		ScriptString ProgressMessageSceneClassName() { mixin(MGPC!("ScriptString", 396)()); }
+		Font LoadingScreenHintMessageFont() { mixin(MGPC!("Font", 392)()); }
+		Font LoadingScreenGameTypeNameFont() { mixin(MGPC!("Font", 388)()); }
+		Font LoadingScreenMapNameFont() { mixin(MGPC!("Font", 384)()); }
+		ScriptString UTFrontEndString() { mixin(MGPC!("ScriptString", 372)()); }
 	}
 final:
 	void PostRender(Canvas pCanvas)
@@ -70,22 +70,26 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateActiveSplitscreenType, cast(void*)0, cast(void*)0);
 	}
-	void SetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString Title, bool bIgnoreFutureNetworkMessages)
+	void SetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString* Title = null, bool* bIgnoreFutureNetworkMessages = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(PlayerController.EProgressMessageType*)params.ptr = MessageType;
 		*cast(ScriptString*)&params[4] = Message;
-		*cast(ScriptString*)&params[16] = Title;
-		*cast(bool*)&params[28] = bIgnoreFutureNetworkMessages;
+		if (Title !is null)
+			*cast(ScriptString*)&params[16] = *Title;
+		if (bIgnoreFutureNetworkMessages !is null)
+			*cast(bool*)&params[28] = *bIgnoreFutureNetworkMessages;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetProgressMessage, params.ptr, cast(void*)0);
 	}
-	void NotifyConnectionError(ScriptString Message, ScriptString Title)
+	void NotifyConnectionError(ScriptString* Message = null, ScriptString* Title = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = Message;
-		*cast(ScriptString*)&params[12] = Title;
+		if (Message !is null)
+			*cast(ScriptString*)params.ptr = *Message;
+		if (Title !is null)
+			*cast(ScriptString*)&params[12] = *Title;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyConnectionError, params.ptr, cast(void*)0);
 	}
 }

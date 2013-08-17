@@ -55,15 +55,15 @@ public extern(D):
 		{
 			auto ref
 			{
-				int MaxY() { mixin(MGPS!(int, 44)()); }
-				int MaxX() { mixin(MGPS!(int, 40)()); }
-				int MinY() { mixin(MGPS!(int, 36)()); }
-				int MinX() { mixin(MGPS!(int, 32)()); }
-				UObject.Color WireframeColor() { mixin(MGPS!(UObject.Color, 28)()); }
-				UObject.Color HighlightColor() { mixin(MGPS!(UObject.Color, 24)()); }
-				int AlphaMapIndex() { mixin(MGPS!(int, 16)()); }
-				TerrainLayerSetup Setup() { mixin(MGPS!(TerrainLayerSetup, 12)()); }
-				ScriptString Name() { mixin(MGPS!(ScriptString, 0)()); }
+				int MaxY() { mixin(MGPS!("int", 44)()); }
+				int MaxX() { mixin(MGPS!("int", 40)()); }
+				int MinY() { mixin(MGPS!("int", 36)()); }
+				int MinX() { mixin(MGPS!("int", 32)()); }
+				UObject.Color WireframeColor() { mixin(MGPS!("UObject.Color", 28)()); }
+				UObject.Color HighlightColor() { mixin(MGPS!("UObject.Color", 24)()); }
+				int AlphaMapIndex() { mixin(MGPS!("int", 16)()); }
+				TerrainLayerSetup Setup() { mixin(MGPS!("TerrainLayerSetup", 12)()); }
+				ScriptString Name() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool Hidden() { mixin(MGBPS!(20, 0x4)()); }
 			bool Hidden(bool val) { mixin(MSBPS!(20, 0x4)()); }
@@ -81,9 +81,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Terrain.TerrainDecoLayer")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Terrain.TerrainDecoration) Decorations() { mixin(MGPS!(ScriptArray!(Terrain.TerrainDecoration), 12)()); }
-			int AlphaMapIndex() { mixin(MGPS!(int, 24)()); }
-			ScriptString Name() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptArray!(Terrain.TerrainDecoration) Decorations() { mixin(MGPS!("ScriptArray!(Terrain.TerrainDecoration)", 12)()); }
+			int AlphaMapIndex() { mixin(MGPS!("int", 24)()); }
+			ScriptString Name() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct AlphaMap
@@ -108,9 +108,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Terrain.SelectedTerrainVertex")()); }
 		@property final auto ref
 		{
-			int Weight() { mixin(MGPS!(int, 8)()); }
-			int Y() { mixin(MGPS!(int, 4)()); }
-			int X() { mixin(MGPS!(int, 0)()); }
+			int Weight() { mixin(MGPS!("int", 8)()); }
+			int Y() { mixin(MGPS!("int", 4)()); }
+			int X() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct TerrainDecorationInstance
@@ -121,10 +121,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Terrain.TerrainDecorationInstance")()); }
 		@property final auto ref
 		{
-			int Yaw() { mixin(MGPS!(int, 16)()); }
-			float Scale() { mixin(MGPS!(float, 12)()); }
-			float Y() { mixin(MGPS!(float, 8)()); }
-			float X() { mixin(MGPS!(float, 4)()); }
+			int Yaw() { mixin(MGPS!("int", 16)()); }
+			float Scale() { mixin(MGPS!("float", 12)()); }
+			float Y() { mixin(MGPS!("float", 8)()); }
+			float X() { mixin(MGPS!("float", 4)()); }
 			// WARNING: Property 'Component' has the same name as a defined type!
 		}
 	}
@@ -136,12 +136,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Terrain.TerrainDecoration")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Terrain.TerrainDecorationInstance) Instances() { mixin(MGPS!(ScriptArray!(Terrain.TerrainDecorationInstance), 24)()); }
-			int RandSeed() { mixin(MGPS!(int, 20)()); }
-			float SlopeRotationBlend() { mixin(MGPS!(float, 16)()); }
-			float Density() { mixin(MGPS!(float, 12)()); }
-			float MaxScale() { mixin(MGPS!(float, 8)()); }
-			float MinScale() { mixin(MGPS!(float, 4)()); }
+			ScriptArray!(Terrain.TerrainDecorationInstance) Instances() { mixin(MGPS!("ScriptArray!(Terrain.TerrainDecorationInstance)", 24)()); }
+			int RandSeed() { mixin(MGPS!("int", 20)()); }
+			float SlopeRotationBlend() { mixin(MGPS!("float", 16)()); }
+			float Density() { mixin(MGPS!("float", 12)()); }
+			float MaxScale() { mixin(MGPS!("float", 8)()); }
+			float MinScale() { mixin(MGPS!("float", 4)()); }
 			// WARNING: Property 'Factory' has the same name as a defined type!
 		}
 	}
@@ -158,47 +158,47 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Terrain.CachedTerrainMaterialArray")()); }
-		@property final auto ref ScriptArray!(UObject.Pointer) CachedMaterials() { mixin(MGPS!(ScriptArray!(UObject.Pointer), 0)()); }
+		@property final auto ref ScriptArray!(UObject.Pointer) CachedMaterials() { mixin(MGPS!("ScriptArray!(UObject.Pointer)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Terrain.TerrainHeight) Heights() { mixin(MGPC!(ScriptArray!(Terrain.TerrainHeight), 476)()); }
-			ScriptArray!(Terrain.TerrainInfoData) InfoData() { mixin(MGPC!(ScriptArray!(Terrain.TerrainInfoData), 488)()); }
-			ScriptArray!(Terrain.TerrainLayer) Layers() { mixin(MGPC!(ScriptArray!(Terrain.TerrainLayer), 500)()); }
-			ScriptArray!(Terrain.TerrainDecoLayer) DecoLayers() { mixin(MGPC!(ScriptArray!(Terrain.TerrainDecoLayer), 516)()); }
-			ScriptArray!(Terrain.AlphaMap) AlphaMaps() { mixin(MGPC!(ScriptArray!(Terrain.AlphaMap), 528)()); }
+			ScriptArray!(Terrain.TerrainHeight) Heights() { mixin(MGPC!("ScriptArray!(Terrain.TerrainHeight)", 476)()); }
+			ScriptArray!(Terrain.TerrainInfoData) InfoData() { mixin(MGPC!("ScriptArray!(Terrain.TerrainInfoData)", 488)()); }
+			ScriptArray!(Terrain.TerrainLayer) Layers() { mixin(MGPC!("ScriptArray!(Terrain.TerrainLayer)", 500)()); }
+			ScriptArray!(Terrain.TerrainDecoLayer) DecoLayers() { mixin(MGPC!("ScriptArray!(Terrain.TerrainDecoLayer)", 516)()); }
+			ScriptArray!(Terrain.AlphaMap) AlphaMaps() { mixin(MGPC!("ScriptArray!(Terrain.AlphaMap)", 528)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) TerrainComponents() { mixin(MGPC!(ScriptArray!(
+void*) TerrainComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 540)()); }
-			ScriptArray!(Terrain.TerrainWeightedMaterial) WeightedMaterials() { mixin(MGPC!(ScriptArray!(Terrain.TerrainWeightedMaterial), 560)()); }
-			ScriptArray!(TerrainWeightMapTexture) WeightedTextureMaps() { mixin(MGPC!(ScriptArray!(TerrainWeightMapTexture), 572)()); }
-			ScriptArray!(Terrain.SelectedTerrainVertex) SelectedVertices() { mixin(MGPC!(ScriptArray!(Terrain.SelectedTerrainVertex), 700)()); }
-			UObject.Guid LightingGuid() { mixin(MGPC!(UObject.Guid, 716)()); }
-			UObject.Color WireframeColor() { mixin(MGPC!(UObject.Color, 712)()); }
-			int EditorTessellationLevel() { mixin(MGPC!(int, 696)()); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 692)()); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 664)()); }
-			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 660)()); }
-			PhysicalMaterial TerrainPhysMaterialOverride() { mixin(MGPC!(PhysicalMaterial, 656)()); }
-			int StaticLightingResolution() { mixin(MGPC!(int, 648)()); }
-			int MaxComponentSize() { mixin(MGPC!(int, 644)()); }
-			int NumPatchesY() { mixin(MGPC!(int, 640)()); }
-			int NumPatchesX() { mixin(MGPC!(int, 636)()); }
-			int NumVerticesY() { mixin(MGPC!(int, 632)()); }
-			int NumVerticesX() { mixin(MGPC!(int, 628)()); }
-			Terrain.CachedTerrainMaterialArray CachedTerrainMaterials() { mixin(MGPC!(Terrain.CachedTerrainMaterialArray, 604)()); }
-			int CollisionTesselationLevel() { mixin(MGPC!(int, 600)()); }
-			float TessellationCheckDistance() { mixin(MGPC!(float, 596)()); }
-			float TesselationDistanceScale() { mixin(MGPC!(float, 592)()); }
-			int MinTessellationLevel() { mixin(MGPC!(int, 588)()); }
-			int MaxTesselationLevel() { mixin(MGPC!(int, 584)()); }
-			int NumSectionsY() { mixin(MGPC!(int, 556)()); }
-			int NumSectionsX() { mixin(MGPC!(int, 552)()); }
-			int NormalMapLayer() { mixin(MGPC!(int, 512)()); }
+void*)", 540)()); }
+			ScriptArray!(Terrain.TerrainWeightedMaterial) WeightedMaterials() { mixin(MGPC!("ScriptArray!(Terrain.TerrainWeightedMaterial)", 560)()); }
+			ScriptArray!(TerrainWeightMapTexture) WeightedTextureMaps() { mixin(MGPC!("ScriptArray!(TerrainWeightMapTexture)", 572)()); }
+			ScriptArray!(Terrain.SelectedTerrainVertex) SelectedVertices() { mixin(MGPC!("ScriptArray!(Terrain.SelectedTerrainVertex)", 700)()); }
+			UObject.Guid LightingGuid() { mixin(MGPC!("UObject.Guid", 716)()); }
+			UObject.Color WireframeColor() { mixin(MGPC!("UObject.Color", 712)()); }
+			int EditorTessellationLevel() { mixin(MGPC!("int", 696)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!("UObject.Pointer", 692)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassPrimitiveSettings", 664)()); }
+			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!("LightComponent.LightingChannelContainer", 660)()); }
+			PhysicalMaterial TerrainPhysMaterialOverride() { mixin(MGPC!("PhysicalMaterial", 656)()); }
+			int StaticLightingResolution() { mixin(MGPC!("int", 648)()); }
+			int MaxComponentSize() { mixin(MGPC!("int", 644)()); }
+			int NumPatchesY() { mixin(MGPC!("int", 640)()); }
+			int NumPatchesX() { mixin(MGPC!("int", 636)()); }
+			int NumVerticesY() { mixin(MGPC!("int", 632)()); }
+			int NumVerticesX() { mixin(MGPC!("int", 628)()); }
+			Terrain.CachedTerrainMaterialArray CachedTerrainMaterials() { mixin(MGPC!("Terrain.CachedTerrainMaterialArray", 604)()); }
+			int CollisionTesselationLevel() { mixin(MGPC!("int", 600)()); }
+			float TessellationCheckDistance() { mixin(MGPC!("float", 596)()); }
+			float TesselationDistanceScale() { mixin(MGPC!("float", 592)()); }
+			int MinTessellationLevel() { mixin(MGPC!("int", 588)()); }
+			int MaxTesselationLevel() { mixin(MGPC!("int", 584)()); }
+			int NumSectionsY() { mixin(MGPC!("int", 556)()); }
+			int NumSectionsX() { mixin(MGPC!("int", 552)()); }
+			int NormalMapLayer() { mixin(MGPC!("int", 512)()); }
 		}
 		bool bShowWireframe() { mixin(MGBPC!(652, 0x8000)()); }
 		bool bShowWireframe(bool val) { mixin(MSBPC!(652, 0x8000)()); }

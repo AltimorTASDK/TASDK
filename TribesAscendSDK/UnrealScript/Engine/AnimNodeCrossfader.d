@@ -33,31 +33,37 @@ public extern(D):
 	{
 		auto ref
 		{
-			float PendingBlendOutTimeOneShot() { mixin(MGPC!(float, 272)()); }
-			ScriptName DefaultAnimSeqName() { mixin(MGPC!(ScriptName, 260)()); }
+			float PendingBlendOutTimeOneShot() { mixin(MGPC!("float", 272)()); }
+			ScriptName DefaultAnimSeqName() { mixin(MGPC!("ScriptName", 260)()); }
 		}
 		bool bDontBlendOutOneShot() { mixin(MGBPC!(268, 0x1)()); }
 		bool bDontBlendOutOneShot(bool val) { mixin(MSBPC!(268, 0x1)()); }
 	}
 final:
-	void PlayOneShotAnim(ScriptName AnimSeqName, float BlendInTime, float BlendOutTime, bool bDontBlendOut, float Rate)
+	void PlayOneShotAnim(ScriptName AnimSeqName, float* BlendInTime = null, float* BlendOutTime = null, bool* bDontBlendOut = null, float* Rate = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = AnimSeqName;
-		*cast(float*)&params[8] = BlendInTime;
-		*cast(float*)&params[12] = BlendOutTime;
-		*cast(bool*)&params[16] = bDontBlendOut;
-		*cast(float*)&params[20] = Rate;
+		if (BlendInTime !is null)
+			*cast(float*)&params[8] = *BlendInTime;
+		if (BlendOutTime !is null)
+			*cast(float*)&params[12] = *BlendOutTime;
+		if (bDontBlendOut !is null)
+			*cast(bool*)&params[16] = *bDontBlendOut;
+		if (Rate !is null)
+			*cast(float*)&params[20] = *Rate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayOneShotAnim, params.ptr, cast(void*)0);
 	}
-	void BlendToLoopingAnim(ScriptName AnimSeqName, float BlendInTime, float Rate)
+	void BlendToLoopingAnim(ScriptName AnimSeqName, float* BlendInTime = null, float* Rate = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = AnimSeqName;
-		*cast(float*)&params[8] = BlendInTime;
-		*cast(float*)&params[12] = Rate;
+		if (BlendInTime !is null)
+			*cast(float*)&params[8] = *BlendInTime;
+		if (Rate !is null)
+			*cast(float*)&params[12] = *Rate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BlendToLoopingAnim, params.ptr, cast(void*)0);
 	}
 	ScriptName GetAnimName()

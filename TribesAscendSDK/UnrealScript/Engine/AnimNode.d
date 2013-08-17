@@ -50,28 +50,28 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimNode.CurveKey")()); }
 		@property final auto ref
 		{
-			float Weight() { mixin(MGPS!(float, 8)()); }
-			ScriptName CurveName() { mixin(MGPS!(ScriptName, 0)()); }
+			float Weight() { mixin(MGPS!("float", 8)()); }
+			ScriptName CurveName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(AnimNodeBlendBase) ParentNodes() { mixin(MGPC!(ScriptArray!(AnimNodeBlendBase), 120)()); }
-			ScriptArray!(UObject.BoneAtom) CachedBoneAtoms() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 140)()); }
-			ScriptArray!(AnimNode.CurveKey) CachedCurveKeys() { mixin(MGPC!(ScriptArray!(AnimNode.CurveKey), 196)()); }
-			ScriptArray!(AnimNode.CurveKey) LastUpdatedAnimMorphKeys() { mixin(MGPC!(ScriptArray!(AnimNode.CurveKey), 212)()); }
-			int SearchTag() { mixin(MGPC!(int, 208)()); }
-			int bCachedHasRootMotion() { mixin(MGPC!(int, 192)()); }
-			UObject.BoneAtom CachedRootMotionDelta() { mixin(MGPC!(UObject.BoneAtom, 160)()); }
-			ubyte CachedNumDesiredBones() { mixin(MGPC!(ubyte, 152)()); }
-			ScriptName NodeName() { mixin(MGPC!(ScriptName, 132)()); }
-			float NodeTotalWeight() { mixin(MGPC!(float, 116)()); }
-			int NodeCachedAtomsTag() { mixin(MGPC!(int, 112)()); }
-			int TickArrayIndex() { mixin(MGPC!(int, 108)()); }
-			int NodeInitTag() { mixin(MGPC!(int, 104)()); }
-			int NodeTickTag() { mixin(MGPC!(int, 100)()); }
+			ScriptArray!(AnimNodeBlendBase) ParentNodes() { mixin(MGPC!("ScriptArray!(AnimNodeBlendBase)", 120)()); }
+			ScriptArray!(UObject.BoneAtom) CachedBoneAtoms() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 140)()); }
+			ScriptArray!(AnimNode.CurveKey) CachedCurveKeys() { mixin(MGPC!("ScriptArray!(AnimNode.CurveKey)", 196)()); }
+			ScriptArray!(AnimNode.CurveKey) LastUpdatedAnimMorphKeys() { mixin(MGPC!("ScriptArray!(AnimNode.CurveKey)", 212)()); }
+			int SearchTag() { mixin(MGPC!("int", 208)()); }
+			int bCachedHasRootMotion() { mixin(MGPC!("int", 192)()); }
+			UObject.BoneAtom CachedRootMotionDelta() { mixin(MGPC!("UObject.BoneAtom", 160)()); }
+			ubyte CachedNumDesiredBones() { mixin(MGPC!("ubyte", 152)()); }
+			ScriptName NodeName() { mixin(MGPC!("ScriptName", 132)()); }
+			float NodeTotalWeight() { mixin(MGPC!("float", 116)()); }
+			int NodeCachedAtomsTag() { mixin(MGPC!("int", 112)()); }
+			int TickArrayIndex() { mixin(MGPC!("int", 108)()); }
+			int NodeInitTag() { mixin(MGPC!("int", 104)()); }
+			int NodeTickTag() { mixin(MGPC!("int", 100)()); }
 		}
 		bool bCallScriptEventOnCeaseRelevant() { mixin(MGBPC!(96, 0x40)()); }
 		bool bCallScriptEventOnCeaseRelevant(bool val) { mixin(MSBPC!(96, 0x40)()); }
@@ -109,13 +109,16 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindAnimNode, params.ptr, cast(void*)0);
 		return *cast(AnimNode*)&params[8];
 	}
-	void PlayAnim(bool bLoop, float Rate, float StartTime)
+	void PlayAnim(bool* bLoop = null, float* Rate = null, float* StartTime = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = bLoop;
-		*cast(float*)&params[4] = Rate;
-		*cast(float*)&params[8] = StartTime;
+		if (bLoop !is null)
+			*cast(bool*)params.ptr = *bLoop;
+		if (Rate !is null)
+			*cast(float*)&params[4] = *Rate;
+		if (StartTime !is null)
+			*cast(float*)&params[8] = *StartTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()

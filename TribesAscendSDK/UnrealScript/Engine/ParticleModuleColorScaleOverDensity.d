@@ -15,7 +15,7 @@ public extern(D):
 	@property final static ParticleModuleColorScaleOverDensity DefaultProperties() { mixin(MGDPC!(ParticleModuleColorScaleOverDensity, "ParticleModuleColorScaleOverDensity Engine.Default__ParticleModuleColorScaleOverDensity")()); }
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat AlphaScaleOverDensity() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 100)()); }
-		DistributionVector.RawDistributionVector ColorScaleOverDensity() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		DistributionFloat.RawDistributionFloat AlphaScaleOverDensity() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 100)()); }
+		DistributionVector.RawDistributionVector ColorScaleOverDensity() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 	}
 }

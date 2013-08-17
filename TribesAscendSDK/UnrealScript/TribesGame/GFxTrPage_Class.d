@@ -65,8 +65,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumRenameLoadout() { mixin(MGPC!(int, 360)()); }
-			int PopupNum() { mixin(MGPC!(int, 356)()); }
+			int NumRenameLoadout() { mixin(MGPC!("int", 360)()); }
+			int PopupNum() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bViewingEquip() { mixin(MGBPC!(364, 0x2)()); }
 		bool bViewingEquip(bool val) { mixin(MSBPC!(364, 0x2)()); }

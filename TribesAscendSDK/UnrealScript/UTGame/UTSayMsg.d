@@ -20,8 +20,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UObject.Color BlueTeamColor() { mixin(MGPC!(UObject.Color, 104)()); }
-		UObject.Color RedTeamColor() { mixin(MGPC!(UObject.Color, 100)()); }
+		UObject.Color BlueTeamColor() { mixin(MGPC!("UObject.Color", 104)()); }
+		UObject.Color RedTeamColor() { mixin(MGPC!("UObject.Color", 100)()); }
 	}
 	final static UObject.Color GetConsoleColor(PlayerReplicationInfo RelatedPRI_1)
 	{

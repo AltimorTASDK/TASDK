@@ -84,8 +84,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxObject m_ControlSettingsList() { mixin(MGPC!(GFxObject, 124)()); }
-		int m_ControlSettingsCount() { mixin(MGPC!(int, 120)()); }
+		GFxObject m_ControlSettingsList() { mixin(MGPC!("GFxObject", 124)()); }
+		int m_ControlSettingsCount() { mixin(MGPC!("int", 120)()); }
 	}
 final:
 	float GetCurrentControlValue(TrObject.ESettingsList Index)
@@ -135,13 +135,14 @@ final:
 		*cast(float*)&params[12] = val;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddControlSetting, params.ptr, cast(void*)0);
 	}
-	void SaveControlSetting(int Index, float val, bool bStore)
+	void SaveControlSetting(int Index, float val, bool* bStore = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(float*)&params[4] = val;
-		*cast(bool*)&params[8] = bStore;
+		if (bStore !is null)
+			*cast(bool*)&params[8] = *bStore;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SaveControlSetting, params.ptr, cast(void*)0);
 	}
 	TrObject.ESettingsList GetControlTypeFromName(ScriptString ControlName)

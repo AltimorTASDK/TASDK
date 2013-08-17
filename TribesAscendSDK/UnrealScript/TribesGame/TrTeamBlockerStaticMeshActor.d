@@ -37,9 +37,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 492)()); }
-			Material m_BaseMaterial() { mixin(MGPC!(Material, 504)()); }
-			ubyte m_DefenderTeamIndex() { mixin(MGPC!(ubyte, 484)()); }
+			ScriptArray!(MaterialInstanceConstant) m_MICs() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 492)()); }
+			Material m_BaseMaterial() { mixin(MGPC!("Material", 504)()); }
+			ubyte m_DefenderTeamIndex() { mixin(MGPC!("ubyte", 484)()); }
 		}
 		bool m_bDisableBlockingOnSiegePhase0Ends() { mixin(MGBPC!(488, 0x1)()); }
 		bool m_bDisableBlockingOnSiegePhase0Ends(bool val) { mixin(MSBPC!(488, 0x1)()); }

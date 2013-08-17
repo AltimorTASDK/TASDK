@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleColorByParameter DefaultProperties() { mixin(MGDPC!(ParticleModuleColorByParameter, "ParticleModuleColorByParameter Engine.Default__ParticleModuleColorByParameter")()); }
 	@property final auto ref
 	{
-		UObject.Color DefaultColor() { mixin(MGPC!(UObject.Color, 80)()); }
-		ScriptName ColorParam() { mixin(MGPC!(ScriptName, 72)()); }
+		UObject.Color DefaultColor() { mixin(MGPC!("UObject.Color", 80)()); }
+		ScriptName ColorParam() { mixin(MGPC!("ScriptName", 72)()); }
 	}
 }

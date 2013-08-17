@@ -13,8 +13,8 @@ public extern(D):
 	@property final static UDKAnimBlendByHoverboardTurn DefaultProperties() { mixin(MGDPC!(UDKAnimBlendByHoverboardTurn, "UDKAnimBlendByHoverboardTurn UDKBase.Default__UDKAnimBlendByHoverboardTurn")()); }
 	@property final auto ref
 	{
-		float CurrentAnimWeight() { mixin(MGPC!(float, 252)()); }
-		float MaxBlendPerSec() { mixin(MGPC!(float, 248)()); }
-		float TurnScale() { mixin(MGPC!(float, 244)()); }
+		float CurrentAnimWeight() { mixin(MGPC!("float", 252)()); }
+		float MaxBlendPerSec() { mixin(MGPC!("float", 248)()); }
+		float TurnScale() { mixin(MGPC!("float", 244)()); }
 	}
 }

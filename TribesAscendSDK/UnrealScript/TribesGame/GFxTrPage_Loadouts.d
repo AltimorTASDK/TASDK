@@ -55,11 +55,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString LoadoutClassName() { mixin(MGPC!(ScriptString, 376)()); }
-			int ModelEquip() { mixin(MGPC!(int, 368)()); }
-			int PopupNum() { mixin(MGPC!(int, 364)()); }
-			int XPAmount() { mixin(MGPC!(int, 360)()); }
-			int GPAmount() { mixin(MGPC!(int, 356)()); }
+			ScriptString LoadoutClassName() { mixin(MGPC!("ScriptString", 376)()); }
+			int ModelEquip() { mixin(MGPC!("int", 368)()); }
+			int PopupNum() { mixin(MGPC!("int", 364)()); }
+			int XPAmount() { mixin(MGPC!("int", 360)()); }
+			int GPAmount() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bInSelection() { mixin(MGBPC!(372, 0x1)()); }
 		bool bInSelection(bool val) { mixin(MSBPC!(372, 0x1)()); }

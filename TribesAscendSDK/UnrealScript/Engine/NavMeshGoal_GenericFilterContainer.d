@@ -33,17 +33,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(NavMeshGoal_Filter) GoalFilters() { mixin(MGPC!(ScriptArray!(NavMeshGoal_Filter), 80)()); }
-		NavigationHandle MyNavigationHandle() { mixin(MGPC!(NavigationHandle, 96)()); }
-		UObject.Pointer SuccessfulGoal() { mixin(MGPC!(UObject.Pointer, 92)()); }
+		ScriptArray!(NavMeshGoal_Filter) GoalFilters() { mixin(MGPC!("ScriptArray!(NavMeshGoal_Filter)", 80)()); }
+		NavigationHandle MyNavigationHandle() { mixin(MGPC!("NavigationHandle", 96)()); }
+		UObject.Pointer SuccessfulGoal() { mixin(MGPC!("UObject.Pointer", 92)()); }
 	}
 final:
-	static NavMeshGoal_GenericFilterContainer CreateAndAddFilterToNavHandle(NavigationHandle NavHandle, int InMaxPathVisits)
+	static NavMeshGoal_GenericFilterContainer CreateAndAddFilterToNavHandle(NavigationHandle NavHandle, int* InMaxPathVisits = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
-		*cast(int*)&params[4] = InMaxPathVisits;
+		if (InMaxPathVisits !is null)
+			*cast(int*)&params[4] = *InMaxPathVisits;
 		StaticClass.ProcessEvent(Functions.CreateAndAddFilterToNavHandle, params.ptr, cast(void*)0);
 		return *cast(NavMeshGoal_GenericFilterContainer*)&params[8];
 	}

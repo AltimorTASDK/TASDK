@@ -13,7 +13,7 @@ public extern(D):
 	@property final static InterpTrackInstFaceFX DefaultProperties() { mixin(MGDPC!(InterpTrackInstFaceFX, "InterpTrackInstFaceFX Engine.Default__InterpTrackInstFaceFX")()); }
 	@property final
 	{
-		@property final auto ref float LastUpdatePosition() { mixin(MGPC!(float, 64)()); }
+		@property final auto ref float LastUpdatePosition() { mixin(MGPC!("float", 64)()); }
 		bool bFirstUpdate() { mixin(MGBPC!(60, 0x1)()); }
 		bool bFirstUpdate(bool val) { mixin(MSBPC!(60, 0x1)()); }
 	}

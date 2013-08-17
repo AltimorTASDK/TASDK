@@ -23,14 +23,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			QWord ImportTimeStamp() { mixin(MGPC!(QWord, 164)()); }
-			int RTVideoTextures() { mixin(MGPC!(int, 160)()); }
-			int RTTextures() { mixin(MGPC!(int, 156)()); }
-			ScriptString SourceFileTimestamp() { mixin(MGPC!(ScriptString, 144)()); }
-			ScriptString TextureFormat() { mixin(MGPC!(ScriptString, 132)()); }
-			SwfMovie.FlashTextureRescale TextureRescale() { mixin(MGPC!(SwfMovie.FlashTextureRescale, 128)()); }
-			int PackTextureSize() { mixin(MGPC!(int, 124)()); }
-			ScriptString SourceFile() { mixin(MGPC!(ScriptString, 112)()); }
+			QWord ImportTimeStamp() { mixin(MGPC!("QWord", 164)()); }
+			int RTVideoTextures() { mixin(MGPC!("int", 160)()); }
+			int RTTextures() { mixin(MGPC!("int", 156)()); }
+			ScriptString SourceFileTimestamp() { mixin(MGPC!("ScriptString", 144)()); }
+			ScriptString TextureFormat() { mixin(MGPC!("ScriptString", 132)()); }
+			SwfMovie.FlashTextureRescale TextureRescale() { mixin(MGPC!("SwfMovie.FlashTextureRescale", 128)()); }
+			int PackTextureSize() { mixin(MGPC!("int", 124)()); }
+			ScriptString SourceFile() { mixin(MGPC!("ScriptString", 112)()); }
 		}
 		bool bPackTextures() { mixin(MGBPC!(108, 0x4)()); }
 		bool bPackTextures(bool val) { mixin(MSBPC!(108, 0x4)()); }

@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleMeshRotationRateOverLife DefaultProperties() { mixin(MGDPC!(ParticleModuleMeshRotationRateOverLife, "ParticleModuleMeshRotationRateOverLife Engine.Default__ParticleModuleMeshRotationRateOverLife")()); }
 	@property final
 	{
-		@property final auto ref DistributionVector.RawDistributionVector RotRate() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		@property final auto ref DistributionVector.RawDistributionVector RotRate() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 		bool bScaleRotRate() { mixin(MGBPC!(100, 0x1)()); }
 		bool bScaleRotRate(bool val) { mixin(MSBPC!(100, 0x1)()); }
 	}

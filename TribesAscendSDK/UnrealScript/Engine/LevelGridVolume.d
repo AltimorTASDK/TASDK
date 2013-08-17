@@ -26,18 +26,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LevelGridVolume.LevelGridCellCoordinate")()); }
 		@property final auto ref
 		{
-			int Z() { mixin(MGPS!(int, 8)()); }
-			int Y() { mixin(MGPS!(int, 4)()); }
-			int X() { mixin(MGPS!(int, 0)()); }
+			int Z() { mixin(MGPS!("int", 8)()); }
+			int Y() { mixin(MGPS!("int", 4)()); }
+			int X() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		KMeshProps.KConvexElem CellConvexElem() { mixin(MGPC!(KMeshProps.KConvexElem, 556)()); }
-		float KeepLoadedRange() { mixin(MGPC!(float, 552)()); }
-		float LoadingDistance() { mixin(MGPC!(float, 548)()); }
-		int Subdivisions() { mixin(MGPC!(int, 536)()); }
-		LevelGridVolume.LevelGridCellShape CellShape() { mixin(MGPC!(LevelGridVolume.LevelGridCellShape, 532)()); }
-		ScriptString LevelGridVolumeName() { mixin(MGPC!(ScriptString, 520)()); }
+		KMeshProps.KConvexElem CellConvexElem() { mixin(MGPC!("KMeshProps.KConvexElem", 556)()); }
+		float KeepLoadedRange() { mixin(MGPC!("float", 552)()); }
+		float LoadingDistance() { mixin(MGPC!("float", 548)()); }
+		int Subdivisions() { mixin(MGPC!("int", 536)()); }
+		LevelGridVolume.LevelGridCellShape CellShape() { mixin(MGPC!("LevelGridVolume.LevelGridCellShape", 532)()); }
+		ScriptString LevelGridVolumeName() { mixin(MGPC!("ScriptString", 520)()); }
 	}
 }

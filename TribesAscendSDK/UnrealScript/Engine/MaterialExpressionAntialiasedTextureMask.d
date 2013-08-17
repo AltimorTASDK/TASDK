@@ -22,6 +22,6 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Channel' has the same name as a defined type!
-		float Threshold() { mixin(MGPC!(float, 164)()); }
+		float Threshold() { mixin(MGPC!("float", 164)()); }
 	}
 }

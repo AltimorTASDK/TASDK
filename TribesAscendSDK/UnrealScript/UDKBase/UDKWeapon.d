@@ -36,10 +36,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) AimingTraceIgnoredActors() { mixin(MGPC!(ScriptArray!(Actor), 736)()); }
-			float AimTraceRange() { mixin(MGPC!(float, 732)()); }
-			ubyte HitEnemy() { mixin(MGPC!(ubyte, 728)()); }
-			int AmmoCount() { mixin(MGPC!(int, 724)()); }
+			ScriptArray!(Actor) AimingTraceIgnoredActors() { mixin(MGPC!("ScriptArray!(Actor)", 736)()); }
+			float AimTraceRange() { mixin(MGPC!("float", 732)()); }
+			ubyte HitEnemy() { mixin(MGPC!("ubyte", 728)()); }
+			int AmmoCount() { mixin(MGPC!("int", 724)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverlayMesh'!
 		}
 		bool bConsiderProjectileAcceleration() { mixin(MGBPC!(720, 0x2)()); }

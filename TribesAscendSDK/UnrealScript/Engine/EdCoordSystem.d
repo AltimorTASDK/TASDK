@@ -13,7 +13,7 @@ public extern(D):
 	@property final static EdCoordSystem DefaultProperties() { mixin(MGDPC!(EdCoordSystem, "EdCoordSystem Engine.Default__EdCoordSystem")()); }
 	@property final auto ref
 	{
-		ScriptString Desc() { mixin(MGPC!(ScriptString, 128)()); }
-		UObject.Matrix M() { mixin(MGPC!(UObject.Matrix, 64)()); }
+		ScriptString Desc() { mixin(MGPC!("ScriptString", 128)()); }
+		UObject.Matrix M() { mixin(MGPC!("UObject.Matrix", 64)()); }
 	}
 }

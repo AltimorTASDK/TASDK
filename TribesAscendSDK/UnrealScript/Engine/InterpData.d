@@ -22,7 +22,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpData.AnimSetBakeAndPruneStatus")()); }
 		@property final
 		{
-			@property final auto ref ScriptString AnimSetName() { mixin(MGPS!(ScriptString, 0)()); }
+			@property final auto ref ScriptString AnimSetName() { mixin(MGPS!("ScriptString", 0)()); }
 			bool bSkipBakeAndPrune() { mixin(MGBPS!(12, 0x2)()); }
 			bool bSkipBakeAndPrune(bool val) { mixin(MSBPS!(12, 0x2)()); }
 			bool bReferencedButUnused() { mixin(MGBPS!(12, 0x1)()); }
@@ -33,16 +33,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(InterpGroup) InterpGroups() { mixin(MGPC!(ScriptArray!(InterpGroup), 156)()); }
-			ScriptArray!(InterpFilter) InterpFilters() { mixin(MGPC!(ScriptArray!(InterpFilter), 172)()); }
-			ScriptArray!(InterpFilter) DefaultFilters() { mixin(MGPC!(ScriptArray!(InterpFilter), 188)()); }
-			ScriptArray!(InterpData.AnimSetBakeAndPruneStatus) BakeAndPruneStatus() { mixin(MGPC!(ScriptArray!(InterpData.AnimSetBakeAndPruneStatus), 212)()); }
-			float EdSectionEnd() { mixin(MGPC!(float, 204)()); }
-			float EdSectionStart() { mixin(MGPC!(float, 200)()); }
-			InterpFilter SelectedFilter() { mixin(MGPC!(InterpFilter, 184)()); }
-			InterpCurveEdSetup CurveEdSetup() { mixin(MGPC!(InterpCurveEdSetup, 168)()); }
-			float PathBuildTime() { mixin(MGPC!(float, 152)()); }
-			float InterpLength() { mixin(MGPC!(float, 148)()); }
+			ScriptArray!(InterpGroup) InterpGroups() { mixin(MGPC!("ScriptArray!(InterpGroup)", 156)()); }
+			ScriptArray!(InterpFilter) InterpFilters() { mixin(MGPC!("ScriptArray!(InterpFilter)", 172)()); }
+			ScriptArray!(InterpFilter) DefaultFilters() { mixin(MGPC!("ScriptArray!(InterpFilter)", 188)()); }
+			ScriptArray!(InterpData.AnimSetBakeAndPruneStatus) BakeAndPruneStatus() { mixin(MGPC!("ScriptArray!(InterpData.AnimSetBakeAndPruneStatus)", 212)()); }
+			float EdSectionEnd() { mixin(MGPC!("float", 204)()); }
+			float EdSectionStart() { mixin(MGPC!("float", 200)()); }
+			InterpFilter SelectedFilter() { mixin(MGPC!("InterpFilter", 184)()); }
+			InterpCurveEdSetup CurveEdSetup() { mixin(MGPC!("InterpCurveEdSetup", 168)()); }
+			float PathBuildTime() { mixin(MGPC!("float", 152)()); }
+			float InterpLength() { mixin(MGPC!("float", 148)()); }
 		}
 		bool bShouldBakeAndPrune() { mixin(MGBPC!(208, 0x1)()); }
 		bool bShouldBakeAndPrune(bool val) { mixin(MSBPC!(208, 0x1)()); }

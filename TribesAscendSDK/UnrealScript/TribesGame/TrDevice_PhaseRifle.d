@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_MaxEnergyConsumed() { mixin(MGPC!(float, 2152)()); }
-		float m_DamagePerEnergy() { mixin(MGPC!(float, 2148)()); }
+		float m_MaxEnergyConsumed() { mixin(MGPC!("float", 2152)()); }
+		float m_DamagePerEnergy() { mixin(MGPC!("float", 2148)()); }
 	}
 final:
 	void InstantFire()

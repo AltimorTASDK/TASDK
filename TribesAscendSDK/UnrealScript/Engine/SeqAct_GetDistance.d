@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_GetDistance")()); }
 	private static __gshared SeqAct_GetDistance mDefaultProperties;
 	@property final static SeqAct_GetDistance DefaultProperties() { mixin(MGDPC!(SeqAct_GetDistance, "SeqAct_GetDistance Engine.Default__SeqAct_GetDistance")()); }
-	@property final auto ref float Distance() { mixin(MGPC!(float, 232)()); }
+	@property final auto ref float Distance() { mixin(MGPC!("float", 232)()); }
 }

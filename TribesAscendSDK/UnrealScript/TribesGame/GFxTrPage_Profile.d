@@ -396,12 +396,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetKDR, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	int GetPlayedPercent(int ClassId, bool bResolve)
+	int GetPlayedPercent(int ClassId, bool* bResolve = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ClassId;
-		*cast(bool*)&params[4] = bResolve;
+		if (bResolve !is null)
+			*cast(bool*)&params[4] = *bResolve;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayedPercent, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}

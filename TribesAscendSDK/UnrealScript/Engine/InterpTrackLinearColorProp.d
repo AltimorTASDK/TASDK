@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackLinearColorProp")()); }
 	private static __gshared InterpTrackLinearColorProp mDefaultProperties;
 	@property final static InterpTrackLinearColorProp DefaultProperties() { mixin(MGDPC!(InterpTrackLinearColorProp, "InterpTrackLinearColorProp Engine.Default__InterpTrackLinearColorProp")()); }
-	@property final auto ref ScriptName PropertyName() { mixin(MGPC!(ScriptName, 148)()); }
+	@property final auto ref ScriptName PropertyName() { mixin(MGPC!("ScriptName", 148)()); }
 }

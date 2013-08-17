@@ -63,20 +63,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) IPPolicies() { mixin(MGPC!(ScriptArray!(ScriptString), 476)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) BannedIDs() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 488)()); }
-			ScriptString ACDescText() { mixin(MGPC!(ScriptString, 648)()); }
-			ScriptString ACDisplayText() { mixin(MGPC!(ScriptString, 612)()); }
-			ScriptString GamePassword() { mixin(MGPC!(ScriptString, 600)()); }
-			ScriptString AdminPassword() { mixin(MGPC!(ScriptString, 588)()); }
-			ScriptClass AdminClass() { mixin(MGPC!(ScriptClass, 584)()); }
-			ScriptString IdleKickReason() { mixin(MGPC!(ScriptString, 572)()); }
-			ScriptString DefaultKickReason() { mixin(MGPC!(ScriptString, 560)()); }
-			ScriptString KickedMsg() { mixin(MGPC!(ScriptString, 548)()); }
-			ScriptString SessionBanned() { mixin(MGPC!(ScriptString, 536)()); }
-			ScriptString NeedPassword() { mixin(MGPC!(ScriptString, 524)()); }
-			ScriptString WrongPassword() { mixin(MGPC!(ScriptString, 512)()); }
-			ScriptString IPBanned() { mixin(MGPC!(ScriptString, 500)()); }
+			ScriptArray!(ScriptString) IPPolicies() { mixin(MGPC!("ScriptArray!(ScriptString)", 476)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) BannedIDs() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 488)()); }
+			ScriptString ACDescText() { mixin(MGPC!("ScriptString", 648)()); }
+			ScriptString ACDisplayText() { mixin(MGPC!("ScriptString", 612)()); }
+			ScriptString GamePassword() { mixin(MGPC!("ScriptString", 600)()); }
+			ScriptString AdminPassword() { mixin(MGPC!("ScriptString", 588)()); }
+			ScriptClass AdminClass() { mixin(MGPC!("ScriptClass", 584)()); }
+			ScriptString IdleKickReason() { mixin(MGPC!("ScriptString", 572)()); }
+			ScriptString DefaultKickReason() { mixin(MGPC!("ScriptString", 560)()); }
+			ScriptString KickedMsg() { mixin(MGPC!("ScriptString", 548)()); }
+			ScriptString SessionBanned() { mixin(MGPC!("ScriptString", 536)()); }
+			ScriptString NeedPassword() { mixin(MGPC!("ScriptString", 524)()); }
+			ScriptString WrongPassword() { mixin(MGPC!("ScriptString", 512)()); }
+			ScriptString IPBanned() { mixin(MGPC!("ScriptString", 500)()); }
 		}
 		bool bDontAddDefaultAdmin() { mixin(MGBPC!(684, 0x1)()); }
 		bool bDontAddDefaultAdmin(bool val) { mixin(MSBPC!(684, 0x1)()); }
@@ -209,7 +209,7 @@ final:
 		*cast(ScriptString*)&params[24] = OutError;
 		*cast(bool*)&params[36] = bSpectator;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PreLogin, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)&params[24];
+		OutError = *cast(ScriptString*)&params[24];
 	}
 	bool CheckIPPolicy(ScriptString Address)
 	{
@@ -219,13 +219,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckIPPolicy, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool IsIDBanned(ref const OnlineSubsystem.UniqueNetId NetId)
+	bool IsIDBanned(ref in OnlineSubsystem.UniqueNetId NetId)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = NetId;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = cast(OnlineSubsystem.UniqueNetId)NetId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsIDBanned, params.ptr, cast(void*)0);
-		*NetId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(bool*)&params[8];
 	}
 }

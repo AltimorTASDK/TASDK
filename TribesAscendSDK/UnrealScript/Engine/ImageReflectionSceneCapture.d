@@ -13,7 +13,7 @@ public extern(D):
 	@property final static ImageReflectionSceneCapture DefaultProperties() { mixin(MGDPC!(ImageReflectionSceneCapture, "ImageReflectionSceneCapture Engine.Default__ImageReflectionSceneCapture")()); }
 	@property final auto ref
 	{
-		float ColorRange() { mixin(MGPC!(float, 488)()); }
-		float DepthRange() { mixin(MGPC!(float, 484)()); }
+		float ColorRange() { mixin(MGPC!("float", 488)()); }
+		float DepthRange() { mixin(MGPC!("float", 484)()); }
 	}
 }

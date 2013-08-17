@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref float Attraction() { mixin(MGPC!(float, 484)()); }
+		@property final auto ref float Attraction() { mixin(MGPC!("float", 484)()); }
 		bool bAttractionFalloff() { mixin(MGBPC!(488, 0x1)()); }
 		bool bAttractionFalloff(bool val) { mixin(MSBPC!(488, 0x1)()); }
 	}

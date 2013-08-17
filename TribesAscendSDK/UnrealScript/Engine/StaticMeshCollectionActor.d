@@ -15,9 +15,9 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) StaticMeshComponents() { mixin(MGPC!(ScriptArray!(
+void*) StaticMeshComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 476)()); }
-		int MaxStaticMeshComponents() { mixin(MGPC!(int, 488)()); }
+void*)", 476)()); }
+		int MaxStaticMeshComponents() { mixin(MGPC!("int", 488)()); }
 	}
 }

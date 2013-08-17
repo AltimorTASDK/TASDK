@@ -16,11 +16,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			int InstanceIndex() { mixin(MGPC!(int, 104)()); }
+			int InstanceIndex() { mixin(MGPC!("int", 104)()); }
 			// WARNING: Property 'Component' has the same name as a defined type!
-			UObject.Guid LightGuid() { mixin(MGPC!(UObject.Guid, 80)()); }
-			UObject.Vector2D CoordinateBias() { mixin(MGPC!(UObject.Vector2D, 72)()); }
-			UObject.Vector2D CoordinateScale() { mixin(MGPC!(UObject.Vector2D, 64)()); }
+			UObject.Guid LightGuid() { mixin(MGPC!("UObject.Guid", 80)()); }
+			UObject.Vector2D CoordinateBias() { mixin(MGPC!("UObject.Vector2D", 72)()); }
+			UObject.Vector2D CoordinateScale() { mixin(MGPC!("UObject.Vector2D", 64)()); }
 			// WARNING: Property 'Texture' has the same name as a defined type!
 		}
 		bool bIsShadowFactorTexture() { mixin(MGBPC!(96, 0x1)()); }

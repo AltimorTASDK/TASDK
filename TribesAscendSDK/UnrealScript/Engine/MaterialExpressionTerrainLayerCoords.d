@@ -21,10 +21,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float MappingPanV() { mixin(MGPC!(float, 124)()); }
-		float MappingPanU() { mixin(MGPC!(float, 120)()); }
-		float MappingRotation() { mixin(MGPC!(float, 116)()); }
-		float MappingScale() { mixin(MGPC!(float, 112)()); }
-		MaterialExpressionTerrainLayerCoords.ETerrainCoordMappingType MappingType() { mixin(MGPC!(MaterialExpressionTerrainLayerCoords.ETerrainCoordMappingType, 108)()); }
+		float MappingPanV() { mixin(MGPC!("float", 124)()); }
+		float MappingPanU() { mixin(MGPC!("float", 120)()); }
+		float MappingRotation() { mixin(MGPC!("float", 116)()); }
+		float MappingScale() { mixin(MGPC!("float", 112)()); }
+		MaterialExpressionTerrainLayerCoords.ETerrainCoordMappingType MappingType() { mixin(MGPC!("MaterialExpressionTerrainLayerCoords.ETerrainCoordMappingType", 108)()); }
 	}
 }

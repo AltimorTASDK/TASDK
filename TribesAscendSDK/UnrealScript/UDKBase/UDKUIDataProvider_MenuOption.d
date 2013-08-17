@@ -27,14 +27,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) OptionSet() { mixin(MGPC!(ScriptArray!(ScriptName), 156)()); }
-			UIRoot.UIRangeData RangeData() { mixin(MGPC!(UIRoot.UIRangeData, 220)()); }
-			int EditBoxMaxLength() { mixin(MGPC!(int, 216)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 200)()); }
-			ScriptString CustomFriendlyName() { mixin(MGPC!(ScriptString, 188)()); }
-			ScriptName RequiredGameMode() { mixin(MGPC!(ScriptName, 180)()); }
-			ScriptString DataStoreMarkup() { mixin(MGPC!(ScriptString, 168)()); }
-			UDKUIDataProvider_MenuOption.EUTOptionType OptionType() { mixin(MGPC!(UDKUIDataProvider_MenuOption.EUTOptionType, 152)()); }
+			ScriptArray!(ScriptName) OptionSet() { mixin(MGPC!("ScriptArray!(ScriptName)", 156)()); }
+			UIRoot.UIRangeData RangeData() { mixin(MGPC!("UIRoot.UIRangeData", 220)()); }
+			int EditBoxMaxLength() { mixin(MGPC!("int", 216)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 200)()); }
+			ScriptString CustomFriendlyName() { mixin(MGPC!("ScriptString", 188)()); }
+			ScriptName RequiredGameMode() { mixin(MGPC!("ScriptName", 180)()); }
+			ScriptString DataStoreMarkup() { mixin(MGPC!("ScriptString", 168)()); }
+			UDKUIDataProvider_MenuOption.EUTOptionType OptionType() { mixin(MGPC!("UDKUIDataProvider_MenuOption.EUTOptionType", 152)()); }
 		}
 		bool bOfflineOnly() { mixin(MGBPC!(212, 0x10)()); }
 		bool bOfflineOnly(bool val) { mixin(MSBPC!(212, 0x10)()); }

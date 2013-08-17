@@ -36,11 +36,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ubyte) VisibleFragments() { mixin(MGPC!(ScriptArray!(ubyte), 616)()); }
-			int bResetStaticMesh() { mixin(MGPC!(int, 636)()); }
-			int NumResourceIndices() { mixin(MGPC!(int, 632)()); }
-			UObject.RenderCommandFence_Mirror ReleaseResourcesFence() { mixin(MGPC!(UObject.RenderCommandFence_Mirror, 612)()); }
-			UObject.Pointer ComponentBaseResources() { mixin(MGPC!(UObject.Pointer, 608)()); }
+			ScriptArray!(ubyte) VisibleFragments() { mixin(MGPC!("ScriptArray!(ubyte)", 616)()); }
+			int bResetStaticMesh() { mixin(MGPC!("int", 636)()); }
+			int NumResourceIndices() { mixin(MGPC!("int", 632)()); }
+			UObject.RenderCommandFence_Mirror ReleaseResourcesFence() { mixin(MGPC!("UObject.RenderCommandFence_Mirror", 612)()); }
+			UObject.Pointer ComponentBaseResources() { mixin(MGPC!("UObject.Pointer", 608)()); }
 		}
 		bool bUseDynamicIBWithHiddenFragments() { mixin(MGBPC!(628, 0x10)()); }
 		bool bUseDynamicIBWithHiddenFragments(bool val) { mixin(MSBPC!(628, 0x10)()); }
@@ -54,12 +54,13 @@ public extern(D):
 		bool bVisibilityHasChanged(bool val) { mixin(MSBPC!(628, 0x1)()); }
 	}
 final:
-	bool SetStaticMesh(StaticMesh NewMesh, bool bForce)
+	bool SetStaticMesh(StaticMesh NewMesh, bool* bForce = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(StaticMesh*)params.ptr = NewMesh;
-		*cast(bool*)&params[4] = bForce;
+		if (bForce !is null)
+			*cast(bool*)&params[4] = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStaticMesh, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SceneCaptureReflectActor DefaultProperties() { mixin(MGDPC!(SceneCaptureReflectActor, "SceneCaptureReflectActor Engine.Default__SceneCaptureReflectActor")()); }
 	@property final auto ref
 	{
-		MaterialInstanceConstant ReflectMaterialInst() { mixin(MGPC!(MaterialInstanceConstant, 484)()); }
+		MaterialInstanceConstant ReflectMaterialInst() { mixin(MGPC!("MaterialInstanceConstant", 484)()); }
 		// WARNING: Property 'StaticMesh' has the same name as a defined type!
 	}
 }

@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxObject IconMC() { mixin(MGPC!(GFxObject, 144)()); }
-		ScriptString Content() { mixin(MGPC!(ScriptString, 132)()); }
+		GFxObject IconMC() { mixin(MGPC!("GFxObject", 144)()); }
+		ScriptString Content() { mixin(MGPC!("ScriptString", 132)()); }
 	}
 final:
 	void SetContent(ScriptString newContent)

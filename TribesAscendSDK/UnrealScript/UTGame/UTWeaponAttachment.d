@@ -85,32 +85,32 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MaxFireEffectDistance() { mixin(MGPC!(float, 668)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 540)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 552)()); }
-			UTPawn.EWeapAnimType WeapAnimType() { mixin(MGPC!(UTPawn.EWeapAnimType, 700)()); }
-			ScriptName AltFireAnim() { mixin(MGPC!(ScriptName, 692)()); }
-			ScriptName FireAnim() { mixin(MGPC!(ScriptName, 684)()); }
-			float DistFactorForRefPose() { mixin(MGPC!(float, 680)()); }
-			float MaxDecalRangeSq() { mixin(MGPC!(float, 676)()); }
-			ScriptClass WeaponClass() { mixin(MGPC!(ScriptClass, 672)()); }
-			float MaxImpactEffectDistance() { mixin(MGPC!(float, 664)()); }
-			SoundCue BulletWhip() { mixin(MGPC!(SoundCue, 660)()); }
-			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 612)()); }
-			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 564)()); }
-			ScriptName AttachmentSocket() { mixin(MGPC!(ScriptName, 532)()); }
+			float MaxFireEffectDistance() { mixin(MGPC!("float", 668)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) ImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 540)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) AltImpactEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 552)()); }
+			UTPawn.EWeapAnimType WeapAnimType() { mixin(MGPC!("UTPawn.EWeapAnimType", 700)()); }
+			ScriptName AltFireAnim() { mixin(MGPC!("ScriptName", 692)()); }
+			ScriptName FireAnim() { mixin(MGPC!("ScriptName", 684)()); }
+			float DistFactorForRefPose() { mixin(MGPC!("float", 680)()); }
+			float MaxDecalRangeSq() { mixin(MGPC!("float", 676)()); }
+			ScriptClass WeaponClass() { mixin(MGPC!("ScriptClass", 672)()); }
+			float MaxImpactEffectDistance() { mixin(MGPC!("float", 664)()); }
+			SoundCue BulletWhip() { mixin(MGPC!("SoundCue", 660)()); }
+			UDKPawn.MaterialImpactEffect DefaultAltImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 612)()); }
+			UDKPawn.MaterialImpactEffect DefaultImpactEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 564)()); }
+			ScriptName AttachmentSocket() { mixin(MGPC!("ScriptName", 532)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OwnerMesh'!
-			float MuzzleFlashDuration() { mixin(MGPC!(float, 524)()); }
+			float MuzzleFlashDuration() { mixin(MGPC!("float", 524)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashLight'!
-			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!(ScriptClass, 516)()); }
-			UObject.Color MuzzleFlashColor() { mixin(MGPC!(UObject.Color, 508)()); }
-			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!(ParticleSystem, 504)()); }
-			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!(ParticleSystem, 500)()); }
+			ScriptClass MuzzleFlashLightClass() { mixin(MGPC!("ScriptClass", 516)()); }
+			UObject.Color MuzzleFlashColor() { mixin(MGPC!("UObject.Color", 508)()); }
+			ParticleSystem MuzzleFlashAltPSCTemplate() { mixin(MGPC!("ParticleSystem", 504)()); }
+			ParticleSystem MuzzleFlashPSCTemplate() { mixin(MGPC!("ParticleSystem", 500)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashPSC'!
-			ScriptName MuzzleFlashSocket() { mixin(MGPC!(ScriptName, 488)()); }
+			ScriptName MuzzleFlashSocket() { mixin(MGPC!("ScriptName", 488)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OverlayMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
-			ScriptClass SplashEffect() { mixin(MGPC!(ScriptClass, 476)()); }
+			ScriptClass SplashEffect() { mixin(MGPC!("ScriptClass", 476)()); }
 		}
 		bool bMakeSplash() { mixin(MGBPC!(512, 0x8)()); }
 		bool bMakeSplash(bool val) { mixin(MSBPC!(512, 0x8)()); }

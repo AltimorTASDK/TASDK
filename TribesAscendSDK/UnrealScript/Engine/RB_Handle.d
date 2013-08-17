@@ -39,19 +39,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector Location() { mixin(MGPC!(Vector, 180)()); }
-			Vector StepSize() { mixin(MGPC!(Vector, 168)()); }
-			Vector Destination() { mixin(MGPC!(Vector, 156)()); }
-			float AngularStiffness() { mixin(MGPC!(float, 152)()); }
-			float AngularDamping() { mixin(MGPC!(float, 148)()); }
-			Vector LinearDampingScale3D() { mixin(MGPC!(Vector, 136)()); }
-			Vector LinearStiffnessScale3D() { mixin(MGPC!(Vector, 124)()); }
-			float LinearStiffness() { mixin(MGPC!(float, 120)()); }
-			float LinearDamping() { mixin(MGPC!(float, 116)()); }
-			UObject.Pointer KinActorData() { mixin(MGPC!(UObject.Pointer, 112)()); }
-			UObject.Pointer HandleData() { mixin(MGPC!(UObject.Pointer, 108)()); }
-			int SceneIndex() { mixin(MGPC!(int, 100)()); }
-			ScriptName GrabbedBoneName() { mixin(MGPC!(ScriptName, 92)()); }
+			Vector Location() { mixin(MGPC!("Vector", 180)()); }
+			Vector StepSize() { mixin(MGPC!("Vector", 168)()); }
+			Vector Destination() { mixin(MGPC!("Vector", 156)()); }
+			float AngularStiffness() { mixin(MGPC!("float", 152)()); }
+			float AngularDamping() { mixin(MGPC!("float", 148)()); }
+			Vector LinearDampingScale3D() { mixin(MGPC!("Vector", 136)()); }
+			Vector LinearStiffnessScale3D() { mixin(MGPC!("Vector", 124)()); }
+			float LinearStiffness() { mixin(MGPC!("float", 120)()); }
+			float LinearDamping() { mixin(MGPC!("float", 116)()); }
+			UObject.Pointer KinActorData() { mixin(MGPC!("UObject.Pointer", 112)()); }
+			UObject.Pointer HandleData() { mixin(MGPC!("UObject.Pointer", 108)()); }
+			int SceneIndex() { mixin(MGPC!("int", 100)()); }
+			ScriptName GrabbedBoneName() { mixin(MGPC!("ScriptName", 92)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GrabbedComponent'!
 		}
 		bool bInterpolating() { mixin(MGBPC!(104, 0x4)()); }
@@ -95,21 +95,19 @@ void**)params.ptr = pComponent;
 		*cast(float*)&params[12] = MoveTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSmoothLocation, params.ptr, cast(void*)0);
 	}
-	void UpdateSmoothLocation(ref const Vector NewLocation)
+	void UpdateSmoothLocation(ref in Vector NewLocation)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Vector*)params.ptr = NewLocation;
+		*cast(Vector*)params.ptr = cast(Vector)NewLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSmoothLocation, params.ptr, cast(void*)0);
-		*NewLocation = *cast(Vector*)params.ptr;
 	}
-	void SetOrientation(ref const UObject.Quat NewOrientation)
+	void SetOrientation(ref in UObject.Quat NewOrientation)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(UObject.Quat*)params.ptr = NewOrientation;
+		*cast(UObject.Quat*)params.ptr = cast(UObject.Quat)NewOrientation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetOrientation, params.ptr, cast(void*)0);
-		*NewOrientation = *cast(UObject.Quat*)params.ptr;
 	}
 	UObject.Quat GetOrientation()
 	{

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackFloatParticleParam")()); }
 	private static __gshared InterpTrackFloatParticleParam mDefaultProperties;
 	@property final static InterpTrackFloatParticleParam DefaultProperties() { mixin(MGDPC!(InterpTrackFloatParticleParam, "InterpTrackFloatParticleParam Engine.Default__InterpTrackFloatParticleParam")()); }
-	@property final auto ref ScriptName ParamName() { mixin(MGPC!(ScriptName, 148)()); }
+	@property final auto ref ScriptName ParamName() { mixin(MGPC!("ScriptName", 148)()); }
 }

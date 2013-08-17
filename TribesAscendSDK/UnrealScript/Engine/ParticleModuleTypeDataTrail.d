@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector SpawnDistance() { mixin(MGPC!(Vector, 108)()); }
-			DistributionFloat.RawDistributionFloat Tension() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 80)()); }
-			int TessellationFactor() { mixin(MGPC!(int, 76)()); }
+			Vector SpawnDistance() { mixin(MGPC!("Vector", 108)()); }
+			DistributionFloat.RawDistributionFloat Tension() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 80)()); }
+			int TessellationFactor() { mixin(MGPC!("int", 76)()); }
 		}
 		bool SpawnByDistance() { mixin(MGBPC!(72, 0x10)()); }
 		bool SpawnByDistance(bool val) { mixin(MSBPC!(72, 0x10)()); }

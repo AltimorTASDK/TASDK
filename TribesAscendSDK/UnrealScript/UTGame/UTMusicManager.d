@@ -53,20 +53,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MusicStartTime() { mixin(MGPC!(float, 476)()); }
+			float MusicStartTime() { mixin(MGPC!("float", 476)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MusicTracks'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CurrentTrack'!
-			int LastBeat() { mixin(MGPC!(int, 480)()); }
-			UTMusicManager.EMusicState CurrentState() { mixin(MGPC!(UTMusicManager.EMusicState, 512)()); }
-			float MusicVolume() { mixin(MGPC!(float, 496)()); }
-			UTPlayerController PlayerOwner() { mixin(MGPC!(UTPlayerController, 492)()); }
-			float CurrTempo() { mixin(MGPC!(float, 484)()); }
-			float CurrFadeFactor() { mixin(MGPC!(float, 488)()); }
-			int PendingEvent() { mixin(MGPC!(int, 516)()); }
-			float PendingEventPlayTime() { mixin(MGPC!(float, 520)()); }
-			float PendingEventDelay() { mixin(MGPC!(float, 524)()); }
-			float LastActionEventTime() { mixin(MGPC!(float, 500)()); }
-			float StingerVolumeMultiplier() { mixin(MGPC!(float, 508)()); }
+			int LastBeat() { mixin(MGPC!("int", 480)()); }
+			UTMusicManager.EMusicState CurrentState() { mixin(MGPC!("UTMusicManager.EMusicState", 512)()); }
+			float MusicVolume() { mixin(MGPC!("float", 496)()); }
+			UTPlayerController PlayerOwner() { mixin(MGPC!("UTPlayerController", 492)()); }
+			float CurrTempo() { mixin(MGPC!("float", 484)()); }
+			float CurrFadeFactor() { mixin(MGPC!("float", 488)()); }
+			int PendingEvent() { mixin(MGPC!("int", 516)()); }
+			float PendingEventPlayTime() { mixin(MGPC!("float", 520)()); }
+			float PendingEventDelay() { mixin(MGPC!("float", 524)()); }
+			float LastActionEventTime() { mixin(MGPC!("float", 500)()); }
+			float StingerVolumeMultiplier() { mixin(MGPC!("float", 508)()); }
 		}
 		bool bPendingAction() { mixin(MGBPC!(504, 0x1)()); }
 		bool bPendingAction(bool val) { mixin(MSBPC!(504, 0x1)()); }

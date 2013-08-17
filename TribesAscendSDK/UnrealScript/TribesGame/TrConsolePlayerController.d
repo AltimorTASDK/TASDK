@@ -47,8 +47,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrConsolePlayerController.ProfileSettingToUE3BindingDatum")()); }
 		@property final auto ref
 		{
-			ScriptName UE3BindingName() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName ProfileSettingName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName UE3BindingName() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName ProfileSettingName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	static struct PlayerWalking
@@ -60,8 +60,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { mixin(MGPC!(ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum), 3436)()); }
-			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { mixin(MGPC!(ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum), 3448)()); }
+			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMapping360() { mixin(MGPC!("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3436)()); }
+			ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum) ProfileSettingToUE3BindingMappingPS3() { mixin(MGPC!("ScriptArray!(TrConsolePlayerController.ProfileSettingToUE3BindingDatum)", 3448)()); }
 		}
 		bool bDebugTargetAdhesion() { mixin(MGBPC!(3432, 0x2)()); }
 		bool bDebugTargetAdhesion(bool val) { mixin(MSBPC!(3432, 0x2)()); }

@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction GetOwnerPrefab() { mixin(MGF!("mGetOwnerPrefab", "Function Engine.PrefabSequence.GetOwnerPrefab")()); }
 		}
 	}
-	@property final auto ref PrefabInstance OwnerPrefab() { mixin(MGPC!(PrefabInstance, 300)()); }
+	@property final auto ref PrefabInstance OwnerPrefab() { mixin(MGPC!("PrefabInstance", 300)()); }
 final:
 	void SetOwnerPrefab(PrefabInstance InOwner)
 	{

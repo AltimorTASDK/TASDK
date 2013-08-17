@@ -13,10 +13,10 @@ public extern(D):
 	@property final static MaterialExpressionRotator DefaultProperties() { mixin(MGDPC!(MaterialExpressionRotator, "MaterialExpressionRotator Engine.Default__MaterialExpressionRotator")()); }
 	@property final auto ref
 	{
-		float Speed() { mixin(MGPC!(float, 172)()); }
-		float CenterY() { mixin(MGPC!(float, 168)()); }
-		float CenterX() { mixin(MGPC!(float, 164)()); }
-		MaterialExpression.ExpressionInput Time() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		float Speed() { mixin(MGPC!("float", 172)()); }
+		float CenterY() { mixin(MGPC!("float", 168)()); }
+		float CenterX() { mixin(MGPC!("float", 164)()); }
+		MaterialExpression.ExpressionInput Time() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput Coordinate() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

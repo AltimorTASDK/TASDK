@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ActorFactoryFracturedStaticMesh DefaultProperties() { mixin(MGDPC!(ActorFactoryFracturedStaticMesh, "ActorFactoryFracturedStaticMesh Engine.Default__ActorFactoryFracturedStaticMesh")()); }
 	@property final auto ref
 	{
-		Vector DrawScale3D() { mixin(MGPC!(Vector, 96)()); }
+		Vector DrawScale3D() { mixin(MGPC!("Vector", 96)()); }
 		// WARNING: Property 'FracturedStaticMesh' has the same name as a defined type!
 	}
 }

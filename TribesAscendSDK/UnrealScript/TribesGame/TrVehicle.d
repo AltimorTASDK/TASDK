@@ -250,77 +250,77 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fCurrentPowerPool() { mixin(MGPC!(float, 2804)()); }
-			float r_fMaxPowerPool() { mixin(MGPC!(float, 2812)()); }
-			ScriptString m_sName() { mixin(MGPC!(ScriptString, 2932)()); }
-			int m_nIconIndex() { mixin(MGPC!(int, 2944)()); }
-			Actor.RigidBodyState m_ClientRBState() { mixin(MGPC!(Actor.RigidBodyState, 3136)()); }
-			TrObject.EVehicleTypes m_VehicleType() { mixin(MGPC!(TrObject.EVehicleTypes, 2780)()); }
-			ScriptString m_sWeapon1Name() { mixin(MGPC!(ScriptString, 3092)()); }
-			ScriptString m_sWeapon2Name() { mixin(MGPC!(ScriptString, 3104)()); }
-			ScriptArray!(UDKPawn.MaterialImpactEffect) m_DustEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialImpactEffect), 2948)()); }
-			float m_fMaxPawnLeaveSpeed() { mixin(MGPC!(float, 3208)()); }
-			int m_nDetectedByEnemyScannerCount() { mixin(MGPC!(int, 3204)()); }
-			int m_nServerTickCount() { mixin(MGPC!(int, 3200)()); }
-			float m_fClientPhysDeltaTime() { mixin(MGPC!(float, 3120)()); }
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 3116)()); }
-			Vector m_vDeathCamStartOffset() { mixin(MGPC!(Vector, 3080)()); }
-			float m_fVehicleHealthBarHeight() { mixin(MGPC!(float, 3076)()); }
-			float m_fVehicleHealthBarWidth() { mixin(MGPC!(float, 3072)()); }
-			float m_fVehicleHealthBarPlacementY() { mixin(MGPC!(float, 3068)()); }
-			float m_fVehicleHealthBarPlacementX() { mixin(MGPC!(float, 3064)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 3060)()); }
-			MaterialInstanceConstant m_Passenger4HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3056)()); }
-			MaterialInstanceConstant m_Passenger3HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3052)()); }
-			MaterialInstanceConstant m_Passenger2HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3048)()); }
-			MaterialInstanceConstant m_Passenger1HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3044)()); }
-			MaterialInstanceConstant m_DriverHealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3040)()); }
-			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 3036)()); }
-			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 3032)()); }
-			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!(Rotator, 3020)()); }
-			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 3016)()); }
-			float m_fContrailSpeed() { mixin(MGPC!(float, 3012)()); }
+			float m_fCurrentPowerPool() { mixin(MGPC!("float", 2804)()); }
+			float r_fMaxPowerPool() { mixin(MGPC!("float", 2812)()); }
+			ScriptString m_sName() { mixin(MGPC!("ScriptString", 2932)()); }
+			int m_nIconIndex() { mixin(MGPC!("int", 2944)()); }
+			Actor.RigidBodyState m_ClientRBState() { mixin(MGPC!("Actor.RigidBodyState", 3136)()); }
+			TrObject.EVehicleTypes m_VehicleType() { mixin(MGPC!("TrObject.EVehicleTypes", 2780)()); }
+			ScriptString m_sWeapon1Name() { mixin(MGPC!("ScriptString", 3092)()); }
+			ScriptString m_sWeapon2Name() { mixin(MGPC!("ScriptString", 3104)()); }
+			ScriptArray!(UDKPawn.MaterialImpactEffect) m_DustEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialImpactEffect)", 2948)()); }
+			float m_fMaxPawnLeaveSpeed() { mixin(MGPC!("float", 3208)()); }
+			int m_nDetectedByEnemyScannerCount() { mixin(MGPC!("int", 3204)()); }
+			int m_nServerTickCount() { mixin(MGPC!("int", 3200)()); }
+			float m_fClientPhysDeltaTime() { mixin(MGPC!("float", 3120)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 3116)()); }
+			Vector m_vDeathCamStartOffset() { mixin(MGPC!("Vector", 3080)()); }
+			float m_fVehicleHealthBarHeight() { mixin(MGPC!("float", 3076)()); }
+			float m_fVehicleHealthBarWidth() { mixin(MGPC!("float", 3072)()); }
+			float m_fVehicleHealthBarPlacementY() { mixin(MGPC!("float", 3068)()); }
+			float m_fVehicleHealthBarPlacementX() { mixin(MGPC!("float", 3064)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 3060)()); }
+			MaterialInstanceConstant m_Passenger4HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3056)()); }
+			MaterialInstanceConstant m_Passenger3HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3052)()); }
+			MaterialInstanceConstant m_Passenger2HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3048)()); }
+			MaterialInstanceConstant m_Passenger1HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3044)()); }
+			MaterialInstanceConstant m_DriverHealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3040)()); }
+			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 3036)()); }
+			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 3032)()); }
+			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!("Rotator", 3020)()); }
+			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 3016)()); }
+			float m_fContrailSpeed() { mixin(MGPC!("float", 3012)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_DustPSC'!
-			UDKPawn.MaterialImpactEffect m_DefaultDustEffect() { mixin(MGPC!(UDKPawn.MaterialImpactEffect, 2960)()); }
-			float ShowHeaderUntil() { mixin(MGPC!(float, 2928)()); }
+			UDKPawn.MaterialImpactEffect m_DefaultDustEffect() { mixin(MGPC!("UDKPawn.MaterialImpactEffect", 2960)()); }
+			float ShowHeaderUntil() { mixin(MGPC!("float", 2928)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentBoostSound'!
-			float m_fBoostFadeOutTime() { mixin(MGPC!(float, 2920)()); }
-			float m_fBoostFadeInTime() { mixin(MGPC!(float, 2916)()); }
-			float m_fDivingMaxSpeedMultiplier() { mixin(MGPC!(float, 2912)()); }
-			int r_nBaseMaxSpeed() { mixin(MGPC!(int, 2908)()); }
-			float m_fWallDamageTickTime() { mixin(MGPC!(float, 2904)()); }
-			float m_fLastWallDamageTime() { mixin(MGPC!(float, 2900)()); }
-			float m_fWallMaxDamage() { mixin(MGPC!(float, 2896)()); }
-			float m_fWallMinDamage() { mixin(MGPC!(float, 2892)()); }
-			float m_fWallMinDamageSpeed() { mixin(MGPC!(float, 2888)()); }
-			float m_fWallMaxDamageSpeed() { mixin(MGPC!(float, 2884)()); }
-			ScriptClass WallCollisionDamageType() { mixin(MGPC!(ScriptClass, 2880)()); }
-			float m_fVehicleDamageTickTime() { mixin(MGPC!(float, 2876)()); }
-			float m_fLastVehicleDamageTime() { mixin(MGPC!(float, 2872)()); }
-			float m_fVehicleMaxDamage() { mixin(MGPC!(float, 2868)()); }
-			float m_fVehicleMinDamage() { mixin(MGPC!(float, 2864)()); }
-			float m_fVehicleMinDamageSpeed() { mixin(MGPC!(float, 2860)()); }
-			float m_fVehicleMaxDamageSpeed() { mixin(MGPC!(float, 2856)()); }
-			ScriptClass VehicleCollisionDamageType() { mixin(MGPC!(ScriptClass, 2852)()); }
-			float m_fPawnDamageTickTime() { mixin(MGPC!(float, 2848)()); }
-			float m_fPawnMaxDamage() { mixin(MGPC!(float, 2844)()); }
-			float m_fPawnMinDamage() { mixin(MGPC!(float, 2840)()); }
-			float m_fPawnMaxDamageSpeed() { mixin(MGPC!(float, 2836)()); }
-			float m_fPawnPushSpeed() { mixin(MGPC!(float, 2832)()); }
-			float m_fFlagPushSpeed() { mixin(MGPC!(float, 2828)()); }
-			float m_CrashDamageSeverity() { mixin(MGPC!(float, 2824)()); }
-			float m_fPowerPoolTickRate() { mixin(MGPC!(float, 2820)()); }
-			float m_fPowerPoolRechargeRate() { mixin(MGPC!(float, 2816)()); }
-			float r_fCurrentPowerPool() { mixin(MGPC!(float, 2808)()); }
-			float m_fBoostReactivatePct() { mixin(MGPC!(float, 2800)()); }
-			float m_fBoostEnergyPerSec() { mixin(MGPC!(float, 2796)()); }
-			float m_fBoostMultiplier() { mixin(MGPC!(float, 2792)()); }
-			float m_fTimeToReset() { mixin(MGPC!(float, 2788)()); }
-			TrVehicleStation m_OwnerStation() { mixin(MGPC!(TrVehicleStation, 2784)()); }
-			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!(TrObject.EMissileLock, 2782)()); }
-			TrObject.EMissileLock r_MissileLock() { mixin(MGPC!(TrObject.EMissileLock, 2781)()); }
-			TrPawn m_PawnToTeleport() { mixin(MGPC!(TrPawn, 2772)()); }
-			Pawn Passenger() { mixin(MGPC!(Pawn, 2756)()); }
+			float m_fBoostFadeOutTime() { mixin(MGPC!("float", 2920)()); }
+			float m_fBoostFadeInTime() { mixin(MGPC!("float", 2916)()); }
+			float m_fDivingMaxSpeedMultiplier() { mixin(MGPC!("float", 2912)()); }
+			int r_nBaseMaxSpeed() { mixin(MGPC!("int", 2908)()); }
+			float m_fWallDamageTickTime() { mixin(MGPC!("float", 2904)()); }
+			float m_fLastWallDamageTime() { mixin(MGPC!("float", 2900)()); }
+			float m_fWallMaxDamage() { mixin(MGPC!("float", 2896)()); }
+			float m_fWallMinDamage() { mixin(MGPC!("float", 2892)()); }
+			float m_fWallMinDamageSpeed() { mixin(MGPC!("float", 2888)()); }
+			float m_fWallMaxDamageSpeed() { mixin(MGPC!("float", 2884)()); }
+			ScriptClass WallCollisionDamageType() { mixin(MGPC!("ScriptClass", 2880)()); }
+			float m_fVehicleDamageTickTime() { mixin(MGPC!("float", 2876)()); }
+			float m_fLastVehicleDamageTime() { mixin(MGPC!("float", 2872)()); }
+			float m_fVehicleMaxDamage() { mixin(MGPC!("float", 2868)()); }
+			float m_fVehicleMinDamage() { mixin(MGPC!("float", 2864)()); }
+			float m_fVehicleMinDamageSpeed() { mixin(MGPC!("float", 2860)()); }
+			float m_fVehicleMaxDamageSpeed() { mixin(MGPC!("float", 2856)()); }
+			ScriptClass VehicleCollisionDamageType() { mixin(MGPC!("ScriptClass", 2852)()); }
+			float m_fPawnDamageTickTime() { mixin(MGPC!("float", 2848)()); }
+			float m_fPawnMaxDamage() { mixin(MGPC!("float", 2844)()); }
+			float m_fPawnMinDamage() { mixin(MGPC!("float", 2840)()); }
+			float m_fPawnMaxDamageSpeed() { mixin(MGPC!("float", 2836)()); }
+			float m_fPawnPushSpeed() { mixin(MGPC!("float", 2832)()); }
+			float m_fFlagPushSpeed() { mixin(MGPC!("float", 2828)()); }
+			float m_CrashDamageSeverity() { mixin(MGPC!("float", 2824)()); }
+			float m_fPowerPoolTickRate() { mixin(MGPC!("float", 2820)()); }
+			float m_fPowerPoolRechargeRate() { mixin(MGPC!("float", 2816)()); }
+			float r_fCurrentPowerPool() { mixin(MGPC!("float", 2808)()); }
+			float m_fBoostReactivatePct() { mixin(MGPC!("float", 2800)()); }
+			float m_fBoostEnergyPerSec() { mixin(MGPC!("float", 2796)()); }
+			float m_fBoostMultiplier() { mixin(MGPC!("float", 2792)()); }
+			float m_fTimeToReset() { mixin(MGPC!("float", 2788)()); }
+			TrVehicleStation m_OwnerStation() { mixin(MGPC!("TrVehicleStation", 2784)()); }
+			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!("TrObject.EMissileLock", 2782)()); }
+			TrObject.EMissileLock r_MissileLock() { mixin(MGPC!("TrObject.EMissileLock", 2781)()); }
+			TrPawn m_PawnToTeleport() { mixin(MGPC!("TrPawn", 2772)()); }
+			Pawn Passenger() { mixin(MGPC!("Pawn", 2756)()); }
 		}
 		bool m_bClientPhysDirty() { mixin(MGBPC!(2776, 0x100)()); }
 		bool m_bClientPhysDirty(bool val) { mixin(MSBPC!(2776, 0x100)()); }
@@ -380,9 +380,9 @@ final:
 		*cast(float*)&params[28] = out_FOV;
 		*cast(TrPlayerController*)&params[32] = WatcherController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcOtherWatchingCam, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[36];
 	}
 	bool SetScannerDetect(bool detected)
@@ -498,7 +498,7 @@ void**)params.ptr = SkelComp;
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, ref const Actor.CollisionImpactData Collision, int ContactIndex)
+void* OtherComponent, ref in Actor.CollisionImpactData Collision, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -508,10 +508,9 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = Collision;
+		*cast(Actor.CollisionImpactData*)&params[8] = cast(Actor.CollisionImpactData)Collision;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
-		*Collision = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void RanInto(Actor Other)
 	{
@@ -593,11 +592,12 @@ void**)&params[4] = OtherComponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanArmorEnterVehicle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	int GetFirstAvailableSeat(bool bSeatMustAllowFlag)
+	int GetFirstAvailableSeat(bool* bSeatMustAllowFlag = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bSeatMustAllowFlag;
+		if (bSeatMustAllowFlag !is null)
+			*cast(bool*)params.ptr = *bSeatMustAllowFlag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFirstAvailableSeat, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
@@ -628,22 +628,24 @@ void**)&params[4] = OtherComponent;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetResetTime, cast(void*)0, cast(void*)0);
 	}
-	void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
+	void HandleMomentum(Vector Momentum, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Momentum;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleMomentum, params.ptr, cast(void*)0);
 	}
-	void ToggleBoosters(bool bEnabled, bool ToggleTimer)
+	void ToggleBoosters(bool bEnabled, bool* ToggleTimer = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		*cast(bool*)&params[4] = ToggleTimer;
+		if (ToggleTimer !is null)
+			*cast(bool*)&params[4] = *ToggleTimer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleBoosters, params.ptr, cast(void*)0);
 	}
 	void ConsumeBoostPowerPool()
@@ -742,7 +744,7 @@ void**)params.ptr = AC;
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = DebugInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSVehicleDebug, params.ptr, cast(void*)0);
-		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 	void InitializeSeats()
 	{
@@ -857,11 +859,12 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeatIndexForStoragePawn, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	bool PlaceExitingDriver(Pawn ExitingDriver)
+	bool PlaceExitingDriver(Pawn* ExitingDriver = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Pawn*)params.ptr = ExitingDriver;
+		if (ExitingDriver !is null)
+			*cast(Pawn*)params.ptr = *ExitingDriver;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlaceExitingDriver, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -915,7 +918,7 @@ void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HealDamage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void DoRepairs(int HealAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void DoRepairs(int HealAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -924,11 +927,13 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoRepairs, params.ptr, cast(void*)0);
 	}
-	void DriverRadiusDamage(float DamageAmount, float DamageRadius, Controller EventInstigator, ScriptClass pDamageType, float Momentum, Vector HitLocation, Actor DamageCauser, float DamageFalloffExponent)
+	void DriverRadiusDamage(float DamageAmount, float DamageRadius, Controller EventInstigator, ScriptClass pDamageType, float Momentum, Vector HitLocation, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -939,14 +944,15 @@ void**)params.ptr = AC;
 		*cast(float*)&params[16] = Momentum;
 		*cast(Vector*)&params[20] = HitLocation;
 		*cast(Actor*)&params[32] = DamageCauser;
-		*cast(float*)&params[36] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[36] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DriverRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void Suicide()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Suicide, cast(void*)0, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -958,10 +964,11 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -970,8 +977,10 @@ void**)params.ptr = AC;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void CheckDamageSmoke()
@@ -1034,8 +1043,8 @@ void**)params.ptr = AC;
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
-		*out_DeltaRot = *cast(Rotator*)&params[16];
+		out_ViewRotation = *cast(Rotator*)&params[4];
+		out_DeltaRot = *cast(Rotator*)&params[16];
 	}
 	void ProcessViewRotationBasedOnSeat(int SeatIndex, float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
 	{
@@ -1046,8 +1055,8 @@ void**)params.ptr = AC;
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotationBasedOnSeat, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 	}
 	bool ShouldShowUseable(PlayerController PC, float Dist)
 	{
@@ -1117,11 +1126,12 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayHorn, cast(void*)0, cast(void*)0);
 	}
-	void GoInvulnerable(float InvulnerableTime)
+	void GoInvulnerable(float* InvulnerableTime = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = InvulnerableTime;
+		if (InvulnerableTime !is null)
+			*cast(float*)params.ptr = *InvulnerableTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GoInvulnerable, params.ptr, cast(void*)0);
 	}
 	void ClearInvulnerability()

@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { mixin(MGPC!(ScriptArray!(ParticleSystemComponent.ParticleSysParam), 232)()); }
-			float ScalarValue() { mixin(MGPC!(float, 248)()); }
+			ScriptArray!(ParticleSystemComponent.ParticleSysParam) InstanceParameters() { mixin(MGPC!("ScriptArray!(ParticleSystemComponent.ParticleSysParam)", 232)()); }
+			float ScalarValue() { mixin(MGPC!("float", 248)()); }
 		}
 		bool bOverrideScalar() { mixin(MGBPC!(244, 0x1)()); }
 		bool bOverrideScalar(bool val) { mixin(MSBPC!(244, 0x1)()); }

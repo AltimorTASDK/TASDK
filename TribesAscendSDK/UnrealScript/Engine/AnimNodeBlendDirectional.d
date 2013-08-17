@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			Rotator RotationOffset() { mixin(MGPC!(Rotator, 256)()); }
-			int SingleAnimAtOrAboveLOD() { mixin(MGPC!(int, 252)()); }
-			float DirAngle() { mixin(MGPC!(float, 248)()); }
-			float DirDegreesPerSecond() { mixin(MGPC!(float, 244)()); }
+			Rotator RotationOffset() { mixin(MGPC!("Rotator", 256)()); }
+			int SingleAnimAtOrAboveLOD() { mixin(MGPC!("int", 252)()); }
+			float DirAngle() { mixin(MGPC!("float", 248)()); }
+			float DirDegreesPerSecond() { mixin(MGPC!("float", 244)()); }
 		}
 		bool bUseAcceleration() { mixin(MGBPC!(268, 0x1)()); }
 		bool bUseAcceleration(bool val) { mixin(MSBPC!(268, 0x1)()); }

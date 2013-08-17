@@ -116,14 +116,15 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'WorldInfo' has the same name as a defined type!
-		PlayerController PC() { mixin(MGPC!(PlayerController, 60)()); }
+		PlayerController PC() { mixin(MGPC!("PlayerController", 60)()); }
 	}
 final:
-	void gmMatchForce(int nQueueId)
+	void gmMatchForce(int* nQueueId = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = nQueueId;
+		if (nQueueId !is null)
+			*cast(int*)params.ptr = *nQueueId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.gmMatchForce, params.ptr, cast(void*)0);
 	}
 	void gmMatchNext(int nMapId)
@@ -168,12 +169,13 @@ final:
 		*cast(int*)params.ptr = Mode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GPerfDebugRelevMode, params.ptr, cast(void*)0);
 	}
-	void scLog(ScriptString LogName, bool bEnabled)
+	void scLog(ScriptString LogName, bool* bEnabled = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogName;
-		*cast(bool*)&params[12] = bEnabled;
+		if (bEnabled !is null)
+			*cast(bool*)&params[12] = *bEnabled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.scLog, params.ptr, cast(void*)0);
 	}
 	void scLogMark(ScriptString Comment)
@@ -183,26 +185,29 @@ final:
 		*cast(ScriptString*)params.ptr = Comment;
 		(cast(ScriptObject)this).ProcessEvent(Functions.scLogMark, params.ptr, cast(void*)0);
 	}
-	void scStartGame(ScriptString Reason)
+	void scStartGame(ScriptString* Reason = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = Reason;
+		if (Reason !is null)
+			*cast(ScriptString*)params.ptr = *Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.scStartGame, params.ptr, cast(void*)0);
 	}
-	void scEndGame(ScriptString Reason)
+	void scEndGame(ScriptString* Reason = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = Reason;
+		if (Reason !is null)
+			*cast(ScriptString*)params.ptr = *Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.scEndGame, params.ptr, cast(void*)0);
 	}
-	void scScore(int nTeam, int nCount)
+	void scScore(int nTeam, int* nCount = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = nTeam;
-		*cast(int*)&params[4] = nCount;
+		if (nCount !is null)
+			*cast(int*)&params[4] = *nCount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.scScore, params.ptr, cast(void*)0);
 	}
 	void scTime(int nSeconds)

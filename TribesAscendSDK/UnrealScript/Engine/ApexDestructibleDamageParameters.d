@@ -25,8 +25,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ApexDestructibleDamageParameters.DamagePair")()); }
 		@property final auto ref
 		{
-			ApexDestructibleDamageParameters.DamageParameters Params() { mixin(MGPS!(ApexDestructibleDamageParameters.DamageParameters, 8)()); }
-			ScriptName DamageCauserName() { mixin(MGPS!(ScriptName, 0)()); }
+			ApexDestructibleDamageParameters.DamageParameters Params() { mixin(MGPS!("ApexDestructibleDamageParameters.DamageParameters", 8)()); }
+			ScriptName DamageCauserName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct DamageParameters
@@ -37,11 +37,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ApexDestructibleDamageParameters.DamageParameters")()); }
 		@property final auto ref
 		{
-			float Momentum() { mixin(MGPS!(float, 12)()); }
-			float Radius() { mixin(MGPS!(float, 8)()); }
-			float BaseDamage() { mixin(MGPS!(float, 4)()); }
-			ApexDestructibleDamageParameters.EDamageParameterOverrideMode OverrideMode() { mixin(MGPS!(ApexDestructibleDamageParameters.EDamageParameterOverrideMode, 0)()); }
+			float Momentum() { mixin(MGPS!("float", 12)()); }
+			float Radius() { mixin(MGPS!("float", 8)()); }
+			float BaseDamage() { mixin(MGPS!("float", 4)()); }
+			ApexDestructibleDamageParameters.EDamageParameterOverrideMode OverrideMode() { mixin(MGPS!("ApexDestructibleDamageParameters.EDamageParameterOverrideMode", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(ApexDestructibleDamageParameters.DamagePair) DamageMap() { mixin(MGPC!(ScriptArray!(ApexDestructibleDamageParameters.DamagePair), 60)()); }
+	@property final auto ref ScriptArray!(ApexDestructibleDamageParameters.DamagePair) DamageMap() { mixin(MGPC!("ScriptArray!(ApexDestructibleDamageParameters.DamagePair)", 60)()); }
 }

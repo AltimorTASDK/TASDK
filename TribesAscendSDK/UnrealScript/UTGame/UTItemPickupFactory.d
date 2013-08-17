@@ -38,23 +38,26 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString PickupMessage() { mixin(MGPC!(ScriptString, 948)()); }
-		ScriptString UseHintMessage() { mixin(MGPC!(ScriptString, 964)()); }
-		float RespawnTime() { mixin(MGPC!(float, 960)()); }
-		SoundCue PickupSound() { mixin(MGPC!(SoundCue, 944)()); }
+		ScriptString PickupMessage() { mixin(MGPC!("ScriptString", 948)()); }
+		ScriptString UseHintMessage() { mixin(MGPC!("ScriptString", 964)()); }
+		float RespawnTime() { mixin(MGPC!("float", 960)()); }
+		SoundCue PickupSound() { mixin(MGPC!("SoundCue", 944)()); }
 	}
 final:
 	void InitializePickup()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializePickup, cast(void*)0, cast(void*)0);
 	}
-	static ScriptString GetLocalString(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2)
+	static ScriptString GetLocalString(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[4] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_2;
 		StaticClass.ProcessEvent(Functions.GetLocalString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}

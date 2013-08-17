@@ -32,14 +32,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor Target() { mixin(MGPC!(Actor, 268)()); }
-			Rotator MaxSpread() { mixin(MGPC!(Rotator, 272)()); }
-			Actor Origin() { mixin(MGPC!(Actor, 264)()); }
-			int ShotsFired() { mixin(MGPC!(int, 288)()); }
-			ubyte FireMode() { mixin(MGPC!(ubyte, 260)()); }
-			ScriptClass WeaponClass() { mixin(MGPC!(ScriptClass, 256)()); }
-			int ShotsToFire() { mixin(MGPC!(int, 252)()); }
-			UTDummyPawn DummyPawn() { mixin(MGPC!(UTDummyPawn, 248)()); }
+			Actor Target() { mixin(MGPC!("Actor", 268)()); }
+			Rotator MaxSpread() { mixin(MGPC!("Rotator", 272)()); }
+			Actor Origin() { mixin(MGPC!("Actor", 264)()); }
+			int ShotsFired() { mixin(MGPC!("int", 288)()); }
+			ubyte FireMode() { mixin(MGPC!("ubyte", 260)()); }
+			ScriptClass WeaponClass() { mixin(MGPC!("ScriptClass", 256)()); }
+			int ShotsToFire() { mixin(MGPC!("int", 252)()); }
+			UTDummyPawn DummyPawn() { mixin(MGPC!("UTDummyPawn", 248)()); }
 		}
 		bool bSuppressSounds() { mixin(MGBPC!(284, 0x1)()); }
 		bool bSuppressSounds(bool val) { mixin(MSBPC!(284, 0x1)()); }

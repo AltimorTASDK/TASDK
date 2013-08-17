@@ -14,9 +14,9 @@ public extern(D):
 	@property final static AnimNotify_ClothingMaxDistanceScale DefaultProperties() { mixin(MGDPC!(AnimNotify_ClothingMaxDistanceScale, "AnimNotify_ClothingMaxDistanceScale Engine.Default__AnimNotify_ClothingMaxDistanceScale")()); }
 	@property final auto ref
 	{
-		float Duration() { mixin(MGPC!(float, 76)()); }
-		SkeletalMeshComponent.EMaxDistanceScaleMode ScaleMode() { mixin(MGPC!(SkeletalMeshComponent.EMaxDistanceScaleMode, 72)()); }
-		float EndScale() { mixin(MGPC!(float, 68)()); }
-		float StartScale() { mixin(MGPC!(float, 64)()); }
+		float Duration() { mixin(MGPC!("float", 76)()); }
+		SkeletalMeshComponent.EMaxDistanceScaleMode ScaleMode() { mixin(MGPC!("SkeletalMeshComponent.EMaxDistanceScaleMode", 72)()); }
+		float EndScale() { mixin(MGPC!("float", 68)()); }
+		float StartScale() { mixin(MGPC!("float", 64)()); }
 	}
 }

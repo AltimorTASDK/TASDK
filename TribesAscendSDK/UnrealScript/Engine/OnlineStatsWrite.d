@@ -41,12 +41,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { mixin(MGPC!(ScriptArray!(Settings.StringIdToStringMapping), 72)()); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!(ScriptArray!(Settings.SettingsProperty), 84)()); }
-		ScriptArray!(int) ViewIds() { mixin(MGPC!(ScriptArray!(int), 96)()); }
-		ScriptArray!(int) ArbitratedViewIds() { mixin(MGPC!(ScriptArray!(int), 108)()); }
+		ScriptArray!(Settings.StringIdToStringMapping) StatMappings() { mixin(MGPC!("ScriptArray!(Settings.StringIdToStringMapping)", 72)()); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!("ScriptArray!(Settings.SettingsProperty)", 84)()); }
+		ScriptArray!(int) ViewIds() { mixin(MGPC!("ScriptArray!(int)", 96)()); }
+		ScriptArray!(int) ArbitratedViewIds() { mixin(MGPC!("ScriptArray!(int)", 108)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnStatsWriteComplete__Delegate'!
-		int RatingId() { mixin(MGPC!(int, 120)()); }
+		int RatingId() { mixin(MGPC!("int", 120)()); }
 	}
 final:
 	void OnStatsWriteComplete()
@@ -60,7 +60,7 @@ final:
 		*cast(ScriptName*)params.ptr = StatName;
 		*cast(int*)&params[8] = StatId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStatId, params.ptr, cast(void*)0);
-		*StatId = *cast(int*)&params[8];
+		StatId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	ScriptName GetStatName(int StatId)
@@ -87,36 +87,40 @@ final:
 		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetIntStat, params.ptr, cast(void*)0);
 	}
-	void IncrementFloatStat(int StatId, float IncBy)
+	void IncrementFloatStat(int StatId, float* IncBy = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = StatId;
-		*cast(float*)&params[4] = IncBy;
+		if (IncBy !is null)
+			*cast(float*)&params[4] = *IncBy;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementFloatStat, params.ptr, cast(void*)0);
 	}
-	void IncrementIntStat(int StatId, int IncBy)
+	void IncrementIntStat(int StatId, int* IncBy = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = StatId;
-		*cast(int*)&params[4] = IncBy;
+		if (IncBy !is null)
+			*cast(int*)&params[4] = *IncBy;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementIntStat, params.ptr, cast(void*)0);
 	}
-	void DecrementFloatStat(int StatId, float DecBy)
+	void DecrementFloatStat(int StatId, float* DecBy = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = StatId;
-		*cast(float*)&params[4] = DecBy;
+		if (DecBy !is null)
+			*cast(float*)&params[4] = *DecBy;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DecrementFloatStat, params.ptr, cast(void*)0);
 	}
-	void DecrementIntStat(int StatId, int DecBy)
+	void DecrementIntStat(int StatId, int* DecBy = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = StatId;
-		*cast(int*)&params[4] = DecBy;
+		if (DecBy !is null)
+			*cast(int*)&params[4] = *DecBy;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DecrementIntStat, params.ptr, cast(void*)0);
 	}
 }

@@ -52,15 +52,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrCollisionProxy, 552)()); }
-			float m_fMarkerOpacity() { mixin(MGPC!(float, 548)()); }
-			float m_fCurrentMarkerTime() { mixin(MGPC!(float, 544)()); }
-			Rotator m_rMarkerRot() { mixin(MGPC!(Rotator, 532)()); }
-			float m_fMarkerBlinkSpeed() { mixin(MGPC!(float, 528)()); }
-			float m_fMarkerScale() { mixin(MGPC!(float, 524)()); }
-			float m_fMarkerZOffset() { mixin(MGPC!(float, 520)()); }
-			float m_PctAmmoToRefill() { mixin(MGPC!(float, 516)()); }
-			SoundCue m_AmmoPickupSound() { mixin(MGPC!(SoundCue, 512)()); }
+			TrCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrCollisionProxy", 552)()); }
+			float m_fMarkerOpacity() { mixin(MGPC!("float", 548)()); }
+			float m_fCurrentMarkerTime() { mixin(MGPC!("float", 544)()); }
+			Rotator m_rMarkerRot() { mixin(MGPC!("Rotator", 532)()); }
+			float m_fMarkerBlinkSpeed() { mixin(MGPC!("float", 528)()); }
+			float m_fMarkerScale() { mixin(MGPC!("float", 524)()); }
+			float m_fMarkerZOffset() { mixin(MGPC!("float", 520)()); }
+			float m_PctAmmoToRefill() { mixin(MGPC!("float", 516)()); }
+			SoundCue m_AmmoPickupSound() { mixin(MGPC!("SoundCue", 512)()); }
 		}
 		bool m_bHasHitObjective() { mixin(MGBPC!(556, 0x1)()); }
 		bool m_bHasHitObjective(bool val) { mixin(MSBPC!(556, 0x1)()); }

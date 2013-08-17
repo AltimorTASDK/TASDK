@@ -13,9 +13,9 @@ public extern(D):
 	@property final static OnlinePlaylistGameTypeProvider DefaultProperties() { mixin(MGDPC!(OnlinePlaylistGameTypeProvider, "OnlinePlaylistGameTypeProvider Engine.Default__OnlinePlaylistGameTypeProvider")()); }
 	@property final auto ref
 	{
-		int GameTypeId() { mixin(MGPC!(int, 156)()); }
-		ScriptString Description() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString DisplayName() { mixin(MGPC!(ScriptString, 132)()); }
-		ScriptName PlaylistGameTypeName() { mixin(MGPC!(ScriptName, 124)()); }
+		int GameTypeId() { mixin(MGPC!("int", 156)()); }
+		ScriptString Description() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString DisplayName() { mixin(MGPC!("ScriptString", 132)()); }
+		ScriptName PlaylistGameTypeName() { mixin(MGPC!("ScriptName", 124)()); }
 	}
 }

@@ -15,8 +15,8 @@ public extern(D):
 	@property final static GFxEvent_FSCommand DefaultProperties() { mixin(MGDPC!(GFxEvent_FSCommand, "GFxEvent_FSCommand GFxUI.Default__GFxEvent_FSCommand")()); }
 	@property final auto ref
 	{
-		GFxFSCmdHandler_Kismet Handler() { mixin(MGPC!(GFxFSCmdHandler_Kismet, 272)()); }
-		ScriptString FSCommand() { mixin(MGPC!(ScriptString, 260)()); }
-		SwfMovie Movie() { mixin(MGPC!(SwfMovie, 256)()); }
+		GFxFSCmdHandler_Kismet Handler() { mixin(MGPC!("GFxFSCmdHandler_Kismet", 272)()); }
+		ScriptString FSCommand() { mixin(MGPC!("ScriptString", 260)()); }
+		SwfMovie Movie() { mixin(MGPC!("SwfMovie", 256)()); }
 	}
 }

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ActorFactoryVehicle")()); }
 	private static __gshared ActorFactoryVehicle mDefaultProperties;
 	@property final static ActorFactoryVehicle DefaultProperties() { mixin(MGDPC!(ActorFactoryVehicle, "ActorFactoryVehicle Engine.Default__ActorFactoryVehicle")()); }
-	@property final auto ref ScriptClass VehicleClass() { mixin(MGPC!(ScriptClass, 92)()); }
+	@property final auto ref ScriptClass VehicleClass() { mixin(MGPC!("ScriptClass", 92)()); }
 }

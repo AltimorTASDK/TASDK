@@ -23,12 +23,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor UserDefinedSpaceActor() { mixin(MGPC!(Actor, 260)()); }
-			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!(Camera.ECameraAnimPlaySpace, 256)()); }
-			float IntensityScale() { mixin(MGPC!(float, 252)()); }
-			float Rate() { mixin(MGPC!(float, 248)()); }
-			float BlendOutTime() { mixin(MGPC!(float, 244)()); }
-			float BlendInTime() { mixin(MGPC!(float, 240)()); }
+			Actor UserDefinedSpaceActor() { mixin(MGPC!("Actor", 260)()); }
+			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!("Camera.ECameraAnimPlaySpace", 256)()); }
+			float IntensityScale() { mixin(MGPC!("float", 252)()); }
+			float Rate() { mixin(MGPC!("float", 248)()); }
+			float BlendOutTime() { mixin(MGPC!("float", 244)()); }
+			float BlendInTime() { mixin(MGPC!("float", 240)()); }
 			// WARNING: Property 'CameraAnim' has the same name as a defined type!
 		}
 		bool bRandomStartTime() { mixin(MGBPC!(236, 0x2)()); }

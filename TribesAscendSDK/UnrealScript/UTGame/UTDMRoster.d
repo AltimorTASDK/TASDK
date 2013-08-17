@@ -19,8 +19,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass DMSquadClass() { mixin(MGPC!(ScriptClass, 600)()); }
-		int Position() { mixin(MGPC!(int, 596)()); }
+		ScriptClass DMSquadClass() { mixin(MGPC!("ScriptClass", 600)()); }
+		int Position() { mixin(MGPC!("int", 596)()); }
 	}
 	final bool AddToTeam(Controller Other)
 	{

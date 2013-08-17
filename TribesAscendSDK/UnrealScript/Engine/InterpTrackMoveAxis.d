@@ -24,7 +24,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		InterpTrackMove.InterpLookupTrack LookupTrack() { mixin(MGPC!(InterpTrackMove.InterpLookupTrack, 152)()); }
-		InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { mixin(MGPC!(InterpTrackMoveAxis.EInterpMoveAxis, 148)()); }
+		InterpTrackMove.InterpLookupTrack LookupTrack() { mixin(MGPC!("InterpTrackMove.InterpLookupTrack", 152)()); }
+		InterpTrackMoveAxis.EInterpMoveAxis MoveAxis() { mixin(MGPC!("InterpTrackMoveAxis.EInterpMoveAxis", 148)()); }
 	}
 }

@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mMustBeLongerPathThan;
 		public @property static final ScriptFunction MustBeLongerPathThan() { mixin(MGF!("mMustBeLongerPathThan", "Function Engine.NavMeshGoalFilter_MinPathDistance.MustBeLongerPathThan")()); }
 	}
-	@property final auto ref int MinDistancePathShouldBe() { mixin(MGPC!(int, 72)()); }
+	@property final auto ref int MinDistancePathShouldBe() { mixin(MGPC!("int", 72)()); }
 	final static bool MustBeLongerPathThan(NavMeshGoal_GenericFilterContainer FilterContainer, int InMinDistancePathShouldBe)
 	{
 		ubyte params[12];

@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumberOfInputs() { mixin(MGPC!(int, 248)()); }
-			ScriptString VarSeparator() { mixin(MGPC!(ScriptString, 236)()); }
+			int NumberOfInputs() { mixin(MGPC!("int", 248)()); }
+			ScriptString VarSeparator() { mixin(MGPC!("ScriptString", 236)()); }
 		}
 		bool bIncludeVarComment() { mixin(MGBPC!(232, 0x1)()); }
 		bool bIncludeVarComment(bool val) { mixin(MSBPC!(232, 0x1)()); }

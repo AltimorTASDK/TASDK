@@ -39,20 +39,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrPlayerController OwningController() { mixin(MGPC!(TrPlayerController, 540)()); }
-			ScriptClass ExtentTemplateClass() { mixin(MGPC!(ScriptClass, 536)()); }
-			float VehicleDist() { mixin(MGPC!(float, 528)()); }
-			float GameObjectiveDist() { mixin(MGPC!(float, 524)()); }
-			float FlagStationDist() { mixin(MGPC!(float, 520)()); }
-			ScriptString DisplayName() { mixin(MGPC!(ScriptString, 508)()); }
-			MaterialInstanceConstant MICDisplay() { mixin(MGPC!(MaterialInstanceConstant, 504)()); }
-			int CreditCost() { mixin(MGPC!(int, 500)()); }
-			float DegreeOfMovement() { mixin(MGPC!(float, 496)()); }
-			float CooldownTime() { mixin(MGPC!(float, 492)()); }
-			float CallTime() { mixin(MGPC!(float, 488)()); }
-			float BuildupTime() { mixin(MGPC!(float, 484)()); }
-			int DatabaseId() { mixin(MGPC!(int, 480)()); }
-			TrObject.ETrPlayerCallIns CallInId() { mixin(MGPC!(TrObject.ETrPlayerCallIns, 476)()); }
+			TrPlayerController OwningController() { mixin(MGPC!("TrPlayerController", 540)()); }
+			ScriptClass ExtentTemplateClass() { mixin(MGPC!("ScriptClass", 536)()); }
+			float VehicleDist() { mixin(MGPC!("float", 528)()); }
+			float GameObjectiveDist() { mixin(MGPC!("float", 524)()); }
+			float FlagStationDist() { mixin(MGPC!("float", 520)()); }
+			ScriptString DisplayName() { mixin(MGPC!("ScriptString", 508)()); }
+			MaterialInstanceConstant MICDisplay() { mixin(MGPC!("MaterialInstanceConstant", 504)()); }
+			int CreditCost() { mixin(MGPC!("int", 500)()); }
+			float DegreeOfMovement() { mixin(MGPC!("float", 496)()); }
+			float CooldownTime() { mixin(MGPC!("float", 492)()); }
+			float CallTime() { mixin(MGPC!("float", 488)()); }
+			float BuildupTime() { mixin(MGPC!("float", 484)()); }
+			int DatabaseId() { mixin(MGPC!("int", 480)()); }
+			TrObject.ETrPlayerCallIns CallInId() { mixin(MGPC!("TrObject.ETrPlayerCallIns", 476)()); }
 		}
 		bool IsInProgress() { mixin(MGBPC!(532, 0x4)()); }
 		bool IsInProgress(bool val) { mixin(MSBPC!(532, 0x4)()); }

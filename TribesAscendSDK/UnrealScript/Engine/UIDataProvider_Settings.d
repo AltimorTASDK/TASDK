@@ -35,28 +35,29 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider_Settings.SettingsArrayProvider")()); }
 		@property final auto ref
 		{
-			UIDataProvider_SettingsArray Provider() { mixin(MGPS!(UIDataProvider_SettingsArray, 12)()); }
-			ScriptName SettingsName() { mixin(MGPS!(ScriptName, 4)()); }
-			int SettingsId() { mixin(MGPS!(int, 0)()); }
+			UIDataProvider_SettingsArray Provider() { mixin(MGPS!("UIDataProvider_SettingsArray", 12)()); }
+			ScriptName SettingsName() { mixin(MGPS!("ScriptName", 4)()); }
+			int SettingsId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider) SettingsArrayProviders() { mixin(MGPC!(ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider), 128)()); }
+			ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider) SettingsArrayProviders() { mixin(MGPC!("ScriptArray!(UIDataProvider_Settings.SettingsArrayProvider)", 128)()); }
 			// WARNING: Property 'Settings' has the same name as a defined type!
 		}
 		bool bIsAListRow() { mixin(MGBPC!(140, 0x1)()); }
 		bool bIsAListRow(bool val) { mixin(MSBPC!(140, 0x1)()); }
 	}
 final:
-	void ArrayProviderPropertyChanged(UIDataProvider SourceProvider, ScriptName PropTag)
+	void ArrayProviderPropertyChanged(UIDataProvider SourceProvider, ScriptName* PropTag = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = PropTag;
+		if (PropTag !is null)
+			*cast(ScriptName*)&params[4] = *PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ArrayProviderPropertyChanged, params.ptr, cast(void*)0);
 	}
 	void OnSettingValueUpdated(ScriptName SettingName)

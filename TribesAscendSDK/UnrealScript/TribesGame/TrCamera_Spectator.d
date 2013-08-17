@@ -37,15 +37,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrFlagBase m_HiddenFlag() { mixin(MGPC!(TrFlagBase, 1124)()); }
-			TrPawn m_HiddenViewTargetPawn() { mixin(MGPC!(TrPawn, 1120)()); }
-			float m_fMaxFixedViewCamDistance() { mixin(MGPC!(float, 1112)()); }
-			float m_MinCamDistance() { mixin(MGPC!(float, 1108)()); }
-			float m_MaxCamDistance() { mixin(MGPC!(float, 1104)()); }
-			float m_fMaxSpeed() { mixin(MGPC!(float, 1100)()); }
-			float m_fPawnZOffset() { mixin(MGPC!(float, 1096)()); }
-			float m_fCameraDistanceInterpSpeed() { mixin(MGPC!(float, 1092)()); }
-			float m_fInterpedCameraDistance() { mixin(MGPC!(float, 1088)()); }
+			TrFlagBase m_HiddenFlag() { mixin(MGPC!("TrFlagBase", 1124)()); }
+			TrPawn m_HiddenViewTargetPawn() { mixin(MGPC!("TrPawn", 1120)()); }
+			float m_fMaxFixedViewCamDistance() { mixin(MGPC!("float", 1112)()); }
+			float m_MinCamDistance() { mixin(MGPC!("float", 1108)()); }
+			float m_MaxCamDistance() { mixin(MGPC!("float", 1104)()); }
+			float m_fMaxSpeed() { mixin(MGPC!("float", 1100)()); }
+			float m_fPawnZOffset() { mixin(MGPC!("float", 1096)()); }
+			float m_fCameraDistanceInterpSpeed() { mixin(MGPC!("float", 1092)()); }
+			float m_fInterpedCameraDistance() { mixin(MGPC!("float", 1088)()); }
 		}
 		bool m_bViewFixed3p() { mixin(MGBPC!(1116, 0x80)()); }
 		bool m_bViewFixed3p(bool val) { mixin(MSBPC!(1116, 0x80)()); }
@@ -86,7 +86,7 @@ final:
 		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateViewTarget, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
+		OutVT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	void ShowHiddenPawn()
 	{

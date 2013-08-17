@@ -16,8 +16,8 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ForceFieldComponent'!
-			ScriptName SocketName() { mixin(MGPC!(ScriptName, 72)()); }
-			ScriptName BoneName() { mixin(MGPC!(ScriptName, 80)()); }
+			ScriptName SocketName() { mixin(MGPC!("ScriptName", 72)()); }
+			ScriptName BoneName() { mixin(MGPC!("ScriptName", 80)()); }
 		}
 		bool bAttach() { mixin(MGBPC!(68, 0x1)()); }
 		bool bAttach(bool val) { mixin(MSBPC!(68, 0x1)()); }

@@ -19,12 +19,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpCurveEdSetup.CurveEdTab")()); }
 		@property final auto ref
 		{
-			ScriptArray!(InterpCurveEdSetup.CurveEdEntry) Curves() { mixin(MGPS!(ScriptArray!(InterpCurveEdSetup.CurveEdEntry), 12)()); }
-			float ViewEndOutput() { mixin(MGPS!(float, 36)()); }
-			float ViewStartOutput() { mixin(MGPS!(float, 32)()); }
-			float ViewEndInput() { mixin(MGPS!(float, 28)()); }
-			float ViewStartInput() { mixin(MGPS!(float, 24)()); }
-			ScriptString TabName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptArray!(InterpCurveEdSetup.CurveEdEntry) Curves() { mixin(MGPS!("ScriptArray!(InterpCurveEdSetup.CurveEdEntry)", 12)()); }
+			float ViewEndOutput() { mixin(MGPS!("float", 36)()); }
+			float ViewStartOutput() { mixin(MGPS!("float", 32)()); }
+			float ViewEndInput() { mixin(MGPS!("float", 28)()); }
+			float ViewStartInput() { mixin(MGPS!("float", 24)()); }
+			ScriptString TabName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct CurveEdEntry
@@ -35,20 +35,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.InterpCurveEdSetup.CurveEdEntry")()); }
 		@property final auto ref
 		{
-			float ClampHigh() { mixin(MGPS!(float, 40)()); }
-			float ClampLow() { mixin(MGPS!(float, 36)()); }
-			int bClamp() { mixin(MGPS!(int, 32)()); }
-			int bFloatingPointColorCurve() { mixin(MGPS!(int, 28)()); }
-			int bColorCurve() { mixin(MGPS!(int, 24)()); }
-			int bHideCurve() { mixin(MGPS!(int, 20)()); }
-			ScriptString CurveName() { mixin(MGPS!(ScriptString, 8)()); }
-			UObject.Color CurveColor() { mixin(MGPS!(UObject.Color, 4)()); }
-			UObject CurveObject() { mixin(MGPS!(UObject, 0)()); }
+			float ClampHigh() { mixin(MGPS!("float", 40)()); }
+			float ClampLow() { mixin(MGPS!("float", 36)()); }
+			int bClamp() { mixin(MGPS!("int", 32)()); }
+			int bFloatingPointColorCurve() { mixin(MGPS!("int", 28)()); }
+			int bColorCurve() { mixin(MGPS!("int", 24)()); }
+			int bHideCurve() { mixin(MGPS!("int", 20)()); }
+			ScriptString CurveName() { mixin(MGPS!("ScriptString", 8)()); }
+			UObject.Color CurveColor() { mixin(MGPS!("UObject.Color", 4)()); }
+			UObject CurveObject() { mixin(MGPS!("UObject", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(InterpCurveEdSetup.CurveEdTab) Tabs() { mixin(MGPC!(ScriptArray!(InterpCurveEdSetup.CurveEdTab), 60)()); }
-		int ActiveTab() { mixin(MGPC!(int, 72)()); }
+		ScriptArray!(InterpCurveEdSetup.CurveEdTab) Tabs() { mixin(MGPC!("ScriptArray!(InterpCurveEdSetup.CurveEdTab)", 60)()); }
+		int ActiveTab() { mixin(MGPC!("int", 72)()); }
 	}
 }

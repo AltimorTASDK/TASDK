@@ -42,14 +42,14 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptString) RequireZoneNames() { mixin(MGPS!(ScriptArray!(ScriptString), 12)()); }
-				ScriptString GroupName() { mixin(MGPS!(ScriptString, 0)()); }
+				ScriptArray!(ScriptString) RequireZoneNames() { mixin(MGPS!("ScriptArray!(ScriptString)", 12)()); }
+				ScriptString GroupName() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bIsAttractModeGroup() { mixin(MGBPS!(24, 0x1)()); }
 			bool bIsAttractModeGroup(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { mixin(MGPC!(ScriptArray!(FrameworkGame.RequiredMobileInputConfig), 884)()); }
+	@property final auto ref ScriptArray!(FrameworkGame.RequiredMobileInputConfig) RequiredMobileInputConfigs() { mixin(MGPC!("ScriptArray!(FrameworkGame.RequiredMobileInputConfig)", 884)()); }
 final:
 	void TgStartGame(ref ScriptString Reason)
 	{
@@ -57,7 +57,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgStartGame, params.ptr, cast(void*)0);
-		*Reason = *cast(ScriptString*)params.ptr;
+		Reason = *cast(ScriptString*)params.ptr;
 	}
 	void TgEndGame(ref ScriptString Reason)
 	{
@@ -65,7 +65,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgEndGame, params.ptr, cast(void*)0);
-		*Reason = *cast(ScriptString*)params.ptr;
+		Reason = *cast(ScriptString*)params.ptr;
 	}
 	void TgTimer(ref ScriptString sTimerCommand)
 	{
@@ -73,14 +73,15 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = sTimerCommand;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgTimer, params.ptr, cast(void*)0);
-		*sTimerCommand = *cast(ScriptString*)params.ptr;
+		sTimerCommand = *cast(ScriptString*)params.ptr;
 	}
-	void TgChangeScore(int nTeam, int nCount)
+	void TgChangeScore(int nTeam, int* nCount = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = nTeam;
-		*cast(int*)&params[4] = nCount;
+		if (nCount !is null)
+			*cast(int*)&params[4] = *nCount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgChangeScore, params.ptr, cast(void*)0);
 	}
 	void TgChangeTime(int nSeconds)
@@ -96,6 +97,6 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TgGetSpectators, params.ptr, cast(void*)0);
-		*List = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		List = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 }

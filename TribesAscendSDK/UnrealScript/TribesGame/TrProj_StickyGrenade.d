@@ -33,7 +33,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref Actor m_OldBase() { mixin(MGPC!(Actor, 888)()); }
+		@property final auto ref Actor m_OldBase() { mixin(MGPC!("Actor", 888)()); }
 		bool m_bHasStuckToTarget() { mixin(MGBPC!(884, 0x1)()); }
 		bool m_bHasStuckToTarget(bool val) { mixin(MSBPC!(884, 0x1)()); }
 	}

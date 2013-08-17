@@ -216,8 +216,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.NavMeshPathGoalEvaluatorCacheDatum")()); }
 		@property final auto ref
 		{
-			int ListIdx() { mixin(MGPS!(int, 0)()); }
-			NavMeshPathGoalEvaluator List() { mixin(MGPS!(NavMeshPathGoalEvaluator, 4)()); }
+			int ListIdx() { mixin(MGPS!("int", 0)()); }
+			NavMeshPathGoalEvaluator List() { mixin(MGPS!("NavMeshPathGoalEvaluator", 4)()); }
 		}
 	}
 	struct HostMigrationState
@@ -230,10 +230,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptString HostMigrationTravelURL() { mixin(MGPS!(ScriptString, 12)()); }
-				float HostMigrationTravelCountdown() { mixin(MGPS!(float, 8)()); }
-				float HostMigrationElapsedTime() { mixin(MGPS!(float, 4)()); }
-				WorldInfo.EHostMigrationProgress HostMigrationProgress() { mixin(MGPS!(WorldInfo.EHostMigrationProgress, 0)()); }
+				ScriptString HostMigrationTravelURL() { mixin(MGPS!("ScriptString", 12)()); }
+				float HostMigrationTravelCountdown() { mixin(MGPS!("float", 8)()); }
+				float HostMigrationElapsedTime() { mixin(MGPS!("float", 4)()); }
+				WorldInfo.EHostMigrationProgress HostMigrationProgress() { mixin(MGPS!("WorldInfo.EHostMigrationProgress", 0)()); }
 			}
 			bool bHostMigrationEnabled() { mixin(MGBPS!(24, 0x1)()); }
 			bool bHostMigrationEnabled(bool val) { mixin(MSBPS!(24, 0x1)()); }
@@ -245,7 +245,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.PhysXVerticalProperties")()); }
-		@property final auto ref WorldInfo.PhysXEmitterVerticalProperties Emitters() { mixin(MGPS!(WorldInfo.PhysXEmitterVerticalProperties, 0)()); }
+		@property final auto ref WorldInfo.PhysXEmitterVerticalProperties Emitters() { mixin(MGPS!("WorldInfo.PhysXEmitterVerticalProperties", 0)()); }
 	}
 	struct WorldFractureSettings
 	{
@@ -257,11 +257,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				float ChanceOfPhysicsChunkOverride() { mixin(MGPS!(float, 0)()); }
-				float MaxExplosionChunkSize() { mixin(MGPS!(float, 8)()); }
-				float MaxDamageChunkSize() { mixin(MGPS!(float, 16)()); }
-				int MaxNumFacturedChunksToSpawnInAFrame() { mixin(MGPS!(int, 20)()); }
-				float FractureExplosionVelScale() { mixin(MGPS!(float, 24)()); }
+				float ChanceOfPhysicsChunkOverride() { mixin(MGPS!("float", 0)()); }
+				float MaxExplosionChunkSize() { mixin(MGPS!("float", 8)()); }
+				float MaxDamageChunkSize() { mixin(MGPS!("float", 16)()); }
+				int MaxNumFacturedChunksToSpawnInAFrame() { mixin(MGPS!("int", 20)()); }
+				float FractureExplosionVelScale() { mixin(MGPS!("float", 24)()); }
 			}
 			bool bEnableChanceOfPhysicsChunkOverride() { mixin(MGBPS!(4, 0x1)()); }
 			bool bEnableChanceOfPhysicsChunkOverride(bool val) { mixin(MSBPS!(4, 0x1)()); }
@@ -279,8 +279,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.NavMeshPathConstraintCacheDatum")()); }
 		@property final auto ref
 		{
-			int ListIdx() { mixin(MGPS!(int, 0)()); }
-			NavMeshPathConstraint List() { mixin(MGPS!(NavMeshPathConstraint, 4)()); }
+			int ListIdx() { mixin(MGPS!("int", 0)()); }
+			NavMeshPathConstraint List() { mixin(MGPS!("NavMeshPathConstraint", 4)()); }
 		}
 	}
 	struct LightmassWorldInfoSettings
@@ -293,19 +293,19 @@ public extern(D):
 		{
 			auto ref
 			{
-				float StaticLightingLevelScale() { mixin(MGPS!(float, 0)()); }
-				int NumIndirectLightingBounces() { mixin(MGPS!(int, 4)()); }
-				UObject.Color EnvironmentColor() { mixin(MGPS!(UObject.Color, 8)()); }
-				float EnvironmentIntensity() { mixin(MGPS!(float, 12)()); }
-				float EmissiveBoost() { mixin(MGPS!(float, 16)()); }
-				float DiffuseBoost() { mixin(MGPS!(float, 20)()); }
-				float SpecularBoost() { mixin(MGPS!(float, 24)()); }
-				float IndirectNormalInfluenceBoost() { mixin(MGPS!(float, 28)()); }
-				float DirectIlluminationOcclusionFraction() { mixin(MGPS!(float, 36)()); }
-				float IndirectIlluminationOcclusionFraction() { mixin(MGPS!(float, 40)()); }
-				float OcclusionExponent() { mixin(MGPS!(float, 44)()); }
-				float FullyOccludedSamplesFraction() { mixin(MGPS!(float, 48)()); }
-				float MaxOcclusionDistance() { mixin(MGPS!(float, 52)()); }
+				float StaticLightingLevelScale() { mixin(MGPS!("float", 0)()); }
+				int NumIndirectLightingBounces() { mixin(MGPS!("int", 4)()); }
+				UObject.Color EnvironmentColor() { mixin(MGPS!("UObject.Color", 8)()); }
+				float EnvironmentIntensity() { mixin(MGPS!("float", 12)()); }
+				float EmissiveBoost() { mixin(MGPS!("float", 16)()); }
+				float DiffuseBoost() { mixin(MGPS!("float", 20)()); }
+				float SpecularBoost() { mixin(MGPS!("float", 24)()); }
+				float IndirectNormalInfluenceBoost() { mixin(MGPS!("float", 28)()); }
+				float DirectIlluminationOcclusionFraction() { mixin(MGPS!("float", 36)()); }
+				float IndirectIlluminationOcclusionFraction() { mixin(MGPS!("float", 40)()); }
+				float OcclusionExponent() { mixin(MGPS!("float", 44)()); }
+				float FullyOccludedSamplesFraction() { mixin(MGPS!("float", 48)()); }
+				float MaxOcclusionDistance() { mixin(MGPS!("float", 52)()); }
 			}
 			bool bUseNormalMapsForSimpleLightMaps() { mixin(MGBPS!(32, 0x1)()); }
 			bool bUseNormalMapsForSimpleLightMaps(bool val) { mixin(MSBPS!(32, 0x1)()); }
@@ -327,11 +327,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.ScreenMessageString")()); }
 		@property final auto ref
 		{
-			QWord Key() { mixin(MGPS!(QWord, 0)()); }
-			ScriptString ScreenMessage() { mixin(MGPS!(ScriptString, 8)()); }
-			UObject.Color DisplayColor() { mixin(MGPS!(UObject.Color, 20)()); }
-			float TimeToDisplay() { mixin(MGPS!(float, 24)()); }
-			float CurrentTimeDisplayed() { mixin(MGPS!(float, 28)()); }
+			QWord Key() { mixin(MGPS!("QWord", 0)()); }
+			ScriptString ScreenMessage() { mixin(MGPS!("ScriptString", 8)()); }
+			UObject.Color DisplayColor() { mixin(MGPS!("UObject.Color", 20)()); }
+			float TimeToDisplay() { mixin(MGPS!("float", 24)()); }
+			float CurrentTimeDisplayed() { mixin(MGPS!("float", 28)()); }
 		}
 	}
 	struct PhysXEmitterVerticalProperties
@@ -344,10 +344,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				int ParticlesLodMin() { mixin(MGPS!(int, 4)()); }
-				int ParticlesLodMax() { mixin(MGPS!(int, 8)()); }
-				int PacketsPerPhysXParticleSystemMax() { mixin(MGPS!(int, 12)()); }
-				float SpawnLodVsFifoBias() { mixin(MGPS!(float, 20)()); }
+				int ParticlesLodMin() { mixin(MGPS!("int", 4)()); }
+				int ParticlesLodMax() { mixin(MGPS!("int", 8)()); }
+				int PacketsPerPhysXParticleSystemMax() { mixin(MGPS!("int", 12)()); }
+				float SpawnLodVsFifoBias() { mixin(MGPS!("float", 20)()); }
 			}
 			bool bDisableLod() { mixin(MGBPS!(0, 0x1)()); }
 			bool bDisableLod(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -365,9 +365,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				int MaxChunkIslandCount() { mixin(MGPS!(int, 0)()); }
-				int MaxRrbActorCount() { mixin(MGPS!(int, 4)()); }
-				float MaxChunkSeparationLOD() { mixin(MGPS!(float, 8)()); }
+				int MaxChunkIslandCount() { mixin(MGPS!("int", 0)()); }
+				int MaxRrbActorCount() { mixin(MGPS!("int", 4)()); }
+				float MaxChunkSeparationLOD() { mixin(MGPS!("float", 8)()); }
 			}
 			bool bOverrideMaxChunkSeparationLOD() { mixin(MGBPS!(12, 0x1)()); }
 			bool bOverrideMaxChunkSeparationLOD(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -381,11 +381,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.PhysXSceneProperties")()); }
 		@property final auto ref
 		{
-			WorldInfo.PhysXSimulationProperties PrimaryScene() { mixin(MGPS!(WorldInfo.PhysXSimulationProperties, 0)()); }
-			WorldInfo.PhysXSimulationProperties CompartmentRigidBody() { mixin(MGPS!(WorldInfo.PhysXSimulationProperties, 12)()); }
-			WorldInfo.PhysXSimulationProperties CompartmentFluid() { mixin(MGPS!(WorldInfo.PhysXSimulationProperties, 24)()); }
-			WorldInfo.PhysXSimulationProperties CompartmentCloth() { mixin(MGPS!(WorldInfo.PhysXSimulationProperties, 36)()); }
-			WorldInfo.PhysXSimulationProperties CompartmentSoftBody() { mixin(MGPS!(WorldInfo.PhysXSimulationProperties, 48)()); }
+			WorldInfo.PhysXSimulationProperties PrimaryScene() { mixin(MGPS!("WorldInfo.PhysXSimulationProperties", 0)()); }
+			WorldInfo.PhysXSimulationProperties CompartmentRigidBody() { mixin(MGPS!("WorldInfo.PhysXSimulationProperties", 12)()); }
+			WorldInfo.PhysXSimulationProperties CompartmentFluid() { mixin(MGPS!("WorldInfo.PhysXSimulationProperties", 24)()); }
+			WorldInfo.PhysXSimulationProperties CompartmentCloth() { mixin(MGPS!("WorldInfo.PhysXSimulationProperties", 36)()); }
+			WorldInfo.PhysXSimulationProperties CompartmentSoftBody() { mixin(MGPS!("WorldInfo.PhysXSimulationProperties", 48)()); }
 		}
 	}
 	struct PhysXSimulationProperties
@@ -398,8 +398,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				float TimeStep() { mixin(MGPS!(float, 4)()); }
-				int MaxSubSteps() { mixin(MGPS!(int, 8)()); }
+				float TimeStep() { mixin(MGPS!("float", 4)()); }
+				int MaxSubSteps() { mixin(MGPS!("int", 8)()); }
 			}
 			bool bUseHardware() { mixin(MGBPS!(0, 0x1)()); }
 			bool bUseHardware(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -433,134 +433,134 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.WorldInfo.NetViewer")()); }
 		@property final auto ref
 		{
-			PlayerController InViewer() { mixin(MGPS!(PlayerController, 0)()); }
-			Actor Viewer() { mixin(MGPS!(Actor, 4)()); }
-			Vector ViewLocation() { mixin(MGPS!(Vector, 8)()); }
-			Vector ViewDir() { mixin(MGPS!(Vector, 20)()); }
+			PlayerController InViewer() { mixin(MGPS!("PlayerController", 0)()); }
+			Actor Viewer() { mixin(MGPS!("Actor", 4)()); }
+			Vector ViewLocation() { mixin(MGPS!("Vector", 8)()); }
+			Vector ViewDir() { mixin(MGPS!("Vector", 20)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			WorldInfo.ENetMode NetMode() { mixin(MGPC!(WorldInfo.ENetMode, 1048)()); }
-			GameInfo Game() { mixin(MGPC!(GameInfo, 1088)()); }
-			float TimeSeconds() { mixin(MGPC!(float, 960)()); }
-			GameReplicationInfo GRI() { mixin(MGPC!(GameReplicationInfo, 1044)()); }
-			Vector DefaultColorScale() { mixin(MGPC!(Vector, 1168)()); }
-			EmitterPool MyEmitterPool() { mixin(MGPC!(EmitterPool, 1348)()); }
-			float TimeDilation() { mixin(MGPC!(float, 952)()); }
-			PlayerReplicationInfo Pauser() { mixin(MGPC!(PlayerReplicationInfo, 984)()); }
-			float MoveRepSize() { mixin(MGPC!(float, 1132)()); }
-			float StallZ() { mixin(MGPC!(float, 1092)()); }
-			ScriptArray!(LevelStreaming) StreamingLevels() { mixin(MGPC!(ScriptArray!(LevelStreaming), 840)()); }
-			float PauseDelay() { mixin(MGPC!(float, 976)()); }
-			float WorldGravityZ() { mixin(MGPC!(float, 1096)()); }
-			float DemoPlayTimeDilation() { mixin(MGPC!(float, 956)()); }
-			MusicTrackDataStructures.MusicTrackStruct ReplicatedMusicTrack() { mixin(MGPC!(MusicTrackDataStructures.MusicTrackStruct, 1272)()); }
-			Actor.ETravelType NextTravelType() { mixin(MGPC!(Actor.ETravelType, 1049)()); }
-			ScriptString NextURL() { mixin(MGPC!(ScriptString, 1148)()); }
-			float NextSwitchCountdown() { mixin(MGPC!(float, 1160)()); }
-			ScriptString EmitterPoolClassPath() { mixin(MGPC!(ScriptString, 1336)()); }
-			ScriptString DecalManagerClassPath() { mixin(MGPC!(ScriptString, 1352)()); }
-			DecalManager MyDecalManager() { mixin(MGPC!(DecalManager, 1364)()); }
-			ScriptString FractureManagerClassPath() { mixin(MGPC!(ScriptString, 1368)()); }
-			FractureManager MyFractureManager() { mixin(MGPC!(FractureManager, 1380)()); }
-			ScriptString ParticleEventManagerClassPath() { mixin(MGPC!(ScriptString, 1384)()); }
-			ParticleEventManager MyParticleEventManager() { mixin(MGPC!(ParticleEventManager, 1396)()); }
-			PostProcessVolume.PostProcessSettings DefaultPostProcessSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 492)()); }
-			PostProcessChain WorldPostProcessChain() { mixin(MGPC!(PostProcessChain, 712)()); }
-			float SquintModeKernelSize() { mixin(MGPC!(float, 724)()); }
-			PostProcessVolume HighestPriorityPostProcessVolume() { mixin(MGPC!(PostProcessVolume, 728)()); }
-			ReverbVolume.ReverbSettings DefaultReverbSettings() { mixin(MGPC!(ReverbVolume.ReverbSettings, 732)()); }
-			ReverbVolume.InteriorSettings DefaultAmbientZoneSettings() { mixin(MGPC!(ReverbVolume.InteriorSettings, 748)()); }
-			float FogStart() { mixin(MGPC!(float, 784)()); }
-			float FogEnd() { mixin(MGPC!(float, 788)()); }
-			UObject.Color FogColor() { mixin(MGPC!(UObject.Color, 792)()); }
-			float BumpEnd() { mixin(MGPC!(float, 796)()); }
-			ReverbVolume HighestPriorityReverbVolume() { mixin(MGPC!(ReverbVolume, 800)()); }
-			ScriptArray!(MassiveLODOverrideVolume) MassiveLODOverrideVolumes() { mixin(MGPC!(ScriptArray!(MassiveLODOverrideVolume), 804)()); }
-			ScriptArray!(PortalVolume) PortalVolumes() { mixin(MGPC!(ScriptArray!(PortalVolume), 816)()); }
-			ScriptArray!(EnvironmentVolume) EnvironmentVolumes() { mixin(MGPC!(ScriptArray!(EnvironmentVolume), 828)()); }
-			UObject.Double LastTimeUnbuiltLightingWasEncountered() { mixin(MGPC!(UObject.Double, 852)()); }
-			BookMark BookMarks() { mixin(MGPC!(BookMark, 860)()); }
-			KismetBookMark KismetBookMarks() { mixin(MGPC!(KismetBookMark, 900)()); }
-			ScriptArray!(ClipPadEntry) ClipPadEntries() { mixin(MGPC!(ScriptArray!(ClipPadEntry), 940)()); }
-			float RealTimeSeconds() { mixin(MGPC!(float, 964)()); }
-			float AudioTimeSeconds() { mixin(MGPC!(float, 968)()); }
-			float DeltaSeconds() { mixin(MGPC!(float, 972)()); }
-			float RealTimeToUnPause() { mixin(MGPC!(float, 980)()); }
-			ScriptString VisibleGroups() { mixin(MGPC!(ScriptString, 988)()); }
-			ScriptString SelectedGroups() { mixin(MGPC!(ScriptString, 1000)()); }
-			Texture2D DefaultTexture() { mixin(MGPC!(Texture2D, 1012)()); }
-			Texture2D WireframeTexture() { mixin(MGPC!(Texture2D, 1016)()); }
-			Texture2D WhiteSquareTexture() { mixin(MGPC!(Texture2D, 1020)()); }
-			Texture2D LargeVertex() { mixin(MGPC!(Texture2D, 1024)()); }
-			Texture2D BSPVertex() { mixin(MGPC!(Texture2D, 1028)()); }
-			ScriptArray!(ScriptString) DeferredExecs() { mixin(MGPC!(ScriptArray!(ScriptString), 1032)()); }
-			WorldInfo.EVisibilityAggressiveness VisibilityAggressiveness() { mixin(MGPC!(WorldInfo.EVisibilityAggressiveness, 1050)()); }
-			EngineTypes.ELightingBuildQuality LevelLightingQuality() { mixin(MGPC!(EngineTypes.ELightingBuildQuality, 1051)()); }
-			ScriptString ComputerName() { mixin(MGPC!(ScriptString, 1052)()); }
-			ScriptString EngineVersion() { mixin(MGPC!(ScriptString, 1064)()); }
-			ScriptString MinNetVersion() { mixin(MGPC!(ScriptString, 1076)()); }
-			float DefaultGravityZ() { mixin(MGPC!(float, 1100)()); }
-			float GlobalGravityZ() { mixin(MGPC!(float, 1104)()); }
-			float RBPhysicsGravityScaling() { mixin(MGPC!(float, 1108)()); }
-			NavigationPoint NavigationPointList() { mixin(MGPC!(NavigationPoint, 1112)()); }
-			Controller ControllerList() { mixin(MGPC!(Controller, 1116)()); }
-			Pawn PawnList() { mixin(MGPC!(Pawn, 1120)()); }
-			CoverLink CoverList() { mixin(MGPC!(CoverLink, 1124)()); }
-			Pylon PylonList() { mixin(MGPC!(Pylon, 1128)()); }
-			ScriptArray!(WorldInfo.NetViewer) ReplicationViewers() { mixin(MGPC!(ScriptArray!(WorldInfo.NetViewer), 1136)()); }
-			int PackedLightAndShadowMapTextureSize() { mixin(MGPC!(int, 1164)()); }
-			ScriptArray!(ScriptClass) GameTypesSupportedOnThisMap() { mixin(MGPC!(ScriptArray!(ScriptClass), 1180)()); }
-			ScriptClass GameTypeForPIE() { mixin(MGPC!(ScriptClass, 1192)()); }
-			ScriptArray!(UObject) ClientDestroyedActorContent() { mixin(MGPC!(ScriptArray!(UObject), 1196)()); }
-			ScriptArray!(ScriptName) PreparingLevelNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1208)()); }
-			ScriptName CommittedPersistentLevelName() { mixin(MGPC!(ScriptName, 1220)()); }
-			ObjectReferencer PersistentMapForcedObjects() { mixin(MGPC!(ObjectReferencer, 1228)()); }
+			WorldInfo.ENetMode NetMode() { mixin(MGPC!("WorldInfo.ENetMode", 1048)()); }
+			GameInfo Game() { mixin(MGPC!("GameInfo", 1088)()); }
+			float TimeSeconds() { mixin(MGPC!("float", 960)()); }
+			GameReplicationInfo GRI() { mixin(MGPC!("GameReplicationInfo", 1044)()); }
+			Vector DefaultColorScale() { mixin(MGPC!("Vector", 1168)()); }
+			EmitterPool MyEmitterPool() { mixin(MGPC!("EmitterPool", 1348)()); }
+			float TimeDilation() { mixin(MGPC!("float", 952)()); }
+			PlayerReplicationInfo Pauser() { mixin(MGPC!("PlayerReplicationInfo", 984)()); }
+			float MoveRepSize() { mixin(MGPC!("float", 1132)()); }
+			float StallZ() { mixin(MGPC!("float", 1092)()); }
+			ScriptArray!(LevelStreaming) StreamingLevels() { mixin(MGPC!("ScriptArray!(LevelStreaming)", 840)()); }
+			float PauseDelay() { mixin(MGPC!("float", 976)()); }
+			float WorldGravityZ() { mixin(MGPC!("float", 1096)()); }
+			float DemoPlayTimeDilation() { mixin(MGPC!("float", 956)()); }
+			MusicTrackDataStructures.MusicTrackStruct ReplicatedMusicTrack() { mixin(MGPC!("MusicTrackDataStructures.MusicTrackStruct", 1272)()); }
+			Actor.ETravelType NextTravelType() { mixin(MGPC!("Actor.ETravelType", 1049)()); }
+			ScriptString NextURL() { mixin(MGPC!("ScriptString", 1148)()); }
+			float NextSwitchCountdown() { mixin(MGPC!("float", 1160)()); }
+			ScriptString EmitterPoolClassPath() { mixin(MGPC!("ScriptString", 1336)()); }
+			ScriptString DecalManagerClassPath() { mixin(MGPC!("ScriptString", 1352)()); }
+			DecalManager MyDecalManager() { mixin(MGPC!("DecalManager", 1364)()); }
+			ScriptString FractureManagerClassPath() { mixin(MGPC!("ScriptString", 1368)()); }
+			FractureManager MyFractureManager() { mixin(MGPC!("FractureManager", 1380)()); }
+			ScriptString ParticleEventManagerClassPath() { mixin(MGPC!("ScriptString", 1384)()); }
+			ParticleEventManager MyParticleEventManager() { mixin(MGPC!("ParticleEventManager", 1396)()); }
+			PostProcessVolume.PostProcessSettings DefaultPostProcessSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 492)()); }
+			PostProcessChain WorldPostProcessChain() { mixin(MGPC!("PostProcessChain", 712)()); }
+			float SquintModeKernelSize() { mixin(MGPC!("float", 724)()); }
+			PostProcessVolume HighestPriorityPostProcessVolume() { mixin(MGPC!("PostProcessVolume", 728)()); }
+			ReverbVolume.ReverbSettings DefaultReverbSettings() { mixin(MGPC!("ReverbVolume.ReverbSettings", 732)()); }
+			ReverbVolume.InteriorSettings DefaultAmbientZoneSettings() { mixin(MGPC!("ReverbVolume.InteriorSettings", 748)()); }
+			float FogStart() { mixin(MGPC!("float", 784)()); }
+			float FogEnd() { mixin(MGPC!("float", 788)()); }
+			UObject.Color FogColor() { mixin(MGPC!("UObject.Color", 792)()); }
+			float BumpEnd() { mixin(MGPC!("float", 796)()); }
+			ReverbVolume HighestPriorityReverbVolume() { mixin(MGPC!("ReverbVolume", 800)()); }
+			ScriptArray!(MassiveLODOverrideVolume) MassiveLODOverrideVolumes() { mixin(MGPC!("ScriptArray!(MassiveLODOverrideVolume)", 804)()); }
+			ScriptArray!(PortalVolume) PortalVolumes() { mixin(MGPC!("ScriptArray!(PortalVolume)", 816)()); }
+			ScriptArray!(EnvironmentVolume) EnvironmentVolumes() { mixin(MGPC!("ScriptArray!(EnvironmentVolume)", 828)()); }
+			UObject.Double LastTimeUnbuiltLightingWasEncountered() { mixin(MGPC!("UObject.Double", 852)()); }
+			BookMark BookMarks() { mixin(MGPC!("BookMark", 860)()); }
+			KismetBookMark KismetBookMarks() { mixin(MGPC!("KismetBookMark", 900)()); }
+			ScriptArray!(ClipPadEntry) ClipPadEntries() { mixin(MGPC!("ScriptArray!(ClipPadEntry)", 940)()); }
+			float RealTimeSeconds() { mixin(MGPC!("float", 964)()); }
+			float AudioTimeSeconds() { mixin(MGPC!("float", 968)()); }
+			float DeltaSeconds() { mixin(MGPC!("float", 972)()); }
+			float RealTimeToUnPause() { mixin(MGPC!("float", 980)()); }
+			ScriptString VisibleGroups() { mixin(MGPC!("ScriptString", 988)()); }
+			ScriptString SelectedGroups() { mixin(MGPC!("ScriptString", 1000)()); }
+			Texture2D DefaultTexture() { mixin(MGPC!("Texture2D", 1012)()); }
+			Texture2D WireframeTexture() { mixin(MGPC!("Texture2D", 1016)()); }
+			Texture2D WhiteSquareTexture() { mixin(MGPC!("Texture2D", 1020)()); }
+			Texture2D LargeVertex() { mixin(MGPC!("Texture2D", 1024)()); }
+			Texture2D BSPVertex() { mixin(MGPC!("Texture2D", 1028)()); }
+			ScriptArray!(ScriptString) DeferredExecs() { mixin(MGPC!("ScriptArray!(ScriptString)", 1032)()); }
+			WorldInfo.EVisibilityAggressiveness VisibilityAggressiveness() { mixin(MGPC!("WorldInfo.EVisibilityAggressiveness", 1050)()); }
+			EngineTypes.ELightingBuildQuality LevelLightingQuality() { mixin(MGPC!("EngineTypes.ELightingBuildQuality", 1051)()); }
+			ScriptString ComputerName() { mixin(MGPC!("ScriptString", 1052)()); }
+			ScriptString EngineVersion() { mixin(MGPC!("ScriptString", 1064)()); }
+			ScriptString MinNetVersion() { mixin(MGPC!("ScriptString", 1076)()); }
+			float DefaultGravityZ() { mixin(MGPC!("float", 1100)()); }
+			float GlobalGravityZ() { mixin(MGPC!("float", 1104)()); }
+			float RBPhysicsGravityScaling() { mixin(MGPC!("float", 1108)()); }
+			NavigationPoint NavigationPointList() { mixin(MGPC!("NavigationPoint", 1112)()); }
+			Controller ControllerList() { mixin(MGPC!("Controller", 1116)()); }
+			Pawn PawnList() { mixin(MGPC!("Pawn", 1120)()); }
+			CoverLink CoverList() { mixin(MGPC!("CoverLink", 1124)()); }
+			Pylon PylonList() { mixin(MGPC!("Pylon", 1128)()); }
+			ScriptArray!(WorldInfo.NetViewer) ReplicationViewers() { mixin(MGPC!("ScriptArray!(WorldInfo.NetViewer)", 1136)()); }
+			int PackedLightAndShadowMapTextureSize() { mixin(MGPC!("int", 1164)()); }
+			ScriptArray!(ScriptClass) GameTypesSupportedOnThisMap() { mixin(MGPC!("ScriptArray!(ScriptClass)", 1180)()); }
+			ScriptClass GameTypeForPIE() { mixin(MGPC!("ScriptClass", 1192)()); }
+			ScriptArray!(UObject) ClientDestroyedActorContent() { mixin(MGPC!("ScriptArray!(UObject)", 1196)()); }
+			ScriptArray!(ScriptName) PreparingLevelNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1208)()); }
+			ScriptName CommittedPersistentLevelName() { mixin(MGPC!("ScriptName", 1220)()); }
+			ObjectReferencer PersistentMapForcedObjects() { mixin(MGPC!("ObjectReferencer", 1228)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MusicComp'!
-			MusicTrackDataStructures.MusicTrackStruct CurrentMusicTrack() { mixin(MGPC!(MusicTrackDataStructures.MusicTrackStruct, 1236)()); }
-			ScriptString Title() { mixin(MGPC!(ScriptString, 1308)()); }
-			ScriptString Author() { mixin(MGPC!(ScriptString, 1320)()); }
-			MapInfo MyMapInfo() { mixin(MGPC!(MapInfo, 1332)()); }
-			ProcBuildingRuleset ProcBuildingRulesetOverride() { mixin(MGPC!(ProcBuildingRuleset, 1400)()); }
-			float MaxPhysicsDeltaTime() { mixin(MGPC!(float, 1404)()); }
-			int MaxPhysicsSubsteps() { mixin(MGPC!(int, 1408)()); }
-			WorldInfo.PhysXSceneProperties PhysicsProperties() { mixin(MGPC!(WorldInfo.PhysXSceneProperties, 1412)()); }
-			ScriptArray!(WorldInfo.CompartmentRunList) CompartmentRunFrames() { mixin(MGPC!(ScriptArray!(WorldInfo.CompartmentRunList), 1472)()); }
-			float DefaultSkinWidth() { mixin(MGPC!(float, 1484)()); }
-			float ApexLODResourceBudget() { mixin(MGPC!(float, 1488)()); }
-			WorldInfo.ApexModuleDestructibleSettings DestructibleSettings() { mixin(MGPC!(WorldInfo.ApexModuleDestructibleSettings, 1492)()); }
-			PhysicsLODVerticalEmitter EmitterVertical() { mixin(MGPC!(PhysicsLODVerticalEmitter, 1508)()); }
-			WorldInfo.PhysXVerticalProperties VerticalProperties() { mixin(MGPC!(WorldInfo.PhysXVerticalProperties, 1512)()); }
-			float ChanceOfPhysicsChunkOverride() { mixin(MGPC!(float, 1536)()); }
-			float MaxExplosionChunkSize() { mixin(MGPC!(float, 1540)()); }
-			float MaxDamageChunkSize() { mixin(MGPC!(float, 1544)()); }
-			float FractureExplosionVelScale() { mixin(MGPC!(float, 1548)()); }
-			int MaxNumFacturedChunksToSpawnInAFrame() { mixin(MGPC!(int, 1552)()); }
-			int NumFacturedChunksSpawnedThisFrame() { mixin(MGPC!(int, 1556)()); }
-			float FracturedMeshWeaponDamage() { mixin(MGPC!(float, 1560)()); }
-			int VisibilityCellSize() { mixin(MGPC!(int, 1564)()); }
-			float CharacterLitIndirectBrightness() { mixin(MGPC!(float, 1568)()); }
-			float CharacterLitIndirectContrastFactor() { mixin(MGPC!(float, 1572)()); }
-			float CharacterShadowedIndirectBrightness() { mixin(MGPC!(float, 1576)()); }
-			float CharacterShadowedIndirectContrastFactor() { mixin(MGPC!(float, 1580)()); }
-			float CharacterLightingContrastFactor() { mixin(MGPC!(float, 1584)()); }
-			Texture2D ImageReflectionEnvironmentTexture() { mixin(MGPC!(Texture2D, 1588)()); }
-			UObject.LinearColor ImageReflectionEnvironmentColor() { mixin(MGPC!(UObject.LinearColor, 1592)()); }
-			float ImageReflectionEnvironmentRotation() { mixin(MGPC!(float, 1608)()); }
-			UObject.Map_Mirror ScreenMessages() { mixin(MGPC!(UObject.Map_Mirror, 1612)()); }
-			ScriptArray!(WorldInfo.ScreenMessageString) PriorityScreenMessages() { mixin(MGPC!(ScriptArray!(WorldInfo.ScreenMessageString), 1672)()); }
-			int MaxTrianglesPerLeaf() { mixin(MGPC!(int, 1684)()); }
-			LightmassLevelSettings LMLevelSettings() { mixin(MGPC!(LightmassLevelSettings, 1688)()); }
-			WorldInfo.LightmassWorldInfoSettings LightmassSettings() { mixin(MGPC!(WorldInfo.LightmassWorldInfoSettings, 1692)()); }
+			MusicTrackDataStructures.MusicTrackStruct CurrentMusicTrack() { mixin(MGPC!("MusicTrackDataStructures.MusicTrackStruct", 1236)()); }
+			ScriptString Title() { mixin(MGPC!("ScriptString", 1308)()); }
+			ScriptString Author() { mixin(MGPC!("ScriptString", 1320)()); }
+			MapInfo MyMapInfo() { mixin(MGPC!("MapInfo", 1332)()); }
+			ProcBuildingRuleset ProcBuildingRulesetOverride() { mixin(MGPC!("ProcBuildingRuleset", 1400)()); }
+			float MaxPhysicsDeltaTime() { mixin(MGPC!("float", 1404)()); }
+			int MaxPhysicsSubsteps() { mixin(MGPC!("int", 1408)()); }
+			WorldInfo.PhysXSceneProperties PhysicsProperties() { mixin(MGPC!("WorldInfo.PhysXSceneProperties", 1412)()); }
+			ScriptArray!(WorldInfo.CompartmentRunList) CompartmentRunFrames() { mixin(MGPC!("ScriptArray!(WorldInfo.CompartmentRunList)", 1472)()); }
+			float DefaultSkinWidth() { mixin(MGPC!("float", 1484)()); }
+			float ApexLODResourceBudget() { mixin(MGPC!("float", 1488)()); }
+			WorldInfo.ApexModuleDestructibleSettings DestructibleSettings() { mixin(MGPC!("WorldInfo.ApexModuleDestructibleSettings", 1492)()); }
+			PhysicsLODVerticalEmitter EmitterVertical() { mixin(MGPC!("PhysicsLODVerticalEmitter", 1508)()); }
+			WorldInfo.PhysXVerticalProperties VerticalProperties() { mixin(MGPC!("WorldInfo.PhysXVerticalProperties", 1512)()); }
+			float ChanceOfPhysicsChunkOverride() { mixin(MGPC!("float", 1536)()); }
+			float MaxExplosionChunkSize() { mixin(MGPC!("float", 1540)()); }
+			float MaxDamageChunkSize() { mixin(MGPC!("float", 1544)()); }
+			float FractureExplosionVelScale() { mixin(MGPC!("float", 1548)()); }
+			int MaxNumFacturedChunksToSpawnInAFrame() { mixin(MGPC!("int", 1552)()); }
+			int NumFacturedChunksSpawnedThisFrame() { mixin(MGPC!("int", 1556)()); }
+			float FracturedMeshWeaponDamage() { mixin(MGPC!("float", 1560)()); }
+			int VisibilityCellSize() { mixin(MGPC!("int", 1564)()); }
+			float CharacterLitIndirectBrightness() { mixin(MGPC!("float", 1568)()); }
+			float CharacterLitIndirectContrastFactor() { mixin(MGPC!("float", 1572)()); }
+			float CharacterShadowedIndirectBrightness() { mixin(MGPC!("float", 1576)()); }
+			float CharacterShadowedIndirectContrastFactor() { mixin(MGPC!("float", 1580)()); }
+			float CharacterLightingContrastFactor() { mixin(MGPC!("float", 1584)()); }
+			Texture2D ImageReflectionEnvironmentTexture() { mixin(MGPC!("Texture2D", 1588)()); }
+			UObject.LinearColor ImageReflectionEnvironmentColor() { mixin(MGPC!("UObject.LinearColor", 1592)()); }
+			float ImageReflectionEnvironmentRotation() { mixin(MGPC!("float", 1608)()); }
+			UObject.Map_Mirror ScreenMessages() { mixin(MGPC!("UObject.Map_Mirror", 1612)()); }
+			ScriptArray!(WorldInfo.ScreenMessageString) PriorityScreenMessages() { mixin(MGPC!("ScriptArray!(WorldInfo.ScreenMessageString)", 1672)()); }
+			int MaxTrianglesPerLeaf() { mixin(MGPC!("int", 1684)()); }
+			LightmassLevelSettings LMLevelSettings() { mixin(MGPC!("LightmassLevelSettings", 1688)()); }
+			WorldInfo.LightmassWorldInfoSettings LightmassSettings() { mixin(MGPC!("WorldInfo.LightmassWorldInfoSettings", 1692)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'NavMeshPathConstraintCache'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'NavMeshPathGoalEvaluatorCache'!
-			CrowdPopulationManagerBase PopulationManager() { mixin(MGPC!(CrowdPopulationManagerBase, 1872)()); }
-			ScriptArray!(SeqAct_Latent) CrowdSpawnerActions() { mixin(MGPC!(ScriptArray!(SeqAct_Latent), 1876)()); }
-			WorldInfo.HostMigrationState PeerHostMigration() { mixin(MGPC!(WorldInfo.HostMigrationState, 1888)()); }
-			float HostMigrationTimeout() { mixin(MGPC!(float, 1916)()); }
+			CrowdPopulationManagerBase PopulationManager() { mixin(MGPC!("CrowdPopulationManagerBase", 1872)()); }
+			ScriptArray!(SeqAct_Latent) CrowdSpawnerActions() { mixin(MGPC!("ScriptArray!(SeqAct_Latent)", 1876)()); }
+			WorldInfo.HostMigrationState PeerHostMigration() { mixin(MGPC!("WorldInfo.HostMigrationState", 1888)()); }
+			float HostMigrationTimeout() { mixin(MGPC!("float", 1916)()); }
 		}
 		bool bPlayersOnly() { mixin(MGBPC!(716, 0x200)()); }
 		bool bPlayersOnly(bool val) { mixin(MSBPC!(716, 0x200)()); }
@@ -652,13 +652,14 @@ final:
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Controller*)&params[4] = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllControllers, params.ptr, cast(void*)0);
-		*C = *cast(Controller*)&params[4];
+		C = *cast(Controller*)&params[4];
 	}
-	static bool IsConsoleBuild(WorldInfo.EConsoleType ConsoleType)
+	static bool IsConsoleBuild(WorldInfo.EConsoleType* ConsoleType = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(WorldInfo.EConsoleType*)params.ptr = ConsoleType;
+		if (ConsoleType !is null)
+			*cast(WorldInfo.EConsoleType*)params.ptr = *ConsoleType;
 		StaticClass.ProcessEvent(Functions.IsConsoleBuild, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -669,11 +670,12 @@ final:
 		StaticClass.ProcessEvent(Functions.GetWorldInfo, params.ptr, cast(void*)0);
 		return *cast(WorldInfo*)params.ptr;
 	}
-	ScriptString GetMapName(bool bIncludePrefix)
+	ScriptString GetMapName(bool* bIncludePrefix = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(bool*)params.ptr = bIncludePrefix;
+		if (bIncludePrefix !is null)
+			*cast(bool*)params.ptr = *bIncludePrefix;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMapName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
@@ -691,13 +693,14 @@ final:
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(NavigationPoint*)&params[4] = N;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllNavigationPoints, params.ptr, cast(void*)0);
-		*N = *cast(NavigationPoint*)&params[4];
+		N = *cast(NavigationPoint*)&params[4];
 	}
-	void ForceGarbageCollection(bool bFullPurge)
+	void ForceGarbageCollection(bool* bFullPurge = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bFullPurge;
+		if (bFullPurge !is null)
+			*cast(bool*)params.ptr = *bFullPurge;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ForceGarbageCollection, params.ptr, cast(void*)0);
 	}
 	bool IsPreparingMapChange()
@@ -707,13 +710,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsPreparingMapChange, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void PrepareMapChange(ref const ScriptArray!(ScriptName) LevelNames)
+	void PrepareMapChange(ref in ScriptArray!(ScriptName) LevelNames)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptName)*)params.ptr = LevelNames;
+		*cast(ScriptArray!(ScriptName)*)params.ptr = cast(ScriptArray!(ScriptName))LevelNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PrepareMapChange, params.ptr, cast(void*)0);
-		*LevelNames = *cast(ScriptArray!(ScriptName)*)params.ptr;
 	}
 	void CommitMapChange()
 	{
@@ -769,11 +771,12 @@ final:
 		*cast(ScriptString*)&params[12] = DebugMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddOnScreenDebugMessage, params.ptr, cast(void*)0);
 	}
-	static bool IsMenuLevel(ScriptString MapName)
+	static bool IsMenuLevel(ScriptString* MapName = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = MapName;
+		if (MapName !is null)
+			*cast(ScriptString*)params.ptr = *MapName;
 		StaticClass.ProcessEvent(Functions.IsMenuLevel, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
@@ -837,13 +840,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAddressURL, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void ServerTravel(ScriptString pURL, bool bAbsolute, bool bShouldSkipGameNotify)
+	void ServerTravel(ScriptString pURL, bool* bAbsolute = null, bool* bShouldSkipGameNotify = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
-		*cast(bool*)&params[12] = bAbsolute;
-		*cast(bool*)&params[16] = bShouldSkipGameNotify;
+		if (bAbsolute !is null)
+			*cast(bool*)&params[12] = *bAbsolute;
+		if (bShouldSkipGameNotify !is null)
+			*cast(bool*)&params[16] = *bShouldSkipGameNotify;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerTravel, params.ptr, cast(void*)0);
 	}
 	bool IsInSeamlessTravel()
@@ -881,38 +886,47 @@ final:
 		*cast(Vector*)&params[8] = Point;
 		*cast(float*)&params[20] = Radius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RadiusNavigationPoints, params.ptr, cast(void*)0);
-		*N = *cast(NavigationPoint*)&params[4];
+		N = *cast(NavigationPoint*)&params[4];
 	}
-	void NavigationPointCheck(Vector Point, Vector Extent, ScriptArray!(NavigationPoint)* Navs, ScriptArray!(ReachSpec)* Specs)
+	void NavigationPointCheck(Vector Point, Vector Extent, ScriptArray!(NavigationPoint)* Navs = null, ScriptArray!(ReachSpec)* Specs = null)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
 		*cast(Vector*)&params[12] = Extent;
-		*cast(ScriptArray!(NavigationPoint)*)&params[24] = Navs;
-		*cast(ScriptArray!(ReachSpec)*)&params[36] = Specs;
+		if (Navs !is null)
+			*cast(ScriptArray!(NavigationPoint)*)&params[24] = *Navs;
+		if (Specs !is null)
+			*cast(ScriptArray!(ReachSpec)*)&params[36] = *Specs;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NavigationPointCheck, params.ptr, cast(void*)0);
-		*Navs = *cast(ScriptArray!(NavigationPoint)*)&params[24];
-		*Specs = *cast(ScriptArray!(ReachSpec)*)&params[36];
+		if (Navs !is null)
+			*Navs = *cast(ScriptArray!(NavigationPoint)*)&params[24];
+		if (Specs !is null)
+			*Specs = *cast(ScriptArray!(ReachSpec)*)&params[36];
 	}
-	void AllPawns(ScriptClass BaseClass, ref Pawn P, Vector TestLocation, float TestRadius)
+	void AllPawns(ScriptClass BaseClass, ref Pawn P, Vector* TestLocation = null, float* TestRadius = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Pawn*)&params[4] = P;
-		*cast(Vector*)&params[8] = TestLocation;
-		*cast(float*)&params[20] = TestRadius;
+		if (TestLocation !is null)
+			*cast(Vector*)&params[8] = *TestLocation;
+		if (TestRadius !is null)
+			*cast(float*)&params[20] = *TestRadius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllPawns, params.ptr, cast(void*)0);
-		*P = *cast(Pawn*)&params[4];
+		P = *cast(Pawn*)&params[4];
 	}
-	void NotifyMatchStarted(bool bShouldActivateLevelStartupEvents, bool bShouldActivateLevelBeginningEvents, bool bShouldActivateLevelLoadedEvents)
+	void NotifyMatchStarted(bool* bShouldActivateLevelStartupEvents = null, bool* bShouldActivateLevelBeginningEvents = null, bool* bShouldActivateLevelLoadedEvents = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = bShouldActivateLevelStartupEvents;
-		*cast(bool*)&params[4] = bShouldActivateLevelBeginningEvents;
-		*cast(bool*)&params[8] = bShouldActivateLevelLoadedEvents;
+		if (bShouldActivateLevelStartupEvents !is null)
+			*cast(bool*)params.ptr = *bShouldActivateLevelStartupEvents;
+		if (bShouldActivateLevelBeginningEvents !is null)
+			*cast(bool*)&params[4] = *bShouldActivateLevelBeginningEvents;
+		if (bShouldActivateLevelLoadedEvents !is null)
+			*cast(bool*)&params[8] = *bShouldActivateLevelLoadedEvents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifyMatchStarted, params.ptr, cast(void*)0);
 	}
 	bool IsMapChangeReady()
@@ -922,13 +936,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsMapChangeReady, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void SeamlessTravel(ScriptString pURL, bool bAbsolute, UObject.Guid MapPackageGuid)
+	void SeamlessTravel(ScriptString pURL, bool* bAbsolute = null, UObject.Guid* MapPackageGuid = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
-		*cast(bool*)&params[12] = bAbsolute;
-		*cast(UObject.Guid*)&params[16] = MapPackageGuid;
+		if (bAbsolute !is null)
+			*cast(bool*)&params[12] = *bAbsolute;
+		if (MapPackageGuid !is null)
+			*cast(UObject.Guid*)&params[16] = *MapPackageGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeamlessTravel, params.ptr, cast(void*)0);
 	}
 	void SetSeamlessTravelMidpointPause(bool bNowPaused)
@@ -973,15 +989,19 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlayingDemo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void GetDemoFrameInfo(int* CurrentFrame, int* TotalFrames)
+	void GetDemoFrameInfo(int* CurrentFrame = null, int* TotalFrames = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = CurrentFrame;
-		*cast(int*)&params[4] = TotalFrames;
+		if (CurrentFrame !is null)
+			*cast(int*)params.ptr = *CurrentFrame;
+		if (TotalFrames !is null)
+			*cast(int*)&params[4] = *TotalFrames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDemoFrameInfo, params.ptr, cast(void*)0);
-		*CurrentFrame = *cast(int*)params.ptr;
-		*TotalFrames = *cast(int*)&params[4];
+		if (CurrentFrame !is null)
+			*CurrentFrame = *cast(int*)params.ptr;
+		if (TotalFrames !is null)
+			*TotalFrames = *cast(int*)&params[4];
 	}
 	bool GetDemoRewindPoints(ref ScriptArray!(int) OutRewindPoints)
 	{
@@ -989,7 +1009,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(int)*)params.ptr = OutRewindPoints;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDemoRewindPoints, params.ptr, cast(void*)0);
-		*OutRewindPoints = *cast(ScriptArray!(int)*)params.ptr;
+		OutRewindPoints = *cast(ScriptArray!(int)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	void DoMemoryTracking()

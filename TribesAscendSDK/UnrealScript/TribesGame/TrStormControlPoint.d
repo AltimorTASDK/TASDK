@@ -51,16 +51,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrInventoryStation_Storm) m_InventoryStations() { mixin(MGPC!(ScriptArray!(TrInventoryStation_Storm), 1392)()); }
-		ScriptString m_sControlPointName() { mixin(MGPC!(ScriptString, 1404)()); }
-		float m_fLaunchTimeDescriptionPlacementY() { mixin(MGPC!(float, 1388)()); }
-		float m_fControlDescriptionPlacementY() { mixin(MGPC!(float, 1384)()); }
-		float m_fMissileFlightTime() { mixin(MGPC!(float, 1380)()); }
-		float m_fMissileLaunchTrackerSpeed() { mixin(MGPC!(float, 1376)()); }
-		float m_fMissileLaunchTracker() { mixin(MGPC!(float, 1372)()); }
-		float m_fCurrentTransitionAmount() { mixin(MGPC!(float, 1368)()); }
-		float m_fTransitionSpeed() { mixin(MGPC!(float, 1364)()); }
-		TrStormControlPoint.ControlPointState r_CurrentControlPointState() { mixin(MGPC!(TrStormControlPoint.ControlPointState, 1360)()); }
+		ScriptArray!(TrInventoryStation_Storm) m_InventoryStations() { mixin(MGPC!("ScriptArray!(TrInventoryStation_Storm)", 1392)()); }
+		ScriptString m_sControlPointName() { mixin(MGPC!("ScriptString", 1404)()); }
+		float m_fLaunchTimeDescriptionPlacementY() { mixin(MGPC!("float", 1388)()); }
+		float m_fControlDescriptionPlacementY() { mixin(MGPC!("float", 1384)()); }
+		float m_fMissileFlightTime() { mixin(MGPC!("float", 1380)()); }
+		float m_fMissileLaunchTrackerSpeed() { mixin(MGPC!("float", 1376)()); }
+		float m_fMissileLaunchTracker() { mixin(MGPC!("float", 1372)()); }
+		float m_fCurrentTransitionAmount() { mixin(MGPC!("float", 1368)()); }
+		float m_fTransitionSpeed() { mixin(MGPC!("float", 1364)()); }
+		TrStormControlPoint.ControlPointState r_CurrentControlPointState() { mixin(MGPC!("TrStormControlPoint.ControlPointState", 1360)()); }
 	}
 final:
 	void OnPawnTouched(TrPawn TRP)

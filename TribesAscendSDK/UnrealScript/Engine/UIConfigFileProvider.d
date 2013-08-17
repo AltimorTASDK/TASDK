@@ -14,7 +14,7 @@ public extern(D):
 	@property final static UIConfigFileProvider DefaultProperties() { mixin(MGDPC!(UIConfigFileProvider, "UIConfigFileProvider Engine.Default__UIConfigFileProvider")()); }
 	@property final auto ref
 	{
-		ScriptArray!(UIConfigSectionProvider) Sections() { mixin(MGPC!(ScriptArray!(UIConfigSectionProvider), 88)()); }
-		ScriptString ConfigFileName() { mixin(MGPC!(ScriptString, 100)()); }
+		ScriptArray!(UIConfigSectionProvider) Sections() { mixin(MGPC!("ScriptArray!(UIConfigSectionProvider)", 88)()); }
+		ScriptString ConfigFileName() { mixin(MGPC!("ScriptString", 100)()); }
 	}
 }

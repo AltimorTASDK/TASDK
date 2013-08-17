@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction OnUnregister() { mixin(MGF!("mOnUnregister", "Function Engine.UIDataProvider_OnlinePlayerDataBase.OnUnregister")()); }
 		}
 	}
-	@property final auto ref int PlayerControllerId() { mixin(MGPC!(int, 88)()); }
+	@property final auto ref int PlayerControllerId() { mixin(MGPC!("int", 88)()); }
 final:
 	void OnRegister(LocalPlayer InPlayer)
 	{

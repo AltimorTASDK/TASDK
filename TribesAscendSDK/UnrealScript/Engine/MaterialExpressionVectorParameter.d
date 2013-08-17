@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.MaterialExpressionVectorParameter")()); }
 	private static __gshared MaterialExpressionVectorParameter mDefaultProperties;
 	@property final static MaterialExpressionVectorParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionVectorParameter, "MaterialExpressionVectorParameter Engine.Default__MaterialExpressionVectorParameter")()); }
-	@property final auto ref UObject.LinearColor DefaultValue() { mixin(MGPC!(UObject.LinearColor, 132)()); }
+	@property final auto ref UObject.LinearColor DefaultValue() { mixin(MGPC!("UObject.LinearColor", 132)()); }
 }

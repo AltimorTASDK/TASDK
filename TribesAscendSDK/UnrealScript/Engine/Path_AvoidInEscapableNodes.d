@@ -29,10 +29,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MoveFlags() { mixin(MGPC!(int, 80)()); }
-		int MaxFallSpeed() { mixin(MGPC!(int, 76)()); }
-		int Height() { mixin(MGPC!(int, 72)()); }
-		int Radius() { mixin(MGPC!(int, 68)()); }
+		int MoveFlags() { mixin(MGPC!("int", 80)()); }
+		int MaxFallSpeed() { mixin(MGPC!("int", 76)()); }
+		int Height() { mixin(MGPC!("int", 72)()); }
+		int Radius() { mixin(MGPC!("int", 68)()); }
 	}
 final:
 	void CachePawnReacFlags(Pawn P)

@@ -76,38 +76,38 @@ public extern(D):
 	{
 		auto ref
 		{
-			CameraAnim DamageCameraAnim() { mixin(MGPC!(CameraAnim, 192)()); }
-			ScriptClass DamageWeaponClass() { mixin(MGPC!(ScriptClass, 152)()); }
-			float GibPerterbation() { mixin(MGPC!(float, 132)()); }
-			ScriptName DeathAnim() { mixin(MGPC!(ScriptName, 172)()); }
-			float DeathAnimRate() { mixin(MGPC!(float, 180)()); }
-			float MotorDecayTime() { mixin(MGPC!(float, 184)()); }
-			float StopAnimAfterDamageInterval() { mixin(MGPC!(float, 188)()); }
-			float DamageOverlayTime() { mixin(MGPC!(float, 116)()); }
-			float XRayEffectTime() { mixin(MGPC!(float, 124)()); }
-			UObject.LinearColor DamageBodyMatColor() { mixin(MGPC!(UObject.LinearColor, 100)()); }
-			float PhysicsTakeHitMomentumThreshold() { mixin(MGPC!(float, 148)()); }
-			UObject.LinearColor HitEffectColor() { mixin(MGPC!(UObject.LinearColor, 248)()); }
-			ScriptString MaleSuicide() { mixin(MGPC!(ScriptString, 288)()); }
-			ScriptString FemaleSuicide() { mixin(MGPC!(ScriptString, 276)()); }
-			ScriptString DeathString() { mixin(MGPC!(ScriptString, 264)()); }
-			int CustomTauntIndex() { mixin(MGPC!(int, 244)()); }
-			ScriptName RewardEvent() { mixin(MGPC!(ScriptName, 236)()); }
-			int RewardAnnouncementSwitch() { mixin(MGPC!(int, 232)()); }
-			ScriptClass RewardAnnouncementClass() { mixin(MGPC!(ScriptClass, 228)()); }
-			int RewardCount() { mixin(MGPC!(int, 224)()); }
-			ScriptName SuicideStatsName() { mixin(MGPC!(ScriptName, 216)()); }
-			ScriptName DeathStatsName() { mixin(MGPC!(ScriptName, 208)()); }
-			ScriptName KillStatsName() { mixin(MGPC!(ScriptName, 200)()); }
-			float NodeDamageScaling() { mixin(MGPC!(float, 196)()); }
-			ScriptClass DeathCameraEffectInstigator() { mixin(MGPC!(ScriptClass, 168)()); }
-			ScriptClass DeathCameraEffectVictim() { mixin(MGPC!(ScriptClass, 164)()); }
-			ParticleSystem GibTrail() { mixin(MGPC!(ParticleSystem, 160)()); }
-			int DamageWeaponFireMode() { mixin(MGPC!(int, 156)()); }
-			int AlwaysGibDamageThreshold() { mixin(MGPC!(int, 144)()); }
-			int MinAccumulateDamageThreshold() { mixin(MGPC!(int, 140)()); }
-			int GibThreshold() { mixin(MGPC!(int, 136)()); }
-			float DeathOverlayTime() { mixin(MGPC!(float, 120)()); }
+			CameraAnim DamageCameraAnim() { mixin(MGPC!("CameraAnim", 192)()); }
+			ScriptClass DamageWeaponClass() { mixin(MGPC!("ScriptClass", 152)()); }
+			float GibPerterbation() { mixin(MGPC!("float", 132)()); }
+			ScriptName DeathAnim() { mixin(MGPC!("ScriptName", 172)()); }
+			float DeathAnimRate() { mixin(MGPC!("float", 180)()); }
+			float MotorDecayTime() { mixin(MGPC!("float", 184)()); }
+			float StopAnimAfterDamageInterval() { mixin(MGPC!("float", 188)()); }
+			float DamageOverlayTime() { mixin(MGPC!("float", 116)()); }
+			float XRayEffectTime() { mixin(MGPC!("float", 124)()); }
+			UObject.LinearColor DamageBodyMatColor() { mixin(MGPC!("UObject.LinearColor", 100)()); }
+			float PhysicsTakeHitMomentumThreshold() { mixin(MGPC!("float", 148)()); }
+			UObject.LinearColor HitEffectColor() { mixin(MGPC!("UObject.LinearColor", 248)()); }
+			ScriptString MaleSuicide() { mixin(MGPC!("ScriptString", 288)()); }
+			ScriptString FemaleSuicide() { mixin(MGPC!("ScriptString", 276)()); }
+			ScriptString DeathString() { mixin(MGPC!("ScriptString", 264)()); }
+			int CustomTauntIndex() { mixin(MGPC!("int", 244)()); }
+			ScriptName RewardEvent() { mixin(MGPC!("ScriptName", 236)()); }
+			int RewardAnnouncementSwitch() { mixin(MGPC!("int", 232)()); }
+			ScriptClass RewardAnnouncementClass() { mixin(MGPC!("ScriptClass", 228)()); }
+			int RewardCount() { mixin(MGPC!("int", 224)()); }
+			ScriptName SuicideStatsName() { mixin(MGPC!("ScriptName", 216)()); }
+			ScriptName DeathStatsName() { mixin(MGPC!("ScriptName", 208)()); }
+			ScriptName KillStatsName() { mixin(MGPC!("ScriptName", 200)()); }
+			float NodeDamageScaling() { mixin(MGPC!("float", 196)()); }
+			ScriptClass DeathCameraEffectInstigator() { mixin(MGPC!("ScriptClass", 168)()); }
+			ScriptClass DeathCameraEffectVictim() { mixin(MGPC!("ScriptClass", 164)()); }
+			ParticleSystem GibTrail() { mixin(MGPC!("ParticleSystem", 160)()); }
+			int DamageWeaponFireMode() { mixin(MGPC!("int", 156)()); }
+			int AlwaysGibDamageThreshold() { mixin(MGPC!("int", 144)()); }
+			int MinAccumulateDamageThreshold() { mixin(MGPC!("int", 140)()); }
+			int GibThreshold() { mixin(MGPC!("int", 136)()); }
+			float DeathOverlayTime() { mixin(MGPC!("float", 120)()); }
 		}
 		bool bLocationalHit() { mixin(MGBPC!(128, 0x2)()); }
 		bool bLocationalHit(bool val) { mixin(MSBPC!(128, 0x2)()); }
@@ -267,27 +267,25 @@ final:
 		*cast(UTGib*)params.ptr = Gib;
 		StaticClass.ProcessEvent(Functions.SpawnGibEffects, params.ptr, cast(void*)0);
 	}
-	static void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
+	static void DoCustomDamageEffects(UTPawn ThePawn, ScriptClass TheDamageType, ref in Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = cast(Actor.TraceHitInfo)HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.DoCustomDamageEffects, params.ptr, cast(void*)0);
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
-	static void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
+	static void CreateDeathSkeleton(UTPawn ThePawn, ScriptClass TheDamageType, ref in Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = cast(Actor.TraceHitInfo)HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.CreateDeathSkeleton, params.ptr, cast(void*)0);
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
 	static void BoneBreaker(UTPawn ThePawn, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -304,16 +302,15 @@ void**)&params[4] = TheMesh;
 		*cast(ScriptName*)&params[32] = BoneName;
 		StaticClass.ProcessEvent(Functions.BoneBreaker, params.ptr, cast(void*)0);
 	}
-	static void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, ref const Actor.TraceHitInfo HitInfo, Vector HitLocation)
+	static void CreateDeathGoreChunks(UTPawn ThePawn, ScriptClass TheDamageType, ref in Actor.TraceHitInfo HitInfo, Vector HitLocation)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(UTPawn*)params.ptr = ThePawn;
 		*cast(ScriptClass*)&params[4] = TheDamageType;
-		*cast(Actor.TraceHitInfo*)&params[8] = HitInfo;
+		*cast(Actor.TraceHitInfo*)&params[8] = cast(Actor.TraceHitInfo)HitInfo;
 		*cast(Vector*)&params[36] = HitLocation;
 		StaticClass.ProcessEvent(Functions.CreateDeathGoreChunks, params.ptr, cast(void*)0);
-		*HitInfo = *cast(Actor.TraceHitInfo*)&params[8];
 	}
 	static void SpawnExtraGibEffects(UTGib TheGib)
 	{
@@ -343,8 +340,8 @@ void**)&params[4] = TheMesh;
 		*cast(Rotator*)&params[20] = CameraRotation;
 		*cast(float*)&params[32] = CameraFOV;
 		StaticClass.ProcessEvent(Functions.CalcDeathCamera, params.ptr, cast(void*)0);
-		*CameraLocation = *cast(Vector*)&params[8];
-		*CameraRotation = *cast(Rotator*)&params[20];
-		*CameraFOV = *cast(float*)&params[32];
+		CameraLocation = *cast(Vector*)&params[8];
+		CameraRotation = *cast(Rotator*)&params[20];
+		CameraFOV = *cast(float*)&params[32];
 	}
 }

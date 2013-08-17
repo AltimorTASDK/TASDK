@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TrTripComponent DefaultProperties() { mixin(MGDPC!(TrTripComponent, "TrTripComponent TribesGame.Default__TrTripComponent")()); }
 	@property final auto ref
 	{
-		float m_fCachedX() { mixin(MGPC!(float, 492)()); }
-		TrTripActor m_TripActor() { mixin(MGPC!(TrTripActor, 488)()); }
+		float m_fCachedX() { mixin(MGPC!("float", 492)()); }
+		TrTripActor m_TripActor() { mixin(MGPC!("TrTripActor", 488)()); }
 	}
 }

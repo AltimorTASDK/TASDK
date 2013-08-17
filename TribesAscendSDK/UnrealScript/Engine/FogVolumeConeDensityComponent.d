@@ -14,10 +14,10 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewCone'!
-		float ConeMaxAngle() { mixin(MGPC!(float, 180)()); }
-		Vector ConeAxis() { mixin(MGPC!(Vector, 168)()); }
-		float ConeRadius() { mixin(MGPC!(float, 164)()); }
-		Vector ConeVertex() { mixin(MGPC!(Vector, 152)()); }
-		float MaxDensity() { mixin(MGPC!(float, 148)()); }
+		float ConeMaxAngle() { mixin(MGPC!("float", 180)()); }
+		Vector ConeAxis() { mixin(MGPC!("Vector", 168)()); }
+		float ConeRadius() { mixin(MGPC!("float", 164)()); }
+		Vector ConeVertex() { mixin(MGPC!("Vector", 152)()); }
+		float MaxDensity() { mixin(MGPC!("float", 148)()); }
 	}
 }

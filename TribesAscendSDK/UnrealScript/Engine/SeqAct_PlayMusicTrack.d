@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_PlayMusicTrack")()); }
 	private static __gshared SeqAct_PlayMusicTrack mDefaultProperties;
 	@property final static SeqAct_PlayMusicTrack DefaultProperties() { mixin(MGDPC!(SeqAct_PlayMusicTrack, "SeqAct_PlayMusicTrack Engine.Default__SeqAct_PlayMusicTrack")()); }
-	@property final auto ref MusicTrackDataStructures.MusicTrackStruct MusicTrack() { mixin(MGPC!(MusicTrackDataStructures.MusicTrackStruct, 232)()); }
+	@property final auto ref MusicTrackDataStructures.MusicTrackStruct MusicTrack() { mixin(MGPC!("MusicTrackDataStructures.MusicTrackStruct", 232)()); }
 }

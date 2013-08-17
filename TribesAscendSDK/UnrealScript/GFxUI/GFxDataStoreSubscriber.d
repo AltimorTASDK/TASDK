@@ -41,35 +41,38 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxMoviePlayer Movie() { mixin(MGPC!(GFxMoviePlayer, 64)()); }
-		UObject.Pointer VfTable_IUIDataStorePublisher() { mixin(MGPC!(UObject.Pointer, 60)()); }
+		GFxMoviePlayer Movie() { mixin(MGPC!("GFxMoviePlayer", 64)()); }
+		UObject.Pointer VfTable_IUIDataStorePublisher() { mixin(MGPC!("UObject.Pointer", 60)()); }
 	}
 final:
 	void PublishValues()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PublishValues, cast(void*)0, cast(void*)0);
 	}
-	void SetDataStoreBinding(ScriptString MarkupText, int BindingIndex)
+	void SetDataStoreBinding(ScriptString MarkupText, int* BindingIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = MarkupText;
-		*cast(int*)&params[12] = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)&params[12] = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetDataStoreBinding, params.ptr, cast(void*)0);
 	}
-	ScriptString GetDataStoreBinding(int BindingIndex)
+	ScriptString GetDataStoreBinding(int* BindingIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)params.ptr = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDataStoreBinding, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	bool RefreshSubscriberValue(int BindingIndex)
+	bool RefreshSubscriberValue(int* BindingIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)params.ptr = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RefreshSubscriberValue, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -90,20 +93,21 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundDataStores, params.ptr, cast(void*)0);
-		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
+		out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 	}
 	void ClearBoundDataStores()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearBoundDataStores, cast(void*)0, cast(void*)0);
 	}
-	bool SaveSubscriberValue(ref ScriptArray!(UIDataStore) out_BoundDataStores, int BindingIndex)
+	bool SaveSubscriberValue(ref ScriptArray!(UIDataStore) out_BoundDataStores, int* BindingIndex = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptArray!(UIDataStore)*)params.ptr = out_BoundDataStores;
-		*cast(int*)&params[12] = BindingIndex;
+		if (BindingIndex !is null)
+			*cast(int*)&params[12] = *BindingIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SaveSubscriberValue, params.ptr, cast(void*)0);
-		*out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
+		out_BoundDataStores = *cast(ScriptArray!(UIDataStore)*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
 }

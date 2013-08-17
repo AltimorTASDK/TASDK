@@ -44,7 +44,7 @@ void* MeshComp)
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[12] = MeshComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayMaterials, params.ptr, cast(void*)0);
-		*Y = *cast(float*)&params[4];
+		Y = *cast(float*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void PostRender()

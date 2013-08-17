@@ -17,13 +17,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LockRadius() { mixin(MGPC!(float, 172)()); }
-			DistributionFloat.RawDistributionFloat TargetStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 144)()); }
-			DistributionVector.RawDistributionVector TargetTangent() { mixin(MGPC!(DistributionVector.RawDistributionVector, 116)()); }
-			DistributionVector.RawDistributionVector Target() { mixin(MGPC!(DistributionVector.RawDistributionVector, 84)()); }
-			ScriptName TargetName() { mixin(MGPC!(ScriptName, 76)()); }
-			ParticleModuleBeamBase.Beam2SourceTargetTangentMethod TargetTangentMethod() { mixin(MGPC!(ParticleModuleBeamBase.Beam2SourceTargetTangentMethod, 73)()); }
-			ParticleModuleBeamBase.Beam2SourceTargetMethod TargetMethod() { mixin(MGPC!(ParticleModuleBeamBase.Beam2SourceTargetMethod, 72)()); }
+			float LockRadius() { mixin(MGPC!("float", 172)()); }
+			DistributionFloat.RawDistributionFloat TargetStrength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 144)()); }
+			DistributionVector.RawDistributionVector TargetTangent() { mixin(MGPC!("DistributionVector.RawDistributionVector", 116)()); }
+			DistributionVector.RawDistributionVector Target() { mixin(MGPC!("DistributionVector.RawDistributionVector", 84)()); }
+			ScriptName TargetName() { mixin(MGPC!("ScriptName", 76)()); }
+			ParticleModuleBeamBase.Beam2SourceTargetTangentMethod TargetTangentMethod() { mixin(MGPC!("ParticleModuleBeamBase.Beam2SourceTargetTangentMethod", 73)()); }
+			ParticleModuleBeamBase.Beam2SourceTargetMethod TargetMethod() { mixin(MGPC!("ParticleModuleBeamBase.Beam2SourceTargetMethod", 72)()); }
 		}
 		bool bLockTargetStength() { mixin(MGBPC!(112, 0x8)()); }
 		bool bLockTargetStength(bool val) { mixin(MSBPC!(112, 0x8)()); }

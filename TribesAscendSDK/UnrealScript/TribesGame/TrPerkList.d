@@ -13,7 +13,7 @@ public extern(D):
 	@property final static TrPerkList DefaultProperties() { mixin(MGDPC!(TrPerkList, "TrPerkList TribesGame.Default__TrPerkList")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) PerkListA() { mixin(MGPC!(ScriptArray!(ScriptString), 60)()); }
-		ScriptArray!(ScriptString) PerkListB() { mixin(MGPC!(ScriptArray!(ScriptString), 72)()); }
+		ScriptArray!(ScriptString) PerkListA() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
+		ScriptArray!(ScriptString) PerkListB() { mixin(MGPC!("ScriptArray!(ScriptString)", 72)()); }
 	}
 }

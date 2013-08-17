@@ -31,10 +31,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ubyte ImpulseCount() { mixin(MGPC!(ubyte, 492)()); }
+			ubyte ImpulseCount() { mixin(MGPC!("ubyte", 492)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Arrow'!
-			float ImpulseRange() { mixin(MGPC!(float, 480)()); }
-			float ImpulseStrength() { mixin(MGPC!(float, 476)()); }
+			float ImpulseRange() { mixin(MGPC!("float", 480)()); }
+			float ImpulseStrength() { mixin(MGPC!("float", 476)()); }
 		}
 		bool bCauseFracture() { mixin(MGBPC!(484, 0x4)()); }
 		bool bCauseFracture(bool val) { mixin(MSBPC!(484, 0x4)()); }

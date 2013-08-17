@@ -13,7 +13,7 @@ public extern(D):
 	@property final static UDKAnimBlendBySpeed DefaultProperties() { mixin(MGDPC!(UDKAnimBlendBySpeed, "UDKAnimBlendBySpeed UDKBase.Default__UDKAnimBlendBySpeed")()); }
 	@property final auto ref
 	{
-		float MaxSpeed() { mixin(MGPC!(float, 264)()); }
-		float MinSpeed() { mixin(MGPC!(float, 260)()); }
+		float MaxSpeed() { mixin(MGPC!("float", 264)()); }
+		float MinSpeed() { mixin(MGPC!("float", 260)()); }
 	}
 }

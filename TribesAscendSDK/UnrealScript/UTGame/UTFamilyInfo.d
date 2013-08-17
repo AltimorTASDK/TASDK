@@ -52,49 +52,49 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString Faction() { mixin(MGPC!(ScriptString, 88)()); }
-			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 192)()); }
-			SkeletalMesh CharacterMesh() { mixin(MGPC!(SkeletalMesh, 100)()); }
-			PhysicsAsset PhysAsset() { mixin(MGPC!(PhysicsAsset, 188)()); }
-			ScriptName LeftFootBone() { mixin(MGPC!(ScriptName, 204)()); }
-			ScriptName RightFootBone() { mixin(MGPC!(ScriptName, 212)()); }
-			ScriptArray!(ScriptName) TakeHitPhysicsFixedBones() { mixin(MGPC!(ScriptArray!(ScriptName), 220)()); }
-			ScriptClass SoundGroupClass() { mixin(MGPC!(ScriptClass, 232)()); }
-			float DefaultMeshScale() { mixin(MGPC!(float, 404)()); }
-			float BaseTranslationOffset() { mixin(MGPC!(float, 408)()); }
-			MaterialInstance BloodSplatterDecalMaterial() { mixin(MGPC!(MaterialInstance, 248)()); }
-			ScriptArray!(UDKPawn.EmoteInfo) FamilyEmotes() { mixin(MGPC!(ScriptArray!(UDKPawn.EmoteInfo), 284)()); }
-			float DrivingDrawScale() { mixin(MGPC!(float, 396)()); }
-			UTPawn.GibInfo HeadGib() { mixin(MGPC!(UTPawn.GibInfo, 308)()); }
-			ParticleSystem HeadShotEffect() { mixin(MGPC!(ParticleSystem, 360)()); }
-			ParticleSystem GibExplosionTemplate() { mixin(MGPC!(ParticleSystem, 392)()); }
-			ScriptArray!(UTPawn.GibInfo) Gibs() { mixin(MGPC!(ScriptArray!(UTPawn.GibInfo), 296)()); }
-			ScriptName HeadShotGoreSocketName() { mixin(MGPC!(ScriptName, 364)()); }
-			StaticMesh HeadShotNeckGoreAttachment() { mixin(MGPC!(StaticMesh, 372)()); }
-			ScriptArray!(UDKPawn.DistanceBasedParticleTemplate) BloodEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate), 380)()); }
-			ScriptClass BloodEmitterClass() { mixin(MGPC!(ScriptClass, 376)()); }
-			ScriptString FamilyID() { mixin(MGPC!(ScriptString, 76)()); }
-			SkeletalMesh DeathMeshSkelMesh() { mixin(MGPC!(SkeletalMesh, 324)()); }
-			PhysicsAsset DeathMeshPhysAsset() { mixin(MGPC!(PhysicsAsset, 328)()); }
-			ScriptArray!(MaterialInstanceTimeVarying) SkeletonBurnOutMaterials() { mixin(MGPC!(ScriptArray!(MaterialInstanceTimeVarying), 348)()); }
-			int DeathMeshNumMaterialsToSetResident() { mixin(MGPC!(int, 332)()); }
-			ScriptArray!(ScriptName) DeathMeshBreakableJoints() { mixin(MGPC!(ScriptArray!(ScriptName), 336)()); }
-			ScriptArray!(Texture) DefaultTeamHeadPortrait() { mixin(MGPC!(ScriptArray!(Texture), 64)()); }
-			ScriptArray!(MaterialInterface) CharacterTeamBodyMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 104)()); }
-			ScriptArray!(MaterialInterface) CharacterTeamHeadMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 116)()); }
-			UObject.LinearColor NonTeamTintColor() { mixin(MGPC!(UObject.LinearColor, 268)()); }
-			UObject.LinearColor NonTeamEmissiveColor() { mixin(MGPC!(UObject.LinearColor, 252)()); }
-			MaterialInstanceConstant BioDeathMICParent() { mixin(MGPC!(MaterialInstanceConstant, 244)()); }
-			MaterialInstanceConstant BaseMICParent() { mixin(MGPC!(MaterialInstanceConstant, 240)()); }
-			ScriptClass VoiceClass() { mixin(MGPC!(ScriptClass, 236)()); }
-			Vector PortraitExtraOffset() { mixin(MGPC!(Vector, 176)()); }
-			ScriptString NeckStumpName() { mixin(MGPC!(ScriptString, 164)()); }
-			MaterialInterface BlueArmMaterial() { mixin(MGPC!(MaterialInterface, 160)()); }
-			MaterialInterface RedArmMaterial() { mixin(MGPC!(MaterialInterface, 156)()); }
-			ScriptString ArmSkinPackageName() { mixin(MGPC!(ScriptString, 144)()); }
-			SkeletalMesh ArmMesh() { mixin(MGPC!(SkeletalMesh, 140)()); }
-			ScriptString ArmMeshPackageName() { mixin(MGPC!(ScriptString, 128)()); }
-			Texture DefaultHeadPortrait() { mixin(MGPC!(Texture, 60)()); }
+			ScriptString Faction() { mixin(MGPC!("ScriptString", 88)()); }
+			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 192)()); }
+			SkeletalMesh CharacterMesh() { mixin(MGPC!("SkeletalMesh", 100)()); }
+			PhysicsAsset PhysAsset() { mixin(MGPC!("PhysicsAsset", 188)()); }
+			ScriptName LeftFootBone() { mixin(MGPC!("ScriptName", 204)()); }
+			ScriptName RightFootBone() { mixin(MGPC!("ScriptName", 212)()); }
+			ScriptArray!(ScriptName) TakeHitPhysicsFixedBones() { mixin(MGPC!("ScriptArray!(ScriptName)", 220)()); }
+			ScriptClass SoundGroupClass() { mixin(MGPC!("ScriptClass", 232)()); }
+			float DefaultMeshScale() { mixin(MGPC!("float", 404)()); }
+			float BaseTranslationOffset() { mixin(MGPC!("float", 408)()); }
+			MaterialInstance BloodSplatterDecalMaterial() { mixin(MGPC!("MaterialInstance", 248)()); }
+			ScriptArray!(UDKPawn.EmoteInfo) FamilyEmotes() { mixin(MGPC!("ScriptArray!(UDKPawn.EmoteInfo)", 284)()); }
+			float DrivingDrawScale() { mixin(MGPC!("float", 396)()); }
+			UTPawn.GibInfo HeadGib() { mixin(MGPC!("UTPawn.GibInfo", 308)()); }
+			ParticleSystem HeadShotEffect() { mixin(MGPC!("ParticleSystem", 360)()); }
+			ParticleSystem GibExplosionTemplate() { mixin(MGPC!("ParticleSystem", 392)()); }
+			ScriptArray!(UTPawn.GibInfo) Gibs() { mixin(MGPC!("ScriptArray!(UTPawn.GibInfo)", 296)()); }
+			ScriptName HeadShotGoreSocketName() { mixin(MGPC!("ScriptName", 364)()); }
+			StaticMesh HeadShotNeckGoreAttachment() { mixin(MGPC!("StaticMesh", 372)()); }
+			ScriptArray!(UDKPawn.DistanceBasedParticleTemplate) BloodEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)", 380)()); }
+			ScriptClass BloodEmitterClass() { mixin(MGPC!("ScriptClass", 376)()); }
+			ScriptString FamilyID() { mixin(MGPC!("ScriptString", 76)()); }
+			SkeletalMesh DeathMeshSkelMesh() { mixin(MGPC!("SkeletalMesh", 324)()); }
+			PhysicsAsset DeathMeshPhysAsset() { mixin(MGPC!("PhysicsAsset", 328)()); }
+			ScriptArray!(MaterialInstanceTimeVarying) SkeletonBurnOutMaterials() { mixin(MGPC!("ScriptArray!(MaterialInstanceTimeVarying)", 348)()); }
+			int DeathMeshNumMaterialsToSetResident() { mixin(MGPC!("int", 332)()); }
+			ScriptArray!(ScriptName) DeathMeshBreakableJoints() { mixin(MGPC!("ScriptArray!(ScriptName)", 336)()); }
+			ScriptArray!(Texture) DefaultTeamHeadPortrait() { mixin(MGPC!("ScriptArray!(Texture)", 64)()); }
+			ScriptArray!(MaterialInterface) CharacterTeamBodyMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 104)()); }
+			ScriptArray!(MaterialInterface) CharacterTeamHeadMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 116)()); }
+			UObject.LinearColor NonTeamTintColor() { mixin(MGPC!("UObject.LinearColor", 268)()); }
+			UObject.LinearColor NonTeamEmissiveColor() { mixin(MGPC!("UObject.LinearColor", 252)()); }
+			MaterialInstanceConstant BioDeathMICParent() { mixin(MGPC!("MaterialInstanceConstant", 244)()); }
+			MaterialInstanceConstant BaseMICParent() { mixin(MGPC!("MaterialInstanceConstant", 240)()); }
+			ScriptClass VoiceClass() { mixin(MGPC!("ScriptClass", 236)()); }
+			Vector PortraitExtraOffset() { mixin(MGPC!("Vector", 176)()); }
+			ScriptString NeckStumpName() { mixin(MGPC!("ScriptString", 164)()); }
+			MaterialInterface BlueArmMaterial() { mixin(MGPC!("MaterialInterface", 160)()); }
+			MaterialInterface RedArmMaterial() { mixin(MGPC!("MaterialInterface", 156)()); }
+			ScriptString ArmSkinPackageName() { mixin(MGPC!("ScriptString", 144)()); }
+			SkeletalMesh ArmMesh() { mixin(MGPC!("SkeletalMesh", 140)()); }
+			ScriptString ArmMeshPackageName() { mixin(MGPC!("ScriptString", 128)()); }
+			Texture DefaultHeadPortrait() { mixin(MGPC!("Texture", 60)()); }
 		}
 		bool bIsFemale() { mixin(MGBPC!(400, 0x1)()); }
 		bool bIsFemale(bool val) { mixin(MSBPC!(400, 0x1)()); }
@@ -146,8 +146,8 @@ final:
 		*cast(MaterialInterface*)&params[4] = TeamMaterialHead;
 		*cast(MaterialInterface*)&params[8] = TeamMaterialBody;
 		StaticClass.ProcessEvent(Functions.GetTeamMaterials, params.ptr, cast(void*)0);
-		*TeamMaterialHead = *cast(MaterialInterface*)&params[4];
-		*TeamMaterialBody = *cast(MaterialInterface*)&params[8];
+		TeamMaterialHead = *cast(MaterialInterface*)&params[4];
+		TeamMaterialBody = *cast(MaterialInterface*)&params[8];
 	}
 	static int GetEmoteGroupCnt(ScriptName Category)
 	{
@@ -165,7 +165,7 @@ final:
 		*cast(ScriptArray!(ScriptString)*)&params[8] = Captions;
 		*cast(ScriptArray!(ScriptName)*)&params[20] = EmoteTags;
 		StaticClass.ProcessEvent(Functions.GetEmotes, params.ptr, cast(void*)0);
-		*Captions = *cast(ScriptArray!(ScriptString)*)&params[8];
-		*EmoteTags = *cast(ScriptArray!(ScriptName)*)&params[20];
+		Captions = *cast(ScriptArray!(ScriptString)*)&params[8];
+		EmoteTags = *cast(ScriptArray!(ScriptName)*)&params[20];
 	}
 }

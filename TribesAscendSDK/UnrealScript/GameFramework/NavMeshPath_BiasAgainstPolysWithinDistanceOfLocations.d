@@ -27,21 +27,21 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Vector) LocationsToCheck() { mixin(MGPC!(ScriptArray!(Vector), 108)()); }
-		float DistanceToCheck() { mixin(MGPC!(float, 104)()); }
-		Vector Rotation() { mixin(MGPC!(Vector, 92)()); }
-		Vector Location() { mixin(MGPC!(Vector, 80)()); }
+		ScriptArray!(Vector) LocationsToCheck() { mixin(MGPC!("ScriptArray!(Vector)", 108)()); }
+		float DistanceToCheck() { mixin(MGPC!("float", 104)()); }
+		Vector Rotation() { mixin(MGPC!("Vector", 92)()); }
+		Vector Location() { mixin(MGPC!("Vector", 80)()); }
 	}
 final:
-	static bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, const Vector InLocation, const Rotator InRotation, const float InDistanceToCheck, const ScriptArray!(Vector) InLocationsToCheck)
+	static bool BiasAgainstPolysWithinDistanceOfLocations(NavigationHandle NavHandle, in Vector InLocation, in Rotator InRotation, in float InDistanceToCheck, in ScriptArray!(Vector) InLocationsToCheck)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
-		*cast(Vector*)&params[4] = InLocation;
-		*cast(Rotator*)&params[16] = InRotation;
-		*cast(float*)&params[28] = InDistanceToCheck;
-		*cast(ScriptArray!(Vector)*)&params[32] = InLocationsToCheck;
+		*cast(Vector*)&params[4] = cast(Vector)InLocation;
+		*cast(Rotator*)&params[16] = cast(Rotator)InRotation;
+		*cast(float*)&params[28] = cast(float)InDistanceToCheck;
+		*cast(ScriptArray!(Vector)*)&params[32] = cast(ScriptArray!(Vector))InLocationsToCheck;
 		StaticClass.ProcessEvent(Functions.BiasAgainstPolysWithinDistanceOfLocations, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[44];
 	}

@@ -33,11 +33,12 @@ final:
 		*cast(int*)params.ptr = ProfileId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetToDefault, params.ptr, cast(void*)0);
 	}
-	static void ResetKeysToDefault(LocalPlayer InPlayerOwner)
+	static void ResetKeysToDefault(LocalPlayer* InPlayerOwner = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = InPlayerOwner;
+		if (InPlayerOwner !is null)
+			*cast(LocalPlayer*)params.ptr = *InPlayerOwner;
 		StaticClass.ProcessEvent(Functions.ResetKeysToDefault, params.ptr, cast(void*)0);
 	}
 }

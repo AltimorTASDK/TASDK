@@ -36,7 +36,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			WorldInfo ThisWorld() { mixin(MGPC!(WorldInfo, 124)()); }
+			WorldInfo ThisWorld() { mixin(MGPC!("WorldInfo", 124)()); }
 			// WARNING: Property 'HUD' has the same name as a defined type!
 		}
 		bool bNeedsUpdateData() { mixin(MGBPC!(128, 0x1)()); }

@@ -19,16 +19,16 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DMC_Prototype.DMCNewVar")()); }
 		@property final auto ref
 		{
-			ScriptName VarType() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName VarName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName VarType() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName VarName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(DMC_Prototype.DMCNewVar) NewVars() { mixin(MGPC!(ScriptArray!(DMC_Prototype.DMCNewVar), 104)()); }
-		ScriptString DefaultPropText() { mixin(MGPC!(ScriptString, 92)()); }
-		ScriptString FunctionCode() { mixin(MGPC!(ScriptString, 80)()); }
-		ScriptClass GeneratedClass() { mixin(MGPC!(ScriptClass, 76)()); }
-		ScriptClass ParentClass() { mixin(MGPC!(ScriptClass, 72)()); }
+		ScriptArray!(DMC_Prototype.DMCNewVar) NewVars() { mixin(MGPC!("ScriptArray!(DMC_Prototype.DMCNewVar)", 104)()); }
+		ScriptString DefaultPropText() { mixin(MGPC!("ScriptString", 92)()); }
+		ScriptString FunctionCode() { mixin(MGPC!("ScriptString", 80)()); }
+		ScriptClass GeneratedClass() { mixin(MGPC!("ScriptClass", 76)()); }
+		ScriptClass ParentClass() { mixin(MGPC!("ScriptClass", 72)()); }
 	}
 }

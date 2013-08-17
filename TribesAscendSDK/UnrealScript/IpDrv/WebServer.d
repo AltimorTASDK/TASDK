@@ -36,17 +36,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ConnID() { mixin(MGPC!(int, 868)()); }
-			int DefaultApplication() { mixin(MGPC!(int, 804)()); }
-			ScriptString ApplicationPaths() { mixin(MGPC!(ScriptString, 672)()); }
-			int ExpirationSeconds() { mixin(MGPC!(int, 808)()); }
-			int ConnectionCount() { mixin(MGPC!(int, 864)()); }
-			WebApplication ApplicationObjects() { mixin(MGPC!(WebApplication, 824)()); }
-			ScriptString ServerURL() { mixin(MGPC!(ScriptString, 812)()); }
-			int MaxConnections() { mixin(MGPC!(int, 800)()); }
-			int ListenPort() { mixin(MGPC!(int, 796)()); }
-			ScriptString Applications() { mixin(MGPC!(ScriptString, 552)()); }
-			ScriptString ServerName() { mixin(MGPC!(ScriptString, 540)()); }
+			int ConnID() { mixin(MGPC!("int", 868)()); }
+			int DefaultApplication() { mixin(MGPC!("int", 804)()); }
+			ScriptString ApplicationPaths() { mixin(MGPC!("ScriptString", 672)()); }
+			int ExpirationSeconds() { mixin(MGPC!("int", 808)()); }
+			int ConnectionCount() { mixin(MGPC!("int", 864)()); }
+			WebApplication ApplicationObjects() { mixin(MGPC!("WebApplication", 824)()); }
+			ScriptString ServerURL() { mixin(MGPC!("ScriptString", 812)()); }
+			int MaxConnections() { mixin(MGPC!("int", 800)()); }
+			int ListenPort() { mixin(MGPC!("int", 796)()); }
+			ScriptString Applications() { mixin(MGPC!("ScriptString", 552)()); }
+			ScriptString ServerName() { mixin(MGPC!("ScriptString", 540)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(792, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(792, 0x1)()); }
@@ -59,7 +59,7 @@ final:
 		*cast(ScriptString*)params.ptr = URI;
 		*cast(ScriptString*)&params[12] = SubURI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetApplication, params.ptr, cast(void*)0);
-		*SubURI = *cast(ScriptString*)&params[12];
+		SubURI = *cast(ScriptString*)&params[12];
 		return *cast(WebApplication*)&params[24];
 	}
 	void PostBeginPlay()

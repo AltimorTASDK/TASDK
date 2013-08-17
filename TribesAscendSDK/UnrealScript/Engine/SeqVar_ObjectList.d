@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction SetObjectValue() { mixin(MGF!("mSetObjectValue", "Function Engine.SeqVar_ObjectList.SetObjectValue")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(UObject) ObjList() { mixin(MGPC!(ScriptArray!(UObject), 176)()); }
+	@property final auto ref ScriptArray!(UObject) ObjList() { mixin(MGPC!("ScriptArray!(UObject)", 176)()); }
 final:
 	UObject GetObjectValue()
 	{

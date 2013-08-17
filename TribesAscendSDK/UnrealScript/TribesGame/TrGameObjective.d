@@ -1525,11 +1525,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGameObjective.UpgradeSelectionList")()); }
 		@property final auto ref
 		{
-			ScriptName PropertyName() { mixin(MGPS!(ScriptName, 16)()); }
-			float NewValue() { mixin(MGPS!(float, 12)()); }
-			int UpgradeCreditCost() { mixin(MGPS!(int, 8)()); }
-			int UpgradeLevel() { mixin(MGPS!(int, 4)()); }
-			ScriptClass UpgradeClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			ScriptName PropertyName() { mixin(MGPS!("ScriptName", 16)()); }
+			float NewValue() { mixin(MGPS!("float", 12)()); }
+			int UpgradeCreditCost() { mixin(MGPS!("int", 8)()); }
+			int UpgradeLevel() { mixin(MGPS!("int", 4)()); }
+			ScriptClass UpgradeClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	struct ObjectiveDamageAssist
@@ -1540,8 +1540,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGameObjective.ObjectiveDamageAssist")()); }
 		@property final auto ref
 		{
-			int DamageAmount() { mixin(MGPS!(int, 4)()); }
-			TrPlayerController Damager() { mixin(MGPS!(TrPlayerController, 0)()); }
+			int DamageAmount() { mixin(MGPS!("int", 4)()); }
+			TrPlayerController Damager() { mixin(MGPS!("TrPlayerController", 0)()); }
 		}
 	}
 	static struct Active
@@ -1563,73 +1563,73 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrGameObjective.UpgradeSelectionList) m_UpgradeList() { mixin(MGPC!(ScriptArray!(TrGameObjective.UpgradeSelectionList), 1260)()); }
-			ScriptArray!(TrGameObjective.ObjectiveDamageAssist) DamageAssistList() { mixin(MGPC!(ScriptArray!(TrGameObjective.ObjectiveDamageAssist), 1324)()); }
-			ScriptArray!(TrPlayerController) m_Upgraders() { mixin(MGPC!(ScriptArray!(TrPlayerController), 1348)()); }
-			ScriptClass m_AssistAccolade() { mixin(MGPC!(ScriptClass, 1344)()); }
-			float fUpgradeAssistTime() { mixin(MGPC!(float, 1340)()); }
-			float m_fMarker2DDistance() { mixin(MGPC!(float, 1336)()); }
-			float DESTROY_ASSIST_PERCENTAGE() { mixin(MGPC!(float, 1320)()); }
-			float REPAIR_ASSIST_PERCENTAGE() { mixin(MGPC!(float, 1316)()); }
-			float m_fInstigatorNamePlacementY() { mixin(MGPC!(float, 1312)()); }
-			float m_fObjectiveNamePlacementY() { mixin(MGPC!(float, 1308)()); }
-			float m_fObjectiveHealthBarHeight() { mixin(MGPC!(float, 1304)()); }
-			float m_fObjectiveHealthBarWidth() { mixin(MGPC!(float, 1300)()); }
-			float m_fObjectiveHealthBarPlacementY() { mixin(MGPC!(float, 1296)()); }
-			float m_fObjectiveHealthBarPlacementX() { mixin(MGPC!(float, 1292)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 1288)()); }
-			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 1284)()); }
-			float m_fRepairBoost() { mixin(MGPC!(float, 1280)()); }
-			ParticleSystem m_UpgradeTemplate() { mixin(MGPC!(ParticleSystem, 1276)()); }
-			int r_nUpgradeLevel() { mixin(MGPC!(int, 1272)()); }
-			int m_nPromptMessageSwitch() { mixin(MGPC!(int, 1256)()); }
-			float m_fPromptMessageTime() { mixin(MGPC!(float, 1252)()); }
-			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 1248)()); }
-			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!(Rotator, 1236)()); }
-			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!(float, 1232)()); }
-			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!(TrObject.EMissileLock, 1229)()); }
-			ubyte r_bReset() { mixin(MGPC!(ubyte, 1228)()); }
+			ScriptArray!(TrGameObjective.UpgradeSelectionList) m_UpgradeList() { mixin(MGPC!("ScriptArray!(TrGameObjective.UpgradeSelectionList)", 1260)()); }
+			ScriptArray!(TrGameObjective.ObjectiveDamageAssist) DamageAssistList() { mixin(MGPC!("ScriptArray!(TrGameObjective.ObjectiveDamageAssist)", 1324)()); }
+			ScriptArray!(TrPlayerController) m_Upgraders() { mixin(MGPC!("ScriptArray!(TrPlayerController)", 1348)()); }
+			ScriptClass m_AssistAccolade() { mixin(MGPC!("ScriptClass", 1344)()); }
+			float fUpgradeAssistTime() { mixin(MGPC!("float", 1340)()); }
+			float m_fMarker2DDistance() { mixin(MGPC!("float", 1336)()); }
+			float DESTROY_ASSIST_PERCENTAGE() { mixin(MGPC!("float", 1320)()); }
+			float REPAIR_ASSIST_PERCENTAGE() { mixin(MGPC!("float", 1316)()); }
+			float m_fInstigatorNamePlacementY() { mixin(MGPC!("float", 1312)()); }
+			float m_fObjectiveNamePlacementY() { mixin(MGPC!("float", 1308)()); }
+			float m_fObjectiveHealthBarHeight() { mixin(MGPC!("float", 1304)()); }
+			float m_fObjectiveHealthBarWidth() { mixin(MGPC!("float", 1300)()); }
+			float m_fObjectiveHealthBarPlacementY() { mixin(MGPC!("float", 1296)()); }
+			float m_fObjectiveHealthBarPlacementX() { mixin(MGPC!("float", 1292)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 1288)()); }
+			MaterialInstanceConstant m_HealthBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 1284)()); }
+			float m_fRepairBoost() { mixin(MGPC!("float", 1280)()); }
+			ParticleSystem m_UpgradeTemplate() { mixin(MGPC!("ParticleSystem", 1276)()); }
+			int r_nUpgradeLevel() { mixin(MGPC!("int", 1272)()); }
+			int m_nPromptMessageSwitch() { mixin(MGPC!("int", 1256)()); }
+			float m_fPromptMessageTime() { mixin(MGPC!("float", 1252)()); }
+			float m_fRemainingSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 1248)()); }
+			Rotator m_rPotentialSeekingTargetHUDRotation() { mixin(MGPC!("Rotator", 1236)()); }
+			float m_fRemainingPotentialSeekingTargetHUDZoomTime() { mixin(MGPC!("float", 1232)()); }
+			TrObject.EMissileLock m_MissileLockStatus() { mixin(MGPC!("TrObject.EMissileLock", 1229)()); }
+			ubyte r_bReset() { mixin(MGPC!("ubyte", 1228)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DestroyedParticleComp'!
-			ParticleSystem DestroyedTemplate() { mixin(MGPC!(ParticleSystem, 1220)()); }
+			ParticleSystem DestroyedTemplate() { mixin(MGPC!("ParticleSystem", 1220)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_DestroyedSound'!
-			float m_fLifeAfterDeathSecs() { mixin(MGPC!(float, 1212)()); }
-			Controller m_LastDamager() { mixin(MGPC!(Controller, 1208)()); }
+			float m_fLifeAfterDeathSecs() { mixin(MGPC!("float", 1212)()); }
+			Controller m_LastDamager() { mixin(MGPC!("Controller", 1208)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_PowerDownSound'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ShieldHitSound'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CriticalSound'!
-			SoundCue m_ExplosionSound() { mixin(MGPC!(SoundCue, 1192)()); }
+			SoundCue m_ExplosionSound() { mixin(MGPC!("SoundCue", 1192)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_OnlineSound'!
-			PhysicsAsset m_OfflinePhysicsAsset() { mixin(MGPC!(PhysicsAsset, 1180)()); }
-			PhysicsAsset m_OnlinePhysicsAsset() { mixin(MGPC!(PhysicsAsset, 1176)()); }
-			ScriptClass m_ExplosionLightClass() { mixin(MGPC!(ScriptClass, 1172)()); }
-			ScriptString m_sScreenName() { mixin(MGPC!(ScriptString, 1160)()); }
-			float m_fOuterExplosionShakeRadius() { mixin(MGPC!(float, 1156)()); }
-			float m_fInnerExplosionShakeRadius() { mixin(MGPC!(float, 1152)()); }
-			CameraAnim m_ExplosionShake() { mixin(MGPC!(CameraAnim, 1148)()); }
-			ParticleSystem m_ExplosionTemplate() { mixin(MGPC!(ParticleSystem, 1144)()); }
-			float m_fShieldHitRemainingTime() { mixin(MGPC!(float, 1140)()); }
-			float m_fShieldHitTargetTimeLength() { mixin(MGPC!(float, 1136)()); }
-			float m_fShieldHitTargetScale() { mixin(MGPC!(float, 1132)()); }
-			MaterialInstanceConstant m_ShieldMIC() { mixin(MGPC!(MaterialInstanceConstant, 1128)()); }
-			float ShowHeaderUntil() { mixin(MGPC!(float, 1124)()); }
-			int MarkerOffset() { mixin(MGPC!(int, 1120)()); }
-			Texture2D m_ShieldNormalMap() { mixin(MGPC!(Texture2D, 1116)()); }
-			Material m_ShieldMaterial() { mixin(MGPC!(Material, 1112)()); }
+			PhysicsAsset m_OfflinePhysicsAsset() { mixin(MGPC!("PhysicsAsset", 1180)()); }
+			PhysicsAsset m_OnlinePhysicsAsset() { mixin(MGPC!("PhysicsAsset", 1176)()); }
+			ScriptClass m_ExplosionLightClass() { mixin(MGPC!("ScriptClass", 1172)()); }
+			ScriptString m_sScreenName() { mixin(MGPC!("ScriptString", 1160)()); }
+			float m_fOuterExplosionShakeRadius() { mixin(MGPC!("float", 1156)()); }
+			float m_fInnerExplosionShakeRadius() { mixin(MGPC!("float", 1152)()); }
+			CameraAnim m_ExplosionShake() { mixin(MGPC!("CameraAnim", 1148)()); }
+			ParticleSystem m_ExplosionTemplate() { mixin(MGPC!("ParticleSystem", 1144)()); }
+			float m_fShieldHitRemainingTime() { mixin(MGPC!("float", 1140)()); }
+			float m_fShieldHitTargetTimeLength() { mixin(MGPC!("float", 1136)()); }
+			float m_fShieldHitTargetScale() { mixin(MGPC!("float", 1132)()); }
+			MaterialInstanceConstant m_ShieldMIC() { mixin(MGPC!("MaterialInstanceConstant", 1128)()); }
+			float ShowHeaderUntil() { mixin(MGPC!("float", 1124)()); }
+			int MarkerOffset() { mixin(MGPC!("int", 1120)()); }
+			Texture2D m_ShieldNormalMap() { mixin(MGPC!("Texture2D", 1116)()); }
+			Material m_ShieldMaterial() { mixin(MGPC!("Material", 1112)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_ShieldMesh'!
-			float m_fShieldHealthPercentage() { mixin(MGPC!(float, 1104)()); }
-			int r_nRepairHealthThreshold() { mixin(MGPC!(int, 1100)()); }
-			int m_nCriticalHealthThreshold() { mixin(MGPC!(int, 1096)()); }
-			Vector r_vReplicatedHitInfo() { mixin(MGPC!(Vector, 1084)()); }
-			int m_nHealthRegenRate() { mixin(MGPC!(int, 1080)()); }
-			int m_nLastHealth() { mixin(MGPC!(int, 1076)()); }
-			int r_MaxHealth() { mixin(MGPC!(int, 1072)()); }
-			int r_Health() { mixin(MGPC!(int, 1068)()); }
-			MaterialInstanceConstant m_ObjectiveMIC() { mixin(MGPC!(MaterialInstanceConstant, 1064)()); }
+			float m_fShieldHealthPercentage() { mixin(MGPC!("float", 1104)()); }
+			int r_nRepairHealthThreshold() { mixin(MGPC!("int", 1100)()); }
+			int m_nCriticalHealthThreshold() { mixin(MGPC!("int", 1096)()); }
+			Vector r_vReplicatedHitInfo() { mixin(MGPC!("Vector", 1084)()); }
+			int m_nHealthRegenRate() { mixin(MGPC!("int", 1080)()); }
+			int m_nLastHealth() { mixin(MGPC!("int", 1076)()); }
+			int r_MaxHealth() { mixin(MGPC!("int", 1072)()); }
+			int r_Health() { mixin(MGPC!("int", 1068)()); }
+			MaterialInstanceConstant m_ObjectiveMIC() { mixin(MGPC!("MaterialInstanceConstant", 1064)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_LightEnvironment'!
-			Vector CallInPosition() { mixin(MGPC!(Vector, 1044)()); }
-			Rotator CallInRotation() { mixin(MGPC!(Rotator, 1032)()); }
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 1028)()); }
+			Vector CallInPosition() { mixin(MGPC!("Vector", 1044)()); }
+			Rotator CallInRotation() { mixin(MGPC!("Rotator", 1032)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 1028)()); }
 		}
 		bool m_bAlwaysRelevantToSameTeam() { mixin(MGBPC!(1184, 0x8000)()); }
 		bool m_bAlwaysRelevantToSameTeam(bool val) { mixin(MSBPC!(1184, 0x8000)()); }
@@ -1763,7 +1763,7 @@ final:
 		*cast(Actor.TraceHitInfo*)&params[16] = HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoRepairs, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -1772,8 +1772,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void ClientRecievedHitInfo()
@@ -1856,7 +1858,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPossessiveInstigatorName, params.ptr, cast(void*)0);
-		*PlayerName = *cast(ScriptString*)params.ptr;
+		PlayerName = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	bool BlocksLineChecksFromSourceActor(Actor SourceActor)
@@ -1945,8 +1947,8 @@ final:
 		*cast(int*)params.ptr = Health;
 		*cast(int*)&params[4] = MaxHealth;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSpectatorHealthInfo, params.ptr, cast(void*)0);
-		*Health = *cast(int*)params.ptr;
-		*MaxHealth = *cast(int*)&params[4];
+		Health = *cast(int*)params.ptr;
+		MaxHealth = *cast(int*)&params[4];
 	}
 	ScriptString GetSpectatorDescription()
 	{

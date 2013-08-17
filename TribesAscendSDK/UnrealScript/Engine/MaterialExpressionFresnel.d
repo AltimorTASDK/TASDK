@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionFresnel DefaultProperties() { mixin(MGDPC!(MaterialExpressionFresnel, "MaterialExpressionFresnel Engine.Default__MaterialExpressionFresnel")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput Normal() { mixin(MGPC!(MaterialExpression.ExpressionInput, 112)()); }
-		float Exponent() { mixin(MGPC!(float, 108)()); }
+		MaterialExpression.ExpressionInput Normal() { mixin(MGPC!("MaterialExpression.ExpressionInput", 112)()); }
+		float Exponent() { mixin(MGPC!("float", 108)()); }
 	}
 }

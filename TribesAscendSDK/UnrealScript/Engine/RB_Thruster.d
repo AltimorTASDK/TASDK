@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref float ThrustStrength() { mixin(MGPC!(float, 480)()); }
+		@property final auto ref float ThrustStrength() { mixin(MGPC!("float", 480)()); }
 		bool bThrustEnabled() { mixin(MGBPC!(476, 0x1)()); }
 		bool bThrustEnabled(bool val) { mixin(MSBPC!(476, 0x1)()); }
 	}

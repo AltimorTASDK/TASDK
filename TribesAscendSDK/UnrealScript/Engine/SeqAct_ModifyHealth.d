@@ -21,11 +21,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor Instigator() { mixin(MGPC!(Actor, 252)()); }
-			float Amount() { mixin(MGPC!(float, 240)()); }
+			Actor Instigator() { mixin(MGPC!("Actor", 252)()); }
+			float Amount() { mixin(MGPC!("float", 240)()); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			float Momentum() { mixin(MGPC!(float, 236)()); }
-			float Radius() { mixin(MGPC!(float, 244)()); }
+			float Momentum() { mixin(MGPC!("float", 236)()); }
+			float Radius() { mixin(MGPC!("float", 244)()); }
 		}
 		bool bHeal() { mixin(MGBPC!(248, 0x1)()); }
 		bool bHeal(bool val) { mixin(MSBPC!(248, 0x1)()); }

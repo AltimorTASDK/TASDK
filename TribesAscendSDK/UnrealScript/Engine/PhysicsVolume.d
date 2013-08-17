@@ -86,19 +86,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			float DamagePerSec() { mixin(MGPC!(float, 544)()); }
-			PhysicsVolume NextPhysicsVolume() { mixin(MGPC!(PhysicsVolume, 580)()); }
-			Controller DamageInstigator() { mixin(MGPC!(Controller, 576)()); }
-			Info PainTimer() { mixin(MGPC!(Info, 572)()); }
-			float MaxDampingForce() { mixin(MGPC!(float, 568)()); }
-			float RigidBodyDamping() { mixin(MGPC!(float, 564)()); }
-			float PainInterval() { mixin(MGPC!(float, 560)()); }
-			float FluidFriction() { mixin(MGPC!(float, 556)()); }
-			int Priority() { mixin(MGPC!(int, 552)()); }
+			float DamagePerSec() { mixin(MGPC!("float", 544)()); }
+			PhysicsVolume NextPhysicsVolume() { mixin(MGPC!("PhysicsVolume", 580)()); }
+			Controller DamageInstigator() { mixin(MGPC!("Controller", 576)()); }
+			Info PainTimer() { mixin(MGPC!("Info", 572)()); }
+			float MaxDampingForce() { mixin(MGPC!("float", 568)()); }
+			float RigidBodyDamping() { mixin(MGPC!("float", 564)()); }
+			float PainInterval() { mixin(MGPC!("float", 560)()); }
+			float FluidFriction() { mixin(MGPC!("float", 556)()); }
+			int Priority() { mixin(MGPC!("int", 552)()); }
 			// WARNING: Property 'DamageType' has the same name as a defined type!
-			float TerminalVelocity() { mixin(MGPC!(float, 540)()); }
-			float GroundFriction() { mixin(MGPC!(float, 536)()); }
-			Vector ZoneVelocity() { mixin(MGPC!(Vector, 520)()); }
+			float TerminalVelocity() { mixin(MGPC!("float", 540)()); }
+			float GroundFriction() { mixin(MGPC!("float", 536)()); }
+			Vector ZoneVelocity() { mixin(MGPC!("Vector", 520)()); }
 		}
 		bool bPainCausing() { mixin(MGBPC!(532, 0x2)()); }
 		bool bPainCausing(bool val) { mixin(MSBPC!(532, 0x2)()); }
@@ -260,14 +260,13 @@ void**)&params[4] = OtherComp;
 		params[] = 0;
 		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
+		Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const PhysicsVolume.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in PhysicsVolume.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = Record;
+		*cast(PhysicsVolume.CheckpointRecord*)params.ptr = cast(PhysicsVolume.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(PhysicsVolume.CheckpointRecord*)params.ptr;
 	}
 }

@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mActivated;
 		public @property static final ScriptFunction Activated() { mixin(MGF!("mActivated", "Function UTGame.UTSeqAct_PlayAnnouncement.Activated")()); }
 	}
-	@property final auto ref UDKPlayerController.ObjectiveAnnouncementInfo Announcement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 232)()); }
+	@property final auto ref UDKPlayerController.ObjectiveAnnouncementInfo Announcement() { mixin(MGPC!("UDKPlayerController.ObjectiveAnnouncementInfo", 232)()); }
 	final void Activated()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Activated, cast(void*)0, cast(void*)0);

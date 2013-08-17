@@ -38,16 +38,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer ReleaseCodecFence() { mixin(MGPC!(UObject.Pointer, 312)()); }
-			UObject.UntypedBulkData_Mirror Data() { mixin(MGPC!(UObject.UntypedBulkData_Mirror, 260)()); }
-			CodecMovie Decoder() { mixin(MGPC!(CodecMovie, 252)()); }
-			ScriptClass DecoderClass() { mixin(MGPC!(ScriptClass, 248)()); }
+			UObject.Pointer ReleaseCodecFence() { mixin(MGPC!("UObject.Pointer", 312)()); }
+			UObject.UntypedBulkData_Mirror Data() { mixin(MGPC!("UObject.UntypedBulkData_Mirror", 260)()); }
+			CodecMovie Decoder() { mixin(MGPC!("CodecMovie", 252)()); }
+			ScriptClass DecoderClass() { mixin(MGPC!("ScriptClass", 248)()); }
 			// WARNING: Property 'MovieStreamSource' has the same name as a defined type!
-			int SizeX() { mixin(MGPC!(int, 236)()); }
-			Texture.TextureAddress AddressY() { mixin(MGPC!(Texture.TextureAddress, 246)()); }
-			Texture.TextureAddress AddressX() { mixin(MGPC!(Texture.TextureAddress, 245)()); }
+			int SizeX() { mixin(MGPC!("int", 236)()); }
+			Texture.TextureAddress AddressY() { mixin(MGPC!("Texture.TextureAddress", 246)()); }
+			Texture.TextureAddress AddressX() { mixin(MGPC!("Texture.TextureAddress", 245)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { mixin(MGPC!(int, 240)()); }
+			int SizeY() { mixin(MGPC!("int", 240)()); }
 		}
 		bool AutoPlay() { mixin(MGBPC!(256, 0x8)()); }
 		bool AutoPlay(bool val) { mixin(MSBPC!(256, 0x8)()); }

@@ -129,8 +129,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgent.RecentInteraction")()); }
 		@property final auto ref
 		{
-			float InteractionDelay() { mixin(MGPS!(float, 8)()); }
-			ScriptName InteractionTag() { mixin(MGPS!(ScriptName, 0)()); }
+			float InteractionDelay() { mixin(MGPS!("float", 8)()); }
+			ScriptName InteractionTag() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct BehaviorEntry
@@ -143,9 +143,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				float BehaviorFrequency() { mixin(MGPS!(float, 8)()); }
-				Actor LookAtActor() { mixin(MGPS!(Actor, 4)()); }
-				GameCrowdAgentBehavior BehaviorArchetype() { mixin(MGPS!(GameCrowdAgentBehavior, 0)()); }
+				float BehaviorFrequency() { mixin(MGPS!("float", 8)()); }
+				Actor LookAtActor() { mixin(MGPS!("Actor", 4)()); }
+				GameCrowdAgentBehavior BehaviorArchetype() { mixin(MGPS!("GameCrowdAgentBehavior", 0)()); }
 			}
 			bool bCanBeUsed() { mixin(MGBPS!(12, 0x4)()); }
 			bool bCanBeUsed(bool val) { mixin(MSBPS!(12, 0x4)()); }
@@ -159,84 +159,84 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) NearbyDynamics() { mixin(MGPC!(ScriptArray!(Actor), 548)()); }
-			ScriptArray!(GameCrowdForcePoint) RelevantAttractors() { mixin(MGPC!(ScriptArray!(GameCrowdForcePoint), 560)()); }
-			ScriptArray!(GameCrowdAgent.RecentInteraction) RecentInteractions() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.RecentInteraction), 764)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) EncounterAgentBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 824)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) SeePlayerBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 836)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) SpawnBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 856)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) PanicBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 868)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) RandomBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 880)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) TakeDamageBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 892)()); }
-			ScriptArray!(GameCrowdAgent.BehaviorEntry) GroupWaitingBehaviors() { mixin(MGPC!(ScriptArray!(GameCrowdAgent.BehaviorEntry), 916)()); }
-			float InitialLastRenderTime() { mixin(MGPC!(float, 960)()); }
-			Vector SpawnOffset() { mixin(MGPC!(Vector, 948)()); }
+			ScriptArray!(Actor) NearbyDynamics() { mixin(MGPC!("ScriptArray!(Actor)", 548)()); }
+			ScriptArray!(GameCrowdForcePoint) RelevantAttractors() { mixin(MGPC!("ScriptArray!(GameCrowdForcePoint)", 560)()); }
+			ScriptArray!(GameCrowdAgent.RecentInteraction) RecentInteractions() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.RecentInteraction)", 764)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) EncounterAgentBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 824)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) SeePlayerBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 836)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) SpawnBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 856)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) PanicBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 868)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) RandomBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 880)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) TakeDamageBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 892)()); }
+			ScriptArray!(GameCrowdAgent.BehaviorEntry) GroupWaitingBehaviors() { mixin(MGPC!("ScriptArray!(GameCrowdAgent.BehaviorEntry)", 916)()); }
+			float InitialLastRenderTime() { mixin(MGPC!("float", 960)()); }
+			Vector SpawnOffset() { mixin(MGPC!("Vector", 948)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'MySpawner'!
-			float MaxLOSLifeDistanceSq() { mixin(MGPC!(float, 936)()); }
-			float DesiredGroupRadiusSq() { mixin(MGPC!(float, 932)()); }
-			float DesiredGroupRadius() { mixin(MGPC!(float, 928)()); }
-			float ReachThreshold() { mixin(MGPC!(float, 912)()); }
-			float ForceUpdateTime() { mixin(MGPC!(float, 908)()); }
-			float RandomBehaviorInterval() { mixin(MGPC!(float, 904)()); }
-			float SeePlayerInterval() { mixin(MGPC!(float, 852)()); }
-			float MaxSeePlayerDistSq() { mixin(MGPC!(float, 848)()); }
-			GameCrowdAgentBehavior CurrentBehavior() { mixin(MGPC!(GameCrowdAgentBehavior, 820)()); }
+			float MaxLOSLifeDistanceSq() { mixin(MGPC!("float", 936)()); }
+			float DesiredGroupRadiusSq() { mixin(MGPC!("float", 932)()); }
+			float DesiredGroupRadius() { mixin(MGPC!("float", 928)()); }
+			float ReachThreshold() { mixin(MGPC!("float", 912)()); }
+			float ForceUpdateTime() { mixin(MGPC!("float", 908)()); }
+			float RandomBehaviorInterval() { mixin(MGPC!("float", 904)()); }
+			float SeePlayerInterval() { mixin(MGPC!("float", 852)()); }
+			float MaxSeePlayerDistSq() { mixin(MGPC!("float", 848)()); }
+			GameCrowdAgentBehavior CurrentBehavior() { mixin(MGPC!("GameCrowdAgentBehavior", 820)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientSoundComponent'!
-			SoundCue AmbientSoundCue() { mixin(MGPC!(SoundCue, 812)()); }
-			UObject.LinearColor BeaconColor() { mixin(MGPC!(UObject.LinearColor, 796)()); }
-			Texture2D BeaconTexture() { mixin(MGPC!(Texture2D, 792)()); }
-			Vector BeaconOffset() { mixin(MGPC!(Vector, 780)()); }
-			float BeaconMaxDist() { mixin(MGPC!(float, 776)()); }
-			float MaxSpeed() { mixin(MGPC!(float, 760)()); }
-			float MaxRunningSpeed() { mixin(MGPC!(float, 756)()); }
-			float MaxWalkingSpeed() { mixin(MGPC!(float, 752)()); }
-			GameCrowdAgent MyArchetype() { mixin(MGPC!(GameCrowdAgent, 748)()); }
-			float NotVisibleTickScalingFactor() { mixin(MGPC!(float, 744)()); }
-			float NotVisibleLifeSpan() { mixin(MGPC!(float, 740)()); }
-			float LastUpdateTime() { mixin(MGPC!(float, 736)()); }
-			float LastPathingAttempt() { mixin(MGPC!(float, 732)()); }
-			float WalkableFloorZ() { mixin(MGPC!(float, 728)()); }
-			int ObstacleCheckCount() { mixin(MGPC!(int, 724)()); }
+			SoundCue AmbientSoundCue() { mixin(MGPC!("SoundCue", 812)()); }
+			UObject.LinearColor BeaconColor() { mixin(MGPC!("UObject.LinearColor", 796)()); }
+			Texture2D BeaconTexture() { mixin(MGPC!("Texture2D", 792)()); }
+			Vector BeaconOffset() { mixin(MGPC!("Vector", 780)()); }
+			float BeaconMaxDist() { mixin(MGPC!("float", 776)()); }
+			float MaxSpeed() { mixin(MGPC!("float", 760)()); }
+			float MaxRunningSpeed() { mixin(MGPC!("float", 756)()); }
+			float MaxWalkingSpeed() { mixin(MGPC!("float", 752)()); }
+			GameCrowdAgent MyArchetype() { mixin(MGPC!("GameCrowdAgent", 748)()); }
+			float NotVisibleTickScalingFactor() { mixin(MGPC!("float", 744)()); }
+			float NotVisibleLifeSpan() { mixin(MGPC!("float", 740)()); }
+			float LastUpdateTime() { mixin(MGPC!("float", 736)()); }
+			float LastPathingAttempt() { mixin(MGPC!("float", 732)()); }
+			float WalkableFloorZ() { mixin(MGPC!("float", 728)()); }
+			int ObstacleCheckCount() { mixin(MGPC!("int", 724)()); }
 			// WARNING: Property 'NavigationHandle' has the same name as a defined type!
-			ScriptClass NavigationHandleClass() { mixin(MGPC!(ScriptClass, 716)()); }
-			Vector SearchExtent() { mixin(MGPC!(Vector, 704)()); }
-			Vector IntermediatePoint() { mixin(MGPC!(Vector, 692)()); }
-			float GroundOffset() { mixin(MGPC!(float, 688)()); }
-			Vector LastKnownGoodPosition() { mixin(MGPC!(Vector, 676)()); }
-			float VisibleProximityLODDist() { mixin(MGPC!(float, 672)()); }
-			float ProximityLODDist() { mixin(MGPC!(float, 668)()); }
-			float EyeZOffset() { mixin(MGPC!(float, 664)()); }
-			Vector MeshMaxScale3D() { mixin(MGPC!(Vector, 652)()); }
-			Vector MeshMinScale3D() { mixin(MGPC!(Vector, 640)()); }
-			float MaxYawRate() { mixin(MGPC!(float, 636)()); }
-			float RotateToTargetSpeed() { mixin(MGPC!(float, 632)()); }
-			float VelocityDamping() { mixin(MGPC!(float, 628)()); }
-			float FollowPathStrength() { mixin(MGPC!(float, 624)()); }
-			float MatchVelStrength() { mixin(MGPC!(float, 620)()); }
-			float GroupAttractionStrength() { mixin(MGPC!(float, 616)()); }
-			float AvoidOtherRadius() { mixin(MGPC!(float, 612)()); }
-			float AvoidPlayerStrength() { mixin(MGPC!(float, 608)()); }
-			float AvoidOtherStrength() { mixin(MGPC!(float, 604)()); }
-			int AwareUpdateInterval() { mixin(MGPC!(int, 600)()); }
-			float AwareRadius() { mixin(MGPC!(float, 596)()); }
-			float LastGroundZ() { mixin(MGPC!(float, 592)()); }
-			int CurrentConformTraceInterval() { mixin(MGPC!(int, 588)()); }
-			int ConformTraceInterval() { mixin(MGPC!(int, 584)()); }
-			float ConformTraceDist() { mixin(MGPC!(float, 580)()); }
-			GameCrowdAgent.EConformType ConformType() { mixin(MGPC!(GameCrowdAgent.EConformType, 576)()); }
-			GameCrowdGroup MyGroup() { mixin(MGPC!(GameCrowdGroup, 480)()); }
-			int AwareUpdateFrameCount() { mixin(MGPC!(int, 544)()); }
-			int ConformTraceFrameCount() { mixin(MGPC!(int, 540)()); }
+			ScriptClass NavigationHandleClass() { mixin(MGPC!("ScriptClass", 716)()); }
+			Vector SearchExtent() { mixin(MGPC!("Vector", 704)()); }
+			Vector IntermediatePoint() { mixin(MGPC!("Vector", 692)()); }
+			float GroundOffset() { mixin(MGPC!("float", 688)()); }
+			Vector LastKnownGoodPosition() { mixin(MGPC!("Vector", 676)()); }
+			float VisibleProximityLODDist() { mixin(MGPC!("float", 672)()); }
+			float ProximityLODDist() { mixin(MGPC!("float", 668)()); }
+			float EyeZOffset() { mixin(MGPC!("float", 664)()); }
+			Vector MeshMaxScale3D() { mixin(MGPC!("Vector", 652)()); }
+			Vector MeshMinScale3D() { mixin(MGPC!("Vector", 640)()); }
+			float MaxYawRate() { mixin(MGPC!("float", 636)()); }
+			float RotateToTargetSpeed() { mixin(MGPC!("float", 632)()); }
+			float VelocityDamping() { mixin(MGPC!("float", 628)()); }
+			float FollowPathStrength() { mixin(MGPC!("float", 624)()); }
+			float MatchVelStrength() { mixin(MGPC!("float", 620)()); }
+			float GroupAttractionStrength() { mixin(MGPC!("float", 616)()); }
+			float AvoidOtherRadius() { mixin(MGPC!("float", 612)()); }
+			float AvoidPlayerStrength() { mixin(MGPC!("float", 608)()); }
+			float AvoidOtherStrength() { mixin(MGPC!("float", 604)()); }
+			int AwareUpdateInterval() { mixin(MGPC!("int", 600)()); }
+			float AwareRadius() { mixin(MGPC!("float", 596)()); }
+			float LastGroundZ() { mixin(MGPC!("float", 592)()); }
+			int CurrentConformTraceInterval() { mixin(MGPC!("int", 588)()); }
+			int ConformTraceInterval() { mixin(MGPC!("int", 584)()); }
+			float ConformTraceDist() { mixin(MGPC!("float", 580)()); }
+			GameCrowdAgent.EConformType ConformType() { mixin(MGPC!("GameCrowdAgent.EConformType", 576)()); }
+			GameCrowdGroup MyGroup() { mixin(MGPC!("GameCrowdGroup", 480)()); }
+			int AwareUpdateFrameCount() { mixin(MGPC!("int", 544)()); }
+			int ConformTraceFrameCount() { mixin(MGPC!("int", 540)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
-			float DeadBodyDuration() { mixin(MGPC!(float, 532)()); }
-			int Health() { mixin(MGPC!(int, 528)()); }
-			float InterpZTranslation() { mixin(MGPC!(float, 524)()); }
-			Vector ExternalForce() { mixin(MGPC!(Vector, 512)()); }
-			GameCrowdDestination PreviousDestination() { mixin(MGPC!(GameCrowdDestination, 508)()); }
-			GameCrowdDestination BehaviorDestination() { mixin(MGPC!(GameCrowdDestination, 504)()); }
-			GameCrowdDestination CurrentDestination() { mixin(MGPC!(GameCrowdDestination, 500)()); }
-			float AvoidanceShare() { mixin(MGPC!(float, 496)()); }
-			Vector PreferredVelocity() { mixin(MGPC!(Vector, 484)()); }
+			float DeadBodyDuration() { mixin(MGPC!("float", 532)()); }
+			int Health() { mixin(MGPC!("int", 528)()); }
+			float InterpZTranslation() { mixin(MGPC!("float", 524)()); }
+			Vector ExternalForce() { mixin(MGPC!("Vector", 512)()); }
+			GameCrowdDestination PreviousDestination() { mixin(MGPC!("GameCrowdDestination", 508)()); }
+			GameCrowdDestination BehaviorDestination() { mixin(MGPC!("GameCrowdDestination", 504)()); }
+			GameCrowdDestination CurrentDestination() { mixin(MGPC!("GameCrowdDestination", 500)()); }
+			float AvoidanceShare() { mixin(MGPC!("float", 496)()); }
+			Vector PreferredVelocity() { mixin(MGPC!("Vector", 484)()); }
 		}
 		bool bIsInSpawnPool() { mixin(MGBPC!(572, 0x8000)()); }
 		bool bIsInSpawnPool(bool val) { mixin(MSBPC!(572, 0x8000)()); }
@@ -272,12 +272,13 @@ public extern(D):
 		bool bUniformScale(bool val) { mixin(MSBPC!(572, 0x1)()); }
 	}
 final:
-	bool PickBehaviorFrom(ScriptArray!(GameCrowdAgent.BehaviorEntry) BehaviorList, Vector BestCameraLoc)
+	bool PickBehaviorFrom(ScriptArray!(GameCrowdAgent.BehaviorEntry) BehaviorList, Vector* BestCameraLoc = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptArray!(GameCrowdAgent.BehaviorEntry)*)params.ptr = BehaviorList;
-		*cast(Vector*)&params[12] = BestCameraLoc;
+		if (BestCameraLoc !is null)
+			*cast(Vector*)&params[12] = *BestCameraLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PickBehaviorFrom, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -342,8 +343,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void SetLighting(bool bEnableLightEnvironment, LightComponent.LightingChannelContainer AgentLightingChannel, bool bCastShadows)
 	{
@@ -404,12 +405,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetSeePlayer, cast(void*)0, cast(void*)0);
 	}
-	void ActivateBehavior(GameCrowdAgentBehavior NewBehaviorArchetype, Actor LookAtActor)
+	void ActivateBehavior(GameCrowdAgentBehavior NewBehaviorArchetype, Actor* LookAtActor = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(GameCrowdAgentBehavior*)params.ptr = NewBehaviorArchetype;
-		*cast(Actor*)&params[4] = LookAtActor;
+		if (LookAtActor !is null)
+			*cast(Actor*)&params[4] = *LookAtActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateBehavior, params.ptr, cast(void*)0);
 	}
 	void SetCurrentBehavior(GameCrowdAgentBehavior BehaviorArchetype)
@@ -446,16 +448,17 @@ final:
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
-	void UpdateIntermediatePoint(Actor DestinationActor)
+	void UpdateIntermediatePoint(Actor* DestinationActor = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Actor*)params.ptr = DestinationActor;
+		if (DestinationActor !is null)
+			*cast(Actor*)params.ptr = *DestinationActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateIntermediatePoint, params.ptr, cast(void*)0);
 	}
 	void PlayDeath(Vector KillMomentum)
@@ -469,7 +472,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.FireDeathEvent, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -478,8 +481,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void OverlappedActorEvent(Actor A)
@@ -493,13 +498,15 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitNavigationHandle, cast(void*)0, cast(void*)0);
 	}
-	Vector GeneratePathToActor(Actor Goal, float WithinDistance, bool bAllowPartialPath)
+	Vector GeneratePathToActor(Actor Goal, float* WithinDistance = null, bool* bAllowPartialPath = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Goal;
-		*cast(float*)&params[4] = WithinDistance;
-		*cast(bool*)&params[8] = bAllowPartialPath;
+		if (WithinDistance !is null)
+			*cast(float*)&params[4] = *WithinDistance;
+		if (bAllowPartialPath !is null)
+			*cast(bool*)&params[8] = *bAllowPartialPath;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GeneratePathToActor, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}

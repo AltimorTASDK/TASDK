@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_CastToFloat DefaultProperties() { mixin(MGDPC!(SeqAct_CastToFloat, "SeqAct_CastToFloat Engine.Default__SeqAct_CastToFloat")()); }
 	@property final auto ref
 	{
-		float FloatResult() { mixin(MGPC!(float, 236)()); }
-		int Value() { mixin(MGPC!(int, 232)()); }
+		float FloatResult() { mixin(MGPC!("float", 236)()); }
+		int Value() { mixin(MGPC!("int", 232)()); }
 	}
 }

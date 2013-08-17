@@ -36,8 +36,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass TargetWeapon() { mixin(MGPC!(ScriptClass, 980)()); }
-		int AmmoAmount() { mixin(MGPC!(int, 976)()); }
+		ScriptClass TargetWeapon() { mixin(MGPC!("ScriptClass", 980)()); }
+		int AmmoAmount() { mixin(MGPC!("int", 976)()); }
 	}
 final:
 	void SpawnCopyFor(Pawn Recipient)

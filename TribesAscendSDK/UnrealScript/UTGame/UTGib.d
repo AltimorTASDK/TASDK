@@ -68,10 +68,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				float DrawScale() { mixin(MGPS!(float, 12)()); }
-				PhysicsAsset ThePhysAsset() { mixin(MGPS!(PhysicsAsset, 8)()); }
-				SkeletalMesh TheSkelMesh() { mixin(MGPS!(SkeletalMesh, 4)()); }
-				StaticMesh TheStaticMesh() { mixin(MGPS!(StaticMesh, 0)()); }
+				float DrawScale() { mixin(MGPS!("float", 12)()); }
+				PhysicsAsset ThePhysAsset() { mixin(MGPS!("PhysicsAsset", 8)()); }
+				SkeletalMesh TheSkelMesh() { mixin(MGPS!("SkeletalMesh", 4)()); }
+				StaticMesh TheStaticMesh() { mixin(MGPS!("StaticMesh", 0)()); }
 			}
 			bool bUseSecondaryGibMeshMITV() { mixin(MGBPS!(16, 0x1)()); }
 			bool bUseSecondaryGibMeshMITV(bool val) { mixin(MSBPS!(16, 0x1)()); }
@@ -82,21 +82,21 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibMeshComp'!
-			ScriptName DecalDissolveParamName() { mixin(MGPC!(ScriptName, 500)()); }
-			float DecalWaitTimeBeforeDissolve() { mixin(MGPC!(float, 508)()); }
-			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { mixin(MGPC!(ScriptArray!(UTGib.StaticMeshDatum), 544)()); }
-			Rotator OldCamRot() { mixin(MGPC!(Rotator, 568)()); }
-			Vector OldCamLoc() { mixin(MGPC!(Vector, 556)()); }
-			ParticleSystem PS_CustomEffect() { mixin(MGPC!(ParticleSystem, 536)()); }
+			ScriptName DecalDissolveParamName() { mixin(MGPC!("ScriptName", 500)()); }
+			float DecalWaitTimeBeforeDissolve() { mixin(MGPC!("float", 508)()); }
+			ScriptArray!(UTGib.StaticMeshDatum) GibMeshesData() { mixin(MGPC!("ScriptArray!(UTGib.StaticMeshDatum)", 544)()); }
+			Rotator OldCamRot() { mixin(MGPC!("Rotator", 568)()); }
+			Vector OldCamLoc() { mixin(MGPC!("Vector", 556)()); }
+			ParticleSystem PS_CustomEffect() { mixin(MGPC!("ParticleSystem", 536)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSC_GibEffect'!
-			float GibMeshWaitTimeBeforeDissolve() { mixin(MGPC!(float, 528)()); }
-			ScriptName GibMeshDissolveParamName() { mixin(MGPC!(ScriptName, 520)()); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { mixin(MGPC!(MaterialInstanceTimeVarying, 516)()); }
-			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { mixin(MGPC!(MaterialInstanceTimeVarying, 512)()); }
-			MaterialInstanceTimeVarying MITV_DecalTemplate() { mixin(MGPC!(MaterialInstanceTimeVarying, 496)()); }
-			MaterialInstance MI_Decal() { mixin(MGPC!(MaterialInstance, 492)()); }
-			MaterialInstanceConstant MIC_Gib() { mixin(MGPC!(MaterialInstanceConstant, 488)()); }
-			SoundCue HitSound() { mixin(MGPC!(SoundCue, 480)()); }
+			float GibMeshWaitTimeBeforeDissolve() { mixin(MGPC!("float", 528)()); }
+			ScriptName GibMeshDissolveParamName() { mixin(MGPC!("ScriptName", 520)()); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplateSecondary() { mixin(MGPC!("MaterialInstanceTimeVarying", 516)()); }
+			MaterialInstanceTimeVarying MITV_GibMeshTemplate() { mixin(MGPC!("MaterialInstanceTimeVarying", 512)()); }
+			MaterialInstanceTimeVarying MITV_DecalTemplate() { mixin(MGPC!("MaterialInstanceTimeVarying", 496)()); }
+			MaterialInstance MI_Decal() { mixin(MGPC!("MaterialInstance", 492)()); }
+			MaterialInstanceConstant MIC_Gib() { mixin(MGPC!("MaterialInstanceConstant", 488)()); }
+			SoundCue HitSound() { mixin(MGPC!("SoundCue", 480)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'GibLightEnvironment'!
 		}
 		bool bUseUnrealPhysics() { mixin(MGBPC!(540, 0x1)()); }
@@ -124,8 +124,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void SetGibStaticMesh(StaticMesh NewStaticMesh)
 	{
@@ -162,16 +162,16 @@ final:
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	void RigidBodyCollision(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* HitComponent, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* OtherComponent, ref const Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
+void* OtherComponent, ref in Actor.CollisionImpactData RigidCollisionData, int ContactIndex)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -181,10 +181,9 @@ void**)params.ptr = HitComponent;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = OtherComponent;
-		*cast(Actor.CollisionImpactData*)&params[8] = RigidCollisionData;
+		*cast(Actor.CollisionImpactData*)&params[8] = cast(Actor.CollisionImpactData)RigidCollisionData;
 		*cast(int*)&params[44] = ContactIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RigidBodyCollision, params.ptr, cast(void*)0);
-		*RigidCollisionData = *cast(Actor.CollisionImpactData*)&params[8];
 	}
 	void LeaveADecal(Vector HitLoc, Vector HitNorm)
 	{

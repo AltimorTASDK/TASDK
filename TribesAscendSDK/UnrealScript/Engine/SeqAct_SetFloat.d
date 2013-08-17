@@ -18,8 +18,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(float) Value() { mixin(MGPC!(ScriptArray!(float), 236)()); }
-		float Target() { mixin(MGPC!(float, 232)()); }
+		ScriptArray!(float) Value() { mixin(MGPC!("ScriptArray!(float)", 236)()); }
+		float Target() { mixin(MGPC!("float", 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

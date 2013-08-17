@@ -34,8 +34,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.ETickingGroup TickGroup() { mixin(MGPC!(UObject.ETickingGroup, 84)()); }
-			Actor Owner() { mixin(MGPC!(Actor, 76)()); }
+			UObject.ETickingGroup TickGroup() { mixin(MGPC!("UObject.ETickingGroup", 84)()); }
+			Actor Owner() { mixin(MGPC!("Actor", 76)()); }
 			// WARNING: Property 'Scene' has the same name as a defined type!
 		}
 		bool bNeedsUpdateTransform() { mixin(MGBPC!(80, 0x8)()); }

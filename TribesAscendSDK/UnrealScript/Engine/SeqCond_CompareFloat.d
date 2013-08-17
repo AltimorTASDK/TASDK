@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqCond_CompareFloat DefaultProperties() { mixin(MGDPC!(SeqCond_CompareFloat, "SeqCond_CompareFloat Engine.Default__SeqCond_CompareFloat")()); }
 	@property final auto ref
 	{
-		float ValueB() { mixin(MGPC!(float, 212)()); }
-		float ValueA() { mixin(MGPC!(float, 208)()); }
+		float ValueB() { mixin(MGPC!("float", 212)()); }
+		float ValueA() { mixin(MGPC!("float", 208)()); }
 	}
 }

@@ -63,8 +63,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			NavigationPoint PickupCache() { mixin(MGPC!(NavigationPoint, 484)()); }
-			ScriptClass InventoryClass() { mixin(MGPC!(ScriptClass, 480)()); }
+			NavigationPoint PickupCache() { mixin(MGPC!("NavigationPoint", 484)()); }
+			ScriptClass InventoryClass() { mixin(MGPC!("ScriptClass", 480)()); }
 			// WARNING: Property 'Inventory' has the same name as a defined type!
 		}
 		bool bFadeOut() { mixin(MGBPC!(488, 0x1)()); }

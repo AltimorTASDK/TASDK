@@ -13,9 +13,9 @@ public extern(D):
 	@property final static UTUIDataProvider_Weapon DefaultProperties() { mixin(MGDPC!(UTUIDataProvider_Weapon, "UTUIDataProvider_Weapon UTGame.Default__UTUIDataProvider_Weapon")()); }
 	@property final auto ref
 	{
-		ScriptString Description() { mixin(MGPC!(ScriptString, 188)()); }
-		ScriptString Flags() { mixin(MGPC!(ScriptString, 176)()); }
-		ScriptString AmmoClassPath() { mixin(MGPC!(ScriptString, 164)()); }
-		ScriptString ClassName() { mixin(MGPC!(ScriptString, 152)()); }
+		ScriptString Description() { mixin(MGPC!("ScriptString", 188)()); }
+		ScriptString Flags() { mixin(MGPC!("ScriptString", 176)()); }
+		ScriptString AmmoClassPath() { mixin(MGPC!("ScriptString", 164)()); }
+		ScriptString ClassName() { mixin(MGPC!("ScriptString", 152)()); }
 	}
 }

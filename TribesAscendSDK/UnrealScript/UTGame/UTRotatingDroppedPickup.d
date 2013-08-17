@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mTick;
 		public @property static final ScriptFunction Tick() { mixin(MGF!("mTick", "Function UTGame.UTRotatingDroppedPickup.Tick")()); }
 	}
-	@property final auto ref float YawRotationRate() { mixin(MGPC!(float, 512)()); }
+	@property final auto ref float YawRotationRate() { mixin(MGPC!("float", 512)()); }
 	final void Tick(float DeltaTime)
 	{
 		ubyte params[4];

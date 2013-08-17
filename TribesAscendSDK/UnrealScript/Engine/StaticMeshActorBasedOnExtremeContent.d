@@ -33,14 +33,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum")()); }
 		@property final auto ref
 		{
-			MaterialInterface TheMaterial() { mixin(MGPS!(MaterialInterface, 4)()); }
-			int MaterialIndex() { mixin(MGPS!(int, 0)()); }
+			MaterialInterface TheMaterial() { mixin(MGPS!("MaterialInterface", 4)()); }
+			int MaterialIndex() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) ExtremeContent() { mixin(MGPC!(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum), 480)()); }
-		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!(ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum), 492)()); }
+		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) ExtremeContent() { mixin(MGPC!("ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)", 480)()); }
+		ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum) NonExtremeContent() { mixin(MGPC!("ScriptArray!(StaticMeshActorBasedOnExtremeContent.SMMaterialSetterDatum)", 492)()); }
 		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
 	}
 final:

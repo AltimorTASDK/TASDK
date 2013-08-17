@@ -32,8 +32,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fMarkerBlinkSpeed() { mixin(MGPC!(float, 516)()); }
-		float m_fCurrentMarkerTime() { mixin(MGPC!(float, 512)()); }
+		float m_fMarkerBlinkSpeed() { mixin(MGPC!("float", 516)()); }
+		float m_fCurrentMarkerTime() { mixin(MGPC!("float", 512)()); }
 	}
 final:
 	void Tick(float DeltaTime)

@@ -31,8 +31,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) Targets() { mixin(MGPC!(ScriptArray!(UObject), 256)()); }
-			float AuthoredGlobalScale() { mixin(MGPC!(float, 272)()); }
+			ScriptArray!(UObject) Targets() { mixin(MGPC!("ScriptArray!(UObject)", 256)()); }
+			float AuthoredGlobalScale() { mixin(MGPC!("float", 272)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(268, 0x1)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(268, 0x1)()); }

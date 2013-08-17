@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleSize")()); }
 	private static __gshared ParticleModuleSize mDefaultProperties;
 	@property final static ParticleModuleSize DefaultProperties() { mixin(MGDPC!(ParticleModuleSize, "ParticleModuleSize Engine.Default__ParticleModuleSize")()); }
-	@property final auto ref DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+	@property final auto ref DistributionVector.RawDistributionVector StartSize() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 }

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqAct_Destroy DefaultProperties() { mixin(MGDPC!(SeqAct_Destroy, "SeqAct_Destroy Engine.Default__SeqAct_Destroy")()); }
 	@property final
 	{
-		@property final auto ref ScriptArray!(ScriptClass) IgnoreBasedClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 236)()); }
+		@property final auto ref ScriptArray!(ScriptClass) IgnoreBasedClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 236)()); }
 		bool bDestroyBasedActors() { mixin(MGBPC!(232, 0x1)()); }
 		bool bDestroyBasedActors(bool val) { mixin(MSBPC!(232, 0x1)()); }
 	}

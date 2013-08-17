@@ -55,8 +55,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentList")()); }
 		@property final auto ref
 		{
-			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo) List() { mixin(MGPS!(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo), 8)()); }
-			ScriptName SocketName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo) List() { mixin(MGPS!("ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentInfo)", 8)()); }
+			ScriptName SocketName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct GameCrowdAttachmentInfo
@@ -67,8 +67,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameCrowdAgentSkeletal.GameCrowdAttachmentInfo")()); }
 		@property final auto ref
 		{
-			Vector Scale3D() { mixin(MGPS!(Vector, 8)()); }
-			float Chance() { mixin(MGPS!(float, 4)()); }
+			Vector Scale3D() { mixin(MGPS!("Vector", 8)()); }
+			float Chance() { mixin(MGPS!("float", 4)()); }
 			// WARNING: Property 'StaticMesh' has the same name as a defined type!
 		}
 	}
@@ -76,25 +76,25 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) WalkAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 992)()); }
-			ScriptArray!(ScriptName) RunAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1004)()); }
-			ScriptArray!(ScriptName) IdleAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1016)()); }
-			ScriptArray!(ScriptName) DeathAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1028)()); }
-			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList) Attachments() { mixin(MGPC!(ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList), 1064)()); }
-			float MaxAnimationDistanceSq() { mixin(MGPC!(float, 1088)()); }
-			float MaxAnimationDistance() { mixin(MGPC!(float, 1084)()); }
-			float MaxTargetAcquireTime() { mixin(MGPC!(float, 1076)()); }
-			ScriptName MoveSyncGroupName() { mixin(MGPC!(ScriptName, 1056)()); }
-			float MaxSpeedBlendChangeSpeed() { mixin(MGPC!(float, 1052)()); }
-			float AnimVelRate() { mixin(MGPC!(float, 1048)()); }
-			float SpeedBlendEnd() { mixin(MGPC!(float, 1044)()); }
-			float SpeedBlendStart() { mixin(MGPC!(float, 1040)()); }
-			AnimTree AgentTree() { mixin(MGPC!(AnimTree, 988)()); }
-			AnimNodeSequence RunSeqNode() { mixin(MGPC!(AnimNodeSequence, 984)()); }
-			AnimNodeSequence WalkSeqNode() { mixin(MGPC!(AnimNodeSequence, 980)()); }
-			AnimNodeSequence ActionSeqNode() { mixin(MGPC!(AnimNodeSequence, 976)()); }
-			AnimNodeSlot FullBodySlot() { mixin(MGPC!(AnimNodeSlot, 972)()); }
-			AnimNodeBlend SpeedBlendNode() { mixin(MGPC!(AnimNodeBlend, 968)()); }
+			ScriptArray!(ScriptName) WalkAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 992)()); }
+			ScriptArray!(ScriptName) RunAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1004)()); }
+			ScriptArray!(ScriptName) IdleAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1016)()); }
+			ScriptArray!(ScriptName) DeathAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1028)()); }
+			ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList) Attachments() { mixin(MGPC!("ScriptArray!(GameCrowdAgentSkeletal.GameCrowdAttachmentList)", 1064)()); }
+			float MaxAnimationDistanceSq() { mixin(MGPC!("float", 1088)()); }
+			float MaxAnimationDistance() { mixin(MGPC!("float", 1084)()); }
+			float MaxTargetAcquireTime() { mixin(MGPC!("float", 1076)()); }
+			ScriptName MoveSyncGroupName() { mixin(MGPC!("ScriptName", 1056)()); }
+			float MaxSpeedBlendChangeSpeed() { mixin(MGPC!("float", 1052)()); }
+			float AnimVelRate() { mixin(MGPC!("float", 1048)()); }
+			float SpeedBlendEnd() { mixin(MGPC!("float", 1044)()); }
+			float SpeedBlendStart() { mixin(MGPC!("float", 1040)()); }
+			AnimTree AgentTree() { mixin(MGPC!("AnimTree", 988)()); }
+			AnimNodeSequence RunSeqNode() { mixin(MGPC!("AnimNodeSequence", 984)()); }
+			AnimNodeSequence WalkSeqNode() { mixin(MGPC!("AnimNodeSequence", 980)()); }
+			AnimNodeSequence ActionSeqNode() { mixin(MGPC!("AnimNodeSequence", 976)()); }
+			AnimNodeSlot FullBodySlot() { mixin(MGPC!("AnimNodeSlot", 972)()); }
+			AnimNodeBlend SpeedBlendNode() { mixin(MGPC!("AnimNodeBlend", 968)()); }
 			// WARNING: Property 'SkeletalMeshComponent' has the same name as a defined type!
 		}
 		bool bAnimateThisTick() { mixin(MGBPC!(1080, 0x8)()); }

@@ -13,9 +13,9 @@ public extern(D):
 	@property final static PBRuleNodeExtractTopBottom DefaultProperties() { mixin(MGDPC!(PBRuleNodeExtractTopBottom, "PBRuleNodeExtractTopBottom Engine.Default__PBRuleNodeExtractTopBottom")()); }
 	@property final auto ref
 	{
-		float ExtractNotBottomZ() { mixin(MGPC!(float, 116)()); }
-		float ExtractBottomZ() { mixin(MGPC!(float, 112)()); }
-		float ExtractNotTopZ() { mixin(MGPC!(float, 108)()); }
-		float ExtractTopZ() { mixin(MGPC!(float, 104)()); }
+		float ExtractNotBottomZ() { mixin(MGPC!("float", 116)()); }
+		float ExtractBottomZ() { mixin(MGPC!("float", 112)()); }
+		float ExtractNotTopZ() { mixin(MGPC!("float", 108)()); }
+		float ExtractTopZ() { mixin(MGPC!("float", 104)()); }
 	}
 }

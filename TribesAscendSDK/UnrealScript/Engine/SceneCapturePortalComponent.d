@@ -20,17 +20,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Actor ViewDestination() { mixin(MGPC!(Actor, 152)()); }
-		float ScaleFOV() { mixin(MGPC!(float, 148)()); }
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 144)()); }
+		Actor ViewDestination() { mixin(MGPC!("Actor", 152)()); }
+		float ScaleFOV() { mixin(MGPC!("float", 148)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
 	}
-	final void SetCaptureParameters(TextureRenderTarget2D NewTextureTarget, float NewScaleFOV, Actor NewViewDest)
+	final void SetCaptureParameters(TextureRenderTarget2D* NewTextureTarget = null, float* NewScaleFOV = null, Actor* NewViewDest = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(TextureRenderTarget2D*)params.ptr = NewTextureTarget;
-		*cast(float*)&params[4] = NewScaleFOV;
-		*cast(Actor*)&params[8] = NewViewDest;
+		if (NewTextureTarget !is null)
+			*cast(TextureRenderTarget2D*)params.ptr = *NewTextureTarget;
+		if (NewScaleFOV !is null)
+			*cast(float*)&params[4] = *NewScaleFOV;
+		if (NewViewDest !is null)
+			*cast(Actor*)&params[8] = *NewViewDest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
 }

@@ -30,8 +30,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKUIResourceDataProvider) DynamicProviders() { mixin(MGPC!(ScriptArray!(UDKUIResourceDataProvider), 256)()); }
-		UObject.MultiMap_Mirror OptionProviders() { mixin(MGPC!(UObject.MultiMap_Mirror, 196)()); }
+		ScriptArray!(UDKUIResourceDataProvider) DynamicProviders() { mixin(MGPC!("ScriptArray!(UDKUIResourceDataProvider)", 256)()); }
+		UObject.MultiMap_Mirror OptionProviders() { mixin(MGPC!("UObject.MultiMap_Mirror", 196)()); }
 	}
 final:
 	void ClearSet(ScriptName SetName)
@@ -56,6 +56,6 @@ final:
 		*cast(ScriptName*)params.ptr = SetName;
 		*cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8] = OutProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSet, params.ptr, cast(void*)0);
-		*OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
+		OutProviders = *cast(ScriptArray!(UDKUIResourceDataProvider)*)&params[8];
 	}
 }

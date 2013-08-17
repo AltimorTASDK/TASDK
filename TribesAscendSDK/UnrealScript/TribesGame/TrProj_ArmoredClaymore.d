@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mMeetsDetonationRequirements;
 		public @property static final ScriptFunction MeetsDetonationRequirements() { mixin(MGF!("mMeetsDetonationRequirements", "Function TribesGame.TrProj_ArmoredClaymore.MeetsDetonationRequirements")()); }
 	}
-	@property final auto ref float DetonationSpeed() { mixin(MGPC!(float, 900)()); }
+	@property final auto ref float DetonationSpeed() { mixin(MGPC!("float", 900)()); }
 	final bool MeetsDetonationRequirements(Pawn Other)
 	{
 		ubyte params[8];

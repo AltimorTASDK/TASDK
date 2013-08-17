@@ -41,9 +41,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float TimeToStopPanic() { mixin(MGPC!(float, 92)()); }
-		float DurationOfPanic() { mixin(MGPC!(float, 88)()); }
-		Actor PanicFocus() { mixin(MGPC!(Actor, 84)()); }
+		float TimeToStopPanic() { mixin(MGPC!("float", 92)()); }
+		float DurationOfPanic() { mixin(MGPC!("float", 88)()); }
+		Actor PanicFocus() { mixin(MGPC!("Actor", 84)()); }
 	}
 final:
 	void ActivatedBy(Actor NewActionTarget)

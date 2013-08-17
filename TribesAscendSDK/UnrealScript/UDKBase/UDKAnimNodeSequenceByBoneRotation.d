@@ -25,15 +25,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKAnimNodeSequenceByBoneRotation.AnimByRotation")()); }
 		@property final auto ref
 		{
-			ScriptName AnimName() { mixin(MGPS!(ScriptName, 12)()); }
-			Rotator DesiredRotation() { mixin(MGPS!(Rotator, 0)()); }
+			ScriptName AnimName() { mixin(MGPS!("ScriptName", 12)()); }
+			Rotator DesiredRotation() { mixin(MGPS!("Rotator", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UDKAnimNodeSequenceByBoneRotation.AnimByRotation) AnimList() { mixin(MGPC!(ScriptArray!(UDKAnimNodeSequenceByBoneRotation.AnimByRotation), 332)()); }
-		UObject.EAxis BoneAxis() { mixin(MGPC!(UObject.EAxis, 328)()); }
-		ScriptName BoneName() { mixin(MGPC!(ScriptName, 320)()); }
+		ScriptArray!(UDKAnimNodeSequenceByBoneRotation.AnimByRotation) AnimList() { mixin(MGPC!("ScriptArray!(UDKAnimNodeSequenceByBoneRotation.AnimByRotation)", 332)()); }
+		UObject.EAxis BoneAxis() { mixin(MGPC!("UObject.EAxis", 328)()); }
+		ScriptName BoneName() { mixin(MGPC!("ScriptName", 320)()); }
 	}
 	final void OnBecomeRelevant()
 	{

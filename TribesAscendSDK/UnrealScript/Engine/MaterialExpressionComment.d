@@ -13,10 +13,10 @@ public extern(D):
 	@property final static MaterialExpressionComment DefaultProperties() { mixin(MGDPC!(MaterialExpressionComment, "MaterialExpressionComment Engine.Default__MaterialExpressionComment")()); }
 	@property final auto ref
 	{
-		ScriptString Text() { mixin(MGPC!(ScriptString, 124)()); }
-		int SizeY() { mixin(MGPC!(int, 120)()); }
-		int SizeX() { mixin(MGPC!(int, 116)()); }
-		int PosY() { mixin(MGPC!(int, 112)()); }
-		int PosX() { mixin(MGPC!(int, 108)()); }
+		ScriptString Text() { mixin(MGPC!("ScriptString", 124)()); }
+		int SizeY() { mixin(MGPC!("int", 120)()); }
+		int SizeX() { mixin(MGPC!("int", 116)()); }
+		int PosY() { mixin(MGPC!("int", 112)()); }
+		int PosX() { mixin(MGPC!("int", 108)()); }
 	}
 }

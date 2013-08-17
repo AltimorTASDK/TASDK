@@ -37,12 +37,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ParticleModuleOrbit.OrbitOptions RotationRateOptions() { mixin(MGPC!(ParticleModuleOrbit.OrbitOptions, 172)()); }
-		DistributionVector.RawDistributionVector RotationRateAmount() { mixin(MGPC!(DistributionVector.RawDistributionVector, 144)()); }
-		ParticleModuleOrbit.OrbitOptions RotationOptions() { mixin(MGPC!(ParticleModuleOrbit.OrbitOptions, 140)()); }
-		DistributionVector.RawDistributionVector RotationAmount() { mixin(MGPC!(DistributionVector.RawDistributionVector, 112)()); }
-		ParticleModuleOrbit.OrbitOptions OffsetOptions() { mixin(MGPC!(ParticleModuleOrbit.OrbitOptions, 108)()); }
-		DistributionVector.RawDistributionVector OffsetAmount() { mixin(MGPC!(DistributionVector.RawDistributionVector, 80)()); }
-		ParticleModuleOrbit.EOrbitChainMode ChainMode() { mixin(MGPC!(ParticleModuleOrbit.EOrbitChainMode, 76)()); }
+		ParticleModuleOrbit.OrbitOptions RotationRateOptions() { mixin(MGPC!("ParticleModuleOrbit.OrbitOptions", 172)()); }
+		DistributionVector.RawDistributionVector RotationRateAmount() { mixin(MGPC!("DistributionVector.RawDistributionVector", 144)()); }
+		ParticleModuleOrbit.OrbitOptions RotationOptions() { mixin(MGPC!("ParticleModuleOrbit.OrbitOptions", 140)()); }
+		DistributionVector.RawDistributionVector RotationAmount() { mixin(MGPC!("DistributionVector.RawDistributionVector", 112)()); }
+		ParticleModuleOrbit.OrbitOptions OffsetOptions() { mixin(MGPC!("ParticleModuleOrbit.OrbitOptions", 108)()); }
+		DistributionVector.RawDistributionVector OffsetAmount() { mixin(MGPC!("DistributionVector.RawDistributionVector", 80)()); }
+		ParticleModuleOrbit.EOrbitChainMode ChainMode() { mixin(MGPC!("ParticleModuleOrbit.EOrbitChainMode", 76)()); }
 	}
 }

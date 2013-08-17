@@ -19,10 +19,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.MorphNodeWeightBase.MorphNodeConn")()); }
 		@property final auto ref
 		{
-			ScriptArray!(MorphNodeBase) ChildNodes() { mixin(MGPS!(ScriptArray!(MorphNodeBase), 0)()); }
-			int DrawY() { mixin(MGPS!(int, 20)()); }
-			ScriptName ConnName() { mixin(MGPS!(ScriptName, 12)()); }
+			ScriptArray!(MorphNodeBase) ChildNodes() { mixin(MGPS!("ScriptArray!(MorphNodeBase)", 0)()); }
+			int DrawY() { mixin(MGPS!("int", 20)()); }
+			ScriptName ConnName() { mixin(MGPS!("ScriptName", 12)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(MorphNodeWeightBase.MorphNodeConn) NodeConns() { mixin(MGPC!(ScriptArray!(MorphNodeWeightBase.MorphNodeConn), 108)()); }
+	@property final auto ref ScriptArray!(MorphNodeWeightBase.MorphNodeConn) NodeConns() { mixin(MGPC!("ScriptArray!(MorphNodeWeightBase.MorphNodeConn)", 108)()); }
 }

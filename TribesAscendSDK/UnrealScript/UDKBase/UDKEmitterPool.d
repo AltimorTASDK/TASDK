@@ -36,24 +36,27 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKEmitterPool.AttachedExplosionLight")()); }
 		@property final auto ref
 		{
-			Vector RelativeLocation() { mixin(MGPS!(Vector, 8)()); }
-			Actor Base() { mixin(MGPS!(Actor, 4)()); }
+			Vector RelativeLocation() { mixin(MGPS!("Vector", 8)()); }
+			Actor Base() { mixin(MGPS!("Actor", 4)()); }
 			// WARNING: Property 'Light' has the same name as a defined type!
 		}
 	}
-	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC!(ScriptArray!(UDKEmitterPool.AttachedExplosionLight), 564)()); }
+	@property final auto ref ScriptArray!(UDKEmitterPool.AttachedExplosionLight) RelativeExplosionLights() { mixin(MGPC!("ScriptArray!(UDKEmitterPool.AttachedExplosionLight)", 564)()); }
 final:
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator SpawnRotation, Actor AttachToActor, bool bInheritScaleFromBase)
+void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator* SpawnRotation = null, Actor* AttachToActor = null, bool* bInheritScaleFromBase = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = EmitterTemplate;
 		*cast(Vector*)&params[4] = SpawnLocation;
-		*cast(Rotator*)&params[16] = SpawnRotation;
-		*cast(Actor*)&params[28] = AttachToActor;
-		*cast(bool*)&params[32] = bInheritScaleFromBase;
+		if (SpawnRotation !is null)
+			*cast(Rotator*)&params[16] = *SpawnRotation;
+		if (AttachToActor !is null)
+			*cast(Actor*)&params[28] = *AttachToActor;
+		if (bInheritScaleFromBase !is null)
+			*cast(bool*)&params[32] = *bInheritScaleFromBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitter, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -72,13 +75,14 @@ void**)params.ptr = pLight;
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SpawnExplosionLight(ScriptClass LightClass, Vector SpawnLocation, Actor AttachToActor)
+void* SpawnExplosionLight(ScriptClass LightClass, Vector SpawnLocation, Actor* AttachToActor = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = LightClass;
 		*cast(Vector*)&params[4] = SpawnLocation;
-		*cast(Actor*)&params[16] = AttachToActor;
+		if (AttachToActor !is null)
+			*cast(Actor*)&params[16] = *AttachToActor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnExplosionLight, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

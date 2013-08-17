@@ -28,33 +28,37 @@ public extern(D):
 	{
 		auto ref
 		{
-			int NumMips() { mixin(MGPC!(int, 248)()); }
+			int NumMips() { mixin(MGPC!("int", 248)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int SizeY() { mixin(MGPC!(int, 240)()); }
-			int SizeX() { mixin(MGPC!(int, 236)()); }
+			int SizeY() { mixin(MGPC!("int", 240)()); }
+			int SizeX() { mixin(MGPC!("int", 236)()); }
 		}
 		bool bIsResolveTarget() { mixin(MGBPC!(252, 0x1)()); }
 		bool bIsResolveTarget(bool val) { mixin(MSBPC!(252, 0x1)()); }
 	}
 final:
-	void Init(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, bool InIsResolveTarget)
+	void Init(int InSizeX, int InSizeY, Texture.EPixelFormat* InFormat = null, bool* InIsResolveTarget = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = InSizeX;
 		*cast(int*)&params[4] = InSizeY;
-		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
-		*cast(bool*)&params[12] = InIsResolveTarget;
+		if (InFormat !is null)
+			*cast(Texture.EPixelFormat*)&params[8] = *InFormat;
+		if (InIsResolveTarget !is null)
+			*cast(bool*)&params[12] = *InIsResolveTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
-	static Texture2DDynamic Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat, bool InIsResolveTarget)
+	static Texture2DDynamic Create(int InSizeX, int InSizeY, Texture.EPixelFormat* InFormat = null, bool* InIsResolveTarget = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = InSizeX;
 		*cast(int*)&params[4] = InSizeY;
-		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
-		*cast(bool*)&params[12] = InIsResolveTarget;
+		if (InFormat !is null)
+			*cast(Texture.EPixelFormat*)&params[8] = *InFormat;
+		if (InIsResolveTarget !is null)
+			*cast(bool*)&params[12] = *InIsResolveTarget;
 		StaticClass.ProcessEvent(Functions.Create, params.ptr, cast(void*)0);
 		return *cast(Texture2DDynamic*)&params[16];
 	}

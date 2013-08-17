@@ -43,7 +43,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref int SentText() { mixin(MGPC!(int, 476)()); }
+		@property final auto ref int SentText() { mixin(MGPC!("int", 476)()); }
 		bool bMuteSpectators() { mixin(MGBPC!(480, 0x1)()); }
 		bool bMuteSpectators(bool val) { mixin(MSBPC!(480, 0x1)()); }
 	}
@@ -61,70 +61,85 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowsBroadcast, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	void BroadcastText(PlayerReplicationInfo SenderPRI, PlayerController Receiver, ScriptString msg, ScriptName Type)
+	void BroadcastText(PlayerReplicationInfo SenderPRI, PlayerController Receiver, ScriptString msg, ScriptName* Type = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = SenderPRI;
 		*cast(PlayerController*)&params[4] = Receiver;
 		*cast(ScriptString*)&params[8] = msg;
-		*cast(ScriptName*)&params[20] = Type;
+		if (Type !is null)
+			*cast(ScriptName*)&params[20] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastText, params.ptr, cast(void*)0);
 	}
-	void BroadcastLocalized(Actor Sender, PlayerController Receiver, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void BroadcastLocalized(Actor Sender, PlayerController Receiver, ScriptClass Message, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Sender;
 		*cast(PlayerController*)&params[4] = Receiver;
 		*cast(ScriptClass*)&params[8] = Message;
-		*cast(int*)&params[12] = Switch;
-		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[20] = RelatedPRI_2;
-		*cast(UObject*)&params[24] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[12] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[16] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[20] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[24] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastLocalized, params.ptr, cast(void*)0);
 	}
-	void Broadcast(Actor Sender, ScriptString msg, ScriptName Type)
+	void Broadcast(Actor Sender, ScriptString msg, ScriptName* Type = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Sender;
 		*cast(ScriptString*)&params[4] = msg;
-		*cast(ScriptName*)&params[16] = Type;
+		if (Type !is null)
+			*cast(ScriptName*)&params[16] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Broadcast, params.ptr, cast(void*)0);
 	}
-	void BroadcastTeam(Controller Sender, ScriptString msg, ScriptName Type)
+	void BroadcastTeam(Controller Sender, ScriptString msg, ScriptName* Type = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = Sender;
 		*cast(ScriptString*)&params[4] = msg;
-		*cast(ScriptName*)&params[16] = Type;
+		if (Type !is null)
+			*cast(ScriptName*)&params[16] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BroadcastTeam, params.ptr, cast(void*)0);
 	}
-	void AllowBroadcastLocalized(Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void AllowBroadcastLocalized(Actor Sender, ScriptClass Message, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Sender;
 		*cast(ScriptClass*)&params[4] = Message;
-		*cast(int*)&params[8] = Switch;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_2;
-		*cast(UObject*)&params[20] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[8] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[16] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[20] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBroadcastLocalized, params.ptr, cast(void*)0);
 	}
-	void AllowBroadcastLocalizedTeam(int TeamIndex, Actor Sender, ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void AllowBroadcastLocalizedTeam(int TeamIndex, Actor Sender, ScriptClass Message, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = TeamIndex;
 		*cast(Actor*)&params[4] = Sender;
 		*cast(ScriptClass*)&params[8] = Message;
-		*cast(int*)&params[12] = Switch;
-		*cast(PlayerReplicationInfo*)&params[16] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[20] = RelatedPRI_2;
-		*cast(UObject*)&params[24] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[12] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[16] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[20] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[24] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowBroadcastLocalizedTeam, params.ptr, cast(void*)0);
 	}
 }

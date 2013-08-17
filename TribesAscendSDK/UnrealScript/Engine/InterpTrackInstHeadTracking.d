@@ -24,10 +24,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				float StartTimeBeingLookedAt() { mixin(MGPS!(float, 16)()); }
-				float LastKnownDistance() { mixin(MGPS!(float, 12)()); }
-				float EnteredTime() { mixin(MGPS!(float, 8)()); }
-				float Rating() { mixin(MGPS!(float, 4)()); }
+				float StartTimeBeingLookedAt() { mixin(MGPS!("float", 16)()); }
+				float LastKnownDistance() { mixin(MGPS!("float", 12)()); }
+				float EnteredTime() { mixin(MGPS!("float", 8)()); }
+				float Rating() { mixin(MGPS!("float", 4)()); }
 				// WARNING: Property 'Actor' has the same name as a defined type!
 			}
 			bool CurrentlyBeingLookedAt() { mixin(MGBPS!(20, 0x1)()); }
@@ -36,10 +36,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SkelControlLookAt) TrackControls() { mixin(MGPC!(ScriptArray!(SkelControlLookAt), 128)()); }
-		float LastUpdatePosition() { mixin(MGPC!(float, 140)()); }
+		ScriptArray!(SkelControlLookAt) TrackControls() { mixin(MGPC!("ScriptArray!(SkelControlLookAt)", 128)()); }
+		float LastUpdatePosition() { mixin(MGPC!("float", 140)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'CurrentActorMap'!
-		InterpTrackHeadTracking.EHeadTrackingAction Action() { mixin(MGPC!(InterpTrackHeadTracking.EHeadTrackingAction, 60)()); }
+		InterpTrackHeadTracking.EHeadTrackingAction Action() { mixin(MGPC!("InterpTrackHeadTracking.EHeadTrackingAction", 60)()); }
 	}
 }

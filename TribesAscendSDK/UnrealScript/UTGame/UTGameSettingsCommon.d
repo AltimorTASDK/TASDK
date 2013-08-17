@@ -147,8 +147,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MaxPlayers() { mixin(MGPC!(int, 172)()); }
-		int MinNetPlayers() { mixin(MGPC!(int, 176)()); }
+		int MaxPlayers() { mixin(MGPC!("int", 172)()); }
+		int MinNetPlayers() { mixin(MGPC!("int", 176)()); }
 	}
 final:
 	void SetCustomMapName(ScriptString MapName)
@@ -171,24 +171,22 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = OutURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildURL, params.ptr, cast(void*)0);
-		*OutURL = *cast(ScriptString*)params.ptr;
+		OutURL = *cast(ScriptString*)params.ptr;
 	}
-	void UpdateFromURL(ref const ScriptString pURL, GameInfo Game)
+	void UpdateFromURL(ref in ScriptString pURL, GameInfo Game)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = pURL;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)pURL;
 		*cast(GameInfo*)&params[12] = Game;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFromURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
 	}
-	void SetMutators(ref const ScriptString pURL)
+	void SetMutators(ref in ScriptString pURL)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = pURL;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetMutators, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
 	}
 	int GenerateMutatorBitmaskFromURL(UTUIDataStore_MenuItems MenuDataStore, ref ScriptArray!(ScriptString) MutatorClassNames)
 	{
@@ -197,16 +195,15 @@ final:
 		*cast(UTUIDataStore_MenuItems*)params.ptr = MenuDataStore;
 		*cast(ScriptArray!(ScriptString)*)&params[4] = MutatorClassNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GenerateMutatorBitmaskFromURL, params.ptr, cast(void*)0);
-		*MutatorClassNames = *cast(ScriptArray!(ScriptString)*)&params[4];
+		MutatorClassNames = *cast(ScriptArray!(ScriptString)*)&params[4];
 		return *cast(int*)&params[16];
 	}
-	void SetCustomMutators(UTUIDataStore_MenuItems MenuDataStore, ref const ScriptArray!(ScriptString) MutatorClassNames)
+	void SetCustomMutators(UTUIDataStore_MenuItems MenuDataStore, ref in ScriptArray!(ScriptString) MutatorClassNames)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTUIDataStore_MenuItems*)params.ptr = MenuDataStore;
-		*cast(ScriptArray!(ScriptString)*)&params[4] = MutatorClassNames;
+		*cast(ScriptArray!(ScriptString)*)&params[4] = cast(ScriptArray!(ScriptString))MutatorClassNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCustomMutators, params.ptr, cast(void*)0);
-		*MutatorClassNames = *cast(ScriptArray!(ScriptString)*)&params[4];
 	}
 }

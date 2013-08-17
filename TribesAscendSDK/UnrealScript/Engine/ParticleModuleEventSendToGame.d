@@ -16,18 +16,14 @@ public extern(D):
 		private static __gshared ScriptFunction mDoEvent;
 		public @property static final ScriptFunction DoEvent() { mixin(MGF!("mDoEvent", "Function Engine.ParticleModuleEventSendToGame.DoEvent")()); }
 	}
-	final void DoEvent(ref const Vector InCollideDirection, ref const Vector InHitLocation, ref const Vector InHitNormal, ref const ScriptName InBoneName)
+	final void DoEvent(ref in Vector InCollideDirection, ref in Vector InHitLocation, ref in Vector InHitNormal, ref in ScriptName InBoneName)
 	{
 		ubyte params[44];
 		params[] = 0;
-		*cast(Vector*)params.ptr = InCollideDirection;
-		*cast(Vector*)&params[12] = InHitLocation;
-		*cast(Vector*)&params[24] = InHitNormal;
-		*cast(ScriptName*)&params[36] = InBoneName;
+		*cast(Vector*)params.ptr = cast(Vector)InCollideDirection;
+		*cast(Vector*)&params[12] = cast(Vector)InHitLocation;
+		*cast(Vector*)&params[24] = cast(Vector)InHitNormal;
+		*cast(ScriptName*)&params[36] = cast(ScriptName)InBoneName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoEvent, params.ptr, cast(void*)0);
-		*InCollideDirection = *cast(Vector*)params.ptr;
-		*InHitLocation = *cast(Vector*)&params[12];
-		*InHitNormal = *cast(Vector*)&params[24];
-		*InBoneName = *cast(ScriptName*)&params[36];
 	}
 }

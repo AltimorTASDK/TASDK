@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackInstLinearColorProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstLinearColorProp, "InterpTrackInstLinearColorProp Engine.Default__InterpTrackInstLinearColorProp")()); }
 	@property final auto ref
 	{
-		UObject.LinearColor ResetColor() { mixin(MGPC!(UObject.LinearColor, 72)()); }
-		UObject.Pointer ColorProp() { mixin(MGPC!(UObject.Pointer, 68)()); }
+		UObject.LinearColor ResetColor() { mixin(MGPC!("UObject.LinearColor", 72)()); }
+		UObject.Pointer ColorProp() { mixin(MGPC!("UObject.Pointer", 68)()); }
 	}
 }

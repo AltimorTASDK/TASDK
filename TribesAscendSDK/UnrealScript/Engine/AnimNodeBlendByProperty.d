@@ -17,17 +17,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			float BlendToChild2Time() { mixin(MGPC!(float, 328)()); }
-			float BlendToChild1Time() { mixin(MGPC!(float, 324)()); }
-			float FloatPropMax() { mixin(MGPC!(float, 320)()); }
-			float FloatPropMin() { mixin(MGPC!(float, 316)()); }
-			float BlendTime() { mixin(MGPC!(float, 312)()); }
-			Actor CachedOwner() { mixin(MGPC!(Actor, 308)()); }
-			UObject.Pointer CachedByteProperty() { mixin(MGPC!(UObject.Pointer, 304)()); }
-			UObject.Pointer CachedBoolProperty() { mixin(MGPC!(UObject.Pointer, 300)()); }
-			UObject.Pointer CachedFloatProperty() { mixin(MGPC!(UObject.Pointer, 296)()); }
-			ScriptName CachedPropertyName() { mixin(MGPC!(ScriptName, 288)()); }
-			ScriptName PropertyName() { mixin(MGPC!(ScriptName, 276)()); }
+			float BlendToChild2Time() { mixin(MGPC!("float", 328)()); }
+			float BlendToChild1Time() { mixin(MGPC!("float", 324)()); }
+			float FloatPropMax() { mixin(MGPC!("float", 320)()); }
+			float FloatPropMin() { mixin(MGPC!("float", 316)()); }
+			float BlendTime() { mixin(MGPC!("float", 312)()); }
+			Actor CachedOwner() { mixin(MGPC!("Actor", 308)()); }
+			UObject.Pointer CachedByteProperty() { mixin(MGPC!("UObject.Pointer", 304)()); }
+			UObject.Pointer CachedBoolProperty() { mixin(MGPC!("UObject.Pointer", 300)()); }
+			UObject.Pointer CachedFloatProperty() { mixin(MGPC!("UObject.Pointer", 296)()); }
+			ScriptName CachedPropertyName() { mixin(MGPC!("ScriptName", 288)()); }
+			ScriptName PropertyName() { mixin(MGPC!("ScriptName", 276)()); }
 		}
 		bool bSynchronizeNodesInEditor() { mixin(MGBPC!(284, 0x8)()); }
 		bool bSynchronizeNodesInEditor(bool val) { mixin(MSBPC!(284, 0x8)()); }

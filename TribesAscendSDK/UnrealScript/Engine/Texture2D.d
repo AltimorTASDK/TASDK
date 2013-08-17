@@ -33,9 +33,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Texture2D.Texture2DMipMap")()); }
 		@property final auto ref
 		{
-			int SizeY() { mixin(MGPS!(int, 56)()); }
-			int SizeX() { mixin(MGPS!(int, 52)()); }
-			UObject.UntypedBulkData_Mirror Data() { mixin(MGPS!(UObject.UntypedBulkData_Mirror, 0)()); }
+			int SizeY() { mixin(MGPS!("int", 56)()); }
+			int SizeX() { mixin(MGPS!("int", 52)()); }
+			UObject.UntypedBulkData_Mirror Data() { mixin(MGPS!("UObject.UntypedBulkData_Mirror", 0)()); }
 		}
 	}
 	struct TextureLinkedListMirror
@@ -46,37 +46,37 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Texture2D.TextureLinkedListMirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer PrevLink() { mixin(MGPS!(UObject.Pointer, 8)()); }
-			UObject.Pointer Next() { mixin(MGPS!(UObject.Pointer, 4)()); }
-			UObject.Pointer Element() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			UObject.Pointer PrevLink() { mixin(MGPS!("UObject.Pointer", 8)()); }
+			UObject.Pointer Next() { mixin(MGPS!("UObject.Pointer", 4)()); }
+			UObject.Pointer Element() { mixin(MGPS!("UObject.Pointer", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(ubyte) SystemMemoryData() { mixin(MGPC!(ScriptArray!(ubyte), 324)()); }
-			float Timer() { mixin(MGPC!(float, 364)()); }
-			int FirstResourceMemMip() { mixin(MGPC!(int, 360)()); }
-			UObject.Pointer ResourceMem() { mixin(MGPC!(UObject.Pointer, 356)()); }
-			int MipTailBaseIdx() { mixin(MGPC!(int, 352)()); }
-			int StreamingIndex() { mixin(MGPC!(int, 348)()); }
-			Texture2D.TextureLinkedListMirror StreamableTexturesLink() { mixin(MGPC!(Texture2D.TextureLinkedListMirror, 336)()); }
-			UObject.ThreadSafeCounter PendingMipChangeRequestStatus() { mixin(MGPC!(UObject.ThreadSafeCounter, 320)()); }
-			int ResidentMips() { mixin(MGPC!(int, 316)()); }
-			int RequestedMips() { mixin(MGPC!(int, 312)()); }
-			UObject.Guid TextureFileCacheGuid() { mixin(MGPC!(UObject.Guid, 296)()); }
-			ScriptName TextureFileCacheName() { mixin(MGPC!(ScriptName, 288)()); }
-			float ForceMipLevelsToBeResidentTimestamp() { mixin(MGPC!(float, 284)()); }
-			Texture.TextureAddress AddressY() { mixin(MGPC!(Texture.TextureAddress, 278)()); }
-			Texture.TextureAddress AddressX() { mixin(MGPC!(Texture.TextureAddress, 277)()); }
+			ScriptArray!(ubyte) SystemMemoryData() { mixin(MGPC!("ScriptArray!(ubyte)", 324)()); }
+			float Timer() { mixin(MGPC!("float", 364)()); }
+			int FirstResourceMemMip() { mixin(MGPC!("int", 360)()); }
+			UObject.Pointer ResourceMem() { mixin(MGPC!("UObject.Pointer", 356)()); }
+			int MipTailBaseIdx() { mixin(MGPC!("int", 352)()); }
+			int StreamingIndex() { mixin(MGPC!("int", 348)()); }
+			Texture2D.TextureLinkedListMirror StreamableTexturesLink() { mixin(MGPC!("Texture2D.TextureLinkedListMirror", 336)()); }
+			UObject.ThreadSafeCounter PendingMipChangeRequestStatus() { mixin(MGPC!("UObject.ThreadSafeCounter", 320)()); }
+			int ResidentMips() { mixin(MGPC!("int", 316)()); }
+			int RequestedMips() { mixin(MGPC!("int", 312)()); }
+			UObject.Guid TextureFileCacheGuid() { mixin(MGPC!("UObject.Guid", 296)()); }
+			ScriptName TextureFileCacheName() { mixin(MGPC!("ScriptName", 288)()); }
+			float ForceMipLevelsToBeResidentTimestamp() { mixin(MGPC!("float", 284)()); }
+			Texture.TextureAddress AddressY() { mixin(MGPC!("Texture.TextureAddress", 278)()); }
+			Texture.TextureAddress AddressX() { mixin(MGPC!("Texture.TextureAddress", 277)()); }
 			// WARNING: Property 'Format' has the same name as a defined type!
-			int OriginalSizeY() { mixin(MGPC!(int, 272)()); }
-			int OriginalSizeX() { mixin(MGPC!(int, 268)()); }
-			int SizeY() { mixin(MGPC!(int, 264)()); }
-			int SizeX() { mixin(MGPC!(int, 260)()); }
-			UObject.IndirectArray_Mirror CachedPVRTCMips() { mixin(MGPC!(UObject.IndirectArray_Mirror, 248)()); }
-			UObject.IndirectArray_Mirror Mips() { mixin(MGPC!(UObject.IndirectArray_Mirror, 236)()); }
+			int OriginalSizeY() { mixin(MGPC!("int", 272)()); }
+			int OriginalSizeX() { mixin(MGPC!("int", 268)()); }
+			int SizeY() { mixin(MGPC!("int", 264)()); }
+			int SizeX() { mixin(MGPC!("int", 260)()); }
+			UObject.IndirectArray_Mirror CachedPVRTCMips() { mixin(MGPC!("UObject.IndirectArray_Mirror", 248)()); }
+			UObject.IndirectArray_Mirror Mips() { mixin(MGPC!("UObject.IndirectArray_Mirror", 236)()); }
 		}
 		bool bGlobalForceMipLevelsToBeResident() { mixin(MGBPC!(280, 0x10)()); }
 		bool bGlobalForceMipLevelsToBeResident(bool val) { mixin(MSBPC!(280, 0x10)()); }
@@ -90,21 +90,23 @@ public extern(D):
 		bool bIsStreamable(bool val) { mixin(MSBPC!(280, 0x1)()); }
 	}
 final:
-	void SetForceMipLevelsToBeResident(float Seconds, int CinematicTextureGroups)
+	void SetForceMipLevelsToBeResident(float Seconds, int* CinematicTextureGroups = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = Seconds;
-		*cast(int*)&params[4] = CinematicTextureGroups;
+		if (CinematicTextureGroups !is null)
+			*cast(int*)&params[4] = *CinematicTextureGroups;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetForceMipLevelsToBeResident, params.ptr, cast(void*)0);
 	}
-	static Texture2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat InFormat)
+	static Texture2D Create(int InSizeX, int InSizeY, Texture.EPixelFormat* InFormat = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = InSizeX;
 		*cast(int*)&params[4] = InSizeY;
-		*cast(Texture.EPixelFormat*)&params[8] = InFormat;
+		if (InFormat !is null)
+			*cast(Texture.EPixelFormat*)&params[8] = *InFormat;
 		StaticClass.ProcessEvent(Functions.Create, params.ptr, cast(void*)0);
 		return *cast(Texture2D*)&params[12];
 	}

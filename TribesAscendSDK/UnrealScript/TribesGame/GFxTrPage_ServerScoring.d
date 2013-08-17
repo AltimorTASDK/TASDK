@@ -46,10 +46,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ScoreNumber() { mixin(MGPC!(int, 368)()); }
-			int MaxBOunds() { mixin(MGPC!(int, 364)()); }
-			int MinBounds() { mixin(MGPC!(int, 360)()); }
-			int GameType() { mixin(MGPC!(int, 356)()); }
+			int ScoreNumber() { mixin(MGPC!("int", 368)()); }
+			int MaxBOunds() { mixin(MGPC!("int", 364)()); }
+			int MinBounds() { mixin(MGPC!("int", 360)()); }
+			int GameType() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bBoundsPopup() { mixin(MGBPC!(372, 0x8)()); }
 		bool bBoundsPopup(bool val) { mixin(MSBPC!(372, 0x8)()); }

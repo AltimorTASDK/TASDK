@@ -706,9 +706,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Rotator")()); }
 		@property final auto ref
 		{
-			int Pitch() { mixin(MGPS!(int, 0)()); }
-			int Yaw() { mixin(MGPS!(int, 4)()); }
-			int Roll() { mixin(MGPS!(int, 8)()); }
+			int Pitch() { mixin(MGPS!("int", 0)()); }
+			int Yaw() { mixin(MGPS!("int", 4)()); }
+			int Roll() { mixin(MGPS!("int", 8)()); }
 		}
 	}
 	struct Plane
@@ -719,11 +719,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Plane")()); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!(float, 0)()); }
-			float Y() { mixin(MGPS!(float, 4)()); }
-			float Z() { mixin(MGPS!(float, 8)()); }
+			float X() { mixin(MGPS!("float", 0)()); }
+			float Y() { mixin(MGPS!("float", 4)()); }
+			float Z() { mixin(MGPS!("float", 8)()); }
 		}
-		@property final auto ref float W() { mixin(MGPS!(float, 12)()); }
+		@property final auto ref float W() { mixin(MGPS!("float", 12)()); }
 	}
 	struct Vector
 	{
@@ -733,9 +733,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector")()); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!(float, 0)()); }
-			float Y() { mixin(MGPS!(float, 4)()); }
-			float Z() { mixin(MGPS!(float, 8)()); }
+			float X() { mixin(MGPS!("float", 0)()); }
+			float Y() { mixin(MGPS!("float", 4)()); }
+			float Z() { mixin(MGPS!("float", 8)()); }
 		}
 	}
 	struct Guid
@@ -746,10 +746,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Guid")()); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!(int, 0)()); }
-			int B() { mixin(MGPS!(int, 4)()); }
-			int C() { mixin(MGPS!(int, 8)()); }
-			int D() { mixin(MGPS!(int, 12)()); }
+			int A() { mixin(MGPS!("int", 0)()); }
+			int B() { mixin(MGPS!("int", 4)()); }
+			int C() { mixin(MGPS!("int", 8)()); }
+			int D() { mixin(MGPS!("int", 12)()); }
 		}
 	}
 	struct Vector2D
@@ -760,8 +760,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector2D")()); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!(float, 0)()); }
-			float Y() { mixin(MGPS!(float, 4)()); }
+			float X() { mixin(MGPS!("float", 0)()); }
+			float Y() { mixin(MGPS!("float", 4)()); }
 		}
 	}
 	struct Vector4
@@ -772,10 +772,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Vector4")()); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!(float, 0)()); }
-			float Y() { mixin(MGPS!(float, 4)()); }
-			float Z() { mixin(MGPS!(float, 8)()); }
-			float W() { mixin(MGPS!(float, 12)()); }
+			float X() { mixin(MGPS!("float", 0)()); }
+			float Y() { mixin(MGPS!("float", 4)()); }
+			float Z() { mixin(MGPS!("float", 8)()); }
+			float W() { mixin(MGPS!("float", 12)()); }
 		}
 	}
 	struct LinearColor
@@ -786,10 +786,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.LinearColor")()); }
 		@property final auto ref
 		{
-			float R() { mixin(MGPS!(float, 0)()); }
-			float G() { mixin(MGPS!(float, 4)()); }
-			float B() { mixin(MGPS!(float, 8)()); }
-			float A() { mixin(MGPS!(float, 12)()); }
+			float R() { mixin(MGPS!("float", 0)()); }
+			float G() { mixin(MGPS!("float", 4)()); }
+			float B() { mixin(MGPS!("float", 8)()); }
+			float A() { mixin(MGPS!("float", 12)()); }
 		}
 	}
 	struct Color
@@ -800,10 +800,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Color")()); }
 		@property final auto ref
 		{
-			ubyte R() { mixin(MGPS!(ubyte, 2)()); }
-			ubyte G() { mixin(MGPS!(ubyte, 1)()); }
-			ubyte B() { mixin(MGPS!(ubyte, 0)()); }
-			ubyte A() { mixin(MGPS!(ubyte, 3)()); }
+			ubyte R() { mixin(MGPS!("ubyte", 2)()); }
+			ubyte G() { mixin(MGPS!("ubyte", 1)()); }
+			ubyte B() { mixin(MGPS!("ubyte", 0)()); }
+			ubyte A() { mixin(MGPS!("ubyte", 3)()); }
 		}
 	}
 	struct InterpCurveVector2D
@@ -814,8 +814,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector2D")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointVector2D), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointVector2D) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointVector2D)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct InterpCurvePointVector2D
@@ -826,11 +826,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector2D")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			UObject.Vector2D OutVal() { mixin(MGPS!(UObject.Vector2D, 4)()); }
-			UObject.Vector2D ArriveTangent() { mixin(MGPS!(UObject.Vector2D, 12)()); }
-			UObject.Vector2D LeaveTangent() { mixin(MGPS!(UObject.Vector2D, 20)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 28)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			UObject.Vector2D OutVal() { mixin(MGPS!("UObject.Vector2D", 4)()); }
+			UObject.Vector2D ArriveTangent() { mixin(MGPS!("UObject.Vector2D", 12)()); }
+			UObject.Vector2D LeaveTangent() { mixin(MGPS!("UObject.Vector2D", 20)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 28)()); }
 		}
 	}
 	struct InterpCurveFloat
@@ -841,8 +841,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveFloat")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointFloat) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointFloat), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointFloat) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointFloat)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct Cylinder
@@ -853,8 +853,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Cylinder")()); }
 		@property final auto ref
 		{
-			float Radius() { mixin(MGPS!(float, 0)()); }
-			float Height() { mixin(MGPS!(float, 4)()); }
+			float Radius() { mixin(MGPS!("float", 0)()); }
+			float Height() { mixin(MGPS!("float", 4)()); }
 		}
 	}
 	struct InterpCurveVector
@@ -865,8 +865,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveVector")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointVector) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointVector), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointVector) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointVector)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct InterpCurvePointVector
@@ -877,11 +877,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointVector")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			Vector OutVal() { mixin(MGPS!(Vector, 4)()); }
-			Vector ArriveTangent() { mixin(MGPS!(Vector, 16)()); }
-			Vector LeaveTangent() { mixin(MGPS!(Vector, 28)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 40)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			Vector OutVal() { mixin(MGPS!("Vector", 4)()); }
+			Vector ArriveTangent() { mixin(MGPS!("Vector", 16)()); }
+			Vector LeaveTangent() { mixin(MGPS!("Vector", 28)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 40)()); }
 		}
 	}
 	struct InterpCurvePointFloat
@@ -892,11 +892,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointFloat")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			float OutVal() { mixin(MGPS!(float, 4)()); }
-			float ArriveTangent() { mixin(MGPS!(float, 8)()); }
-			float LeaveTangent() { mixin(MGPS!(float, 12)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 16)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			float OutVal() { mixin(MGPS!("float", 4)()); }
+			float ArriveTangent() { mixin(MGPS!("float", 8)()); }
+			float LeaveTangent() { mixin(MGPS!("float", 12)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 16)()); }
 		}
 	}
 	struct Quat
@@ -907,10 +907,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Quat")()); }
 		@property final auto ref
 		{
-			float X() { mixin(MGPS!(float, 0)()); }
-			float Y() { mixin(MGPS!(float, 4)()); }
-			float Z() { mixin(MGPS!(float, 8)()); }
-			float W() { mixin(MGPS!(float, 12)()); }
+			float X() { mixin(MGPS!("float", 0)()); }
+			float Y() { mixin(MGPS!("float", 4)()); }
+			float Z() { mixin(MGPS!("float", 8)()); }
+			float W() { mixin(MGPS!("float", 12)()); }
 		}
 	}
 	struct Matrix
@@ -921,10 +921,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Matrix")()); }
 		@property final auto ref
 		{
-			UObject.Plane XPlane() { mixin(MGPS!(UObject.Plane, 0)()); }
-			UObject.Plane YPlane() { mixin(MGPS!(UObject.Plane, 16)()); }
-			UObject.Plane ZPlane() { mixin(MGPS!(UObject.Plane, 32)()); }
-			UObject.Plane WPlane() { mixin(MGPS!(UObject.Plane, 48)()); }
+			UObject.Plane XPlane() { mixin(MGPS!("UObject.Plane", 0)()); }
+			UObject.Plane YPlane() { mixin(MGPS!("UObject.Plane", 16)()); }
+			UObject.Plane ZPlane() { mixin(MGPS!("UObject.Plane", 32)()); }
+			UObject.Plane WPlane() { mixin(MGPS!("UObject.Plane", 48)()); }
 		}
 	}
 	struct BoxSphereBounds
@@ -935,9 +935,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoxSphereBounds")()); }
 		@property final auto ref
 		{
-			Vector Origin() { mixin(MGPS!(Vector, 0)()); }
-			Vector BoxExtent() { mixin(MGPS!(Vector, 12)()); }
-			float SphereRadius() { mixin(MGPS!(float, 24)()); }
+			Vector Origin() { mixin(MGPS!("Vector", 0)()); }
+			Vector BoxExtent() { mixin(MGPS!("Vector", 12)()); }
+			float SphereRadius() { mixin(MGPS!("float", 24)()); }
 		}
 	}
 	struct TwoVectors
@@ -948,8 +948,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TwoVectors")()); }
 		@property final auto ref
 		{
-			Vector v1() { mixin(MGPS!(Vector, 0)()); }
-			Vector v2() { mixin(MGPS!(Vector, 12)()); }
+			Vector v1() { mixin(MGPS!("Vector", 0)()); }
+			Vector v2() { mixin(MGPS!("Vector", 12)()); }
 		}
 	}
 	struct TAlphaBlend
@@ -960,12 +960,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TAlphaBlend")()); }
 		@property final auto ref
 		{
-			float AlphaIn() { mixin(MGPS!(float, 0)()); }
-			float AlphaOut() { mixin(MGPS!(float, 4)()); }
-			float AlphaTarget() { mixin(MGPS!(float, 8)()); }
-			float BlendTime() { mixin(MGPS!(float, 12)()); }
-			float BlendTimeToGo() { mixin(MGPS!(float, 16)()); }
-			UObject.AlphaBlendType BlendType() { mixin(MGPS!(UObject.AlphaBlendType, 20)()); }
+			float AlphaIn() { mixin(MGPS!("float", 0)()); }
+			float AlphaOut() { mixin(MGPS!("float", 4)()); }
+			float AlphaTarget() { mixin(MGPS!("float", 8)()); }
+			float BlendTime() { mixin(MGPS!("float", 12)()); }
+			float BlendTimeToGo() { mixin(MGPS!("float", 16)()); }
+			UObject.AlphaBlendType BlendType() { mixin(MGPS!("UObject.AlphaBlendType", 20)()); }
 		}
 	}
 	struct BoneAtom
@@ -976,9 +976,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BoneAtom")()); }
 		@property final auto ref
 		{
-			UObject.Quat Rotation() { mixin(MGPS!(UObject.Quat, 0)()); }
-			Vector Translation() { mixin(MGPS!(Vector, 16)()); }
-			float Scale() { mixin(MGPS!(float, 28)()); }
+			UObject.Quat Rotation() { mixin(MGPS!("UObject.Quat", 0)()); }
+			Vector Translation() { mixin(MGPS!("Vector", 16)()); }
+			float Scale() { mixin(MGPS!("float", 28)()); }
 		}
 	}
 	struct OctreeElementId
@@ -989,8 +989,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.OctreeElementId")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Node() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			int ElementIndex() { mixin(MGPS!(int, 4)()); }
+			UObject.Pointer Node() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			int ElementIndex() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	struct RenderCommandFence
@@ -999,7 +999,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence")()); }
-		@property final auto ref int NumPendingFences() { mixin(MGPS!(int, 0)()); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS!("int", 0)()); }
 	}
 	struct Pointer
 	{
@@ -1007,7 +1007,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Pointer")()); }
-		@property final auto ref int Dummy() { mixin(MGPS!(int, 0)()); }
+		@property final auto ref int Dummy() { mixin(MGPS!("int", 0)()); }
 	}
 	struct RawDistribution
 	{
@@ -1017,13 +1017,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RawDistribution")()); }
 		@property final auto ref
 		{
-			ubyte Type() { mixin(MGPS!(ubyte, 0)()); }
-			ubyte Op() { mixin(MGPS!(ubyte, 1)()); }
-			ubyte LookupTableNumElements() { mixin(MGPS!(ubyte, 2)()); }
-			ubyte LookupTableChunkSize() { mixin(MGPS!(ubyte, 3)()); }
-			ScriptArray!(float) LookupTable() { mixin(MGPS!(ScriptArray!(float), 4)()); }
-			float LookupTableTimeScale() { mixin(MGPS!(float, 16)()); }
-			float LookupTableStartTime() { mixin(MGPS!(float, 20)()); }
+			ubyte Type() { mixin(MGPS!("ubyte", 0)()); }
+			ubyte Op() { mixin(MGPS!("ubyte", 1)()); }
+			ubyte LookupTableNumElements() { mixin(MGPS!("ubyte", 2)()); }
+			ubyte LookupTableChunkSize() { mixin(MGPS!("ubyte", 3)()); }
+			ScriptArray!(float) LookupTable() { mixin(MGPS!("ScriptArray!(float)", 4)()); }
+			float LookupTableTimeScale() { mixin(MGPS!("float", 16)()); }
+			float LookupTableStartTime() { mixin(MGPS!("float", 20)()); }
 		}
 	}
 	struct InterpCurveLinearColor
@@ -1034,8 +1034,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveLinearColor")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointLinearColor), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointLinearColor) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointLinearColor)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct InterpCurvePointLinearColor
@@ -1046,11 +1046,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointLinearColor")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			UObject.LinearColor OutVal() { mixin(MGPS!(UObject.LinearColor, 4)()); }
-			UObject.LinearColor ArriveTangent() { mixin(MGPS!(UObject.LinearColor, 20)()); }
-			UObject.LinearColor LeaveTangent() { mixin(MGPS!(UObject.LinearColor, 36)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 52)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			UObject.LinearColor OutVal() { mixin(MGPS!("UObject.LinearColor", 4)()); }
+			UObject.LinearColor ArriveTangent() { mixin(MGPS!("UObject.LinearColor", 20)()); }
+			UObject.LinearColor LeaveTangent() { mixin(MGPS!("UObject.LinearColor", 36)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 52)()); }
 		}
 	}
 	struct InterpCurveQuat
@@ -1061,8 +1061,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveQuat")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointQuat) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointQuat), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointQuat) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointQuat)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct InterpCurvePointQuat
@@ -1073,11 +1073,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointQuat")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			UObject.Quat OutVal() { mixin(MGPS!(UObject.Quat, 16)()); }
-			UObject.Quat ArriveTangent() { mixin(MGPS!(UObject.Quat, 32)()); }
-			UObject.Quat LeaveTangent() { mixin(MGPS!(UObject.Quat, 48)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 64)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			UObject.Quat OutVal() { mixin(MGPS!("UObject.Quat", 16)()); }
+			UObject.Quat ArriveTangent() { mixin(MGPS!("UObject.Quat", 32)()); }
+			UObject.Quat LeaveTangent() { mixin(MGPS!("UObject.Quat", 48)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 64)()); }
 		}
 	}
 	struct InterpCurveTwoVectors
@@ -1088,8 +1088,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurveTwoVectors")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { mixin(MGPS!(ScriptArray!(UObject.InterpCurvePointTwoVectors), 0)()); }
-			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!(UObject.EInterpMethodType, 12)()); }
+			ScriptArray!(UObject.InterpCurvePointTwoVectors) Points() { mixin(MGPS!("ScriptArray!(UObject.InterpCurvePointTwoVectors)", 0)()); }
+			UObject.EInterpMethodType InterpMethod() { mixin(MGPS!("UObject.EInterpMethodType", 12)()); }
 		}
 	}
 	struct InterpCurvePointTwoVectors
@@ -1100,11 +1100,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InterpCurvePointTwoVectors")()); }
 		@property final auto ref
 		{
-			float InVal() { mixin(MGPS!(float, 0)()); }
-			UObject.TwoVectors OutVal() { mixin(MGPS!(UObject.TwoVectors, 4)()); }
-			UObject.TwoVectors ArriveTangent() { mixin(MGPS!(UObject.TwoVectors, 28)()); }
-			UObject.TwoVectors LeaveTangent() { mixin(MGPS!(UObject.TwoVectors, 52)()); }
-			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!(UObject.EInterpCurveMode, 76)()); }
+			float InVal() { mixin(MGPS!("float", 0)()); }
+			UObject.TwoVectors OutVal() { mixin(MGPS!("UObject.TwoVectors", 4)()); }
+			UObject.TwoVectors ArriveTangent() { mixin(MGPS!("UObject.TwoVectors", 28)()); }
+			UObject.TwoVectors LeaveTangent() { mixin(MGPS!("UObject.TwoVectors", 52)()); }
+			UObject.EInterpCurveMode InterpMode() { mixin(MGPS!("UObject.EInterpCurveMode", 76)()); }
 		}
 	}
 	struct Box
@@ -1115,9 +1115,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Box")()); }
 		@property final auto ref
 		{
-			Vector Min() { mixin(MGPS!(Vector, 0)()); }
-			Vector Max() { mixin(MGPS!(Vector, 12)()); }
-			ubyte IsValid() { mixin(MGPS!(ubyte, 24)()); }
+			Vector Min() { mixin(MGPS!("Vector", 0)()); }
+			Vector Max() { mixin(MGPS!("Vector", 12)()); }
+			ubyte IsValid() { mixin(MGPS!("ubyte", 24)()); }
 		}
 	}
 	struct TPOV
@@ -1128,9 +1128,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.TPOV")()); }
 		@property final auto ref
 		{
-			Vector Location() { mixin(MGPS!(Vector, 0)()); }
-			Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
-			float FOV() { mixin(MGPS!(float, 24)()); }
+			Vector Location() { mixin(MGPS!("Vector", 0)()); }
+			Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
+			float FOV() { mixin(MGPS!("float", 24)()); }
 		}
 	}
 	struct SHVectorRGB
@@ -1141,9 +1141,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVectorRGB")()); }
 		@property final auto ref
 		{
-			UObject.SHVector R() { mixin(MGPS!(UObject.SHVector, 0)()); }
-			UObject.SHVector G() { mixin(MGPS!(UObject.SHVector, 48)()); }
-			UObject.SHVector B() { mixin(MGPS!(UObject.SHVector, 96)()); }
+			UObject.SHVector R() { mixin(MGPS!("UObject.SHVector", 0)()); }
+			UObject.SHVector G() { mixin(MGPS!("UObject.SHVector", 48)()); }
+			UObject.SHVector B() { mixin(MGPS!("UObject.SHVector", 96)()); }
 		}
 	}
 	struct SHVector
@@ -1154,8 +1154,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SHVector")()); }
 		@property final auto ref
 		{
-			float V() { mixin(MGPS!(float, 0)()); }
-			float Padding() { mixin(MGPS!(float, 36)()); }
+			float V() { mixin(MGPS!("float", 0)()); }
+			float Padding() { mixin(MGPS!("float", 36)()); }
 		}
 	}
 	struct IntPoint
@@ -1166,8 +1166,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IntPoint")()); }
 		@property final auto ref
 		{
-			int X() { mixin(MGPS!(int, 0)()); }
-			int Y() { mixin(MGPS!(int, 4)()); }
+			int X() { mixin(MGPS!("int", 0)()); }
+			int Y() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	struct InlinePointerArray_Mirror
@@ -1178,8 +1178,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.InlinePointerArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer InlineData() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			UObject.Array_Mirror SecondaryData() { mixin(MGPS!(UObject.Array_Mirror, 4)()); }
+			UObject.Pointer InlineData() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			UObject.Array_Mirror SecondaryData() { mixin(MGPS!("UObject.Array_Mirror", 4)()); }
 		}
 	}
 	struct Array_Mirror
@@ -1190,9 +1190,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Array_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			int ArrayNum() { mixin(MGPS!(int, 4)()); }
-			int ArrayMax() { mixin(MGPS!(int, 8)()); }
+			UObject.Pointer Data() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			int ArrayNum() { mixin(MGPS!("int", 4)()); }
+			int ArrayMax() { mixin(MGPS!("int", 8)()); }
 		}
 	}
 	struct IndirectArray_Mirror
@@ -1203,9 +1203,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.IndirectArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Data() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			int ArrayNum() { mixin(MGPS!(int, 4)()); }
-			int ArrayMax() { mixin(MGPS!(int, 8)()); }
+			UObject.Pointer Data() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			int ArrayNum() { mixin(MGPS!("int", 4)()); }
+			int ArrayMax() { mixin(MGPS!("int", 8)()); }
 		}
 	}
 	struct FColorVertexBuffer_Mirror
@@ -1216,11 +1216,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.FColorVertexBuffer_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			UObject.Pointer VertexData() { mixin(MGPS!(UObject.Pointer, 4)()); }
-			int Data() { mixin(MGPS!(int, 8)()); }
-			int Stride() { mixin(MGPS!(int, 12)()); }
-			int NumVertices() { mixin(MGPS!(int, 16)()); }
+			UObject.Pointer VfTable() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			UObject.Pointer VertexData() { mixin(MGPS!("UObject.Pointer", 4)()); }
+			int Data() { mixin(MGPS!("int", 8)()); }
+			int Stride() { mixin(MGPS!("int", 12)()); }
+			int NumVertices() { mixin(MGPS!("int", 16)()); }
 		}
 	}
 	struct RenderCommandFence_Mirror
@@ -1229,7 +1229,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.RenderCommandFence_Mirror")()); }
-		@property final auto ref int NumPendingFences() { mixin(MGPS!(int, 0)()); }
+		@property final auto ref int NumPendingFences() { mixin(MGPS!("int", 0)()); }
 	}
 	struct UntypedBulkData_Mirror
 	{
@@ -1239,19 +1239,19 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.UntypedBulkData_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer VfTable() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			int BulkDataFlags() { mixin(MGPS!(int, 4)()); }
-			int ElementCount() { mixin(MGPS!(int, 8)()); }
-			int BulkDataOffsetInFile() { mixin(MGPS!(int, 12)()); }
-			int BulkDataSizeOnDisk() { mixin(MGPS!(int, 16)()); }
-			int SavedBulkDataFlags() { mixin(MGPS!(int, 20)()); }
-			int SavedElementCount() { mixin(MGPS!(int, 24)()); }
-			int SavedBulkDataOffsetInFile() { mixin(MGPS!(int, 28)()); }
-			int SavedBulkDataSizeOnDisk() { mixin(MGPS!(int, 32)()); }
-			UObject.Pointer BulkData() { mixin(MGPS!(UObject.Pointer, 36)()); }
-			int LockStatus() { mixin(MGPS!(int, 40)()); }
-			UObject.Pointer AttachedAr() { mixin(MGPS!(UObject.Pointer, 44)()); }
-			int bShouldFreeOnEmpty() { mixin(MGPS!(int, 48)()); }
+			UObject.Pointer VfTable() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			int BulkDataFlags() { mixin(MGPS!("int", 4)()); }
+			int ElementCount() { mixin(MGPS!("int", 8)()); }
+			int BulkDataOffsetInFile() { mixin(MGPS!("int", 12)()); }
+			int BulkDataSizeOnDisk() { mixin(MGPS!("int", 16)()); }
+			int SavedBulkDataFlags() { mixin(MGPS!("int", 20)()); }
+			int SavedElementCount() { mixin(MGPS!("int", 24)()); }
+			int SavedBulkDataOffsetInFile() { mixin(MGPS!("int", 28)()); }
+			int SavedBulkDataSizeOnDisk() { mixin(MGPS!("int", 32)()); }
+			UObject.Pointer BulkData() { mixin(MGPS!("UObject.Pointer", 36)()); }
+			int LockStatus() { mixin(MGPS!("int", 40)()); }
+			UObject.Pointer AttachedAr() { mixin(MGPS!("UObject.Pointer", 44)()); }
+			int bShouldFreeOnEmpty() { mixin(MGPS!("int", 48)()); }
 		}
 	}
 	struct MultiMap_Mirror
@@ -1260,7 +1260,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.MultiMap_Mirror")()); }
-		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!(UObject.Set_Mirror, 0)()); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!("UObject.Set_Mirror", 0)()); }
 	}
 	struct Map_Mirror
 	{
@@ -1268,7 +1268,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Map_Mirror")()); }
-		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!(UObject.Set_Mirror, 0)()); }
+		@property final auto ref UObject.Set_Mirror Pairs() { mixin(MGPS!("UObject.Set_Mirror", 0)()); }
 	}
 	struct Set_Mirror
 	{
@@ -1278,10 +1278,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Set_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.SparseArray_Mirror Elements() { mixin(MGPS!(UObject.SparseArray_Mirror, 0)()); }
-			UObject.Pointer Hash() { mixin(MGPS!(UObject.Pointer, 48)()); }
-			int InlineHash() { mixin(MGPS!(int, 52)()); }
-			int HashSize() { mixin(MGPS!(int, 56)()); }
+			UObject.SparseArray_Mirror Elements() { mixin(MGPS!("UObject.SparseArray_Mirror", 0)()); }
+			UObject.Pointer Hash() { mixin(MGPS!("UObject.Pointer", 48)()); }
+			int InlineHash() { mixin(MGPS!("int", 52)()); }
+			int HashSize() { mixin(MGPS!("int", 56)()); }
 		}
 	}
 	struct SparseArray_Mirror
@@ -1292,10 +1292,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.SparseArray_Mirror")()); }
 		@property final auto ref
 		{
-			ScriptArray!(int) Elements() { mixin(MGPS!(ScriptArray!(int), 0)()); }
-			UObject.BitArray_Mirror AllocationFlags() { mixin(MGPS!(UObject.BitArray_Mirror, 12)()); }
-			int FirstFreeIndex() { mixin(MGPS!(int, 40)()); }
-			int NumFreeIndices() { mixin(MGPS!(int, 44)()); }
+			ScriptArray!(int) Elements() { mixin(MGPS!("ScriptArray!(int)", 0)()); }
+			UObject.BitArray_Mirror AllocationFlags() { mixin(MGPS!("UObject.BitArray_Mirror", 12)()); }
+			int FirstFreeIndex() { mixin(MGPS!("int", 40)()); }
+			int NumFreeIndices() { mixin(MGPS!("int", 44)()); }
 		}
 	}
 	struct BitArray_Mirror
@@ -1306,10 +1306,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.BitArray_Mirror")()); }
 		@property final auto ref
 		{
-			UObject.Pointer IndirectData() { mixin(MGPS!(UObject.Pointer, 0)()); }
-			int InlineData() { mixin(MGPS!(int, 4)()); }
-			int NumBits() { mixin(MGPS!(int, 20)()); }
-			int MaxBits() { mixin(MGPS!(int, 24)()); }
+			UObject.Pointer IndirectData() { mixin(MGPS!("UObject.Pointer", 0)()); }
+			int InlineData() { mixin(MGPS!("int", 4)()); }
+			int NumBits() { mixin(MGPS!("int", 20)()); }
+			int MaxBits() { mixin(MGPS!("int", 24)()); }
 		}
 	}
 	struct ThreadSafeCounter
@@ -1318,7 +1318,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.ThreadSafeCounter")()); }
-		@property final auto ref int Value() { mixin(MGPS!(int, 0)()); }
+		@property final auto ref int Value() { mixin(MGPS!("int", 0)()); }
 	}
 	struct Double
 	{
@@ -1328,8 +1328,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.Double")()); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!(int, 0)()); }
-			int B() { mixin(MGPS!(int, 4)()); }
+			int A() { mixin(MGPS!("int", 0)()); }
+			int B() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	struct QWord
@@ -1340,25 +1340,25 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.Object.QWord")()); }
 		@property final auto ref
 		{
-			int A() { mixin(MGPS!(int, 0)()); }
-			int B() { mixin(MGPS!(int, 4)()); }
+			int A() { mixin(MGPS!("int", 0)()); }
+			int B() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	@property final auto ref
 	{
-		UObject Outer() { mixin(MGPC!(UObject, 40)()); }
-		ScriptName Name() { mixin(MGPC!(ScriptName, 44)()); }
-		UObject.Pointer VfTableObject() { mixin(MGPC!(UObject.Pointer, 0)()); }
-		int ObjectInternalInteger() { mixin(MGPC!(int, 4)()); }
-		QWord ObjectFlags() { mixin(MGPC!(QWord, 8)()); }
-		UObject.Pointer HashNext() { mixin(MGPC!(UObject.Pointer, 16)()); }
-		UObject.Pointer HashOuterNext() { mixin(MGPC!(UObject.Pointer, 20)()); }
-		UObject.Pointer StateFrame() { mixin(MGPC!(UObject.Pointer, 24)()); }
+		UObject Outer() { mixin(MGPC!("UObject", 40)()); }
+		ScriptName Name() { mixin(MGPC!("ScriptName", 44)()); }
+		UObject.Pointer VfTableObject() { mixin(MGPC!("UObject.Pointer", 0)()); }
+		int ObjectInternalInteger() { mixin(MGPC!("int", 4)()); }
+		QWord ObjectFlags() { mixin(MGPC!("QWord", 8)()); }
+		UObject.Pointer HashNext() { mixin(MGPC!("UObject.Pointer", 16)()); }
+		UObject.Pointer HashOuterNext() { mixin(MGPC!("UObject.Pointer", 20)()); }
+		UObject.Pointer StateFrame() { mixin(MGPC!("UObject.Pointer", 24)()); }
 		// WARNING: Property 'Linker' has the same name as a defined type!
-		UObject.Pointer LinkerIndex() { mixin(MGPC!(UObject.Pointer, 32)()); }
-		int NetIndex() { mixin(MGPC!(int, 36)()); }
+		UObject.Pointer LinkerIndex() { mixin(MGPC!("UObject.Pointer", 32)()); }
+		int NetIndex() { mixin(MGPC!("int", 36)()); }
 		// WARNING: Property 'Class' has the same name as a defined type!
-		UObject ObjectArchetype() { mixin(MGPC!(UObject, 56)()); }
+		UObject ObjectArchetype() { mixin(MGPC!("UObject", 56)()); }
 	}
 final:
 	int GetBuildChangelistNumber()
@@ -1388,14 +1388,14 @@ final:
 		*cast(int*)&params[24] = Sec;
 		*cast(int*)&params[28] = MSec;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSystemTime, params.ptr, cast(void*)0);
-		*Year = *cast(int*)params.ptr;
-		*Month = *cast(int*)&params[4];
-		*DayOfWeek = *cast(int*)&params[8];
-		*Day = *cast(int*)&params[12];
-		*Hour = *cast(int*)&params[16];
-		*Min = *cast(int*)&params[20];
-		*Sec = *cast(int*)&params[24];
-		*MSec = *cast(int*)&params[28];
+		Year = *cast(int*)params.ptr;
+		Month = *cast(int*)&params[4];
+		DayOfWeek = *cast(int*)&params[8];
+		Day = *cast(int*)&params[12];
+		Hour = *cast(int*)&params[16];
+		Min = *cast(int*)&params[20];
+		Sec = *cast(int*)&params[24];
+		MSec = *cast(int*)&params[28];
 	}
 	ScriptString TimeStamp()
 	{
@@ -1404,13 +1404,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.TimeStamp, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	Vector TransformVectorByRotation(Rotator SourceRotation, Vector SourceVector, bool bInverse)
+	Vector TransformVectorByRotation(Rotator SourceRotation, Vector SourceVector, bool* bInverse = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = SourceRotation;
 		*cast(Vector*)&params[12] = SourceVector;
-		*cast(bool*)&params[24] = bInverse;
+		if (bInverse !is null)
+			*cast(bool*)&params[24] = *bInverse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TransformVectorByRotation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[28];
 	}
@@ -1428,21 +1429,23 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsPendingKill, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	float ByteToFloat(ubyte inputByte, bool bSigned)
+	float ByteToFloat(ubyte inputByte, bool* bSigned = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = inputByte;
-		*cast(bool*)&params[4] = bSigned;
+		if (bSigned !is null)
+			*cast(bool*)&params[4] = *bSigned;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ByteToFloat, params.ptr, cast(void*)0);
 		return *cast(float*)&params[8];
 	}
-	ubyte FloatToByte(float inputFloat, bool bSigned)
+	ubyte FloatToByte(float inputFloat, bool* bSigned = null)
 	{
 		ubyte params[9];
 		params[] = 0;
 		*cast(float*)params.ptr = inputFloat;
-		*cast(bool*)&params[4] = bSigned;
+		if (bSigned !is null)
+			*cast(bool*)&params[4] = *bSigned;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FloatToByte, params.ptr, cast(void*)0);
 		return params[8];
 	}
@@ -1477,7 +1480,7 @@ final:
 		params[] = 0;
 		*cast(UObject.Vector2D*)params.ptr = OutFOV;
 		StaticClass.ProcessEvent(Functions.GetAngularDegreesFromRadians, params.ptr, cast(void*)0);
-		*OutFOV = *cast(UObject.Vector2D*)params.ptr;
+		OutFOV = *cast(UObject.Vector2D*)params.ptr;
 	}
 	static float Acos(float A)
 	{
@@ -1494,7 +1497,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = OutAngDist;
 		*cast(UObject.Vector2D*)&params[8] = DotDist;
 		StaticClass.ProcessEvent(Functions.GetAngularFromDotDist, params.ptr, cast(void*)0);
-		*OutAngDist = *cast(UObject.Vector2D*)params.ptr;
+		OutAngDist = *cast(UObject.Vector2D*)params.ptr;
 	}
 	static bool GetAngularDistance(ref UObject.Vector2D OutAngularDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
 	{
@@ -1506,7 +1509,7 @@ final:
 		*cast(Vector*)&params[32] = AxisY;
 		*cast(Vector*)&params[44] = AxisZ;
 		StaticClass.ProcessEvent(Functions.GetAngularDistance, params.ptr, cast(void*)0);
-		*OutAngularDist = *cast(UObject.Vector2D*)params.ptr;
+		OutAngularDist = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(bool*)&params[56];
 	}
 	static bool GetDotDistance(ref UObject.Vector2D OutDotDist, Vector Direction, Vector AxisX, Vector AxisY, Vector AxisZ)
@@ -1519,7 +1522,7 @@ final:
 		*cast(Vector*)&params[32] = AxisY;
 		*cast(Vector*)&params[44] = AxisZ;
 		StaticClass.ProcessEvent(Functions.GetDotDistance, params.ptr, cast(void*)0);
-		*OutDotDist = *cast(UObject.Vector2D*)params.ptr;
+		OutDotDist = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(bool*)&params[56];
 	}
 	static Vector PointProjectToPlane(Vector Point, Vector A, Vector B, Vector C)
@@ -1533,52 +1536,60 @@ final:
 		StaticClass.ProcessEvent(Functions.PointProjectToPlane, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[48];
 	}
-	float PointDistToPlane(Vector Point, Rotator Orientation, Vector Origin, Vector* out_ClosestPoint)
+	float PointDistToPlane(Vector Point, Rotator Orientation, Vector Origin, Vector* out_ClosestPoint = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
 		*cast(Rotator*)&params[12] = Orientation;
 		*cast(Vector*)&params[24] = Origin;
-		*cast(Vector*)&params[36] = out_ClosestPoint;
+		if (out_ClosestPoint !is null)
+			*cast(Vector*)&params[36] = *out_ClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToPlane, params.ptr, cast(void*)0);
-		*out_ClosestPoint = *cast(Vector*)&params[36];
+		if (out_ClosestPoint !is null)
+			*out_ClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
 	}
-	float PointDistToSegment(Vector Point, Vector StartPoint, Vector EndPoint, Vector* OutClosestPoint)
+	float PointDistToSegment(Vector Point, Vector StartPoint, Vector EndPoint, Vector* OutClosestPoint = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
 		*cast(Vector*)&params[12] = StartPoint;
 		*cast(Vector*)&params[24] = EndPoint;
-		*cast(Vector*)&params[36] = OutClosestPoint;
+		if (OutClosestPoint !is null)
+			*cast(Vector*)&params[36] = *OutClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToSegment, params.ptr, cast(void*)0);
-		*OutClosestPoint = *cast(Vector*)&params[36];
+		if (OutClosestPoint !is null)
+			*OutClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
 	}
-	float PointDistToLine(Vector Point, Vector Line, Vector Origin, Vector* OutClosestPoint)
+	float PointDistToLine(Vector Point, Vector Line, Vector Origin, Vector* OutClosestPoint = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
 		*cast(Vector*)&params[12] = Line;
 		*cast(Vector*)&params[24] = Origin;
-		*cast(Vector*)&params[36] = OutClosestPoint;
+		if (OutClosestPoint !is null)
+			*cast(Vector*)&params[36] = *OutClosestPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointDistToLine, params.ptr, cast(void*)0);
-		*OutClosestPoint = *cast(Vector*)&params[36];
+		if (OutClosestPoint !is null)
+			*OutClosestPoint = *cast(Vector*)&params[36];
 		return *cast(float*)&params[48];
 	}
-	static bool GetPerObjectConfigSections(ScriptClass SearchClass, ref ScriptArray!(ScriptString) out_SectionNames, UObject ObjectOuter, int MaxResults)
+	static bool GetPerObjectConfigSections(ScriptClass SearchClass, ref ScriptArray!(ScriptString) out_SectionNames, UObject* ObjectOuter = null, int* MaxResults = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = SearchClass;
 		*cast(ScriptArray!(ScriptString)*)&params[4] = out_SectionNames;
-		*cast(UObject*)&params[16] = ObjectOuter;
-		*cast(int*)&params[20] = MaxResults;
+		if (ObjectOuter !is null)
+			*cast(UObject*)&params[16] = *ObjectOuter;
+		if (MaxResults !is null)
+			*cast(int*)&params[20] = *MaxResults;
 		StaticClass.ProcessEvent(Functions.GetPerObjectConfigSections, params.ptr, cast(void*)0);
-		*out_SectionNames = *cast(ScriptArray!(ScriptString)*)&params[4];
+		out_SectionNames = *cast(ScriptArray!(ScriptString)*)&params[4];
 		return *cast(bool*)&params[24];
 	}
 	static void StaticSaveConfig()
@@ -1598,13 +1609,14 @@ final:
 		StaticClass.ProcessEvent(Functions.FindObject, params.ptr, cast(void*)0);
 		return *cast(UObject*)&params[16];
 	}
-	static UObject DynamicLoadObject(ScriptString ObjectName, ScriptClass ObjectClass, bool MayFail)
+	static UObject DynamicLoadObject(ScriptString ObjectName, ScriptClass ObjectClass, bool* MayFail = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = ObjectName;
 		*cast(ScriptClass*)&params[12] = ObjectClass;
-		*cast(bool*)&params[16] = MayFail;
+		if (MayFail !is null)
+			*cast(bool*)&params[16] = *MayFail;
 		StaticClass.ProcessEvent(Functions.DynamicLoadObject, params.ptr, cast(void*)0);
 		return *cast(UObject*)&params[20];
 	}
@@ -1665,19 +1677,21 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DumpStateStack, cast(void*)0, cast(void*)0);
 	}
-	void PopState(bool bPopAll)
+	void PopState(bool* bPopAll = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPopAll;
+		if (bPopAll !is null)
+			*cast(bool*)params.ptr = *bPopAll;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopState, params.ptr, cast(void*)0);
 	}
-	void PushState(ScriptName NewState, ScriptName NewLabel)
+	void PushState(ScriptName NewState, ScriptName* NewLabel = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = NewState;
-		*cast(ScriptName*)&params[8] = NewLabel;
+		if (NewLabel !is null)
+			*cast(ScriptName*)&params[8] = *NewLabel;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PushState, params.ptr, cast(void*)0);
 	}
 	ScriptName GetStateName()
@@ -1696,23 +1710,28 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsChildState, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool IsInState(ScriptName TestState, bool bTestStateStack)
+	bool IsInState(ScriptName TestState, bool* bTestStateStack = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = TestState;
-		*cast(bool*)&params[8] = bTestStateStack;
+		if (bTestStateStack !is null)
+			*cast(bool*)&params[8] = *bTestStateStack;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsInState, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	void GotoState(ScriptName NewState, ScriptName Label, bool bForceEvents, bool bKeepStack)
+	void GotoState(ScriptName* NewState = null, ScriptName* Label = null, bool* bForceEvents = null, bool* bKeepStack = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = NewState;
-		*cast(ScriptName*)&params[8] = Label;
-		*cast(bool*)&params[16] = bForceEvents;
-		*cast(bool*)&params[20] = bKeepStack;
+		if (NewState !is null)
+			*cast(ScriptName*)params.ptr = *NewState;
+		if (Label !is null)
+			*cast(ScriptName*)&params[8] = *Label;
+		if (bForceEvents !is null)
+			*cast(bool*)&params[16] = *bForceEvents;
+		if (bKeepStack !is null)
+			*cast(bool*)&params[20] = *bKeepStack;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GotoState, params.ptr, cast(void*)0);
 	}
 	static bool IsUTracing()
@@ -1736,12 +1755,14 @@ final:
 		StaticClass.ProcessEvent(Functions.GetFuncName, params.ptr, cast(void*)0);
 		return *cast(ScriptName*)params.ptr;
 	}
-	static void DebugBreak(int UserFlags, UObject.EDebugBreakType DebuggerType)
+	static void DebugBreak(int* UserFlags = null, UObject.EDebugBreakType* DebuggerType = null)
 	{
 		ubyte params[5];
 		params[] = 0;
-		*cast(int*)params.ptr = UserFlags;
-		*cast(UObject.EDebugBreakType*)&params[4] = DebuggerType;
+		if (UserFlags !is null)
+			*cast(int*)params.ptr = *UserFlags;
+		if (DebuggerType !is null)
+			*cast(UObject.EDebugBreakType*)&params[4] = *DebuggerType;
 		StaticClass.ProcessEvent(Functions.DebugBreak, params.ptr, cast(void*)0);
 	}
 	static ScriptString GetScriptTrace()
@@ -1782,7 +1803,7 @@ final:
 		*cast(ScriptString*)&params[24] = delim;
 		*cast(bool*)&params[36] = bCullEmpty;
 		StaticClass.ProcessEvent(Functions.ParseStringIntoArray, params.ptr, cast(void*)0);
-		*Pieces = *cast(ScriptArray!(ScriptString)*)&params[12];
+		Pieces = *cast(ScriptArray!(ScriptString)*)&params[12];
 	}
 	static void WarnInternal(ScriptString S)
 	{
@@ -1791,12 +1812,13 @@ final:
 		*cast(ScriptString*)params.ptr = S;
 		StaticClass.ProcessEvent(Functions.WarnInternal, params.ptr, cast(void*)0);
 	}
-	static void LogInternal(ScriptString S, ScriptName Tag)
+	static void LogInternal(ScriptString S, ScriptName* Tag = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
-		*cast(ScriptName*)&params[12] = Tag;
+		if (Tag !is null)
+			*cast(ScriptName*)&params[12] = *Tag;
 		StaticClass.ProcessEvent(Functions.LogInternal, params.ptr, cast(void*)0);
 	}
 	static UObject.LinearColor Subtract_LinearColorLinearColor(UObject.LinearColor A, UObject.LinearColor B)
@@ -1846,14 +1868,15 @@ final:
 		StaticClass.ProcessEvent(Functions.LerpColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[12];
 	}
-	static UObject.Color MakeColor(ubyte R, ubyte G, ubyte B, ubyte A)
+	static UObject.Color MakeColor(ubyte R, ubyte G, ubyte B, ubyte* A = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		params[0] = R;
 		params[1] = G;
 		params[2] = B;
-		params[3] = A;
+		if (A !is null)
+			params[3] = *A;
 		StaticClass.ProcessEvent(Functions.MakeColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[4];
 	}
@@ -1964,7 +1987,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(UObject.Vector2D*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_Vector2DVector2D, params.ptr, cast(void*)0);
-		*A = *cast(UObject.Vector2D*)params.ptr;
+		A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[16];
 	}
 	static UObject.Vector2D AddEqual_Vector2DVector2D(ref UObject.Vector2D A, UObject.Vector2D B)
@@ -1974,7 +1997,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(UObject.Vector2D*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_Vector2DVector2D, params.ptr, cast(void*)0);
-		*A = *cast(UObject.Vector2D*)params.ptr;
+		A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[16];
 	}
 	static UObject.Vector2D DivideEqual_Vector2DFloat(ref UObject.Vector2D A, float B)
@@ -1984,7 +2007,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(float*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_Vector2DFloat, params.ptr, cast(void*)0);
-		*A = *cast(UObject.Vector2D*)params.ptr;
+		A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[12];
 	}
 	static UObject.Vector2D MultiplyEqual_Vector2DFloat(ref UObject.Vector2D A, float B)
@@ -1994,7 +2017,7 @@ final:
 		*cast(UObject.Vector2D*)params.ptr = A;
 		*cast(float*)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_Vector2DFloat, params.ptr, cast(void*)0);
-		*A = *cast(UObject.Vector2D*)params.ptr;
+		A = *cast(UObject.Vector2D*)params.ptr;
 		return *cast(UObject.Vector2D*)&params[12];
 	}
 	static UObject.Vector2D Divide_Vector2DFloat(UObject.Vector2D A, float B)
@@ -2051,14 +2074,15 @@ final:
 		StaticClass.ProcessEvent(Functions.Add_QuatQuat, params.ptr, cast(void*)0);
 		return *cast(UObject.Quat*)&params[32];
 	}
-	static UObject.Quat QuatSlerp(UObject.Quat A, UObject.Quat B, float Alpha, bool bShortestPath)
+	static UObject.Quat QuatSlerp(UObject.Quat A, UObject.Quat B, float Alpha, bool* bShortestPath = null)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(UObject.Quat*)params.ptr = A;
 		*cast(UObject.Quat*)&params[16] = B;
 		*cast(float*)&params[32] = Alpha;
-		*cast(bool*)&params[36] = bShortestPath;
+		if (bShortestPath !is null)
+			*cast(bool*)&params[36] = *bShortestPath;
 		StaticClass.ProcessEvent(Functions.QuatSlerp, params.ptr, cast(void*)0);
 		return *cast(UObject.Quat*)&params[48];
 	}
@@ -2313,26 +2337,30 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.PathName, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[4];
 	}
-	static ScriptArray!(ScriptString) SplitString(ScriptString Source, ScriptString Delimiter, bool bCullEmpty)
+	static ScriptArray!(ScriptString) SplitString(ScriptString Source, ScriptString* Delimiter = null, bool* bCullEmpty = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Source;
-		*cast(ScriptString*)&params[12] = Delimiter;
-		*cast(bool*)&params[24] = bCullEmpty;
+		if (Delimiter !is null)
+			*cast(ScriptString*)&params[12] = *Delimiter;
+		if (bCullEmpty !is null)
+			*cast(bool*)&params[24] = *bCullEmpty;
 		StaticClass.ProcessEvent(Functions.SplitString, params.ptr, cast(void*)0);
 		return *cast(ScriptArray!(ScriptString)*)&params[28];
 	}
-	static void JoinArray(ScriptArray!(ScriptString) StringArray, ref ScriptString out_Result, ScriptString delim, bool bIgnoreBlanks)
+	static void JoinArray(ScriptArray!(ScriptString) StringArray, ref ScriptString out_Result, ScriptString* delim = null, bool* bIgnoreBlanks = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = StringArray;
 		*cast(ScriptString*)&params[12] = out_Result;
-		*cast(ScriptString*)&params[24] = delim;
-		*cast(bool*)&params[36] = bIgnoreBlanks;
+		if (delim !is null)
+			*cast(ScriptString*)&params[24] = *delim;
+		if (bIgnoreBlanks !is null)
+			*cast(bool*)&params[36] = *bIgnoreBlanks;
 		StaticClass.ProcessEvent(Functions.JoinArray, params.ptr, cast(void*)0);
-		*out_Result = *cast(ScriptString*)&params[12];
+		out_Result = *cast(ScriptString*)&params[12];
 	}
 	static ScriptString GetRightMost(ScriptString Text)
 	{
@@ -2349,27 +2377,29 @@ void**)&params[8] = B;
 		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.ConcatEqual_StrStr, params.ptr, cast(void*)0);
-		*A = *cast(ScriptString*)params.ptr;
+		A = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[24];
 	}
-	static ScriptString Split(ScriptString Text, ScriptString SplitStr, bool bOmitSplitStr)
+	static ScriptString Split(ScriptString Text, ScriptString SplitStr, bool* bOmitSplitStr = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
 		*cast(ScriptString*)&params[12] = SplitStr;
-		*cast(bool*)&params[24] = bOmitSplitStr;
+		if (bOmitSplitStr !is null)
+			*cast(bool*)&params[24] = *bOmitSplitStr;
 		StaticClass.ProcessEvent(Functions.Split, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[28];
 	}
-	static ScriptString Repl(ScriptString Src, ScriptString Match, ScriptString With, bool bCaseSensitive)
+	static ScriptString Repl(ScriptString Src, ScriptString Match, ScriptString With, bool* bCaseSensitive = null)
 	{
 		ubyte params[52];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Src;
 		*cast(ScriptString*)&params[12] = Match;
 		*cast(ScriptString*)&params[24] = With;
-		*cast(bool*)&params[36] = bCaseSensitive;
+		if (bCaseSensitive !is null)
+			*cast(bool*)&params[36] = *bCaseSensitive;
 		StaticClass.ProcessEvent(Functions.Repl, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[40];
 	}
@@ -2423,25 +2453,29 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.Left, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
-	static ScriptString Mid(ScriptString S, int I, int J)
+	static ScriptString Mid(ScriptString S, int I, int* J = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
 		*cast(int*)&params[12] = I;
-		*cast(int*)&params[16] = J;
+		if (J !is null)
+			*cast(int*)&params[16] = *J;
 		StaticClass.ProcessEvent(Functions.Mid, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	static int InStr(ScriptString S, ScriptString T, bool bSearchFromRight, bool bIgnoreCase, int StartPos)
+	static int InStr(ScriptString S, ScriptString T, bool* bSearchFromRight = null, bool* bIgnoreCase = null, int* StartPos = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
 		*cast(ScriptString*)&params[12] = T;
-		*cast(bool*)&params[24] = bSearchFromRight;
-		*cast(bool*)&params[28] = bIgnoreCase;
-		*cast(int*)&params[32] = StartPos;
+		if (bSearchFromRight !is null)
+			*cast(bool*)&params[24] = *bSearchFromRight;
+		if (bIgnoreCase !is null)
+			*cast(bool*)&params[28] = *bIgnoreCase;
+		if (StartPos !is null)
+			*cast(int*)&params[32] = *StartPos;
 		StaticClass.ProcessEvent(Functions.InStr, params.ptr, cast(void*)0);
 		return *cast(int*)&params[36];
 	}
@@ -2460,7 +2494,7 @@ void**)&params[8] = B;
 		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_StrStr, params.ptr, cast(void*)0);
-		*A = *cast(ScriptString*)params.ptr;
+		A = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[24];
 	}
 	static ScriptString AtEqual_StrStr(ref ScriptString A, ScriptString B)
@@ -2470,7 +2504,7 @@ void**)&params[8] = B;
 		*cast(ScriptString*)params.ptr = A;
 		*cast(ScriptString*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AtEqual_StrStr, params.ptr, cast(void*)0);
-		*A = *cast(ScriptString*)params.ptr;
+		A = *cast(ScriptString*)params.ptr;
 		return *cast(ScriptString*)&params[24];
 	}
 	static bool ComplementEqual_StrStr(ScriptString A, ScriptString B)
@@ -2575,7 +2609,7 @@ void**)&params[8] = B;
 		*cast(int*)&params[16] = MinLimit;
 		*cast(float*)&params[20] = InterpolationSpeed;
 		StaticClass.ProcessEvent(Functions.SClampRotAxis, params.ptr, cast(void*)0);
-		*out_DeltaViewAxis = *cast(int*)&params[8];
+		out_DeltaViewAxis = *cast(int*)&params[8];
 		return *cast(bool*)&params[24];
 	}
 	static int ClampRotAxisFromRange(int Current, int Min, int Max)
@@ -2626,7 +2660,7 @@ void**)&params[8] = B;
 		*cast(int*)&params[8] = MaxLimit;
 		*cast(int*)&params[12] = MinLimit;
 		StaticClass.ProcessEvent(Functions.ClampRotAxis, params.ptr, cast(void*)0);
-		*out_DeltaViewAxis = *cast(int*)&params[4];
+		out_DeltaViewAxis = *cast(int*)&params[4];
 	}
 	static float RSize(Rotator R)
 	{
@@ -2645,7 +2679,7 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.RDiff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[24];
 	}
-	static Rotator RInterpTo(Rotator Current, Rotator Target, float DeltaTime, float InterpSpeed, bool bConstantInterpSpeed)
+	static Rotator RInterpTo(Rotator Current, Rotator Target, float DeltaTime, float InterpSpeed, bool* bConstantInterpSpeed = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -2653,7 +2687,8 @@ void**)&params[8] = B;
 		*cast(Rotator*)&params[12] = Target;
 		*cast(float*)&params[24] = DeltaTime;
 		*cast(float*)&params[28] = InterpSpeed;
-		*cast(bool*)&params[32] = bConstantInterpSpeed;
+		if (bConstantInterpSpeed !is null)
+			*cast(bool*)&params[32] = *bConstantInterpSpeed;
 		StaticClass.ProcessEvent(Functions.RInterpTo, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[36];
 	}
@@ -2666,25 +2701,27 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.RTransform, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[24];
 	}
-	static Rotator RSmerp(Rotator A, Rotator B, float Alpha, bool bShortestPath)
+	static Rotator RSmerp(Rotator A, Rotator B, float Alpha, bool* bShortestPath = null)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		*cast(float*)&params[24] = Alpha;
-		*cast(bool*)&params[28] = bShortestPath;
+		if (bShortestPath !is null)
+			*cast(bool*)&params[28] = *bShortestPath;
 		StaticClass.ProcessEvent(Functions.RSmerp, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[32];
 	}
-	static Rotator RLerp(Rotator A, Rotator B, float Alpha, bool bShortestPath)
+	static Rotator RLerp(Rotator A, Rotator B, float Alpha, bool* bShortestPath = null)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		*cast(float*)&params[24] = Alpha;
-		*cast(bool*)&params[28] = bShortestPath;
+		if (bShortestPath !is null)
+			*cast(bool*)&params[28] = *bShortestPath;
 		StaticClass.ProcessEvent(Functions.RLerp, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[32];
 	}
@@ -2706,11 +2743,12 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.OrthoRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[36];
 	}
-	static Rotator RotRand(bool bRoll)
+	static Rotator RotRand(bool* bRoll = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRoll;
+		if (bRoll !is null)
+			*cast(bool*)params.ptr = *bRoll;
 		StaticClass.ProcessEvent(Functions.RotRand, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[4];
 	}
@@ -2732,9 +2770,9 @@ void**)&params[8] = B;
 		*cast(Vector*)&params[24] = Y;
 		*cast(Vector*)&params[36] = Z;
 		StaticClass.ProcessEvent(Functions.GetUnAxes, params.ptr, cast(void*)0);
-		*X = *cast(Vector*)&params[12];
-		*Y = *cast(Vector*)&params[24];
-		*Z = *cast(Vector*)&params[36];
+		X = *cast(Vector*)&params[12];
+		Y = *cast(Vector*)&params[24];
+		Z = *cast(Vector*)&params[36];
 	}
 	static void GetAxes(Rotator A, ref Vector X, ref Vector Y, ref Vector Z)
 	{
@@ -2745,9 +2783,9 @@ void**)&params[8] = B;
 		*cast(Vector*)&params[24] = Y;
 		*cast(Vector*)&params[36] = Z;
 		StaticClass.ProcessEvent(Functions.GetAxes, params.ptr, cast(void*)0);
-		*X = *cast(Vector*)&params[12];
-		*Y = *cast(Vector*)&params[24];
-		*Z = *cast(Vector*)&params[36];
+		X = *cast(Vector*)&params[12];
+		Y = *cast(Vector*)&params[24];
+		Z = *cast(Vector*)&params[36];
 	}
 	static bool ClockwiseFrom_IntInt(int A, int B)
 	{
@@ -2765,7 +2803,7 @@ void**)&params[8] = B;
 		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_RotatorRotator, params.ptr, cast(void*)0);
-		*A = *cast(Rotator*)params.ptr;
+		A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[24];
 	}
 	static Rotator AddEqual_RotatorRotator(ref Rotator A, Rotator B)
@@ -2775,7 +2813,7 @@ void**)&params[8] = B;
 		*cast(Rotator*)params.ptr = A;
 		*cast(Rotator*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_RotatorRotator, params.ptr, cast(void*)0);
-		*A = *cast(Rotator*)params.ptr;
+		A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[24];
 	}
 	static Rotator Subtract_RotatorRotator(Rotator A, Rotator B)
@@ -2803,7 +2841,7 @@ void**)&params[8] = B;
 		*cast(Rotator*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_RotatorFloat, params.ptr, cast(void*)0);
-		*A = *cast(Rotator*)params.ptr;
+		A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[16];
 	}
 	static Rotator MultiplyEqual_RotatorFloat(ref Rotator A, float B)
@@ -2813,7 +2851,7 @@ void**)&params[8] = B;
 		*cast(Rotator*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_RotatorFloat, params.ptr, cast(void*)0);
-		*A = *cast(Rotator*)params.ptr;
+		A = *cast(Rotator*)params.ptr;
 		return *cast(Rotator*)&params[16];
 	}
 	static Rotator Divide_RotatorFloat(Rotator A, float B)
@@ -2861,7 +2899,7 @@ void**)&params[8] = B;
 		StaticClass.ProcessEvent(Functions.EqualEqual_RotatorRotator, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool InCylinder(Vector Origin, Rotator Dir, float Width, Vector A, bool bIgnoreZ)
+	bool InCylinder(Vector Origin, Rotator Dir, float Width, Vector A, bool* bIgnoreZ = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -2869,7 +2907,8 @@ void**)&params[8] = B;
 		*cast(Rotator*)&params[12] = Dir;
 		*cast(float*)&params[24] = Width;
 		*cast(Vector*)&params[28] = A;
-		*cast(bool*)&params[40] = bIgnoreZ;
+		if (bIgnoreZ !is null)
+			*cast(bool*)&params[40] = *bIgnoreZ;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InCylinder, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[44];
 	}
@@ -3021,7 +3060,7 @@ void**)&params[8] = B;
 		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_VectorVector, params.ptr, cast(void*)0);
-		*A = *cast(Vector*)params.ptr;
+		A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
 	static Vector AddEqual_VectorVector(ref Vector A, Vector B)
@@ -3031,7 +3070,7 @@ void**)&params[8] = B;
 		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_VectorVector, params.ptr, cast(void*)0);
-		*A = *cast(Vector*)params.ptr;
+		A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
 	static Vector DivideEqual_VectorFloat(ref Vector A, float B)
@@ -3041,7 +3080,7 @@ void**)&params[8] = B;
 		*cast(Vector*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_VectorFloat, params.ptr, cast(void*)0);
-		*A = *cast(Vector*)params.ptr;
+		A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[16];
 	}
 	static Vector MultiplyEqual_VectorVector(ref Vector A, Vector B)
@@ -3051,7 +3090,7 @@ void**)&params[8] = B;
 		*cast(Vector*)params.ptr = A;
 		*cast(Vector*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_VectorVector, params.ptr, cast(void*)0);
-		*A = *cast(Vector*)params.ptr;
+		A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[24];
 	}
 	static Vector MultiplyEqual_VectorFloat(ref Vector A, float B)
@@ -3061,7 +3100,7 @@ void**)&params[8] = B;
 		*cast(Vector*)params.ptr = A;
 		*cast(float*)&params[12] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_VectorFloat, params.ptr, cast(void*)0);
-		*A = *cast(Vector*)params.ptr;
+		A = *cast(Vector*)params.ptr;
 		return *cast(Vector*)&params[16];
 	}
 	static Vector Cross_VectorVector(Vector A, Vector B)
@@ -3420,7 +3459,7 @@ void**)&params[8] = B;
 		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_FloatFloat, params.ptr, cast(void*)0);
-		*A = *cast(float*)params.ptr;
+		A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
 	static float AddEqual_FloatFloat(ref float A, float B)
@@ -3430,7 +3469,7 @@ void**)&params[8] = B;
 		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_FloatFloat, params.ptr, cast(void*)0);
-		*A = *cast(float*)params.ptr;
+		A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
 	static float DivideEqual_FloatFloat(ref float A, float B)
@@ -3440,7 +3479,7 @@ void**)&params[8] = B;
 		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_FloatFloat, params.ptr, cast(void*)0);
-		*A = *cast(float*)params.ptr;
+		A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
 	static float MultiplyEqual_FloatFloat(ref float A, float B)
@@ -3450,7 +3489,7 @@ void**)&params[8] = B;
 		*cast(float*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_FloatFloat, params.ptr, cast(void*)0);
-		*A = *cast(float*)params.ptr;
+		A = *cast(float*)params.ptr;
 		return *cast(float*)&params[8];
 	}
 	static bool NotEqual_FloatFloat(float A, float B)
@@ -3628,7 +3667,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_Int, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
 	static int AddAdd_Int(ref int A)
@@ -3637,7 +3676,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_Int, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
 	static int SubtractSubtract_PreInt(ref int A)
@@ -3646,7 +3685,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_PreInt, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
 	static int AddAdd_PreInt(ref int A)
@@ -3655,7 +3694,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		*cast(int*)params.ptr = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_PreInt, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[4];
 	}
 	static int SubtractEqual_IntInt(ref int A, int B)
@@ -3665,7 +3704,7 @@ void**)&params[8] = B;
 		*cast(int*)params.ptr = A;
 		*cast(int*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_IntInt, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 	static int AddEqual_IntInt(ref int A, int B)
@@ -3675,7 +3714,7 @@ void**)&params[8] = B;
 		*cast(int*)params.ptr = A;
 		*cast(int*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_IntInt, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 	static int DivideEqual_IntFloat(ref int A, float B)
@@ -3685,7 +3724,7 @@ void**)&params[8] = B;
 		*cast(int*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_IntFloat, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 	static int MultiplyEqual_IntFloat(ref int A, float B)
@@ -3695,7 +3734,7 @@ void**)&params[8] = B;
 		*cast(int*)params.ptr = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_IntFloat, params.ptr, cast(void*)0);
-		*A = *cast(int*)params.ptr;
+		A = *cast(int*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 	static int Or_IntInt(int A, int B)
@@ -3873,7 +3912,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		params[0] = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_Byte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[1];
 	}
 	static ubyte AddAdd_Byte(ref ubyte A)
@@ -3882,7 +3921,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		params[0] = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_Byte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[1];
 	}
 	static ubyte SubtractSubtract_PreByte(ref ubyte A)
@@ -3891,7 +3930,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		params[0] = A;
 		StaticClass.ProcessEvent(Functions.SubtractSubtract_PreByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[1];
 	}
 	static ubyte AddAdd_PreByte(ref ubyte A)
@@ -3900,7 +3939,7 @@ void**)&params[8] = B;
 		params[] = 0;
 		params[0] = A;
 		StaticClass.ProcessEvent(Functions.AddAdd_PreByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[1];
 	}
 	static ubyte SubtractEqual_ByteByte(ref ubyte A, ubyte B)
@@ -3910,7 +3949,7 @@ void**)&params[8] = B;
 		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.SubtractEqual_ByteByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[2];
 	}
 	static ubyte AddEqual_ByteByte(ref ubyte A, ubyte B)
@@ -3920,7 +3959,7 @@ void**)&params[8] = B;
 		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.AddEqual_ByteByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[2];
 	}
 	static ubyte DivideEqual_ByteByte(ref ubyte A, ubyte B)
@@ -3930,7 +3969,7 @@ void**)&params[8] = B;
 		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.DivideEqual_ByteByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[2];
 	}
 	static ubyte MultiplyEqual_ByteFloat(ref ubyte A, float B)
@@ -3940,7 +3979,7 @@ void**)&params[8] = B;
 		params[0] = A;
 		*cast(float*)&params[4] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_ByteFloat, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[8];
 	}
 	static ubyte MultiplyEqual_ByteByte(ref ubyte A, ubyte B)
@@ -3950,7 +3989,7 @@ void**)&params[8] = B;
 		params[0] = A;
 		params[1] = B;
 		StaticClass.ProcessEvent(Functions.MultiplyEqual_ByteByte, params.ptr, cast(void*)0);
-		*A = params[0];
+		A = params[0];
 		return params[2];
 	}
 	static bool OrOr_BoolBool(bool A, bool B)

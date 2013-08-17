@@ -15,12 +15,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName RotationSpaceBoneName() { mixin(MGPC!(ScriptName, 228)()); }
-			Rotator BoneRotation() { mixin(MGPC!(Rotator, 216)()); }
-			ScriptName TranslationSpaceBoneName() { mixin(MGPC!(ScriptName, 208)()); }
-			SkelControlBase.EBoneControlSpace BoneRotationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 205)()); }
-			SkelControlBase.EBoneControlSpace BoneTranslationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 204)()); }
-			Vector BoneTranslation() { mixin(MGPC!(Vector, 192)()); }
+			ScriptName RotationSpaceBoneName() { mixin(MGPC!("ScriptName", 228)()); }
+			Rotator BoneRotation() { mixin(MGPC!("Rotator", 216)()); }
+			ScriptName TranslationSpaceBoneName() { mixin(MGPC!("ScriptName", 208)()); }
+			SkelControlBase.EBoneControlSpace BoneRotationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 205)()); }
+			SkelControlBase.EBoneControlSpace BoneTranslationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 204)()); }
+			Vector BoneTranslation() { mixin(MGPC!("Vector", 192)()); }
 		}
 		bool bRemoveMeshRotation() { mixin(MGBPC!(188, 0x10)()); }
 		bool bRemoveMeshRotation(bool val) { mixin(MSBPC!(188, 0x10)()); }

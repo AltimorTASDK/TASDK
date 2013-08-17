@@ -31,12 +31,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float AspectRatio() { mixin(MGPC!(float, 480)()); }
-			float CamOverridePostProcessAlpha() { mixin(MGPC!(float, 488)()); }
-			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 492)()); }
+			float AspectRatio() { mixin(MGPC!("float", 480)()); }
+			float CamOverridePostProcessAlpha() { mixin(MGPC!("float", 488)()); }
+			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 492)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MeshComp'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawFrustum'!
-			float FOVAngle() { mixin(MGPC!(float, 484)()); }
+			float FOVAngle() { mixin(MGPC!("float", 484)()); }
 		}
 		bool bConstrainAspectRatio() { mixin(MGBPC!(476, 0x1)()); }
 		bool bConstrainAspectRatio(bool val) { mixin(MSBPC!(476, 0x1)()); }
@@ -51,7 +51,7 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(UObject.TPOV*)&params[4] = OutPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCameraView, params.ptr, cast(void*)0);
-		*OutPOV = *cast(UObject.TPOV*)&params[4];
+		OutPOV = *cast(UObject.TPOV*)&params[4];
 	}
 	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
@@ -61,7 +61,7 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 }

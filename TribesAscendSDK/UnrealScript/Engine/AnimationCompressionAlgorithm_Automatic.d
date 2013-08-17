@@ -13,7 +13,7 @@ public extern(D):
 	@property final static AnimationCompressionAlgorithm_Automatic DefaultProperties() { mixin(MGDPC!(AnimationCompressionAlgorithm_Automatic, "AnimationCompressionAlgorithm_Automatic Engine.Default__AnimationCompressionAlgorithm_Automatic")()); }
 	@property final
 	{
-		@property final auto ref float MaxEndEffectorError() { mixin(MGPC!(float, 80)()); }
+		@property final auto ref float MaxEndEffectorError() { mixin(MGPC!("float", 80)()); }
 		bool bRaiseMaxErrorToExisting() { mixin(MGBPC!(84, 0x40)()); }
 		bool bRaiseMaxErrorToExisting(bool val) { mixin(MSBPC!(84, 0x40)()); }
 		bool bAutoReplaceIfExistingErrorTooGreat() { mixin(MGBPC!(84, 0x20)()); }

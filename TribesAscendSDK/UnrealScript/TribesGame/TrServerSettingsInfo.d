@@ -1422,35 +1422,35 @@ public extern(D):
 	{
 		auto ref
 		{
-			int BaseDestructionLimit() { mixin(MGPC!(int, 508)()); }
-			int MaxSpeedWithFlagLight() { mixin(MGPC!(int, 692)()); }
-			int MaxSpeedWithFlagMedium() { mixin(MGPC!(int, 684)()); }
-			int MaxSpeedWithFlagHeavy() { mixin(MGPC!(int, 696)()); }
-			int DecelerationRateWithFlag() { mixin(MGPC!(int, 688)()); }
-			float fEnergyMultiplier() { mixin(MGPC!(float, 672)()); }
-			int RespawnTime() { mixin(MGPC!(int, 496)()); }
-			int TeamAssignType() { mixin(MGPC!(int, 504)()); }
-			int VehiclePrices() { mixin(MGPC!(int, 604)()); }
-			int FFKillLimit() { mixin(MGPC!(int, 512)()); }
-			int FFDamageLimit() { mixin(MGPC!(int, 516)()); }
-			int CallinPrices() { mixin(MGPC!(int, 628)()); }
-			float CallinBuildups() { mixin(MGPC!(float, 652)()); }
-			int CallinCooldowns() { mixin(MGPC!(int, 640)()); }
-			int TimeLimit() { mixin(MGPC!(int, 476)()); }
-			int OvertimeLimit() { mixin(MGPC!(int, 500)()); }
-			int WarmupTime() { mixin(MGPC!(int, 480)()); }
-			float fFriendlyFireDamageMultiplier() { mixin(MGPC!(float, 664)()); }
-			int ArenaRounds() { mixin(MGPC!(int, 492)()); }
-			int GameScores() { mixin(MGPC!(int, 528)()); }
-			int SpawnType() { mixin(MGPC!(int, 520)()); }
-			float fAoEDamageMultiplier() { mixin(MGPC!(float, 680)()); }
-			float fAoESizeMultiplier() { mixin(MGPC!(float, 676)()); }
-			float fVehicleHealthMultiplier() { mixin(MGPC!(float, 668)()); }
-			int CallinsDenied() { mixin(MGPC!(int, 624)()); }
-			int VehicleLimits() { mixin(MGPC!(int, 584)()); }
-			int ClassCounts() { mixin(MGPC!(int, 548)()); }
-			int MaxPlayers() { mixin(MGPC!(int, 488)()); }
-			int ScoreLimit() { mixin(MGPC!(int, 484)()); }
+			int BaseDestructionLimit() { mixin(MGPC!("int", 508)()); }
+			int MaxSpeedWithFlagLight() { mixin(MGPC!("int", 692)()); }
+			int MaxSpeedWithFlagMedium() { mixin(MGPC!("int", 684)()); }
+			int MaxSpeedWithFlagHeavy() { mixin(MGPC!("int", 696)()); }
+			int DecelerationRateWithFlag() { mixin(MGPC!("int", 688)()); }
+			float fEnergyMultiplier() { mixin(MGPC!("float", 672)()); }
+			int RespawnTime() { mixin(MGPC!("int", 496)()); }
+			int TeamAssignType() { mixin(MGPC!("int", 504)()); }
+			int VehiclePrices() { mixin(MGPC!("int", 604)()); }
+			int FFKillLimit() { mixin(MGPC!("int", 512)()); }
+			int FFDamageLimit() { mixin(MGPC!("int", 516)()); }
+			int CallinPrices() { mixin(MGPC!("int", 628)()); }
+			float CallinBuildups() { mixin(MGPC!("float", 652)()); }
+			int CallinCooldowns() { mixin(MGPC!("int", 640)()); }
+			int TimeLimit() { mixin(MGPC!("int", 476)()); }
+			int OvertimeLimit() { mixin(MGPC!("int", 500)()); }
+			int WarmupTime() { mixin(MGPC!("int", 480)()); }
+			float fFriendlyFireDamageMultiplier() { mixin(MGPC!("float", 664)()); }
+			int ArenaRounds() { mixin(MGPC!("int", 492)()); }
+			int GameScores() { mixin(MGPC!("int", 528)()); }
+			int SpawnType() { mixin(MGPC!("int", 520)()); }
+			float fAoEDamageMultiplier() { mixin(MGPC!("float", 680)()); }
+			float fAoESizeMultiplier() { mixin(MGPC!("float", 676)()); }
+			float fVehicleHealthMultiplier() { mixin(MGPC!("float", 668)()); }
+			int CallinsDenied() { mixin(MGPC!("int", 624)()); }
+			int VehicleLimits() { mixin(MGPC!("int", 584)()); }
+			int ClassCounts() { mixin(MGPC!("int", 548)()); }
+			int MaxPlayers() { mixin(MGPC!("int", 488)()); }
+			int ScoreLimit() { mixin(MGPC!("int", 484)()); }
 		}
 		bool bObjectiveUpgrades() { mixin(MGBPC!(524, 0x4)()); }
 		bool bObjectiveUpgrades(bool val) { mixin(MSBPC!(524, 0x4)()); }
@@ -1514,7 +1514,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(float*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsFloat, params.ptr, cast(void*)0);
-		*Value = *cast(float*)&params[4];
+		Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	static bool GetPropAsInt(int PropId, ref int Value)
@@ -1524,7 +1524,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(int*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsInt, params.ptr, cast(void*)0);
-		*Value = *cast(int*)&params[4];
+		Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	static bool GetPropAsString(int PropId, ref ScriptString Value)
@@ -1534,7 +1534,7 @@ final:
 		*cast(int*)params.ptr = PropId;
 		*cast(ScriptString*)&params[4] = Value;
 		StaticClass.ProcessEvent(Functions.GetPropAsString, params.ptr, cast(void*)0);
-		*Value = *cast(ScriptString*)&params[4];
+		Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void ApplyServerSettings()

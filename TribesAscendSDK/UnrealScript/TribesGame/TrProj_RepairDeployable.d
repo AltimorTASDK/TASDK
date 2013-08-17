@@ -38,33 +38,34 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor) ActorsToRepair() { mixin(MGPC!(ScriptArray!(Actor), 920)()); }
+		ScriptArray!(Actor) ActorsToRepair() { mixin(MGPC!("ScriptArray!(Actor)", 920)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) RepairBeams() { mixin(MGPC!(ScriptArray!(
+void*) RepairBeams() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 932)()); }
-		float m_fTickFrequency() { mixin(MGPC!(float, 956)()); }
-		float m_fTimeSinceLastTick() { mixin(MGPC!(float, 952)()); }
+void*)", 932)()); }
+		float m_fTickFrequency() { mixin(MGPC!("float", 956)()); }
+		float m_fTimeSinceLastTick() { mixin(MGPC!("float", 952)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RepairBeamAC'!
-		SoundCue RepairBeamSound() { mixin(MGPC!(SoundCue, 944)()); }
-		float m_fVehicleRepairPercentage() { mixin(MGPC!(float, 916)()); }
-		float m_fRepairPercentage() { mixin(MGPC!(float, 912)()); }
-		float m_fRepairBuff() { mixin(MGPC!(float, 908)()); }
-		float m_fRepairRadius() { mixin(MGPC!(float, 904)()); }
-		float m_fCheckNearbyActorsFrequency() { mixin(MGPC!(float, 900)()); }
+		SoundCue RepairBeamSound() { mixin(MGPC!("SoundCue", 944)()); }
+		float m_fVehicleRepairPercentage() { mixin(MGPC!("float", 916)()); }
+		float m_fRepairPercentage() { mixin(MGPC!("float", 912)()); }
+		float m_fRepairBuff() { mixin(MGPC!("float", 908)()); }
+		float m_fRepairRadius() { mixin(MGPC!("float", 904)()); }
+		float m_fCheckNearbyActorsFrequency() { mixin(MGPC!("float", 900)()); }
 	}
 final:
 	void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void ArmedTimer()
@@ -96,11 +97,12 @@ void**)&params[16] = WallComp;
 		*cast(Vector*)&params[12] = HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
-	void DetonateObsolete(bool bDetonateFromDamage)
+	void DetonateObsolete(bool* bDetonateFromDamage = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDetonateFromDamage;
+		if (bDetonateFromDamage !is null)
+			*cast(bool*)params.ptr = *bDetonateFromDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DetonateObsolete, params.ptr, cast(void*)0);
 	}
 }

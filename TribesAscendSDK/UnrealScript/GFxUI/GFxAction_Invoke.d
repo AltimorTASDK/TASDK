@@ -19,9 +19,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GFxMoviePlayer.ASValue) Arguments() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.ASValue), 248)()); }
-		ScriptString MethodName() { mixin(MGPC!(ScriptString, 236)()); }
-		GFxMoviePlayer Movie() { mixin(MGPC!(GFxMoviePlayer, 232)()); }
+		ScriptArray!(GFxMoviePlayer.ASValue) Arguments() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.ASValue)", 248)()); }
+		ScriptString MethodName() { mixin(MGPC!("ScriptString", 236)()); }
+		GFxMoviePlayer Movie() { mixin(MGPC!("GFxMoviePlayer", 232)()); }
 	}
 	final bool IsValidLevelSequenceObject()
 	{

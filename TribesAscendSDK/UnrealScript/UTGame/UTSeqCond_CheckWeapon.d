@@ -19,8 +19,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass TestForWeaponClass() { mixin(MGPC!(ScriptClass, 212)()); }
-		Actor Target() { mixin(MGPC!(Actor, 208)()); }
+		ScriptClass TestForWeaponClass() { mixin(MGPC!("ScriptClass", 212)()); }
+		Actor Target() { mixin(MGPC!("Actor", 208)()); }
 	}
 	final void Activated()
 	{

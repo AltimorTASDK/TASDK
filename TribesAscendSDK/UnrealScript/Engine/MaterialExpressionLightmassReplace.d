@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionLightmassReplace DefaultProperties() { mixin(MGDPC!(MaterialExpressionLightmassReplace, "MaterialExpressionLightmassReplace Engine.Default__MaterialExpressionLightmassReplace")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput Lightmass() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput Realtime() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput Lightmass() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput Realtime() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref int TeamIndex() { mixin(MGPC!(int, 696)()); }
+		@property final auto ref int TeamIndex() { mixin(MGPC!("int", 696)()); }
 		bool bEnabled() { mixin(MGBPC!(692, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(692, 0x1)()); }
 		bool bPrimaryStart() { mixin(MGBPC!(692, 0x2)()); }

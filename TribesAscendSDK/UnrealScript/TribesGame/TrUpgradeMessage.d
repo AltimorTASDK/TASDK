@@ -30,31 +30,40 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString ObjectiveUpgraded() { mixin(MGPC!(ScriptString, 104)()); }
-		SoundCue UpgradeSound() { mixin(MGPC!(SoundCue, 100)()); }
+		ScriptString ObjectiveUpgraded() { mixin(MGPC!("ScriptString", 104)()); }
+		SoundCue UpgradeSound() { mixin(MGPC!("SoundCue", 100)()); }
 	}
 final:
-	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(bool*)&params[4] = bPRI1HUD;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (bPRI1HUD !is null)
+			*cast(bool*)&params[4] = *bPRI1HUD;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
 }

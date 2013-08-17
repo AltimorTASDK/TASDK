@@ -15,7 +15,7 @@ public extern(D):
 	@property final static ApexGenericAsset DefaultProperties() { mixin(MGDPC!(ApexGenericAsset, "ApexGenericAsset Engine.Default__ApexGenericAsset")()); }
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 112)()); }
-		UObject.Pointer MApexAsset() { mixin(MGPC!(UObject.Pointer, 108)()); }
+		ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 112)()); }
+		UObject.Pointer MApexAsset() { mixin(MGPC!("UObject.Pointer", 108)()); }
 	}
 }

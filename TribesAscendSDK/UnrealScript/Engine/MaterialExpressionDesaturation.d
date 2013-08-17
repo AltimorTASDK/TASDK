@@ -14,8 +14,8 @@ public extern(D):
 	@property final static MaterialExpressionDesaturation DefaultProperties() { mixin(MGDPC!(MaterialExpressionDesaturation, "MaterialExpressionDesaturation Engine.Default__MaterialExpressionDesaturation")()); }
 	@property final auto ref
 	{
-		UObject.LinearColor LuminanceFactors() { mixin(MGPC!(UObject.LinearColor, 164)()); }
-		MaterialExpression.ExpressionInput Percent() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
+		UObject.LinearColor LuminanceFactors() { mixin(MGPC!("UObject.LinearColor", 164)()); }
+		MaterialExpression.ExpressionInput Percent() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
 		// WARNING: Property 'Input' has the same name as a defined type!
 	}
 }

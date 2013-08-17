@@ -34,9 +34,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float SlowSpeed() { mixin(MGPC!(float, 504)()); }
-		float RampUpTime() { mixin(MGPC!(float, 500)()); }
-		float SlowTime() { mixin(MGPC!(float, 496)()); }
+		float SlowSpeed() { mixin(MGPC!("float", 504)()); }
+		float RampUpTime() { mixin(MGPC!("float", 500)()); }
+		float SlowTime() { mixin(MGPC!("float", 496)()); }
 	}
 final:
 	bool MutatorIsAllowed()

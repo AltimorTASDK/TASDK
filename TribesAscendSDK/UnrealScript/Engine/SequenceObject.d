@@ -36,17 +36,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ObjInstanceVersion() { mixin(MGPC!(int, 60)()); }
-			ScriptArray!(ScriptString) ObjRemoveInProject() { mixin(MGPC!(ScriptArray!(ScriptString), 100)()); }
-			int DrawHeight() { mixin(MGPC!(int, 136)()); }
-			int DrawWidth() { mixin(MGPC!(int, 132)()); }
-			ScriptString ObjComment() { mixin(MGPC!(ScriptString, 116)()); }
-			UObject.Color ObjColor() { mixin(MGPC!(UObject.Color, 112)()); }
-			ScriptString ObjCategory() { mixin(MGPC!(ScriptString, 88)()); }
-			ScriptString ObjName() { mixin(MGPC!(ScriptString, 76)()); }
-			int ObjPosY() { mixin(MGPC!(int, 72)()); }
-			int ObjPosX() { mixin(MGPC!(int, 68)()); }
-			Sequence ParentSequence() { mixin(MGPC!(Sequence, 64)()); }
+			int ObjInstanceVersion() { mixin(MGPC!("int", 60)()); }
+			ScriptArray!(ScriptString) ObjRemoveInProject() { mixin(MGPC!("ScriptArray!(ScriptString)", 100)()); }
+			int DrawHeight() { mixin(MGPC!("int", 136)()); }
+			int DrawWidth() { mixin(MGPC!("int", 132)()); }
+			ScriptString ObjComment() { mixin(MGPC!("ScriptString", 116)()); }
+			UObject.Color ObjColor() { mixin(MGPC!("UObject.Color", 112)()); }
+			ScriptString ObjCategory() { mixin(MGPC!("ScriptString", 88)()); }
+			ScriptString ObjName() { mixin(MGPC!("ScriptString", 76)()); }
+			int ObjPosY() { mixin(MGPC!("int", 72)()); }
+			int ObjPosX() { mixin(MGPC!("int", 68)()); }
+			Sequence ParentSequence() { mixin(MGPC!("Sequence", 64)()); }
 		}
 		bool bSuppressAutoComment() { mixin(MGBPC!(128, 0x10)()); }
 		bool bSuppressAutoComment(bool val) { mixin(MSBPC!(128, 0x10)()); }
@@ -67,12 +67,13 @@ final:
 		StaticClass.ProcessEvent(Functions.GetObjClassVersion, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	void ScriptLog(ScriptString LogText, bool bWarning)
+	void ScriptLog(ScriptString LogText, bool* bWarning = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogText;
-		*cast(bool*)&params[12] = bWarning;
+		if (bWarning !is null)
+			*cast(bool*)&params[12] = *bWarning;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ScriptLog, params.ptr, cast(void*)0);
 	}
 	WorldInfo GetWorldInfo()

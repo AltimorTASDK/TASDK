@@ -59,8 +59,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineRecentPlayersList.RecentParty")()); }
 		@property final auto ref
 		{
-			ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers() { mixin(MGPS!(ScriptArray!(OnlineSubsystem.UniqueNetId), 8)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers() { mixin(MGPS!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 8)()); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
 		}
 	}
 	struct CurrentPlayerMet
@@ -71,21 +71,21 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.OnlineRecentPlayersList.CurrentPlayerMet")()); }
 		@property final auto ref
 		{
-			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 8)()); }
-			int Skill() { mixin(MGPS!(int, 4)()); }
-			int TeamNum() { mixin(MGPS!(int, 0)()); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 8)()); }
+			int Skill() { mixin(MGPS!("int", 4)()); }
+			int TeamNum() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.UniqueNetId) RecentPlayers() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 60)()); }
-		ScriptArray!(OnlineRecentPlayersList.RecentParty) RecentParties() { mixin(MGPC!(ScriptArray!(OnlineRecentPlayersList.RecentParty), 72)()); }
-		ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) CurrentPlayers() { mixin(MGPC!(ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet), 120)()); }
-		int RecentPartiesAddIndex() { mixin(MGPC!(int, 116)()); }
-		int RecentPlayersAddIndex() { mixin(MGPC!(int, 112)()); }
-		int MaxRecentParties() { mixin(MGPC!(int, 108)()); }
-		int MaxRecentPlayers() { mixin(MGPC!(int, 104)()); }
-		OnlineRecentPlayersList.RecentParty LastParty() { mixin(MGPC!(OnlineRecentPlayersList.RecentParty, 84)()); }
+		ScriptArray!(OnlineSubsystem.UniqueNetId) RecentPlayers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 60)()); }
+		ScriptArray!(OnlineRecentPlayersList.RecentParty) RecentParties() { mixin(MGPC!("ScriptArray!(OnlineRecentPlayersList.RecentParty)", 72)()); }
+		ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) CurrentPlayers() { mixin(MGPC!("ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet)", 120)()); }
+		int RecentPartiesAddIndex() { mixin(MGPC!("int", 116)()); }
+		int RecentPlayersAddIndex() { mixin(MGPC!("int", 112)()); }
+		int MaxRecentParties() { mixin(MGPC!("int", 108)()); }
+		int MaxRecentPlayers() { mixin(MGPC!("int", 104)()); }
+		OnlineRecentPlayersList.RecentParty LastParty() { mixin(MGPC!("OnlineRecentPlayersList.RecentParty", 84)()); }
 	}
 final:
 	void AddPlayerToRecentPlayers(OnlineSubsystem.UniqueNetId NewPlayer)
@@ -99,14 +99,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearRecentPlayers, cast(void*)0, cast(void*)0);
 	}
-	void AddPartyToRecentParties(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers)
+	void AddPartyToRecentParties(OnlineSubsystem.UniqueNetId PartyLeader, ref in ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = PartyMembers;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))PartyMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddPartyToRecentParties, params.ptr, cast(void*)0);
-		*PartyMembers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 	}
 	void ClearRecentParties()
 	{
@@ -118,7 +117,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayersFromRecentParties, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
+		Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	void GetPlayersFromCurrentPlayers(ref ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
 	{
@@ -126,7 +125,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayersFromCurrentPlayers, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
+		Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	int GetSkillForCurrentPlayer(OnlineSubsystem.UniqueNetId pPlayer)
 	{
@@ -144,14 +143,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTeamForCurrentPlayer, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	void SetLastParty(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers)
+	void SetLastParty(OnlineSubsystem.UniqueNetId PartyLeader, ref in ScriptArray!(OnlineSubsystem.UniqueNetId) PartyMembers)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = PartyMembers;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))PartyMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetLastParty, params.ptr, cast(void*)0);
-		*PartyMembers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 	}
 	bool ShowRecentPlayerList(ubyte LocalUserNum, ScriptString Title, ScriptString Description)
 	{
@@ -193,11 +191,11 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowCurrentPlayersList, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	void SetCurrentPlayersList(const ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) Players)
+	void SetCurrentPlayersList(in ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet) Players)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet)*)params.ptr = Players;
+		*cast(ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet)*)params.ptr = cast(ScriptArray!(OnlineRecentPlayersList.CurrentPlayerMet))Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCurrentPlayersList, params.ptr, cast(void*)0);
 	}
 	int GetCurrentPlayersListCount()

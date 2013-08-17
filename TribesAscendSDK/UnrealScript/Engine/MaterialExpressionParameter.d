@@ -14,7 +14,7 @@ public extern(D):
 	@property final static MaterialExpressionParameter DefaultProperties() { mixin(MGDPC!(MaterialExpressionParameter, "MaterialExpressionParameter Engine.Default__MaterialExpressionParameter")()); }
 	@property final auto ref
 	{
-		UObject.Guid ExpressionGUID() { mixin(MGPC!(UObject.Guid, 116)()); }
-		ScriptName ParameterName() { mixin(MGPC!(ScriptName, 108)()); }
+		UObject.Guid ExpressionGUID() { mixin(MGPC!("UObject.Guid", 116)()); }
+		ScriptName ParameterName() { mixin(MGPC!("ScriptName", 108)()); }
 	}
 }

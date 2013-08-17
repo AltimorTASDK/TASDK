@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2Input_Rotator")()); }
 	private static __gshared K2Input_Rotator mDefaultProperties;
 	@property final static K2Input_Rotator DefaultProperties() { mixin(MGDPC!(K2Input_Rotator, "K2Input_Rotator Engine.Default__K2Input_Rotator")()); }
-	@property final auto ref Rotator DefaultRotator() { mixin(MGPC!(Rotator, 84)()); }
+	@property final auto ref Rotator DefaultRotator() { mixin(MGPC!("Rotator", 84)()); }
 }

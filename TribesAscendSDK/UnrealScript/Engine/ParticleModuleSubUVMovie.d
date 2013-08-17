@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int StartingFrame() { mixin(MGPC!(int, 132)()); }
-			DistributionFloat.RawDistributionFloat FrameRate() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 104)()); }
+			int StartingFrame() { mixin(MGPC!("int", 132)()); }
+			DistributionFloat.RawDistributionFloat FrameRate() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 104)()); }
 		}
 		bool bUseEmitterTime() { mixin(MGBPC!(100, 0x1)()); }
 		bool bUseEmitterTime(bool val) { mixin(MSBPC!(100, 0x1)()); }

@@ -84,20 +84,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int m_nLastFlagReturnTime() { mixin(MGPC!(int, 112)()); }
-		int m_nLastFlagGrabTime() { mixin(MGPC!(int, 108)()); }
-		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { mixin(MGPC!(int, 104)()); }
-		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { mixin(MGPC!(int, 100)()); }
-		int MINIMUM_ULTRA_GRAB_SPEED() { mixin(MGPC!(int, 96)()); }
-		int MINIMUM_FAST_GRAB_SPEED() { mixin(MGPC!(int, 92)()); }
-		int MAXIMUM_LLAMA_GRAB_SPEED() { mixin(MGPC!(int, 88)()); }
-		int MINIMUM_TIME_FLAG_CREDITS() { mixin(MGPC!(int, 84)()); }
-		int m_nCurrSpinfusorKillStreak() { mixin(MGPC!(int, 80)()); }
-		int m_nCurrExplosiveKillStreak() { mixin(MGPC!(int, 76)()); }
-		int m_nCurrSnipingKillStreak() { mixin(MGPC!(int, 72)()); }
-		TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 68)()); }
-		TrPlayerController m_TrPC() { mixin(MGPC!(TrPlayerController, 64)()); }
-		TrGame m_TrG() { mixin(MGPC!(TrGame, 60)()); }
+		int m_nLastFlagReturnTime() { mixin(MGPC!("int", 112)()); }
+		int m_nLastFlagGrabTime() { mixin(MGPC!("int", 108)()); }
+		int MAXIMUM_EMERGENCY_GRAB_DISTANCE() { mixin(MGPC!("int", 104)()); }
+		int MAXIMUM_FLAG_DEFENSE_DISTANCE() { mixin(MGPC!("int", 100)()); }
+		int MINIMUM_ULTRA_GRAB_SPEED() { mixin(MGPC!("int", 96)()); }
+		int MINIMUM_FAST_GRAB_SPEED() { mixin(MGPC!("int", 92)()); }
+		int MAXIMUM_LLAMA_GRAB_SPEED() { mixin(MGPC!("int", 88)()); }
+		int MINIMUM_TIME_FLAG_CREDITS() { mixin(MGPC!("int", 84)()); }
+		int m_nCurrSpinfusorKillStreak() { mixin(MGPC!("int", 80)()); }
+		int m_nCurrExplosiveKillStreak() { mixin(MGPC!("int", 76)()); }
+		int m_nCurrSnipingKillStreak() { mixin(MGPC!("int", 72)()); }
+		TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 68)()); }
+		TrPlayerController m_TrPC() { mixin(MGPC!("TrPlayerController", 64)()); }
+		TrGame m_TrG() { mixin(MGPC!("TrGame", 60)()); }
 	}
 final:
 	int GetFlagDistance(Vector Loc1, Vector Loc2)
@@ -235,12 +235,13 @@ final:
 		*cast(Controller*)params.ptr = Victim;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateSpecialAccolades, params.ptr, cast(void*)0);
 	}
-	void QueueAccolade(ScriptClass Accolade, int ModifiedCredits)
+	void QueueAccolade(ScriptClass Accolade, int* ModifiedCredits = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Accolade;
-		*cast(int*)&params[4] = ModifiedCredits;
+		if (ModifiedCredits !is null)
+			*cast(int*)&params[4] = *ModifiedCredits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.QueueAccolade, params.ptr, cast(void*)0);
 	}
 	bool CreditsGiven(ScriptClass Accolade)

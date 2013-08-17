@@ -55,13 +55,13 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		AnimNodePlayCustomAnim ReloadCustomAnimNode() { mixin(MGPC!(AnimNodePlayCustomAnim, 2172)()); }
-		int m_nConsumeShotsFired() { mixin(MGPC!(int, 2168)()); }
-		int m_nShotsFired() { mixin(MGPC!(int, 2164)()); }
-		float m_fInnerDefaultAccuracy() { mixin(MGPC!(float, 2160)()); }
-		float m_fConsumeAmmoTimeStamp() { mixin(MGPC!(float, 2156)()); }
-		int m_nImpactCounter() { mixin(MGPC!(int, 2152)()); }
-		int m_nMinShotCount() { mixin(MGPC!(int, 2148)()); }
+		AnimNodePlayCustomAnim ReloadCustomAnimNode() { mixin(MGPC!("AnimNodePlayCustomAnim", 2172)()); }
+		int m_nConsumeShotsFired() { mixin(MGPC!("int", 2168)()); }
+		int m_nShotsFired() { mixin(MGPC!("int", 2164)()); }
+		float m_fInnerDefaultAccuracy() { mixin(MGPC!("float", 2160)()); }
+		float m_fConsumeAmmoTimeStamp() { mixin(MGPC!("float", 2156)()); }
+		int m_nImpactCounter() { mixin(MGPC!("int", 2152)()); }
+		int m_nMinShotCount() { mixin(MGPC!("int", 2148)()); }
 	}
 final:
 	void PostInitAnimTree(
@@ -115,13 +115,14 @@ void**)params.ptr = SkelComp;
 		params[0] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsumeAmmo_Internal, params.ptr, cast(void*)0);
 	}
-	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
+	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool* bHeadShot = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(bool*)&params[84] = bHeadShot;
+		if (bHeadShot !is null)
+			*cast(bool*)&params[84] = *bHeadShot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit_Internal, params.ptr, cast(void*)0);
 	}
 	void OnAnimEnd(AnimNodeSequence SeqNode, float PlayedTime, float ExcessTime)

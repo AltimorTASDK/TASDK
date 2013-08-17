@@ -13,7 +13,7 @@ public extern(D):
 	@property final static AnimationCompressionAlgorithm_RemoveEverySecondKey DefaultProperties() { mixin(MGDPC!(AnimationCompressionAlgorithm_RemoveEverySecondKey, "AnimationCompressionAlgorithm_RemoveEverySecondKey Engine.Default__AnimationCompressionAlgorithm_RemoveEverySecondKey")()); }
 	@property final
 	{
-		@property final auto ref int MinKeys() { mixin(MGPC!(int, 80)()); }
+		@property final auto ref int MinKeys() { mixin(MGPC!("int", 80)()); }
 		bool bStartAtSecondKey() { mixin(MGBPC!(84, 0x1)()); }
 		bool bStartAtSecondKey(bool val) { mixin(MSBPC!(84, 0x1)()); }
 	}

@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ArrowSize() { mixin(MGPC!(float, 492)()); }
-			UObject.Color ArrowColor() { mixin(MGPC!(UObject.Color, 488)()); }
+			float ArrowSize() { mixin(MGPC!("float", 492)()); }
+			UObject.Color ArrowColor() { mixin(MGPC!("UObject.Color", 488)()); }
 		}
 		bool bTreatAsASprite() { mixin(MGBPC!(496, 0x1)()); }
 		bool bTreatAsASprite(bool val) { mixin(MSBPC!(496, 0x1)()); }

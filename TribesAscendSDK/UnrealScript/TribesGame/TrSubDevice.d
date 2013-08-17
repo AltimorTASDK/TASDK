@@ -30,16 +30,19 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Reset, cast(void*)0, cast(void*)0);
 	}
-	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
+	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList = null, Vector* Extent = null)
 	{
 		ubyte params[128];
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartTrace;
 		*cast(Vector*)&params[12] = EndTrace;
-		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = ImpactList;
-		*cast(Vector*)&params[36] = Extent;
+		if (ImpactList !is null)
+			*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = *ImpactList;
+		if (Extent !is null)
+			*cast(Vector*)&params[36] = *Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcWeaponFire, params.ptr, cast(void*)0);
-		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
+		if (ImpactList !is null)
+			*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
 		return *cast(Actor.ImpactInfo*)&params[48];
 	}
 }

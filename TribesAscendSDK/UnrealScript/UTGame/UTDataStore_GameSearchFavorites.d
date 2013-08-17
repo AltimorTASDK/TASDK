@@ -17,12 +17,13 @@ public extern(D):
 		private static __gshared ScriptFunction mHasOutstandingQueries;
 		public @property static final ScriptFunction HasOutstandingQueries() { mixin(MGF!("mHasOutstandingQueries", "Function UTGame.UTDataStore_GameSearchFavorites.HasOutstandingQueries")()); }
 	}
-	@property final auto ref UTDataStore_GameSearchHistory HistoryGameSearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchHistory, 356)()); }
-	final bool HasOutstandingQueries(bool bRestrictCheckToSelf)
+	@property final auto ref UTDataStore_GameSearchHistory HistoryGameSearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchHistory", 356)()); }
+	final bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRestrictCheckToSelf;
+		if (bRestrictCheckToSelf !is null)
+			*cast(bool*)params.ptr = *bRestrictCheckToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

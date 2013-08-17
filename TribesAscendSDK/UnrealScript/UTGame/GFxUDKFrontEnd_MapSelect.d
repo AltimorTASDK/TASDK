@@ -53,12 +53,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UTUIDataProvider_MapInfo) MapList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_MapInfo), 236)()); }
-		int LastSelectedItem() { mixin(MGPC!(int, 248)()); }
-		GFxObject MenuMC() { mixin(MGPC!(GFxObject, 232)()); }
-		GFxClikWidget ImgScrollerMC() { mixin(MGPC!(GFxClikWidget, 228)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 224)()); }
-		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 220)()); }
+		ScriptArray!(UTUIDataProvider_MapInfo) MapList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_MapInfo)", 236)()); }
+		int LastSelectedItem() { mixin(MGPC!("int", 248)()); }
+		GFxObject MenuMC() { mixin(MGPC!("GFxObject", 232)()); }
+		GFxClikWidget ImgScrollerMC() { mixin(MGPC!("GFxClikWidget", 228)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 224)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 220)()); }
 	}
 final:
 	static ScriptString GetImageMarkupByMapName(ScriptString InMapName)
@@ -73,11 +73,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)
@@ -87,12 +88,13 @@ final:
 		*cast(bool*)params.ptr = bDisableComponents;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableSubComponents, params.ptr, cast(void*)0);
 	}
-	void OnMapList_ValueChanged(ScriptString InMapSelected, ScriptString InMapImageSelected)
+	void OnMapList_ValueChanged(ScriptString InMapSelected, ScriptString* InMapImageSelected = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = InMapSelected;
-		*cast(ScriptString*)&params[12] = InMapImageSelected;
+		if (InMapImageSelected !is null)
+			*cast(ScriptString*)&params[12] = *InMapImageSelected;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnMapList_ValueChanged, params.ptr, cast(void*)0);
 	}
 	void SetList(GFxObject List)

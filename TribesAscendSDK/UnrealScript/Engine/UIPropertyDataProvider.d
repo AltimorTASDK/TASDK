@@ -28,7 +28,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) ComplexPropertyTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 88)()); }
+		ScriptArray!(ScriptClass) ComplexPropertyTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 88)()); }
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanSupportComplexPropertyType__Delegate'!
 	}
 final:
@@ -40,14 +40,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanSupportComplexPropertyType, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool GetCustomPropertyValue(ref UIRoot.UIProviderScriptFieldValue PropertyValue, int ArrayIndex)
+	bool GetCustomPropertyValue(ref UIRoot.UIProviderScriptFieldValue PropertyValue, int* ArrayIndex = null)
 	{
 		ubyte params[92];
 		params[] = 0;
 		*cast(UIRoot.UIProviderScriptFieldValue*)params.ptr = PropertyValue;
-		*cast(int*)&params[84] = ArrayIndex;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[84] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCustomPropertyValue, params.ptr, cast(void*)0);
-		*PropertyValue = *cast(UIRoot.UIProviderScriptFieldValue*)params.ptr;
+		PropertyValue = *cast(UIRoot.UIProviderScriptFieldValue*)params.ptr;
 		return *cast(bool*)&params[88];
 	}
 }

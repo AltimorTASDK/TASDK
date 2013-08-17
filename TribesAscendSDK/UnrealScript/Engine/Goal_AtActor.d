@@ -30,21 +30,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			float GoalDist() { mixin(MGPC!(float, 80)()); }
-			Actor GoalActor() { mixin(MGPC!(Actor, 76)()); }
+			float GoalDist() { mixin(MGPC!("float", 80)()); }
+			Actor GoalActor() { mixin(MGPC!("Actor", 76)()); }
 		}
 		bool bKeepPartial() { mixin(MGBPC!(84, 0x1)()); }
 		bool bKeepPartial(bool val) { mixin(MSBPC!(84, 0x1)()); }
 	}
 final:
-	static bool AtActor(Pawn P, Actor Goal, float Dist, bool bReturnPartial)
+	static bool AtActor(Pawn P, Actor Goal, float* Dist = null, bool* bReturnPartial = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = P;
 		*cast(Actor*)&params[4] = Goal;
-		*cast(float*)&params[8] = Dist;
-		*cast(bool*)&params[12] = bReturnPartial;
+		if (Dist !is null)
+			*cast(float*)&params[8] = *Dist;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[12] = *bReturnPartial;
 		StaticClass.ProcessEvent(Functions.AtActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

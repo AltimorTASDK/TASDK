@@ -168,16 +168,16 @@ public extern(D):
 		{
 			auto ref
 			{
-				float Alpha() { mixin(MGPS!(float, 36)()); }
-				float ZScale() { mixin(MGPS!(float, 32)()); }
-				float YScale() { mixin(MGPS!(float, 28)()); }
-				float XScale() { mixin(MGPS!(float, 24)()); }
-				float YRotation() { mixin(MGPS!(float, 20)()); }
-				float XRotation() { mixin(MGPS!(float, 16)()); }
-				float Rotation() { mixin(MGPS!(float, 12)()); }
-				float Z() { mixin(MGPS!(float, 8)()); }
-				float Y() { mixin(MGPS!(float, 4)()); }
-				float X() { mixin(MGPS!(float, 0)()); }
+				float Alpha() { mixin(MGPS!("float", 36)()); }
+				float ZScale() { mixin(MGPS!("float", 32)()); }
+				float YScale() { mixin(MGPS!("float", 28)()); }
+				float XScale() { mixin(MGPS!("float", 24)()); }
+				float YRotation() { mixin(MGPS!("float", 20)()); }
+				float XRotation() { mixin(MGPS!("float", 16)()); }
+				float Rotation() { mixin(MGPS!("float", 12)()); }
+				float Z() { mixin(MGPS!("float", 8)()); }
+				float Y() { mixin(MGPS!("float", 4)()); }
+				float X() { mixin(MGPS!("float", 0)()); }
 			}
 			bool hasVisible() { mixin(MGBPS!(40, 0x800)()); }
 			bool hasVisible(bool val) { mixin(MSBPS!(40, 0x800)()); }
@@ -213,14 +213,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GFxUI.GFxObject.ASColorTransform")()); }
 		@property final auto ref
 		{
-			UObject.LinearColor Add() { mixin(MGPS!(UObject.LinearColor, 16)()); }
-			UObject.LinearColor Multiply() { mixin(MGPS!(UObject.LinearColor, 0)()); }
+			UObject.LinearColor Add() { mixin(MGPS!("UObject.LinearColor", 16)()); }
+			UObject.LinearColor Multiply() { mixin(MGPS!("UObject.LinearColor", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) SubWidgetBindings() { mixin(MGPC!(ScriptArray!(GFxMoviePlayer.GFxWidgetBinding), 108)()); }
-		int Value() { mixin(MGPC!(int, 60)()); }
+		ScriptArray!(GFxMoviePlayer.GFxWidgetBinding) SubWidgetBindings() { mixin(MGPC!("ScriptArray!(GFxMoviePlayer.GFxWidgetBinding)", 108)()); }
+		int Value() { mixin(MGPC!("int", 60)()); }
 	}
 final:
 	GFxMoviePlayer.ASValue Get(ScriptString Member)
@@ -255,12 +255,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[12];
 	}
-	GFxObject GetObject(ScriptString Member, ScriptClass Type)
+	GFxObject GetObject(ScriptString Member, ScriptClass* Type = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Member;
-		*cast(ScriptClass*)&params[12] = Type;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[12] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetObject, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[16];
 	}
@@ -288,13 +289,14 @@ final:
 		*cast(float*)&params[12] = F;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloat, params.ptr, cast(void*)0);
 	}
-	void SetString(ScriptString Member, ScriptString S, TranslationContext InContext)
+	void SetString(ScriptString Member, ScriptString S, TranslationContext* InContext = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Member;
 		*cast(ScriptString*)&params[12] = S;
-		*cast(TranslationContext*)&params[24] = InContext;
+		if (InContext !is null)
+			*cast(TranslationContext*)&params[24] = *InContext;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetString, params.ptr, cast(void*)0);
 	}
 	void SetObject(ScriptString Member, GFxObject val)
@@ -314,12 +316,13 @@ final:
 		*cast(ScriptName*)&params[16] = fname;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFunction, params.ptr, cast(void*)0);
 	}
-	static ScriptString TranslateString(ScriptString StringToTranslate, TranslationContext InContext)
+	static ScriptString TranslateString(ScriptString StringToTranslate, TranslationContext* InContext = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = StringToTranslate;
-		*cast(TranslationContext*)&params[12] = InContext;
+		if (InContext !is null)
+			*cast(TranslationContext*)&params[12] = *InContext;
 		StaticClass.ProcessEvent(Functions.TranslateString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
@@ -337,8 +340,8 @@ final:
 		*cast(float*)params.ptr = X;
 		*cast(float*)&params[4] = Y;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPosition, params.ptr, cast(void*)0);
-		*X = *cast(float*)params.ptr;
-		*Y = *cast(float*)&params[4];
+		X = *cast(float*)params.ptr;
+		Y = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	GFxObject.ASColorTransform GetColorTransform()
@@ -405,12 +408,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetText, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void SetText(ScriptString Text, TranslationContext InContext)
+	void SetText(ScriptString Text, TranslationContext* InContext = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Text;
-		*cast(TranslationContext*)&params[12] = InContext;
+		if (InContext !is null)
+			*cast(TranslationContext*)&params[12] = *InContext;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetText, params.ptr, cast(void*)0);
 	}
 	GFxMoviePlayer.ASValue GetElement(int Index)
@@ -421,12 +425,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElement, params.ptr, cast(void*)0);
 		return *cast(GFxMoviePlayer.ASValue*)&params[4];
 	}
-	GFxObject GetElementObject(int Index, ScriptClass Type)
+	GFxObject GetElementObject(int Index, ScriptClass* Type = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
-		*cast(ScriptClass*)&params[4] = Type;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[4] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementObject, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[8];
 	}
@@ -560,13 +565,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementMember, params.ptr, cast(void*)0);
 		return *cast(GFxMoviePlayer.ASValue*)&params[16];
 	}
-	GFxObject GetElementMemberObject(int Index, ScriptString Member, ScriptClass Type)
+	GFxObject GetElementMemberObject(int Index, ScriptString Member, ScriptClass* Type = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(ScriptString*)&params[4] = Member;
-		*cast(ScriptClass*)&params[16] = Type;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[16] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementMemberObject, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[20];
 	}
@@ -741,24 +747,28 @@ final:
 		*cast(int*)params.ptr = frame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GotoAndStopI, params.ptr, cast(void*)0);
 	}
-	GFxObject CreateEmptyMovieClip(ScriptString instancename, int Depth, ScriptClass Type)
+	GFxObject CreateEmptyMovieClip(ScriptString instancename, int* Depth = null, ScriptClass* Type = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = instancename;
-		*cast(int*)&params[12] = Depth;
-		*cast(ScriptClass*)&params[16] = Type;
+		if (Depth !is null)
+			*cast(int*)&params[12] = *Depth;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[16] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateEmptyMovieClip, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[20];
 	}
-	GFxObject AttachMovie(ScriptString symbolname, ScriptString instancename, int Depth, ScriptClass Type)
+	GFxObject AttachMovie(ScriptString symbolname, ScriptString instancename, int* Depth = null, ScriptClass* Type = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = symbolname;
 		*cast(ScriptString*)&params[12] = instancename;
-		*cast(int*)&params[24] = Depth;
-		*cast(ScriptClass*)&params[28] = Type;
+		if (Depth !is null)
+			*cast(int*)&params[24] = *Depth;
+		if (Type !is null)
+			*cast(ScriptClass*)&params[28] = *Type;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachMovie, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)&params[32];
 	}

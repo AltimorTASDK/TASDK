@@ -27,8 +27,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fPitchAimAngleRotation() { mixin(MGPC!(float, 3296)()); }
-		float m_fPitchAimAngle() { mixin(MGPC!(float, 3292)()); }
+		float m_fPitchAimAngleRotation() { mixin(MGPC!("float", 3296)()); }
+		float m_fPitchAimAngle() { mixin(MGPC!("float", 3292)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -57,18 +57,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) MasterSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 148)()); }
-		ScriptArray!(ScriptString) EffectsSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 160)()); }
-		ScriptArray!(ScriptString) MusicSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 172)()); }
-		ScriptArray!(ScriptString) VGSSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 184)()); }
-		ScriptArray!(ScriptString) VoiceSoundClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 196)()); }
-		int m_nVolumeMaster() { mixin(MGPC!(int, 144)()); }
-		int m_nVolumeMusic() { mixin(MGPC!(int, 140)()); }
-		int m_nVolumeVoice() { mixin(MGPC!(int, 136)()); }
-		int m_nVolumeVGS() { mixin(MGPC!(int, 132)()); }
-		int m_nVolumeEffects() { mixin(MGPC!(int, 128)()); }
-		GFxObject m_SettingsList() { mixin(MGPC!(GFxObject, 124)()); }
-		int m_SettingsCount() { mixin(MGPC!(int, 120)()); }
+		ScriptArray!(ScriptString) MasterSoundClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 148)()); }
+		ScriptArray!(ScriptString) EffectsSoundClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 160)()); }
+		ScriptArray!(ScriptString) MusicSoundClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 172)()); }
+		ScriptArray!(ScriptString) VGSSoundClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 184)()); }
+		ScriptArray!(ScriptString) VoiceSoundClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 196)()); }
+		int m_nVolumeMaster() { mixin(MGPC!("int", 144)()); }
+		int m_nVolumeMusic() { mixin(MGPC!("int", 140)()); }
+		int m_nVolumeVoice() { mixin(MGPC!("int", 136)()); }
+		int m_nVolumeVGS() { mixin(MGPC!("int", 132)()); }
+		int m_nVolumeEffects() { mixin(MGPC!("int", 128)()); }
+		GFxObject m_SettingsList() { mixin(MGPC!("GFxObject", 124)()); }
+		int m_SettingsCount() { mixin(MGPC!("int", 120)()); }
 	}
 final:
 	int GetCurrentSettingValue(TrObject.ESettingsList Type)
@@ -114,13 +114,14 @@ final:
 		*cast(GFxObject*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LoadAudioSettings, params.ptr, cast(void*)0);
 	}
-	void ApplyAudioSetting(int Type, int val, bool bStore)
+	void ApplyAudioSetting(int Type, int val, bool* bStore = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Type;
 		*cast(int*)&params[4] = val;
-		*cast(bool*)&params[8] = bStore;
+		if (bStore !is null)
+			*cast(bool*)&params[8] = *bStore;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyAudioSetting, params.ptr, cast(void*)0);
 	}
 	void AddSettingToList(ScriptString SettingName, int val)

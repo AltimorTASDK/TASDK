@@ -50,25 +50,26 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Selection' has the same name as a defined type!
-		ScriptString CampaignMap() { mixin(MGPC!(ScriptString, 432)()); }
-		ScriptString InstantActionMap() { mixin(MGPC!(ScriptString, 420)()); }
-		GFxClikWidget MenuBtn6MC() { mixin(MGPC!(GFxClikWidget, 416)()); }
-		GFxClikWidget MenuBtn5MC() { mixin(MGPC!(GFxClikWidget, 412)()); }
-		GFxClikWidget MenuBtn4MC() { mixin(MGPC!(GFxClikWidget, 408)()); }
-		GFxClikWidget MenuBtn3MC() { mixin(MGPC!(GFxClikWidget, 404)()); }
-		GFxClikWidget MenuBtn2MC() { mixin(MGPC!(GFxClikWidget, 400)()); }
-		GFxClikWidget MenuBtn1MC() { mixin(MGPC!(GFxClikWidget, 396)()); }
-		GFxObject BlackMC() { mixin(MGPC!(GFxObject, 392)()); }
-		GFxObject MenuButtonsMC() { mixin(MGPC!(GFxObject, 388)()); }
-		GFxObject MainMenuMC() { mixin(MGPC!(GFxObject, 384)()); }
-		GFxObject TitleScreenMC() { mixin(MGPC!(GFxObject, 380)()); }
+		ScriptString CampaignMap() { mixin(MGPC!("ScriptString", 432)()); }
+		ScriptString InstantActionMap() { mixin(MGPC!("ScriptString", 420)()); }
+		GFxClikWidget MenuBtn6MC() { mixin(MGPC!("GFxClikWidget", 416)()); }
+		GFxClikWidget MenuBtn5MC() { mixin(MGPC!("GFxClikWidget", 412)()); }
+		GFxClikWidget MenuBtn4MC() { mixin(MGPC!("GFxClikWidget", 408)()); }
+		GFxClikWidget MenuBtn3MC() { mixin(MGPC!("GFxClikWidget", 404)()); }
+		GFxClikWidget MenuBtn2MC() { mixin(MGPC!("GFxClikWidget", 400)()); }
+		GFxClikWidget MenuBtn1MC() { mixin(MGPC!("GFxClikWidget", 396)()); }
+		GFxObject BlackMC() { mixin(MGPC!("GFxObject", 392)()); }
+		GFxObject MenuButtonsMC() { mixin(MGPC!("GFxObject", 388)()); }
+		GFxObject MainMenuMC() { mixin(MGPC!("GFxObject", 384)()); }
+		GFxObject TitleScreenMC() { mixin(MGPC!("GFxObject", 380)()); }
 	}
 final:
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -97,12 +98,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnCloseAnimationComplete, cast(void*)0, cast(void*)0);
 	}
-	void UT_ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
+	void UT_ConsoleCommand(ScriptString Cmd, bool* bWriteToLog = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UT_ConsoleCommand, params.ptr, cast(void*)0);
 	}
 }

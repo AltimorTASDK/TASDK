@@ -34,8 +34,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrSkelControl_SpinControl m_SpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 540)()); }
-		TrAnimNodeBlendList m_VehiclePadBlendNode() { mixin(MGPC!(TrAnimNodeBlendList, 536)()); }
+		TrSkelControl_SpinControl m_SpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 540)()); }
+		TrAnimNodeBlendList m_VehiclePadBlendNode() { mixin(MGPC!("TrAnimNodeBlendList", 536)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static UDKSkelControl_Rotate DefaultProperties() { mixin(MGDPC!(UDKSkelControl_Rotate, "UDKSkelControl_Rotate UDKBase.Default__UDKSkelControl_Rotate")()); }
 	@property final auto ref
 	{
-		Rotator DesiredBoneRotationRate() { mixin(MGPC!(Rotator, 248)()); }
-		Rotator DesiredBoneRotation() { mixin(MGPC!(Rotator, 236)()); }
+		Rotator DesiredBoneRotationRate() { mixin(MGPC!("Rotator", 248)()); }
+		Rotator DesiredBoneRotation() { mixin(MGPC!("Rotator", 236)()); }
 	}
 }

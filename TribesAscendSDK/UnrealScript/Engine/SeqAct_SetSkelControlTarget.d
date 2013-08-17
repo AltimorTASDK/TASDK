@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SeqAct_SetSkelControlTarget DefaultProperties() { mixin(MGDPC!(SeqAct_SetSkelControlTarget, "SeqAct_SetSkelControlTarget Engine.Default__SeqAct_SetSkelControlTarget")()); }
 	@property final auto ref
 	{
-		ScriptArray!(UObject) TargetActors() { mixin(MGPC!(ScriptArray!(UObject), 240)()); }
-		ScriptName SkelControlName() { mixin(MGPC!(ScriptName, 232)()); }
+		ScriptArray!(UObject) TargetActors() { mixin(MGPC!("ScriptArray!(UObject)", 240)()); }
+		ScriptName SkelControlName() { mixin(MGPC!("ScriptName", 232)()); }
 	}
 }

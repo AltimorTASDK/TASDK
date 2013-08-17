@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class IpDrv.MCPBase")()); }
 	private static __gshared MCPBase mDefaultProperties;
 	@property final static MCPBase DefaultProperties() { mixin(MGDPC!(MCPBase, "MCPBase IpDrv.Default__MCPBase")()); }
-	@property final auto ref UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 60)()); }
+	@property final auto ref UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
 }

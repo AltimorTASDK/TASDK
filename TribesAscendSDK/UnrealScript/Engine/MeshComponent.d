@@ -35,7 +35,7 @@ public extern(D):
 			ScriptFunction CreateAndSetMaterialInstanceTimeVarying() { mixin(MGF!("mCreateAndSetMaterialInstanceTimeVarying", "Function Engine.MeshComponent.CreateAndSetMaterialInstanceTimeVarying")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 488)()); }
+	@property final auto ref ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 488)()); }
 final:
 	MaterialInterface GetMaterial(int ElementIndex)
 	{
@@ -60,13 +60,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumElements, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	void PrestreamTextures(float Seconds, bool bPrioritizeCharacterTextures, int CinematicTextureGroups)
+	void PrestreamTextures(float Seconds, bool bPrioritizeCharacterTextures, int* CinematicTextureGroups = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(float*)params.ptr = Seconds;
 		*cast(bool*)&params[4] = bPrioritizeCharacterTextures;
-		*cast(int*)&params[8] = CinematicTextureGroups;
+		if (CinematicTextureGroups !is null)
+			*cast(int*)&params[8] = *CinematicTextureGroups;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PrestreamTextures, params.ptr, cast(void*)0);
 	}
 	MaterialInstanceConstant CreateAndSetMaterialInstanceConstant(int ElementIndex)

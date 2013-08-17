@@ -45,10 +45,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float Lifetime() { mixin(MGPC!(float, 64)()); }
-			int FontSize() { mixin(MGPC!(int, 76)()); }
-			float PosY() { mixin(MGPC!(float, 72)()); }
-			UObject.Color DrawColor() { mixin(MGPC!(UObject.Color, 68)()); }
+			float Lifetime() { mixin(MGPC!("float", 64)()); }
+			int FontSize() { mixin(MGPC!("int", 76)()); }
+			float PosY() { mixin(MGPC!("float", 72)()); }
+			UObject.Color DrawColor() { mixin(MGPC!("UObject.Color", 68)()); }
 		}
 		bool bBeep() { mixin(MGBPC!(60, 0x10)()); }
 		bool bBeep(bool val) { mixin(MSBPC!(60, 0x10)()); }
@@ -83,37 +83,50 @@ final:
 		StaticClass.ProcessEvent(Functions.PartiallyDuplicates, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
-	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(bool*)&params[4] = bPRI1HUD;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (bPRI1HUD !is null)
+			*cast(bool*)&params[4] = *bPRI1HUD;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	static UObject.Color GetColor(int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static UObject.Color GetColor(int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(PlayerReplicationInfo*)&params[4] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_2;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[4] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetColor, params.ptr, cast(void*)0);
 		return *cast(UObject.Color*)&params[16];
 	}

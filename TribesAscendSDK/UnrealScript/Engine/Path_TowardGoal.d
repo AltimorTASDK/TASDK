@@ -26,7 +26,7 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_TowardGoal.Recycle")()); }
 		}
 	}
-	@property final auto ref Actor GoalActor() { mixin(MGPC!(Actor, 68)()); }
+	@property final auto ref Actor GoalActor() { mixin(MGPC!("Actor", 68)()); }
 final:
 	static bool TowardGoal(Pawn P, Actor Goal)
 	{

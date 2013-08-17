@@ -17,8 +17,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionVector.RawDistributionVector StartLocation() { mixin(MGPC!(DistributionVector.RawDistributionVector, 104)()); }
-			DistributionFloat.RawDistributionFloat VelocityScale() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 76)()); }
+			DistributionVector.RawDistributionVector StartLocation() { mixin(MGPC!("DistributionVector.RawDistributionVector", 104)()); }
+			DistributionFloat.RawDistributionFloat VelocityScale() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 76)()); }
 		}
 		bool Velocity() { mixin(MGBPC!(72, 0x80)()); }
 		bool Velocity(bool val) { mixin(MSBPC!(72, 0x80)()); }

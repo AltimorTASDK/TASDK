@@ -55,32 +55,32 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TgPlayerProfile.PropertyPair) AwardData() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 232)()); }
-			ScriptArray!(TgPlayerProfile.PropertyPair) accoladeData() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 244)()); }
-			ScriptArray!(TgPlayerProfile.BadgeStruct) EarnedBadges() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.BadgeStruct), 256)()); }
-			TrSummaryHelper SummaryHelper() { mixin(MGPC!(TrSummaryHelper, 268)()); }
-			int EarnedBadgeValue() { mixin(MGPC!(int, 224)()); }
-			int XPBoost() { mixin(MGPC!(int, 220)()); }
-			int XPVIP() { mixin(MGPC!(int, 216)()); }
-			int XPPerf() { mixin(MGPC!(int, 212)()); }
-			int XPBase() { mixin(MGPC!(int, 208)()); }
-			ScriptString PlayerName() { mixin(MGPC!(ScriptString, 196)()); }
-			int RankGained() { mixin(MGPC!(int, 192)()); }
-			int RankBase() { mixin(MGPC!(int, 188)()); }
-			int TopPlayedClass() { mixin(MGPC!(int, 184)()); }
-			int Credits() { mixin(MGPC!(int, 180)()); }
-			int Assists() { mixin(MGPC!(int, 176)()); }
-			int Deaths() { mixin(MGPC!(int, 172)()); }
-			int Kills() { mixin(MGPC!(int, 168)()); }
-			int PlayerID() { mixin(MGPC!(int, 164)()); }
-			GFxObject AccoladeDataList() { mixin(MGPC!(GFxObject, 160)()); }
-			GFxObject AwardDataList() { mixin(MGPC!(GFxObject, 156)()); }
-			GFxObject MiscDataList() { mixin(MGPC!(GFxObject, 152)()); }
-			int AccoladeDataCount() { mixin(MGPC!(int, 148)()); }
-			int AwardDataCount() { mixin(MGPC!(int, 144)()); }
-			int MiscDataCount() { mixin(MGPC!(int, 140)()); }
-			int SkillClassId() { mixin(MGPC!(int, 136)()); }
-			int AWARD_TIER_SIZE() { mixin(MGPC!(int, 132)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) AwardData() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.PropertyPair)", 232)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) accoladeData() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.PropertyPair)", 244)()); }
+			ScriptArray!(TgPlayerProfile.BadgeStruct) EarnedBadges() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.BadgeStruct)", 256)()); }
+			TrSummaryHelper SummaryHelper() { mixin(MGPC!("TrSummaryHelper", 268)()); }
+			int EarnedBadgeValue() { mixin(MGPC!("int", 224)()); }
+			int XPBoost() { mixin(MGPC!("int", 220)()); }
+			int XPVIP() { mixin(MGPC!("int", 216)()); }
+			int XPPerf() { mixin(MGPC!("int", 212)()); }
+			int XPBase() { mixin(MGPC!("int", 208)()); }
+			ScriptString PlayerName() { mixin(MGPC!("ScriptString", 196)()); }
+			int RankGained() { mixin(MGPC!("int", 192)()); }
+			int RankBase() { mixin(MGPC!("int", 188)()); }
+			int TopPlayedClass() { mixin(MGPC!("int", 184)()); }
+			int Credits() { mixin(MGPC!("int", 180)()); }
+			int Assists() { mixin(MGPC!("int", 176)()); }
+			int Deaths() { mixin(MGPC!("int", 172)()); }
+			int Kills() { mixin(MGPC!("int", 168)()); }
+			int PlayerID() { mixin(MGPC!("int", 164)()); }
+			GFxObject AccoladeDataList() { mixin(MGPC!("GFxObject", 160)()); }
+			GFxObject AwardDataList() { mixin(MGPC!("GFxObject", 156)()); }
+			GFxObject MiscDataList() { mixin(MGPC!("GFxObject", 152)()); }
+			int AccoladeDataCount() { mixin(MGPC!("int", 148)()); }
+			int AwardDataCount() { mixin(MGPC!("int", 144)()); }
+			int MiscDataCount() { mixin(MGPC!("int", 140)()); }
+			int SkillClassId() { mixin(MGPC!("int", 136)()); }
+			int AWARD_TIER_SIZE() { mixin(MGPC!("int", 132)()); }
 		}
 		bool bSummaryReady() { mixin(MGBPC!(228, 0x4)()); }
 		bool bSummaryReady(bool val) { mixin(MSBPC!(228, 0x4)()); }

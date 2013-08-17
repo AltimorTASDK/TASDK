@@ -32,11 +32,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ScaleAllWaveformsBy() { mixin(MGPC!(float, 76)()); }
-			Actor WaveformInstigator() { mixin(MGPC!(Actor, 80)()); }
-			float ElapsedTime() { mixin(MGPC!(float, 72)()); }
-			int CurrentSample() { mixin(MGPC!(int, 68)()); }
-			ForceFeedbackWaveform FFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 64)()); }
+			float ScaleAllWaveformsBy() { mixin(MGPC!("float", 76)()); }
+			Actor WaveformInstigator() { mixin(MGPC!("Actor", 80)()); }
+			float ElapsedTime() { mixin(MGPC!("float", 72)()); }
+			int CurrentSample() { mixin(MGPC!("int", 68)()); }
+			ForceFeedbackWaveform FFWaveform() { mixin(MGPC!("ForceFeedbackWaveform", 64)()); }
 		}
 		bool bAllowsForceFeedback() { mixin(MGBPC!(60, 0x1)()); }
 		bool bAllowsForceFeedback(bool val) { mixin(MSBPC!(60, 0x1)()); }
@@ -52,18 +52,20 @@ final:
 		*cast(Actor*)&params[4] = WaveInstigator;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
-	void StopForceFeedbackWaveform(ForceFeedbackWaveform WaveForm)
+	void StopForceFeedbackWaveform(ForceFeedbackWaveform* WaveForm = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(ForceFeedbackWaveform*)params.ptr = WaveForm;
+		if (WaveForm !is null)
+			*cast(ForceFeedbackWaveform*)params.ptr = *WaveForm;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
-	void PauseWaveform(bool bPause)
+	void PauseWaveform(bool* bPause = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPause;
+		if (bPause !is null)
+			*cast(bool*)params.ptr = *bPause;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseWaveform, params.ptr, cast(void*)0);
 	}
 }

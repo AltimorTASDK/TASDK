@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mSetNodeWeight;
 		public @property static final ScriptFunction SetNodeWeight() { mixin(MGF!("mSetNodeWeight", "Function Engine.MorphNodeWeight.SetNodeWeight")()); }
 	}
-	@property final auto ref float NodeWeight() { mixin(MGPC!(float, 120)()); }
+	@property final auto ref float NodeWeight() { mixin(MGPC!("float", 120)()); }
 	final void SetNodeWeight(float NewWeight)
 	{
 		ubyte params[4];

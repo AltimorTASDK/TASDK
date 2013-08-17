@@ -36,11 +36,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqCond_SwitchClass.SwitchClassInfo")()); }
 		@property final auto ref
 		{
-			ubyte bFallThru() { mixin(MGPS!(ubyte, 8)()); }
-			ScriptName ClassName() { mixin(MGPS!(ScriptName, 0)()); }
+			ubyte bFallThru() { mixin(MGPS!("ubyte", 8)()); }
+			ScriptName ClassName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo) ClassArray() { mixin(MGPC!(ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo), 208)()); }
+	@property final auto ref ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo) ClassArray() { mixin(MGPC!("ScriptArray!(SeqCond_SwitchClass.SwitchClassInfo)", 208)()); }
 final:
 	void VerifyDefaultCaseValue()
 	{

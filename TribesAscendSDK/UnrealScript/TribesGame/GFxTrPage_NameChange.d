@@ -33,7 +33,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptString NamePopupTitle() { mixin(MGPC!(ScriptString, 396)()); }
+		@property final auto ref ScriptString NamePopupTitle() { mixin(MGPC!("ScriptString", 396)()); }
 		bool bWaitingForNewNameInput() { mixin(MGBPC!(408, 0x1)()); }
 		bool bWaitingForNewNameInput(bool val) { mixin(MSBPC!(408, 0x1)()); }
 	}

@@ -28,13 +28,13 @@ public extern(D):
 			auto ref
 			{
 				// WARNING: Property 'Material' has the same name as a defined type!
-				float Alpha() { mixin(MGPS!(float, 76)()); }
-				TerrainLayerSetup.FilterLimit MaxSlope() { mixin(MGPS!(TerrainLayerSetup.FilterLimit, 60)()); }
-				TerrainLayerSetup.FilterLimit MinSlope() { mixin(MGPS!(TerrainLayerSetup.FilterLimit, 44)()); }
-				TerrainLayerSetup.FilterLimit MaxHeight() { mixin(MGPS!(TerrainLayerSetup.FilterLimit, 28)()); }
-				TerrainLayerSetup.FilterLimit MinHeight() { mixin(MGPS!(TerrainLayerSetup.FilterLimit, 12)()); }
-				float NoisePercent() { mixin(MGPS!(float, 8)()); }
-				float NoiseScale() { mixin(MGPS!(float, 4)()); }
+				float Alpha() { mixin(MGPS!("float", 76)()); }
+				TerrainLayerSetup.FilterLimit MaxSlope() { mixin(MGPS!("TerrainLayerSetup.FilterLimit", 60)()); }
+				TerrainLayerSetup.FilterLimit MinSlope() { mixin(MGPS!("TerrainLayerSetup.FilterLimit", 44)()); }
+				TerrainLayerSetup.FilterLimit MaxHeight() { mixin(MGPS!("TerrainLayerSetup.FilterLimit", 28)()); }
+				TerrainLayerSetup.FilterLimit MinHeight() { mixin(MGPS!("TerrainLayerSetup.FilterLimit", 12)()); }
+				float NoisePercent() { mixin(MGPS!("float", 8)()); }
+				float NoiseScale() { mixin(MGPS!("float", 4)()); }
 			}
 			bool UseNoise() { mixin(MGBPS!(0, 0x1)()); }
 			bool UseNoise(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -50,15 +50,15 @@ public extern(D):
 		{
 			auto ref
 			{
-				float NoiseAmount() { mixin(MGPS!(float, 12)()); }
-				float NoiseScale() { mixin(MGPS!(float, 8)()); }
-				float Base() { mixin(MGPS!(float, 4)()); }
+				float NoiseAmount() { mixin(MGPS!("float", 12)()); }
+				float NoiseScale() { mixin(MGPS!("float", 8)()); }
+				float Base() { mixin(MGPS!("float", 4)()); }
 			}
 			bool Enabled() { mixin(MGBPS!(0, 0x1)()); }
 			bool Enabled(bool val) { mixin(MSBPS!(0, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial) Materials() { mixin(MGPC!(ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial), 60)()); }
+	@property final auto ref ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial) Materials() { mixin(MGPC!("ScriptArray!(TerrainLayerSetup.TerrainFilteredMaterial)", 60)()); }
 	final void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);

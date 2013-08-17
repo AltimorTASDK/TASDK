@@ -69,8 +69,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIInteraction.UIAxisEmulationData")()); }
 		@property final auto ref
 		{
-			UObject.Double NextRepeatTime() { mixin(MGPS!(UObject.Double, 8)()); }
-			ScriptName CurrentRepeatKey() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Double NextRepeatTime() { mixin(MGPS!("UObject.Double", 8)()); }
+			ScriptName CurrentRepeatKey() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 		@property final
 		{
@@ -86,33 +86,33 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIInteraction.UIKeyRepeatData")()); }
 		@property final auto ref
 		{
-			UObject.Double NextRepeatTime() { mixin(MGPS!(UObject.Double, 8)()); }
-			ScriptName CurrentRepeatKey() { mixin(MGPS!(ScriptName, 0)()); }
+			UObject.Double NextRepeatTime() { mixin(MGPS!("UObject.Double", 8)()); }
+			ScriptName CurrentRepeatKey() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GameUISceneClient SceneClient() { mixin(MGPC!(GameUISceneClient, 132)()); }
-			ScriptArray!(ScriptName) SupportedDoubleClickKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 136)()); }
-			ScriptArray!(UIRoot.UIAxisEmulationDefinition) ConfiguredAxisEmulationDefinitions() { mixin(MGPC!(ScriptArray!(UIRoot.UIAxisEmulationDefinition), 196)()); }
-			UIInteraction.UIAxisEmulationData AxisInputEmulation() { mixin(MGPC!(UIInteraction.UIAxisEmulationData, 268)()); }
+			GameUISceneClient SceneClient() { mixin(MGPC!("GameUISceneClient", 132)()); }
+			ScriptArray!(ScriptName) SupportedDoubleClickKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 136)()); }
+			ScriptArray!(UIRoot.UIAxisEmulationDefinition) ConfiguredAxisEmulationDefinitions() { mixin(MGPC!("ScriptArray!(UIRoot.UIAxisEmulationDefinition)", 196)()); }
+			UIInteraction.UIAxisEmulationData AxisInputEmulation() { mixin(MGPC!("UIInteraction.UIAxisEmulationData", 268)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'AxisEmulationDefinitions'!
-			UIInteraction.UIKeyRepeatData MouseButtonRepeatInfo() { mixin(MGPC!(UIInteraction.UIKeyRepeatData, 180)()); }
-			int DoubleClickPixelTolerance() { mixin(MGPC!(int, 176)()); }
-			float DoubleClickTriggerSeconds() { mixin(MGPC!(float, 172)()); }
-			float MouseButtonRepeatDelay() { mixin(MGPC!(float, 168)()); }
-			float AxisRepeatDelay() { mixin(MGPC!(float, 164)()); }
-			float UIAxisMultiplier() { mixin(MGPC!(float, 160)()); }
-			float UIJoystickDeadZone() { mixin(MGPC!(float, 156)()); }
-			DataStoreClient DataStoreManager() { mixin(MGPC!(DataStoreClient, 148)()); }
-			ScriptClass SceneClientClass() { mixin(MGPC!(ScriptClass, 128)()); }
-			ScriptClass UIManagerClass() { mixin(MGPC!(ScriptClass, 124)()); }
+			UIInteraction.UIKeyRepeatData MouseButtonRepeatInfo() { mixin(MGPC!("UIInteraction.UIKeyRepeatData", 180)()); }
+			int DoubleClickPixelTolerance() { mixin(MGPC!("int", 176)()); }
+			float DoubleClickTriggerSeconds() { mixin(MGPC!("float", 172)()); }
+			float MouseButtonRepeatDelay() { mixin(MGPC!("float", 168)()); }
+			float AxisRepeatDelay() { mixin(MGPC!("float", 164)()); }
+			float UIAxisMultiplier() { mixin(MGPC!("float", 160)()); }
+			float UIJoystickDeadZone() { mixin(MGPC!("float", 156)()); }
+			DataStoreClient DataStoreManager() { mixin(MGPC!("DataStoreClient", 148)()); }
+			ScriptClass SceneClientClass() { mixin(MGPC!("ScriptClass", 128)()); }
+			ScriptClass UIManagerClass() { mixin(MGPC!("ScriptClass", 124)()); }
 			// WARNING: Property 'UIManager' has the same name as a defined type!
-			UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC!(UObject.Pointer, 116)()); }
-			UObject.Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC!(UObject.Pointer, 112)()); }
-			UObject.Pointer VfTable_FExec() { mixin(MGPC!(UObject.Pointer, 108)()); }
+			UObject.Pointer VfTable_FCallbackEventDevice() { mixin(MGPC!("UObject.Pointer", 116)()); }
+			UObject.Pointer VfTable_FGlobalDataStoreClientManager() { mixin(MGPC!("UObject.Pointer", 112)()); }
+			UObject.Pointer VfTable_FExec() { mixin(MGPC!("UObject.Pointer", 108)()); }
 		}
 		bool bProcessInput() { mixin(MGBPC!(152, 0x1)()); }
 		bool bProcessInput(bool val) { mixin(MSBPC!(152, 0x1)()); }
@@ -125,12 +125,13 @@ final:
 		StaticClass.ProcessEvent(Functions.GetDataStoreClient, params.ptr, cast(void*)0);
 		return *cast(DataStoreClient*)params.ptr;
 	}
-	static bool IsLoggedIn(int ControllerId, bool bRequireOnlineLogin)
+	static bool IsLoggedIn(int ControllerId, bool* bRequireOnlineLogin = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
-		*cast(bool*)&params[4] = bRequireOnlineLogin;
+		if (bRequireOnlineLogin !is null)
+			*cast(bool*)&params[4] = *bRequireOnlineLogin;
 		StaticClass.ProcessEvent(Functions.IsLoggedIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -211,11 +212,12 @@ final:
 		StaticClass.ProcessEvent(Functions.HasLinkConnection, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	static int GetLoggedInPlayerCount(bool bRequireOnlineLogin)
+	static int GetLoggedInPlayerCount(bool* bRequireOnlineLogin = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRequireOnlineLogin;
+		if (bRequireOnlineLogin !is null)
+			*cast(bool*)params.ptr = *bRequireOnlineLogin;
 		StaticClass.ProcessEvent(Functions.GetLoggedInPlayerCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
@@ -226,11 +228,12 @@ final:
 		StaticClass.ProcessEvent(Functions.GetNumGuestsLoggedIn, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	static int GetConnectedGamepadCount(ScriptArray!(bool) ControllerConnectionStatusOverrides)
+	static int GetConnectedGamepadCount(ScriptArray!(bool)* ControllerConnectionStatusOverrides = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(bool)*)params.ptr = ControllerConnectionStatusOverrides;
+		if (ControllerConnectionStatusOverrides !is null)
+			*cast(ScriptArray!(bool)*)params.ptr = *ControllerConnectionStatusOverrides;
 		StaticClass.ProcessEvent(Functions.GetConnectedGamepadCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}

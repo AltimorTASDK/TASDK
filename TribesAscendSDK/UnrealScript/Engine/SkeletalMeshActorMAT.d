@@ -47,7 +47,7 @@ public extern(D):
 			ScriptFunction SetSkelControlScale() { mixin(MGF!("mSetSkelControlScale", "Function Engine.SkeletalMeshActorMAT.SetSkelControlScale")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!(ScriptArray!(AnimNodeSlot), 536)()); }
+	@property final auto ref ScriptArray!(AnimNodeSlot) SlotNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSlot)", 536)()); }
 final:
 	void MAT_SetAnimWeights(ScriptArray!(Actor.AnimSlotInfo) SlotInfos)
 	{

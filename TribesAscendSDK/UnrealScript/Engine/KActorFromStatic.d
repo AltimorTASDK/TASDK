@@ -52,8 +52,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float MaxImpulseSpeed() { mixin(MGPC!(float, 716)()); }
-		Actor MyStaticMeshActor() { mixin(MGPC!(Actor, 712)()); }
+		float MaxImpulseSpeed() { mixin(MGPC!("float", 716)()); }
+		Actor MyStaticMeshActor() { mixin(MGPC!("Actor", 712)()); }
 	}
 final:
 	static KActorFromStatic MakeDynamic(
@@ -88,15 +88,17 @@ void**)params.ptr = MovableMesh;
 	{
 		StaticClass.ProcessEvent(Functions.MakeStatic, cast(void*)0, cast(void*)0);
 	}
-	void ApplyImpulse(Vector ImpulseDir, float ImpulseMag, Vector HitLocation, Actor.TraceHitInfo HitInfo, ScriptClass pDamageType)
+	void ApplyImpulse(Vector ImpulseDir, float ImpulseMag, Vector HitLocation, Actor.TraceHitInfo* HitInfo = null, ScriptClass* pDamageType = null)
 	{
 		ubyte params[60];
 		params[] = 0;
 		*cast(Vector*)params.ptr = ImpulseDir;
 		*cast(float*)&params[12] = ImpulseMag;
 		*cast(Vector*)&params[16] = HitLocation;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
-		*cast(ScriptClass*)&params[56] = pDamageType;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
+		if (pDamageType !is null)
+			*cast(ScriptClass*)&params[56] = *pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyImpulse, params.ptr, cast(void*)0);
 	}
 	void ReceiveImpulse(Pawn Other, Vector HitLocation, Vector HitNormal)
@@ -135,7 +137,7 @@ void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[20] = HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Touch, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -147,7 +149,8 @@ void**)&params[4] = OtherComp;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
 }

@@ -1661,8 +1661,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!(GFxTrMenuMoviePlayer, 128)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 124)()); }
+			GFxTrMenuMoviePlayer TrOuter() { mixin(MGPC!("GFxTrMenuMoviePlayer", 128)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 124)()); }
 		}
 		bool bSceneCreated() { mixin(MGBPC!(120, 0x1)()); }
 		bool bSceneCreated(bool val) { mixin(MSBPC!(120, 0x1)()); }

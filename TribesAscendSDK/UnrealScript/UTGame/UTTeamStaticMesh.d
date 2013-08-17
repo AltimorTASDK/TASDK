@@ -28,8 +28,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialInterface) TeamMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 484)()); }
-		Material NeutralMaterial() { mixin(MGPC!(Material, 496)()); }
+		ScriptArray!(MaterialInterface) TeamMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 484)()); }
+		Material NeutralMaterial() { mixin(MGPC!("Material", 496)()); }
 	}
 final:
 	void PreBeginPlay()

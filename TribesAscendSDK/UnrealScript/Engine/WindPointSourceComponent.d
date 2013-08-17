@@ -13,7 +13,7 @@ public extern(D):
 	@property final static WindPointSourceComponent DefaultProperties() { mixin(MGDPC!(WindPointSourceComponent, "WindPointSourceComponent Engine.Default__WindPointSourceComponent")()); }
 	@property final auto ref
 	{
-		float Radius() { mixin(MGPC!(float, 112)()); }
+		float Radius() { mixin(MGPC!("float", 112)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewRadiusComponent'!
 	}
 }

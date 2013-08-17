@@ -16,11 +16,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float InteractDistance() { mixin(MGPC!(float, 260)()); }
-			ScriptArray!(ScriptClass) ClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 280)()); }
-			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 292)()); }
-			Texture2D InteractIcon() { mixin(MGPC!(Texture2D, 276)()); }
-			ScriptString InteractText() { mixin(MGPC!(ScriptString, 264)()); }
+			float InteractDistance() { mixin(MGPC!("float", 260)()); }
+			ScriptArray!(ScriptClass) ClassProximityTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 280)()); }
+			ScriptArray!(ScriptClass) IgnoredClassProximityTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 292)()); }
+			Texture2D InteractIcon() { mixin(MGPC!("Texture2D", 276)()); }
+			ScriptString InteractText() { mixin(MGPC!("ScriptString", 264)()); }
 		}
 		bool bAimToInteract() { mixin(MGBPC!(256, 0x1)()); }
 		bool bAimToInteract(bool val) { mixin(MSBPC!(256, 0x1)()); }

@@ -36,20 +36,20 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrRibbonManager.RibbonData")()); }
 		@property final auto ref
 		{
-			int Ribbon() { mixin(MGPS!(int, 8)()); }
-			int Type() { mixin(MGPS!(int, 4)()); }
-			int Id() { mixin(MGPS!(int, 0)()); }
+			int Ribbon() { mixin(MGPS!("int", 8)()); }
+			int Type() { mixin(MGPS!("int", 4)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrRibbonManager.RibbonData) ClassRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 72)()); }
-			ScriptArray!(TrRibbonManager.RibbonData) TypeRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 84)()); }
-			ScriptArray!(TrRibbonManager.RibbonData) EquipRibbons() { mixin(MGPC!(ScriptArray!(TrRibbonManager.RibbonData), 96)()); }
-			int PreviousGold() { mixin(MGPC!(int, 64)()); }
-			int PreviousXP() { mixin(MGPC!(int, 60)()); }
+			ScriptArray!(TrRibbonManager.RibbonData) ClassRibbons() { mixin(MGPC!("ScriptArray!(TrRibbonManager.RibbonData)", 72)()); }
+			ScriptArray!(TrRibbonManager.RibbonData) TypeRibbons() { mixin(MGPC!("ScriptArray!(TrRibbonManager.RibbonData)", 84)()); }
+			ScriptArray!(TrRibbonManager.RibbonData) EquipRibbons() { mixin(MGPC!("ScriptArray!(TrRibbonManager.RibbonData)", 96)()); }
+			int PreviousGold() { mixin(MGPC!("int", 64)()); }
+			int PreviousXP() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bDirty() { mixin(MGBPC!(68, 0x1)()); }
 		bool bDirty(bool val) { mixin(MSBPC!(68, 0x1)()); }

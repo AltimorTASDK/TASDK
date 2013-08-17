@@ -15,11 +15,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TangentTessellationScalar() { mixin(MGPC!(float, 96)()); }
-			float DistanceTessellationStepSize() { mixin(MGPC!(float, 92)()); }
-			float TilingDistance() { mixin(MGPC!(float, 88)()); }
-			int SheetsPerTrail() { mixin(MGPC!(int, 80)()); }
-			ScriptName ControlEdgeName() { mixin(MGPC!(ScriptName, 72)()); }
+			float TangentTessellationScalar() { mixin(MGPC!("float", 96)()); }
+			float DistanceTessellationStepSize() { mixin(MGPC!("float", 92)()); }
+			float TilingDistance() { mixin(MGPC!("float", 88)()); }
+			int SheetsPerTrail() { mixin(MGPC!("int", 80)()); }
+			ScriptName ControlEdgeName() { mixin(MGPC!("ScriptName", 72)()); }
 		}
 		bool bRenderTessellation() { mixin(MGBPC!(84, 0x80)()); }
 		bool bRenderTessellation(bool val) { mixin(MSBPC!(84, 0x80)()); }

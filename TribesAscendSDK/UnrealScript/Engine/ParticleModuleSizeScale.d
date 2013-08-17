@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleSizeScale DefaultProperties() { mixin(MGDPC!(ParticleModuleSizeScale, "ParticleModuleSizeScale Engine.Default__ParticleModuleSizeScale")()); }
 	@property final
 	{
-		@property final auto ref DistributionVector.RawDistributionVector SizeScale() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		@property final auto ref DistributionVector.RawDistributionVector SizeScale() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 		bool EnableZ() { mixin(MGBPC!(100, 0x4)()); }
 		bool EnableZ(bool val) { mixin(MSBPC!(100, 0x4)()); }
 		bool EnableY() { mixin(MGBPC!(100, 0x2)()); }

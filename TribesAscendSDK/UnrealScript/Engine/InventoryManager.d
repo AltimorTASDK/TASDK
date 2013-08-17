@@ -90,10 +90,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(int) PendingFire() { mixin(MGPC!(ScriptArray!(int), 492)()); }
-			Weapon LastAttemptedSwitchToWeapon() { mixin(MGPC!(Weapon, 484)()); }
-			Weapon PendingWeapon() { mixin(MGPC!(Weapon, 480)()); }
-			Inventory InventoryChain() { mixin(MGPC!(Inventory, 476)()); }
+			ScriptArray!(int) PendingFire() { mixin(MGPC!("ScriptArray!(int)", 492)()); }
+			Weapon LastAttemptedSwitchToWeapon() { mixin(MGPC!("Weapon", 484)()); }
+			Weapon PendingWeapon() { mixin(MGPC!("Weapon", 480)()); }
+			Inventory InventoryChain() { mixin(MGPC!("Inventory", 476)()); }
 		}
 		bool bMustHoldWeapon() { mixin(MGBPC!(488, 0x1)()); }
 		bool bMustHoldWeapon(bool val) { mixin(MSBPC!(488, 0x1)()); }
@@ -108,12 +108,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandlePickupQuery, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool AddInventory(Inventory pNewItem, bool bDoNotActivate)
+	bool AddInventory(Inventory pNewItem, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Inventory*)params.ptr = pNewItem;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddInventory, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -168,7 +169,7 @@ final:
 		*cast(ScriptClass*)params.ptr = BaseClass;
 		*cast(Inventory*)&params[4] = Inv;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InventoryActors, params.ptr, cast(void*)0);
-		*Inv = *cast(Inventory*)&params[4];
+		Inv = *cast(Inventory*)&params[4];
 	}
 	void SetupFor(Pawn P)
 	{
@@ -181,21 +182,23 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Destroyed, cast(void*)0, cast(void*)0);
 	}
-	Inventory FindInventoryType(ScriptClass DesiredClass, bool bAllowSubclass)
+	Inventory FindInventoryType(ScriptClass DesiredClass, bool* bAllowSubclass = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = DesiredClass;
-		*cast(bool*)&params[4] = bAllowSubclass;
+		if (bAllowSubclass !is null)
+			*cast(bool*)&params[4] = *bAllowSubclass;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindInventoryType, params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
-	Inventory CreateInventory(ScriptClass NewInventoryItemClass, bool bDoNotActivate)
+	Inventory CreateInventory(ScriptClass NewInventoryItemClass, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = NewInventoryItemClass;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateInventory, params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
@@ -229,19 +232,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponRatingFor, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}
-	Weapon GetBestWeapon(bool bForceADifferentWeapon)
+	Weapon GetBestWeapon(bool* bForceADifferentWeapon = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceADifferentWeapon;
+		if (bForceADifferentWeapon !is null)
+			*cast(bool*)params.ptr = *bForceADifferentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBestWeapon, params.ptr, cast(void*)0);
 		return *cast(Weapon*)&params[4];
 	}
-	void SwitchToBestWeapon(bool bForceADifferentWeapon)
+	void SwitchToBestWeapon(bool* bForceADifferentWeapon = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceADifferentWeapon;
+		if (bForceADifferentWeapon !is null)
+			*cast(bool*)params.ptr = *bForceADifferentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchToBestWeapon, params.ptr, cast(void*)0);
 	}
 	void PrevWeapon()
@@ -295,13 +300,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChangedWeapon, cast(void*)0, cast(void*)0);
 	}
-	void ClientWeaponSet(Weapon NewWeapon, bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(Weapon NewWeapon, bool bOptionalSet, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = NewWeapon;
 		*cast(bool*)&params[4] = bOptionalSet;
-		*cast(bool*)&params[8] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[8] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
 	void UpdateController()

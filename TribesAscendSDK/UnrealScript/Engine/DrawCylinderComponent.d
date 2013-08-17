@@ -17,13 +17,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CylinderSides() { mixin(MGPC!(int, 512)()); }
-			float CylinderHeightOffset() { mixin(MGPC!(float, 508)()); }
-			float CylinderHeight() { mixin(MGPC!(float, 504)()); }
-			float CylinderTopRadius() { mixin(MGPC!(float, 500)()); }
-			float CylinderRadius() { mixin(MGPC!(float, 496)()); }
-			Material CylinderMaterial() { mixin(MGPC!(Material, 492)()); }
-			UObject.Color CylinderColor() { mixin(MGPC!(UObject.Color, 488)()); }
+			int CylinderSides() { mixin(MGPC!("int", 512)()); }
+			float CylinderHeightOffset() { mixin(MGPC!("float", 508)()); }
+			float CylinderHeight() { mixin(MGPC!("float", 504)()); }
+			float CylinderTopRadius() { mixin(MGPC!("float", 500)()); }
+			float CylinderRadius() { mixin(MGPC!("float", 496)()); }
+			Material CylinderMaterial() { mixin(MGPC!("Material", 492)()); }
+			UObject.Color CylinderColor() { mixin(MGPC!("UObject.Color", 488)()); }
 		}
 		bool bDrawOnlyIfSelected() { mixin(MGBPC!(516, 0x4)()); }
 		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(516, 0x4)()); }

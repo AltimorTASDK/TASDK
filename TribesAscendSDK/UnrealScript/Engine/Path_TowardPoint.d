@@ -25,7 +25,7 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.Path_TowardPoint.Recycle")()); }
 		}
 	}
-	@property final auto ref Vector GoalPoint() { mixin(MGPC!(Vector, 68)()); }
+	@property final auto ref Vector GoalPoint() { mixin(MGPC!("Vector", 68)()); }
 final:
 	static bool TowardPoint(Pawn P, Vector Point)
 	{

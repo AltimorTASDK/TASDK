@@ -54,14 +54,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ConnID() { mixin(MGPC!(int, 584)()); }
-			int MaxLineLength() { mixin(MGPC!(int, 580)()); }
-			int MaxValueLength() { mixin(MGPC!(int, 576)()); }
-			int RawBytesExpecting() { mixin(MGPC!(int, 572)()); }
-			WebApplication Application() { mixin(MGPC!(WebApplication, 564)()); }
-			WebResponse Response() { mixin(MGPC!(WebResponse, 560)()); }
-			WebRequest Request() { mixin(MGPC!(WebRequest, 556)()); }
-			ScriptString ReceivedData() { mixin(MGPC!(ScriptString, 544)()); }
+			int ConnID() { mixin(MGPC!("int", 584)()); }
+			int MaxLineLength() { mixin(MGPC!("int", 580)()); }
+			int MaxValueLength() { mixin(MGPC!("int", 576)()); }
+			int RawBytesExpecting() { mixin(MGPC!("int", 572)()); }
+			WebApplication Application() { mixin(MGPC!("WebApplication", 564)()); }
+			WebResponse Response() { mixin(MGPC!("WebResponse", 560)()); }
+			WebRequest Request() { mixin(MGPC!("WebRequest", 556)()); }
+			ScriptString ReceivedData() { mixin(MGPC!("ScriptString", 544)()); }
 			// WARNING: Property 'WebServer' has the same name as a defined type!
 		}
 		bool bDelayCleanup() { mixin(MGBPC!(568, 0x1)()); }

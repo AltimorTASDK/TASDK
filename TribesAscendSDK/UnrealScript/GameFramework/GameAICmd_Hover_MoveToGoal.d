@@ -46,16 +46,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ReachSpec CurrentSpec() { mixin(MGPC!(ReachSpec, 136)()); }
-			Vector MoveVectDest() { mixin(MGPC!(Vector, 124)()); }
-			float GoalDistance() { mixin(MGPC!(float, 120)()); }
-			float SubGoalReachDist() { mixin(MGPC!(float, 116)()); }
-			float CurrentHoverHeight() { mixin(MGPC!(float, 112)()); }
-			float DesiredHoverHeight() { mixin(MGPC!(float, 108)()); }
-			float Radius() { mixin(MGPC!(float, 100)()); }
-			Actor Goal() { mixin(MGPC!(Actor, 96)()); }
-			Actor Find() { mixin(MGPC!(Actor, 92)()); }
-			Actor Path() { mixin(MGPC!(Actor, 88)()); }
+			ReachSpec CurrentSpec() { mixin(MGPC!("ReachSpec", 136)()); }
+			Vector MoveVectDest() { mixin(MGPC!("Vector", 124)()); }
+			float GoalDistance() { mixin(MGPC!("float", 120)()); }
+			float SubGoalReachDist() { mixin(MGPC!("float", 116)()); }
+			float CurrentHoverHeight() { mixin(MGPC!("float", 112)()); }
+			float DesiredHoverHeight() { mixin(MGPC!("float", 108)()); }
+			float Radius() { mixin(MGPC!("float", 100)()); }
+			Actor Goal() { mixin(MGPC!("Actor", 96)()); }
+			Actor Find() { mixin(MGPC!("Actor", 92)()); }
+			Actor Path() { mixin(MGPC!("Actor", 88)()); }
 		}
 		bool bWasFiring() { mixin(MGBPC!(104, 0x1)()); }
 		bool bWasFiring(bool val) { mixin(MSBPC!(104, 0x1)()); }

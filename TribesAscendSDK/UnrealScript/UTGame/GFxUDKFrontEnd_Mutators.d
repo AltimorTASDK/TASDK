@@ -70,15 +70,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UTUIDataProvider_Mutator) AllMutatorsList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_Mutator), 220)()); }
-			ScriptArray!(UTUIDataProvider_Mutator) AvailableMutatorList() { mixin(MGPC!(ScriptArray!(UTUIDataProvider_Mutator), 232)()); }
-			ScriptArray!(int) EnabledList() { mixin(MGPC!(ScriptArray!(int), 248)()); }
-			GFxObject ConfigListDataProvider() { mixin(MGPC!(GFxObject, 276)()); }
-			GFxClikWidget ConfigListMC() { mixin(MGPC!(GFxClikWidget, 272)()); }
-			GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 268)()); }
-			GFxObject MenuMC() { mixin(MGPC!(GFxObject, 264)()); }
-			GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 260)()); }
-			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!(UTUIDataStore_MenuItems, 244)()); }
+			ScriptArray!(UTUIDataProvider_Mutator) AllMutatorsList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_Mutator)", 220)()); }
+			ScriptArray!(UTUIDataProvider_Mutator) AvailableMutatorList() { mixin(MGPC!("ScriptArray!(UTUIDataProvider_Mutator)", 232)()); }
+			ScriptArray!(int) EnabledList() { mixin(MGPC!("ScriptArray!(int)", 248)()); }
+			GFxObject ConfigListDataProvider() { mixin(MGPC!("GFxObject", 276)()); }
+			GFxClikWidget ConfigListMC() { mixin(MGPC!("GFxClikWidget", 272)()); }
+			GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 268)()); }
+			GFxObject MenuMC() { mixin(MGPC!("GFxObject", 264)()); }
+			GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 260)()); }
+			UTUIDataStore_MenuItems MenuDataStore() { mixin(MGPC!("UTUIDataStore_MenuItems", 244)()); }
 		}
 		bool bFirstUpdateAfterActivation() { mixin(MGBPC!(280, 0x1)()); }
 		bool bFirstUpdateAfterActivation(bool val) { mixin(MSBPC!(280, 0x1)()); }
@@ -110,11 +110,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SortAllMutatorsBasedOnOfficialArray, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)

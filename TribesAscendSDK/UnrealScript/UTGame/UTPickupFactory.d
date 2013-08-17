@@ -82,14 +82,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 924)()); }
-			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 940)()); }
-			float LastSeekNotificationTime() { mixin(MGPC!(float, 936)()); }
-			ScriptName PickupStatName() { mixin(MGPC!(ScriptName, 912)()); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 924)()); }
+			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 940)()); }
+			float LastSeekNotificationTime() { mixin(MGPC!("float", 936)()); }
+			ScriptName PickupStatName() { mixin(MGPC!("ScriptName", 912)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupReadySound'!
-			SoundCue RespawnSound() { mixin(MGPC!(SoundCue, 900)()); }
-			Controller TeamOwner() { mixin(MGPC!(Controller, 884)()); }
+			SoundCue RespawnSound() { mixin(MGPC!("SoundCue", 900)()); }
+			Controller TeamOwner() { mixin(MGPC!("Controller", 884)()); }
 		}
 		bool bHasLocationSpeech() { mixin(MGBPC!(920, 0x1)()); }
 		bool bHasLocationSpeech(bool val) { mixin(MSBPC!(920, 0x1)()); }

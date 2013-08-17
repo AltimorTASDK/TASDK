@@ -48,25 +48,26 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.DataStoreClient.PlayerDataStoreGroup")()); }
 		@property final auto ref
 		{
-			ScriptArray!(UIDataStore) DataStores() { mixin(MGPS!(ScriptArray!(UIDataStore), 4)()); }
-			LocalPlayer PlayerOwner() { mixin(MGPS!(LocalPlayer, 0)()); }
+			ScriptArray!(UIDataStore) DataStores() { mixin(MGPS!("ScriptArray!(UIDataStore)", 4)()); }
+			LocalPlayer PlayerOwner() { mixin(MGPS!("LocalPlayer", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) GlobalDataStoreClasses() { mixin(MGPC!(ScriptArray!(ScriptString), 60)()); }
-		ScriptArray!(UIDataStore) GlobalDataStores() { mixin(MGPC!(ScriptArray!(UIDataStore), 72)()); }
-		ScriptArray!(ScriptString) PlayerDataStoreClassNames() { mixin(MGPC!(ScriptArray!(ScriptString), 84)()); }
-		ScriptArray!(ScriptClass) PlayerDataStoreClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 96)()); }
-		ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { mixin(MGPC!(ScriptArray!(DataStoreClient.PlayerDataStoreGroup), 108)()); }
+		ScriptArray!(ScriptString) GlobalDataStoreClasses() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
+		ScriptArray!(UIDataStore) GlobalDataStores() { mixin(MGPC!("ScriptArray!(UIDataStore)", 72)()); }
+		ScriptArray!(ScriptString) PlayerDataStoreClassNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 84)()); }
+		ScriptArray!(ScriptClass) PlayerDataStoreClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 96)()); }
+		ScriptArray!(DataStoreClient.PlayerDataStoreGroup) PlayerDataStores() { mixin(MGPC!("ScriptArray!(DataStoreClient.PlayerDataStoreGroup)", 108)()); }
 	}
 final:
-	UIDataStore FindDataStore(ScriptName DataStoreTag, LocalPlayer PlayerOwner)
+	UIDataStore FindDataStore(ScriptName DataStoreTag, LocalPlayer* PlayerOwner = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = DataStoreTag;
-		*cast(LocalPlayer*)&params[8] = PlayerOwner;
+		if (PlayerOwner !is null)
+			*cast(LocalPlayer*)&params[8] = *PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindDataStore, params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[12];
 	}
@@ -86,12 +87,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateDataStore, params.ptr, cast(void*)0);
 		return *cast(UIDataStore*)&params[4];
 	}
-	bool RegisterDataStore(UIDataStore DataStore, LocalPlayer PlayerOwner)
+	bool RegisterDataStore(UIDataStore DataStore, LocalPlayer* PlayerOwner = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataStore*)params.ptr = DataStore;
-		*cast(LocalPlayer*)&params[4] = PlayerOwner;
+		if (PlayerOwner !is null)
+			*cast(LocalPlayer*)&params[4] = *PlayerOwner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterDataStore, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -101,7 +103,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptClass)*)params.ptr = out_DataStoreClasses;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerDataStoreClasses, params.ptr, cast(void*)0);
-		*out_DataStoreClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
+		out_DataStoreClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
 	}
 	bool UnregisterDataStore(UIDataStore DataStore)
 	{

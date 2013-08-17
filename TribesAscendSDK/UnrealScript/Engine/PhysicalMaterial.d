@@ -40,28 +40,28 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MaterialIndex() { mixin(MGPC!(int, 60)()); }
-			SoundCue FractureSoundSingle() { mixin(MGPC!(SoundCue, 148)()); }
-			SoundCue FractureSoundExplosion() { mixin(MGPC!(SoundCue, 144)()); }
-			PhysicalMaterial Parent() { mixin(MGPC!(PhysicalMaterial, 152)()); }
-			PhysicalMaterialPropertyBase PhysicalMaterialProperty() { mixin(MGPC!(PhysicalMaterialPropertyBase, 156)()); }
-			float Friction() { mixin(MGPC!(float, 64)()); }
-			float Restitution() { mixin(MGPC!(float, 68)()); }
-			Vector AnisoFrictionDir() { mixin(MGPC!(Vector, 76)()); }
-			float FrictionV() { mixin(MGPC!(float, 88)()); }
-			float Density() { mixin(MGPC!(float, 92)()); }
-			float AngularDamping() { mixin(MGPC!(float, 96)()); }
-			float LinearDamping() { mixin(MGPC!(float, 100)()); }
-			float MagneticResponse() { mixin(MGPC!(float, 104)()); }
-			float WindResponse() { mixin(MGPC!(float, 108)()); }
-			float ImpactThreshold() { mixin(MGPC!(float, 112)()); }
-			float ImpactReFireDelay() { mixin(MGPC!(float, 116)()); }
-			ParticleSystem ImpactEffect() { mixin(MGPC!(ParticleSystem, 120)()); }
-			SoundCue ImpactSound() { mixin(MGPC!(SoundCue, 124)()); }
-			float SlideThreshold() { mixin(MGPC!(float, 128)()); }
-			float SlideReFireDelay() { mixin(MGPC!(float, 132)()); }
-			ParticleSystem SlideEffect() { mixin(MGPC!(ParticleSystem, 136)()); }
-			SoundCue SlideSound() { mixin(MGPC!(SoundCue, 140)()); }
+			int MaterialIndex() { mixin(MGPC!("int", 60)()); }
+			SoundCue FractureSoundSingle() { mixin(MGPC!("SoundCue", 148)()); }
+			SoundCue FractureSoundExplosion() { mixin(MGPC!("SoundCue", 144)()); }
+			PhysicalMaterial Parent() { mixin(MGPC!("PhysicalMaterial", 152)()); }
+			PhysicalMaterialPropertyBase PhysicalMaterialProperty() { mixin(MGPC!("PhysicalMaterialPropertyBase", 156)()); }
+			float Friction() { mixin(MGPC!("float", 64)()); }
+			float Restitution() { mixin(MGPC!("float", 68)()); }
+			Vector AnisoFrictionDir() { mixin(MGPC!("Vector", 76)()); }
+			float FrictionV() { mixin(MGPC!("float", 88)()); }
+			float Density() { mixin(MGPC!("float", 92)()); }
+			float AngularDamping() { mixin(MGPC!("float", 96)()); }
+			float LinearDamping() { mixin(MGPC!("float", 100)()); }
+			float MagneticResponse() { mixin(MGPC!("float", 104)()); }
+			float WindResponse() { mixin(MGPC!("float", 108)()); }
+			float ImpactThreshold() { mixin(MGPC!("float", 112)()); }
+			float ImpactReFireDelay() { mixin(MGPC!("float", 116)()); }
+			ParticleSystem ImpactEffect() { mixin(MGPC!("ParticleSystem", 120)()); }
+			SoundCue ImpactSound() { mixin(MGPC!("SoundCue", 124)()); }
+			float SlideThreshold() { mixin(MGPC!("float", 128)()); }
+			float SlideReFireDelay() { mixin(MGPC!("float", 132)()); }
+			ParticleSystem SlideEffect() { mixin(MGPC!("ParticleSystem", 136)()); }
+			SoundCue SlideSound() { mixin(MGPC!("SoundCue", 140)()); }
 		}
 		bool bForceConeFriction() { mixin(MGBPC!(72, 0x1)()); }
 		bool bForceConeFriction(bool val) { mixin(MSBPC!(72, 0x1)()); }
@@ -84,8 +84,8 @@ final:
 		*cast(SoundCue*)params.ptr = OutSoundExplosion;
 		*cast(SoundCue*)&params[4] = OutSoundSingle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindFractureSounds, params.ptr, cast(void*)0);
-		*OutSoundExplosion = *cast(SoundCue*)params.ptr;
-		*OutSoundSingle = *cast(SoundCue*)&params[4];
+		OutSoundExplosion = *cast(SoundCue*)params.ptr;
+		OutSoundSingle = *cast(SoundCue*)&params[4];
 	}
 	PhysicalMaterialPropertyBase GetPhysicalMaterialProperty(ScriptClass DesiredClass)
 	{

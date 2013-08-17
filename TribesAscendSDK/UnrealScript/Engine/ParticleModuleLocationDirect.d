@@ -14,9 +14,9 @@ public extern(D):
 	@property final static ParticleModuleLocationDirect DefaultProperties() { mixin(MGDPC!(ParticleModuleLocationDirect, "ParticleModuleLocationDirect Engine.Default__ParticleModuleLocationDirect")()); }
 	@property final auto ref
 	{
-		DistributionVector.RawDistributionVector Direction() { mixin(MGPC!(DistributionVector.RawDistributionVector, 156)()); }
-		DistributionVector.RawDistributionVector ScaleFactor() { mixin(MGPC!(DistributionVector.RawDistributionVector, 128)()); }
-		DistributionVector.RawDistributionVector LocationOffset() { mixin(MGPC!(DistributionVector.RawDistributionVector, 100)()); }
-		DistributionVector.RawDistributionVector Location() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		DistributionVector.RawDistributionVector Direction() { mixin(MGPC!("DistributionVector.RawDistributionVector", 156)()); }
+		DistributionVector.RawDistributionVector ScaleFactor() { mixin(MGPC!("DistributionVector.RawDistributionVector", 128)()); }
+		DistributionVector.RawDistributionVector LocationOffset() { mixin(MGPC!("DistributionVector.RawDistributionVector", 100)()); }
+		DistributionVector.RawDistributionVector Location() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 	}
 }

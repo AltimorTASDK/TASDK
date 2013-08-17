@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mInitialize;
 		public @property static final ScriptFunction Initialize() { mixin(MGF!("mInitialize", "Function TribesGame.GFxTrScene_Profile.Initialize")()); }
 	}
-	@property final auto ref ScriptArray!(int) ChosenClasses() { mixin(MGPC!(ScriptArray!(int), 132)()); }
+	@property final auto ref ScriptArray!(int) ChosenClasses() { mixin(MGPC!("ScriptArray!(int)", 132)()); }
 	final void Initialize()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Initialize, cast(void*)0, cast(void*)0);

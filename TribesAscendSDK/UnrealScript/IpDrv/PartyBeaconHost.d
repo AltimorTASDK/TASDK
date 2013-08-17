@@ -79,29 +79,29 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeaconHost.ClientBeaconConnection")()); }
 		@property final auto ref
 		{
-			UObject.Pointer Socket() { mixin(MGPS!(UObject.Pointer, 12)()); }
-			float ElapsedHeartbeatTime() { mixin(MGPS!(float, 8)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
+			UObject.Pointer Socket() { mixin(MGPS!("UObject.Pointer", 12)()); }
+			float ElapsedHeartbeatTime() { mixin(MGPS!("float", 8)()); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { mixin(MGPC!(ScriptArray!(PartyBeaconHost.ClientBeaconConnection), 104)()); }
-			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { mixin(MGPC!(ScriptArray!(PartyBeacon.PartyReservation), 132)()); }
+			ScriptArray!(PartyBeaconHost.ClientBeaconConnection) Clients() { mixin(MGPC!("ScriptArray!(PartyBeaconHost.ClientBeaconConnection)", 104)()); }
+			ScriptArray!(PartyBeacon.PartyReservation) Reservations() { mixin(MGPC!("ScriptArray!(PartyBeacon.PartyReservation)", 132)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnClientCancellationReceived__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationsFull__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReservationChange__Delegate'!
-			PartyBeaconHost.EPartyBeaconHostState BeaconState() { mixin(MGPC!(PartyBeaconHost.EPartyBeaconHostState, 168)()); }
-			int ReservedHostTeamNum() { mixin(MGPC!(int, 160)()); }
-			int ForceTeamNum() { mixin(MGPC!(int, 156)()); }
-			int ConnectionBacklog() { mixin(MGPC!(int, 152)()); }
-			ScriptName OnlineSessionName() { mixin(MGPC!(ScriptName, 144)()); }
-			int NumConsumedReservations() { mixin(MGPC!(int, 128)()); }
-			int NumReservations() { mixin(MGPC!(int, 124)()); }
-			int NumPlayersPerTeam() { mixin(MGPC!(int, 120)()); }
-			int NumTeams() { mixin(MGPC!(int, 116)()); }
+			PartyBeaconHost.EPartyBeaconHostState BeaconState() { mixin(MGPC!("PartyBeaconHost.EPartyBeaconHostState", 168)()); }
+			int ReservedHostTeamNum() { mixin(MGPC!("int", 160)()); }
+			int ForceTeamNum() { mixin(MGPC!("int", 156)()); }
+			int ConnectionBacklog() { mixin(MGPC!("int", 152)()); }
+			ScriptName OnlineSessionName() { mixin(MGPC!("ScriptName", 144)()); }
+			int NumConsumedReservations() { mixin(MGPC!("int", 128)()); }
+			int NumReservations() { mixin(MGPC!("int", 124)()); }
+			int NumPlayersPerTeam() { mixin(MGPC!("int", 120)()); }
+			int NumTeams() { mixin(MGPC!("int", 116)()); }
 		}
 		bool bBestFitTeamAssignment() { mixin(MGBPC!(164, 0x1)()); }
 		bool bBestFitTeamAssignment(bool val) { mixin(MSBPC!(164, 0x1)()); }
@@ -129,7 +129,7 @@ final:
 		*cast(bool*)params.ptr = bPause;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseReservationRequests, params.ptr, cast(void*)0);
 	}
-	bool InitHostBeacon(int InNumTeams, int InNumPlayersPerTeam, int InNumReservations, ScriptName InSessionName, int InForceTeamNum)
+	bool InitHostBeacon(int InNumTeams, int InNumPlayersPerTeam, int InNumReservations, ScriptName InSessionName, int* InForceTeamNum = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -137,39 +137,37 @@ final:
 		*cast(int*)&params[4] = InNumPlayersPerTeam;
 		*cast(int*)&params[8] = InNumReservations;
 		*cast(ScriptName*)&params[12] = InSessionName;
-		*cast(int*)&params[20] = InForceTeamNum;
+		if (InForceTeamNum !is null)
+			*cast(int*)&params[20] = *InForceTeamNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitHostBeacon, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	PartyBeacon.EPartyReservationResult AddPartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers, int TeamNum, bool bIsHost)
+	PartyBeacon.EPartyReservationResult AddPartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref in ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers, int TeamNum, bool bIsHost)
 	{
 		ubyte params[29];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = PlayerMembers;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = cast(ScriptArray!(PartyBeacon.PlayerReservation))PlayerMembers;
 		*cast(int*)&params[20] = TeamNum;
 		*cast(bool*)&params[24] = bIsHost;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddPartyReservationEntry, params.ptr, cast(void*)0);
-		*PlayerMembers = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8];
 		return *cast(PartyBeacon.EPartyReservationResult*)&params[28];
 	}
-	PartyBeacon.EPartyReservationResult UpdatePartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref const ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers)
+	PartyBeacon.EPartyReservationResult UpdatePartyReservationEntry(OnlineSubsystem.UniqueNetId PartyLeader, ref in ScriptArray!(PartyBeacon.PlayerReservation) PlayerMembers)
 	{
 		ubyte params[21];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
-		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = PlayerMembers;
+		*cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8] = cast(ScriptArray!(PartyBeacon.PlayerReservation))PlayerMembers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePartyReservationEntry, params.ptr, cast(void*)0);
-		*PlayerMembers = *cast(ScriptArray!(PartyBeacon.PlayerReservation)*)&params[8];
 		return *cast(PartyBeacon.EPartyReservationResult*)&params[20];
 	}
-	int GetExistingReservation(ref const OnlineSubsystem.UniqueNetId PartyLeader)
+	int GetExistingReservation(ref in OnlineSubsystem.UniqueNetId PartyLeader)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PartyLeader;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = cast(OnlineSubsystem.UniqueNetId)PartyLeader;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetExistingReservation, params.ptr, cast(void*)0);
-		*PartyLeader = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(int*)&params[8];
 	}
 	void HandlePlayerLogout(OnlineSubsystem.UniqueNetId PlayerID, bool bMaintainParty)
@@ -236,7 +234,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayers, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
+		Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	void GetPartyLeaders(ref ScriptArray!(OnlineSubsystem.UniqueNetId) PartyLeaders)
 	{
@@ -244,7 +242,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = PartyLeaders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPartyLeaders, params.ptr, cast(void*)0);
-		*PartyLeaders = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
+		PartyLeaders = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 	}
 	int GetMaxAvailableTeamSize()
 	{

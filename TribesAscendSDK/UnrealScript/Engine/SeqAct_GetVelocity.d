@@ -18,8 +18,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Vector VelocityVect() { mixin(MGPC!(Vector, 236)()); }
-		float VelocityMag() { mixin(MGPC!(float, 232)()); }
+		Vector VelocityVect() { mixin(MGPC!("Vector", 236)()); }
+		float VelocityMag() { mixin(MGPC!("float", 232)()); }
 	}
 	final static int GetObjClassVersion()
 	{

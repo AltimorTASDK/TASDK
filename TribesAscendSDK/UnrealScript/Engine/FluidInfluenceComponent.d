@@ -24,29 +24,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			FluidSurfaceActor CurrentFluidActor() { mixin(MGPC!(FluidSurfaceActor, 580)()); }
-			float CurrentTimer() { mixin(MGPC!(float, 576)()); }
-			float CurrentAngle() { mixin(MGPC!(float, 572)()); }
-			float SphereStrength() { mixin(MGPC!(float, 568)()); }
-			float SphereInnerRadius() { mixin(MGPC!(float, 564)()); }
-			float SphereOuterRadius() { mixin(MGPC!(float, 560)()); }
-			float FlowFrequency() { mixin(MGPC!(float, 556)()); }
-			float FlowStrength() { mixin(MGPC!(float, 552)()); }
-			float FlowWaveRadius() { mixin(MGPC!(float, 548)()); }
-			float FlowSideMotionRadius() { mixin(MGPC!(float, 544)()); }
-			int FlowNumRipples() { mixin(MGPC!(int, 540)()); }
-			float FlowSpeed() { mixin(MGPC!(float, 536)()); }
-			float RaindropRate() { mixin(MGPC!(float, 532)()); }
-			float RaindropStrength() { mixin(MGPC!(float, 528)()); }
-			float RaindropRadius() { mixin(MGPC!(float, 524)()); }
-			float RaindropAreaRadius() { mixin(MGPC!(float, 520)()); }
-			float WaveRadius() { mixin(MGPC!(float, 516)()); }
-			float WavePhase() { mixin(MGPC!(float, 512)()); }
-			float WaveFrequency() { mixin(MGPC!(float, 508)()); }
-			float WaveStrength() { mixin(MGPC!(float, 504)()); }
-			float MaxDistance() { mixin(MGPC!(float, 500)()); }
-			FluidInfluenceComponent.EInfluenceType InfluenceType() { mixin(MGPC!(FluidInfluenceComponent.EInfluenceType, 496)()); }
-			FluidSurfaceActor FluidActor() { mixin(MGPC!(FluidSurfaceActor, 492)()); }
+			FluidSurfaceActor CurrentFluidActor() { mixin(MGPC!("FluidSurfaceActor", 580)()); }
+			float CurrentTimer() { mixin(MGPC!("float", 576)()); }
+			float CurrentAngle() { mixin(MGPC!("float", 572)()); }
+			float SphereStrength() { mixin(MGPC!("float", 568)()); }
+			float SphereInnerRadius() { mixin(MGPC!("float", 564)()); }
+			float SphereOuterRadius() { mixin(MGPC!("float", 560)()); }
+			float FlowFrequency() { mixin(MGPC!("float", 556)()); }
+			float FlowStrength() { mixin(MGPC!("float", 552)()); }
+			float FlowWaveRadius() { mixin(MGPC!("float", 548)()); }
+			float FlowSideMotionRadius() { mixin(MGPC!("float", 544)()); }
+			int FlowNumRipples() { mixin(MGPC!("int", 540)()); }
+			float FlowSpeed() { mixin(MGPC!("float", 536)()); }
+			float RaindropRate() { mixin(MGPC!("float", 532)()); }
+			float RaindropStrength() { mixin(MGPC!("float", 528)()); }
+			float RaindropRadius() { mixin(MGPC!("float", 524)()); }
+			float RaindropAreaRadius() { mixin(MGPC!("float", 520)()); }
+			float WaveRadius() { mixin(MGPC!("float", 516)()); }
+			float WavePhase() { mixin(MGPC!("float", 512)()); }
+			float WaveFrequency() { mixin(MGPC!("float", 508)()); }
+			float WaveStrength() { mixin(MGPC!("float", 504)()); }
+			float MaxDistance() { mixin(MGPC!("float", 500)()); }
+			FluidInfluenceComponent.EInfluenceType InfluenceType() { mixin(MGPC!("FluidInfluenceComponent.EInfluenceType", 496)()); }
+			FluidSurfaceActor FluidActor() { mixin(MGPC!("FluidSurfaceActor", 492)()); }
 		}
 		bool bIsToggleTriggered() { mixin(MGBPC!(488, 0x4)()); }
 		bool bIsToggleTriggered(bool val) { mixin(MSBPC!(488, 0x4)()); }

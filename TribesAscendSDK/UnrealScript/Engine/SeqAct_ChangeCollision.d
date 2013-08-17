@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref Actor.ECollisionType CollisionType() { mixin(MGPC!(Actor.ECollisionType, 236)()); }
+		@property final auto ref Actor.ECollisionType CollisionType() { mixin(MGPC!("Actor.ECollisionType", 236)()); }
 		bool bCollideActors() { mixin(MGBPC!(232, 0x1)()); }
 		bool bCollideActors(bool val) { mixin(MSBPC!(232, 0x1)()); }
 		bool bBlockActors() { mixin(MGBPC!(232, 0x2)()); }

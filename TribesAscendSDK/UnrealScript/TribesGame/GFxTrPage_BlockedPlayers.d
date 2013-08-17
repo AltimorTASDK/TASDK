@@ -53,15 +53,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 432)()); }
-			ScriptString FlyoutTitle() { mixin(MGPC!(ScriptString, 420)()); }
-			ScriptString UnblockOption() { mixin(MGPC!(ScriptString, 408)()); }
-			ScriptString BlockedStatus() { mixin(MGPC!(ScriptString, 396)()); }
-			ScriptString BlockSubtext() { mixin(MGPC!(ScriptString, 384)()); }
-			ScriptString BlockOption() { mixin(MGPC!(ScriptString, 372)()); }
-			int RemovingIndex() { mixin(MGPC!(int, 364)()); }
-			int PrevPlayerId() { mixin(MGPC!(int, 360)()); }
-			int FocusedIndex() { mixin(MGPC!(int, 356)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 432)()); }
+			ScriptString FlyoutTitle() { mixin(MGPC!("ScriptString", 420)()); }
+			ScriptString UnblockOption() { mixin(MGPC!("ScriptString", 408)()); }
+			ScriptString BlockedStatus() { mixin(MGPC!("ScriptString", 396)()); }
+			ScriptString BlockSubtext() { mixin(MGPC!("ScriptString", 384)()); }
+			ScriptString BlockOption() { mixin(MGPC!("ScriptString", 372)()); }
+			int RemovingIndex() { mixin(MGPC!("int", 364)()); }
+			int PrevPlayerId() { mixin(MGPC!("int", 360)()); }
+			int FocusedIndex() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForFriendRemovePopup() { mixin(MGBPC!(368, 0x2)()); }
 		bool bWaitingForFriendRemovePopup(bool val) { mixin(MSBPC!(368, 0x2)()); }

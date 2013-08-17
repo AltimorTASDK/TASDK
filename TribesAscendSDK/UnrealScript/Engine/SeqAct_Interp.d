@@ -43,8 +43,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqAct_Interp.CameraCutInfo")()); }
 		@property final auto ref
 		{
-			float TimeStamp() { mixin(MGPS!(float, 12)()); }
-			Vector Location() { mixin(MGPS!(Vector, 0)()); }
+			float TimeStamp() { mixin(MGPS!("float", 12)()); }
+			Vector Location() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	struct SavedTransform
@@ -55,25 +55,25 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SeqAct_Interp.SavedTransform")()); }
 		@property final auto ref
 		{
-			Rotator Rotation() { mixin(MGPS!(Rotator, 12)()); }
-			Vector Location() { mixin(MGPS!(Vector, 0)()); }
+			Rotator Rotation() { mixin(MGPS!("Rotator", 12)()); }
+			Vector Location() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			float PlayRate() { mixin(MGPC!(float, 368)()); }
-			float Position() { mixin(MGPC!(float, 372)()); }
-			ScriptArray!(InterpGroupInst) GroupInst() { mixin(MGPC!(ScriptArray!(InterpGroupInst), 400)()); }
-			ScriptArray!(CoverLink) LinkedCover() { mixin(MGPC!(ScriptArray!(CoverLink), 384)()); }
-			ScriptArray!(SeqAct_Interp.CameraCutInfo) CameraCuts() { mixin(MGPC!(ScriptArray!(SeqAct_Interp.CameraCutInfo), 424)()); }
-			float TerminationTime() { mixin(MGPC!(float, 436)()); }
-			int PreferredSplitScreenNum() { mixin(MGPC!(int, 420)()); }
-			MatineeActor ReplicatedActor() { mixin(MGPC!(MatineeActor, 416)()); }
-			ScriptClass ReplicatedActorClass() { mixin(MGPC!(ScriptClass, 412)()); }
+			float PlayRate() { mixin(MGPC!("float", 368)()); }
+			float Position() { mixin(MGPC!("float", 372)()); }
+			ScriptArray!(InterpGroupInst) GroupInst() { mixin(MGPC!("ScriptArray!(InterpGroupInst)", 400)()); }
+			ScriptArray!(CoverLink) LinkedCover() { mixin(MGPC!("ScriptArray!(CoverLink)", 384)()); }
+			ScriptArray!(SeqAct_Interp.CameraCutInfo) CameraCuts() { mixin(MGPC!("ScriptArray!(SeqAct_Interp.CameraCutInfo)", 424)()); }
+			float TerminationTime() { mixin(MGPC!("float", 436)()); }
+			int PreferredSplitScreenNum() { mixin(MGPC!("int", 420)()); }
+			MatineeActor ReplicatedActor() { mixin(MGPC!("MatineeActor", 416)()); }
+			ScriptClass ReplicatedActorClass() { mixin(MGPC!("ScriptClass", 412)()); }
 			// WARNING: Property 'InterpData' has the same name as a defined type!
-			float ForceStartPosition() { mixin(MGPC!(float, 376)()); }
+			float ForceStartPosition() { mixin(MGPC!("float", 376)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SavedActorVisibilities'!
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SavedActorTransforms'!
 		}
@@ -116,12 +116,13 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddPlayerToDirectorTracks, params.ptr, cast(void*)0);
 	}
-	void SetPosition(float NewPosition, bool bJump)
+	void SetPosition(float NewPosition, bool* bJump = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(float*)params.ptr = NewPosition;
-		*cast(bool*)&params[4] = bJump;
+		if (bJump !is null)
+			*cast(bool*)&params[4] = *bJump;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPosition, params.ptr, cast(void*)0);
 	}
 	void Stop()

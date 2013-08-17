@@ -84,8 +84,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPlayerReplicationInfo.IntStat")()); }
 		@property final auto ref
 		{
-			int StatValue() { mixin(MGPS!(int, 8)()); }
-			ScriptName StatName() { mixin(MGPS!(ScriptName, 0)()); }
+			int StatValue() { mixin(MGPS!("int", 8)()); }
+			ScriptName StatName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct TimeStat
@@ -96,36 +96,36 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTPlayerReplicationInfo.TimeStat")()); }
 		@property final auto ref
 		{
-			float CurrentStart() { mixin(MGPS!(float, 12)()); }
-			float TotalTime() { mixin(MGPS!(float, 8)()); }
-			ScriptName StatName() { mixin(MGPS!(ScriptName, 0)()); }
+			float CurrentStart() { mixin(MGPS!("float", 12)()); }
+			float TotalTime() { mixin(MGPS!("float", 8)()); }
+			ScriptName StatName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptClass CharClassInfo() { mixin(MGPC!(ScriptClass, 700)()); }
-			ScriptClass VoiceClass() { mixin(MGPC!(ScriptClass, 676)()); }
-			Texture CharPortrait() { mixin(MGPC!(Texture, 704)()); }
-			UTPlayerReplicationInfo LastKillerPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 680)()); }
-			int spree() { mixin(MGPC!(int, 656)()); }
-			UTSquadAI Squad() { mixin(MGPC!(UTSquadAI, 668)()); }
-			int MultiKillLevel() { mixin(MGPC!(int, 660)()); }
-			float LastKillTime() { mixin(MGPC!(float, 664)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) KillStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 708)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) DeathStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 720)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) SuicideStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 732)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) EventStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 744)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) VehicleKillStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 756)()); }
-			ScriptArray!(UTPlayerReplicationInfo.IntStat) PickupStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.IntStat), 768)()); }
-			ScriptArray!(UTPlayerReplicationInfo.TimeStat) DrivingStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.TimeStat), 780)()); }
-			ScriptArray!(UTPlayerReplicationInfo.TimeStat) PowerupTimeStats() { mixin(MGPC!(ScriptArray!(UTPlayerReplicationInfo.TimeStat), 792)()); }
-			ubyte OrdersIndex() { mixin(MGPC!(ubyte, 900)()); }
-			ScriptString OrdersString() { mixin(MGPC!(ScriptString, 804)()); }
-			Vector HUDLocation() { mixin(MGPC!(Vector, 688)()); }
-			UObject.Color DefaultHudColor() { mixin(MGPC!(UObject.Color, 684)()); }
-			UTCarriedObject HasFlag() { mixin(MGPC!(UTCarriedObject, 672)()); }
+			ScriptClass CharClassInfo() { mixin(MGPC!("ScriptClass", 700)()); }
+			ScriptClass VoiceClass() { mixin(MGPC!("ScriptClass", 676)()); }
+			Texture CharPortrait() { mixin(MGPC!("Texture", 704)()); }
+			UTPlayerReplicationInfo LastKillerPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 680)()); }
+			int spree() { mixin(MGPC!("int", 656)()); }
+			UTSquadAI Squad() { mixin(MGPC!("UTSquadAI", 668)()); }
+			int MultiKillLevel() { mixin(MGPC!("int", 660)()); }
+			float LastKillTime() { mixin(MGPC!("float", 664)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) KillStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 708)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) DeathStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 720)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) SuicideStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 732)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) EventStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 744)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) VehicleKillStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 756)()); }
+			ScriptArray!(UTPlayerReplicationInfo.IntStat) PickupStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.IntStat)", 768)()); }
+			ScriptArray!(UTPlayerReplicationInfo.TimeStat) DrivingStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.TimeStat)", 780)()); }
+			ScriptArray!(UTPlayerReplicationInfo.TimeStat) PowerupTimeStats() { mixin(MGPC!("ScriptArray!(UTPlayerReplicationInfo.TimeStat)", 792)()); }
+			ubyte OrdersIndex() { mixin(MGPC!("ubyte", 900)()); }
+			ScriptString OrdersString() { mixin(MGPC!("ScriptString", 804)()); }
+			Vector HUDLocation() { mixin(MGPC!("Vector", 688)()); }
+			UObject.Color DefaultHudColor() { mixin(MGPC!("UObject.Color", 684)()); }
+			UTCarriedObject HasFlag() { mixin(MGPC!("UTCarriedObject", 672)()); }
 		}
 		bool bHasFlag() { mixin(MGBPC!(652, 0x1)()); }
 		bool bHasFlag(bool val) { mixin(MSBPC!(652, 0x1)()); }
@@ -204,11 +204,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocalPlayerPRI, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool ShouldBroadCastWelcomeMessage(bool bExiting)
+	bool ShouldBroadCastWelcomeMessage(bool* bExiting = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bExiting;
+		if (bExiting !is null)
+			*cast(bool*)params.ptr = *bExiting;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShouldBroadCastWelcomeMessage, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -286,7 +287,7 @@ final:
 		*cast(Actor*)params.ptr = DestinationActor;
 		*cast(UTPawn*)&params[4] = OwnerPawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllowClientToTeleport, params.ptr, cast(void*)0);
-		*OwnerPawn = *cast(UTPawn*)&params[4];
+		OwnerPawn = *cast(UTPawn*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void ServerTeleportToActor(Actor DestinationActor)

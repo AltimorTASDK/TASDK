@@ -29,10 +29,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector EnvelopeTestPoint() { mixin(MGPC!(Vector, 96)()); }
-			float SoftStartPenalty() { mixin(MGPC!(float, 92)()); }
-			float MinDistance() { mixin(MGPC!(float, 84)()); }
-			float MaxDistance() { mixin(MGPC!(float, 80)()); }
+			Vector EnvelopeTestPoint() { mixin(MGPC!("Vector", 96)()); }
+			float SoftStartPenalty() { mixin(MGPC!("float", 92)()); }
+			float MinDistance() { mixin(MGPC!("float", 84)()); }
+			float MaxDistance() { mixin(MGPC!("float", 80)()); }
 		}
 		bool bOnlyThrowOutNodesThatLeaveEnvelope() { mixin(MGBPC!(88, 0x2)()); }
 		bool bOnlyThrowOutNodesThatLeaveEnvelope(bool val) { mixin(MSBPC!(88, 0x2)()); }
@@ -40,7 +40,7 @@ public extern(D):
 		bool bSoft(bool val) { mixin(MSBPC!(88, 0x1)()); }
 	}
 final:
-	static bool StayWithinEnvelopeToLoc(NavigationHandle NavHandle, Vector InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool bInSoft, float InSoftStartPenalty, bool bOnlyTossOutSpecsThatLeave)
+	static bool StayWithinEnvelopeToLoc(NavigationHandle NavHandle, Vector InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool* bInSoft = null, float* InSoftStartPenalty = null, bool* bOnlyTossOutSpecsThatLeave = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -48,9 +48,12 @@ final:
 		*cast(Vector*)&params[4] = InEnvelopeTestPoint;
 		*cast(float*)&params[16] = InMaxDistance;
 		*cast(float*)&params[20] = InMinDistance;
-		*cast(bool*)&params[24] = bInSoft;
-		*cast(float*)&params[28] = InSoftStartPenalty;
-		*cast(bool*)&params[32] = bOnlyTossOutSpecsThatLeave;
+		if (bInSoft !is null)
+			*cast(bool*)&params[24] = *bInSoft;
+		if (InSoftStartPenalty !is null)
+			*cast(float*)&params[28] = *InSoftStartPenalty;
+		if (bOnlyTossOutSpecsThatLeave !is null)
+			*cast(bool*)&params[32] = *bOnlyTossOutSpecsThatLeave;
 		StaticClass.ProcessEvent(Functions.StayWithinEnvelopeToLoc, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}

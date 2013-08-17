@@ -55,17 +55,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(PlayerReplicationInfo) PRIArray() { mixin(MGPC!(ScriptArray!(PlayerReplicationInfo), 532)()); }
-			ScriptClass GameClass() { mixin(MGPC!(ScriptClass, 476)()); }
-			ScriptArray!(TeamInfo) Teams() { mixin(MGPC!(ScriptArray!(TeamInfo), 504)()); }
-			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC!(ScriptArray!(PlayerReplicationInfo), 544)()); }
-			Actor Winner() { mixin(MGPC!(Actor, 528)()); }
-			ScriptString ServerName() { mixin(MGPC!(ScriptString, 516)()); }
-			int TimeLimit() { mixin(MGPC!(int, 500)()); }
-			int GoalScore() { mixin(MGPC!(int, 496)()); }
-			int RemainingMinute() { mixin(MGPC!(int, 492)()); }
-			int ElapsedTime() { mixin(MGPC!(int, 488)()); }
-			int RemainingTime() { mixin(MGPC!(int, 484)()); }
+			ScriptArray!(PlayerReplicationInfo) PRIArray() { mixin(MGPC!("ScriptArray!(PlayerReplicationInfo)", 532)()); }
+			ScriptClass GameClass() { mixin(MGPC!("ScriptClass", 476)()); }
+			ScriptArray!(TeamInfo) Teams() { mixin(MGPC!("ScriptArray!(TeamInfo)", 504)()); }
+			ScriptArray!(PlayerReplicationInfo) InactivePRIArray() { mixin(MGPC!("ScriptArray!(PlayerReplicationInfo)", 544)()); }
+			Actor Winner() { mixin(MGPC!("Actor", 528)()); }
+			ScriptString ServerName() { mixin(MGPC!("ScriptString", 516)()); }
+			int TimeLimit() { mixin(MGPC!("int", 500)()); }
+			int GoalScore() { mixin(MGPC!("int", 496)()); }
+			int RemainingMinute() { mixin(MGPC!("int", 492)()); }
+			int ElapsedTime() { mixin(MGPC!("int", 488)()); }
+			int RemainingTime() { mixin(MGPC!("int", 484)()); }
 		}
 		bool bMatchHasBegun() { mixin(MGBPC!(480, 0x2)()); }
 		bool bMatchHasBegun(bool val) { mixin(MSBPC!(480, 0x2)()); }

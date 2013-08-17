@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TrAnimNodeBlendByGravCycleDirection DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByGravCycleDirection, "TrAnimNodeBlendByGravCycleDirection TribesGame.Default__TrAnimNodeBlendByGravCycleDirection")()); }
 	@property final auto ref
 	{
-		float m_fBackwardThreshold() { mixin(MGPC!(float, 296)()); }
-		TrVehicle m_TrVehicle() { mixin(MGPC!(TrVehicle, 292)()); }
+		float m_fBackwardThreshold() { mixin(MGPC!("float", 296)()); }
+		TrVehicle m_TrVehicle() { mixin(MGPC!("TrVehicle", 292)()); }
 	}
 }

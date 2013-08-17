@@ -25,29 +25,29 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ApexDestructibleAsset.NxDestructibleDepthParameters) DepthParameters() { mixin(MGPS!(ScriptArray!(ApexDestructibleAsset.NxDestructibleDepthParameters), 116)()); }
-				float FractureImpulseScale() { mixin(MGPS!(float, 112)()); }
-				float GrbParticleSpacing() { mixin(MGPS!(float, 108)()); }
-				float GrbVolumeLimit() { mixin(MGPS!(float, 104)()); }
-				ApexDestructibleAsset.NxDestructibleParametersFlag Flags() { mixin(MGPS!(ApexDestructibleAsset.NxDestructibleParametersFlag, 100)()); }
-				float MassScaleExponent() { mixin(MGPS!(float, 96)()); }
-				float MaxChunkSpeed() { mixin(MGPS!(float, 92)()); }
-				UObject.Box ValidBounds() { mixin(MGPS!(UObject.Box, 64)()); }
-				float DebrisMaxSeparationMax() { mixin(MGPS!(float, 60)()); }
-				float DebrisMaxSeparationMin() { mixin(MGPS!(float, 56)()); }
-				float DebrisLifetimeMax() { mixin(MGPS!(float, 52)()); }
-				float DebrisLifetimeMin() { mixin(MGPS!(float, 48)()); }
-				int EssentialDepth() { mixin(MGPS!(int, 44)()); }
-				int DebrisDepth() { mixin(MGPS!(int, 40)()); }
-				int SupportDepth() { mixin(MGPS!(int, 36)()); }
-				float DeformationPercentLimit() { mixin(MGPS!(float, 28)()); }
-				float DamageToPercentDeformation() { mixin(MGPS!(float, 24)()); }
-				float MaterialStrength() { mixin(MGPS!(float, 20)()); }
-				float ImpactVelocityThreshold() { mixin(MGPS!(float, 16)()); }
-				float ForceToDamage() { mixin(MGPS!(float, 12)()); }
-				float DamageCap() { mixin(MGPS!(float, 8)()); }
-				float DamageToRadius() { mixin(MGPS!(float, 4)()); }
-				float DamageThreshold() { mixin(MGPS!(float, 0)()); }
+				ScriptArray!(ApexDestructibleAsset.NxDestructibleDepthParameters) DepthParameters() { mixin(MGPS!("ScriptArray!(ApexDestructibleAsset.NxDestructibleDepthParameters)", 116)()); }
+				float FractureImpulseScale() { mixin(MGPS!("float", 112)()); }
+				float GrbParticleSpacing() { mixin(MGPS!("float", 108)()); }
+				float GrbVolumeLimit() { mixin(MGPS!("float", 104)()); }
+				ApexDestructibleAsset.NxDestructibleParametersFlag Flags() { mixin(MGPS!("ApexDestructibleAsset.NxDestructibleParametersFlag", 100)()); }
+				float MassScaleExponent() { mixin(MGPS!("float", 96)()); }
+				float MaxChunkSpeed() { mixin(MGPS!("float", 92)()); }
+				UObject.Box ValidBounds() { mixin(MGPS!("UObject.Box", 64)()); }
+				float DebrisMaxSeparationMax() { mixin(MGPS!("float", 60)()); }
+				float DebrisMaxSeparationMin() { mixin(MGPS!("float", 56)()); }
+				float DebrisLifetimeMax() { mixin(MGPS!("float", 52)()); }
+				float DebrisLifetimeMin() { mixin(MGPS!("float", 48)()); }
+				int EssentialDepth() { mixin(MGPS!("int", 44)()); }
+				int DebrisDepth() { mixin(MGPS!("int", 40)()); }
+				int SupportDepth() { mixin(MGPS!("int", 36)()); }
+				float DeformationPercentLimit() { mixin(MGPS!("float", 28)()); }
+				float DamageToPercentDeformation() { mixin(MGPS!("float", 24)()); }
+				float MaterialStrength() { mixin(MGPS!("float", 20)()); }
+				float ImpactVelocityThreshold() { mixin(MGPS!("float", 16)()); }
+				float ForceToDamage() { mixin(MGPS!("float", 12)()); }
+				float DamageCap() { mixin(MGPS!("float", 8)()); }
+				float DamageToRadius() { mixin(MGPS!("float", 4)()); }
+				float DamageThreshold() { mixin(MGPS!("float", 0)()); }
 			}
 			bool bFormExtendedStructures() { mixin(MGBPS!(32, 0x1)()); }
 			bool bFormExtendedStructures(bool val) { mixin(MSBPS!(32, 0x1)()); }
@@ -109,14 +109,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 112)()); }
-			ScriptArray!(FractureMaterial) FractureMaterials() { mixin(MGPC!(ScriptArray!(FractureMaterial), 124)()); }
-			ApexDestructibleAsset.NxDestructibleParameters DestructibleParameters() { mixin(MGPC!(ApexDestructibleAsset.NxDestructibleParameters, 172)()); }
-			ScriptString DustEmitterName() { mixin(MGPC!(ScriptString, 160)()); }
-			ScriptString CrumbleEmitterName() { mixin(MGPC!(ScriptString, 148)()); }
-			UObject.Pointer MDestructibleThumbnailComponent() { mixin(MGPC!(UObject.Pointer, 140)()); }
-			PhysicalMaterial DefaultPhysMaterial() { mixin(MGPC!(PhysicalMaterial, 136)()); }
-			UObject.Pointer MApexAsset() { mixin(MGPC!(UObject.Pointer, 108)()); }
+			ScriptArray!(MaterialInterface) Materials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 112)()); }
+			ScriptArray!(FractureMaterial) FractureMaterials() { mixin(MGPC!("ScriptArray!(FractureMaterial)", 124)()); }
+			ApexDestructibleAsset.NxDestructibleParameters DestructibleParameters() { mixin(MGPC!("ApexDestructibleAsset.NxDestructibleParameters", 172)()); }
+			ScriptString DustEmitterName() { mixin(MGPC!("ScriptString", 160)()); }
+			ScriptString CrumbleEmitterName() { mixin(MGPC!("ScriptString", 148)()); }
+			UObject.Pointer MDestructibleThumbnailComponent() { mixin(MGPC!("UObject.Pointer", 140)()); }
+			PhysicalMaterial DefaultPhysMaterial() { mixin(MGPC!("PhysicalMaterial", 136)()); }
+			UObject.Pointer MApexAsset() { mixin(MGPC!("UObject.Pointer", 108)()); }
 		}
 		bool bDynamic() { mixin(MGBPC!(144, 0x2)()); }
 		bool bDynamic(bool val) { mixin(MSBPC!(144, 0x2)()); }

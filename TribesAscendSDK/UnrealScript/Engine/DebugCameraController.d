@@ -50,14 +50,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			Player OryginalPlayer() { mixin(MGPC!(Player, 1480)()); }
-			PlayerController OryginalControllerRef() { mixin(MGPC!(PlayerController, 1476)()); }
+			Player OryginalPlayer() { mixin(MGPC!("Player", 1480)()); }
+			PlayerController OryginalControllerRef() { mixin(MGPC!("PlayerController", 1476)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SelectedComponent'!
-			Actor SelectedActor() { mixin(MGPC!(Actor, 1488)()); }
+			Actor SelectedActor() { mixin(MGPC!("Actor", 1488)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DrawFrustum'!
-			ScriptName UnselectKey() { mixin(MGPC!(ScriptName, 1464)()); }
-			ScriptName SecondaryKey() { mixin(MGPC!(ScriptName, 1456)()); }
-			ScriptName PrimaryKey() { mixin(MGPC!(ScriptName, 1448)()); }
+			ScriptName UnselectKey() { mixin(MGPC!("ScriptName", 1464)()); }
+			ScriptName SecondaryKey() { mixin(MGPC!("ScriptName", 1456)()); }
+			ScriptName PrimaryKey() { mixin(MGPC!("ScriptName", 1448)()); }
 		}
 		bool bIsFrozenRendering() { mixin(MGBPC!(1472, 0x2)()); }
 		bool bIsFrozenRendering(bool val) { mixin(MSBPC!(1472, 0x2)()); }
@@ -98,12 +98,13 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnActivate, params.ptr, cast(void*)0);
 	}
-	ScriptString ConsoleCommand(ScriptString Command, bool bWriteToLog)
+	ScriptString ConsoleCommand(ScriptString Command, bool* bWriteToLog = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
@@ -118,15 +119,17 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableDebugCamera, cast(void*)0, cast(void*)0);
 	}
-	bool NativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float AmountDepressed, bool bGamepad)
+	bool NativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent Event, float* AmountDepressed = null, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = Event;
-		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (AmountDepressed !is null)
+			*cast(float*)&params[16] = *AmountDepressed;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NativeInputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

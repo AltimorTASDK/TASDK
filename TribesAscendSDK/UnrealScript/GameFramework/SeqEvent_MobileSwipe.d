@@ -14,8 +14,8 @@ public extern(D):
 	@property final static SeqEvent_MobileSwipe DefaultProperties() { mixin(MGDPC!(SeqEvent_MobileSwipe, "SeqEvent_MobileSwipe GameFramework.Default__SeqEvent_MobileSwipe")()); }
 	@property final auto ref
 	{
-		UObject.Vector2D InitialTouch() { mixin(MGPC!(UObject.Vector2D, 280)()); }
-		float MinDistance() { mixin(MGPC!(float, 276)()); }
-		float Tolerance() { mixin(MGPC!(float, 272)()); }
+		UObject.Vector2D InitialTouch() { mixin(MGPC!("UObject.Vector2D", 280)()); }
+		float MinDistance() { mixin(MGPC!("float", 276)()); }
+		float Tolerance() { mixin(MGPC!("float", 272)()); }
 	}
 }

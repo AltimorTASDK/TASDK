@@ -2326,9 +2326,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				TgSupportCommands.GC_ALERT_PRIORITY Priority() { mixin(MGPS!(TgSupportCommands.GC_ALERT_PRIORITY, 20)()); }
-				ScriptString Message() { mixin(MGPS!(ScriptString, 8)()); }
-				float TakeDownTime() { mixin(MGPS!(float, 4)()); }
+				TgSupportCommands.GC_ALERT_PRIORITY Priority() { mixin(MGPS!("TgSupportCommands.GC_ALERT_PRIORITY", 20)()); }
+				ScriptString Message() { mixin(MGPS!("ScriptString", 8)()); }
+				float TakeDownTime() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bInUse() { mixin(MGBPS!(0, 0x1)()); }
 			bool bInUse(bool val) { mixin(MSBPS!(0, 0x1)()); }
@@ -2338,246 +2338,246 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) m_aDamageEffectNames() { mixin(MGPC!(ScriptArray!(ScriptName), 3004)()); }
+			ScriptArray!(ScriptName) m_aDamageEffectNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 3004)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateSoundAccolade__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateLoadVGSMenu__Delegate'!
-			GfxTrHud.TrTempMessage m_HeroStatusTempMessage() { mixin(MGPC!(GfxTrHud.TrTempMessage, 3068)()); }
-			GfxTrHud.TrTempMessage m_PromptPanelTempMessage() { mixin(MGPC!(GfxTrHud.TrTempMessage, 3044)()); }
-			ScriptString m_sRound() { mixin(MGPC!(ScriptString, 3032)()); }
-			GFxObject VGSMenuList() { mixin(MGPC!(GFxObject, 3028)()); }
-			GFxObject _global() { mixin(MGPC!(GFxObject, 3024)()); }
-			MaterialInstanceConstant m_DirDamageMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 3020)()); }
-			MaterialEffect m_DirectionalDamageEffect() { mixin(MGPC!(MaterialEffect, 3016)()); }
-			float m_fDirectionalDamageFadeTime() { mixin(MGPC!(float, 3000)()); }
-			int m_nNearDeathHealthMax() { mixin(MGPC!(int, 2996)()); }
-			GFxObject KillCamInfoObject() { mixin(MGPC!(GFxObject, 2992)()); }
-			GFxObject VGSMenuEntry() { mixin(MGPC!(GFxObject, 2928)()); }
-			GFxObject SpecHelp_LockViewTF() { mixin(MGPC!(GFxObject, 2924)()); }
-			GFxObject SpecHelp_ZoomOutTF() { mixin(MGPC!(GFxObject, 2920)()); }
-			GFxObject SpecHelp_ZoomInTF() { mixin(MGPC!(GFxObject, 2916)()); }
-			GFxObject SpecHelp_FreeCameraTF() { mixin(MGPC!(GFxObject, 2912)()); }
-			GFxObject SpecHelp_FastestPlayerTF() { mixin(MGPC!(GFxObject, 2908)()); }
-			GFxObject SpecHelp_ChangeVehiclesTF() { mixin(MGPC!(GFxObject, 2904)()); }
-			GFxObject SpecHelp_ChangeBookmarksTF() { mixin(MGPC!(GFxObject, 2900)()); }
-			GFxObject SpecHelp_ChangeFlagstandsTF() { mixin(MGPC!(GFxObject, 2896)()); }
-			GFxObject SpecHelp_ChangeFlagsTF() { mixin(MGPC!(GFxObject, 2892)()); }
-			GFxObject SpecHelp_ChangeGeneratorsTF() { mixin(MGPC!(GFxObject, 2888)()); }
-			GFxObject SpecHelp_ChangePlayersTF() { mixin(MGPC!(GFxObject, 2884)()); }
-			GFxObject SpecHelp_DecreaseSpeedTF() { mixin(MGPC!(GFxObject, 2880)()); }
-			GFxObject SpecHelp_IncreaseSpeedTF() { mixin(MGPC!(GFxObject, 2876)()); }
-			GFxObject SpecHelp_StrafeRightTF() { mixin(MGPC!(GFxObject, 2872)()); }
-			GFxObject SpecHelp_StrafeLeftTF() { mixin(MGPC!(GFxObject, 2868)()); }
-			GFxObject SpecHelp_MoveBackTF() { mixin(MGPC!(GFxObject, 2864)()); }
-			GFxObject SpecHelp_MoveForwardTF() { mixin(MGPC!(GFxObject, 2860)()); }
-			GFxObject SpecHelp_MoveDownTF() { mixin(MGPC!(GFxObject, 2856)()); }
-			GFxObject SpecHelp_MoveUpTF() { mixin(MGPC!(GFxObject, 2852)()); }
-			GFxObject SpecHelp_ObjKaratsTF() { mixin(MGPC!(GFxObject, 2848)()); }
-			GFxObject SpecHelp_SpecHudTF() { mixin(MGPC!(GFxObject, 2844)()); }
-			GFxObject SpecHelp_MainmenuTF() { mixin(MGPC!(GFxObject, 2840)()); }
-			GFxObject SpecHelp_ScoreboardTF() { mixin(MGPC!(GFxObject, 2836)()); }
-			GFxObject SpecHelp_TeamSelectTF() { mixin(MGPC!(GFxObject, 2832)()); }
-			GFxObject SpecHelp_HelpTF() { mixin(MGPC!(GFxObject, 2828)()); }
-			GFxObject SpecFloat_DescriptionTF() { mixin(MGPC!(GFxObject, 2824)()); }
-			GFxObject SpecFloat_FloatCameraNameTF() { mixin(MGPC!(GFxObject, 2820)()); }
-			GFxObject SpecObjective_HealthTF() { mixin(MGPC!(GFxObject, 2816)()); }
-			GFxObject SpecObjective_HealthFillBar() { mixin(MGPC!(GFxObject, 2812)()); }
-			GFxObject SpecObjective_DescriptionTF() { mixin(MGPC!(GFxObject, 2808)()); }
-			GFxObject SpecObjective_ObjectiveNameTF() { mixin(MGPC!(GFxObject, 2804)()); }
-			GFxObject SpecBookmark_DescriptionTF() { mixin(MGPC!(GFxObject, 2800)()); }
-			GFxObject SpecBookmark_BookmarkNameTF() { mixin(MGPC!(GFxObject, 2796)()); }
-			GFxObject SpecVehicle_SkiIndicator_fillBar_speedoTF() { mixin(MGPC!(GFxObject, 2792)()); }
-			GFxObject SpecVehicle_SkiIndicator_fillBar() { mixin(MGPC!(GFxObject, 2788)()); }
-			GFxObject SpecVehicle_VehicleGroup_secondaryReady() { mixin(MGPC!(GFxObject, 2784)()); }
-			GFxObject SpecVehicle_SecondaryNameTF() { mixin(MGPC!(GFxObject, 2780)()); }
-			GFxObject SpecVehicle_VehicleGroup_primaryReady() { mixin(MGPC!(GFxObject, 2776)()); }
-			GFxObject SpecVehicle_PrimaryNameTF() { mixin(MGPC!(GFxObject, 2772)()); }
-			GFxObject SpecVehicle_EnergyTF() { mixin(MGPC!(GFxObject, 2768)()); }
-			GFxObject SpecVehicle_EnergyFillBar() { mixin(MGPC!(GFxObject, 2764)()); }
-			GFxObject SpecVehicle_HealthTF() { mixin(MGPC!(GFxObject, 2760)()); }
-			GFxObject SpecVehicle_HealthFillBar() { mixin(MGPC!(GFxObject, 2756)()); }
-			GFxObject SpecVehicle_PassengerNameTF() { mixin(MGPC!(GFxObject, 2752)()); }
-			GFxObject SpecVehicle_DriverNameTF() { mixin(MGPC!(GFxObject, 2748)()); }
-			GFxObject SpecVehicle_VehicleNameTF() { mixin(MGPC!(GFxObject, 2744)()); }
-			GFxObject SpecVehicle_FlagCarried() { mixin(MGPC!(GFxObject, 2740)()); }
-			GFxObject SpecPlayer_SkiIndicator_fillBar_speedoTF() { mixin(MGPC!(GFxObject, 2736)()); }
-			GFxObject SpecPlayer_SkiIndicator_fillBar() { mixin(MGPC!(GFxObject, 2732)()); }
-			GFxObject SpecPlayer_Perk2TF() { mixin(MGPC!(GFxObject, 2728)()); }
-			GFxObject SpecPlayer_PerkItem2() { mixin(MGPC!(GFxObject, 2724)()); }
-			GFxObject SpecPlayer_Perk1TF() { mixin(MGPC!(GFxObject, 2720)()); }
-			GFxObject SpecPlayer_PerkItem1() { mixin(MGPC!(GFxObject, 2716)()); }
-			GFxObject SpecPlayer_PackNameTF() { mixin(MGPC!(GFxObject, 2712)()); }
-			GFxObject SpecPlayer_PackIcons_count() { mixin(MGPC!(GFxObject, 2708)()); }
-			GFxObject SpecPlayer_PackIcons_icon() { mixin(MGPC!(GFxObject, 2704)()); }
-			GFxObject SpecPlayer_OffhandNameTF() { mixin(MGPC!(GFxObject, 2700)()); }
-			GFxObject SpecPlayer_OffhandIcons_count() { mixin(MGPC!(GFxObject, 2696)()); }
-			GFxObject SpecPlayer_OffhandIcons_icon() { mixin(MGPC!(GFxObject, 2692)()); }
-			GFxObject SpecPlayer_SecondaryAmmoTF() { mixin(MGPC!(GFxObject, 2688)()); }
-			GFxObject SpecPlayer_SecondaryNameTF() { mixin(MGPC!(GFxObject, 2684)()); }
-			GFxObject SpecPlayer_PrimaryAmmoTF() { mixin(MGPC!(GFxObject, 2680)()); }
-			GFxObject SpecPlayer_PrimaryNameTF() { mixin(MGPC!(GFxObject, 2676)()); }
-			GFxObject SpecPlayer_EnergyTF() { mixin(MGPC!(GFxObject, 2672)()); }
-			GFxObject SpecPlayer_EnergyFillBar() { mixin(MGPC!(GFxObject, 2668)()); }
-			GFxObject SpecPlayer_HealthTF() { mixin(MGPC!(GFxObject, 2664)()); }
-			GFxObject SpecPlayer_HealthFillBar() { mixin(MGPC!(GFxObject, 2660)()); }
-			GFxObject SpecPlayer_RegenTF() { mixin(MGPC!(GFxObject, 2656)()); }
-			GFxObject SpecPlayer_ClassNameTF() { mixin(MGPC!(GFxObject, 2652)()); }
-			GFxObject SpecPlayer_PlayerNameTF() { mixin(MGPC!(GFxObject, 2648)()); }
-			GFxObject SpecPlayer_FlagCarried() { mixin(MGPC!(GFxObject, 2644)()); }
-			GFxObject SpecObjective() { mixin(MGPC!(GFxObject, 2640)()); }
-			GFxObject SpecBookmark() { mixin(MGPC!(GFxObject, 2636)()); }
-			GFxObject SpawnCounter() { mixin(MGPC!(GFxObject, 2632)()); }
-			GFxObject SpecVehicle() { mixin(MGPC!(GFxObject, 2628)()); }
-			GFxObject SpecPlayer() { mixin(MGPC!(GFxObject, 2624)()); }
-			GFxObject SpecFloat() { mixin(MGPC!(GFxObject, 2620)()); }
-			GFxObject SpecHelp() { mixin(MGPC!(GFxObject, 2616)()); }
-			GFxObject VGS() { mixin(MGPC!(GFxObject, 2612)()); }
-			GFxObject NotificationPopup() { mixin(MGPC!(GFxObject, 2608)()); }
-			GFxObject DeployStatus() { mixin(MGPC!(GFxObject, 2584)()); }
-			GFxObject GlobalAlertTF() { mixin(MGPC!(GFxObject, 2580)()); }
-			GFxObject Credits_And_Streaks_CallItem() { mixin(MGPC!(GFxObject, 2568)()); }
-			GFxObject PlayerStats_Offhand1_Count() { mixin(MGPC!(GFxObject, 2564)()); }
-			GFxObject PlayerStats_Offhand1_Icon() { mixin(MGPC!(GFxObject, 2560)()); }
-			GFxObject PlayerStats_PackCount() { mixin(MGPC!(GFxObject, 2556)()); }
-			GFxObject PlayerStats_PackMC() { mixin(MGPC!(GFxObject, 2552)()); }
-			GFxObject PlayerStats_Pack() { mixin(MGPC!(GFxObject, 2548)()); }
-			GFxObject playerStats_Offhand1() { mixin(MGPC!(GFxObject, 2544)()); }
-			GFxObject VehicleStats_VehicleSlot() { mixin(MGPC!(GFxObject, 2520)()); }
-			GFxObject VehicleStats_VehicleEnergyFill() { mixin(MGPC!(GFxObject, 2516)()); }
-			GFxObject VehicleStats_EnergyTF_TextField() { mixin(MGPC!(GFxObject, 2512)()); }
-			GFxObject VehicleStats_VehicleHealthFill() { mixin(MGPC!(GFxObject, 2508)()); }
-			GFxObject VehicleStats_HealthTF_TextField() { mixin(MGPC!(GFxObject, 2504)()); }
-			GFxObject VehicleStats() { mixin(MGPC!(GFxObject, 2500)()); }
-			GFxObject TeamStats() { mixin(MGPC!(GFxObject, 2496)()); }
-			GFxObject Offhands_And_Flag_FlagInHand() { mixin(MGPC!(GFxObject, 2492)()); }
-			GFxObject Credits_And_Streaks_CreditsGroup_CreditsMC_CreditsN() { mixin(MGPC!(GFxObject, 2488)()); }
-			GFxObject RabbitScoreboard() { mixin(MGPC!(GFxObject, 2484)()); }
-			GFxObject TeamScoreBoard() { mixin(MGPC!(GFxObject, 2480)()); }
-			GFxObject ArenaStats() { mixin(MGPC!(GFxObject, 2476)()); }
-			GFxObject ArenaStats_EnemyScoreTF() { mixin(MGPC!(GFxObject, 2472)()); }
-			GFxObject ArenaStats_FriendlyScoreTF() { mixin(MGPC!(GFxObject, 2468)()); }
-			GFxObject ArenaStats_roundCountTF() { mixin(MGPC!(GFxObject, 2464)()); }
-			GFxObject ArenaStats_arenaGameTimerTF() { mixin(MGPC!(GFxObject, 2460)()); }
-			GFxObject ArenaStats_EnemyManGraphic08() { mixin(MGPC!(GFxObject, 2456)()); }
-			GFxObject ArenaStats_EnemyManGraphic07() { mixin(MGPC!(GFxObject, 2452)()); }
-			GFxObject ArenaStats_EnemyManGraphic06() { mixin(MGPC!(GFxObject, 2448)()); }
-			GFxObject ArenaStats_EnemyManGraphic05() { mixin(MGPC!(GFxObject, 2444)()); }
-			GFxObject ArenaStats_EnemyManGraphic04() { mixin(MGPC!(GFxObject, 2440)()); }
-			GFxObject ArenaStats_EnemyManGraphic03() { mixin(MGPC!(GFxObject, 2436)()); }
-			GFxObject ArenaStats_EnemyManGraphic02() { mixin(MGPC!(GFxObject, 2432)()); }
-			GFxObject ArenaStats_EnemyManGraphic01() { mixin(MGPC!(GFxObject, 2428)()); }
-			GFxObject ArenaStats_FriendlyManGraphic08() { mixin(MGPC!(GFxObject, 2424)()); }
-			GFxObject ArenaStats_FriendlyManGraphic07() { mixin(MGPC!(GFxObject, 2420)()); }
-			GFxObject ArenaStats_FriendlyManGraphic06() { mixin(MGPC!(GFxObject, 2416)()); }
-			GFxObject ArenaStats_FriendlyManGraphic05() { mixin(MGPC!(GFxObject, 2412)()); }
-			GFxObject ArenaStats_FriendlyManGraphic04() { mixin(MGPC!(GFxObject, 2408)()); }
-			GFxObject ArenaStats_FriendlyManGraphic03() { mixin(MGPC!(GFxObject, 2404)()); }
-			GFxObject ArenaStats_FriendlyManGraphic02() { mixin(MGPC!(GFxObject, 2400)()); }
-			GFxObject ArenaStats_FriendlyManGraphic01() { mixin(MGPC!(GFxObject, 2396)()); }
-			GFxObject CaHControlPointE() { mixin(MGPC!(GFxObject, 2392)()); }
-			GFxObject CaHControlPointD() { mixin(MGPC!(GFxObject, 2388)()); }
-			GFxObject CaHControlPointC() { mixin(MGPC!(GFxObject, 2384)()); }
-			GFxObject CaHControlPointB() { mixin(MGPC!(GFxObject, 2380)()); }
-			GFxObject CaHControlPointA() { mixin(MGPC!(GFxObject, 2376)()); }
-			GFxObject CaHStats() { mixin(MGPC!(GFxObject, 2372)()); }
-			GFxObject DaDStats() { mixin(MGPC!(GFxObject, 2368)()); }
-			GFxObject TdmStats() { mixin(MGPC!(GFxObject, 2364)()); }
-			GFxObject TdmStats_gameTimer() { mixin(MGPC!(GFxObject, 2360)()); }
-			GFxObject TdmStats_rightFlagStatus() { mixin(MGPC!(GFxObject, 2356)()); }
-			GFxObject TdmStats_leftFlagStatus() { mixin(MGPC!(GFxObject, 2352)()); }
-			GFxObject CTFStats() { mixin(MGPC!(GFxObject, 2348)()); }
-			GFxObject CTFStats_Timer() { mixin(MGPC!(GFxObject, 2344)()); }
-			GFxObject CTFStats_RightScore() { mixin(MGPC!(GFxObject, 2340)()); }
-			GFxObject CTFStats_LeftScore() { mixin(MGPC!(GFxObject, 2336)()); }
-			GFxObject CTFStats_RightFlagTimer() { mixin(MGPC!(GFxObject, 2332)()); }
-			GFxObject CTFStats_LeftFlagTimer() { mixin(MGPC!(GFxObject, 2328)()); }
-			GFxObject CTFStats_RightFlagStatus() { mixin(MGPC!(GFxObject, 2324)()); }
-			GFxObject CTFStats_LeftFlagStatus() { mixin(MGPC!(GFxObject, 2320)()); }
-			GFxObject CTFStats_RightGenTimer() { mixin(MGPC!(GFxObject, 2316)()); }
-			GFxObject CTFStats_LeftGenTimer() { mixin(MGPC!(GFxObject, 2312)()); }
-			GFxObject CTFStats_RightGenStatus() { mixin(MGPC!(GFxObject, 2308)()); }
-			GFxObject CTFStats_LeftGenStatus() { mixin(MGPC!(GFxObject, 2304)()); }
-			GFxObject RabbitStats_Timer() { mixin(MGPC!(GFxObject, 2300)()); }
-			GFxObject RabbitStats_LeaderScore() { mixin(MGPC!(GFxObject, 2288)()); }
-			GFxObject RabbitStats_LeaderText() { mixin(MGPC!(GFxObject, 2276)()); }
-			GFxObject RabbitStats() { mixin(MGPC!(GFxObject, 2272)()); }
-			GFxObject RabbitScoreboard_PlayerHighlight() { mixin(MGPC!(GFxObject, 2240)()); }
-			GFxObject RabbitScoreboard_RankIcon() { mixin(MGPC!(GFxObject, 2208)()); }
-			GFxObject RabbitScoreboard_RankTF() { mixin(MGPC!(GFxObject, 2176)()); }
-			GFxObject RabbitScoreboard_ClassTF() { mixin(MGPC!(GFxObject, 2144)()); }
-			GFxObject RabbitScoreboard_PingTF() { mixin(MGPC!(GFxObject, 2112)()); }
-			GFxObject RabbitScoreboard_AssistsTF() { mixin(MGPC!(GFxObject, 2080)()); }
-			GFxObject RabbitScoreboard_KillsTF() { mixin(MGPC!(GFxObject, 2048)()); }
-			GFxObject RabbitScoreboard_ScoreT() { mixin(MGPC!(GFxObject, 2016)()); }
-			GFxObject RabbitScoreboard_PlayerTF() { mixin(MGPC!(GFxObject, 1984)()); }
-			GFxObject TeamScoreboard_Blue_RankTF() { mixin(MGPC!(GFxObject, 1920)()); }
-			GFxObject TeamScoreboard_Blue_RankIcon() { mixin(MGPC!(GFxObject, 1856)()); }
-			GFxObject TeamScoreboard_Blue_ClassTF() { mixin(MGPC!(GFxObject, 1792)()); }
-			GFxObject TeamScoreboard_Blue_PingTF() { mixin(MGPC!(GFxObject, 1728)()); }
-			GFxObject TeamScoreboard_Blue_AssistsTF() { mixin(MGPC!(GFxObject, 1664)()); }
-			GFxObject TeamScoreboard_Blue_KillsTF() { mixin(MGPC!(GFxObject, 1600)()); }
-			GFxObject TeamScoreboard_Blue_ScoreTF() { mixin(MGPC!(GFxObject, 1536)()); }
-			GFxObject TeamScoreboard_Blue_PlayerNameTF() { mixin(MGPC!(GFxObject, 1472)()); }
-			GFxObject TeamScoreboard_Red_RankTF() { mixin(MGPC!(GFxObject, 1408)()); }
-			GFxObject TeamScoreboard_Red_RankIcon() { mixin(MGPC!(GFxObject, 1344)()); }
-			GFxObject TeamScoreboard_Red_ClassTF() { mixin(MGPC!(GFxObject, 1280)()); }
-			GFxObject TeamScoreboard_Red_PingTF() { mixin(MGPC!(GFxObject, 1216)()); }
-			GFxObject TeamScoreboard_Red_AssistsTF() { mixin(MGPC!(GFxObject, 1152)()); }
-			GFxObject TeamScoreboard_Red_KillsTF() { mixin(MGPC!(GFxObject, 1088)()); }
-			GFxObject TeamScoreboard_Red_ScoreTF() { mixin(MGPC!(GFxObject, 1024)()); }
-			GFxObject TeamScoreboard_Red_PlayerNameTF() { mixin(MGPC!(GFxObject, 960)()); }
-			GFxObject PlayerStats_EnergyFillBar() { mixin(MGPC!(GFxObject, 956)()); }
-			GFxObject PlayerStats_GhostHealthBar() { mixin(MGPC!(GFxObject, 952)()); }
-			GFxObject PlayerStats_HealthFillBar() { mixin(MGPC!(GFxObject, 948)()); }
-			GFxObject SpawnCounter_TimeLabel() { mixin(MGPC!(GFxObject, 944)()); }
-			GFxObject SpawnCounter_StatusMessage() { mixin(MGPC!(GFxObject, 940)()); }
-			GFxObject CreditsAndStreaks_Streak() { mixin(MGPC!(GFxObject, 928)()); }
-			GFxObject CreditsAndStreaks() { mixin(MGPC!(GFxObject, 924)()); }
-			GFxObject SkiIndicatorFillBar() { mixin(MGPC!(GFxObject, 916)()); }
-			GFxObject SkiIndicatorTF() { mixin(MGPC!(GFxObject, 908)()); }
-			GFxObject SkiIndicator() { mixin(MGPC!(GFxObject, 900)()); }
-			GFxObject CombatLog() { mixin(MGPC!(GFxObject, 896)()); }
-			GFxObject KillMessageArea() { mixin(MGPC!(GFxObject, 892)()); }
-			GFxObject KillCamInfo() { mixin(MGPC!(GFxObject, 888)()); }
-			GFxObject PromptPanel() { mixin(MGPC!(GFxObject, 884)()); }
-			GFxObject HeroStatus_outputTF() { mixin(MGPC!(GFxObject, 880)()); }
-			GFxObject PlayerStats() { mixin(MGPC!(GFxObject, 876)()); }
-			GFxObject Visor() { mixin(MGPC!(GFxObject, 860)()); }
-			GFxDeviceAmmoCount deviceAmmoPoolMP() { mixin(MGPC!(GFxDeviceAmmoCount, 856)()); }
-			GFxDeviceAmmoCount deviceAmmoCountMP() { mixin(MGPC!(GFxDeviceAmmoCount, 852)()); }
-			GFxTrReticules Reticules() { mixin(MGPC!(GFxTrReticules, 848)()); }
-			GFxObject sniperPowerUp() { mixin(MGPC!(GFxObject, 844)()); }
-			TrDevice m_LastOffhand() { mixin(MGPC!(TrDevice, 832)()); }
-			TeamInfo m_LastTeam() { mixin(MGPC!(TeamInfo, 828)()); }
-			int m_nLastVehicleAmmoPool() { mixin(MGPC!(int, 824)()); }
-			float m_fLastVehicleEnergy() { mixin(MGPC!(float, 820)()); }
-			int m_nLastVehicleHealth() { mixin(MGPC!(int, 816)()); }
-			int m_nLastSeatMask() { mixin(MGPC!(int, 812)()); }
-			float m_fSpeedometerUpdateInterval() { mixin(MGPC!(float, 808)()); }
-			int m_SkiSpeedSteps() { mixin(MGPC!(int, 760)()); }
-			int m_VGSMenuListCount() { mixin(MGPC!(int, 756)()); }
-			float m_fLastSpeedometerUpdateTime() { mixin(MGPC!(float, 752)()); }
-			float m_fCurrentGhostHealth() { mixin(MGPC!(float, 748)()); }
-			float m_fLastActualHealth() { mixin(MGPC!(float, 744)()); }
-			float m_fLastMaxHealth() { mixin(MGPC!(float, 740)()); }
-			float m_fLastRotation() { mixin(MGPC!(float, 736)()); }
-			float m_fCrosshairDepth() { mixin(MGPC!(float, 728)()); }
-			int m_nLastFriendlyGeneratorTime() { mixin(MGPC!(int, 724)()); }
-			int m_nLastEnemyGeneratorTime() { mixin(MGPC!(int, 720)()); }
-			int m_nLastOffhandCount() { mixin(MGPC!(int, 708)()); }
-			int m_nLastPercentReload() { mixin(MGPC!(int, 704)()); }
-			int m_nLastPercentLaser() { mixin(MGPC!(int, 700)()); }
-			int m_nLastSkiSpeedStep() { mixin(MGPC!(int, 696)()); }
-			int m_nStreakEvent() { mixin(MGPC!(int, 676)()); }
-			int m_nCrossHairMode() { mixin(MGPC!(int, 672)()); }
-			int m_nLastAmmoPool() { mixin(MGPC!(int, 668)()); }
-			int m_nLastCredits() { mixin(MGPC!(int, 664)()); }
-			int m_nLastPercent() { mixin(MGPC!(int, 660)()); }
-			int m_HUDStageHeight() { mixin(MGPC!(int, 656)()); }
-			int m_HUDStageWidth() { mixin(MGPC!(int, 652)()); }
-			int m_HUDStageOriginY() { mixin(MGPC!(int, 648)()); }
-			int m_HUDStageOriginX() { mixin(MGPC!(int, 644)()); }
-			TrPlayerController m_TrPC() { mixin(MGPC!(TrPlayerController, 640)()); }
-			TrHUD m_TrHUD() { mixin(MGPC!(TrHUD, 636)()); }
+			GfxTrHud.TrTempMessage m_HeroStatusTempMessage() { mixin(MGPC!("GfxTrHud.TrTempMessage", 3068)()); }
+			GfxTrHud.TrTempMessage m_PromptPanelTempMessage() { mixin(MGPC!("GfxTrHud.TrTempMessage", 3044)()); }
+			ScriptString m_sRound() { mixin(MGPC!("ScriptString", 3032)()); }
+			GFxObject VGSMenuList() { mixin(MGPC!("GFxObject", 3028)()); }
+			GFxObject _global() { mixin(MGPC!("GFxObject", 3024)()); }
+			MaterialInstanceConstant m_DirDamageMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 3020)()); }
+			MaterialEffect m_DirectionalDamageEffect() { mixin(MGPC!("MaterialEffect", 3016)()); }
+			float m_fDirectionalDamageFadeTime() { mixin(MGPC!("float", 3000)()); }
+			int m_nNearDeathHealthMax() { mixin(MGPC!("int", 2996)()); }
+			GFxObject KillCamInfoObject() { mixin(MGPC!("GFxObject", 2992)()); }
+			GFxObject VGSMenuEntry() { mixin(MGPC!("GFxObject", 2928)()); }
+			GFxObject SpecHelp_LockViewTF() { mixin(MGPC!("GFxObject", 2924)()); }
+			GFxObject SpecHelp_ZoomOutTF() { mixin(MGPC!("GFxObject", 2920)()); }
+			GFxObject SpecHelp_ZoomInTF() { mixin(MGPC!("GFxObject", 2916)()); }
+			GFxObject SpecHelp_FreeCameraTF() { mixin(MGPC!("GFxObject", 2912)()); }
+			GFxObject SpecHelp_FastestPlayerTF() { mixin(MGPC!("GFxObject", 2908)()); }
+			GFxObject SpecHelp_ChangeVehiclesTF() { mixin(MGPC!("GFxObject", 2904)()); }
+			GFxObject SpecHelp_ChangeBookmarksTF() { mixin(MGPC!("GFxObject", 2900)()); }
+			GFxObject SpecHelp_ChangeFlagstandsTF() { mixin(MGPC!("GFxObject", 2896)()); }
+			GFxObject SpecHelp_ChangeFlagsTF() { mixin(MGPC!("GFxObject", 2892)()); }
+			GFxObject SpecHelp_ChangeGeneratorsTF() { mixin(MGPC!("GFxObject", 2888)()); }
+			GFxObject SpecHelp_ChangePlayersTF() { mixin(MGPC!("GFxObject", 2884)()); }
+			GFxObject SpecHelp_DecreaseSpeedTF() { mixin(MGPC!("GFxObject", 2880)()); }
+			GFxObject SpecHelp_IncreaseSpeedTF() { mixin(MGPC!("GFxObject", 2876)()); }
+			GFxObject SpecHelp_StrafeRightTF() { mixin(MGPC!("GFxObject", 2872)()); }
+			GFxObject SpecHelp_StrafeLeftTF() { mixin(MGPC!("GFxObject", 2868)()); }
+			GFxObject SpecHelp_MoveBackTF() { mixin(MGPC!("GFxObject", 2864)()); }
+			GFxObject SpecHelp_MoveForwardTF() { mixin(MGPC!("GFxObject", 2860)()); }
+			GFxObject SpecHelp_MoveDownTF() { mixin(MGPC!("GFxObject", 2856)()); }
+			GFxObject SpecHelp_MoveUpTF() { mixin(MGPC!("GFxObject", 2852)()); }
+			GFxObject SpecHelp_ObjKaratsTF() { mixin(MGPC!("GFxObject", 2848)()); }
+			GFxObject SpecHelp_SpecHudTF() { mixin(MGPC!("GFxObject", 2844)()); }
+			GFxObject SpecHelp_MainmenuTF() { mixin(MGPC!("GFxObject", 2840)()); }
+			GFxObject SpecHelp_ScoreboardTF() { mixin(MGPC!("GFxObject", 2836)()); }
+			GFxObject SpecHelp_TeamSelectTF() { mixin(MGPC!("GFxObject", 2832)()); }
+			GFxObject SpecHelp_HelpTF() { mixin(MGPC!("GFxObject", 2828)()); }
+			GFxObject SpecFloat_DescriptionTF() { mixin(MGPC!("GFxObject", 2824)()); }
+			GFxObject SpecFloat_FloatCameraNameTF() { mixin(MGPC!("GFxObject", 2820)()); }
+			GFxObject SpecObjective_HealthTF() { mixin(MGPC!("GFxObject", 2816)()); }
+			GFxObject SpecObjective_HealthFillBar() { mixin(MGPC!("GFxObject", 2812)()); }
+			GFxObject SpecObjective_DescriptionTF() { mixin(MGPC!("GFxObject", 2808)()); }
+			GFxObject SpecObjective_ObjectiveNameTF() { mixin(MGPC!("GFxObject", 2804)()); }
+			GFxObject SpecBookmark_DescriptionTF() { mixin(MGPC!("GFxObject", 2800)()); }
+			GFxObject SpecBookmark_BookmarkNameTF() { mixin(MGPC!("GFxObject", 2796)()); }
+			GFxObject SpecVehicle_SkiIndicator_fillBar_speedoTF() { mixin(MGPC!("GFxObject", 2792)()); }
+			GFxObject SpecVehicle_SkiIndicator_fillBar() { mixin(MGPC!("GFxObject", 2788)()); }
+			GFxObject SpecVehicle_VehicleGroup_secondaryReady() { mixin(MGPC!("GFxObject", 2784)()); }
+			GFxObject SpecVehicle_SecondaryNameTF() { mixin(MGPC!("GFxObject", 2780)()); }
+			GFxObject SpecVehicle_VehicleGroup_primaryReady() { mixin(MGPC!("GFxObject", 2776)()); }
+			GFxObject SpecVehicle_PrimaryNameTF() { mixin(MGPC!("GFxObject", 2772)()); }
+			GFxObject SpecVehicle_EnergyTF() { mixin(MGPC!("GFxObject", 2768)()); }
+			GFxObject SpecVehicle_EnergyFillBar() { mixin(MGPC!("GFxObject", 2764)()); }
+			GFxObject SpecVehicle_HealthTF() { mixin(MGPC!("GFxObject", 2760)()); }
+			GFxObject SpecVehicle_HealthFillBar() { mixin(MGPC!("GFxObject", 2756)()); }
+			GFxObject SpecVehicle_PassengerNameTF() { mixin(MGPC!("GFxObject", 2752)()); }
+			GFxObject SpecVehicle_DriverNameTF() { mixin(MGPC!("GFxObject", 2748)()); }
+			GFxObject SpecVehicle_VehicleNameTF() { mixin(MGPC!("GFxObject", 2744)()); }
+			GFxObject SpecVehicle_FlagCarried() { mixin(MGPC!("GFxObject", 2740)()); }
+			GFxObject SpecPlayer_SkiIndicator_fillBar_speedoTF() { mixin(MGPC!("GFxObject", 2736)()); }
+			GFxObject SpecPlayer_SkiIndicator_fillBar() { mixin(MGPC!("GFxObject", 2732)()); }
+			GFxObject SpecPlayer_Perk2TF() { mixin(MGPC!("GFxObject", 2728)()); }
+			GFxObject SpecPlayer_PerkItem2() { mixin(MGPC!("GFxObject", 2724)()); }
+			GFxObject SpecPlayer_Perk1TF() { mixin(MGPC!("GFxObject", 2720)()); }
+			GFxObject SpecPlayer_PerkItem1() { mixin(MGPC!("GFxObject", 2716)()); }
+			GFxObject SpecPlayer_PackNameTF() { mixin(MGPC!("GFxObject", 2712)()); }
+			GFxObject SpecPlayer_PackIcons_count() { mixin(MGPC!("GFxObject", 2708)()); }
+			GFxObject SpecPlayer_PackIcons_icon() { mixin(MGPC!("GFxObject", 2704)()); }
+			GFxObject SpecPlayer_OffhandNameTF() { mixin(MGPC!("GFxObject", 2700)()); }
+			GFxObject SpecPlayer_OffhandIcons_count() { mixin(MGPC!("GFxObject", 2696)()); }
+			GFxObject SpecPlayer_OffhandIcons_icon() { mixin(MGPC!("GFxObject", 2692)()); }
+			GFxObject SpecPlayer_SecondaryAmmoTF() { mixin(MGPC!("GFxObject", 2688)()); }
+			GFxObject SpecPlayer_SecondaryNameTF() { mixin(MGPC!("GFxObject", 2684)()); }
+			GFxObject SpecPlayer_PrimaryAmmoTF() { mixin(MGPC!("GFxObject", 2680)()); }
+			GFxObject SpecPlayer_PrimaryNameTF() { mixin(MGPC!("GFxObject", 2676)()); }
+			GFxObject SpecPlayer_EnergyTF() { mixin(MGPC!("GFxObject", 2672)()); }
+			GFxObject SpecPlayer_EnergyFillBar() { mixin(MGPC!("GFxObject", 2668)()); }
+			GFxObject SpecPlayer_HealthTF() { mixin(MGPC!("GFxObject", 2664)()); }
+			GFxObject SpecPlayer_HealthFillBar() { mixin(MGPC!("GFxObject", 2660)()); }
+			GFxObject SpecPlayer_RegenTF() { mixin(MGPC!("GFxObject", 2656)()); }
+			GFxObject SpecPlayer_ClassNameTF() { mixin(MGPC!("GFxObject", 2652)()); }
+			GFxObject SpecPlayer_PlayerNameTF() { mixin(MGPC!("GFxObject", 2648)()); }
+			GFxObject SpecPlayer_FlagCarried() { mixin(MGPC!("GFxObject", 2644)()); }
+			GFxObject SpecObjective() { mixin(MGPC!("GFxObject", 2640)()); }
+			GFxObject SpecBookmark() { mixin(MGPC!("GFxObject", 2636)()); }
+			GFxObject SpawnCounter() { mixin(MGPC!("GFxObject", 2632)()); }
+			GFxObject SpecVehicle() { mixin(MGPC!("GFxObject", 2628)()); }
+			GFxObject SpecPlayer() { mixin(MGPC!("GFxObject", 2624)()); }
+			GFxObject SpecFloat() { mixin(MGPC!("GFxObject", 2620)()); }
+			GFxObject SpecHelp() { mixin(MGPC!("GFxObject", 2616)()); }
+			GFxObject VGS() { mixin(MGPC!("GFxObject", 2612)()); }
+			GFxObject NotificationPopup() { mixin(MGPC!("GFxObject", 2608)()); }
+			GFxObject DeployStatus() { mixin(MGPC!("GFxObject", 2584)()); }
+			GFxObject GlobalAlertTF() { mixin(MGPC!("GFxObject", 2580)()); }
+			GFxObject Credits_And_Streaks_CallItem() { mixin(MGPC!("GFxObject", 2568)()); }
+			GFxObject PlayerStats_Offhand1_Count() { mixin(MGPC!("GFxObject", 2564)()); }
+			GFxObject PlayerStats_Offhand1_Icon() { mixin(MGPC!("GFxObject", 2560)()); }
+			GFxObject PlayerStats_PackCount() { mixin(MGPC!("GFxObject", 2556)()); }
+			GFxObject PlayerStats_PackMC() { mixin(MGPC!("GFxObject", 2552)()); }
+			GFxObject PlayerStats_Pack() { mixin(MGPC!("GFxObject", 2548)()); }
+			GFxObject playerStats_Offhand1() { mixin(MGPC!("GFxObject", 2544)()); }
+			GFxObject VehicleStats_VehicleSlot() { mixin(MGPC!("GFxObject", 2520)()); }
+			GFxObject VehicleStats_VehicleEnergyFill() { mixin(MGPC!("GFxObject", 2516)()); }
+			GFxObject VehicleStats_EnergyTF_TextField() { mixin(MGPC!("GFxObject", 2512)()); }
+			GFxObject VehicleStats_VehicleHealthFill() { mixin(MGPC!("GFxObject", 2508)()); }
+			GFxObject VehicleStats_HealthTF_TextField() { mixin(MGPC!("GFxObject", 2504)()); }
+			GFxObject VehicleStats() { mixin(MGPC!("GFxObject", 2500)()); }
+			GFxObject TeamStats() { mixin(MGPC!("GFxObject", 2496)()); }
+			GFxObject Offhands_And_Flag_FlagInHand() { mixin(MGPC!("GFxObject", 2492)()); }
+			GFxObject Credits_And_Streaks_CreditsGroup_CreditsMC_CreditsN() { mixin(MGPC!("GFxObject", 2488)()); }
+			GFxObject RabbitScoreboard() { mixin(MGPC!("GFxObject", 2484)()); }
+			GFxObject TeamScoreBoard() { mixin(MGPC!("GFxObject", 2480)()); }
+			GFxObject ArenaStats() { mixin(MGPC!("GFxObject", 2476)()); }
+			GFxObject ArenaStats_EnemyScoreTF() { mixin(MGPC!("GFxObject", 2472)()); }
+			GFxObject ArenaStats_FriendlyScoreTF() { mixin(MGPC!("GFxObject", 2468)()); }
+			GFxObject ArenaStats_roundCountTF() { mixin(MGPC!("GFxObject", 2464)()); }
+			GFxObject ArenaStats_arenaGameTimerTF() { mixin(MGPC!("GFxObject", 2460)()); }
+			GFxObject ArenaStats_EnemyManGraphic08() { mixin(MGPC!("GFxObject", 2456)()); }
+			GFxObject ArenaStats_EnemyManGraphic07() { mixin(MGPC!("GFxObject", 2452)()); }
+			GFxObject ArenaStats_EnemyManGraphic06() { mixin(MGPC!("GFxObject", 2448)()); }
+			GFxObject ArenaStats_EnemyManGraphic05() { mixin(MGPC!("GFxObject", 2444)()); }
+			GFxObject ArenaStats_EnemyManGraphic04() { mixin(MGPC!("GFxObject", 2440)()); }
+			GFxObject ArenaStats_EnemyManGraphic03() { mixin(MGPC!("GFxObject", 2436)()); }
+			GFxObject ArenaStats_EnemyManGraphic02() { mixin(MGPC!("GFxObject", 2432)()); }
+			GFxObject ArenaStats_EnemyManGraphic01() { mixin(MGPC!("GFxObject", 2428)()); }
+			GFxObject ArenaStats_FriendlyManGraphic08() { mixin(MGPC!("GFxObject", 2424)()); }
+			GFxObject ArenaStats_FriendlyManGraphic07() { mixin(MGPC!("GFxObject", 2420)()); }
+			GFxObject ArenaStats_FriendlyManGraphic06() { mixin(MGPC!("GFxObject", 2416)()); }
+			GFxObject ArenaStats_FriendlyManGraphic05() { mixin(MGPC!("GFxObject", 2412)()); }
+			GFxObject ArenaStats_FriendlyManGraphic04() { mixin(MGPC!("GFxObject", 2408)()); }
+			GFxObject ArenaStats_FriendlyManGraphic03() { mixin(MGPC!("GFxObject", 2404)()); }
+			GFxObject ArenaStats_FriendlyManGraphic02() { mixin(MGPC!("GFxObject", 2400)()); }
+			GFxObject ArenaStats_FriendlyManGraphic01() { mixin(MGPC!("GFxObject", 2396)()); }
+			GFxObject CaHControlPointE() { mixin(MGPC!("GFxObject", 2392)()); }
+			GFxObject CaHControlPointD() { mixin(MGPC!("GFxObject", 2388)()); }
+			GFxObject CaHControlPointC() { mixin(MGPC!("GFxObject", 2384)()); }
+			GFxObject CaHControlPointB() { mixin(MGPC!("GFxObject", 2380)()); }
+			GFxObject CaHControlPointA() { mixin(MGPC!("GFxObject", 2376)()); }
+			GFxObject CaHStats() { mixin(MGPC!("GFxObject", 2372)()); }
+			GFxObject DaDStats() { mixin(MGPC!("GFxObject", 2368)()); }
+			GFxObject TdmStats() { mixin(MGPC!("GFxObject", 2364)()); }
+			GFxObject TdmStats_gameTimer() { mixin(MGPC!("GFxObject", 2360)()); }
+			GFxObject TdmStats_rightFlagStatus() { mixin(MGPC!("GFxObject", 2356)()); }
+			GFxObject TdmStats_leftFlagStatus() { mixin(MGPC!("GFxObject", 2352)()); }
+			GFxObject CTFStats() { mixin(MGPC!("GFxObject", 2348)()); }
+			GFxObject CTFStats_Timer() { mixin(MGPC!("GFxObject", 2344)()); }
+			GFxObject CTFStats_RightScore() { mixin(MGPC!("GFxObject", 2340)()); }
+			GFxObject CTFStats_LeftScore() { mixin(MGPC!("GFxObject", 2336)()); }
+			GFxObject CTFStats_RightFlagTimer() { mixin(MGPC!("GFxObject", 2332)()); }
+			GFxObject CTFStats_LeftFlagTimer() { mixin(MGPC!("GFxObject", 2328)()); }
+			GFxObject CTFStats_RightFlagStatus() { mixin(MGPC!("GFxObject", 2324)()); }
+			GFxObject CTFStats_LeftFlagStatus() { mixin(MGPC!("GFxObject", 2320)()); }
+			GFxObject CTFStats_RightGenTimer() { mixin(MGPC!("GFxObject", 2316)()); }
+			GFxObject CTFStats_LeftGenTimer() { mixin(MGPC!("GFxObject", 2312)()); }
+			GFxObject CTFStats_RightGenStatus() { mixin(MGPC!("GFxObject", 2308)()); }
+			GFxObject CTFStats_LeftGenStatus() { mixin(MGPC!("GFxObject", 2304)()); }
+			GFxObject RabbitStats_Timer() { mixin(MGPC!("GFxObject", 2300)()); }
+			GFxObject RabbitStats_LeaderScore() { mixin(MGPC!("GFxObject", 2288)()); }
+			GFxObject RabbitStats_LeaderText() { mixin(MGPC!("GFxObject", 2276)()); }
+			GFxObject RabbitStats() { mixin(MGPC!("GFxObject", 2272)()); }
+			GFxObject RabbitScoreboard_PlayerHighlight() { mixin(MGPC!("GFxObject", 2240)()); }
+			GFxObject RabbitScoreboard_RankIcon() { mixin(MGPC!("GFxObject", 2208)()); }
+			GFxObject RabbitScoreboard_RankTF() { mixin(MGPC!("GFxObject", 2176)()); }
+			GFxObject RabbitScoreboard_ClassTF() { mixin(MGPC!("GFxObject", 2144)()); }
+			GFxObject RabbitScoreboard_PingTF() { mixin(MGPC!("GFxObject", 2112)()); }
+			GFxObject RabbitScoreboard_AssistsTF() { mixin(MGPC!("GFxObject", 2080)()); }
+			GFxObject RabbitScoreboard_KillsTF() { mixin(MGPC!("GFxObject", 2048)()); }
+			GFxObject RabbitScoreboard_ScoreT() { mixin(MGPC!("GFxObject", 2016)()); }
+			GFxObject RabbitScoreboard_PlayerTF() { mixin(MGPC!("GFxObject", 1984)()); }
+			GFxObject TeamScoreboard_Blue_RankTF() { mixin(MGPC!("GFxObject", 1920)()); }
+			GFxObject TeamScoreboard_Blue_RankIcon() { mixin(MGPC!("GFxObject", 1856)()); }
+			GFxObject TeamScoreboard_Blue_ClassTF() { mixin(MGPC!("GFxObject", 1792)()); }
+			GFxObject TeamScoreboard_Blue_PingTF() { mixin(MGPC!("GFxObject", 1728)()); }
+			GFxObject TeamScoreboard_Blue_AssistsTF() { mixin(MGPC!("GFxObject", 1664)()); }
+			GFxObject TeamScoreboard_Blue_KillsTF() { mixin(MGPC!("GFxObject", 1600)()); }
+			GFxObject TeamScoreboard_Blue_ScoreTF() { mixin(MGPC!("GFxObject", 1536)()); }
+			GFxObject TeamScoreboard_Blue_PlayerNameTF() { mixin(MGPC!("GFxObject", 1472)()); }
+			GFxObject TeamScoreboard_Red_RankTF() { mixin(MGPC!("GFxObject", 1408)()); }
+			GFxObject TeamScoreboard_Red_RankIcon() { mixin(MGPC!("GFxObject", 1344)()); }
+			GFxObject TeamScoreboard_Red_ClassTF() { mixin(MGPC!("GFxObject", 1280)()); }
+			GFxObject TeamScoreboard_Red_PingTF() { mixin(MGPC!("GFxObject", 1216)()); }
+			GFxObject TeamScoreboard_Red_AssistsTF() { mixin(MGPC!("GFxObject", 1152)()); }
+			GFxObject TeamScoreboard_Red_KillsTF() { mixin(MGPC!("GFxObject", 1088)()); }
+			GFxObject TeamScoreboard_Red_ScoreTF() { mixin(MGPC!("GFxObject", 1024)()); }
+			GFxObject TeamScoreboard_Red_PlayerNameTF() { mixin(MGPC!("GFxObject", 960)()); }
+			GFxObject PlayerStats_EnergyFillBar() { mixin(MGPC!("GFxObject", 956)()); }
+			GFxObject PlayerStats_GhostHealthBar() { mixin(MGPC!("GFxObject", 952)()); }
+			GFxObject PlayerStats_HealthFillBar() { mixin(MGPC!("GFxObject", 948)()); }
+			GFxObject SpawnCounter_TimeLabel() { mixin(MGPC!("GFxObject", 944)()); }
+			GFxObject SpawnCounter_StatusMessage() { mixin(MGPC!("GFxObject", 940)()); }
+			GFxObject CreditsAndStreaks_Streak() { mixin(MGPC!("GFxObject", 928)()); }
+			GFxObject CreditsAndStreaks() { mixin(MGPC!("GFxObject", 924)()); }
+			GFxObject SkiIndicatorFillBar() { mixin(MGPC!("GFxObject", 916)()); }
+			GFxObject SkiIndicatorTF() { mixin(MGPC!("GFxObject", 908)()); }
+			GFxObject SkiIndicator() { mixin(MGPC!("GFxObject", 900)()); }
+			GFxObject CombatLog() { mixin(MGPC!("GFxObject", 896)()); }
+			GFxObject KillMessageArea() { mixin(MGPC!("GFxObject", 892)()); }
+			GFxObject KillCamInfo() { mixin(MGPC!("GFxObject", 888)()); }
+			GFxObject PromptPanel() { mixin(MGPC!("GFxObject", 884)()); }
+			GFxObject HeroStatus_outputTF() { mixin(MGPC!("GFxObject", 880)()); }
+			GFxObject PlayerStats() { mixin(MGPC!("GFxObject", 876)()); }
+			GFxObject Visor() { mixin(MGPC!("GFxObject", 860)()); }
+			GFxDeviceAmmoCount deviceAmmoPoolMP() { mixin(MGPC!("GFxDeviceAmmoCount", 856)()); }
+			GFxDeviceAmmoCount deviceAmmoCountMP() { mixin(MGPC!("GFxDeviceAmmoCount", 852)()); }
+			GFxTrReticules Reticules() { mixin(MGPC!("GFxTrReticules", 848)()); }
+			GFxObject sniperPowerUp() { mixin(MGPC!("GFxObject", 844)()); }
+			TrDevice m_LastOffhand() { mixin(MGPC!("TrDevice", 832)()); }
+			TeamInfo m_LastTeam() { mixin(MGPC!("TeamInfo", 828)()); }
+			int m_nLastVehicleAmmoPool() { mixin(MGPC!("int", 824)()); }
+			float m_fLastVehicleEnergy() { mixin(MGPC!("float", 820)()); }
+			int m_nLastVehicleHealth() { mixin(MGPC!("int", 816)()); }
+			int m_nLastSeatMask() { mixin(MGPC!("int", 812)()); }
+			float m_fSpeedometerUpdateInterval() { mixin(MGPC!("float", 808)()); }
+			int m_SkiSpeedSteps() { mixin(MGPC!("int", 760)()); }
+			int m_VGSMenuListCount() { mixin(MGPC!("int", 756)()); }
+			float m_fLastSpeedometerUpdateTime() { mixin(MGPC!("float", 752)()); }
+			float m_fCurrentGhostHealth() { mixin(MGPC!("float", 748)()); }
+			float m_fLastActualHealth() { mixin(MGPC!("float", 744)()); }
+			float m_fLastMaxHealth() { mixin(MGPC!("float", 740)()); }
+			float m_fLastRotation() { mixin(MGPC!("float", 736)()); }
+			float m_fCrosshairDepth() { mixin(MGPC!("float", 728)()); }
+			int m_nLastFriendlyGeneratorTime() { mixin(MGPC!("int", 724)()); }
+			int m_nLastEnemyGeneratorTime() { mixin(MGPC!("int", 720)()); }
+			int m_nLastOffhandCount() { mixin(MGPC!("int", 708)()); }
+			int m_nLastPercentReload() { mixin(MGPC!("int", 704)()); }
+			int m_nLastPercentLaser() { mixin(MGPC!("int", 700)()); }
+			int m_nLastSkiSpeedStep() { mixin(MGPC!("int", 696)()); }
+			int m_nStreakEvent() { mixin(MGPC!("int", 676)()); }
+			int m_nCrossHairMode() { mixin(MGPC!("int", 672)()); }
+			int m_nLastAmmoPool() { mixin(MGPC!("int", 668)()); }
+			int m_nLastCredits() { mixin(MGPC!("int", 664)()); }
+			int m_nLastPercent() { mixin(MGPC!("int", 660)()); }
+			int m_HUDStageHeight() { mixin(MGPC!("int", 656)()); }
+			int m_HUDStageWidth() { mixin(MGPC!("int", 652)()); }
+			int m_HUDStageOriginY() { mixin(MGPC!("int", 648)()); }
+			int m_HUDStageOriginX() { mixin(MGPC!("int", 644)()); }
+			TrPlayerController m_TrPC() { mixin(MGPC!("TrPlayerController", 640)()); }
+			TrHUD m_TrHUD() { mixin(MGPC!("TrHUD", 636)()); }
 		}
 		bool bVGSLoadouts() { mixin(MGBPC!(732, 0x200)()); }
 		bool bVGSLoadouts(bool val) { mixin(MSBPC!(732, 0x200)()); }
@@ -2612,11 +2612,12 @@ final:
 		*cast(GFxObject*)params.ptr = List;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DelegateLoadVGSMenu, params.ptr, cast(void*)0);
 	}
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -2627,11 +2628,12 @@ final:
 		*cast(GFxTrReticules*)params.ptr = MC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.registerReticules, params.ptr, cast(void*)0);
 	}
-	void Init(LocalPlayer pPlayer)
+	void Init(LocalPlayer* pPlayer = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = pPlayer;
+		if (pPlayer !is null)
+			*cast(LocalPlayer*)params.ptr = *pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	void SetLoadVGSMenuDelegate(
@@ -2791,13 +2793,15 @@ void**)params.ptr = InDelegate;
 		*cast(bool*)params.ptr = bIsNeutral;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConfigureSpectatorHUD, params.ptr, cast(void*)0);
 	}
-	void ConfigureHUDState(bool bAlive, bool bReady, bool bForceCredits)
+	void ConfigureHUDState(bool bAlive, bool* bReady = null, bool* bForceCredits = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(bool*)params.ptr = bAlive;
-		*cast(bool*)&params[4] = bReady;
-		*cast(bool*)&params[8] = bForceCredits;
+		if (bReady !is null)
+			*cast(bool*)&params[4] = *bReady;
+		if (bForceCredits !is null)
+			*cast(bool*)&params[8] = *bForceCredits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConfigureHUDState, params.ptr, cast(void*)0);
 	}
 	void ShowChatLog()
@@ -2884,11 +2888,12 @@ void**)params.ptr = InDelegate;
 		*cast(ScriptString*)&params[4] = Ammo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAmmoCountTF, params.ptr, cast(void*)0);
 	}
-	void ClearStats(bool clearScores)
+	void ClearStats(bool* clearScores = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = clearScores;
+		if (clearScores !is null)
+			*cast(bool*)params.ptr = *clearScores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearStats, params.ptr, cast(void*)0);
 	}
 	void ForceHealthUpdate(int NewHealth, int NewMaxHealth)
@@ -2991,7 +2996,7 @@ void**)params.ptr = InDelegate;
 		*cast(float*)&params[36] = NewHealth;
 		*cast(float*)&params[40] = HealthMax;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateHealth, params.ptr, cast(void*)0);
-		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
 	void TickGhostHealth(float DeltaTime)
 	{
@@ -3008,7 +3013,7 @@ void**)params.ptr = InDelegate;
 		*cast(float*)&params[36] = NewEnergy;
 		*cast(float*)&params[40] = EnergyMax;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateEnergy, params.ptr, cast(void*)0);
-		*pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
+		pInfo = *cast(GFxMinimapHud.HeEnDisplay*)params.ptr;
 	}
 	void SetOwnership()
 	{
@@ -3436,12 +3441,13 @@ void**)params.ptr = InDelegate;
 		*cast(int*)params.ptr = Team;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateTeamStats, params.ptr, cast(void*)0);
 	}
-	void UpdateVehicleStats(bool bVisible, int FrameId)
+	void UpdateVehicleStats(bool bVisible, int* FrameId = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bVisible;
-		*cast(int*)&params[4] = FrameId;
+		if (FrameId !is null)
+			*cast(int*)&params[4] = *FrameId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateVehicleStats, params.ptr, cast(void*)0);
 	}
 	void UpdateVehicleHealth(int Health, int FrameId)
@@ -3468,23 +3474,26 @@ void**)params.ptr = InDelegate;
 		*cast(int*)&params[4] = FrameId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateVehicleSeat, params.ptr, cast(void*)0);
 	}
-	void UpdateOffhand(int Index, bool bVisible, int FrameId, int Count)
+	void UpdateOffhand(int Index, bool bVisible, int* FrameId = null, int* Count = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(bool*)&params[4] = bVisible;
-		*cast(int*)&params[8] = FrameId;
-		*cast(int*)&params[12] = Count;
+		if (FrameId !is null)
+			*cast(int*)&params[8] = *FrameId;
+		if (Count !is null)
+			*cast(int*)&params[12] = *Count;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOffhand, params.ptr, cast(void*)0);
 	}
-	void UpdateOwnedItem(int Index, bool bVisible, int FrameId)
+	void UpdateOwnedItem(int Index, bool bVisible, int* FrameId = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = Index;
 		*cast(bool*)&params[4] = bVisible;
-		*cast(int*)&params[8] = FrameId;
+		if (FrameId !is null)
+			*cast(int*)&params[8] = *FrameId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOwnedItem, params.ptr, cast(void*)0);
 	}
 	void SoundAccolade()
@@ -3507,7 +3516,7 @@ void**)params.ptr = InDelegate;
 		*cast(GFxObject*)params.ptr = Obj;
 		*cast(ScriptString*)&params[4] = ObjName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RetrieveGFxObject, params.ptr, cast(void*)0);
-		*Obj = *cast(GFxObject*)params.ptr;
+		Obj = *cast(GFxObject*)params.ptr;
 		return *cast(GFxObject*)&params[16];
 	}
 	void SetGlobalAlert(ScriptString Message)

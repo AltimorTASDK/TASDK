@@ -63,11 +63,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			int r_BuffedMaxAmmo() { mixin(MGPC!(int, 2188)()); }
-			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 2184)()); }
+			int r_BuffedMaxAmmo() { mixin(MGPC!("int", 2188)()); }
+			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 2184)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentWeaponSpin'!
-			float m_fCurrSpinTime() { mixin(MGPC!(float, 2176)()); }
-			float m_fBuildupTime() { mixin(MGPC!(float, 2172)()); }
+			float m_fCurrSpinTime() { mixin(MGPC!("float", 2176)()); }
+			float m_fBuildupTime() { mixin(MGPC!("float", 2172)()); }
 		}
 		bool m_bHasClip() { mixin(MGBPC!(2192, 0x1)()); }
 		bool m_bHasClip(bool val) { mixin(MSBPC!(2192, 0x1)()); }

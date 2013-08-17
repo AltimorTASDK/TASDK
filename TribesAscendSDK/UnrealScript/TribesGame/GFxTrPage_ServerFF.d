@@ -48,9 +48,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float MaxBOunds() { mixin(MGPC!(float, 368)()); }
-			float MinBounds() { mixin(MGPC!(float, 364)()); }
-			int PopupNum() { mixin(MGPC!(int, 356)()); }
+			float MaxBOunds() { mixin(MGPC!("float", 368)()); }
+			float MinBounds() { mixin(MGPC!("float", 364)()); }
+			int PopupNum() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bBoundsPopup() { mixin(MGBPC!(360, 0x1)()); }
 		bool bBoundsPopup(bool val) { mixin(MSBPC!(360, 0x1)()); }

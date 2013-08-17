@@ -37,7 +37,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref GameCrowdDestinationQueuePoint QueuePosition() { mixin(MGPC!(GameCrowdDestinationQueuePoint, 88)()); }
+		@property final auto ref GameCrowdDestinationQueuePoint QueuePosition() { mixin(MGPC!("GameCrowdDestinationQueuePoint", 88)()); }
 		bool bStoppingBehavior() { mixin(MGBPC!(84, 0x1)()); }
 		bool bStoppingBehavior(bool val) { mixin(MSBPC!(84, 0x1)()); }
 	}

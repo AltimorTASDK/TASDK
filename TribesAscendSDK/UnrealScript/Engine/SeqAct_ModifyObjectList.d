@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqAct_ModifyObjectList")()); }
 	private static __gshared SeqAct_ModifyObjectList mDefaultProperties;
 	@property final static SeqAct_ModifyObjectList DefaultProperties() { mixin(MGDPC!(SeqAct_ModifyObjectList, "SeqAct_ModifyObjectList Engine.Default__SeqAct_ModifyObjectList")()); }
-	@property final auto ref int ListEntriesCount() { mixin(MGPC!(int, 232)()); }
+	@property final auto ref int ListEntriesCount() { mixin(MGPC!("int", 232)()); }
 }

@@ -47,13 +47,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass WeaponPreference() { mixin(MGPC!(ScriptClass, 712)()); }
-			UDKGameObjective DefendedObjective() { mixin(MGPC!(UDKGameObjective, 704)()); }
-			ScriptName DefenseGroup() { mixin(MGPC!(ScriptName, 716)()); }
-			UTDefensePoint NextDefensePoint() { mixin(MGPC!(UTDefensePoint, 700)()); }
-			Controller CurrentUser() { mixin(MGPC!(Controller, 696)()); }
-			ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!(ScriptArray!(Texture2D), 728)()); }
-			UTDefensePoint.EDefensePriority DefensePriority() { mixin(MGPC!(UTDefensePoint.EDefensePriority, 724)()); }
+			ScriptClass WeaponPreference() { mixin(MGPC!("ScriptClass", 712)()); }
+			UDKGameObjective DefendedObjective() { mixin(MGPC!("UDKGameObjective", 704)()); }
+			ScriptName DefenseGroup() { mixin(MGPC!("ScriptName", 716)()); }
+			UTDefensePoint NextDefensePoint() { mixin(MGPC!("UTDefensePoint", 700)()); }
+			Controller CurrentUser() { mixin(MGPC!("Controller", 696)()); }
+			ScriptArray!(Texture2D) TeamSprites() { mixin(MGPC!("ScriptArray!(Texture2D)", 728)()); }
+			UTDefensePoint.EDefensePriority DefensePriority() { mixin(MGPC!("UTDefensePoint.EDefensePriority", 724)()); }
 		}
 		bool bSniping() { mixin(MGBPC!(708, 0x2)()); }
 		bool bSniping(bool val) { mixin(MSBPC!(708, 0x2)()); }
@@ -82,7 +82,7 @@ final:
 		*cast(bool*)&params[12] = bPrioritizeSameGroup;
 		*cast(int*)&params[16] = NumChecked;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HigherPriorityThan, params.ptr, cast(void*)0);
-		*NumChecked = *cast(int*)&params[16];
+		NumChecked = *cast(int*)&params[16];
 		return *cast(bool*)&params[20];
 	}
 	void Reset()

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionMultiply DefaultProperties() { mixin(MGDPC!(MaterialExpressionMultiply, "MaterialExpressionMultiply Engine.Default__MaterialExpressionMultiply")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

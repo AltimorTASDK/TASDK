@@ -22,16 +22,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 520)()); }
-			float HeightOffset() { mixin(MGPC!(float, 512)()); }
-			float ForceHeight() { mixin(MGPC!(float, 508)()); }
-			float ForceTopRadius() { mixin(MGPC!(float, 504)()); }
-			float ForceRadius() { mixin(MGPC!(float, 500)()); }
-			float EscapeVelocity() { mixin(MGPC!(float, 496)()); }
-			float LiftFalloffHeight() { mixin(MGPC!(float, 492)()); }
-			float LiftStrength() { mixin(MGPC!(float, 488)()); }
-			float RotationalStrength() { mixin(MGPC!(float, 484)()); }
-			float RadialStrength() { mixin(MGPC!(float, 480)()); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 520)()); }
+			float HeightOffset() { mixin(MGPC!("float", 512)()); }
+			float ForceHeight() { mixin(MGPC!("float", 508)()); }
+			float ForceTopRadius() { mixin(MGPC!("float", 504)()); }
+			float ForceRadius() { mixin(MGPC!("float", 500)()); }
+			float EscapeVelocity() { mixin(MGPC!("float", 496)()); }
+			float LiftFalloffHeight() { mixin(MGPC!("float", 492)()); }
+			float LiftStrength() { mixin(MGPC!("float", 488)()); }
+			float RotationalStrength() { mixin(MGPC!("float", 484)()); }
+			float RadialStrength() { mixin(MGPC!("float", 480)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 		}
 		bool bForceApplyToProjectiles() { mixin(MGBPC!(516, 0x10)()); }

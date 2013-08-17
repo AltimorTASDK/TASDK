@@ -39,9 +39,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LastRadarLockWarnTime() { mixin(MGPC!(float, 2776)()); }
-			ScriptString RadarLockMessage() { mixin(MGPC!(ScriptString, 2764)()); }
-			float PushForce() { mixin(MGPC!(float, 2760)()); }
+			float LastRadarLockWarnTime() { mixin(MGPC!("float", 2776)()); }
+			ScriptString RadarLockMessage() { mixin(MGPC!("ScriptString", 2764)()); }
+			float PushForce() { mixin(MGPC!("float", 2760)()); }
 		}
 		bool bAutoLand() { mixin(MGBPC!(2756, 0x1)()); }
 		bool bAutoLand(bool val) { mixin(MSBPC!(2756, 0x1)()); }

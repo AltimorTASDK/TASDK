@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			MaterialExpressionSceneTexture.ESceneTextureType SceneTextureType() { mixin(MGPC!(MaterialExpressionSceneTexture.ESceneTextureType, 136)()); }
-			MaterialExpression.ExpressionInput Coordinates() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+			MaterialExpressionSceneTexture.ESceneTextureType SceneTextureType() { mixin(MGPC!("MaterialExpressionSceneTexture.ESceneTextureType", 136)()); }
+			MaterialExpression.ExpressionInput Coordinates() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 		}
 		bool ScreenAlign() { mixin(MGBPC!(140, 0x1)()); }
 		bool ScreenAlign(bool val) { mixin(MSBPC!(140, 0x1)()); }

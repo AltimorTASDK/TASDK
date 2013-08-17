@@ -779,12 +779,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString Units() { mixin(MGPC!(ScriptString, 116)()); }
-		ScriptString TitleTier3() { mixin(MGPC!(ScriptString, 104)()); }
-		ScriptString TitleTier2() { mixin(MGPC!(ScriptString, 92)()); }
-		ScriptString TitleTier1() { mixin(MGPC!(ScriptString, 80)()); }
-		float Weight() { mixin(MGPC!(float, 76)()); }
-		int TierLimit() { mixin(MGPC!(int, 64)()); }
-		int DatabaseId() { mixin(MGPC!(int, 60)()); }
+		ScriptString Units() { mixin(MGPC!("ScriptString", 116)()); }
+		ScriptString TitleTier3() { mixin(MGPC!("ScriptString", 104)()); }
+		ScriptString TitleTier2() { mixin(MGPC!("ScriptString", 92)()); }
+		ScriptString TitleTier1() { mixin(MGPC!("ScriptString", 80)()); }
+		float Weight() { mixin(MGPC!("float", 76)()); }
+		int TierLimit() { mixin(MGPC!("int", 64)()); }
+		int DatabaseId() { mixin(MGPC!("int", 60)()); }
 	}
 }

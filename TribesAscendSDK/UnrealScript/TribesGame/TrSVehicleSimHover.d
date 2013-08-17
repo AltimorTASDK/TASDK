@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TrSVehicleSimHover DefaultProperties() { mixin(MGDPC!(TrSVehicleSimHover, "TrSVehicleSimHover TribesGame.Default__TrSVehicleSimHover")()); }
 	@property final
 	{
-		@property final auto ref UDKVehicleSimChopper.AnglePID RollGain() { mixin(MGPC!(UDKVehicleSimChopper.AnglePID, 312)()); }
+		@property final auto ref UDKVehicleSimChopper.AnglePID RollGain() { mixin(MGPC!("UDKVehicleSimChopper.AnglePID", 312)()); }
 		bool bShouldStabilizeRotation() { mixin(MGBPC!(332, 0x1)()); }
 		bool bShouldStabilizeRotation(bool val) { mixin(MSBPC!(332, 0x1)()); }
 	}

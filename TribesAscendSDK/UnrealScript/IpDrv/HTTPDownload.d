@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString ProxyServerHost() { mixin(MGPC!(ScriptString, 2672)()); }
-			int ProxyServerPort() { mixin(MGPC!(int, 2684)()); }
-			ScriptString RedirectToURL() { mixin(MGPC!(ScriptString, 72)()); }
-			float ConnectionTimeout() { mixin(MGPC!(float, 2692)()); }
+			ScriptString ProxyServerHost() { mixin(MGPC!("ScriptString", 2672)()); }
+			int ProxyServerPort() { mixin(MGPC!("int", 2684)()); }
+			ScriptString RedirectToURL() { mixin(MGPC!("ScriptString", 72)()); }
+			float ConnectionTimeout() { mixin(MGPC!("float", 2692)()); }
 		}
 		bool UseCompression() { mixin(MGBPC!(84, 0x1)()); }
 		bool UseCompression(bool val) { mixin(MSBPC!(84, 0x1)()); }

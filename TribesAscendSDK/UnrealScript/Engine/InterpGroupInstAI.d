@@ -17,8 +17,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor.EPhysics SavedPhysics() { mixin(MGPC!(Actor.EPhysics, 84)()); }
-			InterpGroupAI AIGroup() { mixin(MGPC!(InterpGroupAI, 80)()); }
+			Actor.EPhysics SavedPhysics() { mixin(MGPC!("Actor.EPhysics", 84)()); }
+			InterpGroupAI AIGroup() { mixin(MGPC!("InterpGroupAI", 80)()); }
 		}
 		bool bSavedNoEncroachCheck() { mixin(MGBPC!(88, 0x1)()); }
 		bool bSavedNoEncroachCheck(bool val) { mixin(MSBPC!(88, 0x1)()); }

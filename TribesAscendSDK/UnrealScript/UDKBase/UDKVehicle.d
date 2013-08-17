@@ -121,8 +121,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKVehicle.BurnOutDatum")()); }
 		@property final auto ref
 		{
-			float CurrValue() { mixin(MGPS!(float, 4)()); }
-			MaterialInstanceTimeVarying MITV() { mixin(MGPS!(MaterialInstanceTimeVarying, 0)()); }
+			float CurrValue() { mixin(MGPS!("float", 4)()); }
+			MaterialInstanceTimeVarying MITV() { mixin(MGPS!("MaterialInstanceTimeVarying", 0)()); }
 		}
 	}
 	struct VehicleSeat
@@ -135,60 +135,60 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptName) GunSocket() { mixin(MGPS!(ScriptArray!(ScriptName), 16)()); }
-				ScriptArray!(ScriptName) GunPivotPoints() { mixin(MGPS!(ScriptArray!(ScriptName), 28)()); }
-				ScriptArray!(UDKVehicle.WeaponEffectInfo) WeaponEffects() { mixin(MGPS!(ScriptArray!(UDKVehicle.WeaponEffectInfo), 56)()); }
-				ScriptArray!(ScriptName) TurretControls() { mixin(MGPS!(ScriptArray!(ScriptName), 128)()); }
-				ScriptArray!(UDKSkelControl_TurretConstrained) TurretControllers() { mixin(MGPS!(ScriptArray!(UDKSkelControl_TurretConstrained), 140)()); }
-				ScriptArray!(UDKVehicle.VehicleSeatAnimInfo) m_SeatAnimInfo() { mixin(MGPS!(ScriptArray!(UDKVehicle.VehicleSeatAnimInfo), 324)()); }
-				ScriptArray!(GameSkelCtrl_Recoil) m_TurretRecoilControls() { mixin(MGPS!(ScriptArray!(GameSkelCtrl_Recoil), 368)()); }
-				ScriptArray!(ScriptName) m_TurretRecoilControlNames() { mixin(MGPS!(ScriptArray!(ScriptName), 380)()); }
-				Rotator FlagRotation() { mixin(MGPS!(Rotator, 416)()); }
-				Vector FlagOffset() { mixin(MGPS!(Vector, 404)()); }
-				ScriptName FlagSocketName() { mixin(MGPS!(ScriptName, 396)()); }
-				float m_fTurnInterpSpeed() { mixin(MGPS!(float, 392)()); }
-				Vector m_vIdealExitLocation() { mixin(MGPS!(Vector, 356)()); }
-				Vector m_vRidingPassengerMeshOffset() { mixin(MGPS!(Vector, 344)()); }
-				float m_fViewYawLimit() { mixin(MGPS!(float, 340)()); }
-				UObject.Vector2D SeatIconPOS() { mixin(MGPS!(UObject.Vector2D, 316)()); }
-				UDKVehicleMovementEffect SeatMovementEffect() { mixin(MGPS!(UDKVehicleMovementEffect, 312)()); }
+				ScriptArray!(ScriptName) GunSocket() { mixin(MGPS!("ScriptArray!(ScriptName)", 16)()); }
+				ScriptArray!(ScriptName) GunPivotPoints() { mixin(MGPS!("ScriptArray!(ScriptName)", 28)()); }
+				ScriptArray!(UDKVehicle.WeaponEffectInfo) WeaponEffects() { mixin(MGPS!("ScriptArray!(UDKVehicle.WeaponEffectInfo)", 56)()); }
+				ScriptArray!(ScriptName) TurretControls() { mixin(MGPS!("ScriptArray!(ScriptName)", 128)()); }
+				ScriptArray!(UDKSkelControl_TurretConstrained) TurretControllers() { mixin(MGPS!("ScriptArray!(UDKSkelControl_TurretConstrained)", 140)()); }
+				ScriptArray!(UDKVehicle.VehicleSeatAnimInfo) m_SeatAnimInfo() { mixin(MGPS!("ScriptArray!(UDKVehicle.VehicleSeatAnimInfo)", 324)()); }
+				ScriptArray!(GameSkelCtrl_Recoil) m_TurretRecoilControls() { mixin(MGPS!("ScriptArray!(GameSkelCtrl_Recoil)", 368)()); }
+				ScriptArray!(ScriptName) m_TurretRecoilControlNames() { mixin(MGPS!("ScriptArray!(ScriptName)", 380)()); }
+				Rotator FlagRotation() { mixin(MGPS!("Rotator", 416)()); }
+				Vector FlagOffset() { mixin(MGPS!("Vector", 404)()); }
+				ScriptName FlagSocketName() { mixin(MGPS!("ScriptName", 396)()); }
+				float m_fTurnInterpSpeed() { mixin(MGPS!("float", 392)()); }
+				Vector m_vIdealExitLocation() { mixin(MGPS!("Vector", 356)()); }
+				Vector m_vRidingPassengerMeshOffset() { mixin(MGPS!("Vector", 344)()); }
+				float m_fViewYawLimit() { mixin(MGPS!("float", 340)()); }
+				UObject.Vector2D SeatIconPOS() { mixin(MGPS!("UObject.Vector2D", 316)()); }
+				UDKVehicleMovementEffect SeatMovementEffect() { mixin(MGPS!("UDKVehicleMovementEffect", 312)()); }
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SeatMotionAudio'!
-				float DriverDamageMult() { mixin(MGPS!(float, 304)()); }
-				ScriptClass ImpactFlashLightClass() { mixin(MGPS!(ScriptClass, 300)()); }
+				float DriverDamageMult() { mixin(MGPS!("float", 304)()); }
+				ScriptClass ImpactFlashLightClass() { mixin(MGPS!("ScriptClass", 300)()); }
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MuzzleFlashLight'!
-				ScriptClass MuzzleFlashLightClass() { mixin(MGPS!(ScriptClass, 292)()); }
-				ScriptName SeatSocket() { mixin(MGPS!(ScriptName, 284)()); }
-				Rotator SeatRotation() { mixin(MGPS!(Rotator, 272)()); }
-				Vector SeatOffset() { mixin(MGPS!(Vector, 260)()); }
-				ScriptName SeatBone() { mixin(MGPS!(ScriptName, 252)()); }
-				float ViewPitchMax() { mixin(MGPS!(float, 244)()); }
-				float ViewPitchMin() { mixin(MGPS!(float, 240)()); }
-				float CameraZoomOffset() { mixin(MGPS!(float, 236)()); }
-				Vector CameraZoomBaseOffset() { mixin(MGPS!(Vector, 224)()); }
-				ScriptName CameraZoomTag() { mixin(MGPS!(ScriptName, 216)()); }
-				float CameraEyeHeight() { mixin(MGPS!(float, 212)()); }
-				float CameraOffset() { mixin(MGPS!(float, 208)()); }
-				Vector CameraSafeOffset() { mixin(MGPS!(Vector, 196)()); }
-				Vector CameraBaseOffset() { mixin(MGPS!(Vector, 184)()); }
-				ScriptName CameraTag() { mixin(MGPS!(ScriptName, 176)()); }
-				float PivotFireOffsetZ() { mixin(MGPS!(float, 168)()); }
-				Actor AimTarget() { mixin(MGPS!(Actor, 164)()); }
-				Vector AimPoint() { mixin(MGPS!(Vector, 152)()); }
-				Rotator LastWeaponRotation() { mixin(MGPS!(Rotator, 116)()); }
-				UObject.Pointer FiringModeProperty() { mixin(MGPS!(UObject.Pointer, 112)()); }
-				UObject.Pointer FlashCountProperty() { mixin(MGPS!(UObject.Pointer, 108)()); }
-				UObject.Pointer FlashLocationProperty() { mixin(MGPS!(UObject.Pointer, 104)()); }
-				UObject.Pointer WeaponRotationProperty() { mixin(MGPS!(UObject.Pointer, 100)()); }
-				ScriptName FiringModeName() { mixin(MGPS!(ScriptName, 92)()); }
-				ScriptName FlashCountName() { mixin(MGPS!(ScriptName, 84)()); }
-				ScriptName FlashLocationName() { mixin(MGPS!(ScriptName, 76)()); }
-				ScriptName WeaponRotationName() { mixin(MGPS!(ScriptName, 68)()); }
-				ScriptString TurretVarPrefix() { mixin(MGPS!(ScriptString, 44)()); }
-				int BarrelIndex() { mixin(MGPS!(int, 40)()); }
-				UDKWeapon Gun() { mixin(MGPS!(UDKWeapon, 12)()); }
-				ScriptClass GunClass() { mixin(MGPS!(ScriptClass, 8)()); }
-				Vehicle SeatPawn() { mixin(MGPS!(Vehicle, 4)()); }
-				Pawn StoragePawn() { mixin(MGPS!(Pawn, 0)()); }
+				ScriptClass MuzzleFlashLightClass() { mixin(MGPS!("ScriptClass", 292)()); }
+				ScriptName SeatSocket() { mixin(MGPS!("ScriptName", 284)()); }
+				Rotator SeatRotation() { mixin(MGPS!("Rotator", 272)()); }
+				Vector SeatOffset() { mixin(MGPS!("Vector", 260)()); }
+				ScriptName SeatBone() { mixin(MGPS!("ScriptName", 252)()); }
+				float ViewPitchMax() { mixin(MGPS!("float", 244)()); }
+				float ViewPitchMin() { mixin(MGPS!("float", 240)()); }
+				float CameraZoomOffset() { mixin(MGPS!("float", 236)()); }
+				Vector CameraZoomBaseOffset() { mixin(MGPS!("Vector", 224)()); }
+				ScriptName CameraZoomTag() { mixin(MGPS!("ScriptName", 216)()); }
+				float CameraEyeHeight() { mixin(MGPS!("float", 212)()); }
+				float CameraOffset() { mixin(MGPS!("float", 208)()); }
+				Vector CameraSafeOffset() { mixin(MGPS!("Vector", 196)()); }
+				Vector CameraBaseOffset() { mixin(MGPS!("Vector", 184)()); }
+				ScriptName CameraTag() { mixin(MGPS!("ScriptName", 176)()); }
+				float PivotFireOffsetZ() { mixin(MGPS!("float", 168)()); }
+				Actor AimTarget() { mixin(MGPS!("Actor", 164)()); }
+				Vector AimPoint() { mixin(MGPS!("Vector", 152)()); }
+				Rotator LastWeaponRotation() { mixin(MGPS!("Rotator", 116)()); }
+				UObject.Pointer FiringModeProperty() { mixin(MGPS!("UObject.Pointer", 112)()); }
+				UObject.Pointer FlashCountProperty() { mixin(MGPS!("UObject.Pointer", 108)()); }
+				UObject.Pointer FlashLocationProperty() { mixin(MGPS!("UObject.Pointer", 104)()); }
+				UObject.Pointer WeaponRotationProperty() { mixin(MGPS!("UObject.Pointer", 100)()); }
+				ScriptName FiringModeName() { mixin(MGPS!("ScriptName", 92)()); }
+				ScriptName FlashCountName() { mixin(MGPS!("ScriptName", 84)()); }
+				ScriptName FlashLocationName() { mixin(MGPS!("ScriptName", 76)()); }
+				ScriptName WeaponRotationName() { mixin(MGPS!("ScriptName", 68)()); }
+				ScriptString TurretVarPrefix() { mixin(MGPS!("ScriptString", 44)()); }
+				int BarrelIndex() { mixin(MGPS!("int", 40)()); }
+				UDKWeapon Gun() { mixin(MGPS!("UDKWeapon", 12)()); }
+				ScriptClass GunClass() { mixin(MGPS!("ScriptClass", 8)()); }
+				Vehicle SeatPawn() { mixin(MGPS!("Vehicle", 4)()); }
+				Pawn StoragePawn() { mixin(MGPS!("Pawn", 0)()); }
 			}
 			bool ValidFlagSeat() { mixin(MGBPS!(428, 0x1)()); }
 			bool ValidFlagSeat(bool val) { mixin(MSBPS!(428, 0x1)()); }
@@ -210,9 +210,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ScriptName) AnimSeqs() { mixin(MGPS!(ScriptArray!(ScriptName), 8)()); }
-				ScriptName AnimPlayerName() { mixin(MGPS!(ScriptName, 28)()); }
-				float AnimRate() { mixin(MGPS!(float, 20)()); }
+				ScriptArray!(ScriptName) AnimSeqs() { mixin(MGPS!("ScriptArray!(ScriptName)", 8)()); }
+				ScriptName AnimPlayerName() { mixin(MGPS!("ScriptName", 28)()); }
+				float AnimRate() { mixin(MGPS!("float", 20)()); }
 				// WARNING: Property 'AnimTag' has the same name as a defined type!
 			}
 			bool bAnimLoopLastSeq() { mixin(MGBPS!(24, 0x1)()); }
@@ -228,9 +228,9 @@ public extern(D):
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SoundRef'!
-			SoundCue SoundTemplate() { mixin(MGPS!(SoundCue, 16)()); }
-			ScriptName SoundEndTag() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName SoundStartTag() { mixin(MGPS!(ScriptName, 0)()); }
+			SoundCue SoundTemplate() { mixin(MGPS!("SoundCue", 16)()); }
+			ScriptName SoundEndTag() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName SoundStartTag() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct DamageParamScales
@@ -241,8 +241,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKVehicle.DamageParamScales")()); }
 		@property final auto ref
 		{
-			float Scale() { mixin(MGPS!(float, 8)()); }
-			ScriptName DamageParamName() { mixin(MGPS!(ScriptName, 0)()); }
+			float Scale() { mixin(MGPS!("float", 8)()); }
+			ScriptName DamageParamName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct FDamageMorphTargets
@@ -253,13 +253,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKVehicle.FDamageMorphTargets")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptName) DamagePropNames() { mixin(MGPS!(ScriptArray!(ScriptName), 36)()); }
-			int Health() { mixin(MGPS!(int, 32)()); }
-			ScriptName InfluenceBone() { mixin(MGPS!(ScriptName, 24)()); }
-			int LinkedMorphNodeIndex() { mixin(MGPS!(int, 20)()); }
-			ScriptName LinkedMorphNodeName() { mixin(MGPS!(ScriptName, 12)()); }
-			MorphNodeWeight MorphNode() { mixin(MGPS!(MorphNodeWeight, 8)()); }
-			ScriptName MorphNodeName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(ScriptName) DamagePropNames() { mixin(MGPS!("ScriptArray!(ScriptName)", 36)()); }
+			int Health() { mixin(MGPS!("int", 32)()); }
+			ScriptName InfluenceBone() { mixin(MGPS!("ScriptName", 24)()); }
+			int LinkedMorphNodeIndex() { mixin(MGPS!("int", 20)()); }
+			ScriptName LinkedMorphNodeName() { mixin(MGPS!("ScriptName", 12)()); }
+			MorphNodeWeight MorphNode() { mixin(MGPS!("MorphNodeWeight", 8)()); }
+			ScriptName MorphNodeName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct VehicleEffect
@@ -273,11 +273,11 @@ public extern(D):
 			auto ref
 			{
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'EffectRef'!
-				ScriptName EffectSocket() { mixin(MGPS!(ScriptName, 28)()); }
-				ParticleSystem EffectTemplate_Blue() { mixin(MGPS!(ParticleSystem, 24)()); }
-				ParticleSystem EffectTemplate() { mixin(MGPS!(ParticleSystem, 20)()); }
-				ScriptName EffectEndTag() { mixin(MGPS!(ScriptName, 8)()); }
-				ScriptName EffectStartTag() { mixin(MGPS!(ScriptName, 0)()); }
+				ScriptName EffectSocket() { mixin(MGPS!("ScriptName", 28)()); }
+				ParticleSystem EffectTemplate_Blue() { mixin(MGPS!("ParticleSystem", 24)()); }
+				ParticleSystem EffectTemplate() { mixin(MGPS!("ParticleSystem", 20)()); }
+				ScriptName EffectEndTag() { mixin(MGPS!("ScriptName", 8)()); }
+				ScriptName EffectStartTag() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bHighDetailOnly() { mixin(MGBPS!(16, 0x2)()); }
 			bool bHighDetailOnly(bool val) { mixin(MSBPS!(16, 0x2)()); }
@@ -294,9 +294,9 @@ public extern(D):
 		@property final auto ref
 		{
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Effect'!
-			Vector Scale3D() { mixin(MGPS!(Vector, 20)()); }
-			Vector Offset() { mixin(MGPS!(Vector, 8)()); }
-			ScriptName SocketName() { mixin(MGPS!(ScriptName, 0)()); }
+			Vector Scale3D() { mixin(MGPS!("Vector", 20)()); }
+			Vector Offset() { mixin(MGPS!("Vector", 8)()); }
+			ScriptName SocketName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct VehicleSeatAnimInfo
@@ -309,10 +309,10 @@ public extern(D):
 		{
 			auto ref
 			{
-				AnimTree SeatAnimTree() { mixin(MGPS!(AnimTree, 16)()); }
-				AnimSet SeatAnimSet() { mixin(MGPS!(AnimSet, 12)()); }
-				int TeamType() { mixin(MGPS!(int, 8)()); }
-				int ArmorType() { mixin(MGPS!(int, 4)()); }
+				AnimTree SeatAnimTree() { mixin(MGPS!("AnimTree", 16)()); }
+				AnimSet SeatAnimSet() { mixin(MGPS!("AnimSet", 12)()); }
+				int TeamType() { mixin(MGPS!("int", 8)()); }
+				int ArmorType() { mixin(MGPS!("int", 4)()); }
 			}
 			bool bClearAnimSet() { mixin(MGBPS!(0, 0x4)()); }
 			bool bClearAnimSet(bool val) { mixin(MSBPS!(0, 0x4)()); }
@@ -326,66 +326,66 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UDKVehicle.BurnOutDatum) BurnOutMaterialInstances() { mixin(MGPC!(ScriptArray!(UDKVehicle.BurnOutDatum), 1556)()); }
-			ScriptArray!(UDKPawn.MaterialSoundEffect) TireSoundList() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialSoundEffect), 1572)()); }
-			ScriptArray!(UDKPawn.MaterialParticleEffect) WheelParticleEffects() { mixin(MGPC!(ScriptArray!(UDKPawn.MaterialParticleEffect), 1596)()); }
-			ScriptArray!(int) GroundEffectIndices() { mixin(MGPC!(ScriptArray!(int), 1648)()); }
-			ScriptArray!(UDKVehicle.VehicleSeat) Seats() { mixin(MGPC!(ScriptArray!(UDKVehicle.VehicleSeat), 1688)()); }
-			ScriptArray!(UDKVehicle.VehicleAnim) VehicleAnims() { mixin(MGPC!(ScriptArray!(UDKVehicle.VehicleAnim), 1704)()); }
-			ScriptArray!(UDKVehicle.VehicleSound) VehicleSounds() { mixin(MGPC!(ScriptArray!(UDKVehicle.VehicleSound), 1716)()); }
-			ScriptArray!(UDKVehicle.DamageParamScales) DamageParamScaleLevels() { mixin(MGPC!(ScriptArray!(UDKVehicle.DamageParamScales), 1768)()); }
-			ScriptArray!(UDKSkelControl_Damage) DamageSkelControls() { mixin(MGPC!(ScriptArray!(UDKSkelControl_Damage), 1780)()); }
-			ScriptArray!(UDKVehicle.FDamageMorphTargets) DamageMorphTargets() { mixin(MGPC!(ScriptArray!(UDKVehicle.FDamageMorphTargets), 1792)()); }
-			ScriptArray!(UDKVehicle.VehicleEffect) VehicleEffects() { mixin(MGPC!(ScriptArray!(UDKVehicle.VehicleEffect), 1860)()); }
-			ScriptArray!(int) ContrailEffectIndices() { mixin(MGPC!(ScriptArray!(int), 1888)()); }
-			ScriptArray!(UDKBot) Trackers() { mixin(MGPC!(ScriptArray!(UDKBot), 1912)()); }
+			ScriptArray!(UDKVehicle.BurnOutDatum) BurnOutMaterialInstances() { mixin(MGPC!("ScriptArray!(UDKVehicle.BurnOutDatum)", 1556)()); }
+			ScriptArray!(UDKPawn.MaterialSoundEffect) TireSoundList() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialSoundEffect)", 1572)()); }
+			ScriptArray!(UDKPawn.MaterialParticleEffect) WheelParticleEffects() { mixin(MGPC!("ScriptArray!(UDKPawn.MaterialParticleEffect)", 1596)()); }
+			ScriptArray!(int) GroundEffectIndices() { mixin(MGPC!("ScriptArray!(int)", 1648)()); }
+			ScriptArray!(UDKVehicle.VehicleSeat) Seats() { mixin(MGPC!("ScriptArray!(UDKVehicle.VehicleSeat)", 1688)()); }
+			ScriptArray!(UDKVehicle.VehicleAnim) VehicleAnims() { mixin(MGPC!("ScriptArray!(UDKVehicle.VehicleAnim)", 1704)()); }
+			ScriptArray!(UDKVehicle.VehicleSound) VehicleSounds() { mixin(MGPC!("ScriptArray!(UDKVehicle.VehicleSound)", 1716)()); }
+			ScriptArray!(UDKVehicle.DamageParamScales) DamageParamScaleLevels() { mixin(MGPC!("ScriptArray!(UDKVehicle.DamageParamScales)", 1768)()); }
+			ScriptArray!(UDKSkelControl_Damage) DamageSkelControls() { mixin(MGPC!("ScriptArray!(UDKSkelControl_Damage)", 1780)()); }
+			ScriptArray!(UDKVehicle.FDamageMorphTargets) DamageMorphTargets() { mixin(MGPC!("ScriptArray!(UDKVehicle.FDamageMorphTargets)", 1792)()); }
+			ScriptArray!(UDKVehicle.VehicleEffect) VehicleEffects() { mixin(MGPC!("ScriptArray!(UDKVehicle.VehicleEffect)", 1860)()); }
+			ScriptArray!(int) ContrailEffectIndices() { mixin(MGPC!("ScriptArray!(int)", 1888)()); }
+			ScriptArray!(UDKBot) Trackers() { mixin(MGPC!("ScriptArray!(UDKBot)", 1912)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'HoverboardDust'!
-			Vector HUDLocation() { mixin(MGPC!(Vector, 1960)()); }
-			float ShowLockedMaxDist() { mixin(MGPC!(float, 1956)()); }
-			float LastPostRenderTraceTime() { mixin(MGPC!(float, 1952)()); }
-			float TeamBeaconMaxDist() { mixin(MGPC!(float, 1948)()); }
-			float MinRunOverWarningAim() { mixin(MGPC!(float, 1944)()); }
-			float LastRunOverWarningTime() { mixin(MGPC!(float, 1940)()); }
-			float MinRunOverSpeed() { mixin(MGPC!(float, 1936)()); }
-			float ResetTime() { mixin(MGPC!(float, 1932)()); }
-			float ExtraReachDownThreshold() { mixin(MGPC!(float, 1928)()); }
-			ubyte Team() { mixin(MGPC!(ubyte, 1924)()); }
-			float ObjectiveGetOutDist() { mixin(MGPC!(float, 1908)()); }
-			ScriptName ContrailColorParameterName() { mixin(MGPC!(ScriptName, 1900)()); }
-			ScriptName WaterEffectType() { mixin(MGPC!(ScriptName, 1880)()); }
-			float LastJumpOutCheck() { mixin(MGPC!(float, 1876)()); }
-			Controller KillerController() { mixin(MGPC!(Controller, 1872)()); }
-			float LastTakeHitTimeout() { mixin(MGPC!(float, 1856)()); }
-			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { mixin(MGPC!(UDKPawn.UTTakeHitInfo, 1812)()); }
-			MaterialInstanceConstant DamageMaterialInstance() { mixin(MGPC!(MaterialInstanceConstant, 1804)()); }
-			float CustomGravityScaling() { mixin(MGPC!(float, 1764)()); }
-			SoundCue SmallChunkImpactSound() { mixin(MGPC!(SoundCue, 1760)()); }
-			SoundCue MediumChunkImpactSound() { mixin(MGPC!(SoundCue, 1756)()); }
-			SoundCue LargeChunkImpactSound() { mixin(MGPC!(SoundCue, 1752)()); }
-			float LastDeathImpactTime() { mixin(MGPC!(float, 1748)()); }
-			float TimeInDestroyablePenetration() { mixin(MGPC!(float, 1744)()); }
-			float DestroyOnPenetrationDuration() { mixin(MGPC!(float, 1740)()); }
-			float DestroyOnPenetrationThreshold() { mixin(MGPC!(float, 1736)()); }
-			ScriptName DrivingAnim() { mixin(MGPC!(ScriptName, 1728)()); }
-			int SeatMask() { mixin(MGPC!(int, 1700)()); }
-			Rotator WeaponRotation() { mixin(MGPC!(Rotator, 1676)()); }
-			ParticleSystem WaterGroundEffect() { mixin(MGPC!(ParticleSystem, 1672)()); }
-			ScriptName GroundEffectDistParameterName() { mixin(MGPC!(ScriptName, 1664)()); }
-			float MaxGroundEffectDist() { mixin(MGPC!(float, 1660)()); }
-			float AccumulatedWaterDamage() { mixin(MGPC!(float, 1644)()); }
-			float WaterDamage() { mixin(MGPC!(float, 1640)()); }
-			float OccupiedUpsideDownDamagePerSec() { mixin(MGPC!(float, 1636)()); }
-			float UpsideDownDamagePerSec() { mixin(MGPC!(float, 1632)()); }
-			float AccruedFireDamage() { mixin(MGPC!(float, 1628)()); }
-			float FireDamagePerSec() { mixin(MGPC!(float, 1624)()); }
-			float FireDamageThreshold() { mixin(MGPC!(float, 1620)()); }
+			Vector HUDLocation() { mixin(MGPC!("Vector", 1960)()); }
+			float ShowLockedMaxDist() { mixin(MGPC!("float", 1956)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!("float", 1952)()); }
+			float TeamBeaconMaxDist() { mixin(MGPC!("float", 1948)()); }
+			float MinRunOverWarningAim() { mixin(MGPC!("float", 1944)()); }
+			float LastRunOverWarningTime() { mixin(MGPC!("float", 1940)()); }
+			float MinRunOverSpeed() { mixin(MGPC!("float", 1936)()); }
+			float ResetTime() { mixin(MGPC!("float", 1932)()); }
+			float ExtraReachDownThreshold() { mixin(MGPC!("float", 1928)()); }
+			ubyte Team() { mixin(MGPC!("ubyte", 1924)()); }
+			float ObjectiveGetOutDist() { mixin(MGPC!("float", 1908)()); }
+			ScriptName ContrailColorParameterName() { mixin(MGPC!("ScriptName", 1900)()); }
+			ScriptName WaterEffectType() { mixin(MGPC!("ScriptName", 1880)()); }
+			float LastJumpOutCheck() { mixin(MGPC!("float", 1876)()); }
+			Controller KillerController() { mixin(MGPC!("Controller", 1872)()); }
+			float LastTakeHitTimeout() { mixin(MGPC!("float", 1856)()); }
+			UDKPawn.UTTakeHitInfo LastTakeHitInfo() { mixin(MGPC!("UDKPawn.UTTakeHitInfo", 1812)()); }
+			MaterialInstanceConstant DamageMaterialInstance() { mixin(MGPC!("MaterialInstanceConstant", 1804)()); }
+			float CustomGravityScaling() { mixin(MGPC!("float", 1764)()); }
+			SoundCue SmallChunkImpactSound() { mixin(MGPC!("SoundCue", 1760)()); }
+			SoundCue MediumChunkImpactSound() { mixin(MGPC!("SoundCue", 1756)()); }
+			SoundCue LargeChunkImpactSound() { mixin(MGPC!("SoundCue", 1752)()); }
+			float LastDeathImpactTime() { mixin(MGPC!("float", 1748)()); }
+			float TimeInDestroyablePenetration() { mixin(MGPC!("float", 1744)()); }
+			float DestroyOnPenetrationDuration() { mixin(MGPC!("float", 1740)()); }
+			float DestroyOnPenetrationThreshold() { mixin(MGPC!("float", 1736)()); }
+			ScriptName DrivingAnim() { mixin(MGPC!("ScriptName", 1728)()); }
+			int SeatMask() { mixin(MGPC!("int", 1700)()); }
+			Rotator WeaponRotation() { mixin(MGPC!("Rotator", 1676)()); }
+			ParticleSystem WaterGroundEffect() { mixin(MGPC!("ParticleSystem", 1672)()); }
+			ScriptName GroundEffectDistParameterName() { mixin(MGPC!("ScriptName", 1664)()); }
+			float MaxGroundEffectDist() { mixin(MGPC!("float", 1660)()); }
+			float AccumulatedWaterDamage() { mixin(MGPC!("float", 1644)()); }
+			float WaterDamage() { mixin(MGPC!("float", 1640)()); }
+			float OccupiedUpsideDownDamagePerSec() { mixin(MGPC!("float", 1636)()); }
+			float UpsideDownDamagePerSec() { mixin(MGPC!("float", 1632)()); }
+			float AccruedFireDamage() { mixin(MGPC!("float", 1628)()); }
+			float FireDamagePerSec() { mixin(MGPC!("float", 1624)()); }
+			float FireDamageThreshold() { mixin(MGPC!("float", 1620)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ScrapeSound'!
-			float FlippedCount() { mixin(MGPC!(float, 1612)()); }
-			float LastCheckUpsideDownTime() { mixin(MGPC!(float, 1608)()); }
-			float MaxWheelEffectDistSq() { mixin(MGPC!(float, 1592)()); }
-			ScriptName CurrentTireMaterial() { mixin(MGPC!(ScriptName, 1584)()); }
+			float FlippedCount() { mixin(MGPC!("float", 1612)()); }
+			float LastCheckUpsideDownTime() { mixin(MGPC!("float", 1608)()); }
+			float MaxWheelEffectDistSq() { mixin(MGPC!("float", 1592)()); }
+			ScriptName CurrentTireMaterial() { mixin(MGPC!("ScriptName", 1584)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'TireAudioComp'!
-			float RemainingBurn() { mixin(MGPC!(float, 1552)()); }
+			float RemainingBurn() { mixin(MGPC!("float", 1552)()); }
 		}
 		bool bAllowedExit() { mixin(MGBPC!(1548, 0x8000)()); }
 		bool bAllowedExit(bool val) { mixin(MSBPC!(1548, 0x8000)()); }
@@ -452,43 +452,51 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRanOverDamageType, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
-	Rotator SeatWeaponRotation(int SeatIndex, Rotator NewRot, bool bReadValue)
+	Rotator SeatWeaponRotation(int SeatIndex, Rotator* NewRot = null, bool* bReadValue = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		*cast(Rotator*)&params[4] = NewRot;
-		*cast(bool*)&params[16] = bReadValue;
+		if (NewRot !is null)
+			*cast(Rotator*)&params[4] = *NewRot;
+		if (bReadValue !is null)
+			*cast(bool*)&params[16] = *bReadValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeatWeaponRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[20];
 	}
-	Vector SeatFlashLocation(int SeatIndex, Vector NewLoc, bool bReadValue)
+	Vector SeatFlashLocation(int SeatIndex, Vector* NewLoc = null, bool* bReadValue = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		*cast(Vector*)&params[4] = NewLoc;
-		*cast(bool*)&params[16] = bReadValue;
+		if (NewLoc !is null)
+			*cast(Vector*)&params[4] = *NewLoc;
+		if (bReadValue !is null)
+			*cast(bool*)&params[16] = *bReadValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFlashLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[20];
 	}
-	ubyte SeatFlashCount(int SeatIndex, ubyte NewCount, bool bReadValue)
+	ubyte SeatFlashCount(int SeatIndex, ubyte* NewCount = null, bool* bReadValue = null)
 	{
 		ubyte params[13];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		params[4] = NewCount;
-		*cast(bool*)&params[8] = bReadValue;
+		if (NewCount !is null)
+			params[4] = *NewCount;
+		if (bReadValue !is null)
+			*cast(bool*)&params[8] = *bReadValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFlashCount, params.ptr, cast(void*)0);
 		return params[12];
 	}
-	ubyte SeatFiringMode(int SeatIndex, ubyte NewFireMode, bool bReadValue)
+	ubyte SeatFiringMode(int SeatIndex, ubyte* NewFireMode = null, bool* bReadValue = null)
 	{
 		ubyte params[13];
 		params[] = 0;
 		*cast(int*)params.ptr = SeatIndex;
-		params[4] = NewFireMode;
-		*cast(bool*)&params[8] = bReadValue;
+		if (NewFireMode !is null)
+			params[4] = *NewFireMode;
+		if (bReadValue !is null)
+			*cast(bool*)&params[8] = *bReadValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SeatFiringMode, params.ptr, cast(void*)0);
 		return params[12];
 	}
@@ -524,11 +532,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsSeatControllerReplicationViewer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool IsLocalOnVehicle(Pawn InP)
+	bool IsLocalOnVehicle(Pawn* InP = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Pawn*)params.ptr = InP;
+		if (InP !is null)
+			*cast(Pawn*)params.ptr = *InP;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocalOnVehicle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

@@ -38,7 +38,7 @@ public extern(D):
 			ScriptFunction OnSwitchAwayFromWeapon() { mixin(MGF!("mOnSwitchAwayFromWeapon", "Function TribesGame.TrDevice_HeavyBoltLauncher.OnSwitchAwayFromWeapon")()); }
 		}
 	}
-	@property final auto ref SoundCue m_BoltIdleSound() { mixin(MGPC!(SoundCue, 2148)()); }
+	@property final auto ref SoundCue m_BoltIdleSound() { mixin(MGPC!("SoundCue", 2148)()); }
 final:
 	void SetBoltIdle(bool bEnabled)
 	{

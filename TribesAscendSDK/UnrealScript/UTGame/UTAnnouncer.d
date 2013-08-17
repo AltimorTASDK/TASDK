@@ -40,15 +40,15 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'CurrentAnnouncementComponent'!
-		ScriptString UTVoiceSoundCueSoundCue() { mixin(MGPC!(ScriptString, 516)()); }
-		SoundCue UTVoiceSoundCue() { mixin(MGPC!(SoundCue, 512)()); }
-		ScriptString CustomAnnouncerSoundCue() { mixin(MGPC!(ScriptString, 500)()); }
-		SoundCue AnnouncerSoundCue() { mixin(MGPC!(SoundCue, 496)()); }
-		UTPlayerController PlayerOwner() { mixin(MGPC!(UTPlayerController, 492)()); }
-		UTQueuedAnnouncement Queue() { mixin(MGPC!(UTQueuedAnnouncement, 488)()); }
-		int PlayingAnnouncementIndex() { mixin(MGPC!(int, 484)()); }
-		ScriptClass PlayingAnnouncementClass() { mixin(MGPC!(ScriptClass, 480)()); }
-		ubyte AnnouncerLevel() { mixin(MGPC!(ubyte, 476)()); }
+		ScriptString UTVoiceSoundCueSoundCue() { mixin(MGPC!("ScriptString", 516)()); }
+		SoundCue UTVoiceSoundCue() { mixin(MGPC!("SoundCue", 512)()); }
+		ScriptString CustomAnnouncerSoundCue() { mixin(MGPC!("ScriptString", 500)()); }
+		SoundCue AnnouncerSoundCue() { mixin(MGPC!("SoundCue", 496)()); }
+		UTPlayerController PlayerOwner() { mixin(MGPC!("UTPlayerController", 492)()); }
+		UTQueuedAnnouncement Queue() { mixin(MGPC!("UTQueuedAnnouncement", 488)()); }
+		int PlayingAnnouncementIndex() { mixin(MGPC!("int", 484)()); }
+		ScriptClass PlayingAnnouncementClass() { mixin(MGPC!("ScriptClass", 480)()); }
+		ubyte AnnouncerLevel() { mixin(MGPC!("ubyte", 476)()); }
 	}
 final:
 	void Destroyed()
@@ -63,14 +63,16 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayNextAnnouncement, cast(void*)0, cast(void*)0);
 	}
-	void PlayAnnouncementNow(ScriptClass InMessageClass, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	void PlayAnnouncementNow(ScriptClass InMessageClass, int MessageIndex, PlayerReplicationInfo* PRI = null, UObject* OptionalObject = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InMessageClass;
 		*cast(int*)&params[4] = MessageIndex;
-		*cast(PlayerReplicationInfo*)&params[8] = PRI;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (PRI !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *PRI;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnnouncementNow, params.ptr, cast(void*)0);
 	}
 	void AnnouncementFinished(
@@ -84,14 +86,16 @@ void* AC)
 void**)params.ptr = AC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AnnouncementFinished, params.ptr, cast(void*)0);
 	}
-	void PlayAnnouncement(ScriptClass InMessageClass, int MessageIndex, PlayerReplicationInfo PRI, UObject OptionalObject)
+	void PlayAnnouncement(ScriptClass InMessageClass, int MessageIndex, PlayerReplicationInfo* PRI = null, UObject* OptionalObject = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = InMessageClass;
 		*cast(int*)&params[4] = MessageIndex;
-		*cast(PlayerReplicationInfo*)&params[8] = PRI;
-		*cast(UObject*)&params[12] = OptionalObject;
+		if (PRI !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *PRI;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[12] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnnouncement, params.ptr, cast(void*)0);
 	}
 }

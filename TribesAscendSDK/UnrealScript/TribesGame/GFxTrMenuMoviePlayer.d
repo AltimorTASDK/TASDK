@@ -1998,10 +1998,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.VendorItemData")()); }
 		@property final auto ref
 		{
-			ScriptString Description() { mixin(MGPS!(ScriptString, 20)()); }
-			ScriptString Title() { mixin(MGPS!(ScriptString, 8)()); }
-			int LootId() { mixin(MGPS!(int, 4)()); }
-			int Price() { mixin(MGPS!(int, 0)()); }
+			ScriptString Description() { mixin(MGPS!("ScriptString", 20)()); }
+			ScriptString Title() { mixin(MGPS!("ScriptString", 8)()); }
+			int LootId() { mixin(MGPS!("int", 4)()); }
+			int Price() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct AcquisitionData
@@ -2012,10 +2012,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrMenuMoviePlayer.AcquisitionData")()); }
 		@property final auto ref
 		{
-			int Icon() { mixin(MGPS!(int, 36)()); }
-			ScriptString Type() { mixin(MGPS!(ScriptString, 24)()); }
-			ScriptString Text() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString Title() { mixin(MGPS!(ScriptString, 0)()); }
+			int Icon() { mixin(MGPS!("int", 36)()); }
+			ScriptString Type() { mixin(MGPS!("ScriptString", 24)()); }
+			ScriptString Text() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString Title() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct QueueUIData
@@ -2028,15 +2028,15 @@ public extern(D):
 		{
 			auto ref
 			{
-				int LevelMax() { mixin(MGPS!(int, 60)()); }
-				int LevelMin() { mixin(MGPS!(int, 56)()); }
-				int SortOrder() { mixin(MGPS!(int, 52)()); }
-				int contentIndex() { mixin(MGPS!(int, 48)()); }
-				ScriptString RibbonText() { mixin(MGPS!(ScriptString, 36)()); }
-				int ribbonType() { mixin(MGPS!(int, 32)()); }
-				ScriptString Subtitle() { mixin(MGPS!(ScriptString, 16)()); }
-				ScriptString Title() { mixin(MGPS!(ScriptString, 4)()); }
-				int queueId() { mixin(MGPS!(int, 0)()); }
+				int LevelMax() { mixin(MGPS!("int", 60)()); }
+				int LevelMin() { mixin(MGPS!("int", 56)()); }
+				int SortOrder() { mixin(MGPS!("int", 52)()); }
+				int contentIndex() { mixin(MGPS!("int", 48)()); }
+				ScriptString RibbonText() { mixin(MGPS!("ScriptString", 36)()); }
+				int ribbonType() { mixin(MGPS!("int", 32)()); }
+				ScriptString Subtitle() { mixin(MGPS!("ScriptString", 16)()); }
+				ScriptString Title() { mixin(MGPS!("ScriptString", 4)()); }
+				int queueId() { mixin(MGPS!("int", 0)()); }
 			}
 			bool bShowRibbon() { mixin(MGBPS!(28, 0x2)()); }
 			bool bShowRibbon(bool val) { mixin(MSBPS!(28, 0x2)()); }
@@ -2048,62 +2048,62 @@ public extern(D):
 	{
 		auto ref
 		{
-			GFxTrMenuMoviePlayer.POPUPTYPE m_PopupType() { mixin(MGPC!(GFxTrMenuMoviePlayer.POPUPTYPE, 380)()); }
-			GFxObject _global() { mixin(MGPC!(GFxObject, 748)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 784)()); }
-			TrUser User() { mixin(MGPC!(TrUser, 752)()); }
-			TrStrings Strings() { mixin(MGPC!(TrStrings, 756)()); }
-			TrStreamManager StreamManager() { mixin(MGPC!(TrStreamManager, 780)()); }
-			TrInventoryHelper EquipHelper() { mixin(MGPC!(TrInventoryHelper, 804)()); }
-			TrEquipInterface EquipInterface() { mixin(MGPC!(TrEquipInterface, 800)()); }
-			TgPlayerProfile PlayerProfile() { mixin(MGPC!(TgPlayerProfile, 796)()); }
-			TrBrowserManager Browser() { mixin(MGPC!(TrBrowserManager, 792)()); }
-			TrLoginManager LoginManager() { mixin(MGPC!(TrLoginManager, 768)()); }
-			TrQueueManager QueueManager() { mixin(MGPC!(TrQueueManager, 772)()); }
-			TrPartyManager PartyManager() { mixin(MGPC!(TrPartyManager, 776)()); }
-			TrLoadingData LoadingData() { mixin(MGPC!(TrLoadingData, 764)()); }
-			TrPageManager Pages() { mixin(MGPC!(TrPageManager, 760)()); }
-			TrSettingsManager SettingsManager() { mixin(MGPC!(TrSettingsManager, 808)()); }
-			TrRibbonManager RibbonManager() { mixin(MGPC!(TrRibbonManager, 820)()); }
-			TrFriendManager Friends() { mixin(MGPC!(TrFriendManager, 788)()); }
-			GFxTrScene_EULA EULAScene() { mixin(MGPC!(GFxTrScene_EULA, 732)()); }
-			GFxTrScene_MatchSummary MatchSummaryScene() { mixin(MGPC!(GFxTrScene_MatchSummary, 736)()); }
-			GFxTrScene_PlayerSummary PlayerSummaryScene() { mixin(MGPC!(GFxTrScene_PlayerSummary, 740)()); }
-			GFxTrMenuSounds MenuSounds() { mixin(MGPC!(GFxTrMenuSounds, 744)()); }
+			GFxTrMenuMoviePlayer.POPUPTYPE m_PopupType() { mixin(MGPC!("GFxTrMenuMoviePlayer.POPUPTYPE", 380)()); }
+			GFxObject _global() { mixin(MGPC!("GFxObject", 748)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 784)()); }
+			TrUser User() { mixin(MGPC!("TrUser", 752)()); }
+			TrStrings Strings() { mixin(MGPC!("TrStrings", 756)()); }
+			TrStreamManager StreamManager() { mixin(MGPC!("TrStreamManager", 780)()); }
+			TrInventoryHelper EquipHelper() { mixin(MGPC!("TrInventoryHelper", 804)()); }
+			TrEquipInterface EquipInterface() { mixin(MGPC!("TrEquipInterface", 800)()); }
+			TgPlayerProfile PlayerProfile() { mixin(MGPC!("TgPlayerProfile", 796)()); }
+			TrBrowserManager Browser() { mixin(MGPC!("TrBrowserManager", 792)()); }
+			TrLoginManager LoginManager() { mixin(MGPC!("TrLoginManager", 768)()); }
+			TrQueueManager QueueManager() { mixin(MGPC!("TrQueueManager", 772)()); }
+			TrPartyManager PartyManager() { mixin(MGPC!("TrPartyManager", 776)()); }
+			TrLoadingData LoadingData() { mixin(MGPC!("TrLoadingData", 764)()); }
+			TrPageManager Pages() { mixin(MGPC!("TrPageManager", 760)()); }
+			TrSettingsManager SettingsManager() { mixin(MGPC!("TrSettingsManager", 808)()); }
+			TrRibbonManager RibbonManager() { mixin(MGPC!("TrRibbonManager", 820)()); }
+			TrFriendManager Friends() { mixin(MGPC!("TrFriendManager", 788)()); }
+			GFxTrScene_EULA EULAScene() { mixin(MGPC!("GFxTrScene_EULA", 732)()); }
+			GFxTrScene_MatchSummary MatchSummaryScene() { mixin(MGPC!("GFxTrScene_MatchSummary", 736)()); }
+			GFxTrScene_PlayerSummary PlayerSummaryScene() { mixin(MGPC!("GFxTrScene_PlayerSummary", 740)()); }
+			GFxTrMenuSounds MenuSounds() { mixin(MGPC!("GFxTrMenuSounds", 744)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'ChatInterface'!
-			int EstimatedWaitTime() { mixin(MGPC!(int, 540)()); }
-			ScriptString LoginFailure() { mixin(MGPC!(ScriptString, 416)()); }
-			ScriptString LoginPlayer() { mixin(MGPC!(ScriptString, 392)()); }
-			ScriptString LoginReason() { mixin(MGPC!(ScriptString, 404)()); }
-			ScriptString GenericFailReason() { mixin(MGPC!(ScriptString, 452)()); }
-			int PlayerNameFailType() { mixin(MGPC!(int, 504)()); }
-			int Progress() { mixin(MGPC!(int, 516)()); }
-			int RankIcon() { mixin(MGPC!(int, 524)()); }
-			int NextRank() { mixin(MGPC!(int, 520)()); }
-			int EndOfMatchTimer() { mixin(MGPC!(int, 508)()); }
-			ScriptString CapturedKey() { mixin(MGPC!(ScriptString, 428)()); }
-			ScriptString UnlockItemName() { mixin(MGPC!(ScriptString, 480)()); }
-			ScriptString UnlockTypeName() { mixin(MGPC!(ScriptString, 492)()); }
-			GFxTrMenuMoviePlayer.AcquisitionType UnlockIconType() { mixin(MGPC!(GFxTrMenuMoviePlayer.AcquisitionType, 381)()); }
-			int UnlockIconId() { mixin(MGPC!(int, 476)()); }
-			ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData) AcquisitionList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData), 708)()); }
-			ScriptArray!(TgPlayerProfile.PropertyPair) UnknownList() { mixin(MGPC!(ScriptArray!(TgPlayerProfile.PropertyPair), 696)()); }
-			ScriptString PurchaseFailedMsg() { mixin(MGPC!(ScriptString, 528)()); }
-			int PurchasingCurrency() { mixin(MGPC!(int, 512)()); }
-			ScriptString PromoFailReason() { mixin(MGPC!(ScriptString, 440)()); }
-			ScriptString NameRulesMessage() { mixin(MGPC!(ScriptString, 544)()); }
-			GFxTrMenuMoviePlayer.VendorItemData PortalPurchase() { mixin(MGPC!(GFxTrMenuMoviePlayer.VendorItemData, 652)()); }
-			ScriptString NextMapName() { mixin(MGPC!(ScriptString, 464)()); }
-			ScriptString FriendLabel() { mixin(MGPC!(ScriptString, 556)()); }
-			ScriptString FollowerLabel() { mixin(MGPC!(ScriptString, 568)()); }
-			ScriptString OfflineLabel() { mixin(MGPC!(ScriptString, 580)()); }
-			ScriptString OnlineLabel() { mixin(MGPC!(ScriptString, 592)()); }
-			ScriptString InGameLabel() { mixin(MGPC!(ScriptString, 604)()); }
-			ScriptString InLobbyLabel() { mixin(MGPC!(ScriptString, 616)()); }
-			ScriptString OKLabel() { mixin(MGPC!(ScriptString, 628)()); }
-			ScriptString CancelLabel() { mixin(MGPC!(ScriptString, 640)()); }
-			ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData) GoldItemList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData), 684)()); }
-			ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData) QueueUIList() { mixin(MGPC!(ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData), 720)()); }
+			int EstimatedWaitTime() { mixin(MGPC!("int", 540)()); }
+			ScriptString LoginFailure() { mixin(MGPC!("ScriptString", 416)()); }
+			ScriptString LoginPlayer() { mixin(MGPC!("ScriptString", 392)()); }
+			ScriptString LoginReason() { mixin(MGPC!("ScriptString", 404)()); }
+			ScriptString GenericFailReason() { mixin(MGPC!("ScriptString", 452)()); }
+			int PlayerNameFailType() { mixin(MGPC!("int", 504)()); }
+			int Progress() { mixin(MGPC!("int", 516)()); }
+			int RankIcon() { mixin(MGPC!("int", 524)()); }
+			int NextRank() { mixin(MGPC!("int", 520)()); }
+			int EndOfMatchTimer() { mixin(MGPC!("int", 508)()); }
+			ScriptString CapturedKey() { mixin(MGPC!("ScriptString", 428)()); }
+			ScriptString UnlockItemName() { mixin(MGPC!("ScriptString", 480)()); }
+			ScriptString UnlockTypeName() { mixin(MGPC!("ScriptString", 492)()); }
+			GFxTrMenuMoviePlayer.AcquisitionType UnlockIconType() { mixin(MGPC!("GFxTrMenuMoviePlayer.AcquisitionType", 381)()); }
+			int UnlockIconId() { mixin(MGPC!("int", 476)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData) AcquisitionList() { mixin(MGPC!("ScriptArray!(GFxTrMenuMoviePlayer.AcquisitionData)", 708)()); }
+			ScriptArray!(TgPlayerProfile.PropertyPair) UnknownList() { mixin(MGPC!("ScriptArray!(TgPlayerProfile.PropertyPair)", 696)()); }
+			ScriptString PurchaseFailedMsg() { mixin(MGPC!("ScriptString", 528)()); }
+			int PurchasingCurrency() { mixin(MGPC!("int", 512)()); }
+			ScriptString PromoFailReason() { mixin(MGPC!("ScriptString", 440)()); }
+			ScriptString NameRulesMessage() { mixin(MGPC!("ScriptString", 544)()); }
+			GFxTrMenuMoviePlayer.VendorItemData PortalPurchase() { mixin(MGPC!("GFxTrMenuMoviePlayer.VendorItemData", 652)()); }
+			ScriptString NextMapName() { mixin(MGPC!("ScriptString", 464)()); }
+			ScriptString FriendLabel() { mixin(MGPC!("ScriptString", 556)()); }
+			ScriptString FollowerLabel() { mixin(MGPC!("ScriptString", 568)()); }
+			ScriptString OfflineLabel() { mixin(MGPC!("ScriptString", 580)()); }
+			ScriptString OnlineLabel() { mixin(MGPC!("ScriptString", 592)()); }
+			ScriptString InGameLabel() { mixin(MGPC!("ScriptString", 604)()); }
+			ScriptString InLobbyLabel() { mixin(MGPC!("ScriptString", 616)()); }
+			ScriptString OKLabel() { mixin(MGPC!("ScriptString", 628)()); }
+			ScriptString CancelLabel() { mixin(MGPC!("ScriptString", 640)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData) GoldItemList() { mixin(MGPC!("ScriptArray!(GFxTrMenuMoviePlayer.VendorItemData)", 684)()); }
+			ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData) QueueUIList() { mixin(MGPC!("ScriptArray!(GFxTrMenuMoviePlayer.QueueUIData)", 720)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateNoParam__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateInt__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__DelegateBool__Delegate'!
@@ -2439,14 +2439,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckAutoLoginStatus, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void PurchasedItem(int VendorId, int LootId, bool bSuccess, ScriptString Message)
+	void PurchasedItem(int VendorId, int LootId, bool bSuccess, ScriptString* Message = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = VendorId;
 		*cast(int*)&params[4] = LootId;
 		*cast(bool*)&params[8] = bSuccess;
-		*cast(ScriptString*)&params[12] = Message;
+		if (Message !is null)
+			*cast(ScriptString*)&params[12] = *Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PurchasedItem, params.ptr, cast(void*)0);
 	}
 	void OnMarshalEvent(UObject.Pointer pMarEvent)
@@ -2542,11 +2543,12 @@ void**)params.ptr = MarshalEventDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HaveClanTag, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool Start(bool StartPaused)
+	bool Start(bool* StartPaused = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = StartPaused;
+		if (StartPaused !is null)
+			*cast(bool*)params.ptr = *StartPaused;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Start, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -3359,14 +3361,15 @@ void**)params.ptr = In;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Quit, cast(void*)0, cast(void*)0);
 	}
-	void SendPlayerLogin(ScriptString PlayerName, ScriptString Reason, bool Success, bool bNeedEULA)
+	void SendPlayerLogin(ScriptString PlayerName, ScriptString Reason, bool Success, bool* bNeedEULA = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		*cast(ScriptString*)&params[12] = Reason;
 		*cast(bool*)&params[24] = Success;
-		*cast(bool*)&params[28] = bNeedEULA;
+		if (bNeedEULA !is null)
+			*cast(bool*)&params[28] = *bNeedEULA;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SendPlayerLogin, params.ptr, cast(void*)0);
 	}
 	void AlienMenu()
@@ -3433,11 +3436,12 @@ void**)params.ptr = In;
 		*cast(ScriptString*)&params[4] = TextInput;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinRequiresPasswordComplete, params.ptr, cast(void*)0);
 	}
-	void CheckRibbons(bool bForce)
+	void CheckRibbons(bool* bForce = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForce;
+		if (bForce !is null)
+			*cast(bool*)params.ptr = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckRibbons, params.ptr, cast(void*)0);
 	}
 	void ProfileUpdated()
@@ -3554,11 +3558,12 @@ void**)params.ptr = In;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewMode, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void ShowMovie(bool bFocus)
+	void ShowMovie(bool* bFocus = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bFocus;
+		if (bFocus !is null)
+			*cast(bool*)params.ptr = *bFocus;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowMovie, params.ptr, cast(void*)0);
 	}
 	void HideMovie()
@@ -3748,14 +3753,15 @@ void**)params.ptr = In;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckVIPForLogin, cast(void*)0, cast(void*)0);
 	}
-	void ReadyAcquisition(ScriptString TopName, ScriptString BotName, GFxTrMenuMoviePlayer.AcquisitionType IconType, int IconId)
+	void ReadyAcquisition(ScriptString TopName, ScriptString BotName, GFxTrMenuMoviePlayer.AcquisitionType IconType, int* IconId = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = TopName;
 		*cast(ScriptString*)&params[12] = BotName;
 		*cast(GFxTrMenuMoviePlayer.AcquisitionType*)&params[24] = IconType;
-		*cast(int*)&params[28] = IconId;
+		if (IconId !is null)
+			*cast(int*)&params[28] = *IconId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadyAcquisition, params.ptr, cast(void*)0);
 	}
 	void DisplayAcquisitions()
@@ -3847,11 +3853,12 @@ void**)params.ptr = In;
 		*cast(GFxObject*)params.ptr = Obj;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddFriendScoreboardPopup, params.ptr, cast(void*)0);
 	}
-	void PurchaseFailed(ScriptString FailMessage)
+	void PurchaseFailed(ScriptString* FailMessage = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = FailMessage;
+		if (FailMessage !is null)
+			*cast(ScriptString*)params.ptr = *FailMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PurchaseFailed, params.ptr, cast(void*)0);
 	}
 	void PurchaseFailedPopup(GFxObject Obj)

@@ -23,13 +23,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor LocationActor() { mixin(MGPC!(Actor, 260)()); }
-			CameraShake Shake() { mixin(MGPC!(CameraShake, 232)()); }
-			float RadialShake_InnerRadius() { mixin(MGPC!(float, 244)()); }
-			float RadialShake_OuterRadius() { mixin(MGPC!(float, 248)()); }
-			float RadialShake_Falloff() { mixin(MGPC!(float, 252)()); }
-			float ShakeScale() { mixin(MGPC!(float, 236)()); }
-			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!(Camera.ECameraAnimPlaySpace, 256)()); }
+			Actor LocationActor() { mixin(MGPC!("Actor", 260)()); }
+			CameraShake Shake() { mixin(MGPC!("CameraShake", 232)()); }
+			float RadialShake_InnerRadius() { mixin(MGPC!("float", 244)()); }
+			float RadialShake_OuterRadius() { mixin(MGPC!("float", 248)()); }
+			float RadialShake_Falloff() { mixin(MGPC!("float", 252)()); }
+			float ShakeScale() { mixin(MGPC!("float", 236)()); }
+			Camera.ECameraAnimPlaySpace PlaySpace() { mixin(MGPC!("Camera.ECameraAnimPlaySpace", 256)()); }
 		}
 		bool bRadialShake() { mixin(MGBPC!(240, 0x2)()); }
 		bool bRadialShake(bool val) { mixin(MSBPC!(240, 0x2)()); }

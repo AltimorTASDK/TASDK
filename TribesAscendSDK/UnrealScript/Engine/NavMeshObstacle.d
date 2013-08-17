@@ -36,7 +36,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC!(UObject.Pointer, 476)()); }
+		@property final auto ref UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC!("UObject.Pointer", 476)()); }
 		bool bPreserveInternalGeo() { mixin(MGBPC!(480, 0x2)()); }
 		bool bPreserveInternalGeo(bool val) { mixin(MSBPC!(480, 0x2)()); }
 		bool bEnabled() { mixin(MGBPC!(480, 0x1)()); }
@@ -49,7 +49,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(Vector)*)params.ptr = Shape;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetObstacleBoudingShape, params.ptr, cast(void*)0);
-		*Shape = *cast(ScriptArray!(Vector)*)params.ptr;
+		Shape = *cast(ScriptArray!(Vector)*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	void RegisterObstacle()

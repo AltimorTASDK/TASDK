@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MaterialExpressionSubtract DefaultProperties() { mixin(MGDPC!(MaterialExpressionSubtract, "MaterialExpressionSubtract Engine.Default__MaterialExpressionSubtract")()); }
 	@property final auto ref
 	{
-		MaterialExpression.ExpressionInput B() { mixin(MGPC!(MaterialExpression.ExpressionInput, 136)()); }
-		MaterialExpression.ExpressionInput A() { mixin(MGPC!(MaterialExpression.ExpressionInput, 108)()); }
+		MaterialExpression.ExpressionInput B() { mixin(MGPC!("MaterialExpression.ExpressionInput", 136)()); }
+		MaterialExpression.ExpressionInput A() { mixin(MGPC!("MaterialExpression.ExpressionInput", 108)()); }
 	}
 }

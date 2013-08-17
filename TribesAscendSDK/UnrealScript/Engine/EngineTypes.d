@@ -137,8 +137,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.SubtitleCue")()); }
 		@property final auto ref
 		{
-			float Time() { mixin(MGPS!(float, 12)()); }
-			ScriptString Text() { mixin(MGPS!(ScriptString, 0)()); }
+			float Time() { mixin(MGPS!("float", 12)()); }
+			ScriptString Text() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct LocalizedSubtitle
@@ -151,8 +151,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(EngineTypes.SubtitleCue) Subtitles() { mixin(MGPS!(ScriptArray!(EngineTypes.SubtitleCue), 12)()); }
-				ScriptString LanguageExt() { mixin(MGPS!(ScriptString, 0)()); }
+				ScriptArray!(EngineTypes.SubtitleCue) Subtitles() { mixin(MGPS!("ScriptArray!(EngineTypes.SubtitleCue)", 12)()); }
+				ScriptString LanguageExt() { mixin(MGPS!("ScriptString", 0)()); }
 			}
 			bool bManualWordWrap() { mixin(MGBPS!(24, 0x2)()); }
 			bool bManualWordWrap(bool val) { mixin(MSBPS!(24, 0x2)()); }
@@ -166,7 +166,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightMapRef")()); }
-		@property final auto ref UObject.Pointer Reference() { mixin(MGPS!(UObject.Pointer, 0)()); }
+		@property final auto ref UObject.Pointer Reference() { mixin(MGPS!("UObject.Pointer", 0)()); }
 	}
 	struct DominantShadowInfo
 	{
@@ -176,11 +176,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.DominantShadowInfo")()); }
 		@property final auto ref
 		{
-			int ShadowMapSizeY() { mixin(MGPS!(int, 160)()); }
-			int ShadowMapSizeX() { mixin(MGPS!(int, 156)()); }
-			UObject.Box LightSpaceImportanceBounds() { mixin(MGPS!(UObject.Box, 128)()); }
-			UObject.Matrix LightToWorld() { mixin(MGPS!(UObject.Matrix, 64)()); }
-			UObject.Matrix WorldToLight() { mixin(MGPS!(UObject.Matrix, 0)()); }
+			int ShadowMapSizeY() { mixin(MGPS!("int", 160)()); }
+			int ShadowMapSizeX() { mixin(MGPS!("int", 156)()); }
+			UObject.Box LightSpaceImportanceBounds() { mixin(MGPS!("UObject.Box", 128)()); }
+			UObject.Matrix LightToWorld() { mixin(MGPS!("UObject.Matrix", 64)()); }
+			UObject.Matrix WorldToLight() { mixin(MGPS!("UObject.Matrix", 0)()); }
 		}
 	}
 	struct LightmassLightSettings
@@ -191,9 +191,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
-			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
-			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
+			float ShadowExponent() { mixin(MGPS!("float", 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!("float", 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct LightmassPointLightSettings
@@ -204,11 +204,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassPointLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
-			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
-			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
+			float ShadowExponent() { mixin(MGPS!("float", 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!("float", 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!("float", 0)()); }
 		}
-		@property final auto ref float LightSourceRadius() { mixin(MGPS!(float, 12)()); }
+		@property final auto ref float LightSourceRadius() { mixin(MGPS!("float", 12)()); }
 	}
 	struct LightmassDirectionalLightSettings
 	{
@@ -218,11 +218,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.LightmassDirectionalLightSettings")()); }
 		@property final auto ref
 		{
-			float ShadowExponent() { mixin(MGPS!(float, 8)()); }
-			float IndirectLightingSaturation() { mixin(MGPS!(float, 4)()); }
-			float IndirectLightingScale() { mixin(MGPS!(float, 0)()); }
+			float ShadowExponent() { mixin(MGPS!("float", 8)()); }
+			float IndirectLightingSaturation() { mixin(MGPS!("float", 4)()); }
+			float IndirectLightingScale() { mixin(MGPS!("float", 0)()); }
 		}
-		@property final auto ref float LightSourceAngle() { mixin(MGPS!(float, 12)()); }
+		@property final auto ref float LightSourceAngle() { mixin(MGPS!("float", 12)()); }
 	}
 	struct LightmassPrimitiveSettings
 	{
@@ -234,12 +234,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				float FullyOccludedSamplesFraction() { mixin(MGPS!(float, 24)()); }
-				float SpecularBoost() { mixin(MGPS!(float, 20)()); }
-				float DiffuseBoost() { mixin(MGPS!(float, 16)()); }
-				float EmissiveBoost() { mixin(MGPS!(float, 12)()); }
-				float EmissiveLightExplicitInfluenceRadius() { mixin(MGPS!(float, 8)()); }
-				float EmissiveLightFalloffExponent() { mixin(MGPS!(float, 4)()); }
+				float FullyOccludedSamplesFraction() { mixin(MGPS!("float", 24)()); }
+				float SpecularBoost() { mixin(MGPS!("float", 20)()); }
+				float DiffuseBoost() { mixin(MGPS!("float", 16)()); }
+				float EmissiveBoost() { mixin(MGPS!("float", 12)()); }
+				float EmissiveLightExplicitInfluenceRadius() { mixin(MGPS!("float", 8)()); }
+				float EmissiveLightFalloffExponent() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bUseEmissiveForStaticLighting() { mixin(MGBPS!(0, 0x4)()); }
 			bool bUseEmissiveForStaticLighting(bool val) { mixin(MSBPS!(0, 0x4)()); }
@@ -259,8 +259,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				float ExecutionTimeDivisor() { mixin(MGPS!(float, 12)()); }
-				float CoplanarTolerance() { mixin(MGPS!(float, 4)()); }
+				float ExecutionTimeDivisor() { mixin(MGPS!("float", 12)()); }
+				float CoplanarTolerance() { mixin(MGPS!("float", 4)()); }
 			}
 			bool bInitialized() { mixin(MGBPS!(16, 0x1)()); }
 			bool bInitialized(bool val) { mixin(MSBPS!(16, 0x1)()); }
@@ -320,9 +320,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.RootMotionCurve")()); }
 		@property final auto ref
 		{
-			float MaxCurveTime() { mixin(MGPS!(float, 24)()); }
-			UObject.InterpCurveVector Curve() { mixin(MGPS!(UObject.InterpCurveVector, 8)()); }
-			ScriptName AnimName() { mixin(MGPS!(ScriptName, 0)()); }
+			float MaxCurveTime() { mixin(MGPS!("float", 24)()); }
+			UObject.InterpCurveVector Curve() { mixin(MGPS!("UObject.InterpCurveVector", 8)()); }
+			ScriptName AnimName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PrimitiveMaterialRef
@@ -333,7 +333,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.PrimitiveMaterialRef")()); }
 		@property final auto ref
 		{
-			int MaterialIndex() { mixin(MGPS!(int, 4)()); }
+			int MaterialIndex() { mixin(MGPS!("int", 4)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Primitive'!
 		}
 	}
@@ -345,8 +345,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.EngineTypes.MaterialReferenceList")()); }
 		@property final auto ref
 		{
-			ScriptArray!(EngineTypes.PrimitiveMaterialRef) AffectedMaterialRefs() { mixin(MGPS!(ScriptArray!(EngineTypes.PrimitiveMaterialRef), 4)()); }
-			MaterialInterface TargetMaterial() { mixin(MGPS!(MaterialInterface, 0)()); }
+			ScriptArray!(EngineTypes.PrimitiveMaterialRef) AffectedMaterialRefs() { mixin(MGPS!("ScriptArray!(EngineTypes.PrimitiveMaterialRef)", 4)()); }
+			MaterialInterface TargetMaterial() { mixin(MGPS!("MaterialInterface", 0)()); }
 		}
 	}
 }

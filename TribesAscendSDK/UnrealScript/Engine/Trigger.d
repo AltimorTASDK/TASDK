@@ -51,7 +51,7 @@ public extern(D):
 	{
 		auto ref
 		{
-			float AITriggerDelay() { mixin(MGPC!(float, 484)()); }
+			float AITriggerDelay() { mixin(MGPC!("float", 484)()); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
 		}
 		bool bRecentlyTriggered() { mixin(MGBPC!(480, 0x1)()); }
@@ -101,14 +101,13 @@ void**)&params[4] = OtherComp;
 		params[] = 0;
 		*cast(Trigger.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(Trigger.CheckpointRecord*)params.ptr;
+		Record = *cast(Trigger.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const Trigger.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in Trigger.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(Trigger.CheckpointRecord*)params.ptr = Record;
+		*cast(Trigger.CheckpointRecord*)params.ptr = cast(Trigger.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(Trigger.CheckpointRecord*)params.ptr;
 	}
 }

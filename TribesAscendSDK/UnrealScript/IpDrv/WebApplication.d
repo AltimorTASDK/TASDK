@@ -38,7 +38,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString Path() { mixin(MGPC!(ScriptString, 68)()); }
+		ScriptString Path() { mixin(MGPC!("ScriptString", 68)()); }
 		// WARNING: Property 'WebServer' has the same name as a defined type!
 		// WARNING: Property 'WorldInfo' has the same name as a defined type!
 	}

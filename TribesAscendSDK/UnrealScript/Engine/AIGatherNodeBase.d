@@ -13,7 +13,7 @@ public extern(D):
 	@property final static AIGatherNodeBase DefaultProperties() { mixin(MGDPC!(AIGatherNodeBase, "AIGatherNodeBase Engine.Default__AIGatherNodeBase")()); }
 	@property final auto ref
 	{
-		ScriptString NodeName() { mixin(MGPC!(ScriptString, 96)()); }
-		float LastUpdateTime() { mixin(MGPC!(float, 92)()); }
+		ScriptString NodeName() { mixin(MGPC!("ScriptString", 96)()); }
+		float LastUpdateTime() { mixin(MGPC!("float", 92)()); }
 	}
 }

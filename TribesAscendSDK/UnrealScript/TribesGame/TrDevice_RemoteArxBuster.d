@@ -87,11 +87,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrProj_RemoteArxBuster) RemoteArxRounds() { mixin(MGPC!(ScriptArray!(TrProj_RemoteArxBuster), 2160)()); }
-			SoundCue m_ArxIdleSound() { mixin(MGPC!(SoundCue, 2176)()); }
-			AnimNodeAdditiveBlending DetReadyAdditiveAnimNode() { mixin(MGPC!(AnimNodeAdditiveBlending, 2172)()); }
-			SkelControlSingleBone DetonatorChild() { mixin(MGPC!(SkelControlSingleBone, 2152)()); }
-			SkelControlSingleBone DetonatorControl() { mixin(MGPC!(SkelControlSingleBone, 2148)()); }
+			ScriptArray!(TrProj_RemoteArxBuster) RemoteArxRounds() { mixin(MGPC!("ScriptArray!(TrProj_RemoteArxBuster)", 2160)()); }
+			SoundCue m_ArxIdleSound() { mixin(MGPC!("SoundCue", 2176)()); }
+			AnimNodeAdditiveBlending DetReadyAdditiveAnimNode() { mixin(MGPC!("AnimNodeAdditiveBlending", 2172)()); }
+			SkelControlSingleBone DetonatorChild() { mixin(MGPC!("SkelControlSingleBone", 2152)()); }
+			SkelControlSingleBone DetonatorControl() { mixin(MGPC!("SkelControlSingleBone", 2148)()); }
 		}
 		bool r_bIsLeftArmVisible() { mixin(MGBPC!(2156, 0x1)()); }
 		bool r_bIsLeftArmVisible(bool val) { mixin(MSBPC!(2156, 0x1)()); }
@@ -177,11 +177,12 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileFire, params.ptr, cast(void*)0);
 		return *cast(Projectile*)params.ptr;
 	}
-	void ActivateRemoteRounds(bool bDoNoDamage)
+	void ActivateRemoteRounds(bool* bDoNoDamage = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDoNoDamage;
+		if (bDoNoDamage !is null)
+			*cast(bool*)params.ptr = *bDoNoDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateRemoteRounds, params.ptr, cast(void*)0);
 	}
 	void HideArmTimer()

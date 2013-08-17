@@ -29,12 +29,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			UDKAnimNodeJumpLeanOffset CachedLeanNode() { mixin(MGPC!(UDKAnimNodeJumpLeanOffset, 320)()); }
-			float LastFallingVelocity() { mixin(MGPC!(float, 316)()); }
-			UDKAnimBlendByFall.EBlendFallTypes FallState() { mixin(MGPC!(UDKAnimBlendByFall.EBlendFallTypes, 312)()); }
-			float ToDblJumpUprightTime() { mixin(MGPC!(float, 308)()); }
-			float PreLandStartUprightTime() { mixin(MGPC!(float, 304)()); }
-			float PreLandTime() { mixin(MGPC!(float, 300)()); }
+			UDKAnimNodeJumpLeanOffset CachedLeanNode() { mixin(MGPC!("UDKAnimNodeJumpLeanOffset", 320)()); }
+			float LastFallingVelocity() { mixin(MGPC!("float", 316)()); }
+			UDKAnimBlendByFall.EBlendFallTypes FallState() { mixin(MGPC!("UDKAnimBlendByFall.EBlendFallTypes", 312)()); }
+			float ToDblJumpUprightTime() { mixin(MGPC!("float", 308)()); }
+			float PreLandStartUprightTime() { mixin(MGPC!("float", 304)()); }
+			float PreLandTime() { mixin(MGPC!("float", 300)()); }
 		}
 		bool bDodgeFall() { mixin(MGBPC!(296, 0x4)()); }
 		bool bDodgeFall(bool val) { mixin(MSBPC!(296, 0x4)()); }

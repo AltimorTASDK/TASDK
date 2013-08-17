@@ -20,8 +20,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Ladder LadderList() { mixin(MGPC!(Ladder, 696)()); }
-		LadderVolume MyLadder() { mixin(MGPC!(LadderVolume, 692)()); }
+		Ladder LadderList() { mixin(MGPC!("Ladder", 696)()); }
+		LadderVolume MyLadder() { mixin(MGPC!("LadderVolume", 692)()); }
 	}
 	final bool SuggestMovePreparation(Pawn Other)
 	{

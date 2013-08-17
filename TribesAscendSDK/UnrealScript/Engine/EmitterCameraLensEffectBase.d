@@ -38,12 +38,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) EmittersToTreatAsSame() { mixin(MGPC!(ScriptArray!(ScriptClass), 508)()); }
-			Camera BaseCamera() { mixin(MGPC!(Camera, 520)()); }
-			float DistFromCamera() { mixin(MGPC!(float, 500)()); }
-			float BaseFOV() { mixin(MGPC!(float, 496)()); }
-			ParticleSystem PS_CameraEffectNonExtremeContent() { mixin(MGPC!(ParticleSystem, 492)()); }
-			ParticleSystem PS_CameraEffect() { mixin(MGPC!(ParticleSystem, 488)()); }
+			ScriptArray!(ScriptClass) EmittersToTreatAsSame() { mixin(MGPC!("ScriptArray!(ScriptClass)", 508)()); }
+			Camera BaseCamera() { mixin(MGPC!("Camera", 520)()); }
+			float DistFromCamera() { mixin(MGPC!("float", 500)()); }
+			float BaseFOV() { mixin(MGPC!("float", 496)()); }
+			ParticleSystem PS_CameraEffectNonExtremeContent() { mixin(MGPC!("ParticleSystem", 492)()); }
+			ParticleSystem PS_CameraEffect() { mixin(MGPC!("ParticleSystem", 488)()); }
 		}
 		bool bAllowMultipleInstances() { mixin(MGBPC!(504, 0x1)()); }
 		bool bAllowMultipleInstances(bool val) { mixin(MSBPC!(504, 0x1)()); }
@@ -72,15 +72,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateLensEffect, cast(void*)0, cast(void*)0);
 	}
-	void UpdateLocation(ref const Vector CamLoc, ref const Rotator CamRot, float CamFOVDeg)
+	void UpdateLocation(ref in Vector CamLoc, ref in Rotator CamRot, float CamFOVDeg)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(Vector*)params.ptr = CamLoc;
-		*cast(Rotator*)&params[12] = CamRot;
+		*cast(Vector*)params.ptr = cast(Vector)CamLoc;
+		*cast(Rotator*)&params[12] = cast(Rotator)CamRot;
 		*cast(float*)&params[24] = CamFOVDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateLocation, params.ptr, cast(void*)0);
-		*CamLoc = *cast(Vector*)params.ptr;
-		*CamRot = *cast(Rotator*)&params[12];
 	}
 }

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.InterpTrackMorphWeight")()); }
 	private static __gshared InterpTrackMorphWeight mDefaultProperties;
 	@property final static InterpTrackMorphWeight DefaultProperties() { mixin(MGDPC!(InterpTrackMorphWeight, "InterpTrackMorphWeight Engine.Default__InterpTrackMorphWeight")()); }
-	@property final auto ref ScriptName MorphNodeName() { mixin(MGPC!(ScriptName, 148)()); }
+	@property final auto ref ScriptName MorphNodeName() { mixin(MGPC!("ScriptName", 148)()); }
 }

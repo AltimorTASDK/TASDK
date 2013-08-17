@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqVar_RandomInt DefaultProperties() { mixin(MGDPC!(SeqVar_RandomInt, "SeqVar_RandomInt Engine.Default__SeqVar_RandomInt")()); }
 	@property final auto ref
 	{
-		int Max() { mixin(MGPC!(int, 156)()); }
-		int Min() { mixin(MGPC!(int, 152)()); }
+		int Max() { mixin(MGPC!("int", 156)()); }
+		int Min() { mixin(MGPC!("int", 152)()); }
 	}
 }

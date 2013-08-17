@@ -55,14 +55,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrPlayerController m_PlayerOwner() { mixin(MGPC!(TrPlayerController, 476)()); }
-		float m_fMusicVolume() { mixin(MGPC!(float, 480)()); }
+		TrPlayerController m_PlayerOwner() { mixin(MGPC!("TrPlayerController", 476)()); }
+		float m_fMusicVolume() { mixin(MGPC!("float", 480)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CurrentTrack'!
-		TrMusicManager.ETgMusicState m_CurrentState() { mixin(MGPC!(TrMusicManager.ETgMusicState, 488)()); }
-		TrMusicManager.ETgMusicState m_PendingState() { mixin(MGPC!(TrMusicManager.ETgMusicState, 489)()); }
-		float m_fStingerVolumeMultiplier() { mixin(MGPC!(float, 484)()); }
+		TrMusicManager.ETgMusicState m_CurrentState() { mixin(MGPC!("TrMusicManager.ETgMusicState", 488)()); }
+		TrMusicManager.ETgMusicState m_PendingState() { mixin(MGPC!("TrMusicManager.ETgMusicState", 489)()); }
+		float m_fStingerVolumeMultiplier() { mixin(MGPC!("float", 484)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_MusicTracks'!
-		float m_CTFTeamScores() { mixin(MGPC!(float, 532)()); }
+		float m_CTFTeamScores() { mixin(MGPC!("float", 532)()); }
 	}
 final:
 	void PostBeginPlay()

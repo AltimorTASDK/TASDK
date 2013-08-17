@@ -60,30 +60,31 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.GFxUDKFrontEnd_MainMenu.Option")()); }
 		@property final auto ref
 		{
-			ScriptString OptionDesc() { mixin(MGPS!(ScriptString, 24)()); }
-			ScriptString OptionLabel() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptString OptionName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString OptionDesc() { mixin(MGPS!("ScriptString", 24)()); }
+			ScriptString OptionLabel() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptString OptionName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		GFxClikWidget ListMC() { mixin(MGPC!(GFxClikWidget, 232)()); }
-		ScriptArray!(GFxUDKFrontEnd_MainMenu.Option) ListOptions() { mixin(MGPC!(ScriptArray!(GFxUDKFrontEnd_MainMenu.Option), 220)()); }
-		ubyte LastSelectedIndex() { mixin(MGPC!(ubyte, 248)()); }
-		GFxObject UserNameTxt() { mixin(MGPC!(GFxObject, 244)()); }
-		GFxObject UserLabelTxt() { mixin(MGPC!(GFxObject, 240)()); }
-		GFxObject ListDataProvider() { mixin(MGPC!(GFxObject, 236)()); }
+		GFxClikWidget ListMC() { mixin(MGPC!("GFxClikWidget", 232)()); }
+		ScriptArray!(GFxUDKFrontEnd_MainMenu.Option) ListOptions() { mixin(MGPC!("ScriptArray!(GFxUDKFrontEnd_MainMenu.Option)", 220)()); }
+		ubyte LastSelectedIndex() { mixin(MGPC!("ubyte", 248)()); }
+		GFxObject UserNameTxt() { mixin(MGPC!("GFxObject", 244)()); }
+		GFxObject UserLabelTxt() { mixin(MGPC!("GFxObject", 240)()); }
+		GFxObject ListDataProvider() { mixin(MGPC!("GFxObject", 236)()); }
 	}
 final:
 	void OnViewLoaded()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewLoaded, cast(void*)0, cast(void*)0);
 	}
-	void OnTopMostView(bool bPlayOpenAnimation)
+	void OnTopMostView(bool* bPlayOpenAnimation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayOpenAnimation;
+		if (bPlayOpenAnimation !is null)
+			*cast(bool*)params.ptr = *bPlayOpenAnimation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnTopMostView, params.ptr, cast(void*)0);
 	}
 	void DisableSubComponents(bool bDisableComponents)

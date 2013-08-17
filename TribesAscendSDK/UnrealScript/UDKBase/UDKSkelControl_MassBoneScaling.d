@@ -24,7 +24,7 @@ public extern(D):
 			ScriptFunction GetBoneScale() { mixin(MGF!("mGetBoneScale", "Function UDKBase.UDKSkelControl_MassBoneScaling.GetBoneScale")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(float) BoneScales() { mixin(MGPC!(ScriptArray!(float), 188)()); }
+	@property final auto ref ScriptArray!(float) BoneScales() { mixin(MGPC!("ScriptArray!(float)", 188)()); }
 final:
 	void SetBoneScale(ScriptName BoneName, float Scale)
 	{

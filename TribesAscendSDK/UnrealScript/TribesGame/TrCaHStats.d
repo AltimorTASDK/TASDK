@@ -53,27 +53,27 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrCaHStats.CapturePointInfo")()); }
 		@property final auto ref
 		{
-			float RemainingHeldTime() { mixin(MGPS!(float, 24)()); }
-			int PctHeld() { mixin(MGPS!(int, 20)()); }
-			int PointOwnershipType() { mixin(MGPS!(int, 16)()); }
-			ScriptString LabelString() { mixin(MGPS!(ScriptString, 4)()); }
-			TrObject.CaHCapturePointLabel PointLabel() { mixin(MGPS!(TrObject.CaHCapturePointLabel, 0)()); }
+			float RemainingHeldTime() { mixin(MGPS!("float", 24)()); }
+			int PctHeld() { mixin(MGPS!("int", 20)()); }
+			int PointOwnershipType() { mixin(MGPS!("int", 16)()); }
+			ScriptString LabelString() { mixin(MGPS!("ScriptString", 4)()); }
+			TrObject.CaHCapturePointLabel PointLabel() { mixin(MGPS!("TrObject.CaHCapturePointLabel", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(TrCaHStats.CapturePointInfo) m_CapturePointData() { mixin(MGPC!(ScriptArray!(TrCaHStats.CapturePointInfo), 108)()); }
-			ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { mixin(MGPC!(ScriptArray!(TrCaHCapturePoint), 120)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 104)()); }
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 100)()); }
-			int RoundNum() { mixin(MGPC!(int, 96)()); }
-			int NumCapturePointsHeld() { mixin(MGPC!(int, 88)()); }
-			int RoundScore() { mixin(MGPC!(int, 80)()); }
-			int TeamScore() { mixin(MGPC!(int, 72)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
-			int MyTeam() { mixin(MGPC!(int, 60)()); }
+			ScriptArray!(TrCaHStats.CapturePointInfo) m_CapturePointData() { mixin(MGPC!("ScriptArray!(TrCaHStats.CapturePointInfo)", 108)()); }
+			ScriptArray!(TrCaHCapturePoint) m_CapturePoints() { mixin(MGPC!("ScriptArray!(TrCaHCapturePoint)", 120)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 104)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 100)()); }
+			int RoundNum() { mixin(MGPC!("int", 96)()); }
+			int NumCapturePointsHeld() { mixin(MGPC!("int", 88)()); }
+			int RoundScore() { mixin(MGPC!("int", 80)()); }
+			int TeamScore() { mixin(MGPC!("int", 72)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int MyTeam() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bForceUpdateNextTick() { mixin(MGBPC!(68, 0x4)()); }
 		bool bForceUpdateNextTick(bool val) { mixin(MSBPC!(68, 0x4)()); }

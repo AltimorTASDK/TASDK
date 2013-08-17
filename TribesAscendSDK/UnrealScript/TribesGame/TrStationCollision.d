@@ -31,7 +31,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref TrPawn m_OccupiedPawn() { mixin(MGPC!(TrPawn, 480)()); }
+		@property final auto ref TrPawn m_OccupiedPawn() { mixin(MGPC!("TrPawn", 480)()); }
 		bool m_bCanBeUsedDuringWarmupRound() { mixin(MGBPC!(476, 0x2)()); }
 		bool m_bCanBeUsedDuringWarmupRound(bool val) { mixin(MSBPC!(476, 0x2)()); }
 		bool m_bOccupied() { mixin(MGBPC!(476, 0x1)()); }

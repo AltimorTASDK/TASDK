@@ -15,12 +15,12 @@ public extern(D):
 	@property final static UIDataProvider_SettingsArray DefaultProperties() { mixin(MGDPC!(UIDataProvider_SettingsArray, "UIDataProvider_SettingsArray Engine.Default__UIDataProvider_SettingsArray")()); }
 	@property final auto ref
 	{
-		ScriptArray!(Settings.IdToStringMapping) Values() { mixin(MGPC!(ScriptArray!(Settings.IdToStringMapping), 124)()); }
-		ScriptString ColumnHeaderText() { mixin(MGPC!(ScriptString, 112)()); }
-		ScriptName SettingsName() { mixin(MGPC!(ScriptName, 104)()); }
-		int SettingsId() { mixin(MGPC!(int, 100)()); }
+		ScriptArray!(Settings.IdToStringMapping) Values() { mixin(MGPC!("ScriptArray!(Settings.IdToStringMapping)", 124)()); }
+		ScriptString ColumnHeaderText() { mixin(MGPC!("ScriptString", 112)()); }
+		ScriptName SettingsName() { mixin(MGPC!("ScriptName", 104)()); }
+		int SettingsId() { mixin(MGPC!("int", 100)()); }
 		// WARNING: Property 'Settings' has the same name as a defined type!
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 88)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
 	}
 }

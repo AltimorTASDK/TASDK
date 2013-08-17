@@ -69,56 +69,56 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameThirdPersonCameraMode.ViewOffsetData")()); }
 		@property final auto ref
 		{
-			Vector OffsetLow() { mixin(MGPS!(Vector, 24)()); }
-			Vector OffsetMid() { mixin(MGPS!(Vector, 12)()); }
-			Vector OffsetHigh() { mixin(MGPS!(Vector, 0)()); }
+			Vector OffsetLow() { mixin(MGPS!("Vector", 24)()); }
+			Vector OffsetMid() { mixin(MGPS!("Vector", 12)()); }
+			Vector OffsetHigh() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			GameThirdPersonCamera ThirdPersonCam() { mixin(MGPC!(GameThirdPersonCamera, 60)()); }
-			GameThirdPersonCameraMode.ECameraViewportTypes CurrentViewportType() { mixin(MGPC!(GameThirdPersonCameraMode.ECameraViewportTypes, 556)()); }
-			float OffsetAdjustmentInterpSpeed() { mixin(MGPC!(float, 552)()); }
-			float ViewOffsetInterp() { mixin(MGPC!(float, 548)()); }
-			UObject.Vector2D DOF_RadiusDistRange() { mixin(MGPC!(UObject.Vector2D, 540)()); }
-			UObject.Vector2D DOF_RadiusRange() { mixin(MGPC!(UObject.Vector2D, 532)()); }
-			float DOF_RadiusFalloff() { mixin(MGPC!(float, 528)()); }
-			Vector DOFTraceExtent() { mixin(MGPC!(Vector, 516)()); }
-			float DOFDistanceInterpSpeed() { mixin(MGPC!(float, 512)()); }
-			float LastDOFDistance() { mixin(MGPC!(float, 508)()); }
-			float LastDOFRadius() { mixin(MGPC!(float, 504)()); }
-			float DOF_MaxFarBlurAmount() { mixin(MGPC!(float, 500)()); }
-			float DOF_MaxNearBlurAmount() { mixin(MGPC!(float, 496)()); }
-			float DOF_FocusInnerRadius() { mixin(MGPC!(float, 492)()); }
-			float DOF_BlurKernelSize() { mixin(MGPC!(float, 488)()); }
-			float DOF_FalloffExponent() { mixin(MGPC!(float, 484)()); }
-			GameThirdPersonCameraMode.ViewOffsetData ViewOffset_ViewportAdjustments() { mixin(MGPC!(GameThirdPersonCameraMode.ViewOffsetData, 268)()); }
-			GameThirdPersonCameraMode.ViewOffsetData ViewOffset() { mixin(MGPC!(GameThirdPersonCameraMode.ViewOffsetData, 232)()); }
-			Vector TargetRelativeCameraOriginOffset() { mixin(MGPC!(Vector, 220)()); }
-			Vector WorstLocOffset() { mixin(MGPC!(Vector, 208)()); }
-			Vector LastRunOffset() { mixin(MGPC!(Vector, 196)()); }
-			float RunOffsetInterpSpeedOut() { mixin(MGPC!(float, 192)()); }
-			float RunOffsetInterpSpeedIn() { mixin(MGPC!(float, 188)()); }
-			float RunOffsetScalingThreshold() { mixin(MGPC!(float, 184)()); }
-			Vector RunBackAdjustment() { mixin(MGPC!(Vector, 172)()); }
-			Vector RunFwdAdjustment() { mixin(MGPC!(Vector, 160)()); }
-			Vector LastStrafeOffset() { mixin(MGPC!(Vector, 148)()); }
-			float StrafeOffsetInterpSpeedOut() { mixin(MGPC!(float, 144)()); }
-			float StrafeOffsetInterpSpeedIn() { mixin(MGPC!(float, 140)()); }
-			float StrafeOffsetScalingThreshold() { mixin(MGPC!(float, 136)()); }
-			Vector StrafeRightAdjustment() { mixin(MGPC!(Vector, 124)()); }
-			Vector StrafeLeftAdjustment() { mixin(MGPC!(Vector, 112)()); }
-			float OriginRotInterpSpeed() { mixin(MGPC!(float, 108)()); }
-			Vector PerAxisOriginLocInterpSpeed() { mixin(MGPC!(Vector, 96)()); }
-			float OriginLocInterpSpeed() { mixin(MGPC!(float, 92)()); }
-			float FollowingCameraVelThreshold() { mixin(MGPC!(float, 88)()); }
-			float FollowingInterpSpeed_Roll() { mixin(MGPC!(float, 84)()); }
-			float FollowingInterpSpeed_Yaw() { mixin(MGPC!(float, 80)()); }
-			float FollowingInterpSpeed_Pitch() { mixin(MGPC!(float, 76)()); }
-			float BlendTime() { mixin(MGPC!(float, 68)()); }
-			float FOVAngle() { mixin(MGPC!(float, 64)()); }
+			GameThirdPersonCamera ThirdPersonCam() { mixin(MGPC!("GameThirdPersonCamera", 60)()); }
+			GameThirdPersonCameraMode.ECameraViewportTypes CurrentViewportType() { mixin(MGPC!("GameThirdPersonCameraMode.ECameraViewportTypes", 556)()); }
+			float OffsetAdjustmentInterpSpeed() { mixin(MGPC!("float", 552)()); }
+			float ViewOffsetInterp() { mixin(MGPC!("float", 548)()); }
+			UObject.Vector2D DOF_RadiusDistRange() { mixin(MGPC!("UObject.Vector2D", 540)()); }
+			UObject.Vector2D DOF_RadiusRange() { mixin(MGPC!("UObject.Vector2D", 532)()); }
+			float DOF_RadiusFalloff() { mixin(MGPC!("float", 528)()); }
+			Vector DOFTraceExtent() { mixin(MGPC!("Vector", 516)()); }
+			float DOFDistanceInterpSpeed() { mixin(MGPC!("float", 512)()); }
+			float LastDOFDistance() { mixin(MGPC!("float", 508)()); }
+			float LastDOFRadius() { mixin(MGPC!("float", 504)()); }
+			float DOF_MaxFarBlurAmount() { mixin(MGPC!("float", 500)()); }
+			float DOF_MaxNearBlurAmount() { mixin(MGPC!("float", 496)()); }
+			float DOF_FocusInnerRadius() { mixin(MGPC!("float", 492)()); }
+			float DOF_BlurKernelSize() { mixin(MGPC!("float", 488)()); }
+			float DOF_FalloffExponent() { mixin(MGPC!("float", 484)()); }
+			GameThirdPersonCameraMode.ViewOffsetData ViewOffset_ViewportAdjustments() { mixin(MGPC!("GameThirdPersonCameraMode.ViewOffsetData", 268)()); }
+			GameThirdPersonCameraMode.ViewOffsetData ViewOffset() { mixin(MGPC!("GameThirdPersonCameraMode.ViewOffsetData", 232)()); }
+			Vector TargetRelativeCameraOriginOffset() { mixin(MGPC!("Vector", 220)()); }
+			Vector WorstLocOffset() { mixin(MGPC!("Vector", 208)()); }
+			Vector LastRunOffset() { mixin(MGPC!("Vector", 196)()); }
+			float RunOffsetInterpSpeedOut() { mixin(MGPC!("float", 192)()); }
+			float RunOffsetInterpSpeedIn() { mixin(MGPC!("float", 188)()); }
+			float RunOffsetScalingThreshold() { mixin(MGPC!("float", 184)()); }
+			Vector RunBackAdjustment() { mixin(MGPC!("Vector", 172)()); }
+			Vector RunFwdAdjustment() { mixin(MGPC!("Vector", 160)()); }
+			Vector LastStrafeOffset() { mixin(MGPC!("Vector", 148)()); }
+			float StrafeOffsetInterpSpeedOut() { mixin(MGPC!("float", 144)()); }
+			float StrafeOffsetInterpSpeedIn() { mixin(MGPC!("float", 140)()); }
+			float StrafeOffsetScalingThreshold() { mixin(MGPC!("float", 136)()); }
+			Vector StrafeRightAdjustment() { mixin(MGPC!("Vector", 124)()); }
+			Vector StrafeLeftAdjustment() { mixin(MGPC!("Vector", 112)()); }
+			float OriginRotInterpSpeed() { mixin(MGPC!("float", 108)()); }
+			Vector PerAxisOriginLocInterpSpeed() { mixin(MGPC!("Vector", 96)()); }
+			float OriginLocInterpSpeed() { mixin(MGPC!("float", 92)()); }
+			float FollowingCameraVelThreshold() { mixin(MGPC!("float", 88)()); }
+			float FollowingInterpSpeed_Roll() { mixin(MGPC!("float", 84)()); }
+			float FollowingInterpSpeed_Yaw() { mixin(MGPC!("float", 80)()); }
+			float FollowingInterpSpeed_Pitch() { mixin(MGPC!("float", 76)()); }
+			float BlendTime() { mixin(MGPC!("float", 68)()); }
+			float FOVAngle() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bInterpViewOffsetOnlyForCamTransition() { mixin(MGBPC!(72, 0x8000)()); }
 		bool bInterpViewOffsetOnlyForCamTransition(bool val) { mixin(MSBPC!(72, 0x8000)()); }
@@ -217,8 +217,8 @@ final:
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 	}
 	Vector GetDOFFocusLoc(Actor TraceOwner, Vector StartTrace, Vector EndTrace)
 	{
@@ -240,14 +240,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.DOFTrace, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[28];
 	}
-	void UpdatePostProcess(ref const Camera.TViewTarget VT, float DeltaTime)
+	void UpdatePostProcess(ref in Camera.TViewTarget VT, float DeltaTime)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = VT;
+		*cast(Camera.TViewTarget*)params.ptr = cast(Camera.TViewTarget)VT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePostProcess, params.ptr, cast(void*)0);
-		*VT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	void ModifyPostProcessSettings(ref PostProcessVolume.PostProcessSettings PP)
 	{
@@ -255,14 +254,13 @@ final:
 		params[] = 0;
 		*cast(PostProcessVolume.PostProcessSettings*)params.ptr = PP;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyPostProcessSettings, params.ptr, cast(void*)0);
-		*PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
+		PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
 	}
-	void SetViewOffset(ref const GameThirdPersonCameraMode.ViewOffsetData NewViewOffset)
+	void SetViewOffset(ref in GameThirdPersonCameraMode.ViewOffsetData NewViewOffset)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(GameThirdPersonCameraMode.ViewOffsetData*)params.ptr = NewViewOffset;
+		*cast(GameThirdPersonCameraMode.ViewOffsetData*)params.ptr = cast(GameThirdPersonCameraMode.ViewOffsetData)NewViewOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewOffset, params.ptr, cast(void*)0);
-		*NewViewOffset = *cast(GameThirdPersonCameraMode.ViewOffsetData*)params.ptr;
 	}
 }

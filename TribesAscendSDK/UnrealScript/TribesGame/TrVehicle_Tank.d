@@ -31,12 +31,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_CameraShakeEffectiveRadius() { mixin(MGPC!(float, 3244)()); }
-		CameraShake m_FireCameraShake() { mixin(MGPC!(CameraShake, 3240)()); }
-		ubyte GunnerFiringMode() { mixin(MGPC!(ubyte, 3237)()); }
-		ubyte GunnerFlashCount() { mixin(MGPC!(ubyte, 3236)()); }
-		Rotator GunnerWeaponRotation() { mixin(MGPC!(Rotator, 3224)()); }
-		Vector GunnerFlashLocation() { mixin(MGPC!(Vector, 3212)()); }
+		float m_CameraShakeEffectiveRadius() { mixin(MGPC!("float", 3244)()); }
+		CameraShake m_FireCameraShake() { mixin(MGPC!("CameraShake", 3240)()); }
+		ubyte GunnerFiringMode() { mixin(MGPC!("ubyte", 3237)()); }
+		ubyte GunnerFlashCount() { mixin(MGPC!("ubyte", 3236)()); }
+		Rotator GunnerWeaponRotation() { mixin(MGPC!("Rotator", 3224)()); }
+		Vector GunnerFlashLocation() { mixin(MGPC!("Vector", 3212)()); }
 	}
 final:
 	void PostInitAnimTree(
@@ -67,8 +67,8 @@ void**)params.ptr = SkelComp;
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotationBasedOnSeat, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 	}
 	Rotator LimitViewRotation(Rotator LimitViewRotation, float LimitViewPitchMin, float LimitViewPitchMax)
 	{

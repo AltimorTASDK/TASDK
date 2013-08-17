@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!(DistributionVector.EDistributionVectorLockFlags, 96)()); }
-			Vector Constant() { mixin(MGPC!(Vector, 80)()); }
+			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!("DistributionVector.EDistributionVectorLockFlags", 96)()); }
+			Vector Constant() { mixin(MGPC!("Vector", 80)()); }
 		}
 		bool bLockAxes() { mixin(MGBPC!(92, 0x1)()); }
 		bool bLockAxes(bool val) { mixin(MSBPC!(92, 0x1)()); }

@@ -35,12 +35,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.InterpCurveFloat SplineReparamTable() { mixin(MGPC!(UObject.InterpCurveFloat, 524)()); }
-			float SplineArrowSize() { mixin(MGPC!(float, 516)()); }
-			float SplineDrawRes() { mixin(MGPC!(float, 512)()); }
-			UObject.Color SplineColor() { mixin(MGPC!(UObject.Color, 508)()); }
-			float SplineCurviness() { mixin(MGPC!(float, 504)()); }
-			UObject.InterpCurveVector SplineInfo() { mixin(MGPC!(UObject.InterpCurveVector, 488)()); }
+			UObject.InterpCurveFloat SplineReparamTable() { mixin(MGPC!("UObject.InterpCurveFloat", 524)()); }
+			float SplineArrowSize() { mixin(MGPC!("float", 516)()); }
+			float SplineDrawRes() { mixin(MGPC!("float", 512)()); }
+			UObject.Color SplineColor() { mixin(MGPC!("UObject.Color", 508)()); }
+			float SplineCurviness() { mixin(MGPC!("float", 504)()); }
+			UObject.InterpCurveVector SplineInfo() { mixin(MGPC!("UObject.InterpCurveVector", 488)()); }
 		}
 		bool bSplineDisabled() { mixin(MGBPC!(520, 0x1)()); }
 		bool bSplineDisabled(bool val) { mixin(MSBPC!(520, 0x1)()); }

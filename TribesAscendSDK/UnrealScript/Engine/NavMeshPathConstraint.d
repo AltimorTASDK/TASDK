@@ -26,11 +26,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float AddedHeuristicCost() { mixin(MGPC!(float, 76)()); }
-		float AddedDirectCost() { mixin(MGPC!(float, 72)()); }
-		int NumThrownOutNodes() { mixin(MGPC!(int, 68)()); }
-		int NumNodesProcessed() { mixin(MGPC!(int, 64)()); }
-		NavMeshPathConstraint NextConstraint() { mixin(MGPC!(NavMeshPathConstraint, 60)()); }
+		float AddedHeuristicCost() { mixin(MGPC!("float", 76)()); }
+		float AddedDirectCost() { mixin(MGPC!("float", 72)()); }
+		int NumThrownOutNodes() { mixin(MGPC!("int", 68)()); }
+		int NumNodesProcessed() { mixin(MGPC!("int", 64)()); }
+		NavMeshPathConstraint NextConstraint() { mixin(MGPC!("NavMeshPathConstraint", 60)()); }
 	}
 final:
 	void Recycle()

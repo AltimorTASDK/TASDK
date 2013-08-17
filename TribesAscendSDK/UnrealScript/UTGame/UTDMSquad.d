@@ -64,8 +64,8 @@ final:
 		*cast(float*)&params[4] = YL;
 		*cast(float*)&params[8] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*YL = *cast(float*)&params[4];
-		*YPos = *cast(float*)&params[8];
+		YL = *cast(float*)&params[4];
+		YPos = *cast(float*)&params[8];
 	}
 	bool IsDefending(UTBot B)
 	{

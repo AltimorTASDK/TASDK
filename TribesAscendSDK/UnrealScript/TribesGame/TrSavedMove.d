@@ -40,7 +40,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC!(TrPawn.WalkingDeceleration, 236)()); }
+		@property final auto ref TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC!("TrPawn.WalkingDeceleration", 236)()); }
 		bool m_bBlink() { mixin(MGBPC!(232, 0x8)()); }
 		bool m_bBlink(bool val) { mixin(MSBPC!(232, 0x8)()); }
 		bool m_bJumpJet() { mixin(MGBPC!(232, 0x4)()); }

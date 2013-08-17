@@ -24,7 +24,7 @@ public extern(D):
 			ScriptFunction Activated() { mixin(MGF!("mActivated", "Function Engine.SeqAct_MITV_Activate.Activated")()); }
 		}
 	}
-	@property final auto ref float DurationOfMITV() { mixin(MGPC!(float, 232)()); }
+	@property final auto ref float DurationOfMITV() { mixin(MGPC!("float", 232)()); }
 final:
 	static int GetObjClassVersion()
 	{

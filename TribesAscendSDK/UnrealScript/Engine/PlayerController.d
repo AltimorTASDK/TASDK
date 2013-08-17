@@ -820,15 +820,15 @@ public extern(D):
 		{
 			auto ref
 			{
-				Actor SrcActor() { mixin(MGPS!(Actor, 0)()); }
-				float TimeRemaining() { mixin(MGPS!(float, 40)()); }
+				Actor SrcActor() { mixin(MGPS!("Actor", 0)()); }
+				float TimeRemaining() { mixin(MGPS!("float", 40)()); }
 				// WARNING: Property 'Font' has the same name as a defined type!
-				Vector SrcActorOffset() { mixin(MGPS!(Vector, 4)()); }
-				Vector SrcActorDesiredOffset() { mixin(MGPS!(Vector, 16)()); }
-				float Duration() { mixin(MGPS!(float, 44)()); }
-				Vector OrigActorLocation() { mixin(MGPS!(Vector, 56)()); }
-				UObject.Color TextColor() { mixin(MGPS!(UObject.Color, 48)()); }
-				ScriptString DebugText() { mixin(MGPS!(ScriptString, 28)()); }
+				Vector SrcActorOffset() { mixin(MGPS!("Vector", 4)()); }
+				Vector SrcActorDesiredOffset() { mixin(MGPS!("Vector", 16)()); }
+				float Duration() { mixin(MGPS!("float", 44)()); }
+				Vector OrigActorLocation() { mixin(MGPS!("Vector", 56)()); }
+				UObject.Color TextColor() { mixin(MGPS!("UObject.Color", 48)()); }
+				ScriptString DebugText() { mixin(MGPS!("ScriptString", 28)()); }
 			}
 			bool bAbsoluteLocation() { mixin(MGBPS!(52, 0x1)()); }
 			bool bAbsoluteLocation(bool val) { mixin(MSBPS!(52, 0x1)()); }
@@ -846,8 +846,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
-				OnlineSubsystem.ENATType NatType() { mixin(MGPS!(OnlineSubsystem.ENATType, 8)()); }
+				OnlineSubsystem.UniqueNetId PlayerID() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
+				OnlineSubsystem.ENATType NatType() { mixin(MGPS!("OnlineSubsystem.ENATType", 8)()); }
 			}
 			bool bLostConnectionToHost() { mixin(MGBPS!(12, 0x1)()); }
 			bool bLostConnectionToHost(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -861,13 +861,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.ClientAdjustment")()); }
 		@property final auto ref
 		{
-			Actor.EPhysics newPhysics() { mixin(MGPS!(Actor.EPhysics, 4)()); }
-			Vector NewLoc() { mixin(MGPS!(Vector, 8)()); }
-			Vector NewVel() { mixin(MGPS!(Vector, 20)()); }
-			Actor NewBase() { mixin(MGPS!(Actor, 32)()); }
-			Vector NewFloor() { mixin(MGPS!(Vector, 36)()); }
-			float TimeStamp() { mixin(MGPS!(float, 0)()); }
-			ubyte bAckGoodMove() { mixin(MGPS!(ubyte, 48)()); }
+			Actor.EPhysics newPhysics() { mixin(MGPS!("Actor.EPhysics", 4)()); }
+			Vector NewLoc() { mixin(MGPS!("Vector", 8)()); }
+			Vector NewVel() { mixin(MGPS!("Vector", 20)()); }
+			Actor NewBase() { mixin(MGPS!("Actor", 32)()); }
+			Vector NewFloor() { mixin(MGPS!("Vector", 36)()); }
+			float TimeStamp() { mixin(MGPS!("float", 0)()); }
+			ubyte bAckGoodMove() { mixin(MGPS!("ubyte", 48)()); }
 		}
 	}
 	struct InputMatchRequest
@@ -878,14 +878,14 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.InputMatchRequest")()); }
 		@property final auto ref
 		{
-			ScriptArray!(PlayerController.InputEntry) Inputs() { mixin(MGPS!(ScriptArray!(PlayerController.InputEntry), 0)()); }
-			Actor MatchActor() { mixin(MGPS!(Actor, 12)()); }
-			ScriptName MatchFuncName() { mixin(MGPS!(ScriptName, 16)()); }
+			ScriptArray!(PlayerController.InputEntry) Inputs() { mixin(MGPS!("ScriptArray!(PlayerController.InputEntry)", 0)()); }
+			Actor MatchActor() { mixin(MGPS!("Actor", 12)()); }
+			ScriptName MatchFuncName() { mixin(MGPS!("ScriptName", 16)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named 'MatchDelegate'!
-			ScriptName FailedFuncName() { mixin(MGPS!(ScriptName, 36)()); }
-			ScriptName RequestName() { mixin(MGPS!(ScriptName, 44)()); }
-			int MatchIdx() { mixin(MGPS!(int, 52)()); }
-			float LastMatchTime() { mixin(MGPS!(float, 56)()); }
+			ScriptName FailedFuncName() { mixin(MGPS!("ScriptName", 36)()); }
+			ScriptName RequestName() { mixin(MGPS!("ScriptName", 44)()); }
+			int MatchIdx() { mixin(MGPS!("int", 52)()); }
+			float LastMatchTime() { mixin(MGPS!("float", 56)()); }
 		}
 	}
 	struct InputEntry
@@ -896,10 +896,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PlayerController.InputEntry")()); }
 		@property final auto ref
 		{
-			PlayerController.EInputTypes Type() { mixin(MGPS!(PlayerController.EInputTypes, 0)()); }
-			float Value() { mixin(MGPS!(float, 4)()); }
-			float TimeDelta() { mixin(MGPS!(float, 8)()); }
-			PlayerController.EInputMatchAction Action() { mixin(MGPS!(PlayerController.EInputMatchAction, 12)()); }
+			PlayerController.EInputTypes Type() { mixin(MGPS!("PlayerController.EInputTypes", 0)()); }
+			float Value() { mixin(MGPS!("float", 4)()); }
+			float TimeDelta() { mixin(MGPS!("float", 8)()); }
+			PlayerController.EInputMatchAction Action() { mixin(MGPS!("PlayerController.EInputMatchAction", 12)()); }
 		}
 	}
 	static struct PlayerWalking
@@ -961,90 +961,90 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LODDistanceFactor() { mixin(MGPC!(float, 960)()); }
+			float LODDistanceFactor() { mixin(MGPC!("float", 960)()); }
 			// WARNING: Property 'Player' has the same name as a defined type!
-			Actor ViewTarget() { mixin(MGPC!(Actor, 936)()); }
-			Camera PlayerCamera() { mixin(MGPC!(Camera, 904)()); }
-			CoverReplicator MyCoverReplicator() { mixin(MGPC!(CoverReplicator, 1352)()); }
-			float MaxTimeMargin() { mixin(MGPC!(float, 1044)()); }
-			float MaxResponseTime() { mixin(MGPC!(float, 916)()); }
-			float LastActiveTime() { mixin(MGPC!(float, 1048)()); }
-			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 1248)()); }
-			ScriptArray!(PlayerController.ConnectedPeerInfo) ConnectedPeers() { mixin(MGPC!(ScriptArray!(PlayerController.ConnectedPeerInfo), 1220)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) BestNextHostPeers() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 1232)()); }
-			OnlineGameSearch MigratedSearchToJoin() { mixin(MGPC!(OnlineGameSearch, 1244)()); }
-			float TimeMargin() { mixin(MGPC!(float, 1036)()); }
-			HUD myHUD() { mixin(MGPC!(HUD, 992)()); }
-			float WaitDelay() { mixin(MGPC!(float, 920)()); }
-			SavedMove SavedMoves() { mixin(MGPC!(SavedMove, 1000)()); }
-			SavedMove PendingMove() { mixin(MGPC!(SavedMove, 1008)()); }
+			Actor ViewTarget() { mixin(MGPC!("Actor", 936)()); }
+			Camera PlayerCamera() { mixin(MGPC!("Camera", 904)()); }
+			CoverReplicator MyCoverReplicator() { mixin(MGPC!("CoverReplicator", 1352)()); }
+			float MaxTimeMargin() { mixin(MGPC!("float", 1044)()); }
+			float MaxResponseTime() { mixin(MGPC!("float", 916)()); }
+			float LastActiveTime() { mixin(MGPC!("float", 1048)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 1248)()); }
+			ScriptArray!(PlayerController.ConnectedPeerInfo) ConnectedPeers() { mixin(MGPC!("ScriptArray!(PlayerController.ConnectedPeerInfo)", 1220)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) BestNextHostPeers() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1232)()); }
+			OnlineGameSearch MigratedSearchToJoin() { mixin(MGPC!("OnlineGameSearch", 1244)()); }
+			float TimeMargin() { mixin(MGPC!("float", 1036)()); }
+			HUD myHUD() { mixin(MGPC!("HUD", 992)()); }
+			float WaitDelay() { mixin(MGPC!("float", 920)()); }
+			SavedMove SavedMoves() { mixin(MGPC!("SavedMove", 1000)()); }
+			SavedMove PendingMove() { mixin(MGPC!("SavedMove", 1008)()); }
 			// WARNING: Property 'PlayerInput' has the same name as a defined type!
-			ScriptClass InputClass() { mixin(MGPC!(ScriptClass, 1136)()); }
-			ScriptArray!(Interaction) Interactions() { mixin(MGPC!(ScriptArray!(Interaction), 1172)()); }
-			ScriptString ForceFeedbackManagerClassName() { mixin(MGPC!(ScriptString, 1156)()); }
+			ScriptClass InputClass() { mixin(MGPC!("ScriptClass", 1136)()); }
+			ScriptArray!(Interaction) Interactions() { mixin(MGPC!("ScriptArray!(Interaction)", 1172)()); }
+			ScriptString ForceFeedbackManagerClassName() { mixin(MGPC!("ScriptString", 1156)()); }
 			// WARNING: Property 'ForceFeedbackManager' has the same name as a defined type!
-			UIDataStore_OnlinePlayerData OnlinePlayerData() { mixin(MGPC!(UIDataStore_OnlinePlayerData, 1260)()); }
-			Pawn AcknowledgedPawn() { mixin(MGPC!(Pawn, 924)()); }
+			UIDataStore_OnlinePlayerData OnlinePlayerData() { mixin(MGPC!("UIDataStore_OnlinePlayerData", 1260)()); }
+			Pawn AcknowledgedPawn() { mixin(MGPC!("Pawn", 924)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) HearSoundActiveComponents() { mixin(MGPC!(ScriptArray!(
+void*) HearSoundActiveComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 1384)()); }
+void*)", 1384)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) HearSoundPoolComponents() { mixin(MGPC!(ScriptArray!(
+void*) HearSoundPoolComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 1396)()); }
+void*)", 1396)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'VoiceInterface'!
-			float FOVAngle() { mixin(MGPC!(float, 948)()); }
-			float DefaultFOV() { mixin(MGPC!(float, 956)()); }
-			float DesiredFOV() { mixin(MGPC!(float, 952)()); }
-			float LastBroadcastTime() { mixin(MGPC!(float, 1288)()); }
-			ScriptString LastBroadcastString() { mixin(MGPC!(ScriptString, 1292)()); }
-			float LastUpdateTime() { mixin(MGPC!(float, 1028)()); }
-			float CurrentTimeStamp() { mixin(MGPC!(float, 1024)()); }
-			float LastSpeedHackLog() { mixin(MGPC!(float, 1064)()); }
-			PlayerController.ClientAdjustment PendingAdjustment() { mixin(MGPC!(PlayerController.ClientAdjustment, 1068)()); }
-			float ServerTimeStamp() { mixin(MGPC!(float, 1032)()); }
-			ScriptClass SavedMoveClass() { mixin(MGPC!(ScriptClass, 996)()); }
-			int ClientCap() { mixin(MGPC!(int, 1052)()); }
-			float LastPingUpdate() { mixin(MGPC!(float, 1060)()); }
-			SavedMove FreeMoves() { mixin(MGPC!(SavedMove, 1004)()); }
-			Vector LastAckedAccel() { mixin(MGPC!(Vector, 1012)()); }
-			ubyte bRun() { mixin(MGPC!(ubyte, 931)()); }
-			ubyte bDuck() { mixin(MGPC!(ubyte, 932)()); }
-			float ClientUpdateTime() { mixin(MGPC!(float, 1040)()); }
+			float FOVAngle() { mixin(MGPC!("float", 948)()); }
+			float DefaultFOV() { mixin(MGPC!("float", 956)()); }
+			float DesiredFOV() { mixin(MGPC!("float", 952)()); }
+			float LastBroadcastTime() { mixin(MGPC!("float", 1288)()); }
+			ScriptString LastBroadcastString() { mixin(MGPC!("ScriptString", 1292)()); }
+			float LastUpdateTime() { mixin(MGPC!("float", 1028)()); }
+			float CurrentTimeStamp() { mixin(MGPC!("float", 1024)()); }
+			float LastSpeedHackLog() { mixin(MGPC!("float", 1064)()); }
+			PlayerController.ClientAdjustment PendingAdjustment() { mixin(MGPC!("PlayerController.ClientAdjustment", 1068)()); }
+			float ServerTimeStamp() { mixin(MGPC!("float", 1032)()); }
+			ScriptClass SavedMoveClass() { mixin(MGPC!("ScriptClass", 996)()); }
+			int ClientCap() { mixin(MGPC!("int", 1052)()); }
+			float LastPingUpdate() { mixin(MGPC!("float", 1060)()); }
+			SavedMove FreeMoves() { mixin(MGPC!("SavedMove", 1004)()); }
+			Vector LastAckedAccel() { mixin(MGPC!("Vector", 1012)()); }
+			ubyte bRun() { mixin(MGPC!("ubyte", 931)()); }
+			ubyte bDuck() { mixin(MGPC!("ubyte", 932)()); }
+			float ClientUpdateTime() { mixin(MGPC!("float", 1040)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__CanUnpause__Delegate'!
-			float InteractDistance() { mixin(MGPC!(float, 1264)()); }
-			ScriptClass CameraClass() { mixin(MGPC!(ScriptClass, 908)()); }
-			Actor.EDoubleClickDir DoubleClickDir() { mixin(MGPC!(Actor.EDoubleClickDir, 928)()); }
-			int GroundPitch() { mixin(MGPC!(int, 1120)()); }
-			float LastSpectatorStateSynchTime() { mixin(MGPC!(float, 1420)()); }
-			float SpectatorCameraSpeed() { mixin(MGPC!(float, 1368)()); }
-			PlayerReplicationInfo RealViewTarget() { mixin(MGPC!(PlayerReplicationInfo, 940)()); }
-			float MinRespawnDelay() { mixin(MGPC!(float, 1376)()); }
-			NetConnection PendingSwapConnection() { mixin(MGPC!(NetConnection, 1372)()); }
-			ubyte bIgnoreMoveInput() { mixin(MGPC!(ubyte, 929)()); }
-			ubyte bIgnoreLookInput() { mixin(MGPC!(ubyte, 930)()); }
-			ScriptArray!(ScriptName) PendingMapChangeLevelNames() { mixin(MGPC!(ScriptArray!(ScriptName), 1340)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) VoicePacketFilter() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 1208)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) GameplayVoiceMuteList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 1196)()); }
-			ScriptArray!(OnlineSubsystem.UniqueNetId) VoiceMuteList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.UniqueNetId), 1184)()); }
-			ScriptArray!(PlayerController.DebugTextInfo) DebugTextList() { mixin(MGPC!(ScriptArray!(PlayerController.DebugTextInfo), 1356)()); }
-			ubyte NetPlayerIndex() { mixin(MGPC!(ubyte, 933)()); }
+			float InteractDistance() { mixin(MGPC!("float", 1264)()); }
+			ScriptClass CameraClass() { mixin(MGPC!("ScriptClass", 908)()); }
+			Actor.EDoubleClickDir DoubleClickDir() { mixin(MGPC!("Actor.EDoubleClickDir", 928)()); }
+			int GroundPitch() { mixin(MGPC!("int", 1120)()); }
+			float LastSpectatorStateSynchTime() { mixin(MGPC!("float", 1420)()); }
+			float SpectatorCameraSpeed() { mixin(MGPC!("float", 1368)()); }
+			PlayerReplicationInfo RealViewTarget() { mixin(MGPC!("PlayerReplicationInfo", 940)()); }
+			float MinRespawnDelay() { mixin(MGPC!("float", 1376)()); }
+			NetConnection PendingSwapConnection() { mixin(MGPC!("NetConnection", 1372)()); }
+			ubyte bIgnoreMoveInput() { mixin(MGPC!("ubyte", 929)()); }
+			ubyte bIgnoreLookInput() { mixin(MGPC!("ubyte", 930)()); }
+			ScriptArray!(ScriptName) PendingMapChangeLevelNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 1340)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) VoicePacketFilter() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1208)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) GameplayVoiceMuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1196)()); }
+			ScriptArray!(OnlineSubsystem.UniqueNetId) VoiceMuteList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.UniqueNetId)", 1184)()); }
+			ScriptArray!(PlayerController.DebugTextInfo) DebugTextList() { mixin(MGPC!("ScriptArray!(PlayerController.DebugTextInfo)", 1356)()); }
+			ubyte NetPlayerIndex() { mixin(MGPC!("ubyte", 933)()); }
 			// WARNING: Property 'CheatManager' has the same name as a defined type!
-			InterpTrackInstDirector ControllingDirTrackInst() { mixin(MGPC!(InterpTrackInstDirector, 944)()); }
-			Rotator TargetViewRotation() { mixin(MGPC!(Rotator, 964)()); }
-			float TargetEyeHeight() { mixin(MGPC!(float, 976)()); }
-			Rotator BlendedTargetViewRotation() { mixin(MGPC!(Rotator, 980)()); }
-			float DynamicPingThreshold() { mixin(MGPC!(float, 1056)()); }
-			ScriptClass CheatClass() { mixin(MGPC!(ScriptClass, 1128)()); }
-			Vector FailedPathStart() { mixin(MGPC!(Vector, 1140)()); }
+			InterpTrackInstDirector ControllingDirTrackInst() { mixin(MGPC!("InterpTrackInstDirector", 944)()); }
+			Rotator TargetViewRotation() { mixin(MGPC!("Rotator", 964)()); }
+			float TargetEyeHeight() { mixin(MGPC!("float", 976)()); }
+			Rotator BlendedTargetViewRotation() { mixin(MGPC!("Rotator", 980)()); }
+			float DynamicPingThreshold() { mixin(MGPC!("float", 1056)()); }
+			ScriptClass CheatClass() { mixin(MGPC!("ScriptClass", 1128)()); }
+			Vector FailedPathStart() { mixin(MGPC!("Vector", 1140)()); }
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			ScriptName DelayedJoinSessionName() { mixin(MGPC!(ScriptName, 1268)()); }
-			ScriptArray!(PlayerController.InputMatchRequest) InputRequests() { mixin(MGPC!(ScriptArray!(PlayerController.InputMatchRequest), 1276)()); }
-			int MaxConcurrentHearSounds() { mixin(MGPC!(int, 1380)()); }
-			ScriptArray!(Actor) HiddenActors() { mixin(MGPC!(ScriptArray!(Actor), 1408)()); }
+			ScriptName DelayedJoinSessionName() { mixin(MGPC!("ScriptName", 1268)()); }
+			ScriptArray!(PlayerController.InputMatchRequest) InputRequests() { mixin(MGPC!("ScriptArray!(PlayerController.InputMatchRequest)", 1276)()); }
+			int MaxConcurrentHearSounds() { mixin(MGPC!("int", 1380)()); }
+			ScriptArray!(Actor) HiddenActors() { mixin(MGPC!("ScriptArray!(Actor)", 1408)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__InputMatchDelegate__Delegate'!
 		}
 		bool bIsExternalUIOpen() { mixin(MGBPC!(912, 0x400000)()); }
@@ -1151,23 +1151,26 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetServerNetworkAddress, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	ScriptString ConsoleCommand(ScriptString Command, bool bWriteToLog)
+	ScriptString ConsoleCommand(ScriptString Command, bool* bWriteToLog = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Command;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[16];
 	}
-	void ClientTravel(ScriptString pURL, Actor.ETravelType TravelType, bool bSeamless, UObject.Guid MapPackageGuid)
+	void ClientTravel(ScriptString pURL, Actor.ETravelType TravelType, bool* bSeamless = null, UObject.Guid* MapPackageGuid = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		*cast(Actor.ETravelType*)&params[12] = TravelType;
-		*cast(bool*)&params[16] = bSeamless;
-		*cast(UObject.Guid*)&params[20] = MapPackageGuid;
+		if (bSeamless !is null)
+			*cast(bool*)&params[16] = *bSeamless;
+		if (MapPackageGuid !is null)
+			*cast(UObject.Guid*)&params[20] = *MapPackageGuid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientTravel, params.ptr, cast(void*)0);
 	}
 	void UpdateURL(ScriptString NewOption, ScriptString NewValue, bool bSave1Default)
@@ -1394,7 +1397,7 @@ final:
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = OutRegisteredPlayers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRegisteredPlayersInSession, params.ptr, cast(void*)0);
-		*OutRegisteredPlayers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
+		OutRegisteredPlayers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 	}
 	void RemoveMissingPeersFromSession(ScriptName SessionName)
 	{
@@ -1509,11 +1512,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.KickWarning, cast(void*)0, cast(void*)0);
 	}
-	void AddCheats(bool bForce)
+	void AddCheats(bool* bForce = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForce;
+		if (bForce !is null)
+			*cast(bool*)params.ptr = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddCheats, params.ptr, cast(void*)0);
 	}
 	void EnableCheats()
@@ -1635,12 +1639,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsMouseAvailable, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void ClientGotoState(ScriptName NewState, ScriptName NewLabel)
+	void ClientGotoState(ScriptName NewState, ScriptName* NewLabel = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = NewState;
-		*cast(ScriptName*)&params[8] = NewLabel;
+		if (NewLabel !is null)
+			*cast(ScriptName*)&params[8] = *NewLabel;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientGotoState, params.ptr, cast(void*)0);
 	}
 	void AskForPawn()
@@ -1705,15 +1710,19 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CleanupPRI, cast(void*)0, cast(void*)0);
 	}
-	void ReceiveLocalizedMessage(ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ReceiveLocalizedMessage(ScriptClass Message, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Message;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReceiveLocalizedMessage, params.ptr, cast(void*)0);
 	}
 	void ClientPlaySound(SoundCue ASound)
@@ -1736,21 +1745,23 @@ void**)params.ptr = AC;
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* GetPooledAudioComponent(SoundCue ASound, Actor SourceActor, bool bStopWhenOwnerDestroyed, bool bUseLocation, Vector SourceLocation)
+void* GetPooledAudioComponent(SoundCue ASound, Actor SourceActor, bool bStopWhenOwnerDestroyed, bool* bUseLocation = null, Vector* SourceLocation = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = ASound;
 		*cast(Actor*)&params[4] = SourceActor;
 		*cast(bool*)&params[8] = bStopWhenOwnerDestroyed;
-		*cast(bool*)&params[12] = bUseLocation;
-		*cast(Vector*)&params[16] = SourceLocation;
+		if (bUseLocation !is null)
+			*cast(bool*)&params[12] = *bUseLocation;
+		if (SourceLocation !is null)
+			*cast(Vector*)&params[16] = *SourceLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPooledAudioComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[28];
 	}
-	void ClientHearSound(SoundCue ASound, Actor SourceActor, Vector SourceLocation, bool bStopWhenOwnerDestroyed, bool bIsOccluded)
+	void ClientHearSound(SoundCue ASound, Actor SourceActor, Vector SourceLocation, bool bStopWhenOwnerDestroyed, bool* bIsOccluded = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -1758,7 +1769,8 @@ void**)&params[28];
 		*cast(Actor*)&params[4] = SourceActor;
 		*cast(Vector*)&params[8] = SourceLocation;
 		*cast(bool*)&params[20] = bStopWhenOwnerDestroyed;
-		*cast(bool*)&params[24] = bIsOccluded;
+		if (bIsOccluded !is null)
+			*cast(bool*)&params[24] = *bIsOccluded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientHearSound, params.ptr, cast(void*)0);
 	}
 	bool IsClosestLocalPlayerToActor(Actor TheActor)
@@ -1802,13 +1814,15 @@ void**)&params[28];
 		*cast(SoundCue*)&params[32] = SoundCueToPlay;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayActorFaceFXAnim, params.ptr, cast(void*)0);
 	}
-	void ClientMessage(ScriptString S, ScriptName Type, float MsgLifeTime)
+	void ClientMessage(ScriptString S, ScriptName* Type = null, float* MsgLifeTime = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
-		*cast(ScriptName*)&params[12] = Type;
-		*cast(float*)&params[20] = MsgLifeTime;
+		if (Type !is null)
+			*cast(ScriptName*)&params[12] = *Type;
+		if (MsgLifeTime !is null)
+			*cast(float*)&params[20] = *MsgLifeTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientMessage, params.ptr, cast(void*)0);
 	}
 	bool CanCommunicate()
@@ -1843,22 +1857,24 @@ void**)&params[28];
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.TeamTalk, cast(void*)0, cast(void*)0);
 	}
-	void SpeakTTS(ScriptString S, PlayerReplicationInfo PRI)
+	void SpeakTTS(ScriptString S, PlayerReplicationInfo* PRI = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = S;
-		*cast(PlayerReplicationInfo*)&params[12] = PRI;
+		if (PRI !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *PRI;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpeakTTS, params.ptr, cast(void*)0);
 	}
-	void TeamMessage(PlayerReplicationInfo PRI, ScriptString S, ScriptName Type, float MsgLifeTime)
+	void TeamMessage(PlayerReplicationInfo PRI, ScriptString S, ScriptName Type, float* MsgLifeTime = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(PlayerReplicationInfo*)params.ptr = PRI;
 		*cast(ScriptString*)&params[4] = S;
 		*cast(ScriptName*)&params[16] = Type;
-		*cast(float*)&params[24] = MsgLifeTime;
+		if (MsgLifeTime !is null)
+			*cast(float*)&params[24] = *MsgLifeTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TeamMessage, params.ptr, cast(void*)0);
 	}
 	void PlayBeepSound()
@@ -2009,14 +2025,17 @@ void**)&params[28];
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetCameraMode, cast(void*)0, cast(void*)0);
 	}
-	void ClientSetCameraFade(bool bEnableFading, UObject.Color FadeColor, UObject.Vector2D FadeAlpha, float FadeTime)
+	void ClientSetCameraFade(bool bEnableFading, UObject.Color* FadeColor = null, UObject.Vector2D* FadeAlpha = null, float* FadeTime = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnableFading;
-		*cast(UObject.Color*)&params[4] = FadeColor;
-		*cast(UObject.Vector2D*)&params[8] = FadeAlpha;
-		*cast(float*)&params[16] = FadeTime;
+		if (FadeColor !is null)
+			*cast(UObject.Color*)&params[4] = *FadeColor;
+		if (FadeAlpha !is null)
+			*cast(UObject.Vector2D*)&params[8] = *FadeAlpha;
+		if (FadeTime !is null)
+			*cast(float*)&params[16] = *FadeTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetCameraFade, params.ptr, cast(void*)0);
 	}
 	bool UsingFirstPersonCamera()
@@ -2281,11 +2300,12 @@ void**)&params[28];
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.RestartLevel, cast(void*)0, cast(void*)0);
 	}
-	void PauseRumbleForAllPlayers(bool bShouldPauseRumble)
+	void PauseRumbleForAllPlayers(bool* bShouldPauseRumble = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bShouldPauseRumble;
+		if (bShouldPauseRumble !is null)
+			*cast(bool*)params.ptr = *bShouldPauseRumble;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseRumbleForAllPlayers, params.ptr, cast(void*)0);
 	}
 	bool CanUnpause()
@@ -2297,14 +2317,15 @@ void**)&params[28];
 	}
 	bool SetPause(bool bPause, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* CanUnpauseDelegate)
+void** CanUnpauseDelegate = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(bool*)params.ptr = bPause;
-		*cast(
+		if (CanUnpauseDelegate !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void**)&params[4] = CanUnpauseDelegate;
+void**)&params[4] = *CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -2346,32 +2367,36 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.NextWeapon, cast(void*)0, cast(void*)0);
 	}
-	void StartFire(ubyte FireModeNum)
+	void StartFire(ubyte* FireModeNum = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		params[0] = FireModeNum;
+		if (FireModeNum !is null)
+			params[0] = *FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartFire, params.ptr, cast(void*)0);
 	}
-	void StopFire(ubyte FireModeNum)
+	void StopFire(ubyte* FireModeNum = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		params[0] = FireModeNum;
+		if (FireModeNum !is null)
+			params[0] = *FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopFire, params.ptr, cast(void*)0);
 	}
-	void StartAltFire(ubyte FireModeNum)
+	void StartAltFire(ubyte* FireModeNum = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		params[0] = FireModeNum;
+		if (FireModeNum !is null)
+			params[0] = *FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartAltFire, params.ptr, cast(void*)0);
 	}
-	void StopAltFire(ubyte FireModeNum)
+	void StopAltFire(ubyte* FireModeNum = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		params[0] = FireModeNum;
+		if (FireModeNum !is null)
+			params[0] = *FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopAltFire, params.ptr, cast(void*)0);
 	}
 	void GetTriggerUseList(float interactDistanceToCheck, float crosshairDist, float minDot, bool bUsuableOnly, ref ScriptArray!(Trigger) out_useList)
@@ -2384,7 +2409,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)&params[12] = bUsuableOnly;
 		*cast(ScriptArray!(Trigger)*)&params[16] = out_useList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTriggerUseList, params.ptr, cast(void*)0);
-		*out_useList = *cast(ScriptArray!(Trigger)*)&params[16];
+		out_useList = *cast(ScriptArray!(Trigger)*)&params[16];
 	}
 	bool Use()
 	{
@@ -2447,11 +2472,12 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchTeam, cast(void*)0, cast(void*)0);
 	}
-	void ChangeTeam(ScriptString TeamName)
+	void ChangeTeam(ScriptString* TeamName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = TeamName;
+		if (TeamName !is null)
+			*cast(ScriptString*)params.ptr = *TeamName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeTeam, params.ptr, cast(void*)0);
 	}
 	void ServerChangeTeam(int N)
@@ -2461,14 +2487,16 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(int*)params.ptr = N;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerChangeTeam, params.ptr, cast(void*)0);
 	}
-	void ClientSetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString Title, bool bIgnoreFutureNetworkMessages)
+	void ClientSetProgressMessage(PlayerController.EProgressMessageType MessageType, ScriptString Message, ScriptString* Title = null, bool* bIgnoreFutureNetworkMessages = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(PlayerController.EProgressMessageType*)params.ptr = MessageType;
 		*cast(ScriptString*)&params[4] = Message;
-		*cast(ScriptString*)&params[16] = Title;
-		*cast(bool*)&params[28] = bIgnoreFutureNetworkMessages;
+		if (Title !is null)
+			*cast(ScriptString*)&params[16] = *Title;
+		if (bIgnoreFutureNetworkMessages !is null)
+			*cast(bool*)&params[28] = *bIgnoreFutureNetworkMessages;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetProgressMessage, params.ptr, cast(void*)0);
 	}
 	void Restart(bool bVehicleTransition)
@@ -2518,12 +2546,14 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Pawn*)params.ptr = NewPawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientRestart, params.ptr, cast(void*)0);
 	}
-	void GameHasEnded(Actor EndGameFocus, bool bIsWinner)
+	void GameHasEnded(Actor* EndGameFocus = null, bool* bIsWinner = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = EndGameFocus;
-		*cast(bool*)&params[4] = bIsWinner;
+		if (EndGameFocus !is null)
+			*cast(Actor*)params.ptr = *EndGameFocus;
+		if (bIsWinner !is null)
+			*cast(bool*)&params[4] = *bIsWinner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GameHasEnded, params.ptr, cast(void*)0);
 	}
 	void ClientGameEnded(Actor EndGameFocus, bool bIsWinner)
@@ -2611,31 +2641,37 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsLocalPlayerController, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams TransitionParams)
+	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
-		*cast(Camera.ViewTargetTransitionParams*)&params[4] = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)&params[4] = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTarget, params.ptr, cast(void*)0);
 	}
-	void SetViewTargetWithBlend(Actor NewViewTarget, float BlendTime, Camera.EViewTargetBlendFunction BlendFunc, float BlendExp, bool bLockOutgoing)
+	void SetViewTargetWithBlend(Actor NewViewTarget, float* BlendTime = null, Camera.EViewTargetBlendFunction* BlendFunc = null, float* BlendExp = null, bool* bLockOutgoing = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
-		*cast(float*)&params[4] = BlendTime;
-		*cast(Camera.EViewTargetBlendFunction*)&params[8] = BlendFunc;
-		*cast(float*)&params[12] = BlendExp;
-		*cast(bool*)&params[16] = bLockOutgoing;
+		if (BlendTime !is null)
+			*cast(float*)&params[4] = *BlendTime;
+		if (BlendFunc !is null)
+			*cast(Camera.EViewTargetBlendFunction*)&params[8] = *BlendFunc;
+		if (BlendExp !is null)
+			*cast(float*)&params[12] = *BlendExp;
+		if (bLockOutgoing !is null)
+			*cast(bool*)&params[16] = *bLockOutgoing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTargetWithBlend, params.ptr, cast(void*)0);
 	}
-	void ClientSetViewTarget(Actor A, Camera.ViewTargetTransitionParams TransitionParams)
+	void ClientSetViewTarget(Actor A, Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = A;
-		*cast(Camera.ViewTargetTransitionParams*)&params[4] = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)&params[4] = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetViewTarget, params.ptr, cast(void*)0);
 	}
 	void ServerVerifyViewTarget()
@@ -2653,8 +2689,8 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	void ViewShake(float DeltaTime)
 	{
@@ -2678,7 +2714,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
+		out_ViewRotation = *cast(Rotator*)&params[4];
 	}
 	Rotator LimitViewRotation(Rotator ViewRotation, float ViewPitchMin, float ViewPitchMax)
 	{
@@ -2723,11 +2759,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(int*)params.ptr = Dir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ViewAPlayer, params.ptr, cast(void*)0);
 	}
-	void ServerViewSelf(Camera.ViewTargetTransitionParams TransitionParams)
+	void ServerViewSelf(Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Camera.ViewTargetTransitionParams*)params.ptr = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)params.ptr = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerViewSelf, params.ptr, cast(void*)0);
 	}
 	bool IsWaiting()
@@ -2780,8 +2817,8 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void OnDrawText(SeqAct_DrawText inAction)
 	{
@@ -2837,26 +2874,28 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(SeqAct_ForceFeedback*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnForceFeedback, params.ptr, cast(void*)0);
 	}
-	void ClientStopForceFeedbackWaveform(ForceFeedbackWaveform FFWaveform)
+	void ClientStopForceFeedbackWaveform(ForceFeedbackWaveform* FFWaveform = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(ForceFeedbackWaveform*)params.ptr = FFWaveform;
+		if (FFWaveform !is null)
+			*cast(ForceFeedbackWaveform*)params.ptr = *FFWaveform;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientStopForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
-	void PlayRumble(const AnimNotify_Rumble TheAnimNotify)
+	void PlayRumble(in AnimNotify_Rumble TheAnimNotify)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(AnimNotify_Rumble*)params.ptr = TheAnimNotify;
+		*cast(AnimNotify_Rumble*)params.ptr = cast(AnimNotify_Rumble)TheAnimNotify;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayRumble, params.ptr, cast(void*)0);
 	}
-	void ClientPlayForceFeedbackWaveform(ForceFeedbackWaveform FFWaveform, Actor FFWaveformInstigator)
+	void ClientPlayForceFeedbackWaveform(ForceFeedbackWaveform FFWaveform, Actor* FFWaveformInstigator = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ForceFeedbackWaveform*)params.ptr = FFWaveform;
-		*cast(Actor*)&params[4] = FFWaveformInstigator;
+		if (FFWaveformInstigator !is null)
+			*cast(Actor*)&params[4] = *FFWaveformInstigator;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
 	bool IsForceFeedbackAllowed()
@@ -2995,13 +3034,12 @@ void**)&params[4] = CanUnpauseDelegate;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetBlockOnAsyncLoading, cast(void*)0, cast(void*)0);
 	}
-	bool IsPlayerMuted(ref const OnlineSubsystem.UniqueNetId Sender)
+	bool IsPlayerMuted(ref in OnlineSubsystem.UniqueNetId Sender)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = Sender;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = cast(OnlineSubsystem.UniqueNetId)Sender;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsPlayerMuted, params.ptr, cast(void*)0);
-		*Sender = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(bool*)&params[8];
 	}
 	void GetSeamlessTravelActorList(bool bToEntry, ref ScriptArray!(Actor) ActorList)
@@ -3011,7 +3049,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
-		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
+		ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 	void SeamlessTravelTo(PlayerController NewPC)
 	{
@@ -3129,13 +3167,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerRegisteredForArbitration, params.ptr, cast(void*)0);
 	}
-	void OnGameInviteAccepted(ref const OnlineGameSearch.OnlineGameSearchResult InviteResult)
+	void OnGameInviteAccepted(ref in OnlineGameSearch.OnlineGameSearchResult InviteResult)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = InviteResult;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)InviteResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameInviteAccepted, params.ptr, cast(void*)0);
-		*InviteResult = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 	}
 	bool InviteHasEnoughSpace(OnlineGameSettings InviteSettings)
 	{
@@ -3248,20 +3285,29 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(float*)&params[4] = RenderDelta;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawDebugTextList, params.ptr, cast(void*)0);
 	}
-	void AddDebugText(ScriptString DebugText, Actor SrcActor, float Duration, Vector Offset, Vector DesiredOffset, UObject.Color TextColor, bool bSkipOverwriteCheck, bool bAbsoluteLocation, bool bKeepAttachedToActor, Font InFont)
+	void AddDebugText(ScriptString DebugText, Actor* SrcActor = null, float* Duration = null, Vector* Offset = null, Vector* DesiredOffset = null, UObject.Color* TextColor = null, bool* bSkipOverwriteCheck = null, bool* bAbsoluteLocation = null, bool* bKeepAttachedToActor = null, Font* InFont = null)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = DebugText;
-		*cast(Actor*)&params[12] = SrcActor;
-		*cast(float*)&params[16] = Duration;
-		*cast(Vector*)&params[20] = Offset;
-		*cast(Vector*)&params[32] = DesiredOffset;
-		*cast(UObject.Color*)&params[44] = TextColor;
-		*cast(bool*)&params[48] = bSkipOverwriteCheck;
-		*cast(bool*)&params[52] = bAbsoluteLocation;
-		*cast(bool*)&params[56] = bKeepAttachedToActor;
-		*cast(Font*)&params[60] = InFont;
+		if (SrcActor !is null)
+			*cast(Actor*)&params[12] = *SrcActor;
+		if (Duration !is null)
+			*cast(float*)&params[16] = *Duration;
+		if (Offset !is null)
+			*cast(Vector*)&params[20] = *Offset;
+		if (DesiredOffset !is null)
+			*cast(Vector*)&params[32] = *DesiredOffset;
+		if (TextColor !is null)
+			*cast(UObject.Color*)&params[44] = *TextColor;
+		if (bSkipOverwriteCheck !is null)
+			*cast(bool*)&params[48] = *bSkipOverwriteCheck;
+		if (bAbsoluteLocation !is null)
+			*cast(bool*)&params[52] = *bAbsoluteLocation;
+		if (bKeepAttachedToActor !is null)
+			*cast(bool*)&params[56] = *bKeepAttachedToActor;
+		if (InFont !is null)
+			*cast(Font*)&params[60] = *InFont;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddDebugText, params.ptr, cast(void*)0);
 	}
 	void RemoveDebugText(Actor SrcActor)
@@ -3346,20 +3392,23 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = RequestingPlayerId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientReturnToParty, params.ptr, cast(void*)0);
 	}
-	bool IsSplitscreenPlayer(int* out_SplitscreenPlayerIndex)
+	bool IsSplitscreenPlayer(int* out_SplitscreenPlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = out_SplitscreenPlayerIndex;
+		if (out_SplitscreenPlayerIndex !is null)
+			*cast(int*)params.ptr = *out_SplitscreenPlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsSplitscreenPlayer, params.ptr, cast(void*)0);
-		*out_SplitscreenPlayerIndex = *cast(int*)params.ptr;
+		if (out_SplitscreenPlayerIndex !is null)
+			*out_SplitscreenPlayerIndex = *cast(int*)params.ptr;
 		return *cast(bool*)&params[4];
 	}
-	PlayerReplicationInfo GetSplitscreenPlayerByIndex(int PlayerIndex)
+	PlayerReplicationInfo GetSplitscreenPlayerByIndex(int* PlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)params.ptr = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSplitscreenPlayerByIndex, params.ptr, cast(void*)0);
 		return *cast(PlayerReplicationInfo*)&params[4];
 	}
@@ -3378,23 +3427,25 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(SeqAct_ControlMovieTexture.EMovieControlType*)&params[4] = Mode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientControlMovieTexture, params.ptr, cast(void*)0);
 	}
-	void ClientSetForceMipLevelsToBeResident(MaterialInterface pMaterial, float ForceDuration, int CinematicTextureGroups)
+	void ClientSetForceMipLevelsToBeResident(MaterialInterface pMaterial, float ForceDuration, int* CinematicTextureGroups = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(MaterialInterface*)params.ptr = pMaterial;
 		*cast(float*)&params[4] = ForceDuration;
-		*cast(int*)&params[8] = CinematicTextureGroups;
+		if (CinematicTextureGroups !is null)
+			*cast(int*)&params[8] = *CinematicTextureGroups;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetForceMipLevelsToBeResident, params.ptr, cast(void*)0);
 	}
-	void ClientPrestreamTextures(Actor ForcedActor, float ForceDuration, bool bEnableStreaming, int CinematicTextureGroups)
+	void ClientPrestreamTextures(Actor ForcedActor, float ForceDuration, bool bEnableStreaming, int* CinematicTextureGroups = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Actor*)params.ptr = ForcedActor;
 		*cast(float*)&params[4] = ForceDuration;
 		*cast(bool*)&params[8] = bEnableStreaming;
-		*cast(int*)&params[12] = CinematicTextureGroups;
+		if (CinematicTextureGroups !is null)
+			*cast(int*)&params[12] = *CinematicTextureGroups;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPrestreamTextures, params.ptr, cast(void*)0);
 	}
 	bool IsPartyLeader()
@@ -3426,8 +3477,8 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(float*)&params[4] = CurrentValue;
 		*cast(float*)&params[8] = MaxValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAchievementProgression, params.ptr, cast(void*)0);
-		*CurrentValue = *cast(float*)&params[4];
-		*MaxValue = *cast(float*)&params[8];
+		CurrentValue = *cast(float*)&params[4];
+		MaxValue = *cast(float*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	void OnFlyThroughHasEnded(SeqAct_FlyThroughHasEnded inAction)
@@ -3461,15 +3512,19 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(float*)&params[4] = ShakeScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DoForceFeedbackForScreenShake, params.ptr, cast(void*)0);
 	}
-	void ClientPlayCameraShake(CameraShake Shake, float Scale, bool bTryForceFeedback, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
+	void ClientPlayCameraShake(CameraShake Shake, float* Scale = null, bool* bTryForceFeedback = null, Camera.ECameraAnimPlaySpace* PlaySpace = null, Rotator* UserPlaySpaceRot = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(CameraShake*)params.ptr = Shake;
-		*cast(float*)&params[4] = Scale;
-		*cast(bool*)&params[8] = bTryForceFeedback;
-		*cast(Camera.ECameraAnimPlaySpace*)&params[12] = PlaySpace;
-		*cast(Rotator*)&params[16] = UserPlaySpaceRot;
+		if (Scale !is null)
+			*cast(float*)&params[4] = *Scale;
+		if (bTryForceFeedback !is null)
+			*cast(bool*)&params[8] = *bTryForceFeedback;
+		if (PlaySpace !is null)
+			*cast(Camera.ECameraAnimPlaySpace*)&params[12] = *PlaySpace;
+		if (UserPlaySpaceRot !is null)
+			*cast(Rotator*)&params[16] = *UserPlaySpaceRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayCameraShake, params.ptr, cast(void*)0);
 	}
 	void ClientStopCameraShake(CameraShake Shake)
@@ -3486,19 +3541,27 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(SeqAct_CameraShake*)params.ptr = inAction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnCameraShake, params.ptr, cast(void*)0);
 	}
-	void ClientPlayCameraAnim(CameraAnim AnimToPlay, float Scale, float Rate, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, Camera.ECameraAnimPlaySpace Space, Rotator CustomPlaySpace)
+	void ClientPlayCameraAnim(CameraAnim AnimToPlay, float* Scale = null, float* Rate = null, float* BlendInTime = null, float* BlendOutTime = null, bool* bLoop = null, bool* bRandomStartTime = null, Camera.ECameraAnimPlaySpace* Space = null, Rotator* CustomPlaySpace = null)
 	{
 		ubyte params[44];
 		params[] = 0;
 		*cast(CameraAnim*)params.ptr = AnimToPlay;
-		*cast(float*)&params[4] = Scale;
-		*cast(float*)&params[8] = Rate;
-		*cast(float*)&params[12] = BlendInTime;
-		*cast(float*)&params[16] = BlendOutTime;
-		*cast(bool*)&params[20] = bLoop;
-		*cast(bool*)&params[24] = bRandomStartTime;
-		*cast(Camera.ECameraAnimPlaySpace*)&params[28] = Space;
-		*cast(Rotator*)&params[32] = CustomPlaySpace;
+		if (Scale !is null)
+			*cast(float*)&params[4] = *Scale;
+		if (Rate !is null)
+			*cast(float*)&params[8] = *Rate;
+		if (BlendInTime !is null)
+			*cast(float*)&params[12] = *BlendInTime;
+		if (BlendOutTime !is null)
+			*cast(float*)&params[16] = *BlendOutTime;
+		if (bLoop !is null)
+			*cast(bool*)&params[20] = *bLoop;
+		if (bRandomStartTime !is null)
+			*cast(bool*)&params[24] = *bRandomStartTime;
+		if (Space !is null)
+			*cast(Camera.ECameraAnimPlaySpace*)&params[28] = *Space;
+		if (CustomPlaySpace !is null)
+			*cast(Rotator*)&params[32] = *CustomPlaySpace;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayCameraAnim, params.ptr, cast(void*)0);
 	}
 	void ClientStopCameraAnim(CameraAnim AnimToStop)
@@ -3522,13 +3585,12 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(SeqAct_SetSoundMode*)params.ptr = Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSetSoundMode, params.ptr, cast(void*)0);
 	}
-	bool HasPeerConnection(ref const OnlineSubsystem.UniqueNetId PeerNetId)
+	bool HasPeerConnection(ref in OnlineSubsystem.UniqueNetId PeerNetId)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = PeerNetId;
+		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = cast(OnlineSubsystem.UniqueNetId)PeerNetId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasPeerConnection, params.ptr, cast(void*)0);
-		*PeerNetId = *cast(OnlineSubsystem.UniqueNetId*)params.ptr;
 		return *cast(bool*)&params[8];
 	}
 	void BugItGo(float X, float Y, float Z, int Pitch, int Yaw, int Roll)
@@ -3559,55 +3621,55 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(Rotator*)&params[12] = TheRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BugItWorker, params.ptr, cast(void*)0);
 	}
-	void BugIt(ScriptString ScreenShotDescription)
+	void BugIt(ScriptString* ScreenShotDescription = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = ScreenShotDescription;
+		if (ScreenShotDescription !is null)
+			*cast(ScriptString*)params.ptr = *ScreenShotDescription;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BugIt, params.ptr, cast(void*)0);
 	}
-	void LogOutBugItGoToLogFile(const ScriptString InScreenShotDesc, const ScriptString InGoString, const ScriptString InLocString)
+	void LogOutBugItGoToLogFile(in ScriptString InScreenShotDesc, in ScriptString InGoString, in ScriptString InLocString)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = InScreenShotDesc;
-		*cast(ScriptString*)&params[12] = InGoString;
-		*cast(ScriptString*)&params[24] = InLocString;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)InScreenShotDesc;
+		*cast(ScriptString*)&params[12] = cast(ScriptString)InGoString;
+		*cast(ScriptString*)&params[24] = cast(ScriptString)InLocString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogOutBugItGoToLogFile, params.ptr, cast(void*)0);
 	}
 	void LogLoc()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogLoc, cast(void*)0, cast(void*)0);
 	}
-	void BugItAI(ScriptString ScreenShotDescription)
+	void BugItAI(ScriptString* ScreenShotDescription = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = ScreenShotDescription;
+		if (ScreenShotDescription !is null)
+			*cast(ScriptString*)params.ptr = *ScreenShotDescription;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BugItAI, params.ptr, cast(void*)0);
 	}
-	void LogOutBugItAIGoToLogFile(const ScriptString InScreenShotDesc, const ScriptString InGoString, const ScriptString InLocString)
+	void LogOutBugItAIGoToLogFile(in ScriptString InScreenShotDesc, in ScriptString InGoString, in ScriptString InLocString)
 	{
 		ubyte params[36];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = InScreenShotDesc;
-		*cast(ScriptString*)&params[12] = InGoString;
-		*cast(ScriptString*)&params[24] = InLocString;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)InScreenShotDesc;
+		*cast(ScriptString*)&params[12] = cast(ScriptString)InGoString;
+		*cast(ScriptString*)&params[24] = cast(ScriptString)InLocString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LogOutBugItAIGoToLogFile, params.ptr, cast(void*)0);
 	}
-	void BugItStringCreator(ref const Vector ViewLocation, ref const Rotator ViewRotation, ref ScriptString GoString, ref ScriptString LocString)
+	void BugItStringCreator(ref in Vector ViewLocation, ref in Rotator ViewRotation, ref ScriptString GoString, ref ScriptString LocString)
 	{
 		ubyte params[48];
 		params[] = 0;
-		*cast(Vector*)params.ptr = ViewLocation;
-		*cast(Rotator*)&params[12] = ViewRotation;
+		*cast(Vector*)params.ptr = cast(Vector)ViewLocation;
+		*cast(Rotator*)&params[12] = cast(Rotator)ViewRotation;
 		*cast(ScriptString*)&params[24] = GoString;
 		*cast(ScriptString*)&params[36] = LocString;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BugItStringCreator, params.ptr, cast(void*)0);
-		*ViewLocation = *cast(Vector*)params.ptr;
-		*ViewRotation = *cast(Rotator*)&params[12];
-		*GoString = *cast(ScriptString*)&params[24];
-		*LocString = *cast(ScriptString*)&params[36];
+		GoString = *cast(ScriptString*)&params[24];
+		LocString = *cast(ScriptString*)&params[36];
 	}
 	void OnEngineInitialTick()
 	{

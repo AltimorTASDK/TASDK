@@ -42,12 +42,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			GameCrowdAgent QueuedAgent() { mixin(MGPC!(GameCrowdAgent, 492)()); }
-			GameCrowdDestinationQueuePoint NextQueuePosition() { mixin(MGPC!(GameCrowdDestinationQueuePoint, 484)()); }
-			ScriptClass QueueBehaviorClass() { mixin(MGPC!(ScriptClass, 508)()); }
-			float AverageReactionTime() { mixin(MGPC!(float, 504)()); }
-			GameCrowdDestination QueueDestination() { mixin(MGPC!(GameCrowdDestination, 496)()); }
-			GameCrowdInteractionPoint PreviousQueuePosition() { mixin(MGPC!(GameCrowdInteractionPoint, 488)()); }
+			GameCrowdAgent QueuedAgent() { mixin(MGPC!("GameCrowdAgent", 492)()); }
+			GameCrowdDestinationQueuePoint NextQueuePosition() { mixin(MGPC!("GameCrowdDestinationQueuePoint", 484)()); }
+			ScriptClass QueueBehaviorClass() { mixin(MGPC!("ScriptClass", 508)()); }
+			float AverageReactionTime() { mixin(MGPC!("float", 504)()); }
+			GameCrowdDestination QueueDestination() { mixin(MGPC!("GameCrowdDestination", 496)()); }
+			GameCrowdInteractionPoint PreviousQueuePosition() { mixin(MGPC!("GameCrowdInteractionPoint", 488)()); }
 		}
 		bool bPendingAdvance() { mixin(MGBPC!(500, 0x2)()); }
 		bool bPendingAdvance(bool val) { mixin(MSBPC!(500, 0x2)()); }

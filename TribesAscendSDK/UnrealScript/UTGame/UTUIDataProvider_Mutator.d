@@ -28,10 +28,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString ClassName() { mixin(MGPC!(ScriptString, 152)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 164)()); }
-			ScriptString GroupNames() { mixin(MGPC!(ScriptString, 176)()); }
-			ScriptArray!(ScriptString) SupportedGameTypes() { mixin(MGPC!(ScriptArray!(ScriptString), 188)()); }
+			ScriptString ClassName() { mixin(MGPC!("ScriptString", 152)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 164)()); }
+			ScriptString GroupNames() { mixin(MGPC!("ScriptString", 176)()); }
+			ScriptArray!(ScriptString) SupportedGameTypes() { mixin(MGPC!("ScriptArray!(ScriptString)", 188)()); }
 		}
 		bool bOfficialMutator() { mixin(MGBPC!(200, 0x2)()); }
 		bool bOfficialMutator(bool val) { mixin(MSBPC!(200, 0x2)()); }

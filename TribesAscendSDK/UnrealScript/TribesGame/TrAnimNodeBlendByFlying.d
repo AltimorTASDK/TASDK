@@ -26,7 +26,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrPawn m_TrPawn() { mixin(MGPC!(TrPawn, 296)()); }
-		TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { mixin(MGPC!(TrAnimNodeBlendByFlying.EFlyDirTypes, 292)()); }
+		TrPawn m_TrPawn() { mixin(MGPC!("TrPawn", 296)()); }
+		TrAnimNodeBlendByFlying.EFlyDirTypes LastDirection() { mixin(MGPC!("TrAnimNodeBlendByFlying.EFlyDirTypes", 292)()); }
 	}
 }

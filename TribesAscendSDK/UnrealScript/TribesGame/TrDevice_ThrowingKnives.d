@@ -40,8 +40,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		SkelControlSingleBone m_KnifeVisibilityBottomControl() { mixin(MGPC!(SkelControlSingleBone, 2152)()); }
-		SkelControlSingleBone m_KnifeVisibilityTopControl() { mixin(MGPC!(SkelControlSingleBone, 2148)()); }
+		SkelControlSingleBone m_KnifeVisibilityBottomControl() { mixin(MGPC!("SkelControlSingleBone", 2152)()); }
+		SkelControlSingleBone m_KnifeVisibilityTopControl() { mixin(MGPC!("SkelControlSingleBone", 2148)()); }
 	}
 final:
 	void PostInitAnimTree(

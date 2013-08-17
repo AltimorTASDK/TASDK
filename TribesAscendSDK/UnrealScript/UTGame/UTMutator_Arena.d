@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction ModifyPlayer() { mixin(MGF!("mModifyPlayer", "Function UTGame.UTMutator_Arena.ModifyPlayer")()); }
 		}
 	}
-	@property final auto ref ScriptString ArenaWeaponClassPath() { mixin(MGPC!(ScriptString, 496)()); }
+	@property final auto ref ScriptString ArenaWeaponClassPath() { mixin(MGPC!("ScriptString", 496)()); }
 final:
 	void PostBeginPlay()
 	{

@@ -40,13 +40,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString strExitMatch() { mixin(MGPC!(ScriptString, 424)()); }
-			ScriptString strManageServers() { mixin(MGPC!(ScriptString, 412)()); }
-			ScriptString strSettings() { mixin(MGPC!(ScriptString, 400)()); }
-			ScriptString strStore() { mixin(MGPC!(ScriptString, 388)()); }
-			ScriptString strSocial() { mixin(MGPC!(ScriptString, 376)()); }
-			ScriptString strParty() { mixin(MGPC!(ScriptString, 364)()); }
-			int TeamLoadoutNum() { mixin(MGPC!(int, 356)()); }
+			ScriptString strExitMatch() { mixin(MGPC!("ScriptString", 424)()); }
+			ScriptString strManageServers() { mixin(MGPC!("ScriptString", 412)()); }
+			ScriptString strSettings() { mixin(MGPC!("ScriptString", 400)()); }
+			ScriptString strStore() { mixin(MGPC!("ScriptString", 388)()); }
+			ScriptString strSocial() { mixin(MGPC!("ScriptString", 376)()); }
+			ScriptString strParty() { mixin(MGPC!("ScriptString", 364)()); }
+			int TeamLoadoutNum() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bRemovePartyTemp() { mixin(MGBPC!(360, 0x1)()); }
 		bool bRemovePartyTemp(bool val) { mixin(MSBPC!(360, 0x1)()); }

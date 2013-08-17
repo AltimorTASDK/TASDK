@@ -30,14 +30,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) RawFaceFXActorBytes() { mixin(MGPC!(ScriptArray!(ubyte), 68)()); }
-		ScriptArray!(ubyte) RawFaceFXSessionBytes() { mixin(MGPC!(ScriptArray!(ubyte), 80)()); }
-		ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPC!(ScriptArray!(MorphTargetSet), 92)()); }
-		ScriptArray!(FaceFXAnimSet) MountedFaceFXAnimSets() { mixin(MGPC!(ScriptArray!(FaceFXAnimSet), 104)()); }
-		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC!(ScriptArray!(SoundCue), 116)()); }
-		int NumLoadErrors() { mixin(MGPC!(int, 128)()); }
-		UObject.Pointer FaceFXActor() { mixin(MGPC!(UObject.Pointer, 64)()); }
-		SkeletalMesh DefaultSkelMesh() { mixin(MGPC!(SkeletalMesh, 60)()); }
+		ScriptArray!(ubyte) RawFaceFXActorBytes() { mixin(MGPC!("ScriptArray!(ubyte)", 68)()); }
+		ScriptArray!(ubyte) RawFaceFXSessionBytes() { mixin(MGPC!("ScriptArray!(ubyte)", 80)()); }
+		ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPC!("ScriptArray!(MorphTargetSet)", 92)()); }
+		ScriptArray!(FaceFXAnimSet) MountedFaceFXAnimSets() { mixin(MGPC!("ScriptArray!(FaceFXAnimSet)", 104)()); }
+		ScriptArray!(SoundCue) ReferencedSoundCues() { mixin(MGPC!("ScriptArray!(SoundCue)", 116)()); }
+		int NumLoadErrors() { mixin(MGPC!("int", 128)()); }
+		UObject.Pointer FaceFXActor() { mixin(MGPC!("UObject.Pointer", 64)()); }
+		SkeletalMesh DefaultSkelMesh() { mixin(MGPC!("SkeletalMesh", 60)()); }
 	}
 final:
 	void MountFaceFXAnimSet(FaceFXAnimSet pAnimSet)

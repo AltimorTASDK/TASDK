@@ -23,13 +23,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 256)()); }
-			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 268)()); }
-			TextureRenderTarget2D RenderTexture() { mixin(MGPC!(TextureRenderTarget2D, 252)()); }
-			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!(GFxMoviePlayer.GFxRenderTextureMode, 248)()); }
-			GFxMoviePlayer MoviePlayer() { mixin(MGPC!(GFxMoviePlayer, 240)()); }
-			ScriptClass MoviePlayerClass() { mixin(MGPC!(ScriptClass, 236)()); }
-			SwfMovie Movie() { mixin(MGPC!(SwfMovie, 232)()); }
+			ScriptArray!(ScriptName) CaptureKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 256)()); }
+			ScriptArray!(ScriptName) FocusIgnoreKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 268)()); }
+			TextureRenderTarget2D RenderTexture() { mixin(MGPC!("TextureRenderTarget2D", 252)()); }
+			GFxMoviePlayer.GFxRenderTextureMode RenderTextureMode() { mixin(MGPC!("GFxMoviePlayer.GFxRenderTextureMode", 248)()); }
+			GFxMoviePlayer MoviePlayer() { mixin(MGPC!("GFxMoviePlayer", 240)()); }
+			ScriptClass MoviePlayerClass() { mixin(MGPC!("ScriptClass", 236)()); }
+			SwfMovie Movie() { mixin(MGPC!("SwfMovie", 232)()); }
 		}
 		bool bDisplayWithHudOff() { mixin(MGBPC!(244, 0x10)()); }
 		bool bDisplayWithHudOff(bool val) { mixin(MSBPC!(244, 0x10)()); }

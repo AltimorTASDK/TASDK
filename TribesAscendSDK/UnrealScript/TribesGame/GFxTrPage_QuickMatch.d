@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction TakeFocus() { mixin(MGF!("mTakeFocus", "Function TribesGame.GFxTrPage_QuickMatch.TakeFocus")()); }
 		}
 	}
-	@property final auto ref ScriptString ActiveQueue() { mixin(MGPC!(ScriptString, 356)()); }
+	@property final auto ref ScriptString ActiveQueue() { mixin(MGPC!("ScriptString", 356)()); }
 final:
 	void Initialize()
 	{

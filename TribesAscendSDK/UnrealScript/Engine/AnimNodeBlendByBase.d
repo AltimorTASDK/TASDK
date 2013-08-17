@@ -20,10 +20,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Actor CachedBase() { mixin(MGPC!(Actor, 296)()); }
-		float BlendTime() { mixin(MGPC!(float, 292)()); }
-		ScriptClass ActorClass() { mixin(MGPC!(ScriptClass, 288)()); }
-		ScriptName ActorTag() { mixin(MGPC!(ScriptName, 280)()); }
-		AnimNodeBlendByBase.EBaseBlendType Type() { mixin(MGPC!(AnimNodeBlendByBase.EBaseBlendType, 276)()); }
+		Actor CachedBase() { mixin(MGPC!("Actor", 296)()); }
+		float BlendTime() { mixin(MGPC!("float", 292)()); }
+		ScriptClass ActorClass() { mixin(MGPC!("ScriptClass", 288)()); }
+		ScriptName ActorTag() { mixin(MGPC!("ScriptName", 280)()); }
+		AnimNodeBlendByBase.EBaseBlendType Type() { mixin(MGPC!("AnimNodeBlendByBase.EBaseBlendType", 276)()); }
 	}
 }

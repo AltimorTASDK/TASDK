@@ -58,12 +58,12 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_ChildSkeletalMeshComponents() { mixin(MGPC!(ScriptArray!(
+void*) m_ChildSkeletalMeshComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 916)()); }
-			TrObject.EContentDataType m_OldContentDataType() { mixin(MGPC!(TrObject.EContentDataType, 940)()); }
-			Rotator m_rZeroedRotation() { mixin(MGPC!(Rotator, 928)()); }
-			float m_fFullCharacterLightingContrastFactor() { mixin(MGPC!(float, 912)()); }
+void*)", 916)()); }
+			TrObject.EContentDataType m_OldContentDataType() { mixin(MGPC!("TrObject.EContentDataType", 940)()); }
+			Rotator m_rZeroedRotation() { mixin(MGPC!("Rotator", 928)()); }
+			float m_fFullCharacterLightingContrastFactor() { mixin(MGPC!("float", 912)()); }
 		}
 		bool m_bWasLastMeshSwapRequestMainMenuContentScene() { mixin(MGBPC!(908, 0x2)()); }
 		bool m_bWasLastMeshSwapRequestMainMenuContentScene(bool val) { mixin(MSBPC!(908, 0x2)()); }

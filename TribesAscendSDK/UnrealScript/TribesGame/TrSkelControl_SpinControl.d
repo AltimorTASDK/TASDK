@@ -28,13 +28,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fSpinDownTime() { mixin(MGPC!(float, 260)()); }
-			float m_fSpinUpTime() { mixin(MGPC!(float, 256)()); }
-			float m_TimeToInterpToTargetRotation() { mixin(MGPC!(float, 280)()); }
-			Rotator m_TargetRotation() { mixin(MGPC!(Rotator, 268)()); }
-			float m_fCurrentDegreesPerSecond() { mixin(MGPC!(float, 264)()); }
-			Vector m_vAxis() { mixin(MGPC!(Vector, 240)()); }
-			float m_fDegreesPerSecond() { mixin(MGPC!(float, 236)()); }
+			float m_fSpinDownTime() { mixin(MGPC!("float", 260)()); }
+			float m_fSpinUpTime() { mixin(MGPC!("float", 256)()); }
+			float m_TimeToInterpToTargetRotation() { mixin(MGPC!("float", 280)()); }
+			Rotator m_TargetRotation() { mixin(MGPC!("Rotator", 268)()); }
+			float m_fCurrentDegreesPerSecond() { mixin(MGPC!("float", 264)()); }
+			Vector m_vAxis() { mixin(MGPC!("Vector", 240)()); }
+			float m_fDegreesPerSecond() { mixin(MGPC!("float", 236)()); }
 		}
 		bool m_bRotateToTargetRotation() { mixin(MGBPC!(252, 0x10)()); }
 		bool m_bRotateToTargetRotation(bool val) { mixin(MSBPC!(252, 0x10)()); }
@@ -55,13 +55,15 @@ final:
 		*cast(bool*)params.ptr = bEnabled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Spin, params.ptr, cast(void*)0);
 	}
-	void SpinToTargetRotation(Rotator TargetRotation, float Time, bool bReset)
+	void SpinToTargetRotation(Rotator TargetRotation, float* Time = null, bool* bReset = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Rotator*)params.ptr = TargetRotation;
-		*cast(float*)&params[12] = Time;
-		*cast(bool*)&params[16] = bReset;
+		if (Time !is null)
+			*cast(float*)&params[12] = *Time;
+		if (bReset !is null)
+			*cast(bool*)&params[16] = *bReset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpinToTargetRotation, params.ptr, cast(void*)0);
 	}
 }

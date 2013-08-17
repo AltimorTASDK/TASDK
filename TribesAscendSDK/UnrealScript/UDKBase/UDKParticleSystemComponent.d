@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector SavedScale3D() { mixin(MGPC!(Vector, 744)()); }
-			float FOV() { mixin(MGPC!(float, 736)()); }
+			Vector SavedScale3D() { mixin(MGPC!("Vector", 744)()); }
+			float FOV() { mixin(MGPC!("float", 736)()); }
 		}
 		bool bHasSavedScale3D() { mixin(MGBPC!(740, 0x1)()); }
 		bool bHasSavedScale3D(bool val) { mixin(MSBPC!(740, 0x1)()); }

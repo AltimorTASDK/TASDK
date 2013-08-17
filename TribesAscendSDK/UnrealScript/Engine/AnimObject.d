@@ -14,11 +14,11 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SkelComponent'!
-		ScriptString CategoryDesc() { mixin(MGPC!(ScriptString, 80)()); }
-		int OutDrawY() { mixin(MGPC!(int, 76)()); }
-		int NodePosY() { mixin(MGPC!(int, 72)()); }
-		int NodePosX() { mixin(MGPC!(int, 68)()); }
-		int DrawHeight() { mixin(MGPC!(int, 64)()); }
-		int DrawWidth() { mixin(MGPC!(int, 60)()); }
+		ScriptString CategoryDesc() { mixin(MGPC!("ScriptString", 80)()); }
+		int OutDrawY() { mixin(MGPC!("int", 76)()); }
+		int NodePosY() { mixin(MGPC!("int", 72)()); }
+		int NodePosX() { mixin(MGPC!("int", 68)()); }
+		int DrawHeight() { mixin(MGPC!("int", 64)()); }
+		int DrawWidth() { mixin(MGPC!("int", 60)()); }
 	}
 }

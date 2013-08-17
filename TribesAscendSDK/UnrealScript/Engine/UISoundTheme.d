@@ -26,17 +26,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UISoundTheme.SoundEventMapping")()); }
 		@property final auto ref
 		{
-			SoundCue SoundToPlay() { mixin(MGPS!(SoundCue, 8)()); }
-			ScriptName SoundEventName() { mixin(MGPS!(ScriptName, 0)()); }
+			SoundCue SoundToPlay() { mixin(MGPS!("SoundCue", 8)()); }
+			ScriptName SoundEventName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(UISoundTheme.SoundEventMapping) SoundEventBindings() { mixin(MGPC!(ScriptArray!(UISoundTheme.SoundEventMapping), 60)()); }
-	final void ProcessSoundEvent(ScriptName SoundEventName, PlayerController SoundOwner)
+	@property final auto ref ScriptArray!(UISoundTheme.SoundEventMapping) SoundEventBindings() { mixin(MGPC!("ScriptArray!(UISoundTheme.SoundEventMapping)", 60)()); }
+	final void ProcessSoundEvent(ScriptName SoundEventName, PlayerController* SoundOwner = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SoundEventName;
-		*cast(PlayerController*)&params[8] = SoundOwner;
+		if (SoundOwner !is null)
+			*cast(PlayerController*)&params[8] = *SoundOwner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSoundEvent, params.ptr, cast(void*)0);
 	}
 }

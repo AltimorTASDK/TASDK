@@ -47,12 +47,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			GfxTrHud m_MoviePlayer() { mixin(MGPC!(GfxTrHud, 84)()); }
-			TrPlayerController TrPC() { mixin(MGPC!(TrPlayerController, 88)()); }
-			int TeamHoldingFlag() { mixin(MGPC!(int, 80)()); }
-			int TeamScore() { mixin(MGPC!(int, 72)()); }
-			int RemainingTime() { mixin(MGPC!(int, 64)()); }
-			int MyTeam() { mixin(MGPC!(int, 60)()); }
+			GfxTrHud m_MoviePlayer() { mixin(MGPC!("GfxTrHud", 84)()); }
+			TrPlayerController TrPC() { mixin(MGPC!("TrPlayerController", 88)()); }
+			int TeamHoldingFlag() { mixin(MGPC!("int", 80)()); }
+			int TeamScore() { mixin(MGPC!("int", 72)()); }
+			int RemainingTime() { mixin(MGPC!("int", 64)()); }
+			int MyTeam() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(68, 0x1)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(68, 0x1)()); }

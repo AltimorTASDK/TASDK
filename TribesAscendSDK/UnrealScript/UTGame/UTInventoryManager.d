@@ -86,18 +86,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTInventoryManager.AmmoStore")()); }
 		@property final auto ref
 		{
-			ScriptClass WeaponClass() { mixin(MGPS!(ScriptClass, 4)()); }
-			int Amount() { mixin(MGPS!(int, 0)()); }
+			ScriptClass WeaponClass() { mixin(MGPS!("ScriptClass", 4)()); }
+			int Amount() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { mixin(MGPC!(ScriptArray!(UTInventoryManager.AmmoStore), 508)()); }
-			float LastAdjustWeaponTime() { mixin(MGPC!(float, 528)()); }
-			UTWeapon PendingSwitchWeapon() { mixin(MGPC!(UTWeapon, 524)()); }
-			Weapon PreviousWeapon() { mixin(MGPC!(Weapon, 520)()); }
+			ScriptArray!(UTInventoryManager.AmmoStore) AmmoStorage() { mixin(MGPC!("ScriptArray!(UTInventoryManager.AmmoStore)", 508)()); }
+			float LastAdjustWeaponTime() { mixin(MGPC!("float", 528)()); }
+			UTWeapon PendingSwitchWeapon() { mixin(MGPC!("UTWeapon", 524)()); }
+			Weapon PreviousWeapon() { mixin(MGPC!("Weapon", 520)()); }
 		}
 		bool bInfiniteAmmo() { mixin(MGBPC!(504, 0x1)()); }
 		bool bInfiniteAmmo(bool val) { mixin(MSBPC!(504, 0x1)()); }
@@ -125,16 +125,19 @@ final:
 		*cast(ScriptName*)params.ptr = EventName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OwnerEvent, params.ptr, cast(void*)0);
 	}
-	void GetWeaponList(ref ScriptArray!(UTWeapon) WeaponList, bool bFilter, int GroupFilter, bool bNoEmpty)
+	void GetWeaponList(ref ScriptArray!(UTWeapon) WeaponList, bool* bFilter = null, int* GroupFilter = null, bool* bNoEmpty = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptArray!(UTWeapon)*)params.ptr = WeaponList;
-		*cast(bool*)&params[12] = bFilter;
-		*cast(int*)&params[16] = GroupFilter;
-		*cast(bool*)&params[20] = bNoEmpty;
+		if (bFilter !is null)
+			*cast(bool*)&params[12] = *bFilter;
+		if (GroupFilter !is null)
+			*cast(int*)&params[16] = *GroupFilter;
+		if (bNoEmpty !is null)
+			*cast(bool*)&params[20] = *bNoEmpty;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponList, params.ptr, cast(void*)0);
-		*WeaponList = *cast(ScriptArray!(UTWeapon)*)params.ptr;
+		WeaponList = *cast(ScriptArray!(UTWeapon)*)params.ptr;
 	}
 	void SwitchWeapon(ubyte NewGroup)
 	{
@@ -158,11 +161,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.NextWeapon, cast(void*)0, cast(void*)0);
 	}
-	void AllAmmo(bool bAmmoForSuperWeapons)
+	void AllAmmo(bool* bAmmoForSuperWeapons = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bAmmoForSuperWeapons;
+		if (bAmmoForSuperWeapons !is null)
+			*cast(bool*)params.ptr = *bAmmoForSuperWeapons;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AllAmmo, params.ptr, cast(void*)0);
 	}
 	void SetCurrentWeapon(Weapon DesiredWeapon)
@@ -193,21 +197,23 @@ final:
 		*cast(Weapon*)params.ptr = DesiredWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPendingWeapon, params.ptr, cast(void*)0);
 	}
-	void ClientWeaponSet(Weapon NewWeapon, bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(Weapon NewWeapon, bool bOptionalSet, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = NewWeapon;
 		*cast(bool*)&params[4] = bOptionalSet;
-		*cast(bool*)&params[8] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[8] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
-	Inventory CreateInventory(ScriptClass NewInventoryItemClass, bool bDoNotActivate)
+	Inventory CreateInventory(ScriptClass NewInventoryItemClass, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = NewInventoryItemClass;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateInventory, params.ptr, cast(void*)0);
 		return *cast(Inventory*)&params[8];
 	}
@@ -229,12 +235,13 @@ final:
 		*cast(UTWeapon*)params.ptr = NewWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckSwitchTo, params.ptr, cast(void*)0);
 	}
-	bool AddInventory(Inventory pNewItem, bool bDoNotActivate)
+	bool AddInventory(Inventory pNewItem, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Inventory*)params.ptr = pNewItem;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddInventory, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -280,11 +287,12 @@ final:
 		*cast(HUD*)params.ptr = H;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawHUD, params.ptr, cast(void*)0);
 	}
-	void SwitchToBestWeapon(bool bForceADifferentWeapon)
+	void SwitchToBestWeapon(bool* bForceADifferentWeapon = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForceADifferentWeapon;
+		if (bForceADifferentWeapon !is null)
+			*cast(bool*)params.ptr = *bForceADifferentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchToBestWeapon, params.ptr, cast(void*)0);
 	}
 }

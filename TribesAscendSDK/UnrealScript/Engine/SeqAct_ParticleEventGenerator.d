@@ -21,13 +21,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptString) EventNames() { mixin(MGPC!(ScriptArray!(ScriptString), 240)()); }
-			Vector EventNormal() { mixin(MGPC!(Vector, 292)()); }
-			Vector EventVelocity() { mixin(MGPC!(Vector, 280)()); }
-			Vector EventDirection() { mixin(MGPC!(Vector, 268)()); }
-			Vector EventLocation() { mixin(MGPC!(Vector, 256)()); }
-			float EventTime() { mixin(MGPC!(float, 252)()); }
-			Actor Instigator() { mixin(MGPC!(Actor, 236)()); }
+			ScriptArray!(ScriptString) EventNames() { mixin(MGPC!("ScriptArray!(ScriptString)", 240)()); }
+			Vector EventNormal() { mixin(MGPC!("Vector", 292)()); }
+			Vector EventVelocity() { mixin(MGPC!("Vector", 280)()); }
+			Vector EventDirection() { mixin(MGPC!("Vector", 268)()); }
+			Vector EventLocation() { mixin(MGPC!("Vector", 256)()); }
+			float EventTime() { mixin(MGPC!("float", 252)()); }
+			Actor Instigator() { mixin(MGPC!("Actor", 236)()); }
 		}
 		bool bUseEmitterLocation() { mixin(MGBPC!(232, 0x2)()); }
 		bool bUseEmitterLocation(bool val) { mixin(MSBPC!(232, 0x2)()); }

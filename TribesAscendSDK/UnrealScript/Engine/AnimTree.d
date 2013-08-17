@@ -59,12 +59,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimTree.AnimGroup")()); }
 		@property final auto ref
 		{
-			ScriptArray!(AnimNodeSequence) SeqNodes() { mixin(MGPS!(ScriptArray!(AnimNodeSequence), 0)()); }
-			float SynchPctPosition() { mixin(MGPS!(float, 32)()); }
-			float RateScale() { mixin(MGPS!(float, 28)()); }
-			ScriptName GroupName() { mixin(MGPS!(ScriptName, 20)()); }
-			AnimNodeSequence NotifyMaster() { mixin(MGPS!(AnimNodeSequence, 16)()); }
-			AnimNodeSequence SynchMaster() { mixin(MGPS!(AnimNodeSequence, 12)()); }
+			ScriptArray!(AnimNodeSequence) SeqNodes() { mixin(MGPS!("ScriptArray!(AnimNodeSequence)", 0)()); }
+			float SynchPctPosition() { mixin(MGPS!("float", 32)()); }
+			float RateScale() { mixin(MGPS!("float", 28)()); }
+			ScriptName GroupName() { mixin(MGPS!("ScriptName", 20)()); }
+			AnimNodeSequence NotifyMaster() { mixin(MGPS!("AnimNodeSequence", 16)()); }
+			AnimNodeSequence SynchMaster() { mixin(MGPS!("AnimNodeSequence", 12)()); }
 		}
 	}
 	struct SkelControlListHead
@@ -75,9 +75,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimTree.SkelControlListHead")()); }
 		@property final auto ref
 		{
-			int DrawY() { mixin(MGPS!(int, 12)()); }
-			SkelControlBase ControlHead() { mixin(MGPS!(SkelControlBase, 8)()); }
-			ScriptName BoneName() { mixin(MGPS!(ScriptName, 0)()); }
+			int DrawY() { mixin(MGPS!("int", 12)()); }
+			SkelControlBase ControlHead() { mixin(MGPS!("SkelControlBase", 8)()); }
+			ScriptName BoneName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PreviewSkelMeshStruct
@@ -88,9 +88,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimTree.PreviewSkelMeshStruct")()); }
 		@property final auto ref
 		{
-			ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPS!(ScriptArray!(MorphTargetSet), 12)()); }
-			SkeletalMesh PreviewSkelMesh() { mixin(MGPS!(SkeletalMesh, 8)()); }
-			ScriptName DisplayName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPS!("ScriptArray!(MorphTargetSet)", 12)()); }
+			SkeletalMesh PreviewSkelMesh() { mixin(MGPS!("SkeletalMesh", 8)()); }
+			ScriptName DisplayName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PreviewSocketStruct
@@ -101,10 +101,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimTree.PreviewSocketStruct")()); }
 		@property final auto ref
 		{
-			StaticMesh PreviewStaticMesh() { mixin(MGPS!(StaticMesh, 20)()); }
-			SkeletalMesh PreviewSkelMesh() { mixin(MGPS!(SkeletalMesh, 16)()); }
-			ScriptName SocketName() { mixin(MGPS!(ScriptName, 8)()); }
-			ScriptName DisplayName() { mixin(MGPS!(ScriptName, 0)()); }
+			StaticMesh PreviewStaticMesh() { mixin(MGPS!("StaticMesh", 20)()); }
+			SkeletalMesh PreviewSkelMesh() { mixin(MGPS!("SkeletalMesh", 16)()); }
+			ScriptName SocketName() { mixin(MGPS!("ScriptName", 8)()); }
+			ScriptName DisplayName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct PreviewAnimSetsStruct
@@ -115,41 +115,41 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AnimTree.PreviewAnimSetsStruct")()); }
 		@property final auto ref
 		{
-			ScriptArray!(AnimSet) PreviewAnimSets() { mixin(MGPS!(ScriptArray!(AnimSet), 8)()); }
-			ScriptName DisplayName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(AnimSet) PreviewAnimSets() { mixin(MGPS!("ScriptArray!(AnimSet)", 8)()); }
+			ScriptName DisplayName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(AnimTree.AnimGroup) AnimGroups() { mixin(MGPC!(ScriptArray!(AnimTree.AnimGroup), 244)()); }
-			ScriptArray!(ScriptName) PrioritizedSkelBranches() { mixin(MGPC!(ScriptArray!(ScriptName), 256)()); }
-			ScriptArray!(ScriptName) ComposePrePassBoneNames() { mixin(MGPC!(ScriptArray!(ScriptName), 268)()); }
-			ScriptArray!(ScriptName) ComposePostPassBoneNames() { mixin(MGPC!(ScriptArray!(ScriptName), 280)()); }
-			ScriptArray!(MorphNodeBase) RootMorphNodes() { mixin(MGPC!(ScriptArray!(MorphNodeBase), 292)()); }
-			ScriptArray!(AnimTree.SkelControlListHead) SkelControlLists() { mixin(MGPC!(ScriptArray!(AnimTree.SkelControlListHead), 304)()); }
-			ScriptArray!(UObject.BoneAtom) SavedPose() { mixin(MGPC!(ScriptArray!(UObject.BoneAtom), 316)()); }
-			ScriptArray!(AnimSet) PreviewAnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 360)()); }
-			ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPC!(ScriptArray!(MorphTargetSet), 372)()); }
-			ScriptArray!(AnimTree.PreviewSkelMeshStruct) PreviewMeshList() { mixin(MGPC!(ScriptArray!(AnimTree.PreviewSkelMeshStruct), 384)()); }
-			ScriptArray!(AnimTree.PreviewSocketStruct) PreviewSocketList() { mixin(MGPC!(ScriptArray!(AnimTree.PreviewSocketStruct), 400)()); }
-			ScriptArray!(AnimTree.PreviewAnimSetsStruct) PreviewAnimSetList() { mixin(MGPC!(ScriptArray!(AnimTree.PreviewAnimSetsStruct), 416)()); }
-			ScriptArray!(AnimNode) AnimTickArray() { mixin(MGPC!(ScriptArray!(AnimNode), 476)()); }
-			int PreviewFloorYaw() { mixin(MGPC!(int, 472)()); }
-			Vector PreviewFloorPos() { mixin(MGPC!(Vector, 460)()); }
-			Rotator PreviewCamRot() { mixin(MGPC!(Rotator, 448)()); }
-			Vector PreviewCamPos() { mixin(MGPC!(Vector, 436)()); }
-			int PreviewAnimSetIndex() { mixin(MGPC!(int, 432)()); }
-			int PreviewAnimSetListIndex() { mixin(MGPC!(int, 428)()); }
-			int PreviewSocketIndex() { mixin(MGPC!(int, 412)()); }
-			int PreviewMeshIndex() { mixin(MGPC!(int, 396)()); }
-			ScriptName SocketName() { mixin(MGPC!(ScriptName, 352)()); }
-			StaticMesh SocketStaticMesh() { mixin(MGPC!(StaticMesh, 348)()); }
-			SkeletalMesh SocketSkelMesh() { mixin(MGPC!(SkeletalMesh, 344)()); }
-			SkeletalMesh PreviewSkelMesh() { mixin(MGPC!(SkeletalMesh, 340)()); }
-			float PreviewPlayRate() { mixin(MGPC!(float, 336)()); }
-			int MorphConnDrawY() { mixin(MGPC!(int, 332)()); }
+			ScriptArray!(AnimTree.AnimGroup) AnimGroups() { mixin(MGPC!("ScriptArray!(AnimTree.AnimGroup)", 244)()); }
+			ScriptArray!(ScriptName) PrioritizedSkelBranches() { mixin(MGPC!("ScriptArray!(ScriptName)", 256)()); }
+			ScriptArray!(ScriptName) ComposePrePassBoneNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 268)()); }
+			ScriptArray!(ScriptName) ComposePostPassBoneNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 280)()); }
+			ScriptArray!(MorphNodeBase) RootMorphNodes() { mixin(MGPC!("ScriptArray!(MorphNodeBase)", 292)()); }
+			ScriptArray!(AnimTree.SkelControlListHead) SkelControlLists() { mixin(MGPC!("ScriptArray!(AnimTree.SkelControlListHead)", 304)()); }
+			ScriptArray!(UObject.BoneAtom) SavedPose() { mixin(MGPC!("ScriptArray!(UObject.BoneAtom)", 316)()); }
+			ScriptArray!(AnimSet) PreviewAnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 360)()); }
+			ScriptArray!(MorphTargetSet) PreviewMorphSets() { mixin(MGPC!("ScriptArray!(MorphTargetSet)", 372)()); }
+			ScriptArray!(AnimTree.PreviewSkelMeshStruct) PreviewMeshList() { mixin(MGPC!("ScriptArray!(AnimTree.PreviewSkelMeshStruct)", 384)()); }
+			ScriptArray!(AnimTree.PreviewSocketStruct) PreviewSocketList() { mixin(MGPC!("ScriptArray!(AnimTree.PreviewSocketStruct)", 400)()); }
+			ScriptArray!(AnimTree.PreviewAnimSetsStruct) PreviewAnimSetList() { mixin(MGPC!("ScriptArray!(AnimTree.PreviewAnimSetsStruct)", 416)()); }
+			ScriptArray!(AnimNode) AnimTickArray() { mixin(MGPC!("ScriptArray!(AnimNode)", 476)()); }
+			int PreviewFloorYaw() { mixin(MGPC!("int", 472)()); }
+			Vector PreviewFloorPos() { mixin(MGPC!("Vector", 460)()); }
+			Rotator PreviewCamRot() { mixin(MGPC!("Rotator", 448)()); }
+			Vector PreviewCamPos() { mixin(MGPC!("Vector", 436)()); }
+			int PreviewAnimSetIndex() { mixin(MGPC!("int", 432)()); }
+			int PreviewAnimSetListIndex() { mixin(MGPC!("int", 428)()); }
+			int PreviewSocketIndex() { mixin(MGPC!("int", 412)()); }
+			int PreviewMeshIndex() { mixin(MGPC!("int", 396)()); }
+			ScriptName SocketName() { mixin(MGPC!("ScriptName", 352)()); }
+			StaticMesh SocketStaticMesh() { mixin(MGPC!("StaticMesh", 348)()); }
+			SkeletalMesh SocketSkelMesh() { mixin(MGPC!("SkeletalMesh", 344)()); }
+			SkeletalMesh PreviewSkelMesh() { mixin(MGPC!("SkeletalMesh", 340)()); }
+			float PreviewPlayRate() { mixin(MGPC!("float", 336)()); }
+			int MorphConnDrawY() { mixin(MGPC!("int", 332)()); }
 		}
 		bool bRebuildAnimTickArray() { mixin(MGBPC!(328, 0x8)()); }
 		bool bRebuildAnimTickArray(bool val) { mixin(MSBPC!(328, 0x8)()); }
@@ -184,13 +184,14 @@ final:
 		*cast(bool*)params.ptr = bUseSaved;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetUseSavedPose, params.ptr, cast(void*)0);
 	}
-	bool SetAnimGroupForNode(AnimNodeSequence SeqNode, ScriptName GroupName, bool bCreateIfNotFound)
+	bool SetAnimGroupForNode(AnimNodeSequence SeqNode, ScriptName GroupName, bool* bCreateIfNotFound = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(AnimNodeSequence*)params.ptr = SeqNode;
 		*cast(ScriptName*)&params[4] = GroupName;
-		*cast(bool*)&params[12] = bCreateIfNotFound;
+		if (bCreateIfNotFound !is null)
+			*cast(bool*)&params[12] = *bCreateIfNotFound;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAnimGroupForNode, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}

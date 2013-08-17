@@ -228,26 +228,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			float WeaponRange() { mixin(MGPC!(float, 676)()); }
-			ubyte CurrentFireMode() { mixin(MGPC!(ubyte, 552)()); }
-			ScriptArray!(ScriptName) FiringStatesArray() { mixin(MGPC!(ScriptArray!(ScriptName), 556)()); }
-			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { mixin(MGPC!(ScriptArray!(Weapon.EWeaponFireType), 568)()); }
-			ScriptArray!(ScriptClass) WeaponProjectiles() { mixin(MGPC!(ScriptArray!(ScriptClass), 580)()); }
-			ScriptArray!(float) FireInterval() { mixin(MGPC!(ScriptArray!(float), 592)()); }
-			ScriptArray!(float) Spread() { mixin(MGPC!(ScriptArray!(float), 604)()); }
-			ScriptArray!(float) InstantHitDamage() { mixin(MGPC!(ScriptArray!(float), 616)()); }
-			ScriptArray!(float) InstantHitMomentum() { mixin(MGPC!(ScriptArray!(float), 628)()); }
-			ScriptArray!(ScriptClass) InstantHitDamageTypes() { mixin(MGPC!(ScriptArray!(ScriptClass), 640)()); }
-			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC!(ScriptArray!(ubyte), 696)()); }
-			float CachedMaxRange() { mixin(MGPC!(float, 712)()); }
-			float AIRating() { mixin(MGPC!(float, 708)()); }
+			float WeaponRange() { mixin(MGPC!("float", 676)()); }
+			ubyte CurrentFireMode() { mixin(MGPC!("ubyte", 552)()); }
+			ScriptArray!(ScriptName) FiringStatesArray() { mixin(MGPC!("ScriptArray!(ScriptName)", 556)()); }
+			ScriptArray!(Weapon.EWeaponFireType) WeaponFireTypes() { mixin(MGPC!("ScriptArray!(Weapon.EWeaponFireType)", 568)()); }
+			ScriptArray!(ScriptClass) WeaponProjectiles() { mixin(MGPC!("ScriptArray!(ScriptClass)", 580)()); }
+			ScriptArray!(float) FireInterval() { mixin(MGPC!("ScriptArray!(float)", 592)()); }
+			ScriptArray!(float) Spread() { mixin(MGPC!("ScriptArray!(float)", 604)()); }
+			ScriptArray!(float) InstantHitDamage() { mixin(MGPC!("ScriptArray!(float)", 616)()); }
+			ScriptArray!(float) InstantHitMomentum() { mixin(MGPC!("ScriptArray!(float)", 628)()); }
+			ScriptArray!(ScriptClass) InstantHitDamageTypes() { mixin(MGPC!("ScriptArray!(ScriptClass)", 640)()); }
+			ScriptArray!(ubyte) ShouldFireOnRelease() { mixin(MGPC!("ScriptArray!(ubyte)", 696)()); }
+			float CachedMaxRange() { mixin(MGPC!("float", 712)()); }
+			float AIRating() { mixin(MGPC!("float", 708)()); }
 			// WARNING: Property 'AIController' has the same name as a defined type!
-			float Priority() { mixin(MGPC!(float, 688)()); }
-			float DefaultAnimSpeed() { mixin(MGPC!(float, 684)()); }
+			float Priority() { mixin(MGPC!("float", 688)()); }
+			float DefaultAnimSpeed() { mixin(MGPC!("float", 684)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Mesh'!
-			Vector FireOffset() { mixin(MGPC!(Vector, 660)()); }
-			float PutDownTime() { mixin(MGPC!(float, 656)()); }
-			float EquipTime() { mixin(MGPC!(float, 652)()); }
+			Vector FireOffset() { mixin(MGPC!("Vector", 660)()); }
+			float PutDownTime() { mixin(MGPC!("float", 656)()); }
+			float EquipTime() { mixin(MGPC!("float", 652)()); }
 		}
 		bool bInstantHit() { mixin(MGBPC!(672, 0x10)()); }
 		bool bInstantHit(bool val) { mixin(MSBPC!(672, 0x10)()); }
@@ -380,8 +380,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void GetWeaponDebug(ref ScriptArray!(ScriptString) DebugInfo)
 	{
@@ -389,7 +389,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = DebugInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponDebug, params.ptr, cast(void*)0);
-		*DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		DebugInfo = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 	int GetPendingFireLength()
 	{
@@ -421,12 +421,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddAmmo, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -473,30 +474,33 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponAnimNodeSeq, params.ptr, cast(void*)0);
 		return *cast(AnimNodeSequence*)params.ptr;
 	}
-	void PlayWeaponAnimation(ScriptName pSequence, float fDesiredDuration, bool bLoop, 
+	void PlayWeaponAnimation(ScriptName pSequence, float fDesiredDuration, bool* bLoop = null, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SkelMesh)
+void** SkelMesh = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = pSequence;
 		*cast(float*)&params[8] = fDesiredDuration;
-		*cast(bool*)&params[12] = bLoop;
-		*cast(
+		if (bLoop !is null)
+			*cast(bool*)&params[12] = *bLoop;
+		if (SkelMesh !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void**)&params[16] = SkelMesh;
+void**)&params[16] = *SkelMesh;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayWeaponAnimation, params.ptr, cast(void*)0);
 	}
 	void StopWeaponAnimation()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopWeaponAnimation, cast(void*)0, cast(void*)0);
 	}
-	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector* HitLocation = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(Vector*)&params[4] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[4] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void StopFireEffects(ubyte FireModeNum)
@@ -575,14 +579,15 @@ void**)&params[16] = SkelMesh;
 	}
 	void AttachWeaponTo(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* MeshCpnt, ScriptName SocketName)
+void* MeshCpnt, ScriptName* SocketName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		*cast(ScriptName*)&params[4] = SocketName;
+		if (SocketName !is null)
+			*cast(ScriptName*)&params[4] = *SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
 	void DetachWeapon()
@@ -597,12 +602,13 @@ void**)params.ptr = MeshCpnt;
 		*cast(bool*)&params[4] = bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientGivenTo, params.ptr, cast(void*)0);
 	}
-	void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(bool bOptionalSet, bool* bDoNotActivate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOptionalSet;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
 	void StartFire(ubyte FireModeNum)
@@ -692,16 +698,19 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTraceOwner, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
-	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
+	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList = null, Vector* Extent = null)
 	{
 		ubyte params[128];
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartTrace;
 		*cast(Vector*)&params[12] = EndTrace;
-		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = ImpactList;
-		*cast(Vector*)&params[36] = Extent;
+		if (ImpactList !is null)
+			*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = *ImpactList;
+		if (Extent !is null)
+			*cast(Vector*)&params[36] = *Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcWeaponFire, params.ptr, cast(void*)0);
-		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
+		if (ImpactList !is null)
+			*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
 		return *cast(Actor.ImpactInfo*)&params[48];
 	}
 	static bool PassThroughDamage(Actor HitActor)
@@ -716,13 +725,14 @@ void**)params.ptr = MeshCpnt;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstantFire, cast(void*)0, cast(void*)0);
 	}
-	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
+	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int* NumHits = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(int*)&params[84] = NumHits;
+		if (NumHits !is null)
+			*cast(int*)&params[84] = *NumHits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit, params.ptr, cast(void*)0);
 	}
 	Projectile ProjectileFire()
@@ -743,11 +753,12 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMuzzleLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	Vector GetPhysicalFireStartLoc(Vector AimDir)
+	Vector GetPhysicalFireStartLoc(Vector* AimDir = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = AimDir;
+		if (AimDir !is null)
+			*cast(Vector*)params.ptr = *AimDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPhysicalFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}

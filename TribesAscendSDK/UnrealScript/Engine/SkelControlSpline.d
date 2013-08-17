@@ -23,11 +23,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			float StartSplineTension() { mixin(MGPC!(float, 204)()); }
-			float EndSplineTension() { mixin(MGPC!(float, 200)()); }
-			SkelControlSpline.ESplineControlRotMode BoneRotMode() { mixin(MGPC!(SkelControlSpline.ESplineControlRotMode, 193)()); }
-			int SplineLength() { mixin(MGPC!(int, 188)()); }
-			UObject.EAxis SplineBoneAxis() { mixin(MGPC!(UObject.EAxis, 192)()); }
+			float StartSplineTension() { mixin(MGPC!("float", 204)()); }
+			float EndSplineTension() { mixin(MGPC!("float", 200)()); }
+			SkelControlSpline.ESplineControlRotMode BoneRotMode() { mixin(MGPC!("SkelControlSpline.ESplineControlRotMode", 193)()); }
+			int SplineLength() { mixin(MGPC!("int", 188)()); }
+			UObject.EAxis SplineBoneAxis() { mixin(MGPC!("UObject.EAxis", 192)()); }
 		}
 		bool bInvertSplineBoneAxis() { mixin(MGBPC!(196, 0x1)()); }
 		bool bInvertSplineBoneAxis(bool val) { mixin(MSBPC!(196, 0x1)()); }

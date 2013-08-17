@@ -13,9 +13,9 @@ public extern(D):
 	@property final static GFxRawData DefaultProperties() { mixin(MGDPC!(GFxRawData, "GFxRawData GFxUI.Default__GFxRawData")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ubyte) RawData() { mixin(MGPC!(ScriptArray!(ubyte), 60)()); }
-		ScriptArray!(ScriptString) ReferencedSwfs() { mixin(MGPC!(ScriptArray!(ScriptString), 72)()); }
-		ScriptArray!(UObject) References() { mixin(MGPC!(ScriptArray!(UObject), 84)()); }
-		ScriptArray!(UObject) UserReferences() { mixin(MGPC!(ScriptArray!(UObject), 96)()); }
+		ScriptArray!(ubyte) RawData() { mixin(MGPC!("ScriptArray!(ubyte)", 60)()); }
+		ScriptArray!(ScriptString) ReferencedSwfs() { mixin(MGPC!("ScriptArray!(ScriptString)", 72)()); }
+		ScriptArray!(UObject) References() { mixin(MGPC!("ScriptArray!(UObject)", 84)()); }
+		ScriptArray!(UObject) UserReferences() { mixin(MGPC!("ScriptArray!(UObject)", 96)()); }
 	}
 }

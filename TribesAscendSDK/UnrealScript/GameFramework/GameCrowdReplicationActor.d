@@ -26,8 +26,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int DestroyAllCount() { mixin(MGPC!(int, 484)()); }
-			SeqAct_GameCrowdSpawner Spawner() { mixin(MGPC!(SeqAct_GameCrowdSpawner, 476)()); }
+			int DestroyAllCount() { mixin(MGPC!("int", 484)()); }
+			SeqAct_GameCrowdSpawner Spawner() { mixin(MGPC!("SeqAct_GameCrowdSpawner", 476)()); }
 		}
 		bool bSpawningActive() { mixin(MGBPC!(480, 0x1)()); }
 		bool bSpawningActive(bool val) { mixin(MSBPC!(480, 0x1)()); }

@@ -52,10 +52,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!(UIDataProvider_OnlineProfileSettings, 100)()); }
-		UIResourceDataProvider StaticDataProvider() { mixin(MGPC!(UIResourceDataProvider, 96)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
-		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!(UObject.Pointer, 88)()); }
+		UIDataProvider_OnlineProfileSettings ProfileProvider() { mixin(MGPC!("UIDataProvider_OnlineProfileSettings", 100)()); }
+		UIResourceDataProvider StaticDataProvider() { mixin(MGPC!("UIResourceDataProvider", 96)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
+		UObject.Pointer VfTable_IUIListElementProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
 	}
 final:
 	void InitializeProvider(bool bIsEditor, UIResourceDataProvider InStaticResourceProvider, UIDataProvider_OnlineProfileSettings InProfileProvider)
@@ -89,7 +89,7 @@ final:
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptArray!(int)*)&params[8] = out_Elements;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetListElements, params.ptr, cast(void*)0);
-		*out_Elements = *cast(ScriptArray!(int)*)&params[8];
+		out_Elements = *cast(ScriptArray!(int)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool IsElementEnabled(ScriptName FieldName, int CollectionIndex)
@@ -112,7 +112,7 @@ void* out_SchemaProvider)
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)&params[8] = out_SchemaProvider;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementCellSchemaProvider, params.ptr, cast(void*)0);
-		*out_SchemaProvider = *cast(
+		out_SchemaProvider = *cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)&params[8];
 		return *cast(bool*)&params[16];
@@ -129,21 +129,23 @@ void* out_ValueProvider)
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)&params[12] = out_ValueProvider;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementCellValueProvider, params.ptr, cast(void*)0);
-		*out_ValueProvider = *cast(
+		out_ValueProvider = *cast(
 // ERROR: Unknown object class 'Class Core.InterfaceProperty'!
 void**)&params[12];
 		return *cast(bool*)&params[20];
 	}
-	void GetElementCellTags(ScriptName FieldName, ref ScriptArray!(ScriptName) CellFieldTags, ScriptArray!(ScriptString)* ColumnHeaderDisplayText)
+	void GetElementCellTags(ScriptName FieldName, ref ScriptArray!(ScriptName) CellFieldTags, ScriptArray!(ScriptString)* ColumnHeaderDisplayText = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = FieldName;
 		*cast(ScriptArray!(ScriptName)*)&params[8] = CellFieldTags;
-		*cast(ScriptArray!(ScriptString)*)&params[20] = ColumnHeaderDisplayText;
+		if (ColumnHeaderDisplayText !is null)
+			*cast(ScriptArray!(ScriptString)*)&params[20] = *ColumnHeaderDisplayText;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetElementCellTags, params.ptr, cast(void*)0);
-		*CellFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
-		*ColumnHeaderDisplayText = *cast(ScriptArray!(ScriptString)*)&params[20];
+		CellFieldTags = *cast(ScriptArray!(ScriptName)*)&params[8];
+		if (ColumnHeaderDisplayText !is null)
+			*ColumnHeaderDisplayText = *cast(ScriptArray!(ScriptString)*)&params[20];
 	}
 	bool GetCellFieldType(ScriptName FieldName, ScriptName CellTag, ref UIRoot.EUIDataProviderFieldType FieldType)
 	{
@@ -153,10 +155,10 @@ void**)&params[12];
 		*cast(ScriptName*)&params[8] = CellTag;
 		*cast(UIRoot.EUIDataProviderFieldType*)&params[16] = FieldType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCellFieldType, params.ptr, cast(void*)0);
-		*FieldType = *cast(UIRoot.EUIDataProviderFieldType*)&params[16];
+		FieldType = *cast(UIRoot.EUIDataProviderFieldType*)&params[16];
 		return *cast(bool*)&params[20];
 	}
-	bool GetCellFieldValue(ScriptName FieldName, ScriptName CellTag, int ListIndex, ref UIRoot.UIProviderFieldValue out_FieldValue, int ArrayIndex)
+	bool GetCellFieldValue(ScriptName FieldName, ScriptName CellTag, int ListIndex, ref UIRoot.UIProviderFieldValue out_FieldValue, int* ArrayIndex = null)
 	{
 		ubyte params[116];
 		params[] = 0;
@@ -164,9 +166,10 @@ void**)&params[12];
 		*cast(ScriptName*)&params[8] = CellTag;
 		*cast(int*)&params[16] = ListIndex;
 		*cast(UIRoot.UIProviderFieldValue*)&params[20] = out_FieldValue;
-		*cast(int*)&params[108] = ArrayIndex;
+		if (ArrayIndex !is null)
+			*cast(int*)&params[108] = *ArrayIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCellFieldValue, params.ptr, cast(void*)0);
-		*out_FieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[20];
+		out_FieldValue = *cast(UIRoot.UIProviderFieldValue*)&params[20];
 		return *cast(bool*)&params[112];
 	}
 	void ClearProviderReferences()
@@ -181,19 +184,18 @@ void**)&params[12];
 		*cast(ScriptName*)&params[12] = TargetFieldTag;
 		*cast(UIDataProvider*)&params[20] = ReplacementProvider;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceProviderValue, params.ptr, cast(void*)0);
-		*out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
+		out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
 		return *cast(bool*)&params[24];
 	}
-	bool ReplaceProviderCollection(ref ScriptArray!(UIDataProvider.UIDataProviderField) out_Fields, ScriptName TargetFieldTag, ref const ScriptArray!(UIDataProvider) ReplacementProviders)
+	bool ReplaceProviderCollection(ref ScriptArray!(UIDataProvider.UIDataProviderField) out_Fields, ScriptName TargetFieldTag, ref in ScriptArray!(UIDataProvider) ReplacementProviders)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr = out_Fields;
 		*cast(ScriptName*)&params[12] = TargetFieldTag;
-		*cast(ScriptArray!(UIDataProvider)*)&params[20] = ReplacementProviders;
+		*cast(ScriptArray!(UIDataProvider)*)&params[20] = cast(ScriptArray!(UIDataProvider))ReplacementProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplaceProviderCollection, params.ptr, cast(void*)0);
-		*out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
-		*ReplacementProviders = *cast(ScriptArray!(UIDataProvider)*)&params[20];
+		out_Fields = *cast(ScriptArray!(UIDataProvider.UIDataProviderField)*)params.ptr;
 		return *cast(bool*)&params[32];
 	}
 }

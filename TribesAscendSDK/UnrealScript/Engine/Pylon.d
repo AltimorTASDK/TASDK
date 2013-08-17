@@ -57,35 +57,35 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Pylon.PolyReference")()); }
 		@property final auto ref
 		{
-			int PolyId() { mixin(MGPS!(int, 20)()); }
-			Actor.ActorReference OwningPylon() { mixin(MGPS!(Actor.ActorReference, 0)()); }
+			int PolyId() { mixin(MGPS!("int", 20)()); }
+			Actor.ActorReference OwningPylon() { mixin(MGPS!("Actor.ActorReference", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Vector) NextPassSeedList() { mixin(MGPC!(ScriptArray!(Vector), 716)()); }
-			ScriptArray!(Volume) ExpansionVolumes() { mixin(MGPC!(ScriptArray!(Volume), 744)()); }
-			ScriptArray!(Pylon) ImposterPylons() { mixin(MGPC!(ScriptArray!(Pylon), 792)()); }
-			ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { mixin(MGPC!(ScriptArray!(Actor), 804)()); }
-			ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { mixin(MGPC!(ScriptArray!(Actor), 816)()); }
-			int DebugEdgeCount() { mixin(MGPC!(int, 828)()); }
+			ScriptArray!(Vector) NextPassSeedList() { mixin(MGPC!("ScriptArray!(Vector)", 716)()); }
+			ScriptArray!(Volume) ExpansionVolumes() { mixin(MGPC!("ScriptArray!(Volume)", 744)()); }
+			ScriptArray!(Pylon) ImposterPylons() { mixin(MGPC!("ScriptArray!(Pylon)", 792)()); }
+			ScriptArray!(Actor) OnBuild_DisableCollisionForThese() { mixin(MGPC!("ScriptArray!(Actor)", 804)()); }
+			ScriptArray!(Actor) OnBuild_EnableCollisionForThese() { mixin(MGPC!("ScriptArray!(Actor)", 816)()); }
+			int DebugEdgeCount() { mixin(MGPC!("int", 828)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BrokenSprite'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderingComp'!
-			Vector ExpansionSphereCenter() { mixin(MGPC!(Vector, 772)()); }
+			Vector ExpansionSphereCenter() { mixin(MGPC!("Vector", 772)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PylonRadiusPreview'!
-			float MaxExpansionRadius() { mixin(MGPC!(float, 760)()); }
-			float ExpansionRadius() { mixin(MGPC!(float, 756)()); }
-			Pylon NextPylon() { mixin(MGPC!(Pylon, 740)()); }
-			UObject.Pointer OctreeIWasAddedTo() { mixin(MGPC!(UObject.Pointer, 736)()); }
-			UObject.OctreeElementId OctreeId() { mixin(MGPC!(UObject.OctreeElementId, 728)()); }
-			UObject.Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC!(UObject.Pointer, 712)()); }
-			UObject.Pointer WorkingSetPtr() { mixin(MGPC!(UObject.Pointer, 708)()); }
-			UObject.Pointer DynamicObstacleMesh() { mixin(MGPC!(UObject.Pointer, 704)()); }
-			UObject.Pointer ObstacleMesh() { mixin(MGPC!(UObject.Pointer, 700)()); }
-			UObject.Pointer NavMeshPtr() { mixin(MGPC!(UObject.Pointer, 696)()); }
-			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!(UObject.Pointer, 692)()); }
+			float MaxExpansionRadius() { mixin(MGPC!("float", 760)()); }
+			float ExpansionRadius() { mixin(MGPC!("float", 756)()); }
+			Pylon NextPylon() { mixin(MGPC!("Pylon", 740)()); }
+			UObject.Pointer OctreeIWasAddedTo() { mixin(MGPC!("UObject.Pointer", 736)()); }
+			UObject.OctreeElementId OctreeId() { mixin(MGPC!("UObject.OctreeElementId", 728)()); }
+			UObject.Pointer PathObjectsThatAffectThisPylon() { mixin(MGPC!("UObject.Pointer", 712)()); }
+			UObject.Pointer WorkingSetPtr() { mixin(MGPC!("UObject.Pointer", 708)()); }
+			UObject.Pointer DynamicObstacleMesh() { mixin(MGPC!("UObject.Pointer", 704)()); }
+			UObject.Pointer ObstacleMesh() { mixin(MGPC!("UObject.Pointer", 700)()); }
+			UObject.Pointer NavMeshPtr() { mixin(MGPC!("UObject.Pointer", 696)()); }
+			UObject.Pointer VfTable_IEditorLinkSelectionInterface() { mixin(MGPC!("UObject.Pointer", 692)()); }
 		}
 		bool bForceObstacleMeshCollision() { mixin(MGBPC!(768, 0x400)()); }
 		bool bForceObstacleMeshCollision(bool val) { mixin(MSBPC!(768, 0x400)()); }

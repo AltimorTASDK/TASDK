@@ -30,7 +30,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref LiftCenter MyLiftCenter() { mixin(MGPC!(LiftCenter, 692)()); }
+		@property final auto ref LiftCenter MyLiftCenter() { mixin(MGPC!("LiftCenter", 692)()); }
 		bool bExitOnly() { mixin(MGBPC!(696, 0x1)()); }
 		bool bExitOnly(bool val) { mixin(MSBPC!(696, 0x1)()); }
 	}

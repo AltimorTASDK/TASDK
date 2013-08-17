@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass RequiredInventory() { mixin(MGPC!(ScriptClass, 212)()); }
-			Actor Target() { mixin(MGPC!(Actor, 208)()); }
+			ScriptClass RequiredInventory() { mixin(MGPC!("ScriptClass", 212)()); }
+			Actor Target() { mixin(MGPC!("Actor", 208)()); }
 		}
 		bool bCheckVehicleDriver() { mixin(MGBPC!(216, 0x2)()); }
 		bool bCheckVehicleDriver(bool val) { mixin(MSBPC!(216, 0x2)()); }

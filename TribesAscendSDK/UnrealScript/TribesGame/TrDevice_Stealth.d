@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mPostBeginPlay;
 		public @property static final ScriptFunction PostBeginPlay() { mixin(MGF!("mPostBeginPlay", "Function TribesGame.TrDevice_Stealth.PostBeginPlay")()); }
 	}
-	@property final auto ref float m_fPulseSpeedThreshold() { mixin(MGPC!(float, 2168)()); }
+	@property final auto ref float m_fPulseSpeedThreshold() { mixin(MGPC!("float", 2168)()); }
 	final void PostBeginPlay()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.PostBeginPlay, cast(void*)0, cast(void*)0);

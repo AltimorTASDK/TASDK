@@ -22,11 +22,11 @@ public extern(D):
 		{
 			auto ref
 			{
-				float AnimPlayRate() { mixin(MGPS!(float, 20)()); }
-				float AnimEndOffset() { mixin(MGPS!(float, 16)()); }
-				float AnimStartOffset() { mixin(MGPS!(float, 12)()); }
-				ScriptName AnimSeqName() { mixin(MGPS!(ScriptName, 4)()); }
-				float StartTime() { mixin(MGPS!(float, 0)()); }
+				float AnimPlayRate() { mixin(MGPS!("float", 20)()); }
+				float AnimEndOffset() { mixin(MGPS!("float", 16)()); }
+				float AnimStartOffset() { mixin(MGPS!("float", 12)()); }
+				ScriptName AnimSeqName() { mixin(MGPS!("ScriptName", 4)()); }
+				float StartTime() { mixin(MGPS!("float", 0)()); }
 			}
 			bool bReverse() { mixin(MGBPS!(24, 0x2)()); }
 			bool bReverse(bool val) { mixin(MSBPS!(24, 0x2)()); }
@@ -38,9 +38,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!(ScriptArray!(AnimSet), 148)()); }
-			ScriptArray!(InterpTrackAnimControl.AnimControlTrackKey) AnimSeqs() { mixin(MGPC!(ScriptArray!(InterpTrackAnimControl.AnimControlTrackKey), 168)()); }
-			ScriptName SlotName() { mixin(MGPC!(ScriptName, 160)()); }
+			ScriptArray!(AnimSet) AnimSets() { mixin(MGPC!("ScriptArray!(AnimSet)", 148)()); }
+			ScriptArray!(InterpTrackAnimControl.AnimControlTrackKey) AnimSeqs() { mixin(MGPC!("ScriptArray!(InterpTrackAnimControl.AnimControlTrackKey)", 168)()); }
+			ScriptName SlotName() { mixin(MGPC!("ScriptName", 160)()); }
 		}
 		bool bEnableRootMotion() { mixin(MGBPC!(180, 0x1)()); }
 		bool bEnableRootMotion(bool val) { mixin(MSBPC!(180, 0x1)()); }

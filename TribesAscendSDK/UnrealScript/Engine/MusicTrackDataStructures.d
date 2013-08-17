@@ -22,12 +22,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptString MP3Filename() { mixin(MGPS!(ScriptString, 24)()); }
-				float FadeOutVolumeLevel() { mixin(MGPS!(float, 20)()); }
-				float FadeOutTime() { mixin(MGPS!(float, 16)()); }
-				float FadeInVolumeLevel() { mixin(MGPS!(float, 12)()); }
-				float FadeInTime() { mixin(MGPS!(float, 8)()); }
-				SoundCue TheSoundCue() { mixin(MGPS!(SoundCue, 0)()); }
+				ScriptString MP3Filename() { mixin(MGPS!("ScriptString", 24)()); }
+				float FadeOutVolumeLevel() { mixin(MGPS!("float", 20)()); }
+				float FadeOutTime() { mixin(MGPS!("float", 16)()); }
+				float FadeInVolumeLevel() { mixin(MGPS!("float", 12)()); }
+				float FadeInTime() { mixin(MGPS!("float", 8)()); }
+				SoundCue TheSoundCue() { mixin(MGPS!("SoundCue", 0)()); }
 			}
 			bool bPersistentAcrossLevels() { mixin(MGBPS!(4, 0x2)()); }
 			bool bPersistentAcrossLevels(bool val) { mixin(MSBPS!(4, 0x2)()); }

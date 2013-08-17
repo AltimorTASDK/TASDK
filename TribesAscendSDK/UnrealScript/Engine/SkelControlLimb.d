@@ -16,16 +16,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName StretchRollBoneName() { mixin(MGPC!(ScriptName, 244)()); }
-			UObject.Vector2D StretchLimits() { mixin(MGPC!(UObject.Vector2D, 236)()); }
-			ScriptName JointTargetSpaceBoneName() { mixin(MGPC!(ScriptName, 224)()); }
-			Vector JointTargetLocation() { mixin(MGPC!(Vector, 212)()); }
-			ScriptName EffectorSpaceBoneName() { mixin(MGPC!(ScriptName, 204)()); }
-			UObject.EAxis JointAxis() { mixin(MGPC!(UObject.EAxis, 203)()); }
-			UObject.EAxis BoneAxis() { mixin(MGPC!(UObject.EAxis, 202)()); }
-			SkelControlBase.EBoneControlSpace JointTargetLocationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 201)()); }
-			SkelControlBase.EBoneControlSpace EffectorLocationSpace() { mixin(MGPC!(SkelControlBase.EBoneControlSpace, 200)()); }
-			Vector EffectorLocation() { mixin(MGPC!(Vector, 188)()); }
+			ScriptName StretchRollBoneName() { mixin(MGPC!("ScriptName", 244)()); }
+			UObject.Vector2D StretchLimits() { mixin(MGPC!("UObject.Vector2D", 236)()); }
+			ScriptName JointTargetSpaceBoneName() { mixin(MGPC!("ScriptName", 224)()); }
+			Vector JointTargetLocation() { mixin(MGPC!("Vector", 212)()); }
+			ScriptName EffectorSpaceBoneName() { mixin(MGPC!("ScriptName", 204)()); }
+			UObject.EAxis JointAxis() { mixin(MGPC!("UObject.EAxis", 203)()); }
+			UObject.EAxis BoneAxis() { mixin(MGPC!("UObject.EAxis", 202)()); }
+			SkelControlBase.EBoneControlSpace JointTargetLocationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 201)()); }
+			SkelControlBase.EBoneControlSpace EffectorLocationSpace() { mixin(MGPC!("SkelControlBase.EBoneControlSpace", 200)()); }
+			Vector EffectorLocation() { mixin(MGPC!("Vector", 188)()); }
 		}
 		bool bAllowStretching() { mixin(MGBPC!(232, 0x20)()); }
 		bool bAllowStretching(bool val) { mixin(MSBPC!(232, 0x20)()); }

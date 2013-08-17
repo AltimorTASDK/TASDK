@@ -40,14 +40,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnShowOnlineStatsUIComplete, cast(void*)0, cast(void*)0);
 	}
-	bool ShowOnlineStatsUI(ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
+	bool ShowOnlineStatsUI(ref in ScriptArray!(OnlineSubsystem.UniqueNetId) Players, OnlineStatsRead StatsRead)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))Players;
 		*cast(OnlineStatsRead*)&params[12] = StatsRead;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowOnlineStatsUI, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
 	void AddShowOnlineStatsUICompleteDelegate(

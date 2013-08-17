@@ -31,12 +31,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float VL() { mixin(MGPC!(float, 512)()); }
-			float V() { mixin(MGPC!(float, 508)()); }
-			float UL() { mixin(MGPC!(float, 504)()); }
-			float U() { mixin(MGPC!(float, 500)()); }
-			float ScreenSize() { mixin(MGPC!(float, 496)()); }
-			Texture2D Sprite() { mixin(MGPC!(Texture2D, 488)()); }
+			float VL() { mixin(MGPC!("float", 512)()); }
+			float V() { mixin(MGPC!("float", 508)()); }
+			float UL() { mixin(MGPC!("float", 504)()); }
+			float U() { mixin(MGPC!("float", 500)()); }
+			float ScreenSize() { mixin(MGPC!("float", 496)()); }
+			Texture2D Sprite() { mixin(MGPC!("Texture2D", 488)()); }
 		}
 		bool bIsScreenSizeScaled() { mixin(MGBPC!(492, 0x1)()); }
 		bool bIsScreenSizeScaled(bool val) { mixin(MSBPC!(492, 0x1)()); }

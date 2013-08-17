@@ -13,7 +13,7 @@ public extern(D):
 	@property final static TextureRenderTarget DefaultProperties() { mixin(MGDPC!(TextureRenderTarget, "TextureRenderTarget Engine.Default__TextureRenderTarget")()); }
 	@property final
 	{
-		@property final auto ref float TargetGamma() { mixin(MGPC!(float, 240)()); }
+		@property final auto ref float TargetGamma() { mixin(MGPC!("float", 240)()); }
 		bool bRenderOnce() { mixin(MGBPC!(236, 0x4)()); }
 		bool bRenderOnce(bool val) { mixin(MSBPC!(236, 0x4)()); }
 		bool bNeedsTwoCopies() { mixin(MGBPC!(236, 0x2)()); }

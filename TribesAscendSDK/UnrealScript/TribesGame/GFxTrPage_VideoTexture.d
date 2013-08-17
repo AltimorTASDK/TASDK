@@ -43,8 +43,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int CurrGraphics() { mixin(MGPC!(int, 360)()); }
-		int SettingIndex() { mixin(MGPC!(int, 356)()); }
+		int CurrGraphics() { mixin(MGPC!("int", 360)()); }
+		int SettingIndex() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

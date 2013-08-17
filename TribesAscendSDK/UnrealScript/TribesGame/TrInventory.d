@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mDropFrom;
 		public @property static final ScriptFunction DropFrom() { mixin(MGF!("mDropFrom", "Function TribesGame.TrInventory.DropFrom")()); }
 	}
-	@property final auto ref float m_fMaxPickupSpeed() { mixin(MGPC!(float, 556)()); }
+	@property final auto ref float m_fMaxPickupSpeed() { mixin(MGPC!("float", 556)()); }
 	final void DropFrom(Vector StartLocation, Vector StartVelocity)
 	{
 		ubyte params[24];

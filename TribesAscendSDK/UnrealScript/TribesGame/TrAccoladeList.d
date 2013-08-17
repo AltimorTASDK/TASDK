@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrAccoladeList")()); }
 	private static __gshared TrAccoladeList mDefaultProperties;
 	@property final static TrAccoladeList DefaultProperties() { mixin(MGDPC!(TrAccoladeList, "TrAccoladeList TribesGame.Default__TrAccoladeList")()); }
-	@property final auto ref ScriptArray!(ScriptString) accoladeList() { mixin(MGPC!(ScriptArray!(ScriptString), 60)()); }
+	@property final auto ref ScriptArray!(ScriptString) accoladeList() { mixin(MGPC!("ScriptArray!(ScriptString)", 60)()); }
 }

@@ -14,8 +14,8 @@ public extern(D):
 	@property final static SeqAct_SetMatInstScalarParam DefaultProperties() { mixin(MGDPC!(SeqAct_SetMatInstScalarParam, "SeqAct_SetMatInstScalarParam Engine.Default__SeqAct_SetMatInstScalarParam")()); }
 	@property final auto ref
 	{
-		float ScalarValue() { mixin(MGPC!(float, 244)()); }
-		ScriptName ParamName() { mixin(MGPC!(ScriptName, 236)()); }
-		MaterialInstanceConstant MatInst() { mixin(MGPC!(MaterialInstanceConstant, 232)()); }
+		float ScalarValue() { mixin(MGPC!("float", 244)()); }
+		ScriptName ParamName() { mixin(MGPC!("ScriptName", 236)()); }
+		MaterialInstanceConstant MatInst() { mixin(MGPC!("MaterialInstanceConstant", 232)()); }
 	}
 }

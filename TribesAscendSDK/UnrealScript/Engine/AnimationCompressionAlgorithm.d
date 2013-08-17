@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 77)()); }
-			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { mixin(MGPC!(AnimSequence.AnimationCompressionFormat, 76)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 60)()); }
+			AnimSequence.AnimationCompressionFormat RotationCompressionFormat() { mixin(MGPC!("AnimSequence.AnimationCompressionFormat", 77)()); }
+			AnimSequence.AnimationCompressionFormat TranslationCompressionFormat() { mixin(MGPC!("AnimSequence.AnimationCompressionFormat", 76)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 60)()); }
 		}
 		bool bNeedsSkeleton() { mixin(MGBPC!(72, 0x1)()); }
 		bool bNeedsSkeleton(bool val) { mixin(MSBPC!(72, 0x1)()); }

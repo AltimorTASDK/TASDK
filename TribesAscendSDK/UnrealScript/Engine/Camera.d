@@ -123,11 +123,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Camera.TViewTarget")()); }
 		@property final auto ref
 		{
-			Actor Target() { mixin(MGPS!(Actor, 0)()); }
-			UObject.TPOV POV() { mixin(MGPS!(UObject.TPOV, 8)()); }
-			float AspectRatio() { mixin(MGPS!(float, 36)()); }
+			Actor Target() { mixin(MGPS!("Actor", 0)()); }
+			UObject.TPOV POV() { mixin(MGPS!("UObject.TPOV", 8)()); }
+			float AspectRatio() { mixin(MGPS!("float", 36)()); }
 			// WARNING: Property 'Controller' has the same name as a defined type!
-			PlayerReplicationInfo PRI() { mixin(MGPS!(PlayerReplicationInfo, 40)()); }
+			PlayerReplicationInfo PRI() { mixin(MGPS!("PlayerReplicationInfo", 40)()); }
 		}
 	}
 	struct TCameraCache
@@ -138,8 +138,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Camera.TCameraCache")()); }
 		@property final auto ref
 		{
-			UObject.TPOV POV() { mixin(MGPS!(UObject.TPOV, 4)()); }
-			float TimeStamp() { mixin(MGPS!(float, 0)()); }
+			UObject.TPOV POV() { mixin(MGPS!("UObject.TPOV", 4)()); }
+			float TimeStamp() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	struct ViewTargetTransitionParams
@@ -152,9 +152,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				float BlendTime() { mixin(MGPS!(float, 0)()); }
-				Camera.EViewTargetBlendFunction BlendFunction() { mixin(MGPS!(Camera.EViewTargetBlendFunction, 4)()); }
-				float BlendExp() { mixin(MGPS!(float, 8)()); }
+				float BlendTime() { mixin(MGPS!("float", 0)()); }
+				Camera.EViewTargetBlendFunction BlendFunction() { mixin(MGPS!("Camera.EViewTargetBlendFunction", 4)()); }
+				float BlendExp() { mixin(MGPS!("float", 8)()); }
 			}
 			bool bLockOutgoing() { mixin(MGBPS!(12, 0x1)()); }
 			bool bLockOutgoing(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -164,42 +164,42 @@ public extern(D):
 	{
 		auto ref
 		{
-			CameraModifier_CameraShake CameraShakeCamMod() { mixin(MGPC!(CameraModifier_CameraShake, 1020)()); }
-			ScriptClass CameraShakeCamModClass() { mixin(MGPC!(ScriptClass, 1024)()); }
-			CameraAnimInst AnimInstPool() { mixin(MGPC!(CameraAnimInst, 1028)()); }
-			ScriptArray!(CameraAnimInst) FreeAnims() { mixin(MGPC!(ScriptArray!(CameraAnimInst), 1072)()); }
-			DynamicCameraActor AnimCameraActor() { mixin(MGPC!(DynamicCameraActor, 1084)()); }
-			Camera.TCameraCache CameraCache() { mixin(MGPC!(Camera.TCameraCache, 792)()); }
-			float DefaultFOV() { mixin(MGPC!(float, 488)()); }
-			PlayerController PCOwner() { mixin(MGPC!(PlayerController, 476)()); }
-			float LockedFOV() { mixin(MGPC!(float, 496)()); }
-			Vector ColorScale() { mixin(MGPC!(Vector, 748)()); }
-			Vector OriginalColorScale() { mixin(MGPC!(Vector, 772)()); }
-			Vector DesiredColorScale() { mixin(MGPC!(Vector, 760)()); }
-			float ColorScaleInterpStartTime() { mixin(MGPC!(float, 788)()); }
-			float ColorScaleInterpDuration() { mixin(MGPC!(float, 784)()); }
-			float CamOverridePostProcessAlpha() { mixin(MGPC!(float, 524)()); }
-			Camera.TViewTarget PendingViewTarget() { mixin(MGPC!(Camera.TViewTarget, 900)()); }
-			Camera.ViewTargetTransitionParams BlendParams() { mixin(MGPC!(Camera.ViewTargetTransitionParams, 948)()); }
-			Camera.TViewTarget ViewTarget() { mixin(MGPC!(Camera.TViewTarget, 856)()); }
-			float ConstrainedAspectRatio() { mixin(MGPC!(float, 500)()); }
-			float BlendTimeToGo() { mixin(MGPC!(float, 944)()); }
-			float FadeTimeRemaining() { mixin(MGPC!(float, 1004)()); }
-			float FadeTime() { mixin(MGPC!(float, 1000)()); }
-			float FadeAmount() { mixin(MGPC!(float, 520)()); }
-			UObject.Vector2D FadeAlpha() { mixin(MGPC!(UObject.Vector2D, 992)()); }
-			Camera.TCameraCache LastFrameCameraCache() { mixin(MGPC!(Camera.TCameraCache, 824)()); }
-			ScriptArray!(CameraModifier) ModifierList() { mixin(MGPC!(ScriptArray!(CameraModifier), 964)()); }
-			ScriptArray!(EmitterCameraLensEffectBase) CameraLensEffects() { mixin(MGPC!(ScriptArray!(EmitterCameraLensEffectBase), 1008)()); }
-			ScriptArray!(CameraAnimInst) ActiveAnims() { mixin(MGPC!(ScriptArray!(CameraAnimInst), 1060)()); }
-			Vector FreeCamOffset() { mixin(MGPC!(Vector, 980)()); }
-			float FreeCamDistance() { mixin(MGPC!(float, 976)()); }
-			PostProcessVolume.PostProcessSettings CamPostProcessSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 528)()); }
-			UObject.Color FadeColor() { mixin(MGPC!(UObject.Color, 516)()); }
-			float OffAxisPitchAngle() { mixin(MGPC!(float, 512)()); }
-			float OffAxisYawAngle() { mixin(MGPC!(float, 508)()); }
-			float DefaultAspectRatio() { mixin(MGPC!(float, 504)()); }
-			ScriptName CameraStyle() { mixin(MGPC!(ScriptName, 480)()); }
+			CameraModifier_CameraShake CameraShakeCamMod() { mixin(MGPC!("CameraModifier_CameraShake", 1020)()); }
+			ScriptClass CameraShakeCamModClass() { mixin(MGPC!("ScriptClass", 1024)()); }
+			CameraAnimInst AnimInstPool() { mixin(MGPC!("CameraAnimInst", 1028)()); }
+			ScriptArray!(CameraAnimInst) FreeAnims() { mixin(MGPC!("ScriptArray!(CameraAnimInst)", 1072)()); }
+			DynamicCameraActor AnimCameraActor() { mixin(MGPC!("DynamicCameraActor", 1084)()); }
+			Camera.TCameraCache CameraCache() { mixin(MGPC!("Camera.TCameraCache", 792)()); }
+			float DefaultFOV() { mixin(MGPC!("float", 488)()); }
+			PlayerController PCOwner() { mixin(MGPC!("PlayerController", 476)()); }
+			float LockedFOV() { mixin(MGPC!("float", 496)()); }
+			Vector ColorScale() { mixin(MGPC!("Vector", 748)()); }
+			Vector OriginalColorScale() { mixin(MGPC!("Vector", 772)()); }
+			Vector DesiredColorScale() { mixin(MGPC!("Vector", 760)()); }
+			float ColorScaleInterpStartTime() { mixin(MGPC!("float", 788)()); }
+			float ColorScaleInterpDuration() { mixin(MGPC!("float", 784)()); }
+			float CamOverridePostProcessAlpha() { mixin(MGPC!("float", 524)()); }
+			Camera.TViewTarget PendingViewTarget() { mixin(MGPC!("Camera.TViewTarget", 900)()); }
+			Camera.ViewTargetTransitionParams BlendParams() { mixin(MGPC!("Camera.ViewTargetTransitionParams", 948)()); }
+			Camera.TViewTarget ViewTarget() { mixin(MGPC!("Camera.TViewTarget", 856)()); }
+			float ConstrainedAspectRatio() { mixin(MGPC!("float", 500)()); }
+			float BlendTimeToGo() { mixin(MGPC!("float", 944)()); }
+			float FadeTimeRemaining() { mixin(MGPC!("float", 1004)()); }
+			float FadeTime() { mixin(MGPC!("float", 1000)()); }
+			float FadeAmount() { mixin(MGPC!("float", 520)()); }
+			UObject.Vector2D FadeAlpha() { mixin(MGPC!("UObject.Vector2D", 992)()); }
+			Camera.TCameraCache LastFrameCameraCache() { mixin(MGPC!("Camera.TCameraCache", 824)()); }
+			ScriptArray!(CameraModifier) ModifierList() { mixin(MGPC!("ScriptArray!(CameraModifier)", 964)()); }
+			ScriptArray!(EmitterCameraLensEffectBase) CameraLensEffects() { mixin(MGPC!("ScriptArray!(EmitterCameraLensEffectBase)", 1008)()); }
+			ScriptArray!(CameraAnimInst) ActiveAnims() { mixin(MGPC!("ScriptArray!(CameraAnimInst)", 1060)()); }
+			Vector FreeCamOffset() { mixin(MGPC!("Vector", 980)()); }
+			float FreeCamDistance() { mixin(MGPC!("float", 976)()); }
+			PostProcessVolume.PostProcessSettings CamPostProcessSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 528)()); }
+			UObject.Color FadeColor() { mixin(MGPC!("UObject.Color", 516)()); }
+			float OffAxisPitchAngle() { mixin(MGPC!("float", 512)()); }
+			float OffAxisYawAngle() { mixin(MGPC!("float", 508)()); }
+			float DefaultAspectRatio() { mixin(MGPC!("float", 504)()); }
+			ScriptName CameraStyle() { mixin(MGPC!("ScriptName", 480)()); }
 		}
 		bool bLockedFOV() { mixin(MGBPC!(492, 0x1)()); }
 		bool bLockedFOV(bool val) { mixin(MSBPC!(492, 0x1)()); }
@@ -236,7 +236,7 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		*cast(UObject.TPOV*)&params[4] = OutPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCameraModifiers, params.ptr, cast(void*)0);
-		*OutPOV = *cast(UObject.TPOV*)&params[4];
+		OutPOV = *cast(UObject.TPOV*)&params[4];
 	}
 	void InitializeFor(PlayerController PC)
 	{
@@ -245,12 +245,13 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeFor, params.ptr, cast(void*)0);
 	}
-	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams TransitionParams)
+	void SetViewTarget(Actor NewViewTarget, Camera.ViewTargetTransitionParams* TransitionParams = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Actor*)params.ptr = NewViewTarget;
-		*cast(Camera.ViewTargetTransitionParams*)&params[4] = TransitionParams;
+		if (TransitionParams !is null)
+			*cast(Camera.ViewTargetTransitionParams*)&params[4] = *TransitionParams;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTarget, params.ptr, cast(void*)0);
 	}
 	float GetFOVAngle()
@@ -274,8 +275,8 @@ final:
 		*cast(Vector*)params.ptr = OutCamLoc;
 		*cast(Rotator*)&params[12] = OutCamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCameraViewPoint, params.ptr, cast(void*)0);
-		*OutCamLoc = *cast(Vector*)params.ptr;
-		*OutCamRot = *cast(Rotator*)&params[12];
+		OutCamLoc = *cast(Vector*)params.ptr;
+		OutCamRot = *cast(Rotator*)&params[12];
 	}
 	Rotator GetCameraRotation()
 	{
@@ -299,25 +300,22 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
 	}
-	UObject.TPOV BlendViewTargets(ref const Camera.TViewTarget A, ref const Camera.TViewTarget B, float Alpha)
+	UObject.TPOV BlendViewTargets(ref in Camera.TViewTarget A, ref in Camera.TViewTarget B, float Alpha)
 	{
 		ubyte params[120];
 		params[] = 0;
-		*cast(Camera.TViewTarget*)params.ptr = A;
-		*cast(Camera.TViewTarget*)&params[44] = B;
+		*cast(Camera.TViewTarget*)params.ptr = cast(Camera.TViewTarget)A;
+		*cast(Camera.TViewTarget*)&params[44] = cast(Camera.TViewTarget)B;
 		*cast(float*)&params[88] = Alpha;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BlendViewTargets, params.ptr, cast(void*)0);
-		*A = *cast(Camera.TViewTarget*)params.ptr;
-		*B = *cast(Camera.TViewTarget*)&params[44];
 		return *cast(UObject.TPOV*)&params[92];
 	}
-	void FillCameraCache(ref const UObject.TPOV NewPOV)
+	void FillCameraCache(ref in UObject.TPOV NewPOV)
 	{
 		ubyte params[28];
 		params[] = 0;
-		*cast(UObject.TPOV*)params.ptr = NewPOV;
+		*cast(UObject.TPOV*)params.ptr = cast(UObject.TPOV)NewPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FillCameraCache, params.ptr, cast(void*)0);
-		*NewPOV = *cast(UObject.TPOV*)params.ptr;
 	}
 	void CheckViewTarget(ref Camera.TViewTarget VT)
 	{
@@ -325,7 +323,7 @@ final:
 		params[] = 0;
 		*cast(Camera.TViewTarget*)params.ptr = VT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckViewTarget, params.ptr, cast(void*)0);
-		*VT = *cast(Camera.TViewTarget*)params.ptr;
+		VT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	void UpdateViewTarget(ref Camera.TViewTarget OutVT, float DeltaTime)
 	{
@@ -334,7 +332,7 @@ final:
 		*cast(Camera.TViewTarget*)params.ptr = OutVT;
 		*cast(float*)&params[44] = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateViewTarget, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)params.ptr;
+		OutVT = *cast(Camera.TViewTarget*)params.ptr;
 	}
 	void ProcessViewRotation(float DeltaTime, ref Rotator OutViewRotation, ref Rotator OutDeltaRot)
 	{
@@ -344,8 +342,8 @@ final:
 		*cast(Rotator*)&params[4] = OutViewRotation;
 		*cast(Rotator*)&params[16] = OutDeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*OutViewRotation = *cast(Rotator*)&params[4];
-		*OutDeltaRot = *cast(Rotator*)&params[16];
+		OutViewRotation = *cast(Rotator*)&params[4];
+		OutDeltaRot = *cast(Rotator*)&params[16];
 	}
 	void DisplayDebug(HUD pHUD, ref float out_YL, ref float out_YPos)
 	{
@@ -355,8 +353,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	EmitterCameraLensEffectBase FindCameraLensEffect(ScriptClass LensEffectEmitterClass)
 	{
@@ -384,14 +382,16 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCameraLensEffects, cast(void*)0, cast(void*)0);
 	}
-	void PlayCameraShake(CameraShake Shake, float Scale, Camera.ECameraAnimPlaySpace PlaySpace, Rotator UserPlaySpaceRot)
+	void PlayCameraShake(CameraShake Shake, float Scale, Camera.ECameraAnimPlaySpace* PlaySpace = null, Rotator* UserPlaySpaceRot = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(CameraShake*)params.ptr = Shake;
 		*cast(float*)&params[4] = Scale;
-		*cast(Camera.ECameraAnimPlaySpace*)&params[8] = PlaySpace;
-		*cast(Rotator*)&params[12] = UserPlaySpaceRot;
+		if (PlaySpace !is null)
+			*cast(Camera.ECameraAnimPlaySpace*)&params[8] = *PlaySpace;
+		if (UserPlaySpaceRot !is null)
+			*cast(Rotator*)&params[12] = *UserPlaySpaceRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCameraShake, params.ptr, cast(void*)0);
 	}
 	void StopCameraShake(CameraShake Shake)
@@ -413,7 +413,7 @@ final:
 		StaticClass.ProcessEvent(Functions.CalcRadialShakeScale, params.ptr, cast(void*)0);
 		return *cast(float*)&params[28];
 	}
-	static void PlayWorldCameraShake(CameraShake Shake, Actor ShakeInstigator, Vector Epicenter, float InnerRadius, float OuterRadius, float Falloff, bool bTryForceFeedback, bool bOrientShakeTowardsEpicenter)
+	static void PlayWorldCameraShake(CameraShake Shake, Actor ShakeInstigator, Vector Epicenter, float InnerRadius, float OuterRadius, float Falloff, bool bTryForceFeedback, bool* bOrientShakeTowardsEpicenter = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -424,50 +424,62 @@ final:
 		*cast(float*)&params[24] = OuterRadius;
 		*cast(float*)&params[28] = Falloff;
 		*cast(bool*)&params[32] = bTryForceFeedback;
-		*cast(bool*)&params[36] = bOrientShakeTowardsEpicenter;
+		if (bOrientShakeTowardsEpicenter !is null)
+			*cast(bool*)&params[36] = *bOrientShakeTowardsEpicenter;
 		StaticClass.ProcessEvent(Functions.PlayWorldCameraShake, params.ptr, cast(void*)0);
 	}
 	void ClearAllCameraShakes()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearAllCameraShakes, cast(void*)0, cast(void*)0);
 	}
-	CameraAnimInst PlayCameraAnim(CameraAnim Anim, float Rate, float Scale, float BlendInTime, float BlendOutTime, bool bLoop, bool bRandomStartTime, float Duration, bool bSingleInstance)
+	CameraAnimInst PlayCameraAnim(CameraAnim Anim, float* Rate = null, float* Scale = null, float* BlendInTime = null, float* BlendOutTime = null, bool* bLoop = null, bool* bRandomStartTime = null, float* Duration = null, bool* bSingleInstance = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(CameraAnim*)params.ptr = Anim;
-		*cast(float*)&params[4] = Rate;
-		*cast(float*)&params[8] = Scale;
-		*cast(float*)&params[12] = BlendInTime;
-		*cast(float*)&params[16] = BlendOutTime;
-		*cast(bool*)&params[20] = bLoop;
-		*cast(bool*)&params[24] = bRandomStartTime;
-		*cast(float*)&params[28] = Duration;
-		*cast(bool*)&params[32] = bSingleInstance;
+		if (Rate !is null)
+			*cast(float*)&params[4] = *Rate;
+		if (Scale !is null)
+			*cast(float*)&params[8] = *Scale;
+		if (BlendInTime !is null)
+			*cast(float*)&params[12] = *BlendInTime;
+		if (BlendOutTime !is null)
+			*cast(float*)&params[16] = *BlendOutTime;
+		if (bLoop !is null)
+			*cast(bool*)&params[20] = *bLoop;
+		if (bRandomStartTime !is null)
+			*cast(bool*)&params[24] = *bRandomStartTime;
+		if (Duration !is null)
+			*cast(float*)&params[28] = *Duration;
+		if (bSingleInstance !is null)
+			*cast(bool*)&params[32] = *bSingleInstance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCameraAnim, params.ptr, cast(void*)0);
 		return *cast(CameraAnimInst*)&params[36];
 	}
-	void StopAllCameraAnims(bool bImmediate)
+	void StopAllCameraAnims(bool* bImmediate = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bImmediate;
+		if (bImmediate !is null)
+			*cast(bool*)params.ptr = *bImmediate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopAllCameraAnims, params.ptr, cast(void*)0);
 	}
-	void StopAllCameraAnimsByType(CameraAnim Anim, bool bImmediate)
+	void StopAllCameraAnimsByType(CameraAnim Anim, bool* bImmediate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(CameraAnim*)params.ptr = Anim;
-		*cast(bool*)&params[4] = bImmediate;
+		if (bImmediate !is null)
+			*cast(bool*)&params[4] = *bImmediate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopAllCameraAnimsByType, params.ptr, cast(void*)0);
 	}
-	void StopCameraAnim(CameraAnimInst AnimInst, bool bImmediate)
+	void StopCameraAnim(CameraAnimInst AnimInst, bool* bImmediate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(CameraAnimInst*)params.ptr = AnimInst;
-		*cast(bool*)&params[4] = bImmediate;
+		if (bImmediate !is null)
+			*cast(bool*)&params[4] = *bImmediate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopCameraAnim, params.ptr, cast(void*)0);
 	}
 }

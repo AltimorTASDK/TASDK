@@ -28,9 +28,9 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
-		MaterialInstanceTimeVarying PodFadeMaterial() { mixin(MGPC!(MaterialInstanceTimeVarying, 484)()); }
-		float TimeToFade() { mixin(MGPC!(float, 480)()); }
-		float TimeToDelete() { mixin(MGPC!(float, 476)()); }
+		MaterialInstanceTimeVarying PodFadeMaterial() { mixin(MGPC!("MaterialInstanceTimeVarying", 484)()); }
+		float TimeToFade() { mixin(MGPC!("float", 480)()); }
+		float TimeToDelete() { mixin(MGPC!("float", 476)()); }
 	}
 final:
 	void PostBeginPlay()

@@ -77,26 +77,26 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrUser.NewItem")()); }
 		@property final auto ref
 		{
-			int ItemId() { mixin(MGPS!(int, 8)()); }
-			int Type() { mixin(MGPS!(int, 4)()); }
-			int ClassId() { mixin(MGPS!(int, 0)()); }
+			int ItemId() { mixin(MGPS!("int", 8)()); }
+			int Type() { mixin(MGPS!("int", 4)()); }
+			int ClassId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_ClassId() { mixin(MGPC!(int, 76)()); }
-			ScriptString CurrencyName() { mixin(MGPC!(ScriptString, 64)()); }
-			ScriptString m_Username() { mixin(MGPC!(ScriptString, 96)()); }
-			ScriptString m_Password() { mixin(MGPC!(ScriptString, 108)()); }
-			ScriptArray!(TrUser.NewItem) NewItems() { mixin(MGPC!(ScriptArray!(TrUser.NewItem), 120)()); }
-			ScriptArray!(TrUser.NewItem) NewBundles() { mixin(MGPC!(ScriptArray!(TrUser.NewItem), 132)()); }
-			ScriptArray!(TrUser.NewItem) SeenNewItems() { mixin(MGPC!(ScriptArray!(TrUser.NewItem), 144)()); }
-			ScriptArray!(int) FavServers() { mixin(MGPC!(ScriptArray!(int), 156)()); }
-			GFxTrMenuMoviePlayer MainMenu() { mixin(MGPC!(GFxTrMenuMoviePlayer, 168)()); }
-			ScriptString m_GameType() { mixin(MGPC!(ScriptString, 84)()); }
-			int CurrencyCode() { mixin(MGPC!(int, 60)()); }
+			int m_ClassId() { mixin(MGPC!("int", 76)()); }
+			ScriptString CurrencyName() { mixin(MGPC!("ScriptString", 64)()); }
+			ScriptString m_Username() { mixin(MGPC!("ScriptString", 96)()); }
+			ScriptString m_Password() { mixin(MGPC!("ScriptString", 108)()); }
+			ScriptArray!(TrUser.NewItem) NewItems() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 120)()); }
+			ScriptArray!(TrUser.NewItem) NewBundles() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 132)()); }
+			ScriptArray!(TrUser.NewItem) SeenNewItems() { mixin(MGPC!("ScriptArray!(TrUser.NewItem)", 144)()); }
+			ScriptArray!(int) FavServers() { mixin(MGPC!("ScriptArray!(int)", 156)()); }
+			GFxTrMenuMoviePlayer MainMenu() { mixin(MGPC!("GFxTrMenuMoviePlayer", 168)()); }
+			ScriptString m_GameType() { mixin(MGPC!("ScriptString", 84)()); }
+			int CurrencyCode() { mixin(MGPC!("int", 60)()); }
 		}
 		bool m_DidLogin() { mixin(MGBPC!(80, 0x1)()); }
 		bool m_DidLogin(bool val) { mixin(MSBPC!(80, 0x1)()); }
@@ -131,11 +131,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.NeedsToSeeNewItemsType, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool NeedToSeeNewBundle(int ItemId)
+	bool NeedToSeeNewBundle(int* ItemId = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(int*)params.ptr = ItemId;
+		if (ItemId !is null)
+			*cast(int*)params.ptr = *ItemId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NeedToSeeNewBundle, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

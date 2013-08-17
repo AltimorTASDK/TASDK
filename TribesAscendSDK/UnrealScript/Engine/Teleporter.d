@@ -38,9 +38,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LastFired() { mixin(MGPC!(float, 728)()); }
-			Vector TargetVelocity() { mixin(MGPC!(Vector, 716)()); }
-			ScriptName ProductRequired() { mixin(MGPC!(ScriptName, 704)()); }
+			float LastFired() { mixin(MGPC!("float", 728)()); }
+			Vector TargetVelocity() { mixin(MGPC!("Vector", 716)()); }
+			ScriptName ProductRequired() { mixin(MGPC!("ScriptName", 704)()); }
 			// WARNING: Property 'URL' has the same name as a defined type!
 		}
 		bool bCanTeleportVehicles() { mixin(MGBPC!(712, 0x40)()); }

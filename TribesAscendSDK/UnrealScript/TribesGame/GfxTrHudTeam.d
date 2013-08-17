@@ -36,16 +36,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		GFxObject FlagCarrierTF() { mixin(MGPC!(GFxObject, 3132)()); }
-		GFxObject ScoreTF() { mixin(MGPC!(GFxObject, 3124)()); }
-		GFxObject ScoreBarMC() { mixin(MGPC!(GFxObject, 3116)()); }
+		GFxObject FlagCarrierTF() { mixin(MGPC!("GFxObject", 3132)()); }
+		GFxObject ScoreTF() { mixin(MGPC!("GFxObject", 3124)()); }
+		GFxObject ScoreBarMC() { mixin(MGPC!("GFxObject", 3116)()); }
 	}
 final:
-	void Init(LocalPlayer pPlayer)
+	void Init(LocalPlayer* pPlayer = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(LocalPlayer*)params.ptr = pPlayer;
+		if (pPlayer !is null)
+			*cast(LocalPlayer*)params.ptr = *pPlayer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
 	GFxObject InitMessageRow()
@@ -55,11 +56,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitMessageRow, params.ptr, cast(void*)0);
 		return *cast(GFxObject*)params.ptr;
 	}
-	void ClearStats(bool clearScores)
+	void ClearStats(bool* clearScores = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = clearScores;
+		if (clearScores !is null)
+			*cast(bool*)params.ptr = *clearScores;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearStats, params.ptr, cast(void*)0);
 	}
 	void UpdateGameHUD(UTPlayerReplicationInfo PRI)

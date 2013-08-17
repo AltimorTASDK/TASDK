@@ -15,6 +15,6 @@ public extern(D):
 	@property final auto ref
 	{
 		// WARNING: Property 'Function' has the same name as a defined type!
-		ScriptString EventName() { mixin(MGPC!(ScriptString, 92)()); }
+		ScriptString EventName() { mixin(MGPC!("ScriptString", 92)()); }
 	}
 }

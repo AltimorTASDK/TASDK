@@ -13,7 +13,7 @@ public extern(D):
 	@property final static Level DefaultProperties() { mixin(MGDPC!(Level, "Level Engine.Default__Level")()); }
 	@property final auto ref
 	{
-		float LightmapTotalSize() { mixin(MGPC!(float, 360)()); }
-		float ShadowmapTotalSize() { mixin(MGPC!(float, 364)()); }
+		float LightmapTotalSize() { mixin(MGPC!("float", 360)()); }
+		float ShadowmapTotalSize() { mixin(MGPC!("float", 364)()); }
 	}
 }

@@ -37,7 +37,7 @@ public extern(D):
 		MAVW_BORDERLESS = 2,
 		MAVW_MAX = 3,
 	}
-	@property final auto ref int CurrWindow() { mixin(MGPC!(int, 356)()); }
+	@property final auto ref int CurrWindow() { mixin(MGPC!("int", 356)()); }
 final:
 	void Initialize()
 	{

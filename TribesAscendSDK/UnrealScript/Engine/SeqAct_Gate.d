@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			int CurrentCloseCount() { mixin(MGPC!(int, 240)()); }
-			int AutoCloseCount() { mixin(MGPC!(int, 236)()); }
+			int CurrentCloseCount() { mixin(MGPC!("int", 240)()); }
+			int AutoCloseCount() { mixin(MGPC!("int", 236)()); }
 		}
 		bool bOpen() { mixin(MGBPC!(232, 0x1)()); }
 		bool bOpen(bool val) { mixin(MSBPC!(232, 0x1)()); }

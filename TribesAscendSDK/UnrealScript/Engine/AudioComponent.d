@@ -60,70 +60,70 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.AudioComponent.AudioComponentParam")()); }
 		@property final auto ref
 		{
-			SoundNodeWave WaveParam() { mixin(MGPS!(SoundNodeWave, 12)()); }
-			float FloatParam() { mixin(MGPS!(float, 8)()); }
-			ScriptName ParamName() { mixin(MGPS!(ScriptName, 0)()); }
+			SoundNodeWave WaveParam() { mixin(MGPS!("SoundNodeWave", 12)()); }
+			float FloatParam() { mixin(MGPS!("float", 8)()); }
+			ScriptName ParamName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			Vector Location() { mixin(MGPC!(Vector, 280)()); }
-			float VolumeMultiplier() { mixin(MGPC!(float, 488)()); }
-			float PitchMultiplier() { mixin(MGPC!(float, 492)()); }
-			float SubtitlePriority() { mixin(MGPC!(float, 308)()); }
+			Vector Location() { mixin(MGPC!("Vector", 280)()); }
+			float VolumeMultiplier() { mixin(MGPC!("float", 488)()); }
+			float PitchMultiplier() { mixin(MGPC!("float", 492)()); }
+			float SubtitlePriority() { mixin(MGPC!("float", 308)()); }
 			// WARNING: Property 'SoundCue' has the same name as a defined type!
-			ScriptArray!(AudioComponent.AudioComponentParam) InstanceParameters() { mixin(MGPC!(ScriptArray!(AudioComponent.AudioComponentParam), 96)()); }
-			ScriptArray!(UObject.Pointer) WaveInstances() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 124)()); }
-			ScriptArray!(ubyte) SoundNodeData() { mixin(MGPC!(ScriptArray!(ubyte), 136)()); }
+			ScriptArray!(AudioComponent.AudioComponentParam) InstanceParameters() { mixin(MGPC!("ScriptArray!(AudioComponent.AudioComponentParam)", 96)()); }
+			ScriptArray!(UObject.Pointer) WaveInstances() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 124)()); }
+			ScriptArray!(ubyte) SoundNodeData() { mixin(MGPC!("ScriptArray!(ubyte)", 136)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnQueueSubtitles__Delegate'!
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnAudioFinished__Delegate'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewSoundRadius'!
-			float LastOcclusionCheckTime() { mixin(MGPC!(float, 504)()); }
-			float OcclusionCheckInterval() { mixin(MGPC!(float, 500)()); }
-			float HighFrequencyGainMultiplier() { mixin(MGPC!(float, 496)()); }
-			int LastReverbVolumeIndex() { mixin(MGPC!(int, 484)()); }
-			ReverbVolume.InteriorSettings LastInteriorSettings() { mixin(MGPC!(ReverbVolume.InteriorSettings, 448)()); }
-			Vector LastLocation() { mixin(MGPC!(Vector, 436)()); }
-			float CurrentInteriorLPF() { mixin(MGPC!(float, 432)()); }
-			float CurrentInteriorVolume() { mixin(MGPC!(float, 428)()); }
-			float SourceInteriorLPF() { mixin(MGPC!(float, 424)()); }
-			float SourceInteriorVolume() { mixin(MGPC!(float, 420)()); }
-			UObject.Double LastUpdateTime() { mixin(MGPC!(UObject.Double, 412)()); }
-			float CurrentRadioFilterVolumeThreshold() { mixin(MGPC!(float, 408)()); }
-			float CurrentRadioFilterVolume() { mixin(MGPC!(float, 404)()); }
-			float CurrentVoiceCenterChannelVolume() { mixin(MGPC!(float, 400)()); }
-			float CurrentHighFrequencyGainMultiplier() { mixin(MGPC!(float, 396)()); }
-			float CurrentPitchMultiplier() { mixin(MGPC!(float, 392)()); }
-			float CurrentVolumeMultiplier() { mixin(MGPC!(float, 388)()); }
-			int CurrentNotifyOnLoop() { mixin(MGPC!(int, 384)()); }
-			int CurrentUseSpatialization() { mixin(MGPC!(int, 380)()); }
-			float CurrentHighFrequencyGain() { mixin(MGPC!(float, 376)()); }
-			float CurrentPitch() { mixin(MGPC!(float, 372)()); }
-			float CurrentVolume() { mixin(MGPC!(float, 368)()); }
-			Vector CurrentLocation() { mixin(MGPC!(Vector, 356)()); }
-			SoundNode CurrentNotifyBufferFinishedHook() { mixin(MGPC!(SoundNode, 352)()); }
-			float CurrAdjustVolumeTargetVolume() { mixin(MGPC!(float, 348)()); }
-			float AdjustVolumeTargetVolume() { mixin(MGPC!(float, 344)()); }
-			float AdjustVolumeStopTime() { mixin(MGPC!(float, 340)()); }
-			float AdjustVolumeStartTime() { mixin(MGPC!(float, 336)()); }
-			float FadeOutTargetVolume() { mixin(MGPC!(float, 332)()); }
-			float FadeOutStopTime() { mixin(MGPC!(float, 328)()); }
-			float FadeOutStartTime() { mixin(MGPC!(float, 324)()); }
-			float FadeInTargetVolume() { mixin(MGPC!(float, 320)()); }
-			float FadeInStopTime() { mixin(MGPC!(float, 316)()); }
-			float FadeInStartTime() { mixin(MGPC!(float, 312)()); }
-			Actor LastOwner() { mixin(MGPC!(Actor, 304)()); }
-			Vector ComponentLocation() { mixin(MGPC!(Vector, 292)()); }
+			float LastOcclusionCheckTime() { mixin(MGPC!("float", 504)()); }
+			float OcclusionCheckInterval() { mixin(MGPC!("float", 500)()); }
+			float HighFrequencyGainMultiplier() { mixin(MGPC!("float", 496)()); }
+			int LastReverbVolumeIndex() { mixin(MGPC!("int", 484)()); }
+			ReverbVolume.InteriorSettings LastInteriorSettings() { mixin(MGPC!("ReverbVolume.InteriorSettings", 448)()); }
+			Vector LastLocation() { mixin(MGPC!("Vector", 436)()); }
+			float CurrentInteriorLPF() { mixin(MGPC!("float", 432)()); }
+			float CurrentInteriorVolume() { mixin(MGPC!("float", 428)()); }
+			float SourceInteriorLPF() { mixin(MGPC!("float", 424)()); }
+			float SourceInteriorVolume() { mixin(MGPC!("float", 420)()); }
+			UObject.Double LastUpdateTime() { mixin(MGPC!("UObject.Double", 412)()); }
+			float CurrentRadioFilterVolumeThreshold() { mixin(MGPC!("float", 408)()); }
+			float CurrentRadioFilterVolume() { mixin(MGPC!("float", 404)()); }
+			float CurrentVoiceCenterChannelVolume() { mixin(MGPC!("float", 400)()); }
+			float CurrentHighFrequencyGainMultiplier() { mixin(MGPC!("float", 396)()); }
+			float CurrentPitchMultiplier() { mixin(MGPC!("float", 392)()); }
+			float CurrentVolumeMultiplier() { mixin(MGPC!("float", 388)()); }
+			int CurrentNotifyOnLoop() { mixin(MGPC!("int", 384)()); }
+			int CurrentUseSpatialization() { mixin(MGPC!("int", 380)()); }
+			float CurrentHighFrequencyGain() { mixin(MGPC!("float", 376)()); }
+			float CurrentPitch() { mixin(MGPC!("float", 372)()); }
+			float CurrentVolume() { mixin(MGPC!("float", 368)()); }
+			Vector CurrentLocation() { mixin(MGPC!("Vector", 356)()); }
+			SoundNode CurrentNotifyBufferFinishedHook() { mixin(MGPC!("SoundNode", 352)()); }
+			float CurrAdjustVolumeTargetVolume() { mixin(MGPC!("float", 348)()); }
+			float AdjustVolumeTargetVolume() { mixin(MGPC!("float", 344)()); }
+			float AdjustVolumeStopTime() { mixin(MGPC!("float", 340)()); }
+			float AdjustVolumeStartTime() { mixin(MGPC!("float", 336)()); }
+			float FadeOutTargetVolume() { mixin(MGPC!("float", 332)()); }
+			float FadeOutStopTime() { mixin(MGPC!("float", 328)()); }
+			float FadeOutStartTime() { mixin(MGPC!("float", 324)()); }
+			float FadeInTargetVolume() { mixin(MGPC!("float", 320)()); }
+			float FadeInStopTime() { mixin(MGPC!("float", 316)()); }
+			float FadeInStartTime() { mixin(MGPC!("float", 312)()); }
+			Actor LastOwner() { mixin(MGPC!("Actor", 304)()); }
+			Vector ComponentLocation() { mixin(MGPC!("Vector", 292)()); }
 			// WARNING: Property 'PortalVolume' has the same name as a defined type!
-			float PlaybackTime() { mixin(MGPC!(float, 272)()); }
+			float PlaybackTime() { mixin(MGPC!("float", 272)()); }
 			// WARNING: Property 'Listener' has the same name as a defined type!
-			UObject.MultiMap_Mirror SoundNodeResetWaveMap() { mixin(MGPC!(UObject.MultiMap_Mirror, 208)()); }
+			UObject.MultiMap_Mirror SoundNodeResetWaveMap() { mixin(MGPC!("UObject.MultiMap_Mirror", 208)()); }
 			// ERROR: Unsupported object class 'MapProperty' for the property named 'SoundNodeOffsetMap'!
-			float LFEBleed() { mixin(MGPC!(float, 116)()); }
-			float StereoBleed() { mixin(MGPC!(float, 112)()); }
-			SoundNode CueFirstNode() { mixin(MGPC!(SoundNode, 92)()); }
+			float LFEBleed() { mixin(MGPC!("float", 116)()); }
+			float StereoBleed() { mixin(MGPC!("float", 112)()); }
+			SoundNode CueFirstNode() { mixin(MGPC!("SoundNode", 92)()); }
 		}
 		bool bUseOwnerLocation() { mixin(MGBPC!(108, 0x1)()); }
 		bool bUseOwnerLocation(bool val) { mixin(MSBPC!(108, 0x1)()); }

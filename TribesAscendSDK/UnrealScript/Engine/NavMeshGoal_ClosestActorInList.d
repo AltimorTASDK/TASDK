@@ -30,19 +30,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) GoalList() { mixin(MGPC!(ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor), 80)()); }
-		UObject.Pointer CachedAnchorPoly() { mixin(MGPC!(UObject.Pointer, 152)()); }
-		UObject.MultiMap_Mirror PolyToGoalActorMap() { mixin(MGPC!(UObject.MultiMap_Mirror, 92)()); }
+		ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) GoalList() { mixin(MGPC!("ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)", 80)()); }
+		UObject.Pointer CachedAnchorPoly() { mixin(MGPC!("UObject.Pointer", 152)()); }
+		UObject.MultiMap_Mirror PolyToGoalActorMap() { mixin(MGPC!("UObject.MultiMap_Mirror", 92)()); }
 	}
 final:
-	static NavMeshGoal_ClosestActorInList ClosestActorInList(NavigationHandle NavHandle, ref const ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) InGoalList)
+	static NavMeshGoal_ClosestActorInList ClosestActorInList(NavigationHandle NavHandle, ref in ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor) InGoalList)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
-		*cast(ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)*)&params[4] = InGoalList;
+		*cast(ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)*)&params[4] = cast(ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor))InGoalList;
 		StaticClass.ProcessEvent(Functions.ClosestActorInList, params.ptr, cast(void*)0);
-		*InGoalList = *cast(ScriptArray!(NavMeshPathGoalEvaluator.BiasedGoalActor)*)&params[4];
 		return *cast(NavMeshGoal_ClosestActorInList*)&params[16];
 	}
 	void Recycle()

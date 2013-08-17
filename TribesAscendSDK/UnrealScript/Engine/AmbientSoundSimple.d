@@ -15,8 +15,8 @@ public extern(D):
 	@property final static AmbientSoundSimple DefaultProperties() { mixin(MGDPC!(AmbientSoundSimple, "AmbientSoundSimple Engine.Default__AmbientSoundSimple")()); }
 	@property final auto ref
 	{
-		SoundNodeAmbient SoundNodeInstance() { mixin(MGPC!(SoundNodeAmbient, 496)()); }
-		SoundCue SoundCueInstance() { mixin(MGPC!(SoundCue, 492)()); }
-		SoundNodeAmbient AmbientProperties() { mixin(MGPC!(SoundNodeAmbient, 488)()); }
+		SoundNodeAmbient SoundNodeInstance() { mixin(MGPC!("SoundNodeAmbient", 496)()); }
+		SoundCue SoundCueInstance() { mixin(MGPC!("SoundCue", 492)()); }
+		SoundNodeAmbient AmbientProperties() { mixin(MGPC!("SoundNodeAmbient", 488)()); }
 	}
 }

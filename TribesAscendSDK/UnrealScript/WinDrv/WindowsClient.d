@@ -13,7 +13,7 @@ public extern(D):
 	@property final static WindowsClient DefaultProperties() { mixin(MGDPC!(WindowsClient, "WindowsClient WinDrv.Default__WindowsClient")()); }
 	@property final auto ref
 	{
-		ScriptClass AudioDeviceClass() { mixin(MGPC!(ScriptClass, 412)()); }
-		int AllowJoystickInput() { mixin(MGPC!(int, 460)()); }
+		ScriptClass AudioDeviceClass() { mixin(MGPC!("ScriptClass", 412)()); }
+		int AllowJoystickInput() { mixin(MGPC!("int", 460)()); }
 	}
 }

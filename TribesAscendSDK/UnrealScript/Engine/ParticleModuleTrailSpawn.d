@@ -20,7 +20,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float MinSpawnVelocity() { mixin(MGPC!(float, 76)()); }
+		float MinSpawnVelocity() { mixin(MGPC!("float", 76)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'SpawnDistanceMap'!
 	}
 }

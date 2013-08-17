@@ -70,44 +70,44 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass m_LastFamilyClassRequest() { mixin(MGPC!(ScriptClass, 776)()); }
-			ScriptClass m_LastDeviceOnlyRequest() { mixin(MGPC!(ScriptClass, 772)()); }
-			TrPlayerController m_TrPlayerController() { mixin(MGPC!(TrPlayerController, 760)()); }
-			ScriptClass m_LastDeviceClassRequest() { mixin(MGPC!(ScriptClass, 768)()); }
+			ScriptClass m_LastFamilyClassRequest() { mixin(MGPC!("ScriptClass", 776)()); }
+			ScriptClass m_LastDeviceOnlyRequest() { mixin(MGPC!("ScriptClass", 772)()); }
+			TrPlayerController m_TrPlayerController() { mixin(MGPC!("TrPlayerController", 760)()); }
+			ScriptClass m_LastDeviceClassRequest() { mixin(MGPC!("ScriptClass", 768)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) m_Lights() { mixin(MGPC!(ScriptArray!(
+void*) m_Lights() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 548)()); }
-			ScriptClass m_DeviceContentDataClass() { mixin(MGPC!(ScriptClass, 904)()); }
-			float m_fLastStreamingCheckTimestamp() { mixin(MGPC!(float, 900)()); }
-			float m_fCheckStreamingFrequency() { mixin(MGPC!(float, 896)()); }
-			TrObject.PaperDollInfo m_PendingPaperDollInfoSkin() { mixin(MGPC!(TrObject.PaperDollInfo, 840)()); }
-			TrObject.PaperDollInfo m_PendingPaperDollInfoDevice() { mixin(MGPC!(TrObject.PaperDollInfo, 784)()); }
-			int m_LastSkinIdRequest() { mixin(MGPC!(int, 780)()); }
-			TrObject.PaperDollInfo m_CurrentPaperDollInfo() { mixin(MGPC!(TrObject.PaperDollInfo, 704)()); }
-			float m_fMaxCustomAnimTime() { mixin(MGPC!(float, 700)()); }
-			float m_fMinCustomAnimTime() { mixin(MGPC!(float, 696)()); }
-			AnimNodePlayCustomAnim m_SidekickCustomAnimNode() { mixin(MGPC!(AnimNodePlayCustomAnim, 692)()); }
-			AnimNodePlayCustomAnim m_CharacterCustomAnimNode() { mixin(MGPC!(AnimNodePlayCustomAnim, 688)()); }
-			Vector m_vOffsetHeavy() { mixin(MGPC!(Vector, 676)()); }
-			Vector m_vOffsetMedium() { mixin(MGPC!(Vector, 664)()); }
-			Vector m_vOffsetLight() { mixin(MGPC!(Vector, 652)()); }
-			Vector m_vBackdropOffset() { mixin(MGPC!(Vector, 640)()); }
-			float m_fBackdropScale16x10() { mixin(MGPC!(float, 636)()); }
-			float m_fBackdropScale16x9() { mixin(MGPC!(float, 632)()); }
-			float m_fBackdropScale4x3() { mixin(MGPC!(float, 628)()); }
-			MaterialInstanceConstant m_DiamondSwordBackdropMaterial() { mixin(MGPC!(MaterialInstanceConstant, 624)()); }
-			MaterialInstanceConstant m_BloodEagleBackdropMaterial() { mixin(MGPC!(MaterialInstanceConstant, 620)()); }
+void*)", 548)()); }
+			ScriptClass m_DeviceContentDataClass() { mixin(MGPC!("ScriptClass", 904)()); }
+			float m_fLastStreamingCheckTimestamp() { mixin(MGPC!("float", 900)()); }
+			float m_fCheckStreamingFrequency() { mixin(MGPC!("float", 896)()); }
+			TrObject.PaperDollInfo m_PendingPaperDollInfoSkin() { mixin(MGPC!("TrObject.PaperDollInfo", 840)()); }
+			TrObject.PaperDollInfo m_PendingPaperDollInfoDevice() { mixin(MGPC!("TrObject.PaperDollInfo", 784)()); }
+			int m_LastSkinIdRequest() { mixin(MGPC!("int", 780)()); }
+			TrObject.PaperDollInfo m_CurrentPaperDollInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 704)()); }
+			float m_fMaxCustomAnimTime() { mixin(MGPC!("float", 700)()); }
+			float m_fMinCustomAnimTime() { mixin(MGPC!("float", 696)()); }
+			AnimNodePlayCustomAnim m_SidekickCustomAnimNode() { mixin(MGPC!("AnimNodePlayCustomAnim", 692)()); }
+			AnimNodePlayCustomAnim m_CharacterCustomAnimNode() { mixin(MGPC!("AnimNodePlayCustomAnim", 688)()); }
+			Vector m_vOffsetHeavy() { mixin(MGPC!("Vector", 676)()); }
+			Vector m_vOffsetMedium() { mixin(MGPC!("Vector", 664)()); }
+			Vector m_vOffsetLight() { mixin(MGPC!("Vector", 652)()); }
+			Vector m_vBackdropOffset() { mixin(MGPC!("Vector", 640)()); }
+			float m_fBackdropScale16x10() { mixin(MGPC!("float", 636)()); }
+			float m_fBackdropScale16x9() { mixin(MGPC!("float", 632)()); }
+			float m_fBackdropScale4x3() { mixin(MGPC!("float", 628)()); }
+			MaterialInstanceConstant m_DiamondSwordBackdropMaterial() { mixin(MGPC!("MaterialInstanceConstant", 624)()); }
+			MaterialInstanceConstant m_BloodEagleBackdropMaterial() { mixin(MGPC!("MaterialInstanceConstant", 620)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_BackdropMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_SidekickMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_WeaponMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CharacterMesh'!
-			ScriptClass m_TrDeviceClass() { mixin(MGPC!(ScriptClass, 600)()); }
-			ScriptClass m_FamilyInfoClass() { mixin(MGPC!(ScriptClass, 596)()); }
-			Vector m_vViewOffset16x10() { mixin(MGPC!(Vector, 584)()); }
-			Vector m_vViewOffset16x9() { mixin(MGPC!(Vector, 572)()); }
-			Vector m_vViewOffset4x3() { mixin(MGPC!(Vector, 560)()); }
+			ScriptClass m_TrDeviceClass() { mixin(MGPC!("ScriptClass", 600)()); }
+			ScriptClass m_FamilyInfoClass() { mixin(MGPC!("ScriptClass", 596)()); }
+			Vector m_vViewOffset16x10() { mixin(MGPC!("Vector", 584)()); }
+			Vector m_vViewOffset16x9() { mixin(MGPC!("Vector", 572)()); }
+			Vector m_vViewOffset4x3() { mixin(MGPC!("Vector", 560)()); }
 		}
 		bool m_bWasLastMeshSwapRequestNonWeapon() { mixin(MGBPC!(764, 0x1)()); }
 		bool m_bWasLastMeshSwapRequestNonWeapon(bool val) { mixin(MSBPC!(764, 0x1)()); }

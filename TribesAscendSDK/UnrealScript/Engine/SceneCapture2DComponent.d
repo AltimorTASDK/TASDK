@@ -30,25 +30,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Matrix ProjMatrix() { mixin(MGPC!(UObject.Matrix, 240)()); }
-			UObject.Matrix ViewMatrix() { mixin(MGPC!(UObject.Matrix, 176)()); }
-			float FarPlane() { mixin(MGPC!(float, 156)()); }
-			float NearPlane() { mixin(MGPC!(float, 152)()); }
-			float FieldOfView() { mixin(MGPC!(float, 148)()); }
-			TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 144)()); }
+			UObject.Matrix ProjMatrix() { mixin(MGPC!("UObject.Matrix", 240)()); }
+			UObject.Matrix ViewMatrix() { mixin(MGPC!("UObject.Matrix", 176)()); }
+			float FarPlane() { mixin(MGPC!("float", 156)()); }
+			float NearPlane() { mixin(MGPC!("float", 152)()); }
+			float FieldOfView() { mixin(MGPC!("float", 148)()); }
+			TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
 		}
 		bool bUpdateMatrices() { mixin(MGBPC!(160, 0x1)()); }
 		bool bUpdateMatrices(bool val) { mixin(MSBPC!(160, 0x1)()); }
 	}
 final:
-	void SetCaptureParameters(TextureRenderTarget2D NewTextureTarget, float NewFOV, float NewNearPlane, float NewFarPlane)
+	void SetCaptureParameters(TextureRenderTarget2D* NewTextureTarget = null, float* NewFOV = null, float* NewNearPlane = null, float* NewFarPlane = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(TextureRenderTarget2D*)params.ptr = NewTextureTarget;
-		*cast(float*)&params[4] = NewFOV;
-		*cast(float*)&params[8] = NewNearPlane;
-		*cast(float*)&params[12] = NewFarPlane;
+		if (NewTextureTarget !is null)
+			*cast(TextureRenderTarget2D*)params.ptr = *NewTextureTarget;
+		if (NewFOV !is null)
+			*cast(float*)&params[4] = *NewFOV;
+		if (NewNearPlane !is null)
+			*cast(float*)&params[8] = *NewNearPlane;
+		if (NewFarPlane !is null)
+			*cast(float*)&params[12] = *NewFarPlane;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetCaptureParameters, params.ptr, cast(void*)0);
 	}
 	void SetView(Vector NewLocation, Rotator NewRotation)

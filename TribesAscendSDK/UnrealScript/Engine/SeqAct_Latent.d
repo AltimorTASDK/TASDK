@@ -27,7 +27,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Actor) LatentActors() { mixin(MGPC!(ScriptArray!(Actor), 232)()); }
+		@property final auto ref ScriptArray!(Actor) LatentActors() { mixin(MGPC!("ScriptArray!(Actor)", 232)()); }
 		bool bAborted() { mixin(MGBPC!(244, 0x1)()); }
 		bool bAborted(bool val) { mixin(MSBPC!(244, 0x1)()); }
 	}

@@ -88,23 +88,23 @@ public extern(D):
 	{
 		auto ref
 		{
-			float GlobalCheckRadiusTweak() { mixin(MGPC!(float, 656)()); }
-			float TossZ() { mixin(MGPC!(float, 652)()); }
-			float MaxExplosionLightDistance() { mixin(MGPC!(float, 672)()); }
-			ScriptClass ExplosionLightClass() { mixin(MGPC!(ScriptClass, 668)()); }
+			float GlobalCheckRadiusTweak() { mixin(MGPC!("float", 656)()); }
+			float TossZ() { mixin(MGPC!("float", 652)()); }
+			float MaxExplosionLightDistance() { mixin(MGPC!("float", 672)()); }
+			ScriptClass ExplosionLightClass() { mixin(MGPC!("ScriptClass", 668)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProjectileLight'!
-			ScriptClass ProjectileLightClass() { mixin(MGPC!(ScriptClass, 660)()); }
-			float MaxEffectDistance() { mixin(MGPC!(float, 648)()); }
-			ScriptName DecalDissolveParamName() { mixin(MGPC!(ScriptName, 640)()); }
-			float DurationOfDecal() { mixin(MGPC!(float, 636)()); }
-			float DecalHeight() { mixin(MGPC!(float, 632)()); }
-			float DecalWidth() { mixin(MGPC!(float, 628)()); }
-			MaterialInterface ExplosionDecal() { mixin(MGPC!(MaterialInterface, 624)()); }
-			ParticleSystem ProjExplosionTemplate() { mixin(MGPC!(ParticleSystem, 620)()); }
-			ParticleSystem ProjFlightTemplate() { mixin(MGPC!(ParticleSystem, 616)()); }
+			ScriptClass ProjectileLightClass() { mixin(MGPC!("ScriptClass", 660)()); }
+			float MaxEffectDistance() { mixin(MGPC!("float", 648)()); }
+			ScriptName DecalDissolveParamName() { mixin(MGPC!("ScriptName", 640)()); }
+			float DurationOfDecal() { mixin(MGPC!("float", 636)()); }
+			float DecalHeight() { mixin(MGPC!("float", 632)()); }
+			float DecalWidth() { mixin(MGPC!("float", 628)()); }
+			MaterialInterface ExplosionDecal() { mixin(MGPC!("MaterialInterface", 624)()); }
+			ParticleSystem ProjExplosionTemplate() { mixin(MGPC!("ParticleSystem", 620)()); }
+			ParticleSystem ProjFlightTemplate() { mixin(MGPC!("ParticleSystem", 616)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ProjEffects'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'AmbientComponent'!
-			SoundCue ExplosionSound() { mixin(MGPC!(SoundCue, 604)()); }
+			SoundCue ExplosionSound() { mixin(MGPC!("SoundCue", 604)()); }
 			// WARNING: Property 'AmbientSound' has the same name as a defined type!
 		}
 		bool bAttachExplosionToVehicles() { mixin(MGBPC!(596, 0x40)()); }
@@ -255,9 +255,9 @@ void**)params.ptr = PSC;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	Actor GetHomingTarget(UTProjectile Seeker, Controller InstigatedBy)

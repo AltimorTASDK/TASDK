@@ -33,15 +33,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			int TextureTile() { mixin(MGPC!(int, 220)()); }
-			DistributionVector.RawDistributionVector EndPointDirection() { mixin(MGPC!(DistributionVector.RawDistributionVector, 192)()); }
-			DistributionFloat.RawDistributionFloat TargetStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 164)()); }
-			DistributionFloat.RawDistributionFloat EmitterStrength() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 136)()); }
-			int TessellationFactor() { mixin(MGPC!(int, 132)()); }
-			DistributionVector.RawDistributionVector EndPoint() { mixin(MGPC!(DistributionVector.RawDistributionVector, 104)()); }
-			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 76)()); }
-			ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam.EBeamEndPointMethod, 73)()); }
-			ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { mixin(MGPC!(ParticleModuleTypeDataBeam.EBeamMethod, 72)()); }
+			int TextureTile() { mixin(MGPC!("int", 220)()); }
+			DistributionVector.RawDistributionVector EndPointDirection() { mixin(MGPC!("DistributionVector.RawDistributionVector", 192)()); }
+			DistributionFloat.RawDistributionFloat TargetStrength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 164)()); }
+			DistributionFloat.RawDistributionFloat EmitterStrength() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 136)()); }
+			int TessellationFactor() { mixin(MGPC!("int", 132)()); }
+			DistributionVector.RawDistributionVector EndPoint() { mixin(MGPC!("DistributionVector.RawDistributionVector", 104)()); }
+			DistributionFloat.RawDistributionFloat Distance() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 76)()); }
+			ParticleModuleTypeDataBeam.EBeamEndPointMethod EndPointMethod() { mixin(MGPC!("ParticleModuleTypeDataBeam.EBeamEndPointMethod", 73)()); }
+			ParticleModuleTypeDataBeam.EBeamMethod BeamMethod() { mixin(MGPC!("ParticleModuleTypeDataBeam.EBeamMethod", 72)()); }
 		}
 		bool RenderTessellation() { mixin(MGBPC!(224, 0x8)()); }
 		bool RenderTessellation(bool val) { mixin(MSBPC!(224, 0x8)()); }

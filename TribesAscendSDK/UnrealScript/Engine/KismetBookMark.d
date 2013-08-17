@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.KismetBookMark")()); }
 	private static __gshared KismetBookMark mDefaultProperties;
 	@property final static KismetBookMark DefaultProperties() { mixin(MGDPC!(KismetBookMark, "KismetBookMark Engine.Default__KismetBookMark")()); }
-	@property final auto ref ScriptString BookMarkSequencePathName() { mixin(MGPC!(ScriptString, 72)()); }
+	@property final auto ref ScriptString BookMarkSequencePathName() { mixin(MGPC!("ScriptString", 72)()); }
 }

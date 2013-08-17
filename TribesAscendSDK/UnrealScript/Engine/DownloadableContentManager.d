@@ -56,30 +56,28 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 60)()); }
-		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC!(ScriptArray!(ScriptString), 72)()); }
-		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC!(ScriptArray!(ScriptClass), 144)()); }
-		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC!(ScriptArray!(UObject), 156)()); }
+		ScriptArray!(UObject.Pointer) DLCConfigCacheChanges() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 60)()); }
+		ScriptArray!(ScriptString) InstalledDLC() { mixin(MGPC!("ScriptArray!(ScriptString)", 72)()); }
+		ScriptArray!(ScriptClass) ClassesToReload() { mixin(MGPC!("ScriptArray!(ScriptClass)", 144)()); }
+		ScriptArray!(UObject) ObjectsToReload() { mixin(MGPC!("ScriptArray!(UObject)", 156)()); }
 		// WARNING: Property 'GameEngine' has the same name as a defined type!
-		UObject.Map_Mirror TextureCachePathMap() { mixin(MGPC!(UObject.Map_Mirror, 84)()); }
+		UObject.Map_Mirror TextureCachePathMap() { mixin(MGPC!("UObject.Map_Mirror", 84)()); }
 	}
 final:
-	bool InstallDLC(ref const OnlineSubsystem.OnlineContent DLCBundle)
+	bool InstallDLC(ref in OnlineSubsystem.OnlineContent DLCBundle)
 	{
 		ubyte params[72];
 		params[] = 0;
-		*cast(OnlineSubsystem.OnlineContent*)params.ptr = DLCBundle;
+		*cast(OnlineSubsystem.OnlineContent*)params.ptr = cast(OnlineSubsystem.OnlineContent)DLCBundle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstallDLC, params.ptr, cast(void*)0);
-		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 		return *cast(bool*)&params[68];
 	}
-	void InstallDLCs(ref const ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles)
+	void InstallDLCs(ref in ScriptArray!(OnlineSubsystem.OnlineContent) DLCBundles)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)params.ptr = DLCBundles;
+		*cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)params.ptr = cast(ScriptArray!(OnlineSubsystem.OnlineContent))DLCBundles;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstallDLCs, params.ptr, cast(void*)0);
-		*DLCBundles = *cast(ScriptArray!(OnlineSubsystem.OnlineContent)*)params.ptr;
 	}
 	void ClearDLC()
 	{
@@ -92,7 +90,7 @@ final:
 		*cast(ScriptName*)params.ptr = TextureCacheName;
 		*cast(ScriptString*)&params[8] = Path;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDLCTextureCachePath, params.ptr, cast(void*)0);
-		*Path = *cast(ScriptString*)&params[8];
+		Path = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	void AddSectionToObjectList(ScriptString Section)
@@ -113,21 +111,19 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateObjectLists, cast(void*)0, cast(void*)0);
 	}
-	void InstallPackages(ref const OnlineSubsystem.OnlineContent DLCBundle)
+	void InstallPackages(ref in OnlineSubsystem.OnlineContent DLCBundle)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(OnlineSubsystem.OnlineContent*)params.ptr = DLCBundle;
+		*cast(OnlineSubsystem.OnlineContent*)params.ptr = cast(OnlineSubsystem.OnlineContent)DLCBundle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstallPackages, params.ptr, cast(void*)0);
-		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 	}
-	void InstallNonPackageFiles(ref const OnlineSubsystem.OnlineContent DLCBundle)
+	void InstallNonPackageFiles(ref in OnlineSubsystem.OnlineContent DLCBundle)
 	{
 		ubyte params[68];
 		params[] = 0;
-		*cast(OnlineSubsystem.OnlineContent*)params.ptr = DLCBundle;
+		*cast(OnlineSubsystem.OnlineContent*)params.ptr = cast(OnlineSubsystem.OnlineContent)DLCBundle;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstallNonPackageFiles, params.ptr, cast(void*)0);
-		*DLCBundle = *cast(OnlineSubsystem.OnlineContent*)params.ptr;
 	}
 	void Init()
 	{

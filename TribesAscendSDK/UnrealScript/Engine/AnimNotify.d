@@ -18,7 +18,7 @@ public extern(D):
 		private static __gshared ScriptFunction mFindNextNotifyOfClass;
 		public @property static final ScriptFunction FindNextNotifyOfClass() { mixin(MGF!("mFindNextNotifyOfClass", "Function Engine.AnimNotify.FindNextNotifyOfClass")()); }
 	}
-	@property final auto ref UObject.Color NotifyColor() { mixin(MGPC!(UObject.Color, 60)()); }
+	@property final auto ref UObject.Color NotifyColor() { mixin(MGPC!("UObject.Color", 60)()); }
 	final bool FindNextNotifyOfClass(AnimNodeSequence AnimSeqInstigator, ScriptClass NotifyClass, ref AnimSequence.AnimNotifyEvent OutEvent)
 	{
 		ubyte params[32];
@@ -27,7 +27,7 @@ public extern(D):
 		*cast(ScriptClass*)&params[4] = NotifyClass;
 		*cast(AnimSequence.AnimNotifyEvent*)&params[8] = OutEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindNextNotifyOfClass, params.ptr, cast(void*)0);
-		*OutEvent = *cast(AnimSequence.AnimNotifyEvent*)&params[8];
+		OutEvent = *cast(AnimSequence.AnimNotifyEvent*)&params[8];
 		return *cast(bool*)&params[28];
 	}
 }

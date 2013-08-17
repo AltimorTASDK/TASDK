@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mRegisterTranslatorTag;
 		public @property static final ScriptFunction RegisterTranslatorTag() { mixin(MGF!("mRegisterTranslatorTag", "Function Engine.TranslationContext.RegisterTranslatorTag")()); }
 	}
-	@property final auto ref ScriptArray!(TranslatorTag) TranslatorTags() { mixin(MGPC!(ScriptArray!(TranslatorTag), 60)()); }
+	@property final auto ref ScriptArray!(TranslatorTag) TranslatorTags() { mixin(MGPC!("ScriptArray!(TranslatorTag)", 60)()); }
 	final bool RegisterTranslatorTag(TranslatorTag InTagHandler)
 	{
 		ubyte params[8];

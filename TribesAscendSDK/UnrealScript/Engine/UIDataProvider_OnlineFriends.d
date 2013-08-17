@@ -35,22 +35,22 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlineFriend) FriendsList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlineFriend), 96)()); }
-		ScriptString BusyText() { mixin(MGPC!(ScriptString, 264)()); }
-		ScriptString AwayText() { mixin(MGPC!(ScriptString, 252)()); }
-		ScriptString OnlineText() { mixin(MGPC!(ScriptString, 240)()); }
-		ScriptString OfflineText() { mixin(MGPC!(ScriptString, 228)()); }
-		ScriptString bHasInvitedYouCol() { mixin(MGPC!(ScriptString, 216)()); }
-		ScriptString bHaveInvitedCol() { mixin(MGPC!(ScriptString, 204)()); }
-		ScriptString bHasVoiceSupportCol() { mixin(MGPC!(ScriptString, 192)()); }
-		ScriptString bIsJoinableCol() { mixin(MGPC!(ScriptString, 180)()); }
-		ScriptString bIsPlayingThisGameCol() { mixin(MGPC!(ScriptString, 168)()); }
-		ScriptString bIsPlayingCol() { mixin(MGPC!(ScriptString, 156)()); }
-		ScriptString bIsOnlineCol() { mixin(MGPC!(ScriptString, 144)()); }
-		ScriptString FriendStateCol() { mixin(MGPC!(ScriptString, 132)()); }
-		ScriptString PresenceInfoCol() { mixin(MGPC!(ScriptString, 120)()); }
-		ScriptString NickNameCol() { mixin(MGPC!(ScriptString, 108)()); }
-		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 92)()); }
+		ScriptArray!(OnlineSubsystem.OnlineFriend) FriendsList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlineFriend)", 96)()); }
+		ScriptString BusyText() { mixin(MGPC!("ScriptString", 264)()); }
+		ScriptString AwayText() { mixin(MGPC!("ScriptString", 252)()); }
+		ScriptString OnlineText() { mixin(MGPC!("ScriptString", 240)()); }
+		ScriptString OfflineText() { mixin(MGPC!("ScriptString", 228)()); }
+		ScriptString bHasInvitedYouCol() { mixin(MGPC!("ScriptString", 216)()); }
+		ScriptString bHaveInvitedCol() { mixin(MGPC!("ScriptString", 204)()); }
+		ScriptString bHasVoiceSupportCol() { mixin(MGPC!("ScriptString", 192)()); }
+		ScriptString bIsJoinableCol() { mixin(MGPC!("ScriptString", 180)()); }
+		ScriptString bIsPlayingThisGameCol() { mixin(MGPC!("ScriptString", 168)()); }
+		ScriptString bIsPlayingCol() { mixin(MGPC!("ScriptString", 156)()); }
+		ScriptString bIsOnlineCol() { mixin(MGPC!("ScriptString", 144)()); }
+		ScriptString FriendStateCol() { mixin(MGPC!("ScriptString", 132)()); }
+		ScriptString PresenceInfoCol() { mixin(MGPC!("ScriptString", 120)()); }
+		ScriptString NickNameCol() { mixin(MGPC!("ScriptString", 108)()); }
+		UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 92)()); }
 	}
 final:
 	void OnRegister(LocalPlayer InPlayer)

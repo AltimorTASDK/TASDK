@@ -63,7 +63,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SplineActor.SplineConnection")()); }
 		@property final auto ref
 		{
-			SplineActor ConnectTo() { mixin(MGPS!(SplineActor, 4)()); }
+			SplineActor ConnectTo() { mixin(MGPS!("SplineActor", 4)()); }
 			// WARNING: Property 'SplineComponent' has the same name as a defined type!
 		}
 	}
@@ -71,16 +71,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SplineActor.SplineConnection) Connections() { mixin(MGPC!(ScriptArray!(SplineActor.SplineConnection), 476)()); }
-			ScriptArray!(SplineActor) LinksFrom() { mixin(MGPC!(ScriptArray!(SplineActor), 508)()); }
-			UObject.InterpCurveFloat SplineVelocityOverTime() { mixin(MGPC!(UObject.InterpCurveFloat, 540)()); }
-			int visitedWeight() { mixin(MGPC!(int, 536)()); }
-			int bestPathWeight() { mixin(MGPC!(int, 532)()); }
-			SplineActor previousPath() { mixin(MGPC!(SplineActor, 528)()); }
-			SplineActor prevOrdered() { mixin(MGPC!(SplineActor, 524)()); }
-			SplineActor nextOrdered() { mixin(MGPC!(SplineActor, 520)()); }
-			UObject.Color SplineColor() { mixin(MGPC!(UObject.Color, 500)()); }
-			Vector SplineActorTangent() { mixin(MGPC!(Vector, 488)()); }
+			ScriptArray!(SplineActor.SplineConnection) Connections() { mixin(MGPC!("ScriptArray!(SplineActor.SplineConnection)", 476)()); }
+			ScriptArray!(SplineActor) LinksFrom() { mixin(MGPC!("ScriptArray!(SplineActor)", 508)()); }
+			UObject.InterpCurveFloat SplineVelocityOverTime() { mixin(MGPC!("UObject.InterpCurveFloat", 540)()); }
+			int visitedWeight() { mixin(MGPC!("int", 536)()); }
+			int bestPathWeight() { mixin(MGPC!("int", 532)()); }
+			SplineActor previousPath() { mixin(MGPC!("SplineActor", 528)()); }
+			SplineActor prevOrdered() { mixin(MGPC!("SplineActor", 524)()); }
+			SplineActor nextOrdered() { mixin(MGPC!("SplineActor", 520)()); }
+			UObject.Color SplineColor() { mixin(MGPC!("UObject.Color", 500)()); }
+			Vector SplineActorTangent() { mixin(MGPC!("Vector", 488)()); }
 		}
 		bool bAlreadyVisited() { mixin(MGBPC!(504, 0x2)()); }
 		bool bAlreadyVisited(bool val) { mixin(MSBPC!(504, 0x2)()); }
@@ -161,20 +161,22 @@ void**)params.ptr = SplineComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.BreakAllConnectionsFrom, cast(void*)0, cast(void*)0);
 	}
-	SplineActor GetRandomConnection(bool bUseLinksFrom)
+	SplineActor GetRandomConnection(bool* bUseLinksFrom = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bUseLinksFrom;
+		if (bUseLinksFrom !is null)
+			*cast(bool*)params.ptr = *bUseLinksFrom;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRandomConnection, params.ptr, cast(void*)0);
 		return *cast(SplineActor*)&params[4];
 	}
-	SplineActor GetBestConnectionInDirection(Vector DesiredDir, bool bUseLinksFrom)
+	SplineActor GetBestConnectionInDirection(Vector DesiredDir, bool* bUseLinksFrom = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = DesiredDir;
-		*cast(bool*)&params[12] = bUseLinksFrom;
+		if (bUseLinksFrom !is null)
+			*cast(bool*)&params[12] = *bUseLinksFrom;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBestConnectionInDirection, params.ptr, cast(void*)0);
 		return *cast(SplineActor*)&params[16];
 	}
@@ -185,7 +187,7 @@ void**)params.ptr = SplineComp;
 		*cast(SplineActor*)params.ptr = Goal;
 		*cast(ScriptArray!(SplineActor)*)&params[4] = OutRoute;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSplinePathTo, params.ptr, cast(void*)0);
-		*OutRoute = *cast(ScriptArray!(SplineActor)*)&params[4];
+		OutRoute = *cast(ScriptArray!(SplineActor)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void GetAllConnectedSplineActors(ref ScriptArray!(SplineActor) OutSet)
@@ -194,7 +196,7 @@ void**)params.ptr = SplineComp;
 		params[] = 0;
 		*cast(ScriptArray!(SplineActor)*)params.ptr = OutSet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllConnectedSplineActors, params.ptr, cast(void*)0);
-		*OutSet = *cast(ScriptArray!(SplineActor)*)params.ptr;
+		OutSet = *cast(ScriptArray!(SplineActor)*)params.ptr;
 	}
 	void OnToggle(SeqAct_Toggle inAction)
 	{

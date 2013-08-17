@@ -65,10 +65,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!(ScriptArray!(UTWeaponLocker.PawnToucher), 960)()); }
-			float WeaponPickupScaling() { mixin(MGPC!(float, 956)()); }
+			ScriptArray!(UTWeaponLocker.PawnToucher) Customers() { mixin(MGPC!("ScriptArray!(UTWeaponLocker.PawnToucher)", 960)()); }
+			float WeaponPickupScaling() { mixin(MGPC!("float", 956)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BaseGlow'!
-			ScriptClass WeaponPickupClass() { mixin(MGPC!(ScriptClass, 944)()); }
+			ScriptClass WeaponPickupClass() { mixin(MGPC!("ScriptClass", 944)()); }
 		}
 		bool bIsActive() { mixin(MGBPC!(948, 0x2)()); }
 		bool bIsActive(bool val) { mixin(MSBPC!(948, 0x2)()); }

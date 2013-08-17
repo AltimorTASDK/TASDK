@@ -32,9 +32,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { mixin(MGPC!(ScriptArray!(OnlineSubsystem.OnlinePartyMember), 184)()); }
+		ScriptArray!(OnlineSubsystem.OnlinePartyMember) MemberList() { mixin(MGPC!("ScriptArray!(OnlineSubsystem.OnlinePartyMember)", 184)()); }
 		// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'PlayerInterface'!
-		OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 172)()); }
+		OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 172)()); }
 	}
 final:
 	void Init(LocalPlayer InPlayer)

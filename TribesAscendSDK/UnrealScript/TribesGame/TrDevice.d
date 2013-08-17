@@ -841,9 +841,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.DeviceUpgrade")()); }
 		@property final auto ref
 		{
-			int DatabaseItemId() { mixin(MGPS!(int, 4)()); }
-			int IconId() { mixin(MGPS!(int, 0)()); }
-			ScriptArray!(TrDevice.DeviceModification) Modifications() { mixin(MGPS!(ScriptArray!(TrDevice.DeviceModification), 8)()); }
+			int DatabaseItemId() { mixin(MGPS!("int", 4)()); }
+			int IconId() { mixin(MGPS!("int", 0)()); }
+			ScriptArray!(TrDevice.DeviceModification) Modifications() { mixin(MGPS!("ScriptArray!(TrDevice.DeviceModification)", 8)()); }
 		}
 	}
 	struct EffectInfo
@@ -854,12 +854,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.EffectInfo")()); }
 		@property final auto ref
 		{
-			float interval() { mixin(MGPS!(float, 20)()); }
-			float Value() { mixin(MGPS!(float, 16)()); }
-			float Lifetime() { mixin(MGPS!(float, 12)()); }
-			TrObject.EffectType Type() { mixin(MGPS!(TrObject.EffectType, 8)()); }
-			ScriptClass effectClass() { mixin(MGPS!(ScriptClass, 4)()); }
-			ubyte FireModeNum() { mixin(MGPS!(ubyte, 0)()); }
+			float interval() { mixin(MGPS!("float", 20)()); }
+			float Value() { mixin(MGPS!("float", 16)()); }
+			float Lifetime() { mixin(MGPS!("float", 12)()); }
+			TrObject.EffectType Type() { mixin(MGPS!("TrObject.EffectType", 8)()); }
+			ScriptClass effectClass() { mixin(MGPS!("ScriptClass", 4)()); }
+			ubyte FireModeNum() { mixin(MGPS!("ubyte", 0)()); }
 		}
 	}
 	struct ReplicatedAmmoCount
@@ -870,8 +870,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.ReplicatedAmmoCount")()); }
 		@property final auto ref
 		{
-			int ClipAmmoCount() { mixin(MGPS!(int, 4)()); }
-			int CarriedAmmoCount() { mixin(MGPS!(int, 0)()); }
+			int ClipAmmoCount() { mixin(MGPS!("int", 4)()); }
+			int CarriedAmmoCount() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct DeviceModification
@@ -882,8 +882,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice.DeviceModification")()); }
 		@property final auto ref
 		{
-			float Value() { mixin(MGPS!(float, 4)()); }
-			int ModType() { mixin(MGPS!(int, 0)()); }
+			float Value() { mixin(MGPS!("float", 4)()); }
+			int ModType() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	static struct WeaponFiring
@@ -935,95 +935,95 @@ public extern(D):
 	{
 		auto ref
 		{
-			int m_nCarriedAmmo() { mixin(MGPC!(int, 1596)()); }
-			int m_nIconIndex() { mixin(MGPC!(int, 1688)()); }
-			ScriptArray!(TrDevice.DeviceUpgrade) Upgrades() { mixin(MGPC!(ScriptArray!(TrDevice.DeviceUpgrade), 2088)()); }
-			ScriptString UpgradeDescription() { mixin(MGPC!(ScriptString, 2028)()); }
-			int DBXPActivityId() { mixin(MGPC!(int, 1484)()); }
-			ScriptString InfoPanelDescription() { mixin(MGPC!(ScriptString, 2000)()); }
-			int InfoPanelDamage() { mixin(MGPC!(int, 2012)()); }
-			int InfoPanelRadius() { mixin(MGPC!(int, 2016)()); }
-			int InfoPanelFireRate() { mixin(MGPC!(int, 2020)()); }
-			int InfoPanelClipSize() { mixin(MGPC!(int, 2024)()); }
-			int DBWeaponId() { mixin(MGPC!(int, 1472)()); }
-			int m_nReticuleIndex() { mixin(MGPC!(int, 1584)()); }
-			ScriptArray!(TrDevice.EffectInfo) m_EffectInfo() { mixin(MGPC!(ScriptArray!(TrDevice.EffectInfo), 1492)()); }
-			ScriptArray!(TrObject.DeviceTargeterType) m_eTargetType() { mixin(MGPC!(ScriptArray!(TrObject.DeviceTargeterType), 1504)()); }
-			ScriptArray!(TrObject.DeviceAttackType) m_eAttackType() { mixin(MGPC!(ScriptArray!(TrObject.DeviceAttackType), 1516)()); }
-			ScriptArray!(int) m_PowerPoolCost() { mixin(MGPC!(ScriptArray!(int), 1528)()); }
-			ScriptArray!(ScriptClass) m_WeaponDeployables() { mixin(MGPC!(ScriptArray!(ScriptClass), 1656)()); }
-			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!(ScriptArray!(TrObject.EffectFormOverwrite), 1768)()); }
-			ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC!(ScriptArray!(AnimNodeSequence), 1840)()); }
-			Vector m_vClientSideFireOffset() { mixin(MGPC!(Vector, 2136)()); }
-			TrDeviceContentData m_ContentData() { mixin(MGPC!(TrDeviceContentData, 2132)()); }
-			ScriptString m_sContentDataClassName() { mixin(MGPC!(ScriptString, 2120)()); }
-			TrDevice.DeviceUpgrade BaseMod() { mixin(MGPC!(TrDevice.DeviceUpgrade, 2100)()); }
-			TrObject.PaperDollInfo m_InGamePaperDollInfo() { mixin(MGPC!(TrObject.PaperDollInfo, 1944)()); }
-			TrObject.PaperDollInfo m_MainMenuPaperDollInfo() { mixin(MGPC!(TrObject.PaperDollInfo, 1888)()); }
-			Vector m_TinyWeaponsOffset() { mixin(MGPC!(Vector, 1876)()); }
-			float m_fTimeBeforeInactiveReload() { mixin(MGPC!(float, 1872)()); }
-			float m_fLastActiveTime() { mixin(MGPC!(float, 1868)()); }
-			int m_nTetherCounter() { mixin(MGPC!(int, 1864)()); }
-			AnimSet m_NoAmmoAnimSet() { mixin(MGPC!(AnimSet, 1860)()); }
-			float m_fFireIntervalForLastShotInClip() { mixin(MGPC!(float, 1856)()); }
-			float m_fClientSideHitLeeway() { mixin(MGPC!(float, 1852)()); }
-			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC!(MaterialInstanceConstant, 1836)()); }
-			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC!(ScriptName, 1828)()); }
-			Vector m_vZoomMeshOffset() { mixin(MGPC!(Vector, 1816)()); }
-			float m_fZoomRate() { mixin(MGPC!(float, 1812)()); }
-			float m_fDesiredZoomFOV() { mixin(MGPC!(float, 1808)()); }
-			int m_ShotsFired() { mixin(MGPC!(int, 1804)()); }
-			Vector m_vPositionPivotOffset() { mixin(MGPC!(Vector, 1792)()); }
-			CameraShake m_FireCameraShake() { mixin(MGPC!(CameraShake, 1788)()); }
+			int m_nCarriedAmmo() { mixin(MGPC!("int", 1596)()); }
+			int m_nIconIndex() { mixin(MGPC!("int", 1688)()); }
+			ScriptArray!(TrDevice.DeviceUpgrade) Upgrades() { mixin(MGPC!("ScriptArray!(TrDevice.DeviceUpgrade)", 2088)()); }
+			ScriptString UpgradeDescription() { mixin(MGPC!("ScriptString", 2028)()); }
+			int DBXPActivityId() { mixin(MGPC!("int", 1484)()); }
+			ScriptString InfoPanelDescription() { mixin(MGPC!("ScriptString", 2000)()); }
+			int InfoPanelDamage() { mixin(MGPC!("int", 2012)()); }
+			int InfoPanelRadius() { mixin(MGPC!("int", 2016)()); }
+			int InfoPanelFireRate() { mixin(MGPC!("int", 2020)()); }
+			int InfoPanelClipSize() { mixin(MGPC!("int", 2024)()); }
+			int DBWeaponId() { mixin(MGPC!("int", 1472)()); }
+			int m_nReticuleIndex() { mixin(MGPC!("int", 1584)()); }
+			ScriptArray!(TrDevice.EffectInfo) m_EffectInfo() { mixin(MGPC!("ScriptArray!(TrDevice.EffectInfo)", 1492)()); }
+			ScriptArray!(TrObject.DeviceTargeterType) m_eTargetType() { mixin(MGPC!("ScriptArray!(TrObject.DeviceTargeterType)", 1504)()); }
+			ScriptArray!(TrObject.DeviceAttackType) m_eAttackType() { mixin(MGPC!("ScriptArray!(TrObject.DeviceAttackType)", 1516)()); }
+			ScriptArray!(int) m_PowerPoolCost() { mixin(MGPC!("ScriptArray!(int)", 1528)()); }
+			ScriptArray!(ScriptClass) m_WeaponDeployables() { mixin(MGPC!("ScriptArray!(ScriptClass)", 1656)()); }
+			ScriptArray!(TrObject.EffectFormOverwrite) m_EffectFormOverwrite() { mixin(MGPC!("ScriptArray!(TrObject.EffectFormOverwrite)", 1768)()); }
+			ScriptArray!(AnimNodeSequence) m_MeshAnimSequenceNodes() { mixin(MGPC!("ScriptArray!(AnimNodeSequence)", 1840)()); }
+			Vector m_vClientSideFireOffset() { mixin(MGPC!("Vector", 2136)()); }
+			TrDeviceContentData m_ContentData() { mixin(MGPC!("TrDeviceContentData", 2132)()); }
+			ScriptString m_sContentDataClassName() { mixin(MGPC!("ScriptString", 2120)()); }
+			TrDevice.DeviceUpgrade BaseMod() { mixin(MGPC!("TrDevice.DeviceUpgrade", 2100)()); }
+			TrObject.PaperDollInfo m_InGamePaperDollInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 1944)()); }
+			TrObject.PaperDollInfo m_MainMenuPaperDollInfo() { mixin(MGPC!("TrObject.PaperDollInfo", 1888)()); }
+			Vector m_TinyWeaponsOffset() { mixin(MGPC!("Vector", 1876)()); }
+			float m_fTimeBeforeInactiveReload() { mixin(MGPC!("float", 1872)()); }
+			float m_fLastActiveTime() { mixin(MGPC!("float", 1868)()); }
+			int m_nTetherCounter() { mixin(MGPC!("int", 1864)()); }
+			AnimSet m_NoAmmoAnimSet() { mixin(MGPC!("AnimSet", 1860)()); }
+			float m_fFireIntervalForLastShotInClip() { mixin(MGPC!("float", 1856)()); }
+			float m_fClientSideHitLeeway() { mixin(MGPC!("float", 1852)()); }
+			MaterialInstanceConstant m_ZoomOverlayMaterial() { mixin(MGPC!("MaterialInstanceConstant", 1836)()); }
+			ScriptName m_nmZoomMaterialEffectName() { mixin(MGPC!("ScriptName", 1828)()); }
+			Vector m_vZoomMeshOffset() { mixin(MGPC!("Vector", 1816)()); }
+			float m_fZoomRate() { mixin(MGPC!("float", 1812)()); }
+			float m_fDesiredZoomFOV() { mixin(MGPC!("float", 1808)()); }
+			int m_ShotsFired() { mixin(MGPC!("int", 1804)()); }
+			Vector m_vPositionPivotOffset() { mixin(MGPC!("Vector", 1792)()); }
+			CameraShake m_FireCameraShake() { mixin(MGPC!("CameraShake", 1788)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonHandsOverlayMesh'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_FirstPersonHandsMesh'!
-			Material r_ReplicatedMaterial() { mixin(MGPC!(Material, 1764)()); }
-			UObject.Vector2D m_v2WeaponLagSmoothingFactor() { mixin(MGPC!(UObject.Vector2D, 1756)()); }
-			UObject.Vector2D m_v2WeaponLagInterpSpeed() { mixin(MGPC!(UObject.Vector2D, 1748)()); }
-			int m_nMaxWeaponLagPitch() { mixin(MGPC!(int, 1744)()); }
-			int m_nMaxWeaponLagYaw() { mixin(MGPC!(int, 1740)()); }
-			UObject.Vector2D m_v2WeaponLagAimOffset() { mixin(MGPC!(UObject.Vector2D, 1732)()); }
-			float m_fMaxKickbackDistanceY() { mixin(MGPC!(float, 1728)()); }
-			float m_fMaxKickbackDistanceX() { mixin(MGPC!(float, 1724)()); }
-			float m_fKickbackBlendOutTime() { mixin(MGPC!(float, 1720)()); }
-			float m_fLastKickbackTime() { mixin(MGPC!(float, 1716)()); }
-			UObject.Vector2D m_v2KickbackAmount() { mixin(MGPC!(UObject.Vector2D, 1708)()); }
-			UObject.Vector2D m_v2MinMaxKickbackY() { mixin(MGPC!(UObject.Vector2D, 1700)()); }
-			UObject.Vector2D m_v2MinMaxKickbackX() { mixin(MGPC!(UObject.Vector2D, 1692)()); }
-			int m_nCreditCost() { mixin(MGPC!(int, 1684)()); }
-			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!(ParticleSystem, 1680)()); }
-			float m_fShowTracerDistance() { mixin(MGPC!(float, 1676)()); }
-			int m_nTracerInterval() { mixin(MGPC!(int, 1672)()); }
-			TrAnimNodeBlendByDeviceAnim m_DeviceAnimNode() { mixin(MGPC!(TrAnimNodeBlendByDeviceAnim, 1668)()); }
-			float m_fLockTargetTime() { mixin(MGPC!(float, 1652)()); }
-			Actor c_LockedActor() { mixin(MGPC!(Actor, 1648)()); }
-			float c_fLockTime() { mixin(MGPC!(float, 1644)()); }
-			TrDevice.ReplicatedAmmoCount r_AmmoCount() { mixin(MGPC!(TrDevice.ReplicatedAmmoCount, 1636)()); }
-			int s_iCheatCountAmmo() { mixin(MGPC!(int, 1632)()); }
-			SoundCue m_ZoomOutSoundCue() { mixin(MGPC!(SoundCue, 1628)()); }
-			SoundCue m_ZoomInSoundCue() { mixin(MGPC!(SoundCue, 1624)()); }
-			SoundCue m_DryFireSoundCue() { mixin(MGPC!(SoundCue, 1620)()); }
-			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC!(SoundCue, 1616)()); }
-			float m_fPctTimeBeforeReload() { mixin(MGPC!(float, 1612)()); }
-			float m_fReloadTime() { mixin(MGPC!(float, 1608)()); }
-			int m_RemainingAmmoInClip() { mixin(MGPC!(int, 1604)()); }
-			int m_nMaxCarriedAmmo() { mixin(MGPC!(int, 1600)()); }
-			int m_nLowAmmoWarning() { mixin(MGPC!(int, 1592)()); }
-			int m_nAltReticuleIndex() { mixin(MGPC!(int, 1588)()); }
-			float m_fQuickRetrieveEquipTime() { mixin(MGPC!(float, 1580)()); }
-			float m_fAccuracyCorrectionRate() { mixin(MGPC!(float, 1576)()); }
-			float m_fAimingModeAccuracyBonus() { mixin(MGPC!(float, 1572)()); }
-			float m_fAccuracyLossMax() { mixin(MGPC!(float, 1568)()); }
-			float m_fAccuracyLossOnShot() { mixin(MGPC!(float, 1564)()); }
-			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC!(float, 1560)()); }
-			float m_fAccuracyLossOnJump() { mixin(MGPC!(float, 1556)()); }
-			float m_fDefaultAccuracy() { mixin(MGPC!(float, 1552)()); }
-			float m_fConeAttackAngle() { mixin(MGPC!(float, 1544)()); }
-			float m_fDamageRadius() { mixin(MGPC!(float, 1540)()); }
-			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!(TrObject.EWeaponTracerType, 1489)()); }
-			TrObject.TR_EQUIP_POINT r_eEquipAt() { mixin(MGPC!(TrObject.TR_EQUIP_POINT, 1488)()); }
-			int DBWeaponTypeId() { mixin(MGPC!(int, 1480)()); }
-			int DBWeaponBaseId() { mixin(MGPC!(int, 1476)()); }
+			Material r_ReplicatedMaterial() { mixin(MGPC!("Material", 1764)()); }
+			UObject.Vector2D m_v2WeaponLagSmoothingFactor() { mixin(MGPC!("UObject.Vector2D", 1756)()); }
+			UObject.Vector2D m_v2WeaponLagInterpSpeed() { mixin(MGPC!("UObject.Vector2D", 1748)()); }
+			int m_nMaxWeaponLagPitch() { mixin(MGPC!("int", 1744)()); }
+			int m_nMaxWeaponLagYaw() { mixin(MGPC!("int", 1740)()); }
+			UObject.Vector2D m_v2WeaponLagAimOffset() { mixin(MGPC!("UObject.Vector2D", 1732)()); }
+			float m_fMaxKickbackDistanceY() { mixin(MGPC!("float", 1728)()); }
+			float m_fMaxKickbackDistanceX() { mixin(MGPC!("float", 1724)()); }
+			float m_fKickbackBlendOutTime() { mixin(MGPC!("float", 1720)()); }
+			float m_fLastKickbackTime() { mixin(MGPC!("float", 1716)()); }
+			UObject.Vector2D m_v2KickbackAmount() { mixin(MGPC!("UObject.Vector2D", 1708)()); }
+			UObject.Vector2D m_v2MinMaxKickbackY() { mixin(MGPC!("UObject.Vector2D", 1700)()); }
+			UObject.Vector2D m_v2MinMaxKickbackX() { mixin(MGPC!("UObject.Vector2D", 1692)()); }
+			int m_nCreditCost() { mixin(MGPC!("int", 1684)()); }
+			ParticleSystem m_TracerBeamTemplate() { mixin(MGPC!("ParticleSystem", 1680)()); }
+			float m_fShowTracerDistance() { mixin(MGPC!("float", 1676)()); }
+			int m_nTracerInterval() { mixin(MGPC!("int", 1672)()); }
+			TrAnimNodeBlendByDeviceAnim m_DeviceAnimNode() { mixin(MGPC!("TrAnimNodeBlendByDeviceAnim", 1668)()); }
+			float m_fLockTargetTime() { mixin(MGPC!("float", 1652)()); }
+			Actor c_LockedActor() { mixin(MGPC!("Actor", 1648)()); }
+			float c_fLockTime() { mixin(MGPC!("float", 1644)()); }
+			TrDevice.ReplicatedAmmoCount r_AmmoCount() { mixin(MGPC!("TrDevice.ReplicatedAmmoCount", 1636)()); }
+			int s_iCheatCountAmmo() { mixin(MGPC!("int", 1632)()); }
+			SoundCue m_ZoomOutSoundCue() { mixin(MGPC!("SoundCue", 1628)()); }
+			SoundCue m_ZoomInSoundCue() { mixin(MGPC!("SoundCue", 1624)()); }
+			SoundCue m_DryFireSoundCue() { mixin(MGPC!("SoundCue", 1620)()); }
+			SoundCue m_ReloadAmmoSoundCue() { mixin(MGPC!("SoundCue", 1616)()); }
+			float m_fPctTimeBeforeReload() { mixin(MGPC!("float", 1612)()); }
+			float m_fReloadTime() { mixin(MGPC!("float", 1608)()); }
+			int m_RemainingAmmoInClip() { mixin(MGPC!("int", 1604)()); }
+			int m_nMaxCarriedAmmo() { mixin(MGPC!("int", 1600)()); }
+			int m_nLowAmmoWarning() { mixin(MGPC!("int", 1592)()); }
+			int m_nAltReticuleIndex() { mixin(MGPC!("int", 1588)()); }
+			float m_fQuickRetrieveEquipTime() { mixin(MGPC!("float", 1580)()); }
+			float m_fAccuracyCorrectionRate() { mixin(MGPC!("float", 1576)()); }
+			float m_fAimingModeAccuracyBonus() { mixin(MGPC!("float", 1572)()); }
+			float m_fAccuracyLossMax() { mixin(MGPC!("float", 1568)()); }
+			float m_fAccuracyLossOnShot() { mixin(MGPC!("float", 1564)()); }
+			float m_fAccuracyLossOnWeaponSwitch() { mixin(MGPC!("float", 1560)()); }
+			float m_fAccuracyLossOnJump() { mixin(MGPC!("float", 1556)()); }
+			float m_fDefaultAccuracy() { mixin(MGPC!("float", 1552)()); }
+			float m_fConeAttackAngle() { mixin(MGPC!("float", 1544)()); }
+			float m_fDamageRadius() { mixin(MGPC!("float", 1540)()); }
+			TrObject.EWeaponTracerType m_TracerType() { mixin(MGPC!("TrObject.EWeaponTracerType", 1489)()); }
+			TrObject.TR_EQUIP_POINT r_eEquipAt() { mixin(MGPC!("TrObject.TR_EQUIP_POINT", 1488)()); }
+			int DBWeaponTypeId() { mixin(MGPC!("int", 1480)()); }
+			int DBWeaponBaseId() { mixin(MGPC!("int", 1476)()); }
 		}
 		bool m_bAllowFireWhileZoomed() { mixin(MGBPC!(1548, 0x100000)()); }
 		bool m_bAllowFireWhileZoomed(bool val) { mixin(MSBPC!(1548, 0x100000)()); }
@@ -1102,12 +1102,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireModeNum, params.ptr, cast(void*)0);
 		return params[0];
 	}
-	bool IsValidTarget(Actor Target, int nFireMode)
+	bool IsValidTarget(Actor Target, int* nFireMode = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		*cast(int*)&params[4] = nFireMode;
+		if (nFireMode !is null)
+			*cast(int*)&params[4] = *nFireMode;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidTarget, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -1291,14 +1292,15 @@ final:
 	}
 	void AttachWeaponTo(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* MeshCpnt, ScriptName SocketName)
+void* MeshCpnt, ScriptName* SocketName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		*cast(ScriptName*)&params[4] = SocketName;
+		if (SocketName !is null)
+			*cast(ScriptName*)&params[4] = *SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
 	void CreateFirstPersonHandsMesh()
@@ -1365,20 +1367,22 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnSwitchAwayFromWeapon, cast(void*)0, cast(void*)0);
 	}
-	void ClientWeaponSet(bool bOptionalSet, bool bDoNotActivate)
+	void ClientWeaponSet(bool bOptionalSet, bool* bDoNotActivate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bOptionalSet;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponSet, params.ptr, cast(void*)0);
 	}
-	void PlayFireEffects(ubyte FireModeNum, Vector HitLocation)
+	void PlayFireEffects(ubyte FireModeNum, Vector* HitLocation = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(Vector*)&params[4] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[4] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void PlayFireAnimation(ubyte FireModeNum)
@@ -1439,12 +1443,13 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNumRoundsCurrentlyInClip, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -1475,13 +1480,14 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.InstantFire, cast(void*)0, cast(void*)0);
 	}
-	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int NumHits)
+	void ProcessInstantHit(ubyte FiringMode, Actor.ImpactInfo Impact, int* NumHits = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(int*)&params[84] = NumHits;
+		if (NumHits !is null)
+			*cast(int*)&params[84] = *NumHits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit, params.ptr, cast(void*)0);
 	}
 	void ServerNotifyHit(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
@@ -1493,13 +1499,14 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)&params[84] = bHeadShot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerNotifyHit, params.ptr, cast(void*)0);
 	}
-	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool bHeadShot)
+	void ProcessInstantHit_Internal(ubyte FiringMode, Actor.ImpactInfo Impact, bool* bHeadShot = null)
 	{
 		ubyte params[88];
 		params[] = 0;
 		params[0] = FiringMode;
 		*cast(Actor.ImpactInfo*)&params[4] = Impact;
-		*cast(bool*)&params[84] = bHeadShot;
+		if (bHeadShot !is null)
+			*cast(bool*)&params[84] = *bHeadShot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessInstantHit_Internal, params.ptr, cast(void*)0);
 	}
 	float ModifyInstantHitDamage(ubyte FiringMode, Actor.ImpactInfo Impact, float Damage)
@@ -1512,14 +1519,15 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyInstantHitDamage, params.ptr, cast(void*)0);
 		return *cast(float*)&params[88];
 	}
-	void ProcessEffect(Actor Target, ubyte FiringMode, TrObject.EffectType efType, bool bRemove)
+	void ProcessEffect(Actor Target, ubyte FiringMode, TrObject.EffectType efType, bool* bRemove = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
 		params[4] = FiringMode;
 		*cast(TrObject.EffectType*)&params[5] = efType;
-		*cast(bool*)&params[8] = bRemove;
+		if (bRemove !is null)
+			*cast(bool*)&params[8] = *bRemove;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessEffect, params.ptr, cast(void*)0);
 	}
 	bool UsesPower()
@@ -1632,11 +1640,12 @@ void**)params.ptr = SkelComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetProjectileClass, params.ptr, cast(void*)0);
 		return *cast(ScriptClass*)params.ptr;
 	}
-	Vector GetClientSideProjectileFireStartLoc(Vector AimDir)
+	Vector GetClientSideProjectileFireStartLoc(Vector* AimDir = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(Vector*)params.ptr = AimDir;
+		if (AimDir !is null)
+			*cast(Vector*)params.ptr = *AimDir;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetClientSideProjectileFireStartLoc, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[12];
 	}
@@ -1909,23 +1918,25 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachMuzzleFlash, cast(void*)0, cast(void*)0);
 	}
-	void WeaponPlaySoundLocal(SoundCue Sound, float NoiseLoudness)
+	void WeaponPlaySoundLocal(SoundCue Sound, float* NoiseLoudness = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = Sound;
-		*cast(float*)&params[4] = NoiseLoudness;
+		if (NoiseLoudness !is null)
+			*cast(float*)&params[4] = *NoiseLoudness;
 		(cast(ScriptObject)this).ProcessEvent(Functions.WeaponPlaySoundLocal, params.ptr, cast(void*)0);
 	}
 	void ClientWeaponThrown()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientWeaponThrown, cast(void*)0, cast(void*)0);
 	}
-	void UpdateShotsFired(bool Reset)
+	void UpdateShotsFired(bool* Reset = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = Reset;
+		if (Reset !is null)
+			*cast(bool*)params.ptr = *Reset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateShotsFired, params.ptr, cast(void*)0);
 	}
 	void StartZoom(UTPlayerController PC)
@@ -1935,12 +1946,13 @@ void**)params.ptr = SkelComp;
 		*cast(UTPlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartZoom, params.ptr, cast(void*)0);
 	}
-	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
+	void EndZoom(UTPlayerController PC, bool* bReturningTo3P = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		*cast(bool*)&params[4] = bReturningTo3P;
+		if (bReturningTo3P !is null)
+			*cast(bool*)&params[4] = *bReturningTo3P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 	bool CanViewZoom()
@@ -1958,16 +1970,19 @@ void**)params.ptr = SkelComp;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetAltReticule, cast(void*)0, cast(void*)0);
 	}
-	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList, Vector Extent)
+	Actor.ImpactInfo CalcWeaponFire(Vector StartTrace, Vector EndTrace, ScriptArray!(Actor.ImpactInfo)* ImpactList = null, Vector* Extent = null)
 	{
 		ubyte params[128];
 		params[] = 0;
 		*cast(Vector*)params.ptr = StartTrace;
 		*cast(Vector*)&params[12] = EndTrace;
-		*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = ImpactList;
-		*cast(Vector*)&params[36] = Extent;
+		if (ImpactList !is null)
+			*cast(ScriptArray!(Actor.ImpactInfo)*)&params[24] = *ImpactList;
+		if (Extent !is null)
+			*cast(Vector*)&params[36] = *Extent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcWeaponFire, params.ptr, cast(void*)0);
-		*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
+		if (ImpactList !is null)
+			*ImpactList = *cast(ScriptArray!(Actor.ImpactInfo)*)&params[24];
 		return *cast(Actor.ImpactInfo*)&params[48];
 	}
 	void PlayDryFireZoom()

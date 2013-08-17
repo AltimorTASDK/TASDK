@@ -29,8 +29,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float m_fScannerRange() { mixin(MGPC!(float, 92)()); }
-			float m_fScannerFOV() { mixin(MGPC!(float, 88)()); }
+			float m_fScannerRange() { mixin(MGPC!("float", 92)()); }
+			float m_fScannerFOV() { mixin(MGPC!("float", 88)()); }
 		}
 		bool m_bSeeLowHealthEnemy() { mixin(MGBPC!(96, 0x20)()); }
 		bool m_bSeeLowHealthEnemy(bool val) { mixin(MSBPC!(96, 0x20)()); }
@@ -46,12 +46,13 @@ public extern(D):
 		bool m_bRequiresLOS(bool val) { mixin(MSBPC!(96, 0x1)()); }
 	}
 final:
-	void Apply(Actor Target, Actor.ImpactInfo Impact)
+	void Apply(Actor Target, Actor.ImpactInfo* Impact = null)
 	{
 		ubyte params[84];
 		params[] = 0;
 		*cast(Actor*)params.ptr = Target;
-		*cast(Actor.ImpactInfo*)&params[4] = Impact;
+		if (Impact !is null)
+			*cast(Actor.ImpactInfo*)&params[4] = *Impact;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Apply, params.ptr, cast(void*)0);
 	}
 	void Remove(Actor Target)

@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) InitiallyLoadedSecondaryLevelNames() { mixin(MGPC!(ScriptArray!(ScriptName), 256)()); }
-			ScriptName MainLevelName() { mixin(MGPC!(ScriptName, 248)()); }
+			ScriptArray!(ScriptName) InitiallyLoadedSecondaryLevelNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 256)()); }
+			ScriptName MainLevelName() { mixin(MGPC!("ScriptName", 248)()); }
 		}
 		bool bStatusIsOk() { mixin(MGBPC!(268, 0x2)()); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC!(268, 0x2)()); }

@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetTeamNum;
 		public @property static final ScriptFunction GetTeamNum() { mixin(MGF!("mGetTeamNum", "Function UDKBase.UDKTeamOwnedInfo.GetTeamNum")()); }
 	}
-	@property final auto ref TeamInfo Team() { mixin(MGPC!(TeamInfo, 476)()); }
+	@property final auto ref TeamInfo Team() { mixin(MGPC!("TeamInfo", 476)()); }
 	final ubyte GetTeamNum()
 	{
 		ubyte params[1];

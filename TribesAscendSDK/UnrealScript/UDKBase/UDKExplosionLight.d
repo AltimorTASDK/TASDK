@@ -33,10 +33,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKExplosionLight.LightValues")()); }
 		@property final auto ref
 		{
-			UObject.Color LightColor() { mixin(MGPS!(UObject.Color, 12)()); }
-			float Brightness() { mixin(MGPS!(float, 8)()); }
-			float Radius() { mixin(MGPS!(float, 4)()); }
-			float StartTime() { mixin(MGPS!(float, 0)()); }
+			UObject.Color LightColor() { mixin(MGPS!("UObject.Color", 12)()); }
+			float Brightness() { mixin(MGPS!("float", 8)()); }
+			float Radius() { mixin(MGPS!("float", 4)()); }
+			float StartTime() { mixin(MGPS!("float", 0)()); }
 		}
 	}
 	@property final
@@ -44,10 +44,10 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnLightFinished__Delegate'!
-			ScriptArray!(UDKExplosionLight.LightValues) TimeShift() { mixin(MGPC!(ScriptArray!(UDKExplosionLight.LightValues), 600)()); }
-			int TimeShiftIndex() { mixin(MGPC!(int, 596)()); }
-			float Lifetime() { mixin(MGPC!(float, 592)()); }
-			float HighDetailFrameTime() { mixin(MGPC!(float, 588)()); }
+			ScriptArray!(UDKExplosionLight.LightValues) TimeShift() { mixin(MGPC!("ScriptArray!(UDKExplosionLight.LightValues)", 600)()); }
+			int TimeShiftIndex() { mixin(MGPC!("int", 596)()); }
+			float Lifetime() { mixin(MGPC!("float", 592)()); }
+			float HighDetailFrameTime() { mixin(MGPC!("float", 588)()); }
 		}
 		bool bInitialized() { mixin(MGBPC!(584, 0x2)()); }
 		bool bInitialized(bool val) { mixin(MSBPC!(584, 0x2)()); }

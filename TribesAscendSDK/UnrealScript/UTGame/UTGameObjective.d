@@ -146,48 +146,48 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGameObjective.ScorerRecord")()); }
 		@property final auto ref
 		{
-			float Pct() { mixin(MGPS!(float, 4)()); }
-			UTPlayerReplicationInfo PRI() { mixin(MGPS!(UTPlayerReplicationInfo, 0)()); }
+			float Pct() { mixin(MGPS!("float", 4)()); }
+			UTPlayerReplicationInfo PRI() { mixin(MGPS!("UTPlayerReplicationInfo", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(NavigationPoint) VehicleParkingSpots() { mixin(MGPC!(ScriptArray!(NavigationPoint), 772)()); }
-			ScriptArray!(UTGameObjective.ScorerRecord) Scorers() { mixin(MGPC!(ScriptArray!(UTGameObjective.ScorerRecord), 792)()); }
-			ScriptArray!(UTVehicleFactory) VehicleFactories() { mixin(MGPC!(ScriptArray!(UTVehicleFactory), 904)()); }
-			ScriptArray!(PlayerStart) PlayerStarts() { mixin(MGPC!(ScriptArray!(PlayerStart), 916)()); }
-			ScriptArray!(UTTeamStaticMesh) TeamStaticMeshes() { mixin(MGPC!(ScriptArray!(UTTeamStaticMesh), 928)()); }
-			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!(ScriptArray!(SoundNodeWave), 1000)()); }
-			UObject.LinearColor AttackLinearColor() { mixin(MGPC!(UObject.LinearColor, 1012)()); }
-			float MaxBeaconDistance() { mixin(MGPC!(float, 996)()); }
-			float LastPostRenderTraceTime() { mixin(MGPC!(float, 992)()); }
-			float LastHighlightUpdate() { mixin(MGPC!(float, 988)()); }
-			float MinimapIconScale() { mixin(MGPC!(float, 984)()); }
-			float HighlightSpeed() { mixin(MGPC!(float, 980)()); }
-			float MaxHighlightScale() { mixin(MGPC!(float, 976)()); }
-			float HighlightScale() { mixin(MGPC!(float, 972)()); }
-			UDKPlayerController.ObjectiveAnnouncementInfo DefendAnnouncement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 956)()); }
-			UDKPlayerController.ObjectiveAnnouncementInfo AttackAnnouncement() { mixin(MGPC!(UDKPlayerController.ObjectiveAnnouncementInfo, 940)()); }
-			float CameraViewDistance() { mixin(MGPC!(float, 900)()); }
-			float MaxSensorRange() { mixin(MGPC!(float, 896)()); }
-			Material HudMaterial() { mixin(MGPC!(Material, 892)()); }
-			float IconExtentY() { mixin(MGPC!(float, 888)()); }
-			float IconExtentX() { mixin(MGPC!(float, 884)()); }
-			float IconPosY() { mixin(MGPC!(float, 880)()); }
-			float IconPosX() { mixin(MGPC!(float, 876)()); }
-			UIRoot.TextureCoordinates AttackCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 860)()); }
-			UObject.LinearColor ControlColor() { mixin(MGPC!(UObject.LinearColor, 812)()); }
-			UTGameObjective NextObjective() { mixin(MGPC!(UTGameObjective, 808)()); }
-			int Score() { mixin(MGPC!(int, 804)()); }
-			float BaseRadius() { mixin(MGPC!(float, 788)()); }
-			Volume MyBaseVolume() { mixin(MGPC!(Volume, 784)()); }
-			ScriptString ObjectiveName() { mixin(MGPC!(ScriptString, 760)()); }
-			UTDefensePoint DefensePoints() { mixin(MGPC!(UTDefensePoint, 756)()); }
-			UTSquadAI DefenseSquad() { mixin(MGPC!(UTSquadAI, 752)()); }
-			ubyte DefensePriority() { mixin(MGPC!(ubyte, 749)()); }
-			ubyte StartTeam() { mixin(MGPC!(ubyte, 748)()); }
+			ScriptArray!(NavigationPoint) VehicleParkingSpots() { mixin(MGPC!("ScriptArray!(NavigationPoint)", 772)()); }
+			ScriptArray!(UTGameObjective.ScorerRecord) Scorers() { mixin(MGPC!("ScriptArray!(UTGameObjective.ScorerRecord)", 792)()); }
+			ScriptArray!(UTVehicleFactory) VehicleFactories() { mixin(MGPC!("ScriptArray!(UTVehicleFactory)", 904)()); }
+			ScriptArray!(PlayerStart) PlayerStarts() { mixin(MGPC!("ScriptArray!(PlayerStart)", 916)()); }
+			ScriptArray!(UTTeamStaticMesh) TeamStaticMeshes() { mixin(MGPC!("ScriptArray!(UTTeamStaticMesh)", 928)()); }
+			ScriptArray!(SoundNodeWave) LocationSpeech() { mixin(MGPC!("ScriptArray!(SoundNodeWave)", 1000)()); }
+			UObject.LinearColor AttackLinearColor() { mixin(MGPC!("UObject.LinearColor", 1012)()); }
+			float MaxBeaconDistance() { mixin(MGPC!("float", 996)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!("float", 992)()); }
+			float LastHighlightUpdate() { mixin(MGPC!("float", 988)()); }
+			float MinimapIconScale() { mixin(MGPC!("float", 984)()); }
+			float HighlightSpeed() { mixin(MGPC!("float", 980)()); }
+			float MaxHighlightScale() { mixin(MGPC!("float", 976)()); }
+			float HighlightScale() { mixin(MGPC!("float", 972)()); }
+			UDKPlayerController.ObjectiveAnnouncementInfo DefendAnnouncement() { mixin(MGPC!("UDKPlayerController.ObjectiveAnnouncementInfo", 956)()); }
+			UDKPlayerController.ObjectiveAnnouncementInfo AttackAnnouncement() { mixin(MGPC!("UDKPlayerController.ObjectiveAnnouncementInfo", 940)()); }
+			float CameraViewDistance() { mixin(MGPC!("float", 900)()); }
+			float MaxSensorRange() { mixin(MGPC!("float", 896)()); }
+			Material HudMaterial() { mixin(MGPC!("Material", 892)()); }
+			float IconExtentY() { mixin(MGPC!("float", 888)()); }
+			float IconExtentX() { mixin(MGPC!("float", 884)()); }
+			float IconPosY() { mixin(MGPC!("float", 880)()); }
+			float IconPosX() { mixin(MGPC!("float", 876)()); }
+			UIRoot.TextureCoordinates AttackCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 860)()); }
+			UObject.LinearColor ControlColor() { mixin(MGPC!("UObject.LinearColor", 812)()); }
+			UTGameObjective NextObjective() { mixin(MGPC!("UTGameObjective", 808)()); }
+			int Score() { mixin(MGPC!("int", 804)()); }
+			float BaseRadius() { mixin(MGPC!("float", 788)()); }
+			Volume MyBaseVolume() { mixin(MGPC!("Volume", 784)()); }
+			ScriptString ObjectiveName() { mixin(MGPC!("ScriptString", 760)()); }
+			UTDefensePoint DefensePoints() { mixin(MGPC!("UTDefensePoint", 756)()); }
+			UTSquadAI DefenseSquad() { mixin(MGPC!("UTSquadAI", 752)()); }
+			ubyte DefensePriority() { mixin(MGPC!("ubyte", 749)()); }
+			ubyte StartTeam() { mixin(MGPC!("ubyte", 748)()); }
 		}
 		bool bAllowRemoteUse() { mixin(MGBPC!(744, 0x2)()); }
 		bool bAllowRemoteUse(bool val) { mixin(MSBPC!(744, 0x2)()); }
@@ -319,9 +319,9 @@ final:
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	void HighlightOnMinimap(int Switch)
@@ -499,7 +499,7 @@ final:
 		*cast(PlayerController*)params.ptr = PC;
 		*cast(Rotator*)&params[4] = GoodRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindGoodEndView, params.ptr, cast(void*)0);
-		*GoodRotation = *cast(Rotator*)&params[4];
+		GoodRotation = *cast(Rotator*)&params[4];
 	}
 	bool TeleportTo(UTPawn Traveler)
 	{

@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName EventName() { mixin(MGPC!(ScriptName, 236)()); }
-			Actor Instigator() { mixin(MGPC!(Actor, 232)()); }
+			ScriptName EventName() { mixin(MGPC!("ScriptName", 236)()); }
+			Actor Instigator() { mixin(MGPC!("Actor", 232)()); }
 		}
 		bool bStatusIsOk() { mixin(MGBPC!(244, 0x1)()); }
 		bool bStatusIsOk(bool val) { mixin(MSBPC!(244, 0x1)()); }

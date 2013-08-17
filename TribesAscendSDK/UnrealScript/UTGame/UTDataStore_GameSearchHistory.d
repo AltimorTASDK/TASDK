@@ -28,15 +28,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		UTDataStore_GameSearchFavorites FavoritesGameSearchDataStore() { mixin(MGPC!(UTDataStore_GameSearchFavorites, 360)()); }
-		ScriptClass FavoritesGameSearchDataStoreClass() { mixin(MGPC!(ScriptClass, 356)()); }
+		UTDataStore_GameSearchFavorites FavoritesGameSearchDataStore() { mixin(MGPC!("UTDataStore_GameSearchFavorites", 360)()); }
+		ScriptClass FavoritesGameSearchDataStoreClass() { mixin(MGPC!("ScriptClass", 356)()); }
 	}
 final:
-	bool HasOutstandingQueries(bool bRestrictCheckToSelf)
+	bool HasOutstandingQueries(bool* bRestrictCheckToSelf = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bRestrictCheckToSelf;
+		if (bRestrictCheckToSelf !is null)
+			*cast(bool*)params.ptr = *bRestrictCheckToSelf;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasOutstandingQueries, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

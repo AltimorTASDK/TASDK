@@ -70,25 +70,25 @@ public extern(D):
 	{
 		auto ref
 		{
-			AnimSequence AnimSeq() { mixin(MGPC!(AnimSequence, 252)()); }
-			float Rate() { mixin(MGPC!(float, 232)()); }
-			ScriptName AnimSeqName() { mixin(MGPC!(ScriptName, 224)()); }
-			float CurrentTime() { mixin(MGPC!(float, 240)()); }
-			float PreviousTime() { mixin(MGPC!(float, 244)()); }
-			float EndTime() { mixin(MGPC!(float, 248)()); }
-			int AnimLinkupIndex() { mixin(MGPC!(int, 256)()); }
-			float NotifyWeightThreshold() { mixin(MGPC!(float, 260)()); }
-			ScriptName SynchGroupName() { mixin(MGPC!(ScriptName, 264)()); }
-			float SynchPosOffset() { mixin(MGPC!(float, 272)()); }
+			AnimSequence AnimSeq() { mixin(MGPC!("AnimSequence", 252)()); }
+			float Rate() { mixin(MGPC!("float", 232)()); }
+			ScriptName AnimSeqName() { mixin(MGPC!("ScriptName", 224)()); }
+			float CurrentTime() { mixin(MGPC!("float", 240)()); }
+			float PreviousTime() { mixin(MGPC!("float", 244)()); }
+			float EndTime() { mixin(MGPC!("float", 248)()); }
+			int AnimLinkupIndex() { mixin(MGPC!("int", 256)()); }
+			float NotifyWeightThreshold() { mixin(MGPC!("float", 260)()); }
+			ScriptName SynchGroupName() { mixin(MGPC!("ScriptName", 264)()); }
+			float SynchPosOffset() { mixin(MGPC!("float", 272)()); }
 			// WARNING: Property 'CameraAnim' has the same name as a defined type!
-			CameraAnimInst ActiveCameraAnimInstance() { mixin(MGPC!(CameraAnimInst, 280)()); }
-			float CameraAnimScale() { mixin(MGPC!(float, 284)()); }
-			float CameraAnimPlayRate() { mixin(MGPC!(float, 288)()); }
-			float CameraAnimBlendInTime() { mixin(MGPC!(float, 292)()); }
-			float CameraAnimBlendOutTime() { mixin(MGPC!(float, 296)()); }
-			AnimNodeSequence.ERootBoneAxis RootBoneOption() { mixin(MGPC!(AnimNodeSequence.ERootBoneAxis, 300)()); }
-			AnimNodeSequence.ERootRotationOption RootRotationOption() { mixin(MGPC!(AnimNodeSequence.ERootRotationOption, 303)()); }
-			ScriptArray!(SkelControlBase) MetaDataSkelControlList() { mixin(MGPC!(ScriptArray!(SkelControlBase), 308)()); }
+			CameraAnimInst ActiveCameraAnimInstance() { mixin(MGPC!("CameraAnimInst", 280)()); }
+			float CameraAnimScale() { mixin(MGPC!("float", 284)()); }
+			float CameraAnimPlayRate() { mixin(MGPC!("float", 288)()); }
+			float CameraAnimBlendInTime() { mixin(MGPC!("float", 292)()); }
+			float CameraAnimBlendOutTime() { mixin(MGPC!("float", 296)()); }
+			AnimNodeSequence.ERootBoneAxis RootBoneOption() { mixin(MGPC!("AnimNodeSequence.ERootBoneAxis", 300)()); }
+			AnimNodeSequence.ERootRotationOption RootRotationOption() { mixin(MGPC!("AnimNodeSequence.ERootRotationOption", 303)()); }
+			ScriptArray!(SkelControlBase) MetaDataSkelControlList() { mixin(MGPC!("ScriptArray!(SkelControlBase)", 308)()); }
 		}
 		bool bPlaying() { mixin(MGBPC!(236, 0x1)()); }
 		bool bPlaying(bool val) { mixin(MSBPC!(236, 0x1)()); }
@@ -135,13 +135,16 @@ final:
 		*cast(ScriptName*)params.ptr = pSequence;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAnim, params.ptr, cast(void*)0);
 	}
-	void PlayAnim(bool bLoop, float InRate, float StartTime)
+	void PlayAnim(bool* bLoop = null, float* InRate = null, float* StartTime = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(bool*)params.ptr = bLoop;
-		*cast(float*)&params[4] = InRate;
-		*cast(float*)&params[8] = StartTime;
+		if (bLoop !is null)
+			*cast(bool*)params.ptr = *bLoop;
+		if (InRate !is null)
+			*cast(float*)&params[4] = *InRate;
+		if (StartTime !is null)
+			*cast(float*)&params[8] = *StartTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayAnim, params.ptr, cast(void*)0);
 	}
 	void StopAnim()
@@ -211,22 +214,28 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTimeLeft, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	void SetRootBoneAxisOption(AnimNodeSequence.ERootBoneAxis AxisX, AnimNodeSequence.ERootBoneAxis AxisY, AnimNodeSequence.ERootBoneAxis AxisZ)
+	void SetRootBoneAxisOption(AnimNodeSequence.ERootBoneAxis* AxisX = null, AnimNodeSequence.ERootBoneAxis* AxisY = null, AnimNodeSequence.ERootBoneAxis* AxisZ = null)
 	{
 		ubyte params[3];
 		params[] = 0;
-		*cast(AnimNodeSequence.ERootBoneAxis*)params.ptr = AxisX;
-		*cast(AnimNodeSequence.ERootBoneAxis*)&params[1] = AxisY;
-		*cast(AnimNodeSequence.ERootBoneAxis*)&params[2] = AxisZ;
+		if (AxisX !is null)
+			*cast(AnimNodeSequence.ERootBoneAxis*)params.ptr = *AxisX;
+		if (AxisY !is null)
+			*cast(AnimNodeSequence.ERootBoneAxis*)&params[1] = *AxisY;
+		if (AxisZ !is null)
+			*cast(AnimNodeSequence.ERootBoneAxis*)&params[2] = *AxisZ;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootBoneAxisOption, params.ptr, cast(void*)0);
 	}
-	void SetRootBoneRotationOption(AnimNodeSequence.ERootRotationOption AxisX, AnimNodeSequence.ERootRotationOption AxisY, AnimNodeSequence.ERootRotationOption AxisZ)
+	void SetRootBoneRotationOption(AnimNodeSequence.ERootRotationOption* AxisX = null, AnimNodeSequence.ERootRotationOption* AxisY = null, AnimNodeSequence.ERootRotationOption* AxisZ = null)
 	{
 		ubyte params[3];
 		params[] = 0;
-		*cast(AnimNodeSequence.ERootRotationOption*)params.ptr = AxisX;
-		*cast(AnimNodeSequence.ERootRotationOption*)&params[1] = AxisY;
-		*cast(AnimNodeSequence.ERootRotationOption*)&params[2] = AxisZ;
+		if (AxisX !is null)
+			*cast(AnimNodeSequence.ERootRotationOption*)params.ptr = *AxisX;
+		if (AxisY !is null)
+			*cast(AnimNodeSequence.ERootRotationOption*)&params[1] = *AxisY;
+		if (AxisZ !is null)
+			*cast(AnimNodeSequence.ERootRotationOption*)&params[2] = *AxisZ;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetRootBoneRotationOption, params.ptr, cast(void*)0);
 	}
 }

@@ -19,9 +19,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float Epsilon() { mixin(MGPC!(float, 96)()); }
-		Vector Rotation() { mixin(MGPC!(Vector, 84)()); }
-		Vector Location() { mixin(MGPC!(Vector, 72)()); }
+		float Epsilon() { mixin(MGPC!("float", 96)()); }
+		Vector Rotation() { mixin(MGPC!("Vector", 84)()); }
+		Vector Location() { mixin(MGPC!("Vector", 72)()); }
 	}
 	final static bool OutsideOfDotProductWedge(NavMeshGoal_GenericFilterContainer FilterContainer, Vector InLocation, Rotator InRotation, float InEpsilon)
 	{

@@ -35,11 +35,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptName EndPointParamName() { mixin(MGPC!(ScriptName, 740)()); }
-		UTPawn PawnOwner() { mixin(MGPC!(UTPawn, 736)()); }
-		ScriptName BeamSockets() { mixin(MGPC!(ScriptName, 720)()); }
+		ScriptName EndPointParamName() { mixin(MGPC!("ScriptName", 740)()); }
+		UTPawn PawnOwner() { mixin(MGPC!("UTPawn", 736)()); }
+		ScriptName BeamSockets() { mixin(MGPC!("ScriptName", 720)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'BeamEmitter'!
-		ParticleSystem BeamTemplate() { mixin(MGPC!(ParticleSystem, 704)()); }
+		ParticleSystem BeamTemplate() { mixin(MGPC!("ParticleSystem", 704)()); }
 	}
 final:
 	void AddBeamEmitter()

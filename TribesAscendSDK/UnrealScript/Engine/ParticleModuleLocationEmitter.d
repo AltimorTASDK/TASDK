@@ -21,10 +21,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float InheritSourceRotationScale() { mixin(MGPC!(float, 92)()); }
-			float InheritSourceVelocityScale() { mixin(MGPC!(float, 88)()); }
-			ParticleModuleLocationEmitter.ELocationEmitterSelectionMethod SelectionMethod() { mixin(MGPC!(ParticleModuleLocationEmitter.ELocationEmitterSelectionMethod, 80)()); }
-			ScriptName EmitterName() { mixin(MGPC!(ScriptName, 72)()); }
+			float InheritSourceRotationScale() { mixin(MGPC!("float", 92)()); }
+			float InheritSourceVelocityScale() { mixin(MGPC!("float", 88)()); }
+			ParticleModuleLocationEmitter.ELocationEmitterSelectionMethod SelectionMethod() { mixin(MGPC!("ParticleModuleLocationEmitter.ELocationEmitterSelectionMethod", 80)()); }
+			ScriptName EmitterName() { mixin(MGPC!("ScriptName", 72)()); }
 		}
 		bool bInheritSourceRotation() { mixin(MGBPC!(84, 0x2)()); }
 		bool bInheritSourceRotation(bool val) { mixin(MSBPC!(84, 0x2)()); }

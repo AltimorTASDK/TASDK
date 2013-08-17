@@ -16,7 +16,7 @@ public extern(D):
 		private static __gshared ScriptFunction mInitMutator;
 		public @property static final ScriptFunction InitMutator() { mixin(MGF!("mInitMutator", "Function UTGame.UTMutator_Slomo.InitMutator")()); }
 	}
-	@property final auto ref float GameSpeed() { mixin(MGPC!(float, 496)()); }
+	@property final auto ref float GameSpeed() { mixin(MGPC!("float", 496)()); }
 	final void InitMutator(ScriptString Options, ref ScriptString ErrorMessage)
 	{
 		ubyte params[24];
@@ -24,6 +24,6 @@ public extern(D):
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitMutator, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 }

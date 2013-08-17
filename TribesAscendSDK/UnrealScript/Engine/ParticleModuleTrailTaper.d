@@ -21,7 +21,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat TaperFactor() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 76)()); }
-		ParticleModuleTrailTaper.ETrailTaperMethod TaperMethod() { mixin(MGPC!(ParticleModuleTrailTaper.ETrailTaperMethod, 72)()); }
+		DistributionFloat.RawDistributionFloat TaperFactor() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 76)()); }
+		ParticleModuleTrailTaper.ETrailTaperMethod TaperMethod() { mixin(MGPC!("ParticleModuleTrailTaper.ETrailTaperMethod", 72)()); }
 	}
 }

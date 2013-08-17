@@ -15,11 +15,11 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) ApexComponents() { mixin(MGPC!(ScriptArray!(
+void*) ApexComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 72)()); }
-		ScriptArray!(ApexAsset) NamedReferences() { mixin(MGPC!(ScriptArray!(ApexAsset), 84)()); }
-		ScriptString SourceFilePath() { mixin(MGPC!(ScriptString, 96)()); }
-		ScriptString OriginalApexName() { mixin(MGPC!(ScriptString, 60)()); }
+void*)", 72)()); }
+		ScriptArray!(ApexAsset) NamedReferences() { mixin(MGPC!("ScriptArray!(ApexAsset)", 84)()); }
+		ScriptString SourceFilePath() { mixin(MGPC!("ScriptString", 96)()); }
+		ScriptString OriginalApexName() { mixin(MGPC!("ScriptString", 60)()); }
 	}
 }

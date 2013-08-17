@@ -28,8 +28,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.PostProcessVolume.LUTBlender")()); }
 		@property final auto ref
 		{
-			ScriptArray!(Texture) LUTTextures() { mixin(MGPS!(ScriptArray!(Texture), 0)()); }
-			ScriptArray!(float) LUTWeights() { mixin(MGPS!(ScriptArray!(float), 12)()); }
+			ScriptArray!(Texture) LUTTextures() { mixin(MGPS!("ScriptArray!(Texture)", 0)()); }
+			ScriptArray!(float) LUTWeights() { mixin(MGPS!("ScriptArray!(float)", 12)()); }
 		}
 	}
 	struct PostProcessSettings
@@ -42,40 +42,40 @@ public extern(D):
 		{
 			auto ref
 			{
-				PostProcessVolume.LUTBlender ColorGradingLUT() { mixin(MGPS!(PostProcessVolume.LUTBlender, 196)()); }
-				Texture ColorGrading_LookupTable() { mixin(MGPS!(Texture, 192)()); }
-				float RimShader_InterpolationDuration() { mixin(MGPS!(float, 188)()); }
-				UObject.LinearColor RimShader_Color() { mixin(MGPS!(UObject.LinearColor, 172)()); }
-				float Scene_InterpolationDuration() { mixin(MGPS!(float, 168)()); }
-				Vector Scene_Shadows() { mixin(MGPS!(Vector, 156)()); }
-				Vector Scene_MidTones() { mixin(MGPS!(Vector, 144)()); }
-				Vector Scene_HighLights() { mixin(MGPS!(Vector, 132)()); }
-				float Scene_ImageGrainScale() { mixin(MGPS!(float, 128)()); }
-				float Scene_TonemapperScale() { mixin(MGPS!(float, 124)()); }
-				Vector Scene_Colorize() { mixin(MGPS!(Vector, 112)()); }
-				float Scene_Desaturation() { mixin(MGPS!(float, 108)()); }
-				float MotionBlur_InterpolationDuration() { mixin(MGPS!(float, 104)()); }
-				float MotionBlur_CameraTranslationThreshold() { mixin(MGPS!(float, 100)()); }
-				float MotionBlur_CameraRotationThreshold() { mixin(MGPS!(float, 96)()); }
-				float MotionBlur_Amount() { mixin(MGPS!(float, 88)()); }
-				float MotionBlur_MaxVelocity() { mixin(MGPS!(float, 84)()); }
-				float DOF_InterpolationDuration() { mixin(MGPS!(float, 80)()); }
-				Vector DOF_FocusPosition() { mixin(MGPS!(Vector, 68)()); }
-				float DOF_FocusDistance() { mixin(MGPS!(float, 64)()); }
-				float DOF_FocusInnerRadius() { mixin(MGPS!(float, 60)()); }
-				DOFEffect.EFocusType DOF_FocusType() { mixin(MGPS!(DOFEffect.EFocusType, 56)()); }
-				UObject.Color DOF_ModulateBlurColor() { mixin(MGPS!(UObject.Color, 52)()); }
-				float DOF_MaxFarBlurAmount() { mixin(MGPS!(float, 48)()); }
-				float DOF_MinBlurAmount() { mixin(MGPS!(float, 44)()); }
-				float DOF_MaxNearBlurAmount() { mixin(MGPS!(float, 40)()); }
-				float DOF_BlurKernelSize() { mixin(MGPS!(float, 36)()); }
-				float DOF_FalloffExponent() { mixin(MGPS!(float, 32)()); }
-				float DOF_BlurBloomKernelSize() { mixin(MGPS!(float, 28)()); }
-				float Bloom_InterpolationDuration() { mixin(MGPS!(float, 24)()); }
-				float Bloom_ScreenBlendThreshold() { mixin(MGPS!(float, 20)()); }
-				UObject.Color Bloom_Tint() { mixin(MGPS!(UObject.Color, 16)()); }
-				float Bloom_Threshold() { mixin(MGPS!(float, 12)()); }
-				float Bloom_Scale() { mixin(MGPS!(float, 8)()); }
+				PostProcessVolume.LUTBlender ColorGradingLUT() { mixin(MGPS!("PostProcessVolume.LUTBlender", 196)()); }
+				Texture ColorGrading_LookupTable() { mixin(MGPS!("Texture", 192)()); }
+				float RimShader_InterpolationDuration() { mixin(MGPS!("float", 188)()); }
+				UObject.LinearColor RimShader_Color() { mixin(MGPS!("UObject.LinearColor", 172)()); }
+				float Scene_InterpolationDuration() { mixin(MGPS!("float", 168)()); }
+				Vector Scene_Shadows() { mixin(MGPS!("Vector", 156)()); }
+				Vector Scene_MidTones() { mixin(MGPS!("Vector", 144)()); }
+				Vector Scene_HighLights() { mixin(MGPS!("Vector", 132)()); }
+				float Scene_ImageGrainScale() { mixin(MGPS!("float", 128)()); }
+				float Scene_TonemapperScale() { mixin(MGPS!("float", 124)()); }
+				Vector Scene_Colorize() { mixin(MGPS!("Vector", 112)()); }
+				float Scene_Desaturation() { mixin(MGPS!("float", 108)()); }
+				float MotionBlur_InterpolationDuration() { mixin(MGPS!("float", 104)()); }
+				float MotionBlur_CameraTranslationThreshold() { mixin(MGPS!("float", 100)()); }
+				float MotionBlur_CameraRotationThreshold() { mixin(MGPS!("float", 96)()); }
+				float MotionBlur_Amount() { mixin(MGPS!("float", 88)()); }
+				float MotionBlur_MaxVelocity() { mixin(MGPS!("float", 84)()); }
+				float DOF_InterpolationDuration() { mixin(MGPS!("float", 80)()); }
+				Vector DOF_FocusPosition() { mixin(MGPS!("Vector", 68)()); }
+				float DOF_FocusDistance() { mixin(MGPS!("float", 64)()); }
+				float DOF_FocusInnerRadius() { mixin(MGPS!("float", 60)()); }
+				DOFEffect.EFocusType DOF_FocusType() { mixin(MGPS!("DOFEffect.EFocusType", 56)()); }
+				UObject.Color DOF_ModulateBlurColor() { mixin(MGPS!("UObject.Color", 52)()); }
+				float DOF_MaxFarBlurAmount() { mixin(MGPS!("float", 48)()); }
+				float DOF_MinBlurAmount() { mixin(MGPS!("float", 44)()); }
+				float DOF_MaxNearBlurAmount() { mixin(MGPS!("float", 40)()); }
+				float DOF_BlurKernelSize() { mixin(MGPS!("float", 36)()); }
+				float DOF_FalloffExponent() { mixin(MGPS!("float", 32)()); }
+				float DOF_BlurBloomKernelSize() { mixin(MGPS!("float", 28)()); }
+				float Bloom_InterpolationDuration() { mixin(MGPS!("float", 24)()); }
+				float Bloom_ScreenBlendThreshold() { mixin(MGPS!("float", 20)()); }
+				UObject.Color Bloom_Tint() { mixin(MGPS!("UObject.Color", 16)()); }
+				float Bloom_Threshold() { mixin(MGPS!("float", 12)()); }
+				float Bloom_Scale() { mixin(MGPS!("float", 8)()); }
 			}
 			bool MotionBlur_FullMotionBlur() { mixin(MGBPS!(92, 0x1)()); }
 			bool MotionBlur_FullMotionBlur(bool val) { mixin(MSBPS!(92, 0x1)()); }
@@ -177,9 +177,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			PostProcessVolume NextLowerPriorityVolume() { mixin(MGPC!(PostProcessVolume, 744)()); }
+			PostProcessVolume NextLowerPriorityVolume() { mixin(MGPC!("PostProcessVolume", 744)()); }
 			// WARNING: Property 'Settings' has the same name as a defined type!
-			float Priority() { mixin(MGPC!(float, 520)()); }
+			float Priority() { mixin(MGPC!("float", 520)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(748, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(748, 0x1)()); }

@@ -84,20 +84,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			UTTeamInfo EnemyTeam() { mixin(MGPC!(UTTeamInfo, 480)()); }
-			UTGameObjective Objectives() { mixin(MGPC!(UTGameObjective, 488)()); }
-			UTSquadAI Squads() { mixin(MGPC!(UTSquadAI, 500)()); }
-			ScriptArray!(UTVehicleFactory) ImportantVehicleFactories() { mixin(MGPC!(ScriptArray!(UTVehicleFactory), 656)()); }
-			int NumSuperPickups() { mixin(MGPC!(int, 648)()); }
-			UTPickupFactory SuperPickups() { mixin(MGPC!(UTPickupFactory, 584)()); }
-			ScriptName OrderList() { mixin(MGPC!(ScriptName, 520)()); }
-			int OrderOffset() { mixin(MGPC!(int, 516)()); }
-			ScriptClass SquadType() { mixin(MGPC!(ScriptClass, 512)()); }
-			UTSquadAI FreelanceSquad() { mixin(MGPC!(UTSquadAI, 508)()); }
-			UTSquadAI AttackSquad() { mixin(MGPC!(UTSquadAI, 504)()); }
-			UTGameObjective PickedStandaloneObjective() { mixin(MGPC!(UTGameObjective, 496)()); }
-			UTGameObjective PickedObjective() { mixin(MGPC!(UTGameObjective, 492)()); }
-			int NumSupportingPlayer() { mixin(MGPC!(int, 484)()); }
+			UTTeamInfo EnemyTeam() { mixin(MGPC!("UTTeamInfo", 480)()); }
+			UTGameObjective Objectives() { mixin(MGPC!("UTGameObjective", 488)()); }
+			UTSquadAI Squads() { mixin(MGPC!("UTSquadAI", 500)()); }
+			ScriptArray!(UTVehicleFactory) ImportantVehicleFactories() { mixin(MGPC!("ScriptArray!(UTVehicleFactory)", 656)()); }
+			int NumSuperPickups() { mixin(MGPC!("int", 648)()); }
+			UTPickupFactory SuperPickups() { mixin(MGPC!("UTPickupFactory", 584)()); }
+			ScriptName OrderList() { mixin(MGPC!("ScriptName", 520)()); }
+			int OrderOffset() { mixin(MGPC!("int", 516)()); }
+			ScriptClass SquadType() { mixin(MGPC!("ScriptClass", 512)()); }
+			UTSquadAI FreelanceSquad() { mixin(MGPC!("UTSquadAI", 508)()); }
+			UTSquadAI AttackSquad() { mixin(MGPC!("UTSquadAI", 504)()); }
+			UTGameObjective PickedStandaloneObjective() { mixin(MGPC!("UTGameObjective", 496)()); }
+			UTGameObjective PickedObjective() { mixin(MGPC!("UTGameObjective", 492)()); }
+			int NumSupportingPlayer() { mixin(MGPC!("int", 484)()); }
 		}
 		bool bFoundSuperItems() { mixin(MGBPC!(652, 0x1)()); }
 		bool bFoundSuperItems(bool val) { mixin(MSBPC!(652, 0x1)()); }

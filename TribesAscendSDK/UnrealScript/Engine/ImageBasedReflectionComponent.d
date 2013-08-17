@@ -17,8 +17,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.LinearColor ReflectionColor() { mixin(MGPC!(UObject.LinearColor, 616)()); }
-			Texture2D ReflectionTexture() { mixin(MGPC!(Texture2D, 612)()); }
+			UObject.LinearColor ReflectionColor() { mixin(MGPC!("UObject.LinearColor", 616)()); }
+			Texture2D ReflectionTexture() { mixin(MGPC!("Texture2D", 612)()); }
 		}
 		bool bTwoSided() { mixin(MGBPC!(608, 0x2)()); }
 		bool bTwoSided(bool val) { mixin(MSBPC!(608, 0x2)()); }

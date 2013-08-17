@@ -32,8 +32,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(SoundCue) m_QueuedAnnouncements() { mixin(MGPC!(ScriptArray!(SoundCue), 476)()); }
-		TrPlayerController m_PlayerOwner() { mixin(MGPC!(TrPlayerController, 492)()); }
+		ScriptArray!(SoundCue) m_QueuedAnnouncements() { mixin(MGPC!("ScriptArray!(SoundCue)", 476)()); }
+		TrPlayerController m_PlayerOwner() { mixin(MGPC!("TrPlayerController", 492)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_CurrentAnnouncementAudioComponent'!
 	}
 final:

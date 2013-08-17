@@ -21,8 +21,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC!(UObject.Pointer, 524)()); }
-			UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC!(UObject.Pointer, 520)()); }
+			UObject.Pointer VfTable_IInterface_NavMeshPathObject() { mixin(MGPC!("UObject.Pointer", 524)()); }
+			UObject.Pointer VfTable_IInterface_NavMeshPathObstacle() { mixin(MGPC!("UObject.Pointer", 520)()); }
 		}
 		bool bSplitNavMesh() { mixin(MGBPC!(528, 0x1)()); }
 		bool bSplitNavMesh(bool val) { mixin(MSBPC!(528, 0x1)()); }

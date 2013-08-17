@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SeqCond_CompareInt DefaultProperties() { mixin(MGDPC!(SeqCond_CompareInt, "SeqCond_CompareInt Engine.Default__SeqCond_CompareInt")()); }
 	@property final auto ref
 	{
-		int ValueB() { mixin(MGPC!(int, 212)()); }
-		int ValueA() { mixin(MGPC!(int, 208)()); }
+		int ValueB() { mixin(MGPC!("int", 212)()); }
+		int ValueA() { mixin(MGPC!("int", 208)()); }
 	}
 }

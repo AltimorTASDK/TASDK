@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mTick;
 		public @property static final ScriptFunction Tick() { mixin(MGF!("mTick", "Function Engine.Trigger_LOS.Tick")()); }
 	}
-	@property final auto ref ScriptArray!(PlayerController) PCsWithLOS() { mixin(MGPC!(ScriptArray!(PlayerController), 488)()); }
+	@property final auto ref ScriptArray!(PlayerController) PCsWithLOS() { mixin(MGPC!("ScriptArray!(PlayerController)", 488)()); }
 	final void Tick(float DeltaTime)
 	{
 		ubyte params[4];

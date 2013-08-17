@@ -49,11 +49,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.SpeedTreeComponent.SpeedTreeStaticLight")()); }
 		@property final auto ref
 		{
-			ShadowMap1D BillboardShadowMap() { mixin(MGPS!(ShadowMap1D, 32)()); }
-			ShadowMap1D LeafCardShadowMap() { mixin(MGPS!(ShadowMap1D, 28)()); }
-			ShadowMap1D LeafMeshShadowMap() { mixin(MGPS!(ShadowMap1D, 24)()); }
-			ShadowMap1D FrondShadowMap() { mixin(MGPS!(ShadowMap1D, 20)()); }
-			ShadowMap1D BranchShadowMap() { mixin(MGPS!(ShadowMap1D, 16)()); }
+			ShadowMap1D BillboardShadowMap() { mixin(MGPS!("ShadowMap1D", 32)()); }
+			ShadowMap1D LeafCardShadowMap() { mixin(MGPS!("ShadowMap1D", 28)()); }
+			ShadowMap1D LeafMeshShadowMap() { mixin(MGPS!("ShadowMap1D", 24)()); }
+			ShadowMap1D FrondShadowMap() { mixin(MGPS!("ShadowMap1D", 20)()); }
+			ShadowMap1D BranchShadowMap() { mixin(MGPS!("ShadowMap1D", 16)()); }
 			// WARNING: Property 'Guid' has the same name as a defined type!
 		}
 	}
@@ -61,26 +61,26 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(SpeedTreeComponent.SpeedTreeStaticLight) StaticLights() { mixin(MGPC!(ScriptArray!(SpeedTreeComponent.SpeedTreeStaticLight), 544)()); }
-			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 640)()); }
-			UObject.Matrix RotationOnlyMatrix() { mixin(MGPC!(UObject.Matrix, 576)()); }
-			EngineTypes.LightMapRef BillboardLightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 572)()); }
-			EngineTypes.LightMapRef LeafCardLightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 568)()); }
-			EngineTypes.LightMapRef LeafMeshLightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 564)()); }
-			EngineTypes.LightMapRef FrondLightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 560)()); }
-			EngineTypes.LightMapRef BranchLightMap() { mixin(MGPC!(EngineTypes.LightMapRef, 556)()); }
-			Texture2D SpeedTreeIcon() { mixin(MGPC!(Texture2D, 540)()); }
-			MaterialInterface BillboardMaterial() { mixin(MGPC!(MaterialInterface, 536)()); }
-			MaterialInterface LeafMeshMaterial() { mixin(MGPC!(MaterialInterface, 532)()); }
-			MaterialInterface LeafCardMaterial() { mixin(MGPC!(MaterialInterface, 528)()); }
-			MaterialInterface FrondMaterial() { mixin(MGPC!(MaterialInterface, 524)()); }
-			MaterialInterface Branch2Material() { mixin(MGPC!(MaterialInterface, 520)()); }
-			MaterialInterface Branch1Material() { mixin(MGPC!(MaterialInterface, 516)()); }
-			float LodLevelOverride() { mixin(MGPC!(float, 512)()); }
-			float LodBillboardEnd() { mixin(MGPC!(float, 508)()); }
-			float LodBillboardStart() { mixin(MGPC!(float, 504)()); }
-			float Lod3DEnd() { mixin(MGPC!(float, 500)()); }
-			float Lod3DStart() { mixin(MGPC!(float, 496)()); }
+			ScriptArray!(SpeedTreeComponent.SpeedTreeStaticLight) StaticLights() { mixin(MGPC!("ScriptArray!(SpeedTreeComponent.SpeedTreeStaticLight)", 544)()); }
+			EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassPrimitiveSettings", 640)()); }
+			UObject.Matrix RotationOnlyMatrix() { mixin(MGPC!("UObject.Matrix", 576)()); }
+			EngineTypes.LightMapRef BillboardLightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 572)()); }
+			EngineTypes.LightMapRef LeafCardLightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 568)()); }
+			EngineTypes.LightMapRef LeafMeshLightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 564)()); }
+			EngineTypes.LightMapRef FrondLightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 560)()); }
+			EngineTypes.LightMapRef BranchLightMap() { mixin(MGPC!("EngineTypes.LightMapRef", 556)()); }
+			Texture2D SpeedTreeIcon() { mixin(MGPC!("Texture2D", 540)()); }
+			MaterialInterface BillboardMaterial() { mixin(MGPC!("MaterialInterface", 536)()); }
+			MaterialInterface LeafMeshMaterial() { mixin(MGPC!("MaterialInterface", 532)()); }
+			MaterialInterface LeafCardMaterial() { mixin(MGPC!("MaterialInterface", 528)()); }
+			MaterialInterface FrondMaterial() { mixin(MGPC!("MaterialInterface", 524)()); }
+			MaterialInterface Branch2Material() { mixin(MGPC!("MaterialInterface", 520)()); }
+			MaterialInterface Branch1Material() { mixin(MGPC!("MaterialInterface", 516)()); }
+			float LodLevelOverride() { mixin(MGPC!("float", 512)()); }
+			float LodBillboardEnd() { mixin(MGPC!("float", 508)()); }
+			float LodBillboardStart() { mixin(MGPC!("float", 504)()); }
+			float Lod3DEnd() { mixin(MGPC!("float", 500)()); }
+			float Lod3DStart() { mixin(MGPC!("float", 496)()); }
 			// WARNING: Property 'SpeedTree' has the same name as a defined type!
 		}
 		bool bUseBillboards() { mixin(MGBPC!(492, 0x10)()); }

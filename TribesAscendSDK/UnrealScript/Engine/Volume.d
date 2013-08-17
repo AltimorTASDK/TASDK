@@ -44,7 +44,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref Actor AssociatedActor() { mixin(MGPC!(Actor, 512)()); }
+		@property final auto ref Actor AssociatedActor() { mixin(MGPC!("Actor", 512)()); }
 		bool bProcessAllActors() { mixin(MGBPC!(516, 0x2)()); }
 		bool bProcessAllActors(bool val) { mixin(MSBPC!(516, 0x2)()); }
 		bool bForcePawnWalk() { mixin(MGBPC!(516, 0x1)()); }
@@ -79,8 +79,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void OnToggle(SeqAct_Toggle Action)
 	{

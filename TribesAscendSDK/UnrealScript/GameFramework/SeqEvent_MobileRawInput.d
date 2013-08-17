@@ -18,10 +18,10 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float TimeStamp() { mixin(MGPC!(float, 268)()); }
-		float TouchLocationY() { mixin(MGPC!(float, 264)()); }
-		float TouchLocationX() { mixin(MGPC!(float, 260)()); }
-		int TouchIndex() { mixin(MGPC!(int, 256)()); }
+		float TimeStamp() { mixin(MGPC!("float", 268)()); }
+		float TouchLocationY() { mixin(MGPC!("float", 264)()); }
+		float TouchLocationX() { mixin(MGPC!("float", 260)()); }
+		int TouchIndex() { mixin(MGPC!("int", 256)()); }
 	}
 	final void RegisterEvent()
 	{

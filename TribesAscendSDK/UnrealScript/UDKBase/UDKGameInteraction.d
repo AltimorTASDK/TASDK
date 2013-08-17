@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction NotifyGameSessionEnded() { mixin(MGF!("mNotifyGameSessionEnded", "Function UDKBase.UDKGameInteraction.NotifyGameSessionEnded")()); }
 		}
 	}
-	@property final auto ref int BlockUIInputSemaphore() { mixin(MGPC!(int, 348)()); }
+	@property final auto ref int BlockUIInputSemaphore() { mixin(MGPC!("int", 348)()); }
 final:
 	bool ShouldProcessUIInput()
 	{

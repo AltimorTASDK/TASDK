@@ -29,7 +29,7 @@ public extern(D):
 			ScriptFunction ArmedTimer() { mixin(MGF!("mArmedTimer", "Function TribesGame.TrProj_ThrowDeployable.ArmedTimer")()); }
 		}
 	}
-	@property final auto ref ScriptClass m_DeployableToSpawn() { mixin(MGPC!(ScriptClass, 900)()); }
+	@property final auto ref ScriptClass m_DeployableToSpawn() { mixin(MGPC!("ScriptClass", 900)()); }
 final:
 	TrDeployable SpawnDeployable()
 	{

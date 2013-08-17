@@ -52,9 +52,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGame_TrStorm.Missile")()); }
 		@property final auto ref
 		{
-			ubyte TargetTeam() { mixin(MGPS!(ubyte, 8)()); }
-			float RemainingFlightTime() { mixin(MGPS!(float, 4)()); }
-			TrStormControlPoint FiredFrom() { mixin(MGPS!(TrStormControlPoint, 0)()); }
+			ubyte TargetTeam() { mixin(MGPS!("ubyte", 8)()); }
+			float RemainingFlightTime() { mixin(MGPS!("float", 4)()); }
+			TrStormControlPoint FiredFrom() { mixin(MGPS!("TrStormControlPoint", 0)()); }
 		}
 	}
 	struct Carrier
@@ -65,9 +65,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrGame_TrStorm.Carrier")()); }
 		@property final auto ref
 		{
-			ubyte TeamNum() { mixin(MGPS!(ubyte, 8)()); }
-			int CoreHealth() { mixin(MGPS!(int, 4)()); }
-			int ShieldHealth() { mixin(MGPS!(int, 0)()); }
+			ubyte TeamNum() { mixin(MGPS!("ubyte", 8)()); }
+			int CoreHealth() { mixin(MGPS!("int", 4)()); }
+			int ShieldHealth() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	static struct MatchEnding
@@ -77,14 +77,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrGame_TrStorm.Missile) m_fActiveMissiles() { mixin(MGPC!(ScriptArray!(TrGame_TrStorm.Missile), 1480)()); }
-		float MatchEndingTime() { mixin(MGPC!(float, 1520)()); }
-		int m_nMaxCoreHealth() { mixin(MGPC!(int, 1516)()); }
-		int m_nMaxShieldHealth() { mixin(MGPC!(int, 1512)()); }
-		TrStormCore m_CarrierCore() { mixin(MGPC!(TrStormCore, 1504)()); }
-		TrStormCarrierShield m_CarrierShields() { mixin(MGPC!(TrStormCarrierShield, 1496)()); }
-		float m_fMissileDamageAmount() { mixin(MGPC!(float, 1492)()); }
-		TrGame_TrStorm.Carrier m_Carriers() { mixin(MGPC!(TrGame_TrStorm.Carrier, 1456)()); }
+		ScriptArray!(TrGame_TrStorm.Missile) m_fActiveMissiles() { mixin(MGPC!("ScriptArray!(TrGame_TrStorm.Missile)", 1480)()); }
+		float MatchEndingTime() { mixin(MGPC!("float", 1520)()); }
+		int m_nMaxCoreHealth() { mixin(MGPC!("int", 1516)()); }
+		int m_nMaxShieldHealth() { mixin(MGPC!("int", 1512)()); }
+		TrStormCore m_CarrierCore() { mixin(MGPC!("TrStormCore", 1504)()); }
+		TrStormCarrierShield m_CarrierShields() { mixin(MGPC!("TrStormCarrierShield", 1496)()); }
+		float m_fMissileDamageAmount() { mixin(MGPC!("float", 1492)()); }
+		TrGame_TrStorm.Carrier m_Carriers() { mixin(MGPC!("TrGame_TrStorm.Carrier", 1456)()); }
 	}
 final:
 	void PostBeginPlay()

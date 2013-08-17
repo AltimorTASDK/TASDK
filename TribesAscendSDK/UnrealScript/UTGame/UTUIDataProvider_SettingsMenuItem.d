@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptString Description() { mixin(MGPC!(ScriptString, 152)()); }
+		@property final auto ref ScriptString Description() { mixin(MGPC!("ScriptString", 152)()); }
 		bool bFrontEndOnly() { mixin(MGBPC!(164, 0x1)()); }
 		bool bFrontEndOnly(bool val) { mixin(MSBPC!(164, 0x1)()); }
 	}

@@ -13,8 +13,8 @@ public extern(D):
 	@property final static SeqCond_IncrementFloat DefaultProperties() { mixin(MGDPC!(SeqCond_IncrementFloat, "SeqCond_IncrementFloat Engine.Default__SeqCond_IncrementFloat")()); }
 	@property final auto ref
 	{
-		float ValueB() { mixin(MGPC!(float, 216)()); }
-		float ValueA() { mixin(MGPC!(float, 212)()); }
-		float IncrementAmount() { mixin(MGPC!(float, 208)()); }
+		float ValueB() { mixin(MGPC!("float", 216)()); }
+		float ValueA() { mixin(MGPC!("float", 212)()); }
+		float IncrementAmount() { mixin(MGPC!("float", 208)()); }
 	}
 }

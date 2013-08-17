@@ -54,9 +54,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				Rotator RelativeRotation() { mixin(MGPS!(Rotator, 20)()); }
-				Vector RelativeLocation() { mixin(MGPS!(Vector, 8)()); }
-				Actor Base() { mixin(MGPS!(Actor, 4)()); }
+				Rotator RelativeRotation() { mixin(MGPS!("Rotator", 20)()); }
+				Vector RelativeLocation() { mixin(MGPS!("Vector", 8)()); }
+				Actor Base() { mixin(MGPS!("Actor", 4)()); }
 				// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSC'!
 			}
 			bool bInheritBaseScale() { mixin(MGBPS!(32, 0x1)()); }
@@ -69,26 +69,26 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) PoolComponents() { mixin(MGPC!(ScriptArray!(
+void*) PoolComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 480)()); }
+void*)", 480)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) ActiveComponents() { mixin(MGPC!(ScriptArray!(
+void*) ActiveComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 492)()); }
-			ScriptArray!(EmitterPool.EmitterBaseInfo) RelativePSCs() { mixin(MGPC!(ScriptArray!(EmitterPool.EmitterBaseInfo), 512)()); }
+void*)", 492)()); }
+			ScriptArray!(EmitterPool.EmitterBaseInfo) RelativePSCs() { mixin(MGPC!("ScriptArray!(EmitterPool.EmitterBaseInfo)", 512)()); }
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) FreeSMComponents() { mixin(MGPC!(ScriptArray!(
+void*) FreeSMComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 540)()); }
-			ScriptArray!(MaterialInstanceConstant) FreeMatInstConsts() { mixin(MGPC!(ScriptArray!(MaterialInstanceConstant), 552)()); }
-			int IdealMaterialInstanceConstants() { mixin(MGPC!(int, 536)()); }
-			int IdealStaticMeshComponents() { mixin(MGPC!(int, 532)()); }
-			float SMC_MIC_CurrentReductionTime() { mixin(MGPC!(float, 528)()); }
-			float SMC_MIC_ReductionTime() { mixin(MGPC!(float, 524)()); }
-			int MaxActiveEffects() { mixin(MGPC!(int, 504)()); }
+void*)", 540)()); }
+			ScriptArray!(MaterialInstanceConstant) FreeMatInstConsts() { mixin(MGPC!("ScriptArray!(MaterialInstanceConstant)", 552)()); }
+			int IdealMaterialInstanceConstants() { mixin(MGPC!("int", 536)()); }
+			int IdealStaticMeshComponents() { mixin(MGPC!("int", 532)()); }
+			float SMC_MIC_CurrentReductionTime() { mixin(MGPC!("float", 528)()); }
+			float SMC_MIC_ReductionTime() { mixin(MGPC!("float", 524)()); }
+			int MaxActiveEffects() { mixin(MGPC!("int", 504)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PSCTemplate'!
 		}
 		bool bLogPoolOverflowList() { mixin(MGBPC!(508, 0x2)()); }
@@ -99,15 +99,18 @@ void*), 540)()); }
 final:
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator SpawnRotation, Actor AttachToActor, bool bInheritScaleFromBase)
+void* SpawnEmitter(ParticleSystem EmitterTemplate, Vector SpawnLocation, Rotator* SpawnRotation = null, Actor* AttachToActor = null, bool* bInheritScaleFromBase = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = EmitterTemplate;
 		*cast(Vector*)&params[4] = SpawnLocation;
-		*cast(Rotator*)&params[16] = SpawnRotation;
-		*cast(Actor*)&params[28] = AttachToActor;
-		*cast(bool*)&params[32] = bInheritScaleFromBase;
+		if (SpawnRotation !is null)
+			*cast(Rotator*)&params[16] = *SpawnRotation;
+		if (AttachToActor !is null)
+			*cast(Actor*)&params[28] = *AttachToActor;
+		if (bInheritScaleFromBase !is null)
+			*cast(bool*)&params[32] = *bInheritScaleFromBase;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitter, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -135,11 +138,12 @@ void* PSC)
 void**)params.ptr = PSC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReturnToPool, params.ptr, cast(void*)0);
 	}
-	void ClearPoolComponents(bool bClearActive)
+	void ClearPoolComponents(bool* bClearActive = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bClearActive;
+		if (bClearActive !is null)
+			*cast(bool*)params.ptr = *bClearActive;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearPoolComponents, params.ptr, cast(void*)0);
 	}
 	void FreeStaticMeshComponents(
@@ -155,11 +159,12 @@ void**)params.ptr = PSC;
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* GetFreeStaticMeshComponent(bool bCreateNewObject)
+void* GetFreeStaticMeshComponent(bool* bCreateNewObject = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bCreateNewObject;
+		if (bCreateNewObject !is null)
+			*cast(bool*)params.ptr = *bCreateNewObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFreeStaticMeshComponent, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -176,11 +181,12 @@ void* SMC)
 void**)params.ptr = SMC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FreeMaterialInstanceConstants, params.ptr, cast(void*)0);
 	}
-	MaterialInstanceConstant GetFreeMatInstConsts(bool bCreateNewObject)
+	MaterialInstanceConstant GetFreeMatInstConsts(bool* bCreateNewObject = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bCreateNewObject;
+		if (bCreateNewObject !is null)
+			*cast(bool*)params.ptr = *bCreateNewObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFreeMatInstConsts, params.ptr, cast(void*)0);
 		return *cast(MaterialInstanceConstant*)&params[4];
 	}
@@ -201,7 +207,7 @@ void**)&params[8];
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void* SpawnEmitterMeshAttachment(ParticleSystem EmitterTemplate, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* Mesh, ScriptName AttachPointName, bool bAttachToSocket, Vector RelativeLoc, Rotator RelativeRot)
+void* Mesh, ScriptName AttachPointName, bool* bAttachToSocket = null, Vector* RelativeLoc = null, Rotator* RelativeRot = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -210,9 +216,12 @@ void* Mesh, ScriptName AttachPointName, bool bAttachToSocket, Vector RelativeLoc
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)&params[4] = Mesh;
 		*cast(ScriptName*)&params[8] = AttachPointName;
-		*cast(bool*)&params[16] = bAttachToSocket;
-		*cast(Vector*)&params[20] = RelativeLoc;
-		*cast(Rotator*)&params[32] = RelativeRot;
+		if (bAttachToSocket !is null)
+			*cast(bool*)&params[16] = *bAttachToSocket;
+		if (RelativeLoc !is null)
+			*cast(Vector*)&params[20] = *RelativeLoc;
+		if (RelativeRot !is null)
+			*cast(Rotator*)&params[32] = *RelativeRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitterMeshAttachment, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -220,12 +229,13 @@ void**)&params[44];
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* SpawnEmitterCustomLifetime(ParticleSystem EmitterTemplate, bool bSkipAutoActivate)
+void* SpawnEmitterCustomLifetime(ParticleSystem EmitterTemplate, bool* bSkipAutoActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = EmitterTemplate;
-		*cast(bool*)&params[4] = bSkipAutoActivate;
+		if (bSkipAutoActivate !is null)
+			*cast(bool*)&params[4] = *bSkipAutoActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnEmitterCustomLifetime, params.ptr, cast(void*)0);
 		return *cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

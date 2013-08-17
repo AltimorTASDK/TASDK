@@ -13,7 +13,7 @@ public extern(D):
 	@property final static BookMark2D DefaultProperties() { mixin(MGDPC!(BookMark2D, "BookMark2D Engine.Default__BookMark2D")()); }
 	@property final auto ref
 	{
-		UObject.IntPoint Location() { mixin(MGPC!(UObject.IntPoint, 64)()); }
-		float Zoom2D() { mixin(MGPC!(float, 60)()); }
+		UObject.IntPoint Location() { mixin(MGPC!("UObject.IntPoint", 64)()); }
+		float Zoom2D() { mixin(MGPC!("float", 60)()); }
 	}
 }

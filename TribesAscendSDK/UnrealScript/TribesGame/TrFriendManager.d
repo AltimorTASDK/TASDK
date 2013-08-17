@@ -62,24 +62,24 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrFriendManager.FriendStruct")()); }
 		@property final auto ref
 		{
-			ScriptString PlayerName() { mixin(MGPS!(ScriptString, 4)()); }
-			TrFriendManager.EOnlineState OnlineState() { mixin(MGPS!(TrFriendManager.EOnlineState, 16)()); }
-			int PlayerID() { mixin(MGPS!(int, 0)()); }
+			ScriptString PlayerName() { mixin(MGPS!("ScriptString", 4)()); }
+			TrFriendManager.EOnlineState OnlineState() { mixin(MGPS!("TrFriendManager.EOnlineState", 16)()); }
+			int PlayerID() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptString RecentlyAddedFriend() { mixin(MGPC!(ScriptString, 76)()); }
-			ScriptArray!(TrFriendManager.FriendStruct) FriendsList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 96)()); }
-			ScriptArray!(TrFriendManager.FriendStruct) FollowersList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 108)()); }
-			ScriptArray!(TrFriendManager.FriendStruct) IgnoredList() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 120)()); }
-			GFxObject GFxList() { mixin(MGPC!(GFxObject, 92)()); }
-			int GFxCount() { mixin(MGPC!(int, 88)()); }
-			int PrevBlockedCount() { mixin(MGPC!(int, 68)()); }
-			int PrevFollowerCount() { mixin(MGPC!(int, 64)()); }
-			int PrevFriendCount() { mixin(MGPC!(int, 60)()); }
+			ScriptString RecentlyAddedFriend() { mixin(MGPC!("ScriptString", 76)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) FriendsList() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 96)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) FollowersList() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 108)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) IgnoredList() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 120)()); }
+			GFxObject GFxList() { mixin(MGPC!("GFxObject", 92)()); }
+			int GFxCount() { mixin(MGPC!("int", 88)()); }
+			int PrevBlockedCount() { mixin(MGPC!("int", 68)()); }
+			int PrevFollowerCount() { mixin(MGPC!("int", 64)()); }
+			int PrevFriendCount() { mixin(MGPC!("int", 60)()); }
 		}
 		bool AddFriendSuccess() { mixin(MGBPC!(72, 0x1)()); }
 		bool AddFriendSuccess(bool val) { mixin(MSBPC!(72, 0x1)()); }

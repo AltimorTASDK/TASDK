@@ -15,10 +15,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionVector.EDistributionVectorMirrorFlags MirrorFlags() { mixin(MGPC!(DistributionVector.EDistributionVectorMirrorFlags, 109)()); }
-			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!(DistributionVector.EDistributionVectorLockFlags, 108)()); }
-			Vector Min() { mixin(MGPC!(Vector, 92)()); }
-			Vector Max() { mixin(MGPC!(Vector, 80)()); }
+			DistributionVector.EDistributionVectorMirrorFlags MirrorFlags() { mixin(MGPC!("DistributionVector.EDistributionVectorMirrorFlags", 109)()); }
+			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!("DistributionVector.EDistributionVectorLockFlags", 108)()); }
+			Vector Min() { mixin(MGPC!("Vector", 92)()); }
+			Vector Max() { mixin(MGPC!("Vector", 80)()); }
 		}
 		bool bUseExtremes() { mixin(MGBPC!(104, 0x2)()); }
 		bool bUseExtremes(bool val) { mixin(MSBPC!(104, 0x2)()); }

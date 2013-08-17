@@ -47,7 +47,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!(ScriptArray!(Pawn), 476)()); }
+		@property final auto ref ScriptArray!(Pawn) m_NearByPawns() { mixin(MGPC!("ScriptArray!(Pawn)", 476)()); }
 		bool m_bTrackLocallyControlledPawnsOnly() { mixin(MGBPC!(488, 0x20)()); }
 		bool m_bTrackLocallyControlledPawnsOnly(bool val) { mixin(MSBPC!(488, 0x20)()); }
 		bool m_bForwardOwnerOnly() { mixin(MGBPC!(488, 0x10)()); }
@@ -74,11 +74,12 @@ void* OtherComp)
 void**)&params[4] = OtherComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TouchOther, params.ptr, cast(void*)0);
 	}
-	void ForceProximityScan(float Radius)
+	void ForceProximityScan(float* Radius = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = Radius;
+		if (Radius !is null)
+			*cast(float*)params.ptr = *Radius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ForceProximityScan, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 
@@ -140,11 +141,12 @@ void**)&params[4] = OtherComp;
 		*cast(Pawn*)params.ptr = aPawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnPawnRemoved, params.ptr, cast(void*)0);
 	}
-	int GetNearByPawns(bool bOnlyValid)
+	int GetNearByPawns(bool* bOnlyValid = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bOnlyValid;
+		if (bOnlyValid !is null)
+			*cast(bool*)params.ptr = *bOnlyValid;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNearByPawns, params.ptr, cast(void*)0);
 		return *cast(int*)&params[4];
 	}

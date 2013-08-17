@@ -70,19 +70,19 @@ public extern(D):
 		auto ref
 		{
 			// WARNING: Property 'CylinderComponent' has the same name as a defined type!
-			float NetCullDistanceSquared() { mixin(MGPC!(float, 528)()); }
-			Actor ImpactedActor() { mixin(MGPC!(Actor, 524)()); }
-			Controller InstigatorController() { mixin(MGPC!(Controller, 520)()); }
-			SoundCue ImpactSound() { mixin(MGPC!(SoundCue, 516)()); }
-			SoundCue SpawnSound() { mixin(MGPC!(SoundCue, 512)()); }
-			ScriptClass MyDamageType() { mixin(MGPC!(ScriptClass, 508)()); }
-			float MomentumTransfer() { mixin(MGPC!(float, 504)()); }
-			float DamageRadius() { mixin(MGPC!(float, 500)()); }
-			float Damage() { mixin(MGPC!(float, 496)()); }
+			float NetCullDistanceSquared() { mixin(MGPC!("float", 528)()); }
+			Actor ImpactedActor() { mixin(MGPC!("Actor", 524)()); }
+			Controller InstigatorController() { mixin(MGPC!("Controller", 520)()); }
+			SoundCue ImpactSound() { mixin(MGPC!("SoundCue", 516)()); }
+			SoundCue SpawnSound() { mixin(MGPC!("SoundCue", 512)()); }
+			ScriptClass MyDamageType() { mixin(MGPC!("ScriptClass", 508)()); }
+			float MomentumTransfer() { mixin(MGPC!("float", 504)()); }
+			float DamageRadius() { mixin(MGPC!("float", 500)()); }
+			float Damage() { mixin(MGPC!("float", 496)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ZeroColliderComponent'!
-			Actor ZeroCollider() { mixin(MGPC!(Actor, 488)()); }
-			float MaxSpeed() { mixin(MGPC!(float, 480)()); }
-			float Speed() { mixin(MGPC!(float, 476)()); }
+			Actor ZeroCollider() { mixin(MGPC!("Actor", 488)()); }
+			float MaxSpeed() { mixin(MGPC!("float", 480)()); }
+			float Speed() { mixin(MGPC!("float", 476)()); }
 		}
 		bool bRotationFollowsVelocity() { mixin(MGBPC!(484, 0x8)()); }
 		bool bRotationFollowsVelocity(bool val) { mixin(MSBPC!(484, 0x8)()); }
@@ -144,7 +144,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProjectileHurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool HurtRadius(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Actor IgnoredActor, Controller InstigatedByController, bool bDoFullDamage)
+	bool HurtRadius(float DamageAmount, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, Actor* IgnoredActor = null, Controller* InstigatedByController = null, bool* bDoFullDamage = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -153,9 +153,12 @@ final:
 		*cast(ScriptClass*)&params[8] = pDamageType;
 		*cast(float*)&params[12] = Momentum;
 		*cast(Vector*)&params[16] = HurtOrigin;
-		*cast(Actor*)&params[28] = IgnoredActor;
-		*cast(Controller*)&params[32] = InstigatedByController;
-		*cast(bool*)&params[36] = bDoFullDamage;
+		if (IgnoredActor !is null)
+			*cast(Actor*)&params[28] = *IgnoredActor;
+		if (InstigatedByController !is null)
+			*cast(Controller*)&params[32] = *InstigatedByController;
+		if (bDoFullDamage !is null)
+			*cast(bool*)&params[36] = *bDoFullDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HurtRadius, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[40];
 	}

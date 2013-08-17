@@ -537,69 +537,78 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString DiamondSwordFlagAbandoned() { mixin(MGPC!(ScriptString, 472)()); }
-		ScriptString BloodEagleFlagAbandoned() { mixin(MGPC!(ScriptString, 460)()); }
-		ScriptString DiamondSwordFlagDropped() { mixin(MGPC!(ScriptString, 448)()); }
-		ScriptString BloodEagleFlagDropped() { mixin(MGPC!(ScriptString, 436)()); }
-		ScriptString DiamondSwordFlagReturned() { mixin(MGPC!(ScriptString, 424)()); }
-		ScriptString BloodEagleFlagReturned() { mixin(MGPC!(ScriptString, 412)()); }
-		ScriptString DiamondSwordFlagCaptured() { mixin(MGPC!(ScriptString, 400)()); }
-		ScriptString BloodEagleFlagCaptured() { mixin(MGPC!(ScriptString, 388)()); }
-		ScriptString DiamondSwordFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 376)()); }
-		ScriptString BloodEagleFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 364)()); }
-		ScriptString DiamondSwordFlagTaken() { mixin(MGPC!(ScriptString, 352)()); }
-		ScriptString BloodEagleFlagTaken() { mixin(MGPC!(ScriptString, 340)()); }
-		ScriptString FriendlyFlagAbandoned() { mixin(MGPC!(ScriptString, 328)()); }
-		ScriptString EnemyFlagAbandoned() { mixin(MGPC!(ScriptString, 316)()); }
-		ScriptString FriendlyFlagDropped() { mixin(MGPC!(ScriptString, 304)()); }
-		ScriptString EnemyFlagDropped() { mixin(MGPC!(ScriptString, 292)()); }
-		ScriptString FriendlyFlagReturned() { mixin(MGPC!(ScriptString, 280)()); }
-		ScriptString EnemyFlagReturned() { mixin(MGPC!(ScriptString, 268)()); }
-		ScriptString FriendlyFlagCaptured() { mixin(MGPC!(ScriptString, 256)()); }
-		ScriptString EnemyFlagCaptured() { mixin(MGPC!(ScriptString, 244)()); }
-		ScriptString FriendlyFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 232)()); }
-		ScriptString EnemyFlagPickupAwayFromBase() { mixin(MGPC!(ScriptString, 220)()); }
-		ScriptString FriendlyFlagTaken() { mixin(MGPC!(ScriptString, 208)()); }
-		ScriptString EnemyFlagTaken() { mixin(MGPC!(ScriptString, 196)()); }
-		SoundCue m_sBECapturedDSFlag() { mixin(MGPC!(SoundCue, 192)()); }
-		SoundCue m_sDSCapturedBEFlag() { mixin(MGPC!(SoundCue, 188)()); }
-		SoundCue m_sBETookDSFlag() { mixin(MGPC!(SoundCue, 184)()); }
-		SoundCue m_sDSTookBEFlag() { mixin(MGPC!(SoundCue, 180)()); }
-		SoundCue m_sBEFlagSecured() { mixin(MGPC!(SoundCue, 176)()); }
-		SoundCue m_sDSFlagSecured() { mixin(MGPC!(SoundCue, 172)()); }
-		SoundCue m_sBELostDSFlag() { mixin(MGPC!(SoundCue, 168)()); }
-		SoundCue m_sDSLostBEFlag() { mixin(MGPC!(SoundCue, 164)()); }
-		SoundCue m_sDSFlagCaptured() { mixin(MGPC!(SoundCue, 160)()); }
-		SoundCue m_sDSFlagTaken() { mixin(MGPC!(SoundCue, 156)()); }
-		SoundCue m_sBEFlagCaptured() { mixin(MGPC!(SoundCue, 152)()); }
-		SoundCue m_sBEFlagTaken() { mixin(MGPC!(SoundCue, 148)()); }
-		SoundNodeWave m_CapturedSounds() { mixin(MGPC!(SoundNodeWave, 136)()); }
-		SoundNodeWave m_TakenSounds() { mixin(MGPC!(SoundNodeWave, 124)()); }
-		SoundNodeWave m_DroppedSounds() { mixin(MGPC!(SoundNodeWave, 112)()); }
-		SoundNodeWave m_ReturnSounds() { mixin(MGPC!(SoundNodeWave, 100)()); }
+		ScriptString DiamondSwordFlagAbandoned() { mixin(MGPC!("ScriptString", 472)()); }
+		ScriptString BloodEagleFlagAbandoned() { mixin(MGPC!("ScriptString", 460)()); }
+		ScriptString DiamondSwordFlagDropped() { mixin(MGPC!("ScriptString", 448)()); }
+		ScriptString BloodEagleFlagDropped() { mixin(MGPC!("ScriptString", 436)()); }
+		ScriptString DiamondSwordFlagReturned() { mixin(MGPC!("ScriptString", 424)()); }
+		ScriptString BloodEagleFlagReturned() { mixin(MGPC!("ScriptString", 412)()); }
+		ScriptString DiamondSwordFlagCaptured() { mixin(MGPC!("ScriptString", 400)()); }
+		ScriptString BloodEagleFlagCaptured() { mixin(MGPC!("ScriptString", 388)()); }
+		ScriptString DiamondSwordFlagPickupAwayFromBase() { mixin(MGPC!("ScriptString", 376)()); }
+		ScriptString BloodEagleFlagPickupAwayFromBase() { mixin(MGPC!("ScriptString", 364)()); }
+		ScriptString DiamondSwordFlagTaken() { mixin(MGPC!("ScriptString", 352)()); }
+		ScriptString BloodEagleFlagTaken() { mixin(MGPC!("ScriptString", 340)()); }
+		ScriptString FriendlyFlagAbandoned() { mixin(MGPC!("ScriptString", 328)()); }
+		ScriptString EnemyFlagAbandoned() { mixin(MGPC!("ScriptString", 316)()); }
+		ScriptString FriendlyFlagDropped() { mixin(MGPC!("ScriptString", 304)()); }
+		ScriptString EnemyFlagDropped() { mixin(MGPC!("ScriptString", 292)()); }
+		ScriptString FriendlyFlagReturned() { mixin(MGPC!("ScriptString", 280)()); }
+		ScriptString EnemyFlagReturned() { mixin(MGPC!("ScriptString", 268)()); }
+		ScriptString FriendlyFlagCaptured() { mixin(MGPC!("ScriptString", 256)()); }
+		ScriptString EnemyFlagCaptured() { mixin(MGPC!("ScriptString", 244)()); }
+		ScriptString FriendlyFlagPickupAwayFromBase() { mixin(MGPC!("ScriptString", 232)()); }
+		ScriptString EnemyFlagPickupAwayFromBase() { mixin(MGPC!("ScriptString", 220)()); }
+		ScriptString FriendlyFlagTaken() { mixin(MGPC!("ScriptString", 208)()); }
+		ScriptString EnemyFlagTaken() { mixin(MGPC!("ScriptString", 196)()); }
+		SoundCue m_sBECapturedDSFlag() { mixin(MGPC!("SoundCue", 192)()); }
+		SoundCue m_sDSCapturedBEFlag() { mixin(MGPC!("SoundCue", 188)()); }
+		SoundCue m_sBETookDSFlag() { mixin(MGPC!("SoundCue", 184)()); }
+		SoundCue m_sDSTookBEFlag() { mixin(MGPC!("SoundCue", 180)()); }
+		SoundCue m_sBEFlagSecured() { mixin(MGPC!("SoundCue", 176)()); }
+		SoundCue m_sDSFlagSecured() { mixin(MGPC!("SoundCue", 172)()); }
+		SoundCue m_sBELostDSFlag() { mixin(MGPC!("SoundCue", 168)()); }
+		SoundCue m_sDSLostBEFlag() { mixin(MGPC!("SoundCue", 164)()); }
+		SoundCue m_sDSFlagCaptured() { mixin(MGPC!("SoundCue", 160)()); }
+		SoundCue m_sDSFlagTaken() { mixin(MGPC!("SoundCue", 156)()); }
+		SoundCue m_sBEFlagCaptured() { mixin(MGPC!("SoundCue", 152)()); }
+		SoundCue m_sBEFlagTaken() { mixin(MGPC!("SoundCue", 148)()); }
+		SoundNodeWave m_CapturedSounds() { mixin(MGPC!("SoundNodeWave", 136)()); }
+		SoundNodeWave m_TakenSounds() { mixin(MGPC!("SoundNodeWave", 124)()); }
+		SoundNodeWave m_DroppedSounds() { mixin(MGPC!("SoundNodeWave", 112)()); }
+		SoundNodeWave m_ReturnSounds() { mixin(MGPC!("SoundNodeWave", 100)()); }
 	}
 final:
-	static ScriptString GetString(int Switch, bool bPRI1HUD, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static ScriptString GetString(int* Switch = null, bool* bPRI1HUD = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(int*)params.ptr = Switch;
-		*cast(bool*)&params[4] = bPRI1HUD;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)params.ptr = *Switch;
+		if (bPRI1HUD !is null)
+			*cast(bool*)&params[4] = *bPRI1HUD;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.GetString, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[20];
 	}
-	static void ClientReceive(PlayerController P, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	static void ClientReceive(PlayerController P, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = P;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		StaticClass.ProcessEvent(Functions.ClientReceive, params.ptr, cast(void*)0);
 	}
 }

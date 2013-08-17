@@ -20,16 +20,16 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.BrushComponent.KCachedConvexData_Mirror")()); }
-		@property final auto ref ScriptArray!(int) CachedConvexElements() { mixin(MGPS!(ScriptArray!(int), 0)()); }
+		@property final auto ref ScriptArray!(int) CachedConvexElements() { mixin(MGPS!("ScriptArray!(int)", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			int CachedPhysBrushDataVersion() { mixin(MGPC!(int, 564)()); }
-			BrushComponent.KCachedConvexData_Mirror CachedPhysBrushData() { mixin(MGPC!(BrushComponent.KCachedConvexData_Mirror, 552)()); }
-			UObject.Pointer BrushPhysDesc() { mixin(MGPC!(UObject.Pointer, 548)()); }
-			KMeshProps.KAggregateGeom BrushAggGeom() { mixin(MGPC!(KMeshProps.KAggregateGeom, 492)()); }
+			int CachedPhysBrushDataVersion() { mixin(MGPC!("int", 564)()); }
+			BrushComponent.KCachedConvexData_Mirror CachedPhysBrushData() { mixin(MGPC!("BrushComponent.KCachedConvexData_Mirror", 552)()); }
+			UObject.Pointer BrushPhysDesc() { mixin(MGPC!("UObject.Pointer", 548)()); }
+			KMeshProps.KAggregateGeom BrushAggGeom() { mixin(MGPC!("KMeshProps.KAggregateGeom", 492)()); }
 			// WARNING: Property 'Brush' has the same name as a defined type!
 		}
 		bool bBlockComplexCollisionTrace() { mixin(MGBPC!(568, 0x1)()); }

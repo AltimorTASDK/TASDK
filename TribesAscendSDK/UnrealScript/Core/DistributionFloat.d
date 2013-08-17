@@ -25,29 +25,30 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Core.DistributionFloat.RawDistributionFloat")()); }
 		@property final auto ref
 		{
-			ubyte Type() { mixin(MGPS!(ubyte, 0)()); }
-			ubyte Op() { mixin(MGPS!(ubyte, 1)()); }
-			ubyte LookupTableNumElements() { mixin(MGPS!(ubyte, 2)()); }
-			ubyte LookupTableChunkSize() { mixin(MGPS!(ubyte, 3)()); }
-			ScriptArray!(float) LookupTable() { mixin(MGPS!(ScriptArray!(float), 4)()); }
-			float LookupTableTimeScale() { mixin(MGPS!(float, 16)()); }
-			float LookupTableStartTime() { mixin(MGPS!(float, 20)()); }
+			ubyte Type() { mixin(MGPS!("ubyte", 0)()); }
+			ubyte Op() { mixin(MGPS!("ubyte", 1)()); }
+			ubyte LookupTableNumElements() { mixin(MGPS!("ubyte", 2)()); }
+			ubyte LookupTableChunkSize() { mixin(MGPS!("ubyte", 3)()); }
+			ScriptArray!(float) LookupTable() { mixin(MGPS!("ScriptArray!(float)", 4)()); }
+			float LookupTableTimeScale() { mixin(MGPS!("float", 16)()); }
+			float LookupTableStartTime() { mixin(MGPS!("float", 20)()); }
 		}
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'Distribution'!
 	}
 	@property final
 	{
-		@property final auto ref UObject.Pointer VfTable_FCurveEdInterface() { mixin(MGPC!(UObject.Pointer, 72)()); }
+		@property final auto ref UObject.Pointer VfTable_FCurveEdInterface() { mixin(MGPC!("UObject.Pointer", 72)()); }
 		bool bIsDirty() { mixin(MGBPC!(76, 0x2)()); }
 		bool bIsDirty(bool val) { mixin(MSBPC!(76, 0x2)()); }
 		bool bCanBeBaked() { mixin(MGBPC!(76, 0x1)()); }
 		bool bCanBeBaked(bool val) { mixin(MSBPC!(76, 0x1)()); }
 	}
-	final float GetFloatValue(float F)
+	final float GetFloatValue(float* F = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(float*)params.ptr = F;
+		if (F !is null)
+			*cast(float*)params.ptr = *F;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatValue, params.ptr, cast(void*)0);
 		return *cast(float*)&params[4];
 	}

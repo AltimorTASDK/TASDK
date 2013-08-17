@@ -40,10 +40,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString C1P3() { mixin(MGPC!(ScriptString, 388)()); }
-			ScriptString C1P2() { mixin(MGPC!(ScriptString, 376)()); }
-			ScriptString C1P1() { mixin(MGPC!(ScriptString, 364)()); }
-			int CheatCodeAction() { mixin(MGPC!(int, 356)()); }
+			ScriptString C1P3() { mixin(MGPC!("ScriptString", 388)()); }
+			ScriptString C1P2() { mixin(MGPC!("ScriptString", 376)()); }
+			ScriptString C1P1() { mixin(MGPC!("ScriptString", 364)()); }
+			int CheatCodeAction() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForCheatCodePopup() { mixin(MGBPC!(360, 0x1)()); }
 		bool bWaitingForCheatCodePopup(bool val) { mixin(MSBPC!(360, 0x1)()); }

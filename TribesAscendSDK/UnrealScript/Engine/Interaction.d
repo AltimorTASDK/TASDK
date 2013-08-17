@@ -53,15 +53,17 @@ public extern(D):
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnReceivedNativeInputKey__Delegate'!
 	}
 final:
-	bool OnReceivedNativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent EventType, float AmountDepressed, bool bGamepad)
+	bool OnReceivedNativeInputKey(int ControllerId, ScriptName Key, UObject.EInputEvent EventType, float* AmountDepressed = null, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(int*)params.ptr = ControllerId;
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(UObject.EInputEvent*)&params[12] = EventType;
-		*cast(float*)&params[16] = AmountDepressed;
-		*cast(bool*)&params[20] = bGamepad;
+		if (AmountDepressed !is null)
+			*cast(float*)&params[16] = *AmountDepressed;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReceivedNativeInputKey, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
@@ -78,7 +80,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReceivedNativeInputChar, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool OnReceivedNativeInputAxis(int ControllerId, ScriptName Key, float Delta, float DeltaTime, bool bGamepad)
+	bool OnReceivedNativeInputAxis(int ControllerId, ScriptName Key, float Delta, float DeltaTime, bool* bGamepad = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -86,7 +88,8 @@ final:
 		*cast(ScriptName*)&params[4] = Key;
 		*cast(float*)&params[12] = Delta;
 		*cast(float*)&params[16] = DeltaTime;
-		*cast(bool*)&params[20] = bGamepad;
+		if (bGamepad !is null)
+			*cast(bool*)&params[20] = *bGamepad;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnReceivedNativeInputAxis, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction UpdateDestinations() { mixin(MGF!("mUpdateDestinations", "Function GameFramework.GameCrowdGroup.UpdateDestinations")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { mixin(MGPC!(ScriptArray!(GameCrowdAgent), 60)()); }
+	@property final auto ref ScriptArray!(GameCrowdAgent) Members() { mixin(MGPC!("ScriptArray!(GameCrowdAgent)", 60)()); }
 final:
 	void AddMember(GameCrowdAgent Agent)
 	{

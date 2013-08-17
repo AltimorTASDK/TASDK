@@ -48,18 +48,18 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.GFxTrPage_Vehicle.VehicleOption")()); }
 		@property final auto ref
 		{
-			ScriptString DisplayName() { mixin(MGPS!(ScriptString, 28)()); }
-			ScriptString ClassName() { mixin(MGPS!(ScriptString, 16)()); }
-			int MaxCount() { mixin(MGPS!(int, 12)()); }
-			int Count() { mixin(MGPS!(int, 8)()); }
-			int Icon() { mixin(MGPS!(int, 4)()); }
-			int Cost() { mixin(MGPS!(int, 0)()); }
+			ScriptString DisplayName() { mixin(MGPS!("ScriptString", 28)()); }
+			ScriptString ClassName() { mixin(MGPS!("ScriptString", 16)()); }
+			int MaxCount() { mixin(MGPS!("int", 12)()); }
+			int Count() { mixin(MGPS!("int", 8)()); }
+			int Icon() { mixin(MGPS!("int", 4)()); }
+			int Cost() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		int PlayerCredits() { mixin(MGPC!(int, 356)()); }
-		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { mixin(MGPC!(ScriptArray!(GFxTrPage_Vehicle.VehicleOption), 360)()); }
+		int PlayerCredits() { mixin(MGPC!("int", 356)()); }
+		ScriptArray!(GFxTrPage_Vehicle.VehicleOption) VehicleOptions() { mixin(MGPC!("ScriptArray!(GFxTrPage_Vehicle.VehicleOption)", 360)()); }
 	}
 final:
 	void Initialize()

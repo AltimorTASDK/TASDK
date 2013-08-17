@@ -46,29 +46,29 @@ public extern(D):
 	{
 		auto ref
 		{
-			int DBWeaponId() { mixin(MGPC!(int, 300)()); }
-			float m_fDamageMultiplierAgainstArmor() { mixin(MGPC!(float, 328)()); }
-			float m_fDamageMultiplierAgainstNonArmoredObjectives() { mixin(MGPC!(float, 336)()); }
-			float m_EnergyDrainAmount() { mixin(MGPC!(float, 396)()); }
-			SoundCue m_RingingSound() { mixin(MGPC!(SoundCue, 380)()); }
-			ScriptName m_nmTakeHitSoundMode() { mixin(MGPC!(ScriptName, 384)()); }
-			float m_fGibRadius() { mixin(MGPC!(float, 348)()); }
-			float m_fGibStrength() { mixin(MGPC!(float, 352)()); }
-			PrimitiveComponent.ERadialImpulseFalloff m_GibFalloff() { mixin(MGPC!(PrimitiveComponent.ERadialImpulseFalloff, 356)()); }
-			float m_fDamageMultiplierAgainstGenerators() { mixin(MGPC!(float, 332)()); }
-			ScriptArray!(ScriptName) m_nmDeathAnimNames() { mixin(MGPC!(ScriptArray!(ScriptName), 360)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxZ() { mixin(MGPC!(UObject.Vector2D, 416)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxY() { mixin(MGPC!(UObject.Vector2D, 408)()); }
-			UObject.Vector2D m_v2DDamageNumbersMinMaxX() { mixin(MGPC!(UObject.Vector2D, 400)()); }
-			int m_nKillIconIndex() { mixin(MGPC!(int, 392)()); }
-			ScriptName m_nmCameraShake() { mixin(MGPC!(ScriptName, 372)()); }
-			float m_fDamageMultiplierAgainstShrike() { mixin(MGPC!(float, 340)()); }
-			float m_fBulletDamageRange() { mixin(MGPC!(float, 324)()); }
-			float m_fMinDamagePct() { mixin(MGPC!(float, 320)()); }
-			float m_fMinDamageRangePct() { mixin(MGPC!(float, 316)()); }
-			float m_fMaxDamageRangePct() { mixin(MGPC!(float, 312)()); }
-			int DBWeaponTypeId() { mixin(MGPC!(int, 308)()); }
-			int DBWeaponBaseId() { mixin(MGPC!(int, 304)()); }
+			int DBWeaponId() { mixin(MGPC!("int", 300)()); }
+			float m_fDamageMultiplierAgainstArmor() { mixin(MGPC!("float", 328)()); }
+			float m_fDamageMultiplierAgainstNonArmoredObjectives() { mixin(MGPC!("float", 336)()); }
+			float m_EnergyDrainAmount() { mixin(MGPC!("float", 396)()); }
+			SoundCue m_RingingSound() { mixin(MGPC!("SoundCue", 380)()); }
+			ScriptName m_nmTakeHitSoundMode() { mixin(MGPC!("ScriptName", 384)()); }
+			float m_fGibRadius() { mixin(MGPC!("float", 348)()); }
+			float m_fGibStrength() { mixin(MGPC!("float", 352)()); }
+			PrimitiveComponent.ERadialImpulseFalloff m_GibFalloff() { mixin(MGPC!("PrimitiveComponent.ERadialImpulseFalloff", 356)()); }
+			float m_fDamageMultiplierAgainstGenerators() { mixin(MGPC!("float", 332)()); }
+			ScriptArray!(ScriptName) m_nmDeathAnimNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 360)()); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxZ() { mixin(MGPC!("UObject.Vector2D", 416)()); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxY() { mixin(MGPC!("UObject.Vector2D", 408)()); }
+			UObject.Vector2D m_v2DDamageNumbersMinMaxX() { mixin(MGPC!("UObject.Vector2D", 400)()); }
+			int m_nKillIconIndex() { mixin(MGPC!("int", 392)()); }
+			ScriptName m_nmCameraShake() { mixin(MGPC!("ScriptName", 372)()); }
+			float m_fDamageMultiplierAgainstShrike() { mixin(MGPC!("float", 340)()); }
+			float m_fBulletDamageRange() { mixin(MGPC!("float", 324)()); }
+			float m_fMinDamagePct() { mixin(MGPC!("float", 320)()); }
+			float m_fMinDamageRangePct() { mixin(MGPC!("float", 316)()); }
+			float m_fMaxDamageRangePct() { mixin(MGPC!("float", 312)()); }
+			int DBWeaponTypeId() { mixin(MGPC!("int", 308)()); }
+			int DBWeaponBaseId() { mixin(MGPC!("int", 304)()); }
 		}
 		bool m_bCausesGib() { mixin(MGBPC!(344, 0x1)()); }
 		bool m_bCausesGib(bool val) { mixin(MSBPC!(344, 0x1)()); }
@@ -82,15 +82,18 @@ public extern(D):
 		bool m_bIgnoreDamageFalloff(bool val) { mixin(MSBPC!(344, 0x4)()); }
 	}
 final:
-	static float CalculateRangeDamageFalloff(float Dist, float damageRange, TrPlayerController TrPCDamager, TrObject.TR_EQUIP_POINT EquipPoint, bool bMinDamageAlwaysApplied)
+	static float CalculateRangeDamageFalloff(float Dist, float damageRange, TrPlayerController* TrPCDamager = null, TrObject.TR_EQUIP_POINT* EquipPoint = null, bool* bMinDamageAlwaysApplied = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(float*)params.ptr = Dist;
 		*cast(float*)&params[4] = damageRange;
-		*cast(TrPlayerController*)&params[8] = TrPCDamager;
-		*cast(TrObject.TR_EQUIP_POINT*)&params[12] = EquipPoint;
-		*cast(bool*)&params[16] = bMinDamageAlwaysApplied;
+		if (TrPCDamager !is null)
+			*cast(TrPlayerController*)&params[8] = *TrPCDamager;
+		if (EquipPoint !is null)
+			*cast(TrObject.TR_EQUIP_POINT*)&params[12] = *EquipPoint;
+		if (bMinDamageAlwaysApplied !is null)
+			*cast(bool*)&params[16] = *bMinDamageAlwaysApplied;
 		StaticClass.ProcessEvent(Functions.CalculateRangeDamageFalloff, params.ptr, cast(void*)0);
 		return *cast(float*)&params[20];
 	}
@@ -144,7 +147,7 @@ final:
 		*cast(ScriptName*)&params[4] = outCameraShakeName;
 		*cast(float*)&params[12] = outScale;
 		StaticClass.ProcessEvent(Functions.GetCameraShake, params.ptr, cast(void*)0);
-		*outCameraShakeName = *cast(ScriptName*)&params[4];
-		*outScale = *cast(float*)&params[12];
+		outCameraShakeName = *cast(ScriptName*)&params[4];
+		outScale = *cast(float*)&params[12];
 	}
 }

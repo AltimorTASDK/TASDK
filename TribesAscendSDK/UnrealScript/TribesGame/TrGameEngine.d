@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class TribesGame.TrGameEngine")()); }
 	private static __gshared TrGameEngine mDefaultProperties;
 	@property final static TrGameEngine DefaultProperties() { mixin(MGDPC!(TrGameEngine, "TrGameEngine TribesGame.Default__TrGameEngine")()); }
-	@property final auto ref float fBGMVolume() { mixin(MGPC!(float, 1840)()); }
+	@property final auto ref float fBGMVolume() { mixin(MGPC!("float", 1840)()); }
 }

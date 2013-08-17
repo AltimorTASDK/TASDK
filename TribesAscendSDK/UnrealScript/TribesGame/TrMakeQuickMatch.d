@@ -1431,12 +1431,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrGameSettingsCommon GameSettings() { mixin(MGPC!(TrGameSettingsCommon, 84)()); }
-			TrGameSearchCommon SearchSettings() { mixin(MGPC!(TrGameSearchCommon, 80)()); }
+			TrGameSettingsCommon GameSettings() { mixin(MGPC!("TrGameSettingsCommon", 84)()); }
+			TrGameSearchCommon SearchSettings() { mixin(MGPC!("TrGameSearchCommon", 80)()); }
 			// ERROR: Unsupported object class 'InterfaceProperty' for the property named 'GameInterface'!
-			OnlineSubsystem OnlineSub() { mixin(MGPC!(OnlineSubsystem, 68)()); }
-			float SearchStarted() { mixin(MGPC!(float, 64)()); }
-			ubyte ControllerId() { mixin(MGPC!(ubyte, 60)()); }
+			OnlineSubsystem OnlineSub() { mixin(MGPC!("OnlineSubsystem", 68)()); }
+			float SearchStarted() { mixin(MGPC!("float", 64)()); }
+			ubyte ControllerId() { mixin(MGPC!("ubyte", 60)()); }
 		}
 		bool bProcessingJoin() { mixin(MGBPC!(88, 0x2)()); }
 		bool bProcessingJoin(bool val) { mixin(MSBPC!(88, 0x2)()); }
@@ -1482,12 +1482,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPC, params.ptr, cast(void*)0);
 		return *cast(PlayerController*)params.ptr;
 	}
-	void ConsoleCommand(ScriptString Cmd, bool bWriteToLog)
+	void ConsoleCommand(ScriptString Cmd, bool* bWriteToLog = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Cmd;
-		*cast(bool*)&params[12] = bWriteToLog;
+		if (bWriteToLog !is null)
+			*cast(bool*)&params[12] = *bWriteToLog;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ConsoleCommand, params.ptr, cast(void*)0);
 	}
 	ScriptString BuildJoinURL(ScriptString ResolvedConnectionURL)

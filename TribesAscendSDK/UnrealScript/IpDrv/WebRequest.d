@@ -56,23 +56,24 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString UserName() { mixin(MGPC!(ScriptString, 84)()); }
-		ScriptString Password() { mixin(MGPC!(ScriptString, 96)()); }
-		ScriptString URI() { mixin(MGPC!(ScriptString, 72)()); }
-		WebRequest.ERequestType RequestType() { mixin(MGPC!(WebRequest.ERequestType, 124)()); }
-		ScriptString RemoteAddr() { mixin(MGPC!(ScriptString, 60)()); }
-		int ContentLength() { mixin(MGPC!(int, 108)()); }
-		ScriptString ContentType() { mixin(MGPC!(ScriptString, 112)()); }
-		UObject.Map_Mirror VariableMap() { mixin(MGPC!(UObject.Map_Mirror, 188)()); }
-		UObject.Map_Mirror HeaderMap() { mixin(MGPC!(UObject.Map_Mirror, 128)()); }
+		ScriptString UserName() { mixin(MGPC!("ScriptString", 84)()); }
+		ScriptString Password() { mixin(MGPC!("ScriptString", 96)()); }
+		ScriptString URI() { mixin(MGPC!("ScriptString", 72)()); }
+		WebRequest.ERequestType RequestType() { mixin(MGPC!("WebRequest.ERequestType", 124)()); }
+		ScriptString RemoteAddr() { mixin(MGPC!("ScriptString", 60)()); }
+		int ContentLength() { mixin(MGPC!("int", 108)()); }
+		ScriptString ContentType() { mixin(MGPC!("ScriptString", 112)()); }
+		UObject.Map_Mirror VariableMap() { mixin(MGPC!("UObject.Map_Mirror", 188)()); }
+		UObject.Map_Mirror HeaderMap() { mixin(MGPC!("UObject.Map_Mirror", 128)()); }
 	}
 final:
-	ScriptString GetVariable(ScriptString VariableName, ScriptString DefaultValue)
+	ScriptString GetVariable(ScriptString VariableName, ScriptString* DefaultValue = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = VariableName;
-		*cast(ScriptString*)&params[12] = DefaultValue;
+		if (DefaultValue !is null)
+			*cast(ScriptString*)&params[12] = *DefaultValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariable, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[24];
 	}
@@ -84,13 +85,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableCount, params.ptr, cast(void*)0);
 		return *cast(int*)&params[12];
 	}
-	ScriptString GetVariableNumber(ScriptString VariableName, int Number, ScriptString DefaultValue)
+	ScriptString GetVariableNumber(ScriptString VariableName, int Number, ScriptString* DefaultValue = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = VariableName;
 		*cast(int*)&params[12] = Number;
-		*cast(ScriptString*)&params[16] = DefaultValue;
+		if (DefaultValue !is null)
+			*cast(ScriptString*)&params[16] = *DefaultValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariableNumber, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[28];
 	}
@@ -118,12 +120,13 @@ final:
 		*cast(ScriptString*)&params[12] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddHeader, params.ptr, cast(void*)0);
 	}
-	ScriptString GetHeader(ScriptString HeaderName, ScriptString DefaultValue)
+	ScriptString GetHeader(ScriptString HeaderName, ScriptString* DefaultValue = null)
 	{
 		ubyte params[36];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = HeaderName;
-		*cast(ScriptString*)&params[12] = DefaultValue;
+		if (DefaultValue !is null)
+			*cast(ScriptString*)&params[12] = *DefaultValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHeader, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)&params[24];
 	}
@@ -133,7 +136,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = headers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetHeaders, params.ptr, cast(void*)0);
-		*headers = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		headers = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 	void AddVariable(ScriptString VariableName, ScriptString Value)
 	{
@@ -149,7 +152,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = varNames;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVariables, params.ptr, cast(void*)0);
-		*varNames = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		varNames = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 	void Dump()
 	{

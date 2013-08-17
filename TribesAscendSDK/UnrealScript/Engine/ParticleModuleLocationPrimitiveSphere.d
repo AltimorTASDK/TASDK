@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleLocationPrimitiveSphere")()); }
 	private static __gshared ParticleModuleLocationPrimitiveSphere mDefaultProperties;
 	@property final static ParticleModuleLocationPrimitiveSphere DefaultProperties() { mixin(MGDPC!(ParticleModuleLocationPrimitiveSphere, "ParticleModuleLocationPrimitiveSphere Engine.Default__ParticleModuleLocationPrimitiveSphere")()); }
-	@property final auto ref DistributionFloat.RawDistributionFloat StartRadius() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 132)()); }
+	@property final auto ref DistributionFloat.RawDistributionFloat StartRadius() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 132)()); }
 }

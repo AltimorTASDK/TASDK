@@ -19,7 +19,7 @@ public extern(D):
 		private static __gshared ScriptFunction mNotify;
 		public @property static final ScriptFunction Notify() { mixin(MGF!("mNotify", "Function Engine.AnimNotify_PawnMaterialParam.Notify")()); }
 	}
-	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!(ScriptArray!(Pawn.ScalarParameterInterpStruct), 64)()); }
+	@property final auto ref ScriptArray!(Pawn.ScalarParameterInterpStruct) ScalarParameterInterpArray() { mixin(MGPC!("ScriptArray!(Pawn.ScalarParameterInterpStruct)", 64)()); }
 	final void Notify(Actor Owner, AnimNodeSequence AnimSeqInstigator)
 	{
 		ubyte params[8];

@@ -15,9 +15,9 @@ public extern(D):
 	{
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) LightComponents() { mixin(MGPC!(ScriptArray!(
+void*) LightComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 484)()); }
-		int MaxLightComponents() { mixin(MGPC!(int, 496)()); }
+void*)", 484)()); }
+		int MaxLightComponents() { mixin(MGPC!("int", 496)()); }
 	}
 }

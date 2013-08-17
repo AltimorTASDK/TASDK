@@ -35,7 +35,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.LensFlareComponent.LensFlareElementMaterials")()); }
-		@property final auto ref ScriptArray!(MaterialInterface) ElementMaterials() { mixin(MGPS!(ScriptArray!(MaterialInterface), 0)()); }
+		@property final auto ref ScriptArray!(MaterialInterface) ElementMaterials() { mixin(MGPS!("ScriptArray!(MaterialInterface)", 0)()); }
 	}
 	struct LensFlareElementInstance
 	{
@@ -48,18 +48,18 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(LensFlareComponent.LensFlareElementMaterials) Materials() { mixin(MGPC!(ScriptArray!(LensFlareComponent.LensFlareElementMaterials), 540)()); }
-			float NextTraceTime() { mixin(MGPC!(float, 556)()); }
-			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!(UObject.Pointer, 552)()); }
-			UObject.LinearColor SourceColor() { mixin(MGPC!(UObject.LinearColor, 524)()); }
-			float Radius() { mixin(MGPC!(float, 520)()); }
-			float ConeFudgeFactor() { mixin(MGPC!(float, 516)()); }
-			float InnerCone() { mixin(MGPC!(float, 512)()); }
-			float OuterCone() { mixin(MGPC!(float, 508)()); }
+			ScriptArray!(LensFlareComponent.LensFlareElementMaterials) Materials() { mixin(MGPC!("ScriptArray!(LensFlareComponent.LensFlareElementMaterials)", 540)()); }
+			float NextTraceTime() { mixin(MGPC!("float", 556)()); }
+			UObject.Pointer ReleaseResourcesFence() { mixin(MGPC!("UObject.Pointer", 552)()); }
+			UObject.LinearColor SourceColor() { mixin(MGPC!("UObject.LinearColor", 524)()); }
+			float Radius() { mixin(MGPC!("float", 520)()); }
+			float ConeFudgeFactor() { mixin(MGPC!("float", 516)()); }
+			float InnerCone() { mixin(MGPC!("float", 512)()); }
+			float OuterCone() { mixin(MGPC!("float", 508)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewRadius'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewOuterCone'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PreviewInnerCone'!
-			LensFlare Template() { mixin(MGPC!(LensFlare, 488)()); }
+			LensFlare Template() { mixin(MGPC!("LensFlare", 488)()); }
 		}
 		bool bVisibleForMobile() { mixin(MGBPC!(504, 0x40)()); }
 		bool bVisibleForMobile(bool val) { mixin(MSBPC!(504, 0x40)()); }
@@ -77,12 +77,13 @@ public extern(D):
 		bool bAutoActivate(bool val) { mixin(MSBPC!(504, 0x1)()); }
 	}
 final:
-	void SetTemplate(LensFlare NewTemplate, bool bForceSet)
+	void SetTemplate(LensFlare NewTemplate, bool* bForceSet = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(LensFlare*)params.ptr = NewTemplate;
-		*cast(bool*)&params[4] = bForceSet;
+		if (bForceSet !is null)
+			*cast(bool*)&params[4] = *bForceSet;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void SetSourceColor(UObject.LinearColor InSourceColor)

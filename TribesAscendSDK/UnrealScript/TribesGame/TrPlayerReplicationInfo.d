@@ -666,46 +666,46 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerReplicationInfo.EquipLevel")()); }
 		@property final auto ref
 		{
-			ubyte UpgradeLevel() { mixin(MGPS!(ubyte, 4)()); }
-			int EquipId() { mixin(MGPS!(int, 0)()); }
+			ubyte UpgradeLevel() { mixin(MGPS!("ubyte", 4)()); }
+			int EquipId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int m_nCreditsEarned() { mixin(MGPC!(int, 948)()); }
-			int m_nKills() { mixin(MGPC!(int, 940)()); }
-			int m_nAssists() { mixin(MGPC!(int, 944)()); }
-			int r_nArenaSpawnsLeft() { mixin(MGPC!(int, 1128)()); }
-			Actor m_LockedTarget() { mixin(MGPC!(Actor, 976)()); }
-			int m_nFreeCredits() { mixin(MGPC!(int, 964)()); }
-			int m_nCurrentCredits() { mixin(MGPC!(int, 968)()); }
-			ScriptClass r_VoiceClass() { mixin(MGPC!(ScriptClass, 984)()); }
-			int m_nRabbitRank() { mixin(MGPC!(int, 924)()); }
-			int m_nPlayerIconIndex() { mixin(MGPC!(int, 936)()); }
-			int r_bSkinId() { mixin(MGPC!(int, 1132)()); }
-			ScriptClass c_Cached1PSkin() { mixin(MGPC!(ScriptClass, 1124)()); }
-			ScriptClass c_Cached3PSkin() { mixin(MGPC!(ScriptClass, 1120)()); }
-			TrValueModifier m_ValueModifier() { mixin(MGPC!(TrValueModifier, 1116)()); }
-			TrPlayerReplicationInfo.EquipLevel r_EquipLevels() { mixin(MGPC!(TrPlayerReplicationInfo.EquipLevel, 1012)()); }
-			float c_fRedFlagTimeStamp() { mixin(MGPC!(float, 1008)()); }
-			float c_fRedFlagPingTime() { mixin(MGPC!(float, 1004)()); }
-			float c_fRedFlagPingThreshold() { mixin(MGPC!(float, 1000)()); }
-			float c_fCurrentPingMS() { mixin(MGPC!(float, 996)()); }
-			TrInventoryHelper InvHelper() { mixin(MGPC!(TrInventoryHelper, 992)()); }
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 988)()); }
-			TrObject.EArmorType m_ArmorType() { mixin(MGPC!(TrObject.EArmorType, 980)()); }
-			int m_nPlayerClassId() { mixin(MGPC!(int, 960)()); }
-			int m_nBaseXP() { mixin(MGPC!(int, 956)()); }
-			int m_nBaseGP() { mixin(MGPC!(int, 952)()); }
-			int m_nRankIconIndex() { mixin(MGPC!(int, 932)()); }
-			int m_nRankNum() { mixin(MGPC!(int, 928)()); }
-			ScriptClass m_PendingBaseClass() { mixin(MGPC!(ScriptClass, 920)()); }
-			ScriptClass m_CurrentBaseClass() { mixin(MGPC!(ScriptClass, 916)()); }
-			ScriptClass m_Rank() { mixin(MGPC!(ScriptClass, 912)()); }
-			int m_PendingLoadout() { mixin(MGPC!(int, 908)()); }
-			int m_CurrentLoadout() { mixin(MGPC!(int, 904)()); }
+			int m_nCreditsEarned() { mixin(MGPC!("int", 948)()); }
+			int m_nKills() { mixin(MGPC!("int", 940)()); }
+			int m_nAssists() { mixin(MGPC!("int", 944)()); }
+			int r_nArenaSpawnsLeft() { mixin(MGPC!("int", 1128)()); }
+			Actor m_LockedTarget() { mixin(MGPC!("Actor", 976)()); }
+			int m_nFreeCredits() { mixin(MGPC!("int", 964)()); }
+			int m_nCurrentCredits() { mixin(MGPC!("int", 968)()); }
+			ScriptClass r_VoiceClass() { mixin(MGPC!("ScriptClass", 984)()); }
+			int m_nRabbitRank() { mixin(MGPC!("int", 924)()); }
+			int m_nPlayerIconIndex() { mixin(MGPC!("int", 936)()); }
+			int r_bSkinId() { mixin(MGPC!("int", 1132)()); }
+			ScriptClass c_Cached1PSkin() { mixin(MGPC!("ScriptClass", 1124)()); }
+			ScriptClass c_Cached3PSkin() { mixin(MGPC!("ScriptClass", 1120)()); }
+			TrValueModifier m_ValueModifier() { mixin(MGPC!("TrValueModifier", 1116)()); }
+			TrPlayerReplicationInfo.EquipLevel r_EquipLevels() { mixin(MGPC!("TrPlayerReplicationInfo.EquipLevel", 1012)()); }
+			float c_fRedFlagTimeStamp() { mixin(MGPC!("float", 1008)()); }
+			float c_fRedFlagPingTime() { mixin(MGPC!("float", 1004)()); }
+			float c_fRedFlagPingThreshold() { mixin(MGPC!("float", 1000)()); }
+			float c_fCurrentPingMS() { mixin(MGPC!("float", 996)()); }
+			TrInventoryHelper InvHelper() { mixin(MGPC!("TrInventoryHelper", 992)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 988)()); }
+			TrObject.EArmorType m_ArmorType() { mixin(MGPC!("TrObject.EArmorType", 980)()); }
+			int m_nPlayerClassId() { mixin(MGPC!("int", 960)()); }
+			int m_nBaseXP() { mixin(MGPC!("int", 956)()); }
+			int m_nBaseGP() { mixin(MGPC!("int", 952)()); }
+			int m_nRankIconIndex() { mixin(MGPC!("int", 932)()); }
+			int m_nRankNum() { mixin(MGPC!("int", 928)()); }
+			ScriptClass m_PendingBaseClass() { mixin(MGPC!("ScriptClass", 920)()); }
+			ScriptClass m_CurrentBaseClass() { mixin(MGPC!("ScriptClass", 916)()); }
+			ScriptClass m_Rank() { mixin(MGPC!("ScriptClass", 912)()); }
+			int m_PendingLoadout() { mixin(MGPC!("int", 908)()); }
+			int m_CurrentLoadout() { mixin(MGPC!("int", 904)()); }
 		}
 		bool r_bIsCrossedOffArenaList() { mixin(MGBPC!(972, 0x8)()); }
 		bool r_bIsCrossedOffArenaList(bool val) { mixin(MSBPC!(972, 0x8)()); }
@@ -952,11 +952,12 @@ final:
 		*cast(TeamInfo*)params.ptr = NewTeam;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPlayerTeam, params.ptr, cast(void*)0);
 	}
-	void SwapToPendingCharClass(bool bIsRespawn)
+	void SwapToPendingCharClass(bool* bIsRespawn = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bIsRespawn;
+		if (bIsRespawn !is null)
+			*cast(bool*)params.ptr = *bIsRespawn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwapToPendingCharClass, params.ptr, cast(void*)0);
 	}
 	bool VerifyAndLoadCharacter(ScriptClass FamilyInfo, int Loadout)

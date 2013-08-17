@@ -16,11 +16,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Color FillColor() { mixin(MGPC!(UObject.Color, 124)()); }
-			UObject.Color BorderColor() { mixin(MGPC!(UObject.Color, 116)()); }
-			int BorderWidth() { mixin(MGPC!(int, 112)()); }
-			int SizeY() { mixin(MGPC!(int, 108)()); }
-			int SizeX() { mixin(MGPC!(int, 104)()); }
+			UObject.Color FillColor() { mixin(MGPC!("UObject.Color", 124)()); }
+			UObject.Color BorderColor() { mixin(MGPC!("UObject.Color", 116)()); }
+			int BorderWidth() { mixin(MGPC!("int", 112)()); }
+			int SizeY() { mixin(MGPC!("int", 108)()); }
+			int SizeX() { mixin(MGPC!("int", 104)()); }
 		}
 		bool bFilled() { mixin(MGBPC!(120, 0x1)()); }
 		bool bFilled(bool val) { mixin(MSBPC!(120, 0x1)()); }

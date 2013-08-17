@@ -55,10 +55,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrFriendManager.EOnlineState TargetOnlineState() { mixin(MGPC!(TrFriendManager.EOnlineState, 380)()); }
-			int TargetPlayerIndex() { mixin(MGPC!(int, 376)()); }
-			ScriptString TargetPlayer() { mixin(MGPC!(ScriptString, 364)()); }
-			int FriendActionPopupIndex() { mixin(MGPC!(int, 356)()); }
+			TrFriendManager.EOnlineState TargetOnlineState() { mixin(MGPC!("TrFriendManager.EOnlineState", 380)()); }
+			int TargetPlayerIndex() { mixin(MGPC!("int", 376)()); }
+			ScriptString TargetPlayer() { mixin(MGPC!("ScriptString", 364)()); }
+			int FriendActionPopupIndex() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForFriendActionPopup() { mixin(MGBPC!(360, 0x1)()); }
 		bool bWaitingForFriendActionPopup(bool val) { mixin(MSBPC!(360, 0x1)()); }

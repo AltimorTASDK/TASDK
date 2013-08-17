@@ -19,12 +19,12 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__EntireBeamVelocity__Delegate'!
-		float PercentBeamVelocityTransfer() { mixin(MGPC!(float, 364)()); }
-		float SpringDamping() { mixin(MGPC!(float, 360)()); }
-		float SpringStiffness() { mixin(MGPC!(float, 356)()); }
-		Vector Velocity() { mixin(MGPC!(Vector, 344)()); }
-		Vector InitialWorldSpaceGoalOffset() { mixin(MGPC!(Vector, 332)()); }
-		Vector WorldSpaceGoal() { mixin(MGPC!(Vector, 320)()); }
+		float PercentBeamVelocityTransfer() { mixin(MGPC!("float", 364)()); }
+		float SpringDamping() { mixin(MGPC!("float", 360)()); }
+		float SpringStiffness() { mixin(MGPC!("float", 356)()); }
+		Vector Velocity() { mixin(MGPC!("Vector", 344)()); }
+		Vector InitialWorldSpaceGoalOffset() { mixin(MGPC!("Vector", 332)()); }
+		Vector WorldSpaceGoal() { mixin(MGPC!("Vector", 320)()); }
 	}
 	final Vector EntireBeamVelocity()
 	{

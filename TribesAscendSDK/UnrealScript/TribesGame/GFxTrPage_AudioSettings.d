@@ -36,7 +36,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref int AudioIndex() { mixin(MGPC!(int, 356)()); }
+		@property final auto ref int AudioIndex() { mixin(MGPC!("int", 356)()); }
 		bool bWaitingForAudioEntry() { mixin(MGBPC!(360, 0x1)()); }
 		bool bWaitingForAudioEntry(bool val) { mixin(MSBPC!(360, 0x1)()); }
 	}

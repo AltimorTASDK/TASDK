@@ -18,15 +18,15 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int DesiredPitch() { mixin(MGPC!(int, 268)()); }
-		float LastThrust() { mixin(MGPC!(float, 264)()); }
-		float PitchTime() { mixin(MGPC!(float, 260)()); }
-		float MaxVelocityPitchRateMultiplier() { mixin(MGPC!(float, 256)()); }
-		float MinVelocity() { mixin(MGPC!(float, 252)()); }
-		float MaxVelocity() { mixin(MGPC!(float, 248)()); }
-		float PitchRate() { mixin(MGPC!(float, 244)()); }
-		float BackPitch() { mixin(MGPC!(float, 240)()); }
-		float ForwardPitch() { mixin(MGPC!(float, 236)()); }
+		int DesiredPitch() { mixin(MGPC!("int", 268)()); }
+		float LastThrust() { mixin(MGPC!("float", 264)()); }
+		float PitchTime() { mixin(MGPC!("float", 260)()); }
+		float MaxVelocityPitchRateMultiplier() { mixin(MGPC!("float", 256)()); }
+		float MinVelocity() { mixin(MGPC!("float", 252)()); }
+		float MaxVelocity() { mixin(MGPC!("float", 248)()); }
+		float PitchRate() { mixin(MGPC!("float", 244)()); }
+		float BackPitch() { mixin(MGPC!("float", 240)()); }
+		float ForwardPitch() { mixin(MGPC!("float", 236)()); }
 	}
 	final void TickSkelControl(float DeltaTime, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

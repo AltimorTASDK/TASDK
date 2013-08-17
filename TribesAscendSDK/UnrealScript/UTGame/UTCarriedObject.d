@@ -127,39 +127,39 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptName GameObjBone3P() { mixin(MGPC!(ScriptName, 596)()); }
-			Rotator GameObjRot3P() { mixin(MGPC!(Rotator, 616)()); }
-			Vector GameObjOffset3P() { mixin(MGPC!(Vector, 604)()); }
-			Rotator GameObjRot1P() { mixin(MGPC!(Rotator, 640)()); }
-			Vector GameObjOffset1P() { mixin(MGPC!(Vector, 628)()); }
-			ScriptArray!(Controller) Assists() { mixin(MGPC!(ScriptArray!(Controller), 560)()); }
-			ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) NeedToPickUpAnnouncements() { mixin(MGPC!(ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo), 680)()); }
-			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!(ForceFeedbackWaveform, 764)()); }
-			UObject.LinearColor GoldColor() { mixin(MGPC!(UObject.LinearColor, 748)()); }
-			UObject.LinearColor BlueColor() { mixin(MGPC!(UObject.LinearColor, 732)()); }
-			UObject.LinearColor RedColor() { mixin(MGPC!(UObject.LinearColor, 716)()); }
-			int LastSeeMessageIndex() { mixin(MGPC!(int, 712)()); }
-			float LastFlagSeeTime() { mixin(MGPC!(float, 708)()); }
-			float LastHighlightUpdate() { mixin(MGPC!(float, 704)()); }
-			float HighlightSpeed() { mixin(MGPC!(float, 700)()); }
-			float MaxHighlightScale() { mixin(MGPC!(float, 696)()); }
-			float HighlightScale() { mixin(MGPC!(float, 692)()); }
-			float DefaultHeight() { mixin(MGPC!(float, 676)()); }
-			float DefaultRadius() { mixin(MGPC!(float, 672)()); }
+			ScriptName GameObjBone3P() { mixin(MGPC!("ScriptName", 596)()); }
+			Rotator GameObjRot3P() { mixin(MGPC!("Rotator", 616)()); }
+			Vector GameObjOffset3P() { mixin(MGPC!("Vector", 604)()); }
+			Rotator GameObjRot1P() { mixin(MGPC!("Rotator", 640)()); }
+			Vector GameObjOffset1P() { mixin(MGPC!("Vector", 628)()); }
+			ScriptArray!(Controller) Assists() { mixin(MGPC!("ScriptArray!(Controller)", 560)()); }
+			ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo) NeedToPickUpAnnouncements() { mixin(MGPC!("ScriptArray!(UDKPlayerController.ObjectiveAnnouncementInfo)", 680)()); }
+			ForceFeedbackWaveform PickUpWaveForm() { mixin(MGPC!("ForceFeedbackWaveform", 764)()); }
+			UObject.LinearColor GoldColor() { mixin(MGPC!("UObject.LinearColor", 748)()); }
+			UObject.LinearColor BlueColor() { mixin(MGPC!("UObject.LinearColor", 732)()); }
+			UObject.LinearColor RedColor() { mixin(MGPC!("UObject.LinearColor", 716)()); }
+			int LastSeeMessageIndex() { mixin(MGPC!("int", 712)()); }
+			float LastFlagSeeTime() { mixin(MGPC!("float", 708)()); }
+			float LastHighlightUpdate() { mixin(MGPC!("float", 704)()); }
+			float HighlightSpeed() { mixin(MGPC!("float", 700)()); }
+			float MaxHighlightScale() { mixin(MGPC!("float", 696)()); }
+			float HighlightScale() { mixin(MGPC!("float", 692)()); }
+			float DefaultHeight() { mixin(MGPC!("float", 676)()); }
+			float DefaultRadius() { mixin(MGPC!("float", 672)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'FlagLight'!
-			Pawn OldHolder() { mixin(MGPC!(Pawn, 664)()); }
-			SoundCue ReturnedSound() { mixin(MGPC!(SoundCue, 660)()); }
-			SoundCue DroppedSound() { mixin(MGPC!(SoundCue, 656)()); }
-			SoundCue PickupSound() { mixin(MGPC!(SoundCue, 652)()); }
-			Texture2D IconTexture() { mixin(MGPC!(Texture2D, 592)()); }
-			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 576)()); }
-			float MapSize() { mixin(MGPC!(float, 572)()); }
-			Controller FirstTouch() { mixin(MGPC!(Controller, 556)()); }
-			float MaxDropTime() { mixin(MGPC!(float, 552)()); }
-			float TakenTime() { mixin(MGPC!(float, 548)()); }
-			Pawn Holder() { mixin(MGPC!(Pawn, 544)()); }
-			UTPlayerReplicationInfo HolderPRI() { mixin(MGPC!(UTPlayerReplicationInfo, 540)()); }
-			float TossDistance() { mixin(MGPC!(float, 536)()); }
+			Pawn OldHolder() { mixin(MGPC!("Pawn", 664)()); }
+			SoundCue ReturnedSound() { mixin(MGPC!("SoundCue", 660)()); }
+			SoundCue DroppedSound() { mixin(MGPC!("SoundCue", 656)()); }
+			SoundCue PickupSound() { mixin(MGPC!("SoundCue", 652)()); }
+			Texture2D IconTexture() { mixin(MGPC!("Texture2D", 592)()); }
+			UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 576)()); }
+			float MapSize() { mixin(MGPC!("float", 572)()); }
+			Controller FirstTouch() { mixin(MGPC!("Controller", 556)()); }
+			float MaxDropTime() { mixin(MGPC!("float", 552)()); }
+			float TakenTime() { mixin(MGPC!("float", 548)()); }
+			Pawn Holder() { mixin(MGPC!("Pawn", 544)()); }
+			UTPlayerReplicationInfo HolderPRI() { mixin(MGPC!("UTPlayerReplicationInfo", 540)()); }
+			float TossDistance() { mixin(MGPC!("float", 536)()); }
 		}
 		bool bUseTeamColorForIcon() { mixin(MGBPC!(532, 0x4)()); }
 		bool bUseTeamColorForIcon(bool val) { mixin(MSBPC!(532, 0x4)()); }
@@ -250,12 +250,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Score, cast(void*)0, cast(void*)0);
 	}
-	void Drop(Controller Killer, bool bNoThrow)
+	void Drop(Controller* Killer = null, bool* bNoThrow = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Controller*)params.ptr = Killer;
-		*cast(bool*)&params[4] = bNoThrow;
+		if (Killer !is null)
+			*cast(Controller*)params.ptr = *Killer;
+		if (bNoThrow !is null)
+			*cast(bool*)&params[4] = *bNoThrow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Drop, params.ptr, cast(void*)0);
 	}
 	void SendHome(Controller Returner)

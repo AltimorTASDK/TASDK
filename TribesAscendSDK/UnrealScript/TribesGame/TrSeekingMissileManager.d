@@ -77,9 +77,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSeekingMissileManager.TargetingSaberLauncherInfo")()); }
 		@property final auto ref
 		{
-			TrDevice_SaberLauncher SaberLauncher() { mixin(MGPS!(TrDevice_SaberLauncher, 0)()); }
-			float RemainingClientNotificationTime() { mixin(MGPS!(float, 8)()); }
-			TrPlayerController VictimController() { mixin(MGPS!(TrPlayerController, 4)()); }
+			TrDevice_SaberLauncher SaberLauncher() { mixin(MGPS!("TrDevice_SaberLauncher", 0)()); }
+			float RemainingClientNotificationTime() { mixin(MGPS!("float", 8)()); }
+			TrPlayerController VictimController() { mixin(MGPS!("TrPlayerController", 4)()); }
 		}
 	}
 	struct SeekingMissileInfo
@@ -91,14 +91,14 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Missile' has the same name as a defined type!
-			TrPlayerController VictimController() { mixin(MGPS!(TrPlayerController, 4)()); }
+			TrPlayerController VictimController() { mixin(MGPS!("TrPlayerController", 4)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { mixin(MGPC!(ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo), 488)()); }
-		ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { mixin(MGPC!(ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo), 476)()); }
-		int RepCounter() { mixin(MGPC!(int, 500)()); }
+		ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo) ActiveTargetingSaberLaunchers() { mixin(MGPC!("ScriptArray!(TrSeekingMissileManager.TargetingSaberLauncherInfo)", 488)()); }
+		ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo) ActiveSeekingMissiles() { mixin(MGPC!("ScriptArray!(TrSeekingMissileManager.SeekingMissileInfo)", 476)()); }
+		int RepCounter() { mixin(MGPC!("int", 500)()); }
 	}
 final:
 	void Tick(float DeltaTime)

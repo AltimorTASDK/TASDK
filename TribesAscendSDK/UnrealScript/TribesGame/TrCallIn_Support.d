@@ -26,8 +26,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MaxDeployedLimit() { mixin(MGPC!(int, 548)()); }
-		ScriptClass ItemInDeliveryPod() { mixin(MGPC!(ScriptClass, 544)()); }
+		int MaxDeployedLimit() { mixin(MGPC!("int", 548)()); }
+		ScriptClass ItemInDeliveryPod() { mixin(MGPC!("ScriptClass", 544)()); }
 	}
 final:
 	bool FireCompletedCallIn(int CallInOffs, Vector TargetLocation, Vector TargetNormal)

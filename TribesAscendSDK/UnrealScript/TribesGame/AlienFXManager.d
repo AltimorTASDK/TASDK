@@ -73,20 +73,20 @@ public extern(D):
 	{
 		auto ref
 		{
-			AlienFXManager.FXOverlay eLastOverlay() { mixin(MGPC!(AlienFXManager.FXOverlay, 141)()); }
-			AlienFXManager.FXOverlay eCurrOverlay() { mixin(MGPC!(AlienFXManager.FXOverlay, 140)()); }
-			float fIntervalCount() { mixin(MGPC!(float, 136)()); }
-			float fInterval() { mixin(MGPC!(float, 132)()); }
-			float fSpeed() { mixin(MGPC!(float, 128)()); }
-			float fBoundsPct() { mixin(MGPC!(float, 124)()); }
-			float fHighBounds() { mixin(MGPC!(float, 120)()); }
-			float fLowBounds() { mixin(MGPC!(float, 116)()); }
-			int nTarget() { mixin(MGPC!(int, 112)()); }
-			float fDamages() { mixin(MGPC!(float, 80)()); }
-			float fObjectiveTime() { mixin(MGPC!(float, 76)()); }
-			float fDamageTime() { mixin(MGPC!(float, 72)()); }
-			int nHealth() { mixin(MGPC!(int, 64)()); }
-			int nTeam() { mixin(MGPC!(int, 60)()); }
+			AlienFXManager.FXOverlay eLastOverlay() { mixin(MGPC!("AlienFXManager.FXOverlay", 141)()); }
+			AlienFXManager.FXOverlay eCurrOverlay() { mixin(MGPC!("AlienFXManager.FXOverlay", 140)()); }
+			float fIntervalCount() { mixin(MGPC!("float", 136)()); }
+			float fInterval() { mixin(MGPC!("float", 132)()); }
+			float fSpeed() { mixin(MGPC!("float", 128)()); }
+			float fBoundsPct() { mixin(MGPC!("float", 124)()); }
+			float fHighBounds() { mixin(MGPC!("float", 120)()); }
+			float fLowBounds() { mixin(MGPC!("float", 116)()); }
+			int nTarget() { mixin(MGPC!("int", 112)()); }
+			float fDamages() { mixin(MGPC!("float", 80)()); }
+			float fObjectiveTime() { mixin(MGPC!("float", 76)()); }
+			float fDamageTime() { mixin(MGPC!("float", 72)()); }
+			int nHealth() { mixin(MGPC!("int", 64)()); }
+			int nTeam() { mixin(MGPC!("int", 60)()); }
 		}
 		bool bBrighten() { mixin(MGBPC!(68, 0x8)()); }
 		bool bBrighten(bool val) { mixin(MSBPC!(68, 0x8)()); }

@@ -60,19 +60,19 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider")()); }
 		@property final auto ref
 		{
-			UIDataProvider_OnlinePlayerStorageArray Provider() { mixin(MGPS!(UIDataProvider_OnlinePlayerStorageArray, 12)()); }
-			ScriptName PlayerStorageName() { mixin(MGPS!(ScriptName, 4)()); }
-			int PlayerStorageId() { mixin(MGPS!(int, 0)()); }
+			UIDataProvider_OnlinePlayerStorageArray Provider() { mixin(MGPS!("UIDataProvider_OnlinePlayerStorageArray", 12)()); }
+			ScriptName PlayerStorageName() { mixin(MGPS!("ScriptName", 4)()); }
+			int PlayerStorageId() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider) PlayerStorageArrayProviders() { mixin(MGPC!(ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider), 108)()); }
-			int DeviceStorageSizeNeeded() { mixin(MGPC!(int, 120)()); }
-			ScriptName ProviderName() { mixin(MGPC!(ScriptName, 96)()); }
-			OnlinePlayerStorage Profile() { mixin(MGPC!(OnlinePlayerStorage, 92)()); }
+			ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider) PlayerStorageArrayProviders() { mixin(MGPC!("ScriptArray!(UIDataProvider_OnlinePlayerStorage.PlayerStorageArrayProvider)", 108)()); }
+			int DeviceStorageSizeNeeded() { mixin(MGPC!("int", 120)()); }
+			ScriptName ProviderName() { mixin(MGPC!("ScriptName", 96)()); }
+			OnlinePlayerStorage Profile() { mixin(MGPC!("OnlinePlayerStorage", 92)()); }
 		}
 		bool bWasErrorLastRead() { mixin(MGBPC!(104, 0x1)()); }
 		bool bWasErrorLastRead(bool val) { mixin(MSBPC!(104, 0x1)()); }
@@ -183,12 +183,13 @@ void**)params.ptr = PlayerInterface;
 		*cast(bool*)params.ptr = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnDeviceSelectionComplete, params.ptr, cast(void*)0);
 	}
-	void ArrayProviderPropertyChanged(UIDataProvider SourceProvider, ScriptName PropTag)
+	void ArrayProviderPropertyChanged(UIDataProvider SourceProvider, ScriptName* PropTag = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = PropTag;
+		if (PropTag !is null)
+			*cast(ScriptName*)&params[4] = *PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ArrayProviderPropertyChanged, params.ptr, cast(void*)0);
 	}
 	void OnSettingValueUpdated(ScriptName SettingName)

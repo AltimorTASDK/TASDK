@@ -17,9 +17,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector BoxExtent() { mixin(MGPC!(Vector, 496)()); }
-			Material BoxMaterial() { mixin(MGPC!(Material, 492)()); }
-			UObject.Color BoxColor() { mixin(MGPC!(UObject.Color, 488)()); }
+			Vector BoxExtent() { mixin(MGPC!("Vector", 496)()); }
+			Material BoxMaterial() { mixin(MGPC!("Material", 492)()); }
+			UObject.Color BoxColor() { mixin(MGPC!("UObject.Color", 488)()); }
 		}
 		bool bDrawOnlyIfSelected() { mixin(MGBPC!(508, 0x4)()); }
 		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(508, 0x4)()); }

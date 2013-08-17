@@ -49,11 +49,12 @@ void**)&params[4] = OtherComp;
 		*cast(Actor*)params.ptr = Other;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnTouch, params.ptr, cast(void*)0);
 	}
-	void ForceProximityScan(float Radius)
+	void ForceProximityScan(float* Radius = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(float*)params.ptr = Radius;
+		if (Radius !is null)
+			*cast(float*)params.ptr = *Radius;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ForceProximityScan, params.ptr, cast(void*)0);
 	}
 }

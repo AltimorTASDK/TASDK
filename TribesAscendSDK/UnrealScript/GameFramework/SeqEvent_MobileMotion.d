@@ -18,12 +18,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float DeltaYaw() { mixin(MGPC!(float, 276)()); }
-		float DeltaPitch() { mixin(MGPC!(float, 272)()); }
-		float DeltaRoll() { mixin(MGPC!(float, 268)()); }
-		float Yaw() { mixin(MGPC!(float, 264)()); }
-		float Pitch() { mixin(MGPC!(float, 260)()); }
-		float Roll() { mixin(MGPC!(float, 256)()); }
+		float DeltaYaw() { mixin(MGPC!("float", 276)()); }
+		float DeltaPitch() { mixin(MGPC!("float", 272)()); }
+		float DeltaRoll() { mixin(MGPC!("float", 268)()); }
+		float Yaw() { mixin(MGPC!("float", 264)()); }
+		float Pitch() { mixin(MGPC!("float", 260)()); }
+		float Roll() { mixin(MGPC!("float", 256)()); }
 	}
 	final static int GetObjClassVersion()
 	{

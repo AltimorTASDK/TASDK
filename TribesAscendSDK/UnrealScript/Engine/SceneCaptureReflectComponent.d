@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SceneCaptureReflectComponent DefaultProperties() { mixin(MGDPC!(SceneCaptureReflectComponent, "SceneCaptureReflectComponent Engine.Default__SceneCaptureReflectComponent")()); }
 	@property final auto ref
 	{
-		float ScaleFOV() { mixin(MGPC!(float, 148)()); }
-		TextureRenderTarget2D TextureTarget() { mixin(MGPC!(TextureRenderTarget2D, 144)()); }
+		float ScaleFOV() { mixin(MGPC!("float", 148)()); }
+		TextureRenderTarget2D TextureTarget() { mixin(MGPC!("TextureRenderTarget2D", 144)()); }
 	}
 }

@@ -48,12 +48,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) NavAliases() { mixin(MGPC!(ScriptArray!(ScriptName), 300)()); }
-			ScriptArray!(ScriptName) AxisInputKeys() { mixin(MGPC!(ScriptArray!(ScriptName), 312)()); }
-			UObject.Map_Mirror InitialPressedKeys() { mixin(MGPC!(UObject.Map_Mirror, 236)()); }
-			UObject.IntPoint DoubleClickStartPosition() { mixin(MGPC!(UObject.IntPoint, 228)()); }
-			UObject.Double DoubleClickStartTime() { mixin(MGPC!(UObject.Double, 220)()); }
-			float LatestDeltaTime() { mixin(MGPC!(float, 216)()); }
+			ScriptArray!(ScriptName) NavAliases() { mixin(MGPC!("ScriptArray!(ScriptName)", 300)()); }
+			ScriptArray!(ScriptName) AxisInputKeys() { mixin(MGPC!("ScriptArray!(ScriptName)", 312)()); }
+			UObject.Map_Mirror InitialPressedKeys() { mixin(MGPC!("UObject.Map_Mirror", 236)()); }
+			UObject.IntPoint DoubleClickStartPosition() { mixin(MGPC!("UObject.IntPoint", 228)()); }
+			UObject.Double DoubleClickStartTime() { mixin(MGPC!("UObject.Double", 220)()); }
+			float LatestDeltaTime() { mixin(MGPC!("float", 216)()); }
 		}
 		bool bCaptureUnprocessedInput() { mixin(MGBPC!(296, 0x10)()); }
 		bool bCaptureUnprocessedInput(bool val) { mixin(MSBPC!(296, 0x10)()); }
@@ -85,12 +85,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CanUnpauseInternalUI, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	void PauseGame(bool bDesiredPauseState, int PlayerIndex)
+	void PauseGame(bool bDesiredPauseState, int* PlayerIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bDesiredPauseState;
-		*cast(int*)&params[4] = PlayerIndex;
+		if (PlayerIndex !is null)
+			*cast(int*)&params[4] = *PlayerIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PauseGame, params.ptr, cast(void*)0);
 	}
 	void NotifyClientTravel(PlayerController TravellingPlayer, ScriptString TravelURL, Actor.ETravelType TravelType, bool bIsSeamlessTravel)

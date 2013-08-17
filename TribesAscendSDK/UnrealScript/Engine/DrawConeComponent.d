@@ -14,9 +14,9 @@ public extern(D):
 	@property final static DrawConeComponent DefaultProperties() { mixin(MGDPC!(DrawConeComponent, "DrawConeComponent Engine.Default__DrawConeComponent")()); }
 	@property final auto ref
 	{
-		int ConeSides() { mixin(MGPC!(int, 500)()); }
-		float ConeAngle() { mixin(MGPC!(float, 496)()); }
-		float ConeRadius() { mixin(MGPC!(float, 492)()); }
-		UObject.Color ConeColor() { mixin(MGPC!(UObject.Color, 488)()); }
+		int ConeSides() { mixin(MGPC!("int", 500)()); }
+		float ConeAngle() { mixin(MGPC!("float", 496)()); }
+		float ConeRadius() { mixin(MGPC!("float", 492)()); }
+		UObject.Color ConeColor() { mixin(MGPC!("UObject.Color", 488)()); }
 	}
 }

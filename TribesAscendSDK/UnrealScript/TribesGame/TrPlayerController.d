@@ -2344,8 +2344,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerController.TrCameraShakeInfo")()); }
 		@property final auto ref
 		{
-			ScriptName ShakeName() { mixin(MGPS!(ScriptName, 4)()); }
-			CameraShake Shake() { mixin(MGPS!(CameraShake, 0)()); }
+			ScriptName ShakeName() { mixin(MGPS!("ScriptName", 4)()); }
+			CameraShake Shake() { mixin(MGPS!("CameraShake", 0)()); }
 		}
 	}
 	struct VGSAudioCommand
@@ -2356,9 +2356,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerController.VGSAudioCommand")()); }
 		@property final auto ref
 		{
-			SoundCue QueuedSoundCue() { mixin(MGPS!(SoundCue, 8)()); }
+			SoundCue QueuedSoundCue() { mixin(MGPS!("SoundCue", 8)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'VGSAudioComponent'!
-			TrPlayerReplicationInfo VGSInstigator() { mixin(MGPS!(TrPlayerReplicationInfo, 0)()); }
+			TrPlayerReplicationInfo VGSInstigator() { mixin(MGPS!("TrPlayerReplicationInfo", 0)()); }
 		}
 	}
 	struct SpectatorKeybindViewTargetMap
@@ -2369,8 +2369,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerController.SpectatorKeybindViewTargetMap")()); }
 		@property final auto ref
 		{
-			Actor ViewTarget() { mixin(MGPS!(Actor, 24)()); }
-			Input.KeyBind KeyBinding() { mixin(MGPS!(Input.KeyBind, 0)()); }
+			Actor ViewTarget() { mixin(MGPS!("Actor", 24)()); }
+			Input.KeyBind KeyBinding() { mixin(MGPS!("Input.KeyBind", 0)()); }
 		}
 	}
 	struct PendingSkin
@@ -2381,8 +2381,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrPlayerController.PendingSkin")()); }
 		@property final auto ref
 		{
-			int skinId() { mixin(MGPS!(int, 4)()); }
-			TrPlayerReplicationInfo TrPRI() { mixin(MGPS!(TrPlayerReplicationInfo, 0)()); }
+			int skinId() { mixin(MGPS!("int", 4)()); }
+			TrPlayerReplicationInfo TrPRI() { mixin(MGPS!("TrPlayerReplicationInfo", 0)()); }
 		}
 	}
 	static struct PlayerWaiting
@@ -2449,168 +2449,168 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrEquipInterface m_TrEquipInterface() { mixin(MGPC!(TrEquipInterface, 3376)()); }
-			float r_fRespawnTime() { mixin(MGPC!(float, 2372)()); }
-			AlienFXManager AlienFX() { mixin(MGPC!(AlienFXManager, 3344)()); }
-			int m_nLastDamagerUpgradeLevel() { mixin(MGPC!(int, 2396)()); }
-			int m_nLastDamagerHealthPercent() { mixin(MGPC!(int, 2392)()); }
-			TrStrings Strings() { mixin(MGPC!(TrStrings, 3428)()); }
-			TrInventoryHelper m_TrInventoryHelper() { mixin(MGPC!(TrInventoryHelper, 3380)()); }
-			int m_RequestedTeam() { mixin(MGPC!(int, 2240)()); }
-			float m_fLastHitEnemyTime() { mixin(MGPC!(float, 2356)()); }
-			TrPlayerController m_LastKilledBy() { mixin(MGPC!(TrPlayerController, 2380)()); }
-			ubyte r_nHitEnemyHeadshot() { mixin(MGPC!(ubyte, 2326)()); }
-			TrHelpTextManager m_HelpTextManager() { mixin(MGPC!(TrHelpTextManager, 2944)()); }
-			Rotator m_rCurrentKickbackDirection() { mixin(MGPC!(Rotator, 2220)()); }
-			MaterialEffect m_ZoomedEffect() { mixin(MGPC!(MaterialEffect, 2340)()); }
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 3144)()); }
-			TrAccoladeManager m_AccoladeManager() { mixin(MGPC!(TrAccoladeManager, 2348)()); }
-			Vector m_vDeathCamOffset() { mixin(MGPC!(Vector, 3112)()); }
-			float m_fDeathCameraCurrentScale() { mixin(MGPC!(float, 3104)()); }
-			float m_fDeathCameraInnerScale() { mixin(MGPC!(float, 3100)()); }
-			float m_fDeathCameraInterpSpeed() { mixin(MGPC!(float, 3108)()); }
-			ScriptClass m_OldPossessedFamilyInfo() { mixin(MGPC!(ScriptClass, 2936)()); }
-			int m_BeginPlayedTime() { mixin(MGPC!(int, 2416)()); }
-			Actor m_LastDamagedBy() { mixin(MGPC!(Actor, 2388)()); }
-			int FriendlyFireDamage() { mixin(MGPC!(int, 3412)()); }
-			float m_fLastFlagGrabTimestamp() { mixin(MGPC!(float, 3080)()); }
-			int FriendlyFireKills() { mixin(MGPC!(int, 3408)()); }
-			UTWeapon.EZoomState m_ZoomState() { mixin(MGPC!(UTWeapon.EZoomState, 2324)()); }
-			float m_fFreeCamYawOffset() { mixin(MGPC!(float, 3024)()); }
-			float m_fFreeCamPitchOffset() { mixin(MGPC!(float, 3028)()); }
-			float m_fCallInCooldown() { mixin(MGPC!(float, 3328)()); }
-			ubyte r_nCallinCooldownFlash() { mixin(MGPC!(ubyte, 2328)()); }
-			TrChatConsoleCommands m_PlayerCommands() { mixin(MGPC!(TrChatConsoleCommands, 3324)()); }
-			ScriptArray!(TrObject.TrEventCredits) m_EventCreditMap() { mixin(MGPC!(ScriptArray!(TrObject.TrEventCredits), 2292)()); }
-			ScriptArray!(TrPlayerController.TrCameraShakeInfo) m_CameraShakes() { mixin(MGPC!(ScriptArray!(TrPlayerController.TrCameraShakeInfo), 2432)()); }
-			ScriptArray!(TrWeatherVolume) m_CurrentWeatherVolumes() { mixin(MGPC!(ScriptArray!(TrWeatherVolume), 2452)()); }
-			ScriptArray!(float) m_fLastBroadcastTimes() { mixin(MGPC!(ScriptArray!(float), 3040)()); }
-			ScriptArray!(Actor) m_PotentialSeekingTargets() { mixin(MGPC!(ScriptArray!(Actor), 3064)()); }
-			ScriptArray!(TrProjectile) m_ProjectilesNeedingTethering() { mixin(MGPC!(ScriptArray!(TrProjectile), 3084)()); }
-			ScriptArray!(TrPlayerController.VGSAudioCommand) m_VGSAudioCommands() { mixin(MGPC!(ScriptArray!(TrPlayerController.VGSAudioCommand), 3160)()); }
-			ScriptArray!(CameraActor) m_SpectatorCameraBookmarks() { mixin(MGPC!(ScriptArray!(CameraActor), 3176)()); }
-			ScriptArray!(TrPowerGenerator) m_SpectatorGenerators() { mixin(MGPC!(ScriptArray!(TrPowerGenerator), 3188)()); }
-			ScriptArray!(TrCTFBase) m_SpectatorFlagStands() { mixin(MGPC!(ScriptArray!(TrCTFBase), 3200)()); }
-			ScriptArray!(TrFlagBase) m_SpectatorFlags() { mixin(MGPC!(ScriptArray!(TrFlagBase), 3212)()); }
-			ScriptArray!(TrVehicle) m_SpectatorVehicles() { mixin(MGPC!(ScriptArray!(TrVehicle), 3224)()); }
-			ScriptArray!(TrPlayerController.SpectatorKeybindViewTargetMap) m_SpectatorTransientKeybinds() { mixin(MGPC!(ScriptArray!(TrPlayerController.SpectatorKeybindViewTargetMap), 3312)()); }
-			ScriptArray!(ScriptClass) m_CachedPendingClassDeviceContentData() { mixin(MGPC!(ScriptArray!(ScriptClass), 3352)()); }
-			ScriptArray!(ScriptClass) m_PendingLoadoutDeviceClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 3364)()); }
-			ScriptArray!(TrPlayerController.PendingSkin) m_Pending3PSkins() { mixin(MGPC!(ScriptArray!(TrPlayerController.PendingSkin), 3384)()); }
-			ScriptArray!(TrPlayerController.PendingSkin) m_Pending1PSkins() { mixin(MGPC!(ScriptArray!(TrPlayerController.PendingSkin), 3396)()); }
-			float fSniperRespawnDelay() { mixin(MGPC!(float, 3424)()); }
-			float m_fLastSuicideTimestamp() { mixin(MGPC!(float, 3420)()); }
-			int VGSClassId() { mixin(MGPC!(int, 3416)()); }
-			TrContentLoader c_ContentLoader() { mixin(MGPC!(TrContentLoader, 3348)()); }
-			int m_WhisperFilter() { mixin(MGPC!(int, 3340)()); }
-			Rotator r_rViewTargetViewRotation() { mixin(MGPC!(Rotator, 3300)()); }
-			Vector r_vViewTargetViewLocation() { mixin(MGPC!(Vector, 3288)()); }
-			PlayerReplicationInfo r_ViewTargetVehiclePassengerPRI() { mixin(MGPC!(PlayerReplicationInfo, 3284)()); }
-			PlayerReplicationInfo r_ViewTargetVehicleDriverPRI() { mixin(MGPC!(PlayerReplicationInfo, 3280)()); }
-			float r_fViewTargetVehicleMaxPowerPool() { mixin(MGPC!(float, 3276)()); }
-			float r_fViewTargetVehicleCurrentPowerPool() { mixin(MGPC!(float, 3272)()); }
-			int r_nViewTargetPackAmmoCount() { mixin(MGPC!(int, 3268)()); }
-			int r_nViewTargetOffhandAmmoCount() { mixin(MGPC!(int, 3264)()); }
-			int r_nViewTargetSecondaryMaxAmmoCount() { mixin(MGPC!(int, 3260)()); }
-			int r_nViewTargetPrimaryMaxAmmoCount() { mixin(MGPC!(int, 3256)()); }
-			int r_nViewTargetSecondaryAmmoCount() { mixin(MGPC!(int, 3252)()); }
-			int r_nViewTargetPrimaryAmmoCount() { mixin(MGPC!(int, 3248)()); }
-			float r_fViewTargetMaxPowerPool() { mixin(MGPC!(float, 3244)()); }
-			float r_fViewTargetCurrentPowerpool() { mixin(MGPC!(float, 3240)()); }
-			float r_fViewTargetNextRegenTimestamp() { mixin(MGPC!(float, 3236)()); }
-			int m_nMaxVGSSoundChannels() { mixin(MGPC!(int, 3172)()); }
-			int m_TeamRabbitAssistCredit() { mixin(MGPC!(int, 3156)()); }
-			int m_TeamAssistCredit() { mixin(MGPC!(int, 3152)()); }
-			int m_DamageNeededForCredit() { mixin(MGPC!(int, 3148)()); }
-			MaterialEffect m_RoundEndedME() { mixin(MGPC!(MaterialEffect, 3140)()); }
-			float m_fDeterminationAccumulator() { mixin(MGPC!(float, 3136)()); }
-			float m_fDeterminationAmount() { mixin(MGPC!(float, 3132)()); }
-			float LoadingScreenTimeout() { mixin(MGPC!(float, 3128)()); }
-			TrPaperDoll m_PaperDoll() { mixin(MGPC!(TrPaperDoll, 3124)()); }
-			float m_fDeathCameraOuterScale() { mixin(MGPC!(float, 3096)()); }
-			float m_fUserSuicideTimePenalty() { mixin(MGPC!(float, 3076)()); }
-			float m_fSpamLockoutTimeStamp() { mixin(MGPC!(float, 3060)()); }
-			float m_fLockoutFromSpamTime() { mixin(MGPC!(float, 3056)()); }
-			float m_fMessageSpamTime() { mixin(MGPC!(float, 3052)()); }
-			int m_fMaxBroadcastSpamCount() { mixin(MGPC!(int, 3036)()); }
-			float m_fLastSpotTargetTime() { mixin(MGPC!(float, 3032)()); }
-			int s_nNewPlayerAssistPoints() { mixin(MGPC!(int, 3020)()); }
-			int s_nMaxNewPlayerAssistPoints() { mixin(MGPC!(int, 3016)()); }
-			float s_fNewPlayerAssistMitigateCauseDamageMultiplier() { mixin(MGPC!(float, 3012)()); }
-			float s_fNewPlayerAssistMitigateTakeDamageMultiplier() { mixin(MGPC!(float, 3008)()); }
-			float m_fFlagGrabSpeedRecord() { mixin(MGPC!(float, 3004)()); }
-			float m_fFlagCapSpeedRecord() { mixin(MGPC!(float, 3000)()); }
-			float m_fSkiSpeedRecord() { mixin(MGPC!(float, 2996)()); }
-			float m_fSpeedCheckTotal() { mixin(MGPC!(float, 2992)()); }
-			float m_fLastSpeedCheckCount() { mixin(MGPC!(float, 2988)()); }
-			float m_fLastSpeedCheckTime() { mixin(MGPC!(float, 2984)()); }
-			float m_fSpeedCheckInterval() { mixin(MGPC!(float, 2980)()); }
-			float m_fHideJetpackHelpTextDistanceThresholdSq() { mixin(MGPC!(float, 2976)()); }
-			float m_fTotalDistanceJetpackedSq() { mixin(MGPC!(float, 2972)()); }
-			float m_fHideSkiHelpTextDistanceThresholdSq() { mixin(MGPC!(float, 2968)()); }
-			float m_fLastDistanceSkiedSq() { mixin(MGPC!(float, 2964)()); }
-			float m_fLastDistanceCheckTime() { mixin(MGPC!(float, 2960)()); }
-			float m_fDistanceCheckInterval() { mixin(MGPC!(float, 2956)()); }
-			float m_fTotalDistanceSkiedSq() { mixin(MGPC!(float, 2952)()); }
-			ScriptClass m_HelpTextManagerClass() { mixin(MGPC!(ScriptClass, 2948)()); }
-			TrVehicle m_LastAcknowledgedVehicle() { mixin(MGPC!(TrVehicle, 2940)()); }
-			int m_ActiveClassId() { mixin(MGPC!(int, 2932)()); }
-			int m_LastVGSUse() { mixin(MGPC!(int, 2928)()); }
-			float m_fIdleCheckTimer() { mixin(MGPC!(float, 2924)()); }
-			float m_RoundEndedVZeroSpeed() { mixin(MGPC!(float, 2920)()); }
-			float m_RoundEndedPPTarget() { mixin(MGPC!(float, 2916)()); }
-			float m_RoundEndedPPAlpha() { mixin(MGPC!(float, 2912)()); }
-			float m_RoundEndedPPInterpSpeed() { mixin(MGPC!(float, 2908)()); }
-			PostProcessVolume.PostProcessSettings m_RoundEndedPPSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 2688)()); }
-			PostProcessVolume.PostProcessSettings m_DefaultPPSettings() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 2468)()); }
-			float m_fSpeedCameraSpeedSqared() { mixin(MGPC!(float, 2464)()); }
-			UDKEmitCameraEffect m_WeatherCameraEffect() { mixin(MGPC!(UDKEmitCameraEffect, 2448)()); }
-			UDKEmitCameraEffect m_SpeedCameraEffect() { mixin(MGPC!(UDKEmitCameraEffect, 2444)()); }
-			int m_nLatestAccoladeIcon() { mixin(MGPC!(int, 2428)()); }
-			TrCameraModifier_CameraShake m_CameraShake() { mixin(MGPC!(TrCameraModifier_CameraShake, 2424)()); }
-			Weapon m_LastWeaponEquipped() { mixin(MGPC!(Weapon, 2420)()); }
-			int m_VehicleSeatIndex() { mixin(MGPC!(int, 2412)()); }
-			float m_LastPressedSkiTimeStamp() { mixin(MGPC!(float, 2408)()); }
-			float m_fMinActiveSkiTimeToEnableFollowthough() { mixin(MGPC!(float, 2404)()); }
-			float m_fSkiFollowthroughTime() { mixin(MGPC!(float, 2400)()); }
-			Actor r_KilledBy() { mixin(MGPC!(Actor, 2384)()); }
-			float m_LastLoadoutRequestTime() { mixin(MGPC!(float, 2376)()); }
-			int m_nClientSpawnTimeRemaining() { mixin(MGPC!(int, 2368)()); }
-			int m_nRespawnTimeRemaining() { mixin(MGPC!(int, 2364)()); }
-			float m_fPlayBeginTime() { mixin(MGPC!(float, 2360)()); }
-			TrAnnouncer m_Announcer() { mixin(MGPC!(TrAnnouncer, 2352)()); }
-			TrMusicManager m_MusicManager() { mixin(MGPC!(TrMusicManager, 2344)()); }
-			float c_fHUDZoomDuration() { mixin(MGPC!(float, 2336)()); }
-			TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC!(TrPawn.WalkingDeceleration, 2334)()); }
-			ubyte m_nCallinCooldownFlashStored() { mixin(MGPC!(ubyte, 2331)()); }
-			ubyte m_nLastHitEnemyHeadshot() { mixin(MGPC!(ubyte, 2327)()); }
-			ubyte r_nHitEnemy() { mixin(MGPC!(ubyte, 2325)()); }
-			float c_fZoomButtonPressedTimeStamp() { mixin(MGPC!(float, 2320)()); }
-			float m_fZoomRate() { mixin(MGPC!(float, 2316)()); }
-			float m_fDesiredMagnifiedZoomFOV() { mixin(MGPC!(float, 2312)()); }
-			float m_fDesiredZoomFOV() { mixin(MGPC!(float, 2308)()); }
-			TrStation m_CurrentStation() { mixin(MGPC!(TrStation, 2304)()); }
-			int r_nCurrentCredits() { mixin(MGPC!(int, 2288)()); }
-			SoundCue m_RicochetSound3P() { mixin(MGPC!(SoundCue, 2284)()); }
-			SoundCue m_MissileSeekingSelfCue() { mixin(MGPC!(SoundCue, 2280)()); }
-			SoundCue m_MissileFiredCue() { mixin(MGPC!(SoundCue, 2276)()); }
-			SoundCue m_MissileLockedCue() { mixin(MGPC!(SoundCue, 2272)()); }
-			SoundCue m_MissileLockingCue() { mixin(MGPC!(SoundCue, 2268)()); }
+			TrEquipInterface m_TrEquipInterface() { mixin(MGPC!("TrEquipInterface", 3376)()); }
+			float r_fRespawnTime() { mixin(MGPC!("float", 2372)()); }
+			AlienFXManager AlienFX() { mixin(MGPC!("AlienFXManager", 3344)()); }
+			int m_nLastDamagerUpgradeLevel() { mixin(MGPC!("int", 2396)()); }
+			int m_nLastDamagerHealthPercent() { mixin(MGPC!("int", 2392)()); }
+			TrStrings Strings() { mixin(MGPC!("TrStrings", 3428)()); }
+			TrInventoryHelper m_TrInventoryHelper() { mixin(MGPC!("TrInventoryHelper", 3380)()); }
+			int m_RequestedTeam() { mixin(MGPC!("int", 2240)()); }
+			float m_fLastHitEnemyTime() { mixin(MGPC!("float", 2356)()); }
+			TrPlayerController m_LastKilledBy() { mixin(MGPC!("TrPlayerController", 2380)()); }
+			ubyte r_nHitEnemyHeadshot() { mixin(MGPC!("ubyte", 2326)()); }
+			TrHelpTextManager m_HelpTextManager() { mixin(MGPC!("TrHelpTextManager", 2944)()); }
+			Rotator m_rCurrentKickbackDirection() { mixin(MGPC!("Rotator", 2220)()); }
+			MaterialEffect m_ZoomedEffect() { mixin(MGPC!("MaterialEffect", 2340)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 3144)()); }
+			TrAccoladeManager m_AccoladeManager() { mixin(MGPC!("TrAccoladeManager", 2348)()); }
+			Vector m_vDeathCamOffset() { mixin(MGPC!("Vector", 3112)()); }
+			float m_fDeathCameraCurrentScale() { mixin(MGPC!("float", 3104)()); }
+			float m_fDeathCameraInnerScale() { mixin(MGPC!("float", 3100)()); }
+			float m_fDeathCameraInterpSpeed() { mixin(MGPC!("float", 3108)()); }
+			ScriptClass m_OldPossessedFamilyInfo() { mixin(MGPC!("ScriptClass", 2936)()); }
+			int m_BeginPlayedTime() { mixin(MGPC!("int", 2416)()); }
+			Actor m_LastDamagedBy() { mixin(MGPC!("Actor", 2388)()); }
+			int FriendlyFireDamage() { mixin(MGPC!("int", 3412)()); }
+			float m_fLastFlagGrabTimestamp() { mixin(MGPC!("float", 3080)()); }
+			int FriendlyFireKills() { mixin(MGPC!("int", 3408)()); }
+			UTWeapon.EZoomState m_ZoomState() { mixin(MGPC!("UTWeapon.EZoomState", 2324)()); }
+			float m_fFreeCamYawOffset() { mixin(MGPC!("float", 3024)()); }
+			float m_fFreeCamPitchOffset() { mixin(MGPC!("float", 3028)()); }
+			float m_fCallInCooldown() { mixin(MGPC!("float", 3328)()); }
+			ubyte r_nCallinCooldownFlash() { mixin(MGPC!("ubyte", 2328)()); }
+			TrChatConsoleCommands m_PlayerCommands() { mixin(MGPC!("TrChatConsoleCommands", 3324)()); }
+			ScriptArray!(TrObject.TrEventCredits) m_EventCreditMap() { mixin(MGPC!("ScriptArray!(TrObject.TrEventCredits)", 2292)()); }
+			ScriptArray!(TrPlayerController.TrCameraShakeInfo) m_CameraShakes() { mixin(MGPC!("ScriptArray!(TrPlayerController.TrCameraShakeInfo)", 2432)()); }
+			ScriptArray!(TrWeatherVolume) m_CurrentWeatherVolumes() { mixin(MGPC!("ScriptArray!(TrWeatherVolume)", 2452)()); }
+			ScriptArray!(float) m_fLastBroadcastTimes() { mixin(MGPC!("ScriptArray!(float)", 3040)()); }
+			ScriptArray!(Actor) m_PotentialSeekingTargets() { mixin(MGPC!("ScriptArray!(Actor)", 3064)()); }
+			ScriptArray!(TrProjectile) m_ProjectilesNeedingTethering() { mixin(MGPC!("ScriptArray!(TrProjectile)", 3084)()); }
+			ScriptArray!(TrPlayerController.VGSAudioCommand) m_VGSAudioCommands() { mixin(MGPC!("ScriptArray!(TrPlayerController.VGSAudioCommand)", 3160)()); }
+			ScriptArray!(CameraActor) m_SpectatorCameraBookmarks() { mixin(MGPC!("ScriptArray!(CameraActor)", 3176)()); }
+			ScriptArray!(TrPowerGenerator) m_SpectatorGenerators() { mixin(MGPC!("ScriptArray!(TrPowerGenerator)", 3188)()); }
+			ScriptArray!(TrCTFBase) m_SpectatorFlagStands() { mixin(MGPC!("ScriptArray!(TrCTFBase)", 3200)()); }
+			ScriptArray!(TrFlagBase) m_SpectatorFlags() { mixin(MGPC!("ScriptArray!(TrFlagBase)", 3212)()); }
+			ScriptArray!(TrVehicle) m_SpectatorVehicles() { mixin(MGPC!("ScriptArray!(TrVehicle)", 3224)()); }
+			ScriptArray!(TrPlayerController.SpectatorKeybindViewTargetMap) m_SpectatorTransientKeybinds() { mixin(MGPC!("ScriptArray!(TrPlayerController.SpectatorKeybindViewTargetMap)", 3312)()); }
+			ScriptArray!(ScriptClass) m_CachedPendingClassDeviceContentData() { mixin(MGPC!("ScriptArray!(ScriptClass)", 3352)()); }
+			ScriptArray!(ScriptClass) m_PendingLoadoutDeviceClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 3364)()); }
+			ScriptArray!(TrPlayerController.PendingSkin) m_Pending3PSkins() { mixin(MGPC!("ScriptArray!(TrPlayerController.PendingSkin)", 3384)()); }
+			ScriptArray!(TrPlayerController.PendingSkin) m_Pending1PSkins() { mixin(MGPC!("ScriptArray!(TrPlayerController.PendingSkin)", 3396)()); }
+			float fSniperRespawnDelay() { mixin(MGPC!("float", 3424)()); }
+			float m_fLastSuicideTimestamp() { mixin(MGPC!("float", 3420)()); }
+			int VGSClassId() { mixin(MGPC!("int", 3416)()); }
+			TrContentLoader c_ContentLoader() { mixin(MGPC!("TrContentLoader", 3348)()); }
+			int m_WhisperFilter() { mixin(MGPC!("int", 3340)()); }
+			Rotator r_rViewTargetViewRotation() { mixin(MGPC!("Rotator", 3300)()); }
+			Vector r_vViewTargetViewLocation() { mixin(MGPC!("Vector", 3288)()); }
+			PlayerReplicationInfo r_ViewTargetVehiclePassengerPRI() { mixin(MGPC!("PlayerReplicationInfo", 3284)()); }
+			PlayerReplicationInfo r_ViewTargetVehicleDriverPRI() { mixin(MGPC!("PlayerReplicationInfo", 3280)()); }
+			float r_fViewTargetVehicleMaxPowerPool() { mixin(MGPC!("float", 3276)()); }
+			float r_fViewTargetVehicleCurrentPowerPool() { mixin(MGPC!("float", 3272)()); }
+			int r_nViewTargetPackAmmoCount() { mixin(MGPC!("int", 3268)()); }
+			int r_nViewTargetOffhandAmmoCount() { mixin(MGPC!("int", 3264)()); }
+			int r_nViewTargetSecondaryMaxAmmoCount() { mixin(MGPC!("int", 3260)()); }
+			int r_nViewTargetPrimaryMaxAmmoCount() { mixin(MGPC!("int", 3256)()); }
+			int r_nViewTargetSecondaryAmmoCount() { mixin(MGPC!("int", 3252)()); }
+			int r_nViewTargetPrimaryAmmoCount() { mixin(MGPC!("int", 3248)()); }
+			float r_fViewTargetMaxPowerPool() { mixin(MGPC!("float", 3244)()); }
+			float r_fViewTargetCurrentPowerpool() { mixin(MGPC!("float", 3240)()); }
+			float r_fViewTargetNextRegenTimestamp() { mixin(MGPC!("float", 3236)()); }
+			int m_nMaxVGSSoundChannels() { mixin(MGPC!("int", 3172)()); }
+			int m_TeamRabbitAssistCredit() { mixin(MGPC!("int", 3156)()); }
+			int m_TeamAssistCredit() { mixin(MGPC!("int", 3152)()); }
+			int m_DamageNeededForCredit() { mixin(MGPC!("int", 3148)()); }
+			MaterialEffect m_RoundEndedME() { mixin(MGPC!("MaterialEffect", 3140)()); }
+			float m_fDeterminationAccumulator() { mixin(MGPC!("float", 3136)()); }
+			float m_fDeterminationAmount() { mixin(MGPC!("float", 3132)()); }
+			float LoadingScreenTimeout() { mixin(MGPC!("float", 3128)()); }
+			TrPaperDoll m_PaperDoll() { mixin(MGPC!("TrPaperDoll", 3124)()); }
+			float m_fDeathCameraOuterScale() { mixin(MGPC!("float", 3096)()); }
+			float m_fUserSuicideTimePenalty() { mixin(MGPC!("float", 3076)()); }
+			float m_fSpamLockoutTimeStamp() { mixin(MGPC!("float", 3060)()); }
+			float m_fLockoutFromSpamTime() { mixin(MGPC!("float", 3056)()); }
+			float m_fMessageSpamTime() { mixin(MGPC!("float", 3052)()); }
+			int m_fMaxBroadcastSpamCount() { mixin(MGPC!("int", 3036)()); }
+			float m_fLastSpotTargetTime() { mixin(MGPC!("float", 3032)()); }
+			int s_nNewPlayerAssistPoints() { mixin(MGPC!("int", 3020)()); }
+			int s_nMaxNewPlayerAssistPoints() { mixin(MGPC!("int", 3016)()); }
+			float s_fNewPlayerAssistMitigateCauseDamageMultiplier() { mixin(MGPC!("float", 3012)()); }
+			float s_fNewPlayerAssistMitigateTakeDamageMultiplier() { mixin(MGPC!("float", 3008)()); }
+			float m_fFlagGrabSpeedRecord() { mixin(MGPC!("float", 3004)()); }
+			float m_fFlagCapSpeedRecord() { mixin(MGPC!("float", 3000)()); }
+			float m_fSkiSpeedRecord() { mixin(MGPC!("float", 2996)()); }
+			float m_fSpeedCheckTotal() { mixin(MGPC!("float", 2992)()); }
+			float m_fLastSpeedCheckCount() { mixin(MGPC!("float", 2988)()); }
+			float m_fLastSpeedCheckTime() { mixin(MGPC!("float", 2984)()); }
+			float m_fSpeedCheckInterval() { mixin(MGPC!("float", 2980)()); }
+			float m_fHideJetpackHelpTextDistanceThresholdSq() { mixin(MGPC!("float", 2976)()); }
+			float m_fTotalDistanceJetpackedSq() { mixin(MGPC!("float", 2972)()); }
+			float m_fHideSkiHelpTextDistanceThresholdSq() { mixin(MGPC!("float", 2968)()); }
+			float m_fLastDistanceSkiedSq() { mixin(MGPC!("float", 2964)()); }
+			float m_fLastDistanceCheckTime() { mixin(MGPC!("float", 2960)()); }
+			float m_fDistanceCheckInterval() { mixin(MGPC!("float", 2956)()); }
+			float m_fTotalDistanceSkiedSq() { mixin(MGPC!("float", 2952)()); }
+			ScriptClass m_HelpTextManagerClass() { mixin(MGPC!("ScriptClass", 2948)()); }
+			TrVehicle m_LastAcknowledgedVehicle() { mixin(MGPC!("TrVehicle", 2940)()); }
+			int m_ActiveClassId() { mixin(MGPC!("int", 2932)()); }
+			int m_LastVGSUse() { mixin(MGPC!("int", 2928)()); }
+			float m_fIdleCheckTimer() { mixin(MGPC!("float", 2924)()); }
+			float m_RoundEndedVZeroSpeed() { mixin(MGPC!("float", 2920)()); }
+			float m_RoundEndedPPTarget() { mixin(MGPC!("float", 2916)()); }
+			float m_RoundEndedPPAlpha() { mixin(MGPC!("float", 2912)()); }
+			float m_RoundEndedPPInterpSpeed() { mixin(MGPC!("float", 2908)()); }
+			PostProcessVolume.PostProcessSettings m_RoundEndedPPSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 2688)()); }
+			PostProcessVolume.PostProcessSettings m_DefaultPPSettings() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 2468)()); }
+			float m_fSpeedCameraSpeedSqared() { mixin(MGPC!("float", 2464)()); }
+			UDKEmitCameraEffect m_WeatherCameraEffect() { mixin(MGPC!("UDKEmitCameraEffect", 2448)()); }
+			UDKEmitCameraEffect m_SpeedCameraEffect() { mixin(MGPC!("UDKEmitCameraEffect", 2444)()); }
+			int m_nLatestAccoladeIcon() { mixin(MGPC!("int", 2428)()); }
+			TrCameraModifier_CameraShake m_CameraShake() { mixin(MGPC!("TrCameraModifier_CameraShake", 2424)()); }
+			Weapon m_LastWeaponEquipped() { mixin(MGPC!("Weapon", 2420)()); }
+			int m_VehicleSeatIndex() { mixin(MGPC!("int", 2412)()); }
+			float m_LastPressedSkiTimeStamp() { mixin(MGPC!("float", 2408)()); }
+			float m_fMinActiveSkiTimeToEnableFollowthough() { mixin(MGPC!("float", 2404)()); }
+			float m_fSkiFollowthroughTime() { mixin(MGPC!("float", 2400)()); }
+			Actor r_KilledBy() { mixin(MGPC!("Actor", 2384)()); }
+			float m_LastLoadoutRequestTime() { mixin(MGPC!("float", 2376)()); }
+			int m_nClientSpawnTimeRemaining() { mixin(MGPC!("int", 2368)()); }
+			int m_nRespawnTimeRemaining() { mixin(MGPC!("int", 2364)()); }
+			float m_fPlayBeginTime() { mixin(MGPC!("float", 2360)()); }
+			TrAnnouncer m_Announcer() { mixin(MGPC!("TrAnnouncer", 2352)()); }
+			TrMusicManager m_MusicManager() { mixin(MGPC!("TrMusicManager", 2344)()); }
+			float c_fHUDZoomDuration() { mixin(MGPC!("float", 2336)()); }
+			TrPawn.WalkingDeceleration m_CurrentDecelerationFactor() { mixin(MGPC!("TrPawn.WalkingDeceleration", 2334)()); }
+			ubyte m_nCallinCooldownFlashStored() { mixin(MGPC!("ubyte", 2331)()); }
+			ubyte m_nLastHitEnemyHeadshot() { mixin(MGPC!("ubyte", 2327)()); }
+			ubyte r_nHitEnemy() { mixin(MGPC!("ubyte", 2325)()); }
+			float c_fZoomButtonPressedTimeStamp() { mixin(MGPC!("float", 2320)()); }
+			float m_fZoomRate() { mixin(MGPC!("float", 2316)()); }
+			float m_fDesiredMagnifiedZoomFOV() { mixin(MGPC!("float", 2312)()); }
+			float m_fDesiredZoomFOV() { mixin(MGPC!("float", 2308)()); }
+			TrStation m_CurrentStation() { mixin(MGPC!("TrStation", 2304)()); }
+			int r_nCurrentCredits() { mixin(MGPC!("int", 2288)()); }
+			SoundCue m_RicochetSound3P() { mixin(MGPC!("SoundCue", 2284)()); }
+			SoundCue m_MissileSeekingSelfCue() { mixin(MGPC!("SoundCue", 2280)()); }
+			SoundCue m_MissileFiredCue() { mixin(MGPC!("SoundCue", 2276)()); }
+			SoundCue m_MissileLockedCue() { mixin(MGPC!("SoundCue", 2272)()); }
+			SoundCue m_MissileLockingCue() { mixin(MGPC!("SoundCue", 2268)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentCreditsSound'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentMissileTargetingSelfLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentMissileSeekingSelfLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentMissileLockingLoop'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentRechargeHealth'!
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_AudioComponentLowHealthLoop'!
-			int m_OverwatchTeam() { mixin(MGPC!(int, 2236)()); }
-			CameraActor m_OverwatchCam() { mixin(MGPC!(CameraActor, 2232)()); }
-			Rotator m_rKickbackAim() { mixin(MGPC!(Rotator, 2208)()); }
-			float m_fLastKickbackViewTime() { mixin(MGPC!(float, 2204)()); }
-			float m_fKickbackViewBlendInTime() { mixin(MGPC!(float, 2200)()); }
-			float m_fKickbackViewBlendOutTime() { mixin(MGPC!(float, 2196)()); }
-			float m_fRemainingInitiatingJettingTime() { mixin(MGPC!(float, 2192)()); }
-			float m_fLastWeaponSwitchTimestamp() { mixin(MGPC!(float, 2180)()); }
-			Actor m_aHoverActor() { mixin(MGPC!(Actor, 2176)()); }
+			int m_OverwatchTeam() { mixin(MGPC!("int", 2236)()); }
+			CameraActor m_OverwatchCam() { mixin(MGPC!("CameraActor", 2232)()); }
+			Rotator m_rKickbackAim() { mixin(MGPC!("Rotator", 2208)()); }
+			float m_fLastKickbackViewTime() { mixin(MGPC!("float", 2204)()); }
+			float m_fKickbackViewBlendInTime() { mixin(MGPC!("float", 2200)()); }
+			float m_fKickbackViewBlendOutTime() { mixin(MGPC!("float", 2196)()); }
+			float m_fRemainingInitiatingJettingTime() { mixin(MGPC!("float", 2192)()); }
+			float m_fLastWeaponSwitchTimestamp() { mixin(MGPC!("float", 2180)()); }
+			Actor m_aHoverActor() { mixin(MGPC!("Actor", 2176)()); }
 		}
 		bool m_bShowHUDCracks() { mixin(MGBPC!(2188, 0x100000)()); }
 		bool m_bShowHUDCracks(bool val) { mixin(MSBPC!(2188, 0x100000)()); }
@@ -2912,16 +2912,21 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNewPlayerAssistToApply, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	void PlayReliableSound(SoundCue InSoundCue, bool bNotReplicated, bool bNoRepToOwner, bool bStopWhenOwnerDestroyed, Vector SoundLocation, bool bNoRepToRelevant)
+	void PlayReliableSound(SoundCue InSoundCue, bool* bNotReplicated = null, bool* bNoRepToOwner = null, bool* bStopWhenOwnerDestroyed = null, Vector* SoundLocation = null, bool* bNoRepToRelevant = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(SoundCue*)params.ptr = InSoundCue;
-		*cast(bool*)&params[4] = bNotReplicated;
-		*cast(bool*)&params[8] = bNoRepToOwner;
-		*cast(bool*)&params[12] = bStopWhenOwnerDestroyed;
-		*cast(Vector*)&params[16] = SoundLocation;
-		*cast(bool*)&params[28] = bNoRepToRelevant;
+		if (bNotReplicated !is null)
+			*cast(bool*)&params[4] = *bNotReplicated;
+		if (bNoRepToOwner !is null)
+			*cast(bool*)&params[8] = *bNoRepToOwner;
+		if (bStopWhenOwnerDestroyed !is null)
+			*cast(bool*)&params[12] = *bStopWhenOwnerDestroyed;
+		if (SoundLocation !is null)
+			*cast(Vector*)&params[16] = *SoundLocation;
+		if (bNoRepToRelevant !is null)
+			*cast(bool*)&params[28] = *bNoRepToRelevant;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayReliableSound, params.ptr, cast(void*)0);
 	}
 	void SendCtrlRequest(ScriptString fsRequest)
@@ -3229,7 +3234,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(ScriptString)*)params.ptr = vFriends;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetOnlineFriends, params.ptr, cast(void*)0);
-		*vFriends = *cast(ScriptArray!(ScriptString)*)params.ptr;
+		vFriends = *cast(ScriptArray!(ScriptString)*)params.ptr;
 	}
 	void PostBeginPlay()
 	{
@@ -3258,7 +3263,7 @@ final:
 		*cast(bool*)params.ptr = bPlayRightNow;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TestAnnouncement, params.ptr, cast(void*)0);
 	}
-	void ClientHearReliableSound(SoundCue ASound, Actor SourceActor, Vector SourceLocation, bool bStopWhenOwnerDestroyed, bool bIsOccluded)
+	void ClientHearReliableSound(SoundCue ASound, Actor SourceActor, Vector SourceLocation, bool bStopWhenOwnerDestroyed, bool* bIsOccluded = null)
 	{
 		ubyte params[28];
 		params[] = 0;
@@ -3266,7 +3271,8 @@ final:
 		*cast(Actor*)&params[4] = SourceActor;
 		*cast(Vector*)&params[8] = SourceLocation;
 		*cast(bool*)&params[20] = bStopWhenOwnerDestroyed;
-		*cast(bool*)&params[24] = bIsOccluded;
+		if (bIsOccluded !is null)
+			*cast(bool*)&params[24] = *bIsOccluded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientHearReliableSound, params.ptr, cast(void*)0);
 	}
 	void ClientMySaberLauncherTargetingUpdated(TrObject.EMissileLock MissileLockValue)
@@ -3324,12 +3330,13 @@ final:
 		*cast(bool*)&params[4] = bProxyEvent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessCreditEvent, params.ptr, cast(void*)0);
 	}
-	void ModifyCredits(int Count, bool bFreeCredits)
+	void ModifyCredits(int Count, bool* bFreeCredits = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = Count;
-		*cast(bool*)&params[4] = bFreeCredits;
+		if (bFreeCredits !is null)
+			*cast(bool*)&params[4] = *bFreeCredits;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyCredits, params.ptr, cast(void*)0);
 	}
 	void UpdateCurrentCredits(int Count)
@@ -3530,11 +3537,12 @@ void**)params.ptr = AC;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = EquipPoint;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActivateDevice, params.ptr, cast(void*)0);
 	}
-	void StartFire(ubyte FireModeNum)
+	void StartFire(ubyte* FireModeNum = null)
 	{
 		ubyte params[1];
 		params[] = 0;
-		params[0] = FireModeNum;
+		if (FireModeNum !is null)
+			params[0] = *FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartFire, params.ptr, cast(void*)0);
 	}
 	void UpdateLockedTarget(Actor LockedActor)
@@ -3582,11 +3590,12 @@ void**)params.ptr = AC;
 		*cast(int*)params.ptr = RequestedTeamNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientEndTeamSelect, params.ptr, cast(void*)0);
 	}
-	void ChangeTeam(ScriptString TeamName)
+	void ChangeTeam(ScriptString* TeamName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = TeamName;
+		if (TeamName !is null)
+			*cast(ScriptString*)params.ptr = *TeamName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeTeam, params.ptr, cast(void*)0);
 	}
 	void ViewAPlayer(int Dir)
@@ -3659,21 +3668,24 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.StopRechargeHealthFX, cast(void*)0, cast(void*)0);
 	}
-	void ToggleJetpack(bool bEnabled, bool bJump)
+	void ToggleJetpack(bool bEnabled, bool* bJump = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		*cast(bool*)&params[4] = bJump;
+		if (bJump !is null)
+			*cast(bool*)&params[4] = *bJump;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ToggleJetpack, params.ptr, cast(void*)0);
 	}
-	void EnableJetpack(bool bEnabled, bool bJump, bool bForcedOff)
+	void EnableJetpack(bool bEnabled, bool* bJump = null, bool* bForcedOff = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(bool*)params.ptr = bEnabled;
-		*cast(bool*)&params[4] = bJump;
-		*cast(bool*)&params[8] = bForcedOff;
+		if (bJump !is null)
+			*cast(bool*)&params[4] = *bJump;
+		if (bForcedOff !is null)
+			*cast(bool*)&params[8] = *bForcedOff;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EnableJetpack, params.ptr, cast(void*)0);
 	}
 	void IgnoreMoveInput(bool bNewMoveInput)
@@ -3698,8 +3710,8 @@ void**)params.ptr = AC;
 		*cast(Vector*)params.ptr = newAccel;
 		*cast(float*)&params[12] = BlinkPackPctEffectiveness;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBlinkPackAccel, params.ptr, cast(void*)0);
-		*newAccel = *cast(Vector*)params.ptr;
-		*BlinkPackPctEffectiveness = *cast(float*)&params[12];
+		newAccel = *cast(Vector*)params.ptr;
+		BlinkPackPctEffectiveness = *cast(float*)&params[12];
 	}
 	void InitRespawnTimer()
 	{
@@ -3856,12 +3868,13 @@ void**)params.ptr = AC;
 		params[0] = T;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SwitchToSeat, params.ptr, cast(void*)0);
 	}
-	void ServerSwitchToSeat(ubyte T, TrVehicle V)
+	void ServerSwitchToSeat(ubyte T, TrVehicle* V = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		params[0] = T;
-		*cast(TrVehicle*)&params[4] = V;
+		if (V !is null)
+			*cast(TrVehicle*)&params[4] = *V;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerSwitchToSeat, params.ptr, cast(void*)0);
 	}
 	bool TriggerInteracted()
@@ -3879,14 +3892,16 @@ void**)params.ptr = AC;
 		*cast(int*)&params[4] = Loadout;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerRequestLoadoutChange, params.ptr, cast(void*)0);
 	}
-	void UpdatePaperDoll(ScriptClass FamilyInfo, ScriptClass DeviceClass, ScriptClass skinClass, int TeamNum)
+	void UpdatePaperDoll(ScriptClass FamilyInfo, ScriptClass DeviceClass, ScriptClass* skinClass = null, int* TeamNum = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = FamilyInfo;
 		*cast(ScriptClass*)&params[4] = DeviceClass;
-		*cast(ScriptClass*)&params[8] = skinClass;
-		*cast(int*)&params[12] = TeamNum;
+		if (skinClass !is null)
+			*cast(ScriptClass*)&params[8] = *skinClass;
+		if (TeamNum !is null)
+			*cast(int*)&params[12] = *TeamNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdatePaperDoll, params.ptr, cast(void*)0);
 	}
 	void UpdatePaperDoll_Device(ScriptClass DeviceClass)
@@ -4035,11 +4050,12 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrEndZoom, cast(void*)0, cast(void*)0);
 	}
-	void ResetZoomDuration(bool bPlayRechargeSoundOnWeapon)
+	void ResetZoomDuration(bool* bPlayRechargeSoundOnWeapon = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bPlayRechargeSoundOnWeapon;
+		if (bPlayRechargeSoundOnWeapon !is null)
+			*cast(bool*)params.ptr = *bPlayRechargeSoundOnWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ResetZoomDuration, params.ptr, cast(void*)0);
 	}
 	void ServerSetZoom(UTWeapon.EZoomState NewZoomState)
@@ -4049,24 +4065,29 @@ void**)params.ptr = AC;
 		*cast(UTWeapon.EZoomState*)params.ptr = NewZoomState;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerSetZoom, params.ptr, cast(void*)0);
 	}
-	void ReceiveLocalizedMessage(ScriptClass Message, int Switch, PlayerReplicationInfo RelatedPRI_1, PlayerReplicationInfo RelatedPRI_2, UObject OptionalObject)
+	void ReceiveLocalizedMessage(ScriptClass Message, int* Switch = null, PlayerReplicationInfo* RelatedPRI_1 = null, PlayerReplicationInfo* RelatedPRI_2 = null, UObject* OptionalObject = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Message;
-		*cast(int*)&params[4] = Switch;
-		*cast(PlayerReplicationInfo*)&params[8] = RelatedPRI_1;
-		*cast(PlayerReplicationInfo*)&params[12] = RelatedPRI_2;
-		*cast(UObject*)&params[16] = OptionalObject;
+		if (Switch !is null)
+			*cast(int*)&params[4] = *Switch;
+		if (RelatedPRI_1 !is null)
+			*cast(PlayerReplicationInfo*)&params[8] = *RelatedPRI_1;
+		if (RelatedPRI_2 !is null)
+			*cast(PlayerReplicationInfo*)&params[12] = *RelatedPRI_2;
+		if (OptionalObject !is null)
+			*cast(UObject*)&params[16] = *OptionalObject;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReceiveLocalizedMessage, params.ptr, cast(void*)0);
 	}
-	void ReceiveLocalizedNagMessage(ScriptClass Message, int Switch, float Time)
+	void ReceiveLocalizedNagMessage(ScriptClass Message, int Switch, float* Time = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(ScriptClass*)params.ptr = Message;
 		*cast(int*)&params[4] = Switch;
-		*cast(float*)&params[8] = Time;
+		if (Time !is null)
+			*cast(float*)&params[8] = *Time;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReceiveLocalizedNagMessage, params.ptr, cast(void*)0);
 	}
 	void Destroyed()
@@ -4091,24 +4112,28 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateClientSpawnTimer, cast(void*)0, cast(void*)0);
 	}
-	void GameHasEnded(Actor EndGameFocus, bool bIsWinner)
+	void GameHasEnded(Actor* EndGameFocus = null, bool* bIsWinner = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = EndGameFocus;
-		*cast(bool*)&params[4] = bIsWinner;
+		if (EndGameFocus !is null)
+			*cast(Actor*)params.ptr = *EndGameFocus;
+		if (bIsWinner !is null)
+			*cast(bool*)&params[4] = *bIsWinner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GameHasEnded, params.ptr, cast(void*)0);
 	}
 	void CheckJumpOrDuck()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckJumpOrDuck, cast(void*)0, cast(void*)0);
 	}
-	void ClientGameEnded(Actor EndGameFocus, bool bIsWinner)
+	void ClientGameEnded(Actor* EndGameFocus = null, bool* bIsWinner = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Actor*)params.ptr = EndGameFocus;
-		*cast(bool*)&params[4] = bIsWinner;
+		if (EndGameFocus !is null)
+			*cast(Actor*)params.ptr = *EndGameFocus;
+		if (bIsWinner !is null)
+			*cast(bool*)&params[4] = *bIsWinner;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientGameEnded, params.ptr, cast(void*)0);
 	}
 	void ServerDropFlag()
@@ -4122,8 +4147,8 @@ void**)params.ptr = AC;
 		*cast(Vector*)params.ptr = POVLocation;
 		*cast(Rotator*)&params[12] = POVRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*POVLocation = *cast(Vector*)params.ptr;
-		*POVRotation = *cast(Rotator*)&params[12];
+		POVLocation = *cast(Vector*)params.ptr;
+		POVRotation = *cast(Rotator*)&params[12];
 	}
 	void ActivateFreeCam()
 	{
@@ -4133,28 +4158,33 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DeactivateFreeCam, cast(void*)0, cast(void*)0);
 	}
-	void SetViewTargetAsOverwatch(bool bForce)
+	void SetViewTargetAsOverwatch(bool* bForce = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bForce;
+		if (bForce !is null)
+			*cast(bool*)params.ptr = *bForce;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetViewTargetAsOverwatch, params.ptr, cast(void*)0);
 	}
-	void PlayCameraShake(ScriptName ShakeName, float Scale, CameraShake SourceShake)
+	void PlayCameraShake(ScriptName* ShakeName = null, float* Scale = null, CameraShake* SourceShake = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptName*)params.ptr = ShakeName;
-		*cast(float*)&params[8] = Scale;
-		*cast(CameraShake*)&params[12] = SourceShake;
+		if (ShakeName !is null)
+			*cast(ScriptName*)params.ptr = *ShakeName;
+		if (Scale !is null)
+			*cast(float*)&params[8] = *Scale;
+		if (SourceShake !is null)
+			*cast(CameraShake*)&params[12] = *SourceShake;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayCameraShake, params.ptr, cast(void*)0);
 	}
-	void ClientPlayForceFeedbackWaveform(ForceFeedbackWaveform FFWaveform, Actor FFWaveformInstigator)
+	void ClientPlayForceFeedbackWaveform(ForceFeedbackWaveform FFWaveform, Actor* FFWaveformInstigator = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ForceFeedbackWaveform*)params.ptr = FFWaveform;
-		*cast(Actor*)&params[4] = FFWaveformInstigator;
+		if (FFWaveformInstigator !is null)
+			*cast(Actor*)&params[4] = *FFWaveformInstigator;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayForceFeedbackWaveform, params.ptr, cast(void*)0);
 	}
 	void UpdateSpeedCameraEffect(bool bEnabled)
@@ -4234,15 +4264,18 @@ void**)params.ptr = AC;
 		*cast(ScriptString*)params.ptr = Message;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ShowFeedbackMessage, params.ptr, cast(void*)0);
 	}
-	UObject.Color GetChatColor(TgSupportCommands.GC_CHAT_CHANNEL pChannel, bool bSameTeam, int* ChatColorIdx)
+	UObject.Color GetChatColor(TgSupportCommands.GC_CHAT_CHANNEL pChannel, bool* bSameTeam = null, int* ChatColorIdx = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(TgSupportCommands.GC_CHAT_CHANNEL*)params.ptr = pChannel;
-		*cast(bool*)&params[4] = bSameTeam;
-		*cast(int*)&params[8] = ChatColorIdx;
+		if (bSameTeam !is null)
+			*cast(bool*)&params[4] = *bSameTeam;
+		if (ChatColorIdx !is null)
+			*cast(int*)&params[8] = *ChatColorIdx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetChatColor, params.ptr, cast(void*)0);
-		*ChatColorIdx = *cast(int*)&params[8];
+		if (ChatColorIdx !is null)
+			*ChatColorIdx = *cast(int*)&params[8];
 		return *cast(UObject.Color*)&params[12];
 	}
 	void AddChatToConsole(ScriptString Sender, ScriptString ChatMessage, TgSupportCommands.GC_CHAT_CHANNEL pChannel)
@@ -4276,11 +4309,12 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.Talk, cast(void*)0, cast(void*)0);
 	}
-	void ChatConsole(bool bTeam)
+	void ChatConsole(bool* bTeam = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bTeam;
+		if (bTeam !is null)
+			*cast(bool*)params.ptr = *bTeam;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChatConsole, params.ptr, cast(void*)0);
 	}
 	void TalkConsole(bool bTeam)
@@ -4408,11 +4442,12 @@ void**)params.ptr = AC;
 		*cast(bool*)params.ptr = bNewBehindView;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientSetBehindView, params.ptr, cast(void*)0);
 	}
-	PlayerInput GetEngineSettings(bool bUse)
+	PlayerInput GetEngineSettings(bool* bUse = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bUse;
+		if (bUse !is null)
+			*cast(bool*)params.ptr = *bUse;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetEngineSettings, params.ptr, cast(void*)0);
 		return *cast(PlayerInput*)&params[4];
 	}
@@ -4617,19 +4652,27 @@ void**)params.ptr = AC;
 		*cast(PlayerReplicationInfo*)params.ptr = NewPRIToWatch;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnViewTargetLeftVehicle, params.ptr, cast(void*)0);
 	}
-	void GetViewTargetList(TrPawn* PawnViewTarget, TrVehicle* VehicleViewTarget, TrCamera_SpectatorBookmark* BookmarkViewTarget, Actor* ObjectiveViewTarget)
+	void GetViewTargetList(TrPawn* PawnViewTarget = null, TrVehicle* VehicleViewTarget = null, TrCamera_SpectatorBookmark* BookmarkViewTarget = null, Actor* ObjectiveViewTarget = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(TrPawn*)params.ptr = PawnViewTarget;
-		*cast(TrVehicle*)&params[4] = VehicleViewTarget;
-		*cast(TrCamera_SpectatorBookmark*)&params[8] = BookmarkViewTarget;
-		*cast(Actor*)&params[12] = ObjectiveViewTarget;
+		if (PawnViewTarget !is null)
+			*cast(TrPawn*)params.ptr = *PawnViewTarget;
+		if (VehicleViewTarget !is null)
+			*cast(TrVehicle*)&params[4] = *VehicleViewTarget;
+		if (BookmarkViewTarget !is null)
+			*cast(TrCamera_SpectatorBookmark*)&params[8] = *BookmarkViewTarget;
+		if (ObjectiveViewTarget !is null)
+			*cast(Actor*)&params[12] = *ObjectiveViewTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetViewTargetList, params.ptr, cast(void*)0);
-		*PawnViewTarget = *cast(TrPawn*)params.ptr;
-		*VehicleViewTarget = *cast(TrVehicle*)&params[4];
-		*BookmarkViewTarget = *cast(TrCamera_SpectatorBookmark*)&params[8];
-		*ObjectiveViewTarget = *cast(Actor*)&params[12];
+		if (PawnViewTarget !is null)
+			*PawnViewTarget = *cast(TrPawn*)params.ptr;
+		if (VehicleViewTarget !is null)
+			*VehicleViewTarget = *cast(TrVehicle*)&params[4];
+		if (BookmarkViewTarget !is null)
+			*BookmarkViewTarget = *cast(TrCamera_SpectatorBookmark*)&params[8];
+		if (ObjectiveViewTarget !is null)
+			*ObjectiveViewTarget = *cast(Actor*)&params[12];
 	}
 	void ServerUnPossess()
 	{
@@ -4698,11 +4741,12 @@ void**)params.ptr = AC;
 		*cast(int*)params.ptr = Seconds;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateGameCountdown, params.ptr, cast(void*)0);
 	}
-	void ServerKickPlayer(int Reason)
+	void ServerKickPlayer(int* Reason = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(int*)params.ptr = Reason;
+		if (Reason !is null)
+			*cast(int*)params.ptr = *Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ServerKickPlayer, params.ptr, cast(void*)0);
 	}
 	void ClientKickPlayer(int Reason)
@@ -4741,9 +4785,9 @@ void**)params.ptr = AC;
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCameraOnViewTarget, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 	}
 	bool IsGameTypeArena()
 	{
@@ -5190,13 +5234,14 @@ void**)params.ptr = AC;
 		*cast(int*)&params[4] = EquipId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TestTrainingSlot, params.ptr, cast(void*)0);
 	}
-	void TestSlot(TrObject.TR_EQUIP_POINT equipType, int EquipId, bool bTraining)
+	void TestSlot(TrObject.TR_EQUIP_POINT equipType, int EquipId, bool* bTraining = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(TrObject.TR_EQUIP_POINT*)params.ptr = equipType;
 		*cast(int*)&params[4] = EquipId;
-		*cast(bool*)&params[8] = bTraining;
+		if (bTraining !is null)
+			*cast(bool*)&params[8] = *bTraining;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TestSlot, params.ptr, cast(void*)0);
 	}
 	void ServerTestSlot(TrObject.TR_EQUIP_POINT EquipId, int EquipItem)
@@ -5318,18 +5363,20 @@ void**)params.ptr = AC;
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientPlayerResettingAndRespawning, cast(void*)0, cast(void*)0);
 	}
-	void DestroyAllOwnedDeployables(ScriptClass DestroyIfNotOfType)
+	void DestroyAllOwnedDeployables(ScriptClass* DestroyIfNotOfType = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(ScriptClass*)params.ptr = DestroyIfNotOfType;
+		if (DestroyIfNotOfType !is null)
+			*cast(ScriptClass*)params.ptr = *DestroyIfNotOfType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyAllOwnedDeployables, params.ptr, cast(void*)0);
 	}
-	void DestroyAllOwnedMines(ScriptClass DestroyIfNotOfType)
+	void DestroyAllOwnedMines(ScriptClass* DestroyIfNotOfType = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(ScriptClass*)params.ptr = DestroyIfNotOfType;
+		if (DestroyIfNotOfType !is null)
+			*cast(ScriptClass*)params.ptr = *DestroyIfNotOfType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DestroyAllOwnedMines, params.ptr, cast(void*)0);
 	}
 	void DestroyAllOwnedProjectiles()
@@ -5345,14 +5392,15 @@ void**)params.ptr = AC;
 		*cast(ScriptString*)&params[16] = XPReward;
 		(cast(ScriptObject)this).ProcessEvent(Functions.QueueBadge, params.ptr, cast(void*)0);
 	}
-	void ClientQueueAccolade(int Icon, ScriptString Title, ScriptString Subtitle, bool bIsBadge)
+	void ClientQueueAccolade(int Icon, ScriptString Title, ScriptString Subtitle, bool* bIsBadge = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(int*)params.ptr = Icon;
 		*cast(ScriptString*)&params[4] = Title;
 		*cast(ScriptString*)&params[16] = Subtitle;
-		*cast(bool*)&params[28] = bIsBadge;
+		if (bIsBadge !is null)
+			*cast(bool*)&params[28] = *bIsBadge;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClientQueueAccolade, params.ptr, cast(void*)0);
 	}
 	void ClassHotkeyPTH()

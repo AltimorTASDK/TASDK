@@ -78,23 +78,25 @@ public extern(D):
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnPlayerTalkingStateChange__Delegate'!
 	}
 final:
-	bool MuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool bIsSystemWide)
+	bool MuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool* bIsSystemWide = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = PlayerID;
-		*cast(bool*)&params[12] = bIsSystemWide;
+		if (bIsSystemWide !is null)
+			*cast(bool*)&params[12] = *bIsSystemWide;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MuteRemoteTalker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool UnmuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool bIsSystemWide)
+	bool UnmuteRemoteTalker(ubyte LocalUserNum, OnlineSubsystem.UniqueNetId PlayerID, bool* bIsSystemWide = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		params[0] = LocalUserNum;
 		*cast(OnlineSubsystem.UniqueNetId*)&params[4] = PlayerID;
-		*cast(bool*)&params[12] = bIsSystemWide;
+		if (bIsSystemWide !is null)
+			*cast(bool*)&params[12] = *bIsSystemWide;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnmuteRemoteTalker, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -235,7 +237,7 @@ void**)params.ptr = TalkerDelegate;
 		params[0] = LocalUserNum;
 		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRecognitionResults, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
+		Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void AddRecognitionCompleteDelegate(ubyte LocalUserNum, 

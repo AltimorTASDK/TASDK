@@ -178,13 +178,13 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CovPosInfo")()); }
 		@property final auto ref
 		{
-			CoverLink Link() { mixin(MGPS!(CoverLink, 0)()); }
-			int LtSlotIdx() { mixin(MGPS!(int, 4)()); }
-			int RtSlotIdx() { mixin(MGPS!(int, 8)()); }
-			float LtToRtPct() { mixin(MGPS!(float, 12)()); }
-			Vector Location() { mixin(MGPS!(Vector, 16)()); }
-			Vector Normal() { mixin(MGPS!(Vector, 28)()); }
-			Vector Tangent() { mixin(MGPS!(Vector, 40)()); }
+			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
+			int LtSlotIdx() { mixin(MGPS!("int", 4)()); }
+			int RtSlotIdx() { mixin(MGPS!("int", 8)()); }
+			float LtToRtPct() { mixin(MGPS!("float", 12)()); }
+			Vector Location() { mixin(MGPS!("Vector", 16)()); }
+			Vector Normal() { mixin(MGPS!("Vector", 28)()); }
+			Vector Tangent() { mixin(MGPS!("Vector", 40)()); }
 		}
 	}
 	struct FireLinkItem
@@ -195,10 +195,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.FireLinkItem")()); }
 		@property final auto ref
 		{
-			CoverLink.ECoverAction DestAction() { mixin(MGPS!(CoverLink.ECoverAction, 3)()); }
-			CoverLink.ECoverType DestType() { mixin(MGPS!(CoverLink.ECoverType, 2)()); }
-			CoverLink.ECoverAction SrcAction() { mixin(MGPS!(CoverLink.ECoverAction, 1)()); }
-			CoverLink.ECoverType SrcType() { mixin(MGPS!(CoverLink.ECoverType, 0)()); }
+			CoverLink.ECoverAction DestAction() { mixin(MGPS!("CoverLink.ECoverAction", 3)()); }
+			CoverLink.ECoverType DestType() { mixin(MGPS!("CoverLink.ECoverType", 2)()); }
+			CoverLink.ECoverAction SrcAction() { mixin(MGPS!("CoverLink.ECoverAction", 1)()); }
+			CoverLink.ECoverType SrcType() { mixin(MGPS!("CoverLink.ECoverType", 0)()); }
 		}
 	}
 	struct FireLink
@@ -211,8 +211,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(ubyte) Interactions() { mixin(MGPS!(ScriptArray!(ubyte), 0)()); }
-				int PackedProperties_CoverPairRefAndDynamicInfo() { mixin(MGPS!(int, 12)()); }
+				ScriptArray!(ubyte) Interactions() { mixin(MGPS!("ScriptArray!(ubyte)", 0)()); }
+				int PackedProperties_CoverPairRefAndDynamicInfo() { mixin(MGPS!("int", 12)()); }
 			}
 			bool bDynamicIndexInited() { mixin(MGBPS!(16, 0x2)()); }
 			bool bDynamicIndexInited(bool val) { mixin(MSBPS!(16, 0x2)()); }
@@ -228,8 +228,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.DynamicLinkInfo")()); }
 		@property final auto ref
 		{
-			Vector LastSrcLocation() { mixin(MGPS!(Vector, 12)()); }
-			Vector LastTargetLocation() { mixin(MGPS!(Vector, 0)()); }
+			Vector LastSrcLocation() { mixin(MGPS!("Vector", 12)()); }
+			Vector LastTargetLocation() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	struct ExposedLink
@@ -240,8 +240,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.ExposedLink")()); }
 		@property final auto ref
 		{
-			ubyte ExposedScale() { mixin(MGPS!(ubyte, 24)()); }
-			CoverLink.CoverReference TargetActor() { mixin(MGPS!(CoverLink.CoverReference, 0)()); }
+			ubyte ExposedScale() { mixin(MGPS!("ubyte", 24)()); }
+			CoverLink.CoverReference TargetActor() { mixin(MGPS!("CoverLink.CoverReference", 0)()); }
 		}
 	}
 	struct CoverReference
@@ -255,7 +255,7 @@ public extern(D):
 			// WARNING: Property 'Guid' has the same name as a defined type!
 			// WARNING: Property 'Actor' has the same name as a defined type!
 		}
-		@property final auto ref int SlotIdx() { mixin(MGPS!(int, 20)()); }
+		@property final auto ref int SlotIdx() { mixin(MGPS!("int", 20)()); }
 	}
 	struct SlotMoveRef
 	{
@@ -265,9 +265,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.SlotMoveRef")()); }
 		@property final auto ref
 		{
-			int Direction() { mixin(MGPS!(int, 76)()); }
-			Actor.BasedPosition Dest() { mixin(MGPS!(Actor.BasedPosition, 24)()); }
-			Pylon.PolyReference Poly() { mixin(MGPS!(Pylon.PolyReference, 0)()); }
+			int Direction() { mixin(MGPS!("int", 76)()); }
+			Actor.BasedPosition Dest() { mixin(MGPS!("Actor.BasedPosition", 24)()); }
+			Pylon.PolyReference Poly() { mixin(MGPS!("Pylon.PolyReference", 0)()); }
 		}
 	}
 	struct CoverSlot
@@ -280,20 +280,20 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(CoverLink.ECoverAction) Actions() { mixin(MGPS!(ScriptArray!(CoverLink.ECoverAction), 36)()); }
-				ScriptArray!(CoverLink.FireLink) FireLinks() { mixin(MGPS!(ScriptArray!(CoverLink.FireLink), 48)()); }
-				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { mixin(MGPS!(ScriptArray!(CoverLink.FireLink), 60)()); }
-				ScriptArray!(int) ExposedCoverPackedProperties() { mixin(MGPS!(ScriptArray!(int), 72)()); }
-				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { mixin(MGPS!(ScriptArray!(CoverLink.SlotMoveRef), 88)()); }
-				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { mixin(MGPS!(ScriptArray!(CoverLink.CoverInfo), 100)()); }
-				int TurnTargetPackedProperties() { mixin(MGPS!(int, 84)()); }
-				Rotator RotationOffset() { mixin(MGPS!(Rotator, 24)()); }
-				Vector LocationOffset() { mixin(MGPS!(Vector, 12)()); }
-				CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPS!(CoverLink.ECoverLocationDescription, 10)()); }
-				CoverLink.ECoverType CoverType() { mixin(MGPS!(CoverLink.ECoverType, 9)()); }
-				CoverLink.ECoverType ForceCoverType() { mixin(MGPS!(CoverLink.ECoverType, 8)()); }
-				float SlotValidAfterTime() { mixin(MGPS!(float, 4)()); }
-				Pawn SlotOwner() { mixin(MGPS!(Pawn, 0)()); }
+				ScriptArray!(CoverLink.ECoverAction) Actions() { mixin(MGPS!("ScriptArray!(CoverLink.ECoverAction)", 36)()); }
+				ScriptArray!(CoverLink.FireLink) FireLinks() { mixin(MGPS!("ScriptArray!(CoverLink.FireLink)", 48)()); }
+				ScriptArray!(CoverLink.FireLink) RejectedFireLinks() { mixin(MGPS!("ScriptArray!(CoverLink.FireLink)", 60)()); }
+				ScriptArray!(int) ExposedCoverPackedProperties() { mixin(MGPS!("ScriptArray!(int)", 72)()); }
+				ScriptArray!(CoverLink.SlotMoveRef) SlipRefs() { mixin(MGPS!("ScriptArray!(CoverLink.SlotMoveRef)", 88)()); }
+				ScriptArray!(CoverLink.CoverInfo) OverlapClaimsList() { mixin(MGPS!("ScriptArray!(CoverLink.CoverInfo)", 100)()); }
+				int TurnTargetPackedProperties() { mixin(MGPS!("int", 84)()); }
+				Rotator RotationOffset() { mixin(MGPS!("Rotator", 24)()); }
+				Vector LocationOffset() { mixin(MGPS!("Vector", 12)()); }
+				CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPS!("CoverLink.ECoverLocationDescription", 10)()); }
+				CoverLink.ECoverType CoverType() { mixin(MGPS!("CoverLink.ECoverType", 9)()); }
+				CoverLink.ECoverType ForceCoverType() { mixin(MGPS!("CoverLink.ECoverType", 8)()); }
+				float SlotValidAfterTime() { mixin(MGPS!("float", 4)()); }
+				Pawn SlotOwner() { mixin(MGPS!("Pawn", 0)()); }
 			}
 			bool bFailedToFindSurface() { mixin(MGBPS!(112, 0x200000)()); }
 			bool bFailedToFindSurface(bool val) { mixin(MSBPS!(112, 0x200000)()); }
@@ -349,34 +349,34 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.CoverLink.CoverInfo")()); }
 		@property final auto ref
 		{
-			CoverLink Link() { mixin(MGPS!(CoverLink, 0)()); }
-			int SlotIdx() { mixin(MGPS!(int, 4)()); }
+			CoverLink Link() { mixin(MGPS!("CoverLink", 0)()); }
+			int SlotIdx() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(CoverLink.CoverSlot) Slots() { mixin(MGPC!(ScriptArray!(CoverLink.CoverSlot), 700)()); }
-			ScriptArray!(Pawn) Claims() { mixin(MGPC!(ScriptArray!(Pawn), 724)()); }
-			float LeanTraceDist() { mixin(MGPC!(float, 696)()); }
-			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { mixin(MGPC!(ScriptArray!(CoverLink.DynamicLinkInfo), 712)()); }
-			float InvalidateDistance() { mixin(MGPC!(float, 736)()); }
-			float MaxFireLinkDist() { mixin(MGPC!(float, 740)()); }
-			Vector CircularOrigin() { mixin(MGPC!(Vector, 744)()); }
-			float CircularRadius() { mixin(MGPC!(float, 756)()); }
-			float AlignDist() { mixin(MGPC!(float, 760)()); }
-			float AutoCoverSlotInterval() { mixin(MGPC!(float, 764)()); }
-			float StandHeight() { mixin(MGPC!(float, 768)()); }
-			float MidHeight() { mixin(MGPC!(float, 772)()); }
-			Vector StandingLeanOffset() { mixin(MGPC!(Vector, 776)()); }
-			Vector CrouchLeanOffset() { mixin(MGPC!(Vector, 788)()); }
-			Vector PopupOffset() { mixin(MGPC!(Vector, 800)()); }
-			float SlipDist() { mixin(MGPC!(float, 812)()); }
-			float TurnDist() { mixin(MGPC!(float, 816)()); }
-			float DangerScale() { mixin(MGPC!(float, 820)()); }
-			CoverLink NextCoverLink() { mixin(MGPC!(CoverLink, 824)()); }
-			CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPC!(CoverLink.ECoverLocationDescription, 828)()); }
+			ScriptArray!(CoverLink.CoverSlot) Slots() { mixin(MGPC!("ScriptArray!(CoverLink.CoverSlot)", 700)()); }
+			ScriptArray!(Pawn) Claims() { mixin(MGPC!("ScriptArray!(Pawn)", 724)()); }
+			float LeanTraceDist() { mixin(MGPC!("float", 696)()); }
+			ScriptArray!(CoverLink.DynamicLinkInfo) DynamicLinkInfos() { mixin(MGPC!("ScriptArray!(CoverLink.DynamicLinkInfo)", 712)()); }
+			float InvalidateDistance() { mixin(MGPC!("float", 736)()); }
+			float MaxFireLinkDist() { mixin(MGPC!("float", 740)()); }
+			Vector CircularOrigin() { mixin(MGPC!("Vector", 744)()); }
+			float CircularRadius() { mixin(MGPC!("float", 756)()); }
+			float AlignDist() { mixin(MGPC!("float", 760)()); }
+			float AutoCoverSlotInterval() { mixin(MGPC!("float", 764)()); }
+			float StandHeight() { mixin(MGPC!("float", 768)()); }
+			float MidHeight() { mixin(MGPC!("float", 772)()); }
+			Vector StandingLeanOffset() { mixin(MGPC!("Vector", 776)()); }
+			Vector CrouchLeanOffset() { mixin(MGPC!("Vector", 788)()); }
+			Vector PopupOffset() { mixin(MGPC!("Vector", 800)()); }
+			float SlipDist() { mixin(MGPC!("float", 812)()); }
+			float TurnDist() { mixin(MGPC!("float", 816)()); }
+			float DangerScale() { mixin(MGPC!("float", 820)()); }
+			CoverLink NextCoverLink() { mixin(MGPC!("CoverLink", 824)()); }
+			CoverLink.ECoverLocationDescription LocationDescription() { mixin(MGPC!("CoverLink.ECoverLocationDescription", 828)()); }
 		}
 		bool bClaimAllSlots() { mixin(MGBPC!(692, 0x4)()); }
 		bool bClaimAllSlots(bool val) { mixin(MSBPC!(692, 0x4)()); }
@@ -408,16 +408,17 @@ public extern(D):
 		bool bDoAutoSlotDensityFixup(bool val) { mixin(MSBPC!(692, 0x2000)()); }
 	}
 final:
-	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, ref CoverLink.CoverInfo out_Info, CoverLink.EFireLinkID ArrayID)
+	bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, ref CoverLink.CoverInfo out_Info, CoverLink.EFireLinkID* ArrayID = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(int*)&params[4] = FireLinkIdx;
 		*cast(CoverLink.CoverInfo*)&params[8] = out_Info;
-		*cast(CoverLink.EFireLinkID*)&params[16] = ArrayID;
+		if (ArrayID !is null)
+			*cast(CoverLink.EFireLinkID*)&params[16] = *ArrayID;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTargetCoverInfo, params.ptr, cast(void*)0);
-		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
+		out_Info = *cast(CoverLink.CoverInfo*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	static ubyte PackFireLinkInteractionInfo(CoverLink.ECoverType SrcType, CoverLink.ECoverAction SrcAction, CoverLink.ECoverType DestType, CoverLink.ECoverAction DestAction)
@@ -431,46 +432,50 @@ final:
 		StaticClass.ProcessEvent(Functions.PackFireLinkInteractionInfo, params.ptr, cast(void*)0);
 		return params[4];
 	}
-	static void UnPackFireLinkInteractionInfo(const ubyte PackedByte, ref CoverLink.ECoverType SrcType, ref CoverLink.ECoverAction SrcAction, ref CoverLink.ECoverType DestType, ref CoverLink.ECoverAction DestAction)
+	static void UnPackFireLinkInteractionInfo(in ubyte PackedByte, ref CoverLink.ECoverType SrcType, ref CoverLink.ECoverAction SrcAction, ref CoverLink.ECoverType DestType, ref CoverLink.ECoverAction DestAction)
 	{
 		ubyte params[5];
 		params[] = 0;
-		params[0] = PackedByte;
+		params[0] = cast(ubyte)PackedByte;
 		*cast(CoverLink.ECoverType*)&params[1] = SrcType;
 		*cast(CoverLink.ECoverAction*)&params[2] = SrcAction;
 		*cast(CoverLink.ECoverType*)&params[3] = DestType;
 		*cast(CoverLink.ECoverAction*)&params[4] = DestAction;
 		StaticClass.ProcessEvent(Functions.UnPackFireLinkInteractionInfo, params.ptr, cast(void*)0);
-		*SrcType = *cast(CoverLink.ECoverType*)&params[1];
-		*SrcAction = *cast(CoverLink.ECoverAction*)&params[2];
-		*DestType = *cast(CoverLink.ECoverType*)&params[3];
-		*DestAction = *cast(CoverLink.ECoverAction*)&params[4];
+		SrcType = *cast(CoverLink.ECoverType*)&params[1];
+		SrcAction = *cast(CoverLink.ECoverAction*)&params[2];
+		DestType = *cast(CoverLink.ECoverType*)&params[3];
+		DestAction = *cast(CoverLink.ECoverAction*)&params[4];
 	}
-	Vector GetSlotLocation(int SlotIdx, bool bForceUseOffset)
+	Vector GetSlotLocation(int SlotIdx, bool* bForceUseOffset = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(bool*)&params[4] = bForceUseOffset;
+		if (bForceUseOffset !is null)
+			*cast(bool*)&params[4] = *bForceUseOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
-	Rotator GetSlotRotation(int SlotIdx, bool bForceUseOffset)
+	Rotator GetSlotRotation(int SlotIdx, bool* bForceUseOffset = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(bool*)&params[4] = bForceUseOffset;
+		if (bForceUseOffset !is null)
+			*cast(bool*)&params[4] = *bForceUseOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotRotation, params.ptr, cast(void*)0);
 		return *cast(Rotator*)&params[8];
 	}
-	Vector GetSlotViewPoint(int SlotIdx, CoverLink.ECoverType Type, CoverLink.ECoverAction Action)
+	Vector GetSlotViewPoint(int SlotIdx, CoverLink.ECoverType* Type = null, CoverLink.ECoverAction* Action = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(CoverLink.ECoverType*)&params[4] = Type;
-		*cast(CoverLink.ECoverAction*)&params[5] = Action;
+		if (Type !is null)
+			*cast(CoverLink.ECoverType*)&params[4] = *Type;
+		if (Action !is null)
+			*cast(CoverLink.ECoverAction*)&params[5] = *Action;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotViewPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
@@ -482,7 +487,7 @@ final:
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkSlot;
 		*cast(float*)&params[12] = out_ExposedScale;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsExposedTo, params.ptr, cast(void*)0);
-		*out_ExposedScale = *cast(float*)&params[12];
+		out_ExposedScale = *cast(float*)&params[12];
 		return *cast(bool*)&params[16];
 	}
 	void SetInvalidUntil(int SlotIdx, float TimeToBecomeValid)
@@ -512,26 +517,30 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.UnClaim, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[12];
 	}
-	bool IsValidClaim(Pawn ChkClaim, int SlotIdx, bool bSkipTeamCheck, bool bSkipOverlapCheck)
+	bool IsValidClaim(Pawn ChkClaim, int SlotIdx, bool* bSkipTeamCheck = null, bool* bSkipOverlapCheck = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = ChkClaim;
 		*cast(int*)&params[4] = SlotIdx;
-		*cast(bool*)&params[8] = bSkipTeamCheck;
-		*cast(bool*)&params[12] = bSkipOverlapCheck;
+		if (bSkipTeamCheck !is null)
+			*cast(bool*)&params[8] = *bSkipTeamCheck;
+		if (bSkipOverlapCheck !is null)
+			*cast(bool*)&params[12] = *bSkipOverlapCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidClaim, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool IsValidClaimBetween(Pawn ChkClaim, int StartSlotIdx, int EndSlotIdx, bool bSkipTeamCheck, bool bSkipOverlapCheck)
+	bool IsValidClaimBetween(Pawn ChkClaim, int StartSlotIdx, int EndSlotIdx, bool* bSkipTeamCheck = null, bool* bSkipOverlapCheck = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = ChkClaim;
 		*cast(int*)&params[4] = StartSlotIdx;
 		*cast(int*)&params[8] = EndSlotIdx;
-		*cast(bool*)&params[12] = bSkipTeamCheck;
-		*cast(bool*)&params[16] = bSkipOverlapCheck;
+		if (bSkipTeamCheck !is null)
+			*cast(bool*)&params[12] = *bSkipTeamCheck;
+		if (bSkipOverlapCheck !is null)
+			*cast(bool*)&params[16] = *bSkipOverlapCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidClaimBetween, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
@@ -543,12 +552,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsStationarySlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool IsEdgeSlot(int SlotIdx, bool bIgnoreLeans)
+	bool IsEdgeSlot(int SlotIdx, bool* bIgnoreLeans = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(bool*)&params[4] = bIgnoreLeans;
+		if (bIgnoreLeans !is null)
+			*cast(bool*)&params[4] = *bIgnoreLeans;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -561,8 +571,8 @@ final:
 		*cast(int*)&params[16] = LeftSlotIdx;
 		*cast(int*)&params[20] = RightSlotIdx;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindSlots, params.ptr, cast(void*)0);
-		*LeftSlotIdx = *cast(int*)&params[16];
-		*RightSlotIdx = *cast(int*)&params[20];
+		LeftSlotIdx = *cast(int*)&params[16];
+		RightSlotIdx = *cast(int*)&params[20];
 		return *cast(bool*)&params[24];
 	}
 	bool IsLeftEdgeSlot(int SlotIdx, bool bIgnoreLeans)
@@ -583,21 +593,23 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsRightEdgeSlot, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	int GetSlotIdxToLeft(int SlotIdx, int Cnt)
+	int GetSlotIdxToLeft(int SlotIdx, int* Cnt = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(int*)&params[4] = Cnt;
+		if (Cnt !is null)
+			*cast(int*)&params[4] = *Cnt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotIdxToLeft, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
-	int GetSlotIdxToRight(int SlotIdx, int Cnt)
+	int GetSlotIdxToRight(int SlotIdx, int* Cnt = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(int*)&params[4] = Cnt;
+		if (Cnt !is null)
+			*cast(int*)&params[4] = *Cnt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotIdxToRight, params.ptr, cast(void*)0);
 		return *cast(int*)&params[8];
 	}
@@ -628,17 +640,18 @@ final:
 		*cast(int*)&params[16] = out_FireLinkIdx;
 		*cast(ScriptArray!(int)*)&params[20] = out_Items;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFireLinkTo, params.ptr, cast(void*)0);
-		*out_FireLinkIdx = *cast(int*)&params[16];
-		*out_Items = *cast(ScriptArray!(int)*)&params[20];
+		out_FireLinkIdx = *cast(int*)&params[16];
+		out_Items = *cast(ScriptArray!(int)*)&params[20];
 		return *cast(bool*)&params[32];
 	}
-	bool HasFireLinkTo(int SlotIdx, CoverLink.CoverInfo ChkCover, bool bAllowFallbackLinks)
+	bool HasFireLinkTo(int SlotIdx, CoverLink.CoverInfo ChkCover, bool* bAllowFallbackLinks = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(CoverLink.CoverInfo*)&params[4] = ChkCover;
-		*cast(bool*)&params[12] = bAllowFallbackLinks;
+		if (bAllowFallbackLinks !is null)
+			*cast(bool*)&params[12] = *bAllowFallbackLinks;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasFireLinkTo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -649,7 +662,7 @@ final:
 		*cast(int*)params.ptr = SlotIdx;
 		*cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4] = Actions;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSlotActions, params.ptr, cast(void*)0);
-		*Actions = *cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4];
+		Actions = *cast(ScriptArray!(CoverLink.ECoverAction)*)&params[4];
 	}
 	void SetDisabled(bool bNewDisabled)
 	{
@@ -666,12 +679,13 @@ final:
 		*cast(bool*)&params[4] = bEnable;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetSlotEnabled, params.ptr, cast(void*)0);
 	}
-	void NotifySlotOwnerCoverDisabled(int SlotIdx, bool bAIOnly)
+	void NotifySlotOwnerCoverDisabled(int SlotIdx, bool* bAIOnly = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = SlotIdx;
-		*cast(bool*)&params[4] = bAIOnly;
+		if (bAIOnly !is null)
+			*cast(bool*)&params[4] = *bAIOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NotifySlotOwnerCoverDisabled, params.ptr, cast(void*)0);
 	}
 	void SetSlotPlayerOnly(int SlotIdx, bool bInPlayerOnly)
@@ -718,15 +732,14 @@ final:
 		params[] = 0;
 		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CreateCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
+		Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
-	void ApplyCheckpointRecord(ref const NavigationPoint.CheckpointRecord Record)
+	void ApplyCheckpointRecord(ref in NavigationPoint.CheckpointRecord Record)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(NavigationPoint.CheckpointRecord*)params.ptr = Record;
+		*cast(NavigationPoint.CheckpointRecord*)params.ptr = cast(NavigationPoint.CheckpointRecord)Record;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyCheckpointRecord, params.ptr, cast(void*)0);
-		*Record = *cast(NavigationPoint.CheckpointRecord*)params.ptr;
 	}
 	void ShutDown()
 	{
@@ -740,7 +753,7 @@ final:
 		*cast(int*)&params[4] = Direction;
 		*cast(CoverLink.CoverInfo*)&params[8] = out_Info;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSwatTurnTarget, params.ptr, cast(void*)0);
-		*out_Info = *cast(CoverLink.CoverInfo*)&params[8];
+		out_Info = *cast(CoverLink.CoverInfo*)&params[8];
 		return *cast(bool*)&params[16];
 	}
 	void BreakFracturedMeshes(Vector Origin, float Radius, float RBStrength, ScriptClass pDamageType)
@@ -753,15 +766,18 @@ final:
 		*cast(ScriptClass*)&params[20] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BreakFracturedMeshes, params.ptr, cast(void*)0);
 	}
-	int AddCoverSlot(Vector SlotLocation, Rotator SlotRotation, int SlotIdx, bool bForceSlotUpdate, Scout pScout)
+	int AddCoverSlot(Vector SlotLocation, Rotator SlotRotation, int* SlotIdx = null, bool* bForceSlotUpdate = null, Scout* pScout = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(Vector*)params.ptr = SlotLocation;
 		*cast(Rotator*)&params[12] = SlotRotation;
-		*cast(int*)&params[24] = SlotIdx;
-		*cast(bool*)&params[28] = bForceSlotUpdate;
-		*cast(Scout*)&params[32] = pScout;
+		if (SlotIdx !is null)
+			*cast(int*)&params[24] = *SlotIdx;
+		if (bForceSlotUpdate !is null)
+			*cast(bool*)&params[28] = *bForceSlotUpdate;
+		if (pScout !is null)
+			*cast(Scout*)&params[32] = *pScout;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddCoverSlot, params.ptr, cast(void*)0);
 		return *cast(int*)&params[36];
 	}

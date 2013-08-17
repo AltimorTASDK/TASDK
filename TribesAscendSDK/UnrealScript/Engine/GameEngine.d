@@ -57,7 +57,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.LevelStreamingStatus")()); }
 		@property final
 		{
-			@property final auto ref ScriptName PackageName() { mixin(MGPS!(ScriptName, 0)()); }
+			@property final auto ref ScriptName PackageName() { mixin(MGPS!("ScriptName", 0)()); }
 			bool bShouldBeLoaded() { mixin(MGBPS!(8, 0x1)()); }
 			bool bShouldBeLoaded(bool val) { mixin(MSBPS!(8, 0x1)()); }
 			bool bShouldBeVisible() { mixin(MGBPS!(8, 0x2)()); }
@@ -72,10 +72,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.FullyLoadedPackagesInfo")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptName) PackagesToLoad() { mixin(MGPS!(ScriptArray!(ScriptName), 16)()); }
-			ScriptArray!(UObject) LoadedObjects() { mixin(MGPS!(ScriptArray!(UObject), 28)()); }
-			ScriptString Tag() { mixin(MGPS!(ScriptString, 4)()); }
-			GameEngine.EFullyLoadPackageType FullyLoadType() { mixin(MGPS!(GameEngine.EFullyLoadPackageType, 0)()); }
+			ScriptArray!(ScriptName) PackagesToLoad() { mixin(MGPS!("ScriptArray!(ScriptName)", 16)()); }
+			ScriptArray!(UObject) LoadedObjects() { mixin(MGPS!("ScriptArray!(UObject)", 28)()); }
+			ScriptString Tag() { mixin(MGPS!("ScriptString", 4)()); }
+			GameEngine.EFullyLoadPackageType FullyLoadType() { mixin(MGPS!("GameEngine.EFullyLoadPackageType", 0)()); }
 		}
 	}
 	struct NamedNetDriver
@@ -87,7 +87,7 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'NetDriver' has the same name as a defined type!
-			ScriptName NetDriverName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptName NetDriverName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct URL
@@ -98,41 +98,41 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.GameEngine.URL")()); }
 		@property final auto ref
 		{
-			ScriptString Protocol() { mixin(MGPS!(ScriptString, 0)()); }
-			ScriptString Host() { mixin(MGPS!(ScriptString, 12)()); }
-			int Port() { mixin(MGPS!(int, 24)()); }
-			ScriptString Map() { mixin(MGPS!(ScriptString, 28)()); }
-			ScriptArray!(ScriptString) Op() { mixin(MGPS!(ScriptArray!(ScriptString), 40)()); }
-			ScriptString Portal() { mixin(MGPS!(ScriptString, 52)()); }
-			int Valid() { mixin(MGPS!(int, 64)()); }
+			ScriptString Protocol() { mixin(MGPS!("ScriptString", 0)()); }
+			ScriptString Host() { mixin(MGPS!("ScriptString", 12)()); }
+			int Port() { mixin(MGPS!("int", 24)()); }
+			ScriptString Map() { mixin(MGPS!("ScriptString", 28)()); }
+			ScriptArray!(ScriptString) Op() { mixin(MGPS!("ScriptArray!(ScriptString)", 40)()); }
+			ScriptString Portal() { mixin(MGPS!("ScriptString", 52)()); }
+			int Valid() { mixin(MGPS!("int", 64)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			PendingLevel GPendingLevel() { mixin(MGPC!(PendingLevel, 1484)()); }
-			ScriptString PendingLevelPlayerControllerClassName() { mixin(MGPC!(ScriptString, 1488)()); }
-			GameEngine.URL LastURL() { mixin(MGPC!(GameEngine.URL, 1500)()); }
-			GameEngine.URL LastRemoteURL() { mixin(MGPC!(GameEngine.URL, 1568)()); }
-			ScriptArray!(ScriptString) ServerActors() { mixin(MGPC!(ScriptArray!(ScriptString), 1636)()); }
-			ScriptString TravelURL() { mixin(MGPC!(ScriptString, 1648)()); }
-			ubyte TravelType() { mixin(MGPC!(ubyte, 1660)()); }
+			PendingLevel GPendingLevel() { mixin(MGPC!("PendingLevel", 1484)()); }
+			ScriptString PendingLevelPlayerControllerClassName() { mixin(MGPC!("ScriptString", 1488)()); }
+			GameEngine.URL LastURL() { mixin(MGPC!("GameEngine.URL", 1500)()); }
+			GameEngine.URL LastRemoteURL() { mixin(MGPC!("GameEngine.URL", 1568)()); }
+			ScriptArray!(ScriptString) ServerActors() { mixin(MGPC!("ScriptArray!(ScriptString)", 1636)()); }
+			ScriptString TravelURL() { mixin(MGPC!("ScriptString", 1648)()); }
+			ubyte TravelType() { mixin(MGPC!("ubyte", 1660)()); }
 			// WARNING: Property 'OnlineSubsystem' has the same name as a defined type!
-			DownloadableContentEnumerator DLCEnumerator() { mixin(MGPC!(DownloadableContentEnumerator, 1672)()); }
-			ScriptString DownloadableContentEnumeratorClassName() { mixin(MGPC!(ScriptString, 1676)()); }
-			DownloadableContentManager DLCManager() { mixin(MGPC!(DownloadableContentManager, 1688)()); }
-			ScriptString DownloadableContentManagerClassName() { mixin(MGPC!(ScriptString, 1692)()); }
-			InGameAdManager AdManager() { mixin(MGPC!(InGameAdManager, 1704)()); }
-			ScriptString InGameAdManagerClassName() { mixin(MGPC!(ScriptString, 1708)()); }
-			ScriptArray!(ScriptName) LevelsToLoadForPendingMapChange() { mixin(MGPC!(ScriptArray!(ScriptName), 1720)()); }
-			ScriptArray!(Level) LoadedLevelsForPendingMapChange() { mixin(MGPC!(ScriptArray!(Level), 1732)()); }
-			ScriptString PendingMapChangeFailureDescription() { mixin(MGPC!(ScriptString, 1744)()); }
-			float MaxDeltaTime() { mixin(MGPC!(float, 1756)()); }
-			ScriptArray!(GameEngine.LevelStreamingStatus) PendingLevelStreamingStatusUpdates() { mixin(MGPC!(ScriptArray!(GameEngine.LevelStreamingStatus), 1760)()); }
-			ScriptArray!(ObjectReferencer) ObjectReferencers() { mixin(MGPC!(ScriptArray!(ObjectReferencer), 1772)()); }
-			ScriptArray!(GameEngine.FullyLoadedPackagesInfo) PackagesToFullyLoad() { mixin(MGPC!(ScriptArray!(GameEngine.FullyLoadedPackagesInfo), 1784)()); }
-			ScriptArray!(GameEngine.NamedNetDriver) NamedNetDrivers() { mixin(MGPC!(ScriptArray!(GameEngine.NamedNetDriver), 1796)()); }
+			DownloadableContentEnumerator DLCEnumerator() { mixin(MGPC!("DownloadableContentEnumerator", 1672)()); }
+			ScriptString DownloadableContentEnumeratorClassName() { mixin(MGPC!("ScriptString", 1676)()); }
+			DownloadableContentManager DLCManager() { mixin(MGPC!("DownloadableContentManager", 1688)()); }
+			ScriptString DownloadableContentManagerClassName() { mixin(MGPC!("ScriptString", 1692)()); }
+			InGameAdManager AdManager() { mixin(MGPC!("InGameAdManager", 1704)()); }
+			ScriptString InGameAdManagerClassName() { mixin(MGPC!("ScriptString", 1708)()); }
+			ScriptArray!(ScriptName) LevelsToLoadForPendingMapChange() { mixin(MGPC!("ScriptArray!(ScriptName)", 1720)()); }
+			ScriptArray!(Level) LoadedLevelsForPendingMapChange() { mixin(MGPC!("ScriptArray!(Level)", 1732)()); }
+			ScriptString PendingMapChangeFailureDescription() { mixin(MGPC!("ScriptString", 1744)()); }
+			float MaxDeltaTime() { mixin(MGPC!("float", 1756)()); }
+			ScriptArray!(GameEngine.LevelStreamingStatus) PendingLevelStreamingStatusUpdates() { mixin(MGPC!("ScriptArray!(GameEngine.LevelStreamingStatus)", 1760)()); }
+			ScriptArray!(ObjectReferencer) ObjectReferencers() { mixin(MGPC!("ScriptArray!(ObjectReferencer)", 1772)()); }
+			ScriptArray!(GameEngine.FullyLoadedPackagesInfo) PackagesToFullyLoad() { mixin(MGPC!("ScriptArray!(GameEngine.FullyLoadedPackagesInfo)", 1784)()); }
+			ScriptArray!(GameEngine.NamedNetDriver) NamedNetDrivers() { mixin(MGPC!("ScriptArray!(GameEngine.NamedNetDriver)", 1796)()); }
 		}
 		bool bWorldWasLoadedThisTick() { mixin(MGBPC!(1664, 0x1)()); }
 		bool bWorldWasLoadedThisTick(bool val) { mixin(MSBPC!(1664, 0x1)()); }

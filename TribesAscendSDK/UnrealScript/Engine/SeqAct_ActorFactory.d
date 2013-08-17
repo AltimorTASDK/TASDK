@@ -29,15 +29,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) SpawnPoints() { mixin(MGPC!(ScriptArray!(Actor), 260)()); }
-			ScriptArray!(Vector) SpawnLocations() { mixin(MGPC!(ScriptArray!(Vector), 272)()); }
-			ScriptArray!(Vector) SpawnOrientations() { mixin(MGPC!(ScriptArray!(Vector), 284)()); }
-			float RemainingDelay() { mixin(MGPC!(float, 312)()); }
-			int SpawnedCount() { mixin(MGPC!(int, 308)()); }
-			int LastSpawnIdx() { mixin(MGPC!(int, 304)()); }
-			float SpawnDelay() { mixin(MGPC!(float, 300)()); }
-			int SpawnCount() { mixin(MGPC!(int, 296)()); }
-			SeqAct_ActorFactory.EPointSelection PointSelection() { mixin(MGPC!(SeqAct_ActorFactory.EPointSelection, 256)()); }
+			ScriptArray!(Actor) SpawnPoints() { mixin(MGPC!("ScriptArray!(Actor)", 260)()); }
+			ScriptArray!(Vector) SpawnLocations() { mixin(MGPC!("ScriptArray!(Vector)", 272)()); }
+			ScriptArray!(Vector) SpawnOrientations() { mixin(MGPC!("ScriptArray!(Vector)", 284)()); }
+			float RemainingDelay() { mixin(MGPC!("float", 312)()); }
+			int SpawnedCount() { mixin(MGPC!("int", 308)()); }
+			int LastSpawnIdx() { mixin(MGPC!("int", 304)()); }
+			float SpawnDelay() { mixin(MGPC!("float", 300)()); }
+			int SpawnCount() { mixin(MGPC!("int", 296)()); }
+			SeqAct_ActorFactory.EPointSelection PointSelection() { mixin(MGPC!("SeqAct_ActorFactory.EPointSelection", 256)()); }
 			// WARNING: Property 'Factory' has the same name as a defined type!
 		}
 		bool bCheckSpawnCollision() { mixin(MGBPC!(248, 0x4)()); }

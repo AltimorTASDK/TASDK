@@ -16,9 +16,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject) ContainedObjects() { mixin(MGPC!(ScriptArray!(UObject), 180)()); }
-			ScriptArray!(ScriptClass) ExcludeClassList() { mixin(MGPC!(ScriptArray!(ScriptClass), 192)()); }
-			float LastUpdateTime() { mixin(MGPC!(float, 176)()); }
+			ScriptArray!(UObject) ContainedObjects() { mixin(MGPC!("ScriptArray!(UObject)", 180)()); }
+			ScriptArray!(ScriptClass) ExcludeClassList() { mixin(MGPC!("ScriptArray!(ScriptClass)", 192)()); }
+			float LastUpdateTime() { mixin(MGPC!("float", 176)()); }
 		}
 		bool bCollidingOnly() { mixin(MGBPC!(204, 0x1)()); }
 		bool bCollidingOnly(bool val) { mixin(MSBPC!(204, 0x1)()); }

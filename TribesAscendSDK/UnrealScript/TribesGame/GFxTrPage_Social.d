@@ -32,9 +32,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString FollowersOnlineSubtext() { mixin(MGPC!(ScriptString, 380)()); }
-		ScriptString FriendsOfflineSubtext() { mixin(MGPC!(ScriptString, 368)()); }
-		ScriptString FriendsOnlineSubtext() { mixin(MGPC!(ScriptString, 356)()); }
+		ScriptString FollowersOnlineSubtext() { mixin(MGPC!("ScriptString", 380)()); }
+		ScriptString FriendsOfflineSubtext() { mixin(MGPC!("ScriptString", 368)()); }
+		ScriptString FriendsOnlineSubtext() { mixin(MGPC!("ScriptString", 356)()); }
 	}
 final:
 	void Initialize()

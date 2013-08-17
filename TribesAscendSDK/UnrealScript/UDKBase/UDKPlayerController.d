@@ -60,23 +60,23 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKPlayerController.ObjectiveAnnouncementInfo")()); }
 		@property final auto ref
 		{
-			ScriptString AnnouncementText() { mixin(MGPS!(ScriptString, 4)()); }
-			SoundNodeWave AnnouncementSound() { mixin(MGPS!(SoundNodeWave, 0)()); }
+			ScriptString AnnouncementText() { mixin(MGPS!("ScriptString", 4)()); }
+			SoundNodeWave AnnouncementSound() { mixin(MGPS!("SoundNodeWave", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(Actor) PotentiallyHiddenActors() { mixin(MGPC!(ScriptArray!(Actor), 1940)()); }
-			float PulseTimer() { mixin(MGPC!(float, 1956)()); }
-			float VehicleCheckRadiusScaling() { mixin(MGPC!(float, 1952)()); }
-			PostProcessVolume.PostProcessSettings PostProcessModifier() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 1720)()); }
-			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { mixin(MGPC!(PostProcessVolume.PostProcessSettings, 1500)()); }
-			Rotator ShakeRot() { mixin(MGPC!(Rotator, 1488)()); }
-			Vector ShakeOffset() { mixin(MGPC!(Vector, 1476)()); }
-			UDKEmitCameraEffect CameraEffect() { mixin(MGPC!(UDKEmitCameraEffect, 1468)()); }
-			CameraAnimInst CameraAnimPlayer() { mixin(MGPC!(CameraAnimInst, 1464)()); }
+			ScriptArray!(Actor) PotentiallyHiddenActors() { mixin(MGPC!("ScriptArray!(Actor)", 1940)()); }
+			float PulseTimer() { mixin(MGPC!("float", 1956)()); }
+			float VehicleCheckRadiusScaling() { mixin(MGPC!("float", 1952)()); }
+			PostProcessVolume.PostProcessSettings PostProcessModifier() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 1720)()); }
+			PostProcessVolume.PostProcessSettings CamOverridePostProcess() { mixin(MGPC!("PostProcessVolume.PostProcessSettings", 1500)()); }
+			Rotator ShakeRot() { mixin(MGPC!("Rotator", 1488)()); }
+			Vector ShakeOffset() { mixin(MGPC!("Vector", 1476)()); }
+			UDKEmitCameraEffect CameraEffect() { mixin(MGPC!("UDKEmitCameraEffect", 1468)()); }
+			CameraAnimInst CameraAnimPlayer() { mixin(MGPC!("CameraAnimInst", 1464)()); }
 		}
 		bool bUsePhysicsRotation() { mixin(MGBPC!(1472, 0x10)()); }
 		bool bUsePhysicsRotation(bool val) { mixin(MSBPC!(1472, 0x10)()); }
@@ -136,16 +136,14 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCameraEffect, cast(void*)0, cast(void*)0);
 	}
-	Pawn GetTargetAdhesionFrictionTarget(float MaxDistance, ref const Vector CamLoc, ref const Rotator CamRot)
+	Pawn GetTargetAdhesionFrictionTarget(float MaxDistance, ref in Vector CamLoc, ref in Rotator CamRot)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(float*)params.ptr = MaxDistance;
-		*cast(Vector*)&params[4] = CamLoc;
-		*cast(Rotator*)&params[16] = CamRot;
+		*cast(Vector*)&params[4] = cast(Vector)CamLoc;
+		*cast(Rotator*)&params[16] = cast(Rotator)CamRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetAdhesionFrictionTarget, params.ptr, cast(void*)0);
-		*CamLoc = *cast(Vector*)&params[4];
-		*CamRot = *cast(Rotator*)&params[16];
 		return *cast(Pawn*)&params[28];
 	}
 	bool IsControllerTiltActive()

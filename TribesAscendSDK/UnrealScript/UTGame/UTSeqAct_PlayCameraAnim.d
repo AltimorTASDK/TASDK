@@ -19,11 +19,11 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		CameraAnim AnimToPlay() { mixin(MGPC!(CameraAnim, 232)()); }
-		float IntensityScale() { mixin(MGPC!(float, 248)()); }
-		float Rate() { mixin(MGPC!(float, 244)()); }
-		float BlendInTime() { mixin(MGPC!(float, 236)()); }
-		float BlendOutTime() { mixin(MGPC!(float, 240)()); }
+		CameraAnim AnimToPlay() { mixin(MGPC!("CameraAnim", 232)()); }
+		float IntensityScale() { mixin(MGPC!("float", 248)()); }
+		float Rate() { mixin(MGPC!("float", 244)()); }
+		float BlendInTime() { mixin(MGPC!("float", 236)()); }
+		float BlendOutTime() { mixin(MGPC!("float", 240)()); }
 	}
 	final static int GetObjClassVersion()
 	{

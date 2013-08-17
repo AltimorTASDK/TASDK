@@ -58,11 +58,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor ActionTarget() { mixin(MGPC!(Actor, 64)()); }
-			float MaxPlayerDistance() { mixin(MGPC!(float, 68)()); }
-			GameCrowdAgent MyAgent() { mixin(MGPC!(GameCrowdAgent, 80)()); }
-			float TimeToStopPropagatingViralBehavior() { mixin(MGPC!(float, 76)()); }
-			float DurationOfViralBehaviorPropagation() { mixin(MGPC!(float, 72)()); }
+			Actor ActionTarget() { mixin(MGPC!("Actor", 64)()); }
+			float MaxPlayerDistance() { mixin(MGPC!("float", 68)()); }
+			GameCrowdAgent MyAgent() { mixin(MGPC!("GameCrowdAgent", 80)()); }
+			float TimeToStopPropagatingViralBehavior() { mixin(MGPC!("float", 76)()); }
+			float DurationOfViralBehaviorPropagation() { mixin(MGPC!("float", 72)()); }
 		}
 		bool bIsPanicked() { mixin(MGBPC!(60, 0x10)()); }
 		bool bIsPanicked(bool val) { mixin(MSBPC!(60, 0x10)()); }

@@ -36,8 +36,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.ParticleModule.ParticleCurvePair")()); }
 		@property final auto ref
 		{
-			UObject CurveObject() { mixin(MGPS!(UObject, 12)()); }
-			ScriptString CurveName() { mixin(MGPS!(ScriptString, 0)()); }
+			UObject CurveObject() { mixin(MGPS!("UObject", 12)()); }
+			ScriptString CurveName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	struct ParticleRandomSeedInfo
@@ -50,8 +50,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(int) RandomSeeds() { mixin(MGPS!(ScriptArray!(int), 12)()); }
-				ScriptName ParameterName() { mixin(MGPS!(ScriptName, 0)()); }
+				ScriptArray!(int) RandomSeeds() { mixin(MGPS!("ScriptArray!(int)", 12)()); }
+				ScriptName ParameterName() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bResetSeedOnEmitterLooping() { mixin(MGBPS!(8, 0x4)()); }
 			bool bResetSeedOnEmitterLooping(bool val) { mixin(MSBPS!(8, 0x4)()); }
@@ -65,8 +65,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Color ModuleEditorColor() { mixin(MGPC!(UObject.Color, 68)()); }
-			ubyte LODValidity() { mixin(MGPC!(ubyte, 64)()); }
+			UObject.Color ModuleEditorColor() { mixin(MGPC!("UObject.Color", 68)()); }
+			ubyte LODValidity() { mixin(MGPC!("ubyte", 64)()); }
 		}
 		bool bRequiresLoopingNotification() { mixin(MGBPC!(60, 0x400)()); }
 		bool bRequiresLoopingNotification(bool val) { mixin(MSBPC!(60, 0x400)()); }

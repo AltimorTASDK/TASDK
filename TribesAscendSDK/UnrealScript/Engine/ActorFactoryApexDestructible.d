@@ -17,9 +17,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ApexDestructibleAsset DestructibleAsset() { mixin(MGPC!(ApexDestructibleAsset, 104)()); }
-			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!(PrimitiveComponent.RBCollisionChannelContainer, 100)()); }
-			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 96)()); }
+			ApexDestructibleAsset DestructibleAsset() { mixin(MGPC!("ApexDestructibleAsset", 104)()); }
+			PrimitiveComponent.RBCollisionChannelContainer CollideWithChannels() { mixin(MGPC!("PrimitiveComponent.RBCollisionChannelContainer", 100)()); }
+			PrimitiveComponent.ERBCollisionChannel RBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 96)()); }
 		}
 		bool bStartAwake() { mixin(MGBPC!(92, 0x1)()); }
 		bool bStartAwake(bool val) { mixin(MSBPC!(92, 0x1)()); }

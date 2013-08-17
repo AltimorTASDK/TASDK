@@ -59,9 +59,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrStatsInterface Stats() { mixin(MGPC!(TrStatsInterface, 540)()); }
-			TrObject.TR_EQUIP_POINT m_PreviousDeviceEquipPoint() { mixin(MGPC!(TrObject.TR_EQUIP_POINT, 536)()); }
-			TrDevice m_RealLastDevice() { mixin(MGPC!(TrDevice, 532)()); }
+			TrStatsInterface Stats() { mixin(MGPC!("TrStatsInterface", 540)()); }
+			TrObject.TR_EQUIP_POINT m_PreviousDeviceEquipPoint() { mixin(MGPC!("TrObject.TR_EQUIP_POINT", 536)()); }
+			TrDevice m_RealLastDevice() { mixin(MGPC!("TrDevice", 532)()); }
 		}
 		bool c_bRetryEquippingPrimaryWeapon() { mixin(MGBPC!(544, 0x1)()); }
 		bool c_bRetryEquippingPrimaryWeapon(bool val) { mixin(MSBPC!(544, 0x1)()); }
@@ -75,12 +75,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDeviceByEquipPoint, params.ptr, cast(void*)0);
 		return *cast(TrDevice*)&params[4];
 	}
-	bool AddInventory(Inventory pNewItem, bool bDoNotActivate)
+	bool AddInventory(Inventory pNewItem, bool* bDoNotActivate = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Inventory*)params.ptr = pNewItem;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddInventory, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
@@ -111,14 +112,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetDeviceByWeaponId, params.ptr, cast(void*)0);
 		return *cast(TrDevice*)&params[4];
 	}
-	void TrGetWeaponList(ref ScriptArray!(TrDevice) WeaponList, bool bInhandOnly)
+	void TrGetWeaponList(ref ScriptArray!(TrDevice) WeaponList, bool* bInhandOnly = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptArray!(TrDevice)*)params.ptr = WeaponList;
-		*cast(bool*)&params[12] = bInhandOnly;
+		if (bInhandOnly !is null)
+			*cast(bool*)&params[12] = *bInhandOnly;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TrGetWeaponList, params.ptr, cast(void*)0);
-		*WeaponList = *cast(ScriptArray!(TrDevice)*)params.ptr;
+		WeaponList = *cast(ScriptArray!(TrDevice)*)params.ptr;
 	}
 	void DiscardEquippedDeployable()
 	{

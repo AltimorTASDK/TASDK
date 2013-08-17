@@ -36,8 +36,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector m_Tangent() { mixin(MGPC!(Vector, 804)()); }
-			Vector m_Location() { mixin(MGPC!(Vector, 792)()); }
+			Vector m_Tangent() { mixin(MGPC!("Vector", 804)()); }
+			Vector m_Location() { mixin(MGPC!("Vector", 792)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscRepairEffect'!
 		}
 		bool m_bIsTracerActive() { mixin(MGBPC!(784, 0x1)()); }

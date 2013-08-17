@@ -28,14 +28,15 @@ public extern(D):
 			ScriptFunction Recycle() { mixin(MGF!("mRecycle", "Function Engine.NavMeshGoal_Null.Recycle")()); }
 		}
 	}
-	@property final auto ref UObject.Pointer PartialGoal() { mixin(MGPC!(UObject.Pointer, 80)()); }
+	@property final auto ref UObject.Pointer PartialGoal() { mixin(MGPC!("UObject.Pointer", 80)()); }
 final:
-	static bool GoUntilBust(NavigationHandle NavHandle, int InMaxPathVisits)
+	static bool GoUntilBust(NavigationHandle NavHandle, int* InMaxPathVisits = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
-		*cast(int*)&params[4] = InMaxPathVisits;
+		if (InMaxPathVisits !is null)
+			*cast(int*)&params[4] = *InMaxPathVisits;
 		StaticClass.ProcessEvent(Functions.GoUntilBust, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

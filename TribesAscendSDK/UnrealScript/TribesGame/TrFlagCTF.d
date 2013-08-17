@@ -53,9 +53,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_YouHaveTheFlagReminderTime() { mixin(MGPC!(float, 940)()); }
-		int m_ReturnedTimeLimit() { mixin(MGPC!(int, 936)()); }
-		int m_LastReturnedTime() { mixin(MGPC!(int, 932)()); }
+		float m_YouHaveTheFlagReminderTime() { mixin(MGPC!("float", 940)()); }
+		int m_ReturnedTimeLimit() { mixin(MGPC!("int", 936)()); }
+		int m_LastReturnedTime() { mixin(MGPC!("int", 932)()); }
 	}
 final:
 	void LogTaken(Controller EventInstigator)

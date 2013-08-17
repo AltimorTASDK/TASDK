@@ -59,18 +59,18 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateListDataProvider, cast(void*)0, cast(void*)0);
 	}
-	void PopulateOptionDataProviderForIndex(const int Index, ref GFxObject OutDataProvider, ref ScriptString OutDefaultValue, ref int OutDefaultIndex)
+	void PopulateOptionDataProviderForIndex(in int Index, ref GFxObject OutDataProvider, ref ScriptString OutDefaultValue, ref int OutDefaultIndex)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(int*)params.ptr = Index;
+		*cast(int*)params.ptr = cast(int)Index;
 		*cast(GFxObject*)&params[4] = OutDataProvider;
 		*cast(ScriptString*)&params[8] = OutDefaultValue;
 		*cast(int*)&params[20] = OutDefaultIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PopulateOptionDataProviderForIndex, params.ptr, cast(void*)0);
-		*OutDataProvider = *cast(GFxObject*)&params[4];
-		*OutDefaultValue = *cast(ScriptString*)&params[8];
-		*OutDefaultIndex = *cast(int*)&params[20];
+		OutDataProvider = *cast(GFxObject*)&params[4];
+		OutDefaultValue = *cast(ScriptString*)&params[8];
+		OutDefaultIndex = *cast(int*)&params[20];
 	}
 	ScriptString FindControlByUTClassName(ubyte UTUIControlClass)
 	{

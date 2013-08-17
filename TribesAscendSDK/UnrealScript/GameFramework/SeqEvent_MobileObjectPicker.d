@@ -14,10 +14,10 @@ public extern(D):
 	@property final static SeqEvent_MobileObjectPicker DefaultProperties() { mixin(MGDPC!(SeqEvent_MobileObjectPicker, "SeqEvent_MobileObjectPicker GameFramework.Default__SeqEvent_MobileObjectPicker")()); }
 	@property final auto ref
 	{
-		ScriptArray!(UObject) Targets() { mixin(MGPC!(ScriptArray!(UObject), 304)()); }
-		UObject FinalTouchObject() { mixin(MGPC!(UObject, 300)()); }
-		Vector FinalTouchNormal() { mixin(MGPC!(Vector, 288)()); }
-		Vector FinalTouchLocation() { mixin(MGPC!(Vector, 276)()); }
-		float TraceDistance() { mixin(MGPC!(float, 272)()); }
+		ScriptArray!(UObject) Targets() { mixin(MGPC!("ScriptArray!(UObject)", 304)()); }
+		UObject FinalTouchObject() { mixin(MGPC!("UObject", 300)()); }
+		Vector FinalTouchNormal() { mixin(MGPC!("Vector", 288)()); }
+		Vector FinalTouchLocation() { mixin(MGPC!("Vector", 276)()); }
+		float TraceDistance() { mixin(MGPC!("float", 272)()); }
 	}
 }

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static Exporter DefaultProperties() { mixin(MGDPC!(Exporter, "Exporter Core.Default__Exporter")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptString) FormatExtension() { mixin(MGPC!(ScriptArray!(ScriptString), 64)()); }
-		ScriptArray!(ScriptString) FormatDescription() { mixin(MGPC!(ScriptArray!(ScriptString), 76)()); }
+		ScriptArray!(ScriptString) FormatExtension() { mixin(MGPC!("ScriptArray!(ScriptString)", 64)()); }
+		ScriptArray!(ScriptString) FormatDescription() { mixin(MGPC!("ScriptArray!(ScriptString)", 76)()); }
 	}
 }

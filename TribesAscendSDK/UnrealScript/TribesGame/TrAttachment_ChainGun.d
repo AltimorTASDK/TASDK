@@ -29,9 +29,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!(TrSkelControl_SpinControl, 796)()); }
-			float m_fLastFireTime() { mixin(MGPC!(float, 792)()); }
-			float m_fCurrSpinTime() { mixin(MGPC!(float, 788)()); }
+			TrSkelControl_SpinControl m_BarrelSpinControl() { mixin(MGPC!("TrSkelControl_SpinControl", 796)()); }
+			float m_fLastFireTime() { mixin(MGPC!("float", 792)()); }
+			float m_fCurrSpinTime() { mixin(MGPC!("float", 788)()); }
 		}
 		bool m_bSpinningUp() { mixin(MGBPC!(784, 0x2)()); }
 		bool m_bSpinningUp(bool val) { mixin(MSBPC!(784, 0x2)()); }

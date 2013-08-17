@@ -70,22 +70,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector ExplosionDirection() { mixin(MGPC!(Vector, 552)()); }
-			float DirectionalExplosionMinDot() { mixin(MGPC!(float, 548)()); }
-			Controller AttacheeController() { mixin(MGPC!(Controller, 544)()); }
-			Actor Attachee() { mixin(MGPC!(Actor, 540)()); }
-			Vector HitLocationFromPhysMaterialTrace() { mixin(MGPC!(Vector, 528)()); }
-			Actor HitActorFromPhysMaterialTrace() { mixin(MGPC!(Actor, 524)()); }
-			Controller InstigatorController() { mixin(MGPC!(Controller, 520)()); }
+			Vector ExplosionDirection() { mixin(MGPC!("Vector", 552)()); }
+			float DirectionalExplosionMinDot() { mixin(MGPC!("float", 548)()); }
+			Controller AttacheeController() { mixin(MGPC!("Controller", 544)()); }
+			Actor Attachee() { mixin(MGPC!("Actor", 540)()); }
+			Vector HitLocationFromPhysMaterialTrace() { mixin(MGPC!("Vector", 528)()); }
+			Actor HitActorFromPhysMaterialTrace() { mixin(MGPC!("Actor", 524)()); }
+			Controller InstigatorController() { mixin(MGPC!("Controller", 520)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RadialImpulseComponent'!
-			GameExplosion ExplosionTemplate() { mixin(MGPC!(GameExplosion, 512)()); }
-			float RadialBlurMaxBlurAmount() { mixin(MGPC!(float, 508)()); }
-			float RadialBlurFadeTimeRemaining() { mixin(MGPC!(float, 504)()); }
-			float RadialBlurFadeTime() { mixin(MGPC!(float, 500)()); }
+			GameExplosion ExplosionTemplate() { mixin(MGPC!("GameExplosion", 512)()); }
+			float RadialBlurMaxBlurAmount() { mixin(MGPC!("float", 508)()); }
+			float RadialBlurFadeTimeRemaining() { mixin(MGPC!("float", 504)()); }
+			float RadialBlurFadeTime() { mixin(MGPC!("float", 500)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExplosionRadialBlur'!
-			float LightInitialBrightness() { mixin(MGPC!(float, 492)()); }
-			float LightFadeTimeRemaining() { mixin(MGPC!(float, 488)()); }
-			float LightFadeTime() { mixin(MGPC!(float, 484)()); }
+			float LightInitialBrightness() { mixin(MGPC!("float", 492)()); }
+			float LightFadeTimeRemaining() { mixin(MGPC!("float", 488)()); }
+			float LightFadeTime() { mixin(MGPC!("float", 484)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'ExplosionLight'!
 		}
 		bool bDrawDebug() { mixin(MGBPC!(476, 0x4)()); }
@@ -177,12 +177,13 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnExplosionFogVolume, cast(void*)0, cast(void*)0);
 	}
-	void Explode(GameExplosion NewExplosionTemplate, Vector Direction)
+	void Explode(GameExplosion NewExplosionTemplate, Vector* Direction = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(GameExplosion*)params.ptr = NewExplosionTemplate;
-		*cast(Vector*)&params[4] = Direction;
+		if (Direction !is null)
+			*cast(Vector*)&params[4] = *Direction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Explode, params.ptr, cast(void*)0);
 	}
 	void DelayedExplosionDamage()

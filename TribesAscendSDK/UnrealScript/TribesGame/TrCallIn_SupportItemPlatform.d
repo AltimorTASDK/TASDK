@@ -33,9 +33,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		TrGameObjective r_DeployedItem() { mixin(MGPC!(TrGameObjective, 476)()); }
-		ubyte DefenderTeamIndex() { mixin(MGPC!(ubyte, 496)()); }
-		ScriptName ItemAttachPointName() { mixin(MGPC!(ScriptName, 488)()); }
+		TrGameObjective r_DeployedItem() { mixin(MGPC!("TrGameObjective", 476)()); }
+		ubyte DefenderTeamIndex() { mixin(MGPC!("ubyte", 496)()); }
+		ScriptName ItemAttachPointName() { mixin(MGPC!("ScriptName", 488)()); }
 		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_Mesh'!
 	}
@@ -47,8 +47,8 @@ final:
 		*cast(float*)params.ptr = CollisionRadius;
 		*cast(float*)&params[4] = CollisionHeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBoundingCylinder, params.ptr, cast(void*)0);
-		*CollisionRadius = *cast(float*)params.ptr;
-		*CollisionHeight = *cast(float*)&params[4];
+		CollisionRadius = *cast(float*)params.ptr;
+		CollisionHeight = *cast(float*)&params[4];
 	}
 	void Init(Actor DeployableOwner, ScriptClass GameObjectiveClass)
 	{

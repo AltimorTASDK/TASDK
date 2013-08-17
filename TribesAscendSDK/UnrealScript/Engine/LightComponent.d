@@ -146,43 +146,43 @@ public extern(D):
 	{
 		auto ref
 		{
-			float Brightness() { mixin(MGPC!(float, 256)()); }
-			UObject.Color LightColor() { mixin(MGPC!(UObject.Color, 260)()); }
+			float Brightness() { mixin(MGPC!("float", 256)()); }
+			UObject.Color LightColor() { mixin(MGPC!("UObject.Color", 260)()); }
 			// WARNING: Property 'Function' has the same name as a defined type!
-			UObject.Pointer SceneInfo() { mixin(MGPC!(UObject.Pointer, 88)()); }
-			UObject.Matrix WorldToLight() { mixin(MGPC!(UObject.Matrix, 96)()); }
-			UObject.Matrix LightToWorld() { mixin(MGPC!(UObject.Matrix, 160)()); }
-			UObject.Guid LightGuid() { mixin(MGPC!(UObject.Guid, 224)()); }
-			UObject.Guid LightmapGuid() { mixin(MGPC!(UObject.Guid, 240)()); }
-			float LightEnv_BouncedLightBrightness() { mixin(MGPC!(float, 268)()); }
-			UObject.Color LightEnv_BouncedModulationColor() { mixin(MGPC!(UObject.Color, 272)()); }
+			UObject.Pointer SceneInfo() { mixin(MGPC!("UObject.Pointer", 88)()); }
+			UObject.Matrix WorldToLight() { mixin(MGPC!("UObject.Matrix", 96)()); }
+			UObject.Matrix LightToWorld() { mixin(MGPC!("UObject.Matrix", 160)()); }
+			UObject.Guid LightGuid() { mixin(MGPC!("UObject.Guid", 224)()); }
+			UObject.Guid LightmapGuid() { mixin(MGPC!("UObject.Guid", 240)()); }
+			float LightEnv_BouncedLightBrightness() { mixin(MGPC!("float", 268)()); }
+			UObject.Color LightEnv_BouncedModulationColor() { mixin(MGPC!("UObject.Color", 272)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'LightEnvironment'!
-			ScriptArray!(ScriptName) OtherLevelsToAffect() { mixin(MGPC!(ScriptArray!(ScriptName), 284)()); }
-			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!(LightComponent.LightingChannelContainer, 296)()); }
-			ScriptArray!(Brush) InclusionVolumes() { mixin(MGPC!(ScriptArray!(Brush), 300)()); }
-			ScriptArray!(Brush) ExclusionVolumes() { mixin(MGPC!(ScriptArray!(Brush), 312)()); }
-			ScriptArray!(UObject.Pointer) InclusionConvexVolumes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 324)()); }
-			ScriptArray!(UObject.Pointer) ExclusionConvexVolumes() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 336)()); }
-			LightComponent.ELightAffectsClassification LightAffectsClassification() { mixin(MGPC!(LightComponent.ELightAffectsClassification, 348)()); }
-			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC!(LightComponent.ELightShadowMode, 349)()); }
-			UObject.LinearColor ModShadowColor() { mixin(MGPC!(UObject.LinearColor, 352)()); }
-			float ModShadowFadeoutTime() { mixin(MGPC!(float, 368)()); }
-			float ModShadowFadeoutExponent() { mixin(MGPC!(float, 372)()); }
-			int LightListIndex() { mixin(MGPC!(int, 376)()); }
-			LightComponent.EShadowProjectionTechnique ShadowProjectionTechnique() { mixin(MGPC!(LightComponent.EShadowProjectionTechnique, 380)()); }
-			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC!(LightComponent.EShadowFilterQuality, 381)()); }
-			int MinShadowResolution() { mixin(MGPC!(int, 384)()); }
-			int MaxShadowResolution() { mixin(MGPC!(int, 388)()); }
-			int ShadowFadeResolution() { mixin(MGPC!(int, 392)()); }
-			float OcclusionDepthRange() { mixin(MGPC!(float, 396)()); }
-			float BloomScale() { mixin(MGPC!(float, 400)()); }
-			float BloomThreshold() { mixin(MGPC!(float, 404)()); }
-			float BloomScreenBlendThreshold() { mixin(MGPC!(float, 408)()); }
-			UObject.Color BloomTint() { mixin(MGPC!(UObject.Color, 412)()); }
-			float RadialBlurPercent() { mixin(MGPC!(float, 416)()); }
-			float OcclusionMaskDarkness() { mixin(MGPC!(float, 420)()); }
-			Texture2D ReflectionTexture() { mixin(MGPC!(Texture2D, 424)()); }
-			float ReflectionScale() { mixin(MGPC!(float, 428)()); }
+			ScriptArray!(ScriptName) OtherLevelsToAffect() { mixin(MGPC!("ScriptArray!(ScriptName)", 284)()); }
+			LightComponent.LightingChannelContainer LightingChannels() { mixin(MGPC!("LightComponent.LightingChannelContainer", 296)()); }
+			ScriptArray!(Brush) InclusionVolumes() { mixin(MGPC!("ScriptArray!(Brush)", 300)()); }
+			ScriptArray!(Brush) ExclusionVolumes() { mixin(MGPC!("ScriptArray!(Brush)", 312)()); }
+			ScriptArray!(UObject.Pointer) InclusionConvexVolumes() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 324)()); }
+			ScriptArray!(UObject.Pointer) ExclusionConvexVolumes() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 336)()); }
+			LightComponent.ELightAffectsClassification LightAffectsClassification() { mixin(MGPC!("LightComponent.ELightAffectsClassification", 348)()); }
+			LightComponent.ELightShadowMode LightShadowMode() { mixin(MGPC!("LightComponent.ELightShadowMode", 349)()); }
+			UObject.LinearColor ModShadowColor() { mixin(MGPC!("UObject.LinearColor", 352)()); }
+			float ModShadowFadeoutTime() { mixin(MGPC!("float", 368)()); }
+			float ModShadowFadeoutExponent() { mixin(MGPC!("float", 372)()); }
+			int LightListIndex() { mixin(MGPC!("int", 376)()); }
+			LightComponent.EShadowProjectionTechnique ShadowProjectionTechnique() { mixin(MGPC!("LightComponent.EShadowProjectionTechnique", 380)()); }
+			LightComponent.EShadowFilterQuality ShadowFilterQuality() { mixin(MGPC!("LightComponent.EShadowFilterQuality", 381)()); }
+			int MinShadowResolution() { mixin(MGPC!("int", 384)()); }
+			int MaxShadowResolution() { mixin(MGPC!("int", 388)()); }
+			int ShadowFadeResolution() { mixin(MGPC!("int", 392)()); }
+			float OcclusionDepthRange() { mixin(MGPC!("float", 396)()); }
+			float BloomScale() { mixin(MGPC!("float", 400)()); }
+			float BloomThreshold() { mixin(MGPC!("float", 404)()); }
+			float BloomScreenBlendThreshold() { mixin(MGPC!("float", 408)()); }
+			UObject.Color BloomTint() { mixin(MGPC!("UObject.Color", 412)()); }
+			float RadialBlurPercent() { mixin(MGPC!("float", 416)()); }
+			float OcclusionMaskDarkness() { mixin(MGPC!("float", 420)()); }
+			Texture2D ReflectionTexture() { mixin(MGPC!("Texture2D", 424)()); }
+			float ReflectionScale() { mixin(MGPC!("float", 428)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(276, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(276, 0x1)()); }
@@ -231,13 +231,16 @@ final:
 		*cast(bool*)params.ptr = bSetEnabled;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetEnabled, params.ptr, cast(void*)0);
 	}
-	void SetLightProperties(float NewBrightness, UObject.Color NewLightColor, LightFunction NewLightFunction)
+	void SetLightProperties(float* NewBrightness = null, UObject.Color* NewLightColor = null, LightFunction* NewLightFunction = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(float*)params.ptr = NewBrightness;
-		*cast(UObject.Color*)&params[4] = NewLightColor;
-		*cast(LightFunction*)&params[8] = NewLightFunction;
+		if (NewBrightness !is null)
+			*cast(float*)params.ptr = *NewBrightness;
+		if (NewLightColor !is null)
+			*cast(UObject.Color*)&params[4] = *NewLightColor;
+		if (NewLightFunction !is null)
+			*cast(LightFunction*)&params[8] = *NewLightFunction;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetLightProperties, params.ptr, cast(void*)0);
 	}
 	Vector GetOrigin()

@@ -70,22 +70,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!(PlayerReplicationInfo, 888)()); }
-			int m_nIconStackId() { mixin(MGPC!(int, 896)()); }
-			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!(ScriptArray!(Pawn), 840)()); }
-			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!(MaterialInstanceConstant, 892)()); }
-			int m_nMarkerOffset() { mixin(MGPC!(int, 884)()); }
-			float m_fShowHeaderUntil() { mixin(MGPC!(float, 880)()); }
-			float LastPostRenderTraceTime() { mixin(MGPC!(float, 876)()); }
-			ScriptString m_sScreenName() { mixin(MGPC!(ScriptString, 864)()); }
-			int m_nNumBouncesBeforeDetonateObsolete() { mixin(MGPC!(int, 860)()); }
-			int m_nNumBounces() { mixin(MGPC!(int, 856)()); }
-			float m_fMaxFloorZ() { mixin(MGPC!(float, 852)()); }
-			TrMineCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrMineCollisionProxy, 836)()); }
-			float m_fDetonationHeight() { mixin(MGPC!(float, 832)()); }
-			float m_fDetonationRadius() { mixin(MGPC!(float, 828)()); }
-			float m_fDeploySeconds() { mixin(MGPC!(float, 824)()); }
-			SoundCue WallImpactSound() { mixin(MGPC!(SoundCue, 816)()); }
+			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!("PlayerReplicationInfo", 888)()); }
+			int m_nIconStackId() { mixin(MGPC!("int", 896)()); }
+			ScriptArray!(Pawn) m_PotentialTargets() { mixin(MGPC!("ScriptArray!(Pawn)", 840)()); }
+			MaterialInstanceConstant m_MarkerMIC() { mixin(MGPC!("MaterialInstanceConstant", 892)()); }
+			int m_nMarkerOffset() { mixin(MGPC!("int", 884)()); }
+			float m_fShowHeaderUntil() { mixin(MGPC!("float", 880)()); }
+			float LastPostRenderTraceTime() { mixin(MGPC!("float", 876)()); }
+			ScriptString m_sScreenName() { mixin(MGPC!("ScriptString", 864)()); }
+			int m_nNumBouncesBeforeDetonateObsolete() { mixin(MGPC!("int", 860)()); }
+			int m_nNumBounces() { mixin(MGPC!("int", 856)()); }
+			float m_fMaxFloorZ() { mixin(MGPC!("float", 852)()); }
+			TrMineCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrMineCollisionProxy", 836)()); }
+			float m_fDetonationHeight() { mixin(MGPC!("float", 832)()); }
+			float m_fDetonationRadius() { mixin(MGPC!("float", 828)()); }
+			float m_fDeploySeconds() { mixin(MGPC!("float", 824)()); }
+			SoundCue WallImpactSound() { mixin(MGPC!("SoundCue", 816)()); }
 		}
 		bool m_bIsPostRendered() { mixin(MGBPC!(820, 0x10)()); }
 		bool m_bIsPostRendered(bool val) { mixin(MSBPC!(820, 0x10)()); }
@@ -138,7 +138,7 @@ void* WallComp)
 void**)&params[16] = WallComp;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HitWall, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller EventInstigator, float BaseDamage, float InDamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -150,10 +150,11 @@ void**)&params[16] = WallComp;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -162,16 +163,19 @@ void**)&params[16] = WallComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void PawnEnteredDetonationArea(Pawn Other)

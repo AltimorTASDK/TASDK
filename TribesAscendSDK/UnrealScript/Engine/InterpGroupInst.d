@@ -16,8 +16,8 @@ public extern(D):
 	@property final static InterpGroupInst DefaultProperties() { mixin(MGDPC!(InterpGroupInst, "InterpGroupInst Engine.Default__InterpGroupInst")()); }
 	@property final auto ref
 	{
-		ScriptArray!(InterpTrackInst) TrackInst() { mixin(MGPC!(ScriptArray!(InterpTrackInst), 68)()); }
-		Actor GroupActor() { mixin(MGPC!(Actor, 64)()); }
-		InterpGroup Group() { mixin(MGPC!(InterpGroup, 60)()); }
+		ScriptArray!(InterpTrackInst) TrackInst() { mixin(MGPC!("ScriptArray!(InterpTrackInst)", 68)()); }
+		Actor GroupActor() { mixin(MGPC!("Actor", 64)()); }
+		InterpGroup Group() { mixin(MGPC!("InterpGroup", 60)()); }
 	}
 }

@@ -13,9 +13,9 @@ public extern(D):
 	@property final static DemoRecDriver DefaultProperties() { mixin(MGDPC!(DemoRecDriver, "DemoRecDriver Engine.Default__DemoRecDriver")()); }
 	@property final auto ref
 	{
-		ScriptString DemoSpectatorClass() { mixin(MGPC!(ScriptString, 444)()); }
-		int MaxRewindPoints() { mixin(MGPC!(int, 580)()); }
-		float RewindPointInterval() { mixin(MGPC!(float, 588)()); }
-		int NumRecentRewindPoints() { mixin(MGPC!(int, 592)()); }
+		ScriptString DemoSpectatorClass() { mixin(MGPC!("ScriptString", 444)()); }
+		int MaxRewindPoints() { mixin(MGPC!("int", 580)()); }
+		float RewindPointInterval() { mixin(MGPC!("float", 588)()); }
+		int NumRecentRewindPoints() { mixin(MGPC!("int", 592)()); }
 	}
 }

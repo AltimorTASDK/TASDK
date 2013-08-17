@@ -58,8 +58,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass AnnouncerMessageClass() { mixin(MGPC!(ScriptClass, 1336)()); }
-		UTCTFFlag Flags() { mixin(MGPC!(UTCTFFlag, 1328)()); }
+		ScriptClass AnnouncerMessageClass() { mixin(MGPC!("ScriptClass", 1336)()); }
+		UTCTFFlag Flags() { mixin(MGPC!("UTCTFFlag", 1328)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -90,8 +90,8 @@ final:
 		*cast(int*)&params[8] = MessageIndex;
 		*cast(int*)&params[12] = LocationSpeechOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationFor, params.ptr, cast(void*)0);
-		*LocationObject = *cast(Actor*)&params[4];
-		*MessageIndex = *cast(int*)&params[8];
+		LocationObject = *cast(Actor*)&params[4];
+		MessageIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[16];
 	}
 	void RegisterFlag(UTCarriedObject F, int TeamIndex)

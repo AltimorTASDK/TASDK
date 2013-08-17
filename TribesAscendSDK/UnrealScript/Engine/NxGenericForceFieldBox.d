@@ -18,7 +18,7 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Vector BoxExtent() { mixin(MGPC!(Vector, 700)()); }
+		Vector BoxExtent() { mixin(MGPC!("Vector", 700)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'RenderComponent'!
 	}
 	final void DoInitRBPhys()

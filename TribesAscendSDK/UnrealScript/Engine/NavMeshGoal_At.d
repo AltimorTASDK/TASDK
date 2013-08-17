@@ -35,10 +35,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			UObject.Pointer PartialGoal() { mixin(MGPC!(UObject.Pointer, 104)()); }
-			UObject.Pointer GoalPoly() { mixin(MGPC!(UObject.Pointer, 100)()); }
-			float GoalDist() { mixin(MGPC!(float, 92)()); }
-			Vector Goal() { mixin(MGPC!(Vector, 80)()); }
+			UObject.Pointer PartialGoal() { mixin(MGPC!("UObject.Pointer", 104)()); }
+			UObject.Pointer GoalPoly() { mixin(MGPC!("UObject.Pointer", 100)()); }
+			float GoalDist() { mixin(MGPC!("float", 92)()); }
+			Vector Goal() { mixin(MGPC!("Vector", 80)()); }
 		}
 		bool bKeepPartial() { mixin(MGBPC!(96, 0x1)()); }
 		bool bKeepPartial(bool val) { mixin(MSBPC!(96, 0x1)()); }
@@ -48,25 +48,29 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.RecycleNative, cast(void*)0, cast(void*)0);
 	}
-	static bool AtActor(NavigationHandle NavHandle, Actor GoalActor, float Dist, bool bReturnPartial)
+	static bool AtActor(NavigationHandle NavHandle, Actor GoalActor, float* Dist = null, bool* bReturnPartial = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
 		*cast(Actor*)&params[4] = GoalActor;
-		*cast(float*)&params[8] = Dist;
-		*cast(bool*)&params[12] = bReturnPartial;
+		if (Dist !is null)
+			*cast(float*)&params[8] = *Dist;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[12] = *bReturnPartial;
 		StaticClass.ProcessEvent(Functions.AtActor, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	static bool AtLocation(NavigationHandle NavHandle, Vector GoalLocation, float Dist, bool bReturnPartial)
+	static bool AtLocation(NavigationHandle NavHandle, Vector GoalLocation, float* Dist = null, bool* bReturnPartial = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
 		*cast(Vector*)&params[4] = GoalLocation;
-		*cast(float*)&params[16] = Dist;
-		*cast(bool*)&params[20] = bReturnPartial;
+		if (Dist !is null)
+			*cast(float*)&params[16] = *Dist;
+		if (bReturnPartial !is null)
+			*cast(bool*)&params[20] = *bReturnPartial;
 		StaticClass.ProcessEvent(Functions.AtLocation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

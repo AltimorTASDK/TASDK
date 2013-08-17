@@ -30,12 +30,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!(ScriptArray!(ScriptName), 248)()); }
-			Actor ActionTarget() { mixin(MGPC!(Actor, 280)()); }
-			float LoopTime() { mixin(MGPC!(float, 276)()); }
-			int LoopIndex() { mixin(MGPC!(int, 272)()); }
-			float BlendOutTime() { mixin(MGPC!(float, 264)()); }
-			float BlendInTime() { mixin(MGPC!(float, 260)()); }
+			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!("ScriptArray!(ScriptName)", 248)()); }
+			Actor ActionTarget() { mixin(MGPC!("Actor", 280)()); }
+			float LoopTime() { mixin(MGPC!("float", 276)()); }
+			int LoopIndex() { mixin(MGPC!("int", 272)()); }
+			float BlendOutTime() { mixin(MGPC!("float", 264)()); }
+			float BlendInTime() { mixin(MGPC!("float", 260)()); }
 		}
 		bool bBlendBetweenAnims() { mixin(MGBPC!(268, 0x8)()); }
 		bool bBlendBetweenAnims(bool val) { mixin(MSBPC!(268, 0x8)()); }

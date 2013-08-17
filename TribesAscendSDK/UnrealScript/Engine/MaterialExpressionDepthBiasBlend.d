@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			MaterialExpression.ExpressionInput Bias() { mixin(MGPC!(MaterialExpression.ExpressionInput, 148)()); }
-			float BiasScale() { mixin(MGPC!(float, 144)()); }
+			MaterialExpression.ExpressionInput Bias() { mixin(MGPC!("MaterialExpression.ExpressionInput", 148)()); }
+			float BiasScale() { mixin(MGPC!("float", 144)()); }
 		}
 		bool bNormalize() { mixin(MGBPC!(140, 0x1)()); }
 		bool bNormalize(bool val) { mixin(MSBPC!(140, 0x1)()); }

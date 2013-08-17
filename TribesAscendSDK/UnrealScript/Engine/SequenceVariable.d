@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SequenceVariable")()); }
 	private static __gshared SequenceVariable mDefaultProperties;
 	@property final static SequenceVariable DefaultProperties() { mixin(MGDPC!(SequenceVariable, "SequenceVariable Engine.Default__SequenceVariable")()); }
-	@property final auto ref ScriptName VarName() { mixin(MGPC!(ScriptName, 140)()); }
+	@property final auto ref ScriptName VarName() { mixin(MGPC!("ScriptName", 140)()); }
 }

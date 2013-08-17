@@ -37,13 +37,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			float ClientSidePositionErrorTolerance() { mixin(MGPC!(float, 652)()); }
-			int AIGroupInitStage() { mixin(MGPC!(int, 612)()); }
-			Pawn AIGroupPawns() { mixin(MGPC!(Pawn, 572)()); }
-			ScriptName AIGroupNames() { mixin(MGPC!(ScriptName, 492)()); }
-			float Position() { mixin(MGPC!(float, 488)()); }
-			float PlayRate() { mixin(MGPC!(float, 484)()); }
-			SeqAct_Interp InterpAction() { mixin(MGPC!(SeqAct_Interp, 476)()); }
+			float ClientSidePositionErrorTolerance() { mixin(MGPC!("float", 652)()); }
+			int AIGroupInitStage() { mixin(MGPC!("int", 612)()); }
+			Pawn AIGroupPawns() { mixin(MGPC!("Pawn", 572)()); }
+			ScriptName AIGroupNames() { mixin(MGPC!("ScriptName", 492)()); }
+			float Position() { mixin(MGPC!("float", 488)()); }
+			float PlayRate() { mixin(MGPC!("float", 484)()); }
+			SeqAct_Interp InterpAction() { mixin(MGPC!("SeqAct_Interp", 476)()); }
 		}
 		bool AllAIGroupsInitialized() { mixin(MGBPC!(480, 0x8)()); }
 		bool AllAIGroupsInitialized(bool val) { mixin(MSBPC!(480, 0x8)()); }

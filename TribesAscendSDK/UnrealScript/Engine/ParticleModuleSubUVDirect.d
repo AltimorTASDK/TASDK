@@ -14,7 +14,7 @@ public extern(D):
 	@property final static ParticleModuleSubUVDirect DefaultProperties() { mixin(MGDPC!(ParticleModuleSubUVDirect, "ParticleModuleSubUVDirect Engine.Default__ParticleModuleSubUVDirect")()); }
 	@property final auto ref
 	{
-		DistributionVector.RawDistributionVector SubUVSize() { mixin(MGPC!(DistributionVector.RawDistributionVector, 100)()); }
-		DistributionVector.RawDistributionVector SubUVPosition() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+		DistributionVector.RawDistributionVector SubUVSize() { mixin(MGPC!("DistributionVector.RawDistributionVector", 100)()); }
+		DistributionVector.RawDistributionVector SubUVPosition() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 	}
 }

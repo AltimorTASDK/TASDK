@@ -132,28 +132,28 @@ public extern(D):
 	{
 		auto ref
 		{
-			Pawn Driver() { mixin(MGPC!(Pawn, 1144)()); }
-			ScriptArray!(Vector) ExitPositions() { mixin(MGPC!(ScriptArray!(Vector), 1152)()); }
-			float TurnTime() { mixin(MGPC!(float, 1256)()); }
-			float VehicleMovingTime() { mixin(MGPC!(float, 1252)()); }
-			float AIMoveCheckTime() { mixin(MGPC!(float, 1248)()); }
-			float OldThrottle() { mixin(MGPC!(float, 1244)()); }
-			float OnlySteeringStartTime() { mixin(MGPC!(float, 1240)()); }
-			float OldSteering() { mixin(MGPC!(float, 1236)()); }
-			float StuckTime() { mixin(MGPC!(float, 1232)()); }
-			float ThrottleTime() { mixin(MGPC!(float, 1228)()); }
-			ubyte StuckCount() { mixin(MGPC!(ubyte, 1224)()); }
-			float ForceCrushPenetration() { mixin(MGPC!(float, 1220)()); }
-			float MinCrushSpeed() { mixin(MGPC!(float, 1216)()); }
-			ScriptClass CrushedDamageType() { mixin(MGPC!(ScriptClass, 1212)()); }
-			float MomentumMult() { mixin(MGPC!(float, 1208)()); }
-			float DriverDamageMult() { mixin(MGPC!(float, 1204)()); }
-			Vector TargetLocationAdjustment() { mixin(MGPC!(Vector, 1192)()); }
-			float Rise() { mixin(MGPC!(float, 1188)()); }
-			float Throttle() { mixin(MGPC!(float, 1184)()); }
-			float Steering() { mixin(MGPC!(float, 1180)()); }
-			Vector ExitOffset() { mixin(MGPC!(Vector, 1168)()); }
-			float ExitRadius() { mixin(MGPC!(float, 1164)()); }
+			Pawn Driver() { mixin(MGPC!("Pawn", 1144)()); }
+			ScriptArray!(Vector) ExitPositions() { mixin(MGPC!("ScriptArray!(Vector)", 1152)()); }
+			float TurnTime() { mixin(MGPC!("float", 1256)()); }
+			float VehicleMovingTime() { mixin(MGPC!("float", 1252)()); }
+			float AIMoveCheckTime() { mixin(MGPC!("float", 1248)()); }
+			float OldThrottle() { mixin(MGPC!("float", 1244)()); }
+			float OnlySteeringStartTime() { mixin(MGPC!("float", 1240)()); }
+			float OldSteering() { mixin(MGPC!("float", 1236)()); }
+			float StuckTime() { mixin(MGPC!("float", 1232)()); }
+			float ThrottleTime() { mixin(MGPC!("float", 1228)()); }
+			ubyte StuckCount() { mixin(MGPC!("ubyte", 1224)()); }
+			float ForceCrushPenetration() { mixin(MGPC!("float", 1220)()); }
+			float MinCrushSpeed() { mixin(MGPC!("float", 1216)()); }
+			ScriptClass CrushedDamageType() { mixin(MGPC!("ScriptClass", 1212)()); }
+			float MomentumMult() { mixin(MGPC!("float", 1208)()); }
+			float DriverDamageMult() { mixin(MGPC!("float", 1204)()); }
+			Vector TargetLocationAdjustment() { mixin(MGPC!("Vector", 1192)()); }
+			float Rise() { mixin(MGPC!("float", 1188)()); }
+			float Throttle() { mixin(MGPC!("float", 1184)()); }
+			float Steering() { mixin(MGPC!("float", 1180)()); }
+			Vector ExitOffset() { mixin(MGPC!("Vector", 1168)()); }
+			float ExitRadius() { mixin(MGPC!("float", 1164)()); }
 		}
 		bool bDoExtraNetRelevancyTraces() { mixin(MGBPC!(1148, 0x1000)()); }
 		bool bDoExtraNetRelevancyTraces(bool val) { mixin(MSBPC!(1148, 0x1000)()); }
@@ -211,8 +211,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void Suicide()
 	{
@@ -225,16 +225,18 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetMaxRiseForce, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
+	Vector GetTargetLocation(Actor* RequestedBy = null, bool* bRequestAlternateLoc = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Actor*)params.ptr = RequestedBy;
-		*cast(bool*)&params[4] = bRequestAlternateLoc;
+		if (RequestedBy !is null)
+			*cast(Actor*)params.ptr = *RequestedBy;
+		if (bRequestAlternateLoc !is null)
+			*cast(bool*)&params[4] = *bRequestAlternateLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -246,10 +248,11 @@ final:
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
-	void DriverRadiusDamage(float DamageAmount, float DamageRadius, Controller EventInstigator, ScriptClass pDamageType, float Momentum, Vector HitLocation, Actor DamageCauser, float DamageFalloffExponent)
+	void DriverRadiusDamage(float DamageAmount, float DamageRadius, Controller EventInstigator, ScriptClass pDamageType, float Momentum, Vector HitLocation, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[40];
 		params[] = 0;
@@ -260,7 +263,8 @@ final:
 		*cast(float*)&params[16] = Momentum;
 		*cast(Vector*)&params[20] = HitLocation;
 		*cast(Actor*)&params[32] = DamageCauser;
-		*cast(float*)&params[36] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[36] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DriverRadiusDamage, params.ptr, cast(void*)0);
 	}
 	void PlayerChangedTeam()
@@ -384,11 +388,12 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DriverLeft, cast(void*)0, cast(void*)0);
 	}
-	bool PlaceExitingDriver(Pawn ExitingDriver)
+	bool PlaceExitingDriver(Pawn* ExitingDriver = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Pawn*)params.ptr = ExitingDriver;
+		if (ExitingDriver !is null)
+			*cast(Pawn*)params.ptr = *ExitingDriver;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlaceExitingDriver, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -423,7 +428,7 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetKillInstigator, params.ptr, cast(void*)0);
 		return *cast(Controller*)&params[8];
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -432,8 +437,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void AdjustDriverDamage(ref int Damage, Controller InstigatedBy, Vector HitLocation, ref Vector Momentum, ScriptClass pDamageType)
@@ -446,14 +453,15 @@ final:
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustDriverDamage, params.ptr, cast(void*)0);
-		*Damage = *cast(int*)params.ptr;
-		*Momentum = *cast(Vector*)&params[20];
+		Damage = *cast(int*)params.ptr;
+		Momentum = *cast(Vector*)&params[20];
 	}
-	void ThrowActiveWeapon(bool bDestroyWeap)
+	void ThrowActiveWeapon(bool* bDestroyWeap = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bDestroyWeap;
+		if (bDestroyWeap !is null)
+			*cast(bool*)params.ptr = *bDestroyWeap;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ThrowActiveWeapon, params.ptr, cast(void*)0);
 	}
 	bool Died(Controller Killer, ScriptClass pDamageType, Vector HitLocation)

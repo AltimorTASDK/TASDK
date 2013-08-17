@@ -28,23 +28,23 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float Mass() { mixin(MGPC!(float, 568)()); }
-		float MaxForce() { mixin(MGPC!(float, 564)()); }
-		float MaxTouchImpulse() { mixin(MGPC!(float, 560)()); }
-		float MaxDamageImpulse() { mixin(MGPC!(float, 556)()); }
-		float FoliageDamping() { mixin(MGPC!(float, 552)()); }
-		float FoliageStiffnessQuadratic() { mixin(MGPC!(float, 548)()); }
-		float FoliageStiffness() { mixin(MGPC!(float, 544)()); }
-		float FoliageTouchImpulseScale() { mixin(MGPC!(float, 540)()); }
-		float FoliageDamageImpulseScale() { mixin(MGPC!(float, 536)()); }
-		Vector FoliagePosition() { mixin(MGPC!(Vector, 524)()); }
-		Vector FoliageForce() { mixin(MGPC!(Vector, 512)()); }
-		Vector FoliageVelocity() { mixin(MGPC!(Vector, 500)()); }
-		Vector TouchingActorEntryPosition() { mixin(MGPC!(Vector, 488)()); }
+		float Mass() { mixin(MGPC!("float", 568)()); }
+		float MaxForce() { mixin(MGPC!("float", 564)()); }
+		float MaxTouchImpulse() { mixin(MGPC!("float", 560)()); }
+		float MaxDamageImpulse() { mixin(MGPC!("float", 556)()); }
+		float FoliageDamping() { mixin(MGPC!("float", 552)()); }
+		float FoliageStiffnessQuadratic() { mixin(MGPC!("float", 548)()); }
+		float FoliageStiffness() { mixin(MGPC!("float", 544)()); }
+		float FoliageTouchImpulseScale() { mixin(MGPC!("float", 540)()); }
+		float FoliageDamageImpulseScale() { mixin(MGPC!("float", 536)()); }
+		Vector FoliagePosition() { mixin(MGPC!("Vector", 524)()); }
+		Vector FoliageForce() { mixin(MGPC!("Vector", 512)()); }
+		Vector FoliageVelocity() { mixin(MGPC!("Vector", 500)()); }
+		Vector TouchingActorEntryPosition() { mixin(MGPC!("Vector", 488)()); }
 		// WARNING: Property 'CylinderComponent' has the same name as a defined type!
 	}
 final:
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -53,8 +53,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 

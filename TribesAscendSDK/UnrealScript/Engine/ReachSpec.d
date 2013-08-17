@@ -39,19 +39,19 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptClass) PruneSpecList() { mixin(MGPC!(ScriptArray!(ScriptClass), 128)()); }
-			Actor BlockedBy() { mixin(MGPC!(Actor, 140)()); }
-			ubyte PathColorIndex() { mixin(MGPC!(ubyte, 121)()); }
-			ubyte bPruned() { mixin(MGPC!(ubyte, 120)()); }
-			int MaxLandingVelocity() { mixin(MGPC!(int, 116)()); }
-			int reachFlags() { mixin(MGPC!(int, 112)()); }
-			int CollisionHeight() { mixin(MGPC!(int, 108)()); }
-			int CollisionRadius() { mixin(MGPC!(int, 104)()); }
-			Actor.ActorReference End() { mixin(MGPC!(Actor.ActorReference, 84)()); }
-			NavigationPoint Start() { mixin(MGPC!(NavigationPoint, 80)()); }
-			Vector Direction() { mixin(MGPC!(Vector, 68)()); }
-			int Distance() { mixin(MGPC!(int, 64)()); }
-			UObject.Pointer NavOctreeObject() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			ScriptArray!(ScriptClass) PruneSpecList() { mixin(MGPC!("ScriptArray!(ScriptClass)", 128)()); }
+			Actor BlockedBy() { mixin(MGPC!("Actor", 140)()); }
+			ubyte PathColorIndex() { mixin(MGPC!("ubyte", 121)()); }
+			ubyte bPruned() { mixin(MGPC!("ubyte", 120)()); }
+			int MaxLandingVelocity() { mixin(MGPC!("int", 116)()); }
+			int reachFlags() { mixin(MGPC!("int", 112)()); }
+			int CollisionHeight() { mixin(MGPC!("int", 108)()); }
+			int CollisionRadius() { mixin(MGPC!("int", 104)()); }
+			Actor.ActorReference End() { mixin(MGPC!("Actor.ActorReference", 84)()); }
+			NavigationPoint Start() { mixin(MGPC!("NavigationPoint", 80)()); }
+			Vector Direction() { mixin(MGPC!("Vector", 68)()); }
+			int Distance() { mixin(MGPC!("int", 64)()); }
+			UObject.Pointer NavOctreeObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bDisabled() { mixin(MGBPC!(124, 0x10)()); }
 		bool bDisabled(bool val) { mixin(MSBPC!(124, 0x10)()); }

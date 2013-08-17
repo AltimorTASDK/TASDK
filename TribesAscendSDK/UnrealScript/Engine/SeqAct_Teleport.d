@@ -30,8 +30,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Volume) TeleportVolumes() { mixin(MGPC!(ScriptArray!(Volume), 240)()); }
-			float TeleportDistance() { mixin(MGPC!(float, 236)()); }
+			ScriptArray!(Volume) TeleportVolumes() { mixin(MGPC!("ScriptArray!(Volume)", 240)()); }
+			float TeleportDistance() { mixin(MGPC!("float", 236)()); }
 		}
 		bool bCheckOverlap() { mixin(MGBPC!(232, 0x2)()); }
 		bool bCheckOverlap(bool val) { mixin(MSBPC!(232, 0x2)()); }

@@ -42,14 +42,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!(ScriptArray!(ScriptName), 84)()); }
-			int AnimationIndex() { mixin(MGPC!(int, 124)()); }
+			ScriptArray!(ScriptName) AnimationList() { mixin(MGPC!("ScriptArray!(ScriptName)", 84)()); }
+			int AnimationIndex() { mixin(MGPC!("int", 124)()); }
 			// WARNING: Property 'AnimSequence' has the same name as a defined type!
-			float LoopTime() { mixin(MGPC!(float, 116)()); }
-			int LoopIndex() { mixin(MGPC!(int, 112)()); }
-			Actor CustomActionTarget() { mixin(MGPC!(Actor, 108)()); }
-			float BlendOutTime() { mixin(MGPC!(float, 100)()); }
-			float BlendInTime() { mixin(MGPC!(float, 96)()); }
+			float LoopTime() { mixin(MGPC!("float", 116)()); }
+			int LoopIndex() { mixin(MGPC!("int", 112)()); }
+			Actor CustomActionTarget() { mixin(MGPC!("Actor", 108)()); }
+			float BlendOutTime() { mixin(MGPC!("float", 100)()); }
+			float BlendInTime() { mixin(MGPC!("float", 96)()); }
 		}
 		bool bBlendBetweenAnims() { mixin(MGBPC!(104, 0x8)()); }
 		bool bBlendBetweenAnims(bool val) { mixin(MSBPC!(104, 0x8)()); }

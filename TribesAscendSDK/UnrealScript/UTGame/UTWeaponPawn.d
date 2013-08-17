@@ -109,8 +109,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void ReplicatedEvent(ScriptName VarName)
 	{
@@ -128,9 +128,9 @@ final:
 		*cast(Rotator*)&params[16] = out_CamRot;
 		*cast(float*)&params[28] = out_FOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcCamera, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[32];
 	}
 	void ProcessViewRotation(float DeltaTime, ref Rotator out_ViewRotation, ref Rotator out_DeltaRot)
@@ -141,8 +141,8 @@ final:
 		*cast(Rotator*)&params[4] = out_ViewRotation;
 		*cast(Rotator*)&params[16] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[4];
-		*out_DeltaRot = *cast(Rotator*)&params[16];
+		out_ViewRotation = *cast(Rotator*)&params[4];
+		out_DeltaRot = *cast(Rotator*)&params[16];
 	}
 	void SetFiringMode(Weapon Weap, ubyte FiringModeNum)
 	{
@@ -217,11 +217,12 @@ final:
 		*cast(bool*)params.ptr = bIn;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustCameraScale, params.ptr, cast(void*)0);
 	}
-	bool PlaceExitingDriver(Pawn ExitingDriver)
+	bool PlaceExitingDriver(Pawn* ExitingDriver = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(Pawn*)params.ptr = ExitingDriver;
+		if (ExitingDriver !is null)
+			*cast(Pawn*)params.ptr = *ExitingDriver;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlaceExitingDriver, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
@@ -229,14 +230,15 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.DropToGround, cast(void*)0, cast(void*)0);
 	}
-	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo)
+	void AddVelocity(Vector NewVelocity, Vector HitLocation, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null)
 	{
 		ubyte params[56];
 		params[] = 0;
 		*cast(Vector*)params.ptr = NewVelocity;
 		*cast(Vector*)&params[12] = HitLocation;
 		*cast(ScriptClass*)&params[24] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[28] = HitInfo;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[28] = *HitInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddVelocity, params.ptr, cast(void*)0);
 	}
 	void JumpOffPawn()
@@ -318,22 +320,24 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.TooCloseToAttack, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void DisplayHud(UTHUD pHUD, Canvas pCanvas, UObject.Vector2D HudPOS, int SIndex)
+	void DisplayHud(UTHUD pHUD, Canvas pCanvas, UObject.Vector2D HudPOS, int* SIndex = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(UTHUD*)params.ptr = pHUD;
 		*cast(Canvas*)&params[4] = pCanvas;
 		*cast(UObject.Vector2D*)&params[8] = HudPOS;
-		*cast(int*)&params[16] = SIndex;
+		if (SIndex !is null)
+			*cast(int*)&params[16] = *SIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayHud, params.ptr, cast(void*)0);
 	}
-	void ApplyWeaponEffects(int OverlayFlags, int SeatIndex)
+	void ApplyWeaponEffects(int OverlayFlags, int* SeatIndex = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = OverlayFlags;
-		*cast(int*)&params[4] = SeatIndex;
+		if (SeatIndex !is null)
+			*cast(int*)&params[4] = *SeatIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ApplyWeaponEffects, params.ptr, cast(void*)0);
 	}
 }

@@ -22,12 +22,12 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(RB_ConstraintSetup) ConstraintSetup() { mixin(MGPC!(ScriptArray!(RB_ConstraintSetup), 148)()); }
-		ScriptArray!(RB_BodySetup) BodySetup() { mixin(MGPC!(ScriptArray!(RB_BodySetup), 64)()); }
-		ScriptArray!(int) BoundsBodies() { mixin(MGPC!(ScriptArray!(int), 136)()); }
-		PhysicsAssetInstance DefaultInstance() { mixin(MGPC!(PhysicsAssetInstance, 160)()); }
-		UObject.Map_Mirror BodySetupIndexMap() { mixin(MGPC!(UObject.Map_Mirror, 76)()); }
-		SkeletalMesh DefaultSkelMesh() { mixin(MGPC!(SkeletalMesh, 60)()); }
+		ScriptArray!(RB_ConstraintSetup) ConstraintSetup() { mixin(MGPC!("ScriptArray!(RB_ConstraintSetup)", 148)()); }
+		ScriptArray!(RB_BodySetup) BodySetup() { mixin(MGPC!("ScriptArray!(RB_BodySetup)", 64)()); }
+		ScriptArray!(int) BoundsBodies() { mixin(MGPC!("ScriptArray!(int)", 136)()); }
+		PhysicsAssetInstance DefaultInstance() { mixin(MGPC!("PhysicsAssetInstance", 160)()); }
+		UObject.Map_Mirror BodySetupIndexMap() { mixin(MGPC!("UObject.Map_Mirror", 76)()); }
+		SkeletalMesh DefaultSkelMesh() { mixin(MGPC!("SkeletalMesh", 60)()); }
 	}
 	final int FindBodyIndex(ScriptName BodyName)
 	{

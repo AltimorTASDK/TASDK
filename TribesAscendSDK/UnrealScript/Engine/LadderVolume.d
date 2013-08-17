@@ -37,12 +37,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector ClimbDir() { mixin(MGPC!(Vector, 608)()); }
-			Pawn PendingClimber() { mixin(MGPC!(Pawn, 628)()); }
+			Vector ClimbDir() { mixin(MGPC!("Vector", 608)()); }
+			Pawn PendingClimber() { mixin(MGPC!("Pawn", 628)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'WallDirArrow'!
-			Ladder LadderList() { mixin(MGPC!(Ladder, 620)()); }
-			Vector LookDir() { mixin(MGPC!(Vector, 596)()); }
-			Rotator WallDir() { mixin(MGPC!(Rotator, 584)()); }
+			Ladder LadderList() { mixin(MGPC!("Ladder", 620)()); }
+			Vector LookDir() { mixin(MGPC!("Vector", 596)()); }
+			Rotator WallDir() { mixin(MGPC!("Rotator", 584)()); }
 		}
 		bool bAllowLadderStrafing() { mixin(MGBPC!(624, 0x4)()); }
 		bool bAllowLadderStrafing(bool val) { mixin(MSBPC!(624, 0x4)()); }

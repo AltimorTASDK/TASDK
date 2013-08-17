@@ -38,17 +38,17 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(UObject.Pointer) PostProcessProxies() { mixin(MGPC!(ScriptArray!(UObject.Pointer), 132)()); }
-			UObject.Pointer ViewState() { mixin(MGPC!(UObject.Pointer, 128)()); }
-			UObject.Pointer CaptureInfo() { mixin(MGPC!(UObject.Pointer, 124)()); }
-			float MaxStreamingUpdateDist() { mixin(MGPC!(float, 120)()); }
-			float MaxViewDistanceOverride() { mixin(MGPC!(float, 116)()); }
-			float MaxUpdateDist() { mixin(MGPC!(float, 112)()); }
-			PostProcessChain PostProcess() { mixin(MGPC!(PostProcessChain, 108)()); }
-			float FrameRate() { mixin(MGPC!(float, 104)()); }
-			int SceneLOD() { mixin(MGPC!(int, 100)()); }
-			SceneCaptureComponent.ESceneCaptureViewMode ViewMode() { mixin(MGPC!(SceneCaptureComponent.ESceneCaptureViewMode, 96)()); }
-			UObject.Color ClearColor() { mixin(MGPC!(UObject.Color, 92)()); }
+			ScriptArray!(UObject.Pointer) PostProcessProxies() { mixin(MGPC!("ScriptArray!(UObject.Pointer)", 132)()); }
+			UObject.Pointer ViewState() { mixin(MGPC!("UObject.Pointer", 128)()); }
+			UObject.Pointer CaptureInfo() { mixin(MGPC!("UObject.Pointer", 124)()); }
+			float MaxStreamingUpdateDist() { mixin(MGPC!("float", 120)()); }
+			float MaxViewDistanceOverride() { mixin(MGPC!("float", 116)()); }
+			float MaxUpdateDist() { mixin(MGPC!("float", 112)()); }
+			PostProcessChain PostProcess() { mixin(MGPC!("PostProcessChain", 108)()); }
+			float FrameRate() { mixin(MGPC!("float", 104)()); }
+			int SceneLOD() { mixin(MGPC!("int", 100)()); }
+			SceneCaptureComponent.ESceneCaptureViewMode ViewMode() { mixin(MGPC!("SceneCaptureComponent.ESceneCaptureViewMode", 96)()); }
+			UObject.Color ClearColor() { mixin(MGPC!("UObject.Color", 92)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(88, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(88, 0x1)()); }

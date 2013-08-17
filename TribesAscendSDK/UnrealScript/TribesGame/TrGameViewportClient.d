@@ -26,7 +26,7 @@ public extern(D):
 			ScriptFunction PostRender() { mixin(MGF!("mPostRender", "Function TribesGame.TrGameViewportClient.PostRender")()); }
 		}
 	}
-	@property final auto ref TrChatConsole ChatConsole() { mixin(MGPC!(TrChatConsole, 408)()); }
+	@property final auto ref TrChatConsole ChatConsole() { mixin(MGPC!("TrChatConsole", 408)()); }
 final:
 	bool Init(ref ScriptString OutError)
 	{
@@ -34,7 +34,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = OutError;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
-		*OutError = *cast(ScriptString*)params.ptr;
+		OutError = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	void PostRender(Canvas pCanvas)

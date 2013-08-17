@@ -14,7 +14,7 @@ public extern(D):
 	@property final static K2Node_MemberVar DefaultProperties() { mixin(MGDPC!(K2Node_MemberVar, "K2Node_MemberVar Engine.Default__K2Node_MemberVar")()); }
 	@property final auto ref
 	{
-		ScriptString VarName() { mixin(MGPC!(ScriptString, 96)()); }
-		K2Connector.EK2ConnectorType VarType() { mixin(MGPC!(K2Connector.EK2ConnectorType, 92)()); }
+		ScriptString VarName() { mixin(MGPC!("ScriptString", 96)()); }
+		K2Connector.EK2ConnectorType VarType() { mixin(MGPC!("K2Connector.EK2ConnectorType", 92)()); }
 	}
 }

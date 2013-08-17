@@ -53,13 +53,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector m_vTracerDrawScale3D() { mixin(MGPC!(Vector, 824)()); }
-			Vector m_vInitialFrameOfRefVelocity() { mixin(MGPC!(Vector, 864)()); }
-			Vector m_vDestinationLoc() { mixin(MGPC!(Vector, 852)()); }
-			float m_fMeshScaleDownTime() { mixin(MGPC!(float, 848)()); }
-			float m_fCurScale() { mixin(MGPC!(float, 844)()); }
-			float m_fMeshScaleUpTime() { mixin(MGPC!(float, 836)()); }
-			float m_fAccelRate() { mixin(MGPC!(float, 820)()); }
+			Vector m_vTracerDrawScale3D() { mixin(MGPC!("Vector", 824)()); }
+			Vector m_vInitialFrameOfRefVelocity() { mixin(MGPC!("Vector", 864)()); }
+			Vector m_vDestinationLoc() { mixin(MGPC!("Vector", 852)()); }
+			float m_fMeshScaleDownTime() { mixin(MGPC!("float", 848)()); }
+			float m_fCurScale() { mixin(MGPC!("float", 844)()); }
+			float m_fMeshScaleUpTime() { mixin(MGPC!("float", 836)()); }
+			float m_fAccelRate() { mixin(MGPC!("float", 820)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TracerPSC'!
 		}
 		bool m_bScalingDown() { mixin(MGBPC!(840, 0x2)()); }

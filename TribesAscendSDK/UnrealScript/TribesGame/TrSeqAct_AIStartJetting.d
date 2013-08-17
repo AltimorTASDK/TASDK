@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector Direction() { mixin(MGPC!(Vector, 236)()); }
-			float Magnitude() { mixin(MGPC!(float, 232)()); }
+			Vector Direction() { mixin(MGPC!("Vector", 236)()); }
+			float Magnitude() { mixin(MGPC!("float", 232)()); }
 		}
 		bool m_bResetVelocity() { mixin(MGBPC!(248, 0x1)()); }
 		bool m_bResetVelocity(bool val) { mixin(MSBPC!(248, 0x1)()); }

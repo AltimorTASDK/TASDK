@@ -51,7 +51,7 @@ public extern(D):
 			ScriptFunction GetSessionDuration() { mixin(MGF!("mGetSessionDuration", "Function Engine.GameplayEventsReader.GetSessionDuration")()); }
 		}
 	}
-	@property final auto ref ScriptArray!(GameplayEventsHandler) RegisteredHandlers() { mixin(MGPC!(ScriptArray!(GameplayEventsHandler), 336)()); }
+	@property final auto ref ScriptArray!(GameplayEventsHandler) RegisteredHandlers() { mixin(MGPC!("ScriptArray!(GameplayEventsHandler)", 336)()); }
 final:
 	bool OpenStatsFile(ScriptString Filename)
 	{

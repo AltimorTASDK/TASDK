@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction EULAReponse() { mixin(MGF!("mEULAReponse", "Function TribesGame.GFxTrScene_EULA.EULAReponse")()); }
 		}
 	}
-	@property final auto ref ScriptString EULA() { mixin(MGPC!(ScriptString, 132)()); }
+	@property final auto ref ScriptString EULA() { mixin(MGPC!("ScriptString", 132)()); }
 final:
 	void LoadEULA()
 	{

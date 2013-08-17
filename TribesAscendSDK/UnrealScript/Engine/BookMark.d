@@ -13,7 +13,7 @@ public extern(D):
 	@property final static BookMark DefaultProperties() { mixin(MGDPC!(BookMark, "BookMark Engine.Default__BookMark")()); }
 	@property final auto ref
 	{
-		Rotator Rotation() { mixin(MGPC!(Rotator, 72)()); }
-		Vector Location() { mixin(MGPC!(Vector, 60)()); }
+		Rotator Rotation() { mixin(MGPC!("Rotator", 72)()); }
+		Vector Location() { mixin(MGPC!("Vector", 60)()); }
 	}
 }

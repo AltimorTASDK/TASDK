@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class UTGame.UTPhysicalMaterialProperty")()); }
 	private static __gshared UTPhysicalMaterialProperty mDefaultProperties;
 	@property final static UTPhysicalMaterialProperty DefaultProperties() { mixin(MGDPC!(UTPhysicalMaterialProperty, "UTPhysicalMaterialProperty UTGame.Default__UTPhysicalMaterialProperty")()); }
-	@property final auto ref ScriptName MaterialType() { mixin(MGPC!(ScriptName, 60)()); }
+	@property final auto ref ScriptName MaterialType() { mixin(MGPC!("ScriptName", 60)()); }
 }

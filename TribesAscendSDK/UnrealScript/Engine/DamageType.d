@@ -22,15 +22,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ForceFeedbackWaveform DamagedFFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 88)()); }
-			float FracturedMeshDamage() { mixin(MGPC!(float, 96)()); }
-			ForceFeedbackWaveform KilledFFWaveform() { mixin(MGPC!(ForceFeedbackWaveform, 92)()); }
-			float VehicleMomentumScaling() { mixin(MGPC!(float, 84)()); }
-			float VehicleDamageScaling() { mixin(MGPC!(float, 80)()); }
-			float RadialDamageImpulse() { mixin(MGPC!(float, 76)()); }
-			float KDeathUpKick() { mixin(MGPC!(float, 72)()); }
-			float KDeathVel() { mixin(MGPC!(float, 68)()); }
-			float KDamageImpulse() { mixin(MGPC!(float, 64)()); }
+			ForceFeedbackWaveform DamagedFFWaveform() { mixin(MGPC!("ForceFeedbackWaveform", 88)()); }
+			float FracturedMeshDamage() { mixin(MGPC!("float", 96)()); }
+			ForceFeedbackWaveform KilledFFWaveform() { mixin(MGPC!("ForceFeedbackWaveform", 92)()); }
+			float VehicleMomentumScaling() { mixin(MGPC!("float", 84)()); }
+			float VehicleDamageScaling() { mixin(MGPC!("float", 80)()); }
+			float RadialDamageImpulse() { mixin(MGPC!("float", 76)()); }
+			float KDeathUpKick() { mixin(MGPC!("float", 72)()); }
+			float KDeathVel() { mixin(MGPC!("float", 68)()); }
+			float KDamageImpulse() { mixin(MGPC!("float", 64)()); }
 		}
 		bool bRadialDamageVelChange() { mixin(MGBPC!(60, 0x10)()); }
 		bool bRadialDamageVelChange(bool val) { mixin(MSBPC!(60, 0x10)()); }

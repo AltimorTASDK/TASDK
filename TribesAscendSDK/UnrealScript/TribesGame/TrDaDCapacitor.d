@@ -44,14 +44,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString StringC() { mixin(MGPC!(ScriptString, 1404)()); }
-		ScriptString StringB() { mixin(MGPC!(ScriptString, 1392)()); }
-		ScriptString StringA() { mixin(MGPC!(ScriptString, 1380)()); }
+		ScriptString StringC() { mixin(MGPC!("ScriptString", 1404)()); }
+		ScriptString StringB() { mixin(MGPC!("ScriptString", 1392)()); }
+		ScriptString StringA() { mixin(MGPC!("ScriptString", 1380)()); }
 		// WARNING: Property 'StaticMeshComponent' has the same name as a defined type!
-		int m_CapacitorIndex() { mixin(MGPC!(int, 1372)()); }
-		TrDaDCore m_Core() { mixin(MGPC!(TrDaDCore, 1368)()); }
-		float m_fShieldBarPlacementY() { mixin(MGPC!(float, 1364)()); }
-		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!(MaterialInstanceConstant, 1360)()); }
+		int m_CapacitorIndex() { mixin(MGPC!("int", 1372)()); }
+		TrDaDCore m_Core() { mixin(MGPC!("TrDaDCore", 1368)()); }
+		float m_fShieldBarPlacementY() { mixin(MGPC!("float", 1364)()); }
+		MaterialInstanceConstant m_ShieldBarMIC() { mixin(MGPC!("MaterialInstanceConstant", 1360)()); }
 	}
 final:
 	void Init(TrDaDCore Core, int Index)
@@ -62,7 +62,7 @@ final:
 		*cast(int*)&params[4] = Index;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Init, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -71,8 +71,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	ScriptString GetScreenName(PlayerController PC)

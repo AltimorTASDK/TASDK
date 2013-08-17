@@ -23,12 +23,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TextYScale() { mixin(MGPC!(float, 160)()); }
-			float TextXScale() { mixin(MGPC!(float, 156)()); }
-			UObject.Color TouchedColor() { mixin(MGPC!(UObject.Color, 152)()); }
-			UObject.Color TextColor() { mixin(MGPC!(UObject.Color, 148)()); }
-			Font TextFont() { mixin(MGPC!(Font, 144)()); }
-			ScriptString Caption() { mixin(MGPC!(ScriptString, 132)()); }
+			float TextYScale() { mixin(MGPC!("float", 160)()); }
+			float TextXScale() { mixin(MGPC!("float", 156)()); }
+			UObject.Color TouchedColor() { mixin(MGPC!("UObject.Color", 152)()); }
+			UObject.Color TextColor() { mixin(MGPC!("UObject.Color", 148)()); }
+			Font TextFont() { mixin(MGPC!("Font", 144)()); }
+			ScriptString Caption() { mixin(MGPC!("ScriptString", 132)()); }
 		}
 		bool bAutoSize() { mixin(MGBPC!(164, 0x1)()); }
 		bool bAutoSize(bool val) { mixin(MSBPC!(164, 0x1)()); }

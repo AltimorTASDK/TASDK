@@ -38,9 +38,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(UIDataProvider_MenuItem) DynamicProviders() { mixin(MGPC!(ScriptArray!(UIDataProvider_MenuItem), 264)()); }
-		UObject.MultiMap_Mirror OptionProviders() { mixin(MGPC!(UObject.MultiMap_Mirror, 204)()); }
-		ScriptName CurrentGameSettingsTag() { mixin(MGPC!(ScriptName, 196)()); }
+		ScriptArray!(UIDataProvider_MenuItem) DynamicProviders() { mixin(MGPC!("ScriptArray!(UIDataProvider_MenuItem)", 264)()); }
+		UObject.MultiMap_Mirror OptionProviders() { mixin(MGPC!("UObject.MultiMap_Mirror", 204)()); }
+		ScriptName CurrentGameSettingsTag() { mixin(MGPC!("ScriptName", 196)()); }
 	}
 final:
 	void ClearSet(ScriptName SetName)
@@ -65,14 +65,15 @@ final:
 		*cast(ScriptName*)params.ptr = SetName;
 		*cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8] = OutProviders;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSet, params.ptr, cast(void*)0);
-		*OutProviders = *cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8];
+		OutProviders = *cast(ScriptArray!(UIDataProvider_MenuItem)*)&params[8];
 	}
-	void OnGameSettingsChanged(UIDataProvider SourceProvider, ScriptName PropTag)
+	void OnGameSettingsChanged(UIDataProvider SourceProvider, ScriptName* PropTag = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(UIDataProvider*)params.ptr = SourceProvider;
-		*cast(ScriptName*)&params[4] = PropTag;
+		if (PropTag !is null)
+			*cast(ScriptName*)&params[4] = *PropTag;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameSettingsChanged, params.ptr, cast(void*)0);
 	}
 	void Registered(LocalPlayer PlayerOwner)

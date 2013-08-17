@@ -42,9 +42,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int Position() { mixin(MGPC!(int, 680)()); }
-		int NumPoints() { mixin(MGPC!(int, 676)()); }
-		Vector WayPoints() { mixin(MGPC!(Vector, 496)()); }
+		int Position() { mixin(MGPC!("int", 680)()); }
+		int NumPoints() { mixin(MGPC!("int", 676)()); }
+		Vector WayPoints() { mixin(MGPC!("Vector", 496)()); }
 	}
 final:
 	void PostBeginPlay()
@@ -62,12 +62,13 @@ final:
 		*cast(ScriptName*)params.ptr = VarName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReplicatedEvent, params.ptr, cast(void*)0);
 	}
-	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
+	void SetTemplate(ParticleSystem NewTemplate, bool* bDestroyOnFinish = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
-		*cast(bool*)&params[4] = bDestroyOnFinish;
+		if (bDestroyOnFinish !is null)
+			*cast(bool*)&params[4] = *bDestroyOnFinish;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void StartNextPath()

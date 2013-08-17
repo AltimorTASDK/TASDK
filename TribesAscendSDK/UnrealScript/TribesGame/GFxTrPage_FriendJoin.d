@@ -53,15 +53,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!(ScriptArray!(TrFriendManager.FriendStruct), 424)()); }
-			ScriptString NotInAGameSubtext() { mixin(MGPC!(ScriptString, 412)()); }
-			ScriptString SocialSubtext() { mixin(MGPC!(ScriptString, 400)()); }
-			ScriptString SocialTitle() { mixin(MGPC!(ScriptString, 388)()); }
-			ScriptString SelectPromptSubtext() { mixin(MGPC!(ScriptString, 376)()); }
-			int SpecActionIndex() { mixin(MGPC!(int, 368)()); }
-			int PrevPlayerId() { mixin(MGPC!(int, 364)()); }
-			int FocusedIndex() { mixin(MGPC!(int, 360)()); }
-			int Criteria() { mixin(MGPC!(int, 356)()); }
+			ScriptArray!(TrFriendManager.FriendStruct) SortedFriends() { mixin(MGPC!("ScriptArray!(TrFriendManager.FriendStruct)", 424)()); }
+			ScriptString NotInAGameSubtext() { mixin(MGPC!("ScriptString", 412)()); }
+			ScriptString SocialSubtext() { mixin(MGPC!("ScriptString", 400)()); }
+			ScriptString SocialTitle() { mixin(MGPC!("ScriptString", 388)()); }
+			ScriptString SelectPromptSubtext() { mixin(MGPC!("ScriptString", 376)()); }
+			int SpecActionIndex() { mixin(MGPC!("int", 368)()); }
+			int PrevPlayerId() { mixin(MGPC!("int", 364)()); }
+			int FocusedIndex() { mixin(MGPC!("int", 360)()); }
+			int Criteria() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForMessagePopup() { mixin(MGBPC!(372, 0x2)()); }
 		bool bWaitingForMessagePopup(bool val) { mixin(MSBPC!(372, 0x2)()); }

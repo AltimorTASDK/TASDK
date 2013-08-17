@@ -44,9 +44,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			SkelControlSingleBone m_RepairGunControl() { mixin(MGPC!(SkelControlSingleBone, 1408)()); }
-			TrAnimNodeBlendList m_RepairStationBlendList() { mixin(MGPC!(TrAnimNodeBlendList, 1404)()); }
-			float m_fStationOpenDelay() { mixin(MGPC!(float, 1400)()); }
+			SkelControlSingleBone m_RepairGunControl() { mixin(MGPC!("SkelControlSingleBone", 1408)()); }
+			TrAnimNodeBlendList m_RepairStationBlendList() { mixin(MGPC!("TrAnimNodeBlendList", 1404)()); }
+			float m_fStationOpenDelay() { mixin(MGPC!("float", 1400)()); }
 		}
 		bool m_bIsStationOpen() { mixin(MGBPC!(1396, 0x1)()); }
 		bool m_bIsStationOpen(bool val) { mixin(MSBPC!(1396, 0x1)()); }

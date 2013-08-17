@@ -34,10 +34,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKSkelControl_TurretConstrained.TurretStepData")()); }
 		@property final auto ref
 		{
-			UDKSkelControl_TurretConstrained.TurretConstraintData MinAngle() { mixin(MGPS!(UDKSkelControl_TurretConstrained.TurretConstraintData, 20)()); }
-			UDKSkelControl_TurretConstrained.TurretConstraintData MaxAngle() { mixin(MGPS!(UDKSkelControl_TurretConstrained.TurretConstraintData, 8)()); }
-			int StepEndAngle() { mixin(MGPS!(int, 4)()); }
-			int StepStartAngle() { mixin(MGPS!(int, 0)()); }
+			UDKSkelControl_TurretConstrained.TurretConstraintData MinAngle() { mixin(MGPS!("UDKSkelControl_TurretConstrained.TurretConstraintData", 20)()); }
+			UDKSkelControl_TurretConstrained.TurretConstraintData MaxAngle() { mixin(MGPS!("UDKSkelControl_TurretConstrained.TurretConstraintData", 8)()); }
+			int StepEndAngle() { mixin(MGPS!("int", 4)()); }
+			int StepStartAngle() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct TurretConstraintData
@@ -48,24 +48,24 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKSkelControl_TurretConstrained.TurretConstraintData")()); }
 		@property final auto ref
 		{
-			int RollConstraint() { mixin(MGPS!(int, 8)()); }
-			int YawConstraint() { mixin(MGPS!(int, 4)()); }
-			int PitchConstraint() { mixin(MGPS!(int, 0)()); }
+			int RollConstraint() { mixin(MGPS!("int", 8)()); }
+			int YawConstraint() { mixin(MGPS!("int", 4)()); }
+			int PitchConstraint() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKSkelControl_TurretConstrained.TurretStepData) Steps() { mixin(MGPC!(ScriptArray!(UDKSkelControl_TurretConstrained.TurretStepData), 264)()); }
+			ScriptArray!(UDKSkelControl_TurretConstrained.TurretStepData) Steps() { mixin(MGPC!("ScriptArray!(UDKSkelControl_TurretConstrained.TurretStepData)", 264)()); }
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnTurretStatusChange__Delegate'!
-			Rotator ConstrainedBoneRotation() { mixin(MGPC!(Rotator, 300)()); }
-			int AssociatedSeatIndex() { mixin(MGPC!(int, 296)()); }
-			Rotator DesiredBoneRotation() { mixin(MGPC!(Rotator, 284)()); }
-			float PitchSpeedScale() { mixin(MGPC!(float, 280)()); }
-			float LagDegreesPerSecond() { mixin(MGPC!(float, 276)()); }
-			UDKSkelControl_TurretConstrained.TurretConstraintData MinAngle() { mixin(MGPC!(UDKSkelControl_TurretConstrained.TurretConstraintData, 252)()); }
-			UDKSkelControl_TurretConstrained.TurretConstraintData MaxAngle() { mixin(MGPC!(UDKSkelControl_TurretConstrained.TurretConstraintData, 240)()); }
+			Rotator ConstrainedBoneRotation() { mixin(MGPC!("Rotator", 300)()); }
+			int AssociatedSeatIndex() { mixin(MGPC!("int", 296)()); }
+			Rotator DesiredBoneRotation() { mixin(MGPC!("Rotator", 284)()); }
+			float PitchSpeedScale() { mixin(MGPC!("float", 280)()); }
+			float LagDegreesPerSecond() { mixin(MGPC!("float", 276)()); }
+			UDKSkelControl_TurretConstrained.TurretConstraintData MinAngle() { mixin(MGPC!("UDKSkelControl_TurretConstrained.TurretConstraintData", 252)()); }
+			UDKSkelControl_TurretConstrained.TurretConstraintData MaxAngle() { mixin(MGPC!("UDKSkelControl_TurretConstrained.TurretConstraintData", 240)()); }
 		}
 		bool bIsInMotion() { mixin(MGBPC!(236, 0x100)()); }
 		bool bIsInMotion(bool val) { mixin(MSBPC!(236, 0x100)()); }

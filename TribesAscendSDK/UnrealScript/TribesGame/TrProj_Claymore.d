@@ -32,16 +32,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float m_fScalarAngle() { mixin(MGPC!(float, 904)()); }
-		float m_fDetonationAngle() { mixin(MGPC!(float, 900)()); }
+		float m_fScalarAngle() { mixin(MGPC!("float", 904)()); }
+		float m_fDetonationAngle() { mixin(MGPC!("float", 900)()); }
 	}
 final:
-	void InitProjectile(Vector Direction, ScriptClass ClassToInherit)
+	void InitProjectile(Vector Direction, ScriptClass* ClassToInherit = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Direction;
-		*cast(ScriptClass*)&params[12] = ClassToInherit;
+		if (ClassToInherit !is null)
+			*cast(ScriptClass*)&params[12] = *ClassToInherit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitProjectile, params.ptr, cast(void*)0);
 	}
 	void SetExplosionEffectParameters(

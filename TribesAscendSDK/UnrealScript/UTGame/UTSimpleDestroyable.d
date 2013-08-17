@@ -46,16 +46,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TimeToRespawn() { mixin(MGPC!(float, 588)()); }
-			StaticMesh RespawnStaticMesh() { mixin(MGPC!(StaticMesh, 584)()); }
-			float RespawnTime() { mixin(MGPC!(float, 580)()); }
-			Vector SpawnPhysMeshAngularVel() { mixin(MGPC!(Vector, 568)()); }
-			Vector SpawnPhysMeshLinearVel() { mixin(MGPC!(Vector, 556)()); }
-			float SpawnPhysMeshLifeSpan() { mixin(MGPC!(float, 552)()); }
-			StaticMesh SpawnPhysMesh() { mixin(MGPC!(StaticMesh, 548)()); }
-			ParticleSystem ParticlesOnDestroy() { mixin(MGPC!(ParticleSystem, 544)()); }
-			SoundCue SoundOnDestroy() { mixin(MGPC!(SoundCue, 540)()); }
-			StaticMesh MeshOnDestroy() { mixin(MGPC!(StaticMesh, 536)()); }
+			float TimeToRespawn() { mixin(MGPC!("float", 588)()); }
+			StaticMesh RespawnStaticMesh() { mixin(MGPC!("StaticMesh", 584)()); }
+			float RespawnTime() { mixin(MGPC!("float", 580)()); }
+			Vector SpawnPhysMeshAngularVel() { mixin(MGPC!("Vector", 568)()); }
+			Vector SpawnPhysMeshLinearVel() { mixin(MGPC!("Vector", 556)()); }
+			float SpawnPhysMeshLifeSpan() { mixin(MGPC!("float", 552)()); }
+			StaticMesh SpawnPhysMesh() { mixin(MGPC!("StaticMesh", 548)()); }
+			ParticleSystem ParticlesOnDestroy() { mixin(MGPC!("ParticleSystem", 544)()); }
+			SoundCue SoundOnDestroy() { mixin(MGPC!("SoundCue", 540)()); }
+			StaticMesh MeshOnDestroy() { mixin(MGPC!("StaticMesh", 536)()); }
 		}
 		bool bDestroyed() { mixin(MGBPC!(532, 0x8)()); }
 		bool bDestroyed(bool val) { mixin(MSBPC!(532, 0x8)()); }
@@ -79,7 +79,7 @@ final:
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.RespawnDestructible, cast(void*)0, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -88,8 +88,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void Touch(Actor Other, 

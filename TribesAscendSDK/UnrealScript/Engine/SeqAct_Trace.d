@@ -21,12 +21,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			Vector HitLocation() { mixin(MGPC!(Vector, 280)()); }
-			float Distance() { mixin(MGPC!(float, 276)()); }
-			UObject HitObject() { mixin(MGPC!(UObject, 272)()); }
-			Vector EndOffset() { mixin(MGPC!(Vector, 260)()); }
-			Vector StartOffset() { mixin(MGPC!(Vector, 248)()); }
-			Vector TraceExtent() { mixin(MGPC!(Vector, 236)()); }
+			Vector HitLocation() { mixin(MGPC!("Vector", 280)()); }
+			float Distance() { mixin(MGPC!("float", 276)()); }
+			UObject HitObject() { mixin(MGPC!("UObject", 272)()); }
+			Vector EndOffset() { mixin(MGPC!("Vector", 260)()); }
+			Vector StartOffset() { mixin(MGPC!("Vector", 248)()); }
+			Vector TraceExtent() { mixin(MGPC!("Vector", 236)()); }
 		}
 		bool bTraceWorld() { mixin(MGBPC!(232, 0x2)()); }
 		bool bTraceWorld(bool val) { mixin(MSBPC!(232, 0x2)()); }

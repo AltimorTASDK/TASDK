@@ -25,9 +25,9 @@ public extern(D):
 		{
 			auto ref
 			{
-				MaterialInstanceConstant ThumbnailMIC() { mixin(MGPS!(MaterialInstanceConstant, 16)()); }
-				float Hardness() { mixin(MGPS!(float, 8)()); }
-				ScriptName LayerName() { mixin(MGPS!(ScriptName, 0)()); }
+				MaterialInstanceConstant ThumbnailMIC() { mixin(MGPS!("MaterialInstanceConstant", 16)()); }
+				float Hardness() { mixin(MGPS!("float", 8)()); }
+				ScriptName LayerName() { mixin(MGPS!("ScriptName", 0)()); }
 			}
 			bool bNoWeightBlend() { mixin(MGBPS!(12, 0x1)()); }
 			bool bNoWeightBlend(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -43,30 +43,30 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(ScriptName) LayerNames() { mixin(MGPC!(ScriptArray!(ScriptName), 484)()); }
-		ScriptArray!(Landscape.LandscapeLayerInfo) LayerInfos() { mixin(MGPC!(ScriptArray!(Landscape.LandscapeLayerInfo), 496)()); }
+		ScriptArray!(ScriptName) LayerNames() { mixin(MGPC!("ScriptArray!(ScriptName)", 484)()); }
+		ScriptArray!(Landscape.LandscapeLayerInfo) LayerInfos() { mixin(MGPC!("ScriptArray!(Landscape.LandscapeLayerInfo)", 496)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) LandscapeComponents() { mixin(MGPC!(ScriptArray!(
+void*) LandscapeComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 604)()); }
+void*)", 604)()); }
 		ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) CollisionComponents() { mixin(MGPC!(ScriptArray!(
+void*) CollisionComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 616)()); }
-		int NumSubsections() { mixin(MGPC!(int, 820)()); }
-		int SubsectionSizeQuads() { mixin(MGPC!(int, 816)()); }
-		int ComponentSizeQuads() { mixin(MGPC!(int, 812)()); }
-		UObject.Pointer DataInterface() { mixin(MGPC!(UObject.Pointer, 808)()); }
+void*)", 616)()); }
+		int NumSubsections() { mixin(MGPC!("int", 820)()); }
+		int SubsectionSizeQuads() { mixin(MGPC!("int", 816)()); }
+		int ComponentSizeQuads() { mixin(MGPC!("int", 812)()); }
+		UObject.Pointer DataInterface() { mixin(MGPC!("UObject.Pointer", 808)()); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'WeightmapUsageMap'!
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoCollisionComponentMap'!
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'XYtoComponentMap'!
-		float StreamingDistanceMultiplier() { mixin(MGPC!(float, 600)()); }
-		int StaticLightingResolution() { mixin(MGPC!(int, 596)()); }
-		EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!(EngineTypes.LightmassPrimitiveSettings, 568)()); }
+		float StreamingDistanceMultiplier() { mixin(MGPC!("float", 600)()); }
+		int StaticLightingResolution() { mixin(MGPC!("int", 596)()); }
+		EngineTypes.LightmassPrimitiveSettings LightmassSettings() { mixin(MGPC!("EngineTypes.LightmassPrimitiveSettings", 568)()); }
 		// ERROR: Unsupported object class 'MapProperty' for the property named 'MaterialInstanceConstantMap'!
-		int MaxLODLevel() { mixin(MGPC!(int, 480)()); }
-		Material LandscapeMaterial() { mixin(MGPC!(Material, 476)()); }
+		int MaxLODLevel() { mixin(MGPC!("int", 480)()); }
+		Material LandscapeMaterial() { mixin(MGPC!("Material", 476)()); }
 	}
 }

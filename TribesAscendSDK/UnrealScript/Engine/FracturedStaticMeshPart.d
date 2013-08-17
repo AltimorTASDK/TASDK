@@ -41,15 +41,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			float LastImpactSoundTime() { mixin(MGPC!(float, 624)()); }
-			float CurrentVibrationLevel() { mixin(MGPC!(float, 620)()); }
-			Vector OldVelocity() { mixin(MGPC!(Vector, 608)()); }
-			PrimitiveComponent.ERBCollisionChannel AsleepRBChannel() { mixin(MGPC!(PrimitiveComponent.ERBCollisionChannel, 604)()); }
-			float FracPartGravScale() { mixin(MGPC!(float, 600)()); }
-			int PartPoolIndex() { mixin(MGPC!(int, 596)()); }
-			float LastSpawnTime() { mixin(MGPC!(float, 592)()); }
-			FracturedStaticMeshActor BaseFracturedMeshActor() { mixin(MGPC!(FracturedStaticMeshActor, 584)()); }
-			float DestroyPartRadiusFactor() { mixin(MGPC!(float, 580)()); }
+			float LastImpactSoundTime() { mixin(MGPC!("float", 624)()); }
+			float CurrentVibrationLevel() { mixin(MGPC!("float", 620)()); }
+			Vector OldVelocity() { mixin(MGPC!("Vector", 608)()); }
+			PrimitiveComponent.ERBCollisionChannel AsleepRBChannel() { mixin(MGPC!("PrimitiveComponent.ERBCollisionChannel", 604)()); }
+			float FracPartGravScale() { mixin(MGPC!("float", 600)()); }
+			int PartPoolIndex() { mixin(MGPC!("int", 596)()); }
+			float LastSpawnTime() { mixin(MGPC!("float", 592)()); }
+			FracturedStaticMeshActor BaseFracturedMeshActor() { mixin(MGPC!("FracturedStaticMeshActor", 584)()); }
+			float DestroyPartRadiusFactor() { mixin(MGPC!("float", 580)()); }
 		}
 		bool bCompositeThatExplodesOnImpact() { mixin(MGBPC!(588, 0x4)()); }
 		bool bCompositeThatExplodesOnImpact(bool val) { mixin(MSBPC!(588, 0x4)()); }
@@ -70,7 +70,7 @@ final:
 		*cast(bool*)params.ptr = bAddToFreePool;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RecyclePart, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int Damage, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -79,8 +79,10 @@ final:
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void TryToCleanUp()

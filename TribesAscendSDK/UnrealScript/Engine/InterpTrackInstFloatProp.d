@@ -14,7 +14,7 @@ public extern(D):
 	@property final static InterpTrackInstFloatProp DefaultProperties() { mixin(MGDPC!(InterpTrackInstFloatProp, "InterpTrackInstFloatProp Engine.Default__InterpTrackInstFloatProp")()); }
 	@property final auto ref
 	{
-		float ResetFloat() { mixin(MGPC!(float, 72)()); }
-		UObject.Pointer FloatProp() { mixin(MGPC!(UObject.Pointer, 68)()); }
+		float ResetFloat() { mixin(MGPC!("float", 72)()); }
+		UObject.Pointer FloatProp() { mixin(MGPC!("UObject.Pointer", 68)()); }
 	}
 }

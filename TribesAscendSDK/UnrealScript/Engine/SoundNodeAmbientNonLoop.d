@@ -14,8 +14,8 @@ public extern(D):
 	@property final static SoundNodeAmbientNonLoop DefaultProperties() { mixin(MGDPC!(SoundNodeAmbientNonLoop, "SoundNodeAmbientNonLoop Engine.Default__SoundNodeAmbientNonLoop")()); }
 	@property final auto ref
 	{
-		DistributionFloat.RawDistributionFloat DelayTime() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 312)()); }
-		float DelayMax() { mixin(MGPC!(float, 308)()); }
-		float DelayMin() { mixin(MGPC!(float, 304)()); }
+		DistributionFloat.RawDistributionFloat DelayTime() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 312)()); }
+		float DelayMax() { mixin(MGPC!("float", 308)()); }
+		float DelayMin() { mixin(MGPC!("float", 304)()); }
 	}
 }

@@ -16,14 +16,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(Vector) TrailBoneLocations() { mixin(MGPC!(ScriptArray!(Vector), 224)()); }
-			UObject.Matrix OldLocalToWorld() { mixin(MGPC!(UObject.Matrix, 240)()); }
-			float ThisTimstep() { mixin(MGPC!(float, 220)()); }
-			Vector FakeVelocity() { mixin(MGPC!(Vector, 208)()); }
-			float StretchLimit() { mixin(MGPC!(float, 204)()); }
-			float TrailRelaxation() { mixin(MGPC!(float, 200)()); }
-			UObject.EAxis ChainBoneAxis() { mixin(MGPC!(UObject.EAxis, 192)()); }
-			int ChainLength() { mixin(MGPC!(int, 188)()); }
+			ScriptArray!(Vector) TrailBoneLocations() { mixin(MGPC!("ScriptArray!(Vector)", 224)()); }
+			UObject.Matrix OldLocalToWorld() { mixin(MGPC!("UObject.Matrix", 240)()); }
+			float ThisTimstep() { mixin(MGPC!("float", 220)()); }
+			Vector FakeVelocity() { mixin(MGPC!("Vector", 208)()); }
+			float StretchLimit() { mixin(MGPC!("float", 204)()); }
+			float TrailRelaxation() { mixin(MGPC!("float", 200)()); }
+			UObject.EAxis ChainBoneAxis() { mixin(MGPC!("UObject.EAxis", 192)()); }
+			int ChainLength() { mixin(MGPC!("int", 188)()); }
 		}
 		bool bHadValidStrength() { mixin(MGBPC!(196, 0x8)()); }
 		bool bHadValidStrength(bool val) { mixin(MSBPC!(196, 0x8)()); }

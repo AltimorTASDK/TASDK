@@ -13,7 +13,7 @@ public extern(D):
 	@property final static MorphNodeBase DefaultProperties() { mixin(MGDPC!(MorphNodeBase, "MorphNodeBase Engine.Default__MorphNodeBase")()); }
 	@property final
 	{
-		@property final auto ref ScriptName NodeName() { mixin(MGPC!(ScriptName, 96)()); }
+		@property final auto ref ScriptName NodeName() { mixin(MGPC!("ScriptName", 96)()); }
 		bool bDrawSlider() { mixin(MGBPC!(104, 0x1)()); }
 		bool bDrawSlider(bool val) { mixin(MSBPC!(104, 0x1)()); }
 	}

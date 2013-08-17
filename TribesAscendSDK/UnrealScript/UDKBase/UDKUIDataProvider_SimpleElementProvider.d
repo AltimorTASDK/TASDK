@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetElementCount;
 		public @property static final ScriptFunction GetElementCount() { mixin(MGF!("mGetElementCount", "Function UDKBase.UDKUIDataProvider_SimpleElementProvider.GetElementCount")()); }
 	}
-	@property final auto ref UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!(UObject.Pointer, 88)()); }
+	@property final auto ref UObject.Pointer VfTable_IUIListElementCellProvider() { mixin(MGPC!("UObject.Pointer", 88)()); }
 	final int GetElementCount()
 	{
 		ubyte params[4];

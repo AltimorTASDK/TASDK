@@ -26,8 +26,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		PathConstraint NextConstraint() { mixin(MGPC!(PathConstraint, 64)()); }
-		int CacheIdx() { mixin(MGPC!(int, 60)()); }
+		PathConstraint NextConstraint() { mixin(MGPC!("PathConstraint", 64)()); }
+		int CacheIdx() { mixin(MGPC!("int", 60)()); }
 	}
 final:
 	void Recycle()

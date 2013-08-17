@@ -76,28 +76,28 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrVehicleStation.VehicleSpawnInfo")()); }
 		@property final auto ref
 		{
-			Rotator m_rSpawnRotOffset() { mixin(MGPS!(Rotator, 20)()); }
-			Vector m_vSpawnLocOffset() { mixin(MGPS!(Vector, 8)()); }
-			int m_nMaxCount() { mixin(MGPS!(int, 4)()); }
-			ScriptClass m_VehicleClass() { mixin(MGPS!(ScriptClass, 0)()); }
+			Rotator m_rSpawnRotOffset() { mixin(MGPS!("Rotator", 20)()); }
+			Vector m_vSpawnLocOffset() { mixin(MGPS!("Vector", 8)()); }
+			int m_nMaxCount() { mixin(MGPS!("int", 4)()); }
+			ScriptClass m_VehicleClass() { mixin(MGPS!("ScriptClass", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			TrAnimNodeBlendList m_VehicleStationBlendNode() { mixin(MGPC!(TrAnimNodeBlendList, 1596)()); }
-			float m_fTimeToSpawnVehicleAfterRequest() { mixin(MGPC!(float, 1592)()); }
-			float m_fInstigatorTeleportTime() { mixin(MGPC!(float, 1588)()); }
-			TrPawn m_PawnRequestingVehicle() { mixin(MGPC!(TrPawn, 1584)()); }
-			TrVehicle m_LastSpawnedVehicle() { mixin(MGPC!(TrVehicle, 1580)()); }
-			float m_fSpawnTimeStamp() { mixin(MGPC!(float, 1576)()); }
-			float m_fPostSpawnLockoutTime() { mixin(MGPC!(float, 1572)()); }
-			TrObject.EVehicleTypes m_LastRequestedVehicleType() { mixin(MGPC!(TrObject.EVehicleTypes, 1569)()); }
-			ubyte r_nSpawnSequenceEnded() { mixin(MGPC!(ubyte, 1568)()); }
-			int r_nSpawnedVehicles() { mixin(MGPC!(int, 1560)()); }
-			TrVehiclePad m_VehiclePad() { mixin(MGPC!(TrVehiclePad, 1556)()); }
-			TrVehicleStation.VehicleSpawnInfo m_SpawnList() { mixin(MGPC!(TrVehicleStation.VehicleSpawnInfo, 1396)()); }
+			TrAnimNodeBlendList m_VehicleStationBlendNode() { mixin(MGPC!("TrAnimNodeBlendList", 1596)()); }
+			float m_fTimeToSpawnVehicleAfterRequest() { mixin(MGPC!("float", 1592)()); }
+			float m_fInstigatorTeleportTime() { mixin(MGPC!("float", 1588)()); }
+			TrPawn m_PawnRequestingVehicle() { mixin(MGPC!("TrPawn", 1584)()); }
+			TrVehicle m_LastSpawnedVehicle() { mixin(MGPC!("TrVehicle", 1580)()); }
+			float m_fSpawnTimeStamp() { mixin(MGPC!("float", 1576)()); }
+			float m_fPostSpawnLockoutTime() { mixin(MGPC!("float", 1572)()); }
+			TrObject.EVehicleTypes m_LastRequestedVehicleType() { mixin(MGPC!("TrObject.EVehicleTypes", 1569)()); }
+			ubyte r_nSpawnSequenceEnded() { mixin(MGPC!("ubyte", 1568)()); }
+			int r_nSpawnedVehicles() { mixin(MGPC!("int", 1560)()); }
+			TrVehiclePad m_VehiclePad() { mixin(MGPC!("TrVehiclePad", 1556)()); }
+			TrVehicleStation.VehicleSpawnInfo m_SpawnList() { mixin(MGPC!("TrVehicleStation.VehicleSpawnInfo", 1396)()); }
 		}
 		bool r_bSpawnSequenceStarted() { mixin(MGBPC!(1564, 0x2)()); }
 		bool r_bSpawnSequenceStarted(bool val) { mixin(MSBPC!(1564, 0x2)()); }

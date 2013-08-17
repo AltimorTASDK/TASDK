@@ -33,15 +33,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			int MaxTriggerCount() { mixin(MGPC!(int, 236)()); }
-			int TriggerCount() { mixin(MGPC!(int, 232)()); }
-			ScriptArray!(SequenceEvent) DuplicateEvts() { mixin(MGPC!(ScriptArray!(SequenceEvent), 208)()); }
-			int MaxWidth() { mixin(MGPC!(int, 252)()); }
-			ubyte Priority() { mixin(MGPC!(ubyte, 248)()); }
-			float ReTriggerDelay() { mixin(MGPC!(float, 240)()); }
-			float ActivationTime() { mixin(MGPC!(float, 228)()); }
-			Actor Instigator() { mixin(MGPC!(Actor, 224)()); }
-			Actor Originator() { mixin(MGPC!(Actor, 220)()); }
+			int MaxTriggerCount() { mixin(MGPC!("int", 236)()); }
+			int TriggerCount() { mixin(MGPC!("int", 232)()); }
+			ScriptArray!(SequenceEvent) DuplicateEvts() { mixin(MGPC!("ScriptArray!(SequenceEvent)", 208)()); }
+			int MaxWidth() { mixin(MGPC!("int", 252)()); }
+			ubyte Priority() { mixin(MGPC!("ubyte", 248)()); }
+			float ReTriggerDelay() { mixin(MGPC!("float", 240)()); }
+			float ActivationTime() { mixin(MGPC!("float", 228)()); }
+			Actor Instigator() { mixin(MGPC!("Actor", 224)()); }
+			Actor Originator() { mixin(MGPC!("Actor", 220)()); }
 		}
 		bool bEnabled() { mixin(MGBPC!(244, 0x1)()); }
 		bool bEnabled(bool val) { mixin(MSBPC!(244, 0x1)()); }
@@ -53,17 +53,19 @@ public extern(D):
 		bool bRegistered(bool val) { mixin(MSBPC!(244, 0x4)()); }
 	}
 final:
-	bool CheckActivate(Actor InOriginator, Actor InInstigator, bool bTest, const ScriptArray!(int)* ActivateIndices, bool bPushTop)
+	bool CheckActivate(Actor InOriginator, Actor InInstigator, bool* bTest = null, in ScriptArray!(int)* ActivateIndices = null, bool* bPushTop = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Actor*)params.ptr = InOriginator;
 		*cast(Actor*)&params[4] = InInstigator;
-		*cast(bool*)&params[8] = bTest;
-		*cast(ScriptArray!(int)*)&params[12] = ActivateIndices;
-		*cast(bool*)&params[24] = bPushTop;
+		if (bTest !is null)
+			*cast(bool*)&params[8] = *bTest;
+		if (ActivateIndices !is null)
+			*cast(ScriptArray!(int)*)&params[12] = cast(ScriptArray!(int))*ActivateIndices;
+		if (bPushTop !is null)
+			*cast(bool*)&params[24] = *bPushTop;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CheckActivate, params.ptr, cast(void*)0);
-		*ActivateIndices = *cast(ScriptArray!(int)*)&params[12];
 		return *cast(bool*)&params[28];
 	}
 	void RegisterEvent()

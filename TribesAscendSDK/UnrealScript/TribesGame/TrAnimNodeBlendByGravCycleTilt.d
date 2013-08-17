@@ -13,9 +13,9 @@ public extern(D):
 	@property final static TrAnimNodeBlendByGravCycleTilt DefaultProperties() { mixin(MGDPC!(TrAnimNodeBlendByGravCycleTilt, "TrAnimNodeBlendByGravCycleTilt TribesGame.Default__TrAnimNodeBlendByGravCycleTilt")()); }
 	@property final auto ref
 	{
-		float m_fDeadZone() { mixin(MGPC!(float, 260)()); }
-		ScriptName m_RootBoneName() { mixin(MGPC!(ScriptName, 252)()); }
-		float m_fTiltScale() { mixin(MGPC!(float, 248)()); }
-		float m_fTiltAmount() { mixin(MGPC!(float, 244)()); }
+		float m_fDeadZone() { mixin(MGPC!("float", 260)()); }
+		ScriptName m_RootBoneName() { mixin(MGPC!("ScriptName", 252)()); }
+		float m_fTiltScale() { mixin(MGPC!("float", 248)()); }
+		float m_fTiltAmount() { mixin(MGPC!("float", 244)()); }
 	}
 }

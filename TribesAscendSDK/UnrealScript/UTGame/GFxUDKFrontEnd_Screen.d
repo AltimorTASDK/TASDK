@@ -30,17 +30,17 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptString CancelButtonImage() { mixin(MGPC!(ScriptString, 208)()); }
-		ScriptString AcceptButtonImage() { mixin(MGPC!(ScriptString, 196)()); }
-		ScriptString CancelButtonHelpText() { mixin(MGPC!(ScriptString, 184)()); }
-		ScriptString AcceptButtonHelpText() { mixin(MGPC!(ScriptString, 172)()); }
-		GFxObject InfoTxt() { mixin(MGPC!(GFxObject, 168)()); }
-		GFxObject HelpTxt() { mixin(MGPC!(GFxObject, 164)()); }
-		GFxObject LogoMC() { mixin(MGPC!(GFxObject, 160)()); }
-		GFxObject FooterMC() { mixin(MGPC!(GFxObject, 156)()); }
-		GFxObject TitleMC() { mixin(MGPC!(GFxObject, 152)()); }
-		GFxClikWidget BackBtn() { mixin(MGPC!(GFxClikWidget, 148)()); }
-		ScriptString ViewTitle() { mixin(MGPC!(ScriptString, 136)()); }
+		ScriptString CancelButtonImage() { mixin(MGPC!("ScriptString", 208)()); }
+		ScriptString AcceptButtonImage() { mixin(MGPC!("ScriptString", 196)()); }
+		ScriptString CancelButtonHelpText() { mixin(MGPC!("ScriptString", 184)()); }
+		ScriptString AcceptButtonHelpText() { mixin(MGPC!("ScriptString", 172)()); }
+		GFxObject InfoTxt() { mixin(MGPC!("GFxObject", 168)()); }
+		GFxObject HelpTxt() { mixin(MGPC!("GFxObject", 164)()); }
+		GFxObject LogoMC() { mixin(MGPC!("GFxObject", 160)()); }
+		GFxObject FooterMC() { mixin(MGPC!("GFxObject", 156)()); }
+		GFxObject TitleMC() { mixin(MGPC!("GFxObject", 152)()); }
+		GFxClikWidget BackBtn() { mixin(MGPC!("GFxClikWidget", 148)()); }
+		ScriptString ViewTitle() { mixin(MGPC!("ScriptString", 136)()); }
 	}
 final:
 	void FocusIn_BackButton(GFxClikWidget.EventData ev)

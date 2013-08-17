@@ -105,23 +105,23 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrVideoSettings.ResolutionData")()); }
 		@property final auto ref
 		{
-			int ResY() { mixin(MGPS!(int, 4)()); }
-			int ResX() { mixin(MGPS!(int, 0)()); }
+			int ResY() { mixin(MGPS!("int", 4)()); }
+			int ResX() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		int m_Cached_Resolution() { mixin(MGPC!(int, 156)()); }
-		int m_VideoSettingsCount() { mixin(MGPC!(int, 124)()); }
-		GFxObject m_VideoSettingsList() { mixin(MGPC!(GFxObject, 132)()); }
-		int m_ResolutionCount() { mixin(MGPC!(int, 120)()); }
-		GFxObject m_ResolutionList() { mixin(MGPC!(GFxObject, 128)()); }
-		int m_Cached_ShadowDetail() { mixin(MGPC!(int, 136)()); }
-		int m_Cached_TextureDetail() { mixin(MGPC!(int, 140)()); }
-		int m_Cached_ScreenType() { mixin(MGPC!(int, 144)()); }
-		int m_Cached_MotionBlur() { mixin(MGPC!(int, 148)()); }
-		int m_Cached_VerticalSync() { mixin(MGPC!(int, 152)()); }
-		int m_Cached_SmoothFramerate() { mixin(MGPC!(int, 160)()); }
+		int m_Cached_Resolution() { mixin(MGPC!("int", 156)()); }
+		int m_VideoSettingsCount() { mixin(MGPC!("int", 124)()); }
+		GFxObject m_VideoSettingsList() { mixin(MGPC!("GFxObject", 132)()); }
+		int m_ResolutionCount() { mixin(MGPC!("int", 120)()); }
+		GFxObject m_ResolutionList() { mixin(MGPC!("GFxObject", 128)()); }
+		int m_Cached_ShadowDetail() { mixin(MGPC!("int", 136)()); }
+		int m_Cached_TextureDetail() { mixin(MGPC!("int", 140)()); }
+		int m_Cached_ScreenType() { mixin(MGPC!("int", 144)()); }
+		int m_Cached_MotionBlur() { mixin(MGPC!("int", 148)()); }
+		int m_Cached_VerticalSync() { mixin(MGPC!("int", 152)()); }
+		int m_Cached_SmoothFramerate() { mixin(MGPC!("int", 160)()); }
 	}
 final:
 	int GetCurrentSettingValue(TrVideoSettings.EVideoSettingType Type)
@@ -145,7 +145,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(TrVideoSettings.ResolutionData)*)params.ptr = ResolutionList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetAllowedResolutions, params.ptr, cast(void*)0);
-		*ResolutionList = *cast(ScriptArray!(TrVideoSettings.ResolutionData)*)params.ptr;
+		ResolutionList = *cast(ScriptArray!(TrVideoSettings.ResolutionData)*)params.ptr;
 	}
 	void ApplyVideoSettings()
 	{
@@ -185,7 +185,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr = ResolutionList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetResolutions, params.ptr, cast(void*)0);
-		*ResolutionList = *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr;
+		ResolutionList = *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr;
 	}
 	void SetVSync(bool bEnable)
 	{

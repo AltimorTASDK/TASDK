@@ -15,9 +15,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(float) Weights() { mixin(MGPC!(ScriptArray!(float), 76)()); }
-			ScriptArray!(bool) HasBeenUsed() { mixin(MGPC!(ScriptArray!(bool), 92)()); }
-			int NumRandomUsed() { mixin(MGPC!(int, 104)()); }
+			ScriptArray!(float) Weights() { mixin(MGPC!("ScriptArray!(float)", 76)()); }
+			ScriptArray!(bool) HasBeenUsed() { mixin(MGPC!("ScriptArray!(bool)", 92)()); }
+			int NumRandomUsed() { mixin(MGPC!("int", 104)()); }
 		}
 		bool bRandomizeWithoutReplacement() { mixin(MGBPC!(88, 0x1)()); }
 		bool bRandomizeWithoutReplacement(bool val) { mixin(MSBPC!(88, 0x1)()); }

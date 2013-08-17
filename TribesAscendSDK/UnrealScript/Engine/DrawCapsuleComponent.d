@@ -17,10 +17,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float CapsuleRadius() { mixin(MGPC!(float, 500)()); }
-			float CapsuleHeight() { mixin(MGPC!(float, 496)()); }
-			Material CapsuleMaterial() { mixin(MGPC!(Material, 492)()); }
-			UObject.Color CapsuleColor() { mixin(MGPC!(UObject.Color, 488)()); }
+			float CapsuleRadius() { mixin(MGPC!("float", 500)()); }
+			float CapsuleHeight() { mixin(MGPC!("float", 496)()); }
+			Material CapsuleMaterial() { mixin(MGPC!("Material", 492)()); }
+			UObject.Color CapsuleColor() { mixin(MGPC!("UObject.Color", 488)()); }
 		}
 		bool bDrawOnlyIfSelected() { mixin(MGBPC!(504, 0x4)()); }
 		bool bDrawOnlyIfSelected(bool val) { mixin(MSBPC!(504, 0x4)()); }

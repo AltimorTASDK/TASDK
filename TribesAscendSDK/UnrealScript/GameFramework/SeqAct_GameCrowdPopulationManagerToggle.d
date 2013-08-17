@@ -29,12 +29,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float WarmupPct() { mixin(MGPC!(float, 232)()); }
-			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!(GameCrowd_ListOfAgents, 240)()); }
-			float MaxSimulationDistance() { mixin(MGPC!(float, 252)()); }
-			float SpawnRate() { mixin(MGPC!(float, 248)()); }
-			int MaxAgents() { mixin(MGPC!(int, 244)()); }
-			ScriptClass PopulationManagerClass() { mixin(MGPC!(ScriptClass, 256)()); }
+			float WarmupPct() { mixin(MGPC!("float", 232)()); }
+			GameCrowd_ListOfAgents CrowdAgentList() { mixin(MGPC!("GameCrowd_ListOfAgents", 240)()); }
+			float MaxSimulationDistance() { mixin(MGPC!("float", 252)()); }
+			float SpawnRate() { mixin(MGPC!("float", 248)()); }
+			int MaxAgents() { mixin(MGPC!("int", 244)()); }
+			ScriptClass PopulationManagerClass() { mixin(MGPC!("ScriptClass", 256)()); }
 		}
 		bool bClearOldArchetypes() { mixin(MGBPC!(236, 0x2)()); }
 		bool bClearOldArchetypes(bool val) { mixin(MSBPC!(236, 0x2)()); }

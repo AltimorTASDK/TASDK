@@ -14,7 +14,7 @@ public extern(D):
 	@property final static SeqAct_Possess DefaultProperties() { mixin(MGDPC!(SeqAct_Possess, "SeqAct_Possess Engine.Default__SeqAct_Possess")()); }
 	@property final
 	{
-		@property final auto ref Pawn PawnToPossess() { mixin(MGPC!(Pawn, 232)()); }
+		@property final auto ref Pawn PawnToPossess() { mixin(MGPC!("Pawn", 232)()); }
 		bool bTryToLeaveVehicle() { mixin(MGBPC!(236, 0x2)()); }
 		bool bTryToLeaveVehicle(bool val) { mixin(MSBPC!(236, 0x2)()); }
 		bool bKillOldPawn() { mixin(MGBPC!(236, 0x1)()); }

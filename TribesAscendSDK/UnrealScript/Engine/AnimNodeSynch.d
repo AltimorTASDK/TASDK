@@ -43,16 +43,16 @@ public extern(D):
 		{
 			auto ref
 			{
-				ScriptArray!(AnimNodeSequence) SeqNodes() { mixin(MGPS!(ScriptArray!(AnimNodeSequence), 0)()); }
-				float RateScale() { mixin(MGPS!(float, 28)()); }
-				ScriptName GroupName() { mixin(MGPS!(ScriptName, 16)()); }
-				AnimNodeSequence MasterNode() { mixin(MGPS!(AnimNodeSequence, 12)()); }
+				ScriptArray!(AnimNodeSequence) SeqNodes() { mixin(MGPS!("ScriptArray!(AnimNodeSequence)", 0)()); }
+				float RateScale() { mixin(MGPS!("float", 28)()); }
+				ScriptName GroupName() { mixin(MGPS!("ScriptName", 16)()); }
+				AnimNodeSequence MasterNode() { mixin(MGPS!("AnimNodeSequence", 12)()); }
 			}
 			bool bFireSlaveNotifies() { mixin(MGBPS!(24, 0x1)()); }
 			bool bFireSlaveNotifies(bool val) { mixin(MSBPS!(24, 0x1)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(AnimNodeSynch.SynchGroup) Groups() { mixin(MGPC!(ScriptArray!(AnimNodeSynch.SynchGroup), 244)()); }
+	@property final auto ref ScriptArray!(AnimNodeSynch.SynchGroup) Groups() { mixin(MGPC!("ScriptArray!(AnimNodeSynch.SynchGroup)", 244)()); }
 final:
 	void AddNodeToGroup(AnimNodeSequence SeqNode, ScriptName GroupName)
 	{

@@ -63,8 +63,8 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Pawn) m_DetectedPawns() { mixin(MGPC!(ScriptArray!(Pawn), 1524)()); }
-		float m_fDetectionZOffset() { mixin(MGPC!(float, 1536)()); }
+		ScriptArray!(Pawn) m_DetectedPawns() { mixin(MGPC!("ScriptArray!(Pawn)", 1524)()); }
+		float m_fDetectionZOffset() { mixin(MGPC!("float", 1536)()); }
 	}
 final:
 	bool CheckLOS(Pawn Target)

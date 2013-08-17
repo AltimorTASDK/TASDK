@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!(DistributionVector.EDistributionVectorLockFlags, 100)()); }
-			UObject.InterpCurveVector ConstantCurve() { mixin(MGPC!(UObject.InterpCurveVector, 80)()); }
+			DistributionVector.EDistributionVectorLockFlags LockedAxes() { mixin(MGPC!("DistributionVector.EDistributionVectorLockFlags", 100)()); }
+			UObject.InterpCurveVector ConstantCurve() { mixin(MGPC!("UObject.InterpCurveVector", 80)()); }
 		}
 		bool bLockAxes() { mixin(MGBPC!(96, 0x1)()); }
 		bool bLockAxes(bool val) { mixin(MSBPC!(96, 0x1)()); }

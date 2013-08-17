@@ -46,12 +46,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TargetAlpha() { mixin(MGPC!(float, 84)()); }
-			float Alpha() { mixin(MGPC!(float, 80)()); }
-			float AlphaOutTime() { mixin(MGPC!(float, 76)()); }
-			float AlphaInTime() { mixin(MGPC!(float, 72)()); }
-			ubyte Priority() { mixin(MGPC!(ubyte, 68)()); }
-			Camera CameraOwner() { mixin(MGPC!(Camera, 64)()); }
+			float TargetAlpha() { mixin(MGPC!("float", 84)()); }
+			float Alpha() { mixin(MGPC!("float", 80)()); }
+			float AlphaOutTime() { mixin(MGPC!("float", 76)()); }
+			float AlphaInTime() { mixin(MGPC!("float", 72)()); }
+			ubyte Priority() { mixin(MGPC!("ubyte", 68)()); }
+			Camera CameraOwner() { mixin(MGPC!("Camera", 64)()); }
 		}
 		bool bDebug() { mixin(MGBPC!(60, 0x8)()); }
 		bool bDebug(bool val) { mixin(MSBPC!(60, 0x8)()); }
@@ -80,8 +80,8 @@ final:
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 		return *cast(bool*)&params[32];
 	}
 	void Init()
@@ -96,7 +96,7 @@ final:
 		*cast(float*)&params[4] = DeltaTime;
 		*cast(UObject.TPOV*)&params[8] = OutPOV;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyCamera, params.ptr, cast(void*)0);
-		*OutPOV = *cast(UObject.TPOV*)&params[8];
+		OutPOV = *cast(UObject.TPOV*)&params[8];
 		return *cast(bool*)&params[36];
 	}
 	bool IsDisabled()
@@ -114,11 +114,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveCameraModifier, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void DisableModifier(bool bImmediate)
+	void DisableModifier(bool* bImmediate = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bImmediate;
+		if (bImmediate !is null)
+			*cast(bool*)params.ptr = *bImmediate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisableModifier, params.ptr, cast(void*)0);
 	}
 	void EnableModifier()

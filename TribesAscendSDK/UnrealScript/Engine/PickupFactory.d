@@ -89,12 +89,12 @@ public extern(D):
 	{
 		auto ref
 		{
-			PickupFactory OriginalFactory() { mixin(MGPC!(PickupFactory, 716)()); }
-			PickupFactory ReplacementFactory() { mixin(MGPC!(PickupFactory, 712)()); }
+			PickupFactory OriginalFactory() { mixin(MGPC!("PickupFactory", 716)()); }
+			PickupFactory ReplacementFactory() { mixin(MGPC!("PickupFactory", 712)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PickupMesh'!
-			float MaxDesireability() { mixin(MGPC!(float, 704)()); }
-			float RespawnEffectTime() { mixin(MGPC!(float, 700)()); }
-			ScriptClass InventoryType() { mixin(MGPC!(ScriptClass, 696)()); }
+			float MaxDesireability() { mixin(MGPC!("float", 704)()); }
+			float RespawnEffectTime() { mixin(MGPC!("float", 700)()); }
+			ScriptClass InventoryType() { mixin(MGPC!("ScriptClass", 696)()); }
 		}
 		bool bRespawnPaused() { mixin(MGBPC!(692, 0x10)()); }
 		bool bRespawnPaused(bool val) { mixin(MSBPC!(692, 0x10)()); }

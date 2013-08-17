@@ -317,16 +317,16 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrSummaryHelper.MVPAward")()); }
 		@property final auto ref
 		{
-			int Value() { mixin(MGPS!(int, 0)()); }
-			int AwardId() { mixin(MGPS!(int, 8)()); }
-			int PlayerID() { mixin(MGPS!(int, 4)()); }
+			int Value() { mixin(MGPS!("int", 0)()); }
+			int AwardId() { mixin(MGPS!("int", 8)()); }
+			int PlayerID() { mixin(MGPS!("int", 4)()); }
 		}
 	}
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__AwardSort__Delegate'!
 		// ERROR: Unsupported object class 'DelegateProperty' for the property named '__MVPSort__Delegate'!
-		int AWARD_TIER_SIZE() { mixin(MGPC!(int, 60)()); }
+		int AWARD_TIER_SIZE() { mixin(MGPC!("int", 60)()); }
 	}
 final:
 	void SortPlayerAwards(ref ScriptArray!(TgPlayerProfile.PropertyPair) AwardArray)
@@ -335,7 +335,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr = AwardArray;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SortPlayerAwards, params.ptr, cast(void*)0);
-		*AwardArray = *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr;
+		AwardArray = *cast(ScriptArray!(TgPlayerProfile.PropertyPair)*)params.ptr;
 	}
 	void SortMVPAwards(ref ScriptArray!(TrSummaryHelper.MVPAward) AwardArray)
 	{
@@ -343,7 +343,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(TrSummaryHelper.MVPAward)*)params.ptr = AwardArray;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SortMVPAwards, params.ptr, cast(void*)0);
-		*AwardArray = *cast(ScriptArray!(TrSummaryHelper.MVPAward)*)params.ptr;
+		AwardArray = *cast(ScriptArray!(TrSummaryHelper.MVPAward)*)params.ptr;
 	}
 	int MVPSort(TrSummaryHelper.MVPAward A, TrSummaryHelper.MVPAward B)
 	{

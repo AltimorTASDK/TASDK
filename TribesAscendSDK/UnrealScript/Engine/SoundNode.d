@@ -13,7 +13,7 @@ public extern(D):
 	@property final static SoundNode DefaultProperties() { mixin(MGDPC!(SoundNode, "SoundNode Engine.Default__SoundNode")()); }
 	@property final auto ref
 	{
-		ScriptArray!(SoundNode) ChildNodes() { mixin(MGPC!(ScriptArray!(SoundNode), 64)()); }
-		int NodeUpdateHint() { mixin(MGPC!(int, 60)()); }
+		ScriptArray!(SoundNode) ChildNodes() { mixin(MGPC!("ScriptArray!(SoundNode)", 64)()); }
+		int NodeUpdateHint() { mixin(MGPC!("int", 60)()); }
 	}
 }

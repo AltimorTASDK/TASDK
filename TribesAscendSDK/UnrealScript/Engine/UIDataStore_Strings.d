@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.UIDataStore_Strings")()); }
 	private static __gshared UIDataStore_Strings mDefaultProperties;
 	@property final static UIDataStore_Strings DefaultProperties() { mixin(MGDPC!(UIDataStore_Strings, "UIDataStore_Strings Engine.Default__UIDataStore_Strings")()); }
-	@property final auto ref ScriptArray!(UIConfigFileProvider) LocFileProviders() { mixin(MGPC!(ScriptArray!(UIConfigFileProvider), 120)()); }
+	@property final auto ref ScriptArray!(UIConfigFileProvider) LocFileProviders() { mixin(MGPC!("ScriptArray!(UIConfigFileProvider)", 120)()); }
 }

@@ -120,40 +120,40 @@ public extern(D):
 	{
 		auto ref
 		{
-			Controller m_Controller() { mixin(MGPC!(Controller, 1408)()); }
-			ScriptArray!(float) m_fRelevancyCheckHeights() { mixin(MGPC!(ScriptArray!(float), 1480)()); }
-			int m_nIconStackId() { mixin(MGPC!(int, 1520)()); }
-			Vector m_vDeathCamStartOffset() { mixin(MGPC!(Vector, 1508)()); }
-			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!(PlayerReplicationInfo, 1504)()); }
+			Controller m_Controller() { mixin(MGPC!("Controller", 1408)()); }
+			ScriptArray!(float) m_fRelevancyCheckHeights() { mixin(MGPC!("ScriptArray!(float)", 1480)()); }
+			int m_nIconStackId() { mixin(MGPC!("int", 1520)()); }
+			Vector m_vDeathCamStartOffset() { mixin(MGPC!("Vector", 1508)()); }
+			PlayerReplicationInfo r_OwnerPRI() { mixin(MGPC!("PlayerReplicationInfo", 1504)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_XRayMesh'!
-			float m_fAnimInterpSpeed() { mixin(MGPC!(float, 1496)()); }
-			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!(AnimNodeScalePlayRate, 1492)()); }
-			Actor m_LastViewer() { mixin(MGPC!(Actor, 1476)()); }
-			PlayerController m_LastRealViewer() { mixin(MGPC!(PlayerController, 1472)()); }
-			float m_fNetRelevancyTime() { mixin(MGPC!(float, 1468)()); }
-			SoundCue m_DeploySound() { mixin(MGPC!(SoundCue, 1464)()); }
-			TrPowerGenerator m_MyMainGenerator() { mixin(MGPC!(TrPowerGenerator, 1460)()); }
-			Pawn r_TargetPawn() { mixin(MGPC!(Pawn, 1456)()); }
-			ubyte r_FlashCount() { mixin(MGPC!(ubyte, 1452)()); }
-			TrSubDevice m_Weapon() { mixin(MGPC!(TrSubDevice, 1448)()); }
-			TrTurretPawn m_WeaponHolder() { mixin(MGPC!(TrTurretPawn, 1444)()); }
-			ScriptClass m_DeviceClass() { mixin(MGPC!(ScriptClass, 1440)()); }
-			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!(float, 1436)()); }
-			float r_fNewDetectionRadius() { mixin(MGPC!(float, 1432)()); }
-			float m_fDamageRadius() { mixin(MGPC!(float, 1428)()); }
-			TrDeployableCollisionProxy m_CollisionProxy() { mixin(MGPC!(TrDeployableCollisionProxy, 1424)()); }
-			float m_fOverriddenTargetComponentHeight() { mixin(MGPC!(float, 1420)()); }
-			float m_TargetCollisionTraceDistance() { mixin(MGPC!(float, 1416)()); }
+			float m_fAnimInterpSpeed() { mixin(MGPC!("float", 1496)()); }
+			AnimNodeScalePlayRate m_AnimNodeScale() { mixin(MGPC!("AnimNodeScalePlayRate", 1492)()); }
+			Actor m_LastViewer() { mixin(MGPC!("Actor", 1476)()); }
+			PlayerController m_LastRealViewer() { mixin(MGPC!("PlayerController", 1472)()); }
+			float m_fNetRelevancyTime() { mixin(MGPC!("float", 1468)()); }
+			SoundCue m_DeploySound() { mixin(MGPC!("SoundCue", 1464)()); }
+			TrPowerGenerator m_MyMainGenerator() { mixin(MGPC!("TrPowerGenerator", 1460)()); }
+			Pawn r_TargetPawn() { mixin(MGPC!("Pawn", 1456)()); }
+			ubyte r_FlashCount() { mixin(MGPC!("ubyte", 1452)()); }
+			TrSubDevice m_Weapon() { mixin(MGPC!("TrSubDevice", 1448)()); }
+			TrTurretPawn m_WeaponHolder() { mixin(MGPC!("TrTurretPawn", 1444)()); }
+			ScriptClass m_DeviceClass() { mixin(MGPC!("ScriptClass", 1440)()); }
+			float m_fAlwaysRelevantDistanceSquared() { mixin(MGPC!("float", 1436)()); }
+			float r_fNewDetectionRadius() { mixin(MGPC!("float", 1432)()); }
+			float m_fDamageRadius() { mixin(MGPC!("float", 1428)()); }
+			TrDeployableCollisionProxy m_CollisionProxy() { mixin(MGPC!("TrDeployableCollisionProxy", 1424)()); }
+			float m_fOverriddenTargetComponentHeight() { mixin(MGPC!("float", 1420)()); }
+			float m_TargetCollisionTraceDistance() { mixin(MGPC!("float", 1416)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_TargetComponent'!
-			float m_fFiringArcCheckValue() { mixin(MGPC!(float, 1404)()); }
-			Vector m_PlacementOrientationVector() { mixin(MGPC!(Vector, 1392)()); }
-			int m_nFiringArcDegrees() { mixin(MGPC!(int, 1388)()); }
-			float m_fTimeToDeploySecs() { mixin(MGPC!(float, 1380)()); }
-			float m_fRemoteActivationTime() { mixin(MGPC!(float, 1376)()); }
-			float m_fBuildupTime() { mixin(MGPC!(float, 1372)()); }
-			TrPawn m_TouchedPlayer() { mixin(MGPC!(TrPawn, 1368)()); }
-			float m_TimeCreated() { mixin(MGPC!(float, 1364)()); }
-			int m_nMaxDeployablesOut() { mixin(MGPC!(int, 1360)()); }
+			float m_fFiringArcCheckValue() { mixin(MGPC!("float", 1404)()); }
+			Vector m_PlacementOrientationVector() { mixin(MGPC!("Vector", 1392)()); }
+			int m_nFiringArcDegrees() { mixin(MGPC!("int", 1388)()); }
+			float m_fTimeToDeploySecs() { mixin(MGPC!("float", 1380)()); }
+			float m_fRemoteActivationTime() { mixin(MGPC!("float", 1376)()); }
+			float m_fBuildupTime() { mixin(MGPC!("float", 1372)()); }
+			TrPawn m_TouchedPlayer() { mixin(MGPC!("TrPawn", 1368)()); }
+			float m_TimeCreated() { mixin(MGPC!("float", 1364)()); }
+			int m_nMaxDeployablesOut() { mixin(MGPC!("int", 1360)()); }
 		}
 		bool m_bBlocksFriendlies() { mixin(MGBPC!(1384, 0x80)()); }
 		bool m_bBlocksFriendlies(bool val) { mixin(MSBPC!(1384, 0x80)()); }
@@ -184,15 +184,17 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcMeshOffset, params.ptr, cast(void*)0);
 		return *cast(float*)params.ptr;
 	}
-	bool IsInLOS(Actor TouchedActor, Vector StartLocation, Vector EndLocation, bool CheckBlockedByBlockers, bool CheckBlockedByActors)
+	bool IsInLOS(Actor TouchedActor, Vector StartLocation, Vector EndLocation, bool* CheckBlockedByBlockers = null, bool* CheckBlockedByActors = null)
 	{
 		ubyte params[40];
 		params[] = 0;
 		*cast(Actor*)params.ptr = TouchedActor;
 		*cast(Vector*)&params[4] = StartLocation;
 		*cast(Vector*)&params[16] = EndLocation;
-		*cast(bool*)&params[28] = CheckBlockedByBlockers;
-		*cast(bool*)&params[32] = CheckBlockedByActors;
+		if (CheckBlockedByBlockers !is null)
+			*cast(bool*)&params[28] = *CheckBlockedByBlockers;
+		if (CheckBlockedByActors !is null)
+			*cast(bool*)&params[32] = *CheckBlockedByActors;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsInLOS, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[36];
 	}
@@ -229,7 +231,7 @@ void**)params.ptr = SkelComp;
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
-	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float DamageFalloffExponent)
+	void TakeRadiusDamage(Controller InstigatedBy, float BaseDamage, float DamageRadius, ScriptClass pDamageType, float Momentum, Vector HurtOrigin, bool bFullDamage, Actor DamageCauser, float* DamageFalloffExponent = null)
 	{
 		ubyte params[44];
 		params[] = 0;
@@ -241,10 +243,11 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[20] = HurtOrigin;
 		*cast(bool*)&params[32] = bFullDamage;
 		*cast(Actor*)&params[36] = DamageCauser;
-		*cast(float*)&params[40] = DamageFalloffExponent;
+		if (DamageFalloffExponent !is null)
+			*cast(float*)&params[40] = *DamageFalloffExponent;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeRadiusDamage, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -253,8 +256,10 @@ void**)params.ptr = SkelComp;
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 	void OnPawnDetectedByCollisionProxy(Pawn P)
@@ -333,11 +338,12 @@ void**)params.ptr = SkelComp;
 		*cast(bool*)params.ptr = wasDamage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnHealthChanged, params.ptr, cast(void*)0);
 	}
-	Vector GetWeaponStartTraceLocation(Weapon CurrentWeapon)
+	Vector GetWeaponStartTraceLocation(Weapon* CurrentWeapon = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Weapon*)params.ptr = CurrentWeapon;
+		if (CurrentWeapon !is null)
+			*cast(Weapon*)params.ptr = *CurrentWeapon;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetWeaponStartTraceLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[4];
 	}
@@ -357,13 +363,14 @@ void**)params.ptr = SkelComp;
 		params[4] = FireModeNum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IncrementFlashCount, params.ptr, cast(void*)0);
 	}
-	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector HitLocation)
+	void PlayFireEffects(Weapon InWeapon, bool bViaReplication, Vector* HitLocation = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Weapon*)params.ptr = InWeapon;
 		*cast(bool*)&params[4] = bViaReplication;
-		*cast(Vector*)&params[8] = HitLocation;
+		if (HitLocation !is null)
+			*cast(Vector*)&params[8] = *HitLocation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayFireEffects, params.ptr, cast(void*)0);
 	}
 	void PulseBackupGenerators()
@@ -387,7 +394,7 @@ void**)params.ptr = SkelComp;
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = PlayerName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPossessiveInstigatorName, params.ptr, cast(void*)0);
-		*PlayerName = *cast(ScriptString*)params.ptr;
+		PlayerName = *cast(ScriptString*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
 	bool CalcOtherWatchingCam(float fDeltaTime, ref Vector out_CamLoc, ref Rotator out_CamRot, ref float out_FOV, TrPlayerController WatcherController)
@@ -400,9 +407,9 @@ void**)params.ptr = SkelComp;
 		*cast(float*)&params[28] = out_FOV;
 		*cast(TrPlayerController*)&params[32] = WatcherController;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcOtherWatchingCam, params.ptr, cast(void*)0);
-		*out_CamLoc = *cast(Vector*)&params[4];
-		*out_CamRot = *cast(Rotator*)&params[16];
-		*out_FOV = *cast(float*)&params[28];
+		out_CamLoc = *cast(Vector*)&params[4];
+		out_CamRot = *cast(Rotator*)&params[16];
+		out_FOV = *cast(float*)&params[28];
 		return *cast(bool*)&params[36];
 	}
 	void OnUpgradePerformed(ScriptName VarName)

@@ -28,16 +28,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Vector m_SavedTargetNormal() { mixin(MGPC!(Vector, 588)()); }
-		Vector m_SavedTargetLocation() { mixin(MGPC!(Vector, 576)()); }
-		int m_FiredProjectiles() { mixin(MGPC!(int, 572)()); }
-		ParticleSystem TargetParticleSystem() { mixin(MGPC!(ParticleSystem, 568)()); }
-		SoundCue TargetParticleSound() { mixin(MGPC!(SoundCue, 564)()); }
-		SoundCue AreaWarningSound() { mixin(MGPC!(SoundCue, 560)()); }
-		int NumberOfProjectiles() { mixin(MGPC!(int, 556)()); }
-		float FireTimeLength() { mixin(MGPC!(float, 552)()); }
-		float CallRadius() { mixin(MGPC!(float, 548)()); }
-		ScriptClass ProjectileFireClass() { mixin(MGPC!(ScriptClass, 544)()); }
+		Vector m_SavedTargetNormal() { mixin(MGPC!("Vector", 588)()); }
+		Vector m_SavedTargetLocation() { mixin(MGPC!("Vector", 576)()); }
+		int m_FiredProjectiles() { mixin(MGPC!("int", 572)()); }
+		ParticleSystem TargetParticleSystem() { mixin(MGPC!("ParticleSystem", 568)()); }
+		SoundCue TargetParticleSound() { mixin(MGPC!("SoundCue", 564)()); }
+		SoundCue AreaWarningSound() { mixin(MGPC!("SoundCue", 560)()); }
+		int NumberOfProjectiles() { mixin(MGPC!("int", 556)()); }
+		float FireTimeLength() { mixin(MGPC!("float", 552)()); }
+		float CallRadius() { mixin(MGPC!("float", 548)()); }
+		ScriptClass ProjectileFireClass() { mixin(MGPC!("ScriptClass", 544)()); }
 	}
 final:
 	bool FireCompletedCallIn(int CallInOffs, Vector TargetLocation, Vector TargetNormal)

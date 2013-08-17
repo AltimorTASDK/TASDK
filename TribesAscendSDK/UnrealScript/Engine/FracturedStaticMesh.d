@@ -17,28 +17,28 @@ public extern(D):
 	{
 		auto ref
 		{
-			ParticleSystem FragmentDestroyEffect() { mixin(MGPC!(ParticleSystem, 436)()); }
-			ScriptArray!(ParticleSystem) FragmentDestroyEffects() { mixin(MGPC!(ScriptArray!(ParticleSystem), 440)()); }
-			float FragmentDestroyEffectScale() { mixin(MGPC!(float, 452)()); }
-			float FragmentHealthScale() { mixin(MGPC!(float, 456)()); }
-			float FragmentMinHealth() { mixin(MGPC!(float, 460)()); }
-			float FragmentMaxHealth() { mixin(MGPC!(float, 464)()); }
-			StaticMesh SourceCoreMesh() { mixin(MGPC!(StaticMesh, 376)()); }
-			float CoreMeshScale() { mixin(MGPC!(float, 380)()); }
-			float ChunkLinVel() { mixin(MGPC!(float, 472)()); }
-			float ChunkAngVel() { mixin(MGPC!(float, 476)()); }
-			float ChunkLinHorizontalScale() { mixin(MGPC!(float, 480)()); }
-			float ExplosionVelScale() { mixin(MGPC!(float, 484)()); }
-			float ChanceOfPhysicsChunk() { mixin(MGPC!(float, 504)()); }
-			float ExplosionChanceOfPhysicsChunk() { mixin(MGPC!(float, 508)()); }
-			float NormalPhysicsChunkScaleMin() { mixin(MGPC!(float, 512)()); }
-			float NormalPhysicsChunkScaleMax() { mixin(MGPC!(float, 516)()); }
-			float ExplosionPhysicsChunkScaleMin() { mixin(MGPC!(float, 520)()); }
-			float ExplosionPhysicsChunkScaleMax() { mixin(MGPC!(float, 524)()); }
-			float MinConnectionSupportArea() { mixin(MGPC!(float, 528)()); }
-			MaterialInterface DynamicOutsideMaterial() { mixin(MGPC!(MaterialInterface, 532)()); }
-			MaterialInterface LoseChunkOutsideMaterial() { mixin(MGPC!(MaterialInterface, 536)()); }
-			int OutsideMaterialIndex() { mixin(MGPC!(int, 540)()); }
+			ParticleSystem FragmentDestroyEffect() { mixin(MGPC!("ParticleSystem", 436)()); }
+			ScriptArray!(ParticleSystem) FragmentDestroyEffects() { mixin(MGPC!("ScriptArray!(ParticleSystem)", 440)()); }
+			float FragmentDestroyEffectScale() { mixin(MGPC!("float", 452)()); }
+			float FragmentHealthScale() { mixin(MGPC!("float", 456)()); }
+			float FragmentMinHealth() { mixin(MGPC!("float", 460)()); }
+			float FragmentMaxHealth() { mixin(MGPC!("float", 464)()); }
+			StaticMesh SourceCoreMesh() { mixin(MGPC!("StaticMesh", 376)()); }
+			float CoreMeshScale() { mixin(MGPC!("float", 380)()); }
+			float ChunkLinVel() { mixin(MGPC!("float", 472)()); }
+			float ChunkAngVel() { mixin(MGPC!("float", 476)()); }
+			float ChunkLinHorizontalScale() { mixin(MGPC!("float", 480)()); }
+			float ExplosionVelScale() { mixin(MGPC!("float", 484)()); }
+			float ChanceOfPhysicsChunk() { mixin(MGPC!("float", 504)()); }
+			float ExplosionChanceOfPhysicsChunk() { mixin(MGPC!("float", 508)()); }
+			float NormalPhysicsChunkScaleMin() { mixin(MGPC!("float", 512)()); }
+			float NormalPhysicsChunkScaleMax() { mixin(MGPC!("float", 516)()); }
+			float ExplosionPhysicsChunkScaleMin() { mixin(MGPC!("float", 520)()); }
+			float ExplosionPhysicsChunkScaleMax() { mixin(MGPC!("float", 524)()); }
+			float MinConnectionSupportArea() { mixin(MGPC!("float", 528)()); }
+			MaterialInterface DynamicOutsideMaterial() { mixin(MGPC!("MaterialInterface", 532)()); }
+			MaterialInterface LoseChunkOutsideMaterial() { mixin(MGPC!("MaterialInterface", 536)()); }
+			int OutsideMaterialIndex() { mixin(MGPC!("int", 540)()); }
 		}
 		bool bUniformFragmentHealth() { mixin(MGBPC!(468, 0x1)()); }
 		bool bUniformFragmentHealth(bool val) { mixin(MSBPC!(468, 0x1)()); }

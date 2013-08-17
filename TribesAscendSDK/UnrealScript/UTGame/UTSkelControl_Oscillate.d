@@ -20,9 +20,9 @@ public extern(D):
 	{
 		auto ref
 		{
-			float CurrentTime() { mixin(MGPC!(float, 252)()); }
-			float Period() { mixin(MGPC!(float, 248)()); }
-			Vector MaxDelta() { mixin(MGPC!(Vector, 236)()); }
+			float CurrentTime() { mixin(MGPC!("float", 252)()); }
+			float Period() { mixin(MGPC!("float", 248)()); }
+			Vector MaxDelta() { mixin(MGPC!("Vector", 236)()); }
 		}
 		bool bReverseDirection() { mixin(MGBPC!(256, 0x1)()); }
 		bool bReverseDirection(bool val) { mixin(MSBPC!(256, 0x1)()); }

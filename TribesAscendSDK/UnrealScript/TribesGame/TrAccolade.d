@@ -781,16 +781,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			int DatabaseId() { mixin(MGPC!(int, 68)()); }
-			int ActivityId() { mixin(MGPC!(int, 72)()); }
-			int Type() { mixin(MGPC!(int, 88)()); }
-			int IconIndex() { mixin(MGPC!(int, 64)()); }
-			ScriptString FriendlyName() { mixin(MGPC!(ScriptString, 104)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 116)()); }
-			ScriptString HUDMessage() { mixin(MGPC!(ScriptString, 92)()); }
-			float Weight() { mixin(MGPC!(float, 84)()); }
-			int MessageSwitch() { mixin(MGPC!(int, 76)()); }
-			int CreditsAwarded() { mixin(MGPC!(int, 60)()); }
+			int DatabaseId() { mixin(MGPC!("int", 68)()); }
+			int ActivityId() { mixin(MGPC!("int", 72)()); }
+			int Type() { mixin(MGPC!("int", 88)()); }
+			int IconIndex() { mixin(MGPC!("int", 64)()); }
+			ScriptString FriendlyName() { mixin(MGPC!("ScriptString", 104)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 116)()); }
+			ScriptString HUDMessage() { mixin(MGPC!("ScriptString", 92)()); }
+			float Weight() { mixin(MGPC!("float", 84)()); }
+			int MessageSwitch() { mixin(MGPC!("int", 76)()); }
+			int CreditsAwarded() { mixin(MGPC!("int", 60)()); }
 		}
 		bool Broadcast() { mixin(MGBPC!(80, 0x1)()); }
 		bool Broadcast(bool val) { mixin(MSBPC!(80, 0x1)()); }

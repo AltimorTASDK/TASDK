@@ -16,8 +16,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor.EDoubleClickDir ForcedDoubleClick() { mixin(MGPC!(Actor.EDoubleClickDir, 996)()); }
-			float LastDuckTime() { mixin(MGPC!(float, 988)()); }
+			Actor.EDoubleClickDir ForcedDoubleClick() { mixin(MGPC!("Actor.EDoubleClickDir", 996)()); }
+			float LastDuckTime() { mixin(MGPC!("float", 988)()); }
 		}
 		bool bHoldDuck() { mixin(MGBPC!(992, 0x1)()); }
 		bool bHoldDuck(bool val) { mixin(MSBPC!(992, 0x1)()); }

@@ -34,10 +34,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			OnlineGameInterfaceImpl GameInterfaceImpl() { mixin(MGPC!(OnlineGameInterfaceImpl, 240)()); }
-			int MaxRemoteTalkers() { mixin(MGPC!(int, 232)()); }
-			int MaxLocalTalkers() { mixin(MGPC!(int, 228)()); }
-			UObject.Pointer VoiceEngine() { mixin(MGPC!(UObject.Pointer, 224)()); }
+			OnlineGameInterfaceImpl GameInterfaceImpl() { mixin(MGPC!("OnlineGameInterfaceImpl", 240)()); }
+			int MaxRemoteTalkers() { mixin(MGPC!("int", 232)()); }
+			int MaxLocalTalkers() { mixin(MGPC!("int", 228)()); }
+			UObject.Pointer VoiceEngine() { mixin(MGPC!("UObject.Pointer", 224)()); }
 		}
 		bool bIsUsingSpeechRecognition() { mixin(MGBPC!(236, 0x1)()); }
 		bool bIsUsingSpeechRecognition(bool val) { mixin(MSBPC!(236, 0x1)()); }
@@ -75,6 +75,6 @@ final:
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = OutRegisteredPlayers;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRegisteredPlayers, params.ptr, cast(void*)0);
-		*OutRegisteredPlayers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
+		OutRegisteredPlayers = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 	}
 }

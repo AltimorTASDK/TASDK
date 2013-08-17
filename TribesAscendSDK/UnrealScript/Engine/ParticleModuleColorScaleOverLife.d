@@ -17,8 +17,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			DistributionFloat.RawDistributionFloat AlphaScaleOverLife() { mixin(MGPC!(DistributionFloat.RawDistributionFloat, 100)()); }
-			DistributionVector.RawDistributionVector ColorScaleOverLife() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+			DistributionFloat.RawDistributionFloat AlphaScaleOverLife() { mixin(MGPC!("DistributionFloat.RawDistributionFloat", 100)()); }
+			DistributionVector.RawDistributionVector ColorScaleOverLife() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 		}
 		bool bEmitterTime() { mixin(MGBPC!(128, 0x1)()); }
 		bool bEmitterTime(bool val) { mixin(MSBPC!(128, 0x1)()); }

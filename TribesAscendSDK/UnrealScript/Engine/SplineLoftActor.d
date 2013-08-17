@@ -33,18 +33,18 @@ public extern(D):
 		{
 			ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) SplineMeshComps() { mixin(MGPC!(ScriptArray!(
+void*) SplineMeshComps() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 564)()); }
-			ScriptArray!(MaterialInterface) DeformMeshMaterials() { mixin(MGPC!(ScriptArray!(MaterialInterface), 580)()); }
-			float MeshMaxDrawDistance() { mixin(MGPC!(float, 624)()); }
+void*)", 564)()); }
+			ScriptArray!(MaterialInterface) DeformMeshMaterials() { mixin(MGPC!("ScriptArray!(MaterialInterface)", 580)()); }
+			float MeshMaxDrawDistance() { mixin(MGPC!("float", 624)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'MeshLightEnvironment'!
-			UObject.Vector2D Offset() { mixin(MGPC!(UObject.Vector2D, 608)()); }
-			Vector WorldXDir() { mixin(MGPC!(Vector, 596)()); }
-			float Roll() { mixin(MGPC!(float, 592)()); }
-			StaticMesh DeformMesh() { mixin(MGPC!(StaticMesh, 576)()); }
-			float ScaleY() { mixin(MGPC!(float, 560)()); }
-			float ScaleX() { mixin(MGPC!(float, 556)()); }
+			UObject.Vector2D Offset() { mixin(MGPC!("UObject.Vector2D", 608)()); }
+			Vector WorldXDir() { mixin(MGPC!("Vector", 596)()); }
+			float Roll() { mixin(MGPC!("float", 592)()); }
+			StaticMesh DeformMesh() { mixin(MGPC!("StaticMesh", 576)()); }
+			float ScaleY() { mixin(MGPC!("float", 560)()); }
+			float ScaleX() { mixin(MGPC!("float", 556)()); }
 		}
 		bool bAcceptsLights() { mixin(MGBPC!(616, 0x2)()); }
 		bool bAcceptsLights(bool val) { mixin(MSBPC!(616, 0x2)()); }

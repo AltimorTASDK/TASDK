@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mPostCreateActor;
 		public @property static final ScriptFunction PostCreateActor() { mixin(MGF!("mPostCreateActor", "Function UTGame.UTActorFactoryPickup.PostCreateActor")()); }
 	}
-	@property final auto ref ScriptClass InventoryClass() { mixin(MGPC!(ScriptClass, 92)()); }
+	@property final auto ref ScriptClass InventoryClass() { mixin(MGPC!("ScriptClass", 92)()); }
 	final void PostCreateActor(Actor NewActor)
 	{
 		ubyte params[4];

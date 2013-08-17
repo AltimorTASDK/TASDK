@@ -79,12 +79,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct GameFramework.GameThirdPersonCamera.PenetrationAvoidanceFeeler")()); }
 		@property final auto ref
 		{
-			int FramesUntilNextTrace() { mixin(MGPS!(int, 36)()); }
-			int TraceInterval() { mixin(MGPS!(int, 32)()); }
-			Vector Extent() { mixin(MGPS!(Vector, 20)()); }
-			float PawnWeight() { mixin(MGPS!(float, 16)()); }
-			float WorldWeight() { mixin(MGPS!(float, 12)()); }
-			Rotator AdjustmentRot() { mixin(MGPS!(Rotator, 0)()); }
+			int FramesUntilNextTrace() { mixin(MGPS!("int", 36)()); }
+			int TraceInterval() { mixin(MGPS!("int", 32)()); }
+			Vector Extent() { mixin(MGPS!("Vector", 20)()); }
+			float PawnWeight() { mixin(MGPS!("float", 16)()); }
+			float WorldWeight() { mixin(MGPS!("float", 12)()); }
+			Rotator AdjustmentRot() { mixin(MGPS!("Rotator", 0)()); }
 		}
 	}
 	struct CamFocusPointParams
@@ -97,13 +97,13 @@ public extern(D):
 		{
 			auto ref
 			{
-				float FocusPitchOffsetDeg() { mixin(MGPS!(float, 48)()); }
-				UObject.Vector2D InFocusFOV() { mixin(MGPS!(UObject.Vector2D, 36)()); }
-				UObject.Vector2D InterpSpeedRange() { mixin(MGPS!(UObject.Vector2D, 28)()); }
-				float CameraFOV() { mixin(MGPS!(float, 24)()); }
-				Vector FocusWorldLoc() { mixin(MGPS!(Vector, 12)()); }
-				ScriptName FocusBoneName() { mixin(MGPS!(ScriptName, 4)()); }
-				Actor FocusActor() { mixin(MGPS!(Actor, 0)()); }
+				float FocusPitchOffsetDeg() { mixin(MGPS!("float", 48)()); }
+				UObject.Vector2D InFocusFOV() { mixin(MGPS!("UObject.Vector2D", 36)()); }
+				UObject.Vector2D InterpSpeedRange() { mixin(MGPS!("UObject.Vector2D", 28)()); }
+				float CameraFOV() { mixin(MGPS!("float", 24)()); }
+				Vector FocusWorldLoc() { mixin(MGPS!("Vector", 12)()); }
+				ScriptName FocusBoneName() { mixin(MGPS!("ScriptName", 4)()); }
+				Actor FocusActor() { mixin(MGPS!("Actor", 0)()); }
 			}
 			bool bIgnoreTrace() { mixin(MGBPS!(44, 0x4)()); }
 			bool bIgnoreTrace(bool val) { mixin(MSBPS!(44, 0x4)()); }
@@ -117,47 +117,47 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler) PenetrationAvoidanceFeelers() { mixin(MGPC!(ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler), 348)()); }
-			Vector LastOffsetAdjustment() { mixin(MGPC!(Vector, 360)()); }
-			Rotator LastPreModifierCameraRot() { mixin(MGPC!(Rotator, 336)()); }
-			Vector LastPreModifierCameraLoc() { mixin(MGPC!(Vector, 324)()); }
-			Vector LastWorstLocationLocal() { mixin(MGPC!(Vector, 312)()); }
-			float WorstLocInterpSpeed() { mixin(MGPC!(float, 308)()); }
-			float DirectLookInterpSpeed() { mixin(MGPC!(float, 304)()); }
-			int DirectLookYaw() { mixin(MGPC!(int, 300)()); }
-			int LastPostCamTurnYaw() { mixin(MGPC!(int, 296)()); }
-			float TurnDelay() { mixin(MGPC!(float, 292)()); }
-			float TurnTotalTime() { mixin(MGPC!(float, 288)()); }
-			int TurnEndAngle() { mixin(MGPC!(int, 284)()); }
-			int TurnStartAngle() { mixin(MGPC!(int, 280)()); }
-			float TurnCurTime() { mixin(MGPC!(float, 276)()); }
-			GameThirdPersonCamera.CamFocusPointParams FocusPoint() { mixin(MGPC!(GameThirdPersonCamera.CamFocusPointParams, 220)()); }
-			Vector LastFocusPointLoc() { mixin(MGPC!(Vector, 208)()); }
-			Vector ActualFocusPointWorldLoc() { mixin(MGPC!(Vector, 196)()); }
-			float LastFocusChangeTime() { mixin(MGPC!(float, 192)()); }
-			float Focus_FastAdjustKickInTime() { mixin(MGPC!(float, 188)()); }
-			int Focus_MaxTries() { mixin(MGPC!(int, 184)()); }
-			float Focus_StepHeightAdjustment() { mixin(MGPC!(float, 180)()); }
-			float Focus_BackOffStrength() { mixin(MGPC!(float, 176)()); }
-			float LeftoverPitchAdjustment() { mixin(MGPC!(float, 172)()); }
-			float LastYawAdjustment() { mixin(MGPC!(float, 168)()); }
-			float LastPitchAdjustment() { mixin(MGPC!(float, 164)()); }
-			float LastHeightAdjustment() { mixin(MGPC!(float, 160)()); }
-			GameThirdPersonCameraMode CurrentCamMode() { mixin(MGPC!(GameThirdPersonCameraMode, 156)()); }
-			ScriptClass ThirdPersonCamDefaultClass() { mixin(MGPC!(ScriptClass, 152)()); }
-			GameThirdPersonCameraMode ThirdPersonCamDefault() { mixin(MGPC!(GameThirdPersonCameraMode, 148)()); }
-			float LastCamFOV() { mixin(MGPC!(float, 144)()); }
-			Vector LastViewOffset() { mixin(MGPC!(Vector, 132)()); }
-			float OriginOffsetInterpSpeed() { mixin(MGPC!(float, 128)()); }
-			Rotator LastActualCameraOriginRot() { mixin(MGPC!(Rotator, 116)()); }
-			Vector LastActualOriginOffset() { mixin(MGPC!(Vector, 104)()); }
-			float PenetrationExtentScale() { mixin(MGPC!(float, 100)()); }
-			float PenetrationBlockedPct() { mixin(MGPC!(float, 96)()); }
-			float PenetrationBlendInTime() { mixin(MGPC!(float, 92)()); }
-			float PenetrationBlendOutTime() { mixin(MGPC!(float, 88)()); }
-			float WorstLocPenetrationExtentScale() { mixin(MGPC!(float, 84)()); }
-			float WorstLocBlockedPct() { mixin(MGPC!(float, 80)()); }
-			Vector LastActualCameraOrigin() { mixin(MGPC!(Vector, 68)()); }
+			ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler) PenetrationAvoidanceFeelers() { mixin(MGPC!("ScriptArray!(GameThirdPersonCamera.PenetrationAvoidanceFeeler)", 348)()); }
+			Vector LastOffsetAdjustment() { mixin(MGPC!("Vector", 360)()); }
+			Rotator LastPreModifierCameraRot() { mixin(MGPC!("Rotator", 336)()); }
+			Vector LastPreModifierCameraLoc() { mixin(MGPC!("Vector", 324)()); }
+			Vector LastWorstLocationLocal() { mixin(MGPC!("Vector", 312)()); }
+			float WorstLocInterpSpeed() { mixin(MGPC!("float", 308)()); }
+			float DirectLookInterpSpeed() { mixin(MGPC!("float", 304)()); }
+			int DirectLookYaw() { mixin(MGPC!("int", 300)()); }
+			int LastPostCamTurnYaw() { mixin(MGPC!("int", 296)()); }
+			float TurnDelay() { mixin(MGPC!("float", 292)()); }
+			float TurnTotalTime() { mixin(MGPC!("float", 288)()); }
+			int TurnEndAngle() { mixin(MGPC!("int", 284)()); }
+			int TurnStartAngle() { mixin(MGPC!("int", 280)()); }
+			float TurnCurTime() { mixin(MGPC!("float", 276)()); }
+			GameThirdPersonCamera.CamFocusPointParams FocusPoint() { mixin(MGPC!("GameThirdPersonCamera.CamFocusPointParams", 220)()); }
+			Vector LastFocusPointLoc() { mixin(MGPC!("Vector", 208)()); }
+			Vector ActualFocusPointWorldLoc() { mixin(MGPC!("Vector", 196)()); }
+			float LastFocusChangeTime() { mixin(MGPC!("float", 192)()); }
+			float Focus_FastAdjustKickInTime() { mixin(MGPC!("float", 188)()); }
+			int Focus_MaxTries() { mixin(MGPC!("int", 184)()); }
+			float Focus_StepHeightAdjustment() { mixin(MGPC!("float", 180)()); }
+			float Focus_BackOffStrength() { mixin(MGPC!("float", 176)()); }
+			float LeftoverPitchAdjustment() { mixin(MGPC!("float", 172)()); }
+			float LastYawAdjustment() { mixin(MGPC!("float", 168)()); }
+			float LastPitchAdjustment() { mixin(MGPC!("float", 164)()); }
+			float LastHeightAdjustment() { mixin(MGPC!("float", 160)()); }
+			GameThirdPersonCameraMode CurrentCamMode() { mixin(MGPC!("GameThirdPersonCameraMode", 156)()); }
+			ScriptClass ThirdPersonCamDefaultClass() { mixin(MGPC!("ScriptClass", 152)()); }
+			GameThirdPersonCameraMode ThirdPersonCamDefault() { mixin(MGPC!("GameThirdPersonCameraMode", 148)()); }
+			float LastCamFOV() { mixin(MGPC!("float", 144)()); }
+			Vector LastViewOffset() { mixin(MGPC!("Vector", 132)()); }
+			float OriginOffsetInterpSpeed() { mixin(MGPC!("float", 128)()); }
+			Rotator LastActualCameraOriginRot() { mixin(MGPC!("Rotator", 116)()); }
+			Vector LastActualOriginOffset() { mixin(MGPC!("Vector", 104)()); }
+			float PenetrationExtentScale() { mixin(MGPC!("float", 100)()); }
+			float PenetrationBlockedPct() { mixin(MGPC!("float", 96)()); }
+			float PenetrationBlendInTime() { mixin(MGPC!("float", 92)()); }
+			float PenetrationBlendOutTime() { mixin(MGPC!("float", 88)()); }
+			float WorstLocPenetrationExtentScale() { mixin(MGPC!("float", 84)()); }
+			float WorstLocBlockedPct() { mixin(MGPC!("float", 80)()); }
+			Vector LastActualCameraOrigin() { mixin(MGPC!("Vector", 68)()); }
 		}
 		bool bDebugChangedCameraMode() { mixin(MGBPC!(272, 0x40)()); }
 		bool bDebugChangedCameraMode(bool val) { mixin(MSBPC!(272, 0x40)()); }
@@ -208,7 +208,7 @@ final:
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateCamera, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)&params[12];
+		OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
 	void UpdateCameraMode(Pawn P)
 	{
@@ -226,17 +226,19 @@ final:
 		*cast(float*)&params[8] = DeltaTime;
 		*cast(Camera.TViewTarget*)&params[12] = OutVT;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PlayerUpdateCamera, params.ptr, cast(void*)0);
-		*OutVT = *cast(Camera.TViewTarget*)&params[12];
+		OutVT = *cast(Camera.TViewTarget*)&params[12];
 	}
-	void BeginTurn(int StartAngle, int EndAngle, float TimeSec, float DelaySec, bool bAlignTargetWhenFinished)
+	void BeginTurn(int StartAngle, int EndAngle, float TimeSec, float* DelaySec = null, bool* bAlignTargetWhenFinished = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(int*)params.ptr = StartAngle;
 		*cast(int*)&params[4] = EndAngle;
 		*cast(float*)&params[8] = TimeSec;
-		*cast(float*)&params[12] = DelaySec;
-		*cast(bool*)&params[16] = bAlignTargetWhenFinished;
+		if (DelaySec !is null)
+			*cast(float*)&params[12] = *DelaySec;
+		if (bAlignTargetWhenFinished !is null)
+			*cast(bool*)&params[16] = *bAlignTargetWhenFinished;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BeginTurn, params.ptr, cast(void*)0);
 	}
 	void EndTurn()
@@ -250,21 +252,26 @@ final:
 		*cast(int*)params.ptr = AngleOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AdjustTurn, params.ptr, cast(void*)0);
 	}
-	void SetFocusOnLoc(Vector FocusWorldLoc, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float CameraFOV, bool bAlwaysFocus, bool bAdjustCamera, bool bIgnoreTrace, float FocusPitchOffsetDeg)
+	void SetFocusOnLoc(Vector FocusWorldLoc, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float* CameraFOV = null, bool* bAlwaysFocus = null, bool* bAdjustCamera = null, bool* bIgnoreTrace = null, float* FocusPitchOffsetDeg = null)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(Vector*)params.ptr = FocusWorldLoc;
 		*cast(UObject.Vector2D*)&params[12] = InterpSpeedRange;
 		*cast(UObject.Vector2D*)&params[20] = InFocusFOV;
-		*cast(float*)&params[28] = CameraFOV;
-		*cast(bool*)&params[32] = bAlwaysFocus;
-		*cast(bool*)&params[36] = bAdjustCamera;
-		*cast(bool*)&params[40] = bIgnoreTrace;
-		*cast(float*)&params[44] = FocusPitchOffsetDeg;
+		if (CameraFOV !is null)
+			*cast(float*)&params[28] = *CameraFOV;
+		if (bAlwaysFocus !is null)
+			*cast(bool*)&params[32] = *bAlwaysFocus;
+		if (bAdjustCamera !is null)
+			*cast(bool*)&params[36] = *bAdjustCamera;
+		if (bIgnoreTrace !is null)
+			*cast(bool*)&params[40] = *bIgnoreTrace;
+		if (FocusPitchOffsetDeg !is null)
+			*cast(float*)&params[44] = *FocusPitchOffsetDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFocusOnLoc, params.ptr, cast(void*)0);
 	}
-	void SetFocusOnActor(Actor FocusActor, ScriptName FocusBoneName, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float CameraFOV, bool bAlwaysFocus, bool bAdjustCamera, bool bIgnoreTrace, float FocusPitchOffsetDeg)
+	void SetFocusOnActor(Actor FocusActor, ScriptName FocusBoneName, UObject.Vector2D InterpSpeedRange, UObject.Vector2D InFocusFOV, float* CameraFOV = null, bool* bAlwaysFocus = null, bool* bAdjustCamera = null, bool* bIgnoreTrace = null, float* FocusPitchOffsetDeg = null)
 	{
 		ubyte params[48];
 		params[] = 0;
@@ -272,11 +279,16 @@ final:
 		*cast(ScriptName*)&params[4] = FocusBoneName;
 		*cast(UObject.Vector2D*)&params[12] = InterpSpeedRange;
 		*cast(UObject.Vector2D*)&params[20] = InFocusFOV;
-		*cast(float*)&params[28] = CameraFOV;
-		*cast(bool*)&params[32] = bAlwaysFocus;
-		*cast(bool*)&params[36] = bAdjustCamera;
-		*cast(bool*)&params[40] = bIgnoreTrace;
-		*cast(float*)&params[44] = FocusPitchOffsetDeg;
+		if (CameraFOV !is null)
+			*cast(float*)&params[28] = *CameraFOV;
+		if (bAlwaysFocus !is null)
+			*cast(bool*)&params[32] = *bAlwaysFocus;
+		if (bAdjustCamera !is null)
+			*cast(bool*)&params[36] = *bAdjustCamera;
+		if (bIgnoreTrace !is null)
+			*cast(bool*)&params[40] = *bIgnoreTrace;
+		if (FocusPitchOffsetDeg !is null)
+			*cast(float*)&params[44] = *FocusPitchOffsetDeg;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFocusOnActor, params.ptr, cast(void*)0);
 	}
 	Actor GetFocusActor()
@@ -286,11 +298,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFocusActor, params.ptr, cast(void*)0);
 		return *cast(Actor*)params.ptr;
 	}
-	void ClearFocusPoint(bool bLeaveCameraRotation)
+	void ClearFocusPoint(bool* bLeaveCameraRotation = null)
 	{
 		ubyte params[4];
 		params[] = 0;
-		*cast(bool*)params.ptr = bLeaveCameraRotation;
+		if (bLeaveCameraRotation !is null)
+			*cast(bool*)params.ptr = *bLeaveCameraRotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearFocusPoint, params.ptr, cast(void*)0);
 	}
 	void UpdateFocusPoint(Pawn P)
@@ -331,8 +344,8 @@ final:
 		*cast(Rotator*)&params[8] = out_ViewRotation;
 		*cast(Rotator*)&params[20] = out_DeltaRot;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessViewRotation, params.ptr, cast(void*)0);
-		*out_ViewRotation = *cast(Rotator*)&params[8];
-		*out_DeltaRot = *cast(Rotator*)&params[20];
+		out_ViewRotation = *cast(Rotator*)&params[8];
+		out_DeltaRot = *cast(Rotator*)&params[20];
 	}
 	void OnBecomeActive(GameCameraBase OldCamera)
 	{
@@ -347,7 +360,7 @@ final:
 		params[] = 0;
 		*cast(PostProcessVolume.PostProcessSettings*)params.ptr = PP;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ModifyPostProcessSettings, params.ptr, cast(void*)0);
-		*PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
+		PP = *cast(PostProcessVolume.PostProcessSettings*)params.ptr;
 	}
 	void ResetInterpolation()
 	{

@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.K2Input_Float")()); }
 	private static __gshared K2Input_Float mDefaultProperties;
 	@property final static K2Input_Float DefaultProperties() { mixin(MGDPC!(K2Input_Float, "K2Input_Float Engine.Default__K2Input_Float")()); }
-	@property final auto ref float DefaultFloat() { mixin(MGPC!(float, 84)()); }
+	@property final auto ref float DefaultFloat() { mixin(MGPC!("float", 84)()); }
 }

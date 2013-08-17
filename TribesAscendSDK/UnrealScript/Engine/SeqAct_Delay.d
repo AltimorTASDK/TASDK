@@ -28,10 +28,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			float RemainingTime() { mixin(MGPC!(float, 264)()); }
-			float LastUpdateTime() { mixin(MGPC!(float, 260)()); }
-			float Duration() { mixin(MGPC!(float, 256)()); }
-			float DefaultDuration() { mixin(MGPC!(float, 252)()); }
+			float RemainingTime() { mixin(MGPC!("float", 264)()); }
+			float LastUpdateTime() { mixin(MGPC!("float", 260)()); }
+			float Duration() { mixin(MGPC!("float", 256)()); }
+			float DefaultDuration() { mixin(MGPC!("float", 252)()); }
 		}
 		bool bStartWillRestart() { mixin(MGBPC!(248, 0x2)()); }
 		bool bStartWillRestart(bool val) { mixin(MSBPC!(248, 0x2)()); }

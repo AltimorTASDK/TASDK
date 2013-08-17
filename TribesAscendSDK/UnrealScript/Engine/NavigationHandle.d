@@ -115,9 +115,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PolySegmentSpan")()); }
 		@property final auto ref
 		{
-			Vector P2() { mixin(MGPS!(Vector, 16)()); }
-			Vector P1() { mixin(MGPS!(Vector, 4)()); }
-			UObject.Pointer Poly() { mixin(MGPS!(UObject.Pointer, 0)()); }
+			Vector P2() { mixin(MGPS!("Vector", 16)()); }
+			Vector P1() { mixin(MGPS!("Vector", 4)()); }
+			UObject.Pointer Poly() { mixin(MGPS!("UObject.Pointer", 0)()); }
 		}
 	}
 	struct NavMeshPathParams
@@ -130,12 +130,12 @@ public extern(D):
 		{
 			auto ref
 			{
-				float MaxHoverDistance() { mixin(MGPS!(float, 44)()); }
-				float MinWalkableZ() { mixin(MGPS!(float, 40)()); }
-				float MaxDropHeight() { mixin(MGPS!(float, 36)()); }
-				Vector SearchStart() { mixin(MGPS!(Vector, 24)()); }
-				float SearchLaneMultiplier() { mixin(MGPS!(float, 20)()); }
-				Vector SearchExtent() { mixin(MGPS!(Vector, 8)()); }
+				float MaxHoverDistance() { mixin(MGPS!("float", 44)()); }
+				float MinWalkableZ() { mixin(MGPS!("float", 40)()); }
+				float MaxDropHeight() { mixin(MGPS!("float", 36)()); }
+				Vector SearchStart() { mixin(MGPS!("Vector", 24)()); }
+				float SearchLaneMultiplier() { mixin(MGPS!("float", 20)()); }
+				Vector SearchExtent() { mixin(MGPS!("Vector", 8)()); }
 				// WARNING: Property 'Interface' has the same name as a defined type!
 			}
 			bool bAbleToSearch() { mixin(MGBPS!(4, 0x4)()); }
@@ -152,7 +152,7 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.PathStore")()); }
-		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { mixin(MGPS!(ScriptArray!(NavigationHandle.EdgePointer), 0)()); }
+		@property final auto ref ScriptArray!(NavigationHandle.EdgePointer) EdgeList() { mixin(MGPS!("ScriptArray!(NavigationHandle.EdgePointer)", 0)()); }
 	}
 	struct EdgePointer
 	{
@@ -160,24 +160,24 @@ public extern(D):
 	public extern(D):
 		private static __gshared ScriptStruct mStaticClass;
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.NavigationHandle.EdgePointer")()); }
-		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS!(UObject.Pointer, 0)()); }
+		@property final auto ref UObject.Pointer Dummy() { mixin(MGPS!("UObject.Pointer", 0)()); }
 	}
 	@property final
 	{
 		auto ref
 		{
-			float LastPathFailTime() { mixin(MGPC!(float, 208)()); }
-			EngineTypes.EPathFindingError LastPathError() { mixin(MGPC!(EngineTypes.EPathFindingError, 204)()); }
-			NavigationHandle.NavMeshPathParams CachedPathParams() { mixin(MGPC!(NavigationHandle.NavMeshPathParams, 156)()); }
-			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC!(NavMeshPathGoalEvaluator, 152)()); }
-			NavMeshPathConstraint PathConstraintList() { mixin(MGPC!(NavMeshPathConstraint, 148)()); }
-			Actor.BasedPosition FinalDestination() { mixin(MGPC!(Actor.BasedPosition, 92)()); }
-			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC!(UObject.Pointer, 88)()); }
-			UObject.Pointer CurrentEdge() { mixin(MGPC!(UObject.Pointer, 84)()); }
-			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC!(UObject.Pointer, 80)()); }
-			NavigationHandle.PathStore PathCache() { mixin(MGPC!(NavigationHandle.PathStore, 68)()); }
-			UObject.Pointer AnchorPoly() { mixin(MGPC!(UObject.Pointer, 64)()); }
-			Pylon AnchorPylon() { mixin(MGPC!(Pylon, 60)()); }
+			float LastPathFailTime() { mixin(MGPC!("float", 208)()); }
+			EngineTypes.EPathFindingError LastPathError() { mixin(MGPC!("EngineTypes.EPathFindingError", 204)()); }
+			NavigationHandle.NavMeshPathParams CachedPathParams() { mixin(MGPC!("NavigationHandle.NavMeshPathParams", 156)()); }
+			NavMeshPathGoalEvaluator PathGoalList() { mixin(MGPC!("NavMeshPathGoalEvaluator", 152)()); }
+			NavMeshPathConstraint PathConstraintList() { mixin(MGPC!("NavMeshPathConstraint", 148)()); }
+			Actor.BasedPosition FinalDestination() { mixin(MGPC!("Actor.BasedPosition", 92)()); }
+			UObject.Pointer SubGoal_DestPoly() { mixin(MGPC!("UObject.Pointer", 88)()); }
+			UObject.Pointer CurrentEdge() { mixin(MGPC!("UObject.Pointer", 84)()); }
+			UObject.Pointer BestUnfinishedPathPoint() { mixin(MGPC!("UObject.Pointer", 80)()); }
+			NavigationHandle.PathStore PathCache() { mixin(MGPC!("NavigationHandle.PathStore", 68)()); }
+			UObject.Pointer AnchorPoly() { mixin(MGPC!("UObject.Pointer", 64)()); }
+			Pylon AnchorPylon() { mixin(MGPC!("Pylon", 60)()); }
 		}
 		bool bUltraVerbosePathDebugging() { mixin(MGBPC!(144, 0x8)()); }
 		bool bUltraVerbosePathDebugging(bool val) { mixin(MSBPC!(144, 0x8)()); }
@@ -241,12 +241,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PathCache_GetGoalPoint, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	void PathCache_RemoveIndex(int InIdx, int Count)
+	void PathCache_RemoveIndex(int InIdx, int* Count = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(int*)params.ptr = InIdx;
-		*cast(int*)&params[4] = Count;
+		if (Count !is null)
+			*cast(int*)&params[4] = *Count;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PathCache_RemoveIndex, params.ptr, cast(void*)0);
 	}
 	Vector GetBestUnfinishedPathPoint()
@@ -278,7 +279,7 @@ final:
 		*cast(Vector*)params.ptr = out_MoveDest;
 		*cast(float*)&params[12] = ArrivalDistance;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMoveLocation, params.ptr, cast(void*)0);
-		*out_MoveDest = *cast(Vector*)params.ptr;
+		out_MoveDest = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
 	bool SetFinalDestination(Vector FinalDest)
@@ -295,18 +296,22 @@ final:
 		params[] = 0;
 		*cast(Vector*)params.ptr = out_ComputedPosition;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ComputeValidFinalDestination, params.ptr, cast(void*)0);
-		*out_ComputedPosition = *cast(Vector*)params.ptr;
+		out_ComputedPosition = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[12];
 	}
-	bool FindPath(Actor* out_DestActor, int* out_DestItem)
+	bool FindPath(Actor* out_DestActor = null, int* out_DestItem = null)
 	{
 		ubyte params[12];
 		params[] = 0;
-		*cast(Actor*)params.ptr = out_DestActor;
-		*cast(int*)&params[4] = out_DestItem;
+		if (out_DestActor !is null)
+			*cast(Actor*)params.ptr = *out_DestActor;
+		if (out_DestItem !is null)
+			*cast(int*)&params[4] = *out_DestItem;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPath, params.ptr, cast(void*)0);
-		*out_DestActor = *cast(Actor*)params.ptr;
-		*out_DestItem = *cast(int*)&params[4];
+		if (out_DestActor !is null)
+			*out_DestActor = *cast(Actor*)params.ptr;
+		if (out_DestItem !is null)
+			*out_DestItem = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool SuggestMovePreparation(ref Vector MovePt, Controller C)
@@ -316,21 +321,25 @@ final:
 		*cast(Vector*)params.ptr = MovePt;
 		*cast(Controller*)&params[12] = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SuggestMovePreparation, params.ptr, cast(void*)0);
-		*MovePt = *cast(Vector*)params.ptr;
+		MovePt = *cast(Vector*)params.ptr;
 		return *cast(bool*)&params[16];
 	}
-	static bool ObstacleLineCheck(Vector Start, Vector End, Vector Extent, Vector* out_HitLoc, Vector* out_HitNorm)
+	static bool ObstacleLineCheck(Vector Start, Vector End, Vector Extent, Vector* out_HitLoc = null, Vector* out_HitNorm = null)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Start;
 		*cast(Vector*)&params[12] = End;
 		*cast(Vector*)&params[24] = Extent;
-		*cast(Vector*)&params[36] = out_HitLoc;
-		*cast(Vector*)&params[48] = out_HitNorm;
+		if (out_HitLoc !is null)
+			*cast(Vector*)&params[36] = *out_HitLoc;
+		if (out_HitNorm !is null)
+			*cast(Vector*)&params[48] = *out_HitNorm;
 		StaticClass.ProcessEvent(Functions.ObstacleLineCheck, params.ptr, cast(void*)0);
-		*out_HitLoc = *cast(Vector*)&params[36];
-		*out_HitNorm = *cast(Vector*)&params[48];
+		if (out_HitLoc !is null)
+			*out_HitLoc = *cast(Vector*)&params[36];
+		if (out_HitNorm !is null)
+			*out_HitNorm = *cast(Vector*)&params[48];
 		return *cast(bool*)&params[60];
 	}
 	static bool ObstaclePointCheck(Vector Pt, Vector Extent)
@@ -342,18 +351,22 @@ final:
 		StaticClass.ProcessEvent(Functions.ObstaclePointCheck, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool LineCheck(Vector Start, Vector End, Vector Extent, Vector* out_HitLocation, Vector* out_HitNormal)
+	bool LineCheck(Vector Start, Vector End, Vector Extent, Vector* out_HitLocation = null, Vector* out_HitNormal = null)
 	{
 		ubyte params[64];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Start;
 		*cast(Vector*)&params[12] = End;
 		*cast(Vector*)&params[24] = Extent;
-		*cast(Vector*)&params[36] = out_HitLocation;
-		*cast(Vector*)&params[48] = out_HitNormal;
+		if (out_HitLocation !is null)
+			*cast(Vector*)&params[36] = *out_HitLocation;
+		if (out_HitNormal !is null)
+			*cast(Vector*)&params[48] = *out_HitNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LineCheck, params.ptr, cast(void*)0);
-		*out_HitLocation = *cast(Vector*)&params[36];
-		*out_HitNormal = *cast(Vector*)&params[48];
+		if (out_HitLocation !is null)
+			*out_HitLocation = *cast(Vector*)&params[36];
+		if (out_HitNormal !is null)
+			*out_HitNormal = *cast(Vector*)&params[48];
 		return *cast(bool*)&params[60];
 	}
 	bool PointCheck(Vector Pt, Vector Extent)
@@ -365,13 +378,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointCheck, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}
-	bool PointReachable(Vector Point, Vector OverrideStartPoint, bool bAllowHitsInEndCollisionBox)
+	bool PointReachable(Vector Point, Vector* OverrideStartPoint = null, bool* bAllowHitsInEndCollisionBox = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = Point;
-		*cast(Vector*)&params[12] = OverrideStartPoint;
-		*cast(bool*)&params[24] = bAllowHitsInEndCollisionBox;
+		if (OverrideStartPoint !is null)
+			*cast(Vector*)&params[12] = *OverrideStartPoint;
+		if (bAllowHitsInEndCollisionBox !is null)
+			*cast(bool*)&params[24] = *bAllowHitsInEndCollisionBox;
 		(cast(ScriptObject)this).ProcessEvent(Functions.PointReachable, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -383,13 +398,16 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.ActorReachable, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void DrawPathCache(Vector DrawOffset, bool bPersistent, UObject.Color DrawColor)
+	void DrawPathCache(Vector* DrawOffset = null, bool* bPersistent = null, UObject.Color* DrawColor = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Vector*)params.ptr = DrawOffset;
-		*cast(bool*)&params[12] = bPersistent;
-		*cast(UObject.Color*)&params[16] = DrawColor;
+		if (DrawOffset !is null)
+			*cast(Vector*)params.ptr = *DrawOffset;
+		if (bPersistent !is null)
+			*cast(bool*)&params[12] = *bPersistent;
+		if (DrawColor !is null)
+			*cast(UObject.Color*)&params[16] = *DrawColor;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DrawPathCache, params.ptr, cast(void*)0);
 	}
 	ScriptString GetCurrentEdgeDebugText()
@@ -418,9 +436,9 @@ final:
 		*cast(Vector*)&params[12] = Extent;
 		*cast(ScriptArray!(Vector)*)&params[24] = out_PolyCtrs;
 		StaticClass.ProcessEvent(Functions.GetAllPolyCentersWithinBounds, params.ptr, cast(void*)0);
-		*out_PolyCtrs = *cast(ScriptArray!(Vector)*)&params[24];
+		out_PolyCtrs = *cast(ScriptArray!(Vector)*)&params[24];
 	}
-	static void GetValidPositionsForBox(Vector pos, float Radius, Vector Extent, bool bMustBeReachableFromStartPos, ref ScriptArray!(Vector) out_ValidPositions, int MaxPositions, float MinRadius, Vector ValidBoxAroundStartPos)
+	static void GetValidPositionsForBox(Vector pos, float Radius, Vector Extent, bool bMustBeReachableFromStartPos, ref ScriptArray!(Vector) out_ValidPositions, int* MaxPositions = null, float* MinRadius = null, Vector* ValidBoxAroundStartPos = null)
 	{
 		ubyte params[64];
 		params[] = 0;
@@ -429,11 +447,14 @@ final:
 		*cast(Vector*)&params[16] = Extent;
 		*cast(bool*)&params[28] = bMustBeReachableFromStartPos;
 		*cast(ScriptArray!(Vector)*)&params[32] = out_ValidPositions;
-		*cast(int*)&params[44] = MaxPositions;
-		*cast(float*)&params[48] = MinRadius;
-		*cast(Vector*)&params[52] = ValidBoxAroundStartPos;
+		if (MaxPositions !is null)
+			*cast(int*)&params[44] = *MaxPositions;
+		if (MinRadius !is null)
+			*cast(float*)&params[48] = *MinRadius;
+		if (ValidBoxAroundStartPos !is null)
+			*cast(Vector*)&params[52] = *ValidBoxAroundStartPos;
 		StaticClass.ProcessEvent(Functions.GetValidPositionsForBox, params.ptr, cast(void*)0);
-		*out_ValidPositions = *cast(ScriptArray!(Vector)*)&params[32];
+		out_ValidPositions = *cast(ScriptArray!(Vector)*)&params[32];
 	}
 	void LimitPathCacheDistance(float MaxDist)
 	{
@@ -456,11 +477,12 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFirstMoveLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)params.ptr;
 	}
-	float CalculatePathDistance(Vector FinalDest)
+	float CalculatePathDistance(Vector* FinalDest = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(Vector*)params.ptr = FinalDest;
+		if (FinalDest !is null)
+			*cast(Vector*)params.ptr = *FinalDest;
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalculatePathDistance, params.ptr, cast(void*)0);
 		return *cast(float*)&params[12];
 	}
@@ -488,7 +510,7 @@ final:
 		*cast(float*)&params[12] = Radius;
 		*cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16] = out_CoverList;
 		StaticClass.ProcessEvent(Functions.GetAllCoverSlotsInRadius, params.ptr, cast(void*)0);
-		*out_CoverList = *cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16];
+		out_CoverList = *cast(ScriptArray!(CoverLink.CoverInfo)*)&params[16];
 		return *cast(bool*)&params[28];
 	}
 }

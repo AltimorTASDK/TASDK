@@ -59,12 +59,12 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PlayerReservation")()); }
 		@property final auto ref
 		{
-			float ElapsedSessionTime() { mixin(MGPS!(float, 32)()); }
-			UObject.Double Sigma() { mixin(MGPS!(UObject.Double, 24)()); }
-			UObject.Double Mu() { mixin(MGPS!(UObject.Double, 16)()); }
-			int XpLevel() { mixin(MGPS!(int, 12)()); }
-			int Skill() { mixin(MGPS!(int, 8)()); }
-			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 0)()); }
+			float ElapsedSessionTime() { mixin(MGPS!("float", 32)()); }
+			UObject.Double Sigma() { mixin(MGPS!("UObject.Double", 24)()); }
+			UObject.Double Mu() { mixin(MGPS!("UObject.Double", 16)()); }
+			int XpLevel() { mixin(MGPS!("int", 12)()); }
+			int Skill() { mixin(MGPS!("int", 8)()); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 0)()); }
 		}
 	}
 	struct PartyReservation
@@ -75,9 +75,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.PartyBeacon.PartyReservation")()); }
 		@property final auto ref
 		{
-			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { mixin(MGPS!(ScriptArray!(PartyBeacon.PlayerReservation), 12)()); }
-			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 4)()); }
-			int TeamNum() { mixin(MGPS!(int, 0)()); }
+			ScriptArray!(PartyBeacon.PlayerReservation) PartyMembers() { mixin(MGPS!("ScriptArray!(PartyBeacon.PlayerReservation)", 12)()); }
+			OnlineSubsystem.UniqueNetId PartyLeader() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 4)()); }
+			int TeamNum() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
@@ -85,12 +85,12 @@ public extern(D):
 		auto ref
 		{
 			// ERROR: Unsupported object class 'DelegateProperty' for the property named '__OnDestroyComplete__Delegate'!
-			ScriptName BeaconName() { mixin(MGPC!(ScriptName, 84)()); }
-			float ElapsedHeartbeatTime() { mixin(MGPC!(float, 80)()); }
-			float HeartbeatTimeout() { mixin(MGPC!(float, 76)()); }
-			UObject.Pointer Socket() { mixin(MGPC!(UObject.Pointer, 68)()); }
-			int PartyBeaconPort() { mixin(MGPC!(int, 64)()); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			ScriptName BeaconName() { mixin(MGPC!("ScriptName", 84)()); }
+			float ElapsedHeartbeatTime() { mixin(MGPC!("float", 80)()); }
+			float HeartbeatTimeout() { mixin(MGPC!("float", 76)()); }
+			UObject.Pointer Socket() { mixin(MGPC!("UObject.Pointer", 68)()); }
+			int PartyBeaconPort() { mixin(MGPC!("int", 64)()); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bShouldTick() { mixin(MGBPC!(72, 0x4)()); }
 		bool bShouldTick(bool val) { mixin(MSBPC!(72, 0x4)()); }

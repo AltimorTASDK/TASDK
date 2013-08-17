@@ -15,8 +15,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TemporaryOriginRotInterpSpeed() { mixin(MGPC!(float, 568)()); }
-			float WorstLocAimingZOffset() { mixin(MGPC!(float, 560)()); }
+			float TemporaryOriginRotInterpSpeed() { mixin(MGPC!("float", 568)()); }
+			float WorstLocAimingZOffset() { mixin(MGPC!("float", 560)()); }
 		}
 		bool bTemporaryOriginRotInterp() { mixin(MGBPC!(564, 0x1)()); }
 		bool bTemporaryOriginRotInterp(bool val) { mixin(MSBPC!(564, 0x1)()); }

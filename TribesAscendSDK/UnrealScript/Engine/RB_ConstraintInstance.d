@@ -61,22 +61,22 @@ public extern(D):
 	{
 		auto ref
 		{
-			int ConstraintIndex() { mixin(MGPC!(int, 68)()); }
-			UObject.Pointer DummyKinActor() { mixin(MGPC!(UObject.Pointer, 168)()); }
-			float AngularDriveForceLimit() { mixin(MGPC!(float, 164)()); }
-			float AngularDriveDamping() { mixin(MGPC!(float, 160)()); }
-			float AngularDriveSpring() { mixin(MGPC!(float, 156)()); }
-			Vector AngularVelocityTarget() { mixin(MGPC!(Vector, 144)()); }
-			UObject.Quat AngularPositionTarget() { mixin(MGPC!(UObject.Quat, 128)()); }
-			float LinearDriveForceLimit() { mixin(MGPC!(float, 116)()); }
-			float LinearDriveDamping() { mixin(MGPC!(float, 112)()); }
-			float LinearDriveSpring() { mixin(MGPC!(float, 108)()); }
-			Vector LinearVelocityTarget() { mixin(MGPC!(Vector, 96)()); }
-			Vector LinearPositionTarget() { mixin(MGPC!(Vector, 84)()); }
-			UObject.Pointer ConstraintData() { mixin(MGPC!(UObject.Pointer, 80)()); }
-			int SceneIndex() { mixin(MGPC!(int, 72)()); }
+			int ConstraintIndex() { mixin(MGPC!("int", 68)()); }
+			UObject.Pointer DummyKinActor() { mixin(MGPC!("UObject.Pointer", 168)()); }
+			float AngularDriveForceLimit() { mixin(MGPC!("float", 164)()); }
+			float AngularDriveDamping() { mixin(MGPC!("float", 160)()); }
+			float AngularDriveSpring() { mixin(MGPC!("float", 156)()); }
+			Vector AngularVelocityTarget() { mixin(MGPC!("Vector", 144)()); }
+			UObject.Quat AngularPositionTarget() { mixin(MGPC!("UObject.Quat", 128)()); }
+			float LinearDriveForceLimit() { mixin(MGPC!("float", 116)()); }
+			float LinearDriveDamping() { mixin(MGPC!("float", 112)()); }
+			float LinearDriveSpring() { mixin(MGPC!("float", 108)()); }
+			Vector LinearVelocityTarget() { mixin(MGPC!("Vector", 96)()); }
+			Vector LinearPositionTarget() { mixin(MGPC!("Vector", 84)()); }
+			UObject.Pointer ConstraintData() { mixin(MGPC!("UObject.Pointer", 80)()); }
+			int SceneIndex() { mixin(MGPC!("int", 72)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'OwnerComponent'!
-			Actor Owner() { mixin(MGPC!(Actor, 60)()); }
+			Actor Owner() { mixin(MGPC!("Actor", 60)()); }
 		}
 		bool bTerminated() { mixin(MGBPC!(76, 0x1000)()); }
 		bool bTerminated(bool val) { mixin(MSBPC!(76, 0x1000)()); }
@@ -206,13 +206,12 @@ void**)&params[20] = InPrimComp;
 		*cast(float*)&params[8] = InForceLimit;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetLinearDriveParams, params.ptr, cast(void*)0);
 	}
-	void SetAngularPositionTarget(ref const UObject.Quat InPosTarget)
+	void SetAngularPositionTarget(ref in UObject.Quat InPosTarget)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(UObject.Quat*)params.ptr = InPosTarget;
+		*cast(UObject.Quat*)params.ptr = cast(UObject.Quat)InPosTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetAngularPositionTarget, params.ptr, cast(void*)0);
-		*InPosTarget = *cast(UObject.Quat*)params.ptr;
 	}
 	void SetAngularVelocityTarget(Vector InVelTarget)
 	{
@@ -253,6 +252,6 @@ void**)&params[20] = InPrimComp;
 		params[] = 0;
 		*cast(UObject.Matrix*)params.ptr = NewTM;
 		(cast(ScriptObject)this).ProcessEvent(Functions.MoveKinActorTransform, params.ptr, cast(void*)0);
-		*NewTM = *cast(UObject.Matrix*)params.ptr;
+		NewTM = *cast(UObject.Matrix*)params.ptr;
 	}
 }

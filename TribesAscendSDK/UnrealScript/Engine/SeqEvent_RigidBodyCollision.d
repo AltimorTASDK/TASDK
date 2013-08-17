@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SeqEvent_RigidBodyCollision")()); }
 	private static __gshared SeqEvent_RigidBodyCollision mDefaultProperties;
 	@property final static SeqEvent_RigidBodyCollision DefaultProperties() { mixin(MGDPC!(SeqEvent_RigidBodyCollision, "SeqEvent_RigidBodyCollision Engine.Default__SeqEvent_RigidBodyCollision")()); }
-	@property final auto ref float MinCollisionVelocity() { mixin(MGPC!(float, 256)()); }
+	@property final auto ref float MinCollisionVelocity() { mixin(MGPC!("float", 256)()); }
 }

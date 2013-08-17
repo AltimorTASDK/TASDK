@@ -59,10 +59,10 @@ public extern(D):
 	{
 		auto ref
 		{
-			int XPAmount() { mixin(MGPC!(int, 368)()); }
-			int GPAmount() { mixin(MGPC!(int, 364)()); }
-			int PurchasingClass() { mixin(MGPC!(int, 360)()); }
-			int FocusedClass() { mixin(MGPC!(int, 356)()); }
+			int XPAmount() { mixin(MGPC!("int", 368)()); }
+			int GPAmount() { mixin(MGPC!("int", 364)()); }
+			int PurchasingClass() { mixin(MGPC!("int", 360)()); }
+			int FocusedClass() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bClassDeniedPopup() { mixin(MGBPC!(372, 0x1)()); }
 		bool bClassDeniedPopup(bool val) { mixin(MSBPC!(372, 0x1)()); }

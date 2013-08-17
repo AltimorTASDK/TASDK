@@ -41,14 +41,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadPlayerData, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
-	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref const ScriptArray!(ubyte) Payload)
+	bool UploadGameplayEventsData(OnlineSubsystem.UniqueNetId UniqueId, ref in ScriptArray!(ubyte) Payload)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(OnlineSubsystem.UniqueNetId*)params.ptr = UniqueId;
-		*cast(ScriptArray!(ubyte)*)&params[8] = Payload;
+		*cast(ScriptArray!(ubyte)*)&params[8] = cast(ScriptArray!(ubyte))Payload;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UploadGameplayEventsData, params.ptr, cast(void*)0);
-		*Payload = *cast(ScriptArray!(ubyte)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)

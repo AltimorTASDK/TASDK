@@ -21,16 +21,18 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int MySeatIndex() { mixin(MGPC!(int, 1556)()); }
-		UDKWeapon MyVehicleWeapon() { mixin(MGPC!(UDKWeapon, 1552)()); }
-		UDKVehicle MyVehicle() { mixin(MGPC!(UDKVehicle, 1548)()); }
+		int MySeatIndex() { mixin(MGPC!("int", 1556)()); }
+		UDKWeapon MyVehicleWeapon() { mixin(MGPC!("UDKWeapon", 1552)()); }
+		UDKVehicle MyVehicle() { mixin(MGPC!("UDKVehicle", 1548)()); }
 	}
-	final Vector GetTargetLocation(Actor RequestedBy, bool bRequestAlternateLoc)
+	final Vector GetTargetLocation(Actor* RequestedBy = null, bool* bRequestAlternateLoc = null)
 	{
 		ubyte params[20];
 		params[] = 0;
-		*cast(Actor*)params.ptr = RequestedBy;
-		*cast(bool*)&params[4] = bRequestAlternateLoc;
+		if (RequestedBy !is null)
+			*cast(Actor*)params.ptr = *RequestedBy;
+		if (bRequestAlternateLoc !is null)
+			*cast(bool*)&params[4] = *bRequestAlternateLoc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetTargetLocation, params.ptr, cast(void*)0);
 		return *cast(Vector*)&params[8];
 	}

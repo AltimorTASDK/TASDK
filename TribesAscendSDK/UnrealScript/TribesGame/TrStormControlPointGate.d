@@ -28,7 +28,7 @@ public extern(D):
 			ScriptFunction PostRenderFor() { mixin(MGF!("mPostRenderFor", "Function TribesGame.TrStormControlPointGate.PostRenderFor")()); }
 		}
 	}
-	@property final auto ref TrStormControlPoint m_ControlPoint() { mixin(MGPC!(TrStormControlPoint, 1360)()); }
+	@property final auto ref TrStormControlPoint m_ControlPoint() { mixin(MGPC!("TrStormControlPoint", 1360)()); }
 final:
 	void Touch(Actor Other, 
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!

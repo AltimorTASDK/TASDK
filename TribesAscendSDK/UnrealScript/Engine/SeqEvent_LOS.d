@@ -20,8 +20,8 @@ public extern(D):
 	{
 		auto ref
 		{
-			float TriggerDistance() { mixin(MGPC!(float, 260)()); }
-			float ScreenCenterDistance() { mixin(MGPC!(float, 256)()); }
+			float TriggerDistance() { mixin(MGPC!("float", 260)()); }
+			float ScreenCenterDistance() { mixin(MGPC!("float", 256)()); }
 		}
 		bool bCheckForObstructions() { mixin(MGBPC!(264, 0x1)()); }
 		bool bCheckForObstructions(bool val) { mixin(MSBPC!(264, 0x1)()); }

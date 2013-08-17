@@ -74,9 +74,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.MeshBeacon.ConnectionBandwidthStats")()); }
 		@property final auto ref
 		{
-			int RoundtripLatency() { mixin(MGPS!(int, 8)()); }
-			int DownstreamRate() { mixin(MGPS!(int, 4)()); }
-			int UpstreamRate() { mixin(MGPS!(int, 0)()); }
+			int RoundtripLatency() { mixin(MGPS!("int", 8)()); }
+			int DownstreamRate() { mixin(MGPS!("int", 4)()); }
+			int UpstreamRate() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	struct PlayerMember
@@ -87,28 +87,28 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct IpDrv.MeshBeacon.PlayerMember")()); }
 		@property final auto ref
 		{
-			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!(OnlineSubsystem.UniqueNetId, 8)()); }
-			int Skill() { mixin(MGPS!(int, 4)()); }
-			int TeamNum() { mixin(MGPS!(int, 0)()); }
+			OnlineSubsystem.UniqueNetId NetId() { mixin(MGPS!("OnlineSubsystem.UniqueNetId", 8)()); }
+			int Skill() { mixin(MGPS!("int", 4)()); }
+			int TeamNum() { mixin(MGPS!("int", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			int MaxBandwidthHistoryEntries() { mixin(MGPC!(int, 116)()); }
-			float MaxBandwidthTestReceiveTime() { mixin(MGPC!(float, 112)()); }
-			float MaxBandwidthTestSendTime() { mixin(MGPC!(float, 108)()); }
-			int MinBandwidthTestBufferSize() { mixin(MGPC!(int, 104)()); }
-			int MaxBandwidthTestBufferSize() { mixin(MGPC!(int, 100)()); }
-			int SocketReceiveBufferSize() { mixin(MGPC!(int, 96)()); }
-			int SocketSendBufferSize() { mixin(MGPC!(int, 92)()); }
-			ScriptName BeaconName() { mixin(MGPC!(ScriptName, 84)()); }
-			float ElapsedHeartbeatTime() { mixin(MGPC!(float, 80)()); }
-			float HeartbeatTimeout() { mixin(MGPC!(float, 76)()); }
-			UObject.Pointer Socket() { mixin(MGPC!(UObject.Pointer, 68)()); }
-			int MeshBeaconPort() { mixin(MGPC!(int, 64)()); }
-			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!(UObject.Pointer, 60)()); }
+			int MaxBandwidthHistoryEntries() { mixin(MGPC!("int", 116)()); }
+			float MaxBandwidthTestReceiveTime() { mixin(MGPC!("float", 112)()); }
+			float MaxBandwidthTestSendTime() { mixin(MGPC!("float", 108)()); }
+			int MinBandwidthTestBufferSize() { mixin(MGPC!("int", 104)()); }
+			int MaxBandwidthTestBufferSize() { mixin(MGPC!("int", 100)()); }
+			int SocketReceiveBufferSize() { mixin(MGPC!("int", 96)()); }
+			int SocketSendBufferSize() { mixin(MGPC!("int", 92)()); }
+			ScriptName BeaconName() { mixin(MGPC!("ScriptName", 84)()); }
+			float ElapsedHeartbeatTime() { mixin(MGPC!("float", 80)()); }
+			float HeartbeatTimeout() { mixin(MGPC!("float", 76)()); }
+			UObject.Pointer Socket() { mixin(MGPC!("UObject.Pointer", 68)()); }
+			int MeshBeaconPort() { mixin(MGPC!("int", 64)()); }
+			UObject.Pointer VfTable_FTickableObject() { mixin(MGPC!("UObject.Pointer", 60)()); }
 		}
 		bool bShouldTick() { mixin(MGBPC!(72, 0x4)()); }
 		bool bShouldTick(bool val) { mixin(MSBPC!(72, 0x4)()); }

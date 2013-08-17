@@ -48,15 +48,15 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrDevice_Melee.MeleeRandomAnimation")()); }
 		@property final auto ref
 		{
-			CameraAnim FireCameraAnim() { mixin(MGPS!(CameraAnim, 8)()); }
-			ScriptName FireAnimName() { mixin(MGPS!(ScriptName, 0)()); }
+			CameraAnim FireCameraAnim() { mixin(MGPS!("CameraAnim", 8)()); }
+			ScriptName FireAnimName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Actor.ImpactInfo) PendingImpactList() { mixin(MGPC!(ScriptArray!(Actor.ImpactInfo), 2164)()); }
-		ScriptArray!(TrDevice_Melee.MeleeRandomAnimation) FiringAnimRandomList() { mixin(MGPC!(ScriptArray!(TrDevice_Melee.MeleeRandomAnimation), 2176)()); }
-		AnimNodeSequence FiringAnimSeqNode() { mixin(MGPC!(AnimNodeSequence, 2188)()); }
+		ScriptArray!(Actor.ImpactInfo) PendingImpactList() { mixin(MGPC!("ScriptArray!(Actor.ImpactInfo)", 2164)()); }
+		ScriptArray!(TrDevice_Melee.MeleeRandomAnimation) FiringAnimRandomList() { mixin(MGPC!("ScriptArray!(TrDevice_Melee.MeleeRandomAnimation)", 2176)()); }
+		AnimNodeSequence FiringAnimSeqNode() { mixin(MGPC!("AnimNodeSequence", 2188)()); }
 	}
 final:
 	void OwningClientPlayHit(Vector HitLocation)
@@ -80,12 +80,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.CalcAmountToLoad, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

@@ -13,7 +13,7 @@ public extern(D):
 	@property final static UDKSkelControl_SpinControl DefaultProperties() { mixin(MGDPC!(UDKSkelControl_SpinControl, "UDKSkelControl_SpinControl UDKBase.Default__UDKSkelControl_SpinControl")()); }
 	@property final auto ref
 	{
-		Vector Axis() { mixin(MGPC!(Vector, 240)()); }
-		float DegreesPerSecond() { mixin(MGPC!(float, 236)()); }
+		Vector Axis() { mixin(MGPC!("Vector", 240)()); }
+		float DegreesPerSecond() { mixin(MGPC!("float", 236)()); }
 	}
 }

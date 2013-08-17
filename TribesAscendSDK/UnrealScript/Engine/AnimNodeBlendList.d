@@ -20,11 +20,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(float) TargetWeight() { mixin(MGPC!(ScriptArray!(float), 244)()); }
-			int EditorActiveChildIndex() { mixin(MGPC!(int, 272)()); }
-			float SliderPosition() { mixin(MGPC!(float, 268)()); }
-			int ActiveChildIndex() { mixin(MGPC!(int, 260)()); }
-			float BlendTimeToGo() { mixin(MGPC!(float, 256)()); }
+			ScriptArray!(float) TargetWeight() { mixin(MGPC!("ScriptArray!(float)", 244)()); }
+			int EditorActiveChildIndex() { mixin(MGPC!("int", 272)()); }
+			float SliderPosition() { mixin(MGPC!("float", 268)()); }
+			int ActiveChildIndex() { mixin(MGPC!("int", 260)()); }
+			float BlendTimeToGo() { mixin(MGPC!("float", 256)()); }
 		}
 		bool bSkipBlendWhenNotRendered() { mixin(MGBPC!(264, 0x4)()); }
 		bool bSkipBlendWhenNotRendered(bool val) { mixin(MSBPC!(264, 0x4)()); }

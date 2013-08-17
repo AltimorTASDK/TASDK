@@ -25,13 +25,15 @@ public extern(D):
 		}
 	}
 final:
-	void OpenLog(ScriptString LogFilename, ScriptString extension, bool bUnique)
+	void OpenLog(ScriptString LogFilename, ScriptString* extension = null, bool* bUnique = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = LogFilename;
-		*cast(ScriptString*)&params[12] = extension;
-		*cast(bool*)&params[24] = bUnique;
+		if (extension !is null)
+			*cast(ScriptString*)&params[12] = *extension;
+		if (bUnique !is null)
+			*cast(bool*)&params[24] = *bUnique;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OpenLog, params.ptr, cast(void*)0);
 	}
 	void CloseLog()

@@ -19,9 +19,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ScriptClass FamilyInfo() { mixin(MGPC!(ScriptClass, 144)()); }
-		float GroundSpeed() { mixin(MGPC!(float, 140)()); }
-		int NextTeam() { mixin(MGPC!(int, 136)()); }
+		ScriptClass FamilyInfo() { mixin(MGPC!("ScriptClass", 144)()); }
+		float GroundSpeed() { mixin(MGPC!("float", 140)()); }
+		int NextTeam() { mixin(MGPC!("int", 136)()); }
 	}
 	final void PostCreateActor(Actor NewActor)
 	{

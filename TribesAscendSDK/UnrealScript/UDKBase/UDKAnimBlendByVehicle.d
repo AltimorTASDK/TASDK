@@ -19,7 +19,7 @@ public extern(D):
 	}
 	@property final
 	{
-		@property final auto ref Vehicle LastVehicle() { mixin(MGPC!(Vehicle, 300)()); }
+		@property final auto ref Vehicle LastVehicle() { mixin(MGPC!("Vehicle", 300)()); }
 		bool bLastPawnDriving() { mixin(MGBPC!(296, 0x1)()); }
 		bool bLastPawnDriving(bool val) { mixin(MSBPC!(296, 0x1)()); }
 	}

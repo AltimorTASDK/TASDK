@@ -52,15 +52,15 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString PromoPopupTitle() { mixin(MGPC!(ScriptString, 400)()); }
-			int ClaimPromotionAction() { mixin(MGPC!(int, 396)()); }
-			ScriptString NoNameChangeInGame() { mixin(MGPC!(ScriptString, 384)()); }
-			int classIdRequired() { mixin(MGPC!(int, 376)()); }
-			int PopupNum() { mixin(MGPC!(int, 372)()); }
-			int NumGold() { mixin(MGPC!(int, 368)()); }
-			int NumDeal() { mixin(MGPC!(int, 364)()); }
-			int HZCost() { mixin(MGPC!(int, 360)()); }
-			int xpCost() { mixin(MGPC!(int, 356)()); }
+			ScriptString PromoPopupTitle() { mixin(MGPC!("ScriptString", 400)()); }
+			int ClaimPromotionAction() { mixin(MGPC!("int", 396)()); }
+			ScriptString NoNameChangeInGame() { mixin(MGPC!("ScriptString", 384)()); }
+			int classIdRequired() { mixin(MGPC!("int", 376)()); }
+			int PopupNum() { mixin(MGPC!("int", 372)()); }
+			int NumGold() { mixin(MGPC!("int", 368)()); }
+			int NumDeal() { mixin(MGPC!("int", 364)()); }
+			int HZCost() { mixin(MGPC!("int", 360)()); }
+			int xpCost() { mixin(MGPC!("int", 356)()); }
 		}
 		bool bWaitingForClaimPromoPopup() { mixin(MGBPC!(380, 0x10)()); }
 		bool bWaitingForClaimPromoPopup(bool val) { mixin(MSBPC!(380, 0x10)()); }

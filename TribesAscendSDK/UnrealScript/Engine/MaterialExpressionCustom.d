@@ -28,14 +28,14 @@ public extern(D):
 		@property final auto ref
 		{
 			// WARNING: Property 'Input' has the same name as a defined type!
-			ScriptString InputName() { mixin(MGPS!(ScriptString, 0)()); }
+			ScriptString InputName() { mixin(MGPS!("ScriptString", 0)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(MaterialExpressionCustom.CustomInput) Inputs() { mixin(MGPC!(ScriptArray!(MaterialExpressionCustom.CustomInput), 136)()); }
-		ScriptString Description() { mixin(MGPC!(ScriptString, 124)()); }
-		MaterialExpressionCustom.ECustomMaterialOutputType OutputType() { mixin(MGPC!(MaterialExpressionCustom.ECustomMaterialOutputType, 120)()); }
-		ScriptString Code() { mixin(MGPC!(ScriptString, 108)()); }
+		ScriptArray!(MaterialExpressionCustom.CustomInput) Inputs() { mixin(MGPC!("ScriptArray!(MaterialExpressionCustom.CustomInput)", 136)()); }
+		ScriptString Description() { mixin(MGPC!("ScriptString", 124)()); }
+		MaterialExpressionCustom.ECustomMaterialOutputType OutputType() { mixin(MGPC!("MaterialExpressionCustom.ECustomMaterialOutputType", 120)()); }
+		ScriptString Code() { mixin(MGPC!("ScriptString", 108)()); }
 	}
 }

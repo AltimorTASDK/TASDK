@@ -257,7 +257,7 @@ final:
 		*cast(int*)&params[8] = Currency;
 		*cast(int*)&params[12] = Price;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVendorItemPrice, params.ptr, cast(void*)0);
-		*Price = *cast(int*)&params[12];
+		Price = *cast(int*)&params[12];
 		return *cast(bool*)&params[16];
 	}
 	bool GetVendorItemInfo(int VendorId, int VendorItemId, ref ScriptString ItemName, ref ScriptString itemDescr, ref ScriptString ribbonDesc)
@@ -270,9 +270,9 @@ final:
 		*cast(ScriptString*)&params[20] = itemDescr;
 		*cast(ScriptString*)&params[32] = ribbonDesc;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetVendorItemInfo, params.ptr, cast(void*)0);
-		*ItemName = *cast(ScriptString*)&params[8];
-		*itemDescr = *cast(ScriptString*)&params[20];
-		*ribbonDesc = *cast(ScriptString*)&params[32];
+		ItemName = *cast(ScriptString*)&params[8];
+		itemDescr = *cast(ScriptString*)&params[20];
+		ribbonDesc = *cast(ScriptString*)&params[32];
 		return *cast(bool*)&params[44];
 	}
 	bool RequestPurchaseGeneral(int VendorId, int VendorItemId, int Currency, ScriptString UserCustomInput)

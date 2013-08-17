@@ -259,8 +259,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGame.GameMapCycle")()); }
 		@property final auto ref
 		{
-			ScriptArray!(ScriptString) Maps() { mixin(MGPS!(ScriptArray!(ScriptString), 8)()); }
-			ScriptName GameClassName() { mixin(MGPS!(ScriptName, 0)()); }
+			ScriptArray!(ScriptString) Maps() { mixin(MGPS!("ScriptArray!(ScriptString)", 8)()); }
+			ScriptName GameClassName() { mixin(MGPS!("ScriptName", 0)()); }
 		}
 	}
 	struct ActiveBotInfo
@@ -271,7 +271,7 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UTGame.UTGame.ActiveBotInfo")()); }
 		@property final
 		{
-			@property final auto ref ScriptString BotName() { mixin(MGPS!(ScriptString, 0)()); }
+			@property final auto ref ScriptString BotName() { mixin(MGPS!("ScriptString", 0)()); }
 			bool bInUse() { mixin(MGBPS!(12, 0x1)()); }
 			bool bInUse(bool val) { mixin(MSBPS!(12, 0x1)()); }
 		}
@@ -300,61 +300,61 @@ public extern(D):
 	{
 		auto ref
 		{
-			UTVehicle VehicleList() { mixin(MGPC!(UTVehicle, 1080)()); }
-			int ResetTimeDelay() { mixin(MGPC!(int, 1076)()); }
-			int WarmupTime() { mixin(MGPC!(int, 956)()); }
-			ScriptArray!(ScriptClass) DefaultInventory() { mixin(MGPC!(ScriptArray!(ScriptClass), 1100)()); }
-			ScriptArray!(ScriptString) MapPrefixes() { mixin(MGPC!(ScriptArray!(ScriptString), 1116)()); }
-			ScriptArray!(UTGame.GameMapCycle) GameSpecificMapCycles() { mixin(MGPC!(ScriptArray!(UTGame.GameMapCycle), 1148)()); }
-			ScriptArray!(UTGame.ActiveBotInfo) ActiveBots() { mixin(MGPC!(ScriptArray!(UTGame.ActiveBotInfo), 1164)()); }
+			UTVehicle VehicleList() { mixin(MGPC!("UTVehicle", 1080)()); }
+			int ResetTimeDelay() { mixin(MGPC!("int", 1076)()); }
+			int WarmupTime() { mixin(MGPC!("int", 956)()); }
+			ScriptArray!(ScriptClass) DefaultInventory() { mixin(MGPC!("ScriptArray!(ScriptClass)", 1100)()); }
+			ScriptArray!(ScriptString) MapPrefixes() { mixin(MGPC!("ScriptArray!(ScriptString)", 1116)()); }
+			ScriptArray!(UTGame.GameMapCycle) GameSpecificMapCycles() { mixin(MGPC!("ScriptArray!(UTGame.GameMapCycle)", 1148)()); }
+			ScriptArray!(UTGame.ActiveBotInfo) ActiveBots() { mixin(MGPC!("ScriptArray!(UTGame.ActiveBotInfo)", 1164)()); }
 			// WARNING: Property 'GameplayEventsWriter' has the same name as a defined type!
-			ScriptString GameplayEventsWriterClassName() { mixin(MGPC!(ScriptString, 1240)()); }
-			ScriptName MidgameScorePanelTag() { mixin(MGPC!(ScriptName, 1232)()); }
-			Pawn Sniper() { mixin(MGPC!(Pawn, 1228)()); }
-			float LastManDownTime() { mixin(MGPC!(float, 1224)()); }
-			float LastEncouragementTime() { mixin(MGPC!(float, 1220)()); }
-			SpeechRecognition SpeechRecognitionData() { mixin(MGPC!(SpeechRecognition, 1216)()); }
-			ScriptString EndOfMatchRulesTemplateStr_Time() { mixin(MGPC!(ScriptString, 1204)()); }
-			ScriptString EndOfMatchRulesTemplateStr_ScoringSingle() { mixin(MGPC!(ScriptString, 1192)()); }
-			ScriptString EndOfMatchRulesTemplateStr_Scoring() { mixin(MGPC!(ScriptString, 1180)()); }
-			NavigationPoint ScriptedStartSpot() { mixin(MGPC!(NavigationPoint, 1176)()); }
-			int MapCycleIndex() { mixin(MGPC!(int, 1160)()); }
-			ScriptClass BotClass() { mixin(MGPC!(ScriptClass, 1144)()); }
-			ScriptString DemoPrefix() { mixin(MGPC!(ScriptString, 1132)()); }
-			ScriptClass ConsolePlayerControllerClass() { mixin(MGPC!(ScriptClass, 1128)()); }
-			ScriptClass VictoryMessageClass() { mixin(MGPC!(ScriptClass, 1112)()); }
-			ScriptString EnemyRosterName() { mixin(MGPC!(ScriptString, 1088)()); }
-			UTTeamInfo EnemyRoster() { mixin(MGPC!(UTTeamInfo, 1084)()); }
-			int ResetCountDown() { mixin(MGPC!(int, 1072)()); }
-			Actor EndGameFocus() { mixin(MGPC!(Actor, 1068)()); }
-			ScriptString GameUMenuType() { mixin(MGPC!(ScriptString, 1056)()); }
-			ScriptString RulesMenuType() { mixin(MGPC!(ScriptString, 1044)()); }
-			int EndMessageCounter() { mixin(MGPC!(int, 1040)()); }
-			int EndMessageWait() { mixin(MGPC!(int, 1036)()); }
-			float EndTime() { mixin(MGPC!(float, 1032)()); }
-			NavigationPoint LastStartSpot() { mixin(MGPC!(NavigationPoint, 1028)()); }
-			NavigationPoint LastPlayerStartSpot() { mixin(MGPC!(NavigationPoint, 1024)()); }
-			int PlayerDeaths() { mixin(MGPC!(int, 1020)()); }
-			int PlayerKills() { mixin(MGPC!(int, 1016)()); }
-			float AdjustedDifficulty() { mixin(MGPC!(float, 1012)()); }
-			int CountDown() { mixin(MGPC!(int, 1008)()); }
-			int PendingMatchElapsedTime() { mixin(MGPC!(int, 1004)()); }
-			int LateEntryLives() { mixin(MGPC!(int, 1000)()); }
-			int DefaultMaxLives() { mixin(MGPC!(int, 996)()); }
-			float SpawnProtectionTime() { mixin(MGPC!(float, 992)()); }
-			int DesiredPlayerCount() { mixin(MGPC!(int, 988)()); }
-			ubyte WeaponTauntUsed() { mixin(MGPC!(ubyte, 965)()); }
-			ubyte StartupStage() { mixin(MGPC!(ubyte, 964)()); }
-			int WarmupRemaining() { mixin(MGPC!(int, 960)()); }
-			int RestartWait() { mixin(MGPC!(int, 952)()); }
-			int MinNetPlayers() { mixin(MGPC!(int, 948)()); }
-			int ClientProcessingTimeout() { mixin(MGPC!(int, 944)()); }
-			int NetWait() { mixin(MGPC!(int, 940)()); }
-			float BotRatio() { mixin(MGPC!(float, 936)()); }
-			float EndTimeDelay() { mixin(MGPC!(float, 932)()); }
-			int ServerSkillLevel() { mixin(MGPC!(int, 928)()); }
-			ScriptString Description() { mixin(MGPC!(ScriptString, 916)()); }
-			ScriptString Acronym() { mixin(MGPC!(ScriptString, 904)()); }
+			ScriptString GameplayEventsWriterClassName() { mixin(MGPC!("ScriptString", 1240)()); }
+			ScriptName MidgameScorePanelTag() { mixin(MGPC!("ScriptName", 1232)()); }
+			Pawn Sniper() { mixin(MGPC!("Pawn", 1228)()); }
+			float LastManDownTime() { mixin(MGPC!("float", 1224)()); }
+			float LastEncouragementTime() { mixin(MGPC!("float", 1220)()); }
+			SpeechRecognition SpeechRecognitionData() { mixin(MGPC!("SpeechRecognition", 1216)()); }
+			ScriptString EndOfMatchRulesTemplateStr_Time() { mixin(MGPC!("ScriptString", 1204)()); }
+			ScriptString EndOfMatchRulesTemplateStr_ScoringSingle() { mixin(MGPC!("ScriptString", 1192)()); }
+			ScriptString EndOfMatchRulesTemplateStr_Scoring() { mixin(MGPC!("ScriptString", 1180)()); }
+			NavigationPoint ScriptedStartSpot() { mixin(MGPC!("NavigationPoint", 1176)()); }
+			int MapCycleIndex() { mixin(MGPC!("int", 1160)()); }
+			ScriptClass BotClass() { mixin(MGPC!("ScriptClass", 1144)()); }
+			ScriptString DemoPrefix() { mixin(MGPC!("ScriptString", 1132)()); }
+			ScriptClass ConsolePlayerControllerClass() { mixin(MGPC!("ScriptClass", 1128)()); }
+			ScriptClass VictoryMessageClass() { mixin(MGPC!("ScriptClass", 1112)()); }
+			ScriptString EnemyRosterName() { mixin(MGPC!("ScriptString", 1088)()); }
+			UTTeamInfo EnemyRoster() { mixin(MGPC!("UTTeamInfo", 1084)()); }
+			int ResetCountDown() { mixin(MGPC!("int", 1072)()); }
+			Actor EndGameFocus() { mixin(MGPC!("Actor", 1068)()); }
+			ScriptString GameUMenuType() { mixin(MGPC!("ScriptString", 1056)()); }
+			ScriptString RulesMenuType() { mixin(MGPC!("ScriptString", 1044)()); }
+			int EndMessageCounter() { mixin(MGPC!("int", 1040)()); }
+			int EndMessageWait() { mixin(MGPC!("int", 1036)()); }
+			float EndTime() { mixin(MGPC!("float", 1032)()); }
+			NavigationPoint LastStartSpot() { mixin(MGPC!("NavigationPoint", 1028)()); }
+			NavigationPoint LastPlayerStartSpot() { mixin(MGPC!("NavigationPoint", 1024)()); }
+			int PlayerDeaths() { mixin(MGPC!("int", 1020)()); }
+			int PlayerKills() { mixin(MGPC!("int", 1016)()); }
+			float AdjustedDifficulty() { mixin(MGPC!("float", 1012)()); }
+			int CountDown() { mixin(MGPC!("int", 1008)()); }
+			int PendingMatchElapsedTime() { mixin(MGPC!("int", 1004)()); }
+			int LateEntryLives() { mixin(MGPC!("int", 1000)()); }
+			int DefaultMaxLives() { mixin(MGPC!("int", 996)()); }
+			float SpawnProtectionTime() { mixin(MGPC!("float", 992)()); }
+			int DesiredPlayerCount() { mixin(MGPC!("int", 988)()); }
+			ubyte WeaponTauntUsed() { mixin(MGPC!("ubyte", 965)()); }
+			ubyte StartupStage() { mixin(MGPC!("ubyte", 964)()); }
+			int WarmupRemaining() { mixin(MGPC!("int", 960)()); }
+			int RestartWait() { mixin(MGPC!("int", 952)()); }
+			int MinNetPlayers() { mixin(MGPC!("int", 948)()); }
+			int ClientProcessingTimeout() { mixin(MGPC!("int", 944)()); }
+			int NetWait() { mixin(MGPC!("int", 940)()); }
+			float BotRatio() { mixin(MGPC!("float", 936)()); }
+			float EndTimeDelay() { mixin(MGPC!("float", 932)()); }
+			int ServerSkillLevel() { mixin(MGPC!("int", 928)()); }
+			ScriptString Description() { mixin(MGPC!("ScriptString", 916)()); }
+			ScriptString Acronym() { mixin(MGPC!("ScriptString", 904)()); }
 		}
 		bool bWarmupRound() { mixin(MGBPC!(896, 0x1000)()); }
 		bool bWarmupRound(bool val) { mixin(MSBPC!(896, 0x1000)()); }
@@ -459,13 +459,16 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.JustStarted, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	UTTeamInfo GetBotTeam(int TeamBots, bool bUseTeamIndex, int TeamIndex)
+	UTTeamInfo GetBotTeam(int* TeamBots = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(int*)params.ptr = TeamBots;
-		*cast(bool*)&params[4] = bUseTeamIndex;
-		*cast(int*)&params[8] = TeamIndex;
+		if (TeamBots !is null)
+			*cast(int*)params.ptr = *TeamBots;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[4] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[8] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBotTeam, params.ptr, cast(void*)0);
 		return *cast(UTTeamInfo*)&params[12];
 	}
@@ -616,7 +619,7 @@ final:
 		*cast(ScriptString*)params.ptr = Options;
 		*cast(ScriptString*)&params[12] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitGame, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[12];
+		ErrorMessage = *cast(ScriptString*)&params[12];
 	}
 	void GenericPlayerInitialization(Controller C)
 	{
@@ -627,14 +630,15 @@ final:
 	}
 	bool SetPause(PlayerController PC, 
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void* CanUnpauseDelegate)
+void** CanUnpauseDelegate = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(PlayerController*)params.ptr = PC;
-		*cast(
+		if (CanUnpauseDelegate !is null)
+			*cast(
 // ERROR: Unknown object class 'Class Core.DelegateProperty'!
-void**)&params[4] = CanUnpauseDelegate;
+void**)&params[4] = *CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPause, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -645,16 +649,16 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.LevelRecommendedPlayers, params.ptr, cast(void*)0);
 		return *cast(int*)params.ptr;
 	}
-	PlayerController Login(ScriptString Portal, ScriptString Options, const OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
+	PlayerController Login(ScriptString Portal, ScriptString Options, in OnlineSubsystem.UniqueNetId UniqueId, ref ScriptString ErrorMessage)
 	{
 		ubyte params[48];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = Portal;
 		*cast(ScriptString*)&params[12] = Options;
-		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = UniqueId;
+		*cast(OnlineSubsystem.UniqueNetId*)&params[24] = cast(OnlineSubsystem.UniqueNetId)UniqueId;
 		*cast(ScriptString*)&params[32] = ErrorMessage;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Login, params.ptr, cast(void*)0);
-		*ErrorMessage = *cast(ScriptString*)&params[32];
+		ErrorMessage = *cast(ScriptString*)&params[32];
 		return *cast(PlayerController*)&params[44];
 	}
 	bool ShouldRespawn(PickupFactory Other)
@@ -774,12 +778,13 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)&params[16] = bNameChange;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChangeName, params.ptr, cast(void*)0);
 	}
-	void DiscardInventory(Pawn Other, Controller Killer)
+	void DiscardInventory(Pawn Other, Controller* Killer = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = Other;
-		*cast(Controller*)&params[4] = Killer;
+		if (Killer !is null)
+			*cast(Controller*)&params[4] = *Killer;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DiscardInventory, params.ptr, cast(void*)0);
 	}
 	void Logout(Controller Exiting)
@@ -815,35 +820,40 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.NeedPlayers, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	UTBot AddBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
+	UTBot AddBot(ScriptString* BotName = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = BotName;
-		*cast(bool*)&params[12] = bUseTeamIndex;
-		*cast(int*)&params[16] = TeamIndex;
+		if (BotName !is null)
+			*cast(ScriptString*)params.ptr = *BotName;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[12] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[16] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
-	UTBot SpawnBot(ScriptString BotName, bool bUseTeamIndex, int TeamIndex)
+	UTBot SpawnBot(ScriptString* BotName = null, bool* bUseTeamIndex = null, int* TeamIndex = null)
 	{
 		ubyte params[24];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = BotName;
-		*cast(bool*)&params[12] = bUseTeamIndex;
-		*cast(int*)&params[16] = TeamIndex;
+		if (BotName !is null)
+			*cast(ScriptString*)params.ptr = *BotName;
+		if (bUseTeamIndex !is null)
+			*cast(bool*)&params[12] = *bUseTeamIndex;
+		if (TeamIndex !is null)
+			*cast(int*)&params[16] = *TeamIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpawnBot, params.ptr, cast(void*)0);
 		return *cast(UTBot*)&params[20];
 	}
-	void InitializeBot(UTBot NewBot, UTTeamInfo BotTeam, ref const UTCharInfo.CharacterInfo BotInfo)
+	void InitializeBot(UTBot NewBot, UTTeamInfo BotTeam, ref in UTCharInfo.CharacterInfo BotInfo)
 	{
 		ubyte params[120];
 		params[] = 0;
 		*cast(UTBot*)params.ptr = NewBot;
 		*cast(UTTeamInfo*)&params[4] = BotTeam;
-		*cast(UTCharInfo.CharacterInfo*)&params[8] = BotInfo;
+		*cast(UTCharInfo.CharacterInfo*)&params[8] = cast(UTCharInfo.CharacterInfo)BotInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.InitializeBot, params.ptr, cast(void*)0);
-		*BotInfo = *cast(UTCharInfo.CharacterInfo*)&params[8];
 	}
 	void InitGameReplicationInfo()
 	{
@@ -924,13 +934,15 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(ScriptString*)params.ptr = Reason;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndLogging, params.ptr, cast(void*)0);
 	}
-	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte InTeam, ScriptString IncomingName)
+	NavigationPoint FindPlayerStart(Controller pPlayer, ubyte* InTeam = null, ScriptString* IncomingName = null)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
-		params[4] = InTeam;
-		*cast(ScriptString*)&params[8] = IncomingName;
+		if (InTeam !is null)
+			params[4] = *InTeam;
+		if (IncomingName !is null)
+			*cast(ScriptString*)&params[8] = *IncomingName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPlayerStart, params.ptr, cast(void*)0);
 		return *cast(NavigationPoint*)&params[20];
 	}
@@ -993,12 +1005,13 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsConsoleDedicatedServer, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte InTeam)
+	PlayerStart ChoosePlayerStart(Controller pPlayer, ubyte* InTeam = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(Controller*)params.ptr = pPlayer;
-		params[4] = InTeam;
+		if (InTeam !is null)
+			params[4] = *InTeam;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ChoosePlayerStart, params.ptr, cast(void*)0);
 		return *cast(PlayerStart*)&params[8];
 	}
@@ -1049,12 +1062,13 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(PlayerController*)params.ptr = PC;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ViewObjective, params.ptr, cast(void*)0);
 	}
-	void AddMutator(ScriptString mutname, bool bUserAdded)
+	void AddMutator(ScriptString mutname, bool* bUserAdded = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = mutname;
-		*cast(bool*)&params[12] = bUserAdded;
+		if (bUserAdded !is null)
+			*cast(bool*)&params[12] = *bUserAdded;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AddMutator, params.ptr, cast(void*)0);
 	}
 	bool AllowClientToTeleport(UTPlayerReplicationInfo ClientPRI, Actor DestinationActor)
@@ -1081,7 +1095,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(bool*)params.ptr = bToEntry;
 		*cast(ScriptArray!(Actor)*)&params[4] = ActorList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetSeamlessTravelActorList, params.ptr, cast(void*)0);
-		*ActorList = *cast(ScriptArray!(Actor)*)&params[4];
+		ActorList = *cast(ScriptArray!(Actor)*)&params[4];
 	}
 	void PostSeamlessTravel()
 	{
@@ -1093,7 +1107,7 @@ void**)&params[4] = CanUnpauseDelegate;
 		params[] = 0;
 		*cast(Controller*)params.ptr = C;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HandleSeamlessTravelPlayer, params.ptr, cast(void*)0);
-		*C = *cast(Controller*)params.ptr;
+		C = *cast(Controller*)params.ptr;
 	}
 	UTMutator GetBaseUTMutator()
 	{
@@ -1102,26 +1116,24 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetBaseUTMutator, params.ptr, cast(void*)0);
 		return *cast(UTMutator*)params.ptr;
 	}
-	void ProcessSpeechRecognition(UTPlayerController Speaker, ref const ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
+	void ProcessSpeechRecognition(UTPlayerController Speaker, ref in ScriptArray!(OnlineSubsystem.SpeechRecognizedWord) Words)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = Speaker;
-		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = Words;
+		*cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4] = cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord))Words;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessSpeechRecognition, params.ptr, cast(void*)0);
-		*Words = *cast(ScriptArray!(OnlineSubsystem.SpeechRecognizedWord)*)&params[4];
 	}
 	void WriteOnlinePlayerScores()
 	{
 		(cast(ScriptObject)this).ProcessEvent(Functions.WriteOnlinePlayerScores, cast(void*)0, cast(void*)0);
 	}
-	int GetCurrentMapCycleIndex(ref const ScriptArray!(ScriptString) MapList)
+	int GetCurrentMapCycleIndex(ref in ScriptArray!(ScriptString) MapList)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(ScriptString)*)params.ptr = MapList;
+		*cast(ScriptArray!(ScriptString)*)params.ptr = cast(ScriptArray!(ScriptString))MapList;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetCurrentMapCycleIndex, params.ptr, cast(void*)0);
-		*MapList = *cast(ScriptArray!(ScriptString)*)params.ptr;
 		return *cast(int*)&params[12];
 	}
 	ScriptString GetNextMap()
@@ -1131,12 +1143,13 @@ void**)&params[4] = CanUnpauseDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetNextMap, params.ptr, cast(void*)0);
 		return *cast(ScriptString*)params.ptr;
 	}
-	void ProcessServerTravel(ScriptString pURL, bool bAbsolute)
+	void ProcessServerTravel(ScriptString pURL, bool* bAbsolute = null)
 	{
 		ubyte params[16];
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
-		*cast(bool*)&params[12] = bAbsolute;
+		if (bAbsolute !is null)
+			*cast(bool*)&params[12] = *bAbsolute;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ProcessServerTravel, params.ptr, cast(void*)0);
 	}
 	void ContinueSeamlessTravel()
@@ -1161,8 +1174,8 @@ void**)&params[4] = CanUnpauseDelegate;
 		*cast(int*)&params[8] = MessageIndex;
 		*cast(int*)&params[12] = LocationSpeechOffset;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLocationFor, params.ptr, cast(void*)0);
-		*LocationObject = *cast(Actor*)&params[4];
-		*MessageIndex = *cast(int*)&params[8];
+		LocationObject = *cast(Actor*)&params[4];
+		MessageIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[16];
 	}
 	bool AllowCheats(PlayerController P)

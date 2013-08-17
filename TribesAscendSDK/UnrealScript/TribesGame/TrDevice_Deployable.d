@@ -116,16 +116,16 @@ public extern(D):
 	{
 		auto ref
 		{
-			Rotator m_rDesiredPlacementRotation() { mixin(MGPC!(Rotator, 2212)()); }
-			Vector m_vDesiredPlacementLocation() { mixin(MGPC!(Vector, 2200)()); }
-			float m_fOutsideCheckDistance() { mixin(MGPC!(float, 2192)()); }
-			float m_fOtherDeployableProximityCheck() { mixin(MGPC!(float, 2188)()); }
-			Vector m_vDeployVolumePlacementExtent() { mixin(MGPC!(Vector, 2176)()); }
-			Vector m_vPlacementExtent() { mixin(MGPC!(Vector, 2164)()); }
-			float m_fPlacementScale() { mixin(MGPC!(float, 2160)()); }
-			int m_nPerPlayerMaxDeployed() { mixin(MGPC!(int, 2156)()); }
-			ScriptClass c_DeployableHologramClass() { mixin(MGPC!(ScriptClass, 2152)()); }
-			TrDeployableHologram c_DeployableHologram() { mixin(MGPC!(TrDeployableHologram, 2148)()); }
+			Rotator m_rDesiredPlacementRotation() { mixin(MGPC!("Rotator", 2212)()); }
+			Vector m_vDesiredPlacementLocation() { mixin(MGPC!("Vector", 2200)()); }
+			float m_fOutsideCheckDistance() { mixin(MGPC!("float", 2192)()); }
+			float m_fOtherDeployableProximityCheck() { mixin(MGPC!("float", 2188)()); }
+			Vector m_vDeployVolumePlacementExtent() { mixin(MGPC!("Vector", 2176)()); }
+			Vector m_vPlacementExtent() { mixin(MGPC!("Vector", 2164)()); }
+			float m_fPlacementScale() { mixin(MGPC!("float", 2160)()); }
+			int m_nPerPlayerMaxDeployed() { mixin(MGPC!("int", 2156)()); }
+			ScriptClass c_DeployableHologramClass() { mixin(MGPC!("ScriptClass", 2152)()); }
+			TrDeployableHologram c_DeployableHologram() { mixin(MGPC!("TrDeployableHologram", 2148)()); }
 		}
 		bool m_bIgnoreCollisionForPlacement() { mixin(MGBPC!(2196, 0x1)()); }
 		bool m_bIgnoreCollisionForPlacement(bool val) { mixin(MSBPC!(2196, 0x1)()); }
@@ -163,45 +163,49 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.Deploy, params.ptr, cast(void*)0);
 		return *cast(TrDeployable*)params.ptr;
 	}
-	bool IsValidDeployTerrain(ref Vector OutLocation, ref Rotator OutRotation, bool VerificationCheck)
+	bool IsValidDeployTerrain(ref Vector OutLocation, ref Rotator OutRotation, bool* VerificationCheck = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = OutLocation;
 		*cast(Rotator*)&params[12] = OutRotation;
-		*cast(bool*)&params[24] = VerificationCheck;
+		if (VerificationCheck !is null)
+			*cast(bool*)&params[24] = *VerificationCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidDeployTerrain, params.ptr, cast(void*)0);
-		*OutLocation = *cast(Vector*)params.ptr;
-		*OutRotation = *cast(Rotator*)&params[12];
+		OutLocation = *cast(Vector*)params.ptr;
+		OutRotation = *cast(Rotator*)&params[12];
 		return *cast(bool*)&params[28];
 	}
-	bool IsValidDeployVolume(ref Vector OutLocation, ref Rotator OutRotation, bool VerificationCheck)
+	bool IsValidDeployVolume(ref Vector OutLocation, ref Rotator OutRotation, bool* VerificationCheck = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = OutLocation;
 		*cast(Rotator*)&params[12] = OutRotation;
-		*cast(bool*)&params[24] = VerificationCheck;
+		if (VerificationCheck !is null)
+			*cast(bool*)&params[24] = *VerificationCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidDeployVolume, params.ptr, cast(void*)0);
-		*OutLocation = *cast(Vector*)params.ptr;
-		*OutRotation = *cast(Rotator*)&params[12];
+		OutLocation = *cast(Vector*)params.ptr;
+		OutRotation = *cast(Rotator*)&params[12];
 		return *cast(bool*)&params[28];
 	}
-	bool IsValidDeployProximity(Vector DeployLocation, bool VerificationCheck)
+	bool IsValidDeployProximity(Vector DeployLocation, bool* VerificationCheck = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = DeployLocation;
-		*cast(bool*)&params[12] = VerificationCheck;
+		if (VerificationCheck !is null)
+			*cast(bool*)&params[12] = *VerificationCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidDeployProximity, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
-	bool IsValidOutsideCheck(Vector DeployLocation, bool VerificationCheck)
+	bool IsValidOutsideCheck(Vector DeployLocation, bool* VerificationCheck = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(Vector*)params.ptr = DeployLocation;
-		*cast(bool*)&params[12] = VerificationCheck;
+		if (VerificationCheck !is null)
+			*cast(bool*)&params[12] = *VerificationCheck;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidOutsideCheck, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -303,22 +307,24 @@ final:
 	}
 	void AttachWeaponTo(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void* MeshCpnt, ScriptName SocketName)
+void* MeshCpnt, ScriptName* SocketName = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
 void**)params.ptr = MeshCpnt;
-		*cast(ScriptName*)&params[4] = SocketName;
+		if (SocketName !is null)
+			*cast(ScriptName*)&params[4] = *SocketName;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AttachWeaponTo, params.ptr, cast(void*)0);
 	}
-	void EndZoom(UTPlayerController PC, bool bReturningTo3P)
+	void EndZoom(UTPlayerController PC, bool* bReturningTo3P = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(UTPlayerController*)params.ptr = PC;
-		*cast(bool*)&params[4] = bReturningTo3P;
+		if (bReturningTo3P !is null)
+			*cast(bool*)&params[4] = *bReturningTo3P;
 		(cast(ScriptObject)this).ProcessEvent(Functions.EndZoom, params.ptr, cast(void*)0);
 	}
 	void ChangeVisibility(bool bIsVisible)
@@ -378,12 +384,13 @@ void**)params.ptr = MeshCpnt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAnyAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)params.ptr;
 	}
-	bool HasAmmo(ubyte FireModeNum, int Amount)
+	bool HasAmmo(ubyte FireModeNum, int* Amount = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		params[0] = FireModeNum;
-		*cast(int*)&params[4] = Amount;
+		if (Amount !is null)
+			*cast(int*)&params[4] = *Amount;
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasAmmo, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}

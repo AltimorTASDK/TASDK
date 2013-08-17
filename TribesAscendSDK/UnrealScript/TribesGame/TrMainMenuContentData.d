@@ -35,11 +35,11 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct TribesGame.TrMainMenuContentData.MeshData")()); }
 		@property final auto ref
 		{
-			TrMainMenuMeshInfo MainMeshInfo() { mixin(MGPS!(TrMainMenuMeshInfo, 4)()); }
-			TrObject.EContentDataType ContentDataType() { mixin(MGPS!(TrObject.EContentDataType, 0)()); }
+			TrMainMenuMeshInfo MainMeshInfo() { mixin(MGPS!("TrMainMenuMeshInfo", 4)()); }
+			TrObject.EContentDataType ContentDataType() { mixin(MGPS!("TrObject.EContentDataType", 0)()); }
 		}
 	}
-	@property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { mixin(MGPC!(ScriptArray!(TrMainMenuContentData.MeshData), 60)()); }
+	@property final auto ref ScriptArray!(TrMainMenuContentData.MeshData) m_MeshData() { mixin(MGPC!("ScriptArray!(TrMainMenuContentData.MeshData)", 60)()); }
 final:
 	void SendPaperDollANewMesh(TrPaperDollMainMenu MainMenuPaperDoll, TrObject.EContentDataType ContentDataType)
 	{

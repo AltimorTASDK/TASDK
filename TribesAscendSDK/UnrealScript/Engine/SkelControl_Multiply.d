@@ -11,5 +11,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.SkelControl_Multiply")()); }
 	private static __gshared SkelControl_Multiply mDefaultProperties;
 	@property final static SkelControl_Multiply DefaultProperties() { mixin(MGDPC!(SkelControl_Multiply, "SkelControl_Multiply Engine.Default__SkelControl_Multiply")()); }
-	@property final auto ref float Multiplier() { mixin(MGPC!(float, 188)()); }
+	@property final auto ref float Multiplier() { mixin(MGPC!("float", 188)()); }
 }

@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.ParticleModuleSourceMovement")()); }
 	private static __gshared ParticleModuleSourceMovement mDefaultProperties;
 	@property final static ParticleModuleSourceMovement DefaultProperties() { mixin(MGDPC!(ParticleModuleSourceMovement, "ParticleModuleSourceMovement Engine.Default__ParticleModuleSourceMovement")()); }
-	@property final auto ref DistributionVector.RawDistributionVector SourceMovementScale() { mixin(MGPC!(DistributionVector.RawDistributionVector, 72)()); }
+	@property final auto ref DistributionVector.RawDistributionVector SourceMovementScale() { mixin(MGPC!("DistributionVector.RawDistributionVector", 72)()); }
 }

@@ -30,23 +30,23 @@ public extern(D):
 		}
 	}
 final:
-	static ParticleSystem GetTemplateForDistance(ref const ScriptArray!(UDKPawn.DistanceBasedParticleTemplate) TemplateList, Vector SpawnLocation, WorldInfo WI)
+	static ParticleSystem GetTemplateForDistance(ref in ScriptArray!(UDKPawn.DistanceBasedParticleTemplate) TemplateList, Vector SpawnLocation, WorldInfo WI)
 	{
 		ubyte params[32];
 		params[] = 0;
-		*cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)*)params.ptr = TemplateList;
+		*cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)*)params.ptr = cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate))TemplateList;
 		*cast(Vector*)&params[12] = SpawnLocation;
 		*cast(WorldInfo*)&params[24] = WI;
 		StaticClass.ProcessEvent(Functions.GetTemplateForDistance, params.ptr, cast(void*)0);
-		*TemplateList = *cast(ScriptArray!(UDKPawn.DistanceBasedParticleTemplate)*)params.ptr;
 		return *cast(ParticleSystem*)&params[28];
 	}
-	void SetTemplate(ParticleSystem NewTemplate, bool bDestroyOnFinish)
+	void SetTemplate(ParticleSystem NewTemplate, bool* bDestroyOnFinish = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(ParticleSystem*)params.ptr = NewTemplate;
-		*cast(bool*)&params[4] = bDestroyOnFinish;
+		if (bDestroyOnFinish !is null)
+			*cast(bool*)&params[4] = *bDestroyOnFinish;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetTemplate, params.ptr, cast(void*)0);
 	}
 	void SetLightEnvironment(

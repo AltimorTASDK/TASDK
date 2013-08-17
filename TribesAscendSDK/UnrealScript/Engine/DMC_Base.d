@@ -55,9 +55,9 @@ public extern(D):
 	}
 	@property final auto ref ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*) CreatedComponents() { mixin(MGPC!(ScriptArray!(
+void*) CreatedComponents() { mixin(MGPC!("ScriptArray!(
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
-void*), 476)()); }
+void*)", 476)()); }
 final:
 	void PrintString(ScriptString InString)
 	{
@@ -140,9 +140,9 @@ final:
 		*cast(float*)&params[16] = Y;
 		*cast(float*)&params[20] = Z;
 		StaticClass.ProcessEvent(Functions.BreakVector, params.ptr, cast(void*)0);
-		*X = *cast(float*)&params[12];
-		*Y = *cast(float*)&params[16];
-		*Z = *cast(float*)&params[20];
+		X = *cast(float*)&params[12];
+		Y = *cast(float*)&params[16];
+		Z = *cast(float*)&params[20];
 	}
 	static Rotator MakeRot(float Pitch, float Yaw, float Roll)
 	{
@@ -163,9 +163,9 @@ final:
 		*cast(float*)&params[16] = Yaw;
 		*cast(float*)&params[20] = Roll;
 		StaticClass.ProcessEvent(Functions.BreakRot, params.ptr, cast(void*)0);
-		*Pitch = *cast(float*)&params[12];
-		*Yaw = *cast(float*)&params[16];
-		*Roll = *cast(float*)&params[20];
+		Pitch = *cast(float*)&params[12];
+		Yaw = *cast(float*)&params[16];
+		Roll = *cast(float*)&params[20];
 	}
 	
 // ERROR: Unknown object class 'Class Core.ComponentProperty'!
@@ -196,7 +196,7 @@ void**)&params[4];
 		*cast(Vector*)&params[16] = Momentum;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DMCTakeDamage, params.ptr, cast(void*)0);
 	}
-	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo HitInfo, Actor DamageCauser)
+	void TakeDamage(int DamageAmount, Controller EventInstigator, Vector HitLocation, Vector Momentum, ScriptClass pDamageType, Actor.TraceHitInfo* HitInfo = null, Actor* DamageCauser = null)
 	{
 		ubyte params[68];
 		params[] = 0;
@@ -205,8 +205,10 @@ void**)&params[4];
 		*cast(Vector*)&params[8] = HitLocation;
 		*cast(Vector*)&params[20] = Momentum;
 		*cast(ScriptClass*)&params[32] = pDamageType;
-		*cast(Actor.TraceHitInfo*)&params[36] = HitInfo;
-		*cast(Actor*)&params[64] = DamageCauser;
+		if (HitInfo !is null)
+			*cast(Actor.TraceHitInfo*)&params[36] = *HitInfo;
+		if (DamageCauser !is null)
+			*cast(Actor*)&params[64] = *DamageCauser;
 		(cast(ScriptObject)this).ProcessEvent(Functions.TakeDamage, params.ptr, cast(void*)0);
 	}
 }

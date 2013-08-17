@@ -167,9 +167,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSetting")()); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!(int, 0)()); }
-			int ValueIndex() { mixin(MGPS!(int, 4)()); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!(Settings.EOnlineDataAdvertisementType, 8)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
+			int ValueIndex() { mixin(MGPS!("int", 4)()); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!("Settings.EOnlineDataAdvertisementType", 8)()); }
 		}
 	}
 	struct SettingsProperty
@@ -180,9 +180,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsProperty")()); }
 		@property final auto ref
 		{
-			int PropertyId() { mixin(MGPS!(int, 0)()); }
-			Settings.SettingsData Data() { mixin(MGPS!(Settings.SettingsData, 4)()); }
-			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!(Settings.EOnlineDataAdvertisementType, 16)()); }
+			int PropertyId() { mixin(MGPS!("int", 0)()); }
+			Settings.SettingsData Data() { mixin(MGPS!("Settings.SettingsData", 4)()); }
+			Settings.EOnlineDataAdvertisementType AdvertisementType() { mixin(MGPS!("Settings.EOnlineDataAdvertisementType", 16)()); }
 		}
 	}
 	struct SettingsData
@@ -193,9 +193,9 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsData")()); }
 		@property final auto ref
 		{
-			Settings.ESettingsDataType Type() { mixin(MGPS!(Settings.ESettingsDataType, 0)()); }
-			int Value1() { mixin(MGPS!(int, 4)()); }
-			UObject.Pointer Value2() { mixin(MGPS!(UObject.Pointer, 8)()); }
+			Settings.ESettingsDataType Type() { mixin(MGPS!("Settings.ESettingsDataType", 0)()); }
+			int Value1() { mixin(MGPS!("int", 4)()); }
+			UObject.Pointer Value2() { mixin(MGPS!("UObject.Pointer", 8)()); }
 		}
 	}
 	struct IdToStringMapping
@@ -206,8 +206,8 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.IdToStringMapping")()); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!(int, 0)()); }
-			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
+			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
 		}
 	}
 	struct LocalizedStringSettingMetaData
@@ -218,10 +218,10 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.LocalizedStringSettingMetaData")()); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!(int, 0)()); }
-			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 12)()); }
-			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { mixin(MGPS!(ScriptArray!(Settings.StringIdToStringMapping), 24)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
+			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 12)()); }
+			ScriptArray!(Settings.StringIdToStringMapping) ValueMappings() { mixin(MGPS!("ScriptArray!(Settings.StringIdToStringMapping)", 24)()); }
 		}
 	}
 	struct StringIdToStringMapping
@@ -234,8 +234,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				int Id() { mixin(MGPS!(int, 0)()); }
-				ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
+				int Id() { mixin(MGPS!("int", 0)()); }
+				ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
 			}
 			bool bIsWildcard() { mixin(MGBPS!(12, 0x1)()); }
 			bool bIsWildcard(bool val) { mixin(MSBPS!(12, 0x1)()); }
@@ -249,33 +249,32 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct Engine.Settings.SettingsPropertyPropertyMetaData")()); }
 		@property final auto ref
 		{
-			int Id() { mixin(MGPS!(int, 0)()); }
-			ScriptName Name() { mixin(MGPS!(ScriptName, 4)()); }
-			ScriptString ColumnHeaderText() { mixin(MGPS!(ScriptString, 12)()); }
-			Settings.EPropertyValueMappingType MappingType() { mixin(MGPS!(Settings.EPropertyValueMappingType, 24)()); }
-			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { mixin(MGPS!(ScriptArray!(Settings.IdToStringMapping), 28)()); }
-			ScriptArray!(Settings.SettingsData) PredefinedValues() { mixin(MGPS!(ScriptArray!(Settings.SettingsData), 40)()); }
-			float MinVal() { mixin(MGPS!(float, 52)()); }
-			float MaxVal() { mixin(MGPS!(float, 56)()); }
-			float RangeIncrement() { mixin(MGPS!(float, 60)()); }
+			int Id() { mixin(MGPS!("int", 0)()); }
+			ScriptName Name() { mixin(MGPS!("ScriptName", 4)()); }
+			ScriptString ColumnHeaderText() { mixin(MGPS!("ScriptString", 12)()); }
+			Settings.EPropertyValueMappingType MappingType() { mixin(MGPS!("Settings.EPropertyValueMappingType", 24)()); }
+			ScriptArray!(Settings.IdToStringMapping) ValueMappings() { mixin(MGPS!("ScriptArray!(Settings.IdToStringMapping)", 28)()); }
+			ScriptArray!(Settings.SettingsData) PredefinedValues() { mixin(MGPS!("ScriptArray!(Settings.SettingsData)", 40)()); }
+			float MinVal() { mixin(MGPS!("float", 52)()); }
+			float MaxVal() { mixin(MGPS!("float", 56)()); }
+			float RangeIncrement() { mixin(MGPS!("float", 60)()); }
 		}
 	}
 	@property final auto ref
 	{
-		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { mixin(MGPC!(ScriptArray!(Settings.LocalizedStringSetting), 60)()); }
-		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!(ScriptArray!(Settings.SettingsProperty), 72)()); }
-		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { mixin(MGPC!(ScriptArray!(Settings.LocalizedStringSettingMetaData), 84)()); }
-		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { mixin(MGPC!(ScriptArray!(Settings.SettingsPropertyPropertyMetaData), 96)()); }
+		ScriptArray!(Settings.LocalizedStringSetting) LocalizedSettings() { mixin(MGPC!("ScriptArray!(Settings.LocalizedStringSetting)", 60)()); }
+		ScriptArray!(Settings.SettingsProperty) Properties() { mixin(MGPC!("ScriptArray!(Settings.SettingsProperty)", 72)()); }
+		ScriptArray!(Settings.LocalizedStringSettingMetaData) LocalizedSettingsMappings() { mixin(MGPC!("ScriptArray!(Settings.LocalizedStringSettingMetaData)", 84)()); }
+		ScriptArray!(Settings.SettingsPropertyPropertyMetaData) PropertyMappings() { mixin(MGPC!("ScriptArray!(Settings.SettingsPropertyPropertyMetaData)", 96)()); }
 	}
 final:
-	void UpdateFromURL(ref const ScriptString pURL, GameInfo Game)
+	void UpdateFromURL(ref in ScriptString pURL, GameInfo Game)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptString*)params.ptr = pURL;
+		*cast(ScriptString*)params.ptr = cast(ScriptString)pURL;
 		*cast(GameInfo*)&params[12] = Game;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateFromURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
 	}
 	void BuildURL(ref ScriptString pURL)
 	{
@@ -283,7 +282,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.BuildURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
+		pURL = *cast(ScriptString*)params.ptr;
 	}
 	void AppendContextsToURL(ref ScriptString pURL)
 	{
@@ -291,7 +290,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendContextsToURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
+		pURL = *cast(ScriptString*)params.ptr;
 	}
 	void AppendPropertiesToURL(ref ScriptString pURL)
 	{
@@ -299,7 +298,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendPropertiesToURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
+		pURL = *cast(ScriptString*)params.ptr;
 	}
 	void AppendDataBindingsToURL(ref ScriptString pURL)
 	{
@@ -307,7 +306,7 @@ final:
 		params[] = 0;
 		*cast(ScriptString*)params.ptr = pURL;
 		(cast(ScriptObject)this).ProcessEvent(Functions.AppendDataBindingsToURL, params.ptr, cast(void*)0);
-		*pURL = *cast(ScriptString*)params.ptr;
+		pURL = *cast(ScriptString*)params.ptr;
 	}
 	void GetQoSAdvertisedStringSettings(ref ScriptArray!(Settings.LocalizedStringSetting) QoSSettings)
 	{
@@ -315,7 +314,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = QoSSettings;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetQoSAdvertisedStringSettings, params.ptr, cast(void*)0);
-		*QoSSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
+		QoSSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
 	}
 	void GetQoSAdvertisedProperties(ref ScriptArray!(Settings.SettingsProperty) QoSProps)
 	{
@@ -323,7 +322,7 @@ final:
 		params[] = 0;
 		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = QoSProps;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetQoSAdvertisedProperties, params.ptr, cast(void*)0);
-		*QoSProps = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
+		QoSProps = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
 	bool GetRangedPropertyValue(int PropertyId, ref float OutValue)
 	{
@@ -332,7 +331,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(float*)&params[4] = OutValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetRangedPropertyValue, params.ptr, cast(void*)0);
-		*OutValue = *cast(float*)&params[4];
+		OutValue = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool SetRangedPropertyValue(int PropertyId, float NewValue)
@@ -354,10 +353,10 @@ final:
 		*cast(float*)&params[12] = RangeIncrement;
 		params[16] = bFormatAsInt;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyRange, params.ptr, cast(void*)0);
-		*OutMinValue = *cast(float*)&params[4];
-		*OutMaxValue = *cast(float*)&params[8];
-		*RangeIncrement = *cast(float*)&params[12];
-		*bFormatAsInt = params[16];
+		OutMinValue = *cast(float*)&params[4];
+		OutMaxValue = *cast(float*)&params[8];
+		RangeIncrement = *cast(float*)&params[12];
+		bFormatAsInt = params[16];
 		return *cast(bool*)&params[20];
 	}
 	bool GetPropertyMappingType(int PropertyId, ref Settings.EPropertyValueMappingType OutType)
@@ -367,7 +366,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(Settings.EPropertyValueMappingType*)&params[4] = OutType;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyMappingType, params.ptr, cast(void*)0);
-		*OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
+		OutType = *cast(Settings.EPropertyValueMappingType*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool HasStringSetting(int SettingId)
@@ -386,23 +385,23 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.HasProperty, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void UpdateProperties(ref const ScriptArray!(Settings.SettingsProperty) Props, bool bShouldAddIfMissing)
+	void UpdateProperties(ref in ScriptArray!(Settings.SettingsProperty) Props, bool* bShouldAddIfMissing = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = Props;
-		*cast(bool*)&params[12] = bShouldAddIfMissing;
+		*cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr = cast(ScriptArray!(Settings.SettingsProperty))Props;
+		if (bShouldAddIfMissing !is null)
+			*cast(bool*)&params[12] = *bShouldAddIfMissing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateProperties, params.ptr, cast(void*)0);
-		*Props = *cast(ScriptArray!(Settings.SettingsProperty)*)params.ptr;
 	}
-	void UpdateStringSettings(ref const ScriptArray!(Settings.LocalizedStringSetting) pSettings, bool bShouldAddIfMissing)
+	void UpdateStringSettings(ref in ScriptArray!(Settings.LocalizedStringSetting) pSettings, bool* bShouldAddIfMissing = null)
 	{
 		ubyte params[16];
 		params[] = 0;
-		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = pSettings;
-		*cast(bool*)&params[12] = bShouldAddIfMissing;
+		*cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr = cast(ScriptArray!(Settings.LocalizedStringSetting))pSettings;
+		if (bShouldAddIfMissing !is null)
+			*cast(bool*)&params[12] = *bShouldAddIfMissing;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateStringSettings, params.ptr, cast(void*)0);
-		*pSettings = *cast(ScriptArray!(Settings.LocalizedStringSetting)*)params.ptr;
 	}
 	Settings.ESettingsDataType GetPropertyType(int PropertyId)
 	{
@@ -419,7 +418,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(int*)&params[4] = ValueId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyValueId, params.ptr, cast(void*)0);
-		*ValueId = *cast(int*)&params[4];
+		ValueId = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	bool SetPropertyValueId(int PropertyId, int ValueId)
@@ -438,7 +437,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(ScriptString*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringProperty, params.ptr, cast(void*)0);
-		*Value = *cast(ScriptString*)&params[4];
+		Value = *cast(ScriptString*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	void SetStringProperty(int PropertyId, ScriptString Value)
@@ -456,7 +455,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(int*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetIntProperty, params.ptr, cast(void*)0);
-		*Value = *cast(int*)&params[4];
+		Value = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void SetIntProperty(int PropertyId, int Value)
@@ -474,7 +473,7 @@ final:
 		*cast(int*)params.ptr = PropertyId;
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetFloatProperty, params.ptr, cast(void*)0);
-		*Value = *cast(float*)&params[4];
+		Value = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	void SetFloatProperty(int PropertyId, float Value)
@@ -485,14 +484,13 @@ final:
 		*cast(float*)&params[4] = Value;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetFloatProperty, params.ptr, cast(void*)0);
 	}
-	bool SetPropertyFromStringByName(ScriptName PropertyName, ref const ScriptString NewValue)
+	bool SetPropertyFromStringByName(ScriptName PropertyName, ref in ScriptString NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = PropertyName;
-		*cast(ScriptString*)&params[8] = NewValue;
+		*cast(ScriptString*)&params[8] = cast(ScriptString)NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetPropertyFromStringByName, params.ptr, cast(void*)0);
-		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	ScriptString GetPropertyAsStringByName(ScriptName PropertyName)
@@ -534,17 +532,16 @@ final:
 		*cast(ScriptName*)params.ptr = PropertyName;
 		*cast(int*)&params[8] = PropertyId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPropertyId, params.ptr, cast(void*)0);
-		*PropertyId = *cast(int*)&params[8];
+		PropertyId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
-	bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ref const ScriptString NewValue)
+	bool SetStringSettingValueFromStringByName(ScriptName StringSettingName, ref in ScriptString NewValue)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = StringSettingName;
-		*cast(ScriptString*)&params[8] = NewValue;
+		*cast(ScriptString*)&params[8] = cast(ScriptString)NewValue;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringSettingValueFromStringByName, params.ptr, cast(void*)0);
-		*NewValue = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	ScriptName GetStringSettingValueNameByName(ScriptName StringSettingName)
@@ -595,7 +592,7 @@ final:
 		*cast(ScriptName*)params.ptr = StringSettingName;
 		*cast(int*)&params[8] = StringSettingId;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingId, params.ptr, cast(void*)0);
-		*StringSettingId = *cast(int*)&params[8];
+		StringSettingId = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	bool GetStringSettingValueByName(ScriptName StringSettingName, ref int ValueIndex)
@@ -605,7 +602,7 @@ final:
 		*cast(ScriptName*)params.ptr = StringSettingName;
 		*cast(int*)&params[8] = ValueIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValueByName, params.ptr, cast(void*)0);
-		*ValueIndex = *cast(int*)&params[8];
+		ValueIndex = *cast(int*)&params[8];
 		return *cast(bool*)&params[12];
 	}
 	void SetStringSettingValueByName(ScriptName StringSettingName, int ValueIndex, bool bShouldAutoAdd)
@@ -624,7 +621,7 @@ final:
 		*cast(int*)params.ptr = StringSettingId;
 		*cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4] = Values;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValueNames, params.ptr, cast(void*)0);
-		*Values = *cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4];
+		Values = *cast(ScriptArray!(Settings.IdToStringMapping)*)&params[4];
 		return *cast(bool*)&params[16];
 	}
 	bool IncrementStringSettingValue(int StringSettingId, int Direction, bool bShouldWrap)
@@ -644,16 +641,17 @@ final:
 		*cast(int*)params.ptr = StringSettingId;
 		*cast(int*)&params[4] = ValueIndex;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetStringSettingValue, params.ptr, cast(void*)0);
-		*ValueIndex = *cast(int*)&params[4];
+		ValueIndex = *cast(int*)&params[4];
 		return *cast(bool*)&params[8];
 	}
-	void SetStringSettingValue(int StringSettingId, int ValueIndex, bool bShouldAutoAdd)
+	void SetStringSettingValue(int StringSettingId, int ValueIndex, bool* bShouldAutoAdd = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(int*)params.ptr = StringSettingId;
 		*cast(int*)&params[4] = ValueIndex;
-		*cast(bool*)&params[8] = bShouldAutoAdd;
+		if (bShouldAutoAdd !is null)
+			*cast(bool*)&params[8] = *bShouldAutoAdd;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SetStringSettingValue, params.ptr, cast(void*)0);
 	}
 	static void GetSettingsDataDateTime(ref Settings.SettingsData Data, ref int OutInt1, ref int OutInt2)
@@ -664,9 +662,9 @@ final:
 		*cast(int*)&params[12] = OutInt1;
 		*cast(int*)&params[16] = OutInt2;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataDateTime, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
-		*OutInt1 = *cast(int*)&params[12];
-		*OutInt2 = *cast(int*)&params[16];
+		Data = *cast(Settings.SettingsData*)params.ptr;
+		OutInt1 = *cast(int*)&params[12];
+		OutInt2 = *cast(int*)&params[16];
 	}
 	static void GetSettingsDataBlob(ref Settings.SettingsData Data, ref ScriptArray!(ubyte) OutBlob)
 	{
@@ -675,8 +673,8 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(ScriptArray!(ubyte)*)&params[12] = OutBlob;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataBlob, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
-		*OutBlob = *cast(ScriptArray!(ubyte)*)&params[12];
+		Data = *cast(Settings.SettingsData*)params.ptr;
+		OutBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
 	static int GetSettingsDataInt(ref Settings.SettingsData Data)
 	{
@@ -684,7 +682,7 @@ final:
 		params[] = 0;
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataInt, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(int*)&params[12];
 	}
 	static float GetSettingsDataFloat(ref Settings.SettingsData Data)
@@ -693,7 +691,7 @@ final:
 		params[] = 0;
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataFloat, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(float*)&params[12];
 	}
 	static ScriptString GetSettingsDataString(ref Settings.SettingsData Data)
@@ -702,7 +700,7 @@ final:
 		params[] = 0;
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.GetSettingsDataString, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 		return *cast(ScriptString*)&params[12];
 	}
 	static void EmptySettingsData(ref Settings.SettingsData Data)
@@ -711,7 +709,7 @@ final:
 		params[] = 0;
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		StaticClass.ProcessEvent(Functions.EmptySettingsData, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 	}
 	static void SetSettingsData(ref Settings.SettingsData Data, ref Settings.SettingsData Data2Copy)
 	{
@@ -720,8 +718,8 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(Settings.SettingsData*)&params[12] = Data2Copy;
 		StaticClass.ProcessEvent(Functions.SetSettingsData, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
-		*Data2Copy = *cast(Settings.SettingsData*)&params[12];
+		Data = *cast(Settings.SettingsData*)params.ptr;
+		Data2Copy = *cast(Settings.SettingsData*)&params[12];
 	}
 	static void SetSettingsDataBlob(ref Settings.SettingsData Data, ref ScriptArray!(ubyte) InBlob)
 	{
@@ -730,8 +728,8 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(ScriptArray!(ubyte)*)&params[12] = InBlob;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataBlob, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
-		*InBlob = *cast(ScriptArray!(ubyte)*)&params[12];
+		Data = *cast(Settings.SettingsData*)params.ptr;
+		InBlob = *cast(ScriptArray!(ubyte)*)&params[12];
 	}
 	static void SetSettingsDataDateTime(ref Settings.SettingsData Data, int InInt1, int InInt2)
 	{
@@ -741,7 +739,7 @@ final:
 		*cast(int*)&params[12] = InInt1;
 		*cast(int*)&params[16] = InInt2;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataDateTime, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 	}
 	static void SetSettingsDataInt(ref Settings.SettingsData Data, int InInt)
 	{
@@ -750,7 +748,7 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(int*)&params[12] = InInt;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataInt, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 	}
 	static void SetSettingsDataFloat(ref Settings.SettingsData Data, float InFloat)
 	{
@@ -759,7 +757,7 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(float*)&params[12] = InFloat;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataFloat, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 	}
 	static void SetSettingsDataString(ref Settings.SettingsData Data, ScriptString InString)
 	{
@@ -768,6 +766,6 @@ final:
 		*cast(Settings.SettingsData*)params.ptr = Data;
 		*cast(ScriptString*)&params[12] = InString;
 		StaticClass.ProcessEvent(Functions.SetSettingsDataString, params.ptr, cast(void*)0);
-		*Data = *cast(Settings.SettingsData*)params.ptr;
+		Data = *cast(Settings.SettingsData*)params.ptr;
 	}
 }

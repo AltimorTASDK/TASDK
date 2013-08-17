@@ -55,16 +55,16 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		float PP_Scene_Desaturation() { mixin(MGPC!(float, 620)()); }
-		Vector PP_Scene_HighLights() { mixin(MGPC!(Vector, 608)()); }
-		float WarningTime() { mixin(MGPC!(float, 604)()); }
-		float TransitionDuration() { mixin(MGPC!(float, 600)()); }
-		float TransitionTime() { mixin(MGPC!(float, 596)()); }
-		UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!(UIRoot.TextureCoordinates, 580)()); }
-		ScriptName PowerupStatName() { mixin(MGPC!(ScriptName, 572)()); }
-		SoundCue PowerupOverSound() { mixin(MGPC!(SoundCue, 568)()); }
-		int HudIndex() { mixin(MGPC!(int, 564)()); }
-		float TimeRemaining() { mixin(MGPC!(float, 560)()); }
+		float PP_Scene_Desaturation() { mixin(MGPC!("float", 620)()); }
+		Vector PP_Scene_HighLights() { mixin(MGPC!("Vector", 608)()); }
+		float WarningTime() { mixin(MGPC!("float", 604)()); }
+		float TransitionDuration() { mixin(MGPC!("float", 600)()); }
+		float TransitionTime() { mixin(MGPC!("float", 596)()); }
+		UIRoot.TextureCoordinates IconCoords() { mixin(MGPC!("UIRoot.TextureCoordinates", 580)()); }
+		ScriptName PowerupStatName() { mixin(MGPC!("ScriptName", 572)()); }
+		SoundCue PowerupOverSound() { mixin(MGPC!("SoundCue", 568)()); }
+		int HudIndex() { mixin(MGPC!("int", 564)()); }
+		float TimeRemaining() { mixin(MGPC!("float", 560)()); }
 	}
 final:
 	void Tick(float DeltaTime)
@@ -74,12 +74,13 @@ final:
 		*cast(float*)params.ptr = DeltaTime;
 		(cast(ScriptObject)this).ProcessEvent(Functions.Tick, params.ptr, cast(void*)0);
 	}
-	void GivenTo(Pawn NewOwner, bool bDoNotActivate)
+	void GivenTo(Pawn NewOwner, bool* bDoNotActivate = null)
 	{
 		ubyte params[8];
 		params[] = 0;
 		*cast(Pawn*)params.ptr = NewOwner;
-		*cast(bool*)&params[4] = bDoNotActivate;
+		if (bDoNotActivate !is null)
+			*cast(bool*)&params[4] = *bDoNotActivate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GivenTo, params.ptr, cast(void*)0);
 	}
 	void ClientGivenTo(Pawn NewOwner, bool bDoNotActivate)
@@ -122,7 +123,7 @@ final:
 		*cast(float*)&params[8] = ResolutionScale;
 		*cast(float*)&params[12] = YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayPowerup, params.ptr, cast(void*)0);
-		*YPos = *cast(float*)&params[12];
+		YPos = *cast(float*)&params[12];
 	}
 	bool DenyPickupQuery(ScriptClass ItemClass, Actor Pickup)
 	{

@@ -228,7 +228,7 @@ final:
 		*cast(ScriptName*)params.ptr = SessionName;
 		params[8] = PlatformSpecificInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlatformSpecificSessionInfoBySessionName, params.ptr, cast(void*)0);
-		*PlatformSpecificInfo = params[8];
+		PlatformSpecificInfo = params[8];
 		return *cast(bool*)&params[88];
 	}
 	bool BindPlatformSpecificSessionToSearch(ubyte SearchingPlayerNum, OnlineGameSearch SearchSettings, ubyte PlatformSpecificInfo)
@@ -241,15 +241,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.BindPlatformSpecificSessionToSearch, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[88];
 	}
-	bool JoinMigratedOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame)
+	bool JoinMigratedOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame)
 	{
 		ubyte params[24];
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(ScriptName*)&params[4] = SessionName;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinMigratedOnlineGame, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12];
 		return *cast(bool*)&params[20];
 	}
 	bool GetResolvedConnectString(ScriptName SessionName, ref ScriptString ConnectInfo)
@@ -259,7 +258,7 @@ final:
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(ScriptString*)&params[8] = ConnectInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetResolvedConnectString, params.ptr, cast(void*)0);
-		*ConnectInfo = *cast(ScriptString*)&params[8];
+		ConnectInfo = *cast(ScriptString*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool RegisterForArbitration(ScriptName SessionName)
@@ -295,15 +294,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.StartOnlineGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[8];
 	}
-	bool JoinOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame)
+	bool JoinOnlineGame(ubyte PlayerNum, ScriptName SessionName, ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame)
 	{
 		ubyte params[24];
 		params[] = 0;
 		params[0] = PlayerNum;
 		*cast(ScriptName*)&params[4] = SessionName;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12] = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		(cast(ScriptObject)this).ProcessEvent(Functions.JoinOnlineGame, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)&params[12];
 		return *cast(bool*)&params[20];
 	}
 	bool RegisterPlayer(ScriptName SessionName, OnlineSubsystem.UniqueNetId PlayerID, bool bWasInvited)
@@ -316,14 +314,13 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.RegisterPlayer, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[20];
 	}
-	bool RecalculateSkillRating(ScriptName SessionName, ref const ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
+	bool RecalculateSkillRating(ScriptName SessionName, ref in ScriptArray!(OnlineSubsystem.UniqueNetId) Players)
 	{
 		ubyte params[24];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
-		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = Players;
+		*cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8] = cast(ScriptArray!(OnlineSubsystem.UniqueNetId))Players;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RecalculateSkillRating, params.ptr, cast(void*)0);
-		*Players = *cast(ScriptArray!(OnlineSubsystem.UniqueNetId)*)&params[8];
 		return *cast(bool*)&params[20];
 	}
 	bool CreateOnlineGame(ubyte HostingPlayerNum, ScriptName SessionName, OnlineGameSettings NewGameSettings)
@@ -368,13 +365,12 @@ final:
 		*cast(bool*)&params[8] = bWasSuccessful;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnRecalculateSkillRatingComplete, params.ptr, cast(void*)0);
 	}
-	void OnGameInviteAccepted(ref const OnlineGameSearch.OnlineGameSearchResult InviteResult)
+	void OnGameInviteAccepted(ref in OnlineGameSearch.OnlineGameSearchResult InviteResult)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = InviteResult;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)InviteResult;
 		(cast(ScriptObject)this).ProcessEvent(Functions.OnGameInviteAccepted, params.ptr, cast(void*)0);
-		*InviteResult = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
 	}
 	void OnArbitrationRegistrationComplete(ScriptName SessionName, bool bWasSuccessful)
 	{
@@ -486,13 +482,14 @@ void* CreateOnlineGameCompleteDelegate)
 void**)params.ptr = CreateOnlineGameCompleteDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearCreateOnlineGameCompleteDelegate, params.ptr, cast(void*)0);
 	}
-	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool bShouldRefreshOnlineData)
+	bool UpdateOnlineGame(ScriptName SessionName, OnlineGameSettings UpdatedGameSettings, bool* bShouldRefreshOnlineData = null)
 	{
 		ubyte params[20];
 		params[] = 0;
 		*cast(ScriptName*)params.ptr = SessionName;
 		*cast(OnlineGameSettings*)&params[8] = UpdatedGameSettings;
-		*cast(bool*)&params[12] = bShouldRefreshOnlineData;
+		if (bShouldRefreshOnlineData !is null)
+			*cast(bool*)&params[12] = *bShouldRefreshOnlineData;
 		(cast(ScriptObject)this).ProcessEvent(Functions.UpdateOnlineGame, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[16];
 	}
@@ -622,15 +619,14 @@ void* QosStatusChangedDelegate)
 void**)params.ptr = QosStatusChangedDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ClearQosStatusChangedDelegate, params.ptr, cast(void*)0);
 	}
-	bool ReadPlatformSpecificSessionInfo(ref const OnlineGameSearch.OnlineGameSearchResult DesiredGame, ref ubyte PlatformSpecificInfo)
+	bool ReadPlatformSpecificSessionInfo(ref in OnlineGameSearch.OnlineGameSearchResult DesiredGame, ref ubyte PlatformSpecificInfo)
 	{
 		ubyte params[92];
 		params[] = 0;
-		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = DesiredGame;
+		*cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr = cast(OnlineGameSearch.OnlineGameSearchResult)DesiredGame;
 		params[8] = PlatformSpecificInfo;
 		(cast(ScriptObject)this).ProcessEvent(Functions.ReadPlatformSpecificSessionInfo, params.ptr, cast(void*)0);
-		*DesiredGame = *cast(OnlineGameSearch.OnlineGameSearchResult*)params.ptr;
-		*PlatformSpecificInfo = params[8];
+		PlatformSpecificInfo = params[8];
 		return *cast(bool*)&params[88];
 	}
 	OnlineGameSearch GetGameSearch()
@@ -640,11 +636,12 @@ void**)params.ptr = QosStatusChangedDelegate;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetGameSearch, params.ptr, cast(void*)0);
 		return *cast(OnlineGameSearch*)params.ptr;
 	}
-	bool FreeSearchResults(OnlineGameSearch Search)
+	bool FreeSearchResults(OnlineGameSearch* Search = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(OnlineGameSearch*)params.ptr = Search;
+		if (Search !is null)
+			*cast(OnlineGameSearch*)params.ptr = *Search;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FreeSearchResults, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}

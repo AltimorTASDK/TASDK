@@ -57,11 +57,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			Actor ScriptedFocus() { mixin(MGPC!(Actor, 920)()); }
-			int ScriptedRouteIndex() { mixin(MGPC!(int, 916)()); }
-			Route ScriptedRoute() { mixin(MGPC!(Route, 912)()); }
-			Actor ScriptedMoveTarget() { mixin(MGPC!(Actor, 908)()); }
-			float Skill() { mixin(MGPC!(float, 904)()); }
+			Actor ScriptedFocus() { mixin(MGPC!("Actor", 920)()); }
+			int ScriptedRouteIndex() { mixin(MGPC!("int", 916)()); }
+			Route ScriptedRoute() { mixin(MGPC!("Route", 912)()); }
+			Actor ScriptedMoveTarget() { mixin(MGPC!("Actor", 908)()); }
+			float Skill() { mixin(MGPC!("float", 904)()); }
 		}
 		bool bReverseScriptedRoute() { mixin(MGBPC!(900, 0x2)()); }
 		bool bReverseScriptedRoute(bool val) { mixin(MSBPC!(900, 0x2)()); }
@@ -85,8 +85,8 @@ final:
 		*cast(float*)&params[4] = out_YL;
 		*cast(float*)&params[8] = out_YPos;
 		(cast(ScriptObject)this).ProcessEvent(Functions.DisplayDebug, params.ptr, cast(void*)0);
-		*out_YL = *cast(float*)&params[4];
-		*out_YPos = *cast(float*)&params[8];
+		out_YL = *cast(float*)&params[4];
+		out_YPos = *cast(float*)&params[8];
 	}
 	void SetTeam(int inTeamIdx)
 	{
@@ -102,8 +102,8 @@ final:
 		*cast(Vector*)params.ptr = out_Location;
 		*cast(Rotator*)&params[12] = out_Rotation;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetPlayerViewPoint, params.ptr, cast(void*)0);
-		*out_Location = *cast(Vector*)params.ptr;
-		*out_Rotation = *cast(Rotator*)&params[12];
+		out_Location = *cast(Vector*)params.ptr;
+		out_Rotation = *cast(Rotator*)&params[12];
 	}
 	void OnAIMoveToActor(SeqAct_AIMoveToActor Action)
 	{

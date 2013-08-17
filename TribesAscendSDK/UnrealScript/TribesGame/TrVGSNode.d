@@ -36,14 +36,14 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptString m_MenuString() { mixin(MGPC!(ScriptString, 68)()); }
-			ScriptName m_KeyBind() { mixin(MGPC!(ScriptName, 60)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_Commands() { mixin(MGPC!(ScriptArray!(TrVGSCommandList.VGSCommandType), 92)()); }
-			ScriptArray!(ScriptClass) m_Children() { mixin(MGPC!(ScriptArray!(ScriptClass), 80)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCTFCommand() { mixin(MGPC!(ScriptArray!(TrVGSCommandList.VGSCommandType), 104)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreTeamRabbitCommand() { mixin(MGPC!(ScriptArray!(TrVGSCommandList.VGSCommandType), 116)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreArenaCommand() { mixin(MGPC!(ScriptArray!(TrVGSCommandList.VGSCommandType), 128)()); }
-			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCaHCommand() { mixin(MGPC!(ScriptArray!(TrVGSCommandList.VGSCommandType), 140)()); }
+			ScriptString m_MenuString() { mixin(MGPC!("ScriptString", 68)()); }
+			ScriptName m_KeyBind() { mixin(MGPC!("ScriptName", 60)()); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_Commands() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 92)()); }
+			ScriptArray!(ScriptClass) m_Children() { mixin(MGPC!("ScriptArray!(ScriptClass)", 80)()); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCTFCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 104)()); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreTeamRabbitCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 116)()); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreArenaCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 128)()); }
+			ScriptArray!(TrVGSCommandList.VGSCommandType) m_IgnoreCaHCommand() { mixin(MGPC!("ScriptArray!(TrVGSCommandList.VGSCommandType)", 140)()); }
 		}
 		bool m_bDrawHeader() { mixin(MGBPC!(152, 0x10)()); }
 		bool m_bDrawHeader(bool val) { mixin(MSBPC!(152, 0x10)()); }
@@ -92,7 +92,7 @@ final:
 		*cast(ScriptArray!(TrVGSCommandList.VGSCommandType)*)params.ptr = outGametypeSpecificCommands;
 		*cast(ScriptClass*)&params[12] = GameClass;
 		StaticClass.ProcessEvent(Functions.GetGametypeSpecificCommands, params.ptr, cast(void*)0);
-		*outGametypeSpecificCommands = *cast(ScriptArray!(TrVGSCommandList.VGSCommandType)*)params.ptr;
+		outGametypeSpecificCommands = *cast(ScriptArray!(TrVGSCommandList.VGSCommandType)*)params.ptr;
 	}
 	static void GetGametypeSpecificChildrenNodes(ref ScriptArray!(ScriptClass) outVGSNodeChildrenClasses, ScriptClass GameClass)
 	{
@@ -101,6 +101,6 @@ final:
 		*cast(ScriptArray!(ScriptClass)*)params.ptr = outVGSNodeChildrenClasses;
 		*cast(ScriptClass*)&params[12] = GameClass;
 		StaticClass.ProcessEvent(Functions.GetGametypeSpecificChildrenNodes, params.ptr, cast(void*)0);
-		*outVGSNodeChildrenClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
+		outVGSNodeChildrenClasses = *cast(ScriptArray!(ScriptClass)*)params.ptr;
 	}
 }

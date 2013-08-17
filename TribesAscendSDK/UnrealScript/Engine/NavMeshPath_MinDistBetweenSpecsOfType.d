@@ -28,19 +28,20 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		Pylon.ENavMeshEdgeType EdgeType() { mixin(MGPC!(Pylon.ENavMeshEdgeType, 96)()); }
-		Vector InitLocation() { mixin(MGPC!(Vector, 84)()); }
-		float MinDistBetweenEdgeTypes() { mixin(MGPC!(float, 80)()); }
+		Pylon.ENavMeshEdgeType EdgeType() { mixin(MGPC!("Pylon.ENavMeshEdgeType", 96)()); }
+		Vector InitLocation() { mixin(MGPC!("Vector", 84)()); }
+		float MinDistBetweenEdgeTypes() { mixin(MGPC!("float", 80)()); }
 	}
 final:
-	static bool EnforceMinDist(NavigationHandle NavHandle, float InMinDist, Pylon.ENavMeshEdgeType InEdgeType, Vector LastLocation)
+	static bool EnforceMinDist(NavigationHandle NavHandle, float InMinDist, Pylon.ENavMeshEdgeType InEdgeType, Vector* LastLocation = null)
 	{
 		ubyte params[28];
 		params[] = 0;
 		*cast(NavigationHandle*)params.ptr = NavHandle;
 		*cast(float*)&params[4] = InMinDist;
 		*cast(Pylon.ENavMeshEdgeType*)&params[8] = InEdgeType;
-		*cast(Vector*)&params[12] = LastLocation;
+		if (LastLocation !is null)
+			*cast(Vector*)&params[12] = *LastLocation;
 		StaticClass.ProcessEvent(Functions.EnforceMinDist, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[24];
 	}

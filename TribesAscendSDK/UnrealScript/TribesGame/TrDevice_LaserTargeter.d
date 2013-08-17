@@ -1462,14 +1462,14 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		ubyte r_ActiveCallin() { mixin(MGPC!(ubyte, 2192)()); }
-		TrCallIn r_CallIns() { mixin(MGPC!(TrCallIn, 2180)()); }
-		Vector m_LastTargetPos() { mixin(MGPC!(Vector, 2212)()); }
-		Rotator m_LastOwnerRot() { mixin(MGPC!(Rotator, 2200)()); }
-		SoundCue m_CallInConfirmation() { mixin(MGPC!(SoundCue, 2196)()); }
-		ubyte m_PrevActiveCallin() { mixin(MGPC!(ubyte, 2193)()); }
+		ubyte r_ActiveCallin() { mixin(MGPC!("ubyte", 2192)()); }
+		TrCallIn r_CallIns() { mixin(MGPC!("TrCallIn", 2180)()); }
+		Vector m_LastTargetPos() { mixin(MGPC!("Vector", 2212)()); }
+		Rotator m_LastOwnerRot() { mixin(MGPC!("Rotator", 2200)()); }
+		SoundCue m_CallInConfirmation() { mixin(MGPC!("SoundCue", 2196)()); }
+		ubyte m_PrevActiveCallin() { mixin(MGPC!("ubyte", 2193)()); }
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'm_pscLaserEffect'!
-		float m_fCallInEndTime() { mixin(MGPC!(float, 2172)()); }
+		float m_fCallInEndTime() { mixin(MGPC!("float", 2172)()); }
 	}
 final:
 	float CalcHUDAimChargePercent()
@@ -1487,13 +1487,14 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidCallIn, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	bool IsValidTargetLocation(Vector CurrentTarget, Vector PreviousTarget, Actor HitTarget)
+	bool IsValidTargetLocation(Vector CurrentTarget, Vector PreviousTarget, Actor* HitTarget = null)
 	{
 		ubyte params[32];
 		params[] = 0;
 		*cast(Vector*)params.ptr = CurrentTarget;
 		*cast(Vector*)&params[12] = PreviousTarget;
-		*cast(Actor*)&params[24] = HitTarget;
+		if (HitTarget !is null)
+			*cast(Actor*)&params[24] = *HitTarget;
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsValidTargetLocation, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[28];
 	}
@@ -1546,9 +1547,9 @@ final:
 		*cast(Vector*)&params[12] = EndLocation;
 		*cast(Vector*)&params[24] = EndLocationNormal;
 		(cast(ScriptObject)this).ProcessEvent(Functions.GetLaserStartAndEnd, params.ptr, cast(void*)0);
-		*StartLocation = *cast(Vector*)params.ptr;
-		*EndLocation = *cast(Vector*)&params[12];
-		*EndLocationNormal = *cast(Vector*)&params[24];
+		StartLocation = *cast(Vector*)params.ptr;
+		EndLocation = *cast(Vector*)&params[12];
+		EndLocationNormal = *cast(Vector*)&params[24];
 		return *cast(bool*)&params[36];
 	}
 	void KillLaserEffect()

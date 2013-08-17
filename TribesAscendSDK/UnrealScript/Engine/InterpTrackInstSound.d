@@ -14,6 +14,6 @@ public extern(D):
 	@property final auto ref
 	{
 		// ERROR: Unsupported object class 'ComponentProperty' for the property named 'PlayAudioComp'!
-		float LastUpdatePosition() { mixin(MGPC!(float, 60)()); }
+		float LastUpdatePosition() { mixin(MGPC!("float", 60)()); }
 	}
 }

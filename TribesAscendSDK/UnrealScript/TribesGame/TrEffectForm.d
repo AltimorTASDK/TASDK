@@ -36,13 +36,13 @@ public extern(D):
 	{
 		auto ref
 		{
-			Material m_BodyMat() { mixin(MGPC!(Material, 60)()); }
-			TrObject.EffectFormPriority m_ePriority() { mixin(MGPC!(TrObject.EffectFormPriority, 72)()); }
-			SoundCue m_SoundCue() { mixin(MGPC!(SoundCue, 84)()); }
-			ParticleSystem m_PSC() { mixin(MGPC!(ParticleSystem, 80)()); }
-			TrObject.EffectFormMatTypes m_eMatType() { mixin(MGPC!(TrObject.EffectFormMatTypes, 73)()); }
-			float m_fBodyMatFadeOutTime() { mixin(MGPC!(float, 68)()); }
-			float m_fBodyMatFadeInTime() { mixin(MGPC!(float, 64)()); }
+			Material m_BodyMat() { mixin(MGPC!("Material", 60)()); }
+			TrObject.EffectFormPriority m_ePriority() { mixin(MGPC!("TrObject.EffectFormPriority", 72)()); }
+			SoundCue m_SoundCue() { mixin(MGPC!("SoundCue", 84)()); }
+			ParticleSystem m_PSC() { mixin(MGPC!("ParticleSystem", 80)()); }
+			TrObject.EffectFormMatTypes m_eMatType() { mixin(MGPC!("TrObject.EffectFormMatTypes", 73)()); }
+			float m_fBodyMatFadeOutTime() { mixin(MGPC!("float", 68)()); }
+			float m_fBodyMatFadeInTime() { mixin(MGPC!("float", 64)()); }
 		}
 		bool m_bIsManaged() { mixin(MGBPC!(76, 0x2)()); }
 		bool m_bIsManaged(bool val) { mixin(MSBPC!(76, 0x2)()); }

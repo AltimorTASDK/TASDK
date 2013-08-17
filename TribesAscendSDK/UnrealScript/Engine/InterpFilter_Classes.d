@@ -13,7 +13,7 @@ public extern(D):
 	@property final static InterpFilter_Classes DefaultProperties() { mixin(MGDPC!(InterpFilter_Classes, "InterpFilter_Classes Engine.Default__InterpFilter_Classes")()); }
 	@property final auto ref
 	{
-		ScriptArray!(ScriptClass) TrackClasses() { mixin(MGPC!(ScriptArray!(ScriptClass), 76)()); }
-		ScriptClass ClassToFilterBy() { mixin(MGPC!(ScriptClass, 72)()); }
+		ScriptArray!(ScriptClass) TrackClasses() { mixin(MGPC!("ScriptArray!(ScriptClass)", 76)()); }
+		ScriptClass ClassToFilterBy() { mixin(MGPC!("ScriptClass", 72)()); }
 	}
 }

@@ -21,11 +21,11 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptClass NewActorClass() { mixin(MGPC!(ScriptClass, 84)()); }
-			int AlternateMenuPriority() { mixin(MGPC!(int, 80)()); }
-			int MenuPriority() { mixin(MGPC!(int, 76)()); }
-			ScriptString MenuName() { mixin(MGPC!(ScriptString, 64)()); }
-			ScriptClass GameplayActorClass() { mixin(MGPC!(ScriptClass, 60)()); }
+			ScriptClass NewActorClass() { mixin(MGPC!("ScriptClass", 84)()); }
+			int AlternateMenuPriority() { mixin(MGPC!("int", 80)()); }
+			int MenuPriority() { mixin(MGPC!("int", 76)()); }
+			ScriptString MenuName() { mixin(MGPC!("ScriptString", 64)()); }
+			ScriptClass GameplayActorClass() { mixin(MGPC!("ScriptClass", 60)()); }
 		}
 		bool bShowInEditorQuickMenu() { mixin(MGBPC!(88, 0x2)()); }
 		bool bShowInEditorQuickMenu(bool val) { mixin(MSBPC!(88, 0x2)()); }

@@ -76,51 +76,51 @@ public extern(D):
 		@property final static ScriptStruct StaticClass() { mixin(MGSCS!("ScriptStruct UDKBase.UDKBot.EnemyPosition")()); }
 		@property final auto ref
 		{
-			float Time() { mixin(MGPS!(float, 24)()); }
-			Vector Velocity() { mixin(MGPS!(Vector, 12)()); }
-			Vector Position() { mixin(MGPS!(Vector, 0)()); }
+			float Time() { mixin(MGPS!("float", 24)()); }
+			Vector Velocity() { mixin(MGPS!("Vector", 12)()); }
+			Vector Position() { mixin(MGPS!("Vector", 0)()); }
 		}
 	}
 	@property final
 	{
 		auto ref
 		{
-			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { mixin(MGPC!(ScriptArray!(UDKBot.EnemyPosition), 960)()); }
-			float MultiJumpZ() { mixin(MGPC!(float, 1120)()); }
-			float DodgeToGoalPct() { mixin(MGPC!(float, 1116)()); }
-			Actor FearSpots() { mixin(MGPC!(Actor, 1108)()); }
-			float DodgeLandZ() { mixin(MGPC!(float, 1104)()); }
-			float CurrentAimError() { mixin(MGPC!(float, 1100)()); }
-			float LastErrorUpdateTime() { mixin(MGPC!(float, 1096)()); }
-			float ErrorUpdateFrequency() { mixin(MGPC!(float, 1092)()); }
-			float LastAimUpdateTime() { mixin(MGPC!(float, 1088)()); }
-			float AimUpdateFrequency() { mixin(MGPC!(float, 1084)()); }
-			float LastIterativeCheck() { mixin(MGPC!(float, 1080)()); }
-			Pawn BlockedAimTarget() { mixin(MGPC!(Pawn, 1076)()); }
-			NavigationPoint SquadRouteGoal() { mixin(MGPC!(NavigationPoint, 1072)()); }
-			Vector TrackedVelocity() { mixin(MGPC!(Vector, 1060)()); }
-			float BaseTrackingReactionTime() { mixin(MGPC!(float, 1056)()); }
-			float TrackingReactionTime() { mixin(MGPC!(float, 1052)()); }
-			float LastSeenTime() { mixin(MGPC!(float, 1048)()); }
-			Vector LastSeeingPos() { mixin(MGPC!(Vector, 1036)()); }
-			Vector LastSeenPos() { mixin(MGPC!(Vector, 1024)()); }
-			float MonitorMaxDistSq() { mixin(MGPC!(float, 1020)()); }
-			Pawn MonitoredPawn() { mixin(MGPC!(Pawn, 1016)()); }
-			Vector MonitorStartLoc() { mixin(MGPC!(Vector, 1004)()); }
-			Projectile WarningProjectile() { mixin(MGPC!(Projectile, 1000)()); }
-			float WarningDelay() { mixin(MGPC!(float, 996)()); }
-			float RespawnPredictionTime() { mixin(MGPC!(float, 992)()); }
-			float HearingThreshold() { mixin(MGPC!(float, 988)()); }
-			int AcquisitionYawRate() { mixin(MGPC!(int, 984)()); }
-			Vector ImpactVelocity() { mixin(MGPC!(Vector, 972)()); }
-			Pawn CurrentlyTrackedEnemy() { mixin(MGPC!(Pawn, 956)()); }
-			Vehicle LastBlockingVehicle() { mixin(MGPC!(Vehicle, 952)()); }
-			Pawn VisibleEnemy() { mixin(MGPC!(Pawn, 948)()); }
-			float EnemyVisibilityTime() { mixin(MGPC!(float, 944)()); }
-			ubyte ScriptedFireMode() { mixin(MGPC!(ubyte, 940)()); }
-			Actor TemporaryFocus() { mixin(MGPC!(Actor, 932)()); }
+			ScriptArray!(UDKBot.EnemyPosition) SavedPositions() { mixin(MGPC!("ScriptArray!(UDKBot.EnemyPosition)", 960)()); }
+			float MultiJumpZ() { mixin(MGPC!("float", 1120)()); }
+			float DodgeToGoalPct() { mixin(MGPC!("float", 1116)()); }
+			Actor FearSpots() { mixin(MGPC!("Actor", 1108)()); }
+			float DodgeLandZ() { mixin(MGPC!("float", 1104)()); }
+			float CurrentAimError() { mixin(MGPC!("float", 1100)()); }
+			float LastErrorUpdateTime() { mixin(MGPC!("float", 1096)()); }
+			float ErrorUpdateFrequency() { mixin(MGPC!("float", 1092)()); }
+			float LastAimUpdateTime() { mixin(MGPC!("float", 1088)()); }
+			float AimUpdateFrequency() { mixin(MGPC!("float", 1084)()); }
+			float LastIterativeCheck() { mixin(MGPC!("float", 1080)()); }
+			Pawn BlockedAimTarget() { mixin(MGPC!("Pawn", 1076)()); }
+			NavigationPoint SquadRouteGoal() { mixin(MGPC!("NavigationPoint", 1072)()); }
+			Vector TrackedVelocity() { mixin(MGPC!("Vector", 1060)()); }
+			float BaseTrackingReactionTime() { mixin(MGPC!("float", 1056)()); }
+			float TrackingReactionTime() { mixin(MGPC!("float", 1052)()); }
+			float LastSeenTime() { mixin(MGPC!("float", 1048)()); }
+			Vector LastSeeingPos() { mixin(MGPC!("Vector", 1036)()); }
+			Vector LastSeenPos() { mixin(MGPC!("Vector", 1024)()); }
+			float MonitorMaxDistSq() { mixin(MGPC!("float", 1020)()); }
+			Pawn MonitoredPawn() { mixin(MGPC!("Pawn", 1016)()); }
+			Vector MonitorStartLoc() { mixin(MGPC!("Vector", 1004)()); }
+			Projectile WarningProjectile() { mixin(MGPC!("Projectile", 1000)()); }
+			float WarningDelay() { mixin(MGPC!("float", 996)()); }
+			float RespawnPredictionTime() { mixin(MGPC!("float", 992)()); }
+			float HearingThreshold() { mixin(MGPC!("float", 988)()); }
+			int AcquisitionYawRate() { mixin(MGPC!("int", 984)()); }
+			Vector ImpactVelocity() { mixin(MGPC!("Vector", 972)()); }
+			Pawn CurrentlyTrackedEnemy() { mixin(MGPC!("Pawn", 956)()); }
+			Vehicle LastBlockingVehicle() { mixin(MGPC!("Vehicle", 952)()); }
+			Pawn VisibleEnemy() { mixin(MGPC!("Pawn", 948)()); }
+			float EnemyVisibilityTime() { mixin(MGPC!("float", 944)()); }
+			ubyte ScriptedFireMode() { mixin(MGPC!("ubyte", 940)()); }
+			Actor TemporaryFocus() { mixin(MGPC!("Actor", 932)()); }
 			// ERROR: Unsupported object class 'ComponentProperty' for the property named 'DecisionComponent'!
-			UDKSquadAI Squad() { mixin(MGPC!(UDKSquadAI, 924)()); }
+			UDKSquadAI Squad() { mixin(MGPC!("UDKSquadAI", 924)()); }
 		}
 		bool bUsePreviousSquadRoute() { mixin(MGBPC!(936, 0x4000)()); }
 		bool bUsePreviousSquadRoute(bool val) { mixin(MSBPC!(936, 0x4000)()); }
@@ -197,14 +197,15 @@ final:
 		params[] = 0;
 		*cast(float*)params.ptr = MinWeight;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindBestInventoryPath, params.ptr, cast(void*)0);
-		*MinWeight = *cast(float*)params.ptr;
+		MinWeight = *cast(float*)params.ptr;
 		return *cast(Actor*)&params[4];
 	}
-	Actor FindPathToSquadRoute(bool bWeightDetours)
+	Actor FindPathToSquadRoute(bool* bWeightDetours = null)
 	{
 		ubyte params[8];
 		params[] = 0;
-		*cast(bool*)params.ptr = bWeightDetours;
+		if (bWeightDetours !is null)
+			*cast(bool*)params.ptr = *bWeightDetours;
 		(cast(ScriptObject)this).ProcessEvent(Functions.FindPathToSquadRoute, params.ptr, cast(void*)0);
 		return *cast(Actor*)&params[4];
 	}
@@ -243,7 +244,7 @@ final:
 		*cast(float*)params.ptr = RequiredJumpZ;
 		*cast(float*)&params[4] = Cost;
 		(cast(ScriptObject)this).ProcessEvent(Functions.SpecialJumpCost, params.ptr, cast(void*)0);
-		*Cost = *cast(float*)&params[4];
+		Cost = *cast(float*)&params[4];
 		return *cast(bool*)&params[8];
 	}
 	float SuperDesireability(PickupFactory P)

@@ -17,7 +17,7 @@ public extern(D):
 		private static __gshared ScriptFunction mGetDataProvider;
 		public @property static final ScriptFunction GetDataProvider() { mixin(MGF!("mGetDataProvider", "Function Engine.UIDataStore_Registry.GetDataProvider")()); }
 	}
-	@property final auto ref UIDynamicFieldProvider RegistryDataProvider() { mixin(MGPC!(UIDynamicFieldProvider, 120)()); }
+	@property final auto ref UIDynamicFieldProvider RegistryDataProvider() { mixin(MGPC!("UIDynamicFieldProvider", 120)()); }
 	final UIDynamicFieldProvider GetDataProvider()
 	{
 		ubyte params[4];

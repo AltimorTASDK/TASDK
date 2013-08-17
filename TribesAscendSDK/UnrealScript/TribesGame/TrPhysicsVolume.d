@@ -14,7 +14,7 @@ public extern(D):
 	@property final static TrPhysicsVolume DefaultProperties() { mixin(MGDPC!(TrPhysicsVolume, "TrPhysicsVolume TribesGame.Default__TrPhysicsVolume")()); }
 	@property final auto ref
 	{
-		TrVGSCommandList.EVGSContextLocation m_ContextLocation() { mixin(MGPC!(TrVGSCommandList.EVGSContextLocation, 584)()); }
-		ubyte m_DefenderTeamIndex() { mixin(MGPC!(ubyte, 585)()); }
+		TrVGSCommandList.EVGSContextLocation m_ContextLocation() { mixin(MGPC!("TrVGSCommandList.EVGSContextLocation", 584)()); }
+		ubyte m_DefenderTeamIndex() { mixin(MGPC!("ubyte", 585)()); }
 	}
 }

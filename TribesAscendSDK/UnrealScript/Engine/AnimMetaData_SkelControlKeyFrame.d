@@ -12,5 +12,5 @@ public extern(D):
 	@property final static ScriptClass StaticClass() { mixin(MGSCC!("Class Engine.AnimMetaData_SkelControlKeyFrame")()); }
 	private static __gshared AnimMetaData_SkelControlKeyFrame mDefaultProperties;
 	@property final static AnimMetaData_SkelControlKeyFrame DefaultProperties() { mixin(MGDPC!(AnimMetaData_SkelControlKeyFrame, "AnimMetaData_SkelControlKeyFrame Engine.Default__AnimMetaData_SkelControlKeyFrame")()); }
-	@property final auto ref ScriptArray!(AnimSequence.TimeModifier) KeyFrames() { mixin(MGPC!(ScriptArray!(AnimSequence.TimeModifier), 84)()); }
+	@property final auto ref ScriptArray!(AnimSequence.TimeModifier) KeyFrames() { mixin(MGPC!("ScriptArray!(AnimSequence.TimeModifier)", 84)()); }
 }

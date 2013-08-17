@@ -40,9 +40,9 @@ public extern(D):
 	}
 	@property final auto ref
 	{
-		int ORBNumber() { mixin(MGPC!(int, 364)()); }
-		int SUPNumber() { mixin(MGPC!(int, 360)()); }
-		int TACNumber() { mixin(MGPC!(int, 356)()); }
+		int ORBNumber() { mixin(MGPC!("int", 364)()); }
+		int SUPNumber() { mixin(MGPC!("int", 360)()); }
+		int TACNumber() { mixin(MGPC!("int", 356)()); }
 	}
 final:
 	void Initialize()

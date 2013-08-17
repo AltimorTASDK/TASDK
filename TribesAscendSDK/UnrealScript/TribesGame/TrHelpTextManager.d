@@ -104,8 +104,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				int Priority() { mixin(MGPS!(int, 4)()); }
-				TrHelpTextManager.EHelpTextType HelpTextType() { mixin(MGPS!(TrHelpTextManager.EHelpTextType, 0)()); }
+				int Priority() { mixin(MGPS!("int", 4)()); }
+				TrHelpTextManager.EHelpTextType HelpTextType() { mixin(MGPS!("TrHelpTextManager.EHelpTextType", 0)()); }
 			}
 			bool bSelfSuppress() { mixin(MGBPS!(8, 0x1)()); }
 			bool bSelfSuppress(bool val) { mixin(MSBPS!(8, 0x1)()); }
@@ -121,8 +121,8 @@ public extern(D):
 		{
 			auto ref
 			{
-				float RemainingTime() { mixin(MGPS!(float, 4)()); }
-				TrHelpTextManager.EHelpTextType HelpTextTypeToRemove() { mixin(MGPS!(TrHelpTextManager.EHelpTextType, 0)()); }
+				float RemainingTime() { mixin(MGPS!("float", 4)()); }
+				TrHelpTextManager.EHelpTextType HelpTextTypeToRemove() { mixin(MGPS!("TrHelpTextManager.EHelpTextType", 0)()); }
 			}
 			bool bSuppress() { mixin(MGBPS!(8, 0x1)()); }
 			bool bSuppress(bool val) { mixin(MSBPS!(8, 0x1)()); }
@@ -132,74 +132,74 @@ public extern(D):
 	{
 		auto ref
 		{
-			ScriptArray!(TrHelpTextManager.EHelpTextType) m_HelpTextQueue() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.EHelpTextType), 1240)()); }
-			ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo) m_HelpTextTypesToRemoveOnTimers() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo), 1252)()); }
-			ScriptArray!(TrHelpTextManager.HelpTextInfo) m_HelpTextConfig() { mixin(MGPC!(ScriptArray!(TrHelpTextManager.HelpTextInfo), 1228)()); }
-			ScriptString m_HelpTextSkiingHowTo() { mixin(MGPC!(ScriptString, 480)()); }
-			ScriptString m_HelpTextSkiingHowToMenuTitle() { mixin(MGPC!(ScriptString, 840)()); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel1() { mixin(MGPC!(ScriptString, 492)()); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 852)()); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel2() { mixin(MGPC!(ScriptString, 504)()); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 864)()); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel3() { mixin(MGPC!(ScriptString, 516)()); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 876)()); }
-			ScriptString m_HelpTextGeneratorDescriptionLevel4() { mixin(MGPC!(ScriptString, 528)()); }
-			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 888)()); }
-			ScriptString m_HelpTextJetpackHowTo() { mixin(MGPC!(ScriptString, 540)()); }
-			ScriptString m_HelpTextJetpackHowToMenuTitle() { mixin(MGPC!(ScriptString, 900)()); }
-			ScriptString m_HelpTextOutOfAmmoNotifier() { mixin(MGPC!(ScriptString, 552)()); }
-			ScriptString m_HelpTextOutOfAmmoNotifierMenuTitle() { mixin(MGPC!(ScriptString, 912)()); }
-			ScriptString m_HelpTextOffhandReminder() { mixin(MGPC!(ScriptString, 564)()); }
-			ScriptString m_HelpTextOffhandReminderMenuTitle() { mixin(MGPC!(ScriptString, 924)()); }
-			ScriptString m_HelpTextCTFFlagDescription() { mixin(MGPC!(ScriptString, 576)()); }
-			ScriptString m_HelpTextCTFFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 936)()); }
-			ScriptString m_HelpTextHoldingEnemyFlagDescription() { mixin(MGPC!(ScriptString, 588)()); }
-			ScriptString m_HelpTextHoldingEnemyFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 948)()); }
-			ScriptString m_HelpTextRabbitFlagDescription() { mixin(MGPC!(ScriptString, 600)()); }
-			ScriptString m_HelpTextRabbitFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 960)()); }
-			ScriptString m_HelpTextHoldingRabbitFlagDescription() { mixin(MGPC!(ScriptString, 612)()); }
-			ScriptString m_HelpTextHoldingRabbitFlagDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 972)()); }
-			ScriptString m_HelpTextInventoryStationDescription() { mixin(MGPC!(ScriptString, 624)()); }
-			ScriptString m_HelpTextInventoryStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 984)()); }
-			ScriptString m_HelpTextVehicleStationDescription() { mixin(MGPC!(ScriptString, 636)()); }
-			ScriptString m_HelpTextVehicleStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 996)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel1() { mixin(MGPC!(ScriptString, 648)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 1008)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel2() { mixin(MGPC!(ScriptString, 660)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 1020)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel3() { mixin(MGPC!(ScriptString, 672)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 1032)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionLevel4() { mixin(MGPC!(ScriptString, 684)()); }
-			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 1044)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel1() { mixin(MGPC!(ScriptString, 696)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel1() { mixin(MGPC!(ScriptString, 1056)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel2() { mixin(MGPC!(ScriptString, 708)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel2() { mixin(MGPC!(ScriptString, 1068)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel3() { mixin(MGPC!(ScriptString, 720)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel3() { mixin(MGPC!(ScriptString, 1080)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionLevel4() { mixin(MGPC!(ScriptString, 732)()); }
-			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel4() { mixin(MGPC!(ScriptString, 1092)()); }
-			ScriptString m_HelpTextRepairStationDescription() { mixin(MGPC!(ScriptString, 744)()); }
-			ScriptString m_HelpTextRepairStationDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1104)()); }
-			ScriptString m_HelpTextArmoredTargetDescription() { mixin(MGPC!(ScriptString, 756)()); }
-			ScriptString m_HelpTextArmoredTargetDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1116)()); }
-			ScriptString m_HelpTextCreditsDescription() { mixin(MGPC!(ScriptString, 768)()); }
-			ScriptString m_HelpTextCreditsDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1128)()); }
-			ScriptString m_HelpTextYouCanPickupPassengerReminder() { mixin(MGPC!(ScriptString, 780)()); }
-			ScriptString m_HelpTextYouCanPickupPassengerReminderMenuTitle() { mixin(MGPC!(ScriptString, 1140)()); }
-			ScriptString m_HelpTextConduitDescription() { mixin(MGPC!(ScriptString, 792)()); }
-			ScriptString m_HelpTextConduitDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1152)()); }
-			ScriptString m_HelpTextSpotTargetReminder() { mixin(MGPC!(ScriptString, 804)()); }
-			ScriptString m_HelpTextSpotTargetReminderMenuTitle() { mixin(MGPC!(ScriptString, 1164)()); }
-			ScriptString m_HelpTextChangingClassDescription() { mixin(MGPC!(ScriptString, 816)()); }
-			ScriptString m_HelpTextChangingClassDescriptionMenuTitle() { mixin(MGPC!(ScriptString, 1176)()); }
-			ScriptString m_HelpTextChangingClassHowTo() { mixin(MGPC!(ScriptString, 828)()); }
-			ScriptString m_HelpTextChangingClassHowToMenuTitle() { mixin(MGPC!(ScriptString, 1188)()); }
-			ScriptString m_LocalizedSuppressString() { mixin(MGPC!(ScriptString, 1200)()); }
-			float m_OffhandReminderRecursiveTime() { mixin(MGPC!(float, 1216)()); }
-			float m_SpotTargetReminderRecursiveTime() { mixin(MGPC!(float, 1224)()); }
-			float m_OffhandReminderInitialTime() { mixin(MGPC!(float, 1212)()); }
-			float m_SpotTargetReminderInitialTime() { mixin(MGPC!(float, 1220)()); }
+			ScriptArray!(TrHelpTextManager.EHelpTextType) m_HelpTextQueue() { mixin(MGPC!("ScriptArray!(TrHelpTextManager.EHelpTextType)", 1240)()); }
+			ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo) m_HelpTextTypesToRemoveOnTimers() { mixin(MGPC!("ScriptArray!(TrHelpTextManager.HelpTextTypeRemovalTimerInfo)", 1252)()); }
+			ScriptArray!(TrHelpTextManager.HelpTextInfo) m_HelpTextConfig() { mixin(MGPC!("ScriptArray!(TrHelpTextManager.HelpTextInfo)", 1228)()); }
+			ScriptString m_HelpTextSkiingHowTo() { mixin(MGPC!("ScriptString", 480)()); }
+			ScriptString m_HelpTextSkiingHowToMenuTitle() { mixin(MGPC!("ScriptString", 840)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel1() { mixin(MGPC!("ScriptString", 492)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel1() { mixin(MGPC!("ScriptString", 852)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel2() { mixin(MGPC!("ScriptString", 504)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel2() { mixin(MGPC!("ScriptString", 864)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel3() { mixin(MGPC!("ScriptString", 516)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel3() { mixin(MGPC!("ScriptString", 876)()); }
+			ScriptString m_HelpTextGeneratorDescriptionLevel4() { mixin(MGPC!("ScriptString", 528)()); }
+			ScriptString m_HelpTextGeneratorDescriptionMenuTitleLevel4() { mixin(MGPC!("ScriptString", 888)()); }
+			ScriptString m_HelpTextJetpackHowTo() { mixin(MGPC!("ScriptString", 540)()); }
+			ScriptString m_HelpTextJetpackHowToMenuTitle() { mixin(MGPC!("ScriptString", 900)()); }
+			ScriptString m_HelpTextOutOfAmmoNotifier() { mixin(MGPC!("ScriptString", 552)()); }
+			ScriptString m_HelpTextOutOfAmmoNotifierMenuTitle() { mixin(MGPC!("ScriptString", 912)()); }
+			ScriptString m_HelpTextOffhandReminder() { mixin(MGPC!("ScriptString", 564)()); }
+			ScriptString m_HelpTextOffhandReminderMenuTitle() { mixin(MGPC!("ScriptString", 924)()); }
+			ScriptString m_HelpTextCTFFlagDescription() { mixin(MGPC!("ScriptString", 576)()); }
+			ScriptString m_HelpTextCTFFlagDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 936)()); }
+			ScriptString m_HelpTextHoldingEnemyFlagDescription() { mixin(MGPC!("ScriptString", 588)()); }
+			ScriptString m_HelpTextHoldingEnemyFlagDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 948)()); }
+			ScriptString m_HelpTextRabbitFlagDescription() { mixin(MGPC!("ScriptString", 600)()); }
+			ScriptString m_HelpTextRabbitFlagDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 960)()); }
+			ScriptString m_HelpTextHoldingRabbitFlagDescription() { mixin(MGPC!("ScriptString", 612)()); }
+			ScriptString m_HelpTextHoldingRabbitFlagDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 972)()); }
+			ScriptString m_HelpTextInventoryStationDescription() { mixin(MGPC!("ScriptString", 624)()); }
+			ScriptString m_HelpTextInventoryStationDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 984)()); }
+			ScriptString m_HelpTextVehicleStationDescription() { mixin(MGPC!("ScriptString", 636)()); }
+			ScriptString m_HelpTextVehicleStationDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 996)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel1() { mixin(MGPC!("ScriptString", 648)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel1() { mixin(MGPC!("ScriptString", 1008)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel2() { mixin(MGPC!("ScriptString", 660)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel2() { mixin(MGPC!("ScriptString", 1020)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel3() { mixin(MGPC!("ScriptString", 672)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel3() { mixin(MGPC!("ScriptString", 1032)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionLevel4() { mixin(MGPC!("ScriptString", 684)()); }
+			ScriptString m_HelpTextBaseTurretDescriptionMenuTitleLevel4() { mixin(MGPC!("ScriptString", 1044)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel1() { mixin(MGPC!("ScriptString", 696)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel1() { mixin(MGPC!("ScriptString", 1056)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel2() { mixin(MGPC!("ScriptString", 708)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel2() { mixin(MGPC!("ScriptString", 1068)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel3() { mixin(MGPC!("ScriptString", 720)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel3() { mixin(MGPC!("ScriptString", 1080)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionLevel4() { mixin(MGPC!("ScriptString", 732)()); }
+			ScriptString m_HelpTextRadarSensorDescriptionMenuTitleLevel4() { mixin(MGPC!("ScriptString", 1092)()); }
+			ScriptString m_HelpTextRepairStationDescription() { mixin(MGPC!("ScriptString", 744)()); }
+			ScriptString m_HelpTextRepairStationDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 1104)()); }
+			ScriptString m_HelpTextArmoredTargetDescription() { mixin(MGPC!("ScriptString", 756)()); }
+			ScriptString m_HelpTextArmoredTargetDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 1116)()); }
+			ScriptString m_HelpTextCreditsDescription() { mixin(MGPC!("ScriptString", 768)()); }
+			ScriptString m_HelpTextCreditsDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 1128)()); }
+			ScriptString m_HelpTextYouCanPickupPassengerReminder() { mixin(MGPC!("ScriptString", 780)()); }
+			ScriptString m_HelpTextYouCanPickupPassengerReminderMenuTitle() { mixin(MGPC!("ScriptString", 1140)()); }
+			ScriptString m_HelpTextConduitDescription() { mixin(MGPC!("ScriptString", 792)()); }
+			ScriptString m_HelpTextConduitDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 1152)()); }
+			ScriptString m_HelpTextSpotTargetReminder() { mixin(MGPC!("ScriptString", 804)()); }
+			ScriptString m_HelpTextSpotTargetReminderMenuTitle() { mixin(MGPC!("ScriptString", 1164)()); }
+			ScriptString m_HelpTextChangingClassDescription() { mixin(MGPC!("ScriptString", 816)()); }
+			ScriptString m_HelpTextChangingClassDescriptionMenuTitle() { mixin(MGPC!("ScriptString", 1176)()); }
+			ScriptString m_HelpTextChangingClassHowTo() { mixin(MGPC!("ScriptString", 828)()); }
+			ScriptString m_HelpTextChangingClassHowToMenuTitle() { mixin(MGPC!("ScriptString", 1188)()); }
+			ScriptString m_LocalizedSuppressString() { mixin(MGPC!("ScriptString", 1200)()); }
+			float m_OffhandReminderRecursiveTime() { mixin(MGPC!("float", 1216)()); }
+			float m_SpotTargetReminderRecursiveTime() { mixin(MGPC!("float", 1224)()); }
+			float m_OffhandReminderInitialTime() { mixin(MGPC!("float", 1212)()); }
+			float m_SpotTargetReminderInitialTime() { mixin(MGPC!("float", 1220)()); }
 		}
 		bool m_bShowHelpTexts() { mixin(MGBPC!(476, 0x1)()); }
 		bool m_bShowHelpTexts(bool val) { mixin(MSBPC!(476, 0x1)()); }
@@ -307,13 +307,15 @@ final:
 		(cast(ScriptObject)this).ProcessEvent(Functions.IsSuppressed, params.ptr, cast(void*)0);
 		return *cast(bool*)&params[4];
 	}
-	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float Time, bool bDoNotSuppress)
+	void RemoveHelpText(TrHelpTextManager.EHelpTextType TypeToRemove, float* Time = null, bool* bDoNotSuppress = null)
 	{
 		ubyte params[12];
 		params[] = 0;
 		*cast(TrHelpTextManager.EHelpTextType*)params.ptr = TypeToRemove;
-		*cast(float*)&params[4] = Time;
-		*cast(bool*)&params[8] = bDoNotSuppress;
+		if (Time !is null)
+			*cast(float*)&params[4] = *Time;
+		if (bDoNotSuppress !is null)
+			*cast(bool*)&params[8] = *bDoNotSuppress;
 		(cast(ScriptObject)this).ProcessEvent(Functions.RemoveHelpText, params.ptr, cast(void*)0);
 	}
 	void SuppressHelpText(TrHelpTextManager.EHelpTextType TypeToSuppress)
