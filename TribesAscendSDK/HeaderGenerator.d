@@ -490,11 +490,11 @@ final class PropertyDescriptor : Descriptor
 			return;
 		}
 
-		if (alone)
-			wtr.Write("@property final ");
 		final switch (InnerProperty.Type)
 		{
 			case ScriptPropertyType.Boolean:
+				if (alone)
+					wtr.Write("@property final ");
 				if (ParentIsStruct)
 				{
 					wtr.WriteLine("bool %s() { mixin(MGBPS!(%u, 0x%X)()); }", InnerProperty.GetName(), InnerProperty.Offset, (cast(ScriptBoolProperty)InnerProperty).BitMask);
@@ -518,7 +518,7 @@ final class PropertyDescriptor : Descriptor
 			case ScriptPropertyType.String:
 			case ScriptPropertyType.Struct:
 				if (alone)
-					wtr.Write("auto ref ");
+					wtr.Write("@property final auto ref ");
 				if (ParentIsStruct)
 					wtr.WriteLine("%s %s() { mixin(MGPS!(%s, %u)()); }", GetTypeName(InnerProperty), InnerProperty.GetName(), GetTypeName(InnerProperty), InnerProperty.Offset);
 				else
